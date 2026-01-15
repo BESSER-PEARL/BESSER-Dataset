@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/epsilonlabs/epsilonlabs/org.eclipse.epsilon.labs.indexed.emf/test/JDTAST.ecore

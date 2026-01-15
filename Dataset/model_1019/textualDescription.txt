@@ -1,0 +1,31 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fsm_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_Initial' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_Initial' is a specialization of 'State'.
+The class 'fsm_Final' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_State' and 'fsm_FSM'. From 'fsm_State', the role 'fsm_State' has cardinality 0..*, and from 'fsm_FSM', the role 'fsm_FSM' has cardinality 0..*.
+An association connects 'fsm_FSM' and 'fsm_Transition'. From 'fsm_FSM', the role 'fsm_FSM2' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition' has cardinality 0..*.
+An association connects 'fsm_State' and 'fsm_Transition'. From 'fsm_State', the role 'fsm_State5' has cardinality 0..*, and from 'fsm_Transition', the role 'fsm_Transition4' has cardinality 0..*.
+An association connects 'fsm_Transition' and 'fsm_State'. From 'fsm_Transition', the role 'fsm_Transition7' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State8' has cardinality 0..*.

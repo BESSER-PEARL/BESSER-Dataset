@@ -1,0 +1,65 @@
+The domain model 'dot' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'dot_NodeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_EdgeTarget' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'dot_Subgraph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dot_AttributeStatement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dot_Graph' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'strict', which is of type bool; 'type', which is of type str.
+
+'dot_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'dot_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_GraphvizModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Port' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'compass_pt', which is of type str.
+
+'dot_EdgeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AttributeType' defines the following possible values: 'graph', 'edge', 'node'.
+The enumeration 'GraphType' defines the following possible values: 'digraph', 'graph'.
+The enumeration 'EdgeOperator' defines the following possible values: 'directed', 'undirected'.
+
+The model also captures inheritance relationships between classes.
+The class 'dot_Attribute' is a specialization of 'Statement'.
+The class 'dot_NodeStatement' is a specialization of 'Statement'.
+The class 'dot_EdgeStatement' is a specialization of 'Statement'.
+The class 'dot_AttributeStatement' is a specialization of 'Statement'.
+The class 'dot_Subgraph' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dot_GraphvizModel' and 'dot_Graph'. From 'dot_GraphvizModel', the role 'dot_GraphvizModel' has cardinality 0..*, and from 'dot_Graph', the role 'dot_Graph' has cardinality 0..*.
+An association connects 'dot_Graph' and 'dot_Statement'. From 'dot_Graph', the role 'dot_Graph2' has cardinality 0..*, and from 'dot_Statement', the role 'dot_Statement' has cardinality 0..*.
+An association connects 'dot_Node' and 'dot_NodeStatement'. From 'dot_Node', the role 'dot_Node' has cardinality 0..*, and from 'dot_NodeStatement', the role 'dot_NodeStatement' has cardinality 0..*.
+An association connects 'dot_NodeStatement' and 'dot_Attribute'. From 'dot_NodeStatement', the role 'dot_NodeStatement5' has cardinality 0..*, and from 'dot_Attribute', the role 'dot_Attribute' has cardinality 0..*.
+An association connects 'dot_Node' and 'dot_Port'. From 'dot_Node', the role 'dot_Node7' has cardinality 0..*, and from 'dot_Port', the role 'dot_Port' has cardinality 0..*.
+An association connects 'dot_EdgeStatement' and 'dot_Node'. From 'dot_EdgeStatement', the role 'dot_EdgeStatement' has cardinality 0..*, and from 'dot_Node', the role 'dot_Node9' has cardinality 0..*.
+An association connects 'dot_EdgeStatement' and 'dot_EdgeTarget'. From 'dot_EdgeStatement', the role 'dot_EdgeStatement11' has cardinality 0..*, and from 'dot_EdgeTarget', the role 'dot_EdgeTarget' has cardinality 0..*.
+An association connects 'dot_Attribute' and 'dot_EdgeStatement'. From 'dot_Attribute', the role 'dot_Attribute14' has cardinality 0..*, and from 'dot_EdgeStatement', the role 'dot_EdgeStatement13' has cardinality 0..*.
+An association connects 'dot_EdgeTarget' and 'dot_Subgraph'. From 'dot_EdgeTarget', the role 'dot_EdgeTarget16' has cardinality 0..*, and from 'dot_Subgraph', the role 'dot_Subgraph' has cardinality 0..*.
+An association connects 'dot_EdgeTarget' and 'dot_Node'. From 'dot_EdgeTarget', the role 'dot_EdgeTarget18' has cardinality 0..*, and from 'dot_Node', the role 'dot_Node19' has cardinality 0..*.
+An association connects 'dot_Attribute' and 'dot_AttributeStatement'. From 'dot_Attribute', the role 'dot_Attribute21' has cardinality 0..*, and from 'dot_AttributeStatement', the role 'dot_AttributeStatement' has cardinality 0..*.
+An association connects 'dot_Subgraph' and 'dot_Statement'. From 'dot_Subgraph', the role 'dot_Subgraph23' has cardinality 0..*, and from 'dot_Statement', the role 'dot_Statement24' has cardinality 0..*.

@@ -1,0 +1,28 @@
+The domain model 'fsm_tp' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'fsm_tp_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsm_tp_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_tp_Transition' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_tp_State' represents an important domain concept.
+It has the following attributes: 'isFinal', which is of type bool; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_tp_InitialState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_tp_State' and 'fsm_tp_FSM'. From 'fsm_tp_State', the role 'fsm_tp_State' has cardinality 0..*, and from 'fsm_tp_FSM', the role 'fsm_tp_FSM' has cardinality 0..*.
+An association connects 'fsm_tp_FSM' and 'fsm_tp_Transition'. From 'fsm_tp_FSM', the role 'fsm_tp_FSM2' has cardinality 0..*, and from 'fsm_tp_Transition', the role 'fsm_tp_Transition' has cardinality 0..*.
+An association connects 'fsm_tp_FSM' and 'fsm_tp_InitialState'. From 'fsm_tp_FSM', the role 'fsm_tp_FSM4' has cardinality 0..*, and from 'fsm_tp_InitialState', the role 'fsm_tp_InitialState' has cardinality 0..*.
+An association connects 'fsm_tp_Transition' and 'fsm_tp_State'. From 'fsm_tp_Transition', the role 'fsm_tp_Transition6' has cardinality 0..*, and from 'fsm_tp_State', the role 'fsm_tp_State7' has cardinality 0..*.
+An association connects 'fsm_tp_Transition' and 'fsm_tp_State'. From 'fsm_tp_Transition', the role 'fsm_tp_Transition9' has cardinality 0..*, and from 'fsm_tp_State', the role 'fsm_tp_State10' has cardinality 0..*.

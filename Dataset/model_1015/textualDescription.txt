@@ -1,0 +1,774 @@
+The domain model 'HALL' describes the core structural elements and their relationships within the system.
+
+The model defines 176 main class(es).
+
+'FSMConditions_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_GetMessageData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Geometry_GeometryData3D' represents an important domain concept.
+It does not declare any attributes.
+
+'Conditions_PreConditionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_SetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Geometry_ColorState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_UnaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_Instructions_VarRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'NormalColors' represents an important domain concept.
+It does not declare any attributes.
+
+'Messages_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_Let' represents an important domain concept.
+It has one attribute: 'namevar', which is of type str.
+
+'SelectedColors' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_DomainPropertyGet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Geometry_Point3D' represents an important domain concept.
+It has one attribute: 'zCoord', which is of type int.
+
+'HALL_Actions_VarRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'HALL_FSMActions_Let' represents an important domain concept.
+It has one attribute: 'namevar', which is of type str.
+
+'HALL_Geometry_NormalColors' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorData' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_PreConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorState' represents an important domain concept.
+It does not declare any attributes.
+
+'PreConditionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_SetState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_FSMInstructions_GetState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_DomainPropertySet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Instructions_DomainPropertyGet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_FSMConditions_PreConditionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Actions_Let' represents an important domain concept.
+It has one attribute: 'namevar', which is of type str.
+
+'HALL_Geometry_SelectedColors' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_ActionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_UnaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'Actions_ActionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_SetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'Instructions_PosConditionMessageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Point3D' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Actions_ActionMessageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedState' represents an important domain concept.
+It does not declare any attributes.
+
+'Instructions_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_Enable' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Messages_MessageHandler' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Instructions_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HALL_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_FSMConditions_UnaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'Geometry_HALL_VisualObject' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_BinaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_Instructions_UnaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'DisabledColors' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Actions_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HALL_Instructions_BinaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_Actions_GetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'Face' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Geometry_RGBColor' represents an important domain concept.
+It has the following attributes: 'greenValue', which is of type int; 'blueValue', which is of type int; 'redValue', which is of type int.
+
+'HALL_Geometry_AlphaTransparency' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'HALL_Instructions_SetMessageData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Data' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initValue', which is of type str; 'type', which is of type str; 'currentValue', which is of type str.
+
+'Messages_HALL_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'Conditions_PreConditionMessageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMConditions_PreConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Point2D' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_GetMessageParameter' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'PreConditionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_PosConditionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Actions_ActionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_PreConditionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Messages_MessageDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MessageDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_DomainPropertyGet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PosConditionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RGBColor' represents an important domain concept.
+It does not declare any attributes.
+
+'GeometryData' represents an important domain concept.
+It does not declare any attributes.
+
+'PosConditionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'GeometryData3D' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMActions_ActionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Geometry_Point' represents an important domain concept.
+It has the following attributes: 'yCoord', which is of type int; 'xCoord', which is of type int.
+
+'HALL_FSMConditions_GetState' represents an important domain concept.
+It does not declare any attributes.
+
+'Instructions_PosConditionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMActions_ActionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'GeometryData2D' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMInstructions_PosConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Messages_MessageState' represents an important domain concept.
+It has the following attributes: 'isContinue', which is of type bool; 'isEnd', which is of type bool; 'isActive', which is of type bool.
+
+'HALL_Conditions_GetState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Trigger_DomainEventFired' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HALL_Conditions_VarRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'HALL_FSMActions_GetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'Trigger_TriggerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'InitialMessageState' represents an important domain concept.
+It does not declare any attributes.
+
+'Messages_HALL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMConditions_PreConditionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMInstructions_PosConditionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Trigger_TriggerExpressionElement' represents an important domain concept.
+It has one attribute: 'String', which is of type str.
+
+'HALL_Geometry_Point2D' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSM_State' represents an important domain concept.
+It has one attribute: 'isActive', which is of type bool.
+
+'Conditions_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_SystemComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_ActionMessageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_DomainPropertyGet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Actions_DomainPropertySet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Conditions_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HALL_Geometry_DisabledColors' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_BinaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_FSM_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_GetState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_GetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_FSMInstructions_SetState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_FSMActions_ActionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Geometry_Face' represents an important domain concept.
+It has one attribute: 'labelText', which is of type str.
+
+'MessageTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_PosConditionMessageExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSM_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Actions_BinaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_FSM_NamedState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_FSMActions_VarRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'HALL_Conditions_Let' represents an important domain concept.
+It has one attribute: 'namevar', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMActions_MessageInvocation' represents an important domain concept.
+It has the following attributes: 'isTopDown', which is of type bool; 'name', which is of type str.
+
+'HALL_Geometry_GeometryData' represents an important domain concept.
+It does not declare any attributes.
+
+'Color' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_DomainPropertyGet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Actions_GetMessageData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Actions_Enable' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Messages_InitialMessageState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Trigger_TriggerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_VarRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'MessageHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Geometry_GeometryData2D' represents an important domain concept.
+It has one attribute: 'labelText', which is of type str.
+
+'HALL_Messages_MessageTransition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Geometry_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_BinaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'HALL_Goal' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'HALL_Actions_UnaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'AlphaTransparency' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_GetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_TaskObject' represents an important domain concept.
+It has the following attributes: 'completionTime', which is of type int; 'numberofgoalscompleted', which is of type int.
+
+'HALL_UserProfile' represents an important domain concept.
+It has one attribute: 'numberofcompletedtasks', which is of type int.
+
+'HALL_FSMInstructions_UnaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+'HALL_Conditions_PreConditionMessageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_VarRef' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'HALL_Actions_DomainPropertyGet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FSMActions_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_SetTopDown' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_VisualObject' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_Let' represents an important domain concept.
+It has one attribute: 'namevar', which is of type str.
+
+'HALL_Trigger_MessageNotification' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TriggerExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Actions_GetMessageParameter' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_FSMInstructions_PosConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HALL_Instructions_SetMessageParameter' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Geometry_ColorData' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Conditions_GetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'FSMInstructions_HALL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMInstructions_Let' represents an important domain concept.
+It has one attribute: 'namevar', which is of type str.
+
+'NamedMessageState' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_Instructions_GetMessageParameter' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_FSM_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_Instructions_GetMessageData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Actions_MessageInvocation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isTopDown', which is of type bool.
+
+'HALL_Instructions_PosConditionMessageExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Messages_HALL_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger_TriggerExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'HALL_FSMConditions_GetData' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'HALL_Messages_NamedMessageState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HALL_FSMActions_BinaryOperator' represents an important domain concept.
+It has one attribute: 'operatorname', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'HALL_VisualObject' is a specialization of 'Component'.
+The class 'HALL_SystemComponent' is a specialization of 'Component'.
+The class 'HALL_UserProfile' is a specialization of 'Component'.
+The class 'HALL_TaskObject' is a specialization of 'Component'.
+The class 'HALL_Geometry_NormalColors' is a specialization of 'ColorState'.
+The class 'HALL_Geometry_SelectedColors' is a specialization of 'ColorState'.
+The class 'HALL_Geometry_DisabledColors' is a specialization of 'ColorState'.
+The class 'HALL_Geometry_GeometryData3D' is a specialization of 'GeometryData'.
+The class 'HALL_Geometry_GeometryData2D' is a specialization of 'GeometryData'.
+The class 'HALL_Geometry_Point3D' is a specialization of 'Point'.
+The class 'HALL_Geometry_Point2D' is a specialization of 'Point'.
+The class 'HALL_Messages_NamedMessageState' is a specialization of 'MessageState'.
+The class 'HALL_Messages_InitialMessageState' is a specialization of 'MessageState'.
+The class 'HALL_Instructions_VarRef' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_Literal' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_BinaryOperator' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_UnaryOperator' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_GetData' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_GetState' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_SetState' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_SetData' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_SetMessageData' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_SetMessageParameter' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_Let' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_DomainPropertyGet' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_GetMessageData' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_GetMessageParameter' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Instructions_SetTopDown' is a specialization of 'PosConditionMessageExpressionElement'.
+The class 'HALL_Conditions_VarRef' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_Literal' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_GetMessageData' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_GetMessageParameter' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_DomainPropertyGet' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_GetState' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_GetData' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_Let' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_UnaryOperator' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Conditions_BinaryOperator' is a specialization of 'PreConditionMessageExpressionElement'.
+The class 'HALL_Actions_VarRef' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_Literal' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_BinaryOperator' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_Let' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_DomainPropertyGet' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_GetMessageData' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_GetMessageParameter' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_MessageInvocation' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_UnaryOperator' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_GetData' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_DomainPropertySet' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_Actions_Enable' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_FSM_NamedState' is a specialization of 'State'.
+The class 'HALL_FSM_InitialState' is a specialization of 'State'.
+The class 'HALL_Trigger_MessageNotification' is a specialization of 'TriggerExpressionElement'.
+The class 'HALL_Trigger_DomainEventFired' is a specialization of 'TriggerExpressionElement'.
+The class 'HALL_FSMInstructions_VarRef' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_Literal' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_BinaryOperator' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_UnaryOperator' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_GetData' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_GetState' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_SetState' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_SetData' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_Let' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMInstructions_DomainPropertyGet' is a specialization of 'PosConditionExpressionElement'.
+The class 'HALL_FSMConditions_Literal' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_VarRef' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_BinaryOperator' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_UnaryOperator' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_GetState' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_GetData' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_DomainPropertyGet' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMConditions_Let' is a specialization of 'PreConditionExpressionElement'.
+The class 'HALL_FSMActions_VarRef' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_Literal' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_DomainPropertyGet' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_Let' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_MessageInvocation' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_Enable' is a specialization of 'ActionMessageExpressionElement'.
+The class 'HALL_FSMActions_DomainPropertySet' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_GetData' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_BinaryOperator' is a specialization of 'ActionExpressionElement'.
+The class 'HALL_FSMActions_UnaryOperator' is a specialization of 'ActionExpressionElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ColorData' and 'HALL_VisualObject'. From 'ColorData', the role 'Geometry' has cardinality 0..*, and from 'HALL_VisualObject', the role 'ColorData' has cardinality 0..*.
+An association connects 'HALL_VisualObject' and 'GeometryData'. From 'HALL_VisualObject', the role 'GeometryData' has cardinality 0..*, and from 'GeometryData', the role 'Geometry2' has cardinality 0..*.
+An association connects 'HALL_VisualObject' and 'HALL_UserProfile'. From 'HALL_VisualObject', the role 'visualObject' has cardinality 0..*, and from 'HALL_UserProfile', the role 'UserProfile' has cardinality 0..*.
+An association connects 'HALL_VisualObject' and 'HALL_VisualObject'. From 'HALL_VisualObject', the role 'componentSetInv' has cardinality 0..*, and from 'HALL_VisualObject', the role 'VisualObject' has cardinality 0..*.
+An association connects 'HALL_VisualObject' and 'HALL_VisualObject'. From 'HALL_VisualObject', the role 'VisualObject8' has cardinality 0..*, and from 'HALL_VisualObject', the role 'componentSet' has cardinality 0..*.
+An association connects 'HALL_Component' and 'HALL_Data'. From 'HALL_Component', the role 'dataInvComponent' has cardinality 0..*, and from 'HALL_Data', the role 'Data' has cardinality 0..*.
+An association connects 'FSM' and 'HALL_Component'. From 'FSM', the role 'FSM11' has cardinality 0..*, and from 'HALL_Component', the role 'FSM' has cardinality 0..*.
+An association connects 'HALL_Component' and 'MessageHandler'. From 'HALL_Component', the role 'MessageHandler' has cardinality 0..*, and from 'MessageHandler', the role 'Messages' has cardinality 0..*.
+An association connects 'HALL_Model' and 'HALL_SystemComponent'. From 'HALL_Model', the role 'Model' has cardinality 0..*, and from 'HALL_SystemComponent', the role 'systemComponent' has cardinality 0..*.
+An association connects 'HALL_SystemComponent' and 'HALL_SystemComponent'. From 'HALL_SystemComponent', the role 'componentSetInv16' has cardinality 0..*, and from 'HALL_SystemComponent', the role 'SystemComponent' has cardinality 0..*.
+An association connects 'HALL_SystemComponent' and 'HALL_SystemComponent'. From 'HALL_SystemComponent', the role 'componentSet19' has cardinality 0..*, and from 'HALL_SystemComponent', the role 'SystemComponent20' has cardinality 0..*.
+An association connects 'HALL_UserProfile' and 'HALL_Model'. From 'HALL_UserProfile', the role 'UserProfile22' has cardinality 0..*, and from 'HALL_Model', the role 'userProfileInv' has cardinality 0..*.
+An association connects 'HALL_Model' and 'HALL_SystemComponent'. From 'HALL_Model', the role 'systemComponentInv' has cardinality 0..*, and from 'HALL_SystemComponent', the role 'SystemComponent24' has cardinality 0..*.
+An association connects 'MessageDefinition' and 'HALL_Model'. From 'MessageDefinition', the role 'Messages26' has cardinality 0..*, and from 'HALL_Model', the role 'MessageDefinition' has cardinality 0..*.
+An association connects 'HALL_UserProfile' and 'HALL_VisualObject'. From 'HALL_UserProfile', the role 'visualObjectInv' has cardinality 0..*, and from 'HALL_VisualObject', the role 'VisualObject28' has cardinality 0..*.
+An association connects 'HALL_TaskObject' and 'HALL_UserProfile'. From 'HALL_TaskObject', the role 'TaskObject' has cardinality 0..*, and from 'HALL_UserProfile', the role 'taskObjectInv' has cardinality 0..*.
+An association connects 'HALL_UserProfile' and 'HALL_Model'. From 'HALL_UserProfile', the role 'userProfile' has cardinality 0..*, and from 'HALL_Model', the role 'Model31' has cardinality 0..*.
+An association connects 'HALL_UserProfile' and 'HALL_UserProfile'. From 'HALL_UserProfile', the role 'UserProfile35' has cardinality 0..*, and from 'HALL_UserProfile', the role 'componentSetInv34' has cardinality 0..*.
+An association connects 'HALL_UserProfile' and 'HALL_UserProfile'. From 'HALL_UserProfile', the role 'UserProfile39' has cardinality 0..*, and from 'HALL_UserProfile', the role 'componentSet38' has cardinality 0..*.
+An association connects 'HALL_TaskObject' and 'HALL_Goal'. From 'HALL_TaskObject', the role 'goalInv' has cardinality 0..*, and from 'HALL_Goal', the role 'Goal' has cardinality 0..*.
+An association connects 'HALL_TaskObject' and 'HALL_UserProfile'. From 'HALL_TaskObject', the role 'taskObject' has cardinality 0..*, and from 'HALL_UserProfile', the role 'UserProfile42' has cardinality 0..*.
+An association connects 'HALL_TaskObject' and 'HALL_TaskObject'. From 'HALL_TaskObject', the role 'componentSetInv45' has cardinality 0..*, and from 'HALL_TaskObject', the role 'TaskObject46' has cardinality 0..*.
+An association connects 'HALL_TaskObject' and 'HALL_TaskObject'. From 'HALL_TaskObject', the role 'TaskObject50' has cardinality 0..*, and from 'HALL_TaskObject', the role 'componentSet49' has cardinality 0..*.
+An association connects 'HALL_TaskObject' and 'HALL_Goal'. From 'HALL_TaskObject', the role 'TaskObject52' has cardinality 0..*, and from 'HALL_Goal', the role 'goal' has cardinality 0..*.
+An association connects 'HALL_Parameter' and 'MessageDefinition'. From 'HALL_Parameter', the role 'MessageDefinition54' has cardinality 0..*, and from 'MessageDefinition', the role 'Messages55' has cardinality 0..*.
+An association connects 'HALL_Data' and 'MessageDefinition'. From 'HALL_Data', the role 'MessageDefinition57' has cardinality 0..*, and from 'MessageDefinition', the role 'Messages58' has cardinality 0..*.
+An association connects 'HALL_Data' and 'HALL_Component'. From 'HALL_Data', the role 'data' has cardinality 0..*, and from 'HALL_Component', the role 'Component' has cardinality 0..*.
+An association connects 'HALL_Geometry_Color' and 'RGBColor'. From 'HALL_Geometry_Color', the role 'RGBColor' has cardinality 0..*, and from 'RGBColor', the role 'Geometry61' has cardinality 0..*.
+An association connects 'RGBColor' and 'HALL_Geometry_Color'. From 'RGBColor', the role 'Geometry64' has cardinality 0..*, and from 'HALL_Geometry_Color', the role 'RGBColor63' has cardinality 0..*.
+An association connects 'HALL_Geometry_Color' and 'RGBColor'. From 'HALL_Geometry_Color', the role 'RGBColor66' has cardinality 0..*, and from 'RGBColor', the role 'Geometry67' has cardinality 0..*.
+An association connects 'HALL_Geometry_Color' and 'ColorState'. From 'HALL_Geometry_Color', the role 'ColorState' has cardinality 0..*, and from 'ColorState', the role 'Geometry69' has cardinality 0..*.
+An association connects 'HALL_Geometry_Color' and 'ColorState'. From 'HALL_Geometry_Color', the role 'ColorState71' has cardinality 0..*, and from 'ColorState', the role 'Geometry72' has cardinality 0..*.
+An association connects 'HALL_Geometry_RGBColor' and 'Color'. From 'HALL_Geometry_RGBColor', the role 'Color' has cardinality 0..*, and from 'Color', the role 'Geometry74' has cardinality 0..*.
+An association connects 'HALL_Geometry_RGBColor' and 'Color'. From 'HALL_Geometry_RGBColor', the role 'Color76' has cardinality 0..*, and from 'Color', the role 'Geometry77' has cardinality 0..*.
+An association connects 'HALL_Geometry_RGBColor' and 'Color'. From 'HALL_Geometry_RGBColor', the role 'Color79' has cardinality 0..*, and from 'Color', the role 'Geometry80' has cardinality 0..*.
+An association connects 'Color' and 'HALL_Geometry_ColorState'. From 'Color', the role 'Geometry83' has cardinality 0..*, and from 'HALL_Geometry_ColorState', the role 'Color82' has cardinality 0..*.
+An association connects 'HALL_Geometry_ColorState' and 'Color'. From 'HALL_Geometry_ColorState', the role 'Color85' has cardinality 0..*, and from 'Color', the role 'Geometry86' has cardinality 0..*.
+An association connects 'AlphaTransparency' and 'HALL_Geometry_ColorState'. From 'AlphaTransparency', the role 'Geometry88' has cardinality 0..*, and from 'HALL_Geometry_ColorState', the role 'AlphaTransparency' has cardinality 0..*.
+An association connects 'HALL_Geometry_AlphaTransparency' and 'ColorState'. From 'HALL_Geometry_AlphaTransparency', the role 'ColorState90' has cardinality 0..*, and from 'ColorState', the role 'Geometry91' has cardinality 0..*.
+An association connects 'ColorData' and 'HALL_Geometry_NormalColors'. From 'ColorData', the role 'Geometry94' has cardinality 0..*, and from 'HALL_Geometry_NormalColors', the role 'ColorData93' has cardinality 0..*.
+An association connects 'HALL_Geometry_SelectedColors' and 'ColorData'. From 'HALL_Geometry_SelectedColors', the role 'ColorData96' has cardinality 0..*, and from 'ColorData', the role 'Geometry97' has cardinality 0..*.
+An association connects 'HALL_Geometry_DisabledColors' and 'ColorData'. From 'HALL_Geometry_DisabledColors', the role 'ColorData99' has cardinality 0..*, and from 'ColorData', the role 'Geometry100' has cardinality 0..*.
+An association connects 'HALL_Geometry_ColorData' and 'SelectedColors'. From 'HALL_Geometry_ColorData', the role 'SelectedColors' has cardinality 0..*, and from 'SelectedColors', the role 'Geometry102' has cardinality 0..*.
+An association connects 'DisabledColors' and 'HALL_Geometry_ColorData'. From 'DisabledColors', the role 'Geometry104' has cardinality 0..*, and from 'HALL_Geometry_ColorData', the role 'DisabledColors' has cardinality 0..*.
+An association connects 'HALL_Geometry_ColorData' and 'NormalColors'. From 'HALL_Geometry_ColorData', the role 'NormalColors' has cardinality 0..*, and from 'NormalColors', the role 'Geometry106' has cardinality 0..*.
+An association connects 'HALL_Geometry_ColorData' and 'Geometry_HALL_VisualObject'. From 'HALL_Geometry_ColorData', the role 'colorData' has cardinality 0..*, and from 'Geometry_HALL_VisualObject', the role 'VisualObject108' has cardinality 0..*.
+An association connects 'Geometry_HALL_VisualObject' and 'HALL_Geometry_GeometryData'. From 'Geometry_HALL_VisualObject', the role 'VisualObject110' has cardinality 0..*, and from 'HALL_Geometry_GeometryData', the role 'geometryData' has cardinality 0..*.
+An association connects 'HALL_Geometry_GeometryData3D' and 'Face'. From 'HALL_Geometry_GeometryData3D', the role 'Face' has cardinality 0..*, and from 'Face', the role 'Geometry112' has cardinality 0..*.
+An association connects 'Point2D' and 'HALL_Geometry_GeometryData2D'. From 'Point2D', the role 'Geometry114' has cardinality 0..*, and from 'HALL_Geometry_GeometryData2D', the role 'Point2D' has cardinality 0..*.
+An association connects 'HALL_Geometry_Face' and 'Point3D'. From 'HALL_Geometry_Face', the role 'Point3D' has cardinality 0..*, and from 'Point3D', the role 'Geometry116' has cardinality 0..*.
+An association connects 'GeometryData3D' and 'HALL_Geometry_Face'. From 'GeometryData3D', the role 'Geometry118' has cardinality 0..*, and from 'HALL_Geometry_Face', the role 'GeometryData3D' has cardinality 0..*.
+An association connects 'HALL_Geometry_Point3D' and 'Face'. From 'HALL_Geometry_Point3D', the role 'Face120' has cardinality 0..*, and from 'Face', the role 'Geometry121' has cardinality 0..*.
+An association connects 'GeometryData2D' and 'HALL_Geometry_Point2D'. From 'GeometryData2D', the role 'Geometry123' has cardinality 0..*, and from 'HALL_Geometry_Point2D', the role 'GeometryData2D' has cardinality 0..*.
+An association connects 'MessageState' and 'HALL_Messages_MessageTransition'. From 'MessageState', the role 'Messages125' has cardinality 0..*, and from 'HALL_Messages_MessageTransition', the role 'MessageState' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageTransition' and 'MessageState'. From 'HALL_Messages_MessageTransition', the role 'HALL_Messages_MessageTransition' has cardinality 0..*, and from 'MessageState', the role 'MessageState127' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageTransition' and 'Conditions_PreConditionMessageExpression'. From 'HALL_Messages_MessageTransition', the role 'Conditions' has cardinality 0..*, and from 'Conditions_PreConditionMessageExpression', the role 'Messages129' has cardinality 0..*.
+An association connects 'Instructions_PosConditionMessageExpression' and 'HALL_Messages_MessageTransition'. From 'Instructions_PosConditionMessageExpression', the role 'Messages131' has cardinality 0..*, and from 'HALL_Messages_MessageTransition', the role 'Instructions' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageTransition' and 'Actions_ActionMessageExpression'. From 'HALL_Messages_MessageTransition', the role 'Actions' has cardinality 0..*, and from 'Actions_ActionMessageExpression', the role 'Messages133' has cardinality 0..*.
+An association connects 'MessageHandler' and 'HALL_Messages_NamedMessageState'. From 'MessageHandler', the role 'Messages136' has cardinality 0..*, and from 'HALL_Messages_NamedMessageState', the role 'MessageHandler135' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageDefinition' and 'Messages_HALL_Model'. From 'HALL_Messages_MessageDefinition', the role 'messageDefinition' has cardinality 0..*, and from 'Messages_HALL_Model', the role 'Model138' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageDefinition' and 'Messages_HALL_Parameter'. From 'HALL_Messages_MessageDefinition', the role 'parameterInv' has cardinality 0..*, and from 'Messages_HALL_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageDefinition' and 'Messages_HALL_Data'. From 'HALL_Messages_MessageDefinition', the role 'dataInvMessageDefinition' has cardinality 0..*, and from 'Messages_HALL_Data', the role 'Data141' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageHandler' and 'NamedMessageState'. From 'HALL_Messages_MessageHandler', the role 'NamedMessageState' has cardinality 0..*, and from 'NamedMessageState', the role 'Messages143' has cardinality 0..*.
+An association connects 'InitialMessageState' and 'HALL_Messages_MessageHandler'. From 'InitialMessageState', the role 'Messages145' has cardinality 0..*, and from 'HALL_Messages_MessageHandler', the role 'InitialMessageState' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageHandler' and 'Messages_HALL_Component'. From 'HALL_Messages_MessageHandler', the role 'messageHandlerSet' has cardinality 0..*, and from 'Messages_HALL_Component', the role 'Component147' has cardinality 0..*.
+An association connects 'HALL_Messages_MessageState' and 'MessageTransition'. From 'HALL_Messages_MessageState', the role 'MessageTransition' has cardinality 0..*, and from 'MessageTransition', the role 'Messages149' has cardinality 0..*.
+An association connects 'MessageHandler' and 'HALL_Messages_InitialMessageState'. From 'MessageHandler', the role 'Messages152' has cardinality 0..*, and from 'HALL_Messages_InitialMessageState', the role 'MessageHandler151' has cardinality 0..*.
+An association connects 'HALL_Instructions_PosConditionMessageExpression' and 'MessageTransition'. From 'HALL_Instructions_PosConditionMessageExpression', the role 'MessageTransition154' has cardinality 0..*, and from 'MessageTransition', the role 'Messages155' has cardinality 0..*.
+An association connects 'Instructions_PosConditionMessageExpressionElement' and 'HALL_Instructions_PosConditionMessageExpression'. From 'Instructions_PosConditionMessageExpressionElement', the role 'Messages158' has cardinality 0..*, and from 'HALL_Instructions_PosConditionMessageExpression', the role 'Instructions157' has cardinality 0..*.
+An association connects 'Instructions_PosConditionMessageExpression' and 'HALL_Instructions_PosConditionMessageExpressionElement'. From 'Instructions_PosConditionMessageExpression', the role 'Messages161' has cardinality 0..*, and from 'HALL_Instructions_PosConditionMessageExpressionElement', the role 'Instructions160' has cardinality 0..*.
+An association connects 'Instructions_PosConditionMessageExpressionElement' and 'HALL_Instructions_BinaryOperator'. From 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement' has cardinality 0..*, and from 'HALL_Instructions_BinaryOperator', the role 'HALL_Instructions_BinaryOperator' has cardinality 0..*.
+An association connects 'HALL_Instructions_BinaryOperator' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_BinaryOperator', the role 'HALL_Instructions_BinaryOperator164' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement165' has cardinality 0..*.
+An association connects 'HALL_Instructions_UnaryOperator' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_UnaryOperator', the role 'HALL_Instructions_UnaryOperator' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement167' has cardinality 0..*.
+An association connects 'Instructions_HALL_Component' and 'HALL_Instructions_GetData'. From 'Instructions_HALL_Component', the role 'Instructions_HALL_Component' has cardinality 0..*, and from 'HALL_Instructions_GetData', the role 'HALL_Instructions_GetData' has cardinality 0..*.
+An association connects 'HALL_Instructions_GetState' and 'Instructions_HALL_Component'. From 'HALL_Instructions_GetState', the role 'HALL_Instructions_GetState' has cardinality 0..*, and from 'Instructions_HALL_Component', the role 'Instructions_HALL_Component170' has cardinality 0..*.
+An association connects 'Instructions_HALL_Component' and 'HALL_Instructions_SetState'. From 'Instructions_HALL_Component', the role 'Instructions_HALL_Component172' has cardinality 0..*, and from 'HALL_Instructions_SetState', the role 'HALL_Instructions_SetState' has cardinality 0..*.
+An association connects 'HALL_Instructions_SetData' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_SetData', the role 'HALL_Instructions_SetData' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement174' has cardinality 0..*.
+An association connects 'HALL_Instructions_SetData' and 'Instructions_HALL_Component'. From 'HALL_Instructions_SetData', the role 'HALL_Instructions_SetData176' has cardinality 0..*, and from 'Instructions_HALL_Component', the role 'Instructions_HALL_Component177' has cardinality 0..*.
+An association connects 'HALL_Instructions_SetMessageData' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_SetMessageData', the role 'HALL_Instructions_SetMessageData' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement179' has cardinality 0..*.
+An association connects 'Instructions_PosConditionMessageExpressionElement' and 'HALL_Instructions_SetMessageParameter'. From 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement181' has cardinality 0..*, and from 'HALL_Instructions_SetMessageParameter', the role 'HALL_Instructions_SetMessageParameter' has cardinality 0..*.
+An association connects 'HALL_Instructions_Let' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_Let', the role 'HALL_Instructions_Let' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement183' has cardinality 0..*.
+An association connects 'HALL_Instructions_Let' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_Let', the role 'HALL_Instructions_Let185' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement186' has cardinality 0..*.
+An association connects 'HALL_Instructions_SetTopDown' and 'Instructions_PosConditionMessageExpressionElement'. From 'HALL_Instructions_SetTopDown', the role 'HALL_Instructions_SetTopDown' has cardinality 0..*, and from 'Instructions_PosConditionMessageExpressionElement', the role 'Instructions_PosConditionMessageExpressionElement188' has cardinality 0..*.
+An association connects 'HALL_Conditions_PreConditionMessageExpression' and 'MessageTransition'. From 'HALL_Conditions_PreConditionMessageExpression', the role 'MessageTransition190' has cardinality 0..*, and from 'MessageTransition', the role 'Messages191' has cardinality 0..*.
+An association connects 'Conditions_PreConditionMessageExpressionElement' and 'HALL_Conditions_PreConditionMessageExpression'. From 'Conditions_PreConditionMessageExpressionElement', the role 'Messages194' has cardinality 0..*, and from 'HALL_Conditions_PreConditionMessageExpression', the role 'Conditions193' has cardinality 0..*.
+An association connects 'Conditions_PreConditionMessageExpression' and 'HALL_Conditions_PreConditionMessageExpressionElement'. From 'Conditions_PreConditionMessageExpression', the role 'Messages197' has cardinality 0..*, and from 'HALL_Conditions_PreConditionMessageExpressionElement', the role 'Conditions196' has cardinality 0..*.
+An association connects 'HALL_Conditions_GetState' and 'Conditions_HALL_Component'. From 'HALL_Conditions_GetState', the role 'HALL_Conditions_GetState' has cardinality 0..*, and from 'Conditions_HALL_Component', the role 'Conditions_HALL_Component' has cardinality 0..*.
+An association connects 'Conditions_HALL_Component' and 'HALL_Conditions_GetData'. From 'Conditions_HALL_Component', the role 'Conditions_HALL_Component200' has cardinality 0..*, and from 'HALL_Conditions_GetData', the role 'HALL_Conditions_GetData' has cardinality 0..*.
+An association connects 'Conditions_PreConditionMessageExpressionElement' and 'HALL_Conditions_Let'. From 'Conditions_PreConditionMessageExpressionElement', the role 'Conditions_PreConditionMessageExpressionElement' has cardinality 0..*, and from 'HALL_Conditions_Let', the role 'HALL_Conditions_Let' has cardinality 0..*.
+An association connects 'HALL_Conditions_Let' and 'Conditions_PreConditionMessageExpressionElement'. From 'HALL_Conditions_Let', the role 'HALL_Conditions_Let203' has cardinality 0..*, and from 'Conditions_PreConditionMessageExpressionElement', the role 'Conditions_PreConditionMessageExpressionElement204' has cardinality 0..*.
+An association connects 'Conditions_PreConditionMessageExpressionElement' and 'HALL_Conditions_UnaryOperator'. From 'Conditions_PreConditionMessageExpressionElement', the role 'Conditions_PreConditionMessageExpressionElement206' has cardinality 0..*, and from 'HALL_Conditions_UnaryOperator', the role 'HALL_Conditions_UnaryOperator' has cardinality 0..*.
+An association connects 'HALL_Conditions_BinaryOperator' and 'Conditions_PreConditionMessageExpressionElement'. From 'HALL_Conditions_BinaryOperator', the role 'HALL_Conditions_BinaryOperator' has cardinality 0..*, and from 'Conditions_PreConditionMessageExpressionElement', the role 'Conditions_PreConditionMessageExpressionElement208' has cardinality 0..*.
+An association connects 'Conditions_PreConditionMessageExpressionElement' and 'HALL_Conditions_BinaryOperator'. From 'Conditions_PreConditionMessageExpressionElement', the role 'Conditions_PreConditionMessageExpressionElement211' has cardinality 0..*, and from 'HALL_Conditions_BinaryOperator', the role 'HALL_Conditions_BinaryOperator210' has cardinality 0..*.
+An association connects 'HALL_Actions_ActionMessageExpression' and 'MessageTransition'. From 'HALL_Actions_ActionMessageExpression', the role 'MessageTransition213' has cardinality 0..*, and from 'MessageTransition', the role 'Messages214' has cardinality 0..*.
+An association connects 'Actions_ActionMessageExpressionElement' and 'HALL_Actions_ActionMessageExpression'. From 'Actions_ActionMessageExpressionElement', the role 'Messages217' has cardinality 0..*, and from 'HALL_Actions_ActionMessageExpression', the role 'Actions216' has cardinality 0..*.
+An association connects 'HALL_Actions_ActionMessageExpressionElement' and 'Actions_ActionMessageExpression'. From 'HALL_Actions_ActionMessageExpressionElement', the role 'Actions219' has cardinality 0..*, and from 'Actions_ActionMessageExpression', the role 'Messages220' has cardinality 0..*.
+An association connects 'HALL_Actions_BinaryOperator' and 'Actions_ActionMessageExpressionElement'. From 'HALL_Actions_BinaryOperator', the role 'HALL_Actions_BinaryOperator' has cardinality 0..*, and from 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement' has cardinality 0..*.
+An association connects 'HALL_Actions_BinaryOperator' and 'Actions_ActionMessageExpressionElement'. From 'HALL_Actions_BinaryOperator', the role 'HALL_Actions_BinaryOperator223' has cardinality 0..*, and from 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement224' has cardinality 0..*.
+An association connects 'HALL_Actions_Let' and 'Actions_ActionMessageExpressionElement'. From 'HALL_Actions_Let', the role 'HALL_Actions_Let' has cardinality 0..*, and from 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement226' has cardinality 0..*.
+An association connects 'HALL_Actions_Let' and 'Actions_ActionMessageExpressionElement'. From 'HALL_Actions_Let', the role 'HALL_Actions_Let228' has cardinality 0..*, and from 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement229' has cardinality 0..*.
+An association connects 'Actions_ActionMessageExpressionElement' and 'HALL_Actions_MessageInvocation'. From 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement231' has cardinality 0..*, and from 'HALL_Actions_MessageInvocation', the role 'HALL_Actions_MessageInvocation' has cardinality 0..*.
+An association connects 'Actions_ActionMessageExpressionElement' and 'HALL_Actions_UnaryOperator'. From 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement233' has cardinality 0..*, and from 'HALL_Actions_UnaryOperator', the role 'HALL_Actions_UnaryOperator' has cardinality 0..*.
+An association connects 'Actions_HALL_Component' and 'HALL_Actions_GetData'. From 'Actions_HALL_Component', the role 'Actions_HALL_Component' has cardinality 0..*, and from 'HALL_Actions_GetData', the role 'HALL_Actions_GetData' has cardinality 0..*.
+An association connects 'HALL_Actions_DomainPropertySet' and 'Actions_ActionMessageExpressionElement'. From 'HALL_Actions_DomainPropertySet', the role 'HALL_Actions_DomainPropertySet' has cardinality 0..*, and from 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement236' has cardinality 0..*.
+An association connects 'Actions_ActionMessageExpressionElement' and 'HALL_Actions_Enable'. From 'Actions_ActionMessageExpressionElement', the role 'Actions_ActionMessageExpressionElement238' has cardinality 0..*, and from 'HALL_Actions_Enable', the role 'HALL_Actions_Enable' has cardinality 0..*.
+An association connects 'MessageDefinition' and 'HALL_Actions_Enable'. From 'MessageDefinition', the role 'MessageDefinition241' has cardinality 0..*, and from 'HALL_Actions_Enable', the role 'HALL_Actions_Enable240' has cardinality 0..*.
+An association connects 'FSM_HALL_Component' and 'HALL_FSM_FSM'. From 'FSM_HALL_Component', the role 'Component244' has cardinality 0..*, and from 'HALL_FSM_FSM', the role 'FSM243' has cardinality 0..*.
+An association connects 'HALL_FSM_FSM' and 'InitialState'. From 'HALL_FSM_FSM', the role 'InitialState' has cardinality 0..*, and from 'InitialState', the role 'FSM246' has cardinality 0..*.
+An association connects 'NamedState' and 'HALL_FSM_FSM'. From 'NamedState', the role 'FSM248' has cardinality 0..*, and from 'HALL_FSM_FSM', the role 'NamedState' has cardinality 0..*.
+An association connects 'HALL_FSM_NamedState' and 'FSM'. From 'HALL_FSM_NamedState', the role 'FSM250' has cardinality 0..*, and from 'FSM', the role 'FSM251' has cardinality 0..*.
+An association connects 'FSM' and 'HALL_FSM_InitialState'. From 'FSM', the role 'FSM254' has cardinality 0..*, and from 'HALL_FSM_InitialState', the role 'FSM253' has cardinality 0..*.
+An association connects 'State' and 'HALL_FSM_Transition'. From 'State', the role 'FSM256' has cardinality 0..*, and from 'HALL_FSM_Transition', the role 'State' has cardinality 0..*.
+An association connects 'State' and 'HALL_FSM_Transition'. From 'State', the role 'State258' has cardinality 0..*, and from 'HALL_FSM_Transition', the role 'HALL_FSM_Transition' has cardinality 0..*.
+An association connects 'HALL_FSM_Transition' and 'FSMConditions_PreConditionExpression'. From 'HALL_FSM_Transition', the role 'FSMConditions' has cardinality 0..*, and from 'FSMConditions_PreConditionExpression', the role 'FSM260' has cardinality 0..*.
+An association connects 'HALL_FSM_Transition' and 'FSMInstructions_PosConditionExpression'. From 'HALL_FSM_Transition', the role 'FSMInstructions' has cardinality 0..*, and from 'FSMInstructions_PosConditionExpression', the role 'FSM262' has cardinality 0..*.
+An association connects 'FSMActions_ActionExpression' and 'HALL_FSM_Transition'. From 'FSMActions_ActionExpression', the role 'FSM264' has cardinality 0..*, and from 'HALL_FSM_Transition', the role 'FSMActions' has cardinality 0..*.
+An association connects 'HALL_FSM_Transition' and 'Trigger_TriggerExpression'. From 'HALL_FSM_Transition', the role 'Trigger' has cardinality 0..*, and from 'Trigger_TriggerExpression', the role 'FSM266' has cardinality 0..*.
+An association connects 'Transition' and 'HALL_FSM_State'. From 'Transition', the role 'FSM268' has cardinality 0..*, and from 'HALL_FSM_State', the role 'Transition' has cardinality 0..*.
+An association connects 'HALL_Trigger_TriggerExpression' and 'Trigger_TriggerExpressionElement'. From 'HALL_Trigger_TriggerExpression', the role 'Trigger270' has cardinality 0..*, and from 'Trigger_TriggerExpressionElement', the role 'FSM271' has cardinality 0..*.
+An association connects 'HALL_Trigger_TriggerExpression' and 'Transition'. From 'HALL_Trigger_TriggerExpression', the role 'Transition273' has cardinality 0..*, and from 'Transition', the role 'FSM274' has cardinality 0..*.
+An association connects 'HALL_Trigger_TriggerExpressionElement' and 'Trigger_TriggerExpression'. From 'HALL_Trigger_TriggerExpressionElement', the role 'Trigger276' has cardinality 0..*, and from 'Trigger_TriggerExpression', the role 'FSM277' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_PosConditionExpression' and 'FSMInstructions_PosConditionExpressionElement'. From 'HALL_FSMInstructions_PosConditionExpression', the role 'FSMInstructions279' has cardinality 0..*, and from 'FSMInstructions_PosConditionExpressionElement', the role 'FSM280' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_PosConditionExpression' and 'Transition'. From 'HALL_FSMInstructions_PosConditionExpression', the role 'Transition282' has cardinality 0..*, and from 'Transition', the role 'FSM283' has cardinality 0..*.
+An association connects 'FSMInstructions_PosConditionExpression' and 'HALL_FSMInstructions_PosConditionExpressionElement'. From 'FSMInstructions_PosConditionExpression', the role 'FSM286' has cardinality 0..*, and from 'HALL_FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions285' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_BinaryOperator' and 'FSMInstructions_PosConditionExpressionElement'. From 'HALL_FSMInstructions_BinaryOperator', the role 'HALL_FSMInstructions_BinaryOperator' has cardinality 0..*, and from 'FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions_PosConditionExpressionElement' has cardinality 0..*.
+An association connects 'FSMInstructions_PosConditionExpressionElement' and 'HALL_FSMInstructions_BinaryOperator'. From 'FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions_PosConditionExpressionElement290' has cardinality 0..*, and from 'HALL_FSMInstructions_BinaryOperator', the role 'HALL_FSMInstructions_BinaryOperator289' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_UnaryOperator' and 'FSMInstructions_PosConditionExpressionElement'. From 'HALL_FSMInstructions_UnaryOperator', the role 'HALL_FSMInstructions_UnaryOperator' has cardinality 0..*, and from 'FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions_PosConditionExpressionElement292' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_GetData' and 'FSMInstructions_HALL_Component'. From 'HALL_FSMInstructions_GetData', the role 'HALL_FSMInstructions_GetData' has cardinality 0..*, and from 'FSMInstructions_HALL_Component', the role 'FSMInstructions_HALL_Component' has cardinality 0..*.
+An association connects 'FSMInstructions_HALL_Component' and 'HALL_FSMInstructions_GetState'. From 'FSMInstructions_HALL_Component', the role 'FSMInstructions_HALL_Component295' has cardinality 0..*, and from 'HALL_FSMInstructions_GetState', the role 'HALL_FSMInstructions_GetState' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_SetState' and 'FSMInstructions_HALL_Component'. From 'HALL_FSMInstructions_SetState', the role 'HALL_FSMInstructions_SetState' has cardinality 0..*, and from 'FSMInstructions_HALL_Component', the role 'FSMInstructions_HALL_Component297' has cardinality 0..*.
+An association connects 'FSMInstructions_PosConditionExpressionElement' and 'HALL_FSMInstructions_SetData'. From 'FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions_PosConditionExpressionElement299' has cardinality 0..*, and from 'HALL_FSMInstructions_SetData', the role 'HALL_FSMInstructions_SetData' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_SetData' and 'FSMInstructions_HALL_Component'. From 'HALL_FSMInstructions_SetData', the role 'HALL_FSMInstructions_SetData301' has cardinality 0..*, and from 'FSMInstructions_HALL_Component', the role 'FSMInstructions_HALL_Component302' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_Let' and 'FSMInstructions_PosConditionExpressionElement'. From 'HALL_FSMInstructions_Let', the role 'HALL_FSMInstructions_Let' has cardinality 0..*, and from 'FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions_PosConditionExpressionElement304' has cardinality 0..*.
+An association connects 'HALL_FSMInstructions_Let' and 'FSMInstructions_PosConditionExpressionElement'. From 'HALL_FSMInstructions_Let', the role 'HALL_FSMInstructions_Let306' has cardinality 0..*, and from 'FSMInstructions_PosConditionExpressionElement', the role 'FSMInstructions_PosConditionExpressionElement307' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_PreConditionExpression' and 'FSMConditions_PreConditionExpressionElement'. From 'HALL_FSMConditions_PreConditionExpression', the role 'FSMConditions309' has cardinality 0..*, and from 'FSMConditions_PreConditionExpressionElement', the role 'FSM310' has cardinality 0..*.
+An association connects 'Transition' and 'HALL_FSMConditions_PreConditionExpression'. From 'Transition', the role 'FSM313' has cardinality 0..*, and from 'HALL_FSMConditions_PreConditionExpression', the role 'Transition312' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_PreConditionExpressionElement' and 'FSMConditions_PreConditionExpression'. From 'HALL_FSMConditions_PreConditionExpressionElement', the role 'FSMConditions315' has cardinality 0..*, and from 'FSMConditions_PreConditionExpression', the role 'FSM316' has cardinality 0..*.
+An association connects 'FSMConditions_PreConditionExpressionElement' and 'HALL_FSMConditions_BinaryOperator'. From 'FSMConditions_PreConditionExpressionElement', the role 'FSMConditions_PreConditionExpressionElement' has cardinality 0..*, and from 'HALL_FSMConditions_BinaryOperator', the role 'HALL_FSMConditions_BinaryOperator' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_BinaryOperator' and 'FSMConditions_PreConditionExpressionElement'. From 'HALL_FSMConditions_BinaryOperator', the role 'HALL_FSMConditions_BinaryOperator319' has cardinality 0..*, and from 'FSMConditions_PreConditionExpressionElement', the role 'FSMConditions_PreConditionExpressionElement320' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_UnaryOperator' and 'FSMConditions_PreConditionExpressionElement'. From 'HALL_FSMConditions_UnaryOperator', the role 'HALL_FSMConditions_UnaryOperator' has cardinality 0..*, and from 'FSMConditions_PreConditionExpressionElement', the role 'FSMConditions_PreConditionExpressionElement322' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_GetState' and 'FSMConditions_HALL_Component'. From 'HALL_FSMConditions_GetState', the role 'HALL_FSMConditions_GetState' has cardinality 0..*, and from 'FSMConditions_HALL_Component', the role 'FSMConditions_HALL_Component' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_GetData' and 'FSMConditions_HALL_Component'. From 'HALL_FSMConditions_GetData', the role 'HALL_FSMConditions_GetData' has cardinality 0..*, and from 'FSMConditions_HALL_Component', the role 'FSMConditions_HALL_Component325' has cardinality 0..*.
+An association connects 'HALL_FSMConditions_Let' and 'FSMConditions_PreConditionExpressionElement'. From 'HALL_FSMConditions_Let', the role 'HALL_FSMConditions_Let' has cardinality 0..*, and from 'FSMConditions_PreConditionExpressionElement', the role 'FSMConditions_PreConditionExpressionElement327' has cardinality 0..*.
+An association connects 'FSMConditions_PreConditionExpressionElement' and 'HALL_FSMConditions_Let'. From 'FSMConditions_PreConditionExpressionElement', the role 'FSMConditions_PreConditionExpressionElement330' has cardinality 0..*, and from 'HALL_FSMConditions_Let', the role 'HALL_FSMConditions_Let329' has cardinality 0..*.
+An association connects 'HALL_FSMActions_ActionExpression' and 'Transition'. From 'HALL_FSMActions_ActionExpression', the role 'Transition332' has cardinality 0..*, and from 'Transition', the role 'FSM333' has cardinality 0..*.
+An association connects 'HALL_FSMActions_ActionExpression' and 'FSMActions_ActionExpressionElement'. From 'HALL_FSMActions_ActionExpression', the role 'FSMActions335' has cardinality 0..*, and from 'FSMActions_ActionExpressionElement', the role 'FSM336' has cardinality 0..*.
+An association connects 'HALL_FSMActions_ActionExpressionElement' and 'FSMActions_ActionExpression'. From 'HALL_FSMActions_ActionExpressionElement', the role 'FSMActions338' has cardinality 0..*, and from 'FSMActions_ActionExpression', the role 'FSM339' has cardinality 0..*.
+An association connects 'FSMActions_ActionExpressionElement' and 'HALL_FSMActions_Let'. From 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement' has cardinality 0..*, and from 'HALL_FSMActions_Let', the role 'HALL_FSMActions_Let' has cardinality 0..*.
+An association connects 'FSMActions_ActionExpressionElement' and 'HALL_FSMActions_Let'. From 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement343' has cardinality 0..*, and from 'HALL_FSMActions_Let', the role 'HALL_FSMActions_Let342' has cardinality 0..*.
+An association connects 'HALL_FSMActions_MessageInvocation' and 'FSMActions_ActionExpressionElement'. From 'HALL_FSMActions_MessageInvocation', the role 'HALL_FSMActions_MessageInvocation' has cardinality 0..*, and from 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement345' has cardinality 0..*.
+An association connects 'FSMActions_ActionExpressionElement' and 'HALL_FSMActions_Enable'. From 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement347' has cardinality 0..*, and from 'HALL_FSMActions_Enable', the role 'HALL_FSMActions_Enable' has cardinality 0..*.
+An association connects 'MessageDefinition' and 'HALL_FSMActions_Enable'. From 'MessageDefinition', the role 'MessageDefinition350' has cardinality 0..*, and from 'HALL_FSMActions_Enable', the role 'HALL_FSMActions_Enable349' has cardinality 0..*.
+An association connects 'FSMActions_ActionExpressionElement' and 'HALL_FSMActions_DomainPropertySet'. From 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement352' has cardinality 0..*, and from 'HALL_FSMActions_DomainPropertySet', the role 'HALL_FSMActions_DomainPropertySet' has cardinality 0..*.
+An association connects 'HALL_FSMActions_GetData' and 'FSMActions_HALL_Component'. From 'HALL_FSMActions_GetData', the role 'HALL_FSMActions_GetData' has cardinality 0..*, and from 'FSMActions_HALL_Component', the role 'FSMActions_HALL_Component' has cardinality 0..*.
+An association connects 'HALL_FSMActions_BinaryOperator' and 'FSMActions_ActionExpressionElement'. From 'HALL_FSMActions_BinaryOperator', the role 'HALL_FSMActions_BinaryOperator' has cardinality 0..*, and from 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement355' has cardinality 0..*.
+An association connects 'FSMActions_ActionExpressionElement' and 'HALL_FSMActions_BinaryOperator'. From 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement358' has cardinality 0..*, and from 'HALL_FSMActions_BinaryOperator', the role 'HALL_FSMActions_BinaryOperator357' has cardinality 0..*.
+An association connects 'HALL_FSMActions_UnaryOperator' and 'FSMActions_ActionExpressionElement'. From 'HALL_FSMActions_UnaryOperator', the role 'HALL_FSMActions_UnaryOperator' has cardinality 0..*, and from 'FSMActions_ActionExpressionElement', the role 'FSMActions_ActionExpressionElement360' has cardinality 0..*.

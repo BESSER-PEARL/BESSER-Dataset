@@ -1,0 +1,31 @@
+The domain model 'tp01' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'tp01_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp01_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'tp01_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp01_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp01_StartState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tp01_StartState' is a specialization of 'State'.
+The class 'tp01_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tp01_FSM' and 'tp01_State'. From 'tp01_FSM', the role 'tp01_FSM' has cardinality 0..*, and from 'tp01_State', the role 'tp01_State' has cardinality 0..*.
+An association connects 'tp01_FSM' and 'tp01_Transition'. From 'tp01_FSM', the role 'tp01_FSM2' has cardinality 0..*, and from 'tp01_Transition', the role 'tp01_Transition' has cardinality 0..*.
+An association connects 'tp01_Transition' and 'tp01_State'. From 'tp01_Transition', the role 'tp01_Transition4' has cardinality 0..*, and from 'tp01_State', the role 'tp01_State5' has cardinality 0..*.
+An association connects 'tp01_State' and 'tp01_Transition'. From 'tp01_State', the role 'tp01_State8' has cardinality 0..*, and from 'tp01_Transition', the role 'tp01_Transition7' has cardinality 0..*.

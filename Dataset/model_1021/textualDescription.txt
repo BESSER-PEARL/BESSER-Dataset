@@ -1,0 +1,28 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'dsl_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Transition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'trigger', which is of type str.
+
+'dsl_State' represents an important domain concept.
+It has the following attributes: 'isFinal', which is of type bool; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_InitialState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_FSM' and 'dsl_State'. From 'dsl_FSM', the role 'dsl_FSM' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State' has cardinality 0..*.
+An association connects 'dsl_FSM' and 'dsl_Transition'. From 'dsl_FSM', the role 'dsl_FSM2' has cardinality 0..*, and from 'dsl_Transition', the role 'dsl_Transition' has cardinality 0..*.
+An association connects 'dsl_FSM' and 'dsl_InitialState'. From 'dsl_FSM', the role 'dsl_FSM4' has cardinality 0..*, and from 'dsl_InitialState', the role 'dsl_InitialState' has cardinality 0..*.
+An association connects 'dsl_State' and 'dsl_Transition'. From 'dsl_State', the role 'dsl_State7' has cardinality 0..*, and from 'dsl_Transition', the role 'dsl_Transition6' has cardinality 0..*.
+An association connects 'dsl_State' and 'dsl_Transition'. From 'dsl_State', the role 'dsl_State10' has cardinality 0..*, and from 'dsl_Transition', the role 'dsl_Transition9' has cardinality 0..*.
