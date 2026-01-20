@@ -6,6 +6,14 @@ The **B-UML Dataset** is a large-scale dataset containing **5,000+ B-UML models*
 
 The dataset provides **multiple synchronized representations** of each model, enabling reproducible, quantitative, and scalable experimentation.
 
+All of the BUML models are directly editable in BESSER's Web Modeling Editor
+
+**Check out the [BESSER Web Modeling Editor online](https://editor.besser-pearl.org/)**
+
+
+**Check out the official [documentation](https://besser.readthedocs.io/en/latest/)**
+Website: https://besser-pearl.org
+
 ---
 
 ## 📦 Dataset Overview
