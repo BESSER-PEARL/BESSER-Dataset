@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/simple-example/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm.ecore

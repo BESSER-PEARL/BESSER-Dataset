@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/damenac/puzzle/examples/demo-ICSR/puzzle.examples.fsm.harel.metamodel/models/fsmHarel.ecore

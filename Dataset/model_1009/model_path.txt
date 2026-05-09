@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Optimus13/statemachine_dsl/fsm_tp/model/fsm_tp.ecore

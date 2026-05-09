@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/silverspy/DSL_TP/fr.ut2j.m1ice.fsm/model/fsm.ecore
