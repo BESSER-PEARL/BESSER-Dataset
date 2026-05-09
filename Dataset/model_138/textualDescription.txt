@@ -1,0 +1,758 @@
+The model has 335 class(es).
+The class 'operators::AssignmentOperator' has no attributes.
+The class 'modifiers::Modifiable' has no attributes.
+The class 'TypeArgument' has no attributes.
+The class 'Annotable' has no attributes.
+The class 'ImportingElement' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'statements::Jump' has no attributes.
+The class 'Operator' has no attributes.
+The class 'TypeParameter' has no attributes.
+The class 'statements::SwitchCase' has no attributes.
+The class 'expressions::MultiplicativeExpressionChild' has no attributes.
+The class 'containers::JavaRoot' has no attributes.
+The class 'annotations::AnnotationParameter' has no attributes.
+The class 'expressions::ConditionalExpression' has no attributes.
+The class 'CatchBlock' has no attributes.
+The class 'containers::EmptyModel' has no attributes.
+The class 'classifiers::ConcreteClassifier' has the following attributes: 'fullName' of type str.
+The class 'operators::AssignmentPlus' has no attributes.
+The class 'literals::NullLiteral' has no attributes.
+The class 'operators::Remainder' has no attributes.
+The class 'expressions::AssignmentExpressionChild' has no attributes.
+The class 'types::Bool' has no attributes.
+The class 'members::InterfaceMethod' has no attributes.
+The class 'ArrayDimension' has no attributes.
+The class 'modifiers::Volatile' has no attributes.
+The class 'ShiftExpressionChild' has no attributes.
+The class 'operators::Complement' has no attributes.
+The class 'expressions::ConditionalExpressionChild' has no attributes.
+The class 'statements::NormalSwitchCase' has no attributes.
+The class 'modifiers::Private' has no attributes.
+The class 'references::ReferenceableElement' has no attributes.
+The class 'members::EmptyMember' has no attributes.
+The class 'commons::Commentable' has the following attributes: 'comments' of type str.
+The class 'statements::Conditional' has no attributes.
+The class 'AdditionalField' has no attributes.
+The class 'parameters::OrdinaryParameter' has no attributes.
+The class 'Implementor' has no attributes.
+The class 'types::PrimitiveType' has no attributes.
+The class 'literals::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'generics::TypeArgument' has no attributes.
+The class 'expressions::ExclusiveOrExpression' has no attributes.
+The class 'arrays::ArraySelector' has no attributes.
+The class 'literals::Self' has no attributes.
+The class 'statements::EmptyStatement' has no attributes.
+The class 'types::Char' has no attributes.
+The class 'variables::AdditionalLocalVariable' has no attributes.
+The class 'StatementContainer' has no attributes.
+The class 'types::ClassifierReference' has no attributes.
+The class 'ArraySelector' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'ArrayInitializer' has no attributes.
+The class 'statements::Continue' has no attributes.
+The class 'literals::LongLiteral' has no attributes.
+The class 'classifiers::Interface' has no attributes.
+The class 'operators::Addition' has no attributes.
+The class 'modifiers::Synchronized' has no attributes.
+The class 'annotations::Annotable' has no attributes.
+The class 'Literal' has no attributes.
+The class 'references::Argumentable' has no attributes.
+The class 'EqualityExpressionChild' has no attributes.
+The class 'statements::TryBlock' has no attributes.
+The class 'operators::LeftShift' has no attributes.
+The class 'variables::LocalVariable' has no attributes.
+The class 'instantiations::Instantiation' has no attributes.
+The class 'annotations::SingleAnnotationParameter' has no attributes.
+The class 'members::Member' has no attributes.
+The class 'modifiers::Transient' has no attributes.
+The class 'modifiers::Abstract' has no attributes.
+The class 'modifiers::Modifier' has no attributes.
+The class 'arrays::ArrayInstantiationBySize' has no attributes.
+The class 'classifiers::AnonymousClass' has no attributes.
+The class 'generics::SuperTypeArgument' has no attributes.
+The class 'operators::RelationOperator' has no attributes.
+The class 'expressions::AdditiveExpression' has no attributes.
+The class 'ReferenceableElement' has no attributes.
+The class 'operators::AssignmentRightShift' has no attributes.
+The class 'imports::Import' has no attributes.
+The class 'AndExpressionChild' has no attributes.
+The class 'generics::ExtendsTypeArgument' has no attributes.
+The class 'literals::HexDoubleLiteral' has the following attributes: 'hexValue' of type float.
+The class 'modifiers::Strictfp' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'statements::Condition' has no attributes.
+The class 'statements::Return' has no attributes.
+The class 'literals::DecimalFloatLiteral' has the following attributes: 'decimalValue' of type float.
+The class 'RelationOperator' has no attributes.
+The class 'expressions::AdditiveExpressionChild' has no attributes.
+The class 'Jump' has no attributes.
+The class 'arrays::ArrayTypeable' has no attributes.
+The class 'commons::NamedElement' has the following attributes: 'name' of type str.
+The class 'ConcreteClassifier' has no attributes.
+The class 'references::MethodCall' has no attributes.
+The class 'expressions::UnaryExpression' has no attributes.
+The class 'JumpLabel' has no attributes.
+The class 'operators::Assignment' has no attributes.
+The class 'parameters::VariableLengthParameter' has no attributes.
+The class 'commons::NamespaceAwareElement' has the following attributes: 'namespaces' of type str.
+The class 'operators::AssignmentMultiplication' has no attributes.
+The class 'UnaryModificationExpressionChild' has no attributes.
+The class 'expressions::InclusiveOrExpressionChild' has no attributes.
+The class 'operators::AssignmentExclusiveOr' has no attributes.
+The class 'types::Void' has no attributes.
+The class 'operators::GreaterThan' has no attributes.
+The class 'expressions::InclusiveOrExpression' has no attributes.
+The class 'ExclusiveOrExpressionChild' has no attributes.
+The class 'SwitchCase' has no attributes.
+The class 'literals::This' has no attributes.
+The class 'operators::AdditiveOperator' has no attributes.
+The class 'operators::Negate' has no attributes.
+The class 'expressions::ConditionalAndExpression' has no attributes.
+The class 'literals::Literal' has no attributes.
+The class 'operators::Division' has no attributes.
+The class 'containers::CompilationUnit' has no attributes.
+The class 'statements::Block' has no attributes.
+The class 'statements::Throw' has no attributes.
+The class 'members::Method' has no attributes.
+The class 'Instantiation' has no attributes.
+The class 'AnnotationValue' has no attributes.
+The class 'Block' has no attributes.
+The class 'members::ClassMethod' has no attributes.
+The class 'expressions::MultiplicativeExpression' has no attributes.
+The class 'statements::SynchronizedBlock' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'imports::ClassifierImport' has no attributes.
+The class 'literals::HexFloatLiteral' has the following attributes: 'hexValue' of type float.
+The class 'expressions::ExpressionList' has no attributes.
+The class 'statements::CatchBlock' has no attributes.
+The class 'AssignmentExpressionChild' has no attributes.
+The class 'statements::ForLoop' has no attributes.
+The class 'instantiations::Initializable' has no attributes.
+The class 'TypeReference' has no attributes.
+The class 'ConditionalAndExpressionChild' has no attributes.
+The class 'types::Type' has no attributes.
+The class 'DoubleLiteral' has no attributes.
+The class 'variables::Variable' has no attributes.
+The class 'statements::ExpressionStatement' has no attributes.
+The class 'LongLiteral' has no attributes.
+The class 'StatementListContainer' has no attributes.
+The class 'types::Double' has no attributes.
+The class 'operators::AssignmentOr' has no attributes.
+The class 'WhileLoop' has no attributes.
+The class 'EnumConstant' has no attributes.
+The class 'modifiers::Native' has no attributes.
+The class 'Package' has no attributes.
+The class 'statements::LocalVariableStatement' has no attributes.
+The class 'MultiplicativeOperator' has no attributes.
+The class 'generics::TypeParameter' has no attributes.
+The class 'parameters::Parametrizable' has no attributes.
+The class 'AdditiveOperator' has no attributes.
+The class 'literals::FloatLiteral' has no attributes.
+The class 'types::Short' has no attributes.
+The class 'Initializable' has no attributes.
+The class 'imports::PackageImport' has no attributes.
+The class 'expressions::UnaryModificationExpressionChild' has no attributes.
+The class 'members::Constructor' has no attributes.
+The class 'literals::DecimalDoubleLiteral' has the following attributes: 'decimalValue' of type float.
+The class 'expressions::AndExpression' has no attributes.
+The class 'ForLoopInitializer' has no attributes.
+The class 'statements::StatementContainer' has no attributes.
+The class 'operators::Operator' has no attributes.
+The class 'types::Float' has no attributes.
+The class 'Self' has no attributes.
+The class 'expressions::InstanceOfExpression' has no attributes.
+The class 'Modifiable' has no attributes.
+The class 'operators::Subtraction' has no attributes.
+The class 'annotations::AnnotationAttribute' has no attributes.
+The class 'AdditionalLocalVariable' has no attributes.
+The class 'NamespaceClassifierReference' has no attributes.
+The class 'containers::Package' has no attributes.
+The class 'CallTypeArgumentable' has no attributes.
+The class 'operators::UnsignedRightShift' has no attributes.
+The class 'InstanceOfExpressionChild' has no attributes.
+The class 'members::AdditionalField' has no attributes.
+The class 'operators::LessThanOrEqual' has no attributes.
+The class 'operators::EqualityOperator' has no attributes.
+The class 'classifiers::Annotation' has no attributes.
+The class 'modifiers::Protected' has no attributes.
+The class 'generics::TypeParametrizable' has no attributes.
+The class 'literals::HexIntegerLiteral' has the following attributes: 'hexValue' of type str.
+The class 'classifiers::Classifier' has no attributes.
+The class 'literals::IntegerLiteral' has no attributes.
+The class 'operators::ShiftOperator' has no attributes.
+The class 'annotations::AnnotationAttributeSetting' has no attributes.
+The class 'operators::MinusMinus' has no attributes.
+The class 'ArrayTypeable' has no attributes.
+The class 'ConditionalExpressionChild' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'operators::RightShift' has no attributes.
+The class 'expressions::SuffixUnaryModificationExpression' has no attributes.
+The class 'TypeParametrizable' has no attributes.
+The class 'expressions::ShiftExpression' has no attributes.
+The class 'references::SelfReference' has no attributes.
+The class 'expressions::ConditionalOrExpressionChild' has no attributes.
+The class 'expressions::EqualityExpressionChild' has no attributes.
+The class 'operators::LessThan' has no attributes.
+The class 'expressions::ConditionalAndExpressionChild' has no attributes.
+The class 'classifiers::Enumeration' has no attributes.
+The class 'RelationExpressionChild' has no attributes.
+The class 'imports::StaticMemberImport' has no attributes.
+The class 'expressions::NestedExpression' has no attributes.
+The class 'references::Reference' has no attributes.
+The class 'Conditional' has no attributes.
+The class 'references::PrimitiveTypeReference' has no attributes.
+The class 'imports::StaticImport' has no attributes.
+The class 'statements::Assert' has no attributes.
+The class 'generics::CallTypeArgumentable' has no attributes.
+The class 'expressions::PrimaryExpression' has no attributes.
+The class 'OrdinaryParameter' has no attributes.
+The class 'literals::HexLongLiteral' has the following attributes: 'hexValue' of type str.
+The class 'expressions::AssignmentExpression' has no attributes.
+The class 'modifiers::Public' has no attributes.
+The class 'AnnotationInstance' has no attributes.
+The class 'expressions::UnaryModificationExpression' has no attributes.
+The class 'expressions::PrefixUnaryModificationExpression' has no attributes.
+The class 'members::Field' has no attributes.
+The class 'MemberContainer' has no attributes.
+The class 'imports::StaticClassifierImport' has no attributes.
+The class 'types::Byte' has no attributes.
+The class 'operators::GreaterThanOrEqual' has no attributes.
+The class 'expressions::RelationExpressionChild' has no attributes.
+The class 'expressions::EqualityExpression' has no attributes.
+The class 'expressions::ConditionalOrExpression' has no attributes.
+The class 'Static' has no attributes.
+The class 'operators::Multiplication' has no attributes.
+The class 'generics::UnknownTypeArgument' has no attributes.
+The class 'TypeArgumentable' has no attributes.
+The class 'IntegerLiteral' has no attributes.
+The class 'InterfaceMethod' has no attributes.
+The class 'literals::OctalLongLiteral' has the following attributes: 'octalValue' of type str.
+The class 'AnnotationInstanceOrModifier' has no attributes.
+The class 'literals::DecimalIntegerLiteral' has the following attributes: 'decimalValue' of type str.
+The class 'literals::DecimalLongLiteral' has the following attributes: 'decimalValue' of type str.
+The class 'Classifier' has no attributes.
+The class 'expressions::ShiftExpressionChild' has no attributes.
+The class 'classifiers::Implementor' has no attributes.
+The class 'statements::DefaultSwitchCase' has no attributes.
+The class 'references::ReflectiveClassReference' has no attributes.
+The class 'members::ExceptionThrower' has no attributes.
+The class 'parameters::Parameter' has no attributes.
+The class 'operators::MultiplicativeOperator' has no attributes.
+The class 'StaticImport' has no attributes.
+The class 'expressions::InstanceOfExpressionChild' has no attributes.
+The class 'UnaryModificationOperator' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'modifiers::Final' has no attributes.
+The class 'expressions::AndExpressionChild' has no attributes.
+The class 'CompilationUnit' has no attributes.
+The class 'expressions::CastExpression' has no attributes.
+The class 'operators::PlusPlus' has no attributes.
+The class 'types::NamespaceClassifierReference' has no attributes.
+The class 'instantiations::NewConstructorCall' has no attributes.
+The class 'arrays::ArrayInstantiationByValues' has no attributes.
+The class 'members::EnumConstant' has no attributes.
+The class 'statements::DoWhileLoop' has no attributes.
+The class 'MultiplicativeExpressionChild' has no attributes.
+The class 'ClassifierReference' has no attributes.
+The class 'AssignmentOperator' has no attributes.
+The class 'literals::Super' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'types::TypedElement' has no attributes.
+The class 'operators::UnaryModificationOperator' has no attributes.
+The class 'expressions::ExclusiveOrExpressionChild' has no attributes.
+The class 'AnnotableAndModifiable' has no attributes.
+The class 'statements::ForLoopInitializer' has no attributes.
+The class 'Reference' has no attributes.
+The class 'ArrayInitializationValue' has no attributes.
+The class 'operators::AssignmentUnsignedRightShift' has no attributes.
+The class 'types::Long' has no attributes.
+The class 'Parametrizable' has no attributes.
+The class 'AnnotationAttributeSetting' has no attributes.
+The class 'annotations::AnnotationInstance' has no attributes.
+The class 'UnaryExpressionChild' has no attributes.
+The class 'instantiations::ExplicitConstructorCall' has no attributes.
+The class 'statements::WhileLoop' has no attributes.
+The class 'UnaryModificationExpression' has no attributes.
+The class 'arrays::ArrayInitializer' has no attributes.
+The class 'operators::AssignmentAnd' has no attributes.
+The class 'ConditionalOrExpressionChild' has no attributes.
+The class 'operators::Equal' has no attributes.
+The class 'references::StringReference' has the following attributes: 'value' of type str.
+The class 'references::ElementReference' has no attributes.
+The class 'Statement' has no attributes.
+The class 'operators::AssignmentDivision' has no attributes.
+The class 'EqualityOperator' has no attributes.
+The class 'operators::AssignmentModulo' has no attributes.
+The class 'Type' has no attributes.
+The class 'Variable' has no attributes.
+The class 'references::IdentifierReference' has no attributes.
+The class 'Member' has no attributes.
+The class 'Argumentable' has no attributes.
+The class 'arrays::ArrayInitializationValue' has no attributes.
+The class 'annotations::AnnotationParameterList' has no attributes.
+The class 'expressions::RelationExpression' has no attributes.
+The class 'modifiers::Static' has no attributes.
+The class 'literals::OctalIntegerLiteral' has the following attributes: 'octalValue' of type str.
+The class 'classifiers::Class' has no attributes.
+The class 'imports::ImportingElement' has no attributes.
+The class 'operators::AssignmentLeftShift' has no attributes.
+The class 'ShiftOperator' has no attributes.
+The class 'modifiers::AnnotationInstanceOrModifier' has no attributes.
+The class 'Expression' has no attributes.
+The class 'statements::ForEachLoop' has no attributes.
+The class 'Import' has no attributes.
+The class 'statements::JumpLabel' has no attributes.
+The class 'FloatLiteral' has no attributes.
+The class 'statements::StatementListContainer' has no attributes.
+The class 'AnonymousClass' has no attributes.
+The class 'AdditiveExpressionChild' has no attributes.
+The class 'types::TypeReference' has no attributes.
+The class 'literals::CharacterLiteral' has the following attributes: 'value' of type str.
+The class 'generics::TypeArgumentable' has no attributes.
+The class 'Method' has no attributes.
+The class 'annotations::AnnotationValue' has no attributes.
+The class 'NamespaceAwareElement' has no attributes.
+The class 'AnnotationParameter' has no attributes.
+The class 'members::MemberContainer' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'generics::QualifiedTypeArgument' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'types::Int' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'modifiers::AnnotableAndModifiable' has no attributes.
+The class 'JavaRoot' has no attributes.
+The class 'LocalVariable' has no attributes.
+The class 'ExceptionThrower' has no attributes.
+The class 'expressions::UnaryExpressionChild' has no attributes.
+The class 'InclusiveOrExpressionChild' has no attributes.
+The class 'operators::UnaryOperator' has no attributes.
+The class 'statements::Break' has no attributes.
+The class 'literals::DoubleLiteral' has no attributes.
+The class 'operators::NotEqual' has no attributes.
+The class 'statements::Switch' has no attributes.
+The class 'ElementReference' has no attributes.
+The class 'arrays::ArrayDimension' has no attributes.
+The class 'operators::AssignmentMinus' has no attributes.
+'classifiers::Implementor' is a specialization of 'Commentable'.
+'containers::Package' is a specialization of 'Annotable'.
+'annotations::SingleAnnotationParameter' is a specialization of 'AnnotationParameter'.
+'classifiers::AnonymousClass' is a specialization of 'Type'.
+'classifiers::Class' is a specialization of 'Implementor'.
+'annotations::AnnotationInstance' is a specialization of 'AnnotationInstanceOrModifier'.
+'arrays::ArrayInstantiationByValues' is a specialization of 'Expression'.
+'classifiers::Class' is a specialization of 'ConcreteClassifier'.
+'classifiers::ConcreteClassifier' is a specialization of 'Member'.
+'arrays::ArrayInitializer' is a specialization of 'ArrayInitializationValue'.
+'commons::NamespaceAwareElement' is a specialization of 'Commentable'.
+'arrays::ArrayInstantiationBySize' is a specialization of 'Reference'.
+'arrays::ArrayInitializationValue' is a specialization of 'Commentable'.
+'arrays::ArrayInstantiationByValues' is a specialization of 'Reference'.
+'annotations::AnnotationAttributeSetting' is a specialization of 'Commentable'.
+'classifiers::ConcreteClassifier' is a specialization of 'MemberContainer'.
+'annotations::Annotable' is a specialization of 'Commentable'.
+'expressions::ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+'containers::JavaRoot' is a specialization of 'NamespaceAwareElement'.
+'classifiers::Enumeration' is a specialization of 'ConcreteClassifier'.
+'arrays::ArrayInstantiationBySize' is a specialization of 'Expression'.
+'arrays::ArrayInstantiationByValues' is a specialization of 'TypedElement'.
+'classifiers::ConcreteClassifier' is a specialization of 'Classifier'.
+'classifiers::Annotation' is a specialization of 'ConcreteClassifier'.
+'classifiers::Enumeration' is a specialization of 'Implementor'.
+'annotations::AnnotationAttribute' is a specialization of 'InterfaceMethod'.
+'arrays::ArrayDimension' is a specialization of 'Commentable'.
+'classifiers::Classifier' is a specialization of 'Type'.
+'containers::Package' is a specialization of 'JavaRoot'.
+'expressions::ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+'expressions::InclusiveOrExpression' is a specialization of 'ConditionalAndExpressionChild'.
+'commons::NamedElement' is a specialization of 'Commentable'.
+'annotations::AnnotationParameter' is a specialization of 'Commentable'.
+'containers::JavaRoot' is a specialization of 'NamedElement'.
+'expressions::ConditionalOrExpressionChild' is a specialization of 'ConditionalExpressionChild'.
+'containers::JavaRoot' is a specialization of 'ImportingElement'.
+'classifiers::AnonymousClass' is a specialization of 'MemberContainer'.
+'arrays::ArrayInstantiationByValues' is a specialization of 'ArrayTypeable'.
+'classifiers::Interface' is a specialization of 'ConcreteClassifier'.
+'arrays::ArrayTypeable' is a specialization of 'Commentable'.
+'classifiers::ConcreteClassifier' is a specialization of 'TypeParametrizable'.
+'annotations::AnnotationValue' is a specialization of 'Commentable'.
+'arrays::ArrayInitializer' is a specialization of 'AnnotationValue'.
+'arrays::ArraySelector' is a specialization of 'Commentable'.
+'classifiers::ConcreteClassifier' is a specialization of 'AnnotableAndModifiable'.
+'annotations::AnnotationParameterList' is a specialization of 'AnnotationParameter'.
+'containers::CompilationUnit' is a specialization of 'JavaRoot'.
+'classifiers::ConcreteClassifier' is a specialization of 'Statement'.
+'classifiers::Classifier' is a specialization of 'ReferenceableElement'.
+'arrays::ArrayInstantiationBySize' is a specialization of 'ArrayTypeable'.
+'annotations::AnnotationInstance' is a specialization of 'Reference'.
+'annotations::AnnotationInstance' is a specialization of 'NamespaceAwareElement'.
+'arrays::ArrayInstantiationBySize' is a specialization of 'TypedElement'.
+'literals::HexFloatLiteral' is a specialization of 'FloatLiteral'.
+'statements::Condition' is a specialization of 'Statement'.
+'expressions::UnaryExpressionChild' is a specialization of 'MultiplicativeExpressionChild'.
+'types::Void' is a specialization of 'PrimitiveType'.
+'expressions::ShiftExpressionChild' is a specialization of 'RelationExpressionChild'.
+'members::Method' is a specialization of 'ReferenceableElement'.
+'members::AdditionalField' is a specialization of 'ArrayTypeable'.
+'statements::DoWhileLoop' is a specialization of 'WhileLoop'.
+'literals::OctalLongLiteral' is a specialization of 'LongLiteral'.
+'expressions::ConditionalExpression' is a specialization of 'AssignmentExpressionChild'.
+'members::Method' is a specialization of 'AnnotableAndModifiable'.
+'operators::RightShift' is a specialization of 'ShiftOperator'.
+'statements::SynchronizedBlock' is a specialization of 'StatementListContainer'.
+'literals::Self' is a specialization of 'Commentable'.
+'parameters::VariableLengthParameter' is a specialization of 'Parameter'.
+'statements::Switch' is a specialization of 'Statement'.
+'expressions::UnaryExpression' is a specialization of 'MultiplicativeExpressionChild'.
+'members::MemberContainer' is a specialization of 'Commentable'.
+'members::Constructor' is a specialization of 'StatementListContainer'.
+'modifiers::AnnotationInstanceOrModifier' is a specialization of 'Commentable'.
+'operators::UnaryOperator' is a specialization of 'Operator'.
+'operators::Negate' is a specialization of 'UnaryOperator'.
+'expressions::MultiplicativeExpression' is a specialization of 'AdditiveExpressionChild'.
+'variables::Variable' is a specialization of 'TypeArgumentable'.
+'literals::IntegerLiteral' is a specialization of 'Literal'.
+'operators::UnaryModificationOperator' is a specialization of 'Operator'.
+'members::Method' is a specialization of 'Parametrizable'.
+'statements::Condition' is a specialization of 'StatementContainer'.
+'types::TypeReference' is a specialization of 'Commentable'.
+'types::Double' is a specialization of 'PrimitiveType'.
+'operators::LessThan' is a specialization of 'RelationOperator'.
+'statements::LocalVariableStatement' is a specialization of 'Statement'.
+'literals::LongLiteral' is a specialization of 'Literal'.
+'expressions::PrimaryExpression' is a specialization of 'UnaryModificationExpressionChild'.
+'parameters::OrdinaryParameter' is a specialization of 'Parameter'.
+'modifiers::Protected' is a specialization of 'Modifier'.
+'operators::MultiplicativeOperator' is a specialization of 'Operator'.
+'references::Argumentable' is a specialization of 'Commentable'.
+'variables::Variable' is a specialization of 'ArrayTypeable'.
+'modifiers::Synchronized' is a specialization of 'Modifier'.
+'literals::Super' is a specialization of 'Self'.
+'imports::StaticImport' is a specialization of 'Import'.
+'operators::AssignmentDivision' is a specialization of 'AssignmentOperator'.
+'types::Float' is a specialization of 'PrimitiveType'.
+'types::Int' is a specialization of 'PrimitiveType'.
+'members::Constructor' is a specialization of 'Parametrizable'.
+'operators::MinusMinus' is a specialization of 'UnaryModificationOperator'.
+'expressions::InstanceOfExpressionChild' is a specialization of 'EqualityExpressionChild'.
+'modifiers::Static' is a specialization of 'Modifier'.
+'operators::AdditiveOperator' is a specialization of 'Operator'.
+'statements::Return' is a specialization of 'Statement'.
+'operators::AssignmentModulo' is a specialization of 'AssignmentOperator'.
+'types::Type' is a specialization of 'Commentable'.
+'members::ClassMethod' is a specialization of 'StatementListContainer'.
+'statements::NormalSwitchCase' is a specialization of 'Conditional'.
+'statements::Assert' is a specialization of 'Statement'.
+'operators::AssignmentOperator' is a specialization of 'Operator'.
+'modifiers::Public' is a specialization of 'Modifier'.
+'members::Method' is a specialization of 'ArrayTypeable'.
+'parameters::Parametrizable' is a specialization of 'Commentable'.
+'types::Bool' is a specialization of 'PrimitiveType'.
+'references::PrimitiveTypeReference' is a specialization of 'Reference'.
+'references::MethodCall' is a specialization of 'ElementReference'.
+'expressions::InstanceOfExpression' is a specialization of 'EqualityExpressionChild'.
+'operators::NotEqual' is a specialization of 'EqualityOperator'.
+'operators::LessThanOrEqual' is a specialization of 'RelationOperator'.
+'expressions::CastExpression' is a specialization of 'UnaryModificationExpressionChild'.
+'expressions::CastExpression' is a specialization of 'ArrayTypeable'.
+'instantiations::NewConstructorCall' is a specialization of 'CallTypeArgumentable'.
+'types::Long' is a specialization of 'PrimitiveType'.
+'members::Constructor' is a specialization of 'Member'.
+'statements::Conditional' is a specialization of 'Commentable'.
+'operators::AssignmentAnd' is a specialization of 'AssignmentOperator'.
+'imports::Import' is a specialization of 'NamespaceAwareElement'.
+'imports::StaticClassifierImport' is a specialization of 'StaticImport'.
+'references::SelfReference' is a specialization of 'Reference'.
+'statements::Continue' is a specialization of 'Jump'.
+'operators::UnsignedRightShift' is a specialization of 'ShiftOperator'.
+'variables::LocalVariable' is a specialization of 'Initializable'.
+'references::Reference' is a specialization of 'PrimaryExpression'.
+'modifiers::Strictfp' is a specialization of 'Modifier'.
+'members::Constructor' is a specialization of 'ExceptionThrower'.
+'references::ElementReference' is a specialization of 'Reference'.
+'statements::WhileLoop' is a specialization of 'StatementContainer'.
+'types::ClassifierReference' is a specialization of 'TypeArgumentable'.
+'expressions::ExclusiveOrExpression' is a specialization of 'InclusiveOrExpressionChild'.
+'statements::NormalSwitchCase' is a specialization of 'SwitchCase'.
+'operators::AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+'containers::Package' is a specialization of 'ReferenceableElement'.
+'references::ReferenceableElement' is a specialization of 'NamedElement'.
+'imports::StaticMemberImport' is a specialization of 'StaticImport'.
+'statements::SynchronizedBlock' is a specialization of 'Statement'.
+'expressions::CastExpression' is a specialization of 'TypedElement'.
+'references::Reference' is a specialization of 'TypeArgumentable'.
+'operators::AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+'references::ReflectiveClassReference' is a specialization of 'Reference'.
+'members::EnumConstant' is a specialization of 'Argumentable'.
+'operators::Assignment' is a specialization of 'AssignmentOperator'.
+'instantiations::Instantiation' is a specialization of 'TypedElement'.
+'statements::JumpLabel' is a specialization of 'Statement'.
+'operators::AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+'literals::DecimalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'operators::LeftShift' is a specialization of 'ShiftOperator'.
+'expressions::UnaryModificationExpression' is a specialization of 'UnaryExpressionChild'.
+'members::Method' is a specialization of 'ExceptionThrower'.
+'operators::AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+'operators::GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+'instantiations::Instantiation' is a specialization of 'Argumentable'.
+'statements::StatementListContainer' is a specialization of 'Commentable'.
+'variables::LocalVariable' is a specialization of 'AnnotableAndModifiable'.
+'expressions::EqualityExpressionChild' is a specialization of 'AndExpressionChild'.
+'parameters::Parameter' is a specialization of 'Variable'.
+'generics::TypeParameter' is a specialization of 'Classifier'.
+'literals::OctalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'expressions::ShiftExpression' is a specialization of 'RelationExpressionChild'.
+'generics::QualifiedTypeArgument' is a specialization of 'TypeArgument'.
+'variables::AdditionalLocalVariable' is a specialization of 'ArrayTypeable'.
+'operators::AssignmentMinus' is a specialization of 'AssignmentOperator'.
+'statements::Block' is a specialization of 'Member'.
+'literals::NullLiteral' is a specialization of 'Literal'.
+'types::TypedElement' is a specialization of 'Commentable'.
+'statements::TryBlock' is a specialization of 'Statement'.
+'modifiers::Transient' is a specialization of 'Modifier'.
+'expressions::NestedExpression' is a specialization of 'Reference'.
+'references::IdentifierReference' is a specialization of 'ElementReference'.
+'literals::HexLongLiteral' is a specialization of 'LongLiteral'.
+'operators::Addition' is a specialization of 'UnaryOperator'.
+'statements::Statement' is a specialization of 'Commentable'.
+'statements::JumpLabel' is a specialization of 'StatementContainer'.
+'expressions::EqualityExpression' is a specialization of 'AndExpressionChild'.
+'operators::AssignmentOr' is a specialization of 'AssignmentOperator'.
+'members::Constructor' is a specialization of 'AnnotableAndModifiable'.
+'operators::PlusPlus' is a specialization of 'UnaryModificationOperator'.
+'members::Field' is a specialization of 'Member'.
+'generics::UnknownTypeArgument' is a specialization of 'TypeArgument'.
+'references::StringReference' is a specialization of 'Reference'.
+'literals::BooleanLiteral' is a specialization of 'Literal'.
+'modifiers::Modifiable' is a specialization of 'Commentable'.
+'variables::LocalVariable' is a specialization of 'Variable'.
+'generics::QualifiedTypeArgument' is a specialization of 'TypedElement'.
+'types::Short' is a specialization of 'PrimitiveType'.
+'generics::TypeParametrizable' is a specialization of 'Commentable'.
+'variables::Variable' is a specialization of 'ReferenceableElement'.
+'statements::Block' is a specialization of 'StatementListContainer'.
+'expressions::AdditiveExpression' is a specialization of 'ShiftExpressionChild'.
+'operators::Subtraction' is a specialization of 'AdditiveOperator'.
+'modifiers::Abstract' is a specialization of 'Modifier'.
+'instantiations::ExplicitConstructorCall' is a specialization of 'Instantiation'.
+'statements::Break' is a specialization of 'Jump'.
+'expressions::SuffixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+'statements::Throw' is a specialization of 'Statement'.
+'statements::Assert' is a specialization of 'Conditional'.
+'references::MethodCall' is a specialization of 'Argumentable'.
+'literals::DecimalLongLiteral' is a specialization of 'LongLiteral'.
+'expressions::AndExpressionChild' is a specialization of 'ExclusiveOrExpressionChild'.
+'members::AdditionalField' is a specialization of 'Initializable'.
+'statements::WhileLoop' is a specialization of 'Statement'.
+'members::Constructor' is a specialization of 'TypeParametrizable'.
+'statements::StatementContainer' is a specialization of 'Commentable'.
+'generics::TypeArgumentable' is a specialization of 'Commentable'.
+'types::ClassifierReference' is a specialization of 'TypeReference'.
+'variables::Variable' is a specialization of 'NamedElement'.
+'generics::TypeArgument' is a specialization of 'ArrayTypeable'.
+'parameters::Parameter' is a specialization of 'AnnotableAndModifiable'.
+'operators::Division' is a specialization of 'MultiplicativeOperator'.
+'modifiers::Volatile' is a specialization of 'Modifier'.
+'statements::DefaultSwitchCase' is a specialization of 'SwitchCase'.
+'modifiers::Native' is a specialization of 'Modifier'.
+'literals::DoubleLiteral' is a specialization of 'Literal'.
+'types::Char' is a specialization of 'PrimitiveType'.
+'generics::SuperTypeArgument' is a specialization of 'TypeArgument'.
+'types::NamespaceClassifierReference' is a specialization of 'NamespaceAwareElement'.
+'statements::JumpLabel' is a specialization of 'NamedElement'.
+'operators::EqualityOperator' is a specialization of 'Operator'.
+'members::AdditionalField' is a specialization of 'ReferenceableElement'.
+'members::ClassMethod' is a specialization of 'Method'.
+'variables::LocalVariable' is a specialization of 'ForLoopInitializer'.
+'statements::EmptyStatement' is a specialization of 'Statement'.
+'literals::Literal' is a specialization of 'PrimaryExpression'.
+'expressions::InstanceOfExpression' is a specialization of 'TypedElement'.
+'variables::AdditionalLocalVariable' is a specialization of 'Initializable'.
+'types::PrimitiveType' is a specialization of 'Type'.
+'statements::ForEachLoop' is a specialization of 'Statement'.
+'statements::TryBlock' is a specialization of 'StatementListContainer'.
+'expressions::AdditiveExpressionChild' is a specialization of 'ShiftExpressionChild'.
+'instantiations::Initializable' is a specialization of 'Commentable'.
+'members::Method' is a specialization of 'TypeParametrizable'.
+'expressions::AndExpression' is a specialization of 'ExclusiveOrExpressionChild'.
+'expressions::MultiplicativeExpressionChild' is a specialization of 'AdditiveExpressionChild'.
+'operators::GreaterThan' is a specialization of 'RelationOperator'.
+'members::Method' is a specialization of 'Member'.
+'expressions::ConditionalOrExpression' is a specialization of 'ConditionalExpressionChild'.
+'types::Byte' is a specialization of 'PrimitiveType'.
+'members::Field' is a specialization of 'AnnotableAndModifiable'.
+'members::EnumConstant' is a specialization of 'ReferenceableElement'.
+'expressions::ConditionalExpressionChild' is a specialization of 'AssignmentExpressionChild'.
+'operators::Multiplication' is a specialization of 'MultiplicativeOperator'.
+'expressions::AssignmentExpression' is a specialization of 'Expression'.
+'variables::Variable' is a specialization of 'TypedElement'.
+'literals::DecimalDoubleLiteral' is a specialization of 'DoubleLiteral'.
+'imports::PackageImport' is a specialization of 'Import'.
+'operators::AssignmentPlus' is a specialization of 'AssignmentOperator'.
+'instantiations::Instantiation' is a specialization of 'TypeArgumentable'.
+'imports::ImportingElement' is a specialization of 'Commentable'.
+'members::EmptyMember' is a specialization of 'Member'.
+'references::MethodCall' is a specialization of 'CallTypeArgumentable'.
+'expressions::RelationExpression' is a specialization of 'InstanceOfExpressionChild'.
+'operators::ShiftOperator' is a specialization of 'Operator'.
+'members::Field' is a specialization of 'Initializable'.
+'types::NamespaceClassifierReference' is a specialization of 'TypeReference'.
+'operators::Operator' is a specialization of 'Commentable'.
+'imports::ClassifierImport' is a specialization of 'Import'.
+'members::Member' is a specialization of 'NamedElement'.
+'operators::RelationOperator' is a specialization of 'Operator'.
+'statements::Block' is a specialization of 'Statement'.
+'modifiers::Private' is a specialization of 'Modifier'.
+'statements::ForLoop' is a specialization of 'StatementContainer'.
+'operators::Addition' is a specialization of 'AdditiveOperator'.
+'expressions::UnaryModificationExpressionChild' is a specialization of 'UnaryExpressionChild'.
+'expressions::InstanceOfExpression' is a specialization of 'ArrayTypeable'.
+'containers::EmptyModel' is a specialization of 'JavaRoot'.
+'literals::This' is a specialization of 'Self'.
+'members::Field' is a specialization of 'Variable'.
+'expressions::ExpressionList' is a specialization of 'ForLoopInitializer'.
+'statements::ForLoopInitializer' is a specialization of 'Commentable'.
+'literals::HexIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'instantiations::NewConstructorCall' is a specialization of 'Instantiation'.
+'statements::CatchBlock' is a specialization of 'StatementListContainer'.
+'members::InterfaceMethod' is a specialization of 'Method'.
+'statements::Block' is a specialization of 'Modifiable'.
+'members::Field' is a specialization of 'ReferenceableElement'.
+'generics::ExtendsTypeArgument' is a specialization of 'TypeArgument'.
+'operators::Equal' is a specialization of 'EqualityOperator'.
+'expressions::InclusiveOrExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+'literals::HexDoubleLiteral' is a specialization of 'DoubleLiteral'.
+'statements::Jump' is a specialization of 'Statement'.
+'modifiers::Modifier' is a specialization of 'AnnotationInstanceOrModifier'.
+'statements::ForEachLoop' is a specialization of 'StatementContainer'.
+'modifiers::AnnotableAndModifiable' is a specialization of 'Commentable'.
+'expressions::Expression' is a specialization of 'ArrayInitializationValue'.
+'statements::SwitchCase' is a specialization of 'StatementListContainer'.
+'instantiations::Instantiation' is a specialization of 'Reference'.
+'statements::ForLoop' is a specialization of 'Conditional'.
+'expressions::PrefixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+'statements::ForLoop' is a specialization of 'Statement'.
+'types::PrimitiveType' is a specialization of 'TypeReference'.
+'expressions::Expression' is a specialization of 'AnnotationValue'.
+'statements::ExpressionStatement' is a specialization of 'Statement'.
+'members::Method' is a specialization of 'TypedElement'.
+'statements::Condition' is a specialization of 'Conditional'.
+'modifiers::Final' is a specialization of 'Modifier'.
+'literals::CharacterLiteral' is a specialization of 'Literal'.
+'generics::CallTypeArgumentable' is a specialization of 'Commentable'.
+'literals::FloatLiteral' is a specialization of 'Literal'.
+'operators::Complement' is a specialization of 'UnaryOperator'.
+'expressions::ExclusiveOrExpressionChild' is a specialization of 'InclusiveOrExpressionChild'.
+'members::EnumConstant' is a specialization of 'Annotable'.
+'operators::Remainder' is a specialization of 'MultiplicativeOperator'.
+'operators::AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+'operators::Subtraction' is a specialization of 'UnaryOperator'.
+'members::ExceptionThrower' is a specialization of 'Commentable'.
+'variables::AdditionalLocalVariable' is a specialization of 'ReferenceableElement'.
+'expressions::AssignmentExpressionChild' is a specialization of 'Expression'.
+'literals::DecimalFloatLiteral' is a specialization of 'FloatLiteral'.
+'expressions::RelationExpressionChild' is a specialization of 'InstanceOfExpressionChild'.
+'AnnotationInstanceOrModifier' (role 'AnnotationInstanceOrModifier', cardinality 0..*) is associated with 'modifiers::AnnotableAndModifiable' (role 'modifiers_AnnotableAndModifiable', cardinality 0..*).
+'AnnotationParameter' (role 'AnnotationParameter', cardinality 0..*) is associated with 'annotations::AnnotationInstance' (role 'annotations_AnnotationInstance3', cardinality 0..*).
+'statements::LocalVariableStatement' (role 'statements_LocalVariableStatement', cardinality 0..*) is associated with 'LocalVariable' (role 'LocalVariable', cardinality 0..*).
+'expressions::ConditionalAndExpression' (role 'expressions_ConditionalAndExpression', cardinality 0..*) is associated with 'ConditionalAndExpressionChild' (role 'ConditionalAndExpressionChild', cardinality 0..*).
+'Reference' (role 'Reference', cardinality 0..*) is associated with 'references::Reference' (role 'references_Reference', cardinality 0..*).
+'Member' (role 'Member', cardinality 0..*) is associated with 'members::MemberContainer' (role 'members_MemberContainer', cardinality 0..*).
+'statements::Switch' (role 'statements_Switch', cardinality 0..*) is associated with 'SwitchCase' (role 'SwitchCase', cardinality 0..*).
+'ConditionalOrExpressionChild' (role 'ConditionalOrExpressionChild', cardinality 0..*) is associated with 'expressions::ConditionalOrExpression' (role 'expressions_ConditionalOrExpression', cardinality 0..*).
+'expressions::AdditiveExpression' (role 'expressions_AdditiveExpression69', cardinality 0..*) is associated with 'AdditiveOperator' (role 'AdditiveOperator', cardinality 0..*).
+'expressions::RelationExpression' (role 'expressions_RelationExpression', cardinality 0..*) is associated with 'RelationExpressionChild' (role 'RelationExpressionChild', cardinality 0..*).
+'expressions::ShiftExpression' (role 'expressions_ShiftExpression', cardinality 0..*) is associated with 'ShiftExpressionChild' (role 'ShiftExpressionChild', cardinality 0..*).
+'Statement' (role 'Statement132', cardinality 0..*) is associated with 'statements::Condition' (role 'statements_Condition', cardinality 0..*).
+'expressions::MultiplicativeExpression' (role 'expressions_MultiplicativeExpression', cardinality 0..*) is associated with 'MultiplicativeExpressionChild' (role 'MultiplicativeExpressionChild', cardinality 0..*).
+'expressions::AssignmentExpression' (role 'expressions_AssignmentExpression43', cardinality 0..*) is associated with 'Expression' (role 'Expression44', cardinality 0..*).
+'Import' (role 'Import', cardinality 0..*) is associated with 'imports::ImportingElement' (role 'imports_ImportingElement', cardinality 0..*).
+'statements::Throw' (role 'statements_Throw', cardinality 0..*) is associated with 'Expression' (role 'Expression155', cardinality 0..*).
+'TypeReference' (role 'TypeReference31', cardinality 0..*) is associated with 'classifiers::Interface' (role 'classifiers_Interface30', cardinality 0..*).
+'parameters::Parametrizable' (role 'parameters_Parametrizable', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'Expression' (role 'Expression127', cardinality 0..*) is associated with 'statements::Conditional' (role 'statements_Conditional', cardinality 0..*).
+'ArrayDimension' (role 'ArrayDimension14', cardinality 0..*) is associated with 'arrays::ArrayTypeable' (role 'arrays_ArrayTypeable13', cardinality 0..*).
+'annotations::AnnotationAttributeSetting' (role 'annotations_AnnotationAttributeSetting', cardinality 0..*) is associated with 'InterfaceMethod' (role 'InterfaceMethod', cardinality 0..*).
+'InstanceOfExpressionChild' (role 'InstanceOfExpressionChild', cardinality 0..*) is associated with 'expressions::InstanceOfExpression' (role 'expressions_InstanceOfExpression', cardinality 0..*).
+'AnnotationValue' (role 'AnnotationValue9', cardinality 0..*) is associated with 'annotations::AnnotationAttributeSetting' (role 'annotations_AnnotationAttributeSetting8', cardinality 0..*).
+'imports::StaticMemberImport' (role 'imports_StaticMemberImport', cardinality 0..*) is associated with 'ReferenceableElement' (role 'ReferenceableElement', cardinality 0..*).
+'instantiations::Initializable' (role 'instantiations_Initializable', cardinality 0..*) is associated with 'Expression' (role 'Expression99', cardinality 0..*).
+'ArrayInitializer' (role 'ArrayInitializer', cardinality 0..*) is associated with 'arrays::ArrayInstantiationByValues' (role 'arrays_ArrayInstantiationByValues', cardinality 0..*).
+'expressions::RelationExpression' (role 'expressions_RelationExpression63', cardinality 0..*) is associated with 'RelationOperator' (role 'RelationOperator', cardinality 0..*).
+'arrays::ArrayInstantiationBySize' (role 'arrays_ArrayInstantiationBySize', cardinality 0..*) is associated with 'Expression' (role 'Expression17', cardinality 0..*).
+'classifiers::Implementor' (role 'classifiers_Implementor', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference', cardinality 0..*).
+'Expression' (role 'Expression151', cardinality 0..*) is associated with 'statements::Switch' (role 'statements_Switch150', cardinality 0..*).
+'imports::StaticImport' (role 'imports_StaticImport', cardinality 0..*) is associated with 'Static' (role 'Static', cardinality 0..*).
+'Modifier' (role 'Modifier', cardinality 0..*) is associated with 'modifiers::Modifiable' (role 'modifiers_Modifiable', cardinality 0..*).
+'Expression' (role 'Expression134', cardinality 0..*) is associated with 'statements::ExpressionStatement' (role 'statements_ExpressionStatement', cardinality 0..*).
+'statements::ForLoop' (role 'statements_ForLoop', cardinality 0..*) is associated with 'ForLoopInitializer' (role 'ForLoopInitializer', cardinality 0..*).
+'Expression' (role 'Expression20', cardinality 0..*) is associated with 'arrays::ArraySelector' (role 'arrays_ArraySelector', cardinality 0..*).
+'AdditiveExpressionChild' (role 'AdditiveExpressionChild', cardinality 0..*) is associated with 'expressions::AdditiveExpression' (role 'expressions_AdditiveExpression', cardinality 0..*).
+'statements::Jump' (role 'statements_Jump', cardinality 0..*) is associated with 'JumpLabel' (role 'JumpLabel', cardinality 0..*).
+'AnnotationValue' (role 'AnnotationValue', cardinality 0..*) is associated with 'annotations::SingleAnnotationParameter' (role 'annotations_SingleAnnotationParameter', cardinality 0..*).
+'generics::TypeParametrizable' (role 'generics_TypeParametrizable', cardinality 0..*) is associated with 'TypeParameter' (role 'TypeParameter', cardinality 0..*).
+'expressions::ConditionalExpression' (role 'expressions_ConditionalExpression50', cardinality 0..*) is associated with 'AssignmentExpressionChild' (role 'AssignmentExpressionChild51', cardinality 0..*).
+'expressions::EqualityExpression' (role 'expressions_EqualityExpression', cardinality 0..*) is associated with 'EqualityOperator' (role 'EqualityOperator', cardinality 0..*).
+'members::Field' (role 'members_Field', cardinality 0..*) is associated with 'AdditionalField' (role 'AdditionalField', cardinality 0..*).
+'Expression' (role 'Expression38', cardinality 0..*) is associated with 'expressions::ExpressionList' (role 'expressions_ExpressionList', cardinality 0..*).
+'imports::ClassifierImport' (role 'imports_ClassifierImport', cardinality 0..*) is associated with 'ConcreteClassifier' (role 'ConcreteClassifier96', cardinality 0..*).
+'containers::Package' (role 'containers_Package36', cardinality 0..*) is associated with 'Package' (role 'Package', cardinality 0..*).
+'types::ClassifierReference' (role 'types_ClassifierReference', cardinality 0..*) is associated with 'Classifier' (role 'Classifier164', cardinality 0..*).
+'AnonymousClass' (role 'AnonymousClass109', cardinality 0..*) is associated with 'members::EnumConstant' (role 'members_EnumConstant', cardinality 0..*).
+'UnaryModificationExpressionChild' (role 'UnaryModificationExpressionChild', cardinality 0..*) is associated with 'expressions::UnaryModificationExpression' (role 'expressions_UnaryModificationExpression', cardinality 0..*).
+'TypeReference' (role 'TypeReference88', cardinality 0..*) is associated with 'generics::ExtendsTypeArgument' (role 'generics_ExtendsTypeArgument', cardinality 0..*).
+'MultiplicativeOperator' (role 'MultiplicativeOperator', cardinality 0..*) is associated with 'expressions::MultiplicativeExpression' (role 'expressions_MultiplicativeExpression72', cardinality 0..*).
+'expressions::UnaryExpression' (role 'expressions_UnaryExpression', cardinality 0..*) is associated with 'UnaryOperator' (role 'UnaryOperator', cardinality 0..*).
+'AssignmentOperator' (role 'AssignmentOperator', cardinality 0..*) is associated with 'expressions::AssignmentExpression' (role 'expressions_AssignmentExpression41', cardinality 0..*).
+'ReferenceableElement' (role 'ReferenceableElement119', cardinality 0..*) is associated with 'references::ElementReference' (role 'references_ElementReference', cardinality 0..*).
+'TypeReference' (role 'TypeReference162', cardinality 0..*) is associated with 'types::TypedElement' (role 'types_TypedElement', cardinality 0..*).
+'TypeArgument' (role 'TypeArgument', cardinality 0..*) is associated with 'generics::TypeArgumentable' (role 'generics_TypeArgumentable', cardinality 0..*).
+'variables::LocalVariable' (role 'variables_LocalVariable', cardinality 0..*) is associated with 'AdditionalLocalVariable' (role 'AdditionalLocalVariable', cardinality 0..*).
+'statements::ForLoop' (role 'statements_ForLoop137', cardinality 0..*) is associated with 'Expression' (role 'Expression138', cardinality 0..*).
+'statements::ForEachLoop' (role 'statements_ForEachLoop142', cardinality 0..*) is associated with 'Expression' (role 'Expression143', cardinality 0..*).
+'EnumConstant' (role 'EnumConstant', cardinality 0..*) is associated with 'classifiers::Enumeration' (role 'classifiers_Enumeration', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'statements::StatementContainer' (role 'statements_StatementContainer', cardinality 0..*).
+'arrays::ArrayInitializer' (role 'arrays_ArrayInitializer', cardinality 0..*) is associated with 'ArrayInitializationValue' (role 'ArrayInitializationValue', cardinality 0..*).
+'ConcreteClassifier' (role 'ConcreteClassifier', cardinality 0..*) is associated with 'containers::CompilationUnit' (role 'containers_CompilationUnit', cardinality 0..*).
+'expressions::UnaryModificationExpression' (role 'expressions_UnaryModificationExpression78', cardinality 0..*) is associated with 'UnaryModificationOperator' (role 'UnaryModificationOperator', cardinality 0..*).
+'Expression' (role 'Expression160', cardinality 0..*) is associated with 'statements::WhileLoop' (role 'statements_WhileLoop', cardinality 0..*).
+'expressions::ShiftExpression' (role 'expressions_ShiftExpression66', cardinality 0..*) is associated with 'ShiftOperator' (role 'ShiftOperator', cardinality 0..*).
+'statements::CatchBlock' (role 'statements_CatchBlock', cardinality 0..*) is associated with 'OrdinaryParameter' (role 'OrdinaryParameter', cardinality 0..*).
+'Expression' (role 'Expression147', cardinality 0..*) is associated with 'statements::Return' (role 'statements_Return', cardinality 0..*).
+'expressions::AssignmentExpression' (role 'expressions_AssignmentExpression', cardinality 0..*) is associated with 'AssignmentExpressionChild' (role 'AssignmentExpressionChild', cardinality 0..*).
+'TypeReference' (role 'TypeReference23', cardinality 0..*) is associated with 'classifiers::Class' (role 'classifiers_Class', cardinality 0..*).
+'expressions::ConditionalExpression' (role 'expressions_ConditionalExpression47', cardinality 0..*) is associated with 'Expression' (role 'Expression48', cardinality 0..*).
+'Member' (role 'Member106', cardinality 0..*) is associated with 'members::MemberContainer' (role 'members_MemberContainer105', cardinality 0..*).
+'containers::Package' (role 'containers_Package', cardinality 0..*) is associated with 'CompilationUnit' (role 'CompilationUnit', cardinality 0..*).
+'expressions::EqualityExpression' (role 'expressions_EqualityExpression59', cardinality 0..*) is associated with 'EqualityExpressionChild' (role 'EqualityExpressionChild', cardinality 0..*).
+'types::NamespaceClassifierReference' (role 'types_NamespaceClassifierReference', cardinality 0..*) is associated with 'ClassifierReference' (role 'ClassifierReference', cardinality 0..*).
+'OrdinaryParameter' (role 'OrdinaryParameter140', cardinality 0..*) is associated with 'statements::ForEachLoop' (role 'statements_ForEachLoop', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'annotations::AnnotationInstance' (role 'annotations_AnnotationInstance', cardinality 0..*).
+'NamespaceClassifierReference' (role 'NamespaceClassifierReference', cardinality 0..*) is associated with 'members::ExceptionThrower' (role 'members_ExceptionThrower', cardinality 0..*).
+'TypeReference' (role 'TypeReference28', cardinality 0..*) is associated with 'classifiers::Interface' (role 'classifiers_Interface', cardinality 0..*).
+'ExclusiveOrExpressionChild' (role 'ExclusiveOrExpressionChild', cardinality 0..*) is associated with 'expressions::ExclusiveOrExpression' (role 'expressions_ExclusiveOrExpression', cardinality 0..*).
+'MultiplicativeExpressionChild' (role 'MultiplicativeExpressionChild80', cardinality 0..*) is associated with 'expressions::CastExpression' (role 'expressions_CastExpression', cardinality 0..*).
+'TypeReference' (role 'TypeReference26', cardinality 0..*) is associated with 'classifiers::Class' (role 'classifiers_Class25', cardinality 0..*).
+'AnonymousClass' (role 'AnonymousClass', cardinality 0..*) is associated with 'instantiations::NewConstructorCall' (role 'instantiations_NewConstructorCall', cardinality 0..*).
+'CatchBlock' (role 'CatchBlock', cardinality 0..*) is associated with 'statements::TryBlock' (role 'statements_TryBlock', cardinality 0..*).
+'generics::TypeParameter' (role 'generics_TypeParameter', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference92', cardinality 0..*).
+'ArraySelector' (role 'ArraySelector', cardinality 0..*) is associated with 'references::Reference' (role 'references_Reference115', cardinality 0..*).
+'statements::TryBlock' (role 'statements_TryBlock158', cardinality 0..*) is associated with 'Block' (role 'Block', cardinality 0..*).
+'ArrayDimension' (role 'ArrayDimension', cardinality 0..*) is associated with 'arrays::ArrayTypeable' (role 'arrays_ArrayTypeable', cardinality 0..*).
+'PrimitiveType' (role 'PrimitiveType', cardinality 0..*) is associated with 'references::PrimitiveTypeReference' (role 'references_PrimitiveTypeReference', cardinality 0..*).
+'annotations::AnnotationParameterList' (role 'annotations_AnnotationParameterList', cardinality 0..*) is associated with 'AnnotationAttributeSetting' (role 'AnnotationAttributeSetting', cardinality 0..*).
+'expressions::UnaryExpression' (role 'expressions_UnaryExpression75', cardinality 0..*) is associated with 'UnaryExpressionChild' (role 'UnaryExpressionChild', cardinality 0..*).
+'AnnotationInstance' (role 'AnnotationInstance', cardinality 0..*) is associated with 'annotations::Annotable' (role 'annotations_Annotable', cardinality 0..*).
+'AndExpressionChild' (role 'AndExpressionChild', cardinality 0..*) is associated with 'expressions::AndExpression' (role 'expressions_AndExpression', cardinality 0..*).
+'expressions::NestedExpression' (role 'expressions_NestedExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression82', cardinality 0..*).
+'Self' (role 'Self122', cardinality 0..*) is associated with 'references::SelfReference' (role 'references_SelfReference', cardinality 0..*).
+'statements::SynchronizedBlock' (role 'statements_SynchronizedBlock', cardinality 0..*) is associated with 'Expression' (role 'Expression153', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'annotations::AnnotationAttribute' (role 'annotations_AnnotationAttribute', cardinality 0..*).
+'expressions::InclusiveOrExpression' (role 'expressions_InclusiveOrExpression', cardinality 0..*) is associated with 'InclusiveOrExpressionChild' (role 'InclusiveOrExpressionChild', cardinality 0..*).
+'TypeArgument' (role 'TypeArgument85', cardinality 0..*) is associated with 'generics::CallTypeArgumentable' (role 'generics_CallTypeArgumentable', cardinality 0..*).
+'Self' (role 'Self', cardinality 0..*) is associated with 'instantiations::ExplicitConstructorCall' (role 'instantiations_ExplicitConstructorCall', cardinality 0..*).
+'Expression' (role 'Expression129', cardinality 0..*) is associated with 'statements::Assert' (role 'statements_Assert', cardinality 0..*).
+'TypeReference' (role 'TypeReference90', cardinality 0..*) is associated with 'generics::SuperTypeArgument' (role 'generics_SuperTypeArgument', cardinality 0..*).
+'references::Argumentable' (role 'references_Argumentable', cardinality 0..*) is associated with 'Expression' (role 'Expression117', cardinality 0..*).
+'ConditionalExpressionChild' (role 'ConditionalExpressionChild', cardinality 0..*) is associated with 'expressions::ConditionalExpression' (role 'expressions_ConditionalExpression', cardinality 0..*).
+'statements::StatementListContainer' (role 'statements_StatementListContainer', cardinality 0..*) is associated with 'Statement' (role 'Statement125', cardinality 0..*).

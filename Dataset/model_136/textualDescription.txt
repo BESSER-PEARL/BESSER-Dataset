@@ -1,0 +1,839 @@
+The model has 389 class(es).
+The class 'simTL4J::expressions::InclusiveOrExpressionChild' has no attributes.
+The class 'simTL4J::annotations::AnnotationValue' has no attributes.
+The class 'simTL4J::modifiers::Private' has no attributes.
+The class 'AnnotationAttributeSetting' has no attributes.
+The class 'simTL4J::modifiers::Transient' has no attributes.
+The class 'simTL4J::modifiers::Modifiable' has no attributes.
+The class 'Expression' has no attributes.
+The class 'simTL4J::statements::StatementContainer' has no attributes.
+The class 'simTL4J::instantiations::Instantiation' has no attributes.
+The class 'simTL4J::operators::EqualityOperator' has no attributes.
+The class 'simTL4J::statements::DefaultSwitchCase' has no attributes.
+The class 'simTL4J::operators::AssignmentDivision' has no attributes.
+The class 'CompilationUnit' has no attributes.
+The class 'simTL4J::arrays::ArrayTypeable' has no attributes.
+The class 'simTL4J::generics::ExtendsTypeArgument' has no attributes.
+The class 'simTL4J::expressions::ConditionalAndExpression' has no attributes.
+The class 'simTL4J::operators::Equal' has no attributes.
+The class 'simTL4J::literals::HexLongLiteral' has the following attributes: 'hexValue' of type str.
+The class 'simTL4J::operators::Operator' has no attributes.
+The class 'simTL4J::types::Int' has no attributes.
+The class 'simTL4J::operators::NotEqual' has no attributes.
+The class 'AdditiveOperator' has no attributes.
+The class 'InterfaceMethod' has no attributes.
+The class 'simTL4J::expressions::AndExpression' has no attributes.
+The class 'simTL4J::literals::DoubleLiteral' has no attributes.
+The class 'Package' has no attributes.
+The class 'simTL4J::statements::Conditional' has no attributes.
+The class 'ShiftOperator' has no attributes.
+The class 'instantiations::Initializable' has no attributes.
+The class 'simTL4J::expressions::ConditionalExpressionChild' has no attributes.
+The class 'DoubleLiteral' has no attributes.
+The class 'simTL4J::types::Short' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'simTL4J::simTL::TAbstractMethodStatement' has no attributes.
+The class 'simTL4J::expressions::RelationExpressionChild' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'simTL4J::references::Argumentable' has no attributes.
+The class 'simTL4J::expressions::CastExpression' has no attributes.
+The class 'simTL4J::simTL::TPlaceholder' has no attributes.
+The class 'simTL4J::expressions::Expression' has no attributes.
+The class 'simTL4J::members::Member' has no attributes.
+The class 'simTL4J::statements::CatchBlock' has no attributes.
+The class 'simTL4J::members::Field' has no attributes.
+The class 'AdditionalLocalVariable' has no attributes.
+The class 'simTL4J::containers::JavaRoot' has no attributes.
+The class 'SwitchCase' has no attributes.
+The class 'AdditionalField' has no attributes.
+The class 'simTL4J::operators::AssignmentModulo' has no attributes.
+The class 'simTL4J::operators::Remainder' has no attributes.
+The class 'simTL4J::modifiers::Abstract' has no attributes.
+The class 'TModelImport' has no attributes.
+The class 'simTL4J::instantiations::Initializable' has no attributes.
+The class 'members::Method' has no attributes.
+The class 'Reference' has no attributes.
+The class 'simTL4J::operators::MultiplicativeOperator' has no attributes.
+The class 'simTL4J::arrays::ArrayInitializationValue' has no attributes.
+The class 'simTL4J::containers::CompilationUnit' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'simTL4J::statements::ForLoop' has no attributes.
+The class 'simTL4J::generics::UnknownTypeArgument' has no attributes.
+The class 'AnnotationParameter' has no attributes.
+The class 'TMethodCall' has no attributes.
+The class 'simTL4J::modifiers::Modifier' has no attributes.
+The class 'simTL4J::generics::SuperTypeArgument' has no attributes.
+The class 'generics::CallTypeArgumentable' has no attributes.
+The class 'simTL4J::statements::StatementListContainer' has no attributes.
+The class 'EqualityOperator' has no attributes.
+The class 'simTL4J::members::ExceptionThrower' has no attributes.
+The class 'simTL4J::expressions::ConditionalAndExpressionChild' has no attributes.
+The class 'simTL::TFor' has no attributes.
+The class 'simTL4J::operators::AssignmentOr' has no attributes.
+The class 'expressions::PrimaryExpression' has no attributes.
+The class 'simTL4J::types::Char' has no attributes.
+The class 'simTL4J::operators::AssignmentMinus' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'simTL4J::expressions::ExclusiveOrExpression' has no attributes.
+The class 'simTL4J::variables::Variable' has no attributes.
+The class 'simTL4J::imports::ClassifierImport' has no attributes.
+The class 'AssignmentOperator' has no attributes.
+The class 'simTL4J::modifiers::Protected' has no attributes.
+The class 'simTL4J::operators::AssignmentPlus' has no attributes.
+The class 'simTL4J::expressions::PrimaryExpression' has no attributes.
+The class 'StatementListContainer' has no attributes.
+The class 'classifiers::Classifier' has no attributes.
+The class 'simTL4J::expressions::EqualityExpression' has no attributes.
+The class 'simTL4J::modifiers::AnnotationInstanceOrModifier' has no attributes.
+The class 'commons::NamedElement' has no attributes.
+The class 'simTL4J::types::TypeReference' has no attributes.
+The class 'simTL4J::generics::TypeParametrizable' has no attributes.
+The class 'simTL4J::simTL::TModelImport' has the following attributes: 'uri' of type str; 'name' of type str.
+The class 'simTL4J::literals::Super' has no attributes.
+The class 'ArrayDimension' has no attributes.
+The class 'simTL4J::arrays::ArraySelector' has no attributes.
+The class 'simTL4J::annotations::AnnotationAttribute' has no attributes.
+The class 'simTL4J::expressions::ShiftExpression' has no attributes.
+The class 'types::TypedElement' has no attributes.
+The class 'simTL4J::references::Reference' has no attributes.
+The class 'simTL4J::simTL::TUnaryOperatorNOT' has no attributes.
+The class 'ConcreteClassifier' has no attributes.
+The class 'simTL4J::expressions::AndExpressionChild' has no attributes.
+The class 'simTL4J::statements::Assert' has no attributes.
+The class 'simTL4J::imports::StaticImport' has no attributes.
+The class 'classifiers::Implementor' has no attributes.
+The class 'statements::StatementListContainer' has no attributes.
+The class 'simTL4J::operators::AssignmentExclusiveOr' has no attributes.
+The class 'simTL4J::literals::HexIntegerLiteral' has the following attributes: 'hexValue' of type str.
+The class 'simTL4J::commons::NamespaceAwareElement' has the following attributes: 'namespaces' of type str.
+The class 'simTL4J::simTL::TPlaceholder::PrimaryExpression' has no attributes.
+The class 'simTL4J::operators::Assignment' has no attributes.
+The class 'simTL4J::simTL::TMethodCall' has the following attributes: 'methodName' of type str; 'params' of type str.
+The class 'simTL4J::types::ClassifierReference' has no attributes.
+The class 'simTL4J::annotations::AnnotationInstance' has no attributes.
+The class 'simTL4J::simTL::TFor::MemberContainer' has no attributes.
+The class 'FloatLiteral' has no attributes.
+The class 'simTL4J::expressions::RelationExpression' has no attributes.
+The class 'arrays::ArrayTypeable' has no attributes.
+The class 'Jump' has no attributes.
+The class 'simTL4J::classifiers::Annotation' has no attributes.
+The class 'InstanceOfExpressionChild' has no attributes.
+The class 'simTL4J::members::Method' has no attributes.
+The class 'simTL4J::parameters::VariableLengthParameter' has no attributes.
+The class 'simTL4J::literals::NullLiteral' has no attributes.
+The class 'simTL4J::classifiers::AnonymousClass' has no attributes.
+The class 'simTL4J::members::InterfaceMethod' has no attributes.
+The class 'simTL4J::literals::FloatLiteral' has no attributes.
+The class 'simTL4J::arrays::ArrayDimension' has no attributes.
+The class 'MultiplicativeOperator' has no attributes.
+The class 'simTL4J::annotations::Annotable' has no attributes.
+The class 'simTL4J::classifiers::Classifier' has no attributes.
+The class 'simTL4J::arrays::ArrayInitializer' has no attributes.
+The class 'simTL4J::references::IdentifierReference' has no attributes.
+The class 'simTL4J::operators::AssignmentLeftShift' has no attributes.
+The class 'imports::ImportingElement' has no attributes.
+The class 'simTL4J::references::ReflectiveClassReference' has no attributes.
+The class 'generics::TypeArgumentable' has no attributes.
+The class 'AssignmentExpressionChild' has no attributes.
+The class 'simTL4J::literals::CharacterLiteral' has the following attributes: 'value' of type str.
+The class 'simTL4J::expressions::InstanceOfExpression' has no attributes.
+The class 'simTL4J::expressions::EqualityExpressionChild' has no attributes.
+The class 'simTL4J::operators::LeftShift' has no attributes.
+The class 'simTL4J::members::AdditionalField' has no attributes.
+The class 'classifiers::ConcreteClassifier' has no attributes.
+The class 'simTL4J::simTL::TIf::MemberContainer' has no attributes.
+The class 'Literal' has no attributes.
+The class 'simTL4J::containers::EmptyModel' has no attributes.
+The class 'simTL4J::operators::GreaterThanOrEqual' has no attributes.
+The class 'simTL4J::classifiers::Class' has no attributes.
+The class 'simTL4J::classifiers::ConcreteClassifier' has the following attributes: 'fullName' of type str.
+The class 'simTL4J::members::ClassMethod' has no attributes.
+The class 'WhileLoop' has no attributes.
+The class 'simTL4J::operators::AssignmentMultiplication' has no attributes.
+The class 'parameters::Parametrizable' has no attributes.
+The class 'simTL4J::expressions::UnaryModificationExpression' has no attributes.
+The class 'simTL4J::expressions::ExpressionList' has no attributes.
+The class 'ClassifierReference' has no attributes.
+The class 'simTL4J::members::Constructor' has no attributes.
+The class 'simTL4J::classifiers::Interface' has no attributes.
+The class 'LongLiteral' has no attributes.
+The class 'simTL4J::operators::AssignmentRightShift' has no attributes.
+The class 'simTL4J::statements::Block' has no attributes.
+The class 'Self' has no attributes.
+The class 'simTL4J::instantiations::NewConstructorCall' has no attributes.
+The class 'arrays::ArrayInitializationValue' has no attributes.
+The class 'simTL4J::operators::RelationOperator' has no attributes.
+The class 'simTL::TIf' has no attributes.
+The class 'simTL4J::modifiers::Static' has no attributes.
+The class 'TPlaceholder' has no attributes.
+The class 'simTL4J::parameters::OrdinaryParameter' has no attributes.
+The class 'TAbstractMethodStatement' has no attributes.
+The class 'simTL4J::members::EmptyMember' has no attributes.
+The class 'simTL4J::operators::AssignmentOperator' has no attributes.
+The class 'ForLoopInitializer' has no attributes.
+The class 'simTL4J::statements::Throw' has no attributes.
+The class 'simTL4J::expressions::AdditiveExpression' has no attributes.
+The class 'ShiftExpressionChild' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'simTL4J::statements::ForEachLoop' has no attributes.
+The class 'AnnotationInstance' has no attributes.
+The class 'AnonymousClass' has no attributes.
+The class 'ConditionalAndExpressionChild' has no attributes.
+The class 'simTL4J::simTL::TFor::StatementListContainer' has no attributes.
+The class 'simTL4J::expressions::SuffixUnaryModificationExpression' has no attributes.
+The class 'generics::TypeArgument' has no attributes.
+The class 'simTL4J::statements::Condition' has no attributes.
+The class 'simTL4J::generics::TypeArgument' has no attributes.
+The class 'Static' has no attributes.
+The class 'simTL4J::expressions::ConditionalOrExpressionChild' has no attributes.
+The class 'simTL4J::simTL::Template' has no attributes.
+The class 'simTL4J::expressions::InstanceOfExpressionChild' has no attributes.
+The class 'simTL4J::operators::LessThanOrEqual' has no attributes.
+The class 'TemplateHeader' has no attributes.
+The class 'simTL4J::literals::DecimalDoubleLiteral' has the following attributes: 'decimalValue' of type float.
+The class 'simTL4J::types::NamespaceClassifierReference' has no attributes.
+The class 'AnnotationValue' has no attributes.
+The class 'statements::SwitchCase' has no attributes.
+The class 'simTL4J::expressions::PrefixUnaryModificationExpression' has no attributes.
+The class 'simTL4J::statements::JumpLabel' has no attributes.
+The class 'expressions::UnaryModificationExpressionChild' has no attributes.
+The class 'simTL4J::modifiers::Final' has no attributes.
+The class 'members::ExceptionThrower' has no attributes.
+The class 'ArraySelector' has no attributes.
+The class 'simTL4J::operators::Negate' has no attributes.
+The class 'simTL4J::literals::LongLiteral' has no attributes.
+The class 'RelationExpressionChild' has no attributes.
+The class 'statements::Conditional' has no attributes.
+The class 'simTL4J::expressions::MultiplicativeExpressionChild' has no attributes.
+The class 'simTL4J::statements::Jump' has no attributes.
+The class 'simTL4J::operators::UnaryModificationOperator' has no attributes.
+The class 'references::ReferenceableElement' has no attributes.
+The class 'simTL4J::simTL::TUnaryOperator' has no attributes.
+The class 'TypeArgument' has no attributes.
+The class 'IntegerLiteral' has no attributes.
+The class 'simTL4J::classifiers::Implementor' has no attributes.
+The class 'simTL4J::modifiers::AnnotableAndModifiable' has no attributes.
+The class 'simTL4J::expressions::ShiftExpressionChild' has no attributes.
+The class 'simTL4J::operators::GreaterThan' has no attributes.
+The class 'simTL4J::statements::LocalVariableStatement' has no attributes.
+The class 'simTL4J::operators::Multiplication' has no attributes.
+The class 'simTL4J::expressions::NestedExpression' has no attributes.
+The class 'simTL4J::expressions::MultiplicativeExpression' has no attributes.
+The class 'simTL4J::generics::CallTypeArgumentable' has no attributes.
+The class 'simTL4J::simTL::TIf' has no attributes.
+The class 'simTL4J::operators::UnaryOperator' has no attributes.
+The class 'simTL4J::generics::QualifiedTypeArgument' has no attributes.
+The class 'Member' has no attributes.
+The class 'annotations::AnnotationValue' has no attributes.
+The class 'MultiplicativeExpressionChild' has no attributes.
+The class 'simTL4J::literals::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'simTL4J::literals::HexDoubleLiteral' has the following attributes: 'hexValue' of type float.
+The class 'UnaryOperator' has no attributes.
+The class 'simTL4J::operators::Subtraction' has no attributes.
+The class 'references::Argumentable' has no attributes.
+The class 'simTL4J::simTL::TFor' has no attributes.
+The class 'references::Reference' has no attributes.
+The class 'simTL4J::operators::MinusMinus' has no attributes.
+The class 'simTL4J::operators::PlusPlus' has no attributes.
+The class 'simTL4J::modifiers::Public' has no attributes.
+The class 'simTL4J::statements::Return' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'OrdinaryParameter' has no attributes.
+The class 'simTL4J::expressions::AssignmentExpressionChild' has no attributes.
+The class 'simTL4J::variables::AdditionalLocalVariable' has no attributes.
+The class 'simTL4J::commons::NamedElement' has the following attributes: 'name' of type str.
+The class 'simTL4J::statements::Switch' has no attributes.
+The class 'instantiations::Instantiation' has no attributes.
+The class 'simTL4J::operators::Complement' has no attributes.
+The class 'annotations::Annotable' has no attributes.
+The class 'simTL4J::operators::Division' has no attributes.
+The class 'statements::StatementContainer' has no attributes.
+The class 'InclusiveOrExpressionChild' has no attributes.
+The class 'simTL4J::imports::PackageImport' has no attributes.
+The class 'simTL4J::simTL::TForVariable' has the following attributes: 'name' of type str.
+The class 'simTL4J::generics::TypeParameter' has no attributes.
+The class 'UnaryModificationExpressionChild' has no attributes.
+The class 'simTL4J::types::Byte' has no attributes.
+The class 'simTL4J::expressions::InclusiveOrExpression' has no attributes.
+The class 'ExclusiveOrExpressionChild' has no attributes.
+The class 'simTL4J::statements::SwitchCase' has no attributes.
+The class 'simTL4J::annotations::AnnotationParameter' has no attributes.
+The class 'Block' has no attributes.
+The class 'TUnaryOperator' has no attributes.
+The class 'Instantiation' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'simTL4J::literals::OctalLongLiteral' has the following attributes: 'octalValue' of type str.
+The class 'simTL4J::expressions::UnaryExpressionChild' has no attributes.
+The class 'simTL4J::statements::TryBlock' has no attributes.
+The class 'simTL4J::commons::Commentable' has the following attributes: 'comments' of type str.
+The class 'EqualityExpressionChild' has no attributes.
+The class 'simTL4J::statements::Statement' has no attributes.
+The class 'simTL4J::references::StringReference' has the following attributes: 'value' of type str.
+The class 'simTL4J::expressions::UnaryExpression' has no attributes.
+The class 'simTL4J::statements::NormalSwitchCase' has no attributes.
+The class 'modifiers::AnnotableAndModifiable' has no attributes.
+The class 'simTL4J::types::PrimitiveType' has no attributes.
+The class 'CatchBlock' has no attributes.
+The class 'generics::TypeParametrizable' has no attributes.
+The class 'simTL4J::types::Boolean' has no attributes.
+The class 'simTL4J::types::Long' has no attributes.
+The class 'UnaryModificationOperator' has no attributes.
+The class 'simTL4J::references::SelfReference' has no attributes.
+The class 'JavaRoot' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'StaticImport' has no attributes.
+The class 'variables::Variable' has no attributes.
+The class 'ConditionalExpressionChild' has no attributes.
+The class 'operators::AdditiveOperator' has no attributes.
+The class 'JumpLabel' has no attributes.
+The class 'simTL4J::references::ElementReference' has no attributes.
+The class 'simTL4J::imports::StaticClassifierImport' has no attributes.
+The class 'expressions::EqualityExpressionChild' has no attributes.
+The class 'LocalVariable' has no attributes.
+The class 'simTL4J::operators::AdditiveOperator' has no attributes.
+The class 'simTL4J::operators::Addition' has no attributes.
+The class 'simTL4J::statements::EmptyStatement' has no attributes.
+The class 'simTL4J::expressions::AssignmentExpression' has no attributes.
+The class 'operators::UnaryOperator' has no attributes.
+The class 'ReferenceableElement' has no attributes.
+The class 'RelationOperator' has no attributes.
+The class 'simTL4J::types::Type' has no attributes.
+The class 'TypeReference' has no attributes.
+The class 'simTL4J::simTL::TemplateHeader' has no attributes.
+The class 'AdditiveExpressionChild' has no attributes.
+The class 'AnnotationInstanceOrModifier' has no attributes.
+The class 'members::MemberContainer' has no attributes.
+The class 'simTL4J::references::ReferenceableElement' has no attributes.
+The class 'NamespaceAwareElement' has no attributes.
+The class 'simTL4J::generics::TypeArgumentable' has no attributes.
+The class 'simTL4J::classifiers::Enumeration' has no attributes.
+The class 'simTL4J::annotations::AnnotationParameterList' has no attributes.
+The class 'EnumConstant' has no attributes.
+The class 'simTL4J::references::MethodCall' has no attributes.
+The class 'simTL4J::parameters::Parameter' has no attributes.
+The class 'types::Type' has no attributes.
+The class 'Operator' has no attributes.
+The class 'simTL4J::literals::This' has no attributes.
+The class 'simTL4J::literals::OctalIntegerLiteral' has the following attributes: 'octalValue' of type str.
+The class 'simTL4J::modifiers::Native' has no attributes.
+The class 'modifiers::AnnotationInstanceOrModifier' has no attributes.
+The class 'ArrayTypeable' has no attributes.
+The class 'simTL4J::annotations::AnnotationAttributeSetting' has no attributes.
+The class 'simTL4J::annotations::SingleAnnotationParameter' has no attributes.
+The class 'TForVariable' has no attributes.
+The class 'ArrayInitializer' has no attributes.
+The class 'simTL4J::statements::ForLoopInitializer' has no attributes.
+The class 'simTL4J::statements::ExpressionStatement' has no attributes.
+The class 'simTL4J::literals::HexFloatLiteral' has the following attributes: 'hexValue' of type float.
+The class 'Method' has no attributes.
+The class 'members::Member' has no attributes.
+The class 'simTL4J::modifiers::Strictfp' has no attributes.
+The class 'simTL4J::statements::DoWhileLoop' has no attributes.
+The class 'simTL4J::literals::DecimalFloatLiteral' has the following attributes: 'decimalValue' of type float.
+The class 'simTL4J::expressions::AdditiveExpressionChild' has no attributes.
+The class 'simTL4J::statements::WhileLoop' has no attributes.
+The class 'simTL4J::containers::Package' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'simTL4J::types::Void' has no attributes.
+The class 'simTL4J::simTL::TMethodStatementImpl' has the following attributes: 'caller' of type str.
+The class 'simTL4J::literals::DecimalIntegerLiteral' has the following attributes: 'decimalValue' of type str.
+The class 'simTL4J::modifiers::Volatile' has no attributes.
+The class 'simTL::TPlaceholder' has no attributes.
+The class 'AndExpressionChild' has no attributes.
+The class 'UnaryModificationExpression' has no attributes.
+The class 'simTL4J::references::PrimitiveTypeReference' has no attributes.
+The class 'simTL4J::statements::SynchronizedBlock' has no attributes.
+The class 'simTL4J::expressions::ConditionalExpression' has no attributes.
+The class 'ElementReference' has no attributes.
+The class 'simTL4J::members::MemberContainer' has no attributes.
+The class 'ArrayInitializationValue' has no attributes.
+The class 'containers::JavaRoot' has no attributes.
+The class 'Import' has no attributes.
+The class 'simTL4J::imports::ImportingElement' has no attributes.
+The class 'simTL4J::operators::AssignmentUnsignedRightShift' has no attributes.
+The class 'NamespaceClassifierReference' has no attributes.
+The class 'TypeParameter' has no attributes.
+The class 'simTL4J::statements::Break' has no attributes.
+The class 'simTL4J::expressions::UnaryModificationExpressionChild' has no attributes.
+The class 'simTL4J::operators::ShiftOperator' has no attributes.
+The class 'simTL4J::types::Float' has no attributes.
+The class 'simTL4J::imports::StaticMemberImport' has no attributes.
+The class 'ConditionalOrExpressionChild' has no attributes.
+The class 'simTL4J::simTL::TIf::StatementListContainer' has no attributes.
+The class 'simTL4J::literals::IntegerLiteral' has no attributes.
+The class 'simTL4J::operators::LessThan' has no attributes.
+The class 'simTL4J::arrays::ArrayInstantiationBySize' has no attributes.
+The class 'simTL4J::literals::Literal' has no attributes.
+The class 'statements::ForLoopInitializer' has no attributes.
+The class 'simTL4J::literals::Self' has no attributes.
+The class 'simTL4J::modifiers::Synchronized' has no attributes.
+The class 'simTL4J::operators::AssignmentAnd' has no attributes.
+The class 'modifiers::Modifiable' has no attributes.
+The class 'simTL4J::arrays::ArrayInstantiationByValues' has no attributes.
+The class 'simTL4J::expressions::ConditionalOrExpression' has no attributes.
+The class 'commons::NamespaceAwareElement' has no attributes.
+The class 'UnaryExpressionChild' has no attributes.
+The class 'simTL4J::variables::LocalVariable' has no attributes.
+The class 'references::ElementReference' has no attributes.
+The class 'simTL4J::members::EnumConstant' has no attributes.
+The class 'simTL4J::expressions::ExclusiveOrExpressionChild' has no attributes.
+The class 'Statement' has no attributes.
+The class 'simTL4J::statements::Continue' has no attributes.
+The class 'simTL4J::types::TypedElement' has no attributes.
+The class 'types::TypeReference' has no attributes.
+The class 'simTL4J::literals::DecimalLongLiteral' has the following attributes: 'decimalValue' of type str.
+The class 'simTL4J::parameters::Parametrizable' has no attributes.
+The class 'simTL4J::operators::UnsignedRightShift' has no attributes.
+The class 'simTL4J::imports::Import' has no attributes.
+The class 'simTL4J::types::Double' has no attributes.
+The class 'simTL4J::operators::RightShift' has no attributes.
+The class 'simTL4J::instantiations::ExplicitConstructorCall' has no attributes.
+'simTL4J::annotations::SingleAnnotationParameter' is a specialization of 'AnnotationParameter'.
+'simTL4J::instantiations::Instantiation' is a specialization of 'types::TypedElement'.
+'simTL4J::simTL::TPlaceholder::PrimaryExpression' is a specialization of 'expressions::PrimaryExpression'.
+'simTL4J::literals::OctalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'simTL4J::classifiers::Enumeration' is a specialization of 'classifiers::Implementor'.
+'simTL4J::annotations::AnnotationAttribute' is a specialization of 'InterfaceMethod'.
+'simTL4J::expressions::PrimaryExpression' is a specialization of 'UnaryModificationExpressionChild'.
+'simTL4J::expressions::SuffixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+'simTL4J::types::TypeReference' is a specialization of 'Commentable'.
+'simTL4J::expressions::ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+'simTL4J::simTL::TIf::StatementListContainer' is a specialization of 'simTL::TIf'.
+'simTL4J::imports::ImportingElement' is a specialization of 'Commentable'.
+'simTL4J::expressions::UnaryModificationExpressionChild' is a specialization of 'UnaryExpressionChild'.
+'simTL4J::containers::CompilationUnit' is a specialization of 'JavaRoot'.
+'simTL4J::types::ClassifierReference' is a specialization of 'types::TypeReference'.
+'simTL4J::classifiers::Annotation' is a specialization of 'ConcreteClassifier'.
+'simTL4J::simTL::TFor::StatementListContainer' is a specialization of 'statements::Statement'.
+'simTL4J::classifiers::AnonymousClass' is a specialization of 'types::Type'.
+'simTL4J::annotations::Annotable' is a specialization of 'Commentable'.
+'simTL4J::variables::AdditionalLocalVariable' is a specialization of 'instantiations::Initializable'.
+'simTL4J::instantiations::Instantiation' is a specialization of 'generics::TypeArgumentable'.
+'simTL4J::generics::TypeArgument' is a specialization of 'ArrayTypeable'.
+'simTL4J::containers::JavaRoot' is a specialization of 'commons::NamespaceAwareElement'.
+'simTL4J::simTL::TIf::StatementListContainer' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::literals::BooleanLiteral' is a specialization of 'Literal'.
+'simTL4J::types::Char' is a specialization of 'PrimitiveType'.
+'simTL4J::expressions::AssignmentExpressionChild' is a specialization of 'Expression'.
+'simTL4J::expressions::ExclusiveOrExpression' is a specialization of 'InclusiveOrExpressionChild'.
+'simTL4J::expressions::MultiplicativeExpressionChild' is a specialization of 'AdditiveExpressionChild'.
+'simTL4J::expressions::InstanceOfExpressionChild' is a specialization of 'EqualityExpressionChild'.
+'simTL4J::types::Boolean' is a specialization of 'PrimitiveType'.
+'simTL4J::imports::ClassifierImport' is a specialization of 'Import'.
+'simTL4J::expressions::EqualityExpression' is a specialization of 'AndExpressionChild'.
+'simTL4J::types::Short' is a specialization of 'PrimitiveType'.
+'simTL4J::expressions::ConditionalOrExpressionChild' is a specialization of 'ConditionalExpressionChild'.
+'simTL4J::arrays::ArraySelector' is a specialization of 'Commentable'.
+'simTL4J::annotations::AnnotationParameter' is a specialization of 'Commentable'.
+'simTL4J::arrays::ArrayInstantiationBySize' is a specialization of 'types::TypedElement'.
+'simTL4J::classifiers::ConcreteClassifier' is a specialization of 'statements::Statement'.
+'simTL4J::variables::LocalVariable' is a specialization of 'modifiers::AnnotableAndModifiable'.
+'simTL4J::expressions::ExclusiveOrExpressionChild' is a specialization of 'InclusiveOrExpressionChild'.
+'simTL4J::variables::AdditionalLocalVariable' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::imports::StaticMemberImport' is a specialization of 'StaticImport'.
+'simTL4J::types::ClassifierReference' is a specialization of 'generics::TypeArgumentable'.
+'simTL4J::classifiers::ConcreteClassifier' is a specialization of 'members::MemberContainer'.
+'simTL4J::arrays::ArrayInitializer' is a specialization of 'arrays::ArrayInitializationValue'.
+'simTL4J::types::PrimitiveType' is a specialization of 'types::Type'.
+'simTL4J::expressions::UnaryExpressionChild' is a specialization of 'MultiplicativeExpressionChild'.
+'simTL4J::classifiers::ConcreteClassifier' is a specialization of 'modifiers::AnnotableAndModifiable'.
+'simTL4J::variables::Variable' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::expressions::InstanceOfExpression' is a specialization of 'types::TypedElement'.
+'simTL4J::instantiations::Instantiation' is a specialization of 'references::Reference'.
+'simTL4J::arrays::ArrayInstantiationBySize' is a specialization of 'expressions::Expression'.
+'simTL4J::expressions::ExpressionList' is a specialization of 'ForLoopInitializer'.
+'simTL4J::expressions::ShiftExpression' is a specialization of 'RelationExpressionChild'.
+'simTL4J::generics::UnknownTypeArgument' is a specialization of 'TypeArgument'.
+'simTL4J::simTL::TFor::MemberContainer' is a specialization of 'members::Member'.
+'simTL4J::types::Float' is a specialization of 'PrimitiveType'.
+'simTL4J::variables::Variable' is a specialization of 'commons::NamedElement'.
+'simTL4J::classifiers::ConcreteClassifier' is a specialization of 'classifiers::Classifier'.
+'simTL4J::expressions::AdditiveExpressionChild' is a specialization of 'ShiftExpressionChild'.
+'simTL4J::arrays::ArrayInstantiationBySize' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::variables::Variable' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::types::Double' is a specialization of 'PrimitiveType'.
+'simTL4J::generics::TypeParameter' is a specialization of 'Classifier'.
+'simTL4J::commons::NamespaceAwareElement' is a specialization of 'Commentable'.
+'simTL4J::generics::SuperTypeArgument' is a specialization of 'TypeArgument'.
+'simTL4J::containers::EmptyModel' is a specialization of 'JavaRoot'.
+'simTL4J::classifiers::Implementor' is a specialization of 'Commentable'.
+'simTL4J::simTL::TUnaryOperatorNOT' is a specialization of 'TUnaryOperator'.
+'simTL4J::expressions::InstanceOfExpression' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::expressions::AssignmentExpression' is a specialization of 'Expression'.
+'simTL4J::simTL::TFor::StatementListContainer' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::variables::LocalVariable' is a specialization of 'statements::ForLoopInitializer'.
+'simTL4J::containers::Package' is a specialization of 'containers::JavaRoot'.
+'simTL4J::expressions::InstanceOfExpression' is a specialization of 'expressions::EqualityExpressionChild'.
+'simTL4J::expressions::CastExpression' is a specialization of 'expressions::UnaryModificationExpressionChild'.
+'simTL4J::classifiers::Class' is a specialization of 'classifiers::ConcreteClassifier'.
+'simTL4J::containers::Package' is a specialization of 'annotations::Annotable'.
+'simTL4J::variables::Variable' is a specialization of 'generics::TypeArgumentable'.
+'simTL4J::types::Type' is a specialization of 'Commentable'.
+'simTL4J::simTL::TFor::MemberContainer' is a specialization of 'members::MemberContainer'.
+'simTL4J::expressions::InclusiveOrExpression' is a specialization of 'ConditionalAndExpressionChild'.
+'simTL4J::annotations::AnnotationInstance' is a specialization of 'modifiers::AnnotationInstanceOrModifier'.
+'simTL4J::arrays::ArrayInstantiationByValues' is a specialization of 'types::TypedElement'.
+'simTL4J::expressions::RelationExpression' is a specialization of 'InstanceOfExpressionChild'.
+'simTL4J::expressions::AndExpressionChild' is a specialization of 'ExclusiveOrExpressionChild'.
+'simTL4J::classifiers::Classifier' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::arrays::ArrayInstantiationByValues' is a specialization of 'references::Reference'.
+'simTL4J::arrays::ArrayDimension' is a specialization of 'Commentable'.
+'simTL4J::containers::JavaRoot' is a specialization of 'imports::ImportingElement'.
+'simTL4J::classifiers::ConcreteClassifier' is a specialization of 'generics::TypeParametrizable'.
+'simTL4J::expressions::MultiplicativeExpression' is a specialization of 'AdditiveExpressionChild'.
+'simTL4J::classifiers::Enumeration' is a specialization of 'classifiers::ConcreteClassifier'.
+'simTL4J::types::Byte' is a specialization of 'PrimitiveType'.
+'simTL4J::expressions::EqualityExpressionChild' is a specialization of 'AndExpressionChild'.
+'simTL4J::simTL::TUnaryOperator' is a specialization of 'TAbstractMethodStatement'.
+'simTL4J::variables::AdditionalLocalVariable' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::generics::QualifiedTypeArgument' is a specialization of 'types::TypedElement'.
+'simTL4J::literals::Literal' is a specialization of 'PrimaryExpression'.
+'simTL4J::expressions::ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+'simTL4J::types::TypedElement' is a specialization of 'Commentable'.
+'simTL4J::generics::CallTypeArgumentable' is a specialization of 'Commentable'.
+'simTL4J::classifiers::Interface' is a specialization of 'ConcreteClassifier'.
+'simTL4J::containers::JavaRoot' is a specialization of 'commons::NamedElement'.
+'simTL4J::annotations::AnnotationValue' is a specialization of 'Commentable'.
+'simTL4J::simTL::TFor::MemberContainer' is a specialization of 'simTL::TFor'.
+'simTL4J::annotations::AnnotationParameterList' is a specialization of 'AnnotationParameter'.
+'simTL4J::literals::Self' is a specialization of 'Commentable'.
+'simTL4J::generics::ExtendsTypeArgument' is a specialization of 'TypeArgument'.
+'simTL4J::expressions::CastExpression' is a specialization of 'types::TypedElement'.
+'simTL4J::instantiations::NewConstructorCall' is a specialization of 'instantiations::Instantiation'.
+'simTL4J::literals::FloatLiteral' is a specialization of 'Literal'.
+'simTL4J::simTL::TIf::MemberContainer' is a specialization of 'members::MemberContainer'.
+'simTL4J::variables::LocalVariable' is a specialization of 'instantiations::Initializable'.
+'simTL4J::imports::StaticClassifierImport' is a specialization of 'StaticImport'.
+'simTL4J::expressions::InclusiveOrExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+'simTL4J::generics::TypeArgumentable' is a specialization of 'Commentable'.
+'simTL4J::simTL::TIf::StatementListContainer' is a specialization of 'statements::Statement'.
+'simTL4J::expressions::AndExpression' is a specialization of 'ExclusiveOrExpressionChild'.
+'simTL4J::arrays::ArrayInstantiationBySize' is a specialization of 'references::Reference'.
+'simTL4J::classifiers::AnonymousClass' is a specialization of 'members::MemberContainer'.
+'simTL4J::simTL::TIf::MemberContainer' is a specialization of 'members::Member'.
+'simTL4J::expressions::CastExpression' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::arrays::ArrayInstantiationByValues' is a specialization of 'expressions::Expression'.
+'simTL4J::types::Void' is a specialization of 'PrimitiveType'.
+'simTL4J::imports::StaticImport' is a specialization of 'Import'.
+'simTL4J::expressions::ConditionalExpressionChild' is a specialization of 'AssignmentExpressionChild'.
+'simTL4J::expressions::Expression' is a specialization of 'annotations::AnnotationValue'.
+'simTL4J::literals::CharacterLiteral' is a specialization of 'Literal'.
+'simTL4J::generics::QualifiedTypeArgument' is a specialization of 'generics::TypeArgument'.
+'simTL4J::arrays::ArrayTypeable' is a specialization of 'Commentable'.
+'simTL4J::types::Int' is a specialization of 'PrimitiveType'.
+'simTL4J::classifiers::ConcreteClassifier' is a specialization of 'members::Member'.
+'simTL4J::expressions::ConditionalExpression' is a specialization of 'AssignmentExpressionChild'.
+'simTL4J::arrays::ArrayInstantiationByValues' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::simTL::TFor::StatementListContainer' is a specialization of 'simTL::TFor'.
+'simTL4J::expressions::ShiftExpressionChild' is a specialization of 'RelationExpressionChild'.
+'simTL4J::containers::Package' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::arrays::ArrayInitializer' is a specialization of 'annotations::AnnotationValue'.
+'simTL4J::types::PrimitiveType' is a specialization of 'types::TypeReference'.
+'simTL4J::classifiers::Classifier' is a specialization of 'types::Type'.
+'simTL4J::variables::LocalVariable' is a specialization of 'variables::Variable'.
+'simTL4J::annotations::AnnotationInstance' is a specialization of 'commons::NamespaceAwareElement'.
+'simTL4J::instantiations::NewConstructorCall' is a specialization of 'generics::CallTypeArgumentable'.
+'simTL4J::expressions::UnaryExpression' is a specialization of 'MultiplicativeExpressionChild'.
+'simTL4J::expressions::RelationExpressionChild' is a specialization of 'InstanceOfExpressionChild'.
+'simTL4J::expressions::UnaryModificationExpression' is a specialization of 'UnaryExpressionChild'.
+'simTL4J::instantiations::Initializable' is a specialization of 'Commentable'.
+'simTL4J::annotations::AnnotationAttributeSetting' is a specialization of 'Commentable'.
+'simTL4J::variables::Variable' is a specialization of 'types::TypedElement'.
+'simTL4J::expressions::AdditiveExpression' is a specialization of 'ShiftExpressionChild'.
+'simTL4J::simTL::TPlaceholder::PrimaryExpression' is a specialization of 'simTL::TPlaceholder'.
+'simTL4J::annotations::AnnotationInstance' is a specialization of 'references::Reference'.
+'simTL4J::classifiers::Class' is a specialization of 'classifiers::Implementor'.
+'simTL4J::statements::Switch' is a specialization of 'Statement'.
+'simTL4J::imports::Import' is a specialization of 'NamespaceAwareElement'.
+'simTL4J::arrays::ArrayInitializationValue' is a specialization of 'Commentable'.
+'simTL4J::expressions::ConditionalOrExpression' is a specialization of 'ConditionalExpressionChild'.
+'simTL4J::generics::TypeParametrizable' is a specialization of 'Commentable'.
+'simTL4J::expressions::PrefixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+'simTL4J::types::Long' is a specialization of 'PrimitiveType'.
+'simTL4J::instantiations::Instantiation' is a specialization of 'references::Argumentable'.
+'simTL4J::simTL::TIf::MemberContainer' is a specialization of 'simTL::TIf'.
+'simTL4J::statements::NormalSwitchCase' is a specialization of 'statements::Conditional'.
+'simTL4J::simTL::TMethodStatementImpl' is a specialization of 'TAbstractMethodStatement'.
+'simTL4J::imports::PackageImport' is a specialization of 'Import'.
+'simTL4J::commons::NamedElement' is a specialization of 'Commentable'.
+'simTL4J::expressions::NestedExpression' is a specialization of 'Reference'.
+'simTL4J::types::NamespaceClassifierReference' is a specialization of 'types::TypeReference'.
+'simTL4J::types::NamespaceClassifierReference' is a specialization of 'commons::NamespaceAwareElement'.
+'simTL4J::expressions::Expression' is a specialization of 'arrays::ArrayInitializationValue'.
+'simTL4J::instantiations::ExplicitConstructorCall' is a specialization of 'Instantiation'.
+'simTL4J::members::ExceptionThrower' is a specialization of 'Commentable'.
+'simTL4J::members::Field' is a specialization of 'modifiers::AnnotableAndModifiable'.
+'simTL4J::statements::TryBlock' is a specialization of 'statements::Statement'.
+'simTL4J::operators::AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+'simTL4J::statements::EmptyStatement' is a specialization of 'Statement'.
+'simTL4J::members::AdditionalField' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::operators::AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+'simTL4J::operators::LeftShift' is a specialization of 'ShiftOperator'.
+'simTL4J::statements::SynchronizedBlock' is a specialization of 'statements::Statement'.
+'simTL4J::members::Method' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::parameters::VariableLengthParameter' is a specialization of 'Parameter'.
+'simTL4J::references::MethodCall' is a specialization of 'references::ElementReference'.
+'simTL4J::statements::ForLoop' is a specialization of 'statements::Statement'.
+'simTL4J::statements::ForEachLoop' is a specialization of 'statements::StatementContainer'.
+'simTL4J::operators::AssignmentDivision' is a specialization of 'AssignmentOperator'.
+'simTL4J::statements::Return' is a specialization of 'Statement'.
+'simTL4J::literals::HexFloatLiteral' is a specialization of 'FloatLiteral'.
+'simTL4J::references::ReferenceableElement' is a specialization of 'NamedElement'.
+'simTL4J::statements::Block' is a specialization of 'modifiers::Modifiable'.
+'simTL4J::literals::HexLongLiteral' is a specialization of 'LongLiteral'.
+'simTL4J::literals::LongLiteral' is a specialization of 'Literal'.
+'simTL4J::parameters::Parametrizable' is a specialization of 'Commentable'.
+'simTL4J::operators::UnaryOperator' is a specialization of 'Operator'.
+'simTL4J::members::InterfaceMethod' is a specialization of 'Method'.
+'simTL4J::operators::AssignmentOperator' is a specialization of 'Operator'.
+'simTL4J::statements::JumpLabel' is a specialization of 'statements::Statement'.
+'simTL4J::members::Method' is a specialization of 'parameters::Parametrizable'.
+'simTL4J::statements::WhileLoop' is a specialization of 'statements::StatementContainer'.
+'simTL4J::members::EnumConstant' is a specialization of 'annotations::Annotable'.
+'simTL4J::members::Method' is a specialization of 'members::ExceptionThrower'.
+'simTL4J::operators::PlusPlus' is a specialization of 'UnaryModificationOperator'.
+'simTL4J::statements::Throw' is a specialization of 'Statement'.
+'simTL4J::statements::Jump' is a specialization of 'Statement'.
+'simTL4J::operators::NotEqual' is a specialization of 'EqualityOperator'.
+'simTL4J::parameters::Parameter' is a specialization of 'modifiers::AnnotableAndModifiable'.
+'simTL4J::modifiers::Modifier' is a specialization of 'AnnotationInstanceOrModifier'.
+'simTL4J::operators::Addition' is a specialization of 'operators::UnaryOperator'.
+'simTL4J::operators::AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+'simTL4J::members::Method' is a specialization of 'modifiers::AnnotableAndModifiable'.
+'simTL4J::operators::MinusMinus' is a specialization of 'UnaryModificationOperator'.
+'simTL4J::parameters::OrdinaryParameter' is a specialization of 'Parameter'.
+'simTL4J::statements::JumpLabel' is a specialization of 'statements::StatementContainer'.
+'simTL4J::references::PrimitiveTypeReference' is a specialization of 'Reference'.
+'simTL4J::statements::Block' is a specialization of 'members::Member'.
+'simTL4J::operators::Operator' is a specialization of 'Commentable'.
+'simTL4J::statements::ForLoop' is a specialization of 'statements::Conditional'.
+'simTL4J::statements::LocalVariableStatement' is a specialization of 'Statement'.
+'simTL4J::statements::StatementListContainer' is a specialization of 'Commentable'.
+'simTL4J::references::MethodCall' is a specialization of 'generics::CallTypeArgumentable'.
+'simTL4J::modifiers::AnnotationInstanceOrModifier' is a specialization of 'Commentable'.
+'simTL4J::operators::AssignmentAnd' is a specialization of 'AssignmentOperator'.
+'simTL4J::members::Constructor' is a specialization of 'members::Member'.
+'simTL4J::statements::Conditional' is a specialization of 'Commentable'.
+'simTL4J::statements::DoWhileLoop' is a specialization of 'WhileLoop'.
+'simTL4J::modifiers::Native' is a specialization of 'Modifier'.
+'simTL4J::operators::GreaterThan' is a specialization of 'RelationOperator'.
+'simTL4J::references::ReflectiveClassReference' is a specialization of 'Reference'.
+'simTL4J::members::Field' is a specialization of 'members::Member'.
+'simTL4J::operators::AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+'simTL4J::statements::DefaultSwitchCase' is a specialization of 'SwitchCase'.
+'simTL4J::statements::Condition' is a specialization of 'statements::Conditional'.
+'simTL4J::members::Field' is a specialization of 'variables::Variable'.
+'simTL4J::operators::Complement' is a specialization of 'UnaryOperator'.
+'simTL4J::operators::AssignmentMinus' is a specialization of 'AssignmentOperator'.
+'simTL4J::statements::SwitchCase' is a specialization of 'StatementListContainer'.
+'simTL4J::statements::JumpLabel' is a specialization of 'commons::NamedElement'.
+'simTL4J::operators::ShiftOperator' is a specialization of 'Operator'.
+'simTL4J::operators::LessThan' is a specialization of 'RelationOperator'.
+'simTL4J::operators::UnaryModificationOperator' is a specialization of 'Operator'.
+'simTL4J::literals::Super' is a specialization of 'Self'.
+'simTL4J::members::Constructor' is a specialization of 'parameters::Parametrizable'.
+'simTL4J::operators::AssignmentOr' is a specialization of 'AssignmentOperator'.
+'simTL4J::references::Reference' is a specialization of 'expressions::PrimaryExpression'.
+'simTL4J::operators::Addition' is a specialization of 'operators::AdditiveOperator'.
+'simTL4J::references::Reference' is a specialization of 'generics::TypeArgumentable'.
+'simTL4J::statements::NormalSwitchCase' is a specialization of 'statements::SwitchCase'.
+'simTL4J::modifiers::Protected' is a specialization of 'Modifier'.
+'simTL4J::references::SelfReference' is a specialization of 'Reference'.
+'simTL4J::operators::Division' is a specialization of 'MultiplicativeOperator'.
+'simTL4J::operators::Subtraction' is a specialization of 'operators::AdditiveOperator'.
+'simTL4J::modifiers::Strictfp' is a specialization of 'Modifier'.
+'simTL4J::modifiers::AnnotableAndModifiable' is a specialization of 'Commentable'.
+'simTL4J::references::Argumentable' is a specialization of 'Commentable'.
+'simTL4J::statements::Condition' is a specialization of 'statements::StatementContainer'.
+'simTL4J::members::Method' is a specialization of 'types::TypedElement'.
+'simTL4J::statements::Block' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::statements::Condition' is a specialization of 'statements::Statement'.
+'simTL4J::members::Member' is a specialization of 'NamedElement'.
+'simTL4J::operators::Remainder' is a specialization of 'MultiplicativeOperator'.
+'simTL4J::modifiers::Abstract' is a specialization of 'Modifier'.
+'simTL4J::operators::Equal' is a specialization of 'EqualityOperator'.
+'simTL4J::statements::ForLoopInitializer' is a specialization of 'Commentable'.
+'simTL4J::statements::Assert' is a specialization of 'statements::Conditional'.
+'simTL4J::literals::IntegerLiteral' is a specialization of 'Literal'.
+'simTL4J::operators::Subtraction' is a specialization of 'operators::UnaryOperator'.
+'simTL4J::members::Constructor' is a specialization of 'generics::TypeParametrizable'.
+'simTL4J::operators::RightShift' is a specialization of 'ShiftOperator'.
+'simTL4J::operators::Multiplication' is a specialization of 'MultiplicativeOperator'.
+'simTL4J::modifiers::Volatile' is a specialization of 'Modifier'.
+'simTL4J::literals::NullLiteral' is a specialization of 'Literal'.
+'simTL4J::members::AdditionalField' is a specialization of 'instantiations::Initializable'.
+'simTL4J::modifiers::Transient' is a specialization of 'Modifier'.
+'simTL4J::statements::SynchronizedBlock' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::literals::DecimalDoubleLiteral' is a specialization of 'DoubleLiteral'.
+'simTL4J::operators::RelationOperator' is a specialization of 'Operator'.
+'simTL4J::operators::AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+'simTL4J::operators::AssignmentModulo' is a specialization of 'AssignmentOperator'.
+'simTL4J::statements::Block' is a specialization of 'statements::Statement'.
+'simTL4J::statements::ExpressionStatement' is a specialization of 'Statement'.
+'simTL4J::literals::HexIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'simTL4J::operators::Assignment' is a specialization of 'AssignmentOperator'.
+'simTL4J::statements::StatementContainer' is a specialization of 'Commentable'.
+'simTL4J::members::EmptyMember' is a specialization of 'Member'.
+'simTL4J::references::StringReference' is a specialization of 'Reference'.
+'simTL4J::references::MethodCall' is a specialization of 'references::Argumentable'.
+'simTL4J::operators::EqualityOperator' is a specialization of 'Operator'.
+'simTL4J::modifiers::Synchronized' is a specialization of 'Modifier'.
+'simTL4J::members::ClassMethod' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::members::ClassMethod' is a specialization of 'members::Method'.
+'simTL4J::statements::Statement' is a specialization of 'Commentable'.
+'simTL4J::operators::GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+'simTL4J::members::EnumConstant' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::operators::AssignmentPlus' is a specialization of 'AssignmentOperator'.
+'simTL4J::operators::UnsignedRightShift' is a specialization of 'ShiftOperator'.
+'simTL4J::literals::This' is a specialization of 'Self'.
+'simTL4J::members::Constructor' is a specialization of 'modifiers::AnnotableAndModifiable'.
+'simTL4J::members::Method' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::members::EnumConstant' is a specialization of 'references::Argumentable'.
+'simTL4J::members::MemberContainer' is a specialization of 'Commentable'.
+'simTL4J::members::AdditionalField' is a specialization of 'arrays::ArrayTypeable'.
+'simTL4J::members::Constructor' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::modifiers::Public' is a specialization of 'Modifier'.
+'simTL4J::statements::CatchBlock' is a specialization of 'StatementListContainer'.
+'simTL4J::members::Method' is a specialization of 'members::Member'.
+'simTL4J::members::Field' is a specialization of 'references::ReferenceableElement'.
+'simTL4J::literals::OctalLongLiteral' is a specialization of 'LongLiteral'.
+'simTL4J::members::Method' is a specialization of 'generics::TypeParametrizable'.
+'simTL4J::parameters::Parameter' is a specialization of 'variables::Variable'.
+'simTL4J::modifiers::Static' is a specialization of 'Modifier'.
+'simTL4J::statements::Continue' is a specialization of 'Jump'.
+'simTL4J::statements::Break' is a specialization of 'Jump'.
+'simTL4J::operators::AdditiveOperator' is a specialization of 'Operator'.
+'simTL4J::members::Constructor' is a specialization of 'members::ExceptionThrower'.
+'simTL4J::modifiers::Modifiable' is a specialization of 'Commentable'.
+'simTL4J::references::ElementReference' is a specialization of 'Reference'.
+'simTL4J::statements::WhileLoop' is a specialization of 'statements::Statement'.
+'simTL4J::operators::MultiplicativeOperator' is a specialization of 'Operator'.
+'simTL4J::statements::Assert' is a specialization of 'statements::Statement'.
+'simTL4J::members::Field' is a specialization of 'instantiations::Initializable'.
+'simTL4J::statements::ForLoop' is a specialization of 'statements::StatementContainer'.
+'simTL4J::modifiers::Private' is a specialization of 'Modifier'.
+'simTL4J::literals::DecimalFloatLiteral' is a specialization of 'FloatLiteral'.
+'simTL4J::operators::Negate' is a specialization of 'UnaryOperator'.
+'simTL4J::literals::DecimalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'simTL4J::statements::ForEachLoop' is a specialization of 'statements::Statement'.
+'simTL4J::literals::DoubleLiteral' is a specialization of 'Literal'.
+'simTL4J::statements::TryBlock' is a specialization of 'statements::StatementListContainer'.
+'simTL4J::modifiers::Final' is a specialization of 'Modifier'.
+'simTL4J::literals::DecimalLongLiteral' is a specialization of 'LongLiteral'.
+'simTL4J::operators::LessThanOrEqual' is a specialization of 'RelationOperator'.
+'simTL4J::references::IdentifierReference' is a specialization of 'ElementReference'.
+'simTL4J::literals::HexDoubleLiteral' is a specialization of 'DoubleLiteral'.
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'simTL4J::statements::StatementContainer' (role 'simTL4J_statements_StatementContainer', cardinality 0..*).
+'simTL4J::annotations::AnnotationAttribute' (role 'simTL4J_annotations_AnnotationAttribute', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'Block' (role 'Block', cardinality 0..*) is associated with 'simTL4J::statements::TryBlock' (role 'simTL4J_statements_TryBlock159', cardinality 0..*).
+'simTL4J::expressions::AssignmentExpression' (role 'simTL4J_expressions_AssignmentExpression42', cardinality 0..*) is associated with 'AssignmentOperator' (role 'AssignmentOperator', cardinality 0..*).
+'EqualityExpressionChild' (role 'EqualityExpressionChild', cardinality 0..*) is associated with 'simTL4J::expressions::EqualityExpression' (role 'simTL4J_expressions_EqualityExpression60', cardinality 0..*).
+'EqualityOperator' (role 'EqualityOperator', cardinality 0..*) is associated with 'simTL4J::expressions::EqualityExpression' (role 'simTL4J_expressions_EqualityExpression', cardinality 0..*).
+'TAbstractMethodStatement' (role 'TAbstractMethodStatement171', cardinality 0..*) is associated with 'simTL4J::simTL::TForVariable' (role 'simTL4J_simTL_TForVariable', cardinality 0..*).
+'simTL4J::statements::ForLoop' (role 'simTL4J_statements_ForLoop', cardinality 0..*) is associated with 'ForLoopInitializer' (role 'ForLoopInitializer', cardinality 0..*).
+'simTL4J::simTL::TIf' (role 'simTL4J_simTL_TIf', cardinality 0..*) is associated with 'TAbstractMethodStatement' (role 'TAbstractMethodStatement', cardinality 0..*).
+'TPlaceholder' (role 'TPlaceholder', cardinality 0..*) is associated with 'simTL4J::commons::NamedElement' (role 'simTL4J_commons_NamedElement', cardinality 0..*).
+'simTL4J::expressions::AdditiveExpression' (role 'simTL4J_expressions_AdditiveExpression70', cardinality 0..*) is associated with 'AdditiveOperator' (role 'AdditiveOperator', cardinality 0..*).
+'Expression' (role 'Expression154', cardinality 0..*) is associated with 'simTL4J::statements::SynchronizedBlock' (role 'simTL4J_statements_SynchronizedBlock', cardinality 0..*).
+'simTL4J::statements::Return' (role 'simTL4J_statements_Return', cardinality 0..*) is associated with 'Expression' (role 'Expression148', cardinality 0..*).
+'simTL4J::classifiers::Interface' (role 'simTL4J_classifiers_Interface', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference28', cardinality 0..*).
+'Expression' (role 'Expression128', cardinality 0..*) is associated with 'simTL4J::statements::Conditional' (role 'simTL4J_statements_Conditional', cardinality 0..*).
+'Import' (role 'Import', cardinality 0..*) is associated with 'simTL4J::imports::ImportingElement' (role 'simTL4J_imports_ImportingElement', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'simTL4J::containers::Package' (role 'simTL4J_containers_Package37', cardinality 0..*).
+'simTL4J::statements::Assert' (role 'simTL4J_statements_Assert', cardinality 0..*) is associated with 'Expression' (role 'Expression130', cardinality 0..*).
+'UnaryModificationOperator' (role 'UnaryModificationOperator', cardinality 0..*) is associated with 'simTL4J::expressions::UnaryModificationExpression' (role 'simTL4J_expressions_UnaryModificationExpression79', cardinality 0..*).
+'LocalVariable' (role 'LocalVariable', cardinality 0..*) is associated with 'simTL4J::statements::LocalVariableStatement' (role 'simTL4J_statements_LocalVariableStatement', cardinality 0..*).
+'UnaryOperator' (role 'UnaryOperator', cardinality 0..*) is associated with 'simTL4J::expressions::UnaryExpression' (role 'simTL4J_expressions_UnaryExpression', cardinality 0..*).
+'simTL4J::parameters::Parametrizable' (role 'simTL4J_parameters_Parametrizable', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'AdditionalLocalVariable' (role 'AdditionalLocalVariable', cardinality 0..*) is associated with 'simTL4J::variables::LocalVariable' (role 'simTL4J_variables_LocalVariable', cardinality 0..*).
+'TAbstractMethodStatement' (role 'TAbstractMethodStatement177', cardinality 0..*) is associated with 'simTL4J::simTL::TPlaceholder' (role 'simTL4J_simTL_TPlaceholder', cardinality 0..*).
+'simTL4J::instantiations::ExplicitConstructorCall' (role 'simTL4J_instantiations_ExplicitConstructorCall', cardinality 0..*) is associated with 'Self' (role 'Self', cardinality 0..*).
+'simTL4J::simTL::TMethodStatementImpl' (role 'simTL4J_simTL_TMethodStatementImpl', cardinality 0..*) is associated with 'TMethodCall' (role 'TMethodCall', cardinality 0..*).
+'Expression' (role 'Expression49', cardinality 0..*) is associated with 'simTL4J::expressions::ConditionalExpression' (role 'simTL4J_expressions_ConditionalExpression48', cardinality 0..*).
+'simTL4J::expressions::CastExpression' (role 'simTL4J_expressions_CastExpression', cardinality 0..*) is associated with 'MultiplicativeExpressionChild' (role 'MultiplicativeExpressionChild81', cardinality 0..*).
+'simTL4J::annotations::AnnotationInstance' (role 'simTL4J_annotations_AnnotationInstance3', cardinality 0..*) is associated with 'AnnotationParameter' (role 'AnnotationParameter', cardinality 0..*).
+'simTL4J::classifiers::Interface' (role 'simTL4J_classifiers_Interface30', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference31', cardinality 0..*).
+'Statement' (role 'Statement126', cardinality 0..*) is associated with 'simTL4J::statements::StatementListContainer' (role 'simTL4J_statements_StatementListContainer', cardinality 0..*).
+'simTL4J::expressions::UnaryModificationExpression' (role 'simTL4J_expressions_UnaryModificationExpression', cardinality 0..*) is associated with 'UnaryModificationExpressionChild' (role 'UnaryModificationExpressionChild', cardinality 0..*).
+'ConcreteClassifier' (role 'ConcreteClassifier', cardinality 0..*) is associated with 'simTL4J::containers::CompilationUnit' (role 'simTL4J_containers_CompilationUnit', cardinality 0..*).
+'simTL4J::expressions::RelationExpression' (role 'simTL4J_expressions_RelationExpression64', cardinality 0..*) is associated with 'RelationOperator' (role 'RelationOperator', cardinality 0..*).
+'simTL4J::modifiers::Modifiable' (role 'simTL4J_modifiers_Modifiable', cardinality 0..*) is associated with 'Modifier' (role 'Modifier', cardinality 0..*).
+'simTL4J::statements::ExpressionStatement' (role 'simTL4J_statements_ExpressionStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression135', cardinality 0..*).
+'simTL4J::references::Reference' (role 'simTL4J_references_Reference116', cardinality 0..*) is associated with 'ArraySelector' (role 'ArraySelector', cardinality 0..*).
+'simTL4J::expressions::InstanceOfExpression' (role 'simTL4J_expressions_InstanceOfExpression', cardinality 0..*) is associated with 'InstanceOfExpressionChild' (role 'InstanceOfExpressionChild', cardinality 0..*).
+'EnumConstant' (role 'EnumConstant', cardinality 0..*) is associated with 'simTL4J::classifiers::Enumeration' (role 'simTL4J_classifiers_Enumeration', cardinality 0..*).
+'simTL4J::statements::ForEachLoop' (role 'simTL4J_statements_ForEachLoop143', cardinality 0..*) is associated with 'Expression' (role 'Expression144', cardinality 0..*).
+'InclusiveOrExpressionChild' (role 'InclusiveOrExpressionChild', cardinality 0..*) is associated with 'simTL4J::expressions::InclusiveOrExpression' (role 'simTL4J_expressions_InclusiveOrExpression', cardinality 0..*).
+'Expression' (role 'Expression156', cardinality 0..*) is associated with 'simTL4J::statements::Throw' (role 'simTL4J_statements_Throw', cardinality 0..*).
+'simTL4J::generics::TypeArgumentable' (role 'simTL4J_generics_TypeArgumentable', cardinality 0..*) is associated with 'TypeArgument' (role 'TypeArgument', cardinality 0..*).
+'TypeParameter' (role 'TypeParameter', cardinality 0..*) is associated with 'simTL4J::generics::TypeParametrizable' (role 'simTL4J_generics_TypeParametrizable', cardinality 0..*).
+'AnonymousClass' (role 'AnonymousClass', cardinality 0..*) is associated with 'simTL4J::instantiations::NewConstructorCall' (role 'simTL4J_instantiations_NewConstructorCall', cardinality 0..*).
+'simTL4J::expressions::NestedExpression' (role 'simTL4J_expressions_NestedExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression83', cardinality 0..*).
+'UnaryExpressionChild' (role 'UnaryExpressionChild', cardinality 0..*) is associated with 'simTL4J::expressions::UnaryExpression' (role 'simTL4J_expressions_UnaryExpression76', cardinality 0..*).
+'simTL4J::types::NamespaceClassifierReference' (role 'simTL4J_types_NamespaceClassifierReference', cardinality 0..*) is associated with 'ClassifierReference' (role 'ClassifierReference', cardinality 0..*).
+'InterfaceMethod' (role 'InterfaceMethod', cardinality 0..*) is associated with 'simTL4J::annotations::AnnotationAttributeSetting' (role 'simTL4J_annotations_AnnotationAttributeSetting', cardinality 0..*).
+'MultiplicativeOperator' (role 'MultiplicativeOperator', cardinality 0..*) is associated with 'simTL4J::expressions::MultiplicativeExpression' (role 'simTL4J_expressions_MultiplicativeExpression73', cardinality 0..*).
+'TModelImport' (role 'TModelImport', cardinality 0..*) is associated with 'simTL4J::simTL::TemplateHeader' (role 'simTL4J_simTL_TemplateHeader', cardinality 0..*).
+'simTL4J::expressions::AdditiveExpression' (role 'simTL4J_expressions_AdditiveExpression', cardinality 0..*) is associated with 'AdditiveExpressionChild' (role 'AdditiveExpressionChild', cardinality 0..*).
+'TAbstractMethodStatement' (role 'TAbstractMethodStatement179', cardinality 0..*) is associated with 'simTL4J::simTL::TUnaryOperator' (role 'simTL4J_simTL_TUnaryOperator', cardinality 0..*).
+'simTL4J::expressions::MultiplicativeExpression' (role 'simTL4J_expressions_MultiplicativeExpression', cardinality 0..*) is associated with 'MultiplicativeExpressionChild' (role 'MultiplicativeExpressionChild', cardinality 0..*).
+'ArrayDimension' (role 'ArrayDimension', cardinality 0..*) is associated with 'simTL4J::arrays::ArrayTypeable' (role 'simTL4J_arrays_ArrayTypeable', cardinality 0..*).
+'AssignmentExpressionChild' (role 'AssignmentExpressionChild52', cardinality 0..*) is associated with 'simTL4J::expressions::ConditionalExpression' (role 'simTL4J_expressions_ConditionalExpression51', cardinality 0..*).
+'simTL4J::containers::Package' (role 'simTL4J_containers_Package', cardinality 0..*) is associated with 'CompilationUnit' (role 'CompilationUnit', cardinality 0..*).
+'ReferenceableElement' (role 'ReferenceableElement', cardinality 0..*) is associated with 'simTL4J::imports::StaticMemberImport' (role 'simTL4J_imports_StaticMemberImport', cardinality 0..*).
+'Self' (role 'Self123', cardinality 0..*) is associated with 'simTL4J::references::SelfReference' (role 'simTL4J_references_SelfReference', cardinality 0..*).
+'RelationExpressionChild' (role 'RelationExpressionChild', cardinality 0..*) is associated with 'simTL4J::expressions::RelationExpression' (role 'simTL4J_expressions_RelationExpression', cardinality 0..*).
+'simTL4J::instantiations::Initializable' (role 'simTL4J_instantiations_Initializable', cardinality 0..*) is associated with 'Expression' (role 'Expression100', cardinality 0..*).
+'simTL4J::annotations::AnnotationParameterList' (role 'simTL4J_annotations_AnnotationParameterList', cardinality 0..*) is associated with 'AnnotationAttributeSetting' (role 'AnnotationAttributeSetting', cardinality 0..*).
+'simTL4J::modifiers::AnnotableAndModifiable' (role 'simTL4J_modifiers_AnnotableAndModifiable', cardinality 0..*) is associated with 'AnnotationInstanceOrModifier' (role 'AnnotationInstanceOrModifier', cardinality 0..*).
+'simTL4J::members::MemberContainer' (role 'simTL4J_members_MemberContainer106', cardinality 0..*) is associated with 'Member' (role 'Member107', cardinality 0..*).
+'SwitchCase' (role 'SwitchCase', cardinality 0..*) is associated with 'simTL4J::statements::Switch' (role 'simTL4J_statements_Switch', cardinality 0..*).
+'ArrayInitializationValue' (role 'ArrayInitializationValue', cardinality 0..*) is associated with 'simTL4J::arrays::ArrayInitializer' (role 'simTL4J_arrays_ArrayInitializer', cardinality 0..*).
+'simTL4J::generics::CallTypeArgumentable' (role 'simTL4J_generics_CallTypeArgumentable', cardinality 0..*) is associated with 'TypeArgument' (role 'TypeArgument86', cardinality 0..*).
+'TForVariable' (role 'TForVariable', cardinality 0..*) is associated with 'simTL4J::simTL::TFor' (role 'simTL4J_simTL_TFor', cardinality 0..*).
+'simTL4J::statements::ForEachLoop' (role 'simTL4J_statements_ForEachLoop', cardinality 0..*) is associated with 'OrdinaryParameter' (role 'OrdinaryParameter141', cardinality 0..*).
+'Expression' (role 'Expression152', cardinality 0..*) is associated with 'simTL4J::statements::Switch' (role 'simTL4J_statements_Switch151', cardinality 0..*).
+'simTL4J::classifiers::Class' (role 'simTL4J_classifiers_Class', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference23', cardinality 0..*).
+'simTL4J::statements::ForLoop' (role 'simTL4J_statements_ForLoop138', cardinality 0..*) is associated with 'Expression' (role 'Expression139', cardinality 0..*).
+'TypeReference' (role 'TypeReference89', cardinality 0..*) is associated with 'simTL4J::generics::ExtendsTypeArgument' (role 'simTL4J_generics_ExtendsTypeArgument', cardinality 0..*).
+'AnonymousClass' (role 'AnonymousClass110', cardinality 0..*) is associated with 'simTL4J::members::EnumConstant' (role 'simTL4J_members_EnumConstant', cardinality 0..*).
+'simTL4J::members::ExceptionThrower' (role 'simTL4J_members_ExceptionThrower', cardinality 0..*) is associated with 'NamespaceClassifierReference' (role 'NamespaceClassifierReference', cardinality 0..*).
+'Expression' (role 'Expression17', cardinality 0..*) is associated with 'simTL4J::arrays::ArrayInstantiationBySize' (role 'simTL4J_arrays_ArrayInstantiationBySize', cardinality 0..*).
+'Expression' (role 'Expression20', cardinality 0..*) is associated with 'simTL4J::arrays::ArraySelector' (role 'simTL4J_arrays_ArraySelector', cardinality 0..*).
+'simTL4J::annotations::AnnotationAttributeSetting' (role 'simTL4J_annotations_AnnotationAttributeSetting8', cardinality 0..*) is associated with 'AnnotationValue' (role 'AnnotationValue9', cardinality 0..*).
+'simTL4J::references::ElementReference' (role 'simTL4J_references_ElementReference', cardinality 0..*) is associated with 'ReferenceableElement' (role 'ReferenceableElement120', cardinality 0..*).
+'simTL4J::annotations::Annotable' (role 'simTL4J_annotations_Annotable', cardinality 0..*) is associated with 'AnnotationInstance' (role 'AnnotationInstance', cardinality 0..*).
+'ArrayInitializer' (role 'ArrayInitializer', cardinality 0..*) is associated with 'simTL4J::arrays::ArrayInstantiationByValues' (role 'simTL4J_arrays_ArrayInstantiationByValues', cardinality 0..*).
+'ConcreteClassifier' (role 'ConcreteClassifier97', cardinality 0..*) is associated with 'simTL4J::imports::ClassifierImport' (role 'simTL4J_imports_ClassifierImport', cardinality 0..*).
+'simTL4J::expressions::AssignmentExpression' (role 'simTL4J_expressions_AssignmentExpression', cardinality 0..*) is associated with 'AssignmentExpressionChild' (role 'AssignmentExpressionChild', cardinality 0..*).
+'Expression' (role 'Expression161', cardinality 0..*) is associated with 'simTL4J::statements::WhileLoop' (role 'simTL4J_statements_WhileLoop', cardinality 0..*).
+'simTL4J::simTL::Template' (role 'simTL4J_simTL_Template', cardinality 0..*) is associated with 'TemplateHeader' (role 'TemplateHeader', cardinality 0..*).
+'JumpLabel' (role 'JumpLabel', cardinality 0..*) is associated with 'simTL4J::statements::Jump' (role 'simTL4J_statements_Jump', cardinality 0..*).
+'Static' (role 'Static', cardinality 0..*) is associated with 'simTL4J::imports::StaticImport' (role 'simTL4J_imports_StaticImport', cardinality 0..*).
+'simTL4J::expressions::ExpressionList' (role 'simTL4J_expressions_ExpressionList', cardinality 0..*) is associated with 'Expression' (role 'Expression39', cardinality 0..*).
+'simTL4J::expressions::ShiftExpression' (role 'simTL4J_expressions_ShiftExpression67', cardinality 0..*) is associated with 'ShiftOperator' (role 'ShiftOperator', cardinality 0..*).
+'simTL4J::classifiers::Implementor' (role 'simTL4J_classifiers_Implementor', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference', cardinality 0..*).
+'simTL4J::expressions::AssignmentExpression' (role 'simTL4J_expressions_AssignmentExpression44', cardinality 0..*) is associated with 'Expression' (role 'Expression45', cardinality 0..*).
+'Statement' (role 'Statement133', cardinality 0..*) is associated with 'simTL4J::statements::Condition' (role 'simTL4J_statements_Condition', cardinality 0..*).
+'AdditionalField' (role 'AdditionalField', cardinality 0..*) is associated with 'simTL4J::members::Field' (role 'simTL4J_members_Field', cardinality 0..*).
+'simTL4J::annotations::AnnotationInstance' (role 'simTL4J_annotations_AnnotationInstance', cardinality 0..*) is associated with 'Classifier' (role 'Classifier', cardinality 0..*).
+'ShiftExpressionChild' (role 'ShiftExpressionChild', cardinality 0..*) is associated with 'simTL4J::expressions::ShiftExpression' (role 'simTL4J_expressions_ShiftExpression', cardinality 0..*).
+'simTL4J::simTL::Template' (role 'simTL4J_simTL_Template174', cardinality 0..*) is associated with 'JavaRoot' (role 'JavaRoot', cardinality 0..*).
+'simTL4J::expressions::ConditionalExpression' (role 'simTL4J_expressions_ConditionalExpression', cardinality 0..*) is associated with 'ConditionalExpressionChild' (role 'ConditionalExpressionChild', cardinality 0..*).
+'AnnotationValue' (role 'AnnotationValue', cardinality 0..*) is associated with 'simTL4J::annotations::SingleAnnotationParameter' (role 'simTL4J_annotations_SingleAnnotationParameter', cardinality 0..*).
+'simTL4J::expressions::ConditionalAndExpression' (role 'simTL4J_expressions_ConditionalAndExpression', cardinality 0..*) is associated with 'ConditionalAndExpressionChild' (role 'ConditionalAndExpressionChild', cardinality 0..*).
+'TypeReference' (role 'TypeReference163', cardinality 0..*) is associated with 'simTL4J::types::TypedElement' (role 'simTL4J_types_TypedElement', cardinality 0..*).
+'simTL4J::expressions::AndExpression' (role 'simTL4J_expressions_AndExpression', cardinality 0..*) is associated with 'AndExpressionChild' (role 'AndExpressionChild', cardinality 0..*).
+'CatchBlock' (role 'CatchBlock', cardinality 0..*) is associated with 'simTL4J::statements::TryBlock' (role 'simTL4J_statements_TryBlock', cardinality 0..*).
+'Reference' (role 'Reference', cardinality 0..*) is associated with 'simTL4J::references::Reference' (role 'simTL4J_references_Reference', cardinality 0..*).
+'ExclusiveOrExpressionChild' (role 'ExclusiveOrExpressionChild', cardinality 0..*) is associated with 'simTL4J::expressions::ExclusiveOrExpression' (role 'simTL4J_expressions_ExclusiveOrExpression', cardinality 0..*).
+'simTL4J::types::ClassifierReference' (role 'simTL4J_types_ClassifierReference', cardinality 0..*) is associated with 'Classifier' (role 'Classifier165', cardinality 0..*).
+'simTL4J::members::MemberContainer' (role 'simTL4J_members_MemberContainer', cardinality 0..*) is associated with 'Member' (role 'Member', cardinality 0..*).
+'TypeReference' (role 'TypeReference93', cardinality 0..*) is associated with 'simTL4J::generics::TypeParameter' (role 'simTL4J_generics_TypeParameter', cardinality 0..*).
+'simTL4J::classifiers::Class' (role 'simTL4J_classifiers_Class25', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference26', cardinality 0..*).
+'simTL4J::references::PrimitiveTypeReference' (role 'simTL4J_references_PrimitiveTypeReference', cardinality 0..*) is associated with 'PrimitiveType' (role 'PrimitiveType', cardinality 0..*).
+'simTL4J::references::Argumentable' (role 'simTL4J_references_Argumentable', cardinality 0..*) is associated with 'Expression' (role 'Expression118', cardinality 0..*).
+'simTL4J::expressions::ConditionalOrExpression' (role 'simTL4J_expressions_ConditionalOrExpression', cardinality 0..*) is associated with 'ConditionalOrExpressionChild' (role 'ConditionalOrExpressionChild', cardinality 0..*).
+'simTL4J::arrays::ArrayTypeable' (role 'simTL4J_arrays_ArrayTypeable13', cardinality 0..*) is associated with 'ArrayDimension' (role 'ArrayDimension14', cardinality 0..*).
+'OrdinaryParameter' (role 'OrdinaryParameter', cardinality 0..*) is associated with 'simTL4J::statements::CatchBlock' (role 'simTL4J_statements_CatchBlock', cardinality 0..*).
+'TypeReference' (role 'TypeReference91', cardinality 0..*) is associated with 'simTL4J::generics::SuperTypeArgument' (role 'simTL4J_generics_SuperTypeArgument', cardinality 0..*).

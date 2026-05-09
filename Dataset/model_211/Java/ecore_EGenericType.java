@@ -1,0 +1,65 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ecore_EGenericType extends EObject {
+
+
+
+
+
+
+    private List<ecore_EGenericType> ecore_egenerictypes;
+
+
+
+
+    private ecore_EGenericType ecore_egenerictype;
+
+
+
+
+    private ecore_EGenericType ecore_egenerictype;
+
+
+    public ecore_EGenericType(
+    ) {
+        super(
+        );
+        this.ecore_egenerictypes = new ArrayList<>();
+    }
+
+    public ecore_EGenericType(
+        ArrayList<ecore_EGenericType> ecore_egenerictypes    ) {
+        this.ecore_egenerictypes = ecore_egenerictypes;
+    }
+
+
+    public List<ecore_EGenericType> getEcore_egenerictypes() {
+        return ecore_egenerictypes;
+    }
+
+    public void addEcore_egenerictype(Ecore_egenerictype ecore_egenerictype) {
+        this.ecore_egenerictypes.add(ecore_egenerictype);
+    }
+    public ecore_EGenericType getEcore_egenerictype() {
+        return ecore_egenerictype;
+    }
+
+    public void setEcore_egenerictype(ecore_EGenericType ecore_egenerictype) {
+        this.ecore_egenerictype = ecore_egenerictype;
+    }
+    public ecore_EGenericType getEcore_egenerictype() {
+        return ecore_egenerictype;
+    }
+
+    public void setEcore_egenerictype(ecore_EGenericType ecore_egenerictype) {
+        this.ecore_egenerictype = ecore_egenerictype;
+    }
+
+}

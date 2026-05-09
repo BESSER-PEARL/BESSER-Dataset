@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/datavirtualization/jbdv/modeshape/sequencers/modeshape-sequencer-teiid/src/test/resources/ecore/Ecore.ecore

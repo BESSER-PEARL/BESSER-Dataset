@@ -1,0 +1,57 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class java_ClassFile extends NamedElement {
+
+    private String originalFilePath;
+
+
+
+
+
+    private java_Archive java_archive;
+
+
+
+
+    private java_Package java_package;
+
+
+    public java_ClassFile(
+        String originalFilePath    ) {
+        super(
+        );
+        this.originalFilePath = originalFilePath;
+    }
+
+
+    public String getOriginalfilepath() {
+        return originalFilePath;
+    }
+
+    public void setOriginalfilepath(String originalFilePath) {
+        this.originalFilePath = originalFilePath;
+    }
+
+    public java_Archive getJava_archive() {
+        return java_archive;
+    }
+
+    public void setJava_archive(java_Archive java_archive) {
+        this.java_archive = java_archive;
+    }
+    public java_Package getJava_package() {
+        return java_package;
+    }
+
+    public void setJava_package(java_Package java_package) {
+        this.java_package = java_package;
+    }
+
+}

@@ -1,0 +1,27 @@
+The model has 11 class(es).
+The class 'petrinet::ReadEdge' has no attributes.
+The class 'petrinet::Edge' has no attributes.
+The class 'petrinet::NamedElement' has the following attributes: 'name' of type str.
+The class 'Edge' has no attributes.
+The class 'petrinet::OutputEdge' has no attributes.
+The class 'petrinet::Place' has the following attributes: 'tokens' of type int.
+The class 'petrinet::InputEdge' has no attributes.
+The class 'petrinet::InhibitorEdge' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'petrinet::PetriNet' has no attributes.
+'petrinet::Transition' is a specialization of 'NamedElement'.
+'petrinet::PetriNet' is a specialization of 'NamedElement'.
+'petrinet::Place' is a specialization of 'NamedElement'.
+'petrinet::ReadEdge' is a specialization of 'Edge'.
+'petrinet::InhibitorEdge' is a specialization of 'Edge'.
+'petrinet::InputEdge' is a specialization of 'Edge'.
+'petrinet::OutputEdge' is a specialization of 'Edge'.
+'petrinet::Edge' is a specialization of 'NamedElement'.
+'petrinet::Edge' (role 'Edge7', cardinality 0..*) is associated with 'petrinet::Transition' (role 'transition', cardinality 0..*).
+'petrinet::Edge' (role 'petrinet_Edge', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet4', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet2', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*).
+'petrinet::Edge' (role 'edges10', cardinality 0..*) is associated with 'petrinet::Transition' (role 'Transition', cardinality 0..*).
+'petrinet::Place' (role 'place', cardinality 0..*) is associated with 'petrinet::Edge' (role 'Edge', cardinality 0..*).
+'petrinet::Place' (role 'Place', cardinality 0..*) is associated with 'petrinet::Edge' (role 'edges', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).

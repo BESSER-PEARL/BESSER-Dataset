@@ -1,0 +1,260 @@
+The model has 93 class(es).
+The class 'dom::NullLiteral' has no attributes.
+The class 'dom::GetterAssignment' has no attributes.
+The class 'dom::StringLiteral' has the following attributes: 'text' of type str.
+The class 'dom::WhileStatement' has no attributes.
+The class 'dom::NewExpression' has no attributes.
+The class 'dom::Elision' has no attributes.
+The class 'dom::Parameter' has no attributes.
+The class 'dom::ArrayLiteral' has no attributes.
+The class 'dom::XmlFragment' has no attributes.
+The class 'dom::ObjectLiteral' has no attributes.
+The class 'dom::ConstStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dom::ConditionalExpression' has no attributes.
+The class 'dom::ThisExpression' has no attributes.
+The class 'dom::IfStatement' has no attributes.
+The class 'dom::SetterAssignment' has no attributes.
+The class 'dom::TryStatement' has no attributes.
+The class 'dom::IForInitializer' has no attributes.
+The class 'dom::CaseClause' has no attributes.
+The class 'dom::FunctionExpression' has the following attributes: 'parametersPosition' of type int.
+The class 'XmlFragment' has no attributes.
+The class 'dom::RegularExpressionLiteral' has the following attributes: 'text' of type str.
+The class 'dom::LabeledStatement' has no attributes.
+The class 'dom::PropertyAssignment' has no attributes.
+The class 'dom::DefaultXmlNamespaceStatement' has no attributes.
+The class 'dom::VariableDeclaration' has no attributes.
+The class 'dom::IterationStatement' has no attributes.
+The class 'dom::ThrowStatement' has no attributes.
+The class 'dom::ParenthesizedExpression' has no attributes.
+The class 'dom::VariableStatement' has no attributes.
+The class 'dom::DefaultClause' has no attributes.
+The class 'dom::ForEachInStatement' has no attributes.
+The class 'dom::VariableReference' has no attributes.
+The class 'dom::CatchClause' has no attributes.
+The class 'dom::AccessorAssignment' has no attributes.
+The class 'dom::AttributeIdentifier' has no attributes.
+The class 'dom::XmlInitializer' has no attributes.
+The class 'IForInitializer' has no attributes.
+The class 'dom::IUnqualifiedSelector' has no attributes.
+The class 'dom::BlockStatement' has no attributes.
+The class 'dom::SwitchElement' has no attributes.
+The class 'dom::QualifiedIdentifier' has no attributes.
+The class 'dom::EmptyStatement' has no attributes.
+The class 'IProperty' has no attributes.
+The class 'IPropertySelector' has no attributes.
+The class 'dom::DoStatement' has no attributes.
+The class 'dom::ArrayAccessExpression' has no attributes.
+The class 'dom::SimplePropertyAssignment' has no attributes.
+The class 'dom::Comment' has the following attributes: 'text' of type str.
+The class 'dom::PropertyIdentifier' has no attributes.
+The class 'ISelector' has no attributes.
+The class 'dom::Source' has no attributes.
+The class 'dom::Statement' has no attributes.
+The class 'dom::ForInStatement' has no attributes.
+The class 'dom::ExpressionSelector' has no attributes.
+The class 'dom::BinaryExpression' has the following attributes: 'operatorPosition' of type int; 'operation' of type str.
+The class 'IUnqualifiedSelector' has no attributes.
+The class 'AccessorAssignment' has no attributes.
+The class 'dom::IPropertyName' has no attributes.
+The class 'dom::XmlExpressionFragment' has no attributes.
+The class 'dom::IArrayElement' has no attributes.
+The class 'dom::DescendantAccessExpression' has no attributes.
+The class 'dom::WildcardIdentifier' has no attributes.
+The class 'dom::NumericLiteral' has the following attributes: 'text' of type str.
+The class 'IterationStatement' has no attributes.
+The class 'dom::ReturnStatement' has no attributes.
+The class 'dom::BreakStatement' has no attributes.
+The class 'dom::Label' has the following attributes: 'name' of type str.
+The class 'PropertyAssignment' has no attributes.
+The class 'dom::WithStatement' has no attributes.
+The class 'dom::FilterExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'dom::ContinueStatement' has no attributes.
+The class 'dom::Expression' has no attributes.
+The class 'SwitchElement' has no attributes.
+The class 'dom::ForStatement' has no attributes.
+The class 'IArrayElement' has no attributes.
+The class 'dom::XmlTextFragment' has the following attributes: 'text' of type str.
+The class 'IPropertyName' has no attributes.
+The class 'dom::FinallyClause' has no attributes.
+The class 'dom::ISelector' has no attributes.
+The class 'dom::CallExpression' has no attributes.
+The class 'Node' has no attributes.
+The class 'dom::Identifier' has the following attributes: 'name' of type str.
+The class 'dom::SwitchStatement' has no attributes.
+The class 'dom::PropertyAccessExpression' has no attributes.
+The class 'dom::UnaryExpression' has the following attributes: 'operation' of type str.
+The class 'dom::IProperty' has no attributes.
+The class 'dom::Node' has the following attributes: 'begin' of type int; 'end' of type int.
+The class 'dom::ExpressionStatement' has no attributes.
+The class 'dom::IPropertySelector' has no attributes.
+The class 'dom::BooleanLiteral' has the following attributes: 'text' of type str.
+The class 'PropertyIdentifier' has no attributes.
+The enumeration 'BinaryOperator' has the following literals: 'modAssign', 'subAssign', 'rsh', 'assign', 'addAssign', 'orAssign', 'bwAnd', 'mulAssign', 'same', 'div', 'neq', 'logOr', 'eq', 'bwXor', 'logAnd', 'less', 'mul', 'divAssign', 'instanceof', 'geq', 'in_', 'rshAssign', 'sub', 'xorAssign', 'add', 'urshAssign', 'leq', 'greater', 'bwOr', 'mod', 'comma', 'ursh', 'andAssign', 'lshAssign', 'nsame', 'lsh'.
+The enumeration 'UnaryOperator' has the following literals: 'postfixDec', 'prefixInc', 'prefixDec', 'not_', 'delete', 'yield_', 'void', 'numNeg', 'unaryPlus', 'bwNot', 'typeof', 'postfixInc'.
+'dom::ISelector' is a specialization of 'Node'.
+'dom::QualifiedIdentifier' is a specialization of 'PropertyIdentifier'.
+'dom::QualifiedIdentifier' is a specialization of 'ISelector'.
+'dom::IUnqualifiedSelector' is a specialization of 'ISelector'.
+'dom::WildcardIdentifier' is a specialization of 'PropertyIdentifier'.
+'dom::WildcardIdentifier' is a specialization of 'IPropertySelector'.
+'dom::IPropertySelector' is a specialization of 'IUnqualifiedSelector'.
+'dom::ExpressionSelector' is a specialization of 'IUnqualifiedSelector'.
+'dom::XmlFragment' is a specialization of 'Node'.
+'dom::Parameter' is a specialization of 'Node'.
+'dom::Source' is a specialization of 'Node'.
+'dom::ConstStatement' is a specialization of 'Statement'.
+'dom::PropertyIdentifier' is a specialization of 'Expression'.
+'dom::PropertyIdentifier' is a specialization of 'IProperty'.
+'dom::IProperty' is a specialization of 'Node'.
+'dom::DefaultXmlNamespaceStatement' is a specialization of 'Statement'.
+'dom::ForEachInStatement' is a specialization of 'IterationStatement'.
+'dom::Comment' is a specialization of 'Node'.
+'dom::XmlTextFragment' is a specialization of 'XmlFragment'.
+'dom::AttributeIdentifier' is a specialization of 'PropertyIdentifier'.
+'dom::XmlExpressionFragment' is a specialization of 'XmlFragment'.
+'dom::Identifier' is a specialization of 'Node'.
+'dom::DescendantAccessExpression' is a specialization of 'Expression'.
+'dom::Identifier' is a specialization of 'IPropertyName'.
+'dom::FilterExpression' is a specialization of 'Expression'.
+'dom::Identifier' is a specialization of 'IPropertySelector'.
+'dom::Identifier' is a specialization of 'IProperty'.
+'dom::VariableReference' is a specialization of 'Expression'.
+'dom::RegularExpressionLiteral' is a specialization of 'Expression'.
+'dom::ThisExpression' is a specialization of 'Expression'.
+'dom::ArrayLiteral' is a specialization of 'Expression'.
+'dom::IArrayElement' is a specialization of 'Node'.
+'dom::Elision' is a specialization of 'IArrayElement'.
+'dom::ObjectLiteral' is a specialization of 'Expression'.
+'dom::PropertyAssignment' is a specialization of 'Node'.
+'dom::Label' is a specialization of 'Node'.
+'dom::Expression' is a specialization of 'Node'.
+'dom::Expression' is a specialization of 'IArrayElement'.
+'dom::Expression' is a specialization of 'IForInitializer'.
+'dom::NullLiteral' is a specialization of 'Expression'.
+'dom::BooleanLiteral' is a specialization of 'Expression'.
+'dom::NumericLiteral' is a specialization of 'Expression'.
+'dom::NumericLiteral' is a specialization of 'IPropertyName'.
+'dom::StringLiteral' is a specialization of 'Expression'.
+'dom::StringLiteral' is a specialization of 'IPropertyName'.
+'dom::PropertyAccessExpression' is a specialization of 'Expression'.
+'dom::NewExpression' is a specialization of 'Expression'.
+'dom::CallExpression' is a specialization of 'Expression'.
+'dom::UnaryExpression' is a specialization of 'Expression'.
+'dom::IPropertyName' is a specialization of 'Node'.
+'dom::SimplePropertyAssignment' is a specialization of 'PropertyAssignment'.
+'dom::AccessorAssignment' is a specialization of 'PropertyAssignment'.
+'dom::GetterAssignment' is a specialization of 'AccessorAssignment'.
+'dom::SetterAssignment' is a specialization of 'AccessorAssignment'.
+'dom::ParenthesizedExpression' is a specialization of 'Expression'.
+'dom::ArrayAccessExpression' is a specialization of 'Expression'.
+'dom::BinaryExpression' is a specialization of 'Expression'.
+'dom::VariableStatement' is a specialization of 'Statement'.
+'dom::VariableStatement' is a specialization of 'IForInitializer'.
+'dom::VariableDeclaration' is a specialization of 'Node'.
+'dom::EmptyStatement' is a specialization of 'Statement'.
+'dom::ExpressionStatement' is a specialization of 'Statement'.
+'dom::ConditionalExpression' is a specialization of 'Expression'.
+'dom::Statement' is a specialization of 'Node'.
+'dom::BlockStatement' is a specialization of 'Statement'.
+'dom::IterationStatement' is a specialization of 'Statement'.
+'dom::DoStatement' is a specialization of 'IterationStatement'.
+'dom::WhileStatement' is a specialization of 'IterationStatement'.
+'dom::ForStatement' is a specialization of 'IterationStatement'.
+'dom::IfStatement' is a specialization of 'Statement'.
+'dom::ReturnStatement' is a specialization of 'Statement'.
+'dom::WithStatement' is a specialization of 'Statement'.
+'dom::SwitchStatement' is a specialization of 'Statement'.
+'dom::SwitchElement' is a specialization of 'Node'.
+'dom::CaseClause' is a specialization of 'SwitchElement'.
+'dom::IForInitializer' is a specialization of 'Node'.
+'dom::ForInStatement' is a specialization of 'IterationStatement'.
+'dom::ContinueStatement' is a specialization of 'Statement'.
+'dom::BreakStatement' is a specialization of 'Statement'.
+'dom::CatchClause' is a specialization of 'Node'.
+'dom::FinallyClause' is a specialization of 'Node'.
+'dom::FunctionExpression' is a specialization of 'Expression'.
+'dom::DefaultClause' is a specialization of 'SwitchElement'.
+'dom::LabeledStatement' is a specialization of 'Statement'.
+'dom::ThrowStatement' is a specialization of 'Statement'.
+'dom::TryStatement' is a specialization of 'Statement'.
+'dom::XmlInitializer' is a specialization of 'Expression'.
+'dom::WithStatement' (role 'dom_WithStatement90', cardinality 0..*) is associated with 'dom::Statement' (role 'dom_Statement91', cardinality 0..*).
+'dom::ForEachInStatement' (role 'dom_ForEachInStatement166', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression167', cardinality 0..*).
+'dom::TryStatement' (role 'dom_TryStatement', cardinality 0..*) is associated with 'dom::BlockStatement' (role 'dom_BlockStatement109', cardinality 0..*).
+'dom::Statement' (role 'dom_Statement60', cardinality 0..*) is associated with 'dom::IfStatement' (role 'dom_IfStatement59', cardinality 0..*).
+'dom::SwitchStatement' (role 'dom_SwitchStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression93', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression150', cardinality 0..*) is associated with 'dom::XmlExpressionFragment' (role 'dom_XmlExpressionFragment', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression44', cardinality 0..*) is associated with 'dom::ConditionalExpression' (role 'dom_ConditionalExpression43', cardinality 0..*).
+'dom::XmlInitializer' (role 'dom_XmlInitializer', cardinality 0..*) is associated with 'dom::XmlFragment' (role 'dom_XmlFragment', cardinality 0..*).
+'dom::SwitchStatement' (role 'dom_SwitchStatement95', cardinality 0..*) is associated with 'dom::SwitchElement' (role 'dom_SwitchElement', cardinality 0..*).
+'dom::Identifier' (role 'dom_Identifier', cardinality 0..*) is associated with 'dom::VariableReference' (role 'dom_VariableReference', cardinality 0..*).
+'dom::Statement' (role 'dom_Statement65', cardinality 0..*) is associated with 'dom::IterationStatement' (role 'dom_IterationStatement', cardinality 0..*).
+'dom::IPropertyName' (role 'dom_IPropertyName', cardinality 0..*) is associated with 'dom::PropertyAssignment' (role 'dom_PropertyAssignment4', cardinality 0..*).
+'dom::WithStatement' (role 'dom_WithStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression88', cardinality 0..*).
+'dom::TryStatement' (role 'dom_TryStatement111', cardinality 0..*) is associated with 'dom::CatchClause' (role 'dom_CatchClause', cardinality 0..*).
+'dom::ReturnStatement' (role 'dom_ReturnStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression86', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression152', cardinality 0..*) is associated with 'dom::DescendantAccessExpression' (role 'dom_DescendantAccessExpression', cardinality 0..*).
+'dom::ConditionalExpression' (role 'dom_ConditionalExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression38', cardinality 0..*).
+'dom::DescendantAccessExpression' (role 'dom_DescendantAccessExpression154', cardinality 0..*) is associated with 'dom::IProperty' (role 'dom_IProperty155', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression67', cardinality 0..*) is associated with 'dom::DoStatement' (role 'dom_DoStatement', cardinality 0..*).
+'dom::LabeledStatement' (role 'dom_LabeledStatement104', cardinality 0..*) is associated with 'dom::Statement' (role 'dom_Statement105', cardinality 0..*).
+'dom::VariableDeclaration' (role 'dom_VariableDeclaration49', cardinality 0..*) is associated with 'dom::Identifier' (role 'dom_Identifier50', cardinality 0..*).
+'dom::SwitchElement' (role 'dom_SwitchElement97', cardinality 0..*) is associated with 'dom::Statement' (role 'dom_Statement98', cardinality 0..*).
+'dom::FunctionExpression' (role 'dom_FunctionExpression131', cardinality 0..*) is associated with 'dom::Parameter' (role 'dom_Parameter', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression24', cardinality 0..*) is associated with 'dom::NewExpression' (role 'dom_NewExpression23', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression10', cardinality 0..*) is associated with 'dom::ParenthesizedExpression' (role 'dom_ParenthesizedExpression', cardinality 0..*).
+'dom::FunctionExpression' (role 'dom_FunctionExpression128', cardinality 0..*) is associated with 'dom::Identifier' (role 'dom_Identifier129', cardinality 0..*).
+'dom::ForStatement' (role 'dom_ForStatement', cardinality 0..*) is associated with 'dom::IForInitializer' (role 'dom_IForInitializer', cardinality 0..*).
+'dom::Comment' (role 'dom_Comment', cardinality 0..*) is associated with 'dom::FunctionExpression' (role 'dom_FunctionExpression', cardinality 0..*).
+'dom::ISelector' (role 'dom_ISelector', cardinality 0..*) is associated with 'dom::AttributeIdentifier' (role 'dom_AttributeIdentifier', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression21', cardinality 0..*) is associated with 'dom::NewExpression' (role 'dom_NewExpression', cardinality 0..*).
+'dom::ForStatement' (role 'dom_ForStatement75', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression76', cardinality 0..*).
+'dom::Statement' (role 'dom_Statement', cardinality 0..*) is associated with 'dom::BlockStatement' (role 'dom_BlockStatement46', cardinality 0..*).
+'dom::IPropertySelector' (role 'dom_IPropertySelector', cardinality 0..*) is associated with 'dom::QualifiedIdentifier' (role 'dom_QualifiedIdentifier', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression148', cardinality 0..*) is associated with 'dom::ExpressionSelector' (role 'dom_ExpressionSelector', cardinality 0..*).
+'dom::Statement' (role 'dom_Statement63', cardinality 0..*) is associated with 'dom::IfStatement' (role 'dom_IfStatement62', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression73', cardinality 0..*) is associated with 'dom::ForStatement' (role 'dom_ForStatement72', cardinality 0..*).
+'dom::CallExpression' (role 'dom_CallExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression26', cardinality 0..*).
+'dom::Label' (role 'dom_Label', cardinality 0..*) is associated with 'dom::ContinueStatement' (role 'dom_ContinueStatement', cardinality 0..*).
+'dom::IArrayElement' (role 'dom_IArrayElement', cardinality 0..*) is associated with 'dom::ArrayLiteral' (role 'dom_ArrayLiteral', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression41', cardinality 0..*) is associated with 'dom::ConditionalExpression' (role 'dom_ConditionalExpression40', cardinality 0..*).
+'dom::IUnqualifiedSelector' (role 'dom_IUnqualifiedSelector', cardinality 0..*) is associated with 'dom::QualifiedIdentifier' (role 'dom_QualifiedIdentifier146', cardinality 0..*).
+'dom::VariableStatement' (role 'dom_VariableStatement', cardinality 0..*) is associated with 'dom::VariableDeclaration' (role 'dom_VariableDeclaration', cardinality 0..*).
+'dom::ArrayAccessExpression' (role 'dom_ArrayAccessExpression14', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression15', cardinality 0..*).
+'dom::CatchClause' (role 'dom_CatchClause118', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression119', cardinality 0..*).
+'dom::CallExpression' (role 'dom_CallExpression28', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression29', cardinality 0..*).
+'dom::WhileStatement' (role 'dom_WhileStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression69', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression36', cardinality 0..*) is associated with 'dom::BinaryExpression' (role 'dom_BinaryExpression35', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression17', cardinality 0..*) is associated with 'dom::PropertyAccessExpression' (role 'dom_PropertyAccessExpression', cardinality 0..*).
+'dom::FinallyClause' (role 'dom_FinallyClause', cardinality 0..*) is associated with 'dom::TryStatement' (role 'dom_TryStatement113', cardinality 0..*).
+'dom::CaseClause' (role 'dom_CaseClause', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression100', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression107', cardinality 0..*) is associated with 'dom::ThrowStatement' (role 'dom_ThrowStatement', cardinality 0..*).
+'dom::BlockStatement' (role 'dom_BlockStatement125', cardinality 0..*) is associated with 'dom::FinallyClause' (role 'dom_FinallyClause124', cardinality 0..*).
+'dom::BinaryExpression' (role 'dom_BinaryExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression33', cardinality 0..*).
+'dom::Parameter' (role 'dom_Parameter136', cardinality 0..*) is associated with 'dom::Identifier' (role 'dom_Identifier137', cardinality 0..*).
+'dom::ExpressionStatement' (role 'dom_ExpressionStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression55', cardinality 0..*).
+'dom::Source' (role 'dom_Source', cardinality 0..*) is associated with 'dom::Statement' (role 'dom_Statement139', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression57', cardinality 0..*) is associated with 'dom::IfStatement' (role 'dom_IfStatement', cardinality 0..*).
+'dom::BlockStatement' (role 'dom_BlockStatement122', cardinality 0..*) is associated with 'dom::CatchClause' (role 'dom_CatchClause121', cardinality 0..*).
+'dom::Label' (role 'dom_Label84', cardinality 0..*) is associated with 'dom::BreakStatement' (role 'dom_BreakStatement', cardinality 0..*).
+'dom::VariableDeclaration' (role 'dom_VariableDeclaration141', cardinality 0..*) is associated with 'dom::ConstStatement' (role 'dom_ConstStatement', cardinality 0..*).
+'dom::SimplePropertyAssignment' (role 'dom_SimplePropertyAssignment', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression', cardinality 0..*).
+'dom::VariableDeclaration' (role 'dom_VariableDeclaration52', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression53', cardinality 0..*).
+'dom::PropertyAssignment' (role 'dom_PropertyAssignment', cardinality 0..*) is associated with 'dom::ObjectLiteral' (role 'dom_ObjectLiteral', cardinality 0..*).
+'dom::FilterExpression' (role 'dom_FilterExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression157', cardinality 0..*).
+'dom::LabeledStatement' (role 'dom_LabeledStatement', cardinality 0..*) is associated with 'dom::Label' (role 'dom_Label102', cardinality 0..*).
+'dom::UnaryExpression' (role 'dom_UnaryExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression31', cardinality 0..*).
+'dom::ForInStatement' (role 'dom_ForInStatement80', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression81', cardinality 0..*).
+'dom::Identifier' (role 'dom_Identifier8', cardinality 0..*) is associated with 'dom::SetterAssignment' (role 'dom_SetterAssignment', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression160', cardinality 0..*) is associated with 'dom::FilterExpression' (role 'dom_FilterExpression159', cardinality 0..*).
+'dom::PropertyAccessExpression' (role 'dom_PropertyAccessExpression19', cardinality 0..*) is associated with 'dom::IProperty' (role 'dom_IProperty', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression162', cardinality 0..*) is associated with 'dom::DefaultXmlNamespaceStatement' (role 'dom_DefaultXmlNamespaceStatement', cardinality 0..*).
+'dom::BlockStatement' (role 'dom_BlockStatement', cardinality 0..*) is associated with 'dom::AccessorAssignment' (role 'dom_AccessorAssignment', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression12', cardinality 0..*) is associated with 'dom::ArrayAccessExpression' (role 'dom_ArrayAccessExpression', cardinality 0..*).
+'dom::IForInitializer' (role 'dom_IForInitializer164', cardinality 0..*) is associated with 'dom::ForEachInStatement' (role 'dom_ForEachInStatement', cardinality 0..*).
+'dom::CatchClause' (role 'dom_CatchClause115', cardinality 0..*) is associated with 'dom::Identifier' (role 'dom_Identifier116', cardinality 0..*).
+'dom::ForInStatement' (role 'dom_ForInStatement', cardinality 0..*) is associated with 'dom::IForInitializer' (role 'dom_IForInitializer78', cardinality 0..*).
+'dom::BlockStatement' (role 'dom_BlockStatement134', cardinality 0..*) is associated with 'dom::FunctionExpression' (role 'dom_FunctionExpression133', cardinality 0..*).

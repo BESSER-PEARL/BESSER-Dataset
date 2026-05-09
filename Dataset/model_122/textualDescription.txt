@@ -1,0 +1,61 @@
+The model has 30 class(es).
+The class 'JMM::FieldDeclaration' has no attributes.
+The class 'NamespaceAccess' has no attributes.
+The class 'JMM::AbstractMethodDeclaration' has no attributes.
+The class 'JMM::AnnotationTypeDeclaration' has no attributes.
+The class 'JMM::Modifier' has the following attributes: 'inheritance' of type str.
+The class 'Expression' has no attributes.
+The class 'JMM::AbstractTypeDeclaration' has no attributes.
+The class 'JMM::ASTNode' has no attributes.
+The class 'JMM::AbstractVariablesContainer' has no attributes.
+The class 'JMM::MethodDeclaration' has no attributes.
+The class 'JMM::TypeDeclaration' has no attributes.
+The class 'Type' has no attributes.
+The class 'JMM::ClassDeclaration' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'JMM::TypeAccess' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'JMM::Expression' has no attributes.
+The class 'JMM::Package' has no attributes.
+The class 'AbstractVariablesContainer' has no attributes.
+The class 'JMM::Type' has no attributes.
+The class 'JMM::Model' has the following attributes: 'name' of type str.
+The class 'AbstractMethodDeclaration' has no attributes.
+The class 'JMM::ConstructorDeclaration' has no attributes.
+The class 'JMM::BodyDeclaration' has no attributes.
+The class 'JMM::NamedElement' has the following attributes: 'name' of type str; 'proxy' of type bool.
+The class 'JMM::NamespaceAccess' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'JMM::InterfaceDeclaration' has no attributes.
+The enumeration 'InheritanceKind' has the following literals: 'abstract', 'none', 'final'.
+'JMM::ClassDeclaration' is a specialization of 'TypeDeclaration'.
+'JMM::NamespaceAccess' is a specialization of 'ASTNode'.
+'JMM::AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+'JMM::AbstractTypeDeclaration' is a specialization of 'Type'.
+'JMM::BodyDeclaration' is a specialization of 'NamedElement'.
+'JMM::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JMM::Package' is a specialization of 'NamedElement'.
+'JMM::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'JMM::MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'JMM::NamedElement' is a specialization of 'ASTNode'.
+'JMM::ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'JMM::Expression' is a specialization of 'ASTNode'.
+'JMM::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'JMM::Type' is a specialization of 'NamedElement'.
+'JMM::TypeAccess' is a specialization of 'NamespaceAccess'.
+'JMM::FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+'JMM::TypeAccess' is a specialization of 'Expression'.
+'JMM::InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+'JMM::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JMM::AbstractVariablesContainer' is a specialization of 'ASTNode'.
+'JMM::Modifier' is a specialization of 'ASTNode'.
+'JMM::Modifier' (role 'JMM_Modifier', cardinality 0..*) is associated with 'JMM::BodyDeclaration' (role 'JMM_BodyDeclaration15', cardinality 0..*).
+'JMM::Package' (role 'JMM_Package8', cardinality 0..*) is associated with 'JMM::AbstractTypeDeclaration' (role 'JMM_AbstractTypeDeclaration', cardinality 0..*).
+'JMM::TypeAccess' (role 'JMM_TypeAccess3', cardinality 0..*) is associated with 'JMM::Type' (role 'JMM_Type', cardinality 0..*).
+'JMM::Model' (role 'JMM_Model', cardinality 0..*) is associated with 'JMM::Package' (role 'JMM_Package', cardinality 0..*).
+'JMM::BodyDeclaration' (role 'JMM_BodyDeclaration', cardinality 0..*) is associated with 'JMM::AbstractTypeDeclaration' (role 'JMM_AbstractTypeDeclaration10', cardinality 0..*).
+'JMM::TypeAccess' (role 'JMM_TypeAccess', cardinality 0..*) is associated with 'JMM::ClassDeclaration' (role 'JMM_ClassDeclaration', cardinality 0..*).
+'JMM::Package' (role 'JMM_Package4', cardinality 0..*) is associated with 'JMM::Package' (role 'JMM_Package6', cardinality 0..*).
+'JMM::AbstractTypeDeclaration' (role 'JMM_AbstractTypeDeclaration12', cardinality 0..*) is associated with 'JMM::TypeAccess' (role 'JMM_TypeAccess13', cardinality 0..*).

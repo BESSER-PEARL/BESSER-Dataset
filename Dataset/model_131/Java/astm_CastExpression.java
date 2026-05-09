@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class astm_CastExpression extends Expression {
+
+
+
+
+
+
+    private astm_TypeReference astm_typereference;
+
+
+
+
+    private astm_Expression astm_expression;
+
+
+    public astm_CastExpression(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public astm_TypeReference getAstm_typereference() {
+        return astm_typereference;
+    }
+
+    public void setAstm_typereference(astm_TypeReference astm_typereference) {
+        this.astm_typereference = astm_typereference;
+    }
+    public astm_Expression getAstm_expression() {
+        return astm_expression;
+    }
+
+    public void setAstm_expression(astm_Expression astm_expression) {
+        this.astm_expression = astm_expression;
+    }
+
+}

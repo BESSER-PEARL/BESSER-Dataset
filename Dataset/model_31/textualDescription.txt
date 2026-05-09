@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'Node' has no attributes.
+The class 'iritptn::Transition' has the following attributes: 'tMin' of type int; 'tMax' of type int.
+The class 'iritptn::PetriNet' has the following attributes: 'name' of type str.
+The class 'iritptn::Place' has the following attributes: 'marking' of type int.
+The class 'iritptn::Node' has the following attributes: 'name' of type str.
+The class 'iritptn::Arc' has the following attributes: 'weight' of type int; 'kind' of type str.
+The enumeration 'ArcKind' has the following literals: 'normal', 'readArc'.
+'iritptn::Transition' is a specialization of 'Node'.
+'iritptn::Place' is a specialization of 'Node'.
+'iritptn::Arc' (role 'Arc', cardinality 0..*) is associated with 'iritptn::PetriNet' (role 'net2', cardinality 0..*).
+'iritptn::Node' (role 'Node9', cardinality 0..*) is associated with 'iritptn::Arc' (role 'ingoings', cardinality 0..*).
+'iritptn::Arc' (role 'Arc6', cardinality 0..*) is associated with 'iritptn::Node' (role 'source', cardinality 0..*).
+'iritptn::Node' (role 'Node13', cardinality 0..*) is associated with 'iritptn::Arc' (role 'outgoings', cardinality 0..*).
+'iritptn::Node' (role 'nodes', cardinality 0..*) is associated with 'iritptn::PetriNet' (role 'PetriNet', cardinality 0..*).
+'iritptn::PetriNet' (role 'PetriNet11', cardinality 0..*) is associated with 'iritptn::Arc' (role 'arc', cardinality 0..*).
+'iritptn::PetriNet' (role 'net', cardinality 0..*) is associated with 'iritptn::Node' (role 'Node', cardinality 0..*).
+'iritptn::Node' (role 'target', cardinality 0..*) is associated with 'iritptn::Arc' (role 'Arc4', cardinality 0..*).

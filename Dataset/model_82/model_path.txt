@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/modisco/modisco-models/org.eclipse.gmt.modisco.java.nousages.cdo/src-gen/org/eclipse/gmt/modisco/java/nousages/cdo/impl/java.ecore

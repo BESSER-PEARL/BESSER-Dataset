@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/masters-info-nantes/Je-push-le-Mia/com.mia.studio.ide-2015-09-10_11-50-35.gtk.x86_64/configuration/org.eclipse.osgi/bundles/155/1/.cp/model/Ecore.ecore

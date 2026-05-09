@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/artist-project/ARTIST-MUT/source/Component_Viewpoint_MOMoT/org.eclipse.emf.henshin.examples/src/org/eclipse/emf/henshin/examples/java2statemachine/java.ecore

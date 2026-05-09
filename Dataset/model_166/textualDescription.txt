@@ -1,0 +1,31 @@
+The model has 10 class(es).
+The class 'Arc' has no attributes.
+The class 'Element' has no attributes.
+The class 'petrinet::metamodel::Element' has the following attributes: 'comments' of type str; 'name' of type str.
+The class 'petrinet::metamodel::Place' has the following attributes: 'radius' of type int; 'coordinates' of type int; 'fill_colour' of type str.
+The class 'petrinet::metamodel::PetriNet' has no attributes.
+The class 'petrinet::metamodel::Rectangle' has the following attributes: 'start_end_coordinates' of type int.
+The class 'petrinet::metamodel::Arc' has the following attributes: 'weight' of type int.
+The class 'petrinet::metamodel::PlaceToTransArc' has no attributes.
+The class 'petrinet::metamodel::TransToPlaceArc' has no attributes.
+The class 'petrinet::metamodel::Transition' has no attributes.
+'petrinet::metamodel::PlaceToTransArc' is a specialization of 'Arc'.
+'petrinet::metamodel::Place' is a specialization of 'Element'.
+'petrinet::metamodel::Transition' is a specialization of 'Element'.
+'petrinet::metamodel::TransToPlaceArc' is a specialization of 'Arc'.
+'petrinet::metamodel::PetriNet' is a specialization of 'Element'.
+'petrinet::metamodel::PlaceToTransArc' (role 'PlaceToTransArc11', cardinality 0..*) is associated with 'petrinet::metamodel::Transition' (role 'target10', cardinality 0..*).
+'petrinet::metamodel::TransToPlaceArc' (role 'outgoing21', cardinality 0..*) is associated with 'petrinet::metamodel::Transition' (role 'Transition22', cardinality 0..*).
+'petrinet::metamodel::PetriNet' (role 'petrinet', cardinality 0..*) is associated with 'petrinet::metamodel::Place' (role 'Place', cardinality 0..*).
+'petrinet::metamodel::Place' (role 'places', cardinality 0..*) is associated with 'petrinet::metamodel::PetriNet' (role 'PetriNet', cardinality 0..*).
+'petrinet::metamodel::PetriNet' (role 'PetriNet8', cardinality 0..*) is associated with 'petrinet::metamodel::Transition' (role 'transitions', cardinality 0..*).
+'petrinet::metamodel::PlaceToTransArc' (role 'incoming', cardinality 0..*) is associated with 'petrinet::metamodel::Transition' (role 'Transition19', cardinality 0..*).
+'petrinet::metamodel::PlaceToTransArc' (role 'PlaceToTransArc', cardinality 0..*) is associated with 'petrinet::metamodel::Place' (role 'source', cardinality 0..*).
+'petrinet::metamodel::Transition' (role 'Transition27', cardinality 0..*) is associated with 'petrinet::metamodel::Rectangle' (role 'rectangle', cardinality 0..*).
+'petrinet::metamodel::PetriNet' (role 'petrinet_metamodel_PetriNet', cardinality 0..*) is associated with 'petrinet::metamodel::Arc' (role 'petrinet_metamodel_Arc', cardinality 0..*).
+'petrinet::metamodel::TransToPlaceArc' (role 'TransToPlaceArc14', cardinality 0..*) is associated with 'petrinet::metamodel::Transition' (role 'source13', cardinality 0..*).
+'petrinet::metamodel::Place' (role 'Place25', cardinality 0..*) is associated with 'petrinet::metamodel::TransToPlaceArc' (role 'incoming24', cardinality 0..*).
+'petrinet::metamodel::Transition' (role 'belongs_to', cardinality 0..*) is associated with 'petrinet::metamodel::Rectangle' (role 'Rectangle', cardinality 0..*).
+'petrinet::metamodel::Place' (role 'target', cardinality 0..*) is associated with 'petrinet::metamodel::TransToPlaceArc' (role 'TransToPlaceArc', cardinality 0..*).
+'petrinet::metamodel::PlaceToTransArc' (role 'outgoing', cardinality 0..*) is associated with 'petrinet::metamodel::Place' (role 'Place17', cardinality 0..*).
+'petrinet::metamodel::Transition' (role 'Transition', cardinality 0..*) is associated with 'petrinet::metamodel::PetriNet' (role 'petrinet2', cardinality 0..*).

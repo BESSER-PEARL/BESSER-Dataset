@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class astm_gastm_NamedTypeReference extends TypeReference {
+
+
+
+
+
+
+    private Name name;
+
+
+    public astm_gastm_NamedTypeReference(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+}

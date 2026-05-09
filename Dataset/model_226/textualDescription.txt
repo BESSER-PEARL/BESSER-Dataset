@@ -1,0 +1,91 @@
+The model has 26 class(es).
+The class 'ecorer::EModelElement' has no attributes.
+The class 'ecorer::EStructuralFeature' has the following attributes: 'transient' of type bool; 'defaultValue' of type str; 'volatile' of type bool; 'defaultValueLiteral' of type str; 'unsettable' of type bool; 'derived' of type bool; 'changeable' of type bool.
+The class 'ecorer::EAnnotation' has the following attributes: 'source' of type str.
+The class 'ecorer::ETypeParameter' has no attributes.
+The class 'EClassifier' has no attributes.
+The class 'ecorer::EGenericType' has no attributes.
+The class 'ecorer::ENamedElement' has the following attributes: 'name' of type str.
+The class 'ecorer::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'ecorer::EReference' has the following attributes: 'resolveProxies' of type bool; 'container' of type bool; 'containment' of type bool.
+The class 'ecorer::EStringToStringMapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'ecorer::EClassifier' has the following attributes: 'instanceClass' of type str; 'instanceTypeName' of type str; 'instanceClassName' of type str; 'defaultValue' of type str.
+The class 'ecorer::EClass' has the following attributes: 'abstract' of type bool; 'interface' of type bool.
+The class 'ecorer::EObject' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'ecorer::ETypedElement' has the following attributes: 'required' of type bool; 'unique' of type bool; 'upperBound' of type int; 'many' of type bool; 'ordered' of type bool; 'lowerBound' of type int.
+The class 'ecorer::EParameter' has no attributes.
+The class 'ecorer::EEnum' has no attributes.
+The class 'ecorer::EAttribute' has the following attributes: 'iD' of type bool.
+The class 'ecorer::EOperation' has no attributes.
+The class 'ecorer::EFactory' has no attributes.
+The class 'ecorer::EEnumLiteral' has the following attributes: 'literal' of type str; 'instance' of type str; 'value' of type int.
+The class 'EDataType' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'ecorer::EPackage' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'EStructuralFeature' has no attributes.
+'ecorer::EClassifier' is a specialization of 'ENamedElement'.
+'ecorer::EPackage' is a specialization of 'ENamedElement'.
+'ecorer::ETypeParameter' is a specialization of 'ENamedElement'.
+'ecorer::EEnumLiteral' is a specialization of 'ENamedElement'.
+'ecorer::EEnum' is a specialization of 'EDataType'.
+'ecorer::EReference' is a specialization of 'EStructuralFeature'.
+'ecorer::EAttribute' is a specialization of 'EStructuralFeature'.
+'ecorer::ETypedElement' is a specialization of 'ENamedElement'.
+'ecorer::EClass' is a specialization of 'EClassifier'.
+'ecorer::EStructuralFeature' is a specialization of 'ETypedElement'.
+'ecorer::ENamedElement' is a specialization of 'EModelElement'.
+'ecorer::EOperation' is a specialization of 'ETypedElement'.
+'ecorer::EParameter' is a specialization of 'ETypedElement'.
+'ecorer::EAnnotation' is a specialization of 'EModelElement'.
+'ecorer::EDataType' is a specialization of 'EClassifier'.
+'ecorer::EFactory' is a specialization of 'EModelElement'.
+'ecorer::ETypeParameter' (role 'ecorer_ETypeParameter106', cardinality 0..*) is associated with 'ecorer::EGenericType' (role 'ecorer_EGenericType107', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType59', cardinality 0..*) is associated with 'ecorer::EOperation' (role 'ecorer_EOperation58', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType100', cardinality 0..*) is associated with 'ecorer::ETypeParameter' (role 'ecorer_ETypeParameter101', cardinality 0..*).
+'ecorer::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*) is associated with 'ecorer::EEnum' (role 'eEnum', cardinality 0..*).
+'ecorer::EAnnotation' (role 'EAnnotation', cardinality 0..*) is associated with 'ecorer::EModelElement' (role 'eModelElement', cardinality 0..*).
+'ecorer::EDataType' (role 'ecorer_EDataType', cardinality 0..*) is associated with 'ecorer::EAttribute' (role 'ecorer_EAttribute', cardinality 0..*).
+'ecorer::EPackage' (role 'ePackage62', cardinality 0..*) is associated with 'ecorer::EClassifier' (role 'EClassifier', cardinality 0..*).
+'ecorer::EObject' (role 'ecorer_EObject7', cardinality 0..*) is associated with 'ecorer::EAnnotation' (role 'ecorer_EAnnotation6', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass20', cardinality 0..*) is associated with 'ecorer::EAttribute' (role 'ecorer_EAttribute21', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass28', cardinality 0..*) is associated with 'ecorer::EStructuralFeature' (role 'ecorer_EStructuralFeature', cardinality 0..*).
+'ecorer::EModelElement' (role 'EModelElement', cardinality 0..*) is associated with 'ecorer::EAnnotation' (role 'eAnnotations', cardinality 0..*).
+'ecorer::EParameter' (role 'EParameter', cardinality 0..*) is associated with 'ecorer::EOperation' (role 'eOperation', cardinality 0..*).
+'ecorer::EPackage' (role 'eSubpackages', cardinality 0..*) is associated with 'ecorer::EPackage' (role 'EPackage68', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass40', cardinality 0..*) is associated with 'ecorer::EGenericType' (role 'ecorer_EGenericType41', cardinality 0..*).
+'ecorer::EOperation' (role 'eOperations', cardinality 0..*) is associated with 'ecorer::EClass' (role 'EClass', cardinality 0..*).
+'ecorer::EClass' (role 'EClass81', cardinality 0..*) is associated with 'ecorer::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass31', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass29', cardinality 0..*).
+'ecorer::EPackage' (role 'eSuperPackage', cardinality 0..*) is associated with 'ecorer::EPackage' (role 'EPackage65', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass15', cardinality 0..*) is associated with 'ecorer::EReference' (role 'ecorer_EReference', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass38', cardinality 0..*).
+'ecorer::EAnnotation' (role 'ecorer_EAnnotation', cardinality 0..*) is associated with 'ecorer::EStringToStringMapEntry' (role 'ecorer_EStringToStringMapEntry', cardinality 0..*).
+'ecorer::EClass' (role 'eContainingClass36', cardinality 0..*) is associated with 'ecorer::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*).
+'ecorer::EOperation' (role 'ecorer_EOperation', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass26', cardinality 0..*).
+'ecorer::ETypeParameter' (role 'ecorer_ETypeParameter', cardinality 0..*) is associated with 'ecorer::EClassifier' (role 'ecorer_EClassifier', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType96', cardinality 0..*) is associated with 'ecorer::EGenericType' (role 'ecorer_EGenericType98', cardinality 0..*).
+'ecorer::EOperation' (role 'EOperation', cardinality 0..*) is associated with 'ecorer::EClass' (role 'eContainingClass', cardinality 0..*).
+'ecorer::EReference' (role 'ecorer_EReference18', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass17', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType90', cardinality 0..*) is associated with 'ecorer::EGenericType' (role 'ecorer_EGenericType92', cardinality 0..*).
+'ecorer::EClassifier' (role 'ecorer_EClassifier83', cardinality 0..*) is associated with 'ecorer::ETypedElement' (role 'ecorer_ETypedElement', cardinality 0..*).
+'ecorer::EClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'ecorer::EPackage' (role 'EPackage', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType86', cardinality 0..*) is associated with 'ecorer::ETypedElement' (role 'ecorer_ETypedElement85', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType89', cardinality 0..*) is associated with 'ecorer::EGenericType' (role 'ecorer_EGenericType87', cardinality 0..*).
+'ecorer::EAttribute' (role 'ecorer_EAttribute13', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass12', cardinality 0..*).
+'ecorer::EOperation' (role 'ecorer_EOperation51', cardinality 0..*) is associated with 'ecorer::ETypeParameter' (role 'ecorer_ETypeParameter52', cardinality 0..*).
+'ecorer::EOperation' (role 'EOperation70', cardinality 0..*) is associated with 'ecorer::EParameter' (role 'eParameters', cardinality 0..*).
+'ecorer::EReference' (role 'ecorer_EReference73', cardinality 0..*) is associated with 'ecorer::EReference' (role 'ecorer_EReference71', cardinality 0..*).
+'ecorer::EAttribute' (role 'ecorer_EAttribute79', cardinality 0..*) is associated with 'ecorer::EReference' (role 'ecorer_EReference78', cardinality 0..*).
+'ecorer::EClassifier' (role 'ecorer_EClassifier95', cardinality 0..*) is associated with 'ecorer::EGenericType' (role 'ecorer_EGenericType94', cardinality 0..*).
+'ecorer::EGenericType' (role 'ecorer_EGenericType103', cardinality 0..*) is associated with 'ecorer::EClassifier' (role 'ecorer_EClassifier104', cardinality 0..*).
+'ecorer::EPackage' (role 'ePackage', cardinality 0..*) is associated with 'ecorer::EFactory' (role 'EFactory', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass8', cardinality 0..*).
+'ecorer::EReference' (role 'ecorer_EReference75', cardinality 0..*) is associated with 'ecorer::EClass' (role 'ecorer_EClass76', cardinality 0..*).
+'ecorer::EObject' (role 'ecorer_EObject', cardinality 0..*) is associated with 'ecorer::EAnnotation' (role 'ecorer_EAnnotation4', cardinality 0..*).
+'ecorer::EEnum' (role 'EEnum', cardinality 0..*) is associated with 'ecorer::EEnumLiteral' (role 'eLiterals', cardinality 0..*).
+'ecorer::EOperation' (role 'ecorer_EOperation55', cardinality 0..*) is associated with 'ecorer::EClassifier' (role 'ecorer_EClassifier56', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass33', cardinality 0..*) is associated with 'ecorer::EAttribute' (role 'ecorer_EAttribute34', cardinality 0..*).
+'ecorer::EPackage' (role 'EPackage47', cardinality 0..*) is associated with 'ecorer::EFactory' (role 'eFactoryInstance', cardinality 0..*).
+'ecorer::EClass' (role 'ecorer_EClass23', cardinality 0..*) is associated with 'ecorer::EReference' (role 'ecorer_EReference24', cardinality 0..*).

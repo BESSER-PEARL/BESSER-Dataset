@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alfonsodelavega/epsilonFork/tests/org.eclipse.epsilon.emg.engine.test.acceptance/model/Ecore.ecore

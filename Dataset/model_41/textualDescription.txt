@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'extendedPetriNets::Place' has no attributes.
+The class 'extendedPetriNets::OutputPort' has no attributes.
+The class 'GenericPlace' has no attributes.
+The class 'extendedPetriNets::InputArc' has the following attributes: 'weight' of type int.
+The class 'extendedPetriNets::PetriNet' has the following attributes: 'name' of type str.
+The class 'extendedPetriNets::Transition' has the following attributes: 'name' of type str.
+The class 'extendedPetriNets::InputPort' has no attributes.
+The class 'extendedPetriNets::OutputArc' has the following attributes: 'weight' of type int.
+The class 'extendedPetriNets::GenericPlace' has the following attributes: 'numberOfTokens' of type int; 'capacity' of type int; 'name' of type str.
+'extendedPetriNets::OutputPort' is a specialization of 'GenericPlace'.
+'extendedPetriNets::InputPort' is a specialization of 'GenericPlace'.
+'extendedPetriNets::Place' is a specialization of 'GenericPlace'.
+'extendedPetriNets::InputArc' (role 'extendedPetriNets_InputArc11', cardinality 0..*) is associated with 'extendedPetriNets::GenericPlace' (role 'extendedPetriNets_GenericPlace12', cardinality 0..*).
+'extendedPetriNets::Transition' (role 'extendedPetriNets_Transition', cardinality 0..*) is associated with 'extendedPetriNets::PetriNet' (role 'extendedPetriNets_PetriNet2', cardinality 0..*).
+'extendedPetriNets::Transition' (role 'extendedPetriNets_Transition15', cardinality 0..*) is associated with 'extendedPetriNets::OutputArc' (role 'extendedPetriNets_OutputArc14', cardinality 0..*).
+'extendedPetriNets::OutputArc' (role 'extendedPetriNets_OutputArc', cardinality 0..*) is associated with 'extendedPetriNets::PetriNet' (role 'extendedPetriNets_PetriNet6', cardinality 0..*).
+'extendedPetriNets::InputArc' (role 'extendedPetriNets_InputArc8', cardinality 0..*) is associated with 'extendedPetriNets::Transition' (role 'extendedPetriNets_Transition9', cardinality 0..*).
+'extendedPetriNets::InputArc' (role 'extendedPetriNets_InputArc', cardinality 0..*) is associated with 'extendedPetriNets::PetriNet' (role 'extendedPetriNets_PetriNet4', cardinality 0..*).
+'extendedPetriNets::GenericPlace' (role 'extendedPetriNets_GenericPlace18', cardinality 0..*) is associated with 'extendedPetriNets::OutputArc' (role 'extendedPetriNets_OutputArc17', cardinality 0..*).
+'extendedPetriNets::GenericPlace' (role 'extendedPetriNets_GenericPlace', cardinality 0..*) is associated with 'extendedPetriNets::PetriNet' (role 'extendedPetriNets_PetriNet', cardinality 0..*).

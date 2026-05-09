@@ -1,0 +1,465 @@
+The model has 162 class(es).
+The class 'TypeParameter' has no attributes.
+The class 'DOM::TryStatement' has no attributes.
+The class 'Core::ICompilationUnit' has no attributes.
+The class 'DOM::BodyDeclaration' has no attributes.
+The class 'IInitializer' has no attributes.
+The class 'DOM::MethodRef' has no attributes.
+The class 'ArrayType' has no attributes.
+The class 'DOM::ParameterizedType' has no attributes.
+The class 'DOM::BreakStatement' has no attributes.
+The class 'SimpleName' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'DOM::TypeParameter' has no attributes.
+The class 'DOM::AnonymousClassDeclaration' has no attributes.
+The class 'DOM::BlockComment' has no attributes.
+The class 'Core::IJavaModel' has no attributes.
+The class 'DOM::ArrayType' has the following attributes: 'dimensions' of type str.
+The class 'DOM::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'DOM::ThisExpression' has no attributes.
+The class 'IPackageFragmentRoot' has no attributes.
+The class 'DOM::Javadoc' has no attributes.
+The class 'DOM::AnnotationTypeDeclaration' has no attributes.
+The class 'DOM::WhileStatement' has no attributes.
+The class 'ICompilationUnit' has no attributes.
+The class 'DOM::SimpleName' has the following attributes: 'declaration' of type str; 'identifier' of type str.
+The class 'DOM::VariableDeclarationFragment' has no attributes.
+The class 'VariableDeclarationFragment' has no attributes.
+The class 'Core::ISourceReference' has the following attributes: 'source' of type str.
+The class 'DOM::AbstractTypeDeclaration' has the following attributes: 'localTypeDeclaration' of type str; 'packageMemberTypeDeclaration' of type str; 'memberTypeDeclaration' of type str.
+The class 'AnonymousClassDeclaration' has no attributes.
+The class 'DOM::FieldAccess' has no attributes.
+The class 'ExtendedModifier' has no attributes.
+The class 'DOM::ClassInstanceCreation' has no attributes.
+The class 'DOM::CharacterLiteral' has the following attributes: 'charValue' of type str; 'escapedValue' of type str.
+The class 'VariableDeclaration' has no attributes.
+The class 'Core::IJavaElement' has the following attributes: 'elementName' of type str.
+The class 'DOM::ExtendedModifier' has no attributes.
+The class 'DOM::TextElement' has the following attributes: 'text' of type str.
+The class 'DOM::CatchClause' has no attributes.
+The class 'Name' has no attributes.
+The class 'DOM::SuperMethodInvocation' has no attributes.
+The class 'DOM::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'Block' has no attributes.
+The class 'DOM::QualifiedName' has no attributes.
+The class 'DOM::SingleVariableDeclaration' has the following attributes: 'varargs' of type str.
+The class 'DOM::ThrowStatement' has no attributes.
+The class 'Core::IPackageFragment' has the following attributes: 'isDefaultPackage' of type str.
+The class 'DOM::ArrayCreation' has no attributes.
+The class 'DOM::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'DOM::StringLiteral' has the following attributes: 'escapedValue' of type str; 'literalValue' of type str.
+The class 'Core::ISourceRange' has the following attributes: 'length' of type str; 'offset' of type str.
+The class 'DOM::ParenthesizedExpression' has no attributes.
+The class 'DOM::WildcardType' has the following attributes: 'upperBound' of type str.
+The class 'DOM::ExpressionStatement' has no attributes.
+The class 'Type' has no attributes.
+The class 'Core::IJavaProject' has no attributes.
+The class 'Core::ITypeParameter' has the following attributes: 'bounds' of type str.
+The class 'DOM::MarkerAnnotation' has no attributes.
+The class 'IType' has no attributes.
+The class 'DOM::MemberRef' has no attributes.
+The class 'Javadoc' has no attributes.
+The class 'DOM::Name' has the following attributes: 'fullyQualifiedName' of type str.
+The class 'Annotation' has no attributes.
+The class 'DOM::CompilationUnit' has no attributes.
+The class 'TagElement' has no attributes.
+The class 'DOM::TagElement' has the following attributes: 'nested' of type str; 'tagName' of type str.
+The class 'DOM::ConstructorInvocation' has no attributes.
+The class 'Core::IPackageFragmentRoot' has no attributes.
+The class 'DOM::ASTNode' has no attributes.
+The class 'DOM::SwitchCase' has the following attributes: 'default' of type str.
+The class 'DOM::NormalAnnotation' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'DOM::Expression' has the following attributes: 'resolveBoxing' of type str; 'resolveUnboxing' of type str.
+The class 'Statement' has no attributes.
+The class 'DOM::Annotation' has no attributes.
+The class 'DOM::VariableDeclaration' has the following attributes: 'extraDimensions' of type str.
+The class 'IClassFile' has no attributes.
+The class 'DOM::TypeDeclaration' has the following attributes: 'interface' of type str.
+The class 'DOM::ConditionalExpression' has no attributes.
+The class 'DOM::Statement' has no attributes.
+The class 'DOM::LabeledStatement' has no attributes.
+The class 'DOM::Comment' has no attributes.
+The class 'DOM::DoStatement' has no attributes.
+The class 'DOM::EnhancedForStatement' has no attributes.
+The class 'ITypeRoot' has no attributes.
+The class 'DOM::Type' has no attributes.
+The class 'IImportDeclaration' has no attributes.
+The class 'DOM::EnumDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'DOM::SimpleType' has no attributes.
+The class 'Core::IMember' has no attributes.
+The class 'DOM::LineComment' has no attributes.
+The class 'Core::ITypeRoot' has no attributes.
+The class 'DOM::SuperConstructorInvocation' has no attributes.
+The class 'DOM::EmptyStatement' has no attributes.
+The class 'DOM::IfStatement' has no attributes.
+The class 'IMethod' has no attributes.
+The class 'DOM::Block' has no attributes.
+The class 'ISourceReference' has no attributes.
+The class 'DOM::SynchronizedStatement' has no attributes.
+The class 'Core::IField' has the following attributes: 'isTransient' of type str; 'isVolatile' of type str; 'isEnumConstant' of type str; 'constant' of type str; 'typeSignature' of type str.
+The class 'DOM::Assignment' has the following attributes: 'operator' of type str.
+The class 'Core::IType' has the following attributes: 'fullyQualifiedName' of type str; 'fullyQualifiedParametrizedName' of type str.
+The class 'IMember' has no attributes.
+The class 'Core::BinaryPackageFragmentRoot' has no attributes.
+The class 'IField' has no attributes.
+The class 'DOM::SuperFieldAccess' has no attributes.
+The class 'Core::IClassFile' has the following attributes: 'isClass' of type str; 'isInterface' of type str.
+The class 'CatchClause' has no attributes.
+The class 'DOM::AST' has no attributes.
+The class 'DOM::EnumConstantDeclaration' has no attributes.
+The class 'Core::Parameter' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Comment' has no attributes.
+The class 'DOM::QualifiedType' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'DOM::SwitchStatement' has no attributes.
+The class 'Core::IImportDeclaration' has the following attributes: 'isOnDemand' of type str; 'isStatic' of type str.
+The class 'DOM::TypeDeclarationStatement' has no attributes.
+The class 'ISourceRange' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'DOM::ImportDeclaration' has the following attributes: 'onDemand' of type str; 'static' of type str.
+The class 'ArrayInitializer' has no attributes.
+The class 'Core::IInitializer' has no attributes.
+The class 'Core::PhysicalElement' has the following attributes: 'path' of type str; 'isReadOnly' of type str.
+The class 'DOM::MethodDeclaration' has the following attributes: 'extraDimensions' of type str; 'varargs' of type str; 'constructor' of type str.
+The class 'Core::IMethod' has the following attributes: 'returnType' of type str; 'isConstructor' of type str; 'isMainMethod' of type str; 'exceptionTypes' of type str.
+The class 'ITypeParameter' has no attributes.
+The class 'DOM::MethodInvocation' has no attributes.
+The class 'DOM::ContinueStatement' has no attributes.
+The class 'IJavaProject' has no attributes.
+The class 'DOM::NumberLiteral' has the following attributes: 'token' of type str.
+The class 'CompilationUnit' has no attributes.
+The class 'PhysicalElement' has no attributes.
+The class 'DOM::CastExpression' has no attributes.
+The class 'DOM::ArrayAccess' has no attributes.
+The class 'DOM::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'DOM::FieldDeclaration' has no attributes.
+The class 'IPackageFragment' has no attributes.
+The class 'EnumConstantDeclaration' has no attributes.
+The class 'DOM::Modifier' has the following attributes: 'private' of type str; 'native' of type str; 'transient' of type str; 'strictfp' of type str; 'synchronized' of type str; 'protected' of type str; 'static' of type str; 'public' of type str; 'none' of type str; 'final' of type str; 'abstract' of type str; 'volatile' of type str.
+The class 'DOM::InstanceofExpression' has no attributes.
+The class 'DOM::SingleMemberAnnotation' has no attributes.
+The class 'DOM::ReturnStatement' has no attributes.
+The class 'DOM::ForStatement' has no attributes.
+The class 'Core::SourcePackageFragmentRoot' has no attributes.
+The class 'DOM::MemberValuePair' has no attributes.
+The class 'DOM::PrimitiveType' has the following attributes: 'code' of type str.
+The class 'MethodRefParameter' has no attributes.
+The class 'MemberValuePair' has no attributes.
+The class 'PackageDeclaration' has no attributes.
+The class 'DOM::NullLiteral' has no attributes.
+The class 'DOM::TypeLiteral' has no attributes.
+The class 'DOM::ArrayInitializer' has no attributes.
+The class 'DOM::VariableDeclarationStatement' has no attributes.
+The class 'DOM::VariableDeclarationExpression' has no attributes.
+The class 'SingleVariableDeclaration' has no attributes.
+The class 'DOM::AssertStatement' has no attributes.
+The class 'DOM::MethodRefParameter' has the following attributes: 'varargs' of type str.
+The class 'IJavaElement' has no attributes.
+The class 'DOM::BooleanLiteral' has the following attributes: 'booleanValue' of type str.
+The class 'ImportDeclaration' has no attributes.
+The class 'DOM::PackageDeclaration' has no attributes.
+The class 'DOM::Initializer' has no attributes.
+The enumeration 'PrefixExpressionOperatorKind' has the following literals: 'plus', 'minus', 'complement', 'increment', 'decrement', 'not_'.
+The enumeration 'InfixExpressionOperatorKind' has the following literals: 'minus', 'right_shift_unsigned', 'xor', 'divide', 'equals', 'conditional_and', 'left_shift', 'or_', 'plus', 'times', 'conditional_or', 'greater', 'greater_equals', 'remainder', 'right_shift_signed', 'less', 'less_equals', 'not_equals', 'and_'.
+The enumeration 'PostfixExpressionOperatorKind' has the following literals: 'decrement', 'increment'.
+The enumeration 'Modifiers' has the following literals: 'final', 'native', 'deprecated', 'transient', 'static', 'default', 'volatile', 'super', 'varargs', 'synchronized', 'annotation', 'protected', 'bridge', 'abstract', 'interface', 'strictfp', 'private', 'synthetic', 'public', 'enum'.
+The enumeration 'AssignmentOperatorKind' has the following literals: 'bit_xor_assign', 'remainder_assign', 'plus_assign', 'right_shift_unsigned_assign', 'bit_or_assign', 'bit_and_assign', 'times_assign', 'left_shift_assign', 'minus_assign', 'assign', 'right_shift_signed_assign', 'divide_assign'.
+'DOM::ClassInstanceCreation' is a specialization of 'Expression'.
+'DOM::ConditionalExpression' is a specialization of 'Expression'.
+'DOM::FieldAccess' is a specialization of 'Expression'.
+'DOM::BooleanLiteral' is a specialization of 'Expression'.
+'DOM::CastExpression' is a specialization of 'Expression'.
+'DOM::CharacterLiteral' is a specialization of 'Expression'.
+'DOM::InstanceofExpression' is a specialization of 'Expression'.
+'DOM::MethodInvocation' is a specialization of 'Expression'.
+'DOM::InfixExpression' is a specialization of 'Expression'.
+'DOM::ParenthesizedExpression' is a specialization of 'Expression'.
+'DOM::PostfixExpression' is a specialization of 'Expression'.
+'DOM::PrefixExpression' is a specialization of 'Expression'.
+'DOM::StringLiteral' is a specialization of 'Expression'.
+'DOM::Name' is a specialization of 'Expression'.
+'DOM::NullLiteral' is a specialization of 'Expression'.
+'DOM::NumberLiteral' is a specialization of 'Expression'.
+'DOM::ThisExpression' is a specialization of 'Expression'.
+'DOM::TypeLiteral' is a specialization of 'Expression'.
+'DOM::VariableDeclarationExpression' is a specialization of 'Expression'.
+'DOM::AssertStatement' is a specialization of 'Statement'.
+'DOM::SuperFieldAccess' is a specialization of 'Expression'.
+'DOM::SuperMethodInvocation' is a specialization of 'Expression'.
+'DOM::ContinueStatement' is a specialization of 'Statement'.
+'Core::IJavaProject' is a specialization of 'IJavaElement'.
+'DOM::DoStatement' is a specialization of 'Statement'.
+'DOM::EmptyStatement' is a specialization of 'Statement'.
+'Core::IJavaProject' is a specialization of 'PhysicalElement'.
+'DOM::EnhancedForStatement' is a specialization of 'Statement'.
+'Core::IJavaModel' is a specialization of 'PhysicalElement'.
+'DOM::ExpressionStatement' is a specialization of 'Statement'.
+'Core::IImportDeclaration' is a specialization of 'IJavaElement'.
+'DOM::Block' is a specialization of 'Statement'.
+'Core::IImportDeclaration' is a specialization of 'ISourceReference'.
+'DOM::BreakStatement' is a specialization of 'Statement'.
+'Core::IPackageFragmentRoot' is a specialization of 'IJavaElement'.
+'DOM::ConstructorInvocation' is a specialization of 'Statement'.
+'Core::IPackageFragmentRoot' is a specialization of 'PhysicalElement'.
+'DOM::IfStatement' is a specialization of 'Statement'.
+'Core::BinaryPackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+'DOM::LabeledStatement' is a specialization of 'Statement'.
+'Core::SourcePackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+'DOM::ReturnStatement' is a specialization of 'Statement'.
+'Core::IPackageFragment' is a specialization of 'IJavaElement'.
+'DOM::ForStatement' is a specialization of 'Statement'.
+'Core::IPackageFragment' is a specialization of 'PhysicalElement'.
+'DOM::SwitchCase' is a specialization of 'Statement'.
+'Core::ITypeRoot' is a specialization of 'IJavaElement'.
+'DOM::SwitchStatement' is a specialization of 'Statement'.
+'Core::ITypeRoot' is a specialization of 'ISourceReference'.
+'DOM::SynchronizedStatement' is a specialization of 'Statement'.
+'Core::ITypeRoot' is a specialization of 'PhysicalElement'.
+'DOM::ThrowStatement' is a specialization of 'Statement'.
+'Core::ICompilationUnit' is a specialization of 'ITypeRoot'.
+'DOM::SuperConstructorInvocation' is a specialization of 'Statement'.
+'Core::IClassFile' is a specialization of 'ITypeRoot'.
+'DOM::VariableDeclarationStatement' is a specialization of 'Statement'.
+'Core::IMethod' is a specialization of 'IMember'.
+'DOM::WhileStatement' is a specialization of 'Statement'.
+'Core::IMember' is a specialization of 'IJavaElement'.
+'DOM::ArrayType' is a specialization of 'Type'.
+'Core::IMember' is a specialization of 'ISourceReference'.
+'DOM::ParameterizedType' is a specialization of 'Type'.
+'Core::IType' is a specialization of 'IMember'.
+'DOM::TryStatement' is a specialization of 'Statement'.
+'Core::ITypeParameter' is a specialization of 'IJavaElement'.
+'DOM::TypeDeclarationStatement' is a specialization of 'Statement'.
+'Core::ITypeParameter' is a specialization of 'ISourceReference'.
+'DOM::SimpleType' is a specialization of 'Type'.
+'Core::IInitializer' is a specialization of 'IMember'.
+'DOM::WildcardType' is a specialization of 'Type'.
+'Core::IField' is a specialization of 'IMember'.
+'DOM::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'DOM::CatchClause' is a specialization of 'ASTNode'.
+'DOM::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'DOM::Comment' is a specialization of 'ASTNode'.
+'DOM::QualifiedName' is a specialization of 'Name'.
+'DOM::CompilationUnit' is a specialization of 'ASTNode'.
+'DOM::SimpleName' is a specialization of 'Name'.
+'DOM::Expression' is a specialization of 'ASTNode'.
+'DOM::MarkerAnnotation' is a specialization of 'Annotation'.
+'DOM::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'DOM::PrimitiveType' is a specialization of 'Type'.
+'DOM::BodyDeclaration' is a specialization of 'ASTNode'.
+'DOM::QualifiedType' is a specialization of 'Type'.
+'DOM::MethodRef' is a specialization of 'ASTNode'.
+'DOM::NormalAnnotation' is a specialization of 'Annotation'.
+'DOM::MethodRefParameter' is a specialization of 'ASTNode'.
+'DOM::SingleMemberAnnotation' is a specialization of 'Annotation'.
+'DOM::Modifier' is a specialization of 'ASTNode'.
+'DOM::Modifier' is a specialization of 'ExtendedModifier'.
+'DOM::ImportDeclaration' is a specialization of 'ASTNode'.
+'DOM::MemberRef' is a specialization of 'ASTNode'.
+'DOM::MemberValuePair' is a specialization of 'ASTNode'.
+'DOM::Statement' is a specialization of 'ASTNode'.
+'DOM::TagElement' is a specialization of 'ASTNode'.
+'DOM::TextElement' is a specialization of 'ASTNode'.
+'DOM::Type' is a specialization of 'ASTNode'.
+'DOM::TypeParameter' is a specialization of 'ASTNode'.
+'DOM::VariableDeclaration' is a specialization of 'ASTNode'.
+'DOM::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'DOM::PackageDeclaration' is a specialization of 'ASTNode'.
+'DOM::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'DOM::Initializer' is a specialization of 'BodyDeclaration'.
+'DOM::MethodDeclaration' is a specialization of 'BodyDeclaration'.
+'DOM::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'DOM::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'DOM::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'DOM::BlockComment' is a specialization of 'Comment'.
+'DOM::Javadoc' is a specialization of 'Comment'.
+'DOM::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'DOM::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'DOM::ArrayAccess' is a specialization of 'Expression'.
+'DOM::ArrayCreation' is a specialization of 'Expression'.
+'DOM::ArrayInitializer' is a specialization of 'Expression'.
+'DOM::Assignment' is a specialization of 'Expression'.
+'DOM::LineComment' is a specialization of 'Comment'.
+'DOM::Annotation' is a specialization of 'Expression'.
+'DOM::Annotation' is a specialization of 'ExtendedModifier'.
+'ICompilationUnit' (role 'ICompilationUnit25', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit24', cardinality 0..*).
+'DOM::ParameterizedType' (role 'DOM_ParameterizedType387', cardinality 0..*) is associated with 'Type' (role 'Type388', cardinality 0..*).
+'Annotation' (role 'Annotation', cardinality 0..*) is associated with 'DOM::PackageDeclaration' (role 'DOM_PackageDeclaration', cardinality 0..*).
+'DOM::ArrayAccess' (role 'DOM_ArrayAccess171', cardinality 0..*) is associated with 'Expression' (role 'Expression172', cardinality 0..*).
+'DOM::IfStatement' (role 'DOM_IfStatement323', cardinality 0..*) is associated with 'Expression' (role 'Expression324', cardinality 0..*).
+'Name' (role 'Name70', cardinality 0..*) is associated with 'DOM::MemberRef' (role 'DOM_MemberRef69', cardinality 0..*).
+'IMethod' (role 'IMethod152', cardinality 0..*) is associated with 'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration151', cardinality 0..*).
+'Type' (role 'Type373', cardinality 0..*) is associated with 'DOM::VariableDeclarationStatement' (role 'DOM_VariableDeclarationStatement372', cardinality 0..*).
+'Type' (role 'Type154', cardinality 0..*) is associated with 'DOM::EnumDeclaration' (role 'DOM_EnumDeclaration', cardinality 0..*).
+'DOM::ArrayCreation' (role 'DOM_ArrayCreation', cardinality 0..*) is associated with 'Expression' (role 'Expression174', cardinality 0..*).
+'IField' (role 'IField', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType38', cardinality 0..*).
+'ISourceRange' (role 'ISourceRange35', cardinality 0..*) is associated with 'Core::IMember' (role 'Core_IMember34', cardinality 0..*).
+'SimpleName' (role 'SimpleName390', cardinality 0..*) is associated with 'DOM::QualifiedType' (role 'DOM_QualifiedType', cardinality 0..*).
+'IType' (role 'IType43', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType42', cardinality 0..*).
+'ArrayType' (role 'ArrayType', cardinality 0..*) is associated with 'DOM::ArrayCreation' (role 'DOM_ArrayCreation178', cardinality 0..*).
+'Type' (role 'Type201', cardinality 0..*) is associated with 'DOM::ClassInstanceCreation' (role 'DOM_ClassInstanceCreation200', cardinality 0..*).
+'DOM::SynchronizedStatement' (role 'DOM_SynchronizedStatement353', cardinality 0..*) is associated with 'Expression' (role 'Expression354', cardinality 0..*).
+'Type' (role 'Type291', cardinality 0..*) is associated with 'DOM::ConstructorInvocation' (role 'DOM_ConstructorInvocation290', cardinality 0..*).
+'Statement' (role 'Statement375', cardinality 0..*) is associated with 'DOM::WhileStatement' (role 'DOM_WhileStatement', cardinality 0..*).
+'SimpleName' (role 'SimpleName76', cardinality 0..*) is associated with 'DOM::MethodRef' (role 'DOM_MethodRef', cardinality 0..*).
+'EnumConstantDeclaration' (role 'EnumConstantDeclaration', cardinality 0..*) is associated with 'DOM::EnumDeclaration' (role 'DOM_EnumDeclaration156', cardinality 0..*).
+'DOM::LabeledStatement' (role 'DOM_LabeledStatement331', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName332', cardinality 0..*).
+'Statement' (role 'Statement321', cardinality 0..*) is associated with 'DOM::IfStatement' (role 'DOM_IfStatement', cardinality 0..*).
+'DOM::AbstractTypeDeclaration' (role 'DOM_AbstractTypeDeclaration', cardinality 0..*) is associated with 'BodyDeclaration' (role 'BodyDeclaration109', cardinality 0..*).
+'DOM::QualifiedType' (role 'DOM_QualifiedType392', cardinality 0..*) is associated with 'Type' (role 'Type393', cardinality 0..*).
+'IPackageFragment' (role 'IPackageFragment95', cardinality 0..*) is associated with 'DOM::PackageDeclaration' (role 'DOM_PackageDeclaration94', cardinality 0..*).
+'DOM::VariableDeclaration' (role 'DOM_VariableDeclaration106', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName107', cardinality 0..*).
+'Statement' (role 'Statement349', cardinality 0..*) is associated with 'DOM::SwitchStatement' (role 'DOM_SwitchStatement348', cardinality 0..*).
+'DOM::VariableDeclarationExpression' (role 'DOM_VariableDeclarationExpression', cardinality 0..*) is associated with 'VariableDeclarationFragment' (role 'VariableDeclarationFragment272', cardinality 0..*).
+'Expression' (role 'Expression378', cardinality 0..*) is associated with 'DOM::WhileStatement' (role 'DOM_WhileStatement377', cardinality 0..*).
+'ExtendedModifier' (role 'ExtendedModifier', cardinality 0..*) is associated with 'DOM::BodyDeclaration' (role 'DOM_BodyDeclaration', cardinality 0..*).
+'DOM::SuperMethodInvocation' (role 'DOM_SuperMethodInvocation265', cardinality 0..*) is associated with 'Type' (role 'Type266', cardinality 0..*).
+'DOM::InfixExpression' (role 'DOM_InfixExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression219', cardinality 0..*).
+'Expression' (role 'Expression334', cardinality 0..*) is associated with 'DOM::ReturnStatement' (role 'DOM_ReturnStatement', cardinality 0..*).
+'DOM::AbstractTypeDeclaration' (role 'DOM_AbstractTypeDeclaration111', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName112', cardinality 0..*).
+'MemberValuePair' (role 'MemberValuePair', cardinality 0..*) is associated with 'DOM::NormalAnnotation' (role 'DOM_NormalAnnotation', cardinality 0..*).
+'IPackageFragmentRoot' (role 'IPackageFragmentRoot13', cardinality 0..*) is associated with 'Core::IPackageFragment' (role 'packageFragments', cardinality 0..*).
+'MethodRefParameter' (role 'MethodRefParameter', cardinality 0..*) is associated with 'DOM::MethodRef' (role 'DOM_MethodRef81', cardinality 0..*).
+'SimpleName' (role 'SimpleName238', cardinality 0..*) is associated with 'DOM::MethodInvocation' (role 'DOM_MethodInvocation237', cardinality 0..*).
+'DOM::ThisExpression' (role 'DOM_ThisExpression', cardinality 0..*) is associated with 'Name' (role 'Name268', cardinality 0..*).
+'DOM::Initializer' (role 'DOM_Initializer', cardinality 0..*) is associated with 'Block' (role 'Block133', cardinality 0..*).
+'DOM::ArrayType' (role 'DOM_ArrayType', cardinality 0..*) is associated with 'Type' (role 'Type380', cardinality 0..*).
+'Expression' (role 'Expression185', cardinality 0..*) is associated with 'DOM::Assignment' (role 'DOM_Assignment184', cardinality 0..*).
+'DOM::BreakStatement' (role 'DOM_BreakStatement', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName286', cardinality 0..*).
+'DOM::CompilationUnit' (role 'DOM_CompilationUnit63', cardinality 0..*) is associated with 'AbstractTypeDeclaration' (role 'AbstractTypeDeclaration', cardinality 0..*).
+'Name' (role 'Name147', cardinality 0..*) is associated with 'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration146', cardinality 0..*).
+'DOM::SuperMethodInvocation' (role 'DOM_SuperMethodInvocation262', cardinality 0..*) is associated with 'Name' (role 'Name263', cardinality 0..*).
+'Expression' (role 'Expression283', cardinality 0..*) is associated with 'DOM::AssertStatement' (role 'DOM_AssertStatement282', cardinality 0..*).
+'Expression' (role 'Expression280', cardinality 0..*) is associated with 'DOM::AssertStatement' (role 'DOM_AssertStatement', cardinality 0..*).
+'Javadoc' (role 'Javadoc89', cardinality 0..*) is associated with 'DOM::PackageDeclaration' (role 'DOM_PackageDeclaration88', cardinality 0..*).
+'Expression' (role 'Expression198', cardinality 0..*) is associated with 'DOM::ClassInstanceCreation' (role 'DOM_ClassInstanceCreation197', cardinality 0..*).
+'Expression' (role 'Expression410', cardinality 0..*) is associated with 'DOM::SingleMemberAnnotation' (role 'DOM_SingleMemberAnnotation', cardinality 0..*).
+'DOM::ForStatement' (role 'DOM_ForStatement312', cardinality 0..*) is associated with 'Expression' (role 'Expression313', cardinality 0..*).
+'DOM::ClassInstanceCreation' (role 'DOM_ClassInstanceCreation194', cardinality 0..*) is associated with 'AnonymousClassDeclaration' (role 'AnonymousClassDeclaration195', cardinality 0..*).
+'Type' (role 'Type383', cardinality 0..*) is associated with 'DOM::ArrayType' (role 'DOM_ArrayType382', cardinality 0..*).
+'IPackageFragmentRoot' (role 'IPackageFragmentRoot7', cardinality 0..*) is associated with 'Core::IJavaProject' (role 'Core_IJavaProject6', cardinality 0..*).
+'Expression' (role 'Expression104', cardinality 0..*) is associated with 'DOM::VariableDeclaration' (role 'DOM_VariableDeclaration', cardinality 0..*).
+'DOM::ClassInstanceCreation' (role 'DOM_ClassInstanceCreation203', cardinality 0..*) is associated with 'Type' (role 'Type204', cardinality 0..*).
+'DOM::SynchronizedStatement' (role 'DOM_SynchronizedStatement', cardinality 0..*) is associated with 'Block' (role 'Block351', cardinality 0..*).
+'DOM::ArrayInitializer' (role 'DOM_ArrayInitializer', cardinality 0..*) is associated with 'Expression' (role 'Expression180', cardinality 0..*).
+'DOM::CastExpression' (role 'DOM_CastExpression189', cardinality 0..*) is associated with 'Type' (role 'Type190', cardinality 0..*).
+'Expression' (role 'Expression206', cardinality 0..*) is associated with 'DOM::ConditionalExpression' (role 'DOM_ConditionalExpression', cardinality 0..*).
+'DOM::SuperMethodInvocation' (role 'DOM_SuperMethodInvocation', cardinality 0..*) is associated with 'Expression' (role 'Expression257', cardinality 0..*).
+'Core::IType' (role 'Core_IType40', cardinality 0..*) is associated with 'IMethod' (role 'IMethod', cardinality 0..*).
+'Type' (role 'Type385', cardinality 0..*) is associated with 'DOM::ParameterizedType' (role 'DOM_ParameterizedType', cardinality 0..*).
+'DOM::SwitchStatement' (role 'DOM_SwitchStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression346', cardinality 0..*).
+'SingleVariableDeclaration' (role 'SingleVariableDeclaration306', cardinality 0..*) is associated with 'DOM::EnhancedForStatement' (role 'DOM_EnhancedForStatement305', cardinality 0..*).
+'Expression' (role 'Expression250', cardinality 0..*) is associated with 'DOM::PrefixExpression' (role 'DOM_PrefixExpression', cardinality 0..*).
+'Name' (role 'Name92', cardinality 0..*) is associated with 'DOM::PackageDeclaration' (role 'DOM_PackageDeclaration91', cardinality 0..*).
+'Expression' (role 'Expression192', cardinality 0..*) is associated with 'DOM::ClassInstanceCreation' (role 'DOM_ClassInstanceCreation', cardinality 0..*).
+'DOM::MethodInvocation' (role 'DOM_MethodInvocation', cardinality 0..*) is associated with 'Expression' (role 'Expression232', cardinality 0..*).
+'Statement' (role 'Statement329', cardinality 0..*) is associated with 'DOM::LabeledStatement' (role 'DOM_LabeledStatement', cardinality 0..*).
+'DOM::TypeDeclaration' (role 'DOM_TypeDeclaration163', cardinality 0..*) is associated with 'TypeParameter' (role 'TypeParameter164', cardinality 0..*).
+'DOM::IfStatement' (role 'DOM_IfStatement326', cardinality 0..*) is associated with 'Statement' (role 'Statement327', cardinality 0..*).
+'IJavaProject' (role 'IJavaProject10', cardinality 0..*) is associated with 'Core::IJavaProject' (role 'Core_IJavaProject9', cardinality 0..*).
+'DOM::MemberValuePair' (role 'DOM_MemberValuePair', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName72', cardinality 0..*).
+'Core::ISourceReference' (role 'Core_ISourceReference', cardinality 0..*) is associated with 'ISourceRange' (role 'ISourceRange', cardinality 0..*).
+'DOM::TryStatement' (role 'DOM_TryStatement', cardinality 0..*) is associated with 'CatchClause' (role 'CatchClause', cardinality 0..*).
+'DOM::MemberRef' (role 'DOM_MemberRef', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName', cardinality 0..*).
+'DOM::FieldAccess' (role 'DOM_FieldAccess', cardinality 0..*) is associated with 'Expression' (role 'Expression214', cardinality 0..*).
+'Core::IPackageFragmentRoot' (role 'packageFragmentRoot', cardinality 0..*) is associated with 'IPackageFragment' (role 'IPackageFragment', cardinality 0..*).
+'DOM::FieldDeclaration' (role 'DOM_FieldDeclaration130', cardinality 0..*) is associated with 'Type' (role 'Type131', cardinality 0..*).
+'DOM::InstanceofExpression' (role 'DOM_InstanceofExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression227', cardinality 0..*).
+'IPackageFragmentRoot' (role 'IPackageFragmentRoot4', cardinality 0..*) is associated with 'Core::IJavaProject' (role 'Core_IJavaProject', cardinality 0..*).
+'BodyDeclaration' (role 'BodyDeclaration', cardinality 0..*) is associated with 'DOM::AnonymousClassDeclaration' (role 'DOM_AnonymousClassDeclaration', cardinality 0..*).
+'DOM::FieldDeclaration' (role 'DOM_FieldDeclaration', cardinality 0..*) is associated with 'VariableDeclarationFragment' (role 'VariableDeclarationFragment', cardinality 0..*).
+'DOM::VariableDeclarationExpression' (role 'DOM_VariableDeclarationExpression274', cardinality 0..*) is associated with 'ExtendedModifier' (role 'ExtendedModifier275', cardinality 0..*).
+'Block' (role 'Block360', cardinality 0..*) is associated with 'DOM::TryStatement' (role 'DOM_TryStatement359', cardinality 0..*).
+'Expression' (role 'Expression182', cardinality 0..*) is associated with 'DOM::Assignment' (role 'DOM_Assignment', cardinality 0..*).
+'Expression' (role 'Expression225', cardinality 0..*) is associated with 'DOM::InfixExpression' (role 'DOM_InfixExpression224', cardinality 0..*).
+'Type' (role 'Type102', cardinality 0..*) is associated with 'DOM::TypeParameter' (role 'DOM_TypeParameter101', cardinality 0..*).
+'DOM::MethodInvocation' (role 'DOM_MethodInvocation234', cardinality 0..*) is associated with 'Expression' (role 'Expression235', cardinality 0..*).
+'Type' (role 'Type230', cardinality 0..*) is associated with 'DOM::InstanceofExpression' (role 'DOM_InstanceofExpression229', cardinality 0..*).
+'Name' (role 'Name167', cardinality 0..*) is associated with 'DOM::Annotation' (role 'DOM_Annotation', cardinality 0..*).
+'Expression' (role 'Expression212', cardinality 0..*) is associated with 'DOM::ConditionalExpression' (role 'DOM_ConditionalExpression211', cardinality 0..*).
+'DOM::CatchClause' (role 'DOM_CatchClause54', cardinality 0..*) is associated with 'SingleVariableDeclaration' (role 'SingleVariableDeclaration', cardinality 0..*).
+'Block' (role 'Block363', cardinality 0..*) is associated with 'DOM::TryStatement' (role 'DOM_TryStatement362', cardinality 0..*).
+'Statement' (role 'Statement310', cardinality 0..*) is associated with 'DOM::ForStatement' (role 'DOM_ForStatement', cardinality 0..*).
+'DOM::TypeDeclaration' (role 'DOM_TypeDeclaration160', cardinality 0..*) is associated with 'Type' (role 'Type161', cardinality 0..*).
+'IPackageFragmentRoot' (role 'IPackageFragmentRoot', cardinality 0..*) is associated with 'Core::IJavaModel' (role 'Core_IJavaModel2', cardinality 0..*).
+'DOM::EnumConstantDeclaration' (role 'DOM_EnumConstantDeclaration126', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName127', cardinality 0..*).
+'SimpleName' (role 'SimpleName117', cardinality 0..*) is associated with 'DOM::AnnotationTypeMemberDeclaration' (role 'DOM_AnnotationTypeMemberDeclaration116', cardinality 0..*).
+'DOM::EnumConstantDeclaration' (role 'DOM_EnumConstantDeclaration124', cardinality 0..*) is associated with 'AnonymousClassDeclaration' (role 'AnonymousClassDeclaration', cardinality 0..*).
+'ITypeParameter' (role 'ITypeParameter', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType45', cardinality 0..*).
+'Core::ICompilationUnit' (role 'Core_ICompilationUnit19', cardinality 0..*) is associated with 'IImportDeclaration' (role 'IImportDeclaration', cardinality 0..*).
+'Name' (role 'Name', cardinality 0..*) is associated with 'DOM::ImportDeclaration' (role 'DOM_ImportDeclaration', cardinality 0..*).
+'Block' (role 'Block135', cardinality 0..*) is associated with 'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration', cardinality 0..*).
+'DOM::MethodInvocation' (role 'DOM_MethodInvocation240', cardinality 0..*) is associated with 'Type' (role 'Type241', cardinality 0..*).
+'Name' (role 'Name260', cardinality 0..*) is associated with 'DOM::SuperMethodInvocation' (role 'DOM_SuperMethodInvocation259', cardinality 0..*).
+'Expression' (role 'Expression316', cardinality 0..*) is associated with 'DOM::ForStatement' (role 'DOM_ForStatement315', cardinality 0..*).
+'DOM::TypeDeclarationStatement' (role 'DOM_TypeDeclarationStatement', cardinality 0..*) is associated with 'AbstractTypeDeclaration' (role 'AbstractTypeDeclaration365', cardinality 0..*).
+'Statement' (role 'Statement300', cardinality 0..*) is associated with 'DOM::EnhancedForStatement' (role 'DOM_EnhancedForStatement', cardinality 0..*).
+'Core::ICompilationUnit' (role 'Core_ICompilationUnit27', cardinality 0..*) is associated with 'CompilationUnit' (role 'CompilationUnit', cardinality 0..*).
+'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration140', cardinality 0..*) is associated with 'Type' (role 'Type141', cardinality 0..*).
+'DOM::FieldAccess' (role 'DOM_FieldAccess216', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName217', cardinality 0..*).
+'DOM::PostfixExpression' (role 'DOM_PostfixExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression248', cardinality 0..*).
+'Name' (role 'Name79', cardinality 0..*) is associated with 'DOM::MethodRef' (role 'DOM_MethodRef78', cardinality 0..*).
+'Expression' (role 'Expression288', cardinality 0..*) is associated with 'DOM::ConstructorInvocation' (role 'DOM_ConstructorInvocation', cardinality 0..*).
+'Name' (role 'Name395', cardinality 0..*) is associated with 'DOM::SimpleType' (role 'DOM_SimpleType', cardinality 0..*).
+'DOM::ArrayCreation' (role 'DOM_ArrayCreation176', cardinality 0..*) is associated with 'ArrayInitializer' (role 'ArrayInitializer', cardinality 0..*).
+'Javadoc' (role 'Javadoc', cardinality 0..*) is associated with 'DOM::BodyDeclaration' (role 'DOM_BodyDeclaration51', cardinality 0..*).
+'DOM::VariableDeclarationExpression' (role 'DOM_VariableDeclarationExpression277', cardinality 0..*) is associated with 'Type' (role 'Type278', cardinality 0..*).
+'Expression' (role 'Expression336', cardinality 0..*) is associated with 'DOM::SuperConstructorInvocation' (role 'DOM_SuperConstructorInvocation', cardinality 0..*).
+'IType' (role 'IType', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit', cardinality 0..*).
+'DOM::InfixExpression' (role 'DOM_InfixExpression221', cardinality 0..*) is associated with 'Expression' (role 'Expression222', cardinality 0..*).
+'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration149', cardinality 0..*) is associated with 'TypeParameter' (role 'TypeParameter', cardinality 0..*).
+'ICompilationUnit' (role 'ICompilationUnit', cardinality 0..*) is associated with 'Core::IPackageFragment' (role 'Core_IPackageFragment16', cardinality 0..*).
+'Type' (role 'Type397', cardinality 0..*) is associated with 'DOM::WildcardType' (role 'DOM_WildcardType', cardinality 0..*).
+'Expression' (role 'Expression339', cardinality 0..*) is associated with 'DOM::SuperConstructorInvocation' (role 'DOM_SuperConstructorInvocation338', cardinality 0..*).
+'DOM::TypeDeclaration' (role 'DOM_TypeDeclaration', cardinality 0..*) is associated with 'Type' (role 'Type158', cardinality 0..*).
+'DOM::Comment' (role 'DOM_Comment', cardinality 0..*) is associated with 'ASTNode' (role 'ASTNode56', cardinality 0..*).
+'Type' (role 'Type120', cardinality 0..*) is associated with 'DOM::AnnotationTypeMemberDeclaration' (role 'DOM_AnnotationTypeMemberDeclaration119', cardinality 0..*).
+'DOM::ArrayAccess' (role 'DOM_ArrayAccess', cardinality 0..*) is associated with 'Expression' (role 'Expression169', cardinality 0..*).
+'DOM::CastExpression' (role 'DOM_CastExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression187', cardinality 0..*).
+'IInitializer' (role 'IInitializer', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType', cardinality 0..*).
+'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration137', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName138', cardinality 0..*).
+'DOM::ThrowStatement' (role 'DOM_ThrowStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression356', cardinality 0..*).
+'DOM::SwitchCase' (role 'DOM_SwitchCase', cardinality 0..*) is associated with 'Expression' (role 'Expression344', cardinality 0..*).
+'DOM::MethodDeclaration' (role 'DOM_MethodDeclaration143', cardinality 0..*) is associated with 'SingleVariableDeclaration' (role 'SingleVariableDeclaration144', cardinality 0..*).
+'Expression' (role 'Expression209', cardinality 0..*) is associated with 'DOM::ConditionalExpression' (role 'DOM_ConditionalExpression208', cardinality 0..*).
+'DOM::EnhancedForStatement' (role 'DOM_EnhancedForStatement302', cardinality 0..*) is associated with 'Expression' (role 'Expression303', cardinality 0..*).
+'DOM::TagElement' (role 'DOM_TagElement', cardinality 0..*) is associated with 'ASTNode' (role 'ASTNode97', cardinality 0..*).
+'DOM::SingleVariableDeclaration' (role 'DOM_SingleVariableDeclaration', cardinality 0..*) is associated with 'Type' (role 'Type399', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'Core::IMethod' (role 'Core_IMethod', cardinality 0..*).
+'DOM::Javadoc' (role 'DOM_Javadoc', cardinality 0..*) is associated with 'TagElement' (role 'TagElement', cardinality 0..*).
+'DOM::ContinueStatement' (role 'DOM_ContinueStatement', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName293', cardinality 0..*).
+'ImportDeclaration' (role 'ImportDeclaration', cardinality 0..*) is associated with 'DOM::CompilationUnit' (role 'DOM_CompilationUnit61', cardinality 0..*).
+'Expression' (role 'Expression246', cardinality 0..*) is associated with 'DOM::ParenthesizedExpression' (role 'DOM_ParenthesizedExpression', cardinality 0..*).
+'DOM::DoStatement' (role 'DOM_DoStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement295', cardinality 0..*).
+'ASTNode' (role 'ASTNode', cardinality 0..*) is associated with 'DOM::AST' (role 'DOM_AST', cardinality 0..*).
+'DOM::TypeParameter' (role 'DOM_TypeParameter', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName99', cardinality 0..*).
+'DOM::Expression' (role 'DOM_Expression', cardinality 0..*) is associated with 'IType' (role 'IType65', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'DOM::Block' (role 'DOM_Block', cardinality 0..*).
+'DOM::MemberValuePair' (role 'DOM_MemberValuePair74', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'ExtendedModifier' (role 'ExtendedModifier402', cardinality 0..*) is associated with 'DOM::SingleVariableDeclaration' (role 'DOM_SingleVariableDeclaration401', cardinality 0..*).
+'Expression' (role 'Expression298', cardinality 0..*) is associated with 'DOM::DoStatement' (role 'DOM_DoStatement297', cardinality 0..*).
+'DOM::SuperFieldAccess' (role 'DOM_SuperFieldAccess', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName252', cardinality 0..*).
+'Block' (role 'Block', cardinality 0..*) is associated with 'DOM::CatchClause' (role 'DOM_CatchClause', cardinality 0..*).
+'DOM::SuperConstructorInvocation' (role 'DOM_SuperConstructorInvocation341', cardinality 0..*) is associated with 'Type' (role 'Type342', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'DOM::CompilationUnit' (role 'DOM_CompilationUnit', cardinality 0..*).
+'Type' (role 'Type270', cardinality 0..*) is associated with 'DOM::TypeLiteral' (role 'DOM_TypeLiteral', cardinality 0..*).
+'Expression' (role 'Expression319', cardinality 0..*) is associated with 'DOM::ForStatement' (role 'DOM_ForStatement318', cardinality 0..*).
+'SimpleName' (role 'SimpleName404', cardinality 0..*) is associated with 'DOM::QualifiedName' (role 'DOM_QualifiedName', cardinality 0..*).
+'ISourceRange' (role 'ISourceRange32', cardinality 0..*) is associated with 'Core::IMember' (role 'Core_IMember', cardinality 0..*).
+'IType' (role 'IType22', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit21', cardinality 0..*).
+'IClassFile' (role 'IClassFile', cardinality 0..*) is associated with 'Core::IPackageFragment' (role 'Core_IPackageFragment', cardinality 0..*).
+'DOM::MethodRefParameter' (role 'DOM_MethodRefParameter85', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'VariableDeclarationFragment' (role 'VariableDeclarationFragment367', cardinality 0..*) is associated with 'DOM::VariableDeclarationStatement' (role 'DOM_VariableDeclarationStatement', cardinality 0..*).
+'DOM::MethodInvocation' (role 'DOM_MethodInvocation243', cardinality 0..*) is associated with 'IMethod' (role 'IMethod244', cardinality 0..*).
+'Core::IJavaModel' (role 'Core_IJavaModel', cardinality 0..*) is associated with 'IJavaProject' (role 'IJavaProject', cardinality 0..*).
+'Name' (role 'Name255', cardinality 0..*) is associated with 'DOM::SuperFieldAccess' (role 'DOM_SuperFieldAccess254', cardinality 0..*).
+'Name' (role 'Name407', cardinality 0..*) is associated with 'DOM::QualifiedName' (role 'DOM_QualifiedName406', cardinality 0..*).
+'DOM::MethodRefParameter' (role 'DOM_MethodRefParameter', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName83', cardinality 0..*).
+'Expression' (role 'Expression308', cardinality 0..*) is associated with 'DOM::ExpressionStatement' (role 'DOM_ExpressionStatement', cardinality 0..*).
+'DOM::VariableDeclarationStatement' (role 'DOM_VariableDeclarationStatement369', cardinality 0..*) is associated with 'ExtendedModifier' (role 'ExtendedModifier370', cardinality 0..*).
+'IType' (role 'IType29', cardinality 0..*) is associated with 'Core::IClassFile' (role 'Core_IClassFile', cardinality 0..*).
+'DOM::CompilationUnit' (role 'DOM_CompilationUnit59', cardinality 0..*) is associated with 'PackageDeclaration' (role 'PackageDeclaration', cardinality 0..*).
+'Expression' (role 'Expression114', cardinality 0..*) is associated with 'DOM::AnnotationTypeMemberDeclaration' (role 'DOM_AnnotationTypeMemberDeclaration', cardinality 0..*).
+'DOM::EnumConstantDeclaration' (role 'DOM_EnumConstantDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression122', cardinality 0..*).

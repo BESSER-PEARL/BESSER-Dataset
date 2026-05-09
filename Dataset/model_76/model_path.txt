@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/neo4emf/Neo4EMF/models/java/src/main/model/java.ecore

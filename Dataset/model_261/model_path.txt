@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/javitroya/ATL2DSLTrans/ruleTypeExtraction/Example/EcoreCopier_modified/Ecore2.ecore

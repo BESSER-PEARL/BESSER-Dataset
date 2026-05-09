@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'petrinet::Place' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'petrinet::Net' has no attributes.
+The class 'petrinet::Transition' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'petrinet::Box' has the following attributes: 'id' of type int; 'name' of type str.
+'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition2', cardinality 0..*) is associated with 'petrinet::Box' (role 'petrinet_Box', cardinality 0..*).
+'petrinet::Box' (role 'petrinet_Box13', cardinality 0..*) is associated with 'petrinet::Net' (role 'petrinet_Net12', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place7', cardinality 0..*) is associated with 'petrinet::Net' (role 'petrinet_Net', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition4', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place5', cardinality 0..*).
+'petrinet::Net' (role 'petrinet_Net9', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition10', cardinality 0..*).
+'petrinet::Box' (role 'petrinet_Box15', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place16', cardinality 0..*).

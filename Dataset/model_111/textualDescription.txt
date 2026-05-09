@@ -1,0 +1,128 @@
+The model has 51 class(es).
+The class 'cSharpArchId::PrimitiveType' has the following attributes: 'kind' of type str.
+The class 'cSharpArchId::Annotation' has no attributes.
+The class 'cSharpArchId::AbstractMethodInvocation' has no attributes.
+The class 'cSharpArchId::ASTNode' has no attributes.
+The class 'cSharpArchId::Namespace' has no attributes.
+The class 'cSharpArchId::Modifier' has the following attributes: 'static' of type bool; 'inheritance' of type str; 'visibility' of type str; 'modifier' of type str.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'cSharpArchId::ClassInstanceCreation' has no attributes.
+The class 'AbstractMethodDeclaration' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'cSharpArchId::MethodDeclaration' has no attributes.
+The class 'cSharpArchId::Block' has no attributes.
+The class 'cSharpArchId::Statement' has no attributes.
+The class 'cSharpArchId::Expresion' has no attributes.
+The class 'Type' has no attributes.
+The class 'cSharpArchId::Assignment' has no attributes.
+The class 'cSharpArchId::CompileUnit' has the following attributes: 'originalFilePath' of type str.
+The class 'cSharpArchId::Archive' has the following attributes: 'originalFilePath' of type str.
+The class 'cSharpArchId::NamedElement' has the following attributes: 'name' of type str.
+The class 'TypeDeclaration' has no attributes.
+The class 'cSharpArchId::InterfaceDeclaration' has no attributes.
+The class 'Statement' has no attributes.
+The class 'cSharpArchId::ElementRef' has no attributes.
+The class 'cSharpArchId::ConstructorDeclaration' has no attributes.
+The class 'cSharpArchId::MethodInvocation' has no attributes.
+The class 'cSharpArchId::TypeDeclaration' has no attributes.
+The class 'cSharpArchId::LineComment' has no attributes.
+The class 'cSharpArchId::VariableDeclaration' has no attributes.
+The class 'cSharpArchId::Enumeration' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'cSharpArchId::ReturnType' has the following attributes: 'returnType' of type str.
+The class 'ASTNode' has no attributes.
+The class 'cSharpArchId::BodyDeclaration' has no attributes.
+The class 'cSharpArchId::ClassDeclaration' has no attributes.
+The class 'cSharpArchId::TypeAcces' has no attributes.
+The class 'cSharpArchId::MethodParameter' has no attributes.
+The class 'Comment' has no attributes.
+The class 'cSharpArchId::UsingDeclaration' has no attributes.
+The class 'AbstractMethodInvocation' has no attributes.
+The class 'cSharpArchId::TypeParameter' has no attributes.
+The class 'cSharpArchId::BlockComment' has no attributes.
+The class 'Expresion' has no attributes.
+The class 'cSharpArchId::ConstructorInvocation' has no attributes.
+The class 'cSharpArchId::Comment' has the following attributes: 'content' of type str.
+The class 'cSharpArchId::EnumerationLiteral' has no attributes.
+The class 'cSharpArchId::AbstractTypeDeclaration' has no attributes.
+The class 'cSharpArchId::AbstractMethodDeclaration' has no attributes.
+The class 'cSharpArchId::SingleVariableDeclaration' has no attributes.
+The class 'cSharpArchId::Model' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'cSharpArchId::Type' has no attributes.
+The enumeration 'ModifierKind' has the following literals: 'virtual', 'override', 'new', 'sinchronized', 'none', 'static', 'readonly', 'native', 'const'.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'none', 'public', 'private', 'internal', 'private_protected', 'internal_protected'.
+The enumeration 'SimpleType' has the following literals: 'ulong', 'string', 'object', 'double', 'bool', 'uint', 'byte', 'float', 'decimal', 'long', 'short', 'char', 'int', 'sbyte', 'void', 'ushort'.
+The enumeration 'InheritanceKind' has the following literals: 'sealed', 'abstract', 'none'.
+'cSharpArchId::Archive' is a specialization of 'NamedElement'.
+'cSharpArchId::UsingDeclaration' is a specialization of 'NamedElement'.
+'cSharpArchId::AbstractTypeDeclaration' is a specialization of 'Type'.
+'cSharpArchId::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'cSharpArchId::Enumeration' is a specialization of 'Type'.
+'cSharpArchId::NamedElement' is a specialization of 'ASTNode'.
+'cSharpArchId::ClassDeclaration' is a specialization of 'TypeDeclaration'.
+'cSharpArchId::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'cSharpArchId::ReturnType' is a specialization of 'Type'.
+'cSharpArchId::Annotation' is a specialization of 'Expresion'.
+'cSharpArchId::Assignment' is a specialization of 'Expresion'.
+'cSharpArchId::TypeAcces' is a specialization of 'Expresion'.
+'cSharpArchId::Type' is a specialization of 'NamedElement'.
+'cSharpArchId::Block' is a specialization of 'Statement'.
+'cSharpArchId::Namespace' is a specialization of 'NamedElement'.
+'cSharpArchId::Expresion' is a specialization of 'ASTNode'.
+'cSharpArchId::Modifier' is a specialization of 'ASTNode'.
+'cSharpArchId::MethodParameter' is a specialization of 'NamedElement'.
+'cSharpArchId::InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+'cSharpArchId::ClassInstanceCreation' is a specialization of 'AbstractMethodInvocation'.
+'cSharpArchId::CompileUnit' is a specialization of 'NamedElement'.
+'cSharpArchId::BlockComment' is a specialization of 'Comment'.
+'cSharpArchId::AbstractMethodInvocation' is a specialization of 'ASTNode'.
+'cSharpArchId::EnumerationLiteral' is a specialization of 'NamedElement'.
+'cSharpArchId::LineComment' is a specialization of 'Comment'.
+'cSharpArchId::ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'cSharpArchId::Statement' is a specialization of 'ASTNode'.
+'cSharpArchId::TypeParameter' is a specialization of 'Type'.
+'cSharpArchId::Comment' is a specialization of 'ASTNode'.
+'cSharpArchId::MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'cSharpArchId::AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+'cSharpArchId::VariableDeclaration' is a specialization of 'BodyDeclaration'.
+'cSharpArchId::ElementRef' is a specialization of 'Type'.
+'cSharpArchId::ConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+'cSharpArchId::PrimitiveType' is a specialization of 'Type'.
+'cSharpArchId::BodyDeclaration' is a specialization of 'NamedElement'.
+'cSharpArchId::MethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit27', cardinality 0..*) is associated with 'cSharpArchId::Archive' (role 'cSharpArchId_Archive26', cardinality 0..*).
+'cSharpArchId::AbstractTypeDeclaration' (role 'cSharpArchId_AbstractTypeDeclaration37', cardinality 0..*) is associated with 'cSharpArchId::Modifier' (role 'cSharpArchId_Modifier', cardinality 0..*).
+'cSharpArchId::BodyDeclaration' (role 'bodyDeclaration', cardinality 0..*) is associated with 'cSharpArchId::Modifier' (role 'Modifier', cardinality 0..*).
+'cSharpArchId::TypeAcces' (role 'cSharpArchId_TypeAcces66', cardinality 0..*) is associated with 'cSharpArchId::ClassInstanceCreation' (role 'cSharpArchId_ClassInstanceCreation', cardinality 0..*).
+'cSharpArchId::AbstractMethodInvocation' (role 'cSharpArchId_AbstractMethodInvocation62', cardinality 0..*) is associated with 'cSharpArchId::Expresion' (role 'cSharpArchId_Expresion', cardinality 0..*).
+'cSharpArchId::BodyDeclaration' (role 'cSharpArchId_BodyDeclaration58', cardinality 0..*) is associated with 'cSharpArchId::MethodDeclaration' (role 'cSharpArchId_MethodDeclaration', cardinality 0..*).
+'cSharpArchId::Expresion' (role 'cSharpArchId_Expresion64', cardinality 0..*) is associated with 'cSharpArchId::MethodInvocation' (role 'cSharpArchId_MethodInvocation', cardinality 0..*).
+'cSharpArchId::ClassInstanceCreation' (role 'cSharpArchId_ClassInstanceCreation68', cardinality 0..*) is associated with 'cSharpArchId::Expresion' (role 'cSharpArchId_Expresion69', cardinality 0..*).
+'cSharpArchId::AbstractTypeDeclaration' (role 'cSharpArchId_AbstractTypeDeclaration35', cardinality 0..*) is associated with 'cSharpArchId::BodyDeclaration' (role 'cSharpArchId_BodyDeclaration', cardinality 0..*).
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit13', cardinality 0..*) is associated with 'cSharpArchId::NamedElement' (role 'cSharpArchId_NamedElement', cardinality 0..*).
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit19', cardinality 0..*) is associated with 'cSharpArchId::UsingDeclaration' (role 'cSharpArchId_UsingDeclaration', cardinality 0..*).
+'cSharpArchId::Namespace' (role 'cSharpArchId_Namespace', cardinality 0..*) is associated with 'cSharpArchId::ClassDeclaration' (role 'cSharpArchId_ClassDeclaration6', cardinality 0..*).
+'cSharpArchId::Annotation' (role 'cSharpArchId_Annotation', cardinality 0..*) is associated with 'cSharpArchId::Modifier' (role 'cSharpArchId_Modifier41', cardinality 0..*).
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit21', cardinality 0..*) is associated with 'cSharpArchId::Namespace' (role 'cSharpArchId_Namespace22', cardinality 0..*).
+'cSharpArchId::Type' (role 'cSharpArchId_Type11', cardinality 0..*) is associated with 'cSharpArchId::MethodParameter' (role 'cSharpArchId_MethodParameter', cardinality 0..*).
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit17', cardinality 0..*) is associated with 'cSharpArchId::AbstractTypeDeclaration' (role 'cSharpArchId_AbstractTypeDeclaration', cardinality 0..*).
+'cSharpArchId::VariableDeclaration' (role 'cSharpArchId_VariableDeclaration', cardinality 0..*) is associated with 'cSharpArchId::Type' (role 'cSharpArchId_Type56', cardinality 0..*).
+'cSharpArchId::Modifier' (role 'modifier', cardinality 0..*) is associated with 'cSharpArchId::BodyDeclaration' (role 'BodyDeclaration', cardinality 0..*).
+'cSharpArchId::Block' (role 'cSharpArchId_Block', cardinality 0..*) is associated with 'cSharpArchId::AbstractMethodDeclaration' (role 'cSharpArchId_AbstractMethodDeclaration', cardinality 0..*).
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit24', cardinality 0..*) is associated with 'cSharpArchId::ASTNode' (role 'cSharpArchId_ASTNode', cardinality 0..*).
+'cSharpArchId::AbstractMethodDeclaration' (role 'cSharpArchId_AbstractMethodDeclaration47', cardinality 0..*) is associated with 'cSharpArchId::TypeParameter' (role 'cSharpArchId_TypeParameter', cardinality 0..*).
+'cSharpArchId::AbstractMethodInvocation' (role 'cSharpArchId_AbstractMethodInvocation', cardinality 0..*) is associated with 'cSharpArchId::TypeAcces' (role 'cSharpArchId_TypeAcces60', cardinality 0..*).
+'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit', cardinality 0..*) is associated with 'cSharpArchId::Model' (role 'cSharpArchId_Model2', cardinality 0..*).
+'cSharpArchId::AbstractMethodDeclaration' (role 'cSharpArchId_AbstractMethodDeclaration49', cardinality 0..*) is associated with 'cSharpArchId::TypeAcces' (role 'cSharpArchId_TypeAcces50', cardinality 0..*).
+'cSharpArchId::VariableDeclaration' (role 'parameters', cardinality 0..*) is associated with 'cSharpArchId::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration', cardinality 0..*).
+'cSharpArchId::Namespace' (role 'cSharpArchId_Namespace8', cardinality 0..*) is associated with 'cSharpArchId::Enumeration' (role 'cSharpArchId_Enumeration9', cardinality 0..*).
+'cSharpArchId::AbstractTypeDeclaration' (role 'cSharpArchId_AbstractTypeDeclaration32', cardinality 0..*) is associated with 'cSharpArchId::Comment' (role 'cSharpArchId_Comment33', cardinality 0..*).
+'cSharpArchId::AbstractMethodDeclaration' (role 'cSharpArchId_AbstractMethodDeclaration52', cardinality 0..*) is associated with 'cSharpArchId::Type' (role 'cSharpArchId_Type53', cardinality 0..*).
+'cSharpArchId::Enumeration' (role 'cSharpArchId_Enumeration', cardinality 0..*) is associated with 'cSharpArchId::EnumerationLiteral' (role 'cSharpArchId_EnumerationLiteral', cardinality 0..*).
+'cSharpArchId::Comment' (role 'cSharpArchId_Comment', cardinality 0..*) is associated with 'cSharpArchId::CompileUnit' (role 'cSharpArchId_CompileUnit15', cardinality 0..*).
+'cSharpArchId::Comment' (role 'cSharpArchId_Comment30', cardinality 0..*) is associated with 'cSharpArchId::AbstractTypeDeclaration' (role 'cSharpArchId_AbstractTypeDeclaration29', cardinality 0..*).
+'cSharpArchId::Model' (role 'cSharpArchId_Model', cardinality 0..*) is associated with 'cSharpArchId::Archive' (role 'cSharpArchId_Archive', cardinality 0..*).
+'cSharpArchId::Type' (role 'cSharpArchId_Type', cardinality 0..*) is associated with 'cSharpArchId::ClassDeclaration' (role 'cSharpArchId_ClassDeclaration', cardinality 0..*).
+'cSharpArchId::VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'cSharpArchId::AbstractMethodDeclaration' (role 'methodDeclaration', cardinality 0..*).
+'cSharpArchId::Annotation' (role 'cSharpArchId_Annotation43', cardinality 0..*) is associated with 'cSharpArchId::TypeAcces' (role 'cSharpArchId_TypeAcces', cardinality 0..*).

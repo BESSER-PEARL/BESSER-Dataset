@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/olegsergeyev/lab/plugins/org.eclipse.emf.gwt.ecore/model/Ecore.ecore

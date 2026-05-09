@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/martin-fleck/momot/examples/tse/at.ac.tuwien.big.momot.examples.tse.resources/casestudy/JavaMethods2UMLActivityDiagram/metamodels/java.ecore

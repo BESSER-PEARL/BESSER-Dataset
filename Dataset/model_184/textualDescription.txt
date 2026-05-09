@@ -1,0 +1,24 @@
+The model has 7 class(es).
+The class 'lit::petriNets::Arc' has no attributes.
+The class 'lit::petriNets::Net' has no attributes.
+The class 'lit::petriNets::Transition' has the following attributes: 'name' of type str.
+The class 'lit::petriNets::Place' has the following attributes: 'name' of type str.
+The class 'lit::petriNets::PTArc' has no attributes.
+The class 'lit::petriNets::TPArc' has no attributes.
+The class 'Arc' has no attributes.
+'lit::petriNets::TPArc' is a specialization of 'Arc'.
+'lit::petriNets::PTArc' is a specialization of 'Arc'.
+'lit::petriNets::Place' (role 'Place', cardinality 0..*) is associated with 'lit::petriNets::Net' (role 'net', cardinality 0..*).
+'lit::petriNets::Net' (role 'net4', cardinality 0..*) is associated with 'lit::petriNets::Arc' (role 'Arc', cardinality 0..*).
+'lit::petriNets::Place' (role 'Place27', cardinality 0..*) is associated with 'lit::petriNets::TPArc' (role 'in_26', cardinality 0..*).
+'lit::petriNets::PTArc' (role 'out', cardinality 0..*) is associated with 'lit::petriNets::Place' (role 'Place19', cardinality 0..*).
+'lit::petriNets::Transition' (role 'transitions', cardinality 0..*) is associated with 'lit::petriNets::Net' (role 'Net9', cardinality 0..*).
+'lit::petriNets::TPArc' (role 'TPArc15', cardinality 0..*) is associated with 'lit::petriNets::Transition' (role 'src14', cardinality 0..*).
+'lit::petriNets::TPArc' (role 'TPArc', cardinality 0..*) is associated with 'lit::petriNets::Place' (role 'dst', cardinality 0..*).
+'lit::petriNets::Net' (role 'Net17', cardinality 0..*) is associated with 'lit::petriNets::Arc' (role 'arcs', cardinality 0..*).
+'lit::petriNets::Place' (role 'places', cardinality 0..*) is associated with 'lit::petriNets::Net' (role 'Net', cardinality 0..*).
+'lit::petriNets::Place' (role 'src', cardinality 0..*) is associated with 'lit::petriNets::PTArc' (role 'PTArc', cardinality 0..*).
+'lit::petriNets::Transition' (role 'dst11', cardinality 0..*) is associated with 'lit::petriNets::PTArc' (role 'PTArc12', cardinality 0..*).
+'lit::petriNets::TPArc' (role 'out23', cardinality 0..*) is associated with 'lit::petriNets::Transition' (role 'Transition24', cardinality 0..*).
+'lit::petriNets::Transition' (role 'Transition21', cardinality 0..*) is associated with 'lit::petriNets::PTArc' (role 'in_', cardinality 0..*).
+'lit::petriNets::Net' (role 'net2', cardinality 0..*) is associated with 'lit::petriNets::Transition' (role 'Transition', cardinality 0..*).

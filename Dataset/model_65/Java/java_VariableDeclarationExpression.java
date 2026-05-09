@@ -1,0 +1,65 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class java_VariableDeclarationExpression extends Expression, AbstractVariablesContainer {
+
+
+
+
+
+
+    private java_Modifier java_modifier;
+
+
+
+
+    private List<java_Annotation> java_annotations;
+
+
+
+
+    private java_Modifier java_modifier;
+
+
+    public java_VariableDeclarationExpression(
+    ) {
+        super(
+        );
+        this.java_annotations = new ArrayList<>();
+    }
+
+    public java_VariableDeclarationExpression(
+        ArrayList<java_Annotation> java_annotations    ) {
+        this.java_annotations = java_annotations;
+    }
+
+
+    public java_Modifier getJava_modifier() {
+        return java_modifier;
+    }
+
+    public void setJava_modifier(java_Modifier java_modifier) {
+        this.java_modifier = java_modifier;
+    }
+    public List<java_Annotation> getJava_annotations() {
+        return java_annotations;
+    }
+
+    public void addJava_annotation(Java_annotation java_annotation) {
+        this.java_annotations.add(java_annotation);
+    }
+    public java_Modifier getJava_modifier() {
+        return java_modifier;
+    }
+
+    public void setJava_modifier(java_Modifier java_modifier) {
+        this.java_modifier = java_modifier;
+    }
+
+}

@@ -1,0 +1,372 @@
+The model has 122 class(es).
+The class 'CatchClause' has no attributes.
+The class 'JavaAbstractSyntax::Initializer' has no attributes.
+The class 'JavaAbstractSyntax::MethodDeclaration' has the following attributes: 'varargs' of type str; 'extraDimensions' of type str; 'constructor' of type str.
+The class 'JavaAbstractSyntax::AnnotationTypeDeclaration' has no attributes.
+The class 'ArrayType' has no attributes.
+The class 'JavaAbstractSyntax::MethodRefParameter' has the following attributes: 'varargs' of type str.
+The class 'JavaAbstractSyntax::TypeDeclarationStatement' has no attributes.
+The class 'JavaAbstractSyntax::CastExpression' has no attributes.
+The class 'JavaAbstractSyntax::SimpleName' has the following attributes: 'declaration' of type str; 'identifier' of type str.
+The class 'JavaAbstractSyntax::CharacterLiteral' has the following attributes: 'charValue' of type str; 'escapedValue' of type str.
+The class 'JavaAbstractSyntax::ReturnStatement' has no attributes.
+The class 'Block' has no attributes.
+The class 'JavaAbstractSyntax::TryStatement' has no attributes.
+The class 'JavaAbstractSyntax::TypeDeclaration' has the following attributes: 'interface' of type str.
+The class 'JavaAbstractSyntax::SuperMethodInvocation' has no attributes.
+The class 'JavaAbstractSyntax::TypeLiteral' has no attributes.
+The class 'Expression' has no attributes.
+The class 'JavaAbstractSyntax::AssertStatement' has no attributes.
+The class 'JavaAbstractSyntax::ImportDeclaration' has the following attributes: 'static' of type str; 'onDemand' of type str.
+The class 'JavaAbstractSyntax::ClassInstanceCreation' has no attributes.
+The class 'JavaAbstractSyntax::VariableDeclaration' has the following attributes: 'extraDimensions' of type str.
+The class 'ArrayInitializer' has no attributes.
+The class 'JavaAbstractSyntax::InstanceofExpression' has no attributes.
+The class 'JavaAbstractSyntax::Javadoc' has no attributes.
+The class 'JavaAbstractSyntax::LabeledStatement' has no attributes.
+The class 'JavaAbstractSyntax::ThrowStatement' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::Expression' has the following attributes: 'resolveUnboxing' of type str; 'resolveBoxing' of type str.
+The class 'JavaAbstractSyntax::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'JavaAbstractSyntax::SynchronizedStatement' has no attributes.
+The class 'JavaAbstractSyntax::SingleMemberAnnotation' has no attributes.
+The class 'JavaAbstractSyntax::NormalAnnotation' has no attributes.
+The class 'JavaAbstractSyntax::LineComment' has no attributes.
+The class 'ImportDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::MethodRef' has no attributes.
+The class 'JavaAbstractSyntax::ArrayInitializer' has no attributes.
+The class 'JavaAbstractSyntax::CatchClause' has no attributes.
+The class 'JavaAbstractSyntax::FieldAccess' has no attributes.
+The class 'JavaAbstractSyntax::DoStatement' has no attributes.
+The class 'JavaAbstractSyntax::NumberLiteral' has the following attributes: 'token' of type str.
+The class 'MemberValuePair' has no attributes.
+The class 'JavaAbstractSyntax::Modifier' has the following attributes: 'private' of type str; 'none' of type str; 'final' of type str; 'volatile' of type str; 'public' of type str; 'static' of type str; 'transient' of type str; 'synchronized' of type str; 'protected' of type str; 'abstract' of type str; 'strictfp' of type str; 'native' of type str.
+The class 'SingleVariableDeclaration' has no attributes.
+The class 'MethodRefParameter' has no attributes.
+The class 'TypeParameter' has no attributes.
+The class 'Javadoc' has no attributes.
+The class 'JavaAbstractSyntax::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::BreakStatement' has no attributes.
+The class 'JavaAbstractSyntax::AST' has no attributes.
+The class 'SimpleName' has no attributes.
+The class 'JavaAbstractSyntax::StringLiteral' has the following attributes: 'literalValue' of type str; 'escapedValue' of type str.
+The class 'JavaAbstractSyntax::ForStatement' has no attributes.
+The class 'JavaAbstractSyntax::ExpressionStatement' has no attributes.
+The class 'JavaAbstractSyntax::ParameterizedType' has no attributes.
+The class 'JavaAbstractSyntax::EnhancedForStatement' has no attributes.
+The class 'JavaAbstractSyntax::Type' has no attributes.
+The class 'JavaAbstractSyntax::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'JavaAbstractSyntax::WildcardType' has the following attributes: 'upperBound' of type str.
+The class 'JavaAbstractSyntax::QualifiedName' has no attributes.
+The class 'JavaAbstractSyntax::VariableDeclarationStatement' has no attributes.
+The class 'JavaAbstractSyntax::EnumDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::Statement' has no attributes.
+The class 'JavaAbstractSyntax::PrimitiveType' has the following attributes: 'code' of type str.
+The class 'JavaAbstractSyntax::FieldDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::ConstructorInvocation' has no attributes.
+The class 'VariableDeclarationFragment' has no attributes.
+The class 'Type' has no attributes.
+The class 'JavaAbstractSyntax::TextElement' has the following attributes: 'text' of type str.
+The class 'JavaAbstractSyntax::BooleanLiteral' has the following attributes: 'booleanValue' of type str.
+The class 'JavaAbstractSyntax::ArrayCreation' has no attributes.
+The class 'JavaAbstractSyntax::QualifiedType' has no attributes.
+The class 'JavaAbstractSyntax::ConditionalExpression' has no attributes.
+The class 'TagElement' has no attributes.
+The class 'EnumConstantDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::ParenthesizedExpression' has no attributes.
+The class 'JavaAbstractSyntax::MarkerAnnotation' has no attributes.
+The class 'Name' has no attributes.
+The class 'JavaAbstractSyntax::ThisExpression' has no attributes.
+The class 'JavaAbstractSyntax::EmptyStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'JavaAbstractSyntax::ContinueStatement' has no attributes.
+The class 'JavaAbstractSyntax::BlockComment' has no attributes.
+The class 'JavaAbstractSyntax::Block' has no attributes.
+The class 'JavaAbstractSyntax::SingleVariableDeclaration' has the following attributes: 'varargs' of type str.
+The class 'JavaAbstractSyntax::VariableDeclarationFragment' has no attributes.
+The class 'Comment' has no attributes.
+The class 'JavaAbstractSyntax::Assignment' has the following attributes: 'operator' of type str.
+The class 'JavaAbstractSyntax::TypeParameter' has no attributes.
+The class 'JavaAbstractSyntax::AbstractTypeDeclaration' has the following attributes: 'packageMemberTypeDeclaration' of type str; 'localTypeDeclaration' of type str; 'memberTypeDeclaration' of type str.
+The class 'AnonymousClassDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::SwitchStatement' has no attributes.
+The class 'JavaAbstractSyntax::ASTNode' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'PackageDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::Annotation' has no attributes.
+The class 'JavaAbstractSyntax::MethodInvocation' has no attributes.
+The class 'JavaAbstractSyntax::MemberRef' has no attributes.
+The class 'JavaAbstractSyntax::SimpleType' has no attributes.
+The class 'JavaAbstractSyntax::ArrayAccess' has no attributes.
+The class 'JavaAbstractSyntax::EnumConstantDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::SuperFieldAccess' has no attributes.
+The class 'JavaAbstractSyntax::CompilationUnit' has no attributes.
+The class 'JavaAbstractSyntax::SuperConstructorInvocation' has no attributes.
+The class 'JavaAbstractSyntax::WhileStatement' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'JavaAbstractSyntax::AnonymousClassDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::ExtendedModifier' has no attributes.
+The class 'JavaAbstractSyntax::SwitchCase' has the following attributes: 'default' of type str.
+The class 'JavaAbstractSyntax::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'ExtendedModifier' has no attributes.
+The class 'JavaAbstractSyntax::VariableDeclarationExpression' has no attributes.
+The class 'JavaAbstractSyntax::ArrayType' has the following attributes: 'dimensions' of type str.
+The class 'JavaAbstractSyntax::PackageDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::IfStatement' has no attributes.
+The class 'JavaAbstractSyntax::NullLiteral' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::TagElement' has the following attributes: 'nested' of type str; 'tagName' of type str.
+The class 'VariableDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::MemberValuePair' has no attributes.
+The class 'JavaAbstractSyntax::BodyDeclaration' has no attributes.
+The class 'JavaAbstractSyntax::Comment' has no attributes.
+The class 'JavaAbstractSyntax::Name' has the following attributes: 'fullyQualifiedName' of type str.
+The enumeration 'AssignementOperatorKind' has the following literals: 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'REMAINDER_ASSIGN', 'BIT_XOR_ASSIGN', 'BIT_AND_ASSIGN', 'LEFT_SHIFT_ASSIGN', 'TIMES_ASSIGN', 'BIT_OR_ASSIGN', 'RIGHT_SHIFT_SIGNED_ASSIGN', 'ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'DIVIDE_ASSIGN'.
+The enumeration 'PrefixExpresssionOperatorKind' has the following literals: 'NOT', 'DECREMENT', 'MINUS', 'COMPLEMENT', 'INCREMENT', 'PLUS'.
+The enumeration 'PostfixExpresssionOperatorKind' has the following literals: 'DECREMENT', 'INCREMENT'.
+The enumeration 'InfixExpressionOperatorKind' has the following literals: 'GREATER_EQUALS', 'LESS', 'LEFT_SHIFT', 'RIGHT_SHIFT_UNSIGNED', 'CONDITIONAL_AND', 'EQUALS', 'OR', 'RIGHT_SHIFT_SIGNED', 'PLUS', 'TIMES', 'DIVIDE', 'GREATER', 'REMAINDER', 'NOT_EQUALS', 'XOR', 'MINUS', 'AND', 'LESS_EQUALS', 'CONDITIONAL_OR'.
+'JavaAbstractSyntax::TryStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::InstanceofExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::StringLiteral' is a specialization of 'Expression'.
+'JavaAbstractSyntax::SuperConstructorInvocation' is a specialization of 'Statement'.
+'JavaAbstractSyntax::ExpressionStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::NullLiteral' is a specialization of 'Expression'.
+'JavaAbstractSyntax::Block' is a specialization of 'Statement'.
+'JavaAbstractSyntax::SwitchCase' is a specialization of 'Statement'.
+'JavaAbstractSyntax::Type' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::EmptyStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::SuperMethodInvocation' is a specialization of 'Expression'.
+'JavaAbstractSyntax::MethodRef' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'JavaAbstractSyntax::BlockComment' is a specialization of 'Comment'.
+'JavaAbstractSyntax::VariableDeclarationStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'JavaAbstractSyntax::Annotation' is a specialization of 'Expression'.
+'JavaAbstractSyntax::WildcardType' is a specialization of 'Type'.
+'JavaAbstractSyntax::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'JavaAbstractSyntax::Statement' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'JavaAbstractSyntax::BooleanLiteral' is a specialization of 'Expression'.
+'JavaAbstractSyntax::CompilationUnit' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::DoStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::VariableDeclaration' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::ConstructorInvocation' is a specialization of 'Statement'.
+'JavaAbstractSyntax::Expression' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::PackageDeclaration' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'JavaAbstractSyntax::Comment' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::Assignment' is a specialization of 'Expression'.
+'JavaAbstractSyntax::SynchronizedStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JavaAbstractSyntax::MethodRefParameter' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::ArrayAccess' is a specialization of 'Expression'.
+'JavaAbstractSyntax::WhileStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::MemberValuePair' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::ForStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JavaAbstractSyntax::ImportDeclaration' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::PrimitiveType' is a specialization of 'Type'.
+'JavaAbstractSyntax::CatchClause' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::ParenthesizedExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::TypeParameter' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::NumberLiteral' is a specialization of 'Expression'.
+'JavaAbstractSyntax::Javadoc' is a specialization of 'Comment'.
+'JavaAbstractSyntax::EnhancedForStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::TypeDeclarationStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::SingleMemberAnnotation' is a specialization of 'Annotation'.
+'JavaAbstractSyntax::TextElement' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::LineComment' is a specialization of 'Comment'.
+'JavaAbstractSyntax::BreakStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::Modifier' is a specialization of 'ExtendedModifier'.
+'JavaAbstractSyntax::ContinueStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::TypeLiteral' is a specialization of 'Expression'.
+'JavaAbstractSyntax::AssertStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::SuperFieldAccess' is a specialization of 'Expression'.
+'JavaAbstractSyntax::ThisExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::Annotation' is a specialization of 'ExtendedModifier'.
+'JavaAbstractSyntax::InfixExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::QualifiedName' is a specialization of 'Name'.
+'JavaAbstractSyntax::PrefixExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::TagElement' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::ParameterizedType' is a specialization of 'Type'.
+'JavaAbstractSyntax::ConditionalExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::MarkerAnnotation' is a specialization of 'Annotation'.
+'JavaAbstractSyntax::ArrayType' is a specialization of 'Type'.
+'JavaAbstractSyntax::ClassInstanceCreation' is a specialization of 'Expression'.
+'JavaAbstractSyntax::Name' is a specialization of 'Expression'.
+'JavaAbstractSyntax::IfStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::ArrayCreation' is a specialization of 'Expression'.
+'JavaAbstractSyntax::Modifier' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::SwitchStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::LabeledStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::NormalAnnotation' is a specialization of 'Annotation'.
+'JavaAbstractSyntax::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JavaAbstractSyntax::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'JavaAbstractSyntax::CharacterLiteral' is a specialization of 'Expression'.
+'JavaAbstractSyntax::CastExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::ArrayInitializer' is a specialization of 'Expression'.
+'JavaAbstractSyntax::QualifiedType' is a specialization of 'Type'.
+'JavaAbstractSyntax::MemberRef' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::FieldAccess' is a specialization of 'Expression'.
+'JavaAbstractSyntax::ReturnStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::SimpleName' is a specialization of 'Name'.
+'JavaAbstractSyntax::ThrowStatement' is a specialization of 'Statement'.
+'JavaAbstractSyntax::BodyDeclaration' is a specialization of 'ASTNode'.
+'JavaAbstractSyntax::SimpleType' is a specialization of 'Type'.
+'JavaAbstractSyntax::MethodDeclaration' is a specialization of 'BodyDeclaration'.
+'JavaAbstractSyntax::Initializer' is a specialization of 'BodyDeclaration'.
+'JavaAbstractSyntax::VariableDeclarationExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::MethodInvocation' is a specialization of 'Expression'.
+'JavaAbstractSyntax::PostfixExpression' is a specialization of 'Expression'.
+'JavaAbstractSyntax::ClassInstanceCreation' (role 'JavaAbstractSyntax_ClassInstanceCreation145', cardinality 0..*) is associated with 'Type' (role 'Type146', cardinality 0..*).
+'Expression' (role 'Expression352', cardinality 0..*) is associated with 'JavaAbstractSyntax::SingleMemberAnnotation' (role 'JavaAbstractSyntax_SingleMemberAnnotation', cardinality 0..*).
+'JavaAbstractSyntax::ArrayCreation' (role 'JavaAbstractSyntax_ArrayCreation', cardinality 0..*) is associated with 'Expression' (role 'Expression119', cardinality 0..*).
+'JavaAbstractSyntax::ConditionalExpression' (role 'JavaAbstractSyntax_ConditionalExpression156', cardinality 0..*) is associated with 'Expression' (role 'Expression157', cardinality 0..*).
+'JavaAbstractSyntax::TagElement' (role 'JavaAbstractSyntax_TagElement', cardinality 0..*) is associated with 'ASTNode' (role 'ASTNode45', cardinality 0..*).
+'JavaAbstractSyntax::ThisExpression' (role 'JavaAbstractSyntax_ThisExpression', cardinality 0..*) is associated with 'Name' (role 'Name210', cardinality 0..*).
+'JavaAbstractSyntax::ClassInstanceCreation' (role 'JavaAbstractSyntax_ClassInstanceCreation148', cardinality 0..*) is associated with 'Type' (role 'Type149', cardinality 0..*).
+'JavaAbstractSyntax::MemberRef' (role 'JavaAbstractSyntax_MemberRef', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName', cardinality 0..*).
+'JavaAbstractSyntax::IfStatement' (role 'JavaAbstractSyntax_IfStatement265', cardinality 0..*) is associated with 'Expression' (role 'Expression266', cardinality 0..*).
+'Type' (role 'Type315', cardinality 0..*) is associated with 'JavaAbstractSyntax::VariableDeclarationStatement' (role 'JavaAbstractSyntax_VariableDeclarationStatement314', cardinality 0..*).
+'Expression' (role 'Expression114', cardinality 0..*) is associated with 'JavaAbstractSyntax::ArrayAccess' (role 'JavaAbstractSyntax_ArrayAccess', cardinality 0..*).
+'JavaAbstractSyntax::ClassInstanceCreation' (role 'JavaAbstractSyntax_ClassInstanceCreation142', cardinality 0..*) is associated with 'Expression' (role 'Expression143', cardinality 0..*).
+'Type' (role 'Type186', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodInvocation' (role 'JavaAbstractSyntax_MethodInvocation185', cardinality 0..*).
+'ASTNode' (role 'ASTNode9', cardinality 0..*) is associated with 'JavaAbstractSyntax::Comment' (role 'JavaAbstractSyntax_Comment', cardinality 0..*).
+'Name' (role 'Name21', cardinality 0..*) is associated with 'JavaAbstractSyntax::MemberRef' (role 'JavaAbstractSyntax_MemberRef20', cardinality 0..*).
+'ExtendedModifier' (role 'ExtendedModifier', cardinality 0..*) is associated with 'JavaAbstractSyntax::BodyDeclaration' (role 'JavaAbstractSyntax_BodyDeclaration', cardinality 0..*).
+'JavaAbstractSyntax::DoStatement' (role 'JavaAbstractSyntax_DoStatement239', cardinality 0..*) is associated with 'Expression' (role 'Expression240', cardinality 0..*).
+'Expression' (role 'Expression137', cardinality 0..*) is associated with 'JavaAbstractSyntax::ClassInstanceCreation' (role 'JavaAbstractSyntax_ClassInstanceCreation', cardinality 0..*).
+'MethodRefParameter' (role 'MethodRefParameter', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodRef' (role 'JavaAbstractSyntax_MethodRef32', cardinality 0..*).
+'JavaAbstractSyntax::BodyDeclaration' (role 'JavaAbstractSyntax_BodyDeclaration4', cardinality 0..*) is associated with 'Javadoc' (role 'Javadoc', cardinality 0..*).
+'SingleVariableDeclaration' (role 'SingleVariableDeclaration', cardinality 0..*) is associated with 'JavaAbstractSyntax::CatchClause' (role 'JavaAbstractSyntax_CatchClause7', cardinality 0..*).
+'JavaAbstractSyntax::EnumConstantDeclaration' (role 'JavaAbstractSyntax_EnumConstantDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression70', cardinality 0..*).
+'Type' (role 'Type322', cardinality 0..*) is associated with 'JavaAbstractSyntax::ArrayType' (role 'JavaAbstractSyntax_ArrayType', cardinality 0..*).
+'Type' (role 'Type89', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodDeclaration' (role 'JavaAbstractSyntax_MethodDeclaration88', cardinality 0..*).
+'SimpleName' (role 'SimpleName34', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodRefParameter' (role 'JavaAbstractSyntax_MethodRefParameter', cardinality 0..*).
+'JavaAbstractSyntax::Javadoc' (role 'JavaAbstractSyntax_Javadoc', cardinality 0..*) is associated with 'TagElement' (role 'TagElement', cardinality 0..*).
+'JavaAbstractSyntax::Initializer' (role 'JavaAbstractSyntax_Initializer', cardinality 0..*) is associated with 'Block' (role 'Block81', cardinality 0..*).
+'JavaAbstractSyntax::PrefixExpression' (role 'JavaAbstractSyntax_PrefixExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression192', cardinality 0..*).
+'JavaAbstractSyntax::SingleVariableDeclaration' (role 'JavaAbstractSyntax_SingleVariableDeclaration', cardinality 0..*) is associated with 'Type' (role 'Type341', cardinality 0..*).
+'SimpleName' (role 'SimpleName183', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodInvocation' (role 'JavaAbstractSyntax_MethodInvocation182', cardinality 0..*).
+'Expression' (role 'Expression188', cardinality 0..*) is associated with 'JavaAbstractSyntax::ParenthesizedExpression' (role 'JavaAbstractSyntax_ParenthesizedExpression', cardinality 0..*).
+'Name' (role 'Name205', cardinality 0..*) is associated with 'JavaAbstractSyntax::SuperMethodInvocation' (role 'JavaAbstractSyntax_SuperMethodInvocation204', cardinality 0..*).
+'JavaAbstractSyntax::SuperConstructorInvocation' (role 'JavaAbstractSyntax_SuperConstructorInvocation283', cardinality 0..*) is associated with 'Type' (role 'Type284', cardinality 0..*).
+'Expression' (role 'Expression180', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodInvocation' (role 'JavaAbstractSyntax_MethodInvocation179', cardinality 0..*).
+'Type' (role 'Type103', cardinality 0..*) is associated with 'JavaAbstractSyntax::TypeDeclaration' (role 'JavaAbstractSyntax_TypeDeclaration', cardinality 0..*).
+'JavaAbstractSyntax::SuperMethodInvocation' (role 'JavaAbstractSyntax_SuperMethodInvocation207', cardinality 0..*) is associated with 'Type' (role 'Type208', cardinality 0..*).
+'Name' (role 'Name30', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodRef' (role 'JavaAbstractSyntax_MethodRef29', cardinality 0..*).
+'JavaAbstractSyntax::ForStatement' (role 'JavaAbstractSyntax_ForStatement260', cardinality 0..*) is associated with 'Expression' (role 'Expression261', cardinality 0..*).
+'Statement' (role 'Statement271', cardinality 0..*) is associated with 'JavaAbstractSyntax::LabeledStatement' (role 'JavaAbstractSyntax_LabeledStatement', cardinality 0..*).
+'JavaAbstractSyntax::QualifiedType' (role 'JavaAbstractSyntax_QualifiedType', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName332', cardinality 0..*).
+'JavaAbstractSyntax::ImportDeclaration' (role 'JavaAbstractSyntax_ImportDeclaration', cardinality 0..*) is associated with 'Name' (role 'Name', cardinality 0..*).
+'Type' (role 'Type335', cardinality 0..*) is associated with 'JavaAbstractSyntax::QualifiedType' (role 'JavaAbstractSyntax_QualifiedType334', cardinality 0..*).
+'JavaAbstractSyntax::VariableDeclarationExpression' (role 'JavaAbstractSyntax_VariableDeclarationExpression216', cardinality 0..*) is associated with 'ExtendedModifier' (role 'ExtendedModifier217', cardinality 0..*).
+'JavaAbstractSyntax::ConditionalExpression' (role 'JavaAbstractSyntax_ConditionalExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression151', cardinality 0..*).
+'Statement' (role 'Statement242', cardinality 0..*) is associated with 'JavaAbstractSyntax::EnhancedForStatement' (role 'JavaAbstractSyntax_EnhancedForStatement', cardinality 0..*).
+'JavaAbstractSyntax::CompilationUnit' (role 'JavaAbstractSyntax_CompilationUnit14', cardinality 0..*) is associated with 'ImportDeclaration' (role 'ImportDeclaration', cardinality 0..*).
+'BodyDeclaration' (role 'BodyDeclaration', cardinality 0..*) is associated with 'JavaAbstractSyntax::AnonymousClassDeclaration' (role 'JavaAbstractSyntax_AnonymousClassDeclaration', cardinality 0..*).
+'Expression' (role 'Expression172', cardinality 0..*) is associated with 'JavaAbstractSyntax::InstanceofExpression' (role 'JavaAbstractSyntax_InstanceofExpression', cardinality 0..*).
+'Name' (role 'Name349', cardinality 0..*) is associated with 'JavaAbstractSyntax::QualifiedName' (role 'JavaAbstractSyntax_QualifiedName348', cardinality 0..*).
+'VariableDeclarationFragment' (role 'VariableDeclarationFragment309', cardinality 0..*) is associated with 'JavaAbstractSyntax::VariableDeclarationStatement' (role 'JavaAbstractSyntax_VariableDeclarationStatement', cardinality 0..*).
+'JavaAbstractSyntax::Annotation' (role 'JavaAbstractSyntax_Annotation', cardinality 0..*) is associated with 'Name' (role 'Name112', cardinality 0..*).
+'JavaAbstractSyntax::InfixExpression' (role 'JavaAbstractSyntax_InfixExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression164', cardinality 0..*).
+'Expression' (role 'Expression278', cardinality 0..*) is associated with 'JavaAbstractSyntax::SuperConstructorInvocation' (role 'JavaAbstractSyntax_SuperConstructorInvocation', cardinality 0..*).
+'TypeParameter' (role 'TypeParameter', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodDeclaration' (role 'JavaAbstractSyntax_MethodDeclaration97', cardinality 0..*).
+'JavaAbstractSyntax::SynchronizedStatement' (role 'JavaAbstractSyntax_SynchronizedStatement', cardinality 0..*) is associated with 'Block' (role 'Block293', cardinality 0..*).
+'Expression' (role 'Expression117', cardinality 0..*) is associated with 'JavaAbstractSyntax::ArrayAccess' (role 'JavaAbstractSyntax_ArrayAccess116', cardinality 0..*).
+'JavaAbstractSyntax::QualifiedName' (role 'JavaAbstractSyntax_QualifiedName', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName346', cardinality 0..*).
+'ArrayInitializer' (role 'ArrayInitializer', cardinality 0..*) is associated with 'JavaAbstractSyntax::ArrayCreation' (role 'JavaAbstractSyntax_ArrayCreation121', cardinality 0..*).
+'Block' (role 'Block83', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodDeclaration' (role 'JavaAbstractSyntax_MethodDeclaration', cardinality 0..*).
+'Statement' (role 'Statement269', cardinality 0..*) is associated with 'JavaAbstractSyntax::IfStatement' (role 'JavaAbstractSyntax_IfStatement268', cardinality 0..*).
+'JavaAbstractSyntax::EnhancedForStatement' (role 'JavaAbstractSyntax_EnhancedForStatement244', cardinality 0..*) is associated with 'Expression' (role 'Expression245', cardinality 0..*).
+'JavaAbstractSyntax::FieldDeclaration' (role 'JavaAbstractSyntax_FieldDeclaration', cardinality 0..*) is associated with 'VariableDeclarationFragment' (role 'VariableDeclarationFragment', cardinality 0..*).
+'AnonymousClassDeclaration' (role 'AnonymousClassDeclaration140', cardinality 0..*) is associated with 'JavaAbstractSyntax::ClassInstanceCreation' (role 'JavaAbstractSyntax_ClassInstanceCreation139', cardinality 0..*).
+'JavaAbstractSyntax::Assignment' (role 'JavaAbstractSyntax_Assignment', cardinality 0..*) is associated with 'Expression' (role 'Expression127', cardinality 0..*).
+'JavaAbstractSyntax::AnnotationTypeMemberDeclaration' (role 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration64', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName65', cardinality 0..*).
+'JavaAbstractSyntax::CompilationUnit' (role 'JavaAbstractSyntax_CompilationUnit12', cardinality 0..*) is associated with 'PackageDeclaration' (role 'PackageDeclaration', cardinality 0..*).
+'AnonymousClassDeclaration' (role 'AnonymousClassDeclaration', cardinality 0..*) is associated with 'JavaAbstractSyntax::EnumConstantDeclaration' (role 'JavaAbstractSyntax_EnumConstantDeclaration72', cardinality 0..*).
+'JavaAbstractSyntax::AnnotationTypeMemberDeclaration' (role 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression62', cardinality 0..*).
+'JavaAbstractSyntax::SwitchCase' (role 'JavaAbstractSyntax_SwitchCase', cardinality 0..*) is associated with 'Expression' (role 'Expression286', cardinality 0..*).
+'JavaAbstractSyntax::ConditionalExpression' (role 'JavaAbstractSyntax_ConditionalExpression153', cardinality 0..*) is associated with 'Expression' (role 'Expression154', cardinality 0..*).
+'CatchClause' (role 'CatchClause', cardinality 0..*) is associated with 'JavaAbstractSyntax::TryStatement' (role 'JavaAbstractSyntax_TryStatement', cardinality 0..*).
+'Expression' (role 'Expression296', cardinality 0..*) is associated with 'JavaAbstractSyntax::SynchronizedStatement' (role 'JavaAbstractSyntax_SynchronizedStatement295', cardinality 0..*).
+'JavaAbstractSyntax::ParameterizedType' (role 'JavaAbstractSyntax_ParameterizedType329', cardinality 0..*) is associated with 'Type' (role 'Type330', cardinality 0..*).
+'Type' (role 'Type220', cardinality 0..*) is associated with 'JavaAbstractSyntax::VariableDeclarationExpression' (role 'JavaAbstractSyntax_VariableDeclarationExpression219', cardinality 0..*).
+'AbstractTypeDeclaration' (role 'AbstractTypeDeclaration', cardinality 0..*) is associated with 'JavaAbstractSyntax::CompilationUnit' (role 'JavaAbstractSyntax_CompilationUnit16', cardinality 0..*).
+'JavaAbstractSyntax::AssertStatement' (role 'JavaAbstractSyntax_AssertStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression222', cardinality 0..*).
+'SimpleName' (role 'SimpleName235', cardinality 0..*) is associated with 'JavaAbstractSyntax::ContinueStatement' (role 'JavaAbstractSyntax_ContinueStatement', cardinality 0..*).
+'TypeParameter' (role 'TypeParameter109', cardinality 0..*) is associated with 'JavaAbstractSyntax::TypeDeclaration' (role 'JavaAbstractSyntax_TypeDeclaration108', cardinality 0..*).
+'JavaAbstractSyntax::EnhancedForStatement' (role 'JavaAbstractSyntax_EnhancedForStatement247', cardinality 0..*) is associated with 'SingleVariableDeclaration' (role 'SingleVariableDeclaration248', cardinality 0..*).
+'Type' (role 'Type68', cardinality 0..*) is associated with 'JavaAbstractSyntax::AnnotationTypeMemberDeclaration' (role 'JavaAbstractSyntax_AnnotationTypeMemberDeclaration67', cardinality 0..*).
+'Expression' (role 'Expression250', cardinality 0..*) is associated with 'JavaAbstractSyntax::ExpressionStatement' (role 'JavaAbstractSyntax_ExpressionStatement', cardinality 0..*).
+'Expression' (role 'Expression170', cardinality 0..*) is associated with 'JavaAbstractSyntax::InfixExpression' (role 'JavaAbstractSyntax_InfixExpression169', cardinality 0..*).
+'Expression' (role 'Expression320', cardinality 0..*) is associated with 'JavaAbstractSyntax::WhileStatement' (role 'JavaAbstractSyntax_WhileStatement319', cardinality 0..*).
+'JavaAbstractSyntax::FieldAccess' (role 'JavaAbstractSyntax_FieldAccess161', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName162', cardinality 0..*).
+'SimpleName' (role 'SimpleName75', cardinality 0..*) is associated with 'JavaAbstractSyntax::EnumConstantDeclaration' (role 'JavaAbstractSyntax_EnumConstantDeclaration74', cardinality 0..*).
+'SimpleName' (role 'SimpleName47', cardinality 0..*) is associated with 'JavaAbstractSyntax::TypeParameter' (role 'JavaAbstractSyntax_TypeParameter', cardinality 0..*).
+'JavaAbstractSyntax::TypeParameter' (role 'JavaAbstractSyntax_TypeParameter49', cardinality 0..*) is associated with 'Type' (role 'Type50', cardinality 0..*).
+'JavaAbstractSyntax::FieldDeclaration' (role 'JavaAbstractSyntax_FieldDeclaration78', cardinality 0..*) is associated with 'Type' (role 'Type79', cardinality 0..*).
+'JavaAbstractSyntax::WhileStatement' (role 'JavaAbstractSyntax_WhileStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement317', cardinality 0..*).
+'SimpleName' (role 'SimpleName55', cardinality 0..*) is associated with 'JavaAbstractSyntax::VariableDeclaration' (role 'JavaAbstractSyntax_VariableDeclaration54', cardinality 0..*).
+'Expression' (role 'Expression255', cardinality 0..*) is associated with 'JavaAbstractSyntax::ForStatement' (role 'JavaAbstractSyntax_ForStatement254', cardinality 0..*).
+'Expression' (role 'Expression298', cardinality 0..*) is associated with 'JavaAbstractSyntax::ThrowStatement' (role 'JavaAbstractSyntax_ThrowStatement', cardinality 0..*).
+'JavaAbstractSyntax::SingleVariableDeclaration' (role 'JavaAbstractSyntax_SingleVariableDeclaration343', cardinality 0..*) is associated with 'ExtendedModifier' (role 'ExtendedModifier344', cardinality 0..*).
+'Type' (role 'Type212', cardinality 0..*) is associated with 'JavaAbstractSyntax::TypeLiteral' (role 'JavaAbstractSyntax_TypeLiteral', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'JavaAbstractSyntax::Block' (role 'JavaAbstractSyntax_Block', cardinality 0..*).
+'Expression' (role 'Expression130', cardinality 0..*) is associated with 'JavaAbstractSyntax::Assignment' (role 'JavaAbstractSyntax_Assignment129', cardinality 0..*).
+'JavaAbstractSyntax::WildcardType' (role 'JavaAbstractSyntax_WildcardType', cardinality 0..*) is associated with 'Type' (role 'Type339', cardinality 0..*).
+'Type' (role 'Type175', cardinality 0..*) is associated with 'JavaAbstractSyntax::InstanceofExpression' (role 'JavaAbstractSyntax_InstanceofExpression174', cardinality 0..*).
+'Type' (role 'Type135', cardinality 0..*) is associated with 'JavaAbstractSyntax::CastExpression' (role 'JavaAbstractSyntax_CastExpression134', cardinality 0..*).
+'JavaAbstractSyntax::NormalAnnotation' (role 'JavaAbstractSyntax_NormalAnnotation', cardinality 0..*) is associated with 'MemberValuePair' (role 'MemberValuePair', cardinality 0..*).
+'JavaAbstractSyntax::SimpleType' (role 'JavaAbstractSyntax_SimpleType', cardinality 0..*) is associated with 'Name' (role 'Name337', cardinality 0..*).
+'JavaAbstractSyntax::AST' (role 'JavaAbstractSyntax_AST', cardinality 0..*) is associated with 'ASTNode' (role 'ASTNode', cardinality 0..*).
+'Type' (role 'Type99', cardinality 0..*) is associated with 'JavaAbstractSyntax::EnumDeclaration' (role 'JavaAbstractSyntax_EnumDeclaration', cardinality 0..*).
+'JavaAbstractSyntax::ConstructorInvocation' (role 'JavaAbstractSyntax_ConstructorInvocation232', cardinality 0..*) is associated with 'Type' (role 'Type233', cardinality 0..*).
+'JavaAbstractSyntax::ArrayInitializer' (role 'JavaAbstractSyntax_ArrayInitializer', cardinality 0..*) is associated with 'Expression' (role 'Expression125', cardinality 0..*).
+'JavaAbstractSyntax::ConstructorInvocation' (role 'JavaAbstractSyntax_ConstructorInvocation', cardinality 0..*) is associated with 'Expression' (role 'Expression230', cardinality 0..*).
+'JavaAbstractSyntax::MethodRefParameter' (role 'JavaAbstractSyntax_MethodRefParameter36', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'JavaAbstractSyntax::SwitchStatement' (role 'JavaAbstractSyntax_SwitchStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression288', cardinality 0..*).
+'JavaAbstractSyntax::ReturnStatement' (role 'JavaAbstractSyntax_ReturnStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression276', cardinality 0..*).
+'JavaAbstractSyntax::IfStatement' (role 'JavaAbstractSyntax_IfStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement263', cardinality 0..*).
+'JavaAbstractSyntax::AssertStatement' (role 'JavaAbstractSyntax_AssertStatement224', cardinality 0..*) is associated with 'Expression' (role 'Expression225', cardinality 0..*).
+'JavaAbstractSyntax::PostfixExpression' (role 'JavaAbstractSyntax_PostfixExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression190', cardinality 0..*).
+'JavaAbstractSyntax::SuperFieldAccess' (role 'JavaAbstractSyntax_SuperFieldAccess196', cardinality 0..*) is associated with 'Name' (role 'Name197', cardinality 0..*).
+'JavaAbstractSyntax::BreakStatement' (role 'JavaAbstractSyntax_BreakStatement', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName228', cardinality 0..*).
+'JavaAbstractSyntax::FieldAccess' (role 'JavaAbstractSyntax_FieldAccess', cardinality 0..*) is associated with 'Expression' (role 'Expression159', cardinality 0..*).
+'Type' (role 'Type325', cardinality 0..*) is associated with 'JavaAbstractSyntax::ArrayType' (role 'JavaAbstractSyntax_ArrayType324', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'JavaAbstractSyntax::MemberValuePair' (role 'JavaAbstractSyntax_MemberValuePair25', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'JavaAbstractSyntax::CompilationUnit' (role 'JavaAbstractSyntax_CompilationUnit', cardinality 0..*).
+'Javadoc' (role 'Javadoc40', cardinality 0..*) is associated with 'JavaAbstractSyntax::PackageDeclaration' (role 'JavaAbstractSyntax_PackageDeclaration39', cardinality 0..*).
+'SimpleName' (role 'SimpleName60', cardinality 0..*) is associated with 'JavaAbstractSyntax::AbstractTypeDeclaration' (role 'JavaAbstractSyntax_AbstractTypeDeclaration59', cardinality 0..*).
+'Statement' (role 'Statement252', cardinality 0..*) is associated with 'JavaAbstractSyntax::ForStatement' (role 'JavaAbstractSyntax_ForStatement', cardinality 0..*).
+'JavaAbstractSyntax::AbstractTypeDeclaration' (role 'JavaAbstractSyntax_AbstractTypeDeclaration', cardinality 0..*) is associated with 'BodyDeclaration' (role 'BodyDeclaration57', cardinality 0..*).
+'JavaAbstractSyntax::TypeDeclaration' (role 'JavaAbstractSyntax_TypeDeclaration105', cardinality 0..*) is associated with 'Type' (role 'Type106', cardinality 0..*).
+'JavaAbstractSyntax::MethodRef' (role 'JavaAbstractSyntax_MethodRef', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName27', cardinality 0..*).
+'JavaAbstractSyntax::MethodDeclaration' (role 'JavaAbstractSyntax_MethodDeclaration94', cardinality 0..*) is associated with 'Name' (role 'Name95', cardinality 0..*).
+'Statement' (role 'Statement291', cardinality 0..*) is associated with 'JavaAbstractSyntax::SwitchStatement' (role 'JavaAbstractSyntax_SwitchStatement290', cardinality 0..*).
+'ArrayType' (role 'ArrayType', cardinality 0..*) is associated with 'JavaAbstractSyntax::ArrayCreation' (role 'JavaAbstractSyntax_ArrayCreation123', cardinality 0..*).
+'JavaAbstractSyntax::SuperConstructorInvocation' (role 'JavaAbstractSyntax_SuperConstructorInvocation280', cardinality 0..*) is associated with 'Expression' (role 'Expression281', cardinality 0..*).
+'Expression' (role 'Expression258', cardinality 0..*) is associated with 'JavaAbstractSyntax::ForStatement' (role 'JavaAbstractSyntax_ForStatement257', cardinality 0..*).
+'JavaAbstractSyntax::SuperMethodInvocation' (role 'JavaAbstractSyntax_SuperMethodInvocation201', cardinality 0..*) is associated with 'Name' (role 'Name202', cardinality 0..*).
+'JavaAbstractSyntax::EnumDeclaration' (role 'JavaAbstractSyntax_EnumDeclaration101', cardinality 0..*) is associated with 'EnumConstantDeclaration' (role 'EnumConstantDeclaration', cardinality 0..*).
+'Statement' (role 'Statement237', cardinality 0..*) is associated with 'JavaAbstractSyntax::DoStatement' (role 'JavaAbstractSyntax_DoStatement', cardinality 0..*).
+'JavaAbstractSyntax::TryStatement' (role 'JavaAbstractSyntax_TryStatement304', cardinality 0..*) is associated with 'Block' (role 'Block305', cardinality 0..*).
+'Expression' (role 'Expression132', cardinality 0..*) is associated with 'JavaAbstractSyntax::CastExpression' (role 'JavaAbstractSyntax_CastExpression', cardinality 0..*).
+'JavaAbstractSyntax::ParameterizedType' (role 'JavaAbstractSyntax_ParameterizedType', cardinality 0..*) is associated with 'Type' (role 'Type327', cardinality 0..*).
+'JavaAbstractSyntax::VariableDeclarationStatement' (role 'JavaAbstractSyntax_VariableDeclarationStatement311', cardinality 0..*) is associated with 'ExtendedModifier' (role 'ExtendedModifier312', cardinality 0..*).
+'Annotation' (role 'Annotation', cardinality 0..*) is associated with 'JavaAbstractSyntax::PackageDeclaration' (role 'JavaAbstractSyntax_PackageDeclaration', cardinality 0..*).
+'Expression' (role 'Expression199', cardinality 0..*) is associated with 'JavaAbstractSyntax::SuperMethodInvocation' (role 'JavaAbstractSyntax_SuperMethodInvocation', cardinality 0..*).
+'JavaAbstractSyntax::MemberValuePair' (role 'JavaAbstractSyntax_MemberValuePair', cardinality 0..*) is associated with 'SimpleName' (role 'SimpleName23', cardinality 0..*).
+'JavaAbstractSyntax::PackageDeclaration' (role 'JavaAbstractSyntax_PackageDeclaration42', cardinality 0..*) is associated with 'Name' (role 'Name43', cardinality 0..*).
+'JavaAbstractSyntax::InfixExpression' (role 'JavaAbstractSyntax_InfixExpression166', cardinality 0..*) is associated with 'Expression' (role 'Expression167', cardinality 0..*).
+'SimpleName' (role 'SimpleName86', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodDeclaration' (role 'JavaAbstractSyntax_MethodDeclaration85', cardinality 0..*).
+'JavaAbstractSyntax::CatchClause' (role 'JavaAbstractSyntax_CatchClause', cardinality 0..*) is associated with 'Block' (role 'Block', cardinality 0..*).
+'JavaAbstractSyntax::VariableDeclaration' (role 'JavaAbstractSyntax_VariableDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression52', cardinality 0..*).
+'VariableDeclarationFragment' (role 'VariableDeclarationFragment214', cardinality 0..*) is associated with 'JavaAbstractSyntax::VariableDeclarationExpression' (role 'JavaAbstractSyntax_VariableDeclarationExpression', cardinality 0..*).
+'JavaAbstractSyntax::TryStatement' (role 'JavaAbstractSyntax_TryStatement301', cardinality 0..*) is associated with 'Block' (role 'Block302', cardinality 0..*).
+'SingleVariableDeclaration' (role 'SingleVariableDeclaration92', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodDeclaration' (role 'JavaAbstractSyntax_MethodDeclaration91', cardinality 0..*).
+'Expression' (role 'Expression177', cardinality 0..*) is associated with 'JavaAbstractSyntax::MethodInvocation' (role 'JavaAbstractSyntax_MethodInvocation', cardinality 0..*).
+'JavaAbstractSyntax::TypeDeclarationStatement' (role 'JavaAbstractSyntax_TypeDeclarationStatement', cardinality 0..*) is associated with 'AbstractTypeDeclaration' (role 'AbstractTypeDeclaration307', cardinality 0..*).
+'SimpleName' (role 'SimpleName274', cardinality 0..*) is associated with 'JavaAbstractSyntax::LabeledStatement' (role 'JavaAbstractSyntax_LabeledStatement273', cardinality 0..*).
+'SimpleName' (role 'SimpleName194', cardinality 0..*) is associated with 'JavaAbstractSyntax::SuperFieldAccess' (role 'JavaAbstractSyntax_SuperFieldAccess', cardinality 0..*).

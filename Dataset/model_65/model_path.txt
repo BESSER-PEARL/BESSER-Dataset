@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/Mogwai/benchmarks/org.eclipse.gmt.modisco.java.cdo/src/org/eclipse/gmt/modisco/java/cdo/impl/java.ecore

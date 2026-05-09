@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'petrinet::TPArc' has no attributes.
+The class 'petrinet::Arc' has the following attributes: 'weight' of type int.
+The class 'petrinet::Petrinet' has the following attributes: 'name' of type str.
+The class 'petrinet::PTArc' has no attributes.
+The class 'petrinet::Transition' has the following attributes: 'name' of type str.
+The class 'Arc' has no attributes.
+The class 'petrinet::Place' has the following attributes: 'name' of type str.
+The class 'petrinet::Token' has no attributes.
+'petrinet::TPArc' is a specialization of 'Arc'.
+'petrinet::PTArc' is a specialization of 'Arc'.
+'petrinet::Place' (role 'src', cardinality 0..*) is associated with 'petrinet::PTArc' (role 'PTArc', cardinality 0..*).
+'petrinet::Token' (role 'petrinet_Token', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place6', cardinality 0..*).
+'petrinet::TPArc' (role 'TPArc', cardinality 0..*) is associated with 'petrinet::Place' (role 'trg', cardinality 0..*).
+'petrinet::Transition' (role 'trg10', cardinality 0..*) is associated with 'petrinet::PTArc' (role 'PTArc11', cardinality 0..*).
+'petrinet::Transition' (role 'Transition', cardinality 0..*) is associated with 'petrinet::PTArc' (role 'in_', cardinality 0..*).
+'petrinet::Petrinet' (role 'petrinet_Petrinet2', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*).
+'petrinet::TPArc' (role 'in_21', cardinality 0..*) is associated with 'petrinet::Place' (role 'Place22', cardinality 0..*).
+'petrinet::PTArc' (role 'out', cardinality 0..*) is associated with 'petrinet::Place' (role 'Place', cardinality 0..*).
+'petrinet::TPArc' (role 'out18', cardinality 0..*) is associated with 'petrinet::Transition' (role 'Transition19', cardinality 0..*).
+'petrinet::Transition' (role 'src13', cardinality 0..*) is associated with 'petrinet::TPArc' (role 'TPArc14', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::Petrinet' (role 'petrinet_Petrinet4', cardinality 0..*).
+'petrinet::Petrinet' (role 'petrinet_Petrinet', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place', cardinality 0..*).

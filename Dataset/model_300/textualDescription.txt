@@ -1,0 +1,49 @@
+The model has 20 class(es).
+The class 'Person' has no attributes.
+The class 'library::Borrower' has no attributes.
+The class 'Item' has no attributes.
+The class 'library::Addressable' has the following attributes: 'address' of type str.
+The class 'library::BookOnTape' has no attributes.
+The class 'library::Person' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'library::Item' has the following attributes: 'publicationDate' of type date.
+The class 'library::Writer' has the following attributes: 'name' of type str.
+The class 'library::Book' has the following attributes: 'title' of type str; 'category' of type str; 'pages' of type int.
+The class 'library::CirculatingItem' has no attributes.
+The class 'library::Employee' has no attributes.
+The class 'library::Lendable' has the following attributes: 'copies' of type int.
+The class 'library::Periodical' has the following attributes: 'title' of type str; 'issuesPerYear' of type int.
+The class 'Addressable' has no attributes.
+The class 'CirculatingItem' has no attributes.
+The class 'library::AudioVisualItem' has the following attributes: 'damaged' of type bool; 'title' of type str; 'minutesLength' of type int.
+The class 'Lendable' has no attributes.
+The class 'AudioVisualItem' has no attributes.
+The class 'library::Library' has the following attributes: 'name' of type str; 'people' of type str.
+The class 'library::VideoCassette' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'Biography', 'ScienceFiction', 'Mystery'.
+'library::CirculatingItem' is a specialization of 'Lendable'.
+'library::Borrower' is a specialization of 'Person'.
+'library::Writer' is a specialization of 'Person'.
+'library::BookOnTape' is a specialization of 'AudioVisualItem'.
+'library::Person' is a specialization of 'Addressable'.
+'library::Employee' is a specialization of 'Person'.
+'library::AudioVisualItem' is a specialization of 'CirculatingItem'.
+'library::Periodical' is a specialization of 'Item'.
+'library::CirculatingItem' is a specialization of 'Item'.
+'library::Book' is a specialization of 'CirculatingItem'.
+'library::Library' is a specialization of 'Addressable'.
+'library::VideoCassette' is a specialization of 'AudioVisualItem'.
+'library::Writer' (role 'library_Writer20', cardinality 0..*) is associated with 'library::BookOnTape' (role 'library_BookOnTape19', cardinality 0..*).
+'library::Library' (role 'library_Library5', cardinality 0..*) is associated with 'library::Borrower' (role 'library_Borrower', cardinality 0..*).
+'library::Writer' (role 'Writer', cardinality 0..*) is associated with 'library::Book' (role 'books', cardinality 0..*).
+'library::Employee' (role 'library_Employee26', cardinality 0..*) is associated with 'library::Employee' (role 'library_Employee24', cardinality 0..*).
+'library::Item' (role 'library_Item', cardinality 0..*) is associated with 'library::Library' (role 'library_Library7', cardinality 0..*).
+'library::Library' (role 'parentBranch', cardinality 0..*) is associated with 'library::Library' (role 'Library', cardinality 0..*).
+'library::Person' (role 'library_Person', cardinality 0..*) is associated with 'library::BookOnTape' (role 'library_BookOnTape', cardinality 0..*).
+'library::Borrower' (role 'borrowers', cardinality 0..*) is associated with 'library::Lendable' (role 'Lendable', cardinality 0..*).
+'library::Borrower' (role 'Borrower', cardinality 0..*) is associated with 'library::Lendable' (role 'borrowed', cardinality 0..*).
+'library::Library' (role 'library_Library9', cardinality 0..*) is associated with 'library::Book' (role 'library_Book', cardinality 0..*).
+'library::Employee' (role 'library_Employee', cardinality 0..*) is associated with 'library::Library' (role 'library_Library3', cardinality 0..*).
+'library::Writer' (role 'author', cardinality 0..*) is associated with 'library::Book' (role 'Book', cardinality 0..*).
+'library::Library' (role 'Library14', cardinality 0..*) is associated with 'library::Library' (role 'branches', cardinality 0..*).
+'library::VideoCassette' (role 'library_VideoCassette', cardinality 0..*) is associated with 'library::Person' (role 'library_Person22', cardinality 0..*).
+'library::Writer' (role 'library_Writer', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).

@@ -1,0 +1,47 @@
+The model has 22 class(es).
+The class 'ptnetLoLA::ArcToTransitionExt' has the following attributes: 'probability' of type float.
+The class 'ptnetLoLA::RefMarkedPlace' has the following attributes: 'token' of type int.
+The class 'ptnetLoLA::Annotation' has the following attributes: 'text' of type str.
+The class 'ptnetLoLA::PlaceReference' has no attributes.
+The class 'Arc' has no attributes.
+The class 'ptnetLoLA::ArcToPlaceExt' has the following attributes: 'probability' of type float.
+The class 'ptnetLoLA::Transition' has no attributes.
+The class 'ptnetLoLA::ArcToTransition' has no attributes.
+The class 'ptnetLoLA::Place' has the following attributes: 'token' of type int; 'finalMarking' of type int.
+The class 'ptnetLoLA::TransitionExt' has the following attributes: 'minTime' of type int; 'cost' of type float; 'probability' of type float; 'confidentiality' of type str; 'maxTime' of type int.
+The class 'ptnetLoLA::PtNet' has no attributes.
+The class 'ArcToTransition' has no attributes.
+The class 'ptnetLoLA::ArcToPlace' has no attributes.
+The class 'ptnetLoLA::PlaceExt' has the following attributes: 'isStart' of type bool; 'probability' of type float.
+The class 'ptnetLoLA::Node' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Node' has no attributes.
+The class 'Transition' has no attributes.
+The class 'ptnetLoLA::Marking' has no attributes.
+The class 'PlaceReference' has no attributes.
+The class 'ptnetLoLA::Arc' has the following attributes: 'weight' of type int.
+The class 'ArcToPlace' has no attributes.
+The class 'Place' has no attributes.
+The enumeration 'NodeType' has the following literals: 'internal', 'input', 'output', 'inout'.
+The enumeration 'Confidentiality' has the following literals: 'UNKNOWN', 'HIGH', 'LOW'.
+'ptnetLoLA::ArcToPlace' is a specialization of 'Arc'.
+'ptnetLoLA::PlaceExt' is a specialization of 'Place'.
+'ptnetLoLA::ArcToTransitionExt' is a specialization of 'ArcToTransition'.
+'ptnetLoLA::Place' is a specialization of 'Node'.
+'ptnetLoLA::ArcToTransition' is a specialization of 'Arc'.
+'ptnetLoLA::RefMarkedPlace' is a specialization of 'PlaceReference'.
+'ptnetLoLA::ArcToPlaceExt' is a specialization of 'ArcToPlace'.
+'ptnetLoLA::TransitionExt' is a specialization of 'Transition'.
+'ptnetLoLA::Transition' is a specialization of 'Node'.
+'ptnetLoLA::Place' (role 'ptnetLoLA_Place', cardinality 0..*) is associated with 'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet', cardinality 0..*).
+'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet10', cardinality 0..*) is associated with 'ptnetLoLA::Marking' (role 'ptnetLoLA_Marking11', cardinality 0..*).
+'ptnetLoLA::Marking' (role 'ptnetLoLA_Marking18', cardinality 0..*) is associated with 'ptnetLoLA::RefMarkedPlace' (role 'ptnetLoLA_RefMarkedPlace', cardinality 0..*).
+'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet8', cardinality 0..*) is associated with 'ptnetLoLA::Arc' (role 'ptnetLoLA_Arc', cardinality 0..*).
+'ptnetLoLA::Marking' (role 'ptnetLoLA_Marking', cardinality 0..*) is associated with 'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet4', cardinality 0..*).
+'ptnetLoLA::Annotation' (role 'ptnetLoLA_Annotation13', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'ptnetLoLA_Node', cardinality 0..*).
+'ptnetLoLA::Arc' (role 'outgoing', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'Node', cardinality 0..*).
+'ptnetLoLA::Node' (role 'target', cardinality 0..*) is associated with 'ptnetLoLA::Arc' (role 'Arc', cardinality 0..*).
+'ptnetLoLA::Node' (role 'source', cardinality 0..*) is associated with 'ptnetLoLA::Arc' (role 'Arc16', cardinality 0..*).
+'ptnetLoLA::PlaceReference' (role 'ptnetLoLA_PlaceReference', cardinality 0..*) is associated with 'ptnetLoLA::Place' (role 'ptnetLoLA_Place20', cardinality 0..*).
+'ptnetLoLA::Arc' (role 'incoming', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'Node23', cardinality 0..*).
+'ptnetLoLA::Annotation' (role 'ptnetLoLA_Annotation', cardinality 0..*) is associated with 'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet6', cardinality 0..*).
+'ptnetLoLA::Transition' (role 'ptnetLoLA_Transition', cardinality 0..*) is associated with 'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet2', cardinality 0..*).

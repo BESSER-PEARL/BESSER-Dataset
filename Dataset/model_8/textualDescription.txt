@@ -1,0 +1,78 @@
+The model has 32 class(es).
+The class 'SrcArc' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgName' has no attributes.
+The class 'TrgIdedElement' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgTransition' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgArc' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgNetContentElement' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgNetElement' has no attributes.
+The class 'TrgLocatedElement' has no attributes.
+The class 'SrcNamedElement' has no attributes.
+The class 'jointPackage::PetriNet2PNML::SrcElement' has no attributes.
+The class 'TrgNetContentElement' has no attributes.
+The class 'jointPackage::PetriNet2PNML::SrcNamedElement' has the following attributes: 'name' of type str.
+The class 'jointPackage::PetriNet2PNML::SrcPlace' has no attributes.
+The class 'jointPackage::PetriNet2PNML::SrcPlaceToTransition' has no attributes.
+The class 'jointPackage::PetriNet2PNML::SrcTransitionToPlace' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgIdedElement' has the following attributes: 'id' of type str.
+The class 'jointPackage::PetriNet2PNML::SrcLocatedElement' has the following attributes: 'location' of type str.
+The class 'jointPackage::PetriNet2PNML::TrgLabel' has the following attributes: 'text' of type str.
+The class 'TrgLabeledElement' has no attributes.
+The class 'SrcElement' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgURI' has the following attributes: 'value' of type str.
+The class 'jointPackage::PetriNet2PNML::TrgNetContent' has no attributes.
+The class 'SrcLocatedElement' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgPNMLDocument' has no attributes.
+The class 'jointPackage::PetriNet2PNML::JointMM' has no attributes.
+The class 'jointPackage::PetriNet2PNML::SrcPetriNet' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgPlace' has no attributes.
+The class 'jointPackage::PetriNet2PNML::SrcTransition' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgLabeledElement' has no attributes.
+The class 'TrgNetContent' has no attributes.
+The class 'jointPackage::PetriNet2PNML::TrgLocatedElement' has the following attributes: 'location' of type str.
+The class 'jointPackage::PetriNet2PNML::SrcArc' has the following attributes: 'weight' of type int.
+'jointPackage::PetriNet2PNML::SrcPetriNet' is a specialization of 'SrcNamedElement'.
+'jointPackage::PetriNet2PNML::SrcNamedElement' is a specialization of 'SrcLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgPNMLDocument' is a specialization of 'TrgLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgNetContentElement' is a specialization of 'TrgIdedElement'.
+'jointPackage::PetriNet2PNML::TrgPlace' is a specialization of 'TrgNetContentElement'.
+'jointPackage::PetriNet2PNML::TrgTransition' is a specialization of 'TrgNetContentElement'.
+'jointPackage::PetriNet2PNML::SrcPlace' is a specialization of 'SrcElement'.
+'jointPackage::PetriNet2PNML::SrcPlaceToTransition' is a specialization of 'SrcArc'.
+'jointPackage::PetriNet2PNML::SrcTransition' is a specialization of 'SrcElement'.
+'jointPackage::PetriNet2PNML::SrcArc' is a specialization of 'SrcNamedElement'.
+'jointPackage::PetriNet2PNML::TrgURI' is a specialization of 'TrgLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgLabeledElement' is a specialization of 'TrgLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgNetContentElement' is a specialization of 'TrgNetContent'.
+'jointPackage::PetriNet2PNML::TrgLabel' is a specialization of 'TrgLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgArc' is a specialization of 'TrgNetContent'.
+'jointPackage::PetriNet2PNML::TrgNetElement' is a specialization of 'TrgIdedElement'.
+'jointPackage::PetriNet2PNML::TrgName' is a specialization of 'TrgLabeledElement'.
+'jointPackage::PetriNet2PNML::SrcTransitionToPlace' is a specialization of 'SrcArc'.
+'jointPackage::PetriNet2PNML::SrcElement' is a specialization of 'SrcNamedElement'.
+'jointPackage::PetriNet2PNML::TrgArc' is a specialization of 'TrgIdedElement'.
+'jointPackage::PetriNet2PNML::TrgNetContent' is a specialization of 'TrgLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgIdedElement' is a specialization of 'TrgLocatedElement'.
+'jointPackage::PetriNet2PNML::TrgNetElement' (role 'jointPackage_PetriNet2PNML_TrgNetElement35', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgName' (role 'jointPackage_PetriNet2PNML_TrgName', cardinality 0..*).
+'jointPackage::PetriNet2PNML::JointMM' (role 'jointPackage_PetriNet2PNML_JointMM', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPetriNet' (role 'jointPackage_PetriNet2PNML_SrcPetriNet', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcPlace' (role 'SrcPlace24', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcTransitionToPlace' (role 'incomingArc23', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgArc' (role 'jointPackage_PetriNet2PNML_TrgArc', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgNetContentElement' (role 'jointPackage_PetriNet2PNML_TrgNetContentElement', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgNetElement' (role 'jointPackage_PetriNet2PNML_TrgNetElement', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgPNMLDocument' (role 'jointPackage_PetriNet2PNML_TrgPNMLDocument28', cardinality 0..*).
+'jointPackage::PetriNet2PNML::JointMM' (role 'jointPackage_PetriNet2PNML_JointMM2', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgPNMLDocument' (role 'jointPackage_PetriNet2PNML_TrgPNMLDocument', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgNetContent' (role 'jointPackage_PetriNet2PNML_TrgNetContent37', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgName' (role 'jointPackage_PetriNet2PNML_TrgName38', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcPlace' (role 'SrcPlace', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPlaceToTransition' (role 'outgoingArc', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcArc' (role 'SrcArc', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPetriNet' (role 'net5', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcPlace' (role 'from_', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPlaceToTransition' (role 'SrcPlaceToTransition', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcElement' (role 'SrcElement', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPetriNet' (role 'net', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgURI' (role 'jointPackage_PetriNet2PNML_TrgURI', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgPNMLDocument' (role 'jointPackage_PetriNet2PNML_TrgPNMLDocument26', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcTransition' (role 'SrcTransition', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPlaceToTransition' (role 'incomingArc', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgURI' (role 'jointPackage_PetriNet2PNML_TrgURI31', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgNetElement' (role 'jointPackage_PetriNet2PNML_TrgNetElement30', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcTransitionToPlace' (role 'outgoingArc20', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcTransition' (role 'SrcTransition21', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgNetElement' (role 'jointPackage_PetriNet2PNML_TrgNetElement33', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgNetContent' (role 'jointPackage_PetriNet2PNML_TrgNetContent', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcTransition' (role 'from_13', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcTransitionToPlace' (role 'SrcTransitionToPlace14', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcPetriNet' (role 'SrcPetriNet16', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcArc' (role 'arcs', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgLabeledElement' (role 'jointPackage_PetriNet2PNML_TrgLabeledElement', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgLabel' (role 'jointPackage_PetriNet2PNML_TrgLabel', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcPetriNet' (role 'SrcPetriNet', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcElement' (role 'elements', cardinality 0..*).
+'jointPackage::PetriNet2PNML::TrgArc' (role 'jointPackage_PetriNet2PNML_TrgArc42', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::TrgNetContentElement' (role 'jointPackage_PetriNet2PNML_TrgNetContentElement43', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcTransition' (role 'to10', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPlaceToTransition' (role 'SrcPlaceToTransition11', cardinality 0..*).
+'jointPackage::PetriNet2PNML::SrcTransitionToPlace' (role 'SrcTransitionToPlace', cardinality 0..*) is associated with 'jointPackage::PetriNet2PNML::SrcPlace' (role 'to', cardinality 0..*).

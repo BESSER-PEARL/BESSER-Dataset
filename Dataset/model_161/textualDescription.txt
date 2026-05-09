@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'PetriNetModel::Arc' has no attributes.
+The class 'PetriNetModel::Place' has no attributes.
+The class 'PetriNetModel::Node' has the following attributes: 'name' of type str.
+The class 'PetriNetModel::Transition' has no attributes.
+The class 'PetriNetModel::PetriNet' has no attributes.
+The class 'PObject' has no attributes.
+The class 'PetriNetModel::Token' has no attributes.
+The class 'Node' has no attributes.
+The class 'PetriNetModel::PObject' has the following attributes: 'id' of type int.
+'PetriNetModel::Place' is a specialization of 'Node'.
+'PetriNetModel::Transition' is a specialization of 'Node'.
+'PetriNetModel::Arc' is a specialization of 'PObject'.
+'PetriNetModel::Node' is a specialization of 'PObject'.
+'PetriNetModel::Arc' (role 'Arc', cardinality 0..*) is associated with 'PetriNetModel::Node' (role 'source', cardinality 0..*).
+'PetriNetModel::Node' (role 'Node', cardinality 0..*) is associated with 'PetriNetModel::Arc' (role 'out', cardinality 0..*).
+'PetriNetModel::PetriNet' (role 'PetriNetModel_PetriNet', cardinality 0..*) is associated with 'PetriNetModel::PObject' (role 'PetriNetModel_PObject', cardinality 0..*).
+'PetriNetModel::Arc' (role 'in_', cardinality 0..*) is associated with 'PetriNetModel::Node' (role 'Node7', cardinality 0..*).
+'PetriNetModel::Node' (role 'target', cardinality 0..*) is associated with 'PetriNetModel::Arc' (role 'Arc3', cardinality 0..*).
+'PetriNetModel::Token' (role 'PetriNetModel_Token', cardinality 0..*) is associated with 'PetriNetModel::Place' (role 'PetriNetModel_Place', cardinality 0..*).

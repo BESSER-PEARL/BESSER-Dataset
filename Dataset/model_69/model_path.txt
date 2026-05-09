@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/markus1978/srcrepo/de.hub.srcrepo.emffrag/models/java.ecore

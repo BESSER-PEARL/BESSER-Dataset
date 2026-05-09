@@ -1,0 +1,705 @@
+The model has 336 class(es).
+The class 'c::sharp::types::ClassOrInterfaceOrDelegateOrEnumType' has no attributes.
+The class 'c::sharp::expressions::StatementExpressionList' has no attributes.
+The class 'JumpStatement' has no attributes.
+The class 'c::sharp::expressions::PrimaryExpression' has no attributes.
+The class 'c::sharp::types::UShort' has no attributes.
+The class 'c::sharp::modifiers::Partial' has no attributes.
+The class 'c::sharp::expressions::RelationalExpression' has no attributes.
+The class 'ShiftOperator' has no attributes.
+The class 'c::sharp::types::Byte' has no attributes.
+The class 'c::sharp::statements::VariableDeclaration' has no attributes.
+The class 'expressions::StatementExpression' has no attributes.
+The class 'SwitchSection' has no attributes.
+The class 'c::sharp::operators::Division' has no attributes.
+The class 'ClassBase' has no attributes.
+The class 'statements::ResourceAcquisition' has no attributes.
+The class 'c::sharp::expressions::UncheckedExpression' has no attributes.
+The class 'namespaces::TypeDeclaration' has no attributes.
+The class 'c::sharp::keywords::Event' has no attributes.
+The class 'c::sharp::expressions::Argument' has no attributes.
+The class 'StatementExpression' has no attributes.
+The class 'c::sharp::operators::Remainder' has no attributes.
+The class 'classes::ClassMemberDeclaration' has no attributes.
+The class 'c::sharp::operators::Assignment' has no attributes.
+The class 'c::sharp::attributes::GlobalAttributes' has no attributes.
+The class 'c::sharp::keywords::Ref' has no attributes.
+The class 'c::sharp::modifiers::Volatile' has no attributes.
+The class 'AttributeTarget' has no attributes.
+The class 'Complement' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'EqualityOperator' has no attributes.
+The class 'And' has no attributes.
+The class 'c::sharp::operators::AssignmentLeftShift' has no attributes.
+The class 'c::sharp::operators::ConditionalAnd' has no attributes.
+The class 'c::sharp::statements::LocalConstantDeclaration' has no attributes.
+The class 'c::sharp::types::Float' has no attributes.
+The class 'SimpleType' has no attributes.
+The class 'c::sharp::statements::VariableDeclarator' has no attributes.
+The class 'c::sharp::literals::CharacterLiteral' has the following attributes: 'value' of type str.
+The class 'ExclusiveOrExpression' has no attributes.
+The class 'c::sharp::classes::FormalParameterList' has no attributes.
+The class 'c::sharp::expressions::SizeOfExpression' has no attributes.
+The class 'c::sharp::expressions::AssignmentExpression' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'c::sharp::statements::FinallyClause' has no attributes.
+The class 'NotEqual' has no attributes.
+The class 'c::sharp::operators::UnaryOperator' has no attributes.
+The class 'operators::AdditiveOperator' has no attributes.
+The class 'SpecificCatchClause' has no attributes.
+The class 'c::sharp::keywords::Default' has no attributes.
+The class 'RightShift' has no attributes.
+The class 'c::sharp::modifiers::Sealed' has no attributes.
+The class 'c::sharp::expressions::PreDecrementExpression' has no attributes.
+The class 'PointerType' has no attributes.
+The class 'c::sharp::modifiers::Public' has no attributes.
+The class 'AttributeArguments' has no attributes.
+The class 'c::sharp::classes::FixedParameter' has no attributes.
+The class 'c::sharp::types::Bool' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'c::sharp::expressions::PrimaryNoArrayCreationExpression' has no attributes.
+The class 'ResourceAcquisition' has no attributes.
+The class 'c::sharp::operators::AssignmentOr' has no attributes.
+The class 'c::sharp::modifiers::Abstract' has no attributes.
+The class 'Return' has no attributes.
+The class 'c::sharp::operators::PlusPlus' has no attributes.
+The class 'c::sharp::modifiers::Unsafe' has no attributes.
+The class 'NamedArgument' has no attributes.
+The class 'c::sharp::operators::AssignmentModulo' has no attributes.
+The class 'c::sharp::statements::EmptyStatement' has no attributes.
+The class 'c::sharp::modifiers::OverrideModifier' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'c::sharp::attributes::Attributes' has no attributes.
+The class 'ClassOrInterfaceOrDelegateOrEnumType' has no attributes.
+The class 'c::sharp::literals::RealLiteral' has the following attributes: 'value' of type str.
+The class 'c::sharp::attributes::AttributeTarget' has no attributes.
+The class 'Argument' has no attributes.
+The class 'c::sharp::operators::AssignmentMultiplication' has no attributes.
+The class 'FixedPointerDeclarator' has no attributes.
+The class 'c::sharp::operators::AssignmentDivision' has no attributes.
+The class 'MemberAccess' has no attributes.
+The class 'c::sharp::attributes::AttributeArguments' has no attributes.
+The class 'c::sharp::keywords::Return' has no attributes.
+The class 'RankSpecifier' has no attributes.
+The class 'c::sharp::expressions::TypeOfExpression' has no attributes.
+The class 'c::sharp::types::ULong' has no attributes.
+The class 'GreaterThan' has no attributes.
+The class 'c::sharp::statements::IfStatement' has no attributes.
+The class 'c::sharp::operators::Multiplication' has no attributes.
+The class 'ShiftExpression' has no attributes.
+The class 'NamespaceBody' has no attributes.
+The class 'c::sharp::expressions::PreIncrementExpression' has no attributes.
+The class 'c::sharp::statements::ThrowStatement' has no attributes.
+The class 'AssignmentOperator' has no attributes.
+The class 'Out' has no attributes.
+The class 'c::sharp::classes::ConstantDeclaration' has no attributes.
+The class 'c::sharp::statements::SpecificCatchClause' has no attributes.
+The class 'GreaterThanOrEqual' has no attributes.
+The class 'NamespaceOrTypeName' has no attributes.
+The class 'c::sharp::operators::UnaryModificationOperator' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'c::sharp::modifiers::ReadOnly' has no attributes.
+The class 'c::sharp::operators::AssignmentPlus' has no attributes.
+The class 'c::sharp::arrays::ArrayInitializer' has no attributes.
+The class 'c::sharp::namespaces::NamespaceMemberDeclaration' has no attributes.
+The class 'c::sharp::statements::ContinueStatement' has no attributes.
+The class 'c::sharp::operators::Equal' has no attributes.
+The class 'IterationStatement' has no attributes.
+The class 'c::sharp::types::Decimal' has no attributes.
+The class 'ExpressionList' has no attributes.
+The class 'AddressOfExpression' has no attributes.
+The class 'c::sharp::statements::FixedStatement' has no attributes.
+The class 'c::sharp::operators::ConditionalOr' has no attributes.
+The class 'Expression' has no attributes.
+The class 'EqualityExpression' has no attributes.
+The class 'c::sharp::expressions::AndExpression' has no attributes.
+The class 'NonArrayType' has no attributes.
+The class 'c::sharp::expressions::DelegateCreationExpression' has no attributes.
+The class 'c::sharp::operators::ShiftOperator' has no attributes.
+The class 'c::sharp::expressions::UnaryExpression' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'c::sharp::statements::ForeachStatement' has no attributes.
+The class 'c::sharp::operators::AssignmentMinus' has no attributes.
+The class 'Default' has no attributes.
+The class 'classes::VariableInitializer' has no attributes.
+The class 'ParameterArray' has no attributes.
+The class 'c::sharp::expressions::StatementExpression' has no attributes.
+The class 'c::sharp::expressions::ParenthesizedExpression' has no attributes.
+The class 'c::sharp::types::Int' has no attributes.
+The class 'c::sharp::keywords::Params' has no attributes.
+The class 'FixedParameter' has no attributes.
+The class 'c::sharp::operators::ExclusiveOr' has no attributes.
+The class 'c::sharp::expressions::PrimaryExtendedExpressionType' has no attributes.
+The class 'expressions::PrimaryNoArrayCreationExpression' has no attributes.
+The class 'c::sharp::operators::AssignmentUnsignedRightShift' has no attributes.
+The class 'c::sharp::attributes::NamedArgumentList' has no attributes.
+The class 'c::sharp::statements::LabeledStatement' has no attributes.
+The class 'c::sharp::operators::LeftShift' has no attributes.
+The class 'c::sharp::operators::AssignmentExclusiveOr' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'c::sharp::literals::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'c::sharp::statements::Statement' has no attributes.
+The class 'Event' has no attributes.
+The class 'c::sharp::classes::Method' has no attributes.
+The class 'Addition' has no attributes.
+The class 'c::sharp::attributes::Attribute' has no attributes.
+The class 'c::sharp::operators::LessThan' has no attributes.
+The class 'UnaryModificationOperator' has no attributes.
+The class 'Equal' has no attributes.
+The class 'c::sharp::classes::ParameterArray' has no attributes.
+The class 'c::sharp::types::UInt' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'common::NamedElement' has no attributes.
+The class 'c::sharp::statements::ForInitializer' has no attributes.
+The class 'FormalParameterList' has no attributes.
+The class 'Ref' has no attributes.
+The class 'c::sharp::literals::Literal' has no attributes.
+The class 'c::sharp::modifiers::Static' has no attributes.
+The class 'c::sharp::operators::MultiplicativeOperator' has no attributes.
+The class 'c::sharp::expressions::MemberAccess' has no attributes.
+The class 'c::sharp::literals::HexadecimalIntegerLiteral' has the following attributes: 'value' of type str.
+The class 'c::sharp::keywords::Out' has no attributes.
+The class 'Literal' has no attributes.
+The class 'c::sharp::types::SByte' has no attributes.
+The class 'c::sharp::arrays::StackallocInitializer' has no attributes.
+The class 'c::sharp::statements::SwitchSection' has no attributes.
+The class 'c::sharp::statements::WhileStatement' has no attributes.
+The class 'c::sharp::namespaces::Namespace' has no attributes.
+The class 'c::sharp::expressions::Expression' has no attributes.
+The class 'ArrayType' has no attributes.
+The class 'c::sharp::statements::ForStatement' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'c::sharp::statements::DoStatement' has no attributes.
+The class 'c::sharp::operators::LessThanOrEqual' has no attributes.
+The class 'expressions::PrimaryExtendedExpressionType' has no attributes.
+The class 'c::sharp::operators::And' has no attributes.
+The class 'c::sharp::expressions::ConditionalExpression' has no attributes.
+The class 'c::sharp::operators::Complement' has no attributes.
+The class 'NamedArgumentList' has no attributes.
+The class 'Negate' has no attributes.
+The class 'c::sharp::statements::SelectionStatement' has no attributes.
+The class 'c::sharp::operators::RightShift' has no attributes.
+The class 'Case' has no attributes.
+The class 'c::sharp::classes::ClassBase' has no attributes.
+The class 'c::sharp::arrays::ArrayType' has no attributes.
+The class 'Unsafe' has no attributes.
+The class 'SelectionStatement' has no attributes.
+The class 'c::sharp::operators::Negate' has no attributes.
+The class 'VariableInitializer' has no attributes.
+The class 'c::sharp::expressions::ArgumentList' has no attributes.
+The class 'Attributes' has no attributes.
+The class 'c::sharp::literals::StringLiteral' has the following attributes: 'value' of type str.
+The class 'c::sharp::literals::NullLiteral' has no attributes.
+The class 'c::sharp::expressions::InvocationExpression' has no attributes.
+The class 'c::sharp::statements::ConstantDeclarator' has no attributes.
+The class 'c::sharp::expressions::ShiftExpression' has no attributes.
+The class 'Type' has no attributes.
+The class 'c::sharp::statements::SimpleEmbeddedStatement' has no attributes.
+The class 'c::sharp::operators::MinusMinus' has no attributes.
+The class 'VariableDeclarator' has no attributes.
+The class 'c::sharp::modifiers::Modifier' has no attributes.
+The class 'c::sharp::expressions::PostDecrementExpression' has no attributes.
+The class 'GeneralCatchClause' has no attributes.
+The class 'EmbeddedStatement' has no attributes.
+The class 'c::sharp::operators::AdditiveOperator' has no attributes.
+The class 'c::sharp::common::NamespaceOrTypeName' has no attributes.
+The class 'c::sharp::statements::ResourceAcquisition' has no attributes.
+The class 'c::sharp::operators::GreaterThanOrEqual' has no attributes.
+The class 'c::sharp::statements::TryStatement' has no attributes.
+The class 'c::sharp::literals::DecimalIntegerLiteral' has the following attributes: 'value' of type str.
+The class 'c::sharp::operators::Subtraction' has no attributes.
+The class 'c::sharp::expressions::ExpressionList' has no attributes.
+The class 'c::sharp::types::PointerType' has no attributes.
+The class 'AndExpression' has no attributes.
+The class 'c::sharp::statements::BreakStatement' has no attributes.
+The class 'c::sharp::operators::NotEqual' has no attributes.
+The class 'namespaces::NamespaceMemberDeclaration' has no attributes.
+The class 'Subtraction' has no attributes.
+The class 'c::sharp::expressions::CheckedExpression' has no attributes.
+The class 'ConditionalAnd' has no attributes.
+The class 'c::sharp::statements::SwitchLabel' has no attributes.
+The class 'c::sharp::types::String' has no attributes.
+The class 'c::sharp::classes::VariableInitializer' has no attributes.
+The class 'c::sharp::modifiers::Private' has no attributes.
+The class 'c::sharp::types::NonArrayType' has no attributes.
+The class 'c::sharp::expressions::ObjectCreationExpression' has no attributes.
+The class 'c::sharp::statements::FixedPointerDeclarator' has no attributes.
+The class 'c::sharp::statements::LockStatement' has no attributes.
+The class 'ExclusiveOr' has no attributes.
+The class 'c::sharp::namespaces::CompilationUnit' has no attributes.
+The class 'c::sharp::expressions::ArrayCreationExpression' has no attributes.
+The class 'c::sharp::expressions::PostIncrementExpression' has no attributes.
+The class 'InclusiveOr' has no attributes.
+The class 'c::sharp::common::NamedElement' has the following attributes: 'name' of type str.
+The class 'c::sharp::expressions::BaseAccess' has no attributes.
+The class 'c::sharp::types::Double' has no attributes.
+The class 'Multiplication' has no attributes.
+The class 'ReferenceType' has no attributes.
+The class 'c::sharp::expressions::PointerMemberAccess' has no attributes.
+The class 'Statement' has no attributes.
+The class 'c::sharp::arrays::RankSpecifier' has no attributes.
+The class 'c::sharp::operators::InclusiveOr' has no attributes.
+The class 'c::sharp::statements::JumpStatement' has no attributes.
+The class 'PreIncrementExpression' has no attributes.
+The class 'c::sharp::namespaces::UsingDirective' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'c::sharp::statements::GeneralCatchClause' has no attributes.
+The class 'c::sharp::classes::Class' has no attributes.
+The class 'UsingDirective' has no attributes.
+The class 'LocalConstantDeclaration' has no attributes.
+The class 'ArrayInitializer' has no attributes.
+The class 'c::sharp::modifiers::Extern' has no attributes.
+The class 'c::sharp::expressions::ExclusiveOrExpression' has no attributes.
+The class 'c::sharp::statements::EmbeddedStatement' has no attributes.
+The class 'c::sharp::attributes::GlobalAttributeTarget' has no attributes.
+The class 'ConditionalOr' has no attributes.
+The class 'PrimaryNoArrayCreationExpression' has no attributes.
+The class 'c::sharp::common::Identifier' has no attributes.
+The class 'MultiplicativeOperator' has no attributes.
+The class 'InclusiveOrExpression' has no attributes.
+The class 'LeftShift' has no attributes.
+The class 'ConditionalAndExpression' has no attributes.
+The class 'c::sharp::statements::IterationStatement' has no attributes.
+The class 'c::sharp::types::Void' has no attributes.
+The class 'c::sharp::expressions::AddressOfExpression' has no attributes.
+The class 'c::sharp::statements::SwitchStatement' has no attributes.
+The class 'c::sharp::expressions::InclusiveOrExpression' has no attributes.
+The class 'c::sharp::statements::CheckedStatement' has no attributes.
+The class 'c::sharp::types::Short' has no attributes.
+The class 'CastExpression' has no attributes.
+The class 'PreDecrementExpression' has no attributes.
+The class 'c::sharp::statements::ExpressionStatement' has no attributes.
+The class 'c::sharp::literals::This' has no attributes.
+The class 'FinallyClause' has no attributes.
+The class 'c::sharp::modifiers::Internal' has no attributes.
+The class 'c::sharp::classes::ClassMemberDeclaration' has no attributes.
+The class 'c::sharp::operators::RelationOperator' has no attributes.
+The class 'c::sharp::modifiers::Protected' has no attributes.
+The class 'Params' has no attributes.
+The class 'StatementExpressionList' has no attributes.
+The class 'c::sharp::operators::Operator' has no attributes.
+The class 'ConditionalOrExpression' has no attributes.
+The class 'c::sharp::operators::GreaterThan' has no attributes.
+The class 'AdditiveExpression' has no attributes.
+The class 'c::sharp::modifiers::New' has no attributes.
+The class 'LessThan' has no attributes.
+The class 'c::sharp::operators::AssignmentAnd' has no attributes.
+The class 'c::sharp::modifiers::Virtual' has no attributes.
+The class 'Operator' has no attributes.
+The class 'c::sharp::expressions::ElementAccess' has no attributes.
+The class 'c::sharp::types::Object' has no attributes.
+The class 'RelationOperator' has no attributes.
+The class 'c::sharp::classes::FieldDeclaration' has no attributes.
+The class 'c::sharp::types::Char' has no attributes.
+The class 'c::sharp::types::Type' has no attributes.
+The class 'c::sharp::expressions::EqualityExpression' has no attributes.
+The class 'c::sharp::classes::Block' has no attributes.
+The class 'c::sharp::operators::EqualityOperator' has no attributes.
+The class 'c::sharp::operators::AssignmentOperator' has no attributes.
+The class 'c::sharp::expressions::CastExpression' has no attributes.
+The class 'GlobalAttributeTarget' has no attributes.
+The class 'ForInitializer' has no attributes.
+The class 'ArgumentList' has no attributes.
+The class 'c::sharp::expressions::MultiplicativeExpression' has no attributes.
+The class 'GlobalAttributes' has no attributes.
+The class 'LessThanOrEqual' has no attributes.
+The class 'types::Type' has no attributes.
+The class 'c::sharp::attributes::NamedArgument' has no attributes.
+The class 'ClassMemberDeclaration' has no attributes.
+The class 'c::sharp::operators::AssignmentRightShift' has no attributes.
+The class 'c::sharp::types::Long' has no attributes.
+The class 'c::sharp::expressions::ConditionalAndExpression' has no attributes.
+The class 'c::sharp::namespaces::TypeDeclaration' has no attributes.
+The class 'Block' has no attributes.
+The class 'RelationalExpression' has no attributes.
+The class 'c::sharp::statements::ReturnStatement' has no attributes.
+The class 'c::sharp::namespaces::NamespaceBody' has no attributes.
+The class 'c::sharp::statements::UsingStatement' has no attributes.
+The class 'types::NonArrayType' has no attributes.
+The class 'c::sharp::keywords::Case' has no attributes.
+The class 'NamespaceMemberDeclaration' has no attributes.
+The class 'Remainder' has no attributes.
+The class 'c::sharp::types::ReferenceType' has no attributes.
+The class 'c::sharp::types::SimpleType' has no attributes.
+The class 'ConstantDeclarator' has no attributes.
+The class 'SwitchLabel' has no attributes.
+The class 'Division' has no attributes.
+The class 'c::sharp::expressions::AdditiveExpression' has no attributes.
+The class 'c::sharp::expressions::ConditionalOrExpression' has no attributes.
+The class 'c::sharp::statements::GotoStatement' has no attributes.
+The class 'c::sharp::statements::DeclarationStatement' has no attributes.
+The class 'c::sharp::operators::Addition' has no attributes.
+The class 'PrimaryExtendedExpressionType' has no attributes.
+The class 'operators::UnaryOperator' has no attributes.
+The class 'c::sharp::statements::UncheckedStatement' has no attributes.
+The class 'MultiplicativeExpression' has no attributes.
+The class 'c::sharp::operators::UnsignedRightShift' has no attributes.
+The class 'statements::ForInitializer' has no attributes.
+'c::sharp::types::Byte' is a specialization of 'SimpleType'.
+'c::sharp::operators::MultiplicativeOperator' is a specialization of 'Operator'.
+'c::sharp::expressions::PostIncrementExpression' is a specialization of 'expressions::PrimaryExtendedExpressionType'.
+'c::sharp::statements::FixedStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::types::Object' is a specialization of 'SimpleType'.
+'c::sharp::operators::Equal' is a specialization of 'EqualityOperator'.
+'c::sharp::operators::AssignmentOr' is a specialization of 'AssignmentOperator'.
+'c::sharp::types::Int' is a specialization of 'SimpleType'.
+'c::sharp::statements::ThrowStatement' is a specialization of 'JumpStatement'.
+'c::sharp::statements::UsingStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::statements::ContinueStatement' is a specialization of 'JumpStatement'.
+'c::sharp::operators::EqualityOperator' is a specialization of 'Operator'.
+'c::sharp::operators::AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+'c::sharp::types::Double' is a specialization of 'SimpleType'.
+'c::sharp::operators::ShiftOperator' is a specialization of 'Operator'.
+'c::sharp::types::Decimal' is a specialization of 'SimpleType'.
+'c::sharp::expressions::PostIncrementExpression' is a specialization of 'expressions::StatementExpression'.
+'c::sharp::operators::AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+'c::sharp::statements::ReturnStatement' is a specialization of 'JumpStatement'.
+'c::sharp::types::Char' is a specialization of 'SimpleType'.
+'c::sharp::namespaces::TypeDeclaration' is a specialization of 'namespaces::NamespaceMemberDeclaration'.
+'c::sharp::operators::And' is a specialization of 'UnaryOperator'.
+'c::sharp::statements::SwitchStatement' is a specialization of 'SelectionStatement'.
+'c::sharp::operators::GreaterThan' is a specialization of 'RelationOperator'.
+'c::sharp::literals::NullLiteral' is a specialization of 'Literal'.
+'c::sharp::arrays::ArrayInitializer' is a specialization of 'VariableInitializer'.
+'c::sharp::expressions::CheckedExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::expressions::InvocationExpression' is a specialization of 'expressions::PrimaryExtendedExpressionType'.
+'c::sharp::expressions::PrimaryNoArrayCreationExpression' is a specialization of 'PrimaryExpression'.
+'c::sharp::expressions::UncheckedExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::arrays::ArrayType' is a specialization of 'Type'.
+'c::sharp::operators::AssignmentOperator' is a specialization of 'Operator'.
+'c::sharp::operators::MinusMinus' is a specialization of 'UnaryModificationOperator'.
+'c::sharp::statements::JumpStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::types::ReferenceType' is a specialization of 'types::NonArrayType'.
+'c::sharp::statements::LabeledStatement' is a specialization of 'common::NamedElement'.
+'c::sharp::namespaces::TypeDeclaration' is a specialization of 'classes::ClassMemberDeclaration'.
+'c::sharp::operators::ExclusiveOr' is a specialization of 'UnaryOperator'.
+'c::sharp::statements::VariableDeclaration' is a specialization of 'statements::ResourceAcquisition'.
+'c::sharp::operators::AssignmentPlus' is a specialization of 'AssignmentOperator'.
+'c::sharp::expressions::ObjectCreationExpression' is a specialization of 'expressions::PrimaryNoArrayCreationExpression'.
+'c::sharp::modifiers::Internal' is a specialization of 'Modifier'.
+'c::sharp::classes::Method' is a specialization of 'common::NamedElement'.
+'c::sharp::statements::SelectionStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::operators::AssignmentMinus' is a specialization of 'AssignmentOperator'.
+'c::sharp::modifiers::Protected' is a specialization of 'Modifier'.
+'c::sharp::modifiers::Private' is a specialization of 'Modifier'.
+'c::sharp::expressions::BaseAccess' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::operators::Complement' is a specialization of 'UnaryOperator'.
+'c::sharp::types::PointerType' is a specialization of 'types::NonArrayType'.
+'c::sharp::operators::GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+'c::sharp::literals::CharacterLiteral' is a specialization of 'Literal'.
+'c::sharp::operators::AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+'c::sharp::statements::UncheckedStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::operators::AdditiveOperator' is a specialization of 'Operator'.
+'c::sharp::expressions::ObjectCreationExpression' is a specialization of 'expressions::StatementExpression'.
+'c::sharp::operators::Addition' is a specialization of 'operators::UnaryOperator'.
+'c::sharp::operators::InclusiveOr' is a specialization of 'UnaryOperator'.
+'c::sharp::operators::RightShift' is a specialization of 'ShiftOperator'.
+'c::sharp::types::SimpleType' is a specialization of 'types::NonArrayType'.
+'c::sharp::operators::Negate' is a specialization of 'UnaryOperator'.
+'c::sharp::expressions::AssignmentExpression' is a specialization of 'expressions::StatementExpression'.
+'c::sharp::statements::EmptyStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::statements::DeclarationStatement' is a specialization of 'Statement'.
+'c::sharp::statements::CheckedStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::modifiers::New' is a specialization of 'Modifier'.
+'c::sharp::types::PointerType' is a specialization of 'types::Type'.
+'c::sharp::namespaces::UsingDirective' is a specialization of 'NamedElement'.
+'c::sharp::statements::VariableDeclaration' is a specialization of 'statements::ForInitializer'.
+'c::sharp::types::Float' is a specialization of 'SimpleType'.
+'c::sharp::operators::AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+'c::sharp::common::Identifier' is a specialization of 'expressions::PrimaryNoArrayCreationExpression'.
+'c::sharp::literals::RealLiteral' is a specialization of 'Literal'.
+'c::sharp::operators::Subtraction' is a specialization of 'operators::UnaryOperator'.
+'c::sharp::operators::UnsignedRightShift' is a specialization of 'ShiftOperator'.
+'c::sharp::classes::FieldDeclaration' is a specialization of 'ClassMemberDeclaration'.
+'c::sharp::statements::LabeledStatement' is a specialization of 'statements::Statement'.
+'c::sharp::operators::LessThanOrEqual' is a specialization of 'RelationOperator'.
+'c::sharp::classes::ConstantDeclaration' is a specialization of 'ClassMemberDeclaration'.
+'c::sharp::expressions::PostDecrementExpression' is a specialization of 'expressions::PrimaryExtendedExpressionType'.
+'c::sharp::modifiers::Unsafe' is a specialization of 'Modifier'.
+'c::sharp::statements::VariableDeclarator' is a specialization of 'NamedElement'.
+'c::sharp::types::SimpleType' is a specialization of 'types::Type'.
+'c::sharp::types::Bool' is a specialization of 'SimpleType'.
+'c::sharp::operators::NotEqual' is a specialization of 'EqualityOperator'.
+'c::sharp::types::UInt' is a specialization of 'SimpleType'.
+'c::sharp::literals::This' is a specialization of 'Literal'.
+'c::sharp::expressions::SizeOfExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::operators::Subtraction' is a specialization of 'operators::AdditiveOperator'.
+'c::sharp::operators::ConditionalOr' is a specialization of 'UnaryOperator'.
+'c::sharp::operators::Addition' is a specialization of 'operators::AdditiveOperator'.
+'c::sharp::statements::BreakStatement' is a specialization of 'JumpStatement'.
+'c::sharp::operators::AssignmentAnd' is a specialization of 'AssignmentOperator'.
+'c::sharp::statements::LockStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::types::ULong' is a specialization of 'SimpleType'.
+'c::sharp::statements::WhileStatement' is a specialization of 'IterationStatement'.
+'c::sharp::expressions::TypeOfExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::modifiers::Extern' is a specialization of 'Modifier'.
+'c::sharp::expressions::AssignmentExpression' is a specialization of 'expressions::Expression'.
+'c::sharp::operators::Division' is a specialization of 'MultiplicativeOperator'.
+'c::sharp::types::Void' is a specialization of 'SimpleType'.
+'c::sharp::statements::ExpressionStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::operators::RelationOperator' is a specialization of 'Operator'.
+'c::sharp::statements::TryStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::expressions::InvocationExpression' is a specialization of 'expressions::StatementExpression'.
+'c::sharp::operators::ConditionalAnd' is a specialization of 'UnaryOperator'.
+'c::sharp::namespaces::Namespace' is a specialization of 'NamespaceMemberDeclaration'.
+'c::sharp::operators::AssignmentModulo' is a specialization of 'AssignmentOperator'.
+'c::sharp::expressions::PreDecrementExpression' is a specialization of 'StatementExpression'.
+'c::sharp::types::UShort' is a specialization of 'SimpleType'.
+'c::sharp::expressions::ConditionalExpression' is a specialization of 'Expression'.
+'c::sharp::operators::AssignmentDivision' is a specialization of 'AssignmentOperator'.
+'c::sharp::statements::IterationStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::operators::LessThan' is a specialization of 'RelationOperator'.
+'c::sharp::statements::GotoStatement' is a specialization of 'JumpStatement'.
+'c::sharp::statements::EmbeddedStatement' is a specialization of 'Statement'.
+'c::sharp::expressions::ElementAccess' is a specialization of 'PrimaryExtendedExpressionType'.
+'c::sharp::types::String' is a specialization of 'SimpleType'.
+'c::sharp::expressions::ArrayCreationExpression' is a specialization of 'PrimaryExpression'.
+'c::sharp::classes::Class' is a specialization of 'common::NamedElement'.
+'c::sharp::types::Long' is a specialization of 'SimpleType'.
+'c::sharp::operators::LeftShift' is a specialization of 'ShiftOperator'.
+'c::sharp::expressions::PostDecrementExpression' is a specialization of 'expressions::StatementExpression'.
+'c::sharp::types::Short' is a specialization of 'SimpleType'.
+'c::sharp::modifiers::Partial' is a specialization of 'Modifier'.
+'c::sharp::modifiers::Public' is a specialization of 'Modifier'.
+'c::sharp::modifiers::OverrideModifier' is a specialization of 'Modifier'.
+'c::sharp::literals::DecimalIntegerLiteral' is a specialization of 'Literal'.
+'c::sharp::expressions::PointerMemberAccess' is a specialization of 'PrimaryExtendedExpressionType'.
+'c::sharp::modifiers::Abstract' is a specialization of 'Modifier'.
+'c::sharp::operators::AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+'c::sharp::expressions::ParenthesizedExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::arrays::StackallocInitializer' is a specialization of 'VariableInitializer'.
+'c::sharp::expressions::PreIncrementExpression' is a specialization of 'StatementExpression'.
+'c::sharp::modifiers::Volatile' is a specialization of 'Modifier'.
+'c::sharp::operators::UnaryOperator' is a specialization of 'Operator'.
+'c::sharp::modifiers::Sealed' is a specialization of 'Modifier'.
+'c::sharp::types::SByte' is a specialization of 'SimpleType'.
+'c::sharp::statements::ForStatement' is a specialization of 'IterationStatement'.
+'c::sharp::literals::BooleanLiteral' is a specialization of 'Literal'.
+'c::sharp::common::Identifier' is a specialization of 'common::NamedElement'.
+'c::sharp::expressions::Expression' is a specialization of 'classes::VariableInitializer'.
+'c::sharp::statements::DoStatement' is a specialization of 'IterationStatement'.
+'c::sharp::operators::Multiplication' is a specialization of 'MultiplicativeOperator'.
+'c::sharp::literals::HexadecimalIntegerLiteral' is a specialization of 'Literal'.
+'c::sharp::literals::Literal' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::modifiers::Static' is a specialization of 'Modifier'.
+'c::sharp::classes::Class' is a specialization of 'namespaces::TypeDeclaration'.
+'c::sharp::statements::ForeachStatement' is a specialization of 'IterationStatement'.
+'c::sharp::expressions::DelegateCreationExpression' is a specialization of 'PrimaryNoArrayCreationExpression'.
+'c::sharp::statements::IfStatement' is a specialization of 'SelectionStatement'.
+'c::sharp::types::ReferenceType' is a specialization of 'types::Type'.
+'c::sharp::modifiers::ReadOnly' is a specialization of 'Modifier'.
+'c::sharp::operators::Assignment' is a specialization of 'AssignmentOperator'.
+'c::sharp::literals::StringLiteral' is a specialization of 'Literal'.
+'c::sharp::operators::PlusPlus' is a specialization of 'UnaryModificationOperator'.
+'c::sharp::modifiers::Virtual' is a specialization of 'Modifier'.
+'c::sharp::types::ClassOrInterfaceOrDelegateOrEnumType' is a specialization of 'ReferenceType'.
+'c::sharp::statements::ConstantDeclarator' is a specialization of 'NamedElement'.
+'c::sharp::operators::UnaryModificationOperator' is a specialization of 'Operator'.
+'c::sharp::expressions::StatementExpressionList' is a specialization of 'ForInitializer'.
+'c::sharp::operators::Remainder' is a specialization of 'MultiplicativeOperator'.
+'c::sharp::statements::SimpleEmbeddedStatement' is a specialization of 'EmbeddedStatement'.
+'c::sharp::classes::Method' is a specialization of 'classes::ClassMemberDeclaration'.
+'c::sharp::expressions::Expression' is a specialization of 'statements::ResourceAcquisition'.
+'c::sharp::expressions::MemberAccess' is a specialization of 'PrimaryExtendedExpressionType'.
+'ConditionalOr' (role 'ConditionalOr', cardinality 0..*) is associated with 'c::sharp::expressions::ConditionalOrExpression' (role 'c_sharp_expressions_ConditionalOrExpression412', cardinality 0..*).
+'c::sharp::statements::SpecificCatchClause' (role 'c_sharp_statements_SpecificCatchClause203', cardinality 0..*) is associated with 'Identifier' (role 'Identifier204', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'c::sharp::statements::DeclarationStatement' (role 'c_sharp_statements_DeclarationStatement', cardinality 0..*).
+'RankSpecifier' (role 'RankSpecifier292', cardinality 0..*) is associated with 'c::sharp::expressions::ArrayCreationExpression' (role 'c_sharp_expressions_ArrayCreationExpression291', cardinality 0..*).
+'UnaryExpression' (role 'UnaryExpression354', cardinality 0..*) is associated with 'c::sharp::expressions::CastExpression' (role 'c_sharp_expressions_CastExpression353', cardinality 0..*).
+'c::sharp::namespaces::UsingDirective' (role 'c_sharp_namespaces_UsingDirective', cardinality 0..*) is associated with 'NamespaceOrTypeName' (role 'NamespaceOrTypeName', cardinality 0..*).
+'NamespaceMemberDeclaration' (role 'NamespaceMemberDeclaration', cardinality 0..*) is associated with 'c::sharp::namespaces::CompilationUnit' (role 'c_sharp_namespaces_CompilationUnit5', cardinality 0..*).
+'c::sharp::expressions::InclusiveOrExpression' (role 'c_sharp_expressions_InclusiveOrExpression406', cardinality 0..*) is associated with 'InclusiveOr' (role 'InclusiveOr', cardinality 0..*).
+'c::sharp::classes::Method' (role 'c_sharp_classes_Method27', cardinality 0..*) is associated with 'Modifier' (role 'Modifier28', cardinality 0..*).
+'c::sharp::statements::LocalConstantDeclaration' (role 'c_sharp_statements_LocalConstantDeclaration246', cardinality 0..*) is associated with 'ConstantDeclarator' (role 'ConstantDeclarator247', cardinality 0..*).
+'Type' (role 'Type345', cardinality 0..*) is associated with 'c::sharp::expressions::SizeOfExpression' (role 'c_sharp_expressions_SizeOfExpression', cardinality 0..*).
+'Type' (role 'Type80', cardinality 0..*) is associated with 'c::sharp::classes::FieldDeclaration' (role 'c_sharp_classes_FieldDeclaration79', cardinality 0..*).
+'c::sharp::expressions::ArgumentList' (role 'c_sharp_expressions_ArgumentList', cardinality 0..*) is associated with 'Argument' (role 'Argument', cardinality 0..*).
+'Expression' (role 'Expression249', cardinality 0..*) is associated with 'c::sharp::statements::ConstantDeclarator' (role 'c_sharp_statements_ConstantDeclarator', cardinality 0..*).
+'Type' (role 'Type384', cardinality 0..*) is associated with 'c::sharp::expressions::RelationalExpression' (role 'c_sharp_expressions_RelationalExpression383', cardinality 0..*).
+'c::sharp::expressions::ExclusiveOrExpression' (role 'c_sharp_expressions_ExclusiveOrExpression', cardinality 0..*) is associated with 'AndExpression' (role 'AndExpression', cardinality 0..*).
+'AttributeArguments' (role 'AttributeArguments', cardinality 0..*) is associated with 'c::sharp::attributes::Attribute' (role 'c_sharp_attributes_Attribute109', cardinality 0..*).
+'Multiplication' (role 'Multiplication', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression311', cardinality 0..*).
+'SpecificCatchClause' (role 'SpecificCatchClause', cardinality 0..*) is associated with 'c::sharp::statements::TryStatement' (role 'c_sharp_statements_TryStatement195', cardinality 0..*).
+'c::sharp::expressions::ConditionalAndExpression' (role 'c_sharp_expressions_ConditionalAndExpression409', cardinality 0..*) is associated with 'ConditionalAnd' (role 'ConditionalAnd', cardinality 0..*).
+'UnaryExpression' (role 'UnaryExpression', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression313', cardinality 0..*).
+'Multiplication' (role 'Multiplication361', cardinality 0..*) is associated with 'c::sharp::expressions::MultiplicativeExpression' (role 'c_sharp_expressions_MultiplicativeExpression360', cardinality 0..*).
+'c::sharp::expressions::MultiplicativeExpression' (role 'c_sharp_expressions_MultiplicativeExpression365', cardinality 0..*) is associated with 'Remainder' (role 'Remainder', cardinality 0..*).
+'Ref' (role 'Ref', cardinality 0..*) is associated with 'c::sharp::classes::FixedParameter' (role 'c_sharp_classes_FixedParameter44', cardinality 0..*).
+'ArrayInitializer' (role 'ArrayInitializer', cardinality 0..*) is associated with 'c::sharp::expressions::ArrayCreationExpression' (role 'c_sharp_expressions_ArrayCreationExpression294', cardinality 0..*).
+'Ref' (role 'Ref258', cardinality 0..*) is associated with 'c::sharp::expressions::Argument' (role 'c_sharp_expressions_Argument257', cardinality 0..*).
+'Complement' (role 'Complement', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression309', cardinality 0..*).
+'c::sharp::attributes::AttributeArguments' (role 'c_sharp_attributes_AttributeArguments', cardinality 0..*) is associated with 'ExpressionList' (role 'ExpressionList', cardinality 0..*).
+'c::sharp::namespaces::CompilationUnit' (role 'c_sharp_namespaces_CompilationUnit3', cardinality 0..*) is associated with 'GlobalAttributes' (role 'GlobalAttributes', cardinality 0..*).
+'c::sharp::statements::SwitchSection' (role 'c_sharp_statements_SwitchSection', cardinality 0..*) is associated with 'SwitchLabel' (role 'SwitchLabel', cardinality 0..*).
+'UnaryExpression' (role 'UnaryExpression327', cardinality 0..*) is associated with 'c::sharp::expressions::AssignmentExpression' (role 'c_sharp_expressions_AssignmentExpression', cardinality 0..*).
+'ClassOrInterfaceOrDelegateOrEnumType' (role 'ClassOrInterfaceOrDelegateOrEnumType', cardinality 0..*) is associated with 'c::sharp::classes::ClassBase' (role 'c_sharp_classes_ClassBase', cardinality 0..*).
+'c::sharp::expressions::RelationalExpression' (role 'c_sharp_expressions_RelationalExpression390', cardinality 0..*) is associated with 'GreaterThan' (role 'GreaterThan', cardinality 0..*).
+'Expression' (role 'Expression148', cardinality 0..*) is associated with 'c::sharp::statements::WhileStatement' (role 'c_sharp_statements_WhileStatement', cardinality 0..*).
+'c::sharp::statements::FixedPointerDeclarator' (role 'c_sharp_statements_FixedPointerDeclarator', cardinality 0..*) is associated with 'Identifier' (role 'Identifier232', cardinality 0..*).
+'ParameterArray' (role 'ParameterArray', cardinality 0..*) is associated with 'c::sharp::classes::FormalParameterList' (role 'c_sharp_classes_FormalParameterList40', cardinality 0..*).
+'c::sharp::attributes::GlobalAttributes' (role 'c_sharp_attributes_GlobalAttributes93', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'ReferenceType' (role 'ReferenceType', cardinality 0..*) is associated with 'c::sharp::types::PointerType' (role 'c_sharp_types_PointerType418', cardinality 0..*).
+'Block' (role 'Block209', cardinality 0..*) is associated with 'c::sharp::statements::GeneralCatchClause' (role 'c_sharp_statements_GeneralCatchClause', cardinality 0..*).
+'c::sharp::arrays::ArrayInitializer' (role 'c_sharp_arrays_ArrayInitializer', cardinality 0..*) is associated with 'VariableInitializer' (role 'VariableInitializer', cardinality 0..*).
+'EqualityExpression' (role 'EqualityExpression', cardinality 0..*) is associated with 'c::sharp::expressions::AndExpression' (role 'c_sharp_expressions_AndExpression', cardinality 0..*).
+'Attribute' (role 'Attribute99', cardinality 0..*) is associated with 'c::sharp::attributes::Attributes' (role 'c_sharp_attributes_Attributes98', cardinality 0..*).
+'Identifier' (role 'Identifier115', cardinality 0..*) is associated with 'c::sharp::attributes::NamedArgument' (role 'c_sharp_attributes_NamedArgument', cardinality 0..*).
+'c::sharp::attributes::GlobalAttributes' (role 'c_sharp_attributes_GlobalAttributes', cardinality 0..*) is associated with 'GlobalAttributeTarget' (role 'GlobalAttributeTarget', cardinality 0..*).
+'PrimaryExtendedExpressionType' (role 'PrimaryExtendedExpressionType', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression301', cardinality 0..*).
+'Identifier' (role 'Identifier271', cardinality 0..*) is associated with 'c::sharp::expressions::PointerMemberAccess' (role 'c_sharp_expressions_PointerMemberAccess', cardinality 0..*).
+'Expression' (role 'Expression189', cardinality 0..*) is associated with 'c::sharp::statements::ReturnStatement' (role 'c_sharp_statements_ReturnStatement', cardinality 0..*).
+'Expression' (role 'Expression323', cardinality 0..*) is associated with 'c::sharp::expressions::ConditionalExpression' (role 'c_sharp_expressions_ConditionalExpression', cardinality 0..*).
+'Identifier' (role 'Identifier61', cardinality 0..*) is associated with 'c::sharp::classes::ParameterArray' (role 'c_sharp_classes_ParameterArray60', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'c::sharp::classes::Method' (role 'c_sharp_classes_Method30', cardinality 0..*).
+'c::sharp::expressions::ConditionalAndExpression' (role 'c_sharp_expressions_ConditionalAndExpression', cardinality 0..*) is associated with 'InclusiveOrExpression' (role 'InclusiveOrExpression', cardinality 0..*).
+'c::sharp::statements::SimpleEmbeddedStatement' (role 'c_sharp_statements_SimpleEmbeddedStatement', cardinality 0..*) is associated with 'Unsafe' (role 'Unsafe', cardinality 0..*).
+'c::sharp::classes::FieldDeclaration' (role 'c_sharp_classes_FieldDeclaration76', cardinality 0..*) is associated with 'Modifier' (role 'Modifier77', cardinality 0..*).
+'c::sharp::attributes::GlobalAttributeTarget' (role 'c_sharp_attributes_GlobalAttributeTarget', cardinality 0..*) is associated with 'Identifier' (role 'Identifier95', cardinality 0..*).
+'UsingDirective' (role 'UsingDirective12', cardinality 0..*) is associated with 'c::sharp::namespaces::NamespaceBody' (role 'c_sharp_namespaces_NamespaceBody', cardinality 0..*).
+'c::sharp::expressions::TypeOfExpression' (role 'c_sharp_expressions_TypeOfExpression', cardinality 0..*) is associated with 'Type' (role 'Type334', cardinality 0..*).
+'c::sharp::statements::GotoStatement' (role 'c_sharp_statements_GotoStatement186', cardinality 0..*) is associated with 'Identifier' (role 'Identifier187', cardinality 0..*).
+'UnaryExpression' (role 'UnaryExpression356', cardinality 0..*) is associated with 'c::sharp::expressions::AddressOfExpression' (role 'c_sharp_expressions_AddressOfExpression', cardinality 0..*).
+'c::sharp::attributes::AttributeTarget' (role 'c_sharp_attributes_AttributeTarget', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'Block' (role 'Block215', cardinality 0..*) is associated with 'c::sharp::statements::UncheckedStatement' (role 'c_sharp_statements_UncheckedStatement', cardinality 0..*).
+'c::sharp::statements::GotoStatement' (role 'c_sharp_statements_GotoStatement183', cardinality 0..*) is associated with 'Expression' (role 'Expression184', cardinality 0..*).
+'EmbeddedStatement' (role 'EmbeddedStatement224', cardinality 0..*) is associated with 'c::sharp::statements::UsingStatement' (role 'c_sharp_statements_UsingStatement223', cardinality 0..*).
+'c::sharp::expressions::PreDecrementExpression' (role 'c_sharp_expressions_PreDecrementExpression', cardinality 0..*) is associated with 'UnaryExpression' (role 'UnaryExpression349', cardinality 0..*).
+'And' (role 'And', cardinality 0..*) is associated with 'c::sharp::expressions::AndExpression' (role 'c_sharp_expressions_AndExpression400', cardinality 0..*).
+'c::sharp::statements::GotoStatement' (role 'c_sharp_statements_GotoStatement180', cardinality 0..*) is associated with 'Case' (role 'Case181', cardinality 0..*).
+'c::sharp::expressions::ObjectCreationExpression' (role 'c_sharp_expressions_ObjectCreationExpression', cardinality 0..*) is associated with 'Type' (role 'Type278', cardinality 0..*).
+'c::sharp::arrays::StackallocInitializer' (role 'c_sharp_arrays_StackallocInitializer', cardinality 0..*) is associated with 'Type' (role 'Type84', cardinality 0..*).
+'c::sharp::types::PointerType' (role 'c_sharp_types_PointerType', cardinality 0..*) is associated with 'SimpleType' (role 'SimpleType416', cardinality 0..*).
+'c::sharp::classes::Method' (role 'c_sharp_classes_Method', cardinality 0..*) is associated with 'Attributes' (role 'Attributes25', cardinality 0..*).
+'NamespaceOrTypeName' (role 'NamespaceOrTypeName107', cardinality 0..*) is associated with 'c::sharp::attributes::Attribute' (role 'c_sharp_attributes_Attribute', cardinality 0..*).
+'c::sharp::expressions::Argument' (role 'c_sharp_expressions_Argument', cardinality 0..*) is associated with 'Out' (role 'Out255', cardinality 0..*).
+'EmbeddedStatement' (role 'EmbeddedStatement151', cardinality 0..*) is associated with 'c::sharp::statements::WhileStatement' (role 'c_sharp_statements_WhileStatement150', cardinality 0..*).
+'c::sharp::statements::FixedStatement' (role 'c_sharp_statements_FixedStatement229', cardinality 0..*) is associated with 'EmbeddedStatement' (role 'EmbeddedStatement230', cardinality 0..*).
+'c::sharp::expressions::ShiftExpression' (role 'c_sharp_expressions_ShiftExpression377', cardinality 0..*) is associated with 'Remainder' (role 'Remainder378', cardinality 0..*).
+'c::sharp::statements::SwitchStatement' (role 'c_sharp_statements_SwitchStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression134', cardinality 0..*).
+'SimpleType' (role 'SimpleType', cardinality 0..*) is associated with 'c::sharp::expressions::MemberAccess' (role 'c_sharp_expressions_MemberAccess', cardinality 0..*).
+'Attributes' (role 'Attributes', cardinality 0..*) is associated with 'c::sharp::classes::Class' (role 'c_sharp_classes_Class', cardinality 0..*).
+'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression303', cardinality 0..*) is associated with 'Addition' (role 'Addition', cardinality 0..*).
+'Subtraction' (role 'Subtraction', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression305', cardinality 0..*).
+'Equal' (role 'Equal', cardinality 0..*) is associated with 'c::sharp::expressions::EqualityExpression' (role 'c_sharp_expressions_EqualityExpression395', cardinality 0..*).
+'Type' (role 'Type244', cardinality 0..*) is associated with 'c::sharp::statements::LocalConstantDeclaration' (role 'c_sharp_statements_LocalConstantDeclaration', cardinality 0..*).
+'c::sharp::namespaces::NamespaceBody' (role 'c_sharp_namespaces_NamespaceBody14', cardinality 0..*) is associated with 'NamespaceMemberDeclaration' (role 'NamespaceMemberDeclaration15', cardinality 0..*).
+'Identifier' (role 'Identifier170', cardinality 0..*) is associated with 'c::sharp::statements::ForeachStatement' (role 'c_sharp_statements_ForeachStatement169', cardinality 0..*).
+'ArgumentList' (role 'ArgumentList', cardinality 0..*) is associated with 'c::sharp::expressions::InvocationExpression' (role 'c_sharp_expressions_InvocationExpression', cardinality 0..*).
+'c::sharp::expressions::ArrayCreationExpression' (role 'c_sharp_expressions_ArrayCreationExpression288', cardinality 0..*) is associated with 'ExpressionList' (role 'ExpressionList289', cardinality 0..*).
+'ExclusiveOrExpression' (role 'ExclusiveOrExpression', cardinality 0..*) is associated with 'c::sharp::expressions::InclusiveOrExpression' (role 'c_sharp_expressions_InclusiveOrExpression', cardinality 0..*).
+'c::sharp::statements::ExpressionStatement' (role 'c_sharp_statements_ExpressionStatement', cardinality 0..*) is associated with 'StatementExpression' (role 'StatementExpression', cardinality 0..*).
+'c::sharp::statements::TryStatement' (role 'c_sharp_statements_TryStatement199', cardinality 0..*) is associated with 'FinallyClause' (role 'FinallyClause', cardinality 0..*).
+'NamedArgumentList' (role 'NamedArgumentList', cardinality 0..*) is associated with 'c::sharp::attributes::AttributeArguments' (role 'c_sharp_attributes_AttributeArguments112', cardinality 0..*).
+'Statement' (role 'Statement140', cardinality 0..*) is associated with 'c::sharp::statements::SwitchSection' (role 'c_sharp_statements_SwitchSection139', cardinality 0..*).
+'Block' (role 'Block211', cardinality 0..*) is associated with 'c::sharp::statements::FinallyClause' (role 'c_sharp_statements_FinallyClause', cardinality 0..*).
+'c::sharp::expressions::PreIncrementExpression' (role 'c_sharp_expressions_PreIncrementExpression', cardinality 0..*) is associated with 'UnaryExpression' (role 'UnaryExpression347', cardinality 0..*).
+'Type' (role 'Type49', cardinality 0..*) is associated with 'c::sharp::classes::FixedParameter' (role 'c_sharp_classes_FixedParameter48', cardinality 0..*).
+'c::sharp::arrays::ArrayType' (role 'c_sharp_arrays_ArrayType90', cardinality 0..*) is associated with 'RankSpecifier' (role 'RankSpecifier', cardinality 0..*).
+'c::sharp::expressions::AdditiveExpression' (role 'c_sharp_expressions_AdditiveExpression', cardinality 0..*) is associated with 'MultiplicativeExpression' (role 'MultiplicativeExpression', cardinality 0..*).
+'c::sharp::expressions::MemberAccess' (role 'c_sharp_expressions_MemberAccess265', cardinality 0..*) is associated with 'Identifier' (role 'Identifier266', cardinality 0..*).
+'c::sharp::expressions::ElementAccess' (role 'c_sharp_expressions_ElementAccess', cardinality 0..*) is associated with 'ExpressionList' (role 'ExpressionList268', cardinality 0..*).
+'RelationalExpression' (role 'RelationalExpression', cardinality 0..*) is associated with 'c::sharp::expressions::EqualityExpression' (role 'c_sharp_expressions_EqualityExpression', cardinality 0..*).
+'c::sharp::classes::Class' (role 'c_sharp_classes_Class22', cardinality 0..*) is associated with 'ClassMemberDeclaration' (role 'ClassMemberDeclaration', cardinality 0..*).
+'ClassBase' (role 'ClassBase', cardinality 0..*) is associated with 'c::sharp::classes::Class' (role 'c_sharp_classes_Class20', cardinality 0..*).
+'c::sharp::classes::ConstantDeclaration' (role 'c_sharp_classes_ConstantDeclaration72', cardinality 0..*) is associated with 'ConstantDeclarator' (role 'ConstantDeclarator', cardinality 0..*).
+'c::sharp::statements::SwitchLabel' (role 'c_sharp_statements_SwitchLabel', cardinality 0..*) is associated with 'Default' (role 'Default', cardinality 0..*).
+'Block' (role 'Block', cardinality 0..*) is associated with 'c::sharp::classes::Method' (role 'c_sharp_classes_Method37', cardinality 0..*).
+'c::sharp::expressions::MultiplicativeExpression' (role 'c_sharp_expressions_MultiplicativeExpression363', cardinality 0..*) is associated with 'Division' (role 'Division', cardinality 0..*).
+'Expression' (role 'Expression191', cardinality 0..*) is associated with 'c::sharp::statements::ThrowStatement' (role 'c_sharp_statements_ThrowStatement', cardinality 0..*).
+'c::sharp::statements::FixedStatement' (role 'c_sharp_statements_FixedStatement227', cardinality 0..*) is associated with 'FixedPointerDeclarator' (role 'FixedPointerDeclarator', cardinality 0..*).
+'c::sharp::statements::DoStatement' (role 'c_sharp_statements_DoStatement155', cardinality 0..*) is associated with 'Expression' (role 'Expression156', cardinality 0..*).
+'c::sharp::statements::LabeledStatement' (role 'c_sharp_statements_LabeledStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement120', cardinality 0..*).
+'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression', cardinality 0..*) is associated with 'MemberAccess' (role 'MemberAccess', cardinality 0..*).
+'c::sharp::expressions::RelationalExpression' (role 'c_sharp_expressions_RelationalExpression392', cardinality 0..*) is associated with 'GreaterThanOrEqual' (role 'GreaterThanOrEqual', cardinality 0..*).
+'c::sharp::statements::SwitchLabel' (role 'c_sharp_statements_SwitchLabel143', cardinality 0..*) is associated with 'Case' (role 'Case', cardinality 0..*).
+'ClassOrInterfaceOrDelegateOrEnumType' (role 'ClassOrInterfaceOrDelegateOrEnumType33', cardinality 0..*) is associated with 'c::sharp::classes::Method' (role 'c_sharp_classes_Method32', cardinality 0..*).
+'SwitchSection' (role 'SwitchSection', cardinality 0..*) is associated with 'c::sharp::statements::SwitchStatement' (role 'c_sharp_statements_SwitchStatement136', cardinality 0..*).
+'c::sharp::expressions::RelationalExpression' (role 'c_sharp_expressions_RelationalExpression388', cardinality 0..*) is associated with 'LessThanOrEqual' (role 'LessThanOrEqual', cardinality 0..*).
+'c::sharp::statements::VariableDeclaration' (role 'c_sharp_statements_VariableDeclaration', cardinality 0..*) is associated with 'Type' (role 'Type237', cardinality 0..*).
+'c::sharp::classes::ConstantDeclaration' (role 'c_sharp_classes_ConstantDeclaration69', cardinality 0..*) is associated with 'Type' (role 'Type70', cardinality 0..*).
+'Expression' (role 'Expression130', cardinality 0..*) is associated with 'c::sharp::statements::IfStatement' (role 'c_sharp_statements_IfStatement', cardinality 0..*).
+'Expression' (role 'Expression217', cardinality 0..*) is associated with 'c::sharp::statements::LockStatement' (role 'c_sharp_statements_LockStatement', cardinality 0..*).
+'c::sharp::expressions::DelegateCreationExpression' (role 'c_sharp_expressions_DelegateCreationExpression338', cardinality 0..*) is associated with 'Expression' (role 'Expression339', cardinality 0..*).
+'Expression' (role 'Expression235', cardinality 0..*) is associated with 'c::sharp::statements::FixedPointerDeclarator' (role 'c_sharp_statements_FixedPointerDeclarator234', cardinality 0..*).
+'c::sharp::expressions::ArrayCreationExpression' (role 'c_sharp_expressions_ArrayCreationExpression285', cardinality 0..*) is associated with 'ArrayType' (role 'ArrayType286', cardinality 0..*).
+'ClassOrInterfaceOrDelegateOrEnumType' (role 'ClassOrInterfaceOrDelegateOrEnumType201', cardinality 0..*) is associated with 'c::sharp::statements::SpecificCatchClause' (role 'c_sharp_statements_SpecificCatchClause', cardinality 0..*).
+'c::sharp::expressions::StatementExpressionList' (role 'c_sharp_expressions_StatementExpressionList', cardinality 0..*) is associated with 'StatementExpression' (role 'StatementExpression251', cardinality 0..*).
+'c::sharp::classes::FieldDeclaration' (role 'c_sharp_classes_FieldDeclaration', cardinality 0..*) is associated with 'Attributes' (role 'Attributes74', cardinality 0..*).
+'Negate' (role 'Negate', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression307', cardinality 0..*).
+'c::sharp::classes::ParameterArray' (role 'c_sharp_classes_ParameterArray', cardinality 0..*) is associated with 'Attributes' (role 'Attributes54', cardinality 0..*).
+'UsingDirective' (role 'UsingDirective', cardinality 0..*) is associated with 'c::sharp::namespaces::CompilationUnit' (role 'c_sharp_namespaces_CompilationUnit', cardinality 0..*).
+'AddressOfExpression' (role 'AddressOfExpression', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression321', cardinality 0..*).
+'c::sharp::expressions::BaseAccess' (role 'c_sharp_expressions_BaseAccess', cardinality 0..*) is associated with 'ExpressionList' (role 'ExpressionList273', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'c::sharp::arrays::StackallocInitializer' (role 'c_sharp_arrays_StackallocInitializer86', cardinality 0..*).
+'Subtraction' (role 'Subtraction372', cardinality 0..*) is associated with 'c::sharp::expressions::AdditiveExpression' (role 'c_sharp_expressions_AdditiveExpression371', cardinality 0..*).
+'Identifier' (role 'Identifier', cardinality 0..*) is associated with 'c::sharp::common::NamespaceOrTypeName' (role 'c_sharp_common_NamespaceOrTypeName', cardinality 0..*).
+'Attributes' (role 'Attributes64', cardinality 0..*) is associated with 'c::sharp::classes::ConstantDeclaration' (role 'c_sharp_classes_ConstantDeclaration', cardinality 0..*).
+'c::sharp::statements::UsingStatement' (role 'c_sharp_statements_UsingStatement', cardinality 0..*) is associated with 'ResourceAcquisition' (role 'ResourceAcquisition', cardinality 0..*).
+'Expression' (role 'Expression343', cardinality 0..*) is associated with 'c::sharp::expressions::UncheckedExpression' (role 'c_sharp_expressions_UncheckedExpression', cardinality 0..*).
+'c::sharp::classes::Class' (role 'c_sharp_classes_Class18', cardinality 0..*) is associated with 'Modifier' (role 'Modifier', cardinality 0..*).
+'c::sharp::statements::TryStatement' (role 'c_sharp_statements_TryStatement', cardinality 0..*) is associated with 'Block' (role 'Block193', cardinality 0..*).
+'ShiftExpression' (role 'ShiftExpression', cardinality 0..*) is associated with 'c::sharp::expressions::RelationalExpression' (role 'c_sharp_expressions_RelationalExpression', cardinality 0..*).
+'c::sharp::statements::SpecificCatchClause' (role 'c_sharp_statements_SpecificCatchClause206', cardinality 0..*) is associated with 'Block' (role 'Block207', cardinality 0..*).
+'c::sharp::classes::ParameterArray' (role 'c_sharp_classes_ParameterArray58', cardinality 0..*) is associated with 'ArrayType' (role 'ArrayType', cardinality 0..*).
+'c::sharp::attributes::AttributeTarget' (role 'c_sharp_attributes_AttributeTarget104', cardinality 0..*) is associated with 'Type' (role 'Type105', cardinality 0..*).
+'c::sharp::expressions::ArrayCreationExpression' (role 'c_sharp_expressions_ArrayCreationExpression', cardinality 0..*) is associated with 'Type' (role 'Type283', cardinality 0..*).
+'c::sharp::statements::TryStatement' (role 'c_sharp_statements_TryStatement197', cardinality 0..*) is associated with 'GeneralCatchClause' (role 'GeneralCatchClause', cardinality 0..*).
+'VariableInitializer' (role 'VariableInitializer242', cardinality 0..*) is associated with 'c::sharp::statements::VariableDeclarator' (role 'c_sharp_statements_VariableDeclarator', cardinality 0..*).
+'c::sharp::expressions::BaseAccess' (role 'c_sharp_expressions_BaseAccess275', cardinality 0..*) is associated with 'Identifier' (role 'Identifier276', cardinality 0..*).
+'LocalConstantDeclaration' (role 'LocalConstantDeclaration', cardinality 0..*) is associated with 'c::sharp::statements::DeclarationStatement' (role 'c_sharp_statements_DeclarationStatement123', cardinality 0..*).
+'c::sharp::attributes::NamedArgument' (role 'c_sharp_attributes_NamedArgument117', cardinality 0..*) is associated with 'Expression' (role 'Expression118', cardinality 0..*).
+'c::sharp::statements::IfStatement' (role 'c_sharp_statements_IfStatement132', cardinality 0..*) is associated with 'EmbeddedStatement' (role 'EmbeddedStatement', cardinality 0..*).
+'CastExpression' (role 'CastExpression', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression319', cardinality 0..*).
+'c::sharp::types::ClassOrInterfaceOrDelegateOrEnumType' (role 'c_sharp_types_ClassOrInterfaceOrDelegateOrEnumType', cardinality 0..*) is associated with 'NamespaceOrTypeName' (role 'NamespaceOrTypeName414', cardinality 0..*).
+'Expression' (role 'Expression253', cardinality 0..*) is associated with 'c::sharp::expressions::ExpressionList' (role 'c_sharp_expressions_ExpressionList', cardinality 0..*).
+'c::sharp::expressions::ShiftExpression' (role 'c_sharp_expressions_ShiftExpression', cardinality 0..*) is associated with 'RightShift' (role 'RightShift', cardinality 0..*).
+'EmbeddedStatement' (role 'EmbeddedStatement220', cardinality 0..*) is associated with 'c::sharp::statements::LockStatement' (role 'c_sharp_statements_LockStatement219', cardinality 0..*).
+'c::sharp::expressions::ObjectCreationExpression' (role 'c_sharp_expressions_ObjectCreationExpression280', cardinality 0..*) is associated with 'ArgumentList' (role 'ArgumentList281', cardinality 0..*).
+'ExclusiveOr' (role 'ExclusiveOr', cardinality 0..*) is associated with 'c::sharp::expressions::ExclusiveOrExpression' (role 'c_sharp_expressions_ExclusiveOrExpression403', cardinality 0..*).
+'PrimaryExpression' (role 'PrimaryExpression', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression299', cardinality 0..*).
+'c::sharp::classes::FormalParameterList' (role 'c_sharp_classes_FormalParameterList', cardinality 0..*) is associated with 'FixedParameter' (role 'FixedParameter', cardinality 0..*).
+'c::sharp::classes::Block' (role 'c_sharp_classes_Block', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'c::sharp::statements::GotoStatement' (role 'c_sharp_statements_GotoStatement', cardinality 0..*) is associated with 'Default' (role 'Default178', cardinality 0..*).
+'c::sharp::statements::ForStatement' (role 'c_sharp_statements_ForStatement162', cardinality 0..*) is associated with 'StatementExpressionList' (role 'StatementExpressionList', cardinality 0..*).
+'Expression' (role 'Expression296', cardinality 0..*) is associated with 'c::sharp::expressions::ParenthesizedExpression' (role 'c_sharp_expressions_ParenthesizedExpression', cardinality 0..*).
+'c::sharp::expressions::CastExpression' (role 'c_sharp_expressions_CastExpression', cardinality 0..*) is associated with 'Type' (role 'Type351', cardinality 0..*).
+'c::sharp::classes::FieldDeclaration' (role 'c_sharp_classes_FieldDeclaration82', cardinality 0..*) is associated with 'VariableDeclarator' (role 'VariableDeclarator', cardinality 0..*).
+'ConditionalAndExpression' (role 'ConditionalAndExpression', cardinality 0..*) is associated with 'c::sharp::expressions::ConditionalOrExpression' (role 'c_sharp_expressions_ConditionalOrExpression', cardinality 0..*).
+'c::sharp::attributes::Attributes' (role 'c_sharp_attributes_Attributes', cardinality 0..*) is associated with 'AttributeTarget' (role 'AttributeTarget', cardinality 0..*).
+'c::sharp::statements::ForStatement' (role 'c_sharp_statements_ForStatement159', cardinality 0..*) is associated with 'Expression' (role 'Expression160', cardinality 0..*).
+'c::sharp::expressions::ConditionalExpression' (role 'c_sharp_expressions_ConditionalExpression325', cardinality 0..*) is associated with 'ConditionalOrExpression' (role 'ConditionalOrExpression', cardinality 0..*).
+'FormalParameterList' (role 'FormalParameterList', cardinality 0..*) is associated with 'c::sharp::classes::Method' (role 'c_sharp_classes_Method35', cardinality 0..*).
+'EmbeddedStatement' (role 'EmbeddedStatement176', cardinality 0..*) is associated with 'c::sharp::statements::ForeachStatement' (role 'c_sharp_statements_ForeachStatement175', cardinality 0..*).
+'c::sharp::statements::ForeachStatement' (role 'c_sharp_statements_ForeachStatement172', cardinality 0..*) is associated with 'Expression' (role 'Expression173', cardinality 0..*).
+'Addition' (role 'Addition369', cardinality 0..*) is associated with 'c::sharp::expressions::AdditiveExpression' (role 'c_sharp_expressions_AdditiveExpression368', cardinality 0..*).
+'Modifier' (role 'Modifier67', cardinality 0..*) is associated with 'c::sharp::classes::ConstantDeclaration' (role 'c_sharp_classes_ConstantDeclaration66', cardinality 0..*).
+'NotEqual' (role 'NotEqual', cardinality 0..*) is associated with 'c::sharp::expressions::EqualityExpression' (role 'c_sharp_expressions_EqualityExpression397', cardinality 0..*).
+'c::sharp::statements::ForStatement' (role 'c_sharp_statements_ForStatement', cardinality 0..*) is associated with 'ForInitializer' (role 'ForInitializer', cardinality 0..*).
+'c::sharp::expressions::AssignmentExpression' (role 'c_sharp_expressions_AssignmentExpression329', cardinality 0..*) is associated with 'AssignmentOperator' (role 'AssignmentOperator', cardinality 0..*).
+'c::sharp::attributes::AttributeTarget' (role 'c_sharp_attributes_AttributeTarget102', cardinality 0..*) is associated with 'Return' (role 'Return', cardinality 0..*).
+'c::sharp::expressions::DelegateCreationExpression' (role 'c_sharp_expressions_DelegateCreationExpression', cardinality 0..*) is associated with 'ClassOrInterfaceOrDelegateOrEnumType' (role 'ClassOrInterfaceOrDelegateOrEnumType336', cardinality 0..*).
+'EmbeddedStatement' (role 'EmbeddedStatement153', cardinality 0..*) is associated with 'c::sharp::statements::DoStatement' (role 'c_sharp_statements_DoStatement', cardinality 0..*).
+'LeftShift' (role 'LeftShift', cardinality 0..*) is associated with 'c::sharp::expressions::ShiftExpression' (role 'c_sharp_expressions_ShiftExpression375', cardinality 0..*).
+'Identifier' (role 'Identifier52', cardinality 0..*) is associated with 'c::sharp::classes::FixedParameter' (role 'c_sharp_classes_FixedParameter51', cardinality 0..*).
+'c::sharp::expressions::AssignmentExpression' (role 'c_sharp_expressions_AssignmentExpression331', cardinality 0..*) is associated with 'Expression' (role 'Expression332', cardinality 0..*).
+'c::sharp::expressions::MultiplicativeExpression' (role 'c_sharp_expressions_MultiplicativeExpression', cardinality 0..*) is associated with 'UnaryExpression' (role 'UnaryExpression358', cardinality 0..*).
+'c::sharp::statements::ForeachStatement' (role 'c_sharp_statements_ForeachStatement', cardinality 0..*) is associated with 'Type' (role 'Type167', cardinality 0..*).
+'NamespaceBody' (role 'NamespaceBody', cardinality 0..*) is associated with 'c::sharp::namespaces::Namespace' (role 'c_sharp_namespaces_Namespace10', cardinality 0..*).
+'c::sharp::expressions::Argument' (role 'c_sharp_expressions_Argument260', cardinality 0..*) is associated with 'Expression' (role 'Expression261', cardinality 0..*).
+'c::sharp::classes::ParameterArray' (role 'c_sharp_classes_ParameterArray56', cardinality 0..*) is associated with 'Params' (role 'Params', cardinality 0..*).
+'Out' (role 'Out', cardinality 0..*) is associated with 'c::sharp::classes::FixedParameter' (role 'c_sharp_classes_FixedParameter46', cardinality 0..*).
+'c::sharp::expressions::RelationalExpression' (role 'c_sharp_expressions_RelationalExpression386', cardinality 0..*) is associated with 'LessThan' (role 'LessThan', cardinality 0..*).
+'PointerType' (role 'PointerType', cardinality 0..*) is associated with 'c::sharp::statements::FixedStatement' (role 'c_sharp_statements_FixedStatement', cardinality 0..*).
+'NamespaceOrTypeName' (role 'NamespaceOrTypeName8', cardinality 0..*) is associated with 'c::sharp::namespaces::Namespace' (role 'c_sharp_namespaces_Namespace', cardinality 0..*).
+'c::sharp::statements::SimpleEmbeddedStatement' (role 'c_sharp_statements_SimpleEmbeddedStatement126', cardinality 0..*) is associated with 'Block' (role 'Block127', cardinality 0..*).
+'c::sharp::classes::FixedParameter' (role 'c_sharp_classes_FixedParameter', cardinality 0..*) is associated with 'Attributes' (role 'Attributes42', cardinality 0..*).
+'c::sharp::arrays::ArrayType' (role 'c_sharp_arrays_ArrayType', cardinality 0..*) is associated with 'NonArrayType' (role 'NonArrayType', cardinality 0..*).
+'NamedArgument' (role 'NamedArgument', cardinality 0..*) is associated with 'c::sharp::attributes::NamedArgumentList' (role 'c_sharp_attributes_NamedArgumentList', cardinality 0..*).
+'PreIncrementExpression' (role 'PreIncrementExpression', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression315', cardinality 0..*).
+'EmbeddedStatement' (role 'EmbeddedStatement165', cardinality 0..*) is associated with 'c::sharp::statements::ForStatement' (role 'c_sharp_statements_ForStatement164', cardinality 0..*).
+'VariableDeclarator' (role 'VariableDeclarator240', cardinality 0..*) is associated with 'c::sharp::statements::VariableDeclaration' (role 'c_sharp_statements_VariableDeclaration239', cardinality 0..*).
+'c::sharp::statements::CheckedStatement' (role 'c_sharp_statements_CheckedStatement', cardinality 0..*) is associated with 'Block' (role 'Block213', cardinality 0..*).
+'PreDecrementExpression' (role 'PreDecrementExpression', cardinality 0..*) is associated with 'c::sharp::expressions::UnaryExpression' (role 'c_sharp_expressions_UnaryExpression317', cardinality 0..*).
+'Expression' (role 'Expression341', cardinality 0..*) is associated with 'c::sharp::expressions::CheckedExpression' (role 'c_sharp_expressions_CheckedExpression', cardinality 0..*).
+'Expression' (role 'Expression146', cardinality 0..*) is associated with 'c::sharp::statements::SwitchLabel' (role 'c_sharp_statements_SwitchLabel145', cardinality 0..*).
+'c::sharp::expressions::ShiftExpression' (role 'c_sharp_expressions_ShiftExpression380', cardinality 0..*) is associated with 'AdditiveExpression' (role 'AdditiveExpression', cardinality 0..*).

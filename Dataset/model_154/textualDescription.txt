@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'petrinetmodel::Transition' has the following attributes: 'id' of type int; 'priority' of type int; 'token' of type int.
+The class 'Edge' has no attributes.
+The class 'petrinetmodel::Place' has the following attributes: 'token' of type int; 'id' of type int.
+The class 'petrinetmodel::EdgeToTransaction' has no attributes.
+The class 'petrinetmodel::EdgeToPlace' has no attributes.
+The class 'petrinetmodel::Petrinet' has no attributes.
+The class 'petrinetmodel::Edge' has the following attributes: 'weight' of type int.
+'petrinetmodel::EdgeToTransaction' is a specialization of 'Edge'.
+'petrinetmodel::EdgeToPlace' is a specialization of 'Edge'.
+'petrinetmodel::EdgeToPlace' (role 'petrinetmodel_EdgeToPlace', cardinality 0..*) is associated with 'petrinetmodel::Transition' (role 'petrinetmodel_Transition4', cardinality 0..*).
+'petrinetmodel::EdgeToTransaction' (role 'petrinetmodel_EdgeToTransaction', cardinality 0..*) is associated with 'petrinetmodel::Place' (role 'petrinetmodel_Place9', cardinality 0..*).
+'petrinetmodel::Petrinet' (role 'petrinetmodel_Petrinet2', cardinality 0..*) is associated with 'petrinetmodel::Place' (role 'petrinetmodel_Place', cardinality 0..*).
+'petrinetmodel::Transition' (role 'petrinetmodel_Transition', cardinality 0..*) is associated with 'petrinetmodel::Petrinet' (role 'petrinetmodel_Petrinet', cardinality 0..*).
+'petrinetmodel::Place' (role 'petrinetmodel_Place12', cardinality 0..*) is associated with 'petrinetmodel::EdgeToPlace' (role 'petrinetmodel_EdgeToPlace11', cardinality 0..*).
+'petrinetmodel::Place' (role 'petrinetmodel_Place7', cardinality 0..*) is associated with 'petrinetmodel::Transition' (role 'petrinetmodel_Transition6', cardinality 0..*).
+'petrinetmodel::EdgeToTransaction' (role 'petrinetmodel_EdgeToTransaction14', cardinality 0..*) is associated with 'petrinetmodel::Transition' (role 'petrinetmodel_Transition15', cardinality 0..*).

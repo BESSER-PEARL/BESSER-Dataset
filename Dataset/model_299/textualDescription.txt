@@ -1,0 +1,28 @@
+The model has 8 class(es).
+The class 'library::CommunityRole' has the following attributes: 'role' of type str.
+The class 'library::Book' has the following attributes: 'title' of type str; 'category' of type str; 'pages' of type int.
+The class 'library::Opinion' has the following attributes: 'text' of type str; 'context' of type str.
+The class 'library::Chapter' has the following attributes: 'name' of type str.
+The class 'library::Writer' has the following attributes: 'name' of type str.
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'library::Community' has the following attributes: 'name' of type str.
+The class 'library::Review' has the following attributes: 'positive' of type bool; 'title' of type str.
+The enumeration 'BookCategory' has the following literals: 'Mystery', 'Biography', 'ScienceFiction'.
+'library::Book' (role 'library_Book7', cardinality 0..*) is associated with 'library::Writer' (role 'library_Writer6', cardinality 0..*).
+'library::Writer' (role 'library_Writer', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).
+'library::CommunityRole' (role 'CommunityRole25', cardinality 0..*) is associated with 'library::Community' (role 'community', cardinality 0..*).
+'library::Library' (role 'library_Library2', cardinality 0..*) is associated with 'library::Book' (role 'library_Book', cardinality 0..*).
+'library::Community' (role 'communities', cardinality 0..*) is associated with 'library::Library' (role 'Library', cardinality 0..*).
+'library::Writer' (role 'Writer', cardinality 0..*) is associated with 'library::Book' (role 'books', cardinality 0..*).
+'library::Review' (role 'reviews', cardinality 0..*) is associated with 'library::Book' (role 'Book18', cardinality 0..*).
+'library::CommunityRole' (role 'roles', cardinality 0..*) is associated with 'library::Community' (role 'Community28', cardinality 0..*).
+'library::Opinion' (role 'opinions22', cardinality 0..*) is associated with 'library::Book' (role 'Book23', cardinality 0..*).
+'library::Library' (role 'library', cardinality 0..*) is associated with 'library::Community' (role 'Community', cardinality 0..*).
+'library::Opinion' (role 'opinions', cardinality 0..*) is associated with 'library::Writer' (role 'Writer20', cardinality 0..*).
+'library::Writer' (role 'participants', cardinality 0..*) is associated with 'library::CommunityRole' (role 'CommunityRole', cardinality 0..*).
+'library::Writer' (role 'Writer30', cardinality 0..*) is associated with 'library::CommunityRole' (role 'participates', cardinality 0..*).
+'library::Book' (role 'book', cardinality 0..*) is associated with 'library::Review' (role 'Review', cardinality 0..*).
+'library::Writer' (role 'writer', cardinality 0..*) is associated with 'library::Opinion' (role 'Opinion', cardinality 0..*).
+'library::Book' (role 'library_Book13', cardinality 0..*) is associated with 'library::Chapter' (role 'library_Chapter', cardinality 0..*).
+'library::Writer' (role 'author', cardinality 0..*) is associated with 'library::Book' (role 'Book', cardinality 0..*).
+'library::Opinion' (role 'Opinion16', cardinality 0..*) is associated with 'library::Book' (role 'book15', cardinality 0..*).

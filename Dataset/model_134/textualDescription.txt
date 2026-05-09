@@ -1,0 +1,409 @@
+The model has 157 class(es).
+The class 'ast::Modifier' has the following attributes: 'value' of type str.
+The class 'ast::BooleanLiteral' has no attributes.
+The class 'ast::ScopeStatement' has no attributes.
+The class 'ast::ApplyRoundOp' has no attributes.
+The class 'ast::TopLevelClassifier' has no attributes.
+The class 'JumpStatement' has no attributes.
+The class 'ast::EqualOp' has no attributes.
+The class 'ast::DivisionOp' has no attributes.
+The class 'ast::JumpStatement' has no attributes.
+The class 'ast::Literal' has the following attributes: 'value' of type str.
+The class 'ast::AttributeSet' has no attributes.
+The class 'ast::ImportStatement' has no attributes.
+The class 'ast::LocalVarStatement' has no attributes.
+The class 'ast::IfThenPart' has no attributes.
+The class 'ast::BitwiseAndOp' has no attributes.
+The class 'ast::MethodBlock' has no attributes.
+The class 'ast::TopLevelStatement' has no attributes.
+The class 'ast::PlusOp' has no attributes.
+The class 'ast::WhileStatement' has no attributes.
+The class 'ast::GreaterThenOp' has no attributes.
+The class 'ast::DocumentationLine' has the following attributes: 'text' of type str.
+The class 'ast::ClassBlock' has no attributes.
+The class 'ClassifierMemberStatement' has no attributes.
+The class 'ast::SwitchDefaultPartRef' has no attributes.
+The class 'ast::BitwiseXorAssignmentOp' has no attributes.
+The class 'ast::BitwiseOrAssignmentOp' has no attributes.
+The class 'ast::PostfixIncrementOp' has no attributes.
+The class 'ast::DoubleLiteral' has no attributes.
+The class 'ast::DivideAssignmentOp' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'EJBase' has no attributes.
+The class 'ast::ConditionalLoop' has no attributes.
+The class 'ast::AccessOp' has no attributes.
+The class 'ast::NewOp' has no attributes.
+The class 'ast::NullReference' has no attributes.
+The class 'ast::SuperReference' has the following attributes: 'name' of type str.
+The class 'ast::ConditionalAndOp' has no attributes.
+The class 'ast::SwitchPart' has no attributes.
+The class 'ast::PackageStatement' has no attributes.
+The class 'ast::BitwiseComplementOp' has no attributes.
+The class 'SwitchPart' has no attributes.
+The class 'ast::EmptyStatement' has no attributes.
+The class 'ast::EJBase' has no attributes.
+The class 'ImplemenationClassifierStatement' has no attributes.
+The class 'ast::BehaviorFeature' has no attributes.
+The class 'ast::ThrowStatement' has no attributes.
+The class 'ast::LabeledStatement' has no attributes.
+The class 'ast::ShiftOp' has no attributes.
+The class 'ast::ConstructorStatement' has no attributes.
+The class 'ast::ContinueStatement' has no attributes.
+The class 'InitStatement' has no attributes.
+The class 'ast::RemainderOp' has no attributes.
+The class 'ClassifierOp' has no attributes.
+The class 'ast::ForeachStatement' has no attributes.
+The class 'ast::ClassifierOp' has no attributes.
+The class 'ast::LongIntegerLiteral' has no attributes.
+The class 'ast::FloatLiteral' has no attributes.
+The class 'UnaryOp' has no attributes.
+The class 'ast::RangeExpression' has no attributes.
+The class 'ast::RightShiftAssignmentOp' has no attributes.
+The class 'ast::Parameter' has no attributes.
+The class 'ast::NamedElement' has no attributes.
+The class 'ast::LeftShiftOp' has no attributes.
+The class 'ast::TemplateParameter' has no attributes.
+The class 'ast::AssignmentOp' has no attributes.
+The class 'ast::LoopStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ast::InstanceOfOp' has no attributes.
+The class 'ast::Variable' has no attributes.
+The class 'ast::MultiplyAssignmentOp' has no attributes.
+The class 'ast::MinusOp' has no attributes.
+The class 'ast::SwitchCasePart' has no attributes.
+The class 'ast::ApplySquareOp' has no attributes.
+The class 'ast::DoWhileStatement' has no attributes.
+The class 'ast::RemainderAssignmentOp' has no attributes.
+The class 'ast::ZeroExtensionRightShiftOp' has no attributes.
+The class 'ast::AssertStatement' has no attributes.
+The class 'BinaryOp' has no attributes.
+The class 'ast::Identifier' has the following attributes: 'quotedValue' of type str; 'escapedValue' of type str; 'value' of type str.
+The class 'ast::LessThenOp' has no attributes.
+The class 'DivisionOp' has no attributes.
+The class 'ast::PrimitiveType' has the following attributes: 'name' of type str.
+The class 'ast::PostfixDecrementOp' has no attributes.
+The class 'ast::UnaryOp' has no attributes.
+The class 'ast::CharacterLiteral' has no attributes.
+The class 'ast::Label' has the following attributes: 'name' of type str.
+The class 'ast::MinusAssignmentOp' has no attributes.
+The class 'ast::PrefixDecrementOp' has no attributes.
+The class 'ast::NotEqualOp' has no attributes.
+The class 'ast::MethodContentStatement' has no attributes.
+The class 'ast::MethodClassifier' has no attributes.
+The class 'ast::ReturnStatement' has no attributes.
+The class 'ast::RightShiftOp' has no attributes.
+The class 'ast::LessOrEqualOp' has no attributes.
+The class 'ConditionalLoop' has no attributes.
+The class 'ast::ConditionalOp' has no attributes.
+The class 'ast::InnerClassifier' has no attributes.
+The class 'ast::ImplemenationClassifierStatement' has no attributes.
+The class 'BehaviorFeature' has no attributes.
+The class 'ast::EJElement' has the following attributes: 'endLine' of type int; 'startColumn' of type int; 'endColumn' of type int; 'startLine' of type int; 'endOffset' of type str; 'startOffset' of type str.
+The class 'ast::ZeroExtensionRightShiftAssignmentOp' has no attributes.
+The class 'ast::DivideOp' has no attributes.
+The class 'ast::ClassifierStatement' has no attributes.
+The class 'ast::PrefixIncrementOp' has no attributes.
+The class 'ast::ExpressionStatement' has no attributes.
+The class 'LabeledStatement' has no attributes.
+The class 'ScopeStatement' has no attributes.
+The class 'AssignmentOperation' has no attributes.
+The class 'ast::ThisReference' has the following attributes: 'name' of type str.
+The class 'ast::BitwiseAndAssignmentOp' has no attributes.
+The class 'ast::UnaryPlusOp' has no attributes.
+The class 'ast::IdentityOp' has no attributes.
+The class 'ast::UnaryMinusOp' has no attributes.
+The class 'ast::LogicalComplementOp' has no attributes.
+The class 'ast::Feature' has no attributes.
+The class 'ast::PlusAssignmentOp' has no attributes.
+The class 'ast::InstanceInitStatement' has no attributes.
+The class 'ast::EnumStatement' has no attributes.
+The class 'ClassifierStatement' has no attributes.
+The class 'ast::IfStatement' has no attributes.
+The class 'ast::InterfaceStatement' has no attributes.
+The class 'TopLevelStatement' has no attributes.
+The class 'Literal' has no attributes.
+The class 'ast::ForStatement' has no attributes.
+The class 'ast::BinaryOp' has no attributes.
+The class 'ast::TryStatement' has no attributes.
+The class 'MethodContentStatement' has no attributes.
+The class 'ast::InitStatement' has no attributes.
+The class 'EJElement' has no attributes.
+The class 'ast::ClassifierMemberStatement' has no attributes.
+The class 'ast::FieldStatement' has no attributes.
+The class 'ast::LeftShiftAssignmentOp' has no attributes.
+The class 'ast::IntegerLiteral' has no attributes.
+The class 'ast::ClassStatement' has no attributes.
+The class 'ast::AssignmentOperation' has no attributes.
+The class 'ast::MultiplyOp' has no attributes.
+The class 'ast::BitwiseXorOp' has no attributes.
+The class 'ast::StringLiteral' has no attributes.
+The class 'LoopStatement' has no attributes.
+The class 'ast::ConditionalOrOp' has no attributes.
+The class 'ast::BreakStatement' has no attributes.
+The class 'ast::SynchronizedStatement' has no attributes.
+The class 'ast::MethodStatement' has no attributes.
+The class 'ast::ArrayConstructor' has no attributes.
+The class 'ast::EnumLiteral' has no attributes.
+The class 'ast::CatchPart' has no attributes.
+The class 'ast::WildcardType' has no attributes.
+The class 'ast::SwitchStatement' has no attributes.
+The class 'ast::AttributeDefinition' has no attributes.
+The class 'ast::SwitchDefaultPart' has no attributes.
+The class 'ast::BitwiseOrOp' has no attributes.
+The class 'ast::CastOp' has no attributes.
+The class 'ast::GreaterOrEqualOp' has no attributes.
+The class 'ast::Expression' has no attributes.
+The class 'ast::StaticInitStatement' has no attributes.
+The class 'ShiftOp' has no attributes.
+The class 'Feature' has no attributes.
+'ast::ClassBlock' is a specialization of 'EJBase'.
+'ast::AssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::FloatLiteral' is a specialization of 'Literal'.
+'ast::CatchPart' is a specialization of 'EJBase'.
+'ast::InnerClassifier' is a specialization of 'ClassifierMemberStatement'.
+'ast::RightShiftAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::PlusAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::Label' is a specialization of 'EJElement'.
+'ast::BitwiseOrAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::DivideAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::StringLiteral' is a specialization of 'Literal'.
+'ast::IfStatement' is a specialization of 'MethodContentStatement'.
+'ast::ShiftOp' is a specialization of 'Expression'.
+'ast::IdentityOp' is a specialization of 'Expression'.
+'ast::WhileStatement' is a specialization of 'ConditionalLoop'.
+'ast::AssignmentOperation' is a specialization of 'Expression'.
+'ast::MultiplyAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::ThrowStatement' is a specialization of 'MethodContentStatement'.
+'ast::NotEqualOp' is a specialization of 'BinaryOp'.
+'ast::RemainderAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::BitwiseXorOp' is a specialization of 'BinaryOp'.
+'ast::RightShiftOp' is a specialization of 'ShiftOp'.
+'ast::GreaterOrEqualOp' is a specialization of 'BinaryOp'.
+'ast::ClassifierMemberStatement' is a specialization of 'EJBase'.
+'ast::RangeExpression' is a specialization of 'Expression'.
+'ast::MultiplyOp' is a specialization of 'Expression'.
+'ast::ArrayConstructor' is a specialization of 'Expression'.
+'ast::InstanceOfOp' is a specialization of 'ClassifierOp'.
+'ast::Identifier' is a specialization of 'Expression'.
+'ast::DoubleLiteral' is a specialization of 'Literal'.
+'ast::GreaterThenOp' is a specialization of 'BinaryOp'.
+'ast::ImplemenationClassifierStatement' is a specialization of 'ClassifierStatement'.
+'ast::ImportStatement' is a specialization of 'TopLevelStatement'.
+'ast::ForeachStatement' is a specialization of 'LoopStatement'.
+'ast::SwitchCasePart' is a specialization of 'SwitchPart'.
+'ast::TemplateParameter' is a specialization of 'NamedElement'.
+'ast::EnumStatement' is a specialization of 'ImplemenationClassifierStatement'.
+'ast::TryStatement' is a specialization of 'ScopeStatement'.
+'ast::DivisionOp' is a specialization of 'Expression'.
+'ast::SwitchDefaultPart' is a specialization of 'SwitchPart'.
+'ast::Modifier' is a specialization of 'EJElement'.
+'ast::ApplyRoundOp' is a specialization of 'Expression'.
+'ast::Variable' is a specialization of 'NamedElement'.
+'ast::ContinueStatement' is a specialization of 'JumpStatement'.
+'ast::BehaviorFeature' is a specialization of 'Feature'.
+'ast::ConditionalOrOp' is a specialization of 'BinaryOp'.
+'ast::ConstructorStatement' is a specialization of 'BehaviorFeature'.
+'ast::ConditionalAndOp' is a specialization of 'BinaryOp'.
+'ast::RemainderOp' is a specialization of 'DivisionOp'.
+'ast::MethodBlock' is a specialization of 'MethodContentStatement'.
+'ast::InitStatement' is a specialization of 'ClassifierMemberStatement'.
+'ast::LessThenOp' is a specialization of 'BinaryOp'.
+'ast::ReturnStatement' is a specialization of 'MethodContentStatement'.
+'ast::PrefixDecrementOp' is a specialization of 'UnaryOp'.
+'ast::BitwiseComplementOp' is a specialization of 'UnaryOp'.
+'ast::UnaryMinusOp' is a specialization of 'UnaryOp'.
+'ast::PrimitiveType' is a specialization of 'Expression'.
+'ast::PrefixIncrementOp' is a specialization of 'UnaryOp'.
+'ast::AttributeSet' is a specialization of 'EJElement'.
+'ast::ZeroExtensionRightShiftOp' is a specialization of 'ShiftOp'.
+'ast::Literal' is a specialization of 'Expression'.
+'ast::ConditionalOp' is a specialization of 'Expression'.
+'ast::SwitchPart' is a specialization of 'EJBase'.
+'ast::StaticInitStatement' is a specialization of 'InitStatement'.
+'ast::NullReference' is a specialization of 'Literal'.
+'ast::UnaryPlusOp' is a specialization of 'UnaryOp'.
+'ast::ZeroExtensionRightShiftAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::MinusAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::PlusOp' is a specialization of 'Expression'.
+'ast::BooleanLiteral' is a specialization of 'Literal'.
+'ast::FieldStatement' is a specialization of 'Feature'.
+'ast::InstanceInitStatement' is a specialization of 'InitStatement'.
+'ast::Expression' is a specialization of 'EJBase'.
+'ast::LogicalComplementOp' is a specialization of 'UnaryOp'.
+'ast::LeftShiftAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::PostfixDecrementOp' is a specialization of 'UnaryOp'.
+'ast::MethodClassifier' is a specialization of 'MethodContentStatement'.
+'ast::EqualOp' is a specialization of 'BinaryOp'.
+'ast::ApplySquareOp' is a specialization of 'Expression'.
+'ast::Parameter' is a specialization of 'NamedElement'.
+'ast::ThisReference' is a specialization of 'Expression'.
+'ast::TopLevelClassifier' is a specialization of 'TopLevelStatement'.
+'ast::LeftShiftOp' is a specialization of 'ShiftOp'.
+'ast::SuperReference' is a specialization of 'Expression'.
+'ast::BitwiseAndOp' is a specialization of 'BinaryOp'.
+'ast::MethodContentStatement' is a specialization of 'EJBase'.
+'ast::DivideOp' is a specialization of 'DivisionOp'.
+'ast::AccessOp' is a specialization of 'Expression'.
+'ast::AttributeDefinition' is a specialization of 'ClassifierStatement'.
+'ast::LocalVarStatement' is a specialization of 'MethodContentStatement'.
+'ast::NewOp' is a specialization of 'Expression'.
+'ast::BinaryOp' is a specialization of 'Expression'.
+'ast::PostfixIncrementOp' is a specialization of 'UnaryOp'.
+'ast::TopLevelStatement' is a specialization of 'EJBase'.
+'ast::InterfaceStatement' is a specialization of 'ClassifierStatement'.
+'ast::ClassStatement' is a specialization of 'ImplemenationClassifierStatement'.
+'ast::IntegerLiteral' is a specialization of 'Literal'.
+'ast::AssertStatement' is a specialization of 'MethodContentStatement'.
+'ast::SwitchDefaultPartRef' is a specialization of 'EJElement'.
+'ast::LoopStatement' is a specialization of 'LabeledStatement'.
+'ast::IfThenPart' is a specialization of 'EJBase'.
+'ast::ClassifierStatement' is a specialization of 'EJBase'.
+'ast::MethodStatement' is a specialization of 'BehaviorFeature'.
+'ast::MinusOp' is a specialization of 'Expression'.
+'ast::JumpStatement' is a specialization of 'MethodContentStatement'.
+'ast::CharacterLiteral' is a specialization of 'Literal'.
+'ast::EJBase' is a specialization of 'EJElement'.
+'ast::NamedElement' is a specialization of 'EJBase'.
+'ast::Feature' is a specialization of 'ClassifierMemberStatement'.
+'ast::LongIntegerLiteral' is a specialization of 'Literal'.
+'ast::BitwiseAndAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::ExpressionStatement' is a specialization of 'MethodContentStatement'.
+'ast::DoWhileStatement' is a specialization of 'ConditionalLoop'.
+'ast::DocumentationLine' is a specialization of 'EJElement'.
+'ast::ForStatement' is a specialization of 'ConditionalLoop'.
+'ast::LessOrEqualOp' is a specialization of 'BinaryOp'.
+'ast::WildcardType' is a specialization of 'Expression'.
+'ast::BitwiseXorAssignmentOp' is a specialization of 'AssignmentOperation'.
+'ast::ConditionalLoop' is a specialization of 'LoopStatement'.
+'ast::EnumLiteral' is a specialization of 'ClassifierMemberStatement'.
+'ast::SwitchStatement' is a specialization of 'LabeledStatement'.
+'ast::ClassifierOp' is a specialization of 'Expression'.
+'ast::ScopeStatement' is a specialization of 'MethodContentStatement'.
+'ast::BreakStatement' is a specialization of 'JumpStatement'.
+'ast::BitwiseOrOp' is a specialization of 'BinaryOp'.
+'ast::LabeledStatement' is a specialization of 'MethodContentStatement'.
+'ast::UnaryOp' is a specialization of 'Expression'.
+'ast::SynchronizedStatement' is a specialization of 'ScopeStatement'.
+'ast::PackageStatement' is a specialization of 'TopLevelStatement'.
+'ast::CastOp' is a specialization of 'ClassifierOp'.
+'ast::EmptyStatement' is a specialization of 'MethodContentStatement'.
+'ast::Expression' (role 'ast_Expression154', cardinality 0..*) is associated with 'ast::IfThenPart' (role 'ast_IfThenPart153', cardinality 0..*).
+'ast::MethodBlock' (role 'ast_MethodBlock151', cardinality 0..*) is associated with 'ast::IfStatement' (role 'ast_IfStatement150', cardinality 0..*).
+'ast::MethodBlock' (role 'ast_MethodBlock157', cardinality 0..*) is associated with 'ast::IfThenPart' (role 'ast_IfThenPart156', cardinality 0..*).
+'ast::ForeachStatement' (role 'ast_ForeachStatement139', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression140', cardinality 0..*).
+'ast::Parameter' (role 'ast_Parameter118', cardinality 0..*) is associated with 'ast::CatchPart' (role 'ast_CatchPart', cardinality 0..*).
+'ast::MethodClassifier' (role 'ast_MethodClassifier', cardinality 0..*) is associated with 'ast::ClassifierStatement' (role 'ast_ClassifierStatement175', cardinality 0..*).
+'ast::SwitchPart' (role 'ast_SwitchPart', cardinality 0..*) is associated with 'ast::MethodBlock' (role 'ast_MethodBlock181', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression12', cardinality 0..*) is associated with 'ast::TemplateParameter' (role 'ast_TemplateParameter', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression269', cardinality 0..*) is associated with 'ast::ShiftOp' (role 'ast_ShiftOp268', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier65', cardinality 0..*) is associated with 'ast::MethodStatement' (role 'ast_MethodStatement64', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression247', cardinality 0..*) is associated with 'ast::MinusOp' (role 'ast_MinusOp246', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression134', cardinality 0..*) is associated with 'ast::ForeachStatement' (role 'ast_ForeachStatement133', cardinality 0..*).
+'ast::ClassifierStatement' (role 'ast_ClassifierStatement76', cardinality 0..*) is associated with 'ast::Identifier' (role 'ast_Identifier77', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier102', cardinality 0..*) is associated with 'ast::ImplemenationClassifierStatement' (role 'ast_ImplemenationClassifierStatement101', cardinality 0..*).
+'ast::BehaviorFeature' (role 'ast_BehaviorFeature', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression17', cardinality 0..*).
+'ast::Variable' (role 'ast_Variable', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression10', cardinality 0..*).
+'ast::NewOp' (role 'ast_NewOp', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression251', cardinality 0..*).
+'ast::LocalVarStatement' (role 'ast_LocalVarStatement162', cardinality 0..*) is associated with 'ast::Modifier' (role 'ast_Modifier163', cardinality 0..*).
+'ast::WildcardType' (role 'ast_WildcardType', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression285', cardinality 0..*).
+'ast::ClassStatement' (role 'ast_ClassStatement93', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression94', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression264', cardinality 0..*) is associated with 'ast::ReturnStatement' (role 'ast_ReturnStatement', cardinality 0..*).
+'ast::ForStatement' (role 'ast_ForStatement143', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression144', cardinality 0..*).
+'ast::ClassifierMemberStatement' (role 'ast_ClassifierMemberStatement86', cardinality 0..*) is associated with 'ast::ClassifierStatement' (role 'ast_ClassifierStatement85', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression137', cardinality 0..*) is associated with 'ast::ForeachStatement' (role 'ast_ForeachStatement136', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression190', cardinality 0..*) is associated with 'ast::ThrowStatement' (role 'ast_ThrowStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression280', cardinality 0..*) is associated with 'ast::RangeExpression' (role 'ast_RangeExpression', cardinality 0..*).
+'ast::ClassStatement' (role 'ast_ClassStatement90', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression91', cardinality 0..*).
+'ast::NewOp' (role 'ast_NewOp259', cardinality 0..*) is associated with 'ast::ArrayConstructor' (role 'ast_ArrayConstructor260', cardinality 0..*).
+'ast::DivisionOp' (role 'ast_DivisionOp239', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression240', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression214', cardinality 0..*) is associated with 'ast::AssignmentOperation' (role 'ast_AssignmentOperation', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression227', cardinality 0..*) is associated with 'ast::ClassifierOp' (role 'ast_ClassifierOp226', cardinality 0..*).
+'ast::ContinueStatement' (role 'ast_ContinueStatement', cardinality 0..*) is associated with 'ast::SwitchDefaultPartRef' (role 'ast_SwitchDefaultPartRef', cardinality 0..*).
+'ast::ClassStatement' (role 'ast_ClassStatement', cardinality 0..*) is associated with 'ast::Modifier' (role 'ast_Modifier88', cardinality 0..*).
+'ast::PlusOp' (role 'ast_PlusOp', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression262', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier48', cardinality 0..*) is associated with 'ast::FieldStatement' (role 'ast_FieldStatement47', cardinality 0..*).
+'ast::PackageStatement' (role 'ast_PackageStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression114', cardinality 0..*).
+'ast::IfStatement' (role 'ast_IfStatement', cardinality 0..*) is associated with 'ast::IfThenPart' (role 'ast_IfThenPart', cardinality 0..*).
+'ast::ForStatement' (role 'ast_ForStatement', cardinality 0..*) is associated with 'ast::LocalVarStatement' (role 'ast_LocalVarStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression271', cardinality 0..*) is associated with 'ast::UnaryOp' (role 'ast_UnaryOp', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression29', cardinality 0..*) is associated with 'ast::EnumLiteral' (role 'ast_EnumLiteral', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression219', cardinality 0..*) is associated with 'ast::BinaryOp' (role 'ast_BinaryOp', cardinality 0..*).
+'ast::ImportStatement' (role 'ast_ImportStatement108', cardinality 0..*) is associated with 'ast::Modifier' (role 'ast_Modifier109', cardinality 0..*).
+'ast::TemplateParameter' (role 'ast_TemplateParameter25', cardinality 0..*) is associated with 'ast::BehaviorFeature' (role 'ast_BehaviorFeature24', cardinality 0..*).
+'ast::AttributeSet' (role 'ast_AttributeSet4', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression', cardinality 0..*).
+'ast::JumpStatement' (role 'ast_JumpStatement', cardinality 0..*) is associated with 'ast::Label' (role 'ast_Label', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression217', cardinality 0..*) is associated with 'ast::AssignmentOperation' (role 'ast_AssignmentOperation216', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression235', cardinality 0..*) is associated with 'ast::ConditionalOp' (role 'ast_ConditionalOp234', cardinality 0..*).
+'ast::SwitchPart' (role 'ast_SwitchPart186', cardinality 0..*) is associated with 'ast::SwitchStatement' (role 'ast_SwitchStatement185', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression15', cardinality 0..*) is associated with 'ast::TemplateParameter' (role 'ast_TemplateParameter14', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression169', cardinality 0..*) is associated with 'ast::LocalVarStatement' (role 'ast_LocalVarStatement168', cardinality 0..*).
+'ast::Feature' (role 'ast_Feature', cardinality 0..*) is associated with 'ast::Modifier' (role 'ast_Modifier37', cardinality 0..*).
+'ast::ConstructorStatement' (role 'ast_ConstructorStatement', cardinality 0..*) is associated with 'ast::MethodBlock' (role 'ast_MethodBlock', cardinality 0..*).
+'ast::IdentityOp' (role 'ast_IdentityOp', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression242', cardinality 0..*).
+'ast::ClassBlock' (role 'ast_ClassBlock35', cardinality 0..*) is associated with 'ast::EnumLiteral' (role 'ast_EnumLiteral34', cardinality 0..*).
+'ast::Parameter' (role 'ast_Parameter22', cardinality 0..*) is associated with 'ast::BehaviorFeature' (role 'ast_BehaviorFeature21', cardinality 0..*).
+'ast::ClassifierStatement' (role 'ast_ClassifierStatement', cardinality 0..*) is associated with 'ast::InnerClassifier' (role 'ast_InnerClassifier', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression112', cardinality 0..*) is associated with 'ast::ImportStatement' (role 'ast_ImportStatement111', cardinality 0..*).
+'ast::LabeledStatement' (role 'ast_LabeledStatement', cardinality 0..*) is associated with 'ast::Label' (role 'ast_Label160', cardinality 0..*).
+'ast::ApplyRoundOp' (role 'ast_ApplyRoundOp', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression202', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier43', cardinality 0..*) is associated with 'ast::Feature' (role 'ast_Feature42', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression237', cardinality 0..*) is associated with 'ast::DivisionOp' (role 'ast_DivisionOp', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression283', cardinality 0..*) is associated with 'ast::RangeExpression' (role 'ast_RangeExpression282', cardinality 0..*).
+'ast::SwitchStatement' (role 'ast_SwitchStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression183', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression197', cardinality 0..*) is associated with 'ast::AccessOp' (role 'ast_AccessOp', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier99', cardinality 0..*) is associated with 'ast::ImplemenationClassifierStatement' (role 'ast_ImplemenationClassifierStatement98', cardinality 0..*).
+'ast::EJBase' (role 'ast_EJBase2', cardinality 0..*) is associated with 'ast::AttributeSet' (role 'ast_AttributeSet', cardinality 0..*).
+'ast::MethodBlock' (role 'ast_MethodBlock56', cardinality 0..*) is associated with 'ast::InitStatement' (role 'ast_InitStatement', cardinality 0..*).
+'ast::MethodStatement' (role 'ast_MethodStatement', cardinality 0..*) is associated with 'ast::MethodBlock' (role 'ast_MethodBlock59', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression266', cardinality 0..*) is associated with 'ast::ShiftOp' (role 'ast_ShiftOp', cardinality 0..*).
+'ast::AssertStatement' (role 'ast_AssertStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression275', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression62', cardinality 0..*) is associated with 'ast::MethodStatement' (role 'ast_MethodStatement61', cardinality 0..*).
+'ast::Parameter' (role 'ast_Parameter7', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression8', cardinality 0..*).
+'ast::CatchPart' (role 'ast_CatchPart195', cardinality 0..*) is associated with 'ast::TryStatement' (role 'ast_TryStatement194', cardinality 0..*).
+'ast::ContinueStatement' (role 'ast_ContinueStatement126', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression127', cardinality 0..*).
+'ast::DocumentationLine' (role 'ast_DocumentationLine', cardinality 0..*) is associated with 'ast::EJBase' (role 'ast_EJBase', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression244', cardinality 0..*) is associated with 'ast::MinusOp' (role 'ast_MinusOp', cardinality 0..*).
+'ast::ArrayConstructor' (role 'ast_ArrayConstructor', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression212', cardinality 0..*).
+'ast::MethodBlock' (role 'ast_MethodBlock171', cardinality 0..*) is associated with 'ast::LoopStatement' (role 'ast_LoopStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression222', cardinality 0..*) is associated with 'ast::BinaryOp' (role 'ast_BinaryOp221', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression232', cardinality 0..*) is associated with 'ast::ConditionalOp' (role 'ast_ConditionalOp231', cardinality 0..*).
+'ast::NewOp' (role 'ast_NewOp253', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression254', cardinality 0..*).
+'ast::MethodBlock' (role 'ast_MethodBlock177', cardinality 0..*) is associated with 'ast::ScopeStatement' (role 'ast_ScopeStatement', cardinality 0..*).
+'ast::AssertStatement' (role 'ast_AssertStatement277', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression278', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier96', cardinality 0..*) is associated with 'ast::ImplemenationClassifierStatement' (role 'ast_ImplemenationClassifierStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression229', cardinality 0..*) is associated with 'ast::ConditionalOp' (role 'ast_ConditionalOp', cardinality 0..*).
+'ast::ForStatement' (role 'ast_ForStatement146', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression147', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression200', cardinality 0..*) is associated with 'ast::AccessOp' (role 'ast_AccessOp199', cardinality 0..*).
+'ast::CatchPart' (role 'ast_CatchPart120', cardinality 0..*) is associated with 'ast::MethodBlock' (role 'ast_MethodBlock121', cardinality 0..*).
+'ast::EnumLiteral' (role 'ast_EnumLiteral31', cardinality 0..*) is associated with 'ast::Identifier' (role 'ast_Identifier32', cardinality 0..*).
+'ast::SynchronizedStatement' (role 'ast_SynchronizedStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression188', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier71', cardinality 0..*) is associated with 'ast::MethodStatement' (role 'ast_MethodStatement70', cardinality 0..*).
+'ast::Variable' (role 'ast_Variable54', cardinality 0..*) is associated with 'ast::FieldStatement' (role 'ast_FieldStatement53', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier106', cardinality 0..*) is associated with 'ast::ImportStatement' (role 'ast_ImportStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression123', cardinality 0..*) is associated with 'ast::ConditionalLoop' (role 'ast_ConditionalLoop', cardinality 0..*).
+'ast::Identifier' (role 'ast_Identifier273', cardinality 0..*) is associated with 'ast::NamedElement' (role 'ast_NamedElement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression104', cardinality 0..*) is associated with 'ast::InterfaceStatement' (role 'ast_InterfaceStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression207', cardinality 0..*) is associated with 'ast::ApplySquareOp' (role 'ast_ApplySquareOp', cardinality 0..*).
+'ast::TopLevelClassifier' (role 'ast_TopLevelClassifier', cardinality 0..*) is associated with 'ast::ClassifierStatement' (role 'ast_ClassifierStatement116', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier74', cardinality 0..*) is associated with 'ast::MethodStatement' (role 'ast_MethodStatement73', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression205', cardinality 0..*) is associated with 'ast::ApplyRoundOp' (role 'ast_ApplyRoundOp204', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier45', cardinality 0..*) is associated with 'ast::FieldStatement' (role 'ast_FieldStatement', cardinality 0..*).
+'ast::TemplateParameter' (role 'ast_TemplateParameter83', cardinality 0..*) is associated with 'ast::ClassifierStatement' (role 'ast_ClassifierStatement82', cardinality 0..*).
+'ast::MethodContentStatement' (role 'ast_MethodContentStatement', cardinality 0..*) is associated with 'ast::MethodBlock' (role 'ast_MethodBlock173', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression179', cardinality 0..*) is associated with 'ast::SwitchCasePart' (role 'ast_SwitchCasePart', cardinality 0..*).
+'ast::Identifier' (role 'ast_Identifier', cardinality 0..*) is associated with 'ast::BehaviorFeature' (role 'ast_BehaviorFeature19', cardinality 0..*).
+'ast::ClassifierMemberStatement' (role 'ast_ClassifierMemberStatement', cardinality 0..*) is associated with 'ast::ClassBlock' (role 'ast_ClassBlock', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression249', cardinality 0..*) is associated with 'ast::MultiplyOp' (role 'ast_MultiplyOp', cardinality 0..*).
+'ast::Parameter' (role 'ast_Parameter', cardinality 0..*) is associated with 'ast::Modifier' (role 'ast_Modifier', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier80', cardinality 0..*) is associated with 'ast::ClassifierStatement' (role 'ast_ClassifierStatement79', cardinality 0..*).
+'ast::WildcardType' (role 'ast_WildcardType287', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression288', cardinality 0..*).
+'ast::Modifier' (role 'ast_Modifier40', cardinality 0..*) is associated with 'ast::Feature' (role 'ast_Feature39', cardinality 0..*).
+'ast::ClassBlock' (role 'ast_ClassBlock257', cardinality 0..*) is associated with 'ast::NewOp' (role 'ast_NewOp256', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression210', cardinality 0..*) is associated with 'ast::ApplySquareOp' (role 'ast_ApplySquareOp209', cardinality 0..*).
+'ast::Variable' (role 'ast_Variable166', cardinality 0..*) is associated with 'ast::LocalVarStatement' (role 'ast_LocalVarStatement165', cardinality 0..*).
+'ast::ForeachStatement' (role 'ast_ForeachStatement', cardinality 0..*) is associated with 'ast::Parameter' (role 'ast_Parameter131', cardinality 0..*).
+'ast::MethodBlock' (role 'ast_MethodBlock192', cardinality 0..*) is associated with 'ast::TryStatement' (role 'ast_TryStatement', cardinality 0..*).
+'ast::MethodStatement' (role 'ast_MethodStatement67', cardinality 0..*) is associated with 'ast::Modifier' (role 'ast_Modifier68', cardinality 0..*).
+'ast::ExpressionStatement' (role 'ast_ExpressionStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression129', cardinality 0..*).
+'ast::ClassifierOp' (role 'ast_ClassifierOp', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression224', cardinality 0..*).
+'ast::FieldStatement' (role 'ast_FieldStatement50', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression51', cardinality 0..*).

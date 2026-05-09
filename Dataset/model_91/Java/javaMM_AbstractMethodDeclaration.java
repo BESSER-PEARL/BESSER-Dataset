@@ -1,0 +1,67 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class javaMM_AbstractMethodDeclaration extends BodyDeclaration {
+
+
+
+
+
+
+    private List<javaMM_SingleVariableDeclaration> javamm_singlevariabledeclarations;
+
+
+
+
+    private javaMM_SingleVariableDeclaration javamm_singlevariabledeclaration;
+
+
+
+
+    private List<javaMM_TypeAccess> javamm_typeaccesss;
+
+
+    public javaMM_AbstractMethodDeclaration(
+    ) {
+        super(
+        );
+        this.javamm_singlevariabledeclarations = new ArrayList<>();
+        this.javamm_typeaccesss = new ArrayList<>();
+    }
+
+    public javaMM_AbstractMethodDeclaration(
+        ArrayList<javaMM_SingleVariableDeclaration> javamm_singlevariabledeclarations,        ArrayList<javaMM_TypeAccess> javamm_typeaccesss    ) {
+        this.javamm_singlevariabledeclarations = javamm_singlevariabledeclarations;
+        this.javamm_typeaccesss = javamm_typeaccesss;
+    }
+
+
+    public List<javaMM_SingleVariableDeclaration> getJavamm_singlevariabledeclarations() {
+        return javamm_singlevariabledeclarations;
+    }
+
+    public void addJavamm_singlevariabledeclaration(Javamm_singlevariabledeclaration javamm_singlevariabledeclaration) {
+        this.javamm_singlevariabledeclarations.add(javamm_singlevariabledeclaration);
+    }
+    public javaMM_SingleVariableDeclaration getJavamm_singlevariabledeclaration() {
+        return javamm_singlevariabledeclaration;
+    }
+
+    public void setJavamm_singlevariabledeclaration(javaMM_SingleVariableDeclaration javamm_singlevariabledeclaration) {
+        this.javamm_singlevariabledeclaration = javamm_singlevariabledeclaration;
+    }
+    public List<javaMM_TypeAccess> getJavamm_typeaccesss() {
+        return javamm_typeaccesss;
+    }
+
+    public void addJavamm_typeaccess(Javamm_typeaccess javamm_typeaccess) {
+        this.javamm_typeaccesss.add(javamm_typeaccess);
+    }
+
+}

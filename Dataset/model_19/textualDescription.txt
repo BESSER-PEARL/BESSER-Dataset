@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Element' has no attributes.
+The class 'petrinet2::Transition' has the following attributes: 'maxDelay' of type float; 'minDelay' of type float.
+The class 'petrinet2::Arc' has no attributes.
+The class 'petrinet2::Place' has no attributes.
+The class 'petrinet2::Node' has no attributes.
+The class 'petrinet2::Element' has the following attributes: 'name' of type str.
+The class 'Node' has no attributes.
+The class 'petrinet2::Petrinet' has no attributes.
+'petrinet2::Node' is a specialization of 'Element'.
+'petrinet2::Transition' is a specialization of 'Node'.
+'petrinet2::Place' is a specialization of 'Node'.
+'petrinet2::Arc' is a specialization of 'Element'.
+'petrinet2::Arc' (role 'petrinet2_Arc', cardinality 0..*) is associated with 'petrinet2::Node' (role 'petrinet2_Node', cardinality 0..*).
+'petrinet2::Node' (role 'petrinet2_Node4', cardinality 0..*) is associated with 'petrinet2::Arc' (role 'petrinet2_Arc3', cardinality 0..*).
+'petrinet2::Element' (role 'petrinet2_Element', cardinality 0..*) is associated with 'petrinet2::Petrinet' (role 'petrinet2_Petrinet', cardinality 0..*).

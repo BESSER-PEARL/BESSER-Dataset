@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/levilucio/DSLTransLifting/tests/t23/PetriNet.ecore

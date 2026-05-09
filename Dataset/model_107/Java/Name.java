@@ -1,0 +1,106 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Name  {
+
+
+
+
+
+
+    private JavaAbstractSyntax_MemberRef javaabstractsyntax_memberref;
+
+
+
+
+    private JavaAbstractSyntax_Annotation javaabstractsyntax_annotation;
+
+
+
+
+    private JavaAbstractSyntax_MethodDeclaration javaabstractsyntax_methoddeclaration;
+
+
+
+
+    private JavaAbstractSyntax_PackageDeclaration javaabstractsyntax_packagedeclaration;
+
+
+
+
+    private JavaAbstractSyntax_MethodRef javaabstractsyntax_methodref;
+
+
+
+
+    private JavaAbstractSyntax_ImportDeclaration javaabstractsyntax_importdeclaration;
+
+
+
+
+    private JavaAbstractSyntax_QualifiedName javaabstractsyntax_qualifiedname;
+
+
+    public Name(
+    ) {
+    }
+
+
+
+    public JavaAbstractSyntax_MemberRef getJavaabstractsyntax_memberref() {
+        return javaabstractsyntax_memberref;
+    }
+
+    public void setJavaabstractsyntax_memberref(JavaAbstractSyntax_MemberRef javaabstractsyntax_memberref) {
+        this.javaabstractsyntax_memberref = javaabstractsyntax_memberref;
+    }
+    public JavaAbstractSyntax_Annotation getJavaabstractsyntax_annotation() {
+        return javaabstractsyntax_annotation;
+    }
+
+    public void setJavaabstractsyntax_annotation(JavaAbstractSyntax_Annotation javaabstractsyntax_annotation) {
+        this.javaabstractsyntax_annotation = javaabstractsyntax_annotation;
+    }
+    public JavaAbstractSyntax_MethodDeclaration getJavaabstractsyntax_methoddeclaration() {
+        return javaabstractsyntax_methoddeclaration;
+    }
+
+    public void setJavaabstractsyntax_methoddeclaration(JavaAbstractSyntax_MethodDeclaration javaabstractsyntax_methoddeclaration) {
+        this.javaabstractsyntax_methoddeclaration = javaabstractsyntax_methoddeclaration;
+    }
+    public JavaAbstractSyntax_PackageDeclaration getJavaabstractsyntax_packagedeclaration() {
+        return javaabstractsyntax_packagedeclaration;
+    }
+
+    public void setJavaabstractsyntax_packagedeclaration(JavaAbstractSyntax_PackageDeclaration javaabstractsyntax_packagedeclaration) {
+        this.javaabstractsyntax_packagedeclaration = javaabstractsyntax_packagedeclaration;
+    }
+    public JavaAbstractSyntax_MethodRef getJavaabstractsyntax_methodref() {
+        return javaabstractsyntax_methodref;
+    }
+
+    public void setJavaabstractsyntax_methodref(JavaAbstractSyntax_MethodRef javaabstractsyntax_methodref) {
+        this.javaabstractsyntax_methodref = javaabstractsyntax_methodref;
+    }
+    public JavaAbstractSyntax_ImportDeclaration getJavaabstractsyntax_importdeclaration() {
+        return javaabstractsyntax_importdeclaration;
+    }
+
+    public void setJavaabstractsyntax_importdeclaration(JavaAbstractSyntax_ImportDeclaration javaabstractsyntax_importdeclaration) {
+        this.javaabstractsyntax_importdeclaration = javaabstractsyntax_importdeclaration;
+    }
+    public JavaAbstractSyntax_QualifiedName getJavaabstractsyntax_qualifiedname() {
+        return javaabstractsyntax_qualifiedname;
+    }
+
+    public void setJavaabstractsyntax_qualifiedname(JavaAbstractSyntax_QualifiedName javaabstractsyntax_qualifiedname) {
+        this.javaabstractsyntax_qualifiedname = javaabstractsyntax_qualifiedname;
+    }
+
+}

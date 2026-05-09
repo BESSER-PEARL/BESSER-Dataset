@@ -1,0 +1,358 @@
+The model has 107 class(es).
+The class 'Java5::ArrayInitializer' has no attributes.
+The class 'Java5::SuperFieldAccess' has no attributes.
+The class 'Java5::MethodDeclaration' has the following attributes: 'extraArrayDimensions' of type int; 'varargs' of type bool; 'constructor' of type bool.
+The class 'Java5::ArrayLengthAccess' has no attributes.
+The class 'Java5::WhileStatement' has no attributes.
+The class 'Java5::VariableDeclarationStatement' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'Java5::Annotation' has no attributes.
+The class 'Java5::CastExpression' has no attributes.
+The class 'Java5::ConditionalExpression' has no attributes.
+The class 'Java5::ConstructorInvocation' has no attributes.
+The class 'Java5::Model' has the following attributes: 'name' of type str.
+The class 'Java5::SuperConstructorInvocation' has no attributes.
+The class 'Java5::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'Java5::CatchClause' has no attributes.
+The class 'Java5::Modifier' has the following attributes: 'static' of type bool; 'inheritance' of type str; 'transient' of type bool; 'volatile' of type bool; 'visibility' of type str; 'native' of type bool; 'strictfp' of type bool; 'synchronized' of type bool.
+The class 'Java5::AbstractTypeDeclaration' has the following attributes: 'qualifiedName' of type str.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'Java5::BreakStatement' has no attributes.
+The class 'Java5::NumberLiteral' has the following attributes: 'tokenValue' of type str.
+The class 'Java5::ThisExpression' has no attributes.
+The class 'Java5::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'Java5::TagElement' has the following attributes: 'tagName' of type str.
+The class 'Java5::ParameterizedType' has no attributes.
+The class 'Java5::MemberRef' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'Java5::ReturnStatement' has no attributes.
+The class 'Java5::FieldDeclaration' has no attributes.
+The class 'OrphanType' has no attributes.
+The class 'Java5::AnnotationTypeDeclaration' has no attributes.
+The class 'Java5::ArrayType' has the following attributes: 'dimensions' of type int; 'originalName' of type str.
+The class 'Expression' has no attributes.
+The class 'Java5::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'Java5::PrimitiveTypeVoid' has no attributes.
+The class 'Java5::PrimitiveTypeInt' has no attributes.
+The class 'Java5::AssertStatement' has no attributes.
+The class 'Java5::TypeDeclarationStatement' has no attributes.
+The class 'Java5::MethodInvocation' has no attributes.
+The class 'Java5::TypeDeclaration' has no attributes.
+The class 'Java5::DoStatement' has no attributes.
+The class 'Java5::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'Java5::EmptyStatement' has no attributes.
+The class 'Java5::PrimitiveTypeChar' has no attributes.
+The class 'Java5::PrimitiveTypeShort' has no attributes.
+The class 'Java5::PrimitiveTypeBoolean' has no attributes.
+The class 'Java5::VariableDeclarationFragment' has no attributes.
+The class 'Java5::NamedElementRef' has no attributes.
+The class 'Java5::PackageDeclaration' has the following attributes: 'qualifiedName' of type str.
+The class 'Java5::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'Java5::CharacterLiteral' has the following attributes: 'escapedValue' of type str; 'value' of type str.
+The class 'Java5::OrphanType' has no attributes.
+The class 'Java5::SuperMethodInvocation' has no attributes.
+The class 'Java5::ForStatement' has no attributes.
+The class 'Java5::SwitchStatement' has no attributes.
+The class 'Java5::PrimitiveTypeFloat' has no attributes.
+The class 'Java5::FieldAccess' has no attributes.
+The class 'Java5::ClassInstanceCreation' has no attributes.
+The class 'Java5::Statement' has no attributes.
+The class 'Java5::AnonymousClassDeclaration' has no attributes.
+The class 'Java5::ASTNode' has no attributes.
+The class 'Java5::Expression' has no attributes.
+The class 'Java5::PrimitiveTypeByte' has no attributes.
+The class 'Java5::ThrowStatement' has no attributes.
+The class 'Java5::EnumConstantDeclaration' has no attributes.
+The class 'Java5::MethodRef' has no attributes.
+The class 'Java5::InstanceofExpression' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'Java5::NamedElement' has the following attributes: 'name' of type str; 'proxy' of type bool.
+The class 'Java5::TryStatement' has no attributes.
+The class 'Java5::ArrayAccess' has no attributes.
+The class 'Java5::PrimitiveType' has no attributes.
+The class 'Java5::Initializer' has no attributes.
+The class 'Java5::SynchronizedStatement' has no attributes.
+The class 'Java5::EnumDeclaration' has no attributes.
+The class 'Java5::Assignment' has the following attributes: 'operator' of type str.
+The class 'Java5::ImportDeclaration' has the following attributes: 'static' of type bool.
+The class 'Java5::BodyDeclaration' has no attributes.
+The class 'Java5::InterfaceDeclaration' has no attributes.
+The class 'Java5::LabeledStatement' has no attributes.
+The class 'Java5::CompilationUnit' has the following attributes: 'originalFilePath' of type str.
+The class 'Java5::ContinueStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Java5::Block' has no attributes.
+The class 'Java5::EnhancedForStatement' has no attributes.
+The class 'Java5::VariableDeclarationExpression' has no attributes.
+The class 'Java5::StringLiteral' has the following attributes: 'value' of type str; 'escapedValue' of type str.
+The class 'Java5::MethodRefParameter' has the following attributes: 'name' of type str; 'isVarargs' of type str.
+The class 'Java5::PrimitiveTypeLong' has no attributes.
+The class 'Java5::WildCardType' has the following attributes: 'isUpperBound' of type str.
+The class 'Java5::TypeLiteral' has no attributes.
+The class 'Java5::VariableDeclaration' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'NamedElement' has no attributes.
+The class 'Java5::PrimitiveTypeDouble' has no attributes.
+The class 'Java5::ClassDeclaration' has no attributes.
+The class 'Java5::ExpressionStatement' has no attributes.
+The class 'Java5::UnresolvedItem' has no attributes.
+The class 'Java5::IfStatement' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'Java5::SingleVariableDeclaration' has the following attributes: 'varargs' of type bool.
+The class 'Java5::SwitchCase' has the following attributes: 'default' of type bool.
+The class 'Java5::TextElement' has the following attributes: 'text' of type str.
+The class 'Java5::AnnotationMemberValuePair' has no attributes.
+The class 'Java5::ArrayCreation' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'Java5::NullLiteral' has no attributes.
+The class 'Java5::ParenthesizedExpression' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'Java5::TypeParameter' has no attributes.
+The enumeration 'InheritanceKind' has the following literals: 'final', 'abstract'.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'protected', 'none', 'public'.
+'Java5::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'Java5::WhileStatement' is a specialization of 'Statement'.
+'Java5::PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+'Java5::PrefixExpression' is a specialization of 'Expression'.
+'Java5::ExpressionStatement' is a specialization of 'Statement'.
+'Java5::Annotation' is a specialization of 'Expression'.
+'Java5::ArrayType' is a specialization of 'OrphanType'.
+'Java5::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'Java5::ArrayAccess' is a specialization of 'Expression'.
+'Java5::AssertStatement' is a specialization of 'Statement'.
+'Java5::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'Java5::BreakStatement' is a specialization of 'Statement'.
+'Java5::MethodRef' is a specialization of 'ASTNode'.
+'Java5::ForStatement' is a specialization of 'Statement'.
+'Java5::VariableDeclaration' is a specialization of 'NamedElement'.
+'Java5::TypeLiteral' is a specialization of 'Expression'.
+'Java5::ArrayLengthAccess' is a specialization of 'Expression'.
+'Java5::WildCardType' is a specialization of 'OrphanType'.
+'Java5::ThrowStatement' is a specialization of 'Statement'.
+'Java5::NamedElement' is a specialization of 'ASTNode'.
+'Java5::FieldAccess' is a specialization of 'Expression'.
+'Java5::NamedElementRef' is a specialization of 'Expression'.
+'Java5::CharacterLiteral' is a specialization of 'Expression'.
+'Java5::EnhancedForStatement' is a specialization of 'Statement'.
+'Java5::TryStatement' is a specialization of 'Statement'.
+'Java5::ImportDeclaration' is a specialization of 'ASTNode'.
+'Java5::PrimitiveType' is a specialization of 'OrphanType'.
+'Java5::StringLiteral' is a specialization of 'Expression'.
+'Java5::ConditionalExpression' is a specialization of 'Expression'.
+'Java5::BooleanLiteral' is a specialization of 'Expression'.
+'Java5::LabeledStatement' is a specialization of 'Statement'.
+'Java5::SynchronizedStatement' is a specialization of 'Statement'.
+'Java5::EmptyStatement' is a specialization of 'Statement'.
+'Java5::SuperFieldAccess' is a specialization of 'Expression'.
+'Java5::PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+'Java5::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'Java5::VariableDeclarationExpression' is a specialization of 'Expression'.
+'Java5::ThisExpression' is a specialization of 'Expression'.
+'Java5::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'Java5::InfixExpression' is a specialization of 'Expression'.
+'Java5::Assignment' is a specialization of 'Expression'.
+'Java5::ParameterizedType' is a specialization of 'OrphanType'.
+'Java5::PostfixExpression' is a specialization of 'Expression'.
+'Java5::PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+'Java5::BodyDeclaration' is a specialization of 'NamedElement'.
+'Java5::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'Java5::ReturnStatement' is a specialization of 'Statement'.
+'Java5::VariableDeclarationStatement' is a specialization of 'Statement'.
+'Java5::CatchClause' is a specialization of 'Statement'.
+'Java5::ArrayInitializer' is a specialization of 'Expression'.
+'Java5::PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+'Java5::ArrayCreation' is a specialization of 'Expression'.
+'Java5::CompilationUnit' is a specialization of 'NamedElement'.
+'Java5::SwitchCase' is a specialization of 'Statement'.
+'Java5::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'Java5::SwitchStatement' is a specialization of 'Statement'.
+'Java5::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'Java5::PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+'Java5::ClassInstanceCreation' is a specialization of 'Expression'.
+'Java5::PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+'Java5::Statement' is a specialization of 'ASTNode'.
+'Java5::ParenthesizedExpression' is a specialization of 'Expression'.
+'Java5::ClassDeclaration' is a specialization of 'TypeDeclaration'.
+'Java5::CastExpression' is a specialization of 'Expression'.
+'Java5::InstanceofExpression' is a specialization of 'Expression'.
+'Java5::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'Java5::DoStatement' is a specialization of 'Statement'.
+'Java5::InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+'Java5::TypeDeclarationStatement' is a specialization of 'Statement'.
+'Java5::IfStatement' is a specialization of 'Statement'.
+'Java5::TagElement' is a specialization of 'ASTNode'.
+'Java5::TextElement' is a specialization of 'ASTNode'.
+'Java5::PackageDeclaration' is a specialization of 'NamedElement'.
+'Java5::ConstructorInvocation' is a specialization of 'Statement'.
+'Java5::MemberRef' is a specialization of 'ASTNode'.
+'Java5::TypeParameter' is a specialization of 'NamedElement'.
+'Java5::SuperMethodInvocation' is a specialization of 'Expression'.
+'Java5::Modifier' is a specialization of 'ASTNode'.
+'Java5::PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+'Java5::UnresolvedItem' is a specialization of 'NamedElement'.
+'Java5::MethodRefParameter' is a specialization of 'ASTNode'.
+'Java5::NullLiteral' is a specialization of 'Expression'.
+'Java5::ContinueStatement' is a specialization of 'Statement'.
+'Java5::MethodDeclaration' is a specialization of 'BodyDeclaration'.
+'Java5::PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+'Java5::Block' is a specialization of 'Statement'.
+'Java5::AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+'Java5::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'Java5::SuperConstructorInvocation' is a specialization of 'Statement'.
+'Java5::MethodInvocation' is a specialization of 'Expression'.
+'Java5::PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+'Java5::LabeledStatement' is a specialization of 'NamedElement'.
+'Java5::Initializer' is a specialization of 'BodyDeclaration'.
+'Java5::NumberLiteral' is a specialization of 'Expression'.
+'Java5::OrphanType' is a specialization of 'NamedElement'.
+'Java5::Expression' is a specialization of 'ASTNode'.
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef235', cardinality 0..*) is associated with 'Java5::NamedElement' (role 'Java5_NamedElement', cardinality 0..*).
+'Java5::TypeLiteral' (role 'Java5_TypeLiteral', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef306', cardinality 0..*).
+'Java5::CatchClause' (role 'Java5_CatchClause', cardinality 0..*) is associated with 'Java5::Block' (role 'Java5_Block68', cardinality 0..*).
+'Java5::EnumDeclaration' (role 'Java5_EnumDeclaration', cardinality 0..*) is associated with 'Java5::EnumConstantDeclaration' (role 'Java5_EnumConstantDeclaration', cardinality 0..*).
+'Java5::PackageDeclaration' (role 'package', cardinality 0..*) is associated with 'Java5::AbstractTypeDeclaration' (role 'AbstractTypeDeclaration237', cardinality 0..*).
+'Java5::Statement' (role 'Java5_Statement172', cardinality 0..*) is associated with 'Java5::LabeledStatement' (role 'Java5_LabeledStatement', cardinality 0..*).
+'Java5::ConditionalExpression' (role 'Java5_ConditionalExpression97', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression98', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'Java5_SingleVariableDeclaration', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef258', cardinality 0..*).
+'Java5::Annotation' (role 'Java5_Annotation', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef6', cardinality 0..*).
+'Java5::VariableDeclarationExpression' (role 'variableDeclarationExpression', cardinality 0..*) is associated with 'Java5::VariableDeclarationFragment' (role 'VariableDeclarationFragment323', cardinality 0..*).
+'Java5::AnnotationTypeMemberDeclaration' (role 'Java5_AnnotationTypeMemberDeclaration17', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef18', cardinality 0..*).
+'Java5::AssertStatement' (role 'Java5_AssertStatement', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression42', cardinality 0..*).
+'Java5::MethodInvocation' (role 'Java5_MethodInvocation201', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression202', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'SingleVariableDeclaration255', cardinality 0..*) is associated with 'Java5::Modifier' (role 'Modifier256', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef80', cardinality 0..*) is associated with 'Java5::ClassInstanceCreation' (role 'Java5_ClassInstanceCreation79', cardinality 0..*).
+'Java5::SuperMethodInvocation' (role 'Java5_SuperMethodInvocation279', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef280', cardinality 0..*).
+'Java5::OrphanType' (role 'Java5_OrphanType', cardinality 0..*) is associated with 'Java5::Model' (role 'Java5_Model216', cardinality 0..*).
+'Java5::Annotation' (role 'Java5_Annotation8', cardinality 0..*) is associated with 'Java5::AnnotationMemberValuePair' (role 'Java5_AnnotationMemberValuePair', cardinality 0..*).
+'Java5::BodyDeclaration' (role 'bodyDeclarations56', cardinality 0..*) is associated with 'Java5::AnonymousClassDeclaration' (role 'AnonymousClassDeclaration', cardinality 0..*).
+'Java5::CompilationUnit' (role 'Java5_CompilationUnit87', cardinality 0..*) is associated with 'Java5::PackageDeclaration' (role 'Java5_PackageDeclaration', cardinality 0..*).
+'Java5::Model' (role 'Java5_Model220', cardinality 0..*) is associated with 'Java5::CompilationUnit' (role 'Java5_CompilationUnit221', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef196', cardinality 0..*) is associated with 'Java5::MethodInvocation' (role 'Java5_MethodInvocation', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef', cardinality 0..*) is associated with 'Java5::AbstractTypeDeclaration' (role 'Java5_AbstractTypeDeclaration4', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef60', cardinality 0..*) is associated with 'Java5::BreakStatement' (role 'Java5_BreakStatement', cardinality 0..*).
+'Java5::IfStatement' (role 'Java5_IfStatement151', cardinality 0..*) is associated with 'Java5::Statement' (role 'Java5_Statement152', cardinality 0..*).
+'Java5::MethodDeclaration' (role 'MethodDeclaration', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'redefinitions', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression146', cardinality 0..*) is associated with 'Java5::IfStatement' (role 'Java5_IfStatement', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef132', cardinality 0..*) is associated with 'Java5::FieldDeclaration' (role 'Java5_FieldDeclaration', cardinality 0..*).
+'Java5::MethodDeclaration' (role 'methodDeclaration', cardinality 0..*) is associated with 'Java5::SingleVariableDeclaration' (role 'SingleVariableDeclaration194', cardinality 0..*).
+'Java5::VariableDeclarationExpression' (role 'VariableDeclarationExpression325', cardinality 0..*) is associated with 'Java5::Modifier' (role 'Modifier326', cardinality 0..*).
+'Java5::TypeParameter' (role 'Java5_TypeParameter', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'Java5_MethodDeclaration187', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'SingleVariableDeclaration', cardinality 0..*) is associated with 'Java5::CatchClause' (role 'catchClause', cardinality 0..*).
+'Java5::ArrayInitializer' (role 'Java5_ArrayInitializer35', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression36', cardinality 0..*).
+'Java5::BodyDeclaration' (role 'Java5_BodyDeclaration', cardinality 0..*) is associated with 'Java5::Annotation' (role 'Java5_Annotation54', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef177', cardinality 0..*) is associated with 'Java5::MemberRef' (role 'Java5_MemberRef176', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef33', cardinality 0..*) is associated with 'Java5::ArrayCreation' (role 'Java5_ArrayCreation32', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression130', cardinality 0..*) is associated with 'Java5::FieldAccess' (role 'Java5_FieldAccess129', cardinality 0..*).
+'Java5::SuperFieldAccess' (role 'Java5_SuperFieldAccess274', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef275', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression92', cardinality 0..*) is associated with 'Java5::ConditionalExpression' (role 'Java5_ConditionalExpression', cardinality 0..*).
+'Java5::TagElement' (role 'Java5_TagElement', cardinality 0..*) is associated with 'Java5::ASTNode' (role 'Java5_ASTNode', cardinality 0..*).
+'Java5::AnnotationTypeMemberDeclaration' (role 'Java5_AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression15', cardinality 0..*).
+'Java5::ArrayAccess' (role 'Java5_ArrayAccess25', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression26', cardinality 0..*).
+'Java5::WhileStatement' (role 'Java5_WhileStatement', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression342', cardinality 0..*).
+'Java5::AssertStatement' (role 'Java5_AssertStatement44', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression45', cardinality 0..*).
+'Java5::ThisExpression' (role 'Java5_ThisExpression', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef298', cardinality 0..*).
+'Java5::ArrayCreation' (role 'Java5_ArrayCreation30', cardinality 0..*) is associated with 'Java5::ArrayInitializer' (role 'Java5_ArrayInitializer', cardinality 0..*).
+'Java5::Modifier' (role 'modifiers', cardinality 0..*) is associated with 'Java5::BodyDeclaration' (role 'BodyDeclaration223', cardinality 0..*).
+'Java5::ArrayCreation' (role 'Java5_ArrayCreation', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression28', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression62', cardinality 0..*) is associated with 'Java5::CastExpression' (role 'Java5_CastExpression', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression319', cardinality 0..*) is associated with 'Java5::VariableDeclaration' (role 'Java5_VariableDeclaration', cardinality 0..*).
+'Java5::MethodDeclaration' (role 'MethodDeclaration192', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'redefinedMethodDeclaration', cardinality 0..*).
+'Java5::TryStatement' (role 'Java5_TryStatement', cardinality 0..*) is associated with 'Java5::Block' (role 'Java5_Block311', cardinality 0..*).
+'Java5::VariableDeclarationFragment' (role 'fragments', cardinality 0..*) is associated with 'Java5::FieldDeclaration' (role 'FieldDeclaration', cardinality 0..*).
+'Java5::InstanceofExpression' (role 'Java5_InstanceofExpression169', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression170', cardinality 0..*).
+'Java5::ParameterizedType' (role 'Java5_ParameterizedType', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef242', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef83', cardinality 0..*) is associated with 'Java5::ClassInstanceCreation' (role 'Java5_ClassInstanceCreation82', cardinality 0..*).
+'Java5::ConditionalExpression' (role 'Java5_ConditionalExpression94', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression95', cardinality 0..*).
+'Java5::VariableDeclarationStatement' (role 'Java5_VariableDeclarationStatement', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef335', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression157', cardinality 0..*) is associated with 'Java5::InfixExpression' (role 'Java5_InfixExpression', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef185', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'Java5_MethodDeclaration184', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression138', cardinality 0..*) is associated with 'Java5::ForStatement' (role 'Java5_ForStatement137', cardinality 0..*).
+'Java5::Modifier' (role 'Modifier340', cardinality 0..*) is associated with 'Java5::VariableDeclarationStatement' (role 'VariableDeclarationStatement339', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression264', cardinality 0..*) is associated with 'Java5::SuperConstructorInvocation' (role 'Java5_SuperConstructorInvocation', cardinality 0..*).
+'Java5::AbstractTypeDeclaration' (role 'abstractTypeDeclaration', cardinality 0..*) is associated with 'Java5::BodyDeclaration' (role 'BodyDeclaration', cardinality 0..*).
+'Java5::MethodRefParameter' (role 'Java5_MethodRefParameter211', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef212', cardinality 0..*).
+'Java5::TypeParameter' (role 'Java5_TypeParameter308', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef309', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'SingleVariableDeclaration123', cardinality 0..*) is associated with 'Java5::EnhancedForStatement' (role 'enhancedForStatement', cardinality 0..*).
+'Java5::ForStatement' (role 'Java5_ForStatement140', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression141', cardinality 0..*).
+'Java5::VariableDeclarationStatement' (role 'VariableDeclarationStatement', cardinality 0..*) is associated with 'Java5::Modifier' (role 'modifiers228', cardinality 0..*).
+'Java5::TryStatement' (role 'Java5_TryStatement313', cardinality 0..*) is associated with 'Java5::Block' (role 'Java5_Block314', cardinality 0..*).
+'Java5::WildCardType' (role 'Java5_WildCardType', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef347', cardinality 0..*).
+'Java5::Initializer' (role 'Java5_Initializer', cardinality 0..*) is associated with 'Java5::Block' (role 'Java5_Block165', cardinality 0..*).
+'Java5::VariableDeclarationFragment' (role 'VariableDeclarationFragment', cardinality 0..*) is associated with 'Java5::FieldDeclaration' (role 'fieldDeclaration', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'SingleVariableDeclaration226', cardinality 0..*) is associated with 'Java5::Modifier' (role 'modifiers225', cardinality 0..*).
+'Java5::Assignment' (role 'Java5_Assignment', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression47', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef231', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef233', cardinality 0..*).
+'Java5::CastExpression' (role 'Java5_CastExpression64', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef65', cardinality 0..*).
+'Java5::DoStatement' (role 'Java5_DoStatement109', cardinality 0..*) is associated with 'Java5::Statement' (role 'Java5_Statement110', cardinality 0..*).
+'Java5::MethodInvocation' (role 'Java5_MethodInvocation198', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression199', cardinality 0..*).
+'Java5::ParameterizedType' (role 'Java5_ParameterizedType244', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef245', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression300', cardinality 0..*) is associated with 'Java5::ThrowStatement' (role 'Java5_ThrowStatement', cardinality 0..*).
+'Java5::InfixExpression' (role 'Java5_InfixExpression162', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression163', cardinality 0..*).
+'Java5::ClassDeclaration' (role 'Java5_ClassDeclaration', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef70', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef283', cardinality 0..*) is associated with 'Java5::SuperMethodInvocation' (role 'Java5_SuperMethodInvocation282', cardinality 0..*).
+'Java5::EnhancedForStatement' (role 'Java5_EnhancedForStatement', cardinality 0..*) is associated with 'Java5::Statement' (role 'Java5_Statement118', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression', cardinality 0..*) is associated with 'Java5::AnnotationMemberValuePair' (role 'Java5_AnnotationMemberValuePair13', cardinality 0..*).
+'Java5::MemberRef' (role 'Java5_MemberRef', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef174', cardinality 0..*).
+'Java5::PackageDeclaration' (role 'Java5_PackageDeclaration214', cardinality 0..*) is associated with 'Java5::Model' (role 'Java5_Model', cardinality 0..*).
+'Java5::AnonymousClassDeclaration' (role 'anonymousClassDeclaration', cardinality 0..*) is associated with 'Java5::ClassInstanceCreation' (role 'ClassInstanceCreation', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression249', cardinality 0..*) is associated with 'Java5::PostfixExpression' (role 'Java5_PostfixExpression', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression23', cardinality 0..*) is associated with 'Java5::ArrayAccess' (role 'Java5_ArrayAccess', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression74', cardinality 0..*) is associated with 'Java5::ClassInstanceCreation' (role 'Java5_ClassInstanceCreation', cardinality 0..*).
+'Java5::ParenthesizedExpression' (role 'Java5_ParenthesizedExpression', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression247', cardinality 0..*).
+'Java5::ClassInstanceCreation' (role 'classInstanceCreation', cardinality 0..*) is associated with 'Java5::AnonymousClassDeclaration' (role 'AnonymousClassDeclaration72', cardinality 0..*).
+'Java5::AbstractTypeDeclaration' (role 'Java5_AbstractTypeDeclaration304', cardinality 0..*) is associated with 'Java5::TypeDeclarationStatement' (role 'Java5_TypeDeclarationStatement', cardinality 0..*).
+'Java5::SwitchCase' (role 'Java5_SwitchCase', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression285', cardinality 0..*).
+'Java5::VariableDeclarationFragment' (role 'VariableDeclarationFragment337', cardinality 0..*) is associated with 'Java5::VariableDeclarationStatement' (role 'variableDeclarationStatement', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef207', cardinality 0..*) is associated with 'Java5::MethodRef' (role 'Java5_MethodRef206', cardinality 0..*).
+'Java5::AbstractTypeDeclaration' (role 'Java5_AbstractTypeDeclaration', cardinality 0..*) is associated with 'Java5::ImportDeclaration' (role 'Java5_ImportDeclaration', cardinality 0..*).
+'Java5::ArrayType' (role 'Java5_ArrayType', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef40', cardinality 0..*).
+'Java5::EnumConstantDeclaration' (role 'Java5_EnumConstantDeclaration115', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression116', cardinality 0..*).
+'Java5::AbstractTypeDeclaration' (role 'Java5_AbstractTypeDeclaration90', cardinality 0..*) is associated with 'Java5::CompilationUnit' (role 'Java5_CompilationUnit89', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression38', cardinality 0..*) is associated with 'Java5::ArrayLengthAccess' (role 'Java5_ArrayLengthAccess', cardinality 0..*).
+'Java5::Statement' (role 'Java5_Statement144', cardinality 0..*) is associated with 'Java5::ForStatement' (role 'Java5_ForStatement143', cardinality 0..*).
+'Java5::SuperMethodInvocation' (role 'Java5_SuperMethodInvocation', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression277', cardinality 0..*).
+'Java5::Modifier' (role 'Modifier', cardinality 0..*) is associated with 'Java5::BodyDeclaration' (role 'BodyDeclaration58', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression287', cardinality 0..*) is associated with 'Java5::SwitchStatement' (role 'Java5_SwitchStatement', cardinality 0..*).
+'Java5::FieldAccess' (role 'Java5_FieldAccess', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef127', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression50', cardinality 0..*) is associated with 'Java5::Assignment' (role 'Java5_Assignment49', cardinality 0..*).
+'Java5::CatchClause' (role 'CatchClause', cardinality 0..*) is associated with 'Java5::SingleVariableDeclaration' (role 'exception', cardinality 0..*).
+'Java5::EnhancedForStatement' (role 'Java5_EnhancedForStatement120', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression121', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'parameters', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'MethodDeclaration260', cardinality 0..*).
+'Java5::SuperConstructorInvocation' (role 'Java5_SuperConstructorInvocation266', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression267', cardinality 0..*).
+'Java5::SynchronizedStatement' (role 'Java5_SynchronizedStatement294', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression295', cardinality 0..*).
+'Java5::AnnotationMemberValuePair' (role 'Java5_AnnotationMemberValuePair10', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef11', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef103', cardinality 0..*) is associated with 'Java5::ConstructorInvocation' (role 'Java5_ConstructorInvocation102', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef182', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'Java5_MethodDeclaration181', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression107', cardinality 0..*) is associated with 'Java5::DoStatement' (role 'Java5_DoStatement', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef272', cardinality 0..*) is associated with 'Java5::SuperFieldAccess' (role 'Java5_SuperFieldAccess', cardinality 0..*).
+'Java5::ImportDeclaration' (role 'Java5_ImportDeclaration85', cardinality 0..*) is associated with 'Java5::CompilationUnit' (role 'Java5_CompilationUnit', cardinality 0..*).
+'Java5::SwitchStatement' (role 'Java5_SwitchStatement289', cardinality 0..*) is associated with 'Java5::Statement' (role 'Java5_Statement290', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef270', cardinality 0..*) is associated with 'Java5::SuperConstructorInvocation' (role 'Java5_SuperConstructorInvocation269', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression77', cardinality 0..*) is associated with 'Java5::ClassInstanceCreation' (role 'Java5_ClassInstanceCreation76', cardinality 0..*).
+'Java5::WhileStatement' (role 'Java5_WhileStatement344', cardinality 0..*) is associated with 'Java5::Statement' (role 'Java5_Statement345', cardinality 0..*).
+'Java5::AnonymousClassDeclaration' (role 'Java5_AnonymousClassDeclaration', cardinality 0..*) is associated with 'Java5::EnumConstantDeclaration' (role 'Java5_EnumConstantDeclaration113', cardinality 0..*).
+'Java5::PackageDeclaration' (role 'Java5_PackageDeclaration238', cardinality 0..*) is associated with 'Java5::PackageDeclaration' (role 'Java5_PackageDeclaration240', cardinality 0..*).
+'Java5::TypeParameter' (role 'Java5_TypeParameter302', cardinality 0..*) is associated with 'Java5::TypeDeclaration' (role 'Java5_TypeDeclaration', cardinality 0..*).
+'Java5::ConstructorInvocation' (role 'Java5_ConstructorInvocation', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression100', cardinality 0..*).
+'Java5::VariableDeclarationFragment' (role 'fragments329', cardinality 0..*) is associated with 'Java5::VariableDeclarationStatement' (role 'VariableDeclarationStatement330', cardinality 0..*).
+'Java5::BodyDeclaration' (role 'bodyDeclarations', cardinality 0..*) is associated with 'Java5::AbstractTypeDeclaration' (role 'AbstractTypeDeclaration', cardinality 0..*).
+'Java5::MethodRef' (role 'Java5_MethodRef', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef204', cardinality 0..*).
+'Java5::VariableDeclarationExpression' (role 'Java5_VariableDeclarationExpression', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef321', cardinality 0..*).
+'Java5::MethodRef' (role 'Java5_MethodRef209', cardinality 0..*) is associated with 'Java5::MethodRefParameter' (role 'Java5_MethodRefParameter', cardinality 0..*).
+'Java5::SingleVariableDeclaration' (role 'parameter', cardinality 0..*) is associated with 'Java5::EnhancedForStatement' (role 'EnhancedForStatement', cardinality 0..*).
+'Java5::NamedElementRef' (role 'Java5_NamedElementRef167', cardinality 0..*) is associated with 'Java5::InstanceofExpression' (role 'Java5_InstanceofExpression', cardinality 0..*).
+'Java5::VariableDeclarationFragment' (role 'fragments332', cardinality 0..*) is associated with 'Java5::VariableDeclarationExpression' (role 'VariableDeclarationExpression333', cardinality 0..*).
+'Java5::ExpressionStatement' (role 'Java5_ExpressionStatement', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression125', cardinality 0..*).
+'Java5::Block' (role 'Java5_Block', cardinality 0..*) is associated with 'Java5::Statement' (role 'Java5_Statement', cardinality 0..*).
+'Java5::InfixExpression' (role 'Java5_InfixExpression159', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression160', cardinality 0..*).
+'Java5::AnonymousClassDeclaration' (role 'anonymousClassDeclarationOwner', cardinality 0..*) is associated with 'Java5::BodyDeclaration' (role 'BodyDeclaration20', cardinality 0..*).
+'Java5::SynchronizedStatement' (role 'Java5_SynchronizedStatement', cardinality 0..*) is associated with 'Java5::Block' (role 'Java5_Block292', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression251', cardinality 0..*) is associated with 'Java5::PrefixExpression' (role 'Java5_PrefixExpression', cardinality 0..*).
+'Java5::TryStatement' (role 'Java5_TryStatement316', cardinality 0..*) is associated with 'Java5::CatchClause' (role 'Java5_CatchClause317', cardinality 0..*).
+'Java5::Expression' (role 'Java5_Expression135', cardinality 0..*) is associated with 'Java5::ForStatement' (role 'Java5_ForStatement', cardinality 0..*).
+'Java5::ImportDeclaration' (role 'Java5_ImportDeclaration154', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef155', cardinality 0..*).
+'Java5::Statement' (role 'Java5_Statement149', cardinality 0..*) is associated with 'Java5::IfStatement' (role 'Java5_IfStatement148', cardinality 0..*).
+'Java5::PackageDeclaration' (role 'PackageDeclaration', cardinality 0..*) is associated with 'Java5::AbstractTypeDeclaration' (role 'ownedElements', cardinality 0..*).
+'Java5::ContinueStatement' (role 'Java5_ContinueStatement', cardinality 0..*) is associated with 'Java5::NamedElementRef' (role 'Java5_NamedElementRef105', cardinality 0..*).
+'Java5::UnresolvedItem' (role 'Java5_UnresolvedItem', cardinality 0..*) is associated with 'Java5::Model' (role 'Java5_Model218', cardinality 0..*).
+'Java5::Block' (role 'Java5_Block179', cardinality 0..*) is associated with 'Java5::MethodDeclaration' (role 'Java5_MethodDeclaration', cardinality 0..*).
+'Java5::Modifier' (role 'modifiers230', cardinality 0..*) is associated with 'Java5::VariableDeclarationExpression' (role 'VariableDeclarationExpression', cardinality 0..*).
+'Java5::ReturnStatement' (role 'Java5_ReturnStatement', cardinality 0..*) is associated with 'Java5::Expression' (role 'Java5_Expression253', cardinality 0..*).

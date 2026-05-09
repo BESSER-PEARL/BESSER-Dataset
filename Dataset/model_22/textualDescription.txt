@@ -1,0 +1,46 @@
+The model has 15 class(es).
+The class 'adaptiveSystem::Condition' has the following attributes: 'token' of type int; 'marked' of type bool; 'maximal' of type bool; 'minimal' of type bool.
+The class 'adaptiveSystem::ArcToCondition' has no attributes.
+The class 'adaptiveSystem::PreNet' has no attributes.
+The class 'OccurrenceNet' has no attributes.
+The class 'Node' has no attributes.
+The class 'adaptiveSystem::AdaptiveSystem' has the following attributes: 'setWellformednessToOclets' of type bool.
+The class 'adaptiveSystem::OccurrenceNet' has the following attributes: 'name' of type str.
+The class 'adaptiveSystem::DoNet' has no attributes.
+The class 'adaptiveSystem::Event' has the following attributes: 'enabled' of type bool; 'saturated' of type bool.
+The class 'adaptiveSystem::AdaptiveProcess' has no attributes.
+The class 'Arc' has no attributes.
+The class 'adaptiveSystem::Arc' has the following attributes: 'weight' of type int.
+The class 'adaptiveSystem::Node' has the following attributes: 'name' of type str; 'abstract' of type bool; 'disabledByAntiOclet' of type bool; 'disabledByConflict' of type bool; 'temp' of type str.
+The class 'adaptiveSystem::ArcToEvent' has no attributes.
+The class 'adaptiveSystem::Oclet' has the following attributes: 'quantor' of type str; 'orientation' of type str; 'name' of type str; 'wellFormed' of type bool.
+The enumeration 'Quantor' has the following literals: 'universal', 'existencial'.
+The enumeration 'Orientation' has the following literals: 'normal', 'anti'.
+The enumeration 'Temp' has the following literals: 'without', 'hot', 'cold'.
+'adaptiveSystem::PreNet' is a specialization of 'OccurrenceNet'.
+'adaptiveSystem::ArcToEvent' is a specialization of 'Arc'.
+'adaptiveSystem::Event' is a specialization of 'Node'.
+'adaptiveSystem::DoNet' is a specialization of 'OccurrenceNet'.
+'adaptiveSystem::Condition' is a specialization of 'Node'.
+'adaptiveSystem::ArcToCondition' is a specialization of 'Arc'.
+'adaptiveSystem::AdaptiveProcess' is a specialization of 'OccurrenceNet'.
+'adaptiveSystem::OccurrenceNet' (role 'adaptiveSystem_OccurrenceNet', cardinality 0..*) is associated with 'adaptiveSystem::Node' (role 'adaptiveSystem_Node', cardinality 0..*).
+'adaptiveSystem::Event' (role 'postEvents', cardinality 0..*) is associated with 'adaptiveSystem::Condition' (role 'Condition', cardinality 0..*).
+'adaptiveSystem::Event' (role 'Event', cardinality 0..*) is associated with 'adaptiveSystem::Condition' (role 'postConditions', cardinality 0..*).
+'adaptiveSystem::ArcToEvent' (role 'ArcToEvent', cardinality 0..*) is associated with 'adaptiveSystem::Condition' (role 'source', cardinality 0..*).
+'adaptiveSystem::Condition' (role 'adaptiveSystem_Condition14', cardinality 0..*) is associated with 'adaptiveSystem::AdaptiveProcess' (role 'adaptiveSystem_AdaptiveProcess13', cardinality 0..*).
+'adaptiveSystem::Condition' (role 'destination', cardinality 0..*) is associated with 'adaptiveSystem::ArcToCondition' (role 'ArcToCondition', cardinality 0..*).
+'adaptiveSystem::PreNet' (role 'adaptiveSystem_PreNet', cardinality 0..*) is associated with 'adaptiveSystem::Oclet' (role 'adaptiveSystem_Oclet4', cardinality 0..*).
+'adaptiveSystem::ArcToEvent' (role 'incoming', cardinality 0..*) is associated with 'adaptiveSystem::Event' (role 'Event32', cardinality 0..*).
+'adaptiveSystem::Event' (role 'source27', cardinality 0..*) is associated with 'adaptiveSystem::ArcToCondition' (role 'ArcToCondition28', cardinality 0..*).
+'adaptiveSystem::PreNet' (role 'adaptiveSystem_PreNet11', cardinality 0..*) is associated with 'adaptiveSystem::Condition' (role 'adaptiveSystem_Condition', cardinality 0..*).
+'adaptiveSystem::DoNet' (role 'adaptiveSystem_DoNet', cardinality 0..*) is associated with 'adaptiveSystem::Oclet' (role 'adaptiveSystem_Oclet6', cardinality 0..*).
+'adaptiveSystem::ArcToEvent' (role 'ArcToEvent25', cardinality 0..*) is associated with 'adaptiveSystem::Event' (role 'destination24', cardinality 0..*).
+'adaptiveSystem::OccurrenceNet' (role 'adaptiveSystem_OccurrenceNet9', cardinality 0..*) is associated with 'adaptiveSystem::Arc' (role 'adaptiveSystem_Arc', cardinality 0..*).
+'adaptiveSystem::AdaptiveProcess' (role 'adaptiveSystem_AdaptiveProcess', cardinality 0..*) is associated with 'adaptiveSystem::AdaptiveSystem' (role 'adaptiveSystem_AdaptiveSystem2', cardinality 0..*).
+'adaptiveSystem::Condition' (role 'preConditions', cardinality 0..*) is associated with 'adaptiveSystem::Event' (role 'Event17', cardinality 0..*).
+'adaptiveSystem::Condition' (role 'Condition38', cardinality 0..*) is associated with 'adaptiveSystem::ArcToCondition' (role 'incoming37', cardinality 0..*).
+'adaptiveSystem::Event' (role 'preEvents', cardinality 0..*) is associated with 'adaptiveSystem::Condition' (role 'Condition22', cardinality 0..*).
+'adaptiveSystem::ArcToCondition' (role 'outgoing34', cardinality 0..*) is associated with 'adaptiveSystem::Event' (role 'Event35', cardinality 0..*).
+'adaptiveSystem::AdaptiveSystem' (role 'adaptiveSystem_AdaptiveSystem', cardinality 0..*) is associated with 'adaptiveSystem::Oclet' (role 'adaptiveSystem_Oclet', cardinality 0..*).
+'adaptiveSystem::ArcToEvent' (role 'outgoing', cardinality 0..*) is associated with 'adaptiveSystem::Condition' (role 'Condition30', cardinality 0..*).

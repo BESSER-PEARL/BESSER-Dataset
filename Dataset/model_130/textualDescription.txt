@@ -1,0 +1,540 @@
+The model has 246 class(es).
+The class 'ActualParameterExpression' has no attributes.
+The class 'gastm::LongInteger' has no attributes.
+The class 'gastm::ConstructedType' has no attributes.
+The class 'FunctionMemberAttributes' has no attributes.
+The class 'gastm::AccessKind' has no attributes.
+The class 'Type' has no attributes.
+The class 'gastm::AnnotationType' has no attributes.
+The class 'SourceFile' has no attributes.
+The class 'gastm::NamedType' has no attributes.
+The class 'gastm::ClassType' has no attributes.
+The class 'gastm::RealLiteral' has no attributes.
+The class 'gastm::LabeledStatement' has no attributes.
+The class 'gastm::Deref' has no attributes.
+The class 'gastm::Declaration' has no attributes.
+The class 'gastm::PostDecrement' has no attributes.
+The class 'gastm::EnumType' has no attributes.
+The class 'gastm::FunctionPersistent' has no attributes.
+The class 'gastm::GASTMSemanticObject' has no attributes.
+The class 'FunctionScope' has no attributes.
+The class 'ConstructedType' has no attributes.
+The class 'gastm::ConditionalExpression' has no attributes.
+The class 'SwitchCase' has no attributes.
+The class 'gastm::PerClassMember' has no attributes.
+The class 'gastm::Scope' has no attributes.
+The class 'gastm::ActualParameter' has no attributes.
+The class 'gastm::AggregateExpression' has no attributes.
+The class 'ProgramScope' has no attributes.
+The class 'gastm::DefaultBlock' has no attributes.
+The class 'GlobalScope' has no attributes.
+The class 'gastm::BitLeftShift' has no attributes.
+The class 'MacroDefinition' has no attributes.
+The class 'gastm::SourceLocation' has the following attributes: 'endColumn' of type int; 'endLine' of type int; 'startColumn' of type int; 'startLine' of type int.
+The class 'gastm::AggregateType' has no attributes.
+The class 'gastm::MissingActualParameter' has no attributes.
+The class 'GASTMObject' has no attributes.
+The class 'gastm::BlockStatement' has no attributes.
+The class 'gastm::Float' has no attributes.
+The class 'LabelDefinition' has no attributes.
+The class 'gastm::DeclarationOrDefinition' has the following attributes: 'isRegister' of type bool; 'linkageSpecifier' of type str.
+The class 'gastm::Or' has no attributes.
+The class 'gastm::WideCharacter' has no attributes.
+The class 'gastm::NameSpaceDefinition' has no attributes.
+The class 'gastm::TryStatement' has no attributes.
+The class 'IdentifierReference' has no attributes.
+The class 'gastm::FunctionDeclaration' has no attributes.
+The class 'AnnotationExpression' has no attributes.
+The class 'gastm::OperatorAssign' has no attributes.
+The class 'gastm::AggregateScope' has no attributes.
+The class 'gastm::BitAnd' has no attributes.
+The class 'gastm::FunctionScope' has no attributes.
+The class 'gastm::UnnamedTypeReference' has no attributes.
+The class 'gastm::NotLess' has no attributes.
+The class 'gastm::VirtualSpecification' has no attributes.
+The class 'gastm::ProgramScope' has no attributes.
+The class 'gastm::Definition' has no attributes.
+The class 'gastm::SourceFile' has the following attributes: 'pathName' of type str.
+The class 'gastm::ReferenceType' has no attributes.
+The class 'gastm::Add' has no attributes.
+The class 'gastm::JumpStatement' has no attributes.
+The class 'gastm::GASTMSourceObject' has no attributes.
+The class 'gastm::Less' has no attributes.
+The class 'GASTMSyntaxObject' has no attributes.
+The class 'gastm::Name' has the following attributes: 'nameString' of type str.
+The class 'gastm::FunctionType' has no attributes.
+The class 'gastm::GASTMObject' has no attributes.
+The class 'Expression' has no attributes.
+The class 'gastm::LabelDefinition' has no attributes.
+The class 'DefinitionObject' has no attributes.
+The class 'gastm::ThrowStatement' has no attributes.
+The class 'gastm::Modulus' has no attributes.
+The class 'gastm::ForCheckAfterStatement' has no attributes.
+The class 'Scope' has no attributes.
+The class 'gastm::FunctionMemberAttribute' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'gastm::Comment' has the following attributes: 'text' of type str.
+The class 'TypeReference' has no attributes.
+The class 'CatchBlock' has no attributes.
+The class 'gastm::AggregateTypeDefinition' has no attributes.
+The class 'gastm::DerivesFrom' has the following attributes: 'isVirtual' of type bool.
+The class 'Literal' has no attributes.
+The class 'gastm::IdentifierReference' has no attributes.
+The class 'gastm::Assign' has no attributes.
+The class 'gastm::ActualParameterExpression' has no attributes.
+The class 'gastm::ForCheckBeforeStatement' has no attributes.
+The class 'GASTMSemanticObject' has no attributes.
+The class 'AccessKind' has no attributes.
+The class 'gastm::Virtual' has no attributes.
+The class 'gastm::Increment' has no attributes.
+The class 'DerivesFrom' has no attributes.
+The class 'gastm::EnumLiteralDefinition' has no attributes.
+The class 'gastm::NamedTypeReference' has no attributes.
+The class 'gastm::RangeExpression' has no attributes.
+The class 'FormalParameterDefinition' has no attributes.
+The class 'NameSpaceType' has no attributes.
+The class 'gastm::NameSpaceType' has no attributes.
+The class 'gastm::Negate' has no attributes.
+The class 'gastm::And' has no attributes.
+The class 'gastm::Public' has no attributes.
+The class 'gastm::LabelType' has no attributes.
+The class 'gastm::Greater' has no attributes.
+The class 'gastm::VariableDefinition' has no attributes.
+The class 'Statement' has no attributes.
+The class 'gastm::StructureType' has no attributes.
+The class 'gastm::VariableCatchBlock' has no attributes.
+The class 'gastm::QualifiedIdentifierReference' has no attributes.
+The class 'LabelAccess' has no attributes.
+The class 'gastm::SwitchStatement' has no attributes.
+The class 'gastm::QualifiedOverData' has no attributes.
+The class 'BlockScope' has no attributes.
+The class 'gastm::VariableDeclaration' has the following attributes: 'isMutable' of type bool.
+The class 'DataDefinition' has no attributes.
+The class 'gastm::BreakStatement' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'gastm::NotEqual' has no attributes.
+The class 'gastm::Byte' has no attributes.
+The class 'gastm::LabelAccess' has no attributes.
+The class 'gastm::Type' has the following attributes: 'isConst' of type bool; 'isVolatile' of type bool.
+The class 'gastm::IncludeUnit' has no attributes.
+The class 'gastm::External' has no attributes.
+The class 'SourceLocation' has no attributes.
+The class 'gastm::Expression' has no attributes.
+The class 'gastm::Double' has no attributes.
+The class 'gastm::PureVirtual' has no attributes.
+The class 'gastm::CollectionType' has no attributes.
+The class 'gastm::CatchBlock' has no attributes.
+The class 'AggregateScope' has no attributes.
+The class 'gastm::Subtract' has no attributes.
+The class 'DeclarationOrDefinition' has no attributes.
+The class 'gastm::GASTMSyntaxObject' has no attributes.
+The class 'gastm::ExpressionStatement' has no attributes.
+The class 'gastm::ReturnStatement' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'gastm::PrimitiveType' has the following attributes: 'isSigned' of type bool.
+The class 'gastm::UnaryExpression' has no attributes.
+The class 'FormalParameterType' has no attributes.
+The class 'gastm::Dimension' has no attributes.
+The class 'gastm::ArrayAccess' has no attributes.
+The class 'gastm::Integer' has no attributes.
+The class 'gastm::UnaryOperator' has no attributes.
+The class 'gastm::TypeReference' has no attributes.
+The class 'FormalParameterDeclaration' has no attributes.
+The class 'gastm::CastExpression' has no attributes.
+The class 'gastm::RangeType' has no attributes.
+The class 'gastm::MacroDefinition' has the following attributes: 'macroName' of type str; 'body' of type str.
+The class 'DataType' has no attributes.
+The class 'gastm::Divide' has no attributes.
+The class 'gastm::BitOr' has no attributes.
+The class 'gastm::CompilationUnit' has the following attributes: 'language' of type str.
+The class 'StorageSpecification' has no attributes.
+The class 'gastm::GlobalScope' has no attributes.
+The class 'gastm::NewExpression' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'gastm::Decrement' has no attributes.
+The class 'gastm::TypesCatchBlock' has no attributes.
+The class 'gastm::Void' has no attributes.
+The class 'LabelType' has no attributes.
+The class 'gastm::FormalParameterType' has no attributes.
+The class 'gastm::UnionType' has no attributes.
+The class 'gastm::OtherSyntaxObject' has no attributes.
+The class 'gastm::BooleanLiteral' has no attributes.
+The class 'GASTMSourceObject' has no attributes.
+The class 'ForStatement' has no attributes.
+The class 'AggregateType' has no attributes.
+The class 'gastm::ByReferenceFormalParameterType' has no attributes.
+The class 'gastm::String' has no attributes.
+The class 'gastm::Statement' has no attributes.
+The class 'gastm::ShortInteger' has no attributes.
+The class 'gastm::EntryDefinition' has no attributes.
+The class 'gastm::BitFieldDefinition' has no attributes.
+The class 'gastm::ExceptionType' has no attributes.
+The class 'LoopStatement' has no attributes.
+The class 'gastm::Private' has no attributes.
+The class 'gastm::Multiply' has no attributes.
+The class 'gastm::BitNot' has no attributes.
+The class 'gastm::Exponent' has no attributes.
+The class 'gastm::NamedTypeDefinition' has no attributes.
+The class 'gastm::DeleteStatement' has no attributes.
+The class 'gastm::Boolean' has no attributes.
+The class 'gastm::DataDefinition' has the following attributes: 'isMutable' of type bool.
+The class 'gastm::MacroCall' has no attributes.
+The class 'VirtualSpecification' has no attributes.
+The class 'gastm::CharLiteral' has no attributes.
+The class 'QualifiedIdentifierReference' has no attributes.
+The class 'gastm::LongDouble' has no attributes.
+The class 'gastm::PreprocessorElement' has no attributes.
+The class 'gastm::AddressOf' has no attributes.
+The class 'gastm::BitXor' has no attributes.
+The class 'gastm::ContinueStatement' has no attributes.
+The class 'gastm::UnaryPlus' has no attributes.
+The class 'gastm::TypeDefinition' has no attributes.
+The class 'ActualParameter' has no attributes.
+The class 'gastm::QualifiedOverPointer' has no attributes.
+The class 'gastm::Literal' has the following attributes: 'value' of type str.
+The class 'gastm::DeclarationOrDefinitionStatement' has no attributes.
+The class 'NamedType' has no attributes.
+The class 'gastm::Not' has no attributes.
+The class 'Definition' has no attributes.
+The class 'NameReference' has no attributes.
+The class 'gastm::TerminateStatement' has no attributes.
+The class 'gastm::IntegerlLiteral' has no attributes.
+The class 'gastm::DataType' has no attributes.
+The class 'gastm::ByValueActualParameterExpression' has no attributes.
+The class 'gastm::ArrayType' has no attributes.
+The class 'gastm::FileLocal' has no attributes.
+The class 'gastm::BitLiteral' has no attributes.
+The class 'gastm::DefinitionObject' has no attributes.
+The class 'gastm::TypeQualifiedIdentifierReference' has no attributes.
+The class 'gastm::FunctionMemberAttributes' has the following attributes: 'isInline' of type bool; 'isFriend' of type bool; 'isThisConst' of type bool.
+The class 'gastm::BinaryExpression' has no attributes.
+The class 'gastm::NonVirtual' has no attributes.
+The class 'gastm::ByReferenceActualParameterExpression' has no attributes.
+The class 'gastm::StorageSpecification' has no attributes.
+The class 'gastm::WhileStatement' has no attributes.
+The class 'gastm::FormalParameterDeclaration' has no attributes.
+The class 'gastm::Project' has no attributes.
+The class 'Name' has no attributes.
+The class 'gastm::PointerType' has no attributes.
+The class 'gastm::NoDef' has no attributes.
+The class 'PreprocessorElement' has no attributes.
+The class 'gastm::EmptyStatement' has no attributes.
+The class 'gastm::LoopStatement' has no attributes.
+The class 'gastm::StringLiteral' has no attributes.
+The class 'CompilationUnit' has no attributes.
+The class 'gastm::BlockScope' has no attributes.
+The class 'gastm::Equal' has no attributes.
+The class 'gastm::DoWhileStatement' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'EnumLiteralDefinition' has no attributes.
+The class 'gastm::BitRightShift' has no attributes.
+The class 'gastm::PostIncrement' has no attributes.
+The class 'gastm::SwitchCase' has no attributes.
+The class 'gastm::FormalParameterDefinition' has no attributes.
+The class 'OtherSyntaxObject' has no attributes.
+The class 'gastm::ForStatement' has no attributes.
+The class 'gastm::CaseBlock' has no attributes.
+The class 'gastm::FunctionCallExpression' has no attributes.
+The class 'gastm::AnnotationExpression' has no attributes.
+The class 'gastm::FunctionDefinition' has no attributes.
+The class 'gastm::Character' has no attributes.
+The class 'gastm::ByValueFormalParameterType' has no attributes.
+The class 'gastm::NotGreater' has no attributes.
+The class 'gastm::IfStatement' has no attributes.
+The class 'gastm::Protected' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'gastm::NameReference' has no attributes.
+The class 'gastm::BinaryOperator' has no attributes.
+'gastm::FunctionCallExpression' is a specialization of 'Expression'.
+'gastm::LabelDefinition' is a specialization of 'DefinitionObject'.
+'gastm::NonVirtual' is a specialization of 'VirtualSpecification'.
+'gastm::VariableCatchBlock' is a specialization of 'CatchBlock'.
+'gastm::RangeType' is a specialization of 'ConstructedType'.
+'gastm::IntegerlLiteral' is a specialization of 'Literal'.
+'gastm::JumpStatement' is a specialization of 'Statement'.
+'gastm::ArrayAccess' is a specialization of 'Expression'.
+'gastm::DoWhileStatement' is a specialization of 'LoopStatement'.
+'gastm::PostIncrement' is a specialization of 'UnaryOperator'.
+'gastm::NotEqual' is a specialization of 'BinaryOperator'.
+'gastm::Definition' is a specialization of 'DeclarationOrDefinition'.
+'gastm::CastExpression' is a specialization of 'Expression'.
+'gastm::NameReference' is a specialization of 'Expression'.
+'gastm::Negate' is a specialization of 'UnaryOperator'.
+'gastm::String' is a specialization of 'PrimitiveType'.
+'gastm::QualifiedOverPointer' is a specialization of 'QualifiedIdentifierReference'.
+'gastm::AggregateType' is a specialization of 'DataType'.
+'gastm::BitXor' is a specialization of 'BinaryOperator'.
+'gastm::ProgramScope' is a specialization of 'Scope'.
+'gastm::NamedTypeReference' is a specialization of 'TypeReference'.
+'gastm::Not' is a specialization of 'UnaryOperator'.
+'gastm::AggregateScope' is a specialization of 'Scope'.
+'gastm::PerClassMember' is a specialization of 'StorageSpecification'.
+'gastm::FunctionDefinition' is a specialization of 'Definition'.
+'gastm::ByValueActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+'gastm::ConditionalExpression' is a specialization of 'Expression'.
+'gastm::SwitchCase' is a specialization of 'OtherSyntaxObject'.
+'gastm::Name' is a specialization of 'OtherSyntaxObject'.
+'gastm::BitLeftShift' is a specialization of 'BinaryOperator'.
+'gastm::CatchBlock' is a specialization of 'OtherSyntaxObject'.
+'gastm::IncludeUnit' is a specialization of 'PreprocessorElement'.
+'gastm::VariableDefinition' is a specialization of 'DataDefinition'.
+'gastm::ExceptionType' is a specialization of 'DataType'.
+'gastm::EnumType' is a specialization of 'DataType'.
+'gastm::Increment' is a specialization of 'UnaryOperator'.
+'gastm::PointerType' is a specialization of 'ConstructedType'.
+'gastm::NameSpaceType' is a specialization of 'Type'.
+'gastm::BitAnd' is a specialization of 'BinaryOperator'.
+'gastm::ReferenceType' is a specialization of 'ConstructedType'.
+'gastm::Or' is a specialization of 'BinaryOperator'.
+'gastm::ByReferenceActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+'gastm::BitRightShift' is a specialization of 'BinaryOperator'.
+'gastm::AggregateExpression' is a specialization of 'Expression'.
+'gastm::FormalParameterType' is a specialization of 'DataType'.
+'gastm::PureVirtual' is a specialization of 'VirtualSpecification'.
+'gastm::Character' is a specialization of 'PrimitiveType'.
+'gastm::CaseBlock' is a specialization of 'SwitchCase'.
+'gastm::EmptyStatement' is a specialization of 'Statement'.
+'gastm::LabelAccess' is a specialization of 'Expression'.
+'gastm::AddressOf' is a specialization of 'UnaryOperator'.
+'gastm::NamedType' is a specialization of 'DataType'.
+'gastm::PreprocessorElement' is a specialization of 'GASTMSyntaxObject'.
+'gastm::VirtualSpecification' is a specialization of 'OtherSyntaxObject'.
+'gastm::Expression' is a specialization of 'GASTMSyntaxObject'.
+'gastm::FunctionPersistent' is a specialization of 'StorageSpecification'.
+'gastm::ReturnStatement' is a specialization of 'Statement'.
+'gastm::PostDecrement' is a specialization of 'UnaryOperator'.
+'gastm::Divide' is a specialization of 'BinaryOperator'.
+'gastm::TypeReference' is a specialization of 'Type'.
+'gastm::SourceLocation' is a specialization of 'GASTMSourceObject'.
+'gastm::IdentifierReference' is a specialization of 'NameReference'.
+'gastm::ContinueStatement' is a specialization of 'Statement'.
+'gastm::QualifiedOverData' is a specialization of 'QualifiedIdentifierReference'.
+'gastm::UnaryPlus' is a specialization of 'UnaryOperator'.
+'gastm::Add' is a specialization of 'BinaryOperator'.
+'gastm::EntryDefinition' is a specialization of 'Definition'.
+'gastm::SwitchStatement' is a specialization of 'Statement'.
+'gastm::FunctionScope' is a specialization of 'Scope'.
+'gastm::RealLiteral' is a specialization of 'Literal'.
+'gastm::LongInteger' is a specialization of 'PrimitiveType'.
+'gastm::AnnotationExpression' is a specialization of 'Expression'.
+'gastm::BlockStatement' is a specialization of 'Statement'.
+'gastm::DataDefinition' is a specialization of 'Definition'.
+'gastm::DeclarationOrDefinitionStatement' is a specialization of 'Statement'.
+'gastm::Subtract' is a specialization of 'BinaryOperator'.
+'gastm::NotLess' is a specialization of 'BinaryOperator'.
+'gastm::TryStatement' is a specialization of 'Statement'.
+'gastm::LabelType' is a specialization of 'Type'.
+'gastm::Exponent' is a specialization of 'BinaryOperator'.
+'gastm::NoDef' is a specialization of 'StorageSpecification'.
+'gastm::DeclarationOrDefinition' is a specialization of 'DefinitionObject'.
+'gastm::BitOr' is a specialization of 'BinaryOperator'.
+'gastm::FormalParameterDeclaration' is a specialization of 'Declaration'.
+'gastm::Scope' is a specialization of 'GASTMSemanticObject'.
+'gastm::ForStatement' is a specialization of 'LoopStatement'.
+'gastm::LabeledStatement' is a specialization of 'Statement'.
+'gastm::BreakStatement' is a specialization of 'Statement'.
+'gastm::External' is a specialization of 'StorageSpecification'.
+'gastm::And' is a specialization of 'BinaryOperator'.
+'gastm::Assign' is a specialization of 'BinaryOperator'.
+'gastm::MacroCall' is a specialization of 'PreprocessorElement'.
+'gastm::FileLocal' is a specialization of 'StorageSpecification'.
+'gastm::UnionType' is a specialization of 'AggregateType'.
+'gastm::AnnotationType' is a specialization of 'AggregateType'.
+'gastm::StringLiteral' is a specialization of 'Literal'.
+'gastm::Comment' is a specialization of 'PreprocessorElement'.
+'gastm::Statement' is a specialization of 'GASTMSyntaxObject'.
+'gastm::NamedTypeDefinition' is a specialization of 'TypeDefinition'.
+'gastm::Greater' is a specialization of 'BinaryOperator'.
+'gastm::Public' is a specialization of 'AccessKind'.
+'gastm::QualifiedIdentifierReference' is a specialization of 'NameReference'.
+'gastm::NotGreater' is a specialization of 'BinaryOperator'.
+'gastm::Type' is a specialization of 'GASTMSyntaxObject'.
+'gastm::FunctionMemberAttribute' is a specialization of 'OtherSyntaxObject'.
+'gastm::NewExpression' is a specialization of 'Expression'.
+'gastm::Deref' is a specialization of 'UnaryOperator'.
+'gastm::ExpressionStatement' is a specialization of 'Statement'.
+'gastm::ThrowStatement' is a specialization of 'Statement'.
+'gastm::ArrayType' is a specialization of 'ConstructedType'.
+'gastm::ShortInteger' is a specialization of 'PrimitiveType'.
+'gastm::GlobalScope' is a specialization of 'Scope'.
+'gastm::BinaryExpression' is a specialization of 'Expression'.
+'gastm::PrimitiveType' is a specialization of 'DataType'.
+'gastm::TypeQualifiedIdentifierReference' is a specialization of 'NameReference'.
+'gastm::Project' is a specialization of 'GASTMSemanticObject'.
+'gastm::DerivesFrom' is a specialization of 'OtherSyntaxObject'.
+'gastm::Void' is a specialization of 'PrimitiveType'.
+'gastm::MissingActualParameter' is a specialization of 'ActualParameter'.
+'gastm::StructureType' is a specialization of 'AggregateType'.
+'gastm::Multiply' is a specialization of 'BinaryOperator'.
+'gastm::ClassType' is a specialization of 'AggregateType'.
+'gastm::ByValueFormalParameterType' is a specialization of 'FormalParameterType'.
+'gastm::Private' is a specialization of 'AccessKind'.
+'gastm::Byte' is a specialization of 'PrimitiveType'.
+'gastm::VariableDeclaration' is a specialization of 'Declaration'.
+'gastm::GASTMSyntaxObject' is a specialization of 'GASTMObject'.
+'gastm::EnumLiteralDefinition' is a specialization of 'Definition'.
+'gastm::IfStatement' is a specialization of 'Statement'.
+'gastm::WhileStatement' is a specialization of 'LoopStatement'.
+'gastm::ActualParameterExpression' is a specialization of 'ActualParameter'.
+'gastm::BitLiteral' is a specialization of 'Literal'.
+'gastm::Double' is a specialization of 'PrimitiveType'.
+'gastm::RangeExpression' is a specialization of 'Expression'.
+'gastm::ForCheckBeforeStatement' is a specialization of 'ForStatement'.
+'gastm::DefaultBlock' is a specialization of 'SwitchCase'.
+'gastm::Integer' is a specialization of 'PrimitiveType'.
+'gastm::DeleteStatement' is a specialization of 'Statement'.
+'gastm::Virtual' is a specialization of 'VirtualSpecification'.
+'gastm::MacroDefinition' is a specialization of 'PreprocessorElement'.
+'gastm::ConstructedType' is a specialization of 'DataType'.
+'gastm::FormalParameterDefinition' is a specialization of 'DataDefinition'.
+'gastm::AggregateTypeDefinition' is a specialization of 'TypeDefinition'.
+'gastm::Boolean' is a specialization of 'PrimitiveType'.
+'gastm::ForCheckAfterStatement' is a specialization of 'ForStatement'.
+'gastm::TerminateStatement' is a specialization of 'Statement'.
+'gastm::DefinitionObject' is a specialization of 'GASTMSyntaxObject'.
+'gastm::Dimension' is a specialization of 'OtherSyntaxObject'.
+'gastm::Float' is a specialization of 'PrimitiveType'.
+'gastm::CompilationUnit' is a specialization of 'OtherSyntaxObject'.
+'gastm::CharLiteral' is a specialization of 'Literal'.
+'gastm::ByReferenceFormalParameterType' is a specialization of 'FormalParameterType'.
+'gastm::WideCharacter' is a specialization of 'PrimitiveType'.
+'gastm::Protected' is a specialization of 'AccessKind'.
+'gastm::UnaryExpression' is a specialization of 'Expression'.
+'gastm::TypeDefinition' is a specialization of 'DefinitionObject'.
+'gastm::LoopStatement' is a specialization of 'Statement'.
+'gastm::BitNot' is a specialization of 'UnaryOperator'.
+'gastm::UnnamedTypeReference' is a specialization of 'TypeReference'.
+'gastm::LongDouble' is a specialization of 'PrimitiveType'.
+'gastm::NameSpaceDefinition' is a specialization of 'DefinitionObject'.
+'gastm::CollectionType' is a specialization of 'ConstructedType'.
+'gastm::SourceFile' is a specialization of 'GASTMSourceObject'.
+'gastm::Literal' is a specialization of 'Expression'.
+'gastm::BooleanLiteral' is a specialization of 'Literal'.
+'gastm::Modulus' is a specialization of 'BinaryOperator'.
+'gastm::Less' is a specialization of 'BinaryOperator'.
+'gastm::Equal' is a specialization of 'BinaryOperator'.
+'gastm::Declaration' is a specialization of 'DeclarationOrDefinition'.
+'gastm::BlockScope' is a specialization of 'Scope'.
+'gastm::BitFieldDefinition' is a specialization of 'DataDefinition'.
+'gastm::Decrement' is a specialization of 'UnaryOperator'.
+'gastm::FunctionDeclaration' is a specialization of 'Declaration'.
+'gastm::FunctionType' is a specialization of 'Type'.
+'gastm::OperatorAssign' is a specialization of 'BinaryOperator'.
+'gastm::TypesCatchBlock' is a specialization of 'CatchBlock'.
+'OtherSyntaxObject' (role 'OtherSyntaxObject', cardinality 0..*) is associated with 'gastm::DeclarationOrDefinition' (role 'gastm_DeclarationOrDefinition', cardinality 0..*).
+'gastm::IncludeUnit' (role 'gastm_IncludeUnit', cardinality 0..*) is associated with 'SourceFile' (role 'SourceFile71', cardinality 0..*).
+'Type' (role 'Type100', cardinality 0..*) is associated with 'gastm::UnnamedTypeReference' (role 'gastm_UnnamedTypeReference', cardinality 0..*).
+'Expression' (role 'Expression241', cardinality 0..*) is associated with 'gastm::AnnotationExpression' (role 'gastm_AnnotationExpression240', cardinality 0..*).
+'NamedType' (role 'NamedType', cardinality 0..*) is associated with 'gastm::NamedTypeDefinition' (role 'gastm_NamedTypeDefinition', cardinality 0..*).
+'gastm::NamedTypeReference' (role 'gastm_NamedTypeReference104', cardinality 0..*) is associated with 'TypeDefinition' (role 'TypeDefinition', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject63', cardinality 0..*) is associated with 'gastm::NameSpaceDefinition' (role 'gastm_NameSpaceDefinition62', cardinality 0..*).
+'gastm::FunctionDefinition' (role 'gastm_FunctionDefinition38', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'gastm::AggregateType' (role 'gastm_AggregateType', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject77', cardinality 0..*).
+'gastm::BinaryExpression' (role 'gastm_BinaryExpression200', cardinality 0..*) is associated with 'Expression' (role 'Expression201', cardinality 0..*).
+'gastm::Project' (role 'gastm_Project', cardinality 0..*) is associated with 'CompilationUnit' (role 'CompilationUnit', cardinality 0..*).
+'gastm::BlockStatement' (role 'gastm_BlockStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement121', cardinality 0..*).
+'TypeReference' (role 'TypeReference167', cardinality 0..*) is associated with 'gastm::Expression' (role 'gastm_Expression', cardinality 0..*).
+'LabelDefinition' (role 'LabelDefinition236', cardinality 0..*) is associated with 'gastm::LabelAccess' (role 'gastm_LabelAccess235', cardinality 0..*).
+'gastm::FunctionCallExpression' (role 'gastm_FunctionCallExpression223', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject224', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference', cardinality 0..*) is associated with 'gastm::QualifiedIdentifierReference' (role 'gastm_QualifiedIdentifierReference181', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject13', cardinality 0..*) is associated with 'gastm::CompilationUnit' (role 'gastm_CompilationUnit', cardinality 0..*).
+'gastm::CompilationUnit' (role 'gastm_CompilationUnit15', cardinality 0..*) is associated with 'ProgramScope' (role 'ProgramScope', cardinality 0..*).
+'Expression' (role 'Expression151', cardinality 0..*) is associated with 'gastm::ForStatement' (role 'gastm_ForStatement150', cardinality 0..*).
+'gastm::SwitchCase' (role 'gastm_SwitchCase', cardinality 0..*) is associated with 'Statement' (role 'Statement137', cardinality 0..*).
+'OtherSyntaxObject' (role 'OtherSyntaxObject193', cardinality 0..*) is associated with 'gastm::UnaryExpression' (role 'gastm_UnaryExpression', cardinality 0..*).
+'gastm::RangeExpression' (role 'gastm_RangeExpression218', cardinality 0..*) is associated with 'Expression' (role 'Expression219', cardinality 0..*).
+'gastm::Dimension' (role 'gastm_Dimension', cardinality 0..*) is associated with 'Expression' (role 'Expression82', cardinality 0..*).
+'gastm::DerivesFrom' (role 'gastm_DerivesFrom', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject95', cardinality 0..*).
+'gastm::Definition' (role 'gastm_Definition22', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference', cardinality 0..*).
+'FunctionMemberAttributes' (role 'FunctionMemberAttributes', cardinality 0..*) is associated with 'gastm::FunctionDeclaration' (role 'gastm_FunctionDeclaration32', cardinality 0..*).
+'NameSpaceType' (role 'NameSpaceType', cardinality 0..*) is associated with 'gastm::NameSpaceDefinition' (role 'gastm_NameSpaceDefinition65', cardinality 0..*).
+'FormalParameterDeclaration' (role 'FormalParameterDeclaration', cardinality 0..*) is associated with 'gastm::FunctionDeclaration' (role 'gastm_FunctionDeclaration', cardinality 0..*).
+'gastm::NameReference' (role 'gastm_NameReference', cardinality 0..*) is associated with 'Name' (role 'Name169', cardinality 0..*).
+'LabelType' (role 'LabelType', cardinality 0..*) is associated with 'gastm::LabelDefinition' (role 'gastm_LabelDefinition69', cardinality 0..*).
+'Scope' (role 'Scope', cardinality 0..*) is associated with 'gastm::Scope' (role 'gastm_Scope6', cardinality 0..*).
+'LabelAccess' (role 'LabelAccess115', cardinality 0..*) is associated with 'gastm::ContinueStatement' (role 'gastm_ContinueStatement', cardinality 0..*).
+'gastm::CatchBlock' (role 'gastm_CatchBlock', cardinality 0..*) is associated with 'Statement' (role 'Statement160', cardinality 0..*).
+'gastm::BlockStatement' (role 'gastm_BlockStatement123', cardinality 0..*) is associated with 'BlockScope' (role 'BlockScope', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'gastm::NamedType' (role 'gastm_NamedType', cardinality 0..*).
+'gastm::QualifiedIdentifierReference' (role 'gastm_QualifiedIdentifierReference', cardinality 0..*) is associated with 'Expression' (role 'Expression179', cardinality 0..*).
+'gastm::SwitchStatement' (role 'gastm_SwitchStatement135', cardinality 0..*) is associated with 'SwitchCase' (role 'SwitchCase', cardinality 0..*).
+'Name' (role 'Name233', cardinality 0..*) is associated with 'gastm::LabelAccess' (role 'gastm_LabelAccess', cardinality 0..*).
+'Expression' (role 'Expression125', cardinality 0..*) is associated with 'gastm::IfStatement' (role 'gastm_IfStatement', cardinality 0..*).
+'Statement' (role 'Statement146', cardinality 0..*) is associated with 'gastm::LoopStatement' (role 'gastm_LoopStatement145', cardinality 0..*).
+'Statement' (role 'Statement49', cardinality 0..*) is associated with 'gastm::EntryDefinition' (role 'gastm_EntryDefinition48', cardinality 0..*).
+'gastm::IfStatement' (role 'gastm_IfStatement130', cardinality 0..*) is associated with 'Statement' (role 'Statement131', cardinality 0..*).
+'TypeReference' (role 'TypeReference34', cardinality 0..*) is associated with 'gastm::FunctionDefinition' (role 'gastm_FunctionDefinition', cardinality 0..*).
+'gastm::ConstructedType' (role 'gastm_ConstructedType', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference75', cardinality 0..*).
+'gastm::LoopStatement' (role 'gastm_LoopStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression143', cardinality 0..*).
+'gastm::VariableCatchBlock' (role 'gastm_VariableCatchBlock', cardinality 0..*) is associated with 'DataDefinition' (role 'DataDefinition', cardinality 0..*).
+'gastm::ArrayType' (role 'gastm_ArrayType', cardinality 0..*) is associated with 'Dimension' (role 'Dimension', cardinality 0..*).
+'Expression' (role 'Expression54', cardinality 0..*) is associated with 'gastm::EnumLiteralDefinition' (role 'gastm_EnumLiteralDefinition', cardinality 0..*).
+'Name' (role 'Name', cardinality 0..*) is associated with 'gastm::Definition' (role 'gastm_Definition', cardinality 0..*).
+'gastm::BinaryExpression' (role 'gastm_BinaryExpression', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject198', cardinality 0..*).
+'gastm::ArrayAccess' (role 'gastm_ArrayAccess176', cardinality 0..*) is associated with 'Expression' (role 'Expression177', cardinality 0..*).
+'gastm::IfStatement' (role 'gastm_IfStatement127', cardinality 0..*) is associated with 'Statement' (role 'Statement128', cardinality 0..*).
+'gastm::DeleteStatement' (role 'gastm_DeleteStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression106', cardinality 0..*).
+'gastm::FunctionDefinition' (role 'gastm_FunctionDefinition40', cardinality 0..*) is associated with 'FunctionMemberAttributes' (role 'FunctionMemberAttributes41', cardinality 0..*).
+'Type' (role 'Type162', cardinality 0..*) is associated with 'gastm::TypesCatchBlock' (role 'gastm_TypesCatchBlock', cardinality 0..*).
+'gastm::ReturnStatement' (role 'gastm_ReturnStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression141', cardinality 0..*).
+'gastm::DeclarationOrDefinition' (role 'gastm_DeclarationOrDefinition18', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject19', cardinality 0..*).
+'gastm::FunctionType' (role 'gastm_FunctionType', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference87', cardinality 0..*).
+'AggregateScope' (role 'AggregateScope', cardinality 0..*) is associated with 'gastm::AggregateType' (role 'gastm_AggregateType79', cardinality 0..*).
+'Expression' (role 'Expression221', cardinality 0..*) is associated with 'gastm::FunctionCallExpression' (role 'gastm_FunctionCallExpression', cardinality 0..*).
+'FormalParameterType' (role 'FormalParameterType', cardinality 0..*) is associated with 'gastm::FunctionType' (role 'gastm_FunctionType89', cardinality 0..*).
+'gastm::TryStatement' (role 'gastm_TryStatement157', cardinality 0..*) is associated with 'Statement' (role 'Statement158', cardinality 0..*).
+'gastm::BitFieldDefinition' (role 'gastm_BitFieldDefinition', cardinality 0..*) is associated with 'Expression' (role 'Expression52', cardinality 0..*).
+'Name' (role 'Name26', cardinality 0..*) is associated with 'gastm::Declaration' (role 'gastm_Declaration25', cardinality 0..*).
+'gastm::GASTMSyntaxObject' (role 'gastm_GASTMSyntaxObject11', cardinality 0..*) is associated with 'AnnotationExpression' (role 'AnnotationExpression', cardinality 0..*).
+'gastm::TypeQualifiedIdentifierReference' (role 'gastm_TypeQualifiedIdentifierReference185', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference186', cardinality 0..*).
+'gastm::ArrayAccess' (role 'gastm_ArrayAccess', cardinality 0..*) is associated with 'Expression' (role 'Expression174', cardinality 0..*).
+'TypeReference' (role 'TypeReference183', cardinality 0..*) is associated with 'gastm::TypeQualifiedIdentifierReference' (role 'gastm_TypeQualifiedIdentifierReference', cardinality 0..*).
+'gastm::Scope' (role 'gastm_Scope', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject', cardinality 0..*).
+'Expression' (role 'Expression196', cardinality 0..*) is associated with 'gastm::UnaryExpression' (role 'gastm_UnaryExpression195', cardinality 0..*).
+'FormalParameterDefinition' (role 'FormalParameterDefinition', cardinality 0..*) is associated with 'gastm::FunctionDefinition' (role 'gastm_FunctionDefinition36', cardinality 0..*).
+'Expression' (role 'Expression191', cardinality 0..*) is associated with 'gastm::CastExpression' (role 'gastm_CastExpression190', cardinality 0..*).
+'VirtualSpecification' (role 'VirtualSpecification', cardinality 0..*) is associated with 'gastm::FunctionMemberAttributes' (role 'gastm_FunctionMemberAttributes', cardinality 0..*).
+'gastm::RangeExpression' (role 'gastm_RangeExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression216', cardinality 0..*).
+'gastm::Project' (role 'gastm_Project3', cardinality 0..*) is associated with 'GlobalScope' (role 'GlobalScope', cardinality 0..*).
+'gastm::TryStatement' (role 'gastm_TryStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement153', cardinality 0..*).
+'Expression' (role 'Expression148', cardinality 0..*) is associated with 'gastm::ForStatement' (role 'gastm_ForStatement', cardinality 0..*).
+'Expression' (role 'Expression112', cardinality 0..*) is associated with 'gastm::JumpStatement' (role 'gastm_JumpStatement', cardinality 0..*).
+'gastm::NameReference' (role 'gastm_NameReference171', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject172', cardinality 0..*).
+'gastm::EntryDefinition' (role 'gastm_EntryDefinition', cardinality 0..*) is associated with 'FormalParameterDefinition' (role 'FormalParameterDefinition46', cardinality 0..*).
+'NamedType' (role 'NamedType98', cardinality 0..*) is associated with 'gastm::DerivesFrom' (role 'gastm_DerivesFrom97', cardinality 0..*).
+'Expression' (role 'Expression204', cardinality 0..*) is associated with 'gastm::BinaryExpression' (role 'gastm_BinaryExpression203', cardinality 0..*).
+'Expression' (role 'Expression214', cardinality 0..*) is associated with 'gastm::ConditionalExpression' (role 'gastm_ConditionalExpression213', cardinality 0..*).
+'gastm::NameSpaceDefinition' (role 'gastm_NameSpaceDefinition', cardinality 0..*) is associated with 'Name' (role 'Name60', cardinality 0..*).
+'gastm::NewExpression' (role 'gastm_NewExpression230', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject231', cardinality 0..*).
+'LabelAccess' (role 'LabelAccess', cardinality 0..*) is associated with 'gastm::BreakStatement' (role 'gastm_BreakStatement', cardinality 0..*).
+'SourceLocation' (role 'SourceLocation', cardinality 0..*) is associated with 'gastm::GASTMSyntaxObject' (role 'gastm_GASTMSyntaxObject', cardinality 0..*).
+'Expression' (role 'Expression208', cardinality 0..*) is associated with 'gastm::ConditionalExpression' (role 'gastm_ConditionalExpression', cardinality 0..*).
+'Name' (role 'Name56', cardinality 0..*) is associated with 'gastm::TypeDefinition' (role 'gastm_TypeDefinition', cardinality 0..*).
+'Expression' (role 'Expression110', cardinality 0..*) is associated with 'gastm::ExpressionStatement' (role 'gastm_ExpressionStatement', cardinality 0..*).
+'gastm::SwitchStatement' (role 'gastm_SwitchStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression133', cardinality 0..*).
+'gastm::Dimension' (role 'gastm_Dimension84', cardinality 0..*) is associated with 'Expression' (role 'Expression85', cardinality 0..*).
+'PreprocessorElement' (role 'PreprocessorElement', cardinality 0..*) is associated with 'gastm::GASTMSyntaxObject' (role 'gastm_GASTMSyntaxObject9', cardinality 0..*).
+'gastm::Declaration' (role 'gastm_Declaration28', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference29', cardinality 0..*).
+'MacroDefinition' (role 'MacroDefinition', cardinality 0..*) is associated with 'gastm::MacroCall' (role 'gastm_MacroCall', cardinality 0..*).
+'gastm::CastExpression' (role 'gastm_CastExpression', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference188', cardinality 0..*).
+'gastm::NamedTypeReference' (role 'gastm_NamedTypeReference', cardinality 0..*) is associated with 'Name' (role 'Name102', cardinality 0..*).
+'gastm::LabeledStatement' (role 'gastm_LabeledStatement', cardinality 0..*) is associated with 'LabelDefinition' (role 'LabelDefinition', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'gastm::DataDefinition' (role 'gastm_DataDefinition', cardinality 0..*).
+'gastm::ConditionalExpression' (role 'gastm_ConditionalExpression210', cardinality 0..*) is associated with 'Expression' (role 'Expression211', cardinality 0..*).
+'AggregateType' (role 'AggregateType', cardinality 0..*) is associated with 'gastm::AggregateTypeDefinition' (role 'gastm_AggregateTypeDefinition', cardinality 0..*).
+'DerivesFrom' (role 'DerivesFrom', cardinality 0..*) is associated with 'gastm::ClassType' (role 'gastm_ClassType', cardinality 0..*).
+'gastm::FunctionDefinition' (role 'gastm_FunctionDefinition43', cardinality 0..*) is associated with 'FunctionScope' (role 'FunctionScope', cardinality 0..*).
+'gastm::OperatorAssign' (role 'gastm_OperatorAssign', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject206', cardinality 0..*).
+'TypeReference' (role 'TypeReference238', cardinality 0..*) is associated with 'gastm::AnnotationExpression' (role 'gastm_AnnotationExpression', cardinality 0..*).
+'gastm::ActualParameterExpression' (role 'gastm_ActualParameterExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression226', cardinality 0..*).
+'gastm::LabelDefinition' (role 'gastm_LabelDefinition', cardinality 0..*) is associated with 'Name' (role 'Name67', cardinality 0..*).
+'gastm::Declaration' (role 'gastm_Declaration', cardinality 0..*) is associated with 'Definition' (role 'Definition', cardinality 0..*).
+'TypeReference' (role 'TypeReference91', cardinality 0..*) is associated with 'gastm::FormalParameterType' (role 'gastm_FormalParameterType', cardinality 0..*).
+'gastm::CaseBlock' (role 'gastm_CaseBlock', cardinality 0..*) is associated with 'Expression' (role 'Expression139', cardinality 0..*).
+'CatchBlock' (role 'CatchBlock', cardinality 0..*) is associated with 'gastm::TryStatement' (role 'gastm_TryStatement155', cardinality 0..*).
+'gastm::LabeledStatement' (role 'gastm_LabeledStatement118', cardinality 0..*) is associated with 'Statement' (role 'Statement119', cardinality 0..*).
+'gastm::EnumType' (role 'gastm_EnumType', cardinality 0..*) is associated with 'EnumLiteralDefinition' (role 'EnumLiteralDefinition', cardinality 0..*).
+'gastm::ThrowStatement' (role 'gastm_ThrowStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression165', cardinality 0..*).
+'SourceFile' (role 'SourceFile', cardinality 0..*) is associated with 'gastm::SourceLocation' (role 'gastm_SourceLocation', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject108', cardinality 0..*) is associated with 'gastm::DeclarationOrDefinitionStatement' (role 'gastm_DeclarationOrDefinitionStatement', cardinality 0..*).
+'gastm::NewExpression' (role 'gastm_NewExpression', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference228', cardinality 0..*).

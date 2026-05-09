@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'petrinet::Arc' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+The class 'petrinet::Place' has the following attributes: 'tokenNb' of type int.
+The class 'petrinet::Petrinet' has no attributes.
+The class 'Node' has no attributes.
+The class 'petrinet::Node' has the following attributes: 'name' of type str.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::Petrinet' (role 'petrinet_Petrinet2', cardinality 0..*).
+'petrinet::Arc' (role 'incomming', cardinality 0..*) is associated with 'petrinet::Node' (role 'Node', cardinality 0..*).
+'petrinet::Node' (role 'target', cardinality 0..*) is associated with 'petrinet::Arc' (role 'Arc', cardinality 0..*).
+'petrinet::Arc' (role 'Arc5', cardinality 0..*) is associated with 'petrinet::Node' (role 'source', cardinality 0..*).
+'petrinet::Arc' (role 'outgoing', cardinality 0..*) is associated with 'petrinet::Node' (role 'Node8', cardinality 0..*).
+'petrinet::Node' (role 'petrinet_Node', cardinality 0..*) is associated with 'petrinet::Petrinet' (role 'petrinet_Petrinet', cardinality 0..*).

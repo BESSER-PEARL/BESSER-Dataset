@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SINTEF-9012/bvr/no.sintef.bvr.engine.test/src/test/resources/realistic/modelSafetyModule0/model/Ecore.ecore

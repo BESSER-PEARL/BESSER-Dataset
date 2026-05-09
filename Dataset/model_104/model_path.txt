@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SOM-Research/hawk-neoemf-models-2018-tutorial/projects/tutorial.neoemf.jdtast/model/JDTAST.ecore

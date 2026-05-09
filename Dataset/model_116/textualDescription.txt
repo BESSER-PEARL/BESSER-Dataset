@@ -1,0 +1,310 @@
+The model has 107 class(es).
+The class 'dsl::ForInit' has no attributes.
+The class 'dsl::EnumBody' has no attributes.
+The class 'dsl::FieldDeclaration' has no attributes.
+The class 'dsl::PreDecrementExpression' has no attributes.
+The class 'dsl::Statement' has no attributes.
+The class 'dsl::AnnotationTypeDeclaration' has the following attributes: 'id' of type str.
+The class 'dsl::MemberValuePair' has the following attributes: 'id' of type str.
+The class 'dsl::PreIncrementExpression' has no attributes.
+The class 'dsl::PostfixExpression' has the following attributes: 'op' of type str.
+The class 'dsl::PrimarySuffix' has the following attributes: 'thisOp' of type bool; 'id' of type str.
+The class 'dsl::MemberValueArrayInitializer' has no attributes.
+The class 'dsl::BooleanLiteral' has the following attributes: 'truthiness' of type str.
+The class 'dsl::MemberValue' has no attributes.
+The class 'dsl::AllocationExpression' has the following attributes: 'primType' of type str.
+The class 'dsl::BlockStatement' has no attributes.
+The class 'dsl::UnaryExpression' has the following attributes: 'sign' of type str.
+The class 'dsl::DefaultValue' has no attributes.
+The class 'dsl::PrimaryPrefix' has the following attributes: 'id' of type str; 'superOp' of type str; 'thisOp' of type str.
+The class 'dsl::MultiplicativeExpression' has the following attributes: 'ops' of type str.
+The class 'dsl::AnnotationTypeMemberDeclaration' has the following attributes: 'id' of type str.
+The class 'dsl::SignedIntLiteral' has the following attributes: 'bitWidth' of type int.
+The class 'dsl::StatementExpression' has the following attributes: 'assignOp' of type str; 'minOp' of type str; 'plusOp' of type str.
+The class 'dsl::AnnotationTypeBody' has no attributes.
+The class 'dsl::UnsignedIntLiteral' has the following attributes: 'sign' of type str.
+The class 'dsl::ClassOrInterfaceBodyDeclaration' has no attributes.
+The class 'dsl::TypeParameter' has the following attributes: 'id' of type str.
+The class 'dsl::MemberSelector' has the following attributes: 'id' of type str.
+The class 'dsl::Type' has the following attributes: 'primType' of type str.
+The class 'dsl::DecimalNumber' has the following attributes: 'decDigitsUnderscore' of type str; 'decDigits' of type int.
+The class 'dsl::MethodOrCtorDeclaration' has the following attributes: 'id' of type str.
+The class 'dsl::Initializer' has the following attributes: 'static' of type bool.
+The class 'dsl::FloatLiteral' has the following attributes: 'digits' of type str.
+The class 'dsl::TypeBound' has no attributes.
+The class 'dsl::BaseLiteral' has the following attributes: 'binDigitsUnderscore' of type str; 'decDigitsUnderscore' of type str; 'hexDigitsUnderscore' of type str.
+The class 'dsl::ExclusiveOrExpression' has no attributes.
+The class 'dsl::ArgumentList' has no attributes.
+The class 'dsl::ConditionalAndExpression' has no attributes.
+The class 'dsl::IntegerLiteral' has the following attributes: 'zero' of type str; 'one' of type str.
+The class 'dsl::EObject' has no attributes.
+The class 'dsl::Expression' has the following attributes: 'assignOp' of type str.
+The class 'dsl::ReferenceType' has the following attributes: 'primType' of type str; 'squareBracketsBeta' of type str; 'squareBracketsAlpha' of type str.
+The class 'dsl::Literal' has the following attributes: 'charLit' of type str; 'stringLit' of type str; 'nullLit' of type str.
+The class 'dsl::ArrayInitializer' has no attributes.
+The class 'dsl::VariableInitializer' has no attributes.
+The class 'dsl::EnumDeclaration' has the following attributes: 'id' of type str.
+The class 'dsl::ReturnStatement' has no attributes.
+The class 'dsl::TypeDeclaration' has no attributes.
+The class 'dsl::ExplicitConstructorInvocation' has the following attributes: 'self' of type bool; 'parent' of type str.
+The class 'dsl::Name' has the following attributes: 'ids' of type str.
+The class 'dsl::NameList' has no attributes.
+The class 'dsl::CommonModifier' has the following attributes: 'final' of type bool; 'visibility' of type str; 'static' of type bool; 'abstract' of type bool.
+The class 'dsl::ArrayDimsAndInits' has the following attributes: 'squareBrackets' of type str.
+The class 'dsl::ImportDeclaration' has no attributes.
+The class 'dsl::ResultType' has no attributes.
+The class 'dsl::FormalParameters' has no attributes.
+The class 'dsl::FormalParameter' has the following attributes: 'final' of type bool.
+The class 'dsl::PackageDeclaration' has no attributes.
+The class 'dsl::TypeBodyModifier' has the following attributes: 'volatile' of type bool; 'transient' of type bool; 'synchronized' of type bool; 'strictfp' of type bool; 'native' of type bool.
+The class 'dsl::AssertStatement' has no attributes.
+The class 'dsl::Block' has no attributes.
+The class 'dsl::MethodDeclarator' has the following attributes: 'squareBrackets' of type str; 'id' of type str.
+The class 'dsl::SwitchStatement' has no attributes.
+The class 'IfStatement' has no attributes.
+The class 'dsl::LabeledStatement' has the following attributes: 'id' of type str.
+The class 'dsl::CompilationUnit' has no attributes.
+The class 'dsl::ForStatement' has the following attributes: 'id' of type str.
+The class 'dsl::PrimaryExpression' has no attributes.
+The class 'dsl::DoStatement' has no attributes.
+The class 'dsl::WhileStatement' has no attributes.
+The class 'dsl::VariableDeclaratorId' has the following attributes: 'squareBrackets' of type str; 'id' of type str.
+The class 'dsl::IfStatement' has no attributes.
+The class 'dsl::EnumConstant' has the following attributes: 'id' of type str.
+The class 'dsl::TypeArguments' has no attributes.
+The class 'dsl::VariableDeclarator' has no attributes.
+The class 'dsl::ConditionalExpression' has no attributes.
+The class 'dsl::AndExpression' has no attributes.
+The class 'dsl::ClassOrInterfaceType' has the following attributes: 'ids' of type str.
+The class 'DefaultValue' has no attributes.
+The class 'dsl::ContinueStatement' has the following attributes: 'id' of type str.
+The class 'dsl::CastLookahead' has the following attributes: 'openBracket' of type str; 'negOp' of type str; 'superOp' of type str; 'id' of type str; 'bitNegOp' of type str; 'thisOp' of type str; 'newOp' of type str; 'primType' of type str.
+The class 'dsl::WildcardBounds' has the following attributes: 'sup' of type bool; 'ext' of type bool.
+The class 'dsl::TypeArgument' has no attributes.
+The class 'dsl::ClassOrInterfaceBody' has no attributes.
+The class 'dsl::ThrowStatement' has no attributes.
+The class 'dsl::BreakStatement' has the following attributes: 'id' of type str.
+The class 'dsl::AdditiveExpression' has the following attributes: 'ops' of type str.
+The class 'dsl::LocalVariableDeclaration' has the following attributes: 'finality' of type str.
+The class 'dsl::Arguments' has no attributes.
+The class 'dsl::SwitchLabel' has the following attributes: 'defaultOp' of type str.
+The class 'dsl::ImplementsList' has no attributes.
+The class 'dsl::ShiftExpression' has the following attributes: 'ops' of type str.
+The class 'dsl::TryStatement' has no attributes.
+The class 'dsl::SynchronizedStatement' has no attributes.
+The class 'dsl::RelationalExpression' has the following attributes: 'ops' of type str.
+The class 'dsl::ExtendsList' has no attributes.
+The class 'dsl::TypeParameters' has no attributes.
+The class 'dsl::MemberValuePairs' has no attributes.
+The class 'dsl::InstanceOfExpression' has no attributes.
+The class 'dsl::UnaryExpressionNotPlusMinus' has the following attributes: 'negOp' of type str.
+The class 'dsl::EqualityExpression' has no attributes.
+The class 'dsl::CastExpression' has no attributes.
+The class 'dsl::Annotation' has no attributes.
+The class 'dsl::StatementExpressionList' has no attributes.
+The class 'dsl::ConditionalOrExpression' has no attributes.
+The class 'dsl::InclusiveOrExpression' has no attributes.
+The class 'dsl::ClassOrInterfaceDeclaration' has the following attributes: 'id' of type str; 'typeCategory' of type str.
+The class 'dsl::ForUpdate' has no attributes.
+The enumeration 'Visibility' has the following literals: 'PRIVATE', 'PUBLIC', 'PROTECTED'.
+'dsl::Expression' is a specialization of 'IfStatement'.
+'dsl::MemberValue' is a specialization of 'DefaultValue'.
+'dsl::Arguments' (role 'dsl_Arguments296', cardinality 0..*) is associated with 'dsl::AllocationExpression' (role 'dsl_AllocationExpression295', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement334', cardinality 0..*) is associated with 'dsl::SynchronizedStatement' (role 'dsl_SynchronizedStatement', cardinality 0..*).
+'dsl::BlockStatement' (role 'dsl_BlockStatement382', cardinality 0..*) is associated with 'dsl::SwitchStatement' (role 'dsl_SwitchStatement381', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type215', cardinality 0..*) is associated with 'dsl::CastLookahead' (role 'dsl_CastLookahead', cardinality 0..*).
+'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration', cardinality 0..*) is associated with 'dsl::TypeDeclaration' (role 'dsl_TypeDeclaration15', cardinality 0..*).
+'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration21', cardinality 0..*) is associated with 'dsl::TypeParameters' (role 'dsl_TypeParameters', cardinality 0..*).
+'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType56', cardinality 0..*) is associated with 'dsl::TypeBound' (role 'dsl_TypeBound55', cardinality 0..*).
+'dsl::ReferenceType' (role 'dsl_ReferenceType137', cardinality 0..*) is associated with 'dsl::TypeArgument' (role 'dsl_TypeArgument136', cardinality 0..*).
+'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'dsl::AnnotationTypeBody' (role 'dsl_AnnotationTypeBody471', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression254', cardinality 0..*) is associated with 'dsl::PrimarySuffix' (role 'dsl_PrimarySuffix253', cardinality 0..*).
+'dsl::ClassOrInterfaceBody' (role 'dsl_ClassOrInterfaceBody299', cardinality 0..*) is associated with 'dsl::AllocationExpression' (role 'dsl_AllocationExpression298', cardinality 0..*).
+'dsl::ExplicitConstructorInvocation' (role 'dsl_ExplicitConstructorInvocation', cardinality 0..*) is associated with 'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration98', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression427', cardinality 0..*) is associated with 'dsl::ReturnStatement' (role 'dsl_ReturnStatement426', cardinality 0..*).
+'dsl::EqualityExpression' (role 'dsl_EqualityExpression', cardinality 0..*) is associated with 'dsl::AndExpression' (role 'dsl_AndExpression176', cardinality 0..*).
+'dsl::TryStatement' (role 'dsl_TryStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement336', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type218', cardinality 0..*) is associated with 'dsl::CastLookahead' (role 'dsl_CastLookahead217', cardinality 0..*).
+'dsl::SwitchLabel' (role 'dsl_SwitchLabel384', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression385', cardinality 0..*).
+'dsl::VariableInitializer' (role 'dsl_VariableInitializer89', cardinality 0..*) is associated with 'dsl::ArrayInitializer' (role 'dsl_ArrayInitializer88', cardinality 0..*).
+'dsl::EnumDeclaration' (role 'dsl_EnumDeclaration37', cardinality 0..*) is associated with 'dsl::ImplementsList' (role 'dsl_ImplementsList38', cardinality 0..*).
+'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration473', cardinality 0..*) is associated with 'dsl::TypeBodyModifier' (role 'dsl_TypeBodyModifier474', cardinality 0..*).
+'dsl::Arguments' (role 'dsl_Arguments257', cardinality 0..*) is associated with 'dsl::PrimarySuffix' (role 'dsl_PrimarySuffix256', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression302', cardinality 0..*) is associated with 'dsl::ArrayDimsAndInits' (role 'dsl_ArrayDimsAndInits301', cardinality 0..*).
+'dsl::VariableDeclarator' (role 'dsl_VariableDeclarator', cardinality 0..*) is associated with 'dsl::FieldDeclaration' (role 'dsl_FieldDeclaration78', cardinality 0..*).
+'dsl::WildcardBounds' (role 'dsl_WildcardBounds', cardinality 0..*) is associated with 'dsl::TypeArgument' (role 'dsl_TypeArgument139', cardinality 0..*).
+'dsl::EqualityExpression' (role 'dsl_EqualityExpression178', cardinality 0..*) is associated with 'dsl::InstanceOfExpression' (role 'dsl_InstanceOfExpression', cardinality 0..*).
+'dsl::ThrowStatement' (role 'dsl_ThrowStatement429', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression430', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression339', cardinality 0..*) is associated with 'dsl::AssertStatement' (role 'dsl_AssertStatement338', cardinality 0..*).
+'dsl::Literal' (role 'dsl_Literal', cardinality 0..*) is associated with 'dsl::CastLookahead' (role 'dsl_CastLookahead220', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression388', cardinality 0..*) is associated with 'dsl::WhileStatement' (role 'dsl_WhileStatement387', cardinality 0..*).
+'dsl::VariableInitializer' (role 'dsl_VariableInitializer86', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type477', cardinality 0..*) is associated with 'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration476', cardinality 0..*).
+'dsl::UnsignedIntLiteral' (role 'dsl_UnsignedIntLiteral', cardinality 0..*) is associated with 'dsl::DecimalNumber' (role 'dsl_DecimalNumber', cardinality 0..*).
+'dsl::ArrayDimsAndInits' (role 'dsl_ArrayDimsAndInits304', cardinality 0..*) is associated with 'dsl::ArrayInitializer' (role 'dsl_ArrayInitializer305', cardinality 0..*).
+'dsl::ReferenceType' (role 'dsl_ReferenceType142', cardinality 0..*) is associated with 'dsl::WildcardBounds' (role 'dsl_WildcardBounds141', cardinality 0..*).
+'dsl::ImplementsList' (role 'dsl_ImplementsList', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration25', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression433', cardinality 0..*) is associated with 'dsl::SynchronizedStatement' (role 'dsl_SynchronizedStatement432', cardinality 0..*).
+'dsl::ResultType' (role 'dsl_ResultType', cardinality 0..*) is associated with 'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration102', cardinality 0..*).
+'dsl::InstanceOfExpression' (role 'dsl_InstanceOfExpression180', cardinality 0..*) is associated with 'dsl::RelationalExpression' (role 'dsl_RelationalExpression', cardinality 0..*).
+'dsl::AssertStatement' (role 'dsl_AssertStatement341', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression342', cardinality 0..*).
+'dsl::PostfixExpression' (role 'dsl_PostfixExpression222', cardinality 0..*) is associated with 'dsl::PrimaryExpression' (role 'dsl_PrimaryExpression223', cardinality 0..*).
+'dsl::TypeBodyModifier' (role 'dsl_TypeBodyModifier64', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration63', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement391', cardinality 0..*) is associated with 'dsl::WhileStatement' (role 'dsl_WhileStatement390', cardinality 0..*).
+'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration61', cardinality 0..*) is associated with 'dsl::Initializer' (role 'dsl_Initializer', cardinality 0..*).
+'dsl::DefaultValue' (role 'dsl_DefaultValue', cardinality 0..*) is associated with 'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration479', cardinality 0..*).
+'dsl::BaseLiteral' (role 'dsl_BaseLiteral', cardinality 0..*) is associated with 'dsl::UnsignedIntLiteral' (role 'dsl_UnsignedIntLiteral260', cardinality 0..*).
+'dsl::LabeledStatement' (role 'dsl_LabeledStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement307', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type145', cardinality 0..*) is associated with 'dsl::ResultType' (role 'dsl_ResultType144', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type183', cardinality 0..*) is associated with 'dsl::InstanceOfExpression' (role 'dsl_InstanceOfExpression182', cardinality 0..*).
+'dsl::AnnotationTypeDeclaration' (role 'dsl_AnnotationTypeDeclaration', cardinality 0..*) is associated with 'dsl::TypeDeclaration' (role 'dsl_TypeDeclaration19', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement345', cardinality 0..*) is associated with 'dsl::LabeledStatement' (role 'dsl_LabeledStatement344', cardinality 0..*).
+'dsl::Block' (role 'dsl_Block436', cardinality 0..*) is associated with 'dsl::SynchronizedStatement' (role 'dsl_SynchronizedStatement435', cardinality 0..*).
+'dsl::BlockStatement' (role 'dsl_BlockStatement', cardinality 0..*) is associated with 'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration100', cardinality 0..*).
+'dsl::CastExpression' (role 'dsl_CastExpression225', cardinality 0..*) is associated with 'dsl::Type' (role 'dsl_Type226', cardinality 0..*).
+'dsl::DoStatement' (role 'dsl_DoStatement393', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement394', cardinality 0..*).
+'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration482', cardinality 0..*) is associated with 'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration481', cardinality 0..*).
+'dsl::BaseLiteral' (role 'dsl_BaseLiteral262', cardinality 0..*) is associated with 'dsl::SignedIntLiteral' (role 'dsl_SignedIntLiteral', cardinality 0..*).
+'dsl::AssertStatement' (role 'dsl_AssertStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement309', cardinality 0..*).
+'dsl::FormalParameter' (role 'dsl_FormalParameter113', cardinality 0..*) is associated with 'dsl::Type' (role 'dsl_Type114', cardinality 0..*).
+'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration94', cardinality 0..*) is associated with 'dsl::FormalParameters' (role 'dsl_FormalParameters', cardinality 0..*).
+'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration106', cardinality 0..*) is associated with 'dsl::Block' (role 'dsl_Block', cardinality 0..*).
+'dsl::ShiftExpression' (role 'dsl_ShiftExpression', cardinality 0..*) is associated with 'dsl::RelationalExpression' (role 'dsl_RelationalExpression185', cardinality 0..*).
+'dsl::BlockStatement' (role 'dsl_BlockStatement348', cardinality 0..*) is associated with 'dsl::Block' (role 'dsl_Block347', cardinality 0..*).
+'dsl::TryStatement' (role 'dsl_TryStatement438', cardinality 0..*) is associated with 'dsl::Block' (role 'dsl_Block439', cardinality 0..*).
+'dsl::ClassOrInterfaceBody' (role 'dsl_ClassOrInterfaceBody', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration27', cardinality 0..*).
+'dsl::EObject' (role 'dsl_EObject', cardinality 0..*) is associated with 'dsl::CastExpression' (role 'dsl_CastExpression228', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement353', cardinality 0..*) is associated with 'dsl::BlockStatement' (role 'dsl_BlockStatement352', cardinality 0..*).
+'dsl::VariableDeclarator' (role 'dsl_VariableDeclarator82', cardinality 0..*) is associated with 'dsl::VariableInitializer' (role 'dsl_VariableInitializer', cardinality 0..*).
+'dsl::ExtendsList' (role 'dsl_ExtendsList29', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType', cardinality 0..*).
+'dsl::TryStatement' (role 'dsl_TryStatement441', cardinality 0..*) is associated with 'dsl::FormalParameter' (role 'dsl_FormalParameter442', cardinality 0..*).
+'dsl::Block' (role 'dsl_Block312', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement311', cardinality 0..*).
+'dsl::IntegerLiteral' (role 'dsl_IntegerLiteral', cardinality 0..*) is associated with 'dsl::SignedIntLiteral' (role 'dsl_SignedIntLiteral264', cardinality 0..*).
+'dsl::ConditionalExpression' (role 'dsl_ConditionalExpression', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression150', cardinality 0..*).
+'dsl::MethodDeclarator' (role 'dsl_MethodDeclarator', cardinality 0..*) is associated with 'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration104', cardinality 0..*).
+'dsl::AdditiveExpression' (role 'dsl_AdditiveExpression', cardinality 0..*) is associated with 'dsl::ShiftExpression' (role 'dsl_ShiftExpression187', cardinality 0..*).
+'dsl::LocalVariableDeclaration' (role 'dsl_LocalVariableDeclaration', cardinality 0..*) is associated with 'dsl::BlockStatement' (role 'dsl_BlockStatement350', cardinality 0..*).
+'dsl::ExtendsList' (role 'dsl_ExtendsList31', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType32', cardinality 0..*).
+'dsl::Block' (role 'dsl_Block445', cardinality 0..*) is associated with 'dsl::TryStatement' (role 'dsl_TryStatement444', cardinality 0..*).
+'dsl::FormalParameters' (role 'dsl_FormalParameters111', cardinality 0..*) is associated with 'dsl::FormalParameter' (role 'dsl_FormalParameter', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression397', cardinality 0..*) is associated with 'dsl::DoStatement' (role 'dsl_DoStatement396', cardinality 0..*).
+'dsl::PrimaryExpression' (role 'dsl_PrimaryExpression230', cardinality 0..*) is associated with 'dsl::EObject' (role 'dsl_EObject231', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement314', cardinality 0..*) is associated with 'dsl::StatementExpression' (role 'dsl_StatementExpression', cardinality 0..*).
+'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration487', cardinality 0..*) is associated with 'dsl::AnnotationTypeDeclaration' (role 'dsl_AnnotationTypeDeclaration488', cardinality 0..*).
+'dsl::UnsignedIntLiteral' (role 'dsl_UnsignedIntLiteral267', cardinality 0..*) is associated with 'dsl::IntegerLiteral' (role 'dsl_IntegerLiteral266', cardinality 0..*).
+'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration66', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration67', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression153', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression151', cardinality 0..*).
+'dsl::TypeBound' (role 'dsl_TypeBound', cardinality 0..*) is associated with 'dsl::TypeParameter' (role 'dsl_TypeParameter53', cardinality 0..*).
+'dsl::AdditiveExpression' (role 'dsl_AdditiveExpression189', cardinality 0..*) is associated with 'dsl::MultiplicativeExpression' (role 'dsl_MultiplicativeExpression', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement320', cardinality 0..*) is associated with 'dsl::WhileStatement' (role 'dsl_WhileStatement', cardinality 0..*).
+'dsl::Name' (role 'dsl_Name447', cardinality 0..*) is associated with 'dsl::Annotation' (role 'dsl_Annotation', cardinality 0..*).
+'dsl::PreIncrementExpression' (role 'dsl_PreIncrementExpression', cardinality 0..*) is associated with 'dsl::UnaryExpression' (role 'dsl_UnaryExpression196', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type400', cardinality 0..*) is associated with 'dsl::ForStatement' (role 'dsl_ForStatement399', cardinality 0..*).
+'dsl::TypeArguments' (role 'dsl_TypeArguments134', cardinality 0..*) is associated with 'dsl::TypeArgument' (role 'dsl_TypeArgument', cardinality 0..*).
+'dsl::SwitchStatement' (role 'dsl_SwitchStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement316', cardinality 0..*).
+'dsl::FloatLiteral' (role 'dsl_FloatLiteral', cardinality 0..*) is associated with 'dsl::DecimalNumber' (role 'dsl_DecimalNumber269', cardinality 0..*).
+'dsl::FieldDeclaration' (role 'dsl_FieldDeclaration491', cardinality 0..*) is associated with 'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration490', cardinality 0..*).
+'dsl::Name' (role 'dsl_Name9', cardinality 0..*) is associated with 'dsl::ImportDeclaration' (role 'dsl_ImportDeclaration8', cardinality 0..*).
+'dsl::MethodDeclarator' (role 'dsl_MethodDeclarator108', cardinality 0..*) is associated with 'dsl::FormalParameters' (role 'dsl_FormalParameters109', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression155', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement', cardinality 0..*).
+'dsl::UnaryExpression' (role 'dsl_UnaryExpression', cardinality 0..*) is associated with 'dsl::MultiplicativeExpression' (role 'dsl_MultiplicativeExpression191', cardinality 0..*).
+'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration356', cardinality 0..*) is associated with 'dsl::BlockStatement' (role 'dsl_BlockStatement355', cardinality 0..*).
+'dsl::StatementExpressionList' (role 'dsl_StatementExpressionList424', cardinality 0..*) is associated with 'dsl::ForUpdate' (role 'dsl_ForUpdate423', cardinality 0..*).
+'dsl::Arguments' (role 'dsl_Arguments120', cardinality 0..*) is associated with 'dsl::ExplicitConstructorInvocation' (role 'dsl_ExplicitConstructorInvocation119', cardinality 0..*).
+'dsl::MemberValuePairs' (role 'dsl_MemberValuePairs', cardinality 0..*) is associated with 'dsl::Annotation' (role 'dsl_Annotation449', cardinality 0..*).
+'dsl::ExtendsList' (role 'dsl_ExtendsList', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceDeclaration' (role 'dsl_ClassOrInterfaceDeclaration23', cardinality 0..*).
+'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration72', cardinality 0..*).
+'dsl::PreDecrementExpression' (role 'dsl_PreDecrementExpression', cardinality 0..*) is associated with 'dsl::UnaryExpression' (role 'dsl_UnaryExpression198', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression403', cardinality 0..*) is associated with 'dsl::ForStatement' (role 'dsl_ForStatement402', cardinality 0..*).
+'dsl::IfStatement' (role 'dsl_IfStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement318', cardinality 0..*).
+'dsl::DecimalNumber' (role 'dsl_DecimalNumber272', cardinality 0..*) is associated with 'dsl::FloatLiteral' (role 'dsl_FloatLiteral271', cardinality 0..*).
+'dsl::AnnotationTypeMemberDeclaration' (role 'dsl_AnnotationTypeMemberDeclaration484', cardinality 0..*) is associated with 'dsl::EnumDeclaration' (role 'dsl_EnumDeclaration485', cardinality 0..*).
+'dsl::UnaryExpression' (role 'dsl_UnaryExpression194', cardinality 0..*) is associated with 'dsl::UnaryExpression' (role 'dsl_UnaryExpression192', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement158', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression157', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type359', cardinality 0..*) is associated with 'dsl::LocalVariableDeclaration' (role 'dsl_LocalVariableDeclaration358', cardinality 0..*).
+'dsl::MemberValue' (role 'dsl_MemberValue', cardinality 0..*) is associated with 'dsl::Annotation' (role 'dsl_Annotation451', cardinality 0..*).
+'dsl::ImplementsList' (role 'dsl_ImplementsList34', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType35', cardinality 0..*).
+'dsl::TypeArguments' (role 'dsl_TypeArguments233', cardinality 0..*) is associated with 'dsl::MemberSelector' (role 'dsl_MemberSelector', cardinality 0..*).
+'dsl::ForInit' (role 'dsl_ForInit', cardinality 0..*) is associated with 'dsl::ForStatement' (role 'dsl_ForStatement405', cardinality 0..*).
+'dsl::EnumBody' (role 'dsl_EnumBody', cardinality 0..*) is associated with 'dsl::EnumDeclaration' (role 'dsl_EnumDeclaration40', cardinality 0..*).
+'dsl::MemberSelector' (role 'dsl_MemberSelector251', cardinality 0..*) is associated with 'dsl::PrimarySuffix' (role 'dsl_PrimarySuffix250', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression285', cardinality 0..*) is associated with 'dsl::ArgumentList' (role 'dsl_ArgumentList284', cardinality 0..*).
+'dsl::IntegerLiteral' (role 'dsl_IntegerLiteral275', cardinality 0..*) is associated with 'dsl::Literal' (role 'dsl_Literal274', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type', cardinality 0..*) is associated with 'dsl::FieldDeclaration' (role 'dsl_FieldDeclaration76', cardinality 0..*).
+'dsl::EnumBody' (role 'dsl_EnumBody42', cardinality 0..*) is associated with 'dsl::EnumConstant' (role 'dsl_EnumConstant', cardinality 0..*).
+'dsl::VariableDeclarator' (role 'dsl_VariableDeclarator362', cardinality 0..*) is associated with 'dsl::LocalVariableDeclaration' (role 'dsl_LocalVariableDeclaration361', cardinality 0..*).
+'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration69', cardinality 0..*) is associated with 'dsl::EnumDeclaration' (role 'dsl_EnumDeclaration70', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression166', cardinality 0..*) is associated with 'dsl::ConditionalExpression' (role 'dsl_ConditionalExpression165', cardinality 0..*).
+'dsl::ConditionalOrExpression' (role 'dsl_ConditionalOrExpression', cardinality 0..*) is associated with 'dsl::ConditionalExpression' (role 'dsl_ConditionalExpression160', cardinality 0..*).
+'dsl::VariableDeclaratorId' (role 'dsl_VariableDeclaratorId117', cardinality 0..*) is associated with 'dsl::FormalParameter' (role 'dsl_FormalParameter116', cardinality 0..*).
+'dsl::MemberValuePair' (role 'dsl_MemberValuePair', cardinality 0..*) is associated with 'dsl::MemberValuePairs' (role 'dsl_MemberValuePairs453', cardinality 0..*).
+'dsl::PrimaryPrefix' (role 'dsl_PrimaryPrefix', cardinality 0..*) is associated with 'dsl::Literal' (role 'dsl_Literal235', cardinality 0..*).
+'dsl::ForStatement' (role 'dsl_ForStatement407', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression408', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement322', cardinality 0..*) is associated with 'dsl::DoStatement' (role 'dsl_DoStatement', cardinality 0..*).
+'dsl::FloatLiteral' (role 'dsl_FloatLiteral278', cardinality 0..*) is associated with 'dsl::Literal' (role 'dsl_Literal277', cardinality 0..*).
+'dsl::ExplicitConstructorInvocation' (role 'dsl_ExplicitConstructorInvocation122', cardinality 0..*) is associated with 'dsl::PrimaryExpression' (role 'dsl_PrimaryExpression', cardinality 0..*).
+'dsl::StatementExpression' (role 'dsl_StatementExpression364', cardinality 0..*) is associated with 'dsl::PreIncrementExpression' (role 'dsl_PreIncrementExpression365', cardinality 0..*).
+'dsl::UnaryExpressionNotPlusMinus' (role 'dsl_UnaryExpressionNotPlusMinus', cardinality 0..*) is associated with 'dsl::UnaryExpression' (role 'dsl_UnaryExpression200', cardinality 0..*).
+'dsl::ConditionalExpression' (role 'dsl_ConditionalExpression162', cardinality 0..*) is associated with 'dsl::Expression' (role 'dsl_Expression163', cardinality 0..*).
+'dsl::MemberValue' (role 'dsl_MemberValue456', cardinality 0..*) is associated with 'dsl::MemberValuePair' (role 'dsl_MemberValuePair455', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression238', cardinality 0..*) is associated with 'dsl::PrimaryPrefix' (role 'dsl_PrimaryPrefix237', cardinality 0..*).
+'dsl::ForUpdate' (role 'dsl_ForUpdate', cardinality 0..*) is associated with 'dsl::ForStatement' (role 'dsl_ForStatement410', cardinality 0..*).
+'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration74', cardinality 0..*) is associated with 'dsl::FieldDeclaration' (role 'dsl_FieldDeclaration', cardinality 0..*).
+'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration', cardinality 0..*) is associated with 'dsl::EnumBody' (role 'dsl_EnumBody44', cardinality 0..*).
+'dsl::TypeBodyModifier' (role 'dsl_TypeBodyModifier', cardinality 0..*) is associated with 'dsl::CommonModifier' (role 'dsl_CommonModifier', cardinality 0..*).
+'dsl::ForStatement' (role 'dsl_ForStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement324', cardinality 0..*).
+'dsl::Literal' (role 'dsl_Literal280', cardinality 0..*) is associated with 'dsl::BooleanLiteral' (role 'dsl_BooleanLiteral', cardinality 0..*).
+'dsl::Block' (role 'dsl_Block125', cardinality 0..*) is associated with 'dsl::Initializer' (role 'dsl_Initializer124', cardinality 0..*).
+'dsl::PreDecrementExpression' (role 'dsl_PreDecrementExpression368', cardinality 0..*) is associated with 'dsl::StatementExpression' (role 'dsl_StatementExpression367', cardinality 0..*).
+'dsl::VariableDeclarator' (role 'dsl_VariableDeclarator80', cardinality 0..*) is associated with 'dsl::VariableDeclaratorId' (role 'dsl_VariableDeclaratorId', cardinality 0..*).
+'dsl::PreIncrementExpression' (role 'dsl_PreIncrementExpression202', cardinality 0..*) is associated with 'dsl::PrimaryExpression' (role 'dsl_PrimaryExpression203', cardinality 0..*).
+'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType130', cardinality 0..*) is associated with 'dsl::ReferenceType' (role 'dsl_ReferenceType129', cardinality 0..*).
+'dsl::NameList' (role 'dsl_NameList147', cardinality 0..*) is associated with 'dsl::Name' (role 'dsl_Name148', cardinality 0..*).
+'dsl::Annotation' (role 'dsl_Annotation459', cardinality 0..*) is associated with 'dsl::MemberValue' (role 'dsl_MemberValue458', cardinality 0..*).
+'dsl::EnumConstant' (role 'dsl_EnumConstant48', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceBody' (role 'dsl_ClassOrInterfaceBody49', cardinality 0..*).
+'dsl::PrimaryPrefix' (role 'dsl_PrimaryPrefix240', cardinality 0..*) is associated with 'dsl::AllocationExpression' (role 'dsl_AllocationExpression', cardinality 0..*).
+'dsl::ForStatement' (role 'dsl_ForStatement412', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement413', cardinality 0..*).
+'dsl::ArgumentList' (role 'dsl_ArgumentList', cardinality 0..*) is associated with 'dsl::Arguments' (role 'dsl_Arguments282', cardinality 0..*).
+'dsl::Statement' (role 'dsl_Statement326', cardinality 0..*) is associated with 'dsl::BreakStatement' (role 'dsl_BreakStatement', cardinality 0..*).
+'dsl::StatementExpression' (role 'dsl_StatementExpression370', cardinality 0..*) is associated with 'dsl::PrimaryExpression' (role 'dsl_PrimaryExpression371', cardinality 0..*).
+'dsl::ReferenceType' (role 'dsl_ReferenceType', cardinality 0..*) is associated with 'dsl::Type' (role 'dsl_Type127', cardinality 0..*).
+'dsl::PrimaryExpression' (role 'dsl_PrimaryExpression206', cardinality 0..*) is associated with 'dsl::PreDecrementExpression' (role 'dsl_PreDecrementExpression205', cardinality 0..*).
+'dsl::PackageDeclaration' (role 'dsl_PackageDeclaration', cardinality 0..*) is associated with 'dsl::CompilationUnit' (role 'dsl_CompilationUnit', cardinality 0..*).
+'dsl::ConditionalAndExpression' (role 'dsl_ConditionalAndExpression', cardinality 0..*) is associated with 'dsl::ConditionalOrExpression' (role 'dsl_ConditionalOrExpression168', cardinality 0..*).
+'dsl::MemberValueArrayInitializer' (role 'dsl_MemberValueArrayInitializer', cardinality 0..*) is associated with 'dsl::MemberValue' (role 'dsl_MemberValue461', cardinality 0..*).
+'dsl::ResultType' (role 'dsl_ResultType243', cardinality 0..*) is associated with 'dsl::PrimaryPrefix' (role 'dsl_PrimaryPrefix242', cardinality 0..*).
+'dsl::LocalVariableDeclaration' (role 'dsl_LocalVariableDeclaration416', cardinality 0..*) is associated with 'dsl::ForInit' (role 'dsl_ForInit415', cardinality 0..*).
+'dsl::EnumConstant' (role 'dsl_EnumConstant46', cardinality 0..*) is associated with 'dsl::Arguments' (role 'dsl_Arguments', cardinality 0..*).
+'dsl::ArrayDimsAndInits' (role 'dsl_ArrayDimsAndInits', cardinality 0..*) is associated with 'dsl::AllocationExpression' (role 'dsl_AllocationExpression287', cardinality 0..*).
+'dsl::ContinueStatement' (role 'dsl_ContinueStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement328', cardinality 0..*).
+'dsl::TypeDeclaration' (role 'dsl_TypeDeclaration17', cardinality 0..*) is associated with 'dsl::EnumDeclaration' (role 'dsl_EnumDeclaration', cardinality 0..*).
+'dsl::ImportDeclaration' (role 'dsl_ImportDeclaration', cardinality 0..*) is associated with 'dsl::CompilationUnit' (role 'dsl_CompilationUnit2', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression374', cardinality 0..*) is associated with 'dsl::StatementExpression' (role 'dsl_StatementExpression373', cardinality 0..*).
+'dsl::UnaryExpressionNotPlusMinus' (role 'dsl_UnaryExpressionNotPlusMinus208', cardinality 0..*) is associated with 'dsl::UnaryExpression' (role 'dsl_UnaryExpression209', cardinality 0..*).
+'dsl::ConditionalAndExpression' (role 'dsl_ConditionalAndExpression170', cardinality 0..*) is associated with 'dsl::InclusiveOrExpression' (role 'dsl_InclusiveOrExpression', cardinality 0..*).
+'dsl::TypeParameter' (role 'dsl_TypeParameter', cardinality 0..*) is associated with 'dsl::TypeParameters' (role 'dsl_TypeParameters51', cardinality 0..*).
+'dsl::MemberValue' (role 'dsl_MemberValue463', cardinality 0..*) is associated with 'dsl::ConditionalExpression' (role 'dsl_ConditionalExpression464', cardinality 0..*).
+'dsl::Name' (role 'dsl_Name246', cardinality 0..*) is associated with 'dsl::PrimaryPrefix' (role 'dsl_PrimaryPrefix245', cardinality 0..*).
+'dsl::StatementExpressionList' (role 'dsl_StatementExpressionList', cardinality 0..*) is associated with 'dsl::ForInit' (role 'dsl_ForInit418', cardinality 0..*).
+'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType290', cardinality 0..*) is associated with 'dsl::AllocationExpression' (role 'dsl_AllocationExpression289', cardinality 0..*).
+'dsl::ReturnStatement' (role 'dsl_ReturnStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement330', cardinality 0..*).
+'dsl::CastExpression' (role 'dsl_CastExpression', cardinality 0..*) is associated with 'dsl::UnaryExpressionNotPlusMinus' (role 'dsl_UnaryExpressionNotPlusMinus211', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression377', cardinality 0..*) is associated with 'dsl::SwitchStatement' (role 'dsl_SwitchStatement376', cardinality 0..*).
+'dsl::TypeParameters' (role 'dsl_TypeParameters92', cardinality 0..*) is associated with 'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration91', cardinality 0..*).
+'dsl::ClassOrInterfaceType' (role 'dsl_ClassOrInterfaceType132', cardinality 0..*) is associated with 'dsl::TypeArguments' (role 'dsl_TypeArguments', cardinality 0..*).
+'dsl::CompilationUnit' (role 'dsl_CompilationUnit4', cardinality 0..*) is associated with 'dsl::TypeDeclaration' (role 'dsl_TypeDeclaration', cardinality 0..*).
+'dsl::InclusiveOrExpression' (role 'dsl_InclusiveOrExpression172', cardinality 0..*) is associated with 'dsl::ExclusiveOrExpression' (role 'dsl_ExclusiveOrExpression', cardinality 0..*).
+'dsl::MemberValue' (role 'dsl_MemberValue467', cardinality 0..*) is associated with 'dsl::MemberValueArrayInitializer' (role 'dsl_MemberValueArrayInitializer466', cardinality 0..*).
+'dsl::AllocationExpression' (role 'dsl_AllocationExpression248', cardinality 0..*) is associated with 'dsl::PrimarySuffix' (role 'dsl_PrimarySuffix', cardinality 0..*).
+'dsl::StatementExpression' (role 'dsl_StatementExpression421', cardinality 0..*) is associated with 'dsl::StatementExpressionList' (role 'dsl_StatementExpressionList420', cardinality 0..*).
+'dsl::CommonModifier' (role 'dsl_CommonModifier13', cardinality 0..*) is associated with 'dsl::TypeDeclaration' (role 'dsl_TypeDeclaration12', cardinality 0..*).
+'dsl::AllocationExpression' (role 'dsl_AllocationExpression292', cardinality 0..*) is associated with 'dsl::TypeArguments' (role 'dsl_TypeArguments293', cardinality 0..*).
+'dsl::ThrowStatement' (role 'dsl_ThrowStatement', cardinality 0..*) is associated with 'dsl::Statement' (role 'dsl_Statement332', cardinality 0..*).
+'dsl::ClassOrInterfaceBodyDeclaration' (role 'dsl_ClassOrInterfaceBodyDeclaration59', cardinality 0..*) is associated with 'dsl::ClassOrInterfaceBody' (role 'dsl_ClassOrInterfaceBody58', cardinality 0..*).
+'dsl::VariableInitializer' (role 'dsl_VariableInitializer84', cardinality 0..*) is associated with 'dsl::ArrayInitializer' (role 'dsl_ArrayInitializer', cardinality 0..*).
+'dsl::SwitchLabel' (role 'dsl_SwitchLabel', cardinality 0..*) is associated with 'dsl::SwitchStatement' (role 'dsl_SwitchStatement379', cardinality 0..*).
+'dsl::UnaryExpressionNotPlusMinus' (role 'dsl_UnaryExpressionNotPlusMinus213', cardinality 0..*) is associated with 'dsl::PostfixExpression' (role 'dsl_PostfixExpression', cardinality 0..*).
+'dsl::MethodOrCtorDeclaration' (role 'dsl_MethodOrCtorDeclaration96', cardinality 0..*) is associated with 'dsl::NameList' (role 'dsl_NameList', cardinality 0..*).
+'dsl::Name' (role 'dsl_Name', cardinality 0..*) is associated with 'dsl::PackageDeclaration' (role 'dsl_PackageDeclaration6', cardinality 0..*).
+'dsl::AnnotationTypeBody' (role 'dsl_AnnotationTypeBody', cardinality 0..*) is associated with 'dsl::AnnotationTypeDeclaration' (role 'dsl_AnnotationTypeDeclaration469', cardinality 0..*).
+'dsl::AndExpression' (role 'dsl_AndExpression', cardinality 0..*) is associated with 'dsl::ExclusiveOrExpression' (role 'dsl_ExclusiveOrExpression174', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/leodejevga/Modellgetriebene-Softwareentwicklung/5/petrinet_xtext/model/generated/Petrinet.ecore

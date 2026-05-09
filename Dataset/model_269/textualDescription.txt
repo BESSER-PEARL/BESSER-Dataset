@@ -1,0 +1,76 @@
+The model has 25 class(es).
+The class 'javaless::ETypedElement' has the following attributes: 'ordered' of type bool; 'lowerBound' of type int; 'required' of type bool; 'unique' of type bool; 'many' of type bool; 'upperBound' of type int.
+The class 'EClassifier' has no attributes.
+The class 'EStructuralFeature' has no attributes.
+The class 'javaless::EObject' has no attributes.
+The class 'javaless::EStringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'javaless::EClassifier' has the following attributes: 'instanceClass' of type str; 'instanceClassName' of type str; 'defaultValue' of type str.
+The class 'javaless::EPackage' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'EModelElement' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'javaless::EReference' has the following attributes: 'containment' of type bool; 'container' of type bool; 'resolveProxies' of type bool.
+The class 'javaless::EEnum' has no attributes.
+The class 'EObject' has no attributes.
+The class 'javaless::ENamedElement' has the following attributes: 'name' of type str.
+The class 'javaless::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'javaless::EEnumLiteral' has the following attributes: 'instance' of type str; 'value' of type int; 'literal' of type str.
+The class 'javaless::EModelElement' has no attributes.
+The class 'javaless::EAnnotation' has the following attributes: 'source' of type str.
+The class 'EDataType' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'javaless::EClass' has the following attributes: 'interface' of type bool; 'abstract' of type bool.
+The class 'javaless::EAttribute' has the following attributes: 'iD' of type bool.
+The class 'javaless::EFactory' has no attributes.
+The class 'javaless::EParameter' has no attributes.
+The class 'javaless::EOperation' has no attributes.
+The class 'javaless::EStructuralFeature' has the following attributes: 'transient' of type bool; 'changeable' of type bool; 'defaultValue' of type str; 'unsettable' of type bool; 'derived' of type bool; 'volatile' of type bool; 'defaultValueLiteral' of type str.
+'javaless::EClass' is a specialization of 'EClassifier'.
+'javaless::EParameter' is a specialization of 'ETypedElement'.
+'javaless::EReference' is a specialization of 'EStructuralFeature'.
+'javaless::EAnnotation' is a specialization of 'EModelElement'.
+'javaless::EAttribute' is a specialization of 'EStructuralFeature'.
+'javaless::EFactory' is a specialization of 'EModelElement'.
+'javaless::ENamedElement' is a specialization of 'EModelElement'.
+'javaless::EEnumLiteral' is a specialization of 'ENamedElement'.
+'javaless::EOperation' is a specialization of 'ETypedElement'.
+'javaless::ETypedElement' is a specialization of 'ENamedElement'.
+'javaless::EStructuralFeature' is a specialization of 'ETypedElement'.
+'javaless::EEnum' is a specialization of 'EDataType'.
+'javaless::EPackage' is a specialization of 'ENamedElement'.
+'javaless::EModelElement' is a specialization of 'EObject'.
+'javaless::EClassifier' is a specialization of 'ENamedElement'.
+'javaless::EDataType' is a specialization of 'EClassifier'.
+'javaless::EClass' (role 'javaless_EClass63', cardinality 0..*) is associated with 'javaless::EReference' (role 'javaless_EReference62', cardinality 0..*).
+'javaless::EClassifier' (role 'javaless_EClassifier', cardinality 0..*) is associated with 'javaless::EOperation' (role 'javaless_EOperation46', cardinality 0..*).
+'javaless::EEnumLiteral' (role 'eLiterals', cardinality 0..*) is associated with 'javaless::EEnum' (role 'EEnum', cardinality 0..*).
+'javaless::EOperation' (role 'EOperation', cardinality 0..*) is associated with 'javaless::EClass' (role 'eContainingClass', cardinality 0..*).
+'javaless::EAttribute' (role 'javaless_EAttribute', cardinality 0..*) is associated with 'javaless::EDataType' (role 'javaless_EDataType', cardinality 0..*).
+'javaless::EModelElement' (role 'eModelElement', cardinality 0..*) is associated with 'javaless::EAnnotation' (role 'EAnnotation', cardinality 0..*).
+'javaless::EClass' (role 'javaless_EClass29', cardinality 0..*) is associated with 'javaless::EClass' (role 'javaless_EClass31', cardinality 0..*).
+'javaless::EFactory' (role 'eFactoryInstance', cardinality 0..*) is associated with 'javaless::EPackage' (role 'EPackage41', cardinality 0..*).
+'javaless::EModelElement' (role 'EModelElement', cardinality 0..*) is associated with 'javaless::EAnnotation' (role 'eAnnotations', cardinality 0..*).
+'javaless::EClass' (role 'javaless_EClass20', cardinality 0..*) is associated with 'javaless::EAttribute' (role 'javaless_EAttribute21', cardinality 0..*).
+'javaless::ETypedElement' (role 'javaless_ETypedElement', cardinality 0..*) is associated with 'javaless::EClassifier' (role 'javaless_EClassifier67', cardinality 0..*).
+'javaless::EStructuralFeature' (role 'javaless_EStructuralFeature', cardinality 0..*) is associated with 'javaless::EClass' (role 'javaless_EClass28', cardinality 0..*).
+'javaless::EFactory' (role 'EFactory', cardinality 0..*) is associated with 'javaless::EPackage' (role 'ePackage', cardinality 0..*).
+'javaless::EAnnotation' (role 'javaless_EAnnotation', cardinality 0..*) is associated with 'javaless::EStringToStringMapEntry' (role 'javaless_EStringToStringMapEntry', cardinality 0..*).
+'javaless::EPackage' (role 'eSubpackages', cardinality 0..*) is associated with 'javaless::EPackage' (role 'EPackage55', cardinality 0..*).
+'javaless::EClass' (role 'javaless_EClass17', cardinality 0..*) is associated with 'javaless::EReference' (role 'javaless_EReference18', cardinality 0..*).
+'javaless::EPackage' (role 'EPackage52', cardinality 0..*) is associated with 'javaless::EPackage' (role 'eSuperPackage', cardinality 0..*).
+'javaless::EReference' (role 'javaless_EReference24', cardinality 0..*) is associated with 'javaless::EClass' (role 'javaless_EClass23', cardinality 0..*).
+'javaless::EOperation' (role 'EOperation57', cardinality 0..*) is associated with 'javaless::EParameter' (role 'eParameters', cardinality 0..*).
+'javaless::EClass' (role 'javaless_EClass', cardinality 0..*) is associated with 'javaless::EClass' (role 'javaless_EClass8', cardinality 0..*).
+'javaless::EParameter' (role 'EParameter', cardinality 0..*) is associated with 'javaless::EOperation' (role 'eOperation', cardinality 0..*).
+'javaless::EClass' (role 'EClass65', cardinality 0..*) is associated with 'javaless::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*).
+'javaless::EOperation' (role 'eOperations', cardinality 0..*) is associated with 'javaless::EClass' (role 'EClass', cardinality 0..*).
+'javaless::EReference' (role 'javaless_EReference60', cardinality 0..*) is associated with 'javaless::EReference' (role 'javaless_EReference58', cardinality 0..*).
+'javaless::EOperation' (role 'javaless_EOperation', cardinality 0..*) is associated with 'javaless::EClass' (role 'javaless_EClass26', cardinality 0..*).
+'javaless::EClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'javaless::EPackage' (role 'EPackage', cardinality 0..*).
+'javaless::EPackage' (role 'ePackage49', cardinality 0..*) is associated with 'javaless::EClassifier' (role 'EClassifier', cardinality 0..*).
+'javaless::EAnnotation' (role 'javaless_EAnnotation6', cardinality 0..*) is associated with 'javaless::EObject' (role 'javaless_EObject7', cardinality 0..*).
+'javaless::EClass' (role 'javaless_EClass15', cardinality 0..*) is associated with 'javaless::EReference' (role 'javaless_EReference', cardinality 0..*).
+'javaless::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*) is associated with 'javaless::EClass' (role 'eContainingClass36', cardinality 0..*).
+'javaless::EClass' (role 'javaless_EClass12', cardinality 0..*) is associated with 'javaless::EAttribute' (role 'javaless_EAttribute13', cardinality 0..*).
+'javaless::EAttribute' (role 'javaless_EAttribute34', cardinality 0..*) is associated with 'javaless::EClass' (role 'javaless_EClass33', cardinality 0..*).
+'javaless::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*) is associated with 'javaless::EEnum' (role 'eEnum', cardinality 0..*).
+'javaless::EObject' (role 'javaless_EObject', cardinality 0..*) is associated with 'javaless::EAnnotation' (role 'javaless_EAnnotation4', cardinality 0..*).

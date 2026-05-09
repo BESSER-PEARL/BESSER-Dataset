@@ -1,0 +1,70 @@
+from datetime import datetime, date, time
+from abc import ABC, abstractmethod
+
+
+############################################
+# Definition of Classes
+############################################
+
+class PlaceToTransArc:
+
+    pass
+class TransToPlaceArc:
+
+    pass
+class Arc:
+
+    pass
+class PetriNet_TransToPlaceArc(Arc):
+
+    pass
+class PetriNet_PlaceToTransArc(Arc):
+
+    pass
+class Transition:
+
+    pass
+class Place:
+
+    pass
+class Element:
+
+    pass
+class PetriNet_Transition(Element):
+
+    pass
+class PetriNet_Place(Element):
+
+    pass
+class PetriNet_PetriNet(Element):
+
+    pass
+class PetriNet_Element(ABC):
+
+    def __init__(self, name: str):
+        self.name = name
+        
+        pass
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+
+class PetriNet_Arc:
+
+    def __init__(self, weight: int):
+        self.weight = weight
+        
+        pass
+    @property
+    def weight(self):
+        return self.__weight
+
+    @weight.setter
+    def weight(self, weight: int):
+        self.__weight = weight
+

@@ -1,0 +1,408 @@
+The model has 180 class(es).
+The class 'statements::Statement' has no attributes.
+The class 'ccsl::action::ReplaceArithmeticOperatorAction' has no attributes.
+The class 'ccsl::datatype::IntPrimitiveType' has no attributes.
+The class 'expressions::OperatorExpression' has no attributes.
+The class 'ccsl::invocation::Invocation' has the following attributes: 'argsKind' of type str.
+The class 'ccsl::booleanFunctions::CcslBooleanFunction' has no attributes.
+The class 'ccsl::filters::SuperMethodClosureFilter' has no attributes.
+The class 'ccsl::filters::HasSameReferenceFilter' has no attributes.
+The class 'ccsl::statements::InstanceCreation' has the following attributes: 'argsKind' of type str.
+The class 'ccsl::filters::ChildClosureComplexTypeFilter' has no attributes.
+The class 'InjectionStrategy' has no attributes.
+The class 'elements::Element' has no attributes.
+The class 'ccsl::variable::ParameterVariable' has no attributes.
+The class 'ccsl::elements::Element' has the following attributes: 'uniqueName' of type str.
+The class 'ccsl::statements::ControlFlow' has no attributes.
+The class 'ccsl::AtomicRule' has no attributes.
+The class 'ccsl::filters::SuperClassClosureFilter' has the following attributes: 'includesSubClass' of type str.
+The class 'namedElements::NamedElement' has no attributes.
+The class 'import::ImportStatement' has no attributes.
+The class 'ccsl::statements::ArrayCreation' has no attributes.
+The class 'UnaryAssignment' has no attributes.
+The class 'ccsl::literalValues::LiteralValue' has the following attributes: 'value' of type str.
+The class 'ccsl::Root' has no attributes.
+The class 'ccsl::filters::IsKindOfFilter' has no attributes.
+The class 'ccsl::numberFunctions::CcslNumberFunction' has no attributes.
+The class 'ccsl::numberFunctions::GetIndexOf' has no attributes.
+The class 'ccsl::tryCatch::CatchClause' has no attributes.
+The class 'ccsl::filters::IsStringFilter' has no attributes.
+The class 'variable::InitializableVariable' has no attributes.
+The class 'ccsl::import::ImportableElement' has no attributes.
+The class 'TemplateFilter' has no attributes.
+The class 'statements::Block' has no attributes.
+The class 'ccsl::filters::Filter' has the following attributes: 'negated' of type str.
+The class 'ccsl::controlFlow::LoopStatement' has no attributes.
+The class 'ccsl::action::ChangeLiteralValueAction' has no attributes.
+The class 'annotation::Annotation' has no attributes.
+The class 'ccsl::statements::VarDeclaration' has no attributes.
+The class 'numberFunctions::CcslNumberFunction' has no attributes.
+The class 'ccsl::literalValues::NullLiteral' has no attributes.
+The class 'tryCatch::CatchClause' has no attributes.
+The class 'ccsl::literalValues::CharacterLiteral' has no attributes.
+The class 'CcslBooleanFunction' has no attributes.
+The class 'ccsl::controlFlow::SwitchCaseBlock' has the following attributes: 'default' of type str.
+The class 'ObjectType' has no attributes.
+The class 'SimpleMethodInvocation' has no attributes.
+The class 'ccsl::filters::PropertyFilter' has no attributes.
+The class 'ccsl::filters::AtomicFilter' has no attributes.
+The class 'ccsl::method::SimpleMethod' has the following attributes: 'visibility' of type str; 'paramsKind' of type str.
+The class 'Invocation' has no attributes.
+The class 'Root' has no attributes.
+The class 'ccsl::statements::Access' has no attributes.
+The class 'ccsl::statements::Statement' has no attributes.
+The class 'ccsl::statements::EmptyStatement' has no attributes.
+The class 'complexType::DeclaredType' has no attributes.
+The class 'ccsl::tryCatch::TryStatement' has no attributes.
+The class 'LiteralValue' has no attributes.
+The class 'ccsl::statements::ContinueStatement' has no attributes.
+The class 'ccsl::complexType::JClass' has the following attributes: 'inheritance' of type str.
+The class 'ccsl::expressions::InfixExpression' has no attributes.
+The class 'ccsl::strategy::AllStrategy' has no attributes.
+The class 'ccsl::complexType::JInterface' has no attributes.
+The class 'method::Method' has no attributes.
+The class 'AtomicFilter' has no attributes.
+The class 'ccsl::filters::SameNameFilter' has the following attributes: 'ignoreCase' of type str.
+The class 'ccsl::datatype::GenericType' has no attributes.
+The class 'ccsl::method::Method' has the following attributes: 'inheritance' of type str; 'final' of type str; 'abstract' of type str; 'static' of type str.
+The class 'ccsl::assignment::PostfixUnaryAssignment' has no attributes.
+The class 'Element' has no attributes.
+The class 'ccsl::statements::NamedElementAccess' has no attributes.
+The class 'ccsl::datatype::ShortPrimitiveType' has no attributes.
+The class 'ccsl::filters::BlockLastStatementFilter' has no attributes.
+The class 'ccsl::numberFunctions::CcslIntegerLiteral' has the following attributes: 'value' of type str.
+The class 'ccsl::variable::Variable' has the following attributes: 'final' of type str.
+The class 'ccsl::statements::InstanceOf' has no attributes.
+The class 'InjectionAction' has no attributes.
+The class 'ccsl::variable::InitializableVariable' has no attributes.
+The class 'ccsl::namedElements::NamedElement' has the following attributes: 'avaliableInSourceCode' of type str; 'name' of type str.
+The class 'ccsl::functions::CcslFunction' has no attributes.
+The class 'ccsl::expressions::BooleanExpression' has the following attributes: 'booleanOperator' of type str.
+The class 'ccsl::complexType::ComplexType' has no attributes.
+The class 'ccsl::method::Constructor' has the following attributes: 'avaliableInSourceCode' of type str.
+The class 'ccsl::variable::LocalVariable' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'Statement' has no attributes.
+The class 'annotation::AnnotableElement' has no attributes.
+The class 'variable::Variable' has no attributes.
+The class 'CcslFunction' has no attributes.
+The class 'ccsl::filters::RegexMatch' has the following attributes: 'regex' of type str.
+The class 'ccsl::statements::ThrowStatement' has no attributes.
+The class 'ccsl::complexType::DeclaredType' has the following attributes: 'visibility' of type str; 'static' of type str.
+The class 'ccsl::datatype::ParameterizedType' has no attributes.
+The class 'ccsl::assignment::AbstractAssignment' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'ccsl::variable::FieldVariable' has the following attributes: 'visibility' of type str; 'static' of type str.
+The class 'ccsl::datatype::PrimitiveType' has no attributes.
+The class 'ccsl::action::DeleteInfixOperatorAction' has no attributes.
+The class 'variable::ParameterVariable' has no attributes.
+The class 'ccsl::datatype::DataType' has no attributes.
+The class 'ccsl::invocation::MethodInvocation' has no attributes.
+The class 'ccsl::statements::ThisStatement' has no attributes.
+The class 'ccsl::assignment::PrefixUnaryAssignment' has no attributes.
+The class 'ccsl::statements::BreakStatement' has no attributes.
+The class 'ccsl::filters::CompositeFilter' has the following attributes: 'operator' of type str.
+The class 'OperatorExpression' has no attributes.
+The class 'DataType' has no attributes.
+The class 'statements::Access' has no attributes.
+The class 'Access' has no attributes.
+The class 'Block' has no attributes.
+The class 'complexType::JInterface' has no attributes.
+The class 'datatype::ObjectType' has no attributes.
+The class 'ccsl::literalValues::BooleanLiteral' has no attributes.
+The class 'ccsl::import::ImportStatement' has no attributes.
+The class 'ccsl::datatype::VoidType' has no attributes.
+The class 'complexType::JClass' has no attributes.
+The class 'ccsl::context::Context' has no attributes.
+The class 'ccsl::action::DeleteAction' has no attributes.
+The class 'method::Constructor' has no attributes.
+The class 'ccsl::controlFlow::SwitchStatement' has no attributes.
+The class 'ccsl::filters::TemplateFilter' has no attributes.
+The class 'ccsl::action::DeleteRandomStatementAction' has no attributes.
+The class 'SimpleMethod' has no attributes.
+The class 'Filter' has no attributes.
+The class 'datatype::DataType' has no attributes.
+The class 'ccsl::controlFlow::IfStatement' has no attributes.
+The class 'Variable' has no attributes.
+The class 'ccsl::literalValues::StringLiteral' has no attributes.
+The class 'ControlFlow' has no attributes.
+The class 'ccsl::faultTypeDescription::InjectionStrategy' has no attributes.
+The class 'AbstractAssignment' has no attributes.
+The class 'ccsl::statements::DataTypeAccess' has no attributes.
+The class 'complexType::ComplexType' has no attributes.
+The class 'ccsl::filters::CountFilter' has the following attributes: 'max' of type str; 'min' of type str.
+The class 'ccsl::faultTypeDescription::InjectionAction' has no attributes.
+The class 'ccsl::expressions::OperatorExpression' has no attributes.
+The class 'ccsl::statements::VariableAccess' has no attributes.
+The class 'ccsl::statements::SynchronizedBlock' has no attributes.
+The class 'ccsl::statements::Block' has the following attributes: 'statementsKind' of type str.
+The class 'ccsl::namedElements::Package' has no attributes.
+The class 'ccsl::expressions::ParenthesizedExpression' has no attributes.
+The class 'CcslNumberFunction' has no attributes.
+The class 'ccsl::annotation::AnnotableElement' has the following attributes: 'annotationsKind' of type str.
+The class 'ccsl::filters::IsTypeOfFilter' has no attributes.
+The class 'ccsl::invocation::SuperMethodInvocation' has no attributes.
+The class 'ccsl::filters::ImplicityOperandFilter' has no attributes.
+The class 'ccsl::invocation::SimpleMethodInvocation' has no attributes.
+The class 'ccsl::expressions::ArithmeticExpression' has the following attributes: 'arithmeticOperator' of type str.
+The class 'filters::Filter' has no attributes.
+The class 'ccsl::CompositeRule' has the following attributes: 'operator' of type str.
+The class 'ccsl::FaultTypeDescription' has the following attributes: 'name' of type str.
+The class 'method::SimpleMethod' has no attributes.
+The class 'ccsl::complexType::AnonymousClass' has no attributes.
+The class 'complexType::AnnotationType' has no attributes.
+The class 'ccsl::complexType::AnnotationType' has no attributes.
+The class 'ccsl::Rule' has the following attributes: 'negated' of type str.
+The class 'ccsl::annotation::Annotation' has no attributes.
+The class 'ccsl::filters::ImplicityContainerFilter' has no attributes.
+The class 'variable::FieldVariable' has no attributes.
+The class 'ccsl::expressions::StringConcatenation' has no attributes.
+The class 'ccsl::datatype::BooleanPrimitiveType' has no attributes.
+The class 'controlFlow::SwitchCaseBlock' has no attributes.
+The class 'ccsl::datatype::StringPrimitiveType' has no attributes.
+The class 'ccsl::statements::ReturnStatement' has no attributes.
+The class 'ccsl::action::ReplaceVariableAccessAction' has no attributes.
+The class 'ccsl::datatype::ArrayType' has the following attributes: 'dimensions' of type str.
+The class 'ccsl::datatype::ObjectType' has no attributes.
+The class 'ccsl::assignment::UnaryAssignment' has the following attributes: 'operator' of type str.
+The class 'ccsl::action::MoveScopeUpAction' has no attributes.
+The class 'Context' has no attributes.
+The class 'ccsl::invocation::ConstructorInvocation' has no attributes.
+The class 'DeclaredType' has no attributes.
+The class 'Rule' has no attributes.
+The class 'ccsl::literalValues::NumberLiteral' has no attributes.
+The class 'ComplexType' has no attributes.
+The class 'action::ArithmeticOperatorMap' has no attributes.
+The class 'ccsl::filters::EquationFilter' has the following attributes: 'operator' of type str.
+The class 'ccsl::assignment::Assignment' has the following attributes: 'operator' of type str.
+The class 'InitializableVariable' has no attributes.
+The class 'ccsl::action::ArithmeticOperatorMap' has the following attributes: 'newArithmeticOperator' of type str; 'oldArithmeticOperator' of type str.
+The class 'import::ImportableElement' has no attributes.
+The class 'ccsl::filters::FromClosureFilter' has no attributes.
+The enumeration 'CollectionKind' has the following literals: 'IMMEDIATE', 'SEQUENCE', 'EXACT', 'ANY'.
+The enumeration 'AssignmentOperator' has the following literals: 'PLUS_ASSIGN', 'ANY', 'ASSIGN'.
+The enumeration 'LogicOperator' has the following literals: 'OR', 'IF_THEN', 'AND'.
+The enumeration 'ArithmeticOperator' has the following literals: 'MULTIPLICATION', 'DIVISION', 'SUBTRACTION', 'ADDITION', 'UNDEFINED', 'MODULUS'.
+The enumeration 'BooleanOperator' has the following literals: 'AND', 'NOT', 'LESS_THAN_OR_EQUAL_TO', 'NOT_EQUAL_TO', 'EQUAL_TO', 'GREATER_THAN_OR_EQUAL_TO', 'OR', 'LESS_THAN', 'GREATER_THAN', 'ANY'.
+The enumeration 'UnaryAssignmentOperator' has the following literals: 'ANY', 'DECREMENT', 'INCREMENT'.
+The enumeration 'EquationOperator' has the following literals: 'PLUS'.
+The enumeration 'Visibility' has the following literals: 'ANY', 'PRIVATE', 'PROTECTED', 'PUBLIC', 'PACKAGE'.
+The enumeration 'Inheritance' has the following literals: 'ANY', 'ABSTRACT', 'NONE', 'FINAL'.
+'ccsl::namedElements::Package' is a specialization of 'namedElements::NamedElement'.
+'ccsl::complexType::DeclaredType' is a specialization of 'datatype::ObjectType'.
+'ccsl::filters::SameNameFilter' is a specialization of 'AtomicFilter'.
+'ccsl::method::Method' is a specialization of 'method::SimpleMethod'.
+'ccsl::assignment::PostfixUnaryAssignment' is a specialization of 'UnaryAssignment'.
+'ccsl::literalValues::NumberLiteral' is a specialization of 'LiteralValue'.
+'ccsl::tryCatch::TryStatement' is a specialization of 'Statement'.
+'ccsl::method::SimpleMethod' is a specialization of 'elements::Element'.
+'ccsl::variable::FieldVariable' is a specialization of 'variable::InitializableVariable'.
+'ccsl::variable::ParameterVariable' is a specialization of 'annotation::AnnotableElement'.
+'ccsl::filters::SuperClassClosureFilter' is a specialization of 'AtomicFilter'.
+'ccsl::variable::FieldVariable' is a specialization of 'annotation::AnnotableElement'.
+'ccsl::namedElements::NamedElement' is a specialization of 'Element'.
+'ccsl::invocation::Invocation' is a specialization of 'Statement'.
+'ccsl::variable::ParameterVariable' is a specialization of 'variable::Variable'.
+'ccsl::assignment::AbstractAssignment' is a specialization of 'Statement'.
+'ccsl::filters::IsStringFilter' is a specialization of 'AtomicFilter'.
+'ccsl::literalValues::CharacterLiteral' is a specialization of 'LiteralValue'.
+'ccsl::numberFunctions::GetIndexOf' is a specialization of 'CcslNumberFunction'.
+'ccsl::filters::BlockLastStatementFilter' is a specialization of 'AtomicFilter'.
+'ccsl::controlFlow::IfStatement' is a specialization of 'ControlFlow'.
+'ccsl::literalValues::StringLiteral' is a specialization of 'LiteralValue'.
+'ccsl::complexType::ComplexType' is a specialization of 'Element'.
+'ccsl::literalValues::LiteralValue' is a specialization of 'Statement'.
+'ccsl::filters::CompositeFilter' is a specialization of 'Filter'.
+'ccsl::controlFlow::SwitchStatement' is a specialization of 'ControlFlow'.
+'ccsl::strategy::AllStrategy' is a specialization of 'InjectionStrategy'.
+'ccsl::statements::Statement' is a specialization of 'Element'.
+'ccsl::filters::TemplateFilter' is a specialization of 'AtomicFilter'.
+'ccsl::complexType::JInterface' is a specialization of 'annotation::AnnotableElement'.
+'ccsl::namedElements::Package' is a specialization of 'import::ImportableElement'.
+'ccsl::literalValues::NullLiteral' is a specialization of 'LiteralValue'.
+'ccsl::filters::ChildClosureComplexTypeFilter' is a specialization of 'AtomicFilter'.
+'ccsl::invocation::MethodInvocation' is a specialization of 'SimpleMethodInvocation'.
+'ccsl::CompositeRule' is a specialization of 'Rule'.
+'ccsl::action::ChangeLiteralValueAction' is a specialization of 'InjectionAction'.
+'ccsl::complexType::JInterface' is a specialization of 'complexType::DeclaredType'.
+'ccsl::statements::Access' is a specialization of 'Statement'.
+'ccsl::action::DeleteInfixOperatorAction' is a specialization of 'InjectionAction'.
+'ccsl::statements::VarDeclaration' is a specialization of 'Statement'.
+'ccsl::assignment::PrefixUnaryAssignment' is a specialization of 'UnaryAssignment'.
+'ccsl::import::ImportableElement' is a specialization of 'Element'.
+'ccsl::action::ReplaceArithmeticOperatorAction' is a specialization of 'InjectionAction'.
+'ccsl::variable::LocalVariable' is a specialization of 'InitializableVariable'.
+'ccsl::complexType::JClass' is a specialization of 'complexType::DeclaredType'.
+'ccsl::statements::ReturnStatement' is a specialization of 'Statement'.
+'ccsl::action::DeleteAction' is a specialization of 'InjectionAction'.
+'ccsl::filters::IsKindOfFilter' is a specialization of 'AtomicFilter'.
+'ccsl::filters::ImplicityContainerFilter' is a specialization of 'AtomicFilter'.
+'ccsl::expressions::BooleanExpression' is a specialization of 'OperatorExpression'.
+'ccsl::expressions::ParenthesizedExpression' is a specialization of 'Statement'.
+'ccsl::statements::ContinueStatement' is a specialization of 'Statement'.
+'ccsl::AtomicRule' is a specialization of 'Rule'.
+'ccsl::datatype::ArrayType' is a specialization of 'ObjectType'.
+'ccsl::assignment::UnaryAssignment' is a specialization of 'AbstractAssignment'.
+'ccsl::filters::RegexMatch' is a specialization of 'AtomicFilter'.
+'ccsl::filters::HasSameReferenceFilter' is a specialization of 'AtomicFilter'.
+'ccsl::expressions::InfixExpression' is a specialization of 'OperatorExpression'.
+'ccsl::complexType::JClass' is a specialization of 'complexType::ComplexType'.
+'ccsl::complexType::JInterface' is a specialization of 'complexType::ComplexType'.
+'ccsl::variable::Variable' is a specialization of 'NamedElement'.
+'ccsl::statements::BreakStatement' is a specialization of 'Statement'.
+'ccsl::statements::ThisStatement' is a specialization of 'Statement'.
+'ccsl::complexType::JClass' is a specialization of 'annotation::AnnotableElement'.
+'ccsl::datatype::ObjectType' is a specialization of 'DataType'.
+'ccsl::action::MoveScopeUpAction' is a specialization of 'InjectionAction'.
+'ccsl::complexType::DeclaredType' is a specialization of 'import::ImportableElement'.
+'ccsl::complexType::AnonymousClass' is a specialization of 'ComplexType'.
+'ccsl::statements::NamedElementAccess' is a specialization of 'Statement'.
+'ccsl::complexType::DeclaredType' is a specialization of 'namedElements::NamedElement'.
+'ccsl::booleanFunctions::CcslBooleanFunction' is a specialization of 'CcslFunction'.
+'ccsl::statements::VariableAccess' is a specialization of 'Access'.
+'ccsl::invocation::SimpleMethodInvocation' is a specialization of 'Invocation'.
+'ccsl::datatype::VoidType' is a specialization of 'PrimitiveType'.
+'ccsl::method::Method' is a specialization of 'namedElements::NamedElement'.
+'ccsl::filters::CountFilter' is a specialization of 'AtomicFilter'.
+'ccsl::filters::SuperMethodClosureFilter' is a specialization of 'AtomicFilter'.
+'ccsl::action::ReplaceVariableAccessAction' is a specialization of 'InjectionAction'.
+'ccsl::filters::IsTypeOfFilter' is a specialization of 'AtomicFilter'.
+'ccsl::statements::EmptyStatement' is a specialization of 'Statement'.
+'ccsl::filters::Filter' is a specialization of 'CcslBooleanFunction'.
+'ccsl::statements::InstanceCreation' is a specialization of 'Statement'.
+'ccsl::numberFunctions::CcslNumberFunction' is a specialization of 'CcslFunction'.
+'ccsl::statements::ArrayCreation' is a specialization of 'Statement'.
+'ccsl::import::ImportStatement' is a specialization of 'Statement'.
+'ccsl::statements::InstanceOf' is a specialization of 'Statement'.
+'ccsl::literalValues::BooleanLiteral' is a specialization of 'LiteralValue'.
+'ccsl::statements::Block' is a specialization of 'Statement'.
+'ccsl::filters::ImplicityOperandFilter' is a specialization of 'TemplateFilter'.
+'ccsl::controlFlow::LoopStatement' is a specialization of 'ControlFlow'.
+'ccsl::datatype::ParameterizedType' is a specialization of 'ObjectType'.
+'ccsl::datatype::DataType' is a specialization of 'Element'.
+'ccsl::expressions::OperatorExpression' is a specialization of 'Statement'.
+'ccsl::filters::AtomicFilter' is a specialization of 'Filter'.
+'ccsl::method::Constructor' is a specialization of 'SimpleMethod'.
+'ccsl::method::SimpleMethod' is a specialization of 'annotation::AnnotableElement'.
+'ccsl::datatype::IntPrimitiveType' is a specialization of 'PrimitiveType'.
+'ccsl::datatype::StringPrimitiveType' is a specialization of 'PrimitiveType'.
+'ccsl::annotation::Annotation' is a specialization of 'Statement'.
+'ccsl::assignment::Assignment' is a specialization of 'AbstractAssignment'.
+'ccsl::datatype::PrimitiveType' is a specialization of 'DataType'.
+'ccsl::variable::InitializableVariable' is a specialization of 'Variable'.
+'ccsl::datatype::BooleanPrimitiveType' is a specialization of 'PrimitiveType'.
+'ccsl::datatype::GenericType' is a specialization of 'ComplexType'.
+'ccsl::expressions::ArithmeticExpression' is a specialization of 'OperatorExpression'.
+'ccsl::tryCatch::CatchClause' is a specialization of 'Statement'.
+'ccsl::statements::DataTypeAccess' is a specialization of 'Access'.
+'ccsl::numberFunctions::CcslIntegerLiteral' is a specialization of 'CcslNumberFunction'.
+'ccsl::expressions::StringConcatenation' is a specialization of 'OperatorExpression'.
+'ccsl::controlFlow::SwitchCaseBlock' is a specialization of 'Block'.
+'ccsl::invocation::SuperMethodInvocation' is a specialization of 'SimpleMethodInvocation'.
+'ccsl::filters::FromClosureFilter' is a specialization of 'AtomicFilter'.
+'ccsl::statements::ControlFlow' is a specialization of 'Statement'.
+'ccsl::invocation::ConstructorInvocation' is a specialization of 'Invocation'.
+'ccsl::action::DeleteRandomStatementAction' is a specialization of 'InjectionAction'.
+'ccsl::datatype::ShortPrimitiveType' is a specialization of 'PrimitiveType'.
+'ccsl::filters::PropertyFilter' is a specialization of 'AtomicFilter'.
+'ccsl::annotation::AnnotableElement' is a specialization of 'Element'.
+'ccsl::complexType::AnnotationType' is a specialization of 'DeclaredType'.
+'ccsl::Rule' is a specialization of 'Root'.
+'ccsl::statements::SynchronizedBlock' is a specialization of 'Statement'.
+'ccsl::FaultTypeDescription' is a specialization of 'Root'.
+'Context' (role 'Context128', cardinality 0..*) is associated with 'ccsl::filters::CountFilter' (role 'ccsl_filters_CountFilter', cardinality 0..*).
+'import::ImportStatement' (role 'import_ImportStatement', cardinality 0..*) is associated with 'ccsl::complexType::DeclaredType' (role 'ccsl_complexType_DeclaredType19', cardinality 0..*).
+'Element' (role 'Element111', cardinality 0..*) is associated with 'ccsl::context::Context' (role 'ccsl_context_Context', cardinality 0..*).
+'ccsl::method::SimpleMethod' (role 'ccsl_method_SimpleMethod', cardinality 0..*) is associated with 'variable::ParameterVariable' (role 'variable_ParameterVariable', cardinality 0..*).
+'variable::ParameterVariable' (role 'variable_ParameterVariable84', cardinality 0..*) is associated with 'ccsl::tryCatch::CatchClause' (role 'ccsl_tryCatch_CatchClause83', cardinality 0..*).
+'ccsl::controlFlow::LoopStatement' (role 'ccsl_controlFlow_LoopStatement', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement76', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement34', cardinality 0..*) is associated with 'ccsl::statements::Block' (role 'ccsl_statements_Block', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement', cardinality 0..*) is associated with 'ccsl::variable::InitializableVariable' (role 'ccsl_variable_InitializableVariable', cardinality 0..*).
+'ccsl::statements::SynchronizedBlock' (role 'ccsl_statements_SynchronizedBlock', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement52', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement89', cardinality 0..*) is associated with 'ccsl::assignment::AbstractAssignment' (role 'ccsl_assignment_AbstractAssignment', cardinality 0..*).
+'ccsl::filters::IsTypeOfFilter' (role 'ccsl_filters_IsTypeOfFilter', cardinality 0..*) is associated with 'Context' (role 'Context158', cardinality 0..*).
+'datatype::ObjectType' (role 'datatype_ObjectType104', cardinality 0..*) is associated with 'ccsl::datatype::ParameterizedType' (role 'ccsl_datatype_ParameterizedType', cardinality 0..*).
+'complexType::DeclaredType' (role 'complexType_DeclaredType22', cardinality 0..*) is associated with 'ccsl::complexType::DeclaredType' (role 'ccsl_complexType_DeclaredType21', cardinality 0..*).
+'filters::Filter' (role 'filters_Filter120', cardinality 0..*) is associated with 'ccsl::filters::CompositeFilter' (role 'ccsl_filters_CompositeFilter', cardinality 0..*).
+'Element' (role 'Element131', cardinality 0..*) is associated with 'ccsl::filters::CountFilter' (role 'ccsl_filters_CountFilter130', cardinality 0..*).
+'ccsl::annotation::Annotation' (role 'ccsl_annotation_Annotation', cardinality 0..*) is associated with 'complexType::AnnotationType' (role 'complexType_AnnotationType', cardinality 0..*).
+'ccsl::complexType::AnonymousClass' (role 'ccsl_complexType_AnonymousClass', cardinality 0..*) is associated with 'datatype::ObjectType' (role 'datatype_ObjectType', cardinality 0..*).
+'ccsl::complexType::JClass' (role 'ccsl_complexType_JClass', cardinality 0..*) is associated with 'method::Constructor' (role 'method_Constructor', cardinality 0..*).
+'datatype::DataType' (role 'datatype_DataType161', cardinality 0..*) is associated with 'ccsl::filters::IsTypeOfFilter' (role 'ccsl_filters_IsTypeOfFilter160', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement68', cardinality 0..*) is associated with 'ccsl::expressions::ParenthesizedExpression' (role 'ccsl_expressions_ParenthesizedExpression', cardinality 0..*).
+'Element' (role 'Element118', cardinality 0..*) is associated with 'ccsl::filters::AtomicFilter' (role 'ccsl_filters_AtomicFilter', cardinality 0..*).
+'tryCatch::CatchClause' (role 'tryCatch_CatchClause', cardinality 0..*) is associated with 'ccsl::tryCatch::TryStatement' (role 'ccsl_tryCatch_TryStatement', cardinality 0..*).
+'Context' (role 'Context168', cardinality 0..*) is associated with 'ccsl::filters::ChildClosureComplexTypeFilter' (role 'ccsl_filters_ChildClosureComplexTypeFilter167', cardinality 0..*).
+'ccsl::FaultTypeDescription' (role 'ccsl_FaultTypeDescription9', cardinality 0..*) is associated with 'InjectionStrategy' (role 'InjectionStrategy', cardinality 0..*).
+'Context' (role 'Context179', cardinality 0..*) is associated with 'ccsl::filters::FromClosureFilter' (role 'ccsl_filters_FromClosureFilter178', cardinality 0..*).
+'variable::FieldVariable' (role 'variable_FieldVariable', cardinality 0..*) is associated with 'ccsl::complexType::ComplexType' (role 'ccsl_complexType_ComplexType', cardinality 0..*).
+'datatype::ObjectType' (role 'datatype_ObjectType37', cardinality 0..*) is associated with 'ccsl::statements::InstanceCreation' (role 'ccsl_statements_InstanceCreation', cardinality 0..*).
+'ccsl::filters::IsKindOfFilter' (role 'ccsl_filters_IsKindOfFilter150', cardinality 0..*) is associated with 'datatype::DataType' (role 'datatype_DataType151', cardinality 0..*).
+'ccsl::statements::ArrayCreation' (role 'ccsl_statements_ArrayCreation', cardinality 0..*) is associated with 'datatype::ObjectType' (role 'datatype_ObjectType50', cardinality 0..*).
+'datatype::DataType' (role 'datatype_DataType28', cardinality 0..*) is associated with 'ccsl::method::Method' (role 'ccsl_method_Method', cardinality 0..*).
+'ccsl::Rule' (role 'ccsl_Rule', cardinality 0..*) is associated with 'ccsl::CompositeRule' (role 'ccsl_CompositeRule', cardinality 0..*).
+'ccsl::statements::SynchronizedBlock' (role 'ccsl_statements_SynchronizedBlock54', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement55', cardinality 0..*).
+'statements::Access' (role 'statements_Access', cardinality 0..*) is associated with 'ccsl::filters::FromClosureFilter' (role 'ccsl_filters_FromClosureFilter', cardinality 0..*).
+'ccsl::filters::ImplicityOperandFilter' (role 'ccsl_filters_ImplicityOperandFilter138', cardinality 0..*) is associated with 'expressions::OperatorExpression' (role 'expressions_OperatorExpression', cardinality 0..*).
+'ccsl::statements::VarDeclaration' (role 'ccsl_statements_VarDeclaration', cardinality 0..*) is associated with 'variable::Variable' (role 'variable_Variable', cardinality 0..*).
+'complexType::JInterface' (role 'complexType_JInterface', cardinality 0..*) is associated with 'ccsl::complexType::DeclaredType' (role 'ccsl_complexType_DeclaredType', cardinality 0..*).
+'ccsl::AtomicRule' (role 'ccsl_AtomicRule', cardinality 0..*) is associated with 'Element' (role 'Element', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement59', cardinality 0..*) is associated with 'ccsl::statements::InstanceOf' (role 'ccsl_statements_InstanceOf', cardinality 0..*).
+'Element' (role 'Element143', cardinality 0..*) is associated with 'ccsl::filters::ImplicityContainerFilter' (role 'ccsl_filters_ImplicityContainerFilter142', cardinality 0..*).
+'ccsl::filters::SuperClassClosureFilter' (role 'ccsl_filters_SuperClassClosureFilter', cardinality 0..*) is associated with 'complexType::JClass' (role 'complexType_JClass181', cardinality 0..*).
+'complexType::ComplexType' (role 'complexType_ComplexType165', cardinality 0..*) is associated with 'ccsl::filters::ChildClosureComplexTypeFilter' (role 'ccsl_filters_ChildClosureComplexTypeFilter164', cardinality 0..*).
+'complexType::DeclaredType' (role 'complexType_DeclaredType107', cardinality 0..*) is associated with 'ccsl::datatype::ParameterizedType' (role 'ccsl_datatype_ParameterizedType106', cardinality 0..*).
+'method::Constructor' (role 'method_Constructor97', cardinality 0..*) is associated with 'ccsl::invocation::ConstructorInvocation' (role 'ccsl_invocation_ConstructorInvocation', cardinality 0..*).
+'Context' (role 'Context', cardinality 0..*) is associated with 'ccsl::AtomicRule' (role 'ccsl_AtomicRule3', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement66', cardinality 0..*) is associated with 'ccsl::expressions::OperatorExpression' (role 'ccsl_expressions_OperatorExpression', cardinality 0..*).
+'ccsl::filters::ImplicityContainerFilter' (role 'ccsl_filters_ImplicityContainerFilter145', cardinality 0..*) is associated with 'Context' (role 'Context146', cardinality 0..*).
+'ccsl::filters::ImplicityOperandFilter' (role 'ccsl_filters_ImplicityOperandFilter', cardinality 0..*) is associated with 'Element' (role 'Element136', cardinality 0..*).
+'ccsl::complexType::JClass' (role 'ccsl_complexType_JClass16', cardinality 0..*) is associated with 'complexType::JClass' (role 'complexType_JClass', cardinality 0..*).
+'Element' (role 'Element134', cardinality 0..*) is associated with 'ccsl::filters::CountFilter' (role 'ccsl_filters_CountFilter133', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement91', cardinality 0..*) is associated with 'ccsl::assignment::Assignment' (role 'ccsl_assignment_Assignment', cardinality 0..*).
+'statements::Block' (role 'statements_Block', cardinality 0..*) is associated with 'ccsl::tryCatch::TryStatement' (role 'ccsl_tryCatch_TryStatement79', cardinality 0..*).
+'ccsl::statements::Access' (role 'ccsl_statements_Access', cardinality 0..*) is associated with 'Element' (role 'Element45', cardinality 0..*).
+'Context' (role 'Context192', cardinality 0..*) is associated with 'ccsl::filters::BlockLastStatementFilter' (role 'ccsl_filters_BlockLastStatementFilter191', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement57', cardinality 0..*) is associated with 'ccsl::statements::ThrowStatement' (role 'ccsl_statements_ThrowStatement', cardinality 0..*).
+'ccsl::FaultTypeDescription' (role 'ccsl_FaultTypeDescription', cardinality 0..*) is associated with 'ccsl::AtomicRule' (role 'ccsl_AtomicRule5', cardinality 0..*).
+'ccsl::tryCatch::CatchClause' (role 'ccsl_tryCatch_CatchClause', cardinality 0..*) is associated with 'statements::Block' (role 'statements_Block81', cardinality 0..*).
+'action::ArithmeticOperatorMap' (role 'action_ArithmeticOperatorMap', cardinality 0..*) is associated with 'ccsl::action::ReplaceArithmeticOperatorAction' (role 'ccsl_action_ReplaceArithmeticOperatorAction', cardinality 0..*).
+'method::Method' (role 'method_Method99', cardinality 0..*) is associated with 'ccsl::invocation::SimpleMethodInvocation' (role 'ccsl_invocation_SimpleMethodInvocation', cardinality 0..*).
+'ccsl::controlFlow::IfStatement' (role 'ccsl_controlFlow_IfStatement73', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement74', cardinality 0..*).
+'ccsl::tryCatch::CatchClause' (role 'ccsl_tryCatch_CatchClause86', cardinality 0..*) is associated with 'complexType::JClass' (role 'complexType_JClass87', cardinality 0..*).
+'Element' (role 'Element122', cardinality 0..*) is associated with 'ccsl::filters::TemplateFilter' (role 'ccsl_filters_TemplateFilter', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement48', cardinality 0..*) is associated with 'ccsl::statements::Access' (role 'ccsl_statements_Access47', cardinality 0..*).
+'Context' (role 'Context125', cardinality 0..*) is associated with 'ccsl::filters::TemplateFilter' (role 'ccsl_filters_TemplateFilter124', cardinality 0..*).
+'ccsl::controlFlow::IfStatement' (role 'ccsl_controlFlow_IfStatement', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement71', cardinality 0..*).
+'Context' (role 'Context187', cardinality 0..*) is associated with 'ccsl::filters::SuperClassClosureFilter' (role 'ccsl_filters_SuperClassClosureFilter186', cardinality 0..*).
+'ccsl::namedElements::Package' (role 'ccsl_namedElements_Package', cardinality 0..*) is associated with 'complexType::DeclaredType' (role 'complexType_DeclaredType', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement43', cardinality 0..*) is associated with 'ccsl::statements::InstanceCreation' (role 'ccsl_statements_InstanceCreation42', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement189', cardinality 0..*) is associated with 'ccsl::filters::BlockLastStatementFilter' (role 'ccsl_filters_BlockLastStatementFilter', cardinality 0..*).
+'numberFunctions::CcslNumberFunction' (role 'numberFunctions_CcslNumberFunction172', cardinality 0..*) is associated with 'ccsl::filters::EquationFilter' (role 'ccsl_filters_EquationFilter171', cardinality 0..*).
+'Context' (role 'Context148', cardinality 0..*) is associated with 'ccsl::filters::IsKindOfFilter' (role 'ccsl_filters_IsKindOfFilter', cardinality 0..*).
+'ccsl::filters::SuperMethodClosureFilter' (role 'ccsl_filters_SuperMethodClosureFilter', cardinality 0..*) is associated with 'Context' (role 'Context153', cardinality 0..*).
+'import::ImportableElement' (role 'import_ImportableElement', cardinality 0..*) is associated with 'ccsl::import::ImportStatement' (role 'ccsl_import_ImportStatement', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement62', cardinality 0..*) is associated with 'ccsl::statements::InstanceOf' (role 'ccsl_statements_InstanceOf61', cardinality 0..*).
+'ccsl::statements::ReturnStatement' (role 'ccsl_statements_ReturnStatement', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement64', cardinality 0..*).
+'ccsl::annotation::AnnotableElement' (role 'ccsl_annotation_AnnotableElement', cardinality 0..*) is associated with 'annotation::Annotation' (role 'annotation_Annotation', cardinality 0..*).
+'InjectionAction' (role 'InjectionAction', cardinality 0..*) is associated with 'ccsl::FaultTypeDescription' (role 'ccsl_FaultTypeDescription7', cardinality 0..*).
+'ccsl::variable::Variable' (role 'ccsl_variable_Variable', cardinality 0..*) is associated with 'datatype::DataType' (role 'datatype_DataType', cardinality 0..*).
+'complexType::ComplexType' (role 'complexType_ComplexType', cardinality 0..*) is associated with 'ccsl::filters::ChildClosureComplexTypeFilter' (role 'ccsl_filters_ChildClosureComplexTypeFilter', cardinality 0..*).
+'complexType::JClass' (role 'complexType_JClass184', cardinality 0..*) is associated with 'ccsl::filters::SuperClassClosureFilter' (role 'ccsl_filters_SuperClassClosureFilter183', cardinality 0..*).
+'Element' (role 'Element194', cardinality 0..*) is associated with 'ccsl::numberFunctions::GetIndexOf' (role 'ccsl_numberFunctions_GetIndexOf', cardinality 0..*).
+'ccsl::filters::FromClosureFilter' (role 'ccsl_filters_FromClosureFilter175', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement176', cardinality 0..*).
+'ccsl::invocation::MethodInvocation' (role 'ccsl_invocation_MethodInvocation', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement93', cardinality 0..*).
+'ccsl::controlFlow::SwitchStatement' (role 'ccsl_controlFlow_SwitchStatement', cardinality 0..*) is associated with 'controlFlow::SwitchCaseBlock' (role 'controlFlow_SwitchCaseBlock', cardinality 0..*).
+'numberFunctions::CcslNumberFunction' (role 'numberFunctions_CcslNumberFunction', cardinality 0..*) is associated with 'ccsl::filters::EquationFilter' (role 'ccsl_filters_EquationFilter', cardinality 0..*).
+'ccsl::filters::ImplicityContainerFilter' (role 'ccsl_filters_ImplicityContainerFilter', cardinality 0..*) is associated with 'Element' (role 'Element140', cardinality 0..*).
+'Element' (role 'Element197', cardinality 0..*) is associated with 'ccsl::numberFunctions::GetIndexOf' (role 'ccsl_numberFunctions_GetIndexOf196', cardinality 0..*).
+'ccsl::faultTypeDescription::InjectionAction' (role 'ccsl_faultTypeDescription_InjectionAction', cardinality 0..*) is associated with 'Element' (role 'Element115', cardinality 0..*).
+'ccsl::statements::NamedElementAccess' (role 'ccsl_statements_NamedElementAccess', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement30', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement95', cardinality 0..*) is associated with 'ccsl::invocation::Invocation' (role 'ccsl_invocation_Invocation', cardinality 0..*).
+'method::Constructor' (role 'method_Constructor40', cardinality 0..*) is associated with 'ccsl::statements::InstanceCreation' (role 'ccsl_statements_InstanceCreation39', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement32', cardinality 0..*) is associated with 'ccsl::statements::ControlFlow' (role 'ccsl_statements_ControlFlow', cardinality 0..*).
+'ccsl::filters::SuperMethodClosureFilter' (role 'ccsl_filters_SuperMethodClosureFilter155', cardinality 0..*) is associated with 'method::Method' (role 'method_Method156', cardinality 0..*).
+'namedElements::NamedElement' (role 'namedElements_NamedElement', cardinality 0..*) is associated with 'ccsl::filters::SameNameFilter' (role 'ccsl_filters_SameNameFilter', cardinality 0..*).
+'method::Method' (role 'method_Method', cardinality 0..*) is associated with 'ccsl::complexType::ComplexType' (role 'ccsl_complexType_ComplexType25', cardinality 0..*).
+'filters::Filter' (role 'filters_Filter', cardinality 0..*) is associated with 'ccsl::context::Context' (role 'ccsl_context_Context113', cardinality 0..*).
+'ccsl::datatype::ArrayType' (role 'ccsl_datatype_ArrayType', cardinality 0..*) is associated with 'datatype::DataType' (role 'datatype_DataType109', cardinality 0..*).

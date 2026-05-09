@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'Petrinet::PetriNet' has no attributes.
+The class 'Petrinet::Transition' has the following attributes: 'name' of type str.
+The class 'Petrinet::Place' has the following attributes: 'tokens' of type int; 'name' of type str.
+'Petrinet::Place' (role 'Petrinet_Place8', cardinality 0..*) is associated with 'Petrinet::Transition' (role 'Petrinet_Transition7', cardinality 0..*).
+'Petrinet::Place' (role 'Petrinet_Place', cardinality 0..*) is associated with 'Petrinet::PetriNet' (role 'Petrinet_PetriNet', cardinality 0..*).
+'Petrinet::Transition' (role 'Petrinet_Transition5', cardinality 0..*) is associated with 'Petrinet::Place' (role 'Petrinet_Place4', cardinality 0..*).
+'Petrinet::PetriNet' (role 'Petrinet_PetriNet2', cardinality 0..*) is associated with 'Petrinet::Transition' (role 'Petrinet_Transition', cardinality 0..*).

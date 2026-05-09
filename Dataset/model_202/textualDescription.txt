@@ -1,0 +1,94 @@
+The model has 27 class(es).
+The class 'ecore::ETypeParameter' has no attributes.
+The class 'ecore::EEnumLiteral' has the following attributes: 'literal' of type str; 'value' of type int; 'instance' of type str.
+The class 'ecore::EPackage' has the following attributes: 'nsPrefix' of type str; 'nsUri' of type str.
+The class 'ecore::EEnum' has no attributes.
+The class 'ecore::EStructuralFeature' has the following attributes: 'unsettable' of type bool; 'changeable' of type bool; 'defaultValueLiteral' of type str; 'defaultValue' of type str; 'transient' of type bool; 'volatile' of type bool; 'derived' of type bool.
+The class 'EClassifier' has no attributes.
+The class 'EStructuralFeature' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'ecore::EGenericType' has no attributes.
+The class 'ecore::EReference' has the following attributes: 'containment' of type bool; 'container' of type bool; 'resolveProxies' of type bool.
+The class 'EModelElement' has no attributes.
+The class 'ecore::EAnnotation' has the following attributes: 'source' of type str.
+The class 'ecore::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'ENamedElement' has no attributes.
+The class 'ecore::EStringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'ecore::EParameter' has no attributes.
+The class 'ecore::EClass' has the following attributes: 'abstract' of type bool; 'interface' of type bool.
+The class 'ecore::ENamedElement' has the following attributes: 'name' of type str.
+The class 'ecore::EAttribute' has the following attributes: 'id' of type bool.
+The class 'ecore::ETypedElement' has the following attributes: 'upperBound' of type int; 'ordered' of type bool; 'unique' of type bool; 'many' of type bool; 'required' of type bool; 'lowerBound' of type int.
+The class 'ecore::EFactory' has no attributes.
+The class 'EObject' has no attributes.
+The class 'EDataType' has no attributes.
+The class 'ecore::EObject' has no attributes.
+The class 'ecore::EClassifier' has the following attributes: 'instanceTypeName' of type str; 'defaultValue' of type str; 'instanceClass' of type str; 'instanceClassName' of type str.
+The class 'ecore::EOperation' has no attributes.
+The class 'ecore::EModelElement' has no attributes.
+'ecore::EAttribute' is a specialization of 'EStructuralFeature'.
+'ecore::EAnnotation' is a specialization of 'EModelElement'.
+'ecore::EEnum' is a specialization of 'EDataType'.
+'ecore::EFactory' is a specialization of 'EModelElement'.
+'ecore::ETypeParameter' is a specialization of 'ENamedElement'.
+'ecore::EClass' is a specialization of 'EClassifier'.
+'ecore::EModelElement' is a specialization of 'EObject'.
+'ecore::EPackage' is a specialization of 'ENamedElement'.
+'ecore::EParameter' is a specialization of 'ETypedElement'.
+'ecore::EReference' is a specialization of 'EStructuralFeature'.
+'ecore::EEnumLiteral' is a specialization of 'ENamedElement'.
+'ecore::EOperation' is a specialization of 'ETypedElement'.
+'ecore::EClassifier' is a specialization of 'ENamedElement'.
+'ecore::EDataType' is a specialization of 'EClassifier'.
+'ecore::ETypedElement' is a specialization of 'ENamedElement'.
+'ecore::EGenericType' is a specialization of 'EObject'.
+'ecore::ENamedElement' is a specialization of 'EModelElement'.
+'ecore::EStructuralFeature' is a specialization of 'ETypedElement'.
+'ecore::EOperation' (role 'ecore_EOperation84', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType85', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass18', cardinality 0..*) is associated with 'ecore::EAttribute' (role 'ecore_EAttribute19', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass39', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType40', cardinality 0..*).
+'ecore::EClassifier' (role 'ecore_EClassifier', cardinality 0..*) is associated with 'ecore::ETypedElement' (role 'ecore_ETypedElement', cardinality 0..*).
+'ecore::EReference' (role 'ecore_EReference90', cardinality 0..*) is associated with 'ecore::EReference' (role 'ecore_EReference92', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass27', cardinality 0..*) is associated with 'ecore::EClass' (role 'ecore_EClass29', cardinality 0..*).
+'ecore::EPackage' (role 'EPackage50', cardinality 0..*) is associated with 'ecore::EPackage' (role 'eSubpackages', cardinality 0..*).
+'ecore::ETypeParameter' (role 'ecore_ETypeParameter72', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType71', cardinality 0..*).
+'ecore::EAnnotation' (role 'EAnnotation', cardinality 0..*) is associated with 'ecore::EModelElement' (role 'eModelElement', cardinality 0..*).
+'ecore::EClass' (role 'EClass87', cardinality 0..*) is associated with 'ecore::EOperation' (role 'eOperations', cardinality 0..*).
+'ecore::EAttribute' (role 'ecore_EAttribute98', cardinality 0..*) is associated with 'ecore::EReference' (role 'ecore_EReference97', cardinality 0..*).
+'ecore::EStructuralFeature' (role 'ecore_EStructuralFeature', cardinality 0..*) is associated with 'ecore::EClass' (role 'ecore_EClass26', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass6', cardinality 0..*) is associated with 'ecore::EClass' (role 'ecore_EClass', cardinality 0..*).
+'ecore::EClass' (role 'eContainingClass', cardinality 0..*) is associated with 'ecore::EOperation' (role 'EOperation', cardinality 0..*).
+'ecore::EClassifier' (role 'ecore_EClassifier66', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType65', cardinality 0..*).
+'ecore::EClassifier' (role 'ecore_EClassifier43', cardinality 0..*) is associated with 'ecore::ETypeParameter' (role 'ecore_ETypeParameter', cardinality 0..*).
+'ecore::EGenericType' (role 'ecore_EGenericType63', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType61', cardinality 0..*).
+'ecore::EPackage' (role 'EPackage54', cardinality 0..*) is associated with 'ecore::EFactory' (role 'eFactoryInstance', cardinality 0..*).
+'ecore::EPackage' (role 'eSuperPackage', cardinality 0..*) is associated with 'ecore::EPackage' (role 'EPackage47', cardinality 0..*).
+'ecore::EGenericType' (role 'ecore_EGenericType57', cardinality 0..*) is associated with 'ecore::ETypeParameter' (role 'ecore_ETypeParameter56', cardinality 0..*).
+'ecore::EAnnotation' (role 'ecore_EAnnotation103', cardinality 0..*) is associated with 'ecore::EObject' (role 'ecore_EObject104', cardinality 0..*).
+'ecore::EClass' (role 'eContainingClass34', cardinality 0..*) is associated with 'ecore::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*).
+'ecore::EModelElement' (role 'EModelElement', cardinality 0..*) is associated with 'ecore::EAnnotation' (role 'eAnnotations', cardinality 0..*).
+'ecore::EClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'ecore::EPackage' (role 'EPackage', cardinality 0..*).
+'ecore::EAnnotation' (role 'ecore_EAnnotation', cardinality 0..*) is associated with 'ecore::EStringToStringMapEntry' (role 'ecore_EStringToStringMapEntry', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass13', cardinality 0..*) is associated with 'ecore::EReference' (role 'ecore_EReference', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass95', cardinality 0..*) is associated with 'ecore::EReference' (role 'ecore_EReference94', cardinality 0..*).
+'ecore::EObject' (role 'ecore_EObject', cardinality 0..*) is associated with 'ecore::EAnnotation' (role 'ecore_EAnnotation101', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass10', cardinality 0..*) is associated with 'ecore::EAttribute' (role 'ecore_EAttribute11', cardinality 0..*).
+'ecore::EClass' (role 'EClass', cardinality 0..*) is associated with 'ecore::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass21', cardinality 0..*) is associated with 'ecore::EReference' (role 'ecore_EReference22', cardinality 0..*).
+'ecore::ETypeParameter' (role 'ecore_ETypeParameter78', cardinality 0..*) is associated with 'ecore::EOperation' (role 'ecore_EOperation77', cardinality 0..*).
+'ecore::EPackage' (role 'ePackage52', cardinality 0..*) is associated with 'ecore::EClassifier' (role 'EClassifier', cardinality 0..*).
+'ecore::EClassifier' (role 'ecore_EClassifier82', cardinality 0..*) is associated with 'ecore::EOperation' (role 'ecore_EOperation81', cardinality 0..*).
+'ecore::EParameter' (role 'eParameters', cardinality 0..*) is associated with 'ecore::EOperation' (role 'EOperation89', cardinality 0..*).
+'ecore::EGenericType' (role 'ecore_EGenericType', cardinality 0..*) is associated with 'ecore::ETypedElement' (role 'ecore_ETypedElement4', cardinality 0..*).
+'ecore::EPackage' (role 'ePackage', cardinality 0..*) is associated with 'ecore::EFactory' (role 'EFactory', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass31', cardinality 0..*) is associated with 'ecore::EAttribute' (role 'ecore_EAttribute32', cardinality 0..*).
+'ecore::EGenericType' (role 'ecore_EGenericType69', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType67', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass15', cardinality 0..*) is associated with 'ecore::EReference' (role 'ecore_EReference16', cardinality 0..*).
+'ecore::EGenericType' (role 'ecore_EGenericType58', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType60', cardinality 0..*).
+'ecore::EOperation' (role 'eOperation', cardinality 0..*) is associated with 'ecore::EParameter' (role 'EParameter', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass36', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType37', cardinality 0..*).
+'ecore::EEnumLiteral' (role 'eLiterals', cardinality 0..*) is associated with 'ecore::EEnum' (role 'EEnum', cardinality 0..*).
+'ecore::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*) is associated with 'ecore::EEnum' (role 'eEnum', cardinality 0..*).
+'ecore::EClass' (role 'ecore_EClass24', cardinality 0..*) is associated with 'ecore::EOperation' (role 'ecore_EOperation', cardinality 0..*).
+'ecore::EAttribute' (role 'ecore_EAttribute', cardinality 0..*) is associated with 'ecore::EDataType' (role 'ecore_EDataType', cardinality 0..*).
+'ecore::EClassifier' (role 'ecore_EClassifier75', cardinality 0..*) is associated with 'ecore::EGenericType' (role 'ecore_EGenericType74', cardinality 0..*).

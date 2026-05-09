@@ -1,0 +1,215 @@
+The model has 89 class(es).
+The class 'highlevelnets::tokenexpressions::TokenMultiSet' has no attributes.
+The class 'highlevelnets::hlpn::HighLevelPetriNet' has no attributes.
+The class 'TokenMultiSet' has no attributes.
+The class 'highlevelnets::common::INetElement' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'NPNSymbolTransitionSN' has no attributes.
+The class 'TokenWeight' has no attributes.
+The class 'highlevelnets::hlpn::Transition' has no attributes.
+The class 'Place' has no attributes.
+The class 'INetElement' has no attributes.
+The class 'TokenNet' has no attributes.
+The class 'TokenType' has no attributes.
+The class 'highlevelnets::marking::PlaceMarking' has no attributes.
+The class 'MonomConstant' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNSymbolArcTPSN' has no attributes.
+The class 'highlevelnets::npnets::TransitionSynchronized' has no attributes.
+The class 'TransitionSynchronized' has no attributes.
+The class 'highlevelnets::hlpn::ArcPT' has no attributes.
+The class 'NPNSymbolArcTPSN' has no attributes.
+The class 'highlevelnets::tokenexpressions::MonomConstant' has the following attributes: 'power' of type str.
+The class 'hlpn::ContextVariable' has no attributes.
+The class 'highlevelnets::npnets::NPnet' has no attributes.
+The class 'highlevelnets::hlpn::ArcTP' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNSymbolPlaceSN' has no attributes.
+The class 'highlevelnets::tokenexpressions::TokenVariadicExpression' has no attributes.
+The class 'highlevelnets::hlpn::Place' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNDiagramNPNMarked' has no attributes.
+The class 'highlevelnets::tokentypes::TokenNet' has no attributes.
+The class 'highlevelnets::tokentypes::TokenTypeElementNet' has no attributes.
+The class 'Synchronization' has no attributes.
+The class 'highlevelnets::tokenexpressions::Monom' has the following attributes: 'power' of type str.
+The class 'TokenBinding' has no attributes.
+The class 'highlevelnets::tokenexpressions::NetConstant' has no attributes.
+The class 'NPNSymbolArcSN' has no attributes.
+The class 'hlpn::Node' has no attributes.
+The class 'common::INetElement' has no attributes.
+The class 'ArcPT' has no attributes.
+The class 'PlaceMarking' has no attributes.
+The class 'NPNSymbolArcPTSN' has no attributes.
+The class 'TokenTypeElementNet' has no attributes.
+The class 'highlevelnets::hlpn::Arc' has no attributes.
+The class 'highlevelnets::tokenexpressions::TokenMultisetExpression' has no attributes.
+The class 'TokenAttribute' has no attributes.
+The class 'highlevelnets::tokentypes::TokenTypeAtomic' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNSymbolArcSN' has the following attributes: 'bendpoints' of type str.
+The class 'HighLevelPetriNet' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNSymbolNodeSN' has the following attributes: 'constraints' of type str.
+The class 'Variable' has no attributes.
+The class 'highlevelnets::marking::HighLevelPetriNetMarked' has no attributes.
+The class 'NetConstant' has no attributes.
+The class 'NPNDiagramNetSystem' has no attributes.
+The class 'highlevelnets::tokenexpressions::TokenBinding' has no attributes.
+The class 'highlevelnets::common::IEntityIdentifiable' has the following attributes: 'uuid' of type str.
+The class 'highlevelnets::tokentypes::TokenType' has no attributes.
+The class 'Transition' has no attributes.
+The class 'highlevelnets::hlpn::ContextVariable' has no attributes.
+The class 'Marking' has no attributes.
+The class 'NPnetMarked' has no attributes.
+The class 'highlevelnets::npnets::Synchronization' has the following attributes: 'kind' of type str; 'key' of type str.
+The class 'highlevelnets::tokenexpressions::Variable' has the following attributes: 'name' of type str.
+The class 'highlevelnets::hlpn::Node' has no attributes.
+The class 'Token' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNSymbolTransitionSN' has no attributes.
+The class 'Atom' has no attributes.
+The class 'highlevelnets::marking::Marking' has no attributes.
+The class 'NPnet' has no attributes.
+The class 'highlevelnets::tokentypes::Atom' has no attributes.
+The class 'highlevelnets::npnets::NPnetMarked' has no attributes.
+The class 'TokenTypeAtomic' has no attributes.
+The class 'ArcTP' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNSymbolTokenSN' has the following attributes: 'constraints' of type str.
+The class 'NPNSymbolTokenSN' has no attributes.
+The class 'highlevelnets::tokentypes::Token' has no attributes.
+The class 'highlevelnets::tokenexpressions::TokenExpressionBinding' has no attributes.
+The class 'Node' has no attributes.
+The class 'highlevelnets::tokentypes::TokenAttribute' has the following attributes: 'name' of type str; 'type' of type str; 'value' of type str.
+The class 'highlevelnets::tokenexpressions::TokenWeight' has the following attributes: 'weight' of type str.
+The class 'highlevelnets::npndiagrams::NPNSymbolArcPTSN' has no attributes.
+The class 'Arc' has no attributes.
+The class 'ContextVariable' has no attributes.
+The class 'highlevelnets::tokentypes::ElementNetMarked' has no attributes.
+The class 'NPNSymbolPlaceSN' has no attributes.
+The class 'ElementNetMarked' has no attributes.
+The class 'TokenVariadicExpression' has no attributes.
+The class 'highlevelnets::tokentypes::TokenAtomic' has no attributes.
+The class 'highlevelnets::npndiagrams::NPNDiagramNetSystem' has no attributes.
+The class 'IEntityIdentifiable' has no attributes.
+The class 'TokenAtomic' has no attributes.
+The class 'Monom' has no attributes.
+The class 'NPNSymbolNodeSN' has no attributes.
+The enumeration 'ESynchronizationKind' has the following literals: 'VerticalSynchronization', 'HorizontalSynchronization'.
+'highlevelnets::tokentypes::TokenAttribute' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::NetConstant' is a specialization of 'INetElement'.
+'highlevelnets::npnets::TransitionSynchronized' is a specialization of 'Transition'.
+'highlevelnets::npndiagrams::NPNDiagramNPNMarked' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::npnets::NPnet' is a specialization of 'INetElement'.
+'highlevelnets::tokentypes::TokenNet' is a specialization of 'Token'.
+'highlevelnets::hlpn::Node' is a specialization of 'INetElement'.
+'highlevelnets::npndiagrams::NPNSymbolPlaceSN' is a specialization of 'NPNSymbolNodeSN'.
+'highlevelnets::npndiagrams::NPNSymbolArcTPSN' is a specialization of 'NPNSymbolArcSN'.
+'highlevelnets::hlpn::HighLevelPetriNet' is a specialization of 'hlpn::ContextVariable'.
+'highlevelnets::tokentypes::TokenAtomic' is a specialization of 'Token'.
+'highlevelnets::hlpn::Transition' is a specialization of 'hlpn::Node'.
+'highlevelnets::hlpn::ArcPT' is a specialization of 'Arc'.
+'highlevelnets::common::INetElement' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokentypes::Atom' is a specialization of 'INetElement'.
+'highlevelnets::npndiagrams::NPNSymbolTransitionSN' is a specialization of 'NPNSymbolNodeSN'.
+'highlevelnets::tokentypes::TokenTypeAtomic' is a specialization of 'TokenType'.
+'highlevelnets::tokentypes::ElementNetMarked' is a specialization of 'INetElement'.
+'highlevelnets::npnets::Synchronization' is a specialization of 'INetElement'.
+'highlevelnets::npnets::NPnetMarked' is a specialization of 'INetElement'.
+'highlevelnets::marking::PlaceMarking' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::hlpn::Place' is a specialization of 'Node'.
+'highlevelnets::hlpn::HighLevelPetriNet' is a specialization of 'common::INetElement'.
+'highlevelnets::tokenexpressions::TokenExpressionBinding' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::marking::HighLevelPetriNetMarked' is a specialization of 'INetElement'.
+'highlevelnets::tokentypes::Token' is a specialization of 'INetElement'.
+'highlevelnets::tokentypes::TokenTypeElementNet' is a specialization of 'TokenType'.
+'highlevelnets::npndiagrams::NPNDiagramNetSystem' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::npndiagrams::NPNSymbolNodeSN' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::hlpn::Transition' is a specialization of 'hlpn::ContextVariable'.
+'highlevelnets::tokenexpressions::Monom' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::TokenWeight' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::TokenVariadicExpression' is a specialization of 'INetElement'.
+'highlevelnets::npndiagrams::NPNSymbolArcSN' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::Variable' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::hlpn::ContextVariable' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::TokenMultisetExpression' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::hlpn::Arc' is a specialization of 'INetElement'.
+'highlevelnets::npndiagrams::NPNSymbolTokenSN' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::npndiagrams::NPNSymbolArcPTSN' is a specialization of 'NPNSymbolArcSN'.
+'highlevelnets::tokenexpressions::TokenMultiSet' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::TokenBinding' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::tokenexpressions::MonomConstant' is a specialization of 'IEntityIdentifiable'.
+'highlevelnets::marking::Marking' is a specialization of 'INetElement'.
+'highlevelnets::hlpn::ArcTP' is a specialization of 'Arc'.
+'highlevelnets::tokentypes::TokenType' is a specialization of 'INetElement'.
+'highlevelnets::tokenexpressions::TokenMultisetExpression' (role 'highlevelnets_tokenexpressions_TokenMultisetExpression', cardinality 0..*) is associated with 'TokenType' (role 'TokenType', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNDiagramNetSystem' (role 'diagram116', cardinality 0..*) is associated with 'NPNSymbolArcSN' (role 'NPNSymbolArcSN', cardinality 0..*).
+'highlevelnets::hlpn::HighLevelPetriNet' (role 'net57', cardinality 0..*) is associated with 'Arc' (role 'Arc', cardinality 0..*).
+'Marking' (role 'Marking', cardinality 0..*) is associated with 'highlevelnets::marking::HighLevelPetriNetMarked' (role 'highlevelnets_marking_HighLevelPetriNetMarked6', cardinality 0..*).
+'highlevelnets::tokentypes::ElementNetMarked' (role 'highlevelnets_tokentypes_ElementNetMarked', cardinality 0..*) is associated with 'Marking' (role 'Marking25', cardinality 0..*).
+'NPNSymbolArcTPSN' (role 'NPNSymbolArcTPSN124', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolTransitionSN' (role 'source123', cardinality 0..*).
+'Synchronization' (role 'Synchronization107', cardinality 0..*) is associated with 'highlevelnets::npnets::TransitionSynchronized' (role 'involved', cardinality 0..*).
+'highlevelnets::tokenexpressions::TokenVariadicExpression' (role 'highlevelnets_tokenexpressions_TokenVariadicExpression', cardinality 0..*) is associated with 'Monom' (role 'Monom', cardinality 0..*).
+'highlevelnets::tokentypes::TokenTypeAtomic' (role 'highlevelnets_tokentypes_TokenTypeAtomic', cardinality 0..*) is associated with 'Atom' (role 'Atom', cardinality 0..*).
+'highlevelnets::npnets::NPnetMarked' (role 'highlevelnets_npnets_NPnetMarked104', cardinality 0..*) is associated with 'NPNDiagramNetSystem' (role 'NPNDiagramNetSystem', cardinality 0..*).
+'highlevelnets::tokentypes::TokenTypeElementNet' (role 'type14', cardinality 0..*) is associated with 'TokenNet' (role 'TokenNet', cardinality 0..*).
+'TokenVariadicExpression' (role 'TokenVariadicExpression72', cardinality 0..*) is associated with 'highlevelnets::hlpn::ArcPT' (role 'highlevelnets_hlpn_ArcPT', cardinality 0..*).
+'highlevelnets::tokentypes::TokenAtomic' (role 'atom', cardinality 0..*) is associated with 'TokenTypeAtomic' (role 'TokenTypeAtomic', cardinality 0..*).
+'NPnet' (role 'NPnet', cardinality 0..*) is associated with 'highlevelnets::npnets::NPnetMarked' (role 'highlevelnets_npnets_NPnetMarked', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'highlevelnets::hlpn::ArcPT' (role 'inArcs', cardinality 0..*).
+'highlevelnets::tokentypes::TokenTypeAtomic' (role 'type', cardinality 0..*) is associated with 'TokenAtomic' (role 'TokenAtomic', cardinality 0..*).
+'ArcPT' (role 'ArcPT', cardinality 0..*) is associated with 'highlevelnets::hlpn::Place' (role 'source', cardinality 0..*).
+'highlevelnets::tokenexpressions::TokenMultisetExpression' (role 'highlevelnets_tokenexpressions_TokenMultisetExpression29', cardinality 0..*) is associated with 'TokenMultiSet' (role 'TokenMultiSet30', cardinality 0..*).
+'NPNSymbolNodeSN' (role 'NPNSymbolNodeSN', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNDiagramNetSystem' (role 'diagram', cardinality 0..*).
+'Token' (role 'Token47', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::TokenBinding' (role 'highlevelnets_tokenexpressions_TokenBinding46', cardinality 0..*).
+'highlevelnets::tokentypes::TokenTypeElementNet' (role 'type10', cardinality 0..*) is associated with 'ElementNetMarked' (role 'ElementNetMarked', cardinality 0..*).
+'highlevelnets::marking::PlaceMarking' (role 'highlevelnets_marking_PlaceMarking3', cardinality 0..*) is associated with 'TokenMultiSet' (role 'TokenMultiSet', cardinality 0..*).
+'highlevelnets::tokentypes::TokenNet' (role 'highlevelnets_tokentypes_TokenNet', cardinality 0..*) is associated with 'ElementNetMarked' (role 'ElementNetMarked21', cardinality 0..*).
+'highlevelnets::hlpn::Transition' (role 'target63', cardinality 0..*) is associated with 'ArcPT' (role 'ArcPT64', cardinality 0..*).
+'Place' (role 'Place69', cardinality 0..*) is associated with 'highlevelnets::hlpn::ArcPT' (role 'outArcs', cardinality 0..*).
+'highlevelnets::hlpn::Place' (role 'target', cardinality 0..*) is associated with 'ArcTP' (role 'ArcTP', cardinality 0..*).
+'NetConstant' (role 'NetConstant', cardinality 0..*) is associated with 'highlevelnets::npnets::NPnet' (role 'highlevelnets_npnets_NPnet96', cardinality 0..*).
+'TokenVariadicExpression' (role 'TokenVariadicExpression80', cardinality 0..*) is associated with 'highlevelnets::hlpn::ArcTP' (role 'highlevelnets_hlpn_ArcTP', cardinality 0..*).
+'highlevelnets::marking::Marking' (role 'highlevelnets_marking_Marking', cardinality 0..*) is associated with 'PlaceMarking' (role 'PlaceMarking', cardinality 0..*).
+'NPNSymbolTransitionSN' (role 'NPNSymbolTransitionSN', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolArcPTSN' (role 'inArcs129', cardinality 0..*).
+'Variable' (role 'Variable44', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::TokenBinding' (role 'highlevelnets_tokenexpressions_TokenBinding', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNSymbolPlaceSN' (role 'target120', cardinality 0..*) is associated with 'NPNSymbolArcTPSN' (role 'NPNSymbolArcTPSN', cardinality 0..*).
+'highlevelnets::hlpn::Transition' (role 'source66', cardinality 0..*) is associated with 'ArcTP' (role 'ArcTP67', cardinality 0..*).
+'Arc' (role 'Arc147', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolArcSN' (role 'highlevelnets_npndiagrams_NPNSymbolArcSN', cardinality 0..*).
+'highlevelnets::hlpn::ArcTP' (role 'inArcs77', cardinality 0..*) is associated with 'Place' (role 'Place78', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNSymbolTransitionSN' (role 'target126', cardinality 0..*) is associated with 'NPNSymbolArcPTSN' (role 'NPNSymbolArcPTSN127', cardinality 0..*).
+'NPNDiagramNetSystem' (role 'NPNDiagramNetSystem140', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolNodeSN' (role 'nodes139', cardinality 0..*).
+'highlevelnets::tokentypes::ElementNetMarked' (role 'elementNetMarkeds', cardinality 0..*) is associated with 'TokenTypeElementNet' (role 'TokenTypeElementNet23', cardinality 0..*).
+'highlevelnets::hlpn::Arc' (role 'arcs', cardinality 0..*) is associated with 'HighLevelPetriNet' (role 'HighLevelPetriNet86', cardinality 0..*).
+'ContextVariable' (role 'ContextVariable', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::Variable' (role 'variables', cardinality 0..*).
+'NPNSymbolPlaceSN' (role 'NPNSymbolPlaceSN134', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolArcTPSN' (role 'inArcs133', cardinality 0..*).
+'highlevelnets::npnets::NPnet' (role 'highlevelnets_npnets_NPnet', cardinality 0..*) is associated with 'HighLevelPetriNet' (role 'HighLevelPetriNet88', cardinality 0..*).
+'NPNSymbolArcPTSN' (role 'NPNSymbolArcPTSN', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolPlaceSN' (role 'source118', cardinality 0..*).
+'highlevelnets::tokentypes::TokenNet' (role 'tokenNets', cardinality 0..*) is associated with 'TokenTypeElementNet' (role 'TokenTypeElementNet', cardinality 0..*).
+'Variable' (role 'Variable49', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::MonomConstant' (role 'highlevelnets_tokenexpressions_MonomConstant', cardinality 0..*).
+'MonomConstant' (role 'MonomConstant', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::TokenVariadicExpression' (role 'highlevelnets_tokenexpressions_TokenVariadicExpression38', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNSymbolArcTPSN' (role 'outArcs136', cardinality 0..*) is associated with 'NPNSymbolTransitionSN' (role 'NPNSymbolTransitionSN137', cardinality 0..*).
+'NPNDiagramNetSystem' (role 'NPNDiagramNetSystem109', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNDiagramNPNMarked' (role 'highlevelnets_npndiagrams_NPNDiagramNPNMarked', cardinality 0..*).
+'highlevelnets::tokenexpressions::TokenExpressionBinding' (role 'highlevelnets_tokenexpressions_TokenExpressionBinding42', cardinality 0..*) is associated with 'TokenBinding' (role 'TokenBinding', cardinality 0..*).
+'highlevelnets::tokenexpressions::MonomConstant' (role 'highlevelnets_tokenexpressions_MonomConstant51', cardinality 0..*) is associated with 'Token' (role 'Token52', cardinality 0..*).
+'highlevelnets::hlpn::ContextVariable' (role 'context', cardinality 0..*) is associated with 'Variable' (role 'Variable82', cardinality 0..*).
+'highlevelnets::hlpn::Place' (role 'highlevelnets_hlpn_Place', cardinality 0..*) is associated with 'TokenType' (role 'TokenType61', cardinality 0..*).
+'NPNSymbolPlaceSN' (role 'NPNSymbolPlaceSN149', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolTokenSN' (role 'tokens', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNSymbolArcSN' (role 'arcs144', cardinality 0..*) is associated with 'NPNDiagramNetSystem' (role 'NPNDiagramNetSystem145', cardinality 0..*).
+'NPNSymbolPlaceSN' (role 'NPNSymbolPlaceSN', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolArcPTSN' (role 'outArcs131', cardinality 0..*).
+'Synchronization' (role 'Synchronization', cardinality 0..*) is associated with 'highlevelnets::npnets::NPnet' (role 'highlevelnets_npnets_NPnet98', cardinality 0..*).
+'TokenType' (role 'TokenType34', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::TokenMultiSet' (role 'highlevelnets_tokenexpressions_TokenMultiSet33', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::Monom' (role 'highlevelnets_tokenexpressions_Monom', cardinality 0..*).
+'TokenBinding' (role 'TokenBinding54', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::NetConstant' (role 'highlevelnets_tokenexpressions_NetConstant', cardinality 0..*).
+'HighLevelPetriNet' (role 'HighLevelPetriNet84', cardinality 0..*) is associated with 'highlevelnets::hlpn::Node' (role 'nodes', cardinality 0..*).
+'Token' (role 'Token', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::TokenWeight' (role 'highlevelnets_tokenexpressions_TokenWeight', cardinality 0..*).
+'TokenTypeElementNet' (role 'TokenTypeElementNet91', cardinality 0..*) is associated with 'highlevelnets::npnets::NPnet' (role 'highlevelnets_npnets_NPnet90', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNSymbolNodeSN' (role 'highlevelnets_npndiagrams_NPNSymbolNodeSN', cardinality 0..*) is associated with 'Node' (role 'Node142', cardinality 0..*).
+'highlevelnets::tokentypes::Token' (role 'highlevelnets_tokentypes_Token', cardinality 0..*) is associated with 'TokenAttribute' (role 'TokenAttribute', cardinality 0..*).
+'highlevelnets::npnets::NPnetMarked' (role 'highlevelnets_npnets_NPnetMarked101', cardinality 0..*) is associated with 'Marking' (role 'Marking102', cardinality 0..*).
+'HighLevelPetriNet' (role 'HighLevelPetriNet', cardinality 0..*) is associated with 'highlevelnets::marking::HighLevelPetriNetMarked' (role 'highlevelnets_marking_HighLevelPetriNetMarked', cardinality 0..*).
+'Place' (role 'Place', cardinality 0..*) is associated with 'highlevelnets::marking::PlaceMarking' (role 'highlevelnets_marking_PlaceMarking', cardinality 0..*).
+'TokenTypeAtomic' (role 'TokenTypeAtomic94', cardinality 0..*) is associated with 'highlevelnets::npnets::NPnet' (role 'highlevelnets_npnets_NPnet93', cardinality 0..*).
+'highlevelnets::tokentypes::TokenAtomic' (role 'highlevelnets_tokentypes_TokenAtomic', cardinality 0..*) is associated with 'Atom' (role 'Atom18', cardinality 0..*).
+'highlevelnets::hlpn::ArcTP' (role 'outArcs74', cardinality 0..*) is associated with 'Transition' (role 'Transition75', cardinality 0..*).
+'highlevelnets::npndiagrams::NPNDiagramNPNMarked' (role 'highlevelnets_npndiagrams_NPNDiagramNPNMarked111', cardinality 0..*) is associated with 'NPnetMarked' (role 'NPnetMarked', cardinality 0..*).
+'highlevelnets::tokenexpressions::TokenExpressionBinding' (role 'highlevelnets_tokenexpressions_TokenExpressionBinding', cardinality 0..*) is associated with 'TokenVariadicExpression' (role 'TokenVariadicExpression', cardinality 0..*).
+'NPNSymbolTokenSN' (role 'NPNSymbolTokenSN', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNSymbolPlaceSN' (role 'place', cardinality 0..*).
+'TransitionSynchronized' (role 'TransitionSynchronized', cardinality 0..*) is associated with 'highlevelnets::npnets::Synchronization' (role 'synchronization', cardinality 0..*).
+'HighLevelPetriNet' (role 'HighLevelPetriNet113', cardinality 0..*) is associated with 'highlevelnets::npndiagrams::NPNDiagramNetSystem' (role 'highlevelnets_npndiagrams_NPNDiagramNetSystem', cardinality 0..*).
+'highlevelnets::hlpn::HighLevelPetriNet' (role 'net', cardinality 0..*) is associated with 'Node' (role 'Node', cardinality 0..*).
+'HighLevelPetriNet' (role 'HighLevelPetriNet12', cardinality 0..*) is associated with 'highlevelnets::tokentypes::TokenTypeElementNet' (role 'highlevelnets_tokentypes_TokenTypeElementNet', cardinality 0..*).
+'TokenWeight' (role 'TokenWeight', cardinality 0..*) is associated with 'highlevelnets::tokenexpressions::TokenMultiSet' (role 'highlevelnets_tokenexpressions_TokenMultiSet', cardinality 0..*).

@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class java_Statement extends ASTNode {
+
+
+
+
+
+
+    private java_WhileStatement java_whilestatement;
+
+
+
+
+    private java_SwitchStatement java_switchstatement;
+
+
+    public java_Statement(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public java_WhileStatement getJava_whilestatement() {
+        return java_whilestatement;
+    }
+
+    public void setJava_whilestatement(java_WhileStatement java_whilestatement) {
+        this.java_whilestatement = java_whilestatement;
+    }
+    public java_SwitchStatement getJava_switchstatement() {
+        return java_switchstatement;
+    }
+
+    public void setJava_switchstatement(java_SwitchStatement java_switchstatement) {
+        this.java_switchstatement = java_switchstatement;
+    }
+
+}

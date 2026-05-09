@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'petrinet::Arc' has the following attributes: 'kind' of type str; 'tokensCount' of type int; 'readOnly' of type bool.
+The class 'petrinet::Node' has the following attributes: 'name' of type str.
+The class 'Node' has no attributes.
+The class 'petrinet::Place' has the following attributes: 'tokensCount' of type int.
+The class 'petrinet::Network' has the following attributes: 'name' of type str.
+The class 'petrinet::Transition' has no attributes.
+The enumeration 'ArcKind' has the following literals: 'read_arc', 'normal'.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Network' (role 'Network', cardinality 0..*) is associated with 'petrinet::Node' (role 'nodes', cardinality 0..*).
+'petrinet::Node' (role 'target', cardinality 0..*) is associated with 'petrinet::Arc' (role 'Arc5', cardinality 0..*).
+'petrinet::Node' (role 'Node', cardinality 0..*) is associated with 'petrinet::Network' (role 'reseau', cardinality 0..*).
+'petrinet::Arc' (role 'Arc', cardinality 0..*) is associated with 'petrinet::Network' (role 'reseau2', cardinality 0..*).
+'petrinet::Network' (role 'Network9', cardinality 0..*) is associated with 'petrinet::Arc' (role 'arcs', cardinality 0..*).
+'petrinet::Node' (role 'source', cardinality 0..*) is associated with 'petrinet::Arc' (role 'Arc7', cardinality 0..*).
+'petrinet::Node' (role 'Node11', cardinality 0..*) is associated with 'petrinet::Arc' (role 'successors', cardinality 0..*).
+'petrinet::Arc' (role 'predecessors', cardinality 0..*) is associated with 'petrinet::Node' (role 'Node13', cardinality 0..*).

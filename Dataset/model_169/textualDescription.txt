@@ -1,0 +1,97 @@
+The model has 45 class(es).
+The class 'petrinet::trace::Place' has no attributes.
+The class 'trace::Events::Transition::fireEntryEventOccurrence' has no attributes.
+The class 'trace::Transition' has no attributes.
+The class 'Place::addTokenEntryEventOccurrence' has no attributes.
+The class 'Events' has no attributes.
+The class 'Events::trace::EObject' has no attributes.
+The class 'Net::runEntryEventOccurrence' has no attributes.
+The class 'trace::petrinet::TracedPlace' has the following attributes: 'initialTokens' of type int; 'name' of type str.
+The class 'trace::Events::Place::removeTokenEntryEventOccurrence' has no attributes.
+The class 'trace::GlobalState' has no attributes.
+The class 'Transition::isEnabledEntryEventOccurrence' has no attributes.
+The class 'Events::trace::GlobalState' has no attributes.
+The class 'trace::Events::Transition::isEnabledEntryEventOccurrence' has no attributes.
+The class 'Net::mainEntryEventOccurrence' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::Events::Transition::isEnabledExitEventOccurrence' has no attributes.
+The class 'Place::tokens::State' has no attributes.
+The class 'States::trace::GlobalState' has no attributes.
+The class 'trace::Net' has no attributes.
+The class 'trace::Events::Transition::fireExitEventOccurrence' has no attributes.
+The class 'TracedObjects' has no attributes.
+The class 'Net::mainExitEventOccurrence' has no attributes.
+The class 'petrinet::TracedPlace' has no attributes.
+The class 'trace::Events::Place::addTokenExitEventOccurrence' has no attributes.
+The class 'Place::removeTokenExitEventOccurrence' has no attributes.
+The class 'trace::Events::Events' has no attributes.
+The class 'trace::Events::Net::mainEntryEventOccurrence' has no attributes.
+The class 'Transition::fireExitEventOccurrence' has no attributes.
+The class 'trace::States::Place::tokens::State' has the following attributes: 'tokens' of type int.
+The class 'trace::Events::EventOccurrence' has no attributes.
+The class 'trace::Events::Net::mainExitEventOccurrence' has no attributes.
+The class 'Place::removeTokenEntryEventOccurrence' has no attributes.
+The class 'Events::trace::Transition' has no attributes.
+The class 'trace::Events::Place::addTokenEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Net::runEntryEventOccurrence' has no attributes.
+The class 'Transition::isEnabledExitEventOccurrence' has no attributes.
+The class 'trace::Events::Place::removeTokenExitEventOccurrence' has no attributes.
+The class 'EventOccurrence' has no attributes.
+The class 'trace::StaticObjectsPools' has no attributes.
+The class 'Transition::fireEntryEventOccurrence' has no attributes.
+The class 'Place::addTokenExitEventOccurrence' has no attributes.
+The class 'Events::trace::Net' has no attributes.
+The class 'trace::Traced::TracedObjects' has no attributes.
+The class 'Net::runExitEventOccurrence' has no attributes.
+The class 'trace::Events::Net::runExitEventOccurrence' has no attributes.
+'trace::Events::Net::runExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Transition::fireExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Net::runEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Transition::isEnabledExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Place::removeTokenEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Place::addTokenEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Place::removeTokenExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Net::mainExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Net::mainEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Transition::fireEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Transition::isEnabledEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Place::addTokenExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'Events::trace::Transition' (role 'Events_trace_Transition57', cardinality 0..*) is associated with 'trace::Events::Transition::fireEntryEventOccurrence' (role 'trace_Events_Transition_fireEntryEventOccurrence', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState62', cardinality 0..*) is associated with 'trace::States::Place::tokens::State' (role 'place_tokens_States', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events18', cardinality 0..*) is associated with 'Net::runEntryEventOccurrence' (role 'Net_runEntryEventOccurrence', cardinality 0..*).
+'petrinet::TracedPlace' (role 'petrinet_TracedPlace', cardinality 0..*) is associated with 'trace::Events::Place::addTokenEntryEventOccurrence' (role 'trace_Events_Place_addTokenEntryEventOccurrence', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace6', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools', cardinality 0..*).
+'trace::Events::Net::runEntryEventOccurrence' (role 'trace_Events_Net_runEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::Net' (role 'Events_trace_Net41', cardinality 0..*).
+'Net::mainExitEventOccurrence' (role 'Net_mainExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events16', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace2', cardinality 0..*) is associated with 'Events' (role 'Events', cardinality 0..*).
+'Transition::fireEntryEventOccurrence' (role 'Transition_fireEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events34', cardinality 0..*).
+'Place::removeTokenEntryEventOccurrence' (role 'Place_removeTokenEntryEventOccurrence50', cardinality 0..*) is associated with 'trace::Events::Place::removeTokenExitEventOccurrence' (role 'trace_Events_Place_removeTokenExitEventOccurrence', cardinality 0..*).
+'trace::Transition' (role 'trace_Transition', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools10', cardinality 0..*).
+'trace::Events::Transition::isEnabledEntryEventOccurrence' (role 'trace_Events_Transition_isEnabledEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::Transition' (role 'Events_trace_Transition', cardinality 0..*).
+'petrinet::TracedPlace' (role 'petrinet_TracedPlace64', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects', cardinality 0..*).
+'trace::Events::Place::addTokenExitEventOccurrence' (role 'trace_Events_Place_addTokenExitEventOccurrence', cardinality 0..*) is associated with 'Place::addTokenEntryEventOccurrence' (role 'Place_addTokenEntryEventOccurrence46', cardinality 0..*).
+'trace::petrinet::TracedPlace' (role 'parent', cardinality 0..*) is associated with 'Place::tokens::State' (role 'Place_tokens_State67', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates', cardinality 0..*) is associated with 'Place::tokens::State' (role 'Place_tokens_State', cardinality 0..*).
+'trace::Events::Transition::fireExitEventOccurrence' (role 'trace_Events_Transition_fireExitEventOccurrence', cardinality 0..*) is associated with 'Transition::fireEntryEventOccurrence' (role 'Transition_fireEntryEventOccurrence59', cardinality 0..*).
+'Net::mainEntryEventOccurrence' (role 'Net_mainEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events', cardinality 0..*).
+'Place::removeTokenEntryEventOccurrence' (role 'Place_removeTokenEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events26', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace4', cardinality 0..*) is associated with 'TracedObjects' (role 'TracedObjects', cardinality 0..*).
+'petrinet::TracedPlace' (role 'TracedPlace', cardinality 0..*) is associated with 'trace::States::Place::tokens::State' (role 'tokensTrace', cardinality 0..*).
+'petrinet::trace::Place' (role 'petrinet_trace_Place', cardinality 0..*) is associated with 'trace::petrinet::TracedPlace' (role 'trace_petrinet_TracedPlace', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::GlobalState' (role 'trace_GlobalState', cardinality 0..*).
+'trace::Events::Net::mainEntryEventOccurrence' (role 'trace_Events_Net_mainEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::Net' (role 'Events_trace_Net', cardinality 0..*).
+'trace::Events::Net::runExitEventOccurrence' (role 'trace_Events_Net_runExitEventOccurrence', cardinality 0..*) is associated with 'Net::runEntryEventOccurrence' (role 'Net_runEntryEventOccurrence43', cardinality 0..*).
+'petrinet::TracedPlace' (role 'petrinet_TracedPlace48', cardinality 0..*) is associated with 'trace::Events::Place::removeTokenEntryEventOccurrence' (role 'trace_Events_Place_removeTokenEntryEventOccurrence', cardinality 0..*).
+'Place::addTokenExitEventOccurrence' (role 'Place_addTokenExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events24', cardinality 0..*).
+'trace::Net' (role 'trace_Net', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools12', cardinality 0..*).
+'trace::Events::Net::mainExitEventOccurrence' (role 'trace_Events_Net_mainExitEventOccurrence', cardinality 0..*) is associated with 'Net::mainEntryEventOccurrence' (role 'Net_mainEntryEventOccurrence39', cardinality 0..*).
+'trace::Events::Transition::isEnabledExitEventOccurrence' (role 'trace_Events_Transition_isEnabledExitEventOccurrence55', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject', cardinality 0..*).
+'Transition::fireExitEventOccurrence' (role 'Transition_fireExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events36', cardinality 0..*).
+'EventOccurrence' (role 'EventOccurrence', cardinality 0..*) is associated with 'trace::GlobalState' (role 'stateDuringWhichTriggered', cardinality 0..*).
+'Net::runExitEventOccurrence' (role 'Net_runExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events20', cardinality 0..*).
+'Transition::isEnabledEntryEventOccurrence' (role 'Transition_isEnabledEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events30', cardinality 0..*).
+'Transition::isEnabledExitEventOccurrence' (role 'Transition_isEnabledExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events32', cardinality 0..*).
+'Place::removeTokenExitEventOccurrence' (role 'Place_removeTokenExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events28', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events22', cardinality 0..*) is associated with 'Place::addTokenEntryEventOccurrence' (role 'Place_addTokenEntryEventOccurrence', cardinality 0..*).
+'Transition::isEnabledEntryEventOccurrence' (role 'Transition_isEnabledEntryEventOccurrence53', cardinality 0..*) is associated with 'trace::Events::Transition::isEnabledExitEventOccurrence' (role 'trace_Events_Transition_isEnabledExitEventOccurrence', cardinality 0..*).
+'trace::Events::EventOccurrence' (role 'eventsTriggeredDuringState', cardinality 0..*) is associated with 'Events::trace::GlobalState' (role 'GlobalState', cardinality 0..*).

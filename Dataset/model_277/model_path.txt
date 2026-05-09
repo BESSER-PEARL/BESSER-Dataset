@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jdinkla/groovy-emf-builder/model/library.ecore

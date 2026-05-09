@@ -1,0 +1,38 @@
+The model has 19 class(es).
+The class 'Expression' has no attributes.
+The class 'JAVA::TypeAccess' has no attributes.
+The class 'JAVA::Expression' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'JAVA::AbstractTypeDeclaration' has no attributes.
+The class 'JAVA::InterfaceDeclaration' has no attributes.
+The class 'JAVA::FieldDeclaration' has no attributes.
+The class 'JAVA::TypeDeclaration' has no attributes.
+The class 'JAVA::BodyDeclaration' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'JAVA::ClassDeclaration' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'JAVA::Package' has no attributes.
+The class 'Type' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'JAVA::ASTNode' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'JAVA::Type' has no attributes.
+The class 'JAVA::NamedElement' has the following attributes: 'name' of type str; 'proxy' of type bool.
+'JAVA::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JAVA::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'JAVA::Expression' is a specialization of 'ASTNode'.
+'JAVA::AbstractTypeDeclaration' is a specialization of 'Type'.
+'JAVA::NamedElement' is a specialization of 'ASTNode'.
+'JAVA::TypeAccess' is a specialization of 'Expression'.
+'JAVA::ClassDeclaration' is a specialization of 'TypeDeclaration'.
+'JAVA::InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+'JAVA::Type' is a specialization of 'NamedElement'.
+'JAVA::Package' is a specialization of 'NamedElement'.
+'JAVA::BodyDeclaration' is a specialization of 'NamedElement'.
+'JAVA::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'JAVA::AbstractTypeDeclaration' (role 'JAVA_AbstractTypeDeclaration', cardinality 0..*) is associated with 'JAVA::Package' (role 'JAVA_Package', cardinality 0..*).
+'JAVA::AbstractTypeDeclaration' (role 'JAVA_AbstractTypeDeclaration7', cardinality 0..*) is associated with 'JAVA::TypeAccess' (role 'JAVA_TypeAccess8', cardinality 0..*).
+'JAVA::ClassDeclaration' (role 'JAVA_ClassDeclaration', cardinality 0..*) is associated with 'JAVA::TypeAccess' (role 'JAVA_TypeAccess', cardinality 0..*).
+'JAVA::FieldDeclaration' (role 'JAVA_FieldDeclaration', cardinality 0..*) is associated with 'JAVA::ClassDeclaration' (role 'JAVA_ClassDeclaration2', cardinality 0..*).
+'JAVA::TypeDeclaration' (role 'JAVA_TypeDeclaration', cardinality 0..*) is associated with 'JAVA::TypeAccess' (role 'JAVA_TypeAccess4', cardinality 0..*).
+'JAVA::FieldDeclaration' (role 'JAVA_FieldDeclaration10', cardinality 0..*) is associated with 'JAVA::TypeAccess' (role 'JAVA_TypeAccess11', cardinality 0..*).

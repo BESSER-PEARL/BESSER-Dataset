@@ -1,0 +1,478 @@
+The model has 155 class(es).
+The class 'cSharp::PrimaryExpression2' has the following attributes: 'incrementeDecrement' of type str.
+The class 'cSharp::ClassBase' has no attributes.
+The class 'cSharp::FixedParameters' has no attributes.
+The class 'RemoveAccessorDeclaration' has no attributes.
+The class 'cSharp::Expression' has no attributes.
+The class 'cSharp::FieldDeclaration' has no attributes.
+The class 'cSharp::SwitchLabel' has no attributes.
+The class 'cSharp::NamespaceDeclaration' has no attributes.
+The class 'cSharp::WhileStatement' has no attributes.
+The class 'ConstructorInitializer' has no attributes.
+The class 'cSharp::FixedParameter' has no attributes.
+The class 'AttributeSection' has no attributes.
+The class 'cSharp::BinaryOperatorDeclarator' has the following attributes: 'overBinOperator' of type str.
+The class 'cSharp::InterfaceBody' has no attributes.
+The class 'cSharp::IndexerDeclarator' has no attributes.
+The class 'cSharp::String' has no attributes.
+The class 'cSharp::PropertyDeclaration' has no attributes.
+The class 'cSharp::UsingStatement' has no attributes.
+The class 'cSharp::JumpStatement' has no attributes.
+The class 'cSharp::InterfaceIndexerDeclaration' has no attributes.
+The class 'OperatorDeclarator' has no attributes.
+The class 'cSharp::TypeOrVoid' has no attributes.
+The class 'cSharp::DestructorDeclaration' has no attributes.
+The class 'cSharp::MaybeEmptyBlock' has no attributes.
+The class 'cSharp::ConstructorDeclaration' has the following attributes: 'constModifier' of type str.
+The class 'cSharp::Void' has no attributes.
+The class 'cSharp::Double' has no attributes.
+The class 'MaybeEmptyBlock' has no attributes.
+The class 'cSharp::SpecificCatchClause' has no attributes.
+The class 'cSharp::ClassBody' has no attributes.
+The class 'cSharp::LocalVariableDeclaration' has no attributes.
+The class 'cSharp::CatchClauses' has no attributes.
+The class 'cSharp::IterationStatement' has no attributes.
+The class 'cSharp::CompilationUnit' has no attributes.
+The class 'cSharp::UShort' has no attributes.
+The class 'cSharp::EnumBody' has no attributes.
+The class 'cSharp::Long' has no attributes.
+The class 'EventDeclaration' has no attributes.
+The class 'cSharp::GlobalAttributeSection' has no attributes.
+The class 'cSharp::Statement' has no attributes.
+The class 'ConstantDeclaration' has no attributes.
+The class 'cSharp::InterfaceMethodDeclaration' has no attributes.
+The class 'cSharp::InterfaceMemberDeclaration' has no attributes.
+The class 'cSharp::EnumMemberDeclaration' has no attributes.
+The class 'cSharp::NamespaceMemberDeclaration' has no attributes.
+The class 'cSharp::Char' has no attributes.
+The class 'cSharp::MethodDeclaration' has no attributes.
+The class 'cSharp::IfStatement' has no attributes.
+The class 'cSharp::BuiltInType' has no attributes.
+The class 'cSharp::Float' has no attributes.
+The class 'BuiltInType' has no attributes.
+The class 'cSharp::Short' has no attributes.
+The class 'cSharp::StatementExpression' has the following attributes: 'incrimentDecrement' of type str; 'assignementOperator' of type str.
+The class 'AddAccessorDeclaration' has no attributes.
+The class 'cSharp::TypeDeclaration' has no attributes.
+The class 'cSharp::GlobalAttributes' has no attributes.
+The class 'cSharp::SetAccessorDeclaration' has no attributes.
+The class 'cSharp::ULong' has no attributes.
+The class 'cSharp::GotoStatement' has no attributes.
+The class 'cSharp::VariableInitializer' has no attributes.
+The class 'FormalParameterList' has no attributes.
+The class 'cSharp::Identifier' has no attributes.
+The class 'GetAccessorDeclaration' has no attributes.
+The class 'cSharp::PrimaryExpression' has the following attributes: 'rankSpecifier' of type str; 'predefinedType' of type str; 'literal' of type str.
+The class 'cSharp::DelegateDeclaration' has no attributes.
+The class 'cSharp::ThrowStatement' has no attributes.
+The class 'cSharp::EmbeddedStatement' has no attributes.
+The class 'cSharp::ForInitializer' has no attributes.
+The class 'cSharp::GetAccessorDeclaration' has no attributes.
+The class 'cSharp::StatementExpressionList' has no attributes.
+The class 'cSharp::Type' has no attributes.
+The class 'cSharp::ResourceAquisition' has no attributes.
+The class 'cSharp::Attributes' has no attributes.
+The class 'cSharp::GeneralCatchclause' has no attributes.
+The class 'cSharp::Expression2' has no attributes.
+The class 'SetAccessorDeclaration' has no attributes.
+The class 'cSharp::ClassDeclaration' has the following attributes: 'classModifier' of type str.
+The class 'cSharp::Argument' has no attributes.
+The class 'cSharp::AttributeList' has no attributes.
+The class 'cSharp::ConversionOperatorDeclarator' has no attributes.
+The class 'cSharp::Attribute' has no attributes.
+The class 'cSharp::LabeledStatement' has no attributes.
+The class 'cSharp::LockStatement' has no attributes.
+The class 'cSharp::FinallyClause' has no attributes.
+The class 'cSharp::QualifiedIdentifier' has no attributes.
+The class 'cSharp::ForeachStatement' has no attributes.
+The class 'cSharp::ContinueStatement' has no attributes.
+The class 'cSharp::Int' has no attributes.
+The class 'cSharp::Byte' has no attributes.
+The class 'FieldDeclaration' has no attributes.
+The class 'cSharp::OperatorDeclaration' has the following attributes: 'opModifier' of type str.
+The class 'cSharp::ClassMemberDeclaration' has no attributes.
+The class 'cSharp::SwitchStatement' has no attributes.
+The class 'cSharp::ForStatement' has no attributes.
+The class 'PropertyDeclaration' has no attributes.
+The class 'cSharp::StaticConstructorDeclaration' has the following attributes: 'staticCosntModifier' of type str.
+The class 'cSharp::RemoveAccessorDeclaration' has no attributes.
+The class 'cSharp::Block' has no attributes.
+The class 'cSharp::ArrayInitializer' has no attributes.
+The class 'cSharp::InterfacePropertyDeclaration' has no attributes.
+The class 'cSharp::FormalParameterList' has no attributes.
+The class 'cSharp::ConstantDeclarator' has no attributes.
+The class 'cSharp::QualifiedIdentifierList' has no attributes.
+The class 'VariableInitializer' has no attributes.
+The class 'cSharp::ConstantDeclaration' has no attributes.
+The class 'Argument' has no attributes.
+The class 'cSharp::UnaryOperatorDeclarator' has no attributes.
+The class 'ArrayType' has no attributes.
+The class 'IntegralType' has no attributes.
+The class 'cSharp::AttributeName' has no attributes.
+The class 'cSharp::ExpressionList' has no attributes.
+The class 'cSharp::EventAccessorDeclarations' has no attributes.
+The class 'cSharp::BuiltInClassType' has no attributes.
+The class 'cSharp::UInt' has no attributes.
+The class 'BuiltInClassType' has no attributes.
+The class 'ClassBase' has no attributes.
+The class 'cSharp::InterfaceAccessors' has no attributes.
+The class 'cSharp::VariableDeclarator' has no attributes.
+The class 'cSharp::InterfaceEventDeclaration' has no attributes.
+The class 'ResourceAquisition' has no attributes.
+The class 'cSharp::UnaryExpression' has the following attributes: 'expUnaryOperator' of type str.
+The class 'cSharp::BreakStatement' has no attributes.
+The class 'cSharp::ElsePart' has no attributes.
+The class 'cSharp::EnumDeclaration' has no attributes.
+The class 'cSharp::Bool' has no attributes.
+The class 'cSharp::EventDeclaration' has no attributes.
+The class 'cSharp::AddAccessorDeclaration' has no attributes.
+The class 'cSharp::TryStatement' has no attributes.
+The class 'cSharp::SwitchSection' has no attributes.
+The class 'cSharp::AttributeSection' has no attributes.
+The class 'cSharp::AttributeArguments' has no attributes.
+The class 'cSharp::Decimal' has no attributes.
+The class 'cSharp::DoStatement' has no attributes.
+The class 'cSharp::ConstructorDeclarator' has no attributes.
+The class 'cSharp::SelectionStatement' has no attributes.
+The class 'cSharp::ParameterArray' has no attributes.
+The class 'cSharp::SByte' has no attributes.
+The class 'TypeOrVoid' has no attributes.
+The class 'cSharp::NonArrayType' has no attributes.
+The class 'cSharp::ArrayType' has no attributes.
+The class 'cSharp::AccessorDeclarations' has no attributes.
+The class 'cSharp::Object' has no attributes.
+The class 'DelegateDeclaration' has no attributes.
+The class 'cSharp::IntegralType' has no attributes.
+The class 'cSharp::ConstructorInitializer' has no attributes.
+The class 'cSharp::ReturnStatement' has no attributes.
+The class 'cSharp::DeclarationStatment' has no attributes.
+The class 'cSharp::ArgumentList' has no attributes.
+The class 'cSharp::LocalconstantDeclaration' has no attributes.
+The class 'cSharp::NamespaceBody' has no attributes.
+The class 'cSharp::InterfaceDeclaration' has no attributes.
+The class 'cSharp::UsingDirective' has no attributes.
+The class 'cSharp::OperatorDeclarator' has no attributes.
+The class 'cSharp::MethodHeader' has the following attributes: 'modifier' of type str.
+The class 'cSharp::IndexerDeclaration' has the following attributes: 'idModifier' of type str.
+'cSharp::UShort' is a specialization of 'IntegralType'.
+'cSharp::ULong' is a specialization of 'IntegralType'.
+'cSharp::Char' is a specialization of 'IntegralType'.
+'cSharp::MaybeEmptyBlock' is a specialization of 'GetAccessorDeclaration'.
+'cSharp::Byte' is a specialization of 'IntegralType'.
+'cSharp::TypeOrVoid' is a specialization of 'DelegateDeclaration'.
+'cSharp::Type' is a specialization of 'EventDeclaration'.
+'cSharp::Expression' is a specialization of 'VariableInitializer'.
+'cSharp::Type' is a specialization of 'ConstantDeclaration'.
+'cSharp::Type' is a specialization of 'FieldDeclaration'.
+'cSharp::Expression' is a specialization of 'ResourceAquisition'.
+'cSharp::Void' is a specialization of 'TypeOrVoid'.
+'cSharp::Short' is a specialization of 'IntegralType'.
+'cSharp::UInt' is a specialization of 'IntegralType'.
+'cSharp::BuiltInClassType' is a specialization of 'ClassBase'.
+'cSharp::IntegralType' is a specialization of 'BuiltInType'.
+'cSharp::Expression' is a specialization of 'Argument'.
+'cSharp::Int' is a specialization of 'IntegralType'.
+'cSharp::Type' is a specialization of 'PropertyDeclaration'.
+'cSharp::AttributeList' is a specialization of 'AttributeSection'.
+'cSharp::ArrayInitializer' is a specialization of 'VariableInitializer'.
+'cSharp::Block' is a specialization of 'MaybeEmptyBlock'.
+'cSharp::Double' is a specialization of 'BuiltInType'.
+'cSharp::ConversionOperatorDeclarator' is a specialization of 'OperatorDeclarator'.
+'cSharp::Decimal' is a specialization of 'BuiltInType'.
+'cSharp::UnaryOperatorDeclarator' is a specialization of 'OperatorDeclarator'.
+'cSharp::ArgumentList' is a specialization of 'ConstructorInitializer'.
+'cSharp::Object' is a specialization of 'BuiltInClassType'.
+'cSharp::Long' is a specialization of 'IntegralType'.
+'cSharp::BinaryOperatorDeclarator' is a specialization of 'OperatorDeclarator'.
+'cSharp::Bool' is a specialization of 'BuiltInType'.
+'cSharp::SByte' is a specialization of 'IntegralType'.
+'cSharp::NonArrayType' is a specialization of 'ArrayType'.
+'cSharp::Block' is a specialization of 'RemoveAccessorDeclaration'.
+'cSharp::Block' is a specialization of 'AddAccessorDeclaration'.
+'cSharp::MaybeEmptyBlock' is a specialization of 'SetAccessorDeclaration'.
+'cSharp::Float' is a specialization of 'BuiltInType'.
+'cSharp::BuiltInClassType' is a specialization of 'BuiltInType'.
+'cSharp::LocalVariableDeclaration' is a specialization of 'ResourceAquisition'.
+'cSharp::FixedParameters' is a specialization of 'FormalParameterList'.
+'cSharp::String' is a specialization of 'BuiltInClassType'.
+'cSharp::TypeOrVoid' (role 'cSharp_TypeOrVoid484', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type485', cardinality 0..*).
+'cSharp::Block' (role 'cSharp_Block', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement545', cardinality 0..*).
+'cSharp::AccessorDeclarations' (role 'cSharp_AccessorDeclarations430', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes431', cardinality 0..*).
+'cSharp::SelectionStatement' (role 'cSharp_SelectionStatement', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement537', cardinality 0..*).
+'cSharp::SpecificCatchClause' (role 'cSharp_SpecificCatchClause603', cardinality 0..*) is associated with 'cSharp::Block' (role 'cSharp_Block604', cardinality 0..*).
+'cSharp::GeneralCatchclause' (role 'cSharp_GeneralCatchclause591', cardinality 0..*) is associated with 'cSharp::Block' (role 'cSharp_Block592', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type198', cardinality 0..*) is associated with 'cSharp::ConstantDeclarator' (role 'cSharp_ConstantDeclarator199', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier143', cardinality 0..*) is associated with 'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression142', cardinality 0..*).
+'cSharp::LabeledStatement' (role 'cSharp_LabeledStatement526', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier527', cardinality 0..*).
+'cSharp::JumpStatement' (role 'cSharp_JumpStatement610', cardinality 0..*) is associated with 'cSharp::GotoStatement' (role 'cSharp_GotoStatement', cardinality 0..*).
+'cSharp::MaybeEmptyBlock' (role 'cSharp_MaybeEmptyBlock362', cardinality 0..*) is associated with 'cSharp::ConstructorDeclaration' (role 'cSharp_ConstructorDeclaration361', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression566', cardinality 0..*) is associated with 'cSharp::LockStatement' (role 'cSharp_LockStatement565', cardinality 0..*).
+'cSharp::SwitchLabel' (role 'cSharp_SwitchLabel', cardinality 0..*) is associated with 'cSharp::SwitchSection' (role 'cSharp_SwitchSection706', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type183', cardinality 0..*) is associated with 'cSharp::EventAccessorDeclarations' (role 'cSharp_EventAccessorDeclarations', cardinality 0..*).
+'cSharp::InterfacePropertyDeclaration' (role 'cSharp_InterfacePropertyDeclaration292', cardinality 0..*) is associated with 'cSharp::InterfaceAccessors' (role 'cSharp_InterfaceAccessors293', cardinality 0..*).
+'cSharp::IndexerDeclaration' (role 'cSharp_IndexerDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration335', cardinality 0..*).
+'cSharp::StatementExpression' (role 'cSharp_StatementExpression665', cardinality 0..*) is associated with 'cSharp::StatementExpressionList' (role 'cSharp_StatementExpressionList664', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type188', cardinality 0..*) is associated with 'cSharp::AccessorDeclarations' (role 'cSharp_AccessorDeclarations', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier153', cardinality 0..*) is associated with 'cSharp::PrimaryExpression2' (role 'cSharp_PrimaryExpression2152', cardinality 0..*).
+'cSharp::LockStatement' (role 'cSharp_LockStatement568', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement569', cardinality 0..*).
+'cSharp::InterfaceMethodDeclaration' (role 'cSharp_InterfaceMethodDeclaration', cardinality 0..*) is associated with 'cSharp::InterfaceMemberDeclaration' (role 'cSharp_InterfaceMemberDeclaration268', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type273', cardinality 0..*) is associated with 'cSharp::InterfaceMemberDeclaration' (role 'cSharp_InterfaceMemberDeclaration272', cardinality 0..*).
+'cSharp::InterfaceMethodDeclaration' (role 'cSharp_InterfaceMethodDeclaration307', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier308', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression262', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression63', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier212', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier211', cardinality 0..*).
+'cSharp::EnumDeclaration' (role 'cSharp_EnumDeclaration237', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier238', cardinality 0..*).
+'cSharp::NamespaceBody' (role 'cSharp_NamespaceBody223', cardinality 0..*) is associated with 'cSharp::UsingDirective' (role 'cSharp_UsingDirective224', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier476', cardinality 0..*) is associated with 'cSharp::FixedParameter' (role 'cSharp_FixedParameter475', cardinality 0..*).
+'cSharp::NamespaceDeclaration' (role 'cSharp_NamespaceDeclaration218', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier219', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier601', cardinality 0..*) is associated with 'cSharp::SpecificCatchClause' (role 'cSharp_SpecificCatchClause600', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement723', cardinality 0..*) is associated with 'cSharp::ElsePart' (role 'cSharp_ElsePart722', cardinality 0..*).
+'cSharp::JumpStatement' (role 'cSharp_JumpStatement606', cardinality 0..*) is associated with 'cSharp::BreakStatement' (role 'cSharp_BreakStatement', cardinality 0..*).
+'cSharp::OperatorDeclaration' (role 'cSharp_OperatorDeclaration379', cardinality 0..*) is associated with 'cSharp::MaybeEmptyBlock' (role 'cSharp_MaybeEmptyBlock380', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression278', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression276', cardinality 0..*).
+'cSharp::WhileStatement' (role 'cSharp_WhileStatement691', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression692', cardinality 0..*).
+'cSharp::StatementExpressionList' (role 'cSharp_StatementExpressionList667', cardinality 0..*) is associated with 'cSharp::StatementExpression' (role 'cSharp_StatementExpression668', cardinality 0..*).
+'cSharp::SwitchSection' (role 'cSharp_SwitchSection', cardinality 0..*) is associated with 'cSharp::SwitchStatement' (role 'cSharp_SwitchStatement704', cardinality 0..*).
+'cSharp::ClassBase' (role 'cSharp_ClassBase499', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifierList' (role 'cSharp_QualifiedIdentifierList500', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression252', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression254', cardinality 0..*).
+'cSharp::TypeDeclaration' (role 'cSharp_TypeDeclaration', cardinality 0..*) is associated with 'cSharp::NamespaceMemberDeclaration' (role 'cSharp_NamespaceMemberDeclaration216', cardinality 0..*).
+'cSharp::DeclarationStatment' (role 'cSharp_DeclarationStatment515', cardinality 0..*) is associated with 'cSharp::LocalconstantDeclaration' (role 'cSharp_LocalconstantDeclaration', cardinality 0..*).
+'cSharp::StaticConstructorDeclaration' (role 'cSharp_StaticConstructorDeclaration348', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier349', cardinality 0..*).
+'cSharp::WhileStatement' (role 'cSharp_WhileStatement', cardinality 0..*) is associated with 'cSharp::IterationStatement' (role 'cSharp_IterationStatement628', cardinality 0..*).
+'cSharp::LocalconstantDeclaration' (role 'cSharp_LocalconstantDeclaration523', cardinality 0..*) is associated with 'cSharp::ConstantDeclarator' (role 'cSharp_ConstantDeclarator524', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type190', cardinality 0..*) is associated with 'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator191', cardinality 0..*).
+'cSharp::StatementExpression' (role 'cSharp_StatementExpression682', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression683', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier', cardinality 0..*) is associated with 'cSharp::UsingDirective' (role 'cSharp_UsingDirective8', cardinality 0..*).
+'cSharp::InterfacePropertyDeclaration' (role 'cSharp_InterfacePropertyDeclaration', cardinality 0..*) is associated with 'cSharp::InterfaceMemberDeclaration' (role 'cSharp_InterfaceMemberDeclaration277', cardinality 0..*).
+'cSharp::BinaryOperatorDeclarator' (role 'cSharp_BinaryOperatorDeclarator392', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier393', cardinality 0..*).
+'cSharp::MethodDeclaration' (role 'cSharp_MethodDeclaration440', cardinality 0..*) is associated with 'cSharp::MethodHeader' (role 'cSharp_MethodHeader', cardinality 0..*).
+'cSharp::ForeachStatement' (role 'cSharp_ForeachStatement645', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement646', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier404', cardinality 0..*) is associated with 'cSharp::UnaryOperatorDeclarator' (role 'cSharp_UnaryOperatorDeclarator403', cardinality 0..*).
+'cSharp::InterfaceBody' (role 'cSharp_InterfaceBody266', cardinality 0..*) is associated with 'cSharp::InterfaceMemberDeclaration' (role 'cSharp_InterfaceMemberDeclaration', cardinality 0..*).
+'cSharp::ConstructorInitializer' (role 'cSharp_ConstructorInitializer', cardinality 0..*) is associated with 'cSharp::ConstructorDeclarator' (role 'cSharp_ConstructorDeclarator370', cardinality 0..*).
+'cSharp::ParameterArray' (role 'cSharp_ParameterArray456', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes457', cardinality 0..*).
+'cSharp::InterfaceMemberDeclaration' (role 'cSharp_InterfaceMemberDeclaration270', cardinality 0..*) is associated with 'cSharp::InterfaceEventDeclaration' (role 'cSharp_InterfaceEventDeclaration', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier388', cardinality 0..*) is associated with 'cSharp::ConversionOperatorDeclarator' (role 'cSharp_ConversionOperatorDeclarator387', cardinality 0..*).
+'cSharp::IfStatement' (role 'cSharp_IfStatement714', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression715', cardinality 0..*).
+'cSharp::NamespaceBody' (role 'cSharp_NamespaceBody', cardinality 0..*) is associated with 'cSharp::NamespaceDeclaration' (role 'cSharp_NamespaceDeclaration221', cardinality 0..*).
+'cSharp::LockStatement' (role 'cSharp_LockStatement', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement547', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression617', cardinality 0..*) is associated with 'cSharp::ThrowStatement' (role 'cSharp_ThrowStatement616', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type385', cardinality 0..*) is associated with 'cSharp::ConversionOperatorDeclarator' (role 'cSharp_ConversionOperatorDeclarator', cardinality 0..*).
+'cSharp::SelectionStatement' (role 'cSharp_SelectionStatement697', cardinality 0..*) is associated with 'cSharp::IfStatement' (role 'cSharp_IfStatement', cardinality 0..*).
+'cSharp::IndexerDeclarator' (role 'cSharp_IndexerDeclarator414', cardinality 0..*) is associated with 'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList415', cardinality 0..*).
+'cSharp::CompilationUnit' (role 'cSharp_CompilationUnit4', cardinality 0..*) is associated with 'cSharp::NamespaceMemberDeclaration' (role 'cSharp_NamespaceMemberDeclaration', cardinality 0..*).
+'cSharp::PrimaryExpression2' (role 'cSharp_PrimaryExpression2155', cardinality 0..*) is associated with 'cSharp::ArgumentList' (role 'cSharp_ArgumentList156', cardinality 0..*).
+'cSharp::ElsePart' (role 'cSharp_ElsePart', cardinality 0..*) is associated with 'cSharp::IfStatement' (role 'cSharp_IfStatement720', cardinality 0..*).
+'cSharp::UnaryExpression' (role 'cSharp_UnaryExpression123', cardinality 0..*) is associated with 'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression', cardinality 0..*).
+'cSharp::TryStatement' (role 'cSharp_TryStatement578', cardinality 0..*) is associated with 'cSharp::FinallyClause' (role 'cSharp_FinallyClause579', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type177', cardinality 0..*) is associated with 'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator178', cardinality 0..*).
+'cSharp::GlobalAttributes' (role 'cSharp_GlobalAttributes10', cardinality 0..*) is associated with 'cSharp::GlobalAttributeSection' (role 'cSharp_GlobalAttributeSection', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression2100', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression101', cardinality 0..*).
+'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration333', cardinality 0..*) is associated with 'cSharp::EventDeclaration' (role 'cSharp_EventDeclaration', cardinality 0..*).
+'cSharp::EnumMemberDeclaration' (role 'cSharp_EnumMemberDeclaration252', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier253', cardinality 0..*).
+'cSharp::InterfaceAccessors' (role 'cSharp_InterfaceAccessors', cardinality 0..*) is associated with 'cSharp::InterfaceIndexerDeclaration' (role 'cSharp_InterfaceIndexerDeclaration281', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier463', cardinality 0..*) is associated with 'cSharp::ParameterArray' (role 'cSharp_ParameterArray462', cardinality 0..*).
+'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator563', cardinality 0..*) is associated with 'cSharp::LocalVariableDeclaration' (role 'cSharp_LocalVariableDeclaration562', cardinality 0..*).
+'cSharp::MaybeEmptyBlock' (role 'cSharp_MaybeEmptyBlock', cardinality 0..*) is associated with 'cSharp::StaticConstructorDeclaration' (role 'cSharp_StaticConstructorDeclaration351', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier503', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifierList' (role 'cSharp_QualifiedIdentifierList502', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression702', cardinality 0..*) is associated with 'cSharp::SwitchStatement' (role 'cSharp_SwitchStatement701', cardinality 0..*).
+'cSharp::Attributes' (role 'cSharp_Attributes421', cardinality 0..*) is associated with 'cSharp::EventAccessorDeclarations' (role 'cSharp_EventAccessorDeclarations420', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type396', cardinality 0..*) is associated with 'cSharp::BinaryOperatorDeclarator' (role 'cSharp_BinaryOperatorDeclarator395', cardinality 0..*).
+'cSharp::EnumBody' (role 'cSharp_EnumBody246', cardinality 0..*) is associated with 'cSharp::EnumMemberDeclaration' (role 'cSharp_EnumMemberDeclaration247', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression250', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression51', cardinality 0..*).
+'cSharp::UsingDirective' (role 'cSharp_UsingDirective', cardinality 0..*) is associated with 'cSharp::CompilationUnit' (role 'cSharp_CompilationUnit', cardinality 0..*).
+'cSharp::Attributes' (role 'cSharp_Attributes296', cardinality 0..*) is associated with 'cSharp::InterfaceAccessors' (role 'cSharp_InterfaceAccessors295', cardinality 0..*).
+'cSharp::IfStatement' (role 'cSharp_IfStatement717', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement718', cardinality 0..*).
+'cSharp::AttributeList' (role 'cSharp_AttributeList15', cardinality 0..*) is associated with 'cSharp::Attribute' (role 'cSharp_Attribute', cardinality 0..*).
+'cSharp::VariableInitializer' (role 'cSharp_VariableInitializer', cardinality 0..*) is associated with 'cSharp::ArrayInitializer' (role 'cSharp_ArrayInitializer164', cardinality 0..*).
+'cSharp::Attribute' (role 'cSharp_Attribute18', cardinality 0..*) is associated with 'cSharp::AttributeList' (role 'cSharp_AttributeList17', cardinality 0..*).
+'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration331', cardinality 0..*) is associated with 'cSharp::PropertyDeclaration' (role 'cSharp_PropertyDeclaration', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression34', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression32', cardinality 0..*).
+'cSharp::ExpressionList' (role 'cSharp_ExpressionList26', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type383', cardinality 0..*) is associated with 'cSharp::OperatorDeclarator' (role 'cSharp_OperatorDeclarator382', cardinality 0..*).
+'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList482', cardinality 0..*) is associated with 'cSharp::TypeOrVoid' (role 'cSharp_TypeOrVoid481', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression266', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression264', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement695', cardinality 0..*) is associated with 'cSharp::WhileStatement' (role 'cSharp_WhileStatement694', cardinality 0..*).
+'cSharp::InterfaceDeclaration' (role 'cSharp_InterfaceDeclaration264', cardinality 0..*) is associated with 'cSharp::InterfaceBody' (role 'cSharp_InterfaceBody', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression145', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression146', cardinality 0..*).
+'cSharp::EnumDeclaration' (role 'cSharp_EnumDeclaration240', cardinality 0..*) is associated with 'cSharp::IntegralType' (role 'cSharp_IntegralType', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier488', cardinality 0..*) is associated with 'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator487', cardinality 0..*).
+'cSharp::OperatorDeclaration' (role 'cSharp_OperatorDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration340', cardinality 0..*).
+'cSharp::IndexerDeclaration' (role 'cSharp_IndexerDeclaration408', cardinality 0..*) is associated with 'cSharp::AccessorDeclarations' (role 'cSharp_AccessorDeclarations409', cardinality 0..*).
+'cSharp::OperatorDeclaration' (role 'cSharp_OperatorDeclaration377', cardinality 0..*) is associated with 'cSharp::OperatorDeclarator' (role 'cSharp_OperatorDeclarator', cardinality 0..*).
+'cSharp::InterfaceEventDeclaration' (role 'cSharp_InterfaceEventDeclaration283', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type284', cardinality 0..*).
+'cSharp::DestructorDeclaration' (role 'cSharp_DestructorDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration344', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression677', cardinality 0..*) is associated with 'cSharp::StatementExpression' (role 'cSharp_StatementExpression676', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression2112', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression113', cardinality 0..*).
+'cSharp::DestructorDeclaration' (role 'cSharp_DestructorDeclaration356', cardinality 0..*) is associated with 'cSharp::MaybeEmptyBlock' (role 'cSharp_MaybeEmptyBlock357', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type557', cardinality 0..*) is associated with 'cSharp::LocalVariableDeclaration' (role 'cSharp_LocalVariableDeclaration556', cardinality 0..*).
+'cSharp::LocalVariableDeclaration' (role 'cSharp_LocalVariableDeclaration', cardinality 0..*) is associated with 'cSharp::DeclarationStatment' (role 'cSharp_DeclarationStatment513', cardinality 0..*).
+'cSharp::InterfaceMethodDeclaration' (role 'cSharp_InterfaceMethodDeclaration304', cardinality 0..*) is associated with 'cSharp::TypeOrVoid' (role 'cSharp_TypeOrVoid305', cardinality 0..*).
+'cSharp::ReturnStatement' (role 'cSharp_ReturnStatement619', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression620', cardinality 0..*).
+'cSharp::ForeachStatement' (role 'cSharp_ForeachStatement639', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier640', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier170', cardinality 0..*) is associated with 'cSharp::AttributeName' (role 'cSharp_AttributeName169', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression2114', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression2116', cardinality 0..*).
+'cSharp::EnumBody' (role 'cSharp_EnumBody244', cardinality 0..*) is associated with 'cSharp::EnumMemberDeclaration' (role 'cSharp_EnumMemberDeclaration', cardinality 0..*).
+'cSharp::AccessorDeclarations' (role 'cSharp_AccessorDeclarations433', cardinality 0..*) is associated with 'cSharp::GetAccessorDeclaration' (role 'cSharp_GetAccessorDeclaration', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression130', cardinality 0..*) is associated with 'cSharp::ArrayInitializer' (role 'cSharp_ArrayInitializer', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement549', cardinality 0..*) is associated with 'cSharp::UsingStatement' (role 'cSharp_UsingStatement', cardinality 0..*).
+'cSharp::AttributeArguments' (role 'cSharp_AttributeArguments24', cardinality 0..*) is associated with 'cSharp::ExpressionList' (role 'cSharp_ExpressionList', cardinality 0..*).
+'cSharp::SpecificCatchClause' (role 'cSharp_SpecificCatchClause589', cardinality 0..*) is associated with 'cSharp::CatchClauses' (role 'cSharp_CatchClauses588', cardinality 0..*).
+'cSharp::NamespaceMemberDeclaration' (role 'cSharp_NamespaceMemberDeclaration214', cardinality 0..*) is associated with 'cSharp::NamespaceDeclaration' (role 'cSharp_NamespaceDeclaration', cardinality 0..*).
+'cSharp::ExpressionList' (role 'cSharp_ExpressionList28', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression29', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression643', cardinality 0..*) is associated with 'cSharp::ForeachStatement' (role 'cSharp_ForeachStatement642', cardinality 0..*).
+'cSharp::ArgumentList' (role 'cSharp_ArgumentList372', cardinality 0..*) is associated with 'cSharp::Argument' (role 'cSharp_Argument', cardinality 0..*).
+'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator560', cardinality 0..*) is associated with 'cSharp::LocalVariableDeclaration' (role 'cSharp_LocalVariableDeclaration559', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier186', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type185', cardinality 0..*).
+'cSharp::TypeDeclaration' (role 'cSharp_TypeDeclaration235', cardinality 0..*) is associated with 'cSharp::DelegateDeclaration' (role 'cSharp_DelegateDeclaration', cardinality 0..*).
+'cSharp::IterationStatement' (role 'cSharp_IterationStatement630', cardinality 0..*) is associated with 'cSharp::DoStatement' (role 'cSharp_DoStatement', cardinality 0..*).
+'cSharp::TypeDeclaration' (role 'cSharp_TypeDeclaration233', cardinality 0..*) is associated with 'cSharp::EnumDeclaration' (role 'cSharp_EnumDeclaration', cardinality 0..*).
+'cSharp::ConstructorDeclaration' (role 'cSharp_ConstructorDeclaration359', cardinality 0..*) is associated with 'cSharp::ConstructorDeclarator' (role 'cSharp_ConstructorDeclarator', cardinality 0..*).
+'cSharp::FixedParameter' (role 'cSharp_FixedParameter467', cardinality 0..*) is associated with 'cSharp::FixedParameters' (role 'cSharp_FixedParameters466', cardinality 0..*).
+'cSharp::ClassDeclaration' (role 'cSharp_ClassDeclaration313', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier314', cardinality 0..*).
+'cSharp::ArgumentList' (role 'cSharp_ArgumentList374', cardinality 0..*) is associated with 'cSharp::Argument' (role 'cSharp_Argument375', cardinality 0..*).
+'cSharp::QualifiedIdentifierList' (role 'cSharp_QualifiedIdentifierList262', cardinality 0..*) is associated with 'cSharp::InterfaceDeclaration' (role 'cSharp_InterfaceDeclaration261', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement554', cardinality 0..*) is associated with 'cSharp::UsingStatement' (role 'cSharp_UsingStatement553', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement539', cardinality 0..*) is associated with 'cSharp::IterationStatement' (role 'cSharp_IterationStatement', cardinality 0..*).
+'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList368', cardinality 0..*) is associated with 'cSharp::ConstructorDeclarator' (role 'cSharp_ConstructorDeclarator367', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type390', cardinality 0..*) is associated with 'cSharp::BinaryOperatorDeclarator' (role 'cSharp_BinaryOperatorDeclarator', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier506', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifierList' (role 'cSharp_QualifiedIdentifierList505', cardinality 0..*).
+'cSharp::CatchClauses' (role 'cSharp_CatchClauses', cardinality 0..*) is associated with 'cSharp::TryStatement' (role 'cSharp_TryStatement574', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type172', cardinality 0..*) is associated with 'cSharp::NonArrayType' (role 'cSharp_NonArrayType173', cardinality 0..*).
+'cSharp::IterationStatement' (role 'cSharp_IterationStatement634', cardinality 0..*) is associated with 'cSharp::ForeachStatement' (role 'cSharp_ForeachStatement', cardinality 0..*).
+'cSharp::ConstantDeclaration' (role 'cSharp_ConstantDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration329', cardinality 0..*).
+'cSharp::PrimaryExpression2' (role 'cSharp_PrimaryExpression2162', cardinality 0..*) is associated with 'cSharp::PrimaryExpression2' (role 'cSharp_PrimaryExpression2160', cardinality 0..*).
+'cSharp::ClassBody' (role 'cSharp_ClassBody323', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration', cardinality 0..*).
+'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration337', cardinality 0..*) is associated with 'cSharp::TypeDeclaration' (role 'cSharp_TypeDeclaration338', cardinality 0..*).
+'cSharp::ArrayType' (role 'cSharp_ArrayType460', cardinality 0..*) is associated with 'cSharp::ParameterArray' (role 'cSharp_ParameterArray459', cardinality 0..*).
+'cSharp::SelectionStatement' (role 'cSharp_SelectionStatement699', cardinality 0..*) is associated with 'cSharp::SwitchStatement' (role 'cSharp_SwitchStatement', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression2106', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression107', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement535', cardinality 0..*) is associated with 'cSharp::StatementExpression' (role 'cSharp_StatementExpression', cardinality 0..*).
+'cSharp::NonArrayType' (role 'cSharp_NonArrayType204', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier205', cardinality 0..*).
+'cSharp::NonArrayType' (role 'cSharp_NonArrayType201', cardinality 0..*) is associated with 'cSharp::BuiltInType' (role 'cSharp_BuiltInType202', cardinality 0..*).
+'cSharp::InterfacePropertyDeclaration' (role 'cSharp_InterfacePropertyDeclaration289', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier290', cardinality 0..*).
+'cSharp::MethodHeader' (role 'cSharp_MethodHeader451', cardinality 0..*) is associated with 'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList452', cardinality 0..*).
+'cSharp::VariableInitializer' (role 'cSharp_VariableInitializer491', cardinality 0..*) is associated with 'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator490', cardinality 0..*).
+'cSharp::UsingStatement' (role 'cSharp_UsingStatement551', cardinality 0..*) is associated with 'cSharp::ResourceAquisition' (role 'cSharp_ResourceAquisition', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression689', cardinality 0..*) is associated with 'cSharp::DoStatement' (role 'cSharp_DoStatement688', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression75', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression274', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression292', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression290', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression284', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression282', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type180', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier181', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression140', cardinality 0..*) is associated with 'cSharp::ArgumentList' (role 'cSharp_ArgumentList', cardinality 0..*).
+'cSharp::ConstantDeclarator' (role 'cSharp_ConstantDeclarator493', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier494', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier259', cardinality 0..*) is associated with 'cSharp::InterfaceDeclaration' (role 'cSharp_InterfaceDeclaration258', cardinality 0..*).
+'cSharp::UsingDirective' (role 'cSharp_UsingDirective6', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier', cardinality 0..*).
+'cSharp::LocalVariableDeclaration' (role 'cSharp_LocalVariableDeclaration659', cardinality 0..*) is associated with 'cSharp::ForInitializer' (role 'cSharp_ForInitializer658', cardinality 0..*).
+'cSharp::ConstructorDeclaration' (role 'cSharp_ConstructorDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration342', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression296', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression298', cardinality 0..*).
+'cSharp::GotoStatement' (role 'cSharp_GotoStatement625', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression626', cardinality 0..*).
+'cSharp::BinaryOperatorDeclarator' (role 'cSharp_BinaryOperatorDeclarator398', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier399', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression268', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression69', cardinality 0..*).
+'cSharp::FixedParameter' (role 'cSharp_FixedParameter', cardinality 0..*) is associated with 'cSharp::FixedParameters' (role 'cSharp_FixedParameters', cardinality 0..*).
+'cSharp::ArrayInitializer' (role 'cSharp_ArrayInitializer135', cardinality 0..*) is associated with 'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression134', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement541', cardinality 0..*) is associated with 'cSharp::JumpStatement' (role 'cSharp_JumpStatement', cardinality 0..*).
+'cSharp::FinallyClause' (role 'cSharp_FinallyClause581', cardinality 0..*) is associated with 'cSharp::Block' (role 'cSharp_Block582', cardinality 0..*).
+'cSharp::ForInitializer' (role 'cSharp_ForInitializer661', cardinality 0..*) is associated with 'cSharp::StatementExpressionList' (role 'cSharp_StatementExpressionList662', cardinality 0..*).
+'cSharp::Attributes' (role 'cSharp_Attributes250', cardinality 0..*) is associated with 'cSharp::EnumMemberDeclaration' (role 'cSharp_EnumMemberDeclaration249', cardinality 0..*).
+'cSharp::Statement' (role 'cSharp_Statement530', cardinality 0..*) is associated with 'cSharp::LabeledStatement' (role 'cSharp_LabeledStatement529', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression244', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression45', cardinality 0..*).
+'cSharp::FinallyClause' (role 'cSharp_FinallyClause', cardinality 0..*) is associated with 'cSharp::TryStatement' (role 'cSharp_TryStatement576', cardinality 0..*).
+'cSharp::GlobalAttributeSection' (role 'cSharp_GlobalAttributeSection12', cardinality 0..*) is associated with 'cSharp::AttributeList' (role 'cSharp_AttributeList', cardinality 0..*).
+'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList454', cardinality 0..*) is associated with 'cSharp::ParameterArray' (role 'cSharp_ParameterArray', cardinality 0..*).
+'cSharp::StatementExpression' (role 'cSharp_StatementExpression679', cardinality 0..*) is associated with 'cSharp::UnaryExpression' (role 'cSharp_UnaryExpression680', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type473', cardinality 0..*) is associated with 'cSharp::FixedParameter' (role 'cSharp_FixedParameter472', cardinality 0..*).
+'cSharp::IterationStatement' (role 'cSharp_IterationStatement632', cardinality 0..*) is associated with 'cSharp::ForStatement' (role 'cSharp_ForStatement', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement', cardinality 0..*) is associated with 'cSharp::Statement' (role 'cSharp_Statement511', cardinality 0..*).
+'cSharp::InterfaceAccessors' (role 'cSharp_InterfaceAccessors301', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes302', cardinality 0..*).
+'cSharp::TypeDeclaration' (role 'cSharp_TypeDeclaration229', cardinality 0..*) is associated with 'cSharp::ClassDeclaration' (role 'cSharp_ClassDeclaration', cardinality 0..*).
+'cSharp::TryStatement' (role 'cSharp_TryStatement', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement543', cardinality 0..*).
+'cSharp::CatchClauses' (role 'cSharp_CatchClauses586', cardinality 0..*) is associated with 'cSharp::GeneralCatchclause' (role 'cSharp_GeneralCatchclause', cardinality 0..*).
+'cSharp::ForStatement' (role 'cSharp_ForStatement650', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression651', cardinality 0..*).
+'cSharp::AttributeSection' (role 'cSharp_AttributeSection', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes', cardinality 0..*).
+'cSharp::MethodHeader' (role 'cSharp_MethodHeader445', cardinality 0..*) is associated with 'cSharp::TypeOrVoid' (role 'cSharp_TypeOrVoid446', cardinality 0..*).
+'cSharp::Attributes' (role 'cSharp_Attributes470', cardinality 0..*) is associated with 'cSharp::FixedParameter' (role 'cSharp_FixedParameter469', cardinality 0..*).
+'cSharp::Attributes' (role 'cSharp_Attributes436', cardinality 0..*) is associated with 'cSharp::AccessorDeclarations' (role 'cSharp_AccessorDeclarations435', cardinality 0..*).
+'cSharp::ThrowStatement' (role 'cSharp_ThrowStatement', cardinality 0..*) is associated with 'cSharp::JumpStatement' (role 'cSharp_JumpStatement614', cardinality 0..*).
+'cSharp::SpecificCatchClause' (role 'cSharp_SpecificCatchClause597', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier598', cardinality 0..*).
+'cSharp::PrimaryExpression2' (role 'cSharp_PrimaryExpression2158', cardinality 0..*) is associated with 'cSharp::ExpressionList' (role 'cSharp_ExpressionList159', cardinality 0..*).
+'cSharp::InterfaceEventDeclaration' (role 'cSharp_InterfaceEventDeclaration286', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier287', cardinality 0..*).
+'cSharp::MethodDeclaration' (role 'cSharp_MethodDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration327', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement656', cardinality 0..*) is associated with 'cSharp::ForStatement' (role 'cSharp_ForStatement655', cardinality 0..*).
+'cSharp::DoStatement' (role 'cSharp_DoStatement685', cardinality 0..*) is associated with 'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement686', cardinality 0..*).
+'cSharp::Identifier' (role 'cSharp_Identifier623', cardinality 0..*) is associated with 'cSharp::GotoStatement' (role 'cSharp_GotoStatement622', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression137', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type138', cardinality 0..*).
+'cSharp::EnumBody' (role 'cSharp_EnumBody', cardinality 0..*) is associated with 'cSharp::EnumDeclaration' (role 'cSharp_EnumDeclaration242', cardinality 0..*).
+'cSharp::IndexerDeclaration' (role 'cSharp_IndexerDeclaration406', cardinality 0..*) is associated with 'cSharp::IndexerDeclarator' (role 'cSharp_IndexerDeclarator', cardinality 0..*).
+'cSharp::InterfaceAccessors' (role 'cSharp_InterfaceAccessors298', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes299', cardinality 0..*).
+'cSharp::DestructorDeclaration' (role 'cSharp_DestructorDeclaration353', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier354', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression288', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression89', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier208', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier209', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression2108', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression2110', cardinality 0..*).
+'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type175', cardinality 0..*).
+'cSharp::BuiltInClassType' (role 'cSharp_BuiltInClassType', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifierList' (role 'cSharp_QualifiedIdentifierList', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression148', cardinality 0..*) is associated with 'cSharp::TypeOrVoid' (role 'cSharp_TypeOrVoid', cardinality 0..*).
+'cSharp::IndexerDeclarator' (role 'cSharp_IndexerDeclarator417', cardinality 0..*) is associated with 'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier418', cardinality 0..*).
+'cSharp::Statement' (role 'cSharp_Statement', cardinality 0..*) is associated with 'cSharp::LabeledStatement' (role 'cSharp_LabeledStatement', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type518', cardinality 0..*) is associated with 'cSharp::LocalconstantDeclaration' (role 'cSharp_LocalconstantDeclaration517', cardinality 0..*).
+'cSharp::SpecificCatchClause' (role 'cSharp_SpecificCatchClause594', cardinality 0..*) is associated with 'cSharp::BuiltInClassType' (role 'cSharp_BuiltInClassType595', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression258', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression260', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression39', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression238', cardinality 0..*).
+'cSharp::UnaryOperatorDeclarator' (role 'cSharp_UnaryOperatorDeclarator', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type401', cardinality 0..*).
+'cSharp::ArgumentList' (role 'cSharp_ArgumentList674', cardinality 0..*) is associated with 'cSharp::StatementExpression' (role 'cSharp_StatementExpression673', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression95', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression294', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type412', cardinality 0..*) is associated with 'cSharp::IndexerDeclarator' (role 'cSharp_IndexerDeclarator411', cardinality 0..*).
+'cSharp::ContinueStatement' (role 'cSharp_ContinueStatement', cardinality 0..*) is associated with 'cSharp::JumpStatement' (role 'cSharp_JumpStatement608', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression248', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression246', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression280', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression81', cardinality 0..*).
+'cSharp::TypeDeclaration' (role 'cSharp_TypeDeclaration231', cardinality 0..*) is associated with 'cSharp::InterfaceDeclaration' (role 'cSharp_InterfaceDeclaration', cardinality 0..*).
+'cSharp::EventAccessorDeclarations' (role 'cSharp_EventAccessorDeclarations425', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes426', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression125', cardinality 0..*) is associated with 'cSharp::NonArrayType' (role 'cSharp_NonArrayType', cardinality 0..*).
+'cSharp::CatchClauses' (role 'cSharp_CatchClauses584', cardinality 0..*) is associated with 'cSharp::SpecificCatchClause' (role 'cSharp_SpecificCatchClause', cardinality 0..*).
+'cSharp::Attribute' (role 'cSharp_Attribute20', cardinality 0..*) is associated with 'cSharp::AttributeName' (role 'cSharp_AttributeName', cardinality 0..*).
+'cSharp::Block' (role 'cSharp_Block572', cardinality 0..*) is associated with 'cSharp::TryStatement' (role 'cSharp_TryStatement571', cardinality 0..*).
+'cSharp::StatementExpressionList' (role 'cSharp_StatementExpressionList', cardinality 0..*) is associated with 'cSharp::ForStatement' (role 'cSharp_ForStatement653', cardinality 0..*).
+'cSharp::InterfaceIndexerDeclaration' (role 'cSharp_InterfaceIndexerDeclaration279', cardinality 0..*) is associated with 'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression2104', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression2102', cardinality 0..*).
+'cSharp::FieldDeclaration' (role 'cSharp_FieldDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration325', cardinality 0..*).
+'cSharp::ClassDeclaration' (role 'cSharp_ClassDeclaration316', cardinality 0..*) is associated with 'cSharp::ClassBase' (role 'cSharp_ClassBase', cardinality 0..*).
+'cSharp::ClassBody' (role 'cSharp_ClassBody', cardinality 0..*) is associated with 'cSharp::ClassDeclaration' (role 'cSharp_ClassDeclaration318', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression712', cardinality 0..*) is associated with 'cSharp::SwitchLabel' (role 'cSharp_SwitchLabel711', cardinality 0..*).
+'cSharp::RemoveAccessorDeclaration' (role 'cSharp_RemoveAccessorDeclaration', cardinality 0..*) is associated with 'cSharp::EventAccessorDeclarations' (role 'cSharp_EventAccessorDeclarations428', cardinality 0..*).
+'cSharp::LocalconstantDeclaration' (role 'cSharp_LocalconstantDeclaration520', cardinality 0..*) is associated with 'cSharp::ConstantDeclarator' (role 'cSharp_ConstantDeclarator521', cardinality 0..*).
+'cSharp::TypeOrVoid' (role 'cSharp_TypeOrVoid478', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier479', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression240', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression242', cardinality 0..*).
+'cSharp::StaticConstructorDeclaration' (role 'cSharp_StaticConstructorDeclaration', cardinality 0..*) is associated with 'cSharp::ClassMemberDeclaration' (role 'cSharp_ClassMemberDeclaration346', cardinality 0..*).
+'cSharp::EnumMemberDeclaration' (role 'cSharp_EnumMemberDeclaration255', cardinality 0..*) is associated with 'cSharp::Expression' (role 'cSharp_Expression256', cardinality 0..*).
+'cSharp::VariableInitializer' (role 'cSharp_VariableInitializer167', cardinality 0..*) is associated with 'cSharp::ArrayInitializer' (role 'cSharp_ArrayInitializer166', cardinality 0..*).
+'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression132', cardinality 0..*) is associated with 'cSharp::ArrayType' (role 'cSharp_ArrayType', cardinality 0..*).
+'cSharp::InterfaceMethodDeclaration' (role 'cSharp_InterfaceMethodDeclaration310', cardinality 0..*) is associated with 'cSharp::FormalParameterList' (role 'cSharp_FormalParameterList311', cardinality 0..*).
+'cSharp::Block' (role 'cSharp_Block725', cardinality 0..*) is associated with 'cSharp::Statement' (role 'cSharp_Statement726', cardinality 0..*).
+'cSharp::EmbeddedStatement' (role 'cSharp_EmbeddedStatement532', cardinality 0..*) is associated with 'cSharp::MaybeEmptyBlock' (role 'cSharp_MaybeEmptyBlock533', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression57', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression256', cardinality 0..*).
+'cSharp::NamespaceMemberDeclaration' (role 'cSharp_NamespaceMemberDeclaration227', cardinality 0..*) is associated with 'cSharp::NamespaceBody' (role 'cSharp_NamespaceBody226', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression31', cardinality 0..*) is associated with 'cSharp::UnaryExpression' (role 'cSharp_UnaryExpression', cardinality 0..*).
+'cSharp::SetAccessorDeclaration' (role 'cSharp_SetAccessorDeclaration', cardinality 0..*) is associated with 'cSharp::AccessorDeclarations' (role 'cSharp_AccessorDeclarations438', cardinality 0..*).
+'cSharp::ForeachStatement' (role 'cSharp_ForeachStatement636', cardinality 0..*) is associated with 'cSharp::Type' (role 'cSharp_Type637', cardinality 0..*).
+'cSharp::Statement' (role 'cSharp_Statement709', cardinality 0..*) is associated with 'cSharp::SwitchSection' (role 'cSharp_SwitchSection708', cardinality 0..*).
+'cSharp::BuiltInType' (role 'cSharp_BuiltInType', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression286', cardinality 0..*).
+'cSharp::ConstructorDeclarator' (role 'cSharp_ConstructorDeclarator364', cardinality 0..*) is associated with 'cSharp::Identifier' (role 'cSharp_Identifier365', cardinality 0..*).
+'cSharp::ClassBody' (role 'cSharp_ClassBody320', cardinality 0..*) is associated with 'cSharp::Attributes' (role 'cSharp_Attributes321', cardinality 0..*).
+'cSharp::Attribute' (role 'cSharp_Attribute22', cardinality 0..*) is associated with 'cSharp::AttributeArguments' (role 'cSharp_AttributeArguments', cardinality 0..*).
+'cSharp::PrimaryExpression2' (role 'cSharp_PrimaryExpression2', cardinality 0..*) is associated with 'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression150', cardinality 0..*).
+'cSharp::JumpStatement' (role 'cSharp_JumpStatement612', cardinality 0..*) is associated with 'cSharp::ReturnStatement' (role 'cSharp_ReturnStatement', cardinality 0..*).
+'cSharp::GlobalAttributes' (role 'cSharp_GlobalAttributes', cardinality 0..*) is associated with 'cSharp::CompilationUnit' (role 'cSharp_CompilationUnit2', cardinality 0..*).
+'cSharp::UnaryExpression' (role 'cSharp_UnaryExpression121', cardinality 0..*) is associated with 'cSharp::UnaryExpression' (role 'cSharp_UnaryExpression119', cardinality 0..*).
+'cSharp::ExpressionList' (role 'cSharp_ExpressionList128', cardinality 0..*) is associated with 'cSharp::PrimaryExpression' (role 'cSharp_PrimaryExpression127', cardinality 0..*).
+'cSharp::Statement' (role 'cSharp_Statement509', cardinality 0..*) is associated with 'cSharp::DeclarationStatment' (role 'cSharp_DeclarationStatment', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type671', cardinality 0..*) is associated with 'cSharp::StatementExpression' (role 'cSharp_StatementExpression670', cardinality 0..*).
+'cSharp::InterfaceIndexerDeclaration' (role 'cSharp_InterfaceIndexerDeclaration', cardinality 0..*) is associated with 'cSharp::InterfaceMemberDeclaration' (role 'cSharp_InterfaceMemberDeclaration275', cardinality 0..*).
+'cSharp::EventAccessorDeclarations' (role 'cSharp_EventAccessorDeclarations423', cardinality 0..*) is associated with 'cSharp::AddAccessorDeclaration' (role 'cSharp_AddAccessorDeclaration', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression497', cardinality 0..*) is associated with 'cSharp::ConstantDeclarator' (role 'cSharp_ConstantDeclarator496', cardinality 0..*).
+'cSharp::Expression2' (role 'cSharp_Expression270', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression272', cardinality 0..*).
+'cSharp::QualifiedIdentifier' (role 'cSharp_QualifiedIdentifier449', cardinality 0..*) is associated with 'cSharp::MethodHeader' (role 'cSharp_MethodHeader448', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type196', cardinality 0..*) is associated with 'cSharp::ConstantDeclarator' (role 'cSharp_ConstantDeclarator', cardinality 0..*).
+'cSharp::MethodDeclaration' (role 'cSharp_MethodDeclaration442', cardinality 0..*) is associated with 'cSharp::MaybeEmptyBlock' (role 'cSharp_MaybeEmptyBlock443', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type', cardinality 0..*) is associated with 'cSharp::UnaryExpression' (role 'cSharp_UnaryExpression118', cardinality 0..*).
+'cSharp::Type' (role 'cSharp_Type193', cardinality 0..*) is associated with 'cSharp::VariableDeclarator' (role 'cSharp_VariableDeclarator194', cardinality 0..*).
+'cSharp::ForStatement' (role 'cSharp_ForStatement648', cardinality 0..*) is associated with 'cSharp::ForInitializer' (role 'cSharp_ForInitializer', cardinality 0..*).
+'cSharp::Expression' (role 'cSharp_Expression36', cardinality 0..*) is associated with 'cSharp::Expression2' (role 'cSharp_Expression2', cardinality 0..*).

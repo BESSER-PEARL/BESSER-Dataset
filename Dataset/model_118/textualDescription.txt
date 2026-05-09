@@ -1,0 +1,235 @@
+The model has 98 class(es).
+The class 'javaDsl::Statement' has no attributes.
+The class 'javaDsl::NoArrayExpressionWithoutMinus' has no attributes.
+The class 'javaDsl::AssignmentExpression' has no attributes.
+The class 'javaDsl::StatementExpression' has no attributes.
+The class 'NoArrayExpression' has no attributes.
+The class 'javaDsl::InclusiveOrExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::ConditionalAndExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::Primary' has the following attributes: 'fields' of type str.
+The class 'javaDsl::BreakStatement' has the following attributes: 'reference' of type str.
+The class 'javaDsl::WhileStatement' has the following attributes: 'condition' of type bool.
+The class 'javaDsl::ClassBody' has no attributes.
+The class 'javaDsl::AbstractMethodDeclaration' has no attributes.
+The class 'javaDsl::ShiftExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::ConstructorDeclarator' has the following attributes: 'name' of type str.
+The class 'javaDsl::RelationalExpression' has the following attributes: 'operators' of type str; 'classes' of type str.
+The class 'javaDsl::PrimaryNewArray' has no attributes.
+The class 'javaDsl::PreIncrementExpression' has no attributes.
+The class 'ClassBodyDeclaration' has no attributes.
+The class 'javaDsl::ConstructorBody' has no attributes.
+The class 'javaDsl::ConditionalExpression' has no attributes.
+The class 'StatementExpression' has no attributes.
+The class 'javaDsl::ForStatement' has the following attributes: 'condition' of type bool.
+The class 'javaDsl::AdditiveExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::ArgumentList' has no attributes.
+The class 'ConstantExpression' has no attributes.
+The class 'javaDsl::MethodHeader' has the following attributes: 'modifiers' of type str.
+The class 'javaDsl::ClassInstanceCreationExpression' has the following attributes: 'type' of type str.
+The class 'javaDsl::Block' has no attributes.
+The class 'javaDsl::BlockStatement' has no attributes.
+The class 'javaDsl::ContinueStatement' has the following attributes: 'reference' of type str.
+The class 'javaDsl::ConditionalOrExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::FormalParameter' has the following attributes: 'variable' of type str.
+The class 'javaDsl::ArrayExpression' has no attributes.
+The class 'javaDsl::ExplicitConstructorInvocation' has the following attributes: 'keyword' of type str.
+The class 'javaDsl::EqualityExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::DoStatement' has the following attributes: 'condition' of type bool.
+The class 'javaDsl::SynchronizedStatement' has no attributes.
+The class 'javaDsl::MethodDeclarator' has the following attributes: 'name' of type str.
+The class 'javaDsl::MultiplicativeExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::ConstantDeclaration' has no attributes.
+The class 'javaDsl::InterfaceDeclaration' has the following attributes: 'name' of type str; 'modifiers' of type str.
+The class 'BlockStatement' has no attributes.
+The class 'javaDsl::ArrayAccess' has the following attributes: 'reference' of type str.
+The class 'InterfaceMemberDeclaration' has no attributes.
+The class 'javaDsl::ClassDeclaration' has the following attributes: 'className' of type str; 'extend' of type str; 'modifiers' of type str.
+The class 'javaDsl::Interfaces' has the following attributes: 'interfaces' of type str; 'keyword' of type str.
+The class 'javaDsl::ForInit' has no attributes.
+The class 'javaDsl::ReturnStatement' has no attributes.
+The class 'javaDsl::ForUpdate' has no attributes.
+The class 'javaDsl::InterfaceBody' has no attributes.
+The class 'Primary' has no attributes.
+The class 'javaDsl::ArrayCreationExpression' has the following attributes: 'type' of type str; 'layers' of type str.
+The class 'javaDsl::PrimaryNoNewArray' has the following attributes: 'literal' of type str; 'method' of type str; 'reference' of type str; 'keyword' of type str.
+The class 'javaDsl::LeftHandSide' has no attributes.
+The class 'javaDsl::LocalVariableDeclaration' has no attributes.
+The class 'javaDsl::TryStatement' has no attributes.
+The class 'javaDsl::SwitchStatement' has no attributes.
+The class 'javaDsl::Exceptions' has the following attributes: 'exceptions' of type str.
+The class 'javaDsl::ConstantExpression' has no attributes.
+The class 'javaDsl::NoArrayExpression' has the following attributes: 'operator' of type str.
+The class 'javaDsl::CompilationUnit' has no attributes.
+The class 'javaDsl::FieldDeclaration' has the following attributes: 'modifiers' of type str.
+The class 'javaDsl::LabeledStatement' has the following attributes: 'label' of type str.
+The class 'javaDsl::TypeDeclaration' has the following attributes: 'doc' of type str.
+The class 'javaDsl::EObject' has no attributes.
+The class 'javaDsl::Expression' has no attributes.
+The class 'javaDsl::AndExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::ArrayInitializer' has no attributes.
+The class 'javaDsl::CastExpression' has the following attributes: 'type' of type str.
+The class 'javaDsl::PackageStatement' has the following attributes: 'name' of type str.
+The class 'javaDsl::Type' has the following attributes: 'name' of type str.
+The class 'javaDsl::VariableInitializer' has no attributes.
+The class 'Expression' has no attributes.
+The class 'javaDsl::IfStatement' has the following attributes: 'condition' of type bool.
+The class 'AssignmentExpression' has no attributes.
+The class 'PrimaryNoNewArray' has no attributes.
+The class 'javaDsl::Head' has no attributes.
+The class 'NoArrayExpressionWithoutMinus' has no attributes.
+The class 'LeftHandSide' has no attributes.
+The class 'javaDsl::ConstructorDeclaration' has the following attributes: 'modifiers' of type str.
+The class 'javaDsl::FieldAccess' has the following attributes: 'field' of type str; 'keyword' of type str.
+The class 'javaDsl::InterfaceMemberDeclaration' has the following attributes: 'modifiers' of type str.
+The class 'javaDsl::ThrowsStatement' has no attributes.
+The class 'javaDsl::MethodDeclaration' has no attributes.
+The class 'javaDsl::VariableDeclarator' has the following attributes: 'name' of type str.
+The class 'javaDsl::MethodInvocation' has the following attributes: 'keyword' of type str; 'method' of type str.
+The class 'VariableInitializer' has no attributes.
+The class 'javaDsl::ExclusiveOrExpression' has the following attributes: 'operators' of type str.
+The class 'javaDsl::ClassBodyDeclaration' has no attributes.
+The class 'javaDsl::PostfixExpression' has the following attributes: 'reference' of type str; 'operators' of type str.
+The class 'javaDsl::ResultType' has no attributes.
+The class 'javaDsl::ExtendsInterfaces' has the following attributes: 'keyword' of type str; 'interfaces' of type str.
+The class 'javaDsl::StaticInitializer' has no attributes.
+The class 'javaDsl::ClassMemberDeclaration' has no attributes.
+The class 'javaDsl::Assignment' has the following attributes: 'operator' of type str.
+The class 'javaDsl::PreDecrementExpression' has no attributes.
+The class 'javaDsl::ImportStatement' has the following attributes: 'package' of type str; 'object' of type str.
+The class 'Statement' has no attributes.
+'javaDsl::PreDecrementExpression' is a specialization of 'NoArrayExpression'.
+'javaDsl::PostfixExpression' is a specialization of 'NoArrayExpressionWithoutMinus'.
+'javaDsl::PrimaryNoNewArray' is a specialization of 'Primary'.
+'javaDsl::ConstantDeclaration' is a specialization of 'InterfaceMemberDeclaration'.
+'javaDsl::ThrowsStatement' is a specialization of 'Statement'.
+'javaDsl::PreIncrementExpression' is a specialization of 'NoArrayExpression'.
+'javaDsl::AbstractMethodDeclaration' is a specialization of 'InterfaceMemberDeclaration'.
+'javaDsl::MethodInvocation' is a specialization of 'StatementExpression'.
+'javaDsl::PostfixExpression' is a specialization of 'StatementExpression'.
+'javaDsl::PreIncrementExpression' is a specialization of 'StatementExpression'.
+'javaDsl::ArrayAccess' is a specialization of 'LeftHandSide'.
+'javaDsl::ReturnStatement' is a specialization of 'Statement'.
+'javaDsl::Assignment' is a specialization of 'AssignmentExpression'.
+'javaDsl::SwitchStatement' is a specialization of 'Statement'.
+'javaDsl::ConditionalExpression' is a specialization of 'AssignmentExpression'.
+'javaDsl::PreDecrementExpression' is a specialization of 'StatementExpression'.
+'javaDsl::NoArrayExpressionWithoutMinus' is a specialization of 'NoArrayExpression'.
+'javaDsl::ArrayInitializer' is a specialization of 'VariableInitializer'.
+'javaDsl::ContinueStatement' is a specialization of 'Statement'.
+'javaDsl::StaticInitializer' is a specialization of 'ClassBodyDeclaration'.
+'javaDsl::WhileStatement' is a specialization of 'Statement'.
+'javaDsl::ConstructorDeclaration' is a specialization of 'ClassBodyDeclaration'.
+'javaDsl::ClassInstanceCreationExpression' is a specialization of 'StatementExpression'.
+'javaDsl::DoStatement' is a specialization of 'Statement'.
+'javaDsl::CastExpression' is a specialization of 'NoArrayExpressionWithoutMinus'.
+'javaDsl::ForStatement' is a specialization of 'Statement'.
+'javaDsl::Assignment' is a specialization of 'StatementExpression'.
+'javaDsl::FieldAccess' is a specialization of 'LeftHandSide'.
+'javaDsl::IfStatement' is a specialization of 'Statement'.
+'javaDsl::Block' is a specialization of 'Statement'.
+'javaDsl::TryStatement' is a specialization of 'Statement'.
+'javaDsl::LocalVariableDeclaration' is a specialization of 'BlockStatement'.
+'javaDsl::StatementExpression' is a specialization of 'Statement'.
+'javaDsl::Expression' is a specialization of 'ConstantExpression'.
+'javaDsl::AssignmentExpression' is a specialization of 'Expression'.
+'javaDsl::Statement' is a specialization of 'BlockStatement'.
+'javaDsl::LabeledStatement' is a specialization of 'Statement'.
+'javaDsl::PrimaryNewArray' is a specialization of 'Primary'.
+'javaDsl::BreakStatement' is a specialization of 'Statement'.
+'javaDsl::Expression' is a specialization of 'PrimaryNoNewArray'.
+'javaDsl::SynchronizedStatement' is a specialization of 'Statement'.
+'javaDsl::Statement' (role 'javaDsl_Statement93', cardinality 0..*) is associated with 'javaDsl::IfStatement' (role 'javaDsl_IfStatement', cardinality 0..*).
+'javaDsl::ReturnStatement' (role 'javaDsl_ReturnStatement', cardinality 0..*) is associated with 'javaDsl::Expression' (role 'javaDsl_Expression123', cardinality 0..*).
+'javaDsl::FieldDeclaration' (role 'javaDsl_FieldDeclaration', cardinality 0..*) is associated with 'javaDsl::ClassMemberDeclaration' (role 'javaDsl_ClassMemberDeclaration17', cardinality 0..*).
+'javaDsl::Type' (role 'javaDsl_Type38', cardinality 0..*) is associated with 'javaDsl::FieldDeclaration' (role 'javaDsl_FieldDeclaration37', cardinality 0..*).
+'javaDsl::Block' (role 'javaDsl_Block132', cardinality 0..*) is associated with 'javaDsl::TryStatement' (role 'javaDsl_TryStatement', cardinality 0..*).
+'javaDsl::Expression' (role 'javaDsl_Expression195', cardinality 0..*) is associated with 'javaDsl::ArgumentList' (role 'javaDsl_ArgumentList194', cardinality 0..*).
+'javaDsl::TypeDeclaration' (role 'javaDsl_TypeDeclaration', cardinality 0..*) is associated with 'javaDsl::CompilationUnit' (role 'javaDsl_CompilationUnit6', cardinality 0..*).
+'javaDsl::Block' (role 'javaDsl_Block84', cardinality 0..*) is associated with 'javaDsl::BlockStatement' (role 'javaDsl_BlockStatement85', cardinality 0..*).
+'javaDsl::LocalVariableDeclaration' (role 'javaDsl_LocalVariableDeclaration89', cardinality 0..*) is associated with 'javaDsl::VariableDeclarator' (role 'javaDsl_VariableDeclarator90', cardinality 0..*).
+'javaDsl::ClassBodyDeclaration' (role 'javaDsl_ClassBodyDeclaration15', cardinality 0..*) is associated with 'javaDsl::ClassMemberDeclaration' (role 'javaDsl_ClassMemberDeclaration', cardinality 0..*).
+'javaDsl::LabeledStatement' (role 'javaDsl_LabeledStatement', cardinality 0..*) is associated with 'javaDsl::Statement' (role 'javaDsl_Statement', cardinality 0..*).
+'javaDsl::NoArrayExpression' (role 'javaDsl_NoArrayExpression174', cardinality 0..*) is associated with 'javaDsl::NoArrayExpression' (role 'javaDsl_NoArrayExpression172', cardinality 0..*).
+'javaDsl::ConditionalExpression' (role 'javaDsl_ConditionalExpression147', cardinality 0..*) is associated with 'javaDsl::Expression' (role 'javaDsl_Expression148', cardinality 0..*).
+'javaDsl::VariableDeclarator' (role 'javaDsl_VariableDeclarator', cardinality 0..*) is associated with 'javaDsl::FieldDeclaration' (role 'javaDsl_FieldDeclaration40', cardinality 0..*).
+'javaDsl::Head' (role 'javaDsl_Head', cardinality 0..*) is associated with 'javaDsl::CompilationUnit' (role 'javaDsl_CompilationUnit', cardinality 0..*).
+'javaDsl::BlockStatement' (role 'javaDsl_BlockStatement', cardinality 0..*) is associated with 'javaDsl::ConstructorBody' (role 'javaDsl_ConstructorBody33', cardinality 0..*).
+'javaDsl::ClassBodyDeclaration' (role 'javaDsl_ClassBodyDeclaration', cardinality 0..*) is associated with 'javaDsl::ClassBody' (role 'javaDsl_ClassBody13', cardinality 0..*).
+'javaDsl::Primary' (role 'javaDsl_Primary187', cardinality 0..*) is associated with 'javaDsl::ArrayExpression' (role 'javaDsl_ArrayExpression', cardinality 0..*).
+'javaDsl::AbstractMethodDeclaration' (role 'javaDsl_AbstractMethodDeclaration79', cardinality 0..*) is associated with 'javaDsl::Exceptions' (role 'javaDsl_Exceptions80', cardinality 0..*).
+'javaDsl::ArgumentList' (role 'javaDsl_ArgumentList185', cardinality 0..*) is associated with 'javaDsl::Primary' (role 'javaDsl_Primary184', cardinality 0..*).
+'javaDsl::MethodDeclarator' (role 'javaDsl_MethodDeclarator77', cardinality 0..*) is associated with 'javaDsl::AbstractMethodDeclaration' (role 'javaDsl_AbstractMethodDeclaration76', cardinality 0..*).
+'javaDsl::IfStatement' (role 'javaDsl_IfStatement95', cardinality 0..*) is associated with 'javaDsl::Statement' (role 'javaDsl_Statement96', cardinality 0..*).
+'javaDsl::ForInit' (role 'javaDsl_ForInit', cardinality 0..*) is associated with 'javaDsl::ForStatement' (role 'javaDsl_ForStatement', cardinality 0..*).
+'javaDsl::CompilationUnit' (role 'javaDsl_CompilationUnit4', cardinality 0..*) is associated with 'javaDsl::ImportStatement' (role 'javaDsl_ImportStatement', cardinality 0..*).
+'javaDsl::Block' (role 'javaDsl_Block141', cardinality 0..*) is associated with 'javaDsl::TryStatement' (role 'javaDsl_TryStatement140', cardinality 0..*).
+'javaDsl::Type' (role 'javaDsl_Type', cardinality 0..*) is associated with 'javaDsl::FormalParameter' (role 'javaDsl_FormalParameter29', cardinality 0..*).
+'javaDsl::WhileStatement' (role 'javaDsl_WhileStatement', cardinality 0..*) is associated with 'javaDsl::Statement' (role 'javaDsl_Statement105', cardinality 0..*).
+'javaDsl::TryStatement' (role 'javaDsl_TryStatement134', cardinality 0..*) is associated with 'javaDsl::FormalParameter' (role 'javaDsl_FormalParameter135', cardinality 0..*).
+'javaDsl::VariableDeclarator' (role 'javaDsl_VariableDeclarator72', cardinality 0..*) is associated with 'javaDsl::ConstantDeclaration' (role 'javaDsl_ConstantDeclaration71', cardinality 0..*).
+'javaDsl::ForUpdate' (role 'javaDsl_ForUpdate120', cardinality 0..*) is associated with 'javaDsl::StatementExpression' (role 'javaDsl_StatementExpression121', cardinality 0..*).
+'javaDsl::InterfaceBody' (role 'javaDsl_InterfaceBody', cardinality 0..*) is associated with 'javaDsl::InterfaceDeclaration' (role 'javaDsl_InterfaceDeclaration65', cardinality 0..*).
+'javaDsl::PackageStatement' (role 'javaDsl_PackageStatement', cardinality 0..*) is associated with 'javaDsl::CompilationUnit' (role 'javaDsl_CompilationUnit2', cardinality 0..*).
+'javaDsl::ShiftExpression' (role 'javaDsl_ShiftExpression167', cardinality 0..*) is associated with 'javaDsl::AdditiveExpression' (role 'javaDsl_AdditiveExpression', cardinality 0..*).
+'javaDsl::MethodInvocation' (role 'javaDsl_MethodInvocation', cardinality 0..*) is associated with 'javaDsl::ArgumentList' (role 'javaDsl_ArgumentList177', cardinality 0..*).
+'javaDsl::ConstructorDeclarator' (role 'javaDsl_ConstructorDeclarator', cardinality 0..*) is associated with 'javaDsl::ConstructorDeclaration' (role 'javaDsl_ConstructorDeclaration', cardinality 0..*).
+'javaDsl::ConstructorDeclaration' (role 'javaDsl_ConstructorDeclaration23', cardinality 0..*) is associated with 'javaDsl::Exceptions' (role 'javaDsl_Exceptions', cardinality 0..*).
+'javaDsl::ArgumentList' (role 'javaDsl_ArgumentList192', cardinality 0..*) is associated with 'javaDsl::ClassInstanceCreationExpression' (role 'javaDsl_ClassInstanceCreationExpression191', cardinality 0..*).
+'javaDsl::ConditionalExpression' (role 'javaDsl_ConditionalExpression151', cardinality 0..*) is associated with 'javaDsl::ConditionalExpression' (role 'javaDsl_ConditionalExpression149', cardinality 0..*).
+'javaDsl::ConditionalAndExpression' (role 'javaDsl_ConditionalAndExpression155', cardinality 0..*) is associated with 'javaDsl::InclusiveOrExpression' (role 'javaDsl_InclusiveOrExpression', cardinality 0..*).
+'javaDsl::ForUpdate' (role 'javaDsl_ForUpdate', cardinality 0..*) is associated with 'javaDsl::ForStatement' (role 'javaDsl_ForStatement110', cardinality 0..*).
+'javaDsl::Type' (role 'javaDsl_Type59', cardinality 0..*) is associated with 'javaDsl::ResultType' (role 'javaDsl_ResultType58', cardinality 0..*).
+'javaDsl::ArrayCreationExpression' (role 'javaDsl_ArrayCreationExpression197', cardinality 0..*) is associated with 'javaDsl::ArrayExpression' (role 'javaDsl_ArrayExpression198', cardinality 0..*).
+'javaDsl::EObject' (role 'javaDsl_EObject', cardinality 0..*) is associated with 'javaDsl::TypeDeclaration' (role 'javaDsl_TypeDeclaration8', cardinality 0..*).
+'javaDsl::ArgumentList' (role 'javaDsl_ArgumentList', cardinality 0..*) is associated with 'javaDsl::ExplicitConstructorInvocation' (role 'javaDsl_ExplicitConstructorInvocation35', cardinality 0..*).
+'javaDsl::LocalVariableDeclaration' (role 'javaDsl_LocalVariableDeclaration', cardinality 0..*) is associated with 'javaDsl::Type' (role 'javaDsl_Type87', cardinality 0..*).
+'javaDsl::NoArrayExpression' (role 'javaDsl_NoArrayExpression', cardinality 0..*) is associated with 'javaDsl::MultiplicativeExpression' (role 'javaDsl_MultiplicativeExpression171', cardinality 0..*).
+'javaDsl::ArrayExpression' (role 'javaDsl_ArrayExpression206', cardinality 0..*) is associated with 'javaDsl::ArrayAccess' (role 'javaDsl_ArrayAccess205', cardinality 0..*).
+'javaDsl::SwitchStatement' (role 'javaDsl_SwitchStatement100', cardinality 0..*) is associated with 'javaDsl::ConstantExpression' (role 'javaDsl_ConstantExpression', cardinality 0..*).
+'javaDsl::MultiplicativeExpression' (role 'javaDsl_MultiplicativeExpression', cardinality 0..*) is associated with 'javaDsl::AdditiveExpression' (role 'javaDsl_AdditiveExpression169', cardinality 0..*).
+'javaDsl::StaticInitializer' (role 'javaDsl_StaticInitializer', cardinality 0..*) is associated with 'javaDsl::Block' (role 'javaDsl_Block', cardinality 0..*).
+'javaDsl::ForStatement' (role 'javaDsl_ForStatement112', cardinality 0..*) is associated with 'javaDsl::Statement' (role 'javaDsl_Statement113', cardinality 0..*).
+'javaDsl::InterfaceBody' (role 'javaDsl_InterfaceBody67', cardinality 0..*) is associated with 'javaDsl::InterfaceMemberDeclaration' (role 'javaDsl_InterfaceMemberDeclaration', cardinality 0..*).
+'javaDsl::RelationalExpression' (role 'javaDsl_RelationalExpression165', cardinality 0..*) is associated with 'javaDsl::ShiftExpression' (role 'javaDsl_ShiftExpression', cardinality 0..*).
+'javaDsl::ClassDeclaration' (role 'javaDsl_ClassDeclaration', cardinality 0..*) is associated with 'javaDsl::Interfaces' (role 'javaDsl_Interfaces', cardinality 0..*).
+'javaDsl::ClassDeclaration' (role 'javaDsl_ClassDeclaration11', cardinality 0..*) is associated with 'javaDsl::ClassBody' (role 'javaDsl_ClassBody', cardinality 0..*).
+'javaDsl::EqualityExpression' (role 'javaDsl_EqualityExpression163', cardinality 0..*) is associated with 'javaDsl::RelationalExpression' (role 'javaDsl_RelationalExpression', cardinality 0..*).
+'javaDsl::ArrayExpression' (role 'javaDsl_ArrayExpression200', cardinality 0..*) is associated with 'javaDsl::Expression' (role 'javaDsl_Expression201', cardinality 0..*).
+'javaDsl::MethodDeclarator' (role 'javaDsl_MethodDeclarator', cardinality 0..*) is associated with 'javaDsl::MethodHeader' (role 'javaDsl_MethodHeader53', cardinality 0..*).
+'javaDsl::ConstructorBody' (role 'javaDsl_ConstructorBody', cardinality 0..*) is associated with 'javaDsl::ConstructorDeclaration' (role 'javaDsl_ConstructorDeclaration25', cardinality 0..*).
+'javaDsl::SynchronizedStatement' (role 'javaDsl_SynchronizedStatement129', cardinality 0..*) is associated with 'javaDsl::Block' (role 'javaDsl_Block130', cardinality 0..*).
+'javaDsl::MethodDeclaration' (role 'javaDsl_MethodDeclaration', cardinality 0..*) is associated with 'javaDsl::ClassMemberDeclaration' (role 'javaDsl_ClassMemberDeclaration19', cardinality 0..*).
+'javaDsl::ConditionalOrExpression' (role 'javaDsl_ConditionalOrExpression', cardinality 0..*) is associated with 'javaDsl::ConditionalExpression' (role 'javaDsl_ConditionalExpression', cardinality 0..*).
+'javaDsl::AbstractMethodDeclaration' (role 'javaDsl_AbstractMethodDeclaration', cardinality 0..*) is associated with 'javaDsl::ResultType' (role 'javaDsl_ResultType74', cardinality 0..*).
+'javaDsl::Type' (role 'javaDsl_Type69', cardinality 0..*) is associated with 'javaDsl::ConstantDeclaration' (role 'javaDsl_ConstantDeclaration', cardinality 0..*).
+'javaDsl::LocalVariableDeclaration' (role 'javaDsl_LocalVariableDeclaration118', cardinality 0..*) is associated with 'javaDsl::ForInit' (role 'javaDsl_ForInit117', cardinality 0..*).
+'javaDsl::MethodHeader' (role 'javaDsl_MethodHeader', cardinality 0..*) is associated with 'javaDsl::MethodDeclaration' (role 'javaDsl_MethodDeclaration46', cardinality 0..*).
+'javaDsl::PrimaryNoNewArray' (role 'javaDsl_PrimaryNoNewArray', cardinality 0..*) is associated with 'javaDsl::ClassInstanceCreationExpression' (role 'javaDsl_ClassInstanceCreationExpression', cardinality 0..*).
+'javaDsl::Assignment' (role 'javaDsl_Assignment', cardinality 0..*) is associated with 'javaDsl::LeftHandSide' (role 'javaDsl_LeftHandSide', cardinality 0..*).
+'javaDsl::ConstructorBody' (role 'javaDsl_ConstructorBody31', cardinality 0..*) is associated with 'javaDsl::ExplicitConstructorInvocation' (role 'javaDsl_ExplicitConstructorInvocation', cardinality 0..*).
+'javaDsl::MethodHeader' (role 'javaDsl_MethodHeader51', cardinality 0..*) is associated with 'javaDsl::ResultType' (role 'javaDsl_ResultType', cardinality 0..*).
+'javaDsl::AssignmentExpression' (role 'javaDsl_AssignmentExpression', cardinality 0..*) is associated with 'javaDsl::Assignment' (role 'javaDsl_Assignment144', cardinality 0..*).
+'javaDsl::AndExpression' (role 'javaDsl_AndExpression161', cardinality 0..*) is associated with 'javaDsl::EqualityExpression' (role 'javaDsl_EqualityExpression', cardinality 0..*).
+'javaDsl::Expression' (role 'javaDsl_Expression127', cardinality 0..*) is associated with 'javaDsl::SynchronizedStatement' (role 'javaDsl_SynchronizedStatement', cardinality 0..*).
+'javaDsl::SwitchStatement' (role 'javaDsl_SwitchStatement', cardinality 0..*) is associated with 'javaDsl::Expression' (role 'javaDsl_Expression98', cardinality 0..*).
+'javaDsl::ArrayAccess' (role 'javaDsl_ArrayAccess', cardinality 0..*) is associated with 'javaDsl::PrimaryNoNewArray' (role 'javaDsl_PrimaryNoNewArray203', cardinality 0..*).
+'javaDsl::MethodDeclarator' (role 'javaDsl_MethodDeclarator61', cardinality 0..*) is associated with 'javaDsl::FormalParameter' (role 'javaDsl_FormalParameter62', cardinality 0..*).
+'javaDsl::SwitchStatement' (role 'javaDsl_SwitchStatement102', cardinality 0..*) is associated with 'javaDsl::BlockStatement' (role 'javaDsl_BlockStatement103', cardinality 0..*).
+'javaDsl::InclusiveOrExpression' (role 'javaDsl_InclusiveOrExpression157', cardinality 0..*) is associated with 'javaDsl::ExclusiveOrExpression' (role 'javaDsl_ExclusiveOrExpression', cardinality 0..*).
+'javaDsl::AndExpression' (role 'javaDsl_AndExpression', cardinality 0..*) is associated with 'javaDsl::ExclusiveOrExpression' (role 'javaDsl_ExclusiveOrExpression159', cardinality 0..*).
+'javaDsl::ForInit' (role 'javaDsl_ForInit115', cardinality 0..*) is associated with 'javaDsl::StatementExpression' (role 'javaDsl_StatementExpression', cardinality 0..*).
+'javaDsl::ConditionalOrExpression' (role 'javaDsl_ConditionalOrExpression153', cardinality 0..*) is associated with 'javaDsl::ConditionalAndExpression' (role 'javaDsl_ConditionalAndExpression', cardinality 0..*).
+'javaDsl::InterfaceDeclaration' (role 'javaDsl_InterfaceDeclaration', cardinality 0..*) is associated with 'javaDsl::ExtendsInterfaces' (role 'javaDsl_ExtendsInterfaces', cardinality 0..*).
+'javaDsl::Expression' (role 'javaDsl_Expression', cardinality 0..*) is associated with 'javaDsl::VariableInitializer' (role 'javaDsl_VariableInitializer44', cardinality 0..*).
+'javaDsl::ConstructorDeclarator' (role 'javaDsl_ConstructorDeclarator27', cardinality 0..*) is associated with 'javaDsl::FormalParameter' (role 'javaDsl_FormalParameter', cardinality 0..*).
+'javaDsl::VariableDeclarator' (role 'javaDsl_VariableDeclarator42', cardinality 0..*) is associated with 'javaDsl::VariableInitializer' (role 'javaDsl_VariableInitializer', cardinality 0..*).
+'javaDsl::ThrowsStatement' (role 'javaDsl_ThrowsStatement', cardinality 0..*) is associated with 'javaDsl::Expression' (role 'javaDsl_Expression125', cardinality 0..*).
+'javaDsl::ArrayCreationExpression' (role 'javaDsl_ArrayCreationExpression', cardinality 0..*) is associated with 'javaDsl::PrimaryNewArray' (role 'javaDsl_PrimaryNewArray', cardinality 0..*).
+'javaDsl::TryStatement' (role 'javaDsl_TryStatement137', cardinality 0..*) is associated with 'javaDsl::Block' (role 'javaDsl_Block138', cardinality 0..*).
+'javaDsl::PostfixExpression' (role 'javaDsl_PostfixExpression', cardinality 0..*) is associated with 'javaDsl::Primary' (role 'javaDsl_Primary', cardinality 0..*).
+'javaDsl::Primary' (role 'javaDsl_Primary180', cardinality 0..*) is associated with 'javaDsl::MethodInvocation' (role 'javaDsl_MethodInvocation179', cardinality 0..*).
+'javaDsl::DoStatement' (role 'javaDsl_DoStatement', cardinality 0..*) is associated with 'javaDsl::Statement' (role 'javaDsl_Statement107', cardinality 0..*).
+'javaDsl::MethodDeclaration' (role 'javaDsl_MethodDeclaration48', cardinality 0..*) is associated with 'javaDsl::Block' (role 'javaDsl_Block49', cardinality 0..*).
+'javaDsl::ArrayInitializer' (role 'javaDsl_ArrayInitializer', cardinality 0..*) is associated with 'javaDsl::VariableInitializer' (role 'javaDsl_VariableInitializer82', cardinality 0..*).
+'javaDsl::FieldAccess' (role 'javaDsl_FieldAccess', cardinality 0..*) is associated with 'javaDsl::Primary' (role 'javaDsl_Primary182', cardinality 0..*).
+'javaDsl::Exceptions' (role 'javaDsl_Exceptions56', cardinality 0..*) is associated with 'javaDsl::MethodHeader' (role 'javaDsl_MethodHeader55', cardinality 0..*).

@@ -1,0 +1,126 @@
+The model has 40 class(es).
+The class 'javasimplified::Statement' has no attributes.
+The class 'javasimplified::ExpressionStatement' has no attributes.
+The class 'javasimplified::PrimitiveType' has no attributes.
+The class 'javasimplified::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'javasimplified::ArrayAccess' has no attributes.
+The class 'javasimplified::Block' has no attributes.
+The class 'javasimplified::ForStatement' has no attributes.
+The class 'javasimplified::Comment' has no attributes.
+The class 'javasimplified::ImportDeclaration' has no attributes.
+The class 'javasimplified::VariableAccess' has no attributes.
+The class 'javasimplified::Modifier' has the following attributes: 'isStatic' of type bool; 'isVolatile' of type bool; 'visibility' of type str; 'isSynchronized' of type bool; 'isFinal' of type bool.
+The class 'javasimplified::NullLiteral' has no attributes.
+The class 'javasimplified::Parameter' has no attributes.
+The class 'javasimplified::StringLiteral' has the following attributes: 'value' of type str.
+The class 'javasimplified::CastExpression' has no attributes.
+The class 'javasimplified::ReturnStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'javasimplified::NumberLiteral' has the following attributes: 'value' of type str.
+The class 'javasimplified::InstanceOfExpression' has no attributes.
+The class 'javasimplified::CatchStatment' has no attributes.
+The class 'javasimplified::Model' has no attributes.
+The class 'javasimplified::Variable' has the following attributes: 'name' of type str.
+The class 'javasimplified::ThisExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'javasimplified::Expression' has no attributes.
+The class 'javasimplified::ClassInstanceCreation' has no attributes.
+The class 'javasimplified::Interface' has no attributes.
+The class 'javasimplified::IfStatement' has no attributes.
+The class 'javasimplified::ThrowStatement' has no attributes.
+The class 'javasimplified::TryStatement' has no attributes.
+The class 'javasimplified::Method' has the following attributes: 'visibility' of type str.
+The class 'javasimplified::ArrayCreation' has no attributes.
+The class 'javasimplified::WhileStatement' has no attributes.
+The class 'javasimplified::NamedElement' has the following attributes: 'name' of type str.
+The class 'javasimplified::Assignment' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'javasimplified::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'javasimplified::Package' has no attributes.
+The class 'javasimplified::BooleanLiteral' has the following attributes: 'value' of type bool.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'none', 'public', 'protected'.
+'javasimplified::ThisExpression' is a specialization of 'Expression'.
+'javasimplified::InstanceOfExpression' is a specialization of 'Expression'.
+'javasimplified::Interface' is a specialization of 'Type'.
+'javasimplified::Package' is a specialization of 'NamedElement'.
+'javasimplified::ArrayCreation' is a specialization of 'Expression'.
+'javasimplified::ClassInstanceCreation' is a specialization of 'Expression'.
+'javasimplified::Method' is a specialization of 'NamedElement'.
+'javasimplified::BooleanLiteral' is a specialization of 'Expression'.
+'javasimplified::VariableAccess' is a specialization of 'Expression'.
+'javasimplified::ThrowStatement' is a specialization of 'Statement'.
+'javasimplified::Assignment' is a specialization of 'Expression'.
+'javasimplified::NullLiteral' is a specialization of 'Expression'.
+'javasimplified::PrimitiveType' is a specialization of 'Type'.
+'javasimplified::ReturnStatement' is a specialization of 'Statement'.
+'javasimplified::Variable' is a specialization of 'Statement'.
+'javasimplified::ForStatement' is a specialization of 'Statement'.
+'javasimplified::CatchStatment' is a specialization of 'Statement'.
+'javasimplified::TryStatement' is a specialization of 'Statement'.
+'javasimplified::WhileStatement' is a specialization of 'Statement'.
+'javasimplified::NumberLiteral' is a specialization of 'Expression'.
+'javasimplified::StringLiteral' is a specialization of 'Expression'.
+'javasimplified::Parameter' is a specialization of 'NamedElement'.
+'javasimplified::IfStatement' is a specialization of 'Statement'.
+'javasimplified::CastExpression' is a specialization of 'Expression'.
+'javasimplified::Type' is a specialization of 'NamedElement'.
+'javasimplified::Model' is a specialization of 'NamedElement'.
+'javasimplified::ExpressionStatement' is a specialization of 'Statement'.
+'javasimplified::Block' is a specialization of 'Statement'.
+'javasimplified::Class' is a specialization of 'Type'.
+'javasimplified::ArrayAccess' is a specialization of 'Expression'.
+'javasimplified::Class' (role 'class_', cardinality 0..*) is associated with 'javasimplified::Variable' (role 'Variable', cardinality 0..*).
+'javasimplified::Method' (role 'javasimplified_Method28', cardinality 0..*) is associated with 'javasimplified::Class' (role 'javasimplified_Class27', cardinality 0..*).
+'javasimplified::Variable' (role 'javasimplified_Variable', cardinality 0..*) is associated with 'javasimplified::Type' (role 'javasimplified_Type10', cardinality 0..*).
+'javasimplified::ArrayCreation' (role 'javasimplified_ArrayCreation124', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression125', cardinality 0..*).
+'javasimplified::Statement' (role 'javasimplified_Statement90', cardinality 0..*) is associated with 'javasimplified::Block' (role 'javasimplified_Block', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression', cardinality 0..*) is associated with 'javasimplified::ForStatement' (role 'javasimplified_ForStatement48', cardinality 0..*).
+'javasimplified::Comment' (role 'Comment', cardinality 0..*) is associated with 'javasimplified::Class' (role 'class_22', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression117', cardinality 0..*) is associated with 'javasimplified::ArrayAccess' (role 'javasimplified_ArrayAccess116', cardinality 0..*).
+'javasimplified::ThrowStatement' (role 'javasimplified_ThrowStatement', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression73', cardinality 0..*).
+'javasimplified::Type' (role 'javasimplified_Type112', cardinality 0..*) is associated with 'javasimplified::InstanceOfExpression' (role 'javasimplified_InstanceOfExpression111', cardinality 0..*).
+'javasimplified::ArrayAccess' (role 'javasimplified_ArrayAccess', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression114', cardinality 0..*).
+'javasimplified::CastExpression' (role 'javasimplified_CastExpression94', cardinality 0..*) is associated with 'javasimplified::Type' (role 'javasimplified_Type95', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression80', cardinality 0..*) is associated with 'javasimplified::Assignment' (role 'javasimplified_Assignment79', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression104', cardinality 0..*) is associated with 'javasimplified::ClassInstanceCreation' (role 'javasimplified_ClassInstanceCreation', cardinality 0..*).
+'javasimplified::Package' (role 'javasimplified_Package42', cardinality 0..*) is associated with 'javasimplified::Model' (role 'javasimplified_Model', cardinality 0..*).
+'javasimplified::Type' (role 'javasimplified_Type', cardinality 0..*) is associated with 'javasimplified::Method' (role 'javasimplified_Method4', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression67', cardinality 0..*) is associated with 'javasimplified::WhileStatement' (role 'javasimplified_WhileStatement66', cardinality 0..*).
+'javasimplified::ClassInstanceCreation' (role 'javasimplified_ClassInstanceCreation106', cardinality 0..*) is associated with 'javasimplified::Type' (role 'javasimplified_Type107', cardinality 0..*).
+'javasimplified::ThisExpression' (role 'javasimplified_ThisExpression', cardinality 0..*) is associated with 'javasimplified::Type' (role 'javasimplified_Type97', cardinality 0..*).
+'javasimplified::InstanceOfExpression' (role 'javasimplified_InstanceOfExpression', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression109', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression51', cardinality 0..*) is associated with 'javasimplified::ForStatement' (role 'javasimplified_ForStatement50', cardinality 0..*).
+'javasimplified::Class' (role 'javasimplified_Class30', cardinality 0..*) is associated with 'javasimplified::ImportDeclaration' (role 'javasimplified_ImportDeclaration', cardinality 0..*).
+'javasimplified::Modifier' (role 'javasimplified_Modifier33', cardinality 0..*) is associated with 'javasimplified::Class' (role 'javasimplified_Class32', cardinality 0..*).
+'javasimplified::ArrayCreation' (role 'javasimplified_ArrayCreation', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression119', cardinality 0..*).
+'javasimplified::VariableAccess' (role 'javasimplified_VariableAccess101', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression102', cardinality 0..*).
+'javasimplified::Class' (role 'Class19', cardinality 0..*) is associated with 'javasimplified::Comment' (role 'comments', cardinality 0..*).
+'javasimplified::Class' (role 'javasimplified_Class', cardinality 0..*) is associated with 'javasimplified::Method' (role 'javasimplified_Method', cardinality 0..*).
+'javasimplified::WhileStatement' (role 'javasimplified_WhileStatement', cardinality 0..*) is associated with 'javasimplified::Statement' (role 'javasimplified_Statement64', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression54', cardinality 0..*) is associated with 'javasimplified::ForStatement' (role 'javasimplified_ForStatement53', cardinality 0..*).
+'javasimplified::Package' (role 'javasimplified_Package40', cardinality 0..*) is associated with 'javasimplified::Package' (role 'javasimplified_Package38', cardinality 0..*).
+'javasimplified::ArrayCreation' (role 'javasimplified_ArrayCreation121', cardinality 0..*) is associated with 'javasimplified::Type' (role 'javasimplified_Type122', cardinality 0..*).
+'javasimplified::Method' (role 'javasimplified_Method6', cardinality 0..*) is associated with 'javasimplified::Modifier' (role 'javasimplified_Modifier', cardinality 0..*).
+'javasimplified::ExpressionStatement' (role 'javasimplified_ExpressionStatement', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression82', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression56', cardinality 0..*) is associated with 'javasimplified::IfStatement' (role 'javasimplified_IfStatement', cardinality 0..*).
+'javasimplified::Variable' (role 'javasimplified_Variable99', cardinality 0..*) is associated with 'javasimplified::VariableAccess' (role 'javasimplified_VariableAccess', cardinality 0..*).
+'javasimplified::Interface' (role 'javasimplified_Interface', cardinality 0..*) is associated with 'javasimplified::Class' (role 'javasimplified_Class35', cardinality 0..*).
+'javasimplified::IfStatement' (role 'javasimplified_IfStatement61', cardinality 0..*) is associated with 'javasimplified::Statement' (role 'javasimplified_Statement62', cardinality 0..*).
+'javasimplified::Statement' (role 'javasimplified_Statement69', cardinality 0..*) is associated with 'javasimplified::TryStatement' (role 'javasimplified_TryStatement', cardinality 0..*).
+'javasimplified::ForStatement' (role 'javasimplified_ForStatement', cardinality 0..*) is associated with 'javasimplified::Statement' (role 'javasimplified_Statement46', cardinality 0..*).
+'javasimplified::TryStatement' (role 'javasimplified_TryStatement71', cardinality 0..*) is associated with 'javasimplified::CatchStatment' (role 'javasimplified_CatchStatment', cardinality 0..*).
+'javasimplified::Variable' (role 'variables', cardinality 0..*) is associated with 'javasimplified::Class' (role 'Class', cardinality 0..*).
+'javasimplified::Expression' (role 'javasimplified_Expression77', cardinality 0..*) is associated with 'javasimplified::Assignment' (role 'javasimplified_Assignment', cardinality 0..*).
+'javasimplified::Variable' (role 'javasimplified_Variable13', cardinality 0..*) is associated with 'javasimplified::Modifier' (role 'javasimplified_Modifier14', cardinality 0..*).
+'javasimplified::CatchStatment' (role 'javasimplified_CatchStatment87', cardinality 0..*) is associated with 'javasimplified::Parameter' (role 'javasimplified_Parameter88', cardinality 0..*).
+'javasimplified::CastExpression' (role 'javasimplified_CastExpression', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression92', cardinality 0..*).
+'javasimplified::CatchStatment' (role 'javasimplified_CatchStatment84', cardinality 0..*) is associated with 'javasimplified::Statement' (role 'javasimplified_Statement85', cardinality 0..*).
+'javasimplified::Class' (role 'javasimplified_Class25', cardinality 0..*) is associated with 'javasimplified::Class' (role 'javasimplified_Class23', cardinality 0..*).
+'javasimplified::ImportDeclaration' (role 'javasimplified_ImportDeclaration44', cardinality 0..*) is associated with 'javasimplified::NamedElement' (role 'javasimplified_NamedElement', cardinality 0..*).
+'javasimplified::Statement' (role 'javasimplified_Statement', cardinality 0..*) is associated with 'javasimplified::Method' (role 'javasimplified_Method8', cardinality 0..*).
+'javasimplified::ReturnStatement' (role 'javasimplified_ReturnStatement', cardinality 0..*) is associated with 'javasimplified::Expression' (role 'javasimplified_Expression75', cardinality 0..*).
+'javasimplified::Type' (role 'javasimplified_Type17', cardinality 0..*) is associated with 'javasimplified::Parameter' (role 'javasimplified_Parameter16', cardinality 0..*).
+'javasimplified::Class' (role 'javasimplified_Class37', cardinality 0..*) is associated with 'javasimplified::Package' (role 'javasimplified_Package', cardinality 0..*).
+'javasimplified::Method' (role 'javasimplified_Method2', cardinality 0..*) is associated with 'javasimplified::Parameter' (role 'javasimplified_Parameter', cardinality 0..*).
+'javasimplified::Statement' (role 'javasimplified_Statement59', cardinality 0..*) is associated with 'javasimplified::IfStatement' (role 'javasimplified_IfStatement58', cardinality 0..*).

@@ -1,0 +1,60 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class JDTAST_AnnotationTypeMemberDeclaration extends BodyDeclaration {
+
+
+
+
+
+
+    private JDTAST_SimpleName jdtast_simplename;
+
+
+
+
+    private JDTAST_Type jdtast_type;
+
+
+
+
+    private JDTAST_Expression jdtast_expression;
+
+
+    public JDTAST_AnnotationTypeMemberDeclaration(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public JDTAST_SimpleName getJdtast_simplename() {
+        return jdtast_simplename;
+    }
+
+    public void setJdtast_simplename(JDTAST_SimpleName jdtast_simplename) {
+        this.jdtast_simplename = jdtast_simplename;
+    }
+    public JDTAST_Type getJdtast_type() {
+        return jdtast_type;
+    }
+
+    public void setJdtast_type(JDTAST_Type jdtast_type) {
+        this.jdtast_type = jdtast_type;
+    }
+    public JDTAST_Expression getJdtast_expression() {
+        return jdtast_expression;
+    }
+
+    public void setJdtast_expression(JDTAST_Expression jdtast_expression) {
+        this.jdtast_expression = jdtast_expression;
+    }
+
+}

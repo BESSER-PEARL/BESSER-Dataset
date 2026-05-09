@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'Node' has no attributes.
+The class 'petrinet::OutputArc' has no attributes.
+The class 'petrinet::Arc' has no attributes.
+The class 'petrinet::Place' has no attributes.
+The class 'Element' has no attributes.
+The class 'Arc' has no attributes.
+The class 'petrinet::PetriNet' has no attributes.
+The class 'petrinet::Transition' has the following attributes: 'minDelay' of type float; 'maxDelay' of type float.
+The class 'petrinet::Node' has no attributes.
+The class 'petrinet::InputArc' has no attributes.
+The class 'petrinet::Element' has the following attributes: 'name' of type str.
+'petrinet::Node' is a specialization of 'Element'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::InputArc' is a specialization of 'Arc'.
+'petrinet::OutputArc' is a specialization of 'Arc'.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Arc' is a specialization of 'Element'.
+'petrinet::Place' (role 'petrinet_Place', cardinality 0..*) is associated with 'petrinet::OutputArc' (role 'petrinet_OutputArc3', cardinality 0..*).
+'petrinet::InputArc' (role 'petrinet_InputArc', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition5', cardinality 0..*).
+'petrinet::InputArc' (role 'petrinet_InputArc7', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place8', cardinality 0..*).
+'petrinet::Element' (role 'petrinet_Element', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*) is associated with 'petrinet::OutputArc' (role 'petrinet_OutputArc', cardinality 0..*).

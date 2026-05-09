@@ -1,0 +1,479 @@
+The model has 153 class(es).
+The class 'java::::UnresolvedLabeledStatement' has no attributes.
+The class 'java::::TextElement' has the following attributes: 'text' of type str.
+The class 'java::::VariableDeclarationFragment' has no attributes.
+The class 'java::::MethodRef' has no attributes.
+The class 'java::::ConstructorDeclaration' has no attributes.
+The class 'java::::AssertStatement' has no attributes.
+The class 'java::::Assignment' has the following attributes: 'operator' of type str.
+The class 'java::::FieldAccess' has no attributes.
+The class 'Type' has no attributes.
+The class 'java::::VariableDeclarationExpression' has no attributes.
+The class 'java::::ASTNode' has no attributes.
+The class 'java::::ArrayInitializer' has no attributes.
+The class 'java::::Test' has no attributes.
+The class 'java::::ClassInstanceCreation' has no attributes.
+The class 'java::::Archive' has the following attributes: 'originalFilePath' of type str.
+The class 'java::::BlockComment' has no attributes.
+The class 'java::::BodyDeclaration' has no attributes.
+The class 'java::::UnresolvedEnumDeclaration' has no attributes.
+The class 'java::::UnresolvedVariableDeclarationFragment' has no attributes.
+The class 'java::::ForStatement' has no attributes.
+The class 'java::::TypeParameter' has no attributes.
+The class 'java::::VariableDeclarationStatement' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'Statement' has no attributes.
+The class 'java::::SingleVariableDeclaration' has the following attributes: 'varargs' of type bool.
+The class 'java::::UnresolvedSingleVariableDeclaration' has no attributes.
+The class 'java::::ArrayAccess' has no attributes.
+The class 'java::::AbstractVariablesContainer' has no attributes.
+The class 'MethodDeclaration' has no attributes.
+The class 'java::::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'AbstractMethodDeclaration' has no attributes.
+The class 'java::::AbstractMethodDeclaration' has no attributes.
+The class 'java::::EmptyStatement' has no attributes.
+The class 'java::::AnnotationTypeDeclaration' has no attributes.
+The class 'java::::PrimitiveTypeDouble' has no attributes.
+The class 'java::::UnresolvedAnnotationTypeMemberDeclaration' has no attributes.
+The class 'java::::EnhancedForStatement' has no attributes.
+The class 'java::::UnresolvedType' has no attributes.
+The class 'java::::Javadoc' has no attributes.
+The class 'java::::ClassFile' has the following attributes: 'originalFilePath' of type str.
+The class 'java::::Statement' has no attributes.
+The class 'java::::TypeLiteral' has no attributes.
+The class 'java::::NullLiteral' has no attributes.
+The class 'java::::AbstractTypeQualifiedExpression' has no attributes.
+The class 'java::::TagElement' has the following attributes: 'tagName' of type str.
+The class 'java::::UnresolvedClassDeclaration' has no attributes.
+The class 'java::::AnonymousClassDeclaration' has no attributes.
+The class 'java::::Modifier' has the following attributes: 'volatile' of type bool; 'synchronized' of type bool; 'visibility' of type str; 'transient' of type bool; 'inheritance' of type str; 'static' of type bool; 'strictfp' of type bool; 'native' of type bool.
+The class 'java::::CompilationUnit' has the following attributes: 'originalFilePath' of type str.
+The class 'java::::PrimitiveTypeLong' has no attributes.
+The class 'AnnotationTypeMemberDeclaration' has no attributes.
+The class 'java::::ArrayType' has the following attributes: 'dimensions' of type int.
+The class 'java::::ConditionalExpression' has no attributes.
+The class 'ClassDeclaration' has no attributes.
+The class 'java::::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'java::::LabeledStatement' has no attributes.
+The class 'AbstractVariablesContainer' has no attributes.
+The class 'java::::SuperMethodInvocation' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'java::::Model' has the following attributes: 'name' of type str.
+The class 'java::::BreakStatement' has no attributes.
+The class 'java::::ThisExpression' has no attributes.
+The class 'java::::UnresolvedAnnotationDeclaration' has no attributes.
+The class 'java::::TypeAccess' has no attributes.
+The class 'java::::ClassDeclaration' has no attributes.
+The class 'java::::Annotation' has no attributes.
+The class 'java::::PackageAccess' has no attributes.
+The class 'java::::ArrayCreation' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'java::::ParameterizedType' has no attributes.
+The class 'java::::UnresolvedTypeDeclaration' has no attributes.
+The class 'java::::InterfaceDeclaration' has no attributes.
+The class 'AbstractTypeQualifiedExpression' has no attributes.
+The class 'java::::UnresolvedItemAccess' has no attributes.
+The class 'java::::Block' has no attributes.
+The class 'java::::TypeDeclarationStatement' has no attributes.
+The class 'java::::SuperConstructorInvocation' has no attributes.
+The class 'java::::TypeDeclaration' has no attributes.
+The class 'java::::ReturnStatement' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'java::::MethodDeclaration' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'java::::Manifest' has no attributes.
+The class 'java::::WhileStatement' has no attributes.
+The class 'java::::Initializer' has no attributes.
+The class 'java::::ParenthesizedExpression' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'java::::TryStatement' has no attributes.
+The class 'java::::AbstractMethodInvocation' has no attributes.
+The class 'java::::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'java::::LineComment' has no attributes.
+The class 'java::::ManifestEntry' has the following attributes: 'name' of type str.
+The class 'java::::CastExpression' has no attributes.
+The class 'java::::NamedElement' has the following attributes: 'proxy' of type bool; 'name' of type str.
+The class 'java::::PrimitiveTypeBoolean' has no attributes.
+The class 'java::::UnresolvedInterfaceDeclaration' has no attributes.
+The class 'java::::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'java::::AnnotationMemberValuePair' has no attributes.
+The class 'java::::SynchronizedStatement' has no attributes.
+The class 'AnnotationTypeDeclaration' has no attributes.
+The class 'java::::ExpressionStatement' has no attributes.
+The class 'java::::ArrayLengthAccess' has no attributes.
+The class 'java::::ConstructorInvocation' has no attributes.
+The class 'java::::CatchClause' has no attributes.
+The class 'java::::EnumDeclaration' has no attributes.
+The class 'java::::NumberLiteral' has the following attributes: 'tokenValue' of type str.
+The class 'java::::MemberRef' has no attributes.
+The class 'InterfaceDeclaration' has no attributes.
+The class 'java::::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'java::::EnumConstantDeclaration' has no attributes.
+The class 'EnumDeclaration' has no attributes.
+The class 'java::::SuperFieldAccess' has no attributes.
+The class 'java::::DoStatement' has no attributes.
+The class 'java::::ContinueStatement' has no attributes.
+The class 'java::::NamespaceAccess' has no attributes.
+The class 'Expression' has no attributes.
+The class 'java::::PrimitiveTypeByte' has no attributes.
+The class 'java::::MethodInvocation' has no attributes.
+The class 'java::::PrimitiveTypeFloat' has no attributes.
+The class 'java::::ThrowStatement' has no attributes.
+The class 'java::::Expression' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'java::::SingleVariableAccess' has no attributes.
+The class 'java::::CharacterLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'java::::VariableDeclaration' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'java::::ManifestAttribute' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'java::::AbstractTypeDeclaration' has no attributes.
+The class 'java::::Package' has no attributes.
+The class 'java::::StringLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'java::::UnresolvedItem' has no attributes.
+The class 'java::::PrimitiveType' has no attributes.
+The class 'java::::SwitchStatement' has no attributes.
+The class 'java::::FieldDeclaration' has no attributes.
+The class 'NamespaceAccess' has no attributes.
+The class 'AbstractMethodInvocation' has no attributes.
+The class 'java::::PrimitiveTypeInt' has no attributes.
+The class 'java::::SwitchCase' has the following attributes: 'default' of type bool.
+The class 'LabeledStatement' has no attributes.
+The class 'java::::PrimitiveTypeShort' has no attributes.
+The class 'java::::IfStatement' has no attributes.
+The class 'java::::UnresolvedMethodDeclaration' has no attributes.
+The class 'java::::MethodRefParameter' has the following attributes: 'varargs' of type bool; 'name' of type str.
+The class 'UnresolvedItem' has no attributes.
+The class 'java::::Type' has no attributes.
+The class 'java::::Comment' has the following attributes: 'enclosedByParent' of type bool; 'prefixOfParent' of type bool; 'content' of type str.
+The class 'SingleVariableDeclaration' has no attributes.
+The class 'java::::PrimitiveTypeChar' has no attributes.
+The class 'java::::ImportDeclaration' has the following attributes: 'static' of type bool.
+The class 'VariableDeclarationFragment' has no attributes.
+The class 'Comment' has no attributes.
+The class 'java::::InstanceofExpression' has no attributes.
+The class 'java::::WildCardType' has the following attributes: 'upperBound' of type bool.
+The class 'ASTNode' has no attributes.
+The class 'java::::PrimitiveTypeVoid' has no attributes.
+The enumeration 'PostfixExpressionKind' has the following literals: 'DECREMENT', 'INCREMENT'.
+The enumeration 'InfixExpressionKind' has the following literals: 'OR', 'CONDITIONAL_AND', 'CONDITIONAL_OR', 'XOR', 'TIMES', 'REMAINDER', 'MINUS', 'LEFT_SHIFT', 'RIGHT_SHIFT_SIGNED', 'AND', 'LESS_EQUALS', 'GREATER_EQUALS', 'DIVIDE', 'RIGHT_SHIFT_UNSIGNED', 'EQUALS', 'PLUS', 'NOT_EQUALS', 'GREATER', 'LESS'.
+The enumeration 'AssignmentKind' has the following literals: 'MINUS_ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'LEFT_SHIFT_ASSIGN', 'REMAINDER_ASSIGN', 'RIGHT_SHIFT_SIGNED_ASSIGN', 'BIT_XOR_ASSIGN', 'TIMES_ASSIGN', 'BIT_AND_ASSIGN', 'DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'BIT_OR_ASSIGN', 'ASSIGN'.
+The enumeration 'PrefixExpressionKind' has the following literals: 'DECREMENT', 'MINUS', 'PLUS', 'NOT', 'INCREMENT', 'COMPLEMENT'.
+The enumeration 'InheritanceKind' has the following literals: 'final', 'abstract', 'none'.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'public', 'none', 'private'.
+'java::::UnresolvedClassDeclaration' is a specialization of 'ClassDeclaration'.
+'java::::ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'java::::ConstructorInvocation' is a specialization of 'Statement'.
+'java::::BodyDeclaration' is a specialization of 'NamedElement'.
+'java::::EnhancedForStatement' is a specialization of 'Statement'.
+'java::::VariableDeclarationExpression' is a specialization of 'AbstractVariablesContainer'.
+'java::::VariableDeclarationStatement' is a specialization of 'Statement'.
+'java::::ConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+'java::::UnresolvedMethodDeclaration' is a specialization of 'MethodDeclaration'.
+'java::::Comment' is a specialization of 'ASTNode'.
+'java::::ClassInstanceCreation' is a specialization of 'AbstractMethodInvocation'.
+'java::::ClassDeclaration' is a specialization of 'TypeDeclaration'.
+'java::::UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'AnnotationTypeMemberDeclaration'.
+'java::::FieldAccess' is a specialization of 'Expression'.
+'java::::VariableDeclarationStatement' is a specialization of 'AbstractVariablesContainer'.
+'java::::ContinueStatement' is a specialization of 'Statement'.
+'java::::EmptyStatement' is a specialization of 'Statement'.
+'java::::AbstractTypeDeclaration' is a specialization of 'Type'.
+'java::::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'java::::TypeLiteral' is a specialization of 'Expression'.
+'java::::DoStatement' is a specialization of 'Statement'.
+'java::::ImportDeclaration' is a specialization of 'ASTNode'.
+'java::::UnresolvedMethodDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::EnumConstantDeclaration' is a specialization of 'VariableDeclaration'.
+'java::::ExpressionStatement' is a specialization of 'Statement'.
+'java::::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'java::::CompilationUnit' is a specialization of 'NamedElement'.
+'java::::TypeAccess' is a specialization of 'NamespaceAccess'.
+'java::::FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+'java::::AbstractVariablesContainer' is a specialization of 'ASTNode'.
+'java::::TypeAccess' is a specialization of 'Expression'.
+'java::::UnresolvedInterfaceDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::WildCardType' is a specialization of 'Type'.
+'java::::UnresolvedLabeledStatement' is a specialization of 'UnresolvedItem'.
+'java::::TypeDeclarationStatement' is a specialization of 'Statement'.
+'java::::AbstractMethodInvocation' is a specialization of 'ASTNode'.
+'java::::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'java::::UnresolvedClassDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::StringLiteral' is a specialization of 'Expression'.
+'java::::LabeledStatement' is a specialization of 'NamedElement'.
+'java::::IfStatement' is a specialization of 'Statement'.
+'java::::TypeParameter' is a specialization of 'Type'.
+'java::::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'java::::ForStatement' is a specialization of 'Statement'.
+'java::::MemberRef' is a specialization of 'ASTNode'.
+'java::::UnresolvedInterfaceDeclaration' is a specialization of 'InterfaceDeclaration'.
+'java::::Expression' is a specialization of 'ASTNode'.
+'java::::Javadoc' is a specialization of 'Comment'.
+'java::::InstanceofExpression' is a specialization of 'Expression'.
+'java::::Initializer' is a specialization of 'BodyDeclaration'.
+'java::::Type' is a specialization of 'NamedElement'.
+'java::::MethodRefParameter' is a specialization of 'ASTNode'.
+'java::::InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+'java::::UnresolvedType' is a specialization of 'UnresolvedItem'.
+'java::::LabeledStatement' is a specialization of 'Statement'.
+'java::::InfixExpression' is a specialization of 'Expression'.
+'java::::MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'java::::MethodInvocation' is a specialization of 'Expression'.
+'java::::NumberLiteral' is a specialization of 'Expression'.
+'java::::MethodRef' is a specialization of 'ASTNode'.
+'java::::LineComment' is a specialization of 'Comment'.
+'java::::UnresolvedVariableDeclarationFragment' is a specialization of 'UnresolvedItem'.
+'java::::MethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+'java::::PrefixExpression' is a specialization of 'Expression'.
+'java::::Modifier' is a specialization of 'ASTNode'.
+'java::::UnresolvedEnumDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::NamespaceAccess' is a specialization of 'ASTNode'.
+'java::::UnresolvedSingleVariableDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::NullLiteral' is a specialization of 'Expression'.
+'java::::NamedElement' is a specialization of 'ASTNode'.
+'java::::PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+'java::::Package' is a specialization of 'NamedElement'.
+'java::::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'java::::UnresolvedTypeDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::PostfixExpression' is a specialization of 'Expression'.
+'java::::AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+'java::::UnresolvedTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'java::::ParameterizedType' is a specialization of 'Type'.
+'java::::SuperConstructorInvocation' is a specialization of 'Statement'.
+'java::::UnresolvedItem' is a specialization of 'NamedElement'.
+'java::::VariableDeclarationExpression' is a specialization of 'Expression'.
+'java::::PackageAccess' is a specialization of 'NamespaceAccess'.
+'java::::UnresolvedItemAccess' is a specialization of 'Expression'.
+'java::::ReturnStatement' is a specialization of 'Statement'.
+'java::::UnresolvedSingleVariableDeclaration' is a specialization of 'SingleVariableDeclaration'.
+'java::::ParenthesizedExpression' is a specialization of 'Expression'.
+'java::::UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+'java::::PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+'java::::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'java::::PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+'java::::SuperFieldAccess' is a specialization of 'AbstractTypeQualifiedExpression'.
+'java::::PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+'java::::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'java::::PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+'java::::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'java::::SingleVariableAccess' is a specialization of 'Expression'.
+'java::::AssertStatement' is a specialization of 'Statement'.
+'java::::PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+'java::::SwitchCase' is a specialization of 'Statement'.
+'java::::WhileStatement' is a specialization of 'Statement'.
+'java::::AbstractTypeQualifiedExpression' is a specialization of 'Expression'.
+'java::::UnresolvedAnnotationDeclaration' is a specialization of 'AnnotationTypeDeclaration'.
+'java::::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'java::::Annotation' is a specialization of 'Expression'.
+'java::::PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+'java::::ArrayType' is a specialization of 'Type'.
+'java::::ArrayInitializer' is a specialization of 'Expression'.
+'java::::PrimitiveType' is a specialization of 'Type'.
+'java::::UnresolvedEnumDeclaration' is a specialization of 'EnumDeclaration'.
+'java::::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'java::::Statement' is a specialization of 'ASTNode'.
+'java::::ArrayAccess' is a specialization of 'Expression'.
+'java::::ThisExpression' is a specialization of 'AbstractTypeQualifiedExpression'.
+'java::::PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+'java::::CatchClause' is a specialization of 'Statement'.
+'java::::SuperMethodInvocation' is a specialization of 'AbstractTypeQualifiedExpression'.
+'java::::SuperMethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+'java::::UnresolvedLabeledStatement' is a specialization of 'LabeledStatement'.
+'java::::SwitchStatement' is a specialization of 'Statement'.
+'java::::UnresolvedItemAccess' is a specialization of 'NamespaceAccess'.
+'java::::AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+'java::::SynchronizedStatement' is a specialization of 'Statement'.
+'java::::BlockComment' is a specialization of 'Comment'.
+'java::::SuperConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+'java::::VariableDeclaration' is a specialization of 'NamedElement'.
+'java::::ArrayCreation' is a specialization of 'Expression'.
+'java::::UnresolvedType' is a specialization of 'Type'.
+'java::::TextElement' is a specialization of 'ASTNode'.
+'java::::Assignment' is a specialization of 'Expression'.
+'java::::UnresolvedAnnotationDeclaration' is a specialization of 'UnresolvedItem'.
+'java::::ConditionalExpression' is a specialization of 'Expression'.
+'java::::ThrowStatement' is a specialization of 'Statement'.
+'java::::BooleanLiteral' is a specialization of 'Expression'.
+'java::::TagElement' is a specialization of 'ASTNode'.
+'java::::Block' is a specialization of 'Statement'.
+'java::::BreakStatement' is a specialization of 'Statement'.
+'java::::UnresolvedVariableDeclarationFragment' is a specialization of 'VariableDeclarationFragment'.
+'java::::CastExpression' is a specialization of 'Expression'.
+'java::::TryStatement' is a specialization of 'Statement'.
+'java::::CharacterLiteral' is a specialization of 'Expression'.
+'java::::ClassFile' is a specialization of 'NamedElement'.
+'java::::ArrayLengthAccess' is a specialization of 'Expression'.
+'java::::ClassInstanceCreation' is a specialization of 'Expression'.
+'java::::Archive' is a specialization of 'NamedElement'.
+'java::::Assignment' (role 'java__Assignment83', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression84', cardinality 0..*).
+'java::::AnnotationMemberValuePair' (role 'AnnotationMemberValuePair', cardinality 0..*) is associated with 'java::::AnnotationTypeMemberDeclaration' (role 'member', cardinality 0..*).
+'java::::ArrayInitializer' (role 'java__ArrayInitializer', cardinality 0..*) is associated with 'java::::ArrayCreation' (role 'java__ArrayCreation69', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'ownedElements', cardinality 0..*) is associated with 'java::::Package' (role 'Package', cardinality 0..*).
+'java::::ClassInstanceCreation' (role 'ClassInstanceCreation', cardinality 0..*) is associated with 'java::::AnonymousClassDeclaration' (role 'anonymousClassDeclaration', cardinality 0..*).
+'java::::Expression' (role 'java__Expression177', cardinality 0..*) is associated with 'java::::IfStatement' (role 'java__IfStatement', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'AbstractTypeDeclaration260', cardinality 0..*) is associated with 'java::::Package' (role 'package', cardinality 0..*).
+'java::::Expression' (role 'java__Expression119', cardinality 0..*) is associated with 'java::::ConditionalExpression' (role 'java__ConditionalExpression', cardinality 0..*).
+'java::::ExpressionStatement' (role 'java__ExpressionStatement', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression160', cardinality 0..*).
+'java::::ManifestEntry' (role 'java__ManifestEntry211', cardinality 0..*) is associated with 'java::::ManifestAttribute' (role 'java__ManifestAttribute212', cardinality 0..*).
+'java::::ClassFile' (role 'java__ClassFile110', cardinality 0..*) is associated with 'java::::Package' (role 'java__Package', cardinality 0..*).
+'java::::VariableDeclarationStatement' (role 'VariableDeclarationStatement', cardinality 0..*) is associated with 'java::::Modifier' (role 'modifier255', cardinality 0..*).
+'java::::LabeledStatement' (role 'label', cardinality 0..*) is associated with 'java::::BreakStatement' (role 'BreakStatement', cardinality 0..*).
+'java::::AnnotationMemberValuePair' (role 'java__AnnotationMemberValuePair', cardinality 0..*) is associated with 'java::::Annotation' (role 'java__Annotation31', cardinality 0..*).
+'java::::WhileStatement' (role 'java__WhileStatement', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression366', cardinality 0..*).
+'java::::CompilationUnit' (role 'java__CompilationUnit132', cardinality 0..*) is associated with 'java::::ImportDeclaration' (role 'java__ImportDeclaration', cardinality 0..*).
+'java::::LabeledStatement' (role 'label205', cardinality 0..*) is associated with 'java::::ContinueStatement' (role 'ContinueStatement', cardinality 0..*).
+'java::::FieldAccess' (role 'java__FieldAccess163', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression164', cardinality 0..*).
+'java::::VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'java::::SingleVariableAccess' (role 'usageInVariableAccess', cardinality 0..*).
+'java::::Comment' (role 'java__Comment130', cardinality 0..*) is associated with 'java::::CompilationUnit' (role 'java__CompilationUnit129', cardinality 0..*).
+'java::::Statement' (role 'java__Statement314', cardinality 0..*) is associated with 'java::::SwitchStatement' (role 'java__SwitchStatement313', cardinality 0..*).
+'java::::TryStatement' (role 'java__TryStatement', cardinality 0..*) is associated with 'java::::Block' (role 'java__Block326', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'method', cardinality 0..*) is associated with 'java::::MethodRef' (role 'MethodRef', cardinality 0..*).
+'java::::AbstractMethodInvocation' (role 'java__AbstractMethodInvocation12', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess13', cardinality 0..*).
+'java::::Package' (role 'Package273', cardinality 0..*) is associated with 'java::::PackageAccess' (role 'usagesInPackageAccess', cardinality 0..*).
+'java::::Expression' (role 'java__Expression39', cardinality 0..*) is associated with 'java::::AssertStatement' (role 'java__AssertStatement38', cardinality 0..*).
+'java::::VariableDeclaration' (role 'java__VariableDeclaration', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression352', cardinality 0..*).
+'java::::TypeAccess' (role 'TypeAccess', cardinality 0..*) is associated with 'java::::Type' (role 'type', cardinality 0..*).
+'java::::Expression' (role 'java__Expression286', cardinality 0..*) is associated with 'java::::PrefixExpression' (role 'java__PrefixExpression', cardinality 0..*).
+'java::::Expression' (role 'java__Expression169', cardinality 0..*) is associated with 'java::::ForStatement' (role 'java__ForStatement168', cardinality 0..*).
+'java::::MethodRefParameter' (role 'java__MethodRefParameter233', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess234', cardinality 0..*).
+'java::::Expression' (role 'java__Expression288', cardinality 0..*) is associated with 'java::::ReturnStatement' (role 'java__ReturnStatement', cardinality 0..*).
+'java::::SuperFieldAccess' (role 'java__SuperFieldAccess', cardinality 0..*) is associated with 'java::::SingleVariableAccess' (role 'java__SingleVariableAccess307', cardinality 0..*).
+'java::::AnnotationTypeMemberDeclaration' (role 'AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'java::::AnnotationMemberValuePair' (role 'usages48', cardinality 0..*).
+'java::::Modifier' (role 'Modifier', cardinality 0..*) is associated with 'java::::BodyDeclaration' (role 'bodyDeclaration', cardinality 0..*).
+'java::::Type' (role 'java__Type', cardinality 0..*) is associated with 'java::::Model' (role 'java__Model', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess342', cardinality 0..*) is associated with 'java::::TypeLiteral' (role 'java__TypeLiteral', cardinality 0..*).
+'java::::DoStatement' (role 'java__DoStatement', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression142', cardinality 0..*).
+'java::::TagElement' (role 'java__TagElement', cardinality 0..*) is associated with 'java::::Javadoc' (role 'java__Javadoc', cardinality 0..*).
+'java::::PackageAccess' (role 'java__PackageAccess274', cardinality 0..*) is associated with 'java::::PackageAccess' (role 'java__PackageAccess', cardinality 0..*).
+'java::::Model' (role 'model', cardinality 0..*) is associated with 'java::::Package' (role 'Package236', cardinality 0..*).
+'java::::BreakStatement' (role 'usagesInBreakStatements', cardinality 0..*) is associated with 'java::::LabeledStatement' (role 'LabeledStatement', cardinality 0..*).
+'java::::ClassFile' (role 'java__ClassFile46', cardinality 0..*) is associated with 'java::::ASTNode' (role 'java__ASTNode45', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess72', cardinality 0..*) is associated with 'java::::ArrayCreation' (role 'java__ArrayCreation71', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'java__AbstractTypeDeclaration21', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess22', cardinality 0..*).
+'java::::Statement' (role 'java__Statement147', cardinality 0..*) is associated with 'java::::EnhancedForStatement' (role 'java__EnhancedForStatement', cardinality 0..*).
+'java::::Annotation' (role 'java__Annotation299', cardinality 0..*) is associated with 'java::::SingleVariableDeclaration' (role 'java__SingleVariableDeclaration298', cardinality 0..*).
+'java::::NamedElement' (role 'java__NamedElement', cardinality 0..*) is associated with 'java::::MemberRef' (role 'java__MemberRef', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'exception', cardinality 0..*) is associated with 'java::::CatchClause' (role 'CatchClause', cardinality 0..*).
+'java::::Archive' (role 'java__Archive34', cardinality 0..*) is associated with 'java::::Manifest' (role 'java__Manifest', cardinality 0..*).
+'java::::Expression' (role 'java__Expression292', cardinality 0..*) is associated with 'java::::SingleVariableAccess' (role 'java__SingleVariableAccess291', cardinality 0..*).
+'java::::Expression' (role 'java__Expression319', cardinality 0..*) is associated with 'java::::SynchronizedStatement' (role 'java__SynchronizedStatement318', cardinality 0..*).
+'java::::CompilationUnit' (role 'java__CompilationUnit134', cardinality 0..*) is associated with 'java::::Package' (role 'java__Package135', cardinality 0..*).
+'java::::Assignment' (role 'java__Assignment', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression81', cardinality 0..*).
+'java::::AnnotationTypeMemberDeclaration' (role 'java__AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression53', cardinality 0..*).
+'java::::Modifier' (role 'Modifier355', cardinality 0..*) is associated with 'java::::VariableDeclarationExpression' (role 'variableDeclarationExpression', cardinality 0..*).
+'java::::IfStatement' (role 'java__IfStatement182', cardinality 0..*) is associated with 'java::::Statement' (role 'java__Statement183', cardinality 0..*).
+'java::::Expression' (role 'java__Expression282', cardinality 0..*) is associated with 'java::::ParenthesizedExpression' (role 'java__ParenthesizedExpression', cardinality 0..*).
+'java::::Statement' (role 'java__Statement', cardinality 0..*) is associated with 'java::::Block' (role 'java__Block92', cardinality 0..*).
+'java::::MemberRef' (role 'java__MemberRef215', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess216', cardinality 0..*).
+'java::::Annotation' (role 'java__Annotation357', cardinality 0..*) is associated with 'java::::VariableDeclarationExpression' (role 'java__VariableDeclarationExpression', cardinality 0..*).
+'java::::Expression' (role 'java__Expression77', cardinality 0..*) is associated with 'java::::ArrayLengthAccess' (role 'java__ArrayLengthAccess', cardinality 0..*).
+'java::::VariableDeclarationFragment' (role 'VariableDeclarationFragment', cardinality 0..*) is associated with 'java::::AbstractVariablesContainer' (role 'variablesContainer', cardinality 0..*).
+'java::::Expression' (role 'java__Expression75', cardinality 0..*) is associated with 'java::::ArrayInitializer' (role 'java__ArrayInitializer74', cardinality 0..*).
+'java::::VariableDeclarationFragment' (role 'fragments', cardinality 0..*) is associated with 'java::::AbstractVariablesContainer' (role 'AbstractVariablesContainer', cardinality 0..*).
+'java::::Type' (role 'Type', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'usagesInTypeAccess', cardinality 0..*).
+'java::::Modifier' (role 'modifier', cardinality 0..*) is associated with 'java::::BodyDeclaration' (role 'BodyDeclaration250', cardinality 0..*).
+'java::::VariableDeclarationStatement' (role 'variableDeclarationStatement', cardinality 0..*) is associated with 'java::::Modifier' (role 'Modifier360', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'SingleVariableDeclaration152', cardinality 0..*) is associated with 'java::::EnhancedForStatement' (role 'enhancedForStatement', cardinality 0..*).
+'java::::ContinueStatement' (role 'usagesInContinueStatements', cardinality 0..*) is associated with 'java::::LabeledStatement' (role 'LabeledStatement140', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess24', cardinality 0..*) is associated with 'java::::AbstractTypeQualifiedExpression' (role 'java__AbstractTypeQualifiedExpression', cardinality 0..*).
+'java::::Package' (role 'Package266', cardinality 0..*) is associated with 'java::::Package' (role 'package265', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess29', cardinality 0..*) is associated with 'java::::Annotation' (role 'java__Annotation', cardinality 0..*).
+'java::::InstanceofExpression' (role 'java__InstanceofExpression198', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression199', cardinality 0..*).
+'java::::AnonymousClassDeclaration' (role 'java__AnonymousClassDeclaration', cardinality 0..*) is associated with 'java::::EnumConstantDeclaration' (role 'java__EnumConstantDeclaration', cardinality 0..*).
+'java::::UnresolvedItemAccess' (role 'java__UnresolvedItemAccess', cardinality 0..*) is associated with 'java::::UnresolvedItem' (role 'java__UnresolvedItem347', cardinality 0..*).
+'java::::Expression' (role 'java__Expression189', cardinality 0..*) is associated with 'java::::InfixExpression' (role 'java__InfixExpression188', cardinality 0..*).
+'java::::ForStatement' (role 'java__ForStatement171', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression172', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'java__AbstractTypeDeclaration105', cardinality 0..*) is associated with 'java::::ClassFile' (role 'java__ClassFile104', cardinality 0..*).
+'java::::ConditionalExpression' (role 'java__ConditionalExpression124', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression125', cardinality 0..*).
+'java::::AnonymousClassDeclaration' (role 'AnonymousClassDeclaration', cardinality 0..*) is associated with 'java::::BodyDeclaration' (role 'bodyDeclarations89', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess345', cardinality 0..*) is associated with 'java::::TypeParameter' (role 'java__TypeParameter344', cardinality 0..*).
+'java::::CompilationUnit' (role 'java__CompilationUnit108', cardinality 0..*) is associated with 'java::::ClassFile' (role 'java__ClassFile107', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'SingleVariableDeclaration253', cardinality 0..*) is associated with 'java::::Modifier' (role 'modifier252', cardinality 0..*).
+'java::::Modifier' (role 'modifier257', cardinality 0..*) is associated with 'java::::VariableDeclarationExpression' (role 'VariableDeclarationExpression', cardinality 0..*).
+'java::::AbstractVariablesContainer' (role 'java__AbstractVariablesContainer', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess26', cardinality 0..*).
+'java::::AnonymousClassDeclaration' (role 'anonymousClassDeclarationOwner', cardinality 0..*) is associated with 'java::::BodyDeclaration' (role 'BodyDeclaration59', cardinality 0..*).
+'java::::Archive' (role 'java__Archive', cardinality 0..*) is associated with 'java::::ClassFile' (role 'java__ClassFile', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'java__SingleVariableDeclaration', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess296', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess127', cardinality 0..*) is associated with 'java::::ClassDeclaration' (role 'java__ClassDeclaration', cardinality 0..*).
+'java::::MethodRefParameter' (role 'java__MethodRefParameter', cardinality 0..*) is associated with 'java::::MethodRef' (role 'java__MethodRef231', cardinality 0..*).
+'java::::Annotation' (role 'java__Annotation362', cardinality 0..*) is associated with 'java::::VariableDeclarationStatement' (role 'java__VariableDeclarationStatement', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'method8', cardinality 0..*) is associated with 'java::::AbstractMethodInvocation' (role 'AbstractMethodInvocation', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration', cardinality 0..*) is associated with 'java::::AbstractMethodInvocation' (role 'usages', cardinality 0..*).
+'java::::Expression' (role 'java__Expression51', cardinality 0..*) is associated with 'java::::AnnotationMemberValuePair' (role 'java__AnnotationMemberValuePair50', cardinality 0..*).
+'java::::EnumConstantDeclaration' (role 'java__EnumConstantDeclaration158', cardinality 0..*) is associated with 'java::::EnumDeclaration' (role 'java__EnumDeclaration', cardinality 0..*).
+'java::::Statement' (role 'java__Statement175', cardinality 0..*) is associated with 'java::::ForStatement' (role 'java__ForStatement174', cardinality 0..*).
+'java::::Comment' (role 'java__Comment41', cardinality 0..*) is associated with 'java::::ASTNode' (role 'java__ASTNode', cardinality 0..*).
+'java::::ManifestEntry' (role 'java__ManifestEntry', cardinality 0..*) is associated with 'java::::Manifest' (role 'java__Manifest209', cardinality 0..*).
+'java::::Model' (role 'Model', cardinality 0..*) is associated with 'java::::Package' (role 'ownedElements262', cardinality 0..*).
+'java::::Expression' (role 'java__Expression95', cardinality 0..*) is associated with 'java::::CastExpression' (role 'java__CastExpression', cardinality 0..*).
+'java::::MethodRef' (role 'java__MethodRef', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess229', cardinality 0..*).
+'java::::CompilationUnit' (role 'java__CompilationUnit', cardinality 0..*) is associated with 'java::::ASTNode' (role 'java__ASTNode43', cardinality 0..*).
+'java::::CastExpression' (role 'java__CastExpression97', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess98', cardinality 0..*).
+'java::::MethodDeclaration' (role 'MethodDeclaration223', cardinality 0..*) is associated with 'java::::MethodDeclaration' (role 'redefinedMethodDeclaration', cardinality 0..*).
+'java::::ParameterizedType' (role 'java__ParameterizedType279', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess280', cardinality 0..*).
+'java::::Expression' (role 'java__Expression311', cardinality 0..*) is associated with 'java::::SwitchStatement' (role 'java__SwitchStatement', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess364', cardinality 0..*) is associated with 'java::::WildCardType' (role 'java__WildCardType', cardinality 0..*).
+'java::::TryStatement' (role 'java__TryStatement331', cardinality 0..*) is associated with 'java::::CatchClause' (role 'java__CatchClause332', cardinality 0..*).
+'java::::Expression' (role 'java__Expression284', cardinality 0..*) is associated with 'java::::PostfixExpression' (role 'java__PostfixExpression', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'methodDeclaration', cardinality 0..*) is associated with 'java::::SingleVariableDeclaration' (role 'SingleVariableDeclaration', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'abstractTypeDeclaration', cardinality 0..*) is associated with 'java::::BodyDeclaration' (role 'BodyDeclaration', cardinality 0..*).
+'java::::Package' (role 'Package269', cardinality 0..*) is associated with 'java::::Package' (role 'ownedPackages', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess218', cardinality 0..*) is associated with 'java::::MethodDeclaration' (role 'java__MethodDeclaration', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration227', cardinality 0..*) is associated with 'java::::MethodRef' (role 'usagesInDocComments', cardinality 0..*).
+'java::::Statement' (role 'java__Statement369', cardinality 0..*) is associated with 'java::::WhileStatement' (role 'java__WhileStatement368', cardinality 0..*).
+'java::::ImportDeclaration' (role 'ImportDeclaration', cardinality 0..*) is associated with 'java::::NamedElement' (role 'importedElement', cardinality 0..*).
+'java::::AssertStatement' (role 'java__AssertStatement', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression36', cardinality 0..*).
+'java::::Test' (role 'java__Test', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess371', cardinality 0..*).
+'java::::InstanceofExpression' (role 'java__InstanceofExpression', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess196', cardinality 0..*).
+'java::::Statement' (role 'java__Statement202', cardinality 0..*) is associated with 'java::::LabeledStatement' (role 'java__LabeledStatement', cardinality 0..*).
+'java::::VariableDeclaration' (role 'variable', cardinality 0..*) is associated with 'java::::SingleVariableAccess' (role 'SingleVariableAccess', cardinality 0..*).
+'java::::Expression' (role 'java__Expression186', cardinality 0..*) is associated with 'java::::InfixExpression' (role 'java__InfixExpression', cardinality 0..*).
+'java::::TypeParameter' (role 'java__TypeParameter338', cardinality 0..*) is associated with 'java::::TypeDeclaration' (role 'java__TypeDeclaration', cardinality 0..*).
+'java::::Statement' (role 'java__Statement145', cardinality 0..*) is associated with 'java::::DoStatement' (role 'java__DoStatement144', cardinality 0..*).
+'java::::Expression' (role 'java__Expression166', cardinality 0..*) is associated with 'java::::ForStatement' (role 'java__ForStatement', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'parameter', cardinality 0..*) is associated with 'java::::EnhancedForStatement' (role 'EnhancedForStatement', cardinality 0..*).
+'java::::TagElement' (role 'java__TagElement321', cardinality 0..*) is associated with 'java::::ASTNode' (role 'java__ASTNode322', cardinality 0..*).
+'java::::Archive' (role 'java__Archive248', cardinality 0..*) is associated with 'java::::Model' (role 'java__Model247', cardinality 0..*).
+'java::::Block' (role 'java__Block329', cardinality 0..*) is associated with 'java::::TryStatement' (role 'java__TryStatement328', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess117', cardinality 0..*) is associated with 'java::::ClassInstanceCreation' (role 'java__ClassInstanceCreation116', cardinality 0..*).
+'java::::Comment' (role 'java__Comment', cardinality 0..*) is associated with 'java::::AbstractTypeDeclaration' (role 'java__AbstractTypeDeclaration', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'java__AbstractTypeDeclaration340', cardinality 0..*) is associated with 'java::::TypeDeclarationStatement' (role 'java__TypeDeclarationStatement', cardinality 0..*).
+'java::::CatchClause' (role 'java__CatchClause', cardinality 0..*) is associated with 'java::::Block' (role 'java__Block102', cardinality 0..*).
+'java::::SwitchCase' (role 'java__SwitchCase', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression309', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'java__AbstractMethodDeclaration', cardinality 0..*) is associated with 'java::::Block' (role 'java__Block', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'parameters', cardinality 0..*) is associated with 'java::::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration301', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'java__AbstractMethodDeclaration3', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess', cardinality 0..*).
+'java::::ImportDeclaration' (role 'usagesInImports', cardinality 0..*) is associated with 'java::::NamedElement' (role 'NamedElement', cardinality 0..*).
+'java::::Expression' (role 'java__Expression', cardinality 0..*) is associated with 'java::::AbstractMethodInvocation' (role 'java__AbstractMethodInvocation', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'SingleVariableDeclaration100', cardinality 0..*) is associated with 'java::::CatchClause' (role 'catchClause', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess277', cardinality 0..*) is associated with 'java::::ParameterizedType' (role 'java__ParameterizedType', cardinality 0..*).
+'java::::ClassInstanceCreation' (role 'java__ClassInstanceCreation', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression114', cardinality 0..*).
+'java::::EnhancedForStatement' (role 'java__EnhancedForStatement149', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression150', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess56', cardinality 0..*) is associated with 'java::::AnnotationTypeMemberDeclaration' (role 'java__AnnotationTypeMemberDeclaration55', cardinality 0..*).
+'java::::NamespaceAccess' (role 'java__NamespaceAccess', cardinality 0..*) is associated with 'java::::TypeAccess' (role 'java__TypeAccess336', cardinality 0..*).
+'java::::Manifest' (role 'java__Manifest207', cardinality 0..*) is associated with 'java::::ManifestAttribute' (role 'java__ManifestAttribute', cardinality 0..*).
+'java::::ArrayCreation' (role 'java__ArrayCreation', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression67', cardinality 0..*).
+'java::::MethodDeclaration' (role 'MethodDeclaration', cardinality 0..*) is associated with 'java::::MethodDeclaration' (role 'redefinitions', cardinality 0..*).
+'java::::BodyDeclaration' (role 'java__BodyDeclaration', cardinality 0..*) is associated with 'java::::Annotation' (role 'java__Annotation87', cardinality 0..*).
+'java::::CompilationUnit' (role 'java__CompilationUnit137', cardinality 0..*) is associated with 'java::::AbstractTypeDeclaration' (role 'java__AbstractTypeDeclaration138', cardinality 0..*).
+'java::::AnonymousClassDeclaration' (role 'AnonymousClassDeclaration112', cardinality 0..*) is associated with 'java::::ClassInstanceCreation' (role 'classInstanceCreation', cardinality 0..*).
+'java::::UnresolvedItemAccess' (role 'java__UnresolvedItemAccess349', cardinality 0..*) is associated with 'java::::ASTNode' (role 'java__ASTNode350', cardinality 0..*).
+'java::::Expression' (role 'java__Expression225', cardinality 0..*) is associated with 'java::::MethodInvocation' (role 'java__MethodInvocation', cardinality 0..*).
+'java::::Model' (role 'java__Model241', cardinality 0..*) is associated with 'java::::CompilationUnit' (role 'java__CompilationUnit242', cardinality 0..*).
+'java::::Expression' (role 'java__Expression65', cardinality 0..*) is associated with 'java::::ArrayAccess' (role 'java__ArrayAccess64', cardinality 0..*).
+'java::::TypeAccess' (role 'java__TypeAccess79', cardinality 0..*) is associated with 'java::::ArrayType' (role 'java__ArrayType', cardinality 0..*).
+'java::::FieldAccess' (role 'java__FieldAccess', cardinality 0..*) is associated with 'java::::SingleVariableAccess' (role 'java__SingleVariableAccess', cardinality 0..*).
+'java::::Expression' (role 'java__Expression156', cardinality 0..*) is associated with 'java::::EnumConstantDeclaration' (role 'java__EnumConstantDeclaration155', cardinality 0..*).
+'java::::PackageAccess' (role 'PackageAccess', cardinality 0..*) is associated with 'java::::Package' (role 'package271', cardinality 0..*).
+'java::::ArrayAccess' (role 'java__ArrayAccess', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression62', cardinality 0..*).
+'java::::Initializer' (role 'java__Initializer', cardinality 0..*) is associated with 'java::::Block' (role 'java__Block194', cardinality 0..*).
+'java::::Expression' (role 'java__Expression324', cardinality 0..*) is associated with 'java::::ThrowStatement' (role 'java__ThrowStatement', cardinality 0..*).
+'java::::ClassFile' (role 'java__ClassFile245', cardinality 0..*) is associated with 'java::::Model' (role 'java__Model244', cardinality 0..*).
+'java::::AbstractMethodDeclaration' (role 'java__AbstractMethodDeclaration5', cardinality 0..*) is associated with 'java::::TypeParameter' (role 'java__TypeParameter', cardinality 0..*).
+'java::::InfixExpression' (role 'java__InfixExpression191', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression192', cardinality 0..*).
+'java::::Block' (role 'java__Block316', cardinality 0..*) is associated with 'java::::SynchronizedStatement' (role 'java__SynchronizedStatement', cardinality 0..*).
+'java::::SuperConstructorInvocation' (role 'java__SuperConstructorInvocation', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression305', cardinality 0..*).
+'java::::BodyDeclaration' (role 'bodyDeclarations', cardinality 0..*) is associated with 'java::::AbstractTypeDeclaration' (role 'AbstractTypeDeclaration', cardinality 0..*).
+'java::::AbstractTypeDeclaration' (role 'java__AbstractTypeDeclaration17', cardinality 0..*) is associated with 'java::::Comment' (role 'java__Comment18', cardinality 0..*).
+'java::::Statement' (role 'java__Statement180', cardinality 0..*) is associated with 'java::::IfStatement' (role 'java__IfStatement179', cardinality 0..*).
+'java::::Model' (role 'java__Model239', cardinality 0..*) is associated with 'java::::UnresolvedItem' (role 'java__UnresolvedItem', cardinality 0..*).
+'java::::SingleVariableDeclaration' (role 'singleVariableDeclaration', cardinality 0..*) is associated with 'java::::Modifier' (role 'Modifier294', cardinality 0..*).
+'java::::ConditionalExpression' (role 'java__ConditionalExpression121', cardinality 0..*) is associated with 'java::::Expression' (role 'java__Expression122', cardinality 0..*).

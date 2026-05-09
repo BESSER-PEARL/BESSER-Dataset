@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Edge' has no attributes.
+The class 'petri::Transition' has the following attributes: 'token' of type int.
+The class 'petri::Edge' has the following attributes: 'weight' of type int.
+The class 'petri::Place' has the following attributes: 'token' of type int.
+The class 'petri::PetriNet' has no attributes.
+The class 'petri::EdgeToTransition' has no attributes.
+The class 'petri::EdgeToPlace' has no attributes.
+'petri::EdgeToPlace' is a specialization of 'Edge'.
+'petri::EdgeToTransition' is a specialization of 'Edge'.
+'petri::EdgeToPlace' (role 'petri_EdgeToPlace', cardinality 0..*) is associated with 'petri::Transition' (role 'petri_Transition6', cardinality 0..*).
+'petri::Place' (role 'petri_Place4', cardinality 0..*) is associated with 'petri::EdgeToTransition' (role 'petri_EdgeToTransition', cardinality 0..*).
+'petri::Transition' (role 'petri_Transition12', cardinality 0..*) is associated with 'petri::EdgeToTransition' (role 'petri_EdgeToTransition11', cardinality 0..*).
+'petri::Place' (role 'petri_Place9', cardinality 0..*) is associated with 'petri::EdgeToPlace' (role 'petri_EdgeToPlace8', cardinality 0..*).
+'petri::PetriNet' (role 'petri_PetriNet2', cardinality 0..*) is associated with 'petri::Place' (role 'petri_Place', cardinality 0..*).
+'petri::Transition' (role 'petri_Transition', cardinality 0..*) is associated with 'petri::PetriNet' (role 'petri_PetriNet', cardinality 0..*).

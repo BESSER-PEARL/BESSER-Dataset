@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class java_TryStatement extends Statement {
+
+
+
+
+
+
+    private java_Block java_block;
+
+
+
+
+    private java_Block java_block;
+
+
+    public java_TryStatement(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public java_Block getJava_block() {
+        return java_block;
+    }
+
+    public void setJava_block(java_Block java_block) {
+        this.java_block = java_block;
+    }
+    public java_Block getJava_block() {
+        return java_block;
+    }
+
+    public void setJava_block(java_Block java_block) {
+        this.java_block = java_block;
+    }
+
+}

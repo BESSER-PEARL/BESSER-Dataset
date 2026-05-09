@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alfonsodelavega/epsilonFork/tests/org.eclipse.epsilon.egx.engine.test.acceptance/src/org/eclipse/epsilon/egx/engine/test/acceptance/ecore2dot/java.ecore

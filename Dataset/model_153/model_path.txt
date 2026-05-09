@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dstrueber/bigtrafo/de.bigtrafo.benchmark/ocl/reference/04/PetriNetWithOCLPaper.ecore

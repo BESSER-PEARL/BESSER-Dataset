@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/swoopyy/NPNALTelegram/ru.mathtech.npntool.npnets.model/model/npnets.ecore

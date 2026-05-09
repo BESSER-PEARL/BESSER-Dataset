@@ -1,0 +1,91 @@
+The model has 26 class(es).
+The class 'EClassifier' has no attributes.
+The class 'encore::EEnum' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'encore::EPackage' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'encore::ETypedElement' has the following attributes: 'unique' of type bool; 'required' of type bool; 'upperBound' of type int; 'lowerBound' of type int; 'many' of type bool; 'ordered' of type bool.
+The class 'EStructuralFeature' has no attributes.
+The class 'encore::EStructuralFeature' has the following attributes: 'derived' of type bool; 'transient' of type bool; 'volatile' of type bool; 'defaultValue' of type str; 'changeable' of type bool; 'defaultValueLiteral' of type str; 'unsettable' of type bool.
+The class 'encore::EAnnotation' has the following attributes: 'source' of type str.
+The class 'ENamedElement' has no attributes.
+The class 'encore::EClass' has the following attributes: 'interface' of type bool; 'abstract' of type bool.
+The class 'encore::EOperation' has no attributes.
+The class 'encore::EStringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'encore::EAttribute' has the following attributes: 'iD' of type bool.
+The class 'encore::EFactory' has no attributes.
+The class 'encore::EModelElement' has no attributes.
+The class 'encore::EGenericType' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'encore::EObject' has no attributes.
+The class 'EDataType' has no attributes.
+The class 'encore::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'encore::EParameter' has no attributes.
+The class 'encore::ETypeParameter' has no attributes.
+The class 'encore::EEnumLiteral' has the following attributes: 'literal' of type str; 'instance' of type str; 'value' of type int.
+The class 'encore::ENamedElement' has the following attributes: 'name' of type str.
+The class 'encore::EReference' has the following attributes: 'container' of type bool; 'containment' of type bool; 'resolveProxies' of type bool.
+The class 'encore::EClassifier' has the following attributes: 'instanceClass' of type str; 'instanceTypeName' of type str; 'instanceClassName' of type str; 'defaultValue' of type str.
+'encore::EStructuralFeature' is a specialization of 'ETypedElement'.
+'encore::EClass' is a specialization of 'EClassifier'.
+'encore::EOperation' is a specialization of 'ETypedElement'.
+'encore::EParameter' is a specialization of 'ETypedElement'.
+'encore::EEnum' is a specialization of 'EDataType'.
+'encore::EClassifier' is a specialization of 'ENamedElement'.
+'encore::EAnnotation' is a specialization of 'EModelElement'.
+'encore::ETypeParameter' is a specialization of 'ENamedElement'.
+'encore::ETypedElement' is a specialization of 'ENamedElement'.
+'encore::EAttribute' is a specialization of 'EStructuralFeature'.
+'encore::EPackage' is a specialization of 'ENamedElement'.
+'encore::ENamedElement' is a specialization of 'EModelElement'.
+'encore::EFactory' is a specialization of 'EModelElement'.
+'encore::EEnumLiteral' is a specialization of 'ENamedElement'.
+'encore::EDataType' is a specialization of 'EClassifier'.
+'encore::EReference' is a specialization of 'EStructuralFeature'.
+'encore::EGenericType' (role 'encore_EGenericType91', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType93', cardinality 0..*).
+'encore::EAnnotation' (role 'encore_EAnnotation4', cardinality 0..*) is associated with 'encore::EObject' (role 'encore_EObject', cardinality 0..*).
+'encore::ETypeParameter' (role 'encore_ETypeParameter', cardinality 0..*) is associated with 'encore::EClassifier' (role 'encore_EClassifier44', cardinality 0..*).
+'encore::EClassifier' (role 'encore_EClassifier63', cardinality 0..*) is associated with 'encore::EPackage' (role 'encore_EPackage62', cardinality 0..*).
+'encore::EParameter' (role 'EParameter', cardinality 0..*) is associated with 'encore::EOperation' (role 'eOperation', cardinality 0..*).
+'encore::EOperation' (role 'encore_EOperation55', cardinality 0..*) is associated with 'encore::EClassifier' (role 'encore_EClassifier56', cardinality 0..*).
+'encore::EDataType' (role 'encore_EDataType', cardinality 0..*) is associated with 'encore::EAttribute' (role 'encore_EAttribute', cardinality 0..*).
+'encore::EStringToStringMapEntry' (role 'encore_EStringToStringMapEntry', cardinality 0..*) is associated with 'encore::EAnnotation' (role 'encore_EAnnotation', cardinality 0..*).
+'encore::ETypeParameter' (role 'encore_ETypeParameter107', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType108', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass23', cardinality 0..*) is associated with 'encore::EReference' (role 'encore_EReference24', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass28', cardinality 0..*) is associated with 'encore::EStructuralFeature' (role 'encore_EStructuralFeature', cardinality 0..*).
+'encore::EOperation' (role 'eOperations', cardinality 0..*) is associated with 'encore::EClass' (role 'EClass', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass38', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType', cardinality 0..*).
+'encore::EClass' (role 'eContainingClass', cardinality 0..*) is associated with 'encore::EOperation' (role 'EOperation', cardinality 0..*).
+'encore::EGenericType' (role 'encore_EGenericType104', cardinality 0..*) is associated with 'encore::EClassifier' (role 'encore_EClassifier105', cardinality 0..*).
+'encore::ETypedElement' (role 'encore_ETypedElement86', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType87', cardinality 0..*).
+'encore::EOperation' (role 'encore_EOperation51', cardinality 0..*) is associated with 'encore::ETypeParameter' (role 'encore_ETypeParameter52', cardinality 0..*).
+'encore::EAttribute' (role 'encore_EAttribute80', cardinality 0..*) is associated with 'encore::EReference' (role 'encore_EReference79', cardinality 0..*).
+'encore::EClassifier' (role 'encore_EClassifier84', cardinality 0..*) is associated with 'encore::ETypedElement' (role 'encore_ETypedElement', cardinality 0..*).
+'encore::EAnnotation' (role 'eAnnotations', cardinality 0..*) is associated with 'encore::EModelElement' (role 'EModelElement', cardinality 0..*).
+'encore::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*) is associated with 'encore::EEnum' (role 'eEnum', cardinality 0..*).
+'encore::EReference' (role 'encore_EReference76', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass77', cardinality 0..*).
+'encore::EReference' (role 'encore_EReference74', cardinality 0..*) is associated with 'encore::EReference' (role 'encore_EReference72', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass31', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass29', cardinality 0..*).
+'encore::EGenericType' (role 'encore_EGenericType95', cardinality 0..*) is associated with 'encore::EClassifier' (role 'encore_EClassifier96', cardinality 0..*).
+'encore::EPackage' (role 'encore_EPackage', cardinality 0..*) is associated with 'encore::EClassifier' (role 'encore_EClassifier', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass33', cardinality 0..*) is associated with 'encore::EAttribute' (role 'encore_EAttribute34', cardinality 0..*).
+'encore::EOperation' (role 'encore_EOperation', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass26', cardinality 0..*).
+'encore::EOperation' (role 'EOperation71', cardinality 0..*) is associated with 'encore::EParameter' (role 'eParameters', cardinality 0..*).
+'encore::EModelElement' (role 'eModelElement', cardinality 0..*) is associated with 'encore::EAnnotation' (role 'EAnnotation', cardinality 0..*).
+'encore::EPackage' (role 'encore_EPackage66', cardinality 0..*) is associated with 'encore::EPackage' (role 'encore_EPackage64', cardinality 0..*).
+'encore::EGenericType' (role 'encore_EGenericType99', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType97', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass8', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass', cardinality 0..*).
+'encore::EAttribute' (role 'encore_EAttribute21', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass20', cardinality 0..*).
+'encore::EPackage' (role 'encore_EPackage69', cardinality 0..*) is associated with 'encore::EPackage' (role 'encore_EPackage67', cardinality 0..*).
+'encore::EGenericType' (role 'encore_EGenericType41', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass40', cardinality 0..*).
+'encore::EReference' (role 'encore_EReference18', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass17', cardinality 0..*).
+'encore::EPackage' (role 'ePackage', cardinality 0..*) is associated with 'encore::EFactory' (role 'EFactory', cardinality 0..*).
+'encore::ETypeParameter' (role 'encore_ETypeParameter102', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType101', cardinality 0..*).
+'encore::EFactory' (role 'eFactoryInstance', cardinality 0..*) is associated with 'encore::EPackage' (role 'EPackage', cardinality 0..*).
+'encore::EClass' (role 'EClass82', cardinality 0..*) is associated with 'encore::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*).
+'encore::EObject' (role 'encore_EObject7', cardinality 0..*) is associated with 'encore::EAnnotation' (role 'encore_EAnnotation6', cardinality 0..*).
+'encore::EClass' (role 'encore_EClass12', cardinality 0..*) is associated with 'encore::EAttribute' (role 'encore_EAttribute13', cardinality 0..*).
+'encore::EEnumLiteral' (role 'eLiterals', cardinality 0..*) is associated with 'encore::EEnum' (role 'EEnum', cardinality 0..*).
+'encore::EGenericType' (role 'encore_EGenericType88', cardinality 0..*) is associated with 'encore::EGenericType' (role 'encore_EGenericType90', cardinality 0..*).
+'encore::EReference' (role 'encore_EReference', cardinality 0..*) is associated with 'encore::EClass' (role 'encore_EClass15', cardinality 0..*).
+'encore::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*) is associated with 'encore::EClass' (role 'eContainingClass36', cardinality 0..*).
+'encore::EGenericType' (role 'encore_EGenericType59', cardinality 0..*) is associated with 'encore::EOperation' (role 'encore_EOperation58', cardinality 0..*).

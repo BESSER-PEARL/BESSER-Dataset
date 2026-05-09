@@ -1,0 +1,60 @@
+The model has 19 class(es).
+The class 'Ecore::EPackage' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'Ecore::EEnumLiteral' has the following attributes: 'value' of type int; 'instance' of type str; 'literal' of type str.
+The class 'Ecore::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'Ecore::EReference' has the following attributes: 'containment' of type bool; 'container' of type bool; 'resolveProxies' of type bool.
+The class 'Ecore::EAttribute' has the following attributes: 'iD' of type bool.
+The class 'Ecore::EStructuralFeature' has the following attributes: 'volatile' of type bool; 'defaultValueLiteral' of type str; 'unsettable' of type bool; 'defaultValue' of type str; 'transient' of type bool; 'changeable' of type bool; 'derived' of type bool.
+The class 'Ecore::EOperation' has no attributes.
+The class 'Ecore::ENamedElement' has the following attributes: 'name' of type str.
+The class 'EDataType' has no attributes.
+The class 'Ecore::ETypedElement' has the following attributes: 'ordered' of type bool; 'many' of type bool; 'unique' of type bool; 'lowerBound' of type int; 'required' of type bool; 'upperBound' of type int.
+The class 'Ecore::EEnum' has no attributes.
+The class 'Ecore::EStringToStringMapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'Ecore::EParameter' has no attributes.
+The class 'Ecore::EClassifier' has the following attributes: 'instanceTypeName' of type str; 'defaultValue' of type str; 'instanceClassName' of type str; 'instanceClass' of type str.
+The class 'EClassifier' has no attributes.
+The class 'Ecore::EClass' has the following attributes: 'interface' of type bool; 'abstract' of type bool.
+The class 'ENamedElement' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'EStructuralFeature' has no attributes.
+'Ecore::EDataType' is a specialization of 'EClassifier'.
+'Ecore::EPackage' is a specialization of 'ENamedElement'.
+'Ecore::ETypedElement' is a specialization of 'ENamedElement'.
+'Ecore::EParameter' is a specialization of 'ETypedElement'.
+'Ecore::EAttribute' is a specialization of 'EStructuralFeature'.
+'Ecore::EReference' is a specialization of 'EStructuralFeature'.
+'Ecore::EClassifier' is a specialization of 'ENamedElement'.
+'Ecore::EClass' is a specialization of 'EClassifier'.
+'Ecore::EEnum' is a specialization of 'EDataType'.
+'Ecore::EEnumLiteral' is a specialization of 'ENamedElement'.
+'Ecore::EStructuralFeature' is a specialization of 'ETypedElement'.
+'Ecore::EOperation' is a specialization of 'ETypedElement'.
+'Ecore::EAttribute' (role 'Ecore_EAttribute', cardinality 0..*) is associated with 'Ecore::EDataType' (role 'Ecore_EDataType', cardinality 0..*).
+'Ecore::EClass' (role 'Ecore_EClass19', cardinality 0..*) is associated with 'Ecore::EOperation' (role 'Ecore_EOperation', cardinality 0..*).
+'Ecore::EClass' (role 'eContainingClass29', cardinality 0..*) is associated with 'Ecore::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*).
+'Ecore::EReference' (role 'Ecore_EReference11', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass10', cardinality 0..*).
+'Ecore::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*) is associated with 'Ecore::EClass' (role 'EClass56', cardinality 0..*).
+'Ecore::EClassifier' (role 'Ecore_EClassifier', cardinality 0..*) is associated with 'Ecore::EOperation' (role 'Ecore_EOperation36', cardinality 0..*).
+'Ecore::EReference' (role 'Ecore_EReference53', cardinality 0..*) is associated with 'Ecore::EAttribute' (role 'Ecore_EAttribute54', cardinality 0..*).
+'Ecore::EPackage' (role 'EPackage43', cardinality 0..*) is associated with 'Ecore::EPackage' (role 'eSubpackages', cardinality 0..*).
+'Ecore::EReference' (role 'Ecore_EReference48', cardinality 0..*) is associated with 'Ecore::EReference' (role 'Ecore_EReference46', cardinality 0..*).
+'Ecore::EParameter' (role 'EParameter', cardinality 0..*) is associated with 'Ecore::EOperation' (role 'eOperation', cardinality 0..*).
+'Ecore::EClass' (role 'Ecore_EClass16', cardinality 0..*) is associated with 'Ecore::EReference' (role 'Ecore_EReference17', cardinality 0..*).
+'Ecore::EClass' (role 'EClass', cardinality 0..*) is associated with 'Ecore::EOperation' (role 'eOperations', cardinality 0..*).
+'Ecore::EPackage' (role 'EPackage', cardinality 0..*) is associated with 'Ecore::EClassifier' (role 'eClassifiers', cardinality 0..*).
+'Ecore::EClass' (role 'Ecore_EClass8', cardinality 0..*) is associated with 'Ecore::EReference' (role 'Ecore_EReference', cardinality 0..*).
+'Ecore::EAttribute' (role 'Ecore_EAttribute14', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass13', cardinality 0..*).
+'Ecore::EAttribute' (role 'Ecore_EAttribute6', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass5', cardinality 0..*).
+'Ecore::EStructuralFeature' (role 'Ecore_EStructuralFeature', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass21', cardinality 0..*).
+'Ecore::EParameter' (role 'eParameters', cardinality 0..*) is associated with 'Ecore::EOperation' (role 'EOperation45', cardinality 0..*).
+'Ecore::EClassifier' (role 'EClassifier', cardinality 0..*) is associated with 'Ecore::EPackage' (role 'ePackage', cardinality 0..*).
+'Ecore::EEnum' (role 'EEnum', cardinality 0..*) is associated with 'Ecore::EEnumLiteral' (role 'eLiterals', cardinality 0..*).
+'Ecore::EReference' (role 'Ecore_EReference50', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass51', cardinality 0..*).
+'Ecore::EPackage' (role 'EPackage40', cardinality 0..*) is associated with 'Ecore::EPackage' (role 'eSuperPackage', cardinality 0..*).
+'Ecore::EClass' (role 'eContainingClass', cardinality 0..*) is associated with 'Ecore::EOperation' (role 'EOperation', cardinality 0..*).
+'Ecore::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*) is associated with 'Ecore::EEnum' (role 'eEnum', cardinality 0..*).
+'Ecore::ETypedElement' (role 'Ecore_ETypedElement', cardinality 0..*) is associated with 'Ecore::EClassifier' (role 'Ecore_EClassifier58', cardinality 0..*).
+'Ecore::EClass' (role 'Ecore_EClass24', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass22', cardinality 0..*).
+'Ecore::EClass' (role 'Ecore_EClass', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass1', cardinality 0..*).
+'Ecore::EAttribute' (role 'Ecore_EAttribute27', cardinality 0..*) is associated with 'Ecore::EClass' (role 'Ecore_EClass26', cardinality 0..*).

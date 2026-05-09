@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Harkame/M2/meta_programmation/model/org.eclipse.emf.ecore/model/Ecore.ecore

@@ -1,0 +1,585 @@
+The model has 264 class(es).
+The class 'astm::gastm::String' has no attributes.
+The class 'astm::gastm::GASTMObject' has no attributes.
+The class 'astm::gastm::ExceptionType' has no attributes.
+The class 'astm::gastm::ActualParameter' has no attributes.
+The class 'astm::gastm::Virtual' has no attributes.
+The class 'VirtualSpecification' has no attributes.
+The class 'astm::gastm::MacroCall' has no attributes.
+The class 'astm::gastm::Increment' has no attributes.
+The class 'DataDefinition' has no attributes.
+The class 'Statement' has no attributes.
+The class 'AnnotationExpression' has no attributes.
+The class 'AggregateScope' has no attributes.
+The class 'astm::gastm::RangeType' has no attributes.
+The class 'GASTMSemanticObject' has no attributes.
+The class 'astm::gastm::DoWhileStatement' has no attributes.
+The class 'astm::gastm::GASTMSourceObject' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'astm::gastm::AccessKind' has no attributes.
+The class 'astm::gastm::StringLiteral' has no attributes.
+The class 'LabelType' has no attributes.
+The class 'astm::gastm::BlockStatement' has no attributes.
+The class 'astm::gastm::BitLiteral' has no attributes.
+The class 'astm::gastm::Void' has no attributes.
+The class 'astm::gastm::Protected' has no attributes.
+The class 'astm::gastm::StorageSpecification' has no attributes.
+The class 'astm::gastm::FormalParameterDefinition' has no attributes.
+The class 'astm::gastm::SpecificSelectStatement' has no attributes.
+The class 'astm::gastm::FunctionDeclaration' has no attributes.
+The class 'astm::gastm::PointerType' has no attributes.
+The class 'astm::gastm::EntryDefinition' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'DeclarationOrDefinition' has no attributes.
+The class 'GASTMSourceObject' has no attributes.
+The class 'astm::gastm::Negate' has no attributes.
+The class 'astm::gastm::Divide' has no attributes.
+The class 'astm::gastm::LabelDefinition' has no attributes.
+The class 'astm::gastm::EnumType' has no attributes.
+The class 'astm::gastm::ByReferenceFormalParameterType' has no attributes.
+The class 'TypeReference' has no attributes.
+The class 'astm::gastm::FunctionType' has no attributes.
+The class 'Expression' has no attributes.
+The class 'astm::gastm::PrimitiveType' has the following attributes: 'isSigned' of type bool.
+The class 'astm::gastm::Boolean' has no attributes.
+The class 'ActualParameterExpression' has no attributes.
+The class 'astm::gastm::TypeReference' has no attributes.
+The class 'astm::gastm::NamedTypeDefinition' has no attributes.
+The class 'astm::sastm::DelphiFunctionCallExpression' has no attributes.
+The class 'astm::gastm::SwitchStatement' has no attributes.
+The class 'astm::gastm::AddressOf' has no attributes.
+The class 'astm::gastm::NotEqual' has no attributes.
+The class 'FormalParameterDeclaration' has no attributes.
+The class 'astm::gastm::AggregateExpression' has no attributes.
+The class 'astm::gastm::SpecificIn' has no attributes.
+The class 'astm::gastm::PostIncrement' has no attributes.
+The class 'astm::gastm::ForCheckBeforeStatement' has no attributes.
+The class 'astm::gastm::NoDef' has no attributes.
+The class 'DataType' has no attributes.
+The class 'astm::gastm::Float' has no attributes.
+The class 'astm::gastm::UnnamedTypeReference' has no attributes.
+The class 'astm::gastm::FileLocal' has no attributes.
+The class 'astm::gastm::And' has no attributes.
+The class 'astm::gastm::PerClassMember' has no attributes.
+The class 'astm::gastm::Decrement' has no attributes.
+The class 'Name' has no attributes.
+The class 'GASTMSyntaxObject' has no attributes.
+The class 'astm::gastm::Byte' has no attributes.
+The class 'FunctionScope' has no attributes.
+The class 'astm::gastm::PostDecrement' has no attributes.
+The class 'astm::gastm::SourceFile' has the following attributes: 'pathName' of type str.
+The class 'astm::gastm::SpecificLike' has no attributes.
+The class 'astm::gastm::FunctionPersistent' has no attributes.
+The class 'astm::gastm::ContinueStatement' has no attributes.
+The class 'astm::gastm::WhileStatement' has no attributes.
+The class 'StorageSpecification' has no attributes.
+The class 'astm::gastm::Deref' has no attributes.
+The class 'GASTMObject' has no attributes.
+The class 'ForStatement' has no attributes.
+The class 'LabelAccess' has no attributes.
+The class 'EnumLiteralDefinition' has no attributes.
+The class 'FunctionCallExpression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'astm::gastm::WideCharacter' has no attributes.
+The class 'SourceLocation' has no attributes.
+The class 'astm::gastm::AnnotationType' has no attributes.
+The class 'astm::gastm::Not' has no attributes.
+The class 'astm::gastm::ForCheckAfterStatement' has no attributes.
+The class 'astm::gastm::Multiply' has no attributes.
+The class 'astm::gastm::BinaryOperator' has no attributes.
+The class 'astm::gastm::Comment' has the following attributes: 'text' of type str.
+The class 'astm::gastm::FunctionCallExpression' has no attributes.
+The class 'astm::gastm::Scope' has no attributes.
+The class 'astm::gastm::RealLiteral' has no attributes.
+The class 'astm::gastm::ByValueActualParameterExpression' has no attributes.
+The class 'AccessKind' has no attributes.
+The class 'astm::gastm::ActualParameterExpression' has no attributes.
+The class 'FunctionMemberAttributes' has no attributes.
+The class 'astm::gastm::VariableDefinition' has no attributes.
+The class 'astm::gastm::VariableDeclaration' has the following attributes: 'isMutable' of type bool.
+The class 'astm::gastm::ConditionalExpression' has no attributes.
+The class 'astm::gastm::AggregateType' has no attributes.
+The class 'astm::gastm::ByValueFormalParameterType' has no attributes.
+The class 'astm::gastm::BitNot' has no attributes.
+The class 'astm::gastm::OperatorAssign' has no attributes.
+The class 'astm::gastm::RangeExpression' has no attributes.
+The class 'astm::gastm::BitRightShift' has no attributes.
+The class 'astm::gastm::FormalParameterDeclaration' has no attributes.
+The class 'astm::gastm::AggregateTypeDefinition' has no attributes.
+The class 'astm::gastm::FunctionMemberAttribute' has no attributes.
+The class 'astm::sastm::DelphiUnit' has no attributes.
+The class 'astm::gastm::PureVirtual' has no attributes.
+The class 'astm::gastm::ReturnStatement' has no attributes.
+The class 'astm::gastm::ThrowStatement' has no attributes.
+The class 'astm::gastm::Or' has no attributes.
+The class 'astm::gastm::BitAnd' has no attributes.
+The class 'astm::gastm::Definition' has no attributes.
+The class 'astm::gastm::BitOr' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'astm::gastm::SpecificConcatString' has no attributes.
+The class 'astm::gastm::EnumLiteralDefinition' has no attributes.
+The class 'ConstructedType' has no attributes.
+The class 'astm::gastm::ClassType' has no attributes.
+The class 'astm::gastm::BitLeftShift' has no attributes.
+The class 'FormalParameterType' has no attributes.
+The class 'ActualParameter' has no attributes.
+The class 'astm::gastm::OtherSyntaxObject' has no attributes.
+The class 'astm::gastm::Literal' has the following attributes: 'value' of type str.
+The class 'astm::gastm::Expression' has no attributes.
+The class 'astm::gastm::TypeDefinition' has no attributes.
+The class 'DerivesFrom' has no attributes.
+The class 'astm::gastm::UnaryPlus' has no attributes.
+The class 'NameReference' has no attributes.
+The class 'astm::gastm::TypeQualifiedIdentifierReference' has no attributes.
+The class 'BlockStatement' has no attributes.
+The class 'astm::gastm::CastExpression' has no attributes.
+The class 'astm::gastm::Dimension' has no attributes.
+The class 'astm::gastm::BreakStatement' has no attributes.
+The class 'FormalParameterDefinition' has no attributes.
+The class 'astm::gastm::AnnotationExpression' has no attributes.
+The class 'astm::gastm::FunctionScope' has no attributes.
+The class 'astm::gastm::Equal' has no attributes.
+The class 'astm::gastm::FunctionDefinition' has no attributes.
+The class 'astm::gastm::ConstructedType' has no attributes.
+The class 'astm::gastm::NameReference' has no attributes.
+The class 'astm::gastm::UnaryExpression' has no attributes.
+The class 'astm::gastm::LoopStatement' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'astm::sastm::DelphiImplementationSection' has no attributes.
+The class 'astm::gastm::DataType' has no attributes.
+The class 'astm::gastm::FormalParameterType' has no attributes.
+The class 'DefinitionObject' has no attributes.
+The class 'astm::gastm::DerivesFrom' has the following attributes: 'isVirtual' of type bool.
+The class 'astm::gastm::CaseBlock' has no attributes.
+The class 'astm::gastm::VirtualSpecification' has no attributes.
+The class 'astm::gastm::FunctionMemberAttributes' has the following attributes: 'isThisConst' of type bool; 'isFriend' of type bool; 'isInline' of type bool.
+The class 'astm::gastm::CompilationUnit' has the following attributes: 'language' of type str.
+The class 'astm::gastm::QualifiedIdentifierReference' has no attributes.
+The class 'astm::gastm::IncludeUnit' has no attributes.
+The class 'astm::gastm::NotLess' has no attributes.
+The class 'Definition' has no attributes.
+The class 'astm::gastm::CatchBlock' has no attributes.
+The class 'astm::gastm::ByReferenceActualParameterExpression' has no attributes.
+The class 'CompilationUnit' has no attributes.
+The class 'astm::gastm::SwitchCase' has no attributes.
+The class 'astm::gastm::Subtract' has no attributes.
+The class 'astm::gastm::SourceLocation' has the following attributes: 'startColumn' of type int; 'endColumn' of type int; 'startLine' of type int; 'endLine' of type int.
+The class 'astm::gastm::BlockScope' has no attributes.
+The class 'CatchBlock' has no attributes.
+The class 'LabelDefinition' has no attributes.
+The class 'GlobalScope' has no attributes.
+The class 'astm::gastm::StructureType' has no attributes.
+The class 'Scope' has no attributes.
+The class 'astm::gastm::IdentifierReference' has no attributes.
+The class 'astm::gastm::VariableCatchBlock' has no attributes.
+The class 'astm::gastm::NamedType' has no attributes.
+The class 'astm::gastm::NameSpaceDefinition' has no attributes.
+The class 'astm::gastm::GlobalScope' has no attributes.
+The class 'astm::gastm::DeclarationOrDefinition' has the following attributes: 'isRegister' of type bool; 'linkageSpecifier' of type str.
+The class 'astm::gastm::Type' has the following attributes: 'isConst' of type bool; 'isVolatile' of type bool.
+The class 'AggregateType' has no attributes.
+The class 'astm::gastm::TypesCatchBlock' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'astm::sastm::DelphiInterfaceSection' has no attributes.
+The class 'astm::gastm::External' has no attributes.
+The class 'astm::gastm::Name' has the following attributes: 'nameString' of type str.
+The class 'MacroDefinition' has no attributes.
+The class 'astm::sastm::DelphiBlockStatement' has no attributes.
+The class 'SourceFile' has no attributes.
+The class 'DelphiInterfaceSection' has no attributes.
+The class 'astm::gastm::DefaultBlock' has no attributes.
+The class 'NamedTypeReference' has no attributes.
+The class 'astm::gastm::LabelAccess' has no attributes.
+The class 'NameSpaceType' has no attributes.
+The class 'astm::gastm::NameSpaceType' has no attributes.
+The class 'astm::gastm::SpecificTriggerDefinition' has no attributes.
+The class 'astm::gastm::NewExpression' has no attributes.
+The class 'astm::gastm::BitFieldDefinition' has no attributes.
+The class 'astm::gastm::CollectionType' has no attributes.
+The class 'astm::gastm::ArrayAccess' has no attributes.
+The class 'astm::gastm::ArrayType' has no attributes.
+The class 'astm::gastm::BinaryExpression' has no attributes.
+The class 'astm::gastm::ForStatement' has no attributes.
+The class 'astm::gastm::ProgramScope' has no attributes.
+The class 'astm::sastm::DelphiWithStatement' has no attributes.
+The class 'astm::gastm::QualifiedOverData' has no attributes.
+The class 'astm::gastm::Assign' has no attributes.
+The class 'astm::gastm::JumpStatement' has no attributes.
+The class 'astm::gastm::Public' has no attributes.
+The class 'NamedType' has no attributes.
+The class 'astm::gastm::DeclarationOrDefinitionStatement' has no attributes.
+The class 'astm::gastm::TryStatement' has no attributes.
+The class 'astm::gastm::UnaryOperator' has no attributes.
+The class 'astm::gastm::LabelType' has no attributes.
+The class 'astm::gastm::Declaration' has no attributes.
+The class 'astm::gastm::Less' has no attributes.
+The class 'astm::gastm::GASTMSyntaxObject' has no attributes.
+The class 'BlockScope' has no attributes.
+The class 'astm::gastm::UnionType' has no attributes.
+The class 'astm::gastm::EmptyStatement' has no attributes.
+The class 'astm::gastm::Add' has no attributes.
+The class 'astm::gastm::NonVirtual' has no attributes.
+The class 'astm::gastm::Exponent' has no attributes.
+The class 'astm::gastm::AggregateScope' has no attributes.
+The class 'astm::gastm::DefinitionObject' has no attributes.
+The class 'LoopStatement' has no attributes.
+The class 'astm::gastm::MissingActualParameter' has no attributes.
+The class 'astm::gastm::SpecificGreaterEqual' has no attributes.
+The class 'OtherSyntaxObject' has no attributes.
+The class 'astm::gastm::NamedTypeReference' has no attributes.
+The class 'astm::gastm::IfStatement' has no attributes.
+The class 'astm::gastm::BitXor' has no attributes.
+The class 'astm::gastm::Statement' has no attributes.
+The class 'astm::gastm::NotGreater' has no attributes.
+The class 'astm::gastm::ExpressionStatement' has no attributes.
+The class 'astm::gastm::Modulus' has no attributes.
+The class 'astm::gastm::DeleteStatement' has no attributes.
+The class 'ProgramScope' has no attributes.
+The class 'astm::gastm::PreprocessorElement' has no attributes.
+The class 'SwitchCase' has no attributes.
+The class 'Type' has no attributes.
+The class 'astm::gastm::TerminateStatement' has no attributes.
+The class 'IdentifierReference' has no attributes.
+The class 'astm::gastm::SpecificLessEqual' has no attributes.
+The class 'QualifiedIdentifierReference' has no attributes.
+The class 'astm::gastm::Project' has no attributes.
+The class 'astm::gastm::LabeledStatement' has no attributes.
+The class 'astm::gastm::Private' has no attributes.
+The class 'DelphiImplementationSection' has no attributes.
+The class 'astm::gastm::LongInteger' has no attributes.
+The class 'astm::gastm::BooleanLiteral' has no attributes.
+The class 'PreprocessorElement' has no attributes.
+The class 'astm::gastm::DataDefinition' has the following attributes: 'isMutable' of type bool.
+The class 'astm::gastm::LongDouble' has no attributes.
+The class 'astm::gastm::MacroDefinition' has the following attributes: 'body' of type str; 'macroName' of type str.
+The class 'astm::gastm::Double' has no attributes.
+The class 'astm::gastm::GASTMSemanticObject' has no attributes.
+The class 'astm::gastm::ReferenceType' has no attributes.
+The class 'astm::gastm::IntegerLiteral' has no attributes.
+The class 'astm::gastm::QualifiedOverPointer' has no attributes.
+The class 'astm::gastm::CharLiteral' has no attributes.
+The class 'astm::gastm::Integer' has no attributes.
+The class 'astm::gastm::Character' has no attributes.
+The class 'astm::gastm::ShortInteger' has no attributes.
+The class 'astm::gastm::Greater' has no attributes.
+'astm::gastm::ByValueActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+'astm::gastm::FormalParameterType' is a specialization of 'DataType'.
+'astm::gastm::EnumLiteralDefinition' is a specialization of 'Definition'.
+'astm::gastm::LongInteger' is a specialization of 'PrimitiveType'.
+'astm::gastm::WhileStatement' is a specialization of 'LoopStatement'.
+'astm::gastm::LongDouble' is a specialization of 'PrimitiveType'.
+'astm::gastm::ConstructedType' is a specialization of 'DataType'.
+'astm::gastm::Decrement' is a specialization of 'UnaryOperator'.
+'astm::gastm::NamedTypeDefinition' is a specialization of 'TypeDefinition'.
+'astm::gastm::NameSpaceType' is a specialization of 'Type'.
+'astm::sastm::DelphiFunctionCallExpression' is a specialization of 'FunctionCallExpression'.
+'astm::gastm::VariableCatchBlock' is a specialization of 'CatchBlock'.
+'astm::sastm::DelphiUnit' is a specialization of 'CompilationUnit'.
+'astm::gastm::CompilationUnit' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::NamedTypeReference' is a specialization of 'TypeReference'.
+'astm::gastm::BooleanLiteral' is a specialization of 'Literal'.
+'astm::gastm::ClassType' is a specialization of 'AggregateType'.
+'astm::gastm::PointerType' is a specialization of 'ConstructedType'.
+'astm::gastm::SpecificIn' is a specialization of 'BinaryOperator'.
+'astm::gastm::Modulus' is a specialization of 'BinaryOperator'.
+'astm::gastm::Increment' is a specialization of 'UnaryOperator'.
+'astm::gastm::ReferenceType' is a specialization of 'ConstructedType'.
+'astm::gastm::Statement' is a specialization of 'GASTMSyntaxObject'.
+'astm::gastm::UnaryExpression' is a specialization of 'Expression'.
+'astm::gastm::QualifiedOverPointer' is a specialization of 'QualifiedIdentifierReference'.
+'astm::gastm::MissingActualParameter' is a specialization of 'ActualParameter'.
+'astm::gastm::GASTMSyntaxObject' is a specialization of 'GASTMObject'.
+'astm::gastm::NotGreater' is a specialization of 'BinaryOperator'.
+'astm::gastm::SpecificGreaterEqual' is a specialization of 'BinaryOperator'.
+'astm::gastm::BinaryExpression' is a specialization of 'Expression'.
+'astm::gastm::Equal' is a specialization of 'BinaryOperator'.
+'astm::gastm::TypeReference' is a specialization of 'Type'.
+'astm::gastm::LabelType' is a specialization of 'Type'.
+'astm::gastm::Virtual' is a specialization of 'VirtualSpecification'.
+'astm::gastm::BitLiteral' is a specialization of 'Literal'.
+'astm::gastm::PostDecrement' is a specialization of 'UnaryOperator'.
+'astm::gastm::DeclarationOrDefinition' is a specialization of 'DefinitionObject'.
+'astm::gastm::GlobalScope' is a specialization of 'Scope'.
+'astm::gastm::Project' is a specialization of 'GASTMSemanticObject'.
+'astm::gastm::EnumType' is a specialization of 'DataType'.
+'astm::gastm::NonVirtual' is a specialization of 'VirtualSpecification'.
+'astm::gastm::SpecificTriggerDefinition' is a specialization of 'Definition'.
+'astm::gastm::ProgramScope' is a specialization of 'Scope'.
+'astm::gastm::SpecificLike' is a specialization of 'BinaryOperator'.
+'astm::gastm::DefaultBlock' is a specialization of 'SwitchCase'.
+'astm::gastm::UnnamedTypeReference' is a specialization of 'TypeReference'.
+'astm::gastm::UnionType' is a specialization of 'AggregateType'.
+'astm::gastm::BitAnd' is a specialization of 'BinaryOperator'.
+'astm::gastm::ExceptionType' is a specialization of 'DataType'.
+'astm::gastm::And' is a specialization of 'BinaryOperator'.
+'astm::gastm::EmptyStatement' is a specialization of 'Statement'.
+'astm::gastm::NewExpression' is a specialization of 'Expression'.
+'astm::gastm::AggregateScope' is a specialization of 'Scope'.
+'astm::gastm::BitXor' is a specialization of 'BinaryOperator'.
+'astm::gastm::AggregateType' is a specialization of 'DataType'.
+'astm::gastm::StringLiteral' is a specialization of 'Literal'.
+'astm::gastm::TypeDefinition' is a specialization of 'DefinitionObject'.
+'astm::gastm::ByReferenceActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+'astm::gastm::SpecificLessEqual' is a specialization of 'BinaryOperator'.
+'astm::gastm::QualifiedIdentifierReference' is a specialization of 'NameReference'.
+'astm::gastm::AggregateTypeDefinition' is a specialization of 'TypeDefinition'.
+'astm::gastm::NameReference' is a specialization of 'Expression'.
+'astm::gastm::SourceFile' is a specialization of 'GASTMSourceObject'.
+'astm::gastm::Less' is a specialization of 'BinaryOperator'.
+'astm::gastm::Dimension' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::Private' is a specialization of 'AccessKind'.
+'astm::gastm::FileLocal' is a specialization of 'StorageSpecification'.
+'astm::gastm::BreakStatement' is a specialization of 'Statement'.
+'astm::gastm::NoDef' is a specialization of 'StorageSpecification'.
+'astm::gastm::IntegerLiteral' is a specialization of 'Literal'.
+'astm::gastm::NameSpaceDefinition' is a specialization of 'DefinitionObject'.
+'astm::gastm::VirtualSpecification' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::AggregateExpression' is a specialization of 'Expression'.
+'astm::gastm::DefinitionObject' is a specialization of 'GASTMSyntaxObject'.
+'astm::gastm::Double' is a specialization of 'PrimitiveType'.
+'astm::gastm::AddressOf' is a specialization of 'UnaryOperator'.
+'astm::gastm::FunctionDefinition' is a specialization of 'Definition'.
+'astm::gastm::PreprocessorElement' is a specialization of 'GASTMSyntaxObject'.
+'astm::gastm::External' is a specialization of 'StorageSpecification'.
+'astm::gastm::ExpressionStatement' is a specialization of 'Statement'.
+'astm::gastm::DataType' is a specialization of 'Type'.
+'astm::gastm::FunctionPersistent' is a specialization of 'StorageSpecification'.
+'astm::gastm::SwitchStatement' is a specialization of 'Statement'.
+'astm::gastm::Void' is a specialization of 'PrimitiveType'.
+'astm::sastm::DelphiBlockStatement' is a specialization of 'BlockStatement'.
+'astm::gastm::BitFieldDefinition' is a specialization of 'DataDefinition'.
+'astm::gastm::Deref' is a specialization of 'UnaryOperator'.
+'astm::gastm::ForCheckBeforeStatement' is a specialization of 'ForStatement'.
+'astm::gastm::CaseBlock' is a specialization of 'SwitchCase'.
+'astm::gastm::IfStatement' is a specialization of 'Statement'.
+'astm::gastm::Comment' is a specialization of 'PreprocessorElement'.
+'astm::gastm::FunctionMemberAttribute' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::Assign' is a specialization of 'BinaryOperator'.
+'astm::gastm::RangeType' is a specialization of 'ConstructedType'.
+'astm::gastm::BlockStatement' is a specialization of 'Statement'.
+'astm::gastm::Literal' is a specialization of 'Expression'.
+'astm::gastm::Declaration' is a specialization of 'DeclarationOrDefinition'.
+'astm::gastm::Scope' is a specialization of 'GASTMSemanticObject'.
+'astm::gastm::Name' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::CollectionType' is a specialization of 'ConstructedType'.
+'astm::gastm::FunctionDeclaration' is a specialization of 'Declaration'.
+'astm::gastm::SpecificSelectStatement' is a specialization of 'Statement'.
+'astm::gastm::Not' is a specialization of 'UnaryOperator'.
+'astm::gastm::DoWhileStatement' is a specialization of 'LoopStatement'.
+'astm::gastm::VariableDefinition' is a specialization of 'DataDefinition'.
+'astm::gastm::SourceLocation' is a specialization of 'GASTMSourceObject'.
+'astm::gastm::String' is a specialization of 'PrimitiveType'.
+'astm::gastm::OperatorAssign' is a specialization of 'BinaryOperator'.
+'astm::gastm::SpecificConcatString' is a specialization of 'BinaryOperator'.
+'astm::gastm::NotEqual' is a specialization of 'BinaryOperator'.
+'astm::gastm::WideCharacter' is a specialization of 'PrimitiveType'.
+'astm::gastm::Subtract' is a specialization of 'BinaryOperator'.
+'astm::gastm::RangeExpression' is a specialization of 'Expression'.
+'astm::gastm::NamedType' is a specialization of 'DataType'.
+'astm::gastm::ByValueFormalParameterType' is a specialization of 'FormalParameterType'.
+'astm::gastm::ArrayType' is a specialization of 'ConstructedType'.
+'astm::gastm::FunctionScope' is a specialization of 'Scope'.
+'astm::gastm::UnaryPlus' is a specialization of 'UnaryOperator'.
+'astm::sastm::DelphiImplementationSection' is a specialization of 'CompilationUnit'.
+'astm::gastm::Protected' is a specialization of 'AccessKind'.
+'astm::gastm::LoopStatement' is a specialization of 'Statement'.
+'astm::gastm::MacroCall' is a specialization of 'PreprocessorElement'.
+'astm::gastm::Byte' is a specialization of 'PrimitiveType'.
+'astm::gastm::TypeQualifiedIdentifierReference' is a specialization of 'NameReference'.
+'astm::gastm::Or' is a specialization of 'BinaryOperator'.
+'astm::gastm::QualifiedOverData' is a specialization of 'QualifiedIdentifierReference'.
+'astm::gastm::NotLess' is a specialization of 'BinaryOperator'.
+'astm::gastm::Definition' is a specialization of 'DeclarationOrDefinition'.
+'astm::gastm::LabelAccess' is a specialization of 'Expression'.
+'astm::gastm::CatchBlock' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::BitRightShift' is a specialization of 'BinaryOperator'.
+'astm::gastm::ShortInteger' is a specialization of 'PrimitiveType'.
+'astm::gastm::IncludeUnit' is a specialization of 'PreprocessorElement'.
+'astm::gastm::Integer' is a specialization of 'PrimitiveType'.
+'astm::gastm::TryStatement' is a specialization of 'Statement'.
+'astm::gastm::CharLiteral' is a specialization of 'Literal'.
+'astm::gastm::ConditionalExpression' is a specialization of 'Expression'.
+'astm::gastm::VariableDeclaration' is a specialization of 'Declaration'.
+'astm::gastm::ThrowStatement' is a specialization of 'Statement'.
+'astm::gastm::AnnotationType' is a specialization of 'AggregateType'.
+'astm::gastm::BitLeftShift' is a specialization of 'BinaryOperator'.
+'astm::gastm::ForCheckAfterStatement' is a specialization of 'ForStatement'.
+'astm::gastm::PrimitiveType' is a specialization of 'DataType'.
+'astm::sastm::DelphiInterfaceSection' is a specialization of 'CompilationUnit'.
+'astm::gastm::LabelDefinition' is a specialization of 'DefinitionObject'.
+'astm::sastm::DelphiWithStatement' is a specialization of 'BlockStatement'.
+'astm::gastm::DerivesFrom' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::TypesCatchBlock' is a specialization of 'CatchBlock'.
+'astm::gastm::ArrayAccess' is a specialization of 'Expression'.
+'astm::gastm::AnnotationExpression' is a specialization of 'Expression'.
+'astm::gastm::BitOr' is a specialization of 'BinaryOperator'.
+'astm::gastm::Multiply' is a specialization of 'BinaryOperator'.
+'astm::gastm::FormalParameterDeclaration' is a specialization of 'Declaration'.
+'astm::gastm::Divide' is a specialization of 'BinaryOperator'.
+'astm::gastm::Type' is a specialization of 'GASTMSyntaxObject'.
+'astm::gastm::DeclarationOrDefinitionStatement' is a specialization of 'Statement'.
+'astm::gastm::FunctionCallExpression' is a specialization of 'Expression'.
+'astm::gastm::PureVirtual' is a specialization of 'VirtualSpecification'.
+'astm::gastm::StructureType' is a specialization of 'AggregateType'.
+'astm::gastm::Character' is a specialization of 'PrimitiveType'.
+'astm::gastm::TerminateStatement' is a specialization of 'Statement'.
+'astm::gastm::SwitchCase' is a specialization of 'OtherSyntaxObject'.
+'astm::gastm::EntryDefinition' is a specialization of 'Definition'.
+'astm::gastm::Exponent' is a specialization of 'BinaryOperator'.
+'astm::gastm::IdentifierReference' is a specialization of 'NameReference'.
+'astm::gastm::Greater' is a specialization of 'BinaryOperator'.
+'astm::gastm::FunctionType' is a specialization of 'Type'.
+'astm::gastm::ActualParameterExpression' is a specialization of 'ActualParameter'.
+'astm::gastm::BlockScope' is a specialization of 'Scope'.
+'astm::gastm::DeleteStatement' is a specialization of 'Statement'.
+'astm::gastm::CastExpression' is a specialization of 'Expression'.
+'astm::gastm::PostIncrement' is a specialization of 'UnaryOperator'.
+'astm::gastm::Float' is a specialization of 'PrimitiveType'.
+'astm::gastm::ContinueStatement' is a specialization of 'Statement'.
+'astm::gastm::Add' is a specialization of 'BinaryOperator'.
+'astm::gastm::Negate' is a specialization of 'UnaryOperator'.
+'astm::gastm::OtherSyntaxObject' is a specialization of 'GASTMSyntaxObject'.
+'astm::gastm::BitNot' is a specialization of 'UnaryOperator'.
+'astm::gastm::ForStatement' is a specialization of 'LoopStatement'.
+'astm::gastm::RealLiteral' is a specialization of 'Literal'.
+'astm::gastm::DataDefinition' is a specialization of 'Definition'.
+'astm::gastm::MacroDefinition' is a specialization of 'PreprocessorElement'.
+'astm::gastm::ReturnStatement' is a specialization of 'Statement'.
+'astm::gastm::Public' is a specialization of 'AccessKind'.
+'astm::gastm::JumpStatement' is a specialization of 'Statement'.
+'astm::gastm::PerClassMember' is a specialization of 'StorageSpecification'.
+'astm::gastm::FormalParameterDefinition' is a specialization of 'DataDefinition'.
+'astm::gastm::ByReferenceFormalParameterType' is a specialization of 'FormalParameterType'.
+'astm::gastm::LabeledStatement' is a specialization of 'Statement'.
+'astm::gastm::Expression' is a specialization of 'GASTMSyntaxObject'.
+'astm::gastm::Boolean' is a specialization of 'PrimitiveType'.
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'astm::gastm::FunctionDefinition' (role 'astm_gastm_FunctionDefinition41', cardinality 0..*).
+'TypeReference' (role 'TypeReference29', cardinality 0..*) is associated with 'astm::gastm::Declaration' (role 'astm_gastm_Declaration28', cardinality 0..*).
+'astm::gastm::Declaration' (role 'astm_gastm_Declaration', cardinality 0..*) is associated with 'Definition' (role 'Definition', cardinality 0..*).
+'astm::gastm::CastExpression' (role 'astm_gastm_CastExpression', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference191', cardinality 0..*).
+'DelphiImplementationSection' (role 'DelphiImplementationSection', cardinality 0..*) is associated with 'astm::sastm::DelphiUnit' (role 'astm_sastm_DelphiUnit251', cardinality 0..*).
+'OtherSyntaxObject' (role 'OtherSyntaxObject201', cardinality 0..*) is associated with 'astm::gastm::BinaryExpression' (role 'astm_gastm_BinaryExpression', cardinality 0..*).
+'astm::gastm::NamedTypeReference' (role 'astm_gastm_NamedTypeReference', cardinality 0..*) is associated with 'Name' (role 'Name105', cardinality 0..*).
+'astm::gastm::NamedType' (role 'astm_gastm_NamedType', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'AnnotationExpression' (role 'AnnotationExpression', cardinality 0..*) is associated with 'astm::gastm::GASTMSyntaxObject' (role 'astm_gastm_GASTMSyntaxObject11', cardinality 0..*).
+'Expression' (role 'Expression85', cardinality 0..*) is associated with 'astm::gastm::Dimension' (role 'astm_gastm_Dimension', cardinality 0..*).
+'CompilationUnit' (role 'CompilationUnit', cardinality 0..*) is associated with 'astm::gastm::Project' (role 'astm_gastm_Project', cardinality 0..*).
+'astm::gastm::LabelDefinition' (role 'astm_gastm_LabelDefinition72', cardinality 0..*) is associated with 'LabelType' (role 'LabelType', cardinality 0..*).
+'Expression' (role 'Expression217', cardinality 0..*) is associated with 'astm::gastm::ConditionalExpression' (role 'astm_gastm_ConditionalExpression216', cardinality 0..*).
+'astm::gastm::DeleteStatement' (role 'astm_gastm_DeleteStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression109', cardinality 0..*).
+'astm::sastm::DelphiInterfaceSection' (role 'astm_sastm_DelphiInterfaceSection', cardinality 0..*) is associated with 'NamedTypeReference' (role 'NamedTypeReference', cardinality 0..*).
+'astm::gastm::Declaration' (role 'astm_gastm_Declaration25', cardinality 0..*) is associated with 'Name' (role 'Name26', cardinality 0..*).
+'astm::gastm::Expression' (role 'astm_gastm_Expression', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference170', cardinality 0..*).
+'astm::gastm::BinaryExpression' (role 'astm_gastm_BinaryExpression203', cardinality 0..*) is associated with 'Expression' (role 'Expression204', cardinality 0..*).
+'TypeReference' (role 'TypeReference', cardinality 0..*) is associated with 'astm::gastm::Definition' (role 'astm_gastm_Definition22', cardinality 0..*).
+'astm::gastm::GASTMSyntaxObject' (role 'astm_gastm_GASTMSyntaxObject9', cardinality 0..*) is associated with 'PreprocessorElement' (role 'PreprocessorElement', cardinality 0..*).
+'Type' (role 'Type103', cardinality 0..*) is associated with 'astm::gastm::UnnamedTypeReference' (role 'astm_gastm_UnnamedTypeReference', cardinality 0..*).
+'astm::gastm::SwitchCase' (role 'astm_gastm_SwitchCase', cardinality 0..*) is associated with 'Statement' (role 'Statement140', cardinality 0..*).
+'DelphiInterfaceSection' (role 'DelphiInterfaceSection', cardinality 0..*) is associated with 'astm::sastm::DelphiUnit' (role 'astm_sastm_DelphiUnit249', cardinality 0..*).
+'astm::gastm::NameSpaceDefinition' (role 'astm_gastm_NameSpaceDefinition', cardinality 0..*) is associated with 'Name' (role 'Name63', cardinality 0..*).
+'astm::gastm::FormalParameterType' (role 'astm_gastm_FormalParameterType', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference94', cardinality 0..*).
+'astm::gastm::DeclarationOrDefinitionStatement' (role 'astm_gastm_DeclarationOrDefinitionStatement', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject111', cardinality 0..*).
+'astm::gastm::NamedTypeReference' (role 'astm_gastm_NamedTypeReference107', cardinality 0..*) is associated with 'TypeDefinition' (role 'TypeDefinition', cardinality 0..*).
+'FunctionMemberAttributes' (role 'FunctionMemberAttributes44', cardinality 0..*) is associated with 'astm::gastm::FunctionDefinition' (role 'astm_gastm_FunctionDefinition43', cardinality 0..*).
+'FunctionMemberAttributes' (role 'FunctionMemberAttributes', cardinality 0..*) is associated with 'astm::gastm::FunctionDeclaration' (role 'astm_gastm_FunctionDeclaration32', cardinality 0..*).
+'Statement' (role 'Statement134', cardinality 0..*) is associated with 'astm::gastm::IfStatement' (role 'astm_gastm_IfStatement133', cardinality 0..*).
+'NamedTypeReference' (role 'NamedTypeReference254', cardinality 0..*) is associated with 'astm::sastm::DelphiImplementationSection' (role 'astm_sastm_DelphiImplementationSection', cardinality 0..*).
+'OtherSyntaxObject' (role 'OtherSyntaxObject209', cardinality 0..*) is associated with 'astm::gastm::OperatorAssign' (role 'astm_gastm_OperatorAssign', cardinality 0..*).
+'Expression' (role 'Expression136', cardinality 0..*) is associated with 'astm::gastm::SwitchStatement' (role 'astm_gastm_SwitchStatement', cardinality 0..*).
+'Expression' (role 'Expression199', cardinality 0..*) is associated with 'astm::gastm::UnaryExpression' (role 'astm_gastm_UnaryExpression198', cardinality 0..*).
+'astm::gastm::LabeledStatement' (role 'astm_gastm_LabeledStatement', cardinality 0..*) is associated with 'LabelDefinition' (role 'LabelDefinition', cardinality 0..*).
+'astm::gastm::LabelAccess' (role 'astm_gastm_LabelAccess237', cardinality 0..*) is associated with 'LabelDefinition' (role 'LabelDefinition238', cardinality 0..*).
+'astm::gastm::EntryDefinition' (role 'astm_gastm_EntryDefinition51', cardinality 0..*) is associated with 'Statement' (role 'Statement52', cardinality 0..*).
+'astm::gastm::Dimension' (role 'astm_gastm_Dimension87', cardinality 0..*) is associated with 'Expression' (role 'Expression88', cardinality 0..*).
+'astm::gastm::IfStatement' (role 'astm_gastm_IfStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression128', cardinality 0..*).
+'Expression' (role 'Expression177', cardinality 0..*) is associated with 'astm::gastm::ArrayAccess' (role 'astm_gastm_ArrayAccess', cardinality 0..*).
+'astm::sastm::DelphiUnit' (role 'astm_sastm_DelphiUnit', cardinality 0..*) is associated with 'Name' (role 'Name247', cardinality 0..*).
+'Statement' (role 'Statement131', cardinality 0..*) is associated with 'astm::gastm::IfStatement' (role 'astm_gastm_IfStatement130', cardinality 0..*).
+'astm::gastm::DeclarationOrDefinition' (role 'astm_gastm_DeclarationOrDefinition', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject', cardinality 0..*).
+'astm::gastm::ConditionalExpression' (role 'astm_gastm_ConditionalExpression213', cardinality 0..*) is associated with 'Expression' (role 'Expression214', cardinality 0..*).
+'astm::gastm::CastExpression' (role 'astm_gastm_CastExpression193', cardinality 0..*) is associated with 'Expression' (role 'Expression194', cardinality 0..*).
+'astm::gastm::IncludeUnit' (role 'astm_gastm_IncludeUnit', cardinality 0..*) is associated with 'SourceFile' (role 'SourceFile74', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference', cardinality 0..*) is associated with 'astm::gastm::QualifiedIdentifierReference' (role 'astm_gastm_QualifiedIdentifierReference184', cardinality 0..*).
+'astm::gastm::TypeDefinition' (role 'astm_gastm_TypeDefinition', cardinality 0..*) is associated with 'Name' (role 'Name59', cardinality 0..*).
+'Expression' (role 'Expression182', cardinality 0..*) is associated with 'astm::gastm::QualifiedIdentifierReference' (role 'astm_gastm_QualifiedIdentifierReference', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject175', cardinality 0..*) is associated with 'astm::gastm::NameReference' (role 'astm_gastm_NameReference174', cardinality 0..*).
+'astm::gastm::Scope' (role 'astm_gastm_Scope6', cardinality 0..*) is associated with 'Scope' (role 'Scope', cardinality 0..*).
+'astm::gastm::BlockStatement' (role 'astm_gastm_BlockStatement126', cardinality 0..*) is associated with 'BlockScope' (role 'BlockScope', cardinality 0..*).
+'astm::gastm::CompilationUnit' (role 'astm_gastm_CompilationUnit', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject13', cardinality 0..*).
+'Expression' (role 'Expression57', cardinality 0..*) is associated with 'astm::gastm::EnumLiteralDefinition' (role 'astm_gastm_EnumLiteralDefinition', cardinality 0..*).
+'LabelAccess' (role 'LabelAccess118', cardinality 0..*) is associated with 'astm::gastm::ContinueStatement' (role 'astm_gastm_ContinueStatement', cardinality 0..*).
+'DataDefinition' (role 'DataDefinition', cardinality 0..*) is associated with 'astm::gastm::VariableCatchBlock' (role 'astm_gastm_VariableCatchBlock', cardinality 0..*).
+'Expression' (role 'Expression228', cardinality 0..*) is associated with 'astm::gastm::ActualParameterExpression' (role 'astm_gastm_ActualParameterExpression', cardinality 0..*).
+'astm::gastm::LabeledStatement' (role 'astm_gastm_LabeledStatement121', cardinality 0..*) is associated with 'Statement' (role 'Statement122', cardinality 0..*).
+'astm::gastm::ConstructedType' (role 'astm_gastm_ConstructedType', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference78', cardinality 0..*).
+'astm::gastm::FunctionType' (role 'astm_gastm_FunctionType', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference90', cardinality 0..*).
+'astm::sastm::DelphiWithStatement' (role 'astm_sastm_DelphiWithStatement', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject266', cardinality 0..*).
+'astm::gastm::DataDefinition' (role 'astm_gastm_DataDefinition', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'Expression' (role 'Expression168', cardinality 0..*) is associated with 'astm::gastm::ThrowStatement' (role 'astm_gastm_ThrowStatement', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject262', cardinality 0..*) is associated with 'astm::sastm::DelphiBlockStatement' (role 'astm_sastm_DelphiBlockStatement261', cardinality 0..*).
+'astm::gastm::AggregateType' (role 'astm_gastm_AggregateType82', cardinality 0..*) is associated with 'AggregateScope' (role 'AggregateScope', cardinality 0..*).
+'astm::sastm::DelphiFunctionCallExpression' (role 'astm_sastm_DelphiFunctionCallExpression', cardinality 0..*) is associated with 'DefinitionObject' (role 'DefinitionObject264', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject66', cardinality 0..*) is associated with 'astm::gastm::NameSpaceDefinition' (role 'astm_gastm_NameSpaceDefinition65', cardinality 0..*).
+'Dimension' (role 'Dimension', cardinality 0..*) is associated with 'astm::gastm::ArrayType' (role 'astm_gastm_ArrayType', cardinality 0..*).
+'astm::gastm::FunctionDeclaration' (role 'astm_gastm_FunctionDeclaration', cardinality 0..*) is associated with 'FormalParameterDeclaration' (role 'FormalParameterDeclaration', cardinality 0..*).
+'NamedTypeReference' (role 'NamedTypeReference257', cardinality 0..*) is associated with 'astm::sastm::DelphiImplementationSection' (role 'astm_sastm_DelphiImplementationSection256', cardinality 0..*).
+'astm::gastm::NameSpaceDefinition' (role 'astm_gastm_NameSpaceDefinition68', cardinality 0..*) is associated with 'NameSpaceType' (role 'NameSpaceType', cardinality 0..*).
+'astm::gastm::GASTMSyntaxObject' (role 'astm_gastm_GASTMSyntaxObject', cardinality 0..*) is associated with 'SourceLocation' (role 'SourceLocation', cardinality 0..*).
+'Name' (role 'Name', cardinality 0..*) is associated with 'astm::gastm::Definition' (role 'astm_gastm_Definition', cardinality 0..*).
+'astm::gastm::LabelAccess' (role 'astm_gastm_LabelAccess', cardinality 0..*) is associated with 'Name' (role 'Name235', cardinality 0..*).
+'Expression' (role 'Expression222', cardinality 0..*) is associated with 'astm::gastm::RangeExpression' (role 'astm_gastm_RangeExpression221', cardinality 0..*).
+'astm::gastm::DeclarationOrDefinition' (role 'astm_gastm_DeclarationOrDefinition18', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject19', cardinality 0..*).
+'astm::gastm::CatchBlock' (role 'astm_gastm_CatchBlock', cardinality 0..*) is associated with 'Statement' (role 'Statement163', cardinality 0..*).
+'ProgramScope' (role 'ProgramScope', cardinality 0..*) is associated with 'astm::gastm::CompilationUnit' (role 'astm_gastm_CompilationUnit15', cardinality 0..*).
+'astm::gastm::FunctionDefinition' (role 'astm_gastm_FunctionDefinition39', cardinality 0..*) is associated with 'FormalParameterDefinition' (role 'FormalParameterDefinition', cardinality 0..*).
+'FormalParameterDefinition' (role 'FormalParameterDefinition49', cardinality 0..*) is associated with 'astm::gastm::EntryDefinition' (role 'astm_gastm_EntryDefinition', cardinality 0..*).
+'TypeReference' (role 'TypeReference37', cardinality 0..*) is associated with 'astm::gastm::FunctionDefinition' (role 'astm_gastm_FunctionDefinition', cardinality 0..*).
+'FormalParameterType' (role 'FormalParameterType', cardinality 0..*) is associated with 'astm::gastm::FunctionType' (role 'astm_gastm_FunctionType92', cardinality 0..*).
+'EnumLiteralDefinition' (role 'EnumLiteralDefinition', cardinality 0..*) is associated with 'astm::gastm::EnumType' (role 'astm_gastm_EnumType', cardinality 0..*).
+'AggregateType' (role 'AggregateType', cardinality 0..*) is associated with 'astm::gastm::AggregateTypeDefinition' (role 'astm_gastm_AggregateTypeDefinition', cardinality 0..*).
+'astm::gastm::ForStatement' (role 'astm_gastm_ForStatement153', cardinality 0..*) is associated with 'Expression' (role 'Expression154', cardinality 0..*).
+'Statement' (role 'Statement156', cardinality 0..*) is associated with 'astm::gastm::TryStatement' (role 'astm_gastm_TryStatement', cardinality 0..*).
+'astm::gastm::LoopStatement' (role 'astm_gastm_LoopStatement148', cardinality 0..*) is associated with 'Statement' (role 'Statement149', cardinality 0..*).
+'astm::gastm::FunctionCallExpression' (role 'astm_gastm_FunctionCallExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression224', cardinality 0..*).
+'astm::gastm::Project' (role 'astm_gastm_Project3', cardinality 0..*) is associated with 'GlobalScope' (role 'GlobalScope', cardinality 0..*).
+'astm::gastm::TryStatement' (role 'astm_gastm_TryStatement160', cardinality 0..*) is associated with 'Statement' (role 'Statement161', cardinality 0..*).
+'MacroDefinition' (role 'MacroDefinition', cardinality 0..*) is associated with 'astm::gastm::MacroCall' (role 'astm_gastm_MacroCall', cardinality 0..*).
+'astm::gastm::DerivesFrom' (role 'astm_gastm_DerivesFrom', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject98', cardinality 0..*).
+'astm::gastm::NewExpression' (role 'astm_gastm_NewExpression232', cardinality 0..*) is associated with 'OtherSyntaxObject' (role 'OtherSyntaxObject233', cardinality 0..*).
+'FunctionScope' (role 'FunctionScope', cardinality 0..*) is associated with 'astm::gastm::FunctionDefinition' (role 'astm_gastm_FunctionDefinition46', cardinality 0..*).
+'TypeReference' (role 'TypeReference186', cardinality 0..*) is associated with 'astm::gastm::TypeQualifiedIdentifierReference' (role 'astm_gastm_TypeQualifiedIdentifierReference', cardinality 0..*).
+'Expression' (role 'Expression151', cardinality 0..*) is associated with 'astm::gastm::ForStatement' (role 'astm_gastm_ForStatement', cardinality 0..*).
+'astm::gastm::NewExpression' (role 'astm_gastm_NewExpression', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference230', cardinality 0..*).
+'NamedType' (role 'NamedType', cardinality 0..*) is associated with 'astm::gastm::NamedTypeDefinition' (role 'astm_gastm_NamedTypeDefinition', cardinality 0..*).
+'Expression' (role 'Expression113', cardinality 0..*) is associated with 'astm::gastm::ExpressionStatement' (role 'astm_gastm_ExpressionStatement', cardinality 0..*).
+'Expression' (role 'Expression219', cardinality 0..*) is associated with 'astm::gastm::RangeExpression' (role 'astm_gastm_RangeExpression', cardinality 0..*).
+'astm::gastm::BlockStatement' (role 'astm_gastm_BlockStatement', cardinality 0..*) is associated with 'Statement' (role 'Statement124', cardinality 0..*).
+'astm::gastm::JumpStatement' (role 'astm_gastm_JumpStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression115', cardinality 0..*).
+'Name' (role 'Name70', cardinality 0..*) is associated with 'astm::gastm::LabelDefinition' (role 'astm_gastm_LabelDefinition', cardinality 0..*).
+'CatchBlock' (role 'CatchBlock', cardinality 0..*) is associated with 'astm::gastm::TryStatement' (role 'astm_gastm_TryStatement158', cardinality 0..*).
+'SwitchCase' (role 'SwitchCase', cardinality 0..*) is associated with 'astm::gastm::SwitchStatement' (role 'astm_gastm_SwitchStatement138', cardinality 0..*).
+'astm::gastm::LoopStatement' (role 'astm_gastm_LoopStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression146', cardinality 0..*).
+'DerivesFrom' (role 'DerivesFrom', cardinality 0..*) is associated with 'astm::gastm::ClassType' (role 'astm_gastm_ClassType', cardinality 0..*).
+'Name' (role 'Name172', cardinality 0..*) is associated with 'astm::gastm::NameReference' (role 'astm_gastm_NameReference', cardinality 0..*).
+'astm::gastm::AnnotationExpression' (role 'astm_gastm_AnnotationExpression242', cardinality 0..*) is associated with 'Expression' (role 'Expression243', cardinality 0..*).
+'Expression' (role 'Expression144', cardinality 0..*) is associated with 'astm::gastm::ReturnStatement' (role 'astm_gastm_ReturnStatement', cardinality 0..*).
+'astm::sastm::DelphiBlockStatement' (role 'astm_sastm_DelphiBlockStatement', cardinality 0..*) is associated with 'NamedTypeReference' (role 'NamedTypeReference259', cardinality 0..*).
+'astm::gastm::CaseBlock' (role 'astm_gastm_CaseBlock', cardinality 0..*) is associated with 'Expression' (role 'Expression142', cardinality 0..*).
+'NamedType' (role 'NamedType101', cardinality 0..*) is associated with 'astm::gastm::DerivesFrom' (role 'astm_gastm_DerivesFrom100', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject80', cardinality 0..*) is associated with 'astm::gastm::AggregateType' (role 'astm_gastm_AggregateType', cardinality 0..*).
+'Expression' (role 'Expression180', cardinality 0..*) is associated with 'astm::gastm::ArrayAccess' (role 'astm_gastm_ArrayAccess179', cardinality 0..*).
+'astm::gastm::FunctionDeclaration' (role 'astm_gastm_FunctionDeclaration34', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference35', cardinality 0..*).
+'Statement' (role 'Statement245', cardinality 0..*) is associated with 'astm::gastm::SpecificTriggerDefinition' (role 'astm_gastm_SpecificTriggerDefinition', cardinality 0..*).
+'astm::gastm::TypeQualifiedIdentifierReference' (role 'astm_gastm_TypeQualifiedIdentifierReference188', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference189', cardinality 0..*).
+'astm::gastm::FunctionCallExpression' (role 'astm_gastm_FunctionCallExpression226', cardinality 0..*) is associated with 'ActualParameter' (role 'ActualParameter', cardinality 0..*).
+'Expression' (role 'Expression211', cardinality 0..*) is associated with 'astm::gastm::ConditionalExpression' (role 'astm_gastm_ConditionalExpression', cardinality 0..*).
+'astm::gastm::BitFieldDefinition' (role 'astm_gastm_BitFieldDefinition', cardinality 0..*) is associated with 'Expression' (role 'Expression55', cardinality 0..*).
+'Expression' (role 'Expression207', cardinality 0..*) is associated with 'astm::gastm::BinaryExpression' (role 'astm_gastm_BinaryExpression206', cardinality 0..*).
+'DefinitionObject' (role 'DefinitionObject', cardinality 0..*) is associated with 'astm::gastm::Scope' (role 'astm_gastm_Scope', cardinality 0..*).
+'VirtualSpecification' (role 'VirtualSpecification', cardinality 0..*) is associated with 'astm::gastm::FunctionMemberAttributes' (role 'astm_gastm_FunctionMemberAttributes', cardinality 0..*).
+'SourceFile' (role 'SourceFile', cardinality 0..*) is associated with 'astm::gastm::SourceLocation' (role 'astm_gastm_SourceLocation', cardinality 0..*).
+'Type' (role 'Type165', cardinality 0..*) is associated with 'astm::gastm::TypesCatchBlock' (role 'astm_gastm_TypesCatchBlock', cardinality 0..*).
+'astm::gastm::BreakStatement' (role 'astm_gastm_BreakStatement', cardinality 0..*) is associated with 'LabelAccess' (role 'LabelAccess', cardinality 0..*).
+'OtherSyntaxObject' (role 'OtherSyntaxObject196', cardinality 0..*) is associated with 'astm::gastm::UnaryExpression' (role 'astm_gastm_UnaryExpression', cardinality 0..*).
+'TypeReference' (role 'TypeReference240', cardinality 0..*) is associated with 'astm::gastm::AnnotationExpression' (role 'astm_gastm_AnnotationExpression', cardinality 0..*).

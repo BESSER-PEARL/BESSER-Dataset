@@ -1,0 +1,27 @@
+The model has 15 class(es).
+The class 'petrinet::PetriNet' has the following attributes: 'name' of type str.
+The class 'RefArcs' has no attributes.
+The class 'petrinet::Arc' has the following attributes: 'name' of type str.
+The class 'RefPetriNets' has no attributes.
+The class 'petrinet::Place' has no attributes.
+The class 'RefNodes' has no attributes.
+The class 'petrinet::Node' has the following attributes: 'name' of type str.
+The class 'petrinet::RefTokens' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+The class 'petrinet::RefNodes' has no attributes.
+The class 'petrinet::RefArcs' has no attributes.
+The class 'RefTokens' has no attributes.
+The class 'petrinet::RefPetriNets' has no attributes.
+The class 'petrinet::Token' has the following attributes: 'name' of type str.
+The class 'Node' has no attributes.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::PetriNet' is a specialization of 'RefPetriNets'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Node' is a specialization of 'RefNodes'.
+'petrinet::Arc' is a specialization of 'RefArcs'.
+'petrinet::Token' is a specialization of 'RefTokens'.
+'petrinet::RefNodes' (role 'petrinet_RefNodes', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).
+'petrinet::RefTokens' (role 'petrinet_RefTokens', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet2', cardinality 0..*) is associated with 'petrinet::RefArcs' (role 'petrinet_RefArcs', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc6', cardinality 0..*) is associated with 'petrinet::RefNodes' (role 'petrinet_RefNodes7', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::RefNodes' (role 'petrinet_RefNodes4', cardinality 0..*).

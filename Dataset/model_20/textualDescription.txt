@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'petriNetz::Arc' has the following attributes: 'weight' of type int.
+The class 'petriNetz::Place' has the following attributes: 'name' of type str.
+The class 'petriNetz::PTArc' has no attributes.
+The class 'petriNetz::Token' has no attributes.
+The class 'petriNetz::Petrinet' has the following attributes: 'name' of type str.
+The class 'petriNetz::TPArc' has no attributes.
+The class 'petriNetz::Transition' has the following attributes: 'name' of type str.
+The class 'Arc' has no attributes.
+'petriNetz::TPArc' is a specialization of 'Arc'.
+'petriNetz::PTArc' is a specialization of 'Arc'.
+'petriNetz::PTArc' (role 'petriNetz_PTArc13', cardinality 0..*) is associated with 'petriNetz::Transition' (role 'petriNetz_Transition12', cardinality 0..*).
+'petriNetz::PTArc' (role 'petriNetz_PTArc18', cardinality 0..*) is associated with 'petriNetz::Place' (role 'petriNetz_Place19', cardinality 0..*).
+'petriNetz::Place' (role 'petriNetz_Place', cardinality 0..*) is associated with 'petriNetz::Petrinet' (role 'petriNetz_Petrinet', cardinality 0..*).
+'petriNetz::TPArc' (role 'petriNetz_TPArc16', cardinality 0..*) is associated with 'petriNetz::Transition' (role 'petriNetz_Transition15', cardinality 0..*).
+'petriNetz::TPArc' (role 'petriNetz_TPArc24', cardinality 0..*) is associated with 'petriNetz::Place' (role 'petriNetz_Place25', cardinality 0..*).
+'petriNetz::Place' (role 'petriNetz_Place10', cardinality 0..*) is associated with 'petriNetz::TPArc' (role 'petriNetz_TPArc', cardinality 0..*).
+'petriNetz::Arc' (role 'petriNetz_Arc', cardinality 0..*) is associated with 'petriNetz::Petrinet' (role 'petriNetz_Petrinet4', cardinality 0..*).
+'petriNetz::PTArc' (role 'petriNetz_PTArc', cardinality 0..*) is associated with 'petriNetz::Place' (role 'petriNetz_Place8', cardinality 0..*).
+'petriNetz::TPArc' (role 'petriNetz_TPArc27', cardinality 0..*) is associated with 'petriNetz::Transition' (role 'petriNetz_Transition28', cardinality 0..*).
+'petriNetz::Petrinet' (role 'petriNetz_Petrinet2', cardinality 0..*) is associated with 'petriNetz::Transition' (role 'petriNetz_Transition', cardinality 0..*).
+'petriNetz::Transition' (role 'petriNetz_Transition22', cardinality 0..*) is associated with 'petriNetz::PTArc' (role 'petriNetz_PTArc21', cardinality 0..*).
+'petriNetz::Place' (role 'petriNetz_Place6', cardinality 0..*) is associated with 'petriNetz::Token' (role 'petriNetz_Token', cardinality 0..*).

@@ -1,0 +1,747 @@
+The model has 322 class(es).
+The class 'java::AnnotationInstance' has no attributes.
+The class 'java::Field' has no attributes.
+The class 'java::ExclusiveOrExpressionChild' has no attributes.
+The class 'Modifiable' has no attributes.
+The class 'java::Import' has no attributes.
+The class 'JavaRoot' has no attributes.
+The class 'java::CallTypeArgumentable' has no attributes.
+The class 'java::HexFloatLiteral' has the following attributes: 'hexValue' of type float.
+The class 'java::HexDoubleLiteral' has the following attributes: 'hexValue' of type float.
+The class 'java::Switch' has no attributes.
+The class 'UnaryModificationOperator' has no attributes.
+The class 'java::MultiplicativeOperator' has no attributes.
+The class 'ArrayInitializationValue' has no attributes.
+The class 'java::RightShift' has no attributes.
+The class 'ExceptionThrower' has no attributes.
+The class 'java::NullLiteral' has no attributes.
+The class 'java::AndExpressionChild' has no attributes.
+The class 'NamespaceAwareElement' has no attributes.
+The class 'ShiftOperator' has no attributes.
+The class 'java::EqualityOperator' has no attributes.
+The class 'MultiplicativeOperator' has no attributes.
+The class 'java::Annotable' has no attributes.
+The class 'java::StaticImport' has no attributes.
+The class 'java::MinusMinus' has no attributes.
+The class 'java::Classifier' has no attributes.
+The class 'java::AssignmentMinus' has no attributes.
+The class 'java::ShiftOperator' has no attributes.
+The class 'java::CharacterLiteral' has the following attributes: 'value' of type str.
+The class 'java::ConditionalExpression' has no attributes.
+The class 'java::Complement' has no attributes.
+The class 'java::JavaRoot' has no attributes.
+The class 'java::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'EqualityOperator' has no attributes.
+The class 'AnnotationParameter' has no attributes.
+The class 'java::CompilationUnit' has no attributes.
+The class 'InclusiveOrExpressionChild' has no attributes.
+The class 'java::ArrayInstantiationBySize' has no attributes.
+The class 'java::Enumeration' has no attributes.
+The class 'java::AssignmentExpression' has no attributes.
+The class 'java::LocalVariable' has no attributes.
+The class 'CallTypeArgumentable' has no attributes.
+The class 'java::ArrayInstantiationByValues' has no attributes.
+The class 'java::VariableLengthParameter' has no attributes.
+The class 'java::DoWhileLoop' has no attributes.
+The class 'java::AssignmentDivision' has no attributes.
+The class 'Literal' has no attributes.
+The class 'TypeParametrizable' has no attributes.
+The class 'java::ConditionalOrExpressionChild' has no attributes.
+The class 'java::Return' has no attributes.
+The class 'java::AdditiveExpression' has no attributes.
+The class 'java::Negate' has no attributes.
+The class 'java::OrdinaryParameter' has no attributes.
+The class 'java::MultiplicativeExpressionChild' has no attributes.
+The class 'TypeArgumentable' has no attributes.
+The class 'java::ImportingElement' has no attributes.
+The class 'java::PrimitiveTypeReference' has no attributes.
+The class 'java::DecimalFloatLiteral' has the following attributes: 'decimalValue' of type float.
+The class 'TypedElement' has no attributes.
+The class 'java::Addition' has no attributes.
+The class 'ExclusiveOrExpressionChild' has no attributes.
+The class 'java::TypeReference' has no attributes.
+The class 'java::Parameter' has no attributes.
+The class 'java::AssignmentOperator' has no attributes.
+The class 'java::EqualityExpression' has no attributes.
+The class 'java::UnaryModificationExpression' has no attributes.
+The class 'java::StringReference' has the following attributes: 'value' of type str.
+The class 'ShiftExpressionChild' has no attributes.
+The class 'java::AssignmentModulo' has no attributes.
+The class 'java::Annotation' has no attributes.
+The class 'java::SelfReference' has no attributes.
+The class 'java::UnaryExpression' has no attributes.
+The class 'java::InstanceOfExpression' has no attributes.
+The class 'Import' has no attributes.
+The class 'java::Parametrizable' has no attributes.
+The class 'StaticImport' has no attributes.
+The class 'java::Multiplication' has no attributes.
+The class 'ConditionalAndExpressionChild' has no attributes.
+The class 'java::JumpLabel' has no attributes.
+The class 'java::ExtendsTypeArgument' has no attributes.
+The class 'MultiplicativeExpressionChild' has no attributes.
+The class 'RelationExpressionChild' has no attributes.
+The class 'java::AssignmentMultiplication' has no attributes.
+The class 'java::Class' has no attributes.
+The class 'java::RelationOperator' has no attributes.
+The class 'Expression' has no attributes.
+The class 'java::Type' has no attributes.
+The class 'java::Self' has no attributes.
+The class 'java::Argumentable' has no attributes.
+The class 'java::LongLiteral' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'java::LessThan' has no attributes.
+The class 'ElementReference' has no attributes.
+The class 'Parametrizable' has no attributes.
+The class 'SwitchCase' has no attributes.
+The class 'FloatLiteral' has no attributes.
+The class 'java::ArrayInitializer' has no attributes.
+The class 'EqualityExpressionChild' has no attributes.
+The class 'AndExpressionChild' has no attributes.
+The class 'java::Subtraction' has no attributes.
+The class 'java::InclusiveOrExpression' has no attributes.
+The class 'java::AnonymousClass' has no attributes.
+The class 'java::StatementListContainer' has no attributes.
+The class 'java::ConditionalExpressionChild' has no attributes.
+The class 'java::ConditionalAndExpression' has no attributes.
+The class 'java::NestedExpression' has no attributes.
+The class 'java::DoubleLiteral' has no attributes.
+The class 'java::ConcreteClassifier' has no attributes.
+The class 'java::Package' has no attributes.
+The class 'java::Remainder' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'java::ClassifierReference' has no attributes.
+The class 'java::TypeParameter' has no attributes.
+The class 'java::CatchBlock' has no attributes.
+The class 'java::AdditiveExpressionChild' has no attributes.
+The class 'java::Literal' has no attributes.
+The class 'java::ArrayInstantiationByValuesTyped' has no attributes.
+The class 'UnaryModificationExpression' has no attributes.
+The class 'java::ArrayTypeable' has no attributes.
+The class 'java::Conditional' has no attributes.
+The class 'java::Double' has no attributes.
+The class 'java::PrefixUnaryModificationExpression' has no attributes.
+The class 'java::AssignmentExpressionChild' has no attributes.
+The class 'java::ArrayDimension' has no attributes.
+The class 'java::AssignmentLeftShift' has no attributes.
+The class 'java::Boolean' has no attributes.
+The class 'Method' has no attributes.
+The class 'Annotable' has no attributes.
+The class 'AnnotableAndModifiable' has no attributes.
+The class 'InstanceOfExpressionChild' has no attributes.
+The class 'java::ClassifierImport' has no attributes.
+The class 'java::Short' has no attributes.
+The class 'java::NormalSwitchCase' has no attributes.
+The class 'java::Operator' has no attributes.
+The class 'ImportingElement' has no attributes.
+The class 'java::PlusPlus' has no attributes.
+The class 'LongLiteral' has no attributes.
+The class 'AdditiveExpressionChild' has no attributes.
+The class 'java::SingleAnnotationParameter' has no attributes.
+The class 'java::Static' has no attributes.
+The class 'java::InclusiveOrExpressionChild' has no attributes.
+The class 'java::Long' has no attributes.
+The class 'java::NamespaceClassifierReference' has no attributes.
+The class 'java::Native' has no attributes.
+The class 'java::Strictfp' has no attributes.
+The class 'ConditionalOrExpressionChild' has no attributes.
+The class 'ForLoopInitializer' has no attributes.
+The class 'java::AnnotationAttribute' has no attributes.
+The class 'java::LeftShift' has no attributes.
+The class 'java::AdditionalLocalVariable' has no attributes.
+The class 'TypeArgument' has no attributes.
+The class 'java::Synchronized' has no attributes.
+The class 'AnnotationValue' has no attributes.
+The class 'java::ElementReference' has no attributes.
+The class 'InterfaceMethod' has no attributes.
+The class 'java::EnumConstant' has no attributes.
+The class 'java::AssignmentRightShift' has no attributes.
+The class 'java::ArraySelector' has no attributes.
+The class 'java::DefaultSwitchCase' has no attributes.
+The class 'java::StaticClassifierImport' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Self' has no attributes.
+The class 'StatementContainer' has no attributes.
+The class 'java::EmptyMember' has no attributes.
+The class 'java::Transient' has no attributes.
+The class 'Member' has no attributes.
+The class 'java::Continue' has no attributes.
+The class 'java::ArrayInstantiation' has no attributes.
+The class 'java::Interface' has no attributes.
+The class 'java::ArrayInstantiationByValuesUntyped' has no attributes.
+The class 'WhileLoop' has no attributes.
+The class 'java::QualifiedTypeArgument' has no attributes.
+The class 'Type' has no attributes.
+The class 'java::Break' has no attributes.
+The class 'java::StaticMemberImport' has no attributes.
+The class 'java::Statement' has no attributes.
+The class 'java::TypeParametrizable' has no attributes.
+The class 'java::SuperTypeArgument' has no attributes.
+The class 'java::ForEachLoop' has no attributes.
+The class 'java::SwitchCase' has no attributes.
+The class 'java::Initializable' has no attributes.
+The class 'TypeReference' has no attributes.
+The class 'java::EmptyModel' has no attributes.
+The class 'java::Condition' has no attributes.
+The class 'java::AdditionalField' has no attributes.
+The class 'java::UnsignedRightShift' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'java::Char' has no attributes.
+The class 'java::Equal' has no attributes.
+The class 'java::AnnotationAttributeSetting' has no attributes.
+The class 'java::Float' has no attributes.
+The class 'java::Int' has no attributes.
+The class 'java::SuffixUnaryModificationExpression' has no attributes.
+The class 'java::IntegerLiteral' has no attributes.
+The class 'java::NamespaceAwareElement' has the following attributes: 'namespaces' of type str.
+The class 'Variable' has no attributes.
+The class 'AssignmentOperator' has no attributes.
+The class 'java::AssignmentExclusiveOr' has no attributes.
+The class 'ConcreteClassifier' has no attributes.
+The class 'java::Abstract' has no attributes.
+The class 'ReferenceableElement' has no attributes.
+The class 'AssignmentExpressionChild' has no attributes.
+The class 'StatementListContainer' has no attributes.
+The class 'Statement' has no attributes.
+The class 'java::Reference' has no attributes.
+The class 'java::Method' has no attributes.
+The class 'Reference' has no attributes.
+The class 'java::Void' has no attributes.
+The class 'RelationOperator' has no attributes.
+The class 'java::DecimalLongLiteral' has the following attributes: 'decimalValue' of type str.
+The class 'java::Modifiable' has no attributes.
+The class 'DoubleLiteral' has no attributes.
+The class 'java::ShiftExpression' has no attributes.
+The class 'java::RelationExpression' has no attributes.
+The class 'AnnotationInstanceOrModifier' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'java::PackageReference' has no attributes.
+The class 'java::DecimalIntegerLiteral' has the following attributes: 'decimalValue' of type str.
+The class 'java::TypeArgumentable' has no attributes.
+The class 'java::AssignmentUnsignedRightShift' has no attributes.
+The class 'java::ConditionalAndExpressionChild' has no attributes.
+The class 'java::UnknownTypeArgument' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'java::PackageImport' has no attributes.
+The class 'ArrayTypeable' has no attributes.
+The class 'java::Assert' has no attributes.
+The class 'java::Expression' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'java::GreaterThan' has no attributes.
+The class 'java::Public' has no attributes.
+The class 'java::Modifier' has no attributes.
+The class 'java::ShiftExpressionChild' has no attributes.
+The class 'java::Final' has no attributes.
+The class 'java::Protected' has no attributes.
+The class 'java::LessThanOrEqual' has no attributes.
+The class 'java::AdditiveOperator' has no attributes.
+The class 'java::StatementContainer' has no attributes.
+The class 'java::InstanceOfExpressionChild' has no attributes.
+The class 'java::MethodCall' has no attributes.
+The class 'java::PrimitiveType' has no attributes.
+The class 'Operator' has no attributes.
+The class 'ArrayInstantiation' has no attributes.
+The class 'java::TryBlock' has no attributes.
+The class 'java::ConditionalOrExpression' has no attributes.
+The class 'java::OctalIntegerLiteral' has the following attributes: 'octalValue' of type str.
+The class 'Instantiation' has no attributes.
+The class 'Implementor' has no attributes.
+The class 'java::NotEqual' has no attributes.
+The class 'java::UnaryOperator' has no attributes.
+The class 'java::Jump' has no attributes.
+The class 'java::UnaryModificationOperator' has no attributes.
+The class 'java::MemberContainer' has no attributes.
+The class 'java::Constructor' has no attributes.
+The class 'java::Assignment' has no attributes.
+The class 'java::Private' has no attributes.
+The class 'ConditionalExpressionChild' has no attributes.
+The class 'java::Volatile' has no attributes.
+The class 'java::RelationExpressionChild' has no attributes.
+The class 'java::Division' has no attributes.
+The class 'UnaryExpressionChild' has no attributes.
+The class 'java::InterfaceMethod' has no attributes.
+The class 'java::AndExpression' has no attributes.
+The class 'java::IdentifierReference' has no attributes.
+The class 'java::TypeArgument' has no attributes.
+The class 'java::AnnotationParameterList' has no attributes.
+The class 'java::ExplicitConstructorCall' has no attributes.
+The class 'java::ReferenceableElement' has no attributes.
+The class 'java::GreaterThanOrEqual' has no attributes.
+The class 'java::Super' has no attributes.
+The class 'java::OctalLongLiteral' has the following attributes: 'octalValue' of type str.
+The class 'java::MultiplicativeExpression' has no attributes.
+The class 'ArrayInstantiationByValues' has no attributes.
+The class 'Conditional' has no attributes.
+The class 'java::Throw' has no attributes.
+The class 'java::PrimaryExpression' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'java::UnaryExpressionChild' has no attributes.
+The class 'java::AnnotationParameter' has no attributes.
+The class 'java::AssignmentOr' has no attributes.
+The class 'java::Member' has no attributes.
+The class 'java::CastExpression' has no attributes.
+The class 'java::Implementor' has no attributes.
+The class 'java::AnnotableAndModifiable' has no attributes.
+The class 'java::LocalVariableStatement' has no attributes.
+The class 'IntegerLiteral' has no attributes.
+The class 'java::NamedElement' has the following attributes: 'name' of type str.
+The class 'java::SynchronizedBlock' has no attributes.
+The class 'java::ExclusiveOrExpression' has no attributes.
+The class 'java::TypedElement' has no attributes.
+The class 'java::This' has no attributes.
+The class 'AdditiveOperator' has no attributes.
+The class 'Argumentable' has no attributes.
+The class 'java::EmptyStatement' has no attributes.
+The class 'java::Instantiation' has no attributes.
+The class 'java::AnnotationInstanceOrModifier' has no attributes.
+The class 'java::WhileLoop' has no attributes.
+The class 'java::ForLoop' has no attributes.
+The class 'java::DecimalDoubleLiteral' has the following attributes: 'decimalValue' of type float.
+The class 'java::LayoutInformation' has no attributes.
+The class 'Jump' has no attributes.
+The class 'MemberContainer' has no attributes.
+The class 'java::FloatLiteral' has no attributes.
+The class 'Initializable' has no attributes.
+The class 'java::ArrayInitializationValue' has no attributes.
+The class 'java::EqualityExpressionChild' has no attributes.
+The class 'java::ReflectiveClassReference' has no attributes.
+The class 'java::UnaryModificationExpressionChild' has no attributes.
+The class 'java::ExceptionThrower' has no attributes.
+The class 'java::ClassMethod' has no attributes.
+The class 'java::AnnotationValue' has no attributes.
+The class 'java::AssignmentAnd' has no attributes.
+The class 'java::ExpressionStatement' has no attributes.
+The class 'java::HexLongLiteral' has the following attributes: 'hexValue' of type str.
+The class 'java::ForLoopInitializer' has no attributes.
+The class 'java::Block' has no attributes.
+The class 'java::NewConstructorCall' has no attributes.
+The class 'java::ExpressionList' has no attributes.
+The class 'java::HexIntegerLiteral' has the following attributes: 'hexValue' of type str.
+The class 'java::Commentable' has no attributes.
+The class 'java::Byte' has no attributes.
+The class 'UnaryModificationExpressionChild' has no attributes.
+The class 'java::AssignmentPlus' has no attributes.
+The class 'java::Variable' has no attributes.
+'java::Boolean' is a specialization of 'PrimitiveType'.
+'java::PrimitiveType' is a specialization of 'TypeReference'.
+'java::PrimitiveType' is a specialization of 'Type'.
+'java::TryBlock' is a specialization of 'StatementListContainer'.
+'java::AdditionalLocalVariable' is a specialization of 'ReferenceableElement'.
+'java::Type' is a specialization of 'Commentable'.
+'java::TypedElement' is a specialization of 'Commentable'.
+'java::TryBlock' is a specialization of 'Statement'.
+'java::PackageReference' is a specialization of 'ReferenceableElement'.
+'java::AdditionalLocalVariable' is a specialization of 'ArrayTypeable'.
+'java::Variable' is a specialization of 'TypedElement'.
+'java::SynchronizedBlock' is a specialization of 'Statement'.
+'java::Double' is a specialization of 'PrimitiveType'.
+'java::ClassifierReference' is a specialization of 'TypeArgumentable'.
+'java::WhileLoop' is a specialization of 'StatementContainer'.
+'java::Long' is a specialization of 'PrimitiveType'.
+'java::Variable' is a specialization of 'TypeArgumentable'.
+'java::Int' is a specialization of 'PrimitiveType'.
+'java::LocalVariable' is a specialization of 'Variable'.
+'java::Variable' is a specialization of 'ReferenceableElement'.
+'java::Float' is a specialization of 'PrimitiveType'.
+'java::Variable' is a specialization of 'NamedElement'.
+'java::Short' is a specialization of 'PrimitiveType'.
+'java::LocalVariable' is a specialization of 'AnnotableAndModifiable'.
+'java::NamespaceClassifierReference' is a specialization of 'NamespaceAwareElement'.
+'java::SynchronizedBlock' is a specialization of 'StatementListContainer'.
+'java::Variable' is a specialization of 'ArrayTypeable'.
+'java::WhileLoop' is a specialization of 'Statement'.
+'java::TypeReference' is a specialization of 'Commentable'.
+'java::AdditionalLocalVariable' is a specialization of 'Initializable'.
+'java::NamespaceClassifierReference' is a specialization of 'TypeReference'.
+'java::ClassifierReference' is a specialization of 'TypeReference'.
+'java::Void' is a specialization of 'PrimitiveType'.
+'java::Byte' is a specialization of 'PrimitiveType'.
+'java::LocalVariable' is a specialization of 'Initializable'.
+'java::Switch' is a specialization of 'Statement'.
+'java::LocalVariable' is a specialization of 'ForLoopInitializer'.
+'java::Char' is a specialization of 'PrimitiveType'.
+'java::ConcreteClassifier' is a specialization of 'AnnotableAndModifiable'.
+'java::Reference' is a specialization of 'TypeArgumentable'.
+'java::Constructor' is a specialization of 'TypeParametrizable'.
+'java::EqualityExpression' is a specialization of 'AndExpressionChild'.
+'java::SingleAnnotationParameter' is a specialization of 'AnnotationParameter'.
+'java::UnaryModificationExpressionChild' is a specialization of 'UnaryExpressionChild'.
+'java::ArrayDimension' is a specialization of 'Commentable'.
+'java::UnaryExpressionChild' is a specialization of 'MultiplicativeExpressionChild'.
+'java::Throw' is a specialization of 'Statement'.
+'java::AnnotationInstance' is a specialization of 'Reference'.
+'java::AnnotationInstance' is a specialization of 'AnnotationInstanceOrModifier'.
+'java::Constructor' is a specialization of 'Member'.
+'java::JavaRoot' is a specialization of 'NamespaceAwareElement'.
+'java::DecimalDoubleLiteral' is a specialization of 'DoubleLiteral'.
+'java::ConcreteClassifier' is a specialization of 'MemberContainer'.
+'java::AssignmentDivision' is a specialization of 'AssignmentOperator'.
+'java::BooleanLiteral' is a specialization of 'Literal'.
+'java::ArrayInstantiationBySize' is a specialization of 'ArrayTypeable'.
+'java::Constructor' is a specialization of 'AnnotableAndModifiable'.
+'java::ArrayInstantiationBySize' is a specialization of 'TypedElement'.
+'java::ShiftExpression' is a specialization of 'RelationExpressionChild'.
+'java::MethodCall' is a specialization of 'CallTypeArgumentable'.
+'java::TypeArgument' is a specialization of 'ArrayTypeable'.
+'java::UnsignedRightShift' is a specialization of 'ShiftOperator'.
+'java::AdditionalField' is a specialization of 'Initializable'.
+'java::LessThanOrEqual' is a specialization of 'RelationOperator'.
+'java::HexIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'java::ClassMethod' is a specialization of 'StatementListContainer'.
+'java::PackageImport' is a specialization of 'Import'.
+'java::ForEachLoop' is a specialization of 'StatementContainer'.
+'java::ArrayInstantiation' is a specialization of 'Reference'.
+'java::AssignmentModulo' is a specialization of 'AssignmentOperator'.
+'java::Statement' is a specialization of 'Commentable'.
+'java::Expression' is a specialization of 'ArrayInitializationValue'.
+'java::AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+'java::ShiftOperator' is a specialization of 'Operator'.
+'java::CharacterLiteral' is a specialization of 'Literal'.
+'java::Block' is a specialization of 'Member'.
+'java::DoWhileLoop' is a specialization of 'WhileLoop'.
+'java::CastExpression' is a specialization of 'UnaryModificationExpressionChild'.
+'java::ForLoopInitializer' is a specialization of 'Commentable'.
+'java::RelationExpressionChild' is a specialization of 'InstanceOfExpressionChild'.
+'java::ClassMethod' is a specialization of 'Method'.
+'java::Jump' is a specialization of 'Statement'.
+'java::Field' is a specialization of 'AnnotableAndModifiable'.
+'java::Field' is a specialization of 'Variable'.
+'java::QualifiedTypeArgument' is a specialization of 'TypedElement'.
+'java::Method' is a specialization of 'ReferenceableElement'.
+'java::Self' is a specialization of 'Commentable'.
+'java::LeftShift' is a specialization of 'ShiftOperator'.
+'java::AndExpressionChild' is a specialization of 'ExclusiveOrExpressionChild'.
+'java::DecimalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'java::Initializable' is a specialization of 'Commentable'.
+'java::StatementContainer' is a specialization of 'Commentable'.
+'java::Enumeration' is a specialization of 'Implementor'.
+'java::AnonymousClass' is a specialization of 'MemberContainer'.
+'java::Native' is a specialization of 'Modifier'.
+'java::ConditionalOrExpression' is a specialization of 'ConditionalExpressionChild'.
+'java::Expression' is a specialization of 'AnnotationValue'.
+'java::Protected' is a specialization of 'Modifier'.
+'java::ConcreteClassifier' is a specialization of 'Member'.
+'java::NestedExpression' is a specialization of 'Reference'.
+'java::CatchBlock' is a specialization of 'StatementListContainer'.
+'java::Class' is a specialization of 'ConcreteClassifier'.
+'java::SuperTypeArgument' is a specialization of 'TypeArgument'.
+'java::Abstract' is a specialization of 'Modifier'.
+'java::AssignmentExpression' is a specialization of 'Expression'.
+'java::AssignmentOperator' is a specialization of 'Operator'.
+'java::UnknownTypeArgument' is a specialization of 'TypeArgument'.
+'java::DefaultSwitchCase' is a specialization of 'SwitchCase'.
+'java::Continue' is a specialization of 'Jump'.
+'java::OctalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+'java::Super' is a specialization of 'Self'.
+'java::Class' is a specialization of 'Implementor'.
+'java::AdditionalField' is a specialization of 'ArrayTypeable'.
+'java::JumpLabel' is a specialization of 'NamedElement'.
+'java::Annotable' is a specialization of 'Commentable'.
+'java::TypeParameter' is a specialization of 'Classifier'.
+'java::Method' is a specialization of 'TypeParametrizable'.
+'java::DoubleLiteral' is a specialization of 'Literal'.
+'java::Assignment' is a specialization of 'AssignmentOperator'.
+'java::Break' is a specialization of 'Jump'.
+'java::Method' is a specialization of 'Member'.
+'java::ReflectiveClassReference' is a specialization of 'Reference'.
+'java::AssignmentExpressionChild' is a specialization of 'Expression'.
+'java::CompilationUnit' is a specialization of 'JavaRoot'.
+'java::EqualityOperator' is a specialization of 'Operator'.
+'java::Private' is a specialization of 'Modifier'.
+'java::FloatLiteral' is a specialization of 'Literal'.
+'java::ArrayInstantiationBySize' is a specialization of 'ArrayInstantiation'.
+'java::Package' is a specialization of 'JavaRoot'.
+'java::Division' is a specialization of 'MultiplicativeOperator'.
+'java::AnnotationParameter' is a specialization of 'Commentable'.
+'java::PrefixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+'java::MultiplicativeOperator' is a specialization of 'Operator'.
+'java::ForEachLoop' is a specialization of 'Statement'.
+'java::Synchronized' is a specialization of 'Modifier'.
+'java::NamespaceAwareElement' is a specialization of 'Commentable'.
+'java::NullLiteral' is a specialization of 'Literal'.
+'java::Field' is a specialization of 'Initializable'.
+'java::StaticClassifierImport' is a specialization of 'StaticImport'.
+'java::TypeArgumentable' is a specialization of 'Commentable'.
+'java::Instantiation' is a specialization of 'Reference'.
+'java::AdditionalField' is a specialization of 'ReferenceableElement'.
+'java::Reference' is a specialization of 'PrimaryExpression'.
+'java::This' is a specialization of 'Self'.
+'java::ArrayTypeable' is a specialization of 'Commentable'.
+'java::VariableLengthParameter' is a specialization of 'Parameter'.
+'java::ExplicitConstructorCall' is a specialization of 'Instantiation'.
+'java::Annotation' is a specialization of 'ConcreteClassifier'.
+'java::AdditiveExpressionChild' is a specialization of 'ShiftExpressionChild'.
+'java::IntegerLiteral' is a specialization of 'Literal'.
+'java::Public' is a specialization of 'Modifier'.
+'java::ExclusiveOrExpressionChild' is a specialization of 'InclusiveOrExpressionChild'.
+'java::Static' is a specialization of 'Modifier'.
+'java::ArrayInstantiationByValues' is a specialization of 'ArrayInstantiation'.
+'java::StaticMemberImport' is a specialization of 'StaticImport'.
+'java::Classifier' is a specialization of 'ReferenceableElement'.
+'java::EmptyStatement' is a specialization of 'Statement'.
+'java::StatementListContainer' is a specialization of 'Commentable'.
+'java::HexDoubleLiteral' is a specialization of 'DoubleLiteral'.
+'java::AssignmentPlus' is a specialization of 'AssignmentOperator'.
+'java::AnnotationAttribute' is a specialization of 'InterfaceMethod'.
+'java::AnnotableAndModifiable' is a specialization of 'Commentable'.
+'java::TypeParametrizable' is a specialization of 'Commentable'.
+'java::Equal' is a specialization of 'EqualityOperator'.
+'java::Complement' is a specialization of 'UnaryOperator'.
+'java::EmptyMember' is a specialization of 'Member'.
+'java::Member' is a specialization of 'NamedElement'.
+'java::InclusiveOrExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+'java::InstanceOfExpressionChild' is a specialization of 'EqualityExpressionChild'.
+'java::Remainder' is a specialization of 'MultiplicativeOperator'.
+'java::PlusPlus' is a specialization of 'UnaryModificationOperator'.
+'java::ExclusiveOrExpression' is a specialization of 'InclusiveOrExpressionChild'.
+'java::AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+'java::DecimalLongLiteral' is a specialization of 'LongLiteral'.
+'java::Method' is a specialization of 'ArrayTypeable'.
+'java::ElementReference' is a specialization of 'Reference'.
+'java::ArrayInitializationValue' is a specialization of 'Commentable'.
+'java::ExpressionList' is a specialization of 'ForLoopInitializer'.
+'java::Condition' is a specialization of 'Statement'.
+'java::Enumeration' is a specialization of 'ConcreteClassifier'.
+'java::Method' is a specialization of 'ExceptionThrower'.
+'java::LessThan' is a specialization of 'RelationOperator'.
+'java::AnnotationInstanceOrModifier' is a specialization of 'Commentable'.
+'java::ArrayInstantiationByValuesTyped' is a specialization of 'ArrayTypeable'.
+'java::Strictfp' is a specialization of 'Modifier'.
+'java::Block' is a specialization of 'Statement'.
+'java::Subtraction' is a specialization of 'AdditiveOperator'.
+'java::PrimaryExpression' is a specialization of 'UnaryModificationExpressionChild'.
+'java::ForLoop' is a specialization of 'Statement'.
+'java::Addition' is a specialization of 'AdditiveOperator'.
+'java::StaticImport' is a specialization of 'Import'.
+'java::Field' is a specialization of 'Member'.
+'java::NamedElement' is a specialization of 'Commentable'.
+'java::Modifiable' is a specialization of 'Commentable'.
+'java::InstanceOfExpression' is a specialization of 'TypedElement'.
+'java::Parameter' is a specialization of 'Variable'.
+'java::NewConstructorCall' is a specialization of 'TypedElement'.
+'java::UnaryOperator' is a specialization of 'Operator'.
+'java::ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+'java::LongLiteral' is a specialization of 'Literal'.
+'java::SuffixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+'java::Method' is a specialization of 'TypedElement'.
+'java::Final' is a specialization of 'Modifier'.
+'java::ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+'java::Block' is a specialization of 'StatementListContainer'.
+'java::Condition' is a specialization of 'Conditional'.
+'java::AdditiveExpression' is a specialization of 'ShiftExpressionChild'.
+'java::RightShift' is a specialization of 'ShiftOperator'.
+'java::HexLongLiteral' is a specialization of 'LongLiteral'.
+'java::Constructor' is a specialization of 'StatementListContainer'.
+'java::RelationExpression' is a specialization of 'InstanceOfExpressionChild'.
+'java::JavaRoot' is a specialization of 'NamedElement'.
+'java::OctalLongLiteral' is a specialization of 'LongLiteral'.
+'java::ReferenceableElement' is a specialization of 'NamedElement'.
+'java::AnnotationAttributeSetting' is a specialization of 'Commentable'.
+'java::AndExpression' is a specialization of 'ExclusiveOrExpressionChild'.
+'java::ArrayInitializer' is a specialization of 'AnnotationValue'.
+'java::Operator' is a specialization of 'Commentable'.
+'java::OrdinaryParameter' is a specialization of 'Parameter'.
+'java::HexFloatLiteral' is a specialization of 'FloatLiteral'.
+'java::AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+'java::ConditionalExpressionChild' is a specialization of 'AssignmentExpressionChild'.
+'java::ForLoop' is a specialization of 'StatementContainer'.
+'java::MultiplicativeExpression' is a specialization of 'AdditiveExpressionChild'.
+'java::Implementor' is a specialization of 'Commentable'.
+'java::Constructor' is a specialization of 'ExceptionThrower'.
+'java::ShiftExpressionChild' is a specialization of 'RelationExpressionChild'.
+'java::ArrayInstantiationByValuesTyped' is a specialization of 'TypedElement'.
+'java::ImportingElement' is a specialization of 'Commentable'.
+'java::Volatile' is a specialization of 'Modifier'.
+'java::AssignmentMinus' is a specialization of 'AssignmentOperator'.
+'java::EnumConstant' is a specialization of 'ReferenceableElement'.
+'java::Return' is a specialization of 'Statement'.
+'java::Modifier' is a specialization of 'AnnotationInstanceOrModifier'.
+'java::PrimitiveTypeReference' is a specialization of 'Reference'.
+'java::SwitchCase' is a specialization of 'StatementListContainer'.
+'java::AnnotationParameterList' is a specialization of 'AnnotationParameter'.
+'java::AnonymousClass' is a specialization of 'Type'.
+'java::EnumConstant' is a specialization of 'Annotable'.
+'java::AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+'java::ConcreteClassifier' is a specialization of 'Statement'.
+'java::Constructor' is a specialization of 'Parametrizable'.
+'java::SelfReference' is a specialization of 'Reference'.
+'java::MultiplicativeExpressionChild' is a specialization of 'AdditiveExpressionChild'.
+'java::Method' is a specialization of 'AnnotableAndModifiable'.
+'java::JumpLabel' is a specialization of 'StatementContainer'.
+'java::MinusMinus' is a specialization of 'UnaryModificationOperator'.
+'java::ArrayInitializer' is a specialization of 'ArrayInitializationValue'.
+'java::ConditionalOrExpressionChild' is a specialization of 'ConditionalExpressionChild'.
+'java::AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+'java::ArrayInstantiationByValuesUntyped' is a specialization of 'ArrayInstantiationByValues'.
+'java::AdditiveOperator' is a specialization of 'Operator'.
+'java::GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+'java::AssignmentAnd' is a specialization of 'AssignmentOperator'.
+'java::GreaterThan' is a specialization of 'RelationOperator'.
+'java::UnaryModificationOperator' is a specialization of 'Operator'.
+'java::Parametrizable' is a specialization of 'Commentable'.
+'java::ConcreteClassifier' is a specialization of 'Classifier'.
+'java::Multiplication' is a specialization of 'MultiplicativeOperator'.
+'java::Interface' is a specialization of 'ConcreteClassifier'.
+'java::InclusiveOrExpression' is a specialization of 'ConditionalAndExpressionChild'.
+'java::Parameter' is a specialization of 'AnnotableAndModifiable'.
+'java::NewConstructorCall' is a specialization of 'Instantiation'.
+'java::CallTypeArgumentable' is a specialization of 'Commentable'.
+'java::Assert' is a specialization of 'Conditional'.
+'java::CastExpression' is a specialization of 'ArrayTypeable'.
+'java::IdentifierReference' is a specialization of 'ElementReference'.
+'java::NotEqual' is a specialization of 'EqualityOperator'.
+'java::Assert' is a specialization of 'Statement'.
+'java::ConcreteClassifier' is a specialization of 'TypeParametrizable'.
+'java::Addition' is a specialization of 'UnaryOperator'.
+'java::StringReference' is a specialization of 'Reference'.
+'java::ArrayInstantiationByValuesTyped' is a specialization of 'ArrayInstantiationByValues'.
+'java::JumpLabel' is a specialization of 'Statement'.
+'java::Literal' is a specialization of 'PrimaryExpression'.
+'java::Package' is a specialization of 'Annotable'.
+'java::AnnotationInstance' is a specialization of 'NamespaceAwareElement'.
+'java::ForLoop' is a specialization of 'Conditional'.
+'java::MethodCall' is a specialization of 'ElementReference'.
+'java::UnaryModificationExpression' is a specialization of 'UnaryExpressionChild'.
+'java::EqualityExpressionChild' is a specialization of 'AndExpressionChild'.
+'java::InstanceOfExpression' is a specialization of 'ArrayTypeable'.
+'java::EnumConstant' is a specialization of 'Argumentable'.
+'java::CastExpression' is a specialization of 'TypedElement'.
+'java::NormalSwitchCase' is a specialization of 'SwitchCase'.
+'java::JavaRoot' is a specialization of 'ImportingElement'.
+'java::Field' is a specialization of 'ReferenceableElement'.
+'java::Conditional' is a specialization of 'Commentable'.
+'java::RelationOperator' is a specialization of 'Operator'.
+'java::NewConstructorCall' is a specialization of 'CallTypeArgumentable'.
+'java::Subtraction' is a specialization of 'UnaryOperator'.
+'java::AnnotationValue' is a specialization of 'Commentable'.
+'java::ExceptionThrower' is a specialization of 'Commentable'.
+'java::Condition' is a specialization of 'StatementContainer'.
+'java::UnaryExpression' is a specialization of 'MultiplicativeExpressionChild'.
+'java::ClassifierImport' is a specialization of 'Import'.
+'java::Classifier' is a specialization of 'Type'.
+'java::ExtendsTypeArgument' is a specialization of 'TypeArgument'.
+'java::MethodCall' is a specialization of 'Argumentable'.
+'java::InterfaceMethod' is a specialization of 'Method'.
+'java::Method' is a specialization of 'Parametrizable'.
+'java::NormalSwitchCase' is a specialization of 'Conditional'.
+'java::InstanceOfExpression' is a specialization of 'EqualityExpressionChild'.
+'java::Negate' is a specialization of 'UnaryOperator'.
+'java::Block' is a specialization of 'Modifiable'.
+'java::ArraySelector' is a specialization of 'Commentable'.
+'java::QualifiedTypeArgument' is a specialization of 'TypeArgument'.
+'java::EmptyModel' is a specialization of 'JavaRoot'.
+'java::Argumentable' is a specialization of 'Commentable'.
+'java::Instantiation' is a specialization of 'Argumentable'.
+'java::ArrayInstantiation' is a specialization of 'Expression'.
+'java::AssignmentOr' is a specialization of 'AssignmentOperator'.
+'java::Transient' is a specialization of 'Modifier'.
+'java::DecimalFloatLiteral' is a specialization of 'FloatLiteral'.
+'java::ExpressionStatement' is a specialization of 'Statement'.
+'java::LocalVariableStatement' is a specialization of 'Statement'.
+'java::MemberContainer' is a specialization of 'Commentable'.
+'java::Import' is a specialization of 'NamespaceAwareElement'.
+'java::ConditionalExpression' is a specialization of 'AssignmentExpressionChild'.
+'java::ReferenceableElement' (role 'java_ReferenceableElement', cardinality 0..*) is associated with 'java::StaticMemberImport' (role 'java_StaticMemberImport', cardinality 0..*).
+'java::PackageReference' (role 'java_PackageReference176', cardinality 0..*) is associated with 'java::PackageReference' (role 'java_PackageReference', cardinality 0..*).
+'java::CatchBlock' (role 'java_CatchBlock', cardinality 0..*) is associated with 'java::OrdinaryParameter' (role 'java_OrdinaryParameter', cardinality 0..*).
+'java::ForLoop' (role 'java_ForLoop144', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression145', cardinality 0..*).
+'java::ConditionalExpression' (role 'java_ConditionalExpression50', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression51', cardinality 0..*).
+'java::AdditiveExpressionChild' (role 'java_AdditiveExpressionChild', cardinality 0..*) is associated with 'java::AdditiveExpression' (role 'java_AdditiveExpression', cardinality 0..*).
+'java::Static' (role 'java_Static', cardinality 0..*) is associated with 'java::StaticImport' (role 'java_StaticImport', cardinality 0..*).
+'java::ForLoop' (role 'java_ForLoop', cardinality 0..*) is associated with 'java::ForLoopInitializer' (role 'java_ForLoopInitializer', cardinality 0..*).
+'java::TypeReference' (role 'java_TypeReference91', cardinality 0..*) is associated with 'java::ExtendsTypeArgument' (role 'java_ExtendsTypeArgument', cardinality 0..*).
+'java::InterfaceMethod' (role 'java_InterfaceMethod', cardinality 0..*) is associated with 'java::AnnotationAttributeSetting' (role 'java_AnnotationAttributeSetting8', cardinality 0..*).
+'java::TypeParameter' (role 'java_TypeParameter', cardinality 0..*) is associated with 'java::TypeParametrizable' (role 'java_TypeParametrizable', cardinality 0..*).
+'java::EnumConstant' (role 'java_EnumConstant', cardinality 0..*) is associated with 'java::Enumeration' (role 'java_Enumeration', cardinality 0..*).
+'java::TypeReference' (role 'java_TypeReference31', cardinality 0..*) is associated with 'java::Interface' (role 'java_Interface', cardinality 0..*).
+'java::UnaryExpression' (role 'java_UnaryExpression', cardinality 0..*) is associated with 'java::UnaryOperator' (role 'java_UnaryOperator', cardinality 0..*).
+'java::LocalVariable' (role 'java_LocalVariable179', cardinality 0..*) is associated with 'java::AdditionalLocalVariable' (role 'java_AdditionalLocalVariable', cardinality 0..*).
+'java::Member' (role 'java_Member', cardinality 0..*) is associated with 'java::MemberContainer' (role 'java_MemberContainer', cardinality 0..*).
+'java::Switch' (role 'java_Switch157', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression158', cardinality 0..*).
+'java::ConditionalAndExpressionChild' (role 'java_ConditionalAndExpressionChild', cardinality 0..*) is associated with 'java::ConditionalAndExpression' (role 'java_ConditionalAndExpression', cardinality 0..*).
+'java::AndExpressionChild' (role 'java_AndExpressionChild', cardinality 0..*) is associated with 'java::AndExpression' (role 'java_AndExpression', cardinality 0..*).
+'java::ExpressionList' (role 'java_ExpressionList', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression41', cardinality 0..*).
+'java::NewConstructorCall' (role 'java_NewConstructorCall', cardinality 0..*) is associated with 'java::AnonymousClass' (role 'java_AnonymousClass', cardinality 0..*).
+'java::InstanceOfExpression' (role 'java_InstanceOfExpression', cardinality 0..*) is associated with 'java::InstanceOfExpressionChild' (role 'java_InstanceOfExpressionChild', cardinality 0..*).
+'java::Modifier' (role 'java_Modifier', cardinality 0..*) is associated with 'java::Modifiable' (role 'java_Modifiable', cardinality 0..*).
+'java::AnnotationParameter' (role 'java_AnnotationParameter', cardinality 0..*) is associated with 'java::AnnotationInstance' (role 'java_AnnotationInstance4', cardinality 0..*).
+'java::EnumConstant' (role 'java_EnumConstant113', cardinality 0..*) is associated with 'java::AnonymousClass' (role 'java_AnonymousClass114', cardinality 0..*).
+'java::AssignmentExpression' (role 'java_AssignmentExpression46', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression47', cardinality 0..*).
+'java::TypeReference' (role 'java_TypeReference', cardinality 0..*) is associated with 'java::Implementor' (role 'java_Implementor', cardinality 0..*).
+'java::ConditionalExpression' (role 'java_ConditionalExpression', cardinality 0..*) is associated with 'java::ConditionalExpressionChild' (role 'java_ConditionalExpressionChild', cardinality 0..*).
+'java::Member' (role 'java_Member110', cardinality 0..*) is associated with 'java::MemberContainer' (role 'java_MemberContainer109', cardinality 0..*).
+'java::Self' (role 'java_Self', cardinality 0..*) is associated with 'java::ExplicitConstructorCall' (role 'java_ExplicitConstructorCall', cardinality 0..*).
+'java::TryBlock' (role 'java_TryBlock', cardinality 0..*) is associated with 'java::CatchBlock' (role 'java_CatchBlock164', cardinality 0..*).
+'java::Expression' (role 'java_Expression19', cardinality 0..*) is associated with 'java::ArrayInstantiationBySize' (role 'java_ArrayInstantiationBySize', cardinality 0..*).
+'java::ConditionalOrExpression' (role 'java_ConditionalOrExpression', cardinality 0..*) is associated with 'java::ConditionalOrExpressionChild' (role 'java_ConditionalOrExpressionChild', cardinality 0..*).
+'java::ArraySelector' (role 'java_ArraySelector121', cardinality 0..*) is associated with 'java::Reference' (role 'java_Reference120', cardinality 0..*).
+'java::ArrayTypeable' (role 'java_ArrayTypeable15', cardinality 0..*) is associated with 'java::ArrayDimension' (role 'java_ArrayDimension16', cardinality 0..*).
+'java::Condition' (role 'java_Condition', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement139', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier', cardinality 0..*) is associated with 'java::AnnotationInstance' (role 'java_AnnotationInstance2', cardinality 0..*).
+'java::TypedElement' (role 'java_TypedElement', cardinality 0..*) is associated with 'java::TypeReference' (role 'java_TypeReference170', cardinality 0..*).
+'java::UnaryModificationOperator' (role 'java_UnaryModificationOperator', cardinality 0..*) is associated with 'java::UnaryModificationExpression' (role 'java_UnaryModificationExpression81', cardinality 0..*).
+'java::Expression' (role 'java_Expression168', cardinality 0..*) is associated with 'java::WhileLoop' (role 'java_WhileLoop', cardinality 0..*).
+'java::RelationExpression' (role 'java_RelationExpression', cardinality 0..*) is associated with 'java::RelationExpressionChild' (role 'java_RelationExpressionChild', cardinality 0..*).
+'java::TypeArgument' (role 'java_TypeArgument', cardinality 0..*) is associated with 'java::TypeArgumentable' (role 'java_TypeArgumentable', cardinality 0..*).
+'java::AnnotableAndModifiable' (role 'java_AnnotableAndModifiable', cardinality 0..*) is associated with 'java::AnnotationInstanceOrModifier' (role 'java_AnnotationInstanceOrModifier', cardinality 0..*).
+'java::UnaryExpressionChild' (role 'java_UnaryExpressionChild', cardinality 0..*) is associated with 'java::UnaryExpression' (role 'java_UnaryExpression78', cardinality 0..*).
+'java::Field' (role 'java_Field', cardinality 0..*) is associated with 'java::AdditionalField' (role 'java_AdditionalField', cardinality 0..*).
+'java::AssignmentOperator' (role 'java_AssignmentOperator', cardinality 0..*) is associated with 'java::AssignmentExpression' (role 'java_AssignmentExpression44', cardinality 0..*).
+'java::MultiplicativeOperator' (role 'java_MultiplicativeOperator', cardinality 0..*) is associated with 'java::MultiplicativeExpression' (role 'java_MultiplicativeExpression75', cardinality 0..*).
+'java::Class' (role 'java_Class28', cardinality 0..*) is associated with 'java::TypeReference' (role 'java_TypeReference29', cardinality 0..*).
+'java::TypeParameter' (role 'java_TypeParameter95', cardinality 0..*) is associated with 'java::TypeReference' (role 'java_TypeReference96', cardinality 0..*).
+'java::EqualityOperator' (role 'java_EqualityOperator', cardinality 0..*) is associated with 'java::EqualityExpression' (role 'java_EqualityExpression', cardinality 0..*).
+'java::Assert' (role 'java_Assert', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression136', cardinality 0..*).
+'java::Expression' (role 'java_Expression162', cardinality 0..*) is associated with 'java::Throw' (role 'java_Throw', cardinality 0..*).
+'java::TryBlock' (role 'java_TryBlock166', cardinality 0..*) is associated with 'java::Block' (role 'java_Block', cardinality 0..*).
+'java::Return' (role 'java_Return', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression154', cardinality 0..*).
+'java::AnnotationValue' (role 'java_AnnotationValue11', cardinality 0..*) is associated with 'java::AnnotationAttributeSetting' (role 'java_AnnotationAttributeSetting10', cardinality 0..*).
+'java::Expression' (role 'java_Expression123', cardinality 0..*) is associated with 'java::Argumentable' (role 'java_Argumentable', cardinality 0..*).
+'java::AnnotationParameterList' (role 'java_AnnotationParameterList', cardinality 0..*) is associated with 'java::AnnotationAttributeSetting' (role 'java_AnnotationAttributeSetting', cardinality 0..*).
+'java::Expression' (role 'java_Expression', cardinality 0..*) is associated with 'java::AnnotationAttribute' (role 'java_AnnotationAttribute', cardinality 0..*).
+'java::LayoutInformation' (role 'java_LayoutInformation', cardinality 0..*) is associated with 'java::Commentable' (role 'java_Commentable', cardinality 0..*).
+'java::AnnotationValue' (role 'java_AnnotationValue', cardinality 0..*) is associated with 'java::SingleAnnotationParameter' (role 'java_SingleAnnotationParameter', cardinality 0..*).
+'java::TypeArgument' (role 'java_TypeArgument88', cardinality 0..*) is associated with 'java::CallTypeArgumentable' (role 'java_CallTypeArgumentable', cardinality 0..*).
+'java::ElementReference' (role 'java_ElementReference', cardinality 0..*) is associated with 'java::ReferenceableElement' (role 'java_ReferenceableElement125', cardinality 0..*).
+'java::NamespaceClassifierReference' (role 'java_NamespaceClassifierReference174', cardinality 0..*) is associated with 'java::ClassifierReference' (role 'java_ClassifierReference175', cardinality 0..*).
+'java::AssignmentExpressionChild' (role 'java_AssignmentExpressionChild', cardinality 0..*) is associated with 'java::AssignmentExpression' (role 'java_AssignmentExpression', cardinality 0..*).
+'java::JumpLabel' (role 'java_JumpLabel', cardinality 0..*) is associated with 'java::Jump' (role 'java_Jump', cardinality 0..*).
+'java::ImportingElement' (role 'java_ImportingElement', cardinality 0..*) is associated with 'java::Import' (role 'java_Import', cardinality 0..*).
+'java::ExclusiveOrExpressionChild' (role 'java_ExclusiveOrExpressionChild', cardinality 0..*) is associated with 'java::ExclusiveOrExpression' (role 'java_ExclusiveOrExpression', cardinality 0..*).
+'java::Reference' (role 'java_Reference', cardinality 0..*) is associated with 'java::Reference' (role 'java_Reference117', cardinality 0..*).
+'java::ShiftExpression' (role 'java_ShiftExpression69', cardinality 0..*) is associated with 'java::ShiftOperator' (role 'java_ShiftOperator', cardinality 0..*).
+'java::AdditiveExpression' (role 'java_AdditiveExpression72', cardinality 0..*) is associated with 'java::AdditiveOperator' (role 'java_AdditiveOperator', cardinality 0..*).
+'java::ArraySelector' (role 'java_ArraySelector', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression23', cardinality 0..*).
+'java::AnnotationInstance' (role 'java_AnnotationInstance', cardinality 0..*) is associated with 'java::Annotable' (role 'java_Annotable', cardinality 0..*).
+'java::LocalVariable' (role 'java_LocalVariable', cardinality 0..*) is associated with 'java::LocalVariableStatement' (role 'java_LocalVariableStatement', cardinality 0..*).
+'java::ExceptionThrower' (role 'java_ExceptionThrower', cardinality 0..*) is associated with 'java::NamespaceClassifierReference' (role 'java_NamespaceClassifierReference', cardinality 0..*).
+'java::Conditional' (role 'java_Conditional', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression134', cardinality 0..*).
+'java::CompilationUnit' (role 'java_CompilationUnit', cardinality 0..*) is associated with 'java::ConcreteClassifier' (role 'java_ConcreteClassifier', cardinality 0..*).
+'java::Switch' (role 'java_Switch', cardinality 0..*) is associated with 'java::SwitchCase' (role 'java_SwitchCase', cardinality 0..*).
+'java::SelfReference' (role 'java_SelfReference', cardinality 0..*) is associated with 'java::Self' (role 'java_Self128', cardinality 0..*).
+'java::MultiplicativeExpressionChild' (role 'java_MultiplicativeExpressionChild', cardinality 0..*) is associated with 'java::MultiplicativeExpression' (role 'java_MultiplicativeExpression', cardinality 0..*).
+'java::Parametrizable' (role 'java_Parametrizable', cardinality 0..*) is associated with 'java::Parameter' (role 'java_Parameter', cardinality 0..*).
+'java::ArrayTypeable' (role 'java_ArrayTypeable', cardinality 0..*) is associated with 'java::ArrayDimension' (role 'java_ArrayDimension', cardinality 0..*).
+'java::EqualityExpressionChild' (role 'java_EqualityExpressionChild', cardinality 0..*) is associated with 'java::EqualityExpression' (role 'java_EqualityExpression62', cardinality 0..*).
+'java::Statement' (role 'java_Statement', cardinality 0..*) is associated with 'java::StatementContainer' (role 'java_StatementContainer', cardinality 0..*).
+'java::TypeReference' (role 'java_TypeReference34', cardinality 0..*) is associated with 'java::Interface' (role 'java_Interface33', cardinality 0..*).
+'java::TypeReference' (role 'java_TypeReference26', cardinality 0..*) is associated with 'java::Class' (role 'java_Class', cardinality 0..*).
+'java::CastExpression' (role 'java_CastExpression', cardinality 0..*) is associated with 'java::MultiplicativeExpressionChild' (role 'java_MultiplicativeExpressionChild83', cardinality 0..*).
+'java::ShiftExpressionChild' (role 'java_ShiftExpressionChild', cardinality 0..*) is associated with 'java::ShiftExpression' (role 'java_ShiftExpression', cardinality 0..*).
+'java::Expression' (role 'java_Expression150', cardinality 0..*) is associated with 'java::ForEachLoop' (role 'java_ForEachLoop149', cardinality 0..*).
+'java::ConcreteClassifier' (role 'java_ConcreteClassifier100', cardinality 0..*) is associated with 'java::ClassifierImport' (role 'java_ClassifierImport', cardinality 0..*).
+'java::ConditionalExpression' (role 'java_ConditionalExpression53', cardinality 0..*) is associated with 'java::AssignmentExpressionChild' (role 'java_AssignmentExpressionChild54', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier172', cardinality 0..*) is associated with 'java::ClassifierReference' (role 'java_ClassifierReference', cardinality 0..*).
+'java::Statement' (role 'java_Statement132', cardinality 0..*) is associated with 'java::StatementListContainer' (role 'java_StatementListContainer', cardinality 0..*).
+'java::RelationOperator' (role 'java_RelationOperator', cardinality 0..*) is associated with 'java::RelationExpression' (role 'java_RelationExpression66', cardinality 0..*).
+'java::PrimitiveType' (role 'java_PrimitiveType', cardinality 0..*) is associated with 'java::PrimitiveTypeReference' (role 'java_PrimitiveTypeReference', cardinality 0..*).
+'java::TypeReference' (role 'java_TypeReference93', cardinality 0..*) is associated with 'java::SuperTypeArgument' (role 'java_SuperTypeArgument', cardinality 0..*).
+'java::NestedExpression' (role 'java_NestedExpression', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression85', cardinality 0..*).
+'java::Expression' (role 'java_Expression103', cardinality 0..*) is associated with 'java::Initializable' (role 'java_Initializable', cardinality 0..*).
+'java::UnaryModificationExpressionChild' (role 'java_UnaryModificationExpressionChild', cardinality 0..*) is associated with 'java::UnaryModificationExpression' (role 'java_UnaryModificationExpression', cardinality 0..*).
+'java::ArrayInitializationValue' (role 'java_ArrayInitializationValue', cardinality 0..*) is associated with 'java::ArrayInitializer' (role 'java_ArrayInitializer', cardinality 0..*).
+'java::ArrayInitializer' (role 'java_ArrayInitializer21', cardinality 0..*) is associated with 'java::ArrayInstantiationByValues' (role 'java_ArrayInstantiationByValues', cardinality 0..*).
+'java::ForEachLoop' (role 'java_ForEachLoop', cardinality 0..*) is associated with 'java::OrdinaryParameter' (role 'java_OrdinaryParameter147', cardinality 0..*).
+'java::Expression' (role 'java_Expression141', cardinality 0..*) is associated with 'java::ExpressionStatement' (role 'java_ExpressionStatement', cardinality 0..*).
+'java::Package' (role 'java_Package', cardinality 0..*) is associated with 'java::CompilationUnit' (role 'java_CompilationUnit39', cardinality 0..*).
+'java::InclusiveOrExpression' (role 'java_InclusiveOrExpression', cardinality 0..*) is associated with 'java::InclusiveOrExpressionChild' (role 'java_InclusiveOrExpressionChild', cardinality 0..*).
+'java::SynchronizedBlock' (role 'java_SynchronizedBlock', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression160', cardinality 0..*).

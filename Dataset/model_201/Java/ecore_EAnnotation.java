@@ -1,0 +1,65 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ecore_EAnnotation extends EModelElement {
+
+    private String source;
+
+
+
+
+
+    private List<ecore_EObject> ecore_eobjects;
+
+
+
+
+    private List<ecore_EObject> ecore_eobjects;
+
+
+    public ecore_EAnnotation(
+        String source    ) {
+        super(
+        );
+        this.source = source;
+        this.ecore_eobjects = new ArrayList<>();
+        this.ecore_eobjects = new ArrayList<>();
+    }
+
+    public ecore_EAnnotation(
+        String source        ArrayList<ecore_EObject> ecore_eobjects,        ArrayList<ecore_EObject> ecore_eobjects    ) {
+        this.source = source;
+        this.ecore_eobjects = ecore_eobjects;
+        this.ecore_eobjects = ecore_eobjects;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public List<ecore_EObject> getEcore_eobjects() {
+        return ecore_eobjects;
+    }
+
+    public void addEcore_eobject(Ecore_eobject ecore_eobject) {
+        this.ecore_eobjects.add(ecore_eobject);
+    }
+    public List<ecore_EObject> getEcore_eobjects() {
+        return ecore_eobjects;
+    }
+
+    public void addEcore_eobject(Ecore_eobject ecore_eobject) {
+        this.ecore_eobjects.add(ecore_eobject);
+    }
+
+}

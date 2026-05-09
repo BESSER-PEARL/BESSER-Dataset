@@ -1,0 +1,432 @@
+The model has 120 class(es).
+The class 'Annotation' has no attributes.
+The class 'ast::SimpleName' has the following attributes: 'identifier' of type str.
+The class 'ast::TypeDeclarationStatement' has no attributes.
+The class 'ast::ArrayCreation' has no attributes.
+The class 'ast::ThrowStatement' has no attributes.
+The class 'ast::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'ast::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'ast::SuperMethodReference' has no attributes.
+The class 'ast::ParenthesizedExpression' has no attributes.
+The class 'ast::MethodInvocation' has no attributes.
+The class 'ast::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'ast::CreationReference' has no attributes.
+The class 'ast::IntersectionType' has no attributes.
+The class 'ast::SuperConstructorInvocation' has no attributes.
+The class 'ast::CompilationUnit' has no attributes.
+The class 'ast::CharacterLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'ASTNode' has no attributes.
+The class 'ast::QualifiedType' has no attributes.
+The class 'ast::ParameterizedType' has no attributes.
+The class 'ast::AbstractTypeDeclaration' has no attributes.
+The class 'ast::IfStatement' has no attributes.
+The class 'ast::SimpleType' has no attributes.
+The class 'ast::TypeParameter' has no attributes.
+The class 'ast::Javadoc' has no attributes.
+The class 'ast::AssertStatement' has no attributes.
+The class 'ast::MemberValuePair' has no attributes.
+The class 'MethodReference' has no attributes.
+The class 'ast::Annotation' has no attributes.
+The class 'ast::LambdaExpression' has the following attributes: 'parentheses' of type bool.
+The class 'ast::Comment' has no attributes.
+The class 'Name' has no attributes.
+The class 'ast::TextElement' has the following attributes: 'text' of type str.
+The class 'ast::EnumConstantDeclaration' has no attributes.
+The class 'ast::MethodDeclaration' has the following attributes: 'constructor' of type bool.
+The class 'ast::BooleanLiteral' has the following attributes: 'booleanValue' of type bool.
+The class 'ast::MethodRefParameter' has the following attributes: 'varargs' of type bool.
+The class 'ast::TypeDeclaration' has the following attributes: 'interface' of type bool.
+The class 'ast::DoStatement' has no attributes.
+The class 'ast::BreakStatement' has no attributes.
+The class 'ast::UnionType' has no attributes.
+The class 'IDocElement' has no attributes.
+The class 'ast::VariableDeclarationStatement' has no attributes.
+The class 'IExtendedModifier' has no attributes.
+The class 'ast::TypeMethodReference' has no attributes.
+The class 'ast::AnnotatableType' has no attributes.
+The class 'ast::Dimension' has no attributes.
+The class 'Comment' has no attributes.
+The class 'ast::SynchronizedStatement' has no attributes.
+The class 'ast::ForStatement' has no attributes.
+The class 'ast::Block' has no attributes.
+The class 'ast::AnnotationTypeDeclaration' has no attributes.
+The class 'ast::FieldAccess' has no attributes.
+The class 'ast::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'ast::EnumDeclaration' has no attributes.
+The class 'ast::Expression' has no attributes.
+The class 'ast::ClassInstanceCreation' has no attributes.
+The class 'ast::PackageDeclaration' has no attributes.
+The class 'ast::Initializer' has no attributes.
+The class 'ast::TypeLiteral' has no attributes.
+The class 'ast::TryStatement' has no attributes.
+The class 'ast::MethodReference' has no attributes.
+The class 'ast::SuperFieldAccess' has no attributes.
+The class 'ast::ExpressionStatement' has no attributes.
+The class 'ast::ArrayAccess' has no attributes.
+The class 'ast::QualifiedName' has no attributes.
+The class 'ast::MarkerAnnotation' has no attributes.
+The class 'ast::SwitchStatement' has no attributes.
+The class 'ast::MethodRef' has no attributes.
+The class 'ast::ReturnStatement' has no attributes.
+The class 'ast::ArrayInitializer' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ast::FieldDeclaration' has no attributes.
+The class 'ast::VariableDeclaration' has no attributes.
+The class 'ast::StringLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'ast::VariableDeclarationFragment' has no attributes.
+The class 'ast::NumberLiteral' has the following attributes: 'token' of type str.
+The class 'ast::Modifier' has the following attributes: 'keyword' of type str.
+The class 'ast::ConditionalExpression' has no attributes.
+The class 'ast::CastExpression' has no attributes.
+The class 'ast::VariableDeclarationExpression' has no attributes.
+The class 'ast::InstanceofExpression' has no attributes.
+The class 'ast::SingleMemberAnnotation' has no attributes.
+The class 'ast::ConstructorInvocation' has no attributes.
+The class 'ast::TagElement' has the following attributes: 'tagName' of type str.
+The class 'VariableDeclaration' has no attributes.
+The class 'ast::NameQualifiedType' has no attributes.
+The class 'ast::NormalAnnotation' has no attributes.
+The class 'ast::Statement' has no attributes.
+The class 'ast::SingleVariableDeclaration' has the following attributes: 'varargs' of type bool.
+The class 'ast::NullLiteral' has no attributes.
+The class 'ast::LabeledStatement' has no attributes.
+The class 'ast::Assignment' has the following attributes: 'operator' of type str.
+The class 'ast::Type' has no attributes.
+The class 'ast::SuperMethodInvocation' has no attributes.
+The class 'ast::AnonymousClassDeclaration' has no attributes.
+The class 'ast::ASTNode' has no attributes.
+The class 'ast::BodyDeclaration' has no attributes.
+The class 'AnnotatableType' has no attributes.
+The class 'ast::ArrayType' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'ast::CatchClause' has no attributes.
+The class 'ast::Name' has no attributes.
+The class 'ast::SwitchCase' has no attributes.
+The class 'ast::ContinueStatement' has no attributes.
+The class 'ast::ExpressionMethodReference' has no attributes.
+The class 'ast::BlockComment' has no attributes.
+The class 'ast::LineComment' has no attributes.
+The class 'ast::IDocElement' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'Type' has no attributes.
+The class 'ast::EmptyStatement' has no attributes.
+The class 'ast::ImportDeclaration' has the following attributes: 'static' of type bool; 'onDemand' of type bool.
+The class 'ast::EnhancedForStatement' has no attributes.
+The class 'ast::MemberRef' has no attributes.
+The class 'ast::ThisExpression' has no attributes.
+The class 'ast::WildcardType' has the following attributes: 'upperBound' of type bool.
+The class 'ast::WhileStatement' has no attributes.
+The class 'ast::IExtendedModifier' has no attributes.
+The class 'Statement' has no attributes.
+The class 'ast::PrimitiveType' has the following attributes: 'primitiveTypeCode' of type str.
+'ast::MethodRef' is a specialization of 'ASTNode'.
+'ast::MethodRef' is a specialization of 'IDocElement'.
+'ast::Modifier' is a specialization of 'ASTNode'.
+'ast::MethodRefParameter' is a specialization of 'ASTNode'.
+'ast::Modifier' is a specialization of 'IExtendedModifier'.
+'ast::ParameterizedType' is a specialization of 'Type'.
+'ast::ArrayAccess' is a specialization of 'Expression'.
+'ast::QualifiedType' is a specialization of 'AnnotatableType'.
+'ast::WildcardType' is a specialization of 'AnnotatableType'.
+'ast::ArrayCreation' is a specialization of 'Expression'.
+'ast::ArrayInitializer' is a specialization of 'Expression'.
+'ast::MemberValuePair' is a specialization of 'ASTNode'.
+'ast::ArrayType' is a specialization of 'Type'.
+'ast::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'ast::Type' is a specialization of 'ASTNode'.
+'ast::TypeParameter' is a specialization of 'ASTNode'.
+'ast::AssertStatement' is a specialization of 'Statement'.
+'ast::UnionType' is a specialization of 'Type'.
+'ast::Statement' is a specialization of 'ASTNode'.
+'ast::Dimension' is a specialization of 'ASTNode'.
+'ast::Name' is a specialization of 'Expression'.
+'ast::LambdaExpression' is a specialization of 'Expression'.
+'ast::Assignment' is a specialization of 'Expression'.
+'ast::IntersectionType' is a specialization of 'Type'.
+'ast::Name' is a specialization of 'IDocElement'.
+'ast::NameQualifiedType' is a specialization of 'AnnotatableType'.
+'ast::TagElement' is a specialization of 'ASTNode'.
+'ast::CreationReference' is a specialization of 'MethodReference'.
+'ast::TagElement' is a specialization of 'IDocElement'.
+'ast::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'ast::TextElement' is a specialization of 'ASTNode'.
+'ast::TypeMethodReference' is a specialization of 'MethodReference'.
+'ast::TextElement' is a specialization of 'IDocElement'.
+'ast::MethodReference' is a specialization of 'Expression'.
+'ast::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'ast::ExpressionMethodReference' is a specialization of 'MethodReference'.
+'ast::SuperMethodReference' is a specialization of 'MethodReference'.
+'ast::CastExpression' is a specialization of 'Expression'.
+'ast::CatchClause' is a specialization of 'ASTNode'.
+'ast::CharacterLiteral' is a specialization of 'Expression'.
+'ast::ClassInstanceCreation' is a specialization of 'Expression'.
+'ast::CompilationUnit' is a specialization of 'ASTNode'.
+'ast::Block' is a specialization of 'Statement'.
+'ast::BooleanLiteral' is a specialization of 'Expression'.
+'ast::BreakStatement' is a specialization of 'Statement'.
+'ast::ConditionalExpression' is a specialization of 'Expression'.
+'ast::ConstructorInvocation' is a specialization of 'Statement'.
+'ast::ContinueStatement' is a specialization of 'Statement'.
+'ast::DoStatement' is a specialization of 'Statement'.
+'ast::EmptyStatement' is a specialization of 'Statement'.
+'ast::ExpressionStatement' is a specialization of 'Statement'.
+'ast::BodyDeclaration' is a specialization of 'ASTNode'.
+'ast::ForStatement' is a specialization of 'Statement'.
+'ast::IfStatement' is a specialization of 'Statement'.
+'ast::ImportDeclaration' is a specialization of 'ASTNode'.
+'ast::InfixExpression' is a specialization of 'Expression'.
+'ast::FieldAccess' is a specialization of 'Expression'.
+'ast::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'ast::MethodDeclaration' is a specialization of 'BodyDeclaration'.
+'ast::MethodInvocation' is a specialization of 'Expression'.
+'ast::Initializer' is a specialization of 'BodyDeclaration'.
+'ast::Javadoc' is a specialization of 'Comment'.
+'ast::Comment' is a specialization of 'ASTNode'.
+'ast::LabeledStatement' is a specialization of 'Statement'.
+'ast::PostfixExpression' is a specialization of 'Expression'.
+'ast::PrefixExpression' is a specialization of 'Expression'.
+'ast::PrimitiveType' is a specialization of 'AnnotatableType'.
+'ast::AnnotatableType' is a specialization of 'Type'.
+'ast::QualifiedName' is a specialization of 'Name'.
+'ast::ReturnStatement' is a specialization of 'Statement'.
+'ast::SimpleName' is a specialization of 'Name'.
+'ast::SimpleType' is a specialization of 'AnnotatableType'.
+'ast::NullLiteral' is a specialization of 'Expression'.
+'ast::NumberLiteral' is a specialization of 'Expression'.
+'ast::PackageDeclaration' is a specialization of 'ASTNode'.
+'ast::ParenthesizedExpression' is a specialization of 'Expression'.
+'ast::VariableDeclaration' is a specialization of 'ASTNode'.
+'ast::StringLiteral' is a specialization of 'Expression'.
+'ast::SuperConstructorInvocation' is a specialization of 'Statement'.
+'ast::SuperFieldAccess' is a specialization of 'Expression'.
+'ast::SuperMethodInvocation' is a specialization of 'Expression'.
+'ast::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'ast::SynchronizedStatement' is a specialization of 'Statement'.
+'ast::ThisExpression' is a specialization of 'Expression'.
+'ast::ThrowStatement' is a specialization of 'Statement'.
+'ast::TryStatement' is a specialization of 'Statement'.
+'ast::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'ast::SwitchCase' is a specialization of 'Statement'.
+'ast::SwitchStatement' is a specialization of 'Statement'.
+'ast::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'ast::TypeDeclarationStatement' is a specialization of 'Statement'.
+'ast::MarkerAnnotation' is a specialization of 'Annotation'.
+'ast::TypeLiteral' is a specialization of 'Expression'.
+'ast::BlockComment' is a specialization of 'Comment'.
+'ast::VariableDeclarationExpression' is a specialization of 'Expression'.
+'ast::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'ast::Annotation' is a specialization of 'Expression'.
+'ast::VariableDeclarationStatement' is a specialization of 'Statement'.
+'ast::Annotation' is a specialization of 'IExtendedModifier'.
+'ast::EnhancedForStatement' is a specialization of 'Statement'.
+'ast::Expression' is a specialization of 'ASTNode'.
+'ast::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'ast::NormalAnnotation' is a specialization of 'Annotation'.
+'ast::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'ast::SingleMemberAnnotation' is a specialization of 'Annotation'.
+'ast::WhileStatement' is a specialization of 'Statement'.
+'ast::MemberRef' is a specialization of 'ASTNode'.
+'ast::InstanceofExpression' is a specialization of 'Expression'.
+'ast::MemberRef' is a specialization of 'IDocElement'.
+'ast::LineComment' is a specialization of 'Comment'.
+'ast::Expression' (role 'ast_Expression251', cardinality 0..*) is associated with 'ast::SuperConstructorInvocation' (role 'ast_SuperConstructorInvocation', cardinality 0..*).
+'ast::Javadoc' (role 'ast_Javadoc', cardinality 0..*) is associated with 'ast::FieldDeclaration' (role 'ast_FieldDeclaration', cardinality 0..*).
+'ast::EnumDeclaration' (role 'ast_EnumDeclaration', cardinality 0..*) is associated with 'ast::Javadoc' (role 'ast_Javadoc375', cardinality 0..*).
+'ast::Name' (role 'ast_Name', cardinality 0..*) is associated with 'ast::MarkerAnnotation' (role 'ast_MarkerAnnotation', cardinality 0..*).
+'ast::FieldDeclaration' (role 'ast_FieldDeclaration112', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type113', cardinality 0..*).
+'ast::AnonymousClassDeclaration' (role 'ast_AnonymousClassDeclaration404', cardinality 0..*) is associated with 'ast::EnumConstantDeclaration' (role 'ast_EnumConstantDeclaration403', cardinality 0..*).
+'ast::AnnotationTypeMemberDeclaration' (role 'ast_AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'ast::Javadoc' (role 'ast_Javadoc450', cardinality 0..*).
+'ast::ArrayInitializer' (role 'ast_ArrayInitializer34', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression35', cardinality 0..*).
+'ast::TypeDeclaration' (role 'ast_TypeDeclaration306', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName307', cardinality 0..*).
+'ast::CatchClause' (role 'ast_CatchClause', cardinality 0..*) is associated with 'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration', cardinality 0..*).
+'ast::SwitchCase' (role 'ast_SwitchCase', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression275', cardinality 0..*).
+'ast::MethodRef' (role 'ast_MethodRef16', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName17', cardinality 0..*).
+'ast::MethodInvocation' (role 'ast_MethodInvocation202', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression203', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression128', cardinality 0..*) is associated with 'ast::IfStatement' (role 'ast_IfStatement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression57', cardinality 0..*) is associated with 'ast::CastExpression' (role 'ast_CastExpression56', cardinality 0..*).
+'ast::TypeParameter' (role 'ast_TypeParameter406', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier407', cardinality 0..*).
+'ast::IExtendedModifier' (role 'ast_IExtendedModifier453', cardinality 0..*) is associated with 'ast::AnnotationTypeMemberDeclaration' (role 'ast_AnnotationTypeMemberDeclaration452', cardinality 0..*).
+'ast::VariableDeclarationStatement' (role 'ast_VariableDeclarationStatement', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier343', cardinality 0..*).
+'ast::SuperMethodInvocation' (role 'ast_SuperMethodInvocation266', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type267', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression194', cardinality 0..*) is associated with 'ast::MethodInvocation' (role 'ast_MethodInvocation', cardinality 0..*).
+'ast::Statement' (role 'ast_Statement161', cardinality 0..*) is associated with 'ast::LabeledStatement' (role 'ast_LabeledStatement160', cardinality 0..*).
+'ast::MemberValuePair' (role 'ast_MemberValuePair', cardinality 0..*) is associated with 'ast::NormalAnnotation' (role 'ast_NormalAnnotation4', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName200', cardinality 0..*) is associated with 'ast::MethodInvocation' (role 'ast_MethodInvocation199', cardinality 0..*).
+'ast::Name' (role 'ast_Name287', cardinality 0..*) is associated with 'ast::ThisExpression' (role 'ast_ThisExpression', cardinality 0..*).
+'ast::Block' (role 'ast_Block285', cardinality 0..*) is associated with 'ast::SynchronizedStatement' (role 'ast_SynchronizedStatement284', cardinality 0..*).
+'ast::Javadoc' (role 'ast_Javadoc147', cardinality 0..*) is associated with 'ast::Initializer' (role 'ast_Initializer', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName410', cardinality 0..*) is associated with 'ast::TypeParameter' (role 'ast_TypeParameter409', cardinality 0..*).
+'ast::NormalAnnotation' (role 'ast_NormalAnnotation', cardinality 0..*) is associated with 'ast::Name' (role 'ast_Name2', cardinality 0..*).
+'ast::Type' (role 'ast_Type456', cardinality 0..*) is associated with 'ast::AnnotationTypeMemberDeclaration' (role 'ast_AnnotationTypeMemberDeclaration455', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression120', cardinality 0..*) is associated with 'ast::ForStatement' (role 'ast_ForStatement119', cardinality 0..*).
+'ast::ImportDeclaration' (role 'ast_ImportDeclaration136', cardinality 0..*) is associated with 'ast::Name' (role 'ast_Name137', cardinality 0..*).
+'ast::ArrayCreation' (role 'ast_ArrayCreation32', cardinality 0..*) is associated with 'ast::ArrayInitializer' (role 'ast_ArrayInitializer', cardinality 0..*).
+'ast::AbstractTypeDeclaration' (role 'ast_AbstractTypeDeclaration', cardinality 0..*) is associated with 'ast::CompilationUnit' (role 'ast_CompilationUnit80', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression289', cardinality 0..*) is associated with 'ast::ThrowStatement' (role 'ast_ThrowStatement', cardinality 0..*).
+'ast::Dimension' (role 'ast_Dimension338', cardinality 0..*) is associated with 'ast::VariableDeclarationFragment' (role 'ast_VariableDeclarationFragment337', cardinality 0..*).
+'ast::VariableDeclarationFragment' (role 'ast_VariableDeclarationFragment349', cardinality 0..*) is associated with 'ast::VariableDeclarationStatement' (role 'ast_VariableDeclarationStatement348', cardinality 0..*).
+'ast::ArrayAccess' (role 'ast_ArrayAccess', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression23', cardinality 0..*).
+'ast::TypeParameter' (role 'ast_TypeParameter412', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type413', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName459', cardinality 0..*) is associated with 'ast::AnnotationTypeMemberDeclaration' (role 'ast_AnnotationTypeMemberDeclaration458', cardinality 0..*).
+'ast::Annotation' (role 'ast_Annotation428', cardinality 0..*) is associated with 'ast::WildcardType' (role 'ast_WildcardType', cardinality 0..*).
+'ast::AnonymousClassDeclaration' (role 'ast_AnonymousClassDeclaration', cardinality 0..*) is associated with 'ast::BodyDeclaration' (role 'ast_BodyDeclaration', cardinality 0..*).
+'ast::MethodDeclaration' (role 'ast_MethodDeclaration165', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier166', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName365', cardinality 0..*) is associated with 'ast::MethodRefParameter' (role 'ast_MethodRefParameter364', cardinality 0..*).
+'ast::Name' (role 'ast_Name14', cardinality 0..*) is associated with 'ast::MethodRef' (role 'ast_MethodRef', cardinality 0..*).
+'ast::MethodInvocation' (role 'ast_MethodInvocation196', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type197', cardinality 0..*).
+'ast::ParameterizedType' (role 'ast_ParameterizedType417', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type418', cardinality 0..*).
+'ast::Dimension' (role 'ast_Dimension186', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration185', cardinality 0..*).
+'ast::WhileStatement' (role 'ast_WhileStatement353', cardinality 0..*) is associated with 'ast::Statement' (role 'ast_Statement354', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName262', cardinality 0..*) is associated with 'ast::SuperFieldAccess' (role 'ast_SuperFieldAccess261', cardinality 0..*).
+'ast::Type' (role 'ast_Type346', cardinality 0..*) is associated with 'ast::VariableDeclarationStatement' (role 'ast_VariableDeclarationStatement345', cardinality 0..*).
+'ast::SimpleType' (role 'ast_SimpleType230', cardinality 0..*) is associated with 'ast::Name' (role 'ast_Name231', cardinality 0..*).
+'ast::MethodDeclaration' (role 'ast_MethodDeclaration168', cardinality 0..*) is associated with 'ast::TypeParameter' (role 'ast_TypeParameter', cardinality 0..*).
+'ast::Type' (role 'ast_Type189', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration188', cardinality 0..*).
+'ast::VariableDeclarationExpression' (role 'ast_VariableDeclarationExpression325', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier326', cardinality 0..*).
+'ast::MethodRefParameter' (role 'ast_MethodRefParameter361', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type362', cardinality 0..*).
+'ast::SingleMemberAnnotation' (role 'ast_SingleMemberAnnotation8', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression41', cardinality 0..*) is associated with 'ast::AssertStatement' (role 'ast_AssertStatement', cardinality 0..*).
+'ast::PackageDeclaration' (role 'ast_PackageDeclaration210', cardinality 0..*) is associated with 'ast::Name' (role 'ast_Name211', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression145', cardinality 0..*) is associated with 'ast::InfixExpression' (role 'ast_InfixExpression144', cardinality 0..*).
+'ast::Type' (role 'ast_Type464', cardinality 0..*) is associated with 'ast::UnionType' (role 'ast_UnionType', cardinality 0..*).
+'ast::AnnotationTypeMemberDeclaration' (role 'ast_AnnotationTypeMemberDeclaration461', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression462', cardinality 0..*).
+'ast::IDocElement' (role 'ast_IDocElement', cardinality 0..*) is associated with 'ast::TagElement' (role 'ast_TagElement', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression226', cardinality 0..*) is associated with 'ast::ReturnStatement' (role 'ast_ReturnStatement', cardinality 0..*).
+'ast::ArrayType' (role 'ast_ArrayType37', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName95', cardinality 0..*) is associated with 'ast::ContinueStatement' (role 'ast_ContinueStatement', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName224', cardinality 0..*) is associated with 'ast::QualifiedName' (role 'ast_QualifiedName223', cardinality 0..*).
+'ast::EnhancedForStatement' (role 'ast_EnhancedForStatement372', cardinality 0..*) is associated with 'ast::Statement' (role 'ast_Statement373', cardinality 0..*).
+'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration245', cardinality 0..*) is associated with 'ast::Dimension' (role 'ast_Dimension246', cardinality 0..*).
+'ast::SuperMethodInvocation' (role 'ast_SuperMethodInvocation272', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression273', cardinality 0..*).
+'ast::ParameterizedType' (role 'ast_ParameterizedType', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type415', cardinality 0..*).
+'ast::ClassInstanceCreation' (role 'ast_ClassInstanceCreation74', cardinality 0..*) is associated with 'ast::AnonymousClassDeclaration' (role 'ast_AnonymousClassDeclaration75', cardinality 0..*).
+'ast::IExtendedModifier' (role 'ast_IExtendedModifier', cardinality 0..*) is associated with 'ast::FieldDeclaration' (role 'ast_FieldDeclaration110', cardinality 0..*).
+'ast::Javadoc' (role 'ast_Javadoc206', cardinality 0..*) is associated with 'ast::PackageDeclaration' (role 'ast_PackageDeclaration205', cardinality 0..*).
+'ast::Annotation' (role 'ast_Annotation467', cardinality 0..*) is associated with 'ast::Dimension' (role 'ast_Dimension466', cardinality 0..*).
+'ast::SuperMethodReference' (role 'ast_SuperMethodReference497', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type498', cardinality 0..*).
+'ast::Type' (role 'ast_Type313', cardinality 0..*) is associated with 'ast::TypeDeclaration' (role 'ast_TypeDeclaration312', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression49', cardinality 0..*) is associated with 'ast::Assignment' (role 'ast_Assignment48', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName270', cardinality 0..*) is associated with 'ast::SuperMethodInvocation' (role 'ast_SuperMethodInvocation269', cardinality 0..*).
+'ast::TypeDeclarationStatement' (role 'ast_TypeDeclarationStatement', cardinality 0..*) is associated with 'ast::AbstractTypeDeclaration' (role 'ast_AbstractTypeDeclaration321', cardinality 0..*).
+'ast::FieldDeclaration' (role 'ast_FieldDeclaration115', cardinality 0..*) is associated with 'ast::VariableDeclarationFragment' (role 'ast_VariableDeclarationFragment', cardinality 0..*).
+'ast::Type' (role 'ast_Type384', cardinality 0..*) is associated with 'ast::EnumDeclaration' (role 'ast_EnumDeclaration383', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression100', cardinality 0..*) is associated with 'ast::DoStatement' (role 'ast_DoStatement99', cardinality 0..*).
+'ast::Name' (role 'ast_Name10', cardinality 0..*) is associated with 'ast::MemberRef' (role 'ast_MemberRef', cardinality 0..*).
+'ast::ForStatement' (role 'ast_ForStatement125', cardinality 0..*) is associated with 'ast::Statement' (role 'ast_Statement126', cardinality 0..*).
+'ast::EnumConstantDeclaration' (role 'ast_EnumConstantDeclaration400', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression401', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression217', cardinality 0..*) is associated with 'ast::PrefixExpression' (role 'ast_PrefixExpression', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName501', cardinality 0..*) is associated with 'ast::SuperMethodReference' (role 'ast_SuperMethodReference500', cardinality 0..*).
+'ast::EnumConstantDeclaration' (role 'ast_EnumConstantDeclaration391', cardinality 0..*) is associated with 'ast::Javadoc' (role 'ast_Javadoc392', cardinality 0..*).
+'ast::LambdaExpression' (role 'ast_LambdaExpression', cardinality 0..*) is associated with 'ast::VariableDeclaration' (role 'ast_VariableDeclaration', cardinality 0..*).
+'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration183', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration182', cardinality 0..*).
+'ast::TryStatement' (role 'ast_TryStatement295', cardinality 0..*) is associated with 'ast::CatchClause' (role 'ast_CatchClause296', cardinality 0..*).
+'ast::Type' (role 'ast_Type431', cardinality 0..*) is associated with 'ast::WildcardType' (role 'ast_WildcardType430', cardinality 0..*).
+'ast::TypeDeclaration' (role 'ast_TypeDeclaration318', cardinality 0..*) is associated with 'ast::BodyDeclaration' (role 'ast_BodyDeclaration319', cardinality 0..*).
+'ast::QualifiedType' (role 'ast_QualifiedType425', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName426', cardinality 0..*).
+'ast::Type' (role 'ast_Type503', cardinality 0..*) is associated with 'ast::TypeMethodReference' (role 'ast_TypeMethodReference', cardinality 0..*).
+'ast::PackageDeclaration' (role 'ast_PackageDeclaration', cardinality 0..*) is associated with 'ast::CompilationUnit' (role 'ast_CompilationUnit', cardinality 0..*).
+'ast::ASTNode' (role 'ast_ASTNode', cardinality 0..*) is associated with 'ast::LambdaExpression' (role 'ast_LambdaExpression470', cardinality 0..*).
+'ast::WhileStatement' (role 'ast_WhileStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression351', cardinality 0..*).
+'ast::Annotation' (role 'ast_Annotation', cardinality 0..*) is associated with 'ast::PackageDeclaration' (role 'ast_PackageDeclaration208', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression82', cardinality 0..*) is associated with 'ast::ConditionalExpression' (role 'ast_ConditionalExpression', cardinality 0..*).
+'ast::TypeLiteral' (role 'ast_TypeLiteral', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type323', cardinality 0..*).
+'ast::Type' (role 'ast_Type506', cardinality 0..*) is associated with 'ast::TypeMethodReference' (role 'ast_TypeMethodReference505', cardinality 0..*).
+'ast::AssertStatement' (role 'ast_AssertStatement43', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression44', cardinality 0..*).
+'ast::VariableDeclarationExpression' (role 'ast_VariableDeclarationExpression331', cardinality 0..*) is associated with 'ast::VariableDeclarationFragment' (role 'ast_VariableDeclarationFragment332', cardinality 0..*).
+'ast::ArrayType' (role 'ast_ArrayType39', cardinality 0..*) is associated with 'ast::Dimension' (role 'ast_Dimension', cardinality 0..*).
+'ast::Javadoc' (role 'ast_Javadoc163', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression370', cardinality 0..*) is associated with 'ast::EnhancedForStatement' (role 'ast_EnhancedForStatement369', cardinality 0..*).
+'ast::Type' (role 'ast_Type472', cardinality 0..*) is associated with 'ast::IntersectionType' (role 'ast_IntersectionType', cardinality 0..*).
+'ast::Type' (role 'ast_Type359', cardinality 0..*) is associated with 'ast::InstanceofExpression' (role 'ast_InstanceofExpression358', cardinality 0..*).
+'ast::ArrayType' (role 'ast_ArrayType', cardinality 0..*) is associated with 'ast::ArrayCreation' (role 'ast_ArrayCreation', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName243', cardinality 0..*) is associated with 'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration242', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression213', cardinality 0..*) is associated with 'ast::ParenthesizedExpression' (role 'ast_ParenthesizedExpression', cardinality 0..*).
+'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration239', cardinality 0..*) is associated with 'ast::Annotation' (role 'ast_Annotation240', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression88', cardinality 0..*) is associated with 'ast::ConditionalExpression' (role 'ast_ConditionalExpression87', cardinality 0..*).
+'ast::TypeMethodReference' (role 'ast_TypeMethodReference508', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName509', cardinality 0..*).
+'ast::Name' (role 'ast_Name259', cardinality 0..*) is associated with 'ast::SuperFieldAccess' (role 'ast_SuperFieldAccess', cardinality 0..*).
+'ast::SingleMemberAnnotation' (role 'ast_SingleMemberAnnotation', cardinality 0..*) is associated with 'ast::Name' (role 'ast_Name6', cardinality 0..*).
+'ast::QualifiedType' (role 'ast_QualifiedType', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type420', cardinality 0..*).
+'ast::Initializer' (role 'ast_Initializer152', cardinality 0..*) is associated with 'ast::Block' (role 'ast_Block153', cardinality 0..*).
+'ast::NameQualifiedType' (role 'ast_NameQualifiedType', cardinality 0..*) is associated with 'ast::Name' (role 'ast_Name474', cardinality 0..*).
+'ast::ConstructorInvocation' (role 'ast_ConstructorInvocation', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type90', cardinality 0..*).
+'ast::CatchClause' (role 'ast_CatchClause60', cardinality 0..*) is associated with 'ast::Block' (role 'ast_Block61', cardinality 0..*).
+'ast::Type' (role 'ast_Type171', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration170', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression249', cardinality 0..*) is associated with 'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration248', cardinality 0..*).
+'ast::Block' (role 'ast_Block192', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration191', cardinality 0..*).
+'ast::SuperConstructorInvocation' (role 'ast_SuperConstructorInvocation253', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type254', cardinality 0..*).
+'ast::VariableDeclarationExpression' (role 'ast_VariableDeclarationExpression', cardinality 0..*) is associated with 'ast::TryStatement' (role 'ast_TryStatement', cardinality 0..*).
+'ast::TagElement' (role 'ast_TagElement156', cardinality 0..*) is associated with 'ast::Javadoc' (role 'ast_Javadoc155', cardinality 0..*).
+'ast::ExpressionStatement' (role 'ast_ExpressionStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression102', cardinality 0..*).
+'ast::Initializer' (role 'ast_Initializer149', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier150', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression215', cardinality 0..*) is associated with 'ast::PostfixExpression' (role 'ast_PostfixExpression', cardinality 0..*).
+'ast::Type' (role 'ast_Type485', cardinality 0..*) is associated with 'ast::CreationReference' (role 'ast_CreationReference484', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName174', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration173', cardinality 0..*).
+'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration367', cardinality 0..*) is associated with 'ast::EnhancedForStatement' (role 'ast_EnhancedForStatement', cardinality 0..*).
+'ast::QualifiedType' (role 'ast_QualifiedType422', cardinality 0..*) is associated with 'ast::Annotation' (role 'ast_Annotation423', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression282', cardinality 0..*) is associated with 'ast::SynchronizedStatement' (role 'ast_SynchronizedStatement', cardinality 0..*).
+'ast::Statement' (role 'ast_Statement', cardinality 0..*) is associated with 'ast::Block' (role 'ast_Block', cardinality 0..*).
+'ast::Annotation' (role 'ast_Annotation477', cardinality 0..*) is associated with 'ast::NameQualifiedType' (role 'ast_NameQualifiedType476', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression117', cardinality 0..*) is associated with 'ast::ForStatement' (role 'ast_ForStatement', cardinality 0..*).
+'ast::Statement' (role 'ast_Statement97', cardinality 0..*) is associated with 'ast::DoStatement' (role 'ast_DoStatement', cardinality 0..*).
+'ast::ExpressionMethodReference' (role 'ast_ExpressionMethodReference', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression487', cardinality 0..*).
+'ast::BreakStatement' (role 'ast_BreakStatement', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName52', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName434', cardinality 0..*) is associated with 'ast::MemberValuePair' (role 'ast_MemberValuePair433', cardinality 0..*).
+'ast::TryStatement' (role 'ast_TryStatement292', cardinality 0..*) is associated with 'ast::Block' (role 'ast_Block293', cardinality 0..*).
+'ast::ArrayCreation' (role 'ast_ArrayCreation29', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression30', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression123', cardinality 0..*) is associated with 'ast::ForStatement' (role 'ast_ForStatement122', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName480', cardinality 0..*) is associated with 'ast::NameQualifiedType' (role 'ast_NameQualifiedType479', cardinality 0..*).
+'ast::InfixExpression' (role 'ast_InfixExpression141', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression142', cardinality 0..*).
+'ast::IExtendedModifier' (role 'ast_IExtendedModifier378', cardinality 0..*) is associated with 'ast::EnumDeclaration' (role 'ast_EnumDeclaration377', cardinality 0..*).
+'ast::Type' (role 'ast_Type177', cardinality 0..*) is associated with 'ast::MethodDeclaration' (role 'ast_MethodDeclaration176', cardinality 0..*).
+'ast::Name' (role 'ast_Name264', cardinality 0..*) is associated with 'ast::SuperMethodInvocation' (role 'ast_SuperMethodInvocation', cardinality 0..*).
+'ast::AnnotationTypeDeclaration' (role 'ast_AnnotationTypeDeclaration', cardinality 0..*) is associated with 'ast::Javadoc' (role 'ast_Javadoc439', cardinality 0..*).
+'ast::IfStatement' (role 'ast_IfStatement133', cardinality 0..*) is associated with 'ast::Statement' (role 'ast_Statement134', cardinality 0..*).
+'ast::IfStatement' (role 'ast_IfStatement130', cardinality 0..*) is associated with 'ast::Statement' (role 'ast_Statement131', cardinality 0..*).
+'ast::Type' (role 'ast_Type490', cardinality 0..*) is associated with 'ast::ExpressionMethodReference' (role 'ast_ExpressionMethodReference489', cardinality 0..*).
+'ast::VariableDeclarationFragment' (role 'ast_VariableDeclarationFragment334', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName335', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression85', cardinality 0..*) is associated with 'ast::ConditionalExpression' (role 'ast_ConditionalExpression84', cardinality 0..*).
+'ast::Annotation' (role 'ast_Annotation219', cardinality 0..*) is associated with 'ast::PrimitiveType' (role 'ast_PrimitiveType', cardinality 0..*).
+'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration236', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type237', cardinality 0..*).
+'ast::SwitchStatement' (role 'ast_SwitchStatement', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression277', cardinality 0..*).
+'ast::EnumDeclaration' (role 'ast_EnumDeclaration380', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName381', cardinality 0..*).
+'ast::VariableDeclarationFragment' (role 'ast_VariableDeclarationFragment340', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression341', cardinality 0..*).
+'ast::LabeledStatement' (role 'ast_LabeledStatement', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName158', cardinality 0..*).
+'ast::CreationReference' (role 'ast_CreationReference', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type482', cardinality 0..*).
+'ast::SwitchStatement' (role 'ast_SwitchStatement279', cardinality 0..*) is associated with 'ast::Statement' (role 'ast_Statement280', cardinality 0..*).
+'ast::SingleVariableDeclaration' (role 'ast_SingleVariableDeclaration233', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier234', cardinality 0..*).
+'ast::EnumConstantDeclaration' (role 'ast_EnumConstantDeclaration394', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier395', cardinality 0..*).
+'ast::SimpleType' (role 'ast_SimpleType', cardinality 0..*) is associated with 'ast::Annotation' (role 'ast_Annotation228', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName398', cardinality 0..*) is associated with 'ast::EnumConstantDeclaration' (role 'ast_EnumConstantDeclaration397', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName493', cardinality 0..*) is associated with 'ast::ExpressionMethodReference' (role 'ast_ExpressionMethodReference492', cardinality 0..*).
+'ast::TypeDeclaration' (role 'ast_TypeDeclaration315', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type316', cardinality 0..*).
+'ast::IExtendedModifier' (role 'ast_IExtendedModifier442', cardinality 0..*) is associated with 'ast::AnnotationTypeDeclaration' (role 'ast_AnnotationTypeDeclaration441', cardinality 0..*).
+'ast::CastExpression' (role 'ast_CastExpression', cardinality 0..*) is associated with 'ast::Type' (role 'ast_Type54', cardinality 0..*).
+'ast::Type' (role 'ast_Type329', cardinality 0..*) is associated with 'ast::VariableDeclarationExpression' (role 'ast_VariableDeclarationExpression328', cardinality 0..*).
+'ast::ArrayAccess' (role 'ast_ArrayAccess25', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression26', cardinality 0..*).
+'ast::Name' (role 'ast_Name495', cardinality 0..*) is associated with 'ast::SuperMethodReference' (role 'ast_SuperMethodReference', cardinality 0..*).
+'ast::MethodRef' (role 'ast_MethodRef19', cardinality 0..*) is associated with 'ast::MethodRefParameter' (role 'ast_MethodRefParameter', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression46', cardinality 0..*) is associated with 'ast::Assignment' (role 'ast_Assignment', cardinality 0..*).
+'ast::MethodDeclaration' (role 'ast_MethodDeclaration179', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName180', cardinality 0..*).
+'ast::MemberRef' (role 'ast_MemberRef12', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression72', cardinality 0..*) is associated with 'ast::ClassInstanceCreation' (role 'ast_ClassInstanceCreation71', cardinality 0..*).
+'ast::SimpleName' (role 'ast_SimpleName445', cardinality 0..*) is associated with 'ast::AnnotationTypeDeclaration' (role 'ast_AnnotationTypeDeclaration444', cardinality 0..*).
+'ast::Expression' (role 'ast_Expression437', cardinality 0..*) is associated with 'ast::MemberValuePair' (role 'ast_MemberValuePair436', cardinality 0..*).
+'ast::Type' (role 'ast_Type66', cardinality 0..*) is associated with 'ast::ClassInstanceCreation' (role 'ast_ClassInstanceCreation65', cardinality 0..*).
+'ast::BodyDeclaration' (role 'ast_BodyDeclaration389', cardinality 0..*) is associated with 'ast::EnumDeclaration' (role 'ast_EnumDeclaration388', cardinality 0..*).
+'ast::Name' (role 'ast_Name221', cardinality 0..*) is associated with 'ast::QualifiedName' (role 'ast_QualifiedName', cardinality 0..*).
+'ast::InstanceofExpression' (role 'ast_InstanceofExpression', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression356', cardinality 0..*).
+'ast::EnumDeclaration' (role 'ast_EnumDeclaration386', cardinality 0..*) is associated with 'ast::EnumConstantDeclaration' (role 'ast_EnumConstantDeclaration', cardinality 0..*).
+'ast::FieldAccess' (role 'ast_FieldAccess106', cardinality 0..*) is associated with 'ast::SimpleName' (role 'ast_SimpleName107', cardinality 0..*).
+'ast::ConstructorInvocation' (role 'ast_ConstructorInvocation92', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression93', cardinality 0..*).
+'ast::TypeDeclaration' (role 'ast_TypeDeclaration303', cardinality 0..*) is associated with 'ast::IExtendedModifier' (role 'ast_IExtendedModifier304', cardinality 0..*).
+'ast::Block' (role 'ast_Block299', cardinality 0..*) is associated with 'ast::TryStatement' (role 'ast_TryStatement298', cardinality 0..*).
+'ast::FieldAccess' (role 'ast_FieldAccess', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression104', cardinality 0..*).
+'ast::BodyDeclaration' (role 'ast_BodyDeclaration448', cardinality 0..*) is associated with 'ast::AnnotationTypeDeclaration' (role 'ast_AnnotationTypeDeclaration447', cardinality 0..*).
+'ast::ClassInstanceCreation' (role 'ast_ClassInstanceCreation', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression63', cardinality 0..*).
+'ast::Type' (role 'ast_Type69', cardinality 0..*) is associated with 'ast::ClassInstanceCreation' (role 'ast_ClassInstanceCreation68', cardinality 0..*).
+'ast::InfixExpression' (role 'ast_InfixExpression', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression139', cardinality 0..*).
+'ast::ImportDeclaration' (role 'ast_ImportDeclaration', cardinality 0..*) is associated with 'ast::CompilationUnit' (role 'ast_CompilationUnit78', cardinality 0..*).
+'ast::TypeParameter' (role 'ast_TypeParameter310', cardinality 0..*) is associated with 'ast::TypeDeclaration' (role 'ast_TypeDeclaration309', cardinality 0..*).
+'ast::TypeDeclaration' (role 'ast_TypeDeclaration', cardinality 0..*) is associated with 'ast::Javadoc' (role 'ast_Javadoc301', cardinality 0..*).
+'ast::SuperConstructorInvocation' (role 'ast_SuperConstructorInvocation256', cardinality 0..*) is associated with 'ast::Expression' (role 'ast_Expression257', cardinality 0..*).

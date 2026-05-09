@@ -1,0 +1,436 @@
+The model has 133 class(es).
+The class 'JDTAST::TypeParameter' has no attributes.
+The class 'Comment' has no attributes.
+The class 'PhysicalElement' has no attributes.
+The class 'ExtendedModifier' has no attributes.
+The class 'JDTAST::CatchClause' has no attributes.
+The class 'JDTAST::QualifiedName' has no attributes.
+The class 'JDTAST::CharacterLiteral' has the following attributes: 'charValue' of type str; 'escapedValue' of type str.
+The class 'JDTAST::ContinueStatement' has no attributes.
+The class 'JDTAST::ArrayCreation' has no attributes.
+The class 'JDTAST::TagElement' has the following attributes: 'nested' of type str; 'tagName' of type str.
+The class 'JDTAST::ParenthesizedExpression' has no attributes.
+The class 'JDTAST::SourcePackageFragmentRoot' has no attributes.
+The class 'JDTAST::BooleanLiteral' has the following attributes: 'booleanValue' of type str.
+The class 'JDTAST::AnonymousClassDeclaration' has no attributes.
+The class 'JDTAST::SingleVariableDeclaration' has the following attributes: 'varargs' of type str.
+The class 'JDTAST::WildcardType' has the following attributes: 'upperBound' of type str.
+The class 'ASTNode' has no attributes.
+The class 'JDTAST::IImportDeclaration' has the following attributes: 'isStatic' of type str; 'isOnDemand' of type str.
+The class 'JDTAST::Javadoc' has no attributes.
+The class 'JDTAST::BlockComment' has no attributes.
+The class 'JDTAST::ReturnStatement' has no attributes.
+The class 'JDTAST::ParameterizedType' has no attributes.
+The class 'JDTAST::ICompilationUnit' has no attributes.
+The class 'JDTAST::IInitializer' has no attributes.
+The class 'JDTAST::Initializer' has no attributes.
+The class 'JDTAST::ImportDeclaration' has the following attributes: 'onDemand' of type str; 'static' of type str.
+The class 'JDTAST::CastExpression' has no attributes.
+The class 'JDTAST::MemberRef' has no attributes.
+The class 'JDTAST::MethodRefParameter' has the following attributes: 'varargs' of type str.
+The class 'JDTAST::SwitchCase' has the following attributes: 'default' of type str.
+The class 'JDTAST::ThrowStatement' has no attributes.
+The class 'JDTAST::TypeDeclarationStatement' has no attributes.
+The class 'JDTAST::IPackageFragmentRoot' has no attributes.
+The class 'JDTAST::ConstructorInvocation' has no attributes.
+The class 'JDTAST::Name' has the following attributes: 'fullyQualifiedName' of type str.
+The class 'JDTAST::IfStatement' has no attributes.
+The class 'JDTAST::BodyDeclaration' has no attributes.
+The class 'JDTAST::VariableDeclarationExpression' has no attributes.
+The class 'JDTAST::TextElement' has the following attributes: 'text' of type str.
+The class 'JDTAST::TryStatement' has no attributes.
+The class 'JDTAST::AnnotationTypeDeclaration' has no attributes.
+The class 'JDTAST::IJavaProject' has no attributes.
+The class 'JDTAST::InstanceofExpression' has no attributes.
+The class 'JDTAST::BinaryPackageFragmentRoot' has no attributes.
+The class 'JDTAST::EnumConstantDeclaration' has no attributes.
+The class 'JDTAST::ASTNode' has no attributes.
+The class 'Statement' has no attributes.
+The class 'JDTAST::Annotation' has no attributes.
+The class 'JDTAST::SwitchStatement' has no attributes.
+The class 'JDTAST::LabeledStatement' has no attributes.
+The class 'JDTAST::MethodInvocation' has no attributes.
+The class 'JDTAST::Modifier' has the following attributes: 'strictfp' of type str; 'abstract' of type str; 'static' of type str; 'native' of type str; 'protected' of type str; 'transient' of type str; 'final' of type str; 'public' of type str; 'volatile' of type str; 'none' of type str; 'synchronized' of type str; 'private' of type str.
+The class 'JDTAST::TypeLiteral' has no attributes.
+The class 'JDTAST::QualifiedType' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'JDTAST::FieldDeclaration' has no attributes.
+The class 'JDTAST::VariableDeclaration' has the following attributes: 'extraDimensions' of type str.
+The class 'JDTAST::AST' has no attributes.
+The class 'Type' has no attributes.
+The class 'JDTAST::MarkerAnnotation' has no attributes.
+The class 'JDTAST::Type' has no attributes.
+The class 'ISourceReference' has no attributes.
+The class 'JDTAST::ArrayType' has the following attributes: 'dimensions' of type str.
+The class 'JDTAST::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'JDTAST::SingleMemberAnnotation' has no attributes.
+The class 'IPackageFragmentRoot' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'JDTAST::Expression' has the following attributes: 'resolveUnboxing' of type str; 'resolveBoxing' of type str.
+The class 'Expression' has no attributes.
+The class 'IJavaElement' has no attributes.
+The class 'JDTAST::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'JDTAST::ArrayInitializer' has no attributes.
+The class 'JDTAST::NormalAnnotation' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'JDTAST::AssertStatement' has no attributes.
+The class 'JDTAST::WhileStatement' has no attributes.
+The class 'JDTAST::Comment' has no attributes.
+The class 'JDTAST::SimpleName' has the following attributes: 'declaration' of type str; 'identifier' of type str.
+The class 'JDTAST::NullLiteral' has no attributes.
+The class 'JDTAST::ClassInstanceCreation' has no attributes.
+The class 'JDTAST::ConditionalExpression' has no attributes.
+The class 'JDTAST::ExtendedModifier' has no attributes.
+The class 'JDTAST::PrimitiveType' has the following attributes: 'code' of type str.
+The class 'JDTAST::MemberValuePair' has no attributes.
+The class 'JDTAST::Assignment' has the following attributes: 'operator' of type str.
+The class 'JDTAST::ForStatement' has no attributes.
+The class 'JDTAST::IJavaModel' has no attributes.
+The class 'JDTAST::LineComment' has no attributes.
+The class 'JDTAST::ITypeRoot' has no attributes.
+The class 'JDTAST::AbstractTypeDeclaration' has the following attributes: 'localTypeDeclaration' of type str; 'packageMemberTypeDeclaration' of type str; 'memberTypeDeclaration' of type str.
+The class 'JDTAST::ISourceReference' has the following attributes: 'source' of type str.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'IMember' has no attributes.
+The class 'JDTAST::SuperMethodInvocation' has no attributes.
+The class 'JDTAST::EnhancedForStatement' has no attributes.
+The class 'JDTAST::IJavaElement' has the following attributes: 'elementName' of type str.
+The class 'JDTAST::ExpressionStatement' has no attributes.
+The class 'JDTAST::IMember' has no attributes.
+The class 'JDTAST::CompilationUnit' has no attributes.
+The class 'JDTAST::ArrayAccess' has no attributes.
+The class 'JDTAST::ISourceRange' has the following attributes: 'offset' of type str; 'length' of type str.
+The class 'JDTAST::PackageDeclaration' has no attributes.
+The class 'JDTAST::VariableDeclarationFragment' has no attributes.
+The class 'JDTAST::Block' has no attributes.
+The class 'ITypeRoot' has no attributes.
+The class 'JDTAST::NumberLiteral' has the following attributes: 'token' of type str.
+The class 'JDTAST::ITypeParameter' has the following attributes: 'bounds' of type str.
+The class 'JDTAST::SuperFieldAccess' has no attributes.
+The class 'Name' has no attributes.
+The class 'JDTAST::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'JDTAST::MethodRef' has no attributes.
+The class 'JDTAST::BreakStatement' has no attributes.
+The class 'JDTAST::PhysicalElement' has the following attributes: 'path' of type str; 'isReadOnly' of type str.
+The class 'JDTAST::IPackageFragment' has the following attributes: 'isDefaultPackage' of type str.
+The class 'JDTAST::SynchronizedStatement' has no attributes.
+The class 'JDTAST::StringLiteral' has the following attributes: 'escapedValue' of type str; 'literalValue' of type str.
+The class 'JDTAST::IField' has the following attributes: 'typeSignature' of type str; 'constant' of type str; 'isEnumConstant' of type str; 'isTransient' of type str; 'isVolatile' of type str.
+The class 'JDTAST::VariableDeclarationStatement' has no attributes.
+The class 'JDTAST::ThisExpression' has no attributes.
+The class 'JDTAST::IType' has the following attributes: 'fullyQualifiedParametrizedName' of type str; 'fullyQualifiedName' of type str.
+The class 'JDTAST::MethodDeclaration' has the following attributes: 'extraDimensions' of type str; 'varargs' of type str; 'constructor' of type str.
+The class 'JDTAST::Parameter' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'JDTAST::SimpleType' has no attributes.
+The class 'JDTAST::IClassFile' has the following attributes: 'isInterface' of type str; 'isClass' of type str.
+The class 'JDTAST::EnumDeclaration' has no attributes.
+The class 'JDTAST::DoStatement' has no attributes.
+The class 'JDTAST::EmptyStatement' has no attributes.
+The class 'JDTAST::IMethod' has the following attributes: 'isMainMethod' of type str; 'returnType' of type str; 'exceptionTypes' of type str; 'isConstructor' of type str.
+The class 'JDTAST::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'JDTAST::Statement' has no attributes.
+The class 'JDTAST::SuperConstructorInvocation' has no attributes.
+The class 'JDTAST::FieldAccess' has no attributes.
+The class 'JDTAST::TypeDeclaration' has the following attributes: 'interface' of type str.
+The enumeration 'PrefixExpressionOperatorKind' has the following literals: 'increment', 'plus', 'minus', 'not_', 'decrement', 'complement'.
+The enumeration 'Modifiers' has the following literals: 'public', 'synchronized', 'deprecated', 'annotation', 'protected', 'static', 'interface', 'synthetic', 'super', 'native', 'bridge', 'default', 'enum', 'abstract', 'strictfp', 'volatile', 'transient', 'varargs', 'private', 'final'.
+The enumeration 'AssignmentOperatorKind' has the following literals: 'assign', 'minus_assign', 'plus_assign', 'right_shift_signed_assign', 'left_shift_assign', 'bit_or_assign', 'divide_assign', 'bit_xor_assign', 'right_shift_unsigned_assign', 'bit_and_assign', 'remainder_assign', 'times_assign'.
+The enumeration 'InfixExpressionOperatorKind' has the following literals: 'and_', 'conditional_and', 'right_shift_signed', 'plus', 'less_equals', 'greater_equals', 'left_shift', 'times', 'minus', 'greater', 'equals', 'less', 'or_', 'right_shift_unsigned', 'conditional_or', 'not_equals', 'divide', 'xor', 'remainder'.
+The enumeration 'PostfixExpressionOperatorKind' has the following literals: 'decrement', 'increment'.
+'JDTAST::ArrayType' is a specialization of 'Type'.
+'JDTAST::IfStatement' is a specialization of 'Statement'.
+'JDTAST::VariableDeclarationExpression' is a specialization of 'Expression'.
+'JDTAST::Statement' is a specialization of 'ASTNode'.
+'JDTAST::ReturnStatement' is a specialization of 'Statement'.
+'JDTAST::Annotation' is a specialization of 'Expression'.
+'JDTAST::ParenthesizedExpression' is a specialization of 'Expression'.
+'JDTAST::IJavaProject' is a specialization of 'PhysicalElement'.
+'JDTAST::ITypeParameter' is a specialization of 'ISourceReference'.
+'JDTAST::MemberRef' is a specialization of 'ASTNode'.
+'JDTAST::IJavaProject' is a specialization of 'IJavaElement'.
+'JDTAST::TextElement' is a specialization of 'ASTNode'.
+'JDTAST::ForStatement' is a specialization of 'Statement'.
+'JDTAST::EmptyStatement' is a specialization of 'Statement'.
+'JDTAST::NormalAnnotation' is a specialization of 'Annotation'.
+'JDTAST::Modifier' is a specialization of 'ExtendedModifier'.
+'JDTAST::PrimitiveType' is a specialization of 'Type'.
+'JDTAST::NullLiteral' is a specialization of 'Expression'.
+'JDTAST::SynchronizedStatement' is a specialization of 'Statement'.
+'JDTAST::Modifier' is a specialization of 'ASTNode'.
+'JDTAST::TypeDeclarationStatement' is a specialization of 'Statement'.
+'JDTAST::TypeParameter' is a specialization of 'ASTNode'.
+'JDTAST::MethodDeclaration' is a specialization of 'BodyDeclaration'.
+'JDTAST::SingleMemberAnnotation' is a specialization of 'Annotation'.
+'JDTAST::IMember' is a specialization of 'IJavaElement'.
+'JDTAST::CompilationUnit' is a specialization of 'ASTNode'.
+'JDTAST::ArrayInitializer' is a specialization of 'Expression'.
+'JDTAST::EnhancedForStatement' is a specialization of 'Statement'.
+'JDTAST::SuperConstructorInvocation' is a specialization of 'Statement'.
+'JDTAST::Javadoc' is a specialization of 'Comment'.
+'JDTAST::LineComment' is a specialization of 'Comment'.
+'JDTAST::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'JDTAST::BodyDeclaration' is a specialization of 'ASTNode'.
+'JDTAST::BinaryPackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+'JDTAST::QualifiedName' is a specialization of 'Name'.
+'JDTAST::InstanceofExpression' is a specialization of 'Expression'.
+'JDTAST::ICompilationUnit' is a specialization of 'ITypeRoot'.
+'JDTAST::IJavaModel' is a specialization of 'PhysicalElement'.
+'JDTAST::IPackageFragment' is a specialization of 'IJavaElement'.
+'JDTAST::IMember' is a specialization of 'ISourceReference'.
+'JDTAST::ArrayCreation' is a specialization of 'Expression'.
+'JDTAST::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'JDTAST::VariableDeclaration' is a specialization of 'ASTNode'.
+'JDTAST::SimpleName' is a specialization of 'Name'.
+'JDTAST::Comment' is a specialization of 'ASTNode'.
+'JDTAST::BooleanLiteral' is a specialization of 'Expression'.
+'JDTAST::SimpleType' is a specialization of 'Type'.
+'JDTAST::IClassFile' is a specialization of 'ITypeRoot'.
+'JDTAST::BreakStatement' is a specialization of 'Statement'.
+'JDTAST::IPackageFragment' is a specialization of 'PhysicalElement'.
+'JDTAST::ITypeRoot' is a specialization of 'ISourceReference'.
+'JDTAST::DoStatement' is a specialization of 'Statement'.
+'JDTAST::Annotation' is a specialization of 'ExtendedModifier'.
+'JDTAST::IMethod' is a specialization of 'IMember'.
+'JDTAST::SwitchCase' is a specialization of 'Statement'.
+'JDTAST::IPackageFragmentRoot' is a specialization of 'IJavaElement'.
+'JDTAST::PackageDeclaration' is a specialization of 'ASTNode'.
+'JDTAST::IPackageFragmentRoot' is a specialization of 'PhysicalElement'.
+'JDTAST::ThisExpression' is a specialization of 'Expression'.
+'JDTAST::IImportDeclaration' is a specialization of 'IJavaElement'.
+'JDTAST::MethodRefParameter' is a specialization of 'ASTNode'.
+'JDTAST::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JDTAST::PrefixExpression' is a specialization of 'Expression'.
+'JDTAST::Type' is a specialization of 'ASTNode'.
+'JDTAST::BlockComment' is a specialization of 'Comment'.
+'JDTAST::ContinueStatement' is a specialization of 'Statement'.
+'JDTAST::ConstructorInvocation' is a specialization of 'Statement'.
+'JDTAST::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JDTAST::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'JDTAST::TagElement' is a specialization of 'ASTNode'.
+'JDTAST::MethodRef' is a specialization of 'ASTNode'.
+'JDTAST::Block' is a specialization of 'Statement'.
+'JDTAST::TryStatement' is a specialization of 'Statement'.
+'JDTAST::ExpressionStatement' is a specialization of 'Statement'.
+'JDTAST::CatchClause' is a specialization of 'ASTNode'.
+'JDTAST::ThrowStatement' is a specialization of 'Statement'.
+'JDTAST::IField' is a specialization of 'IMember'.
+'JDTAST::Initializer' is a specialization of 'BodyDeclaration'.
+'JDTAST::MarkerAnnotation' is a specialization of 'Annotation'.
+'JDTAST::ITypeRoot' is a specialization of 'IJavaElement'.
+'JDTAST::CharacterLiteral' is a specialization of 'Expression'.
+'JDTAST::WhileStatement' is a specialization of 'Statement'.
+'JDTAST::ArrayAccess' is a specialization of 'Expression'.
+'JDTAST::NumberLiteral' is a specialization of 'Expression'.
+'JDTAST::TypeLiteral' is a specialization of 'Expression'.
+'JDTAST::MemberValuePair' is a specialization of 'ASTNode'.
+'JDTAST::PostfixExpression' is a specialization of 'Expression'.
+'JDTAST::IInitializer' is a specialization of 'IMember'.
+'JDTAST::Name' is a specialization of 'Expression'.
+'JDTAST::CastExpression' is a specialization of 'Expression'.
+'JDTAST::AssertStatement' is a specialization of 'Statement'.
+'JDTAST::SwitchStatement' is a specialization of 'Statement'.
+'JDTAST::QualifiedType' is a specialization of 'Type'.
+'JDTAST::FieldAccess' is a specialization of 'Expression'.
+'JDTAST::ITypeRoot' is a specialization of 'PhysicalElement'.
+'JDTAST::ITypeParameter' is a specialization of 'IJavaElement'.
+'JDTAST::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'JDTAST::IType' is a specialization of 'IMember'.
+'JDTAST::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'JDTAST::WildcardType' is a specialization of 'Type'.
+'JDTAST::InfixExpression' is a specialization of 'Expression'.
+'JDTAST::ClassInstanceCreation' is a specialization of 'Expression'.
+'JDTAST::VariableDeclarationStatement' is a specialization of 'Statement'.
+'JDTAST::SuperFieldAccess' is a specialization of 'Expression'.
+'JDTAST::Assignment' is a specialization of 'Expression'.
+'JDTAST::LabeledStatement' is a specialization of 'Statement'.
+'JDTAST::IImportDeclaration' is a specialization of 'ISourceReference'.
+'JDTAST::MethodInvocation' is a specialization of 'Expression'.
+'JDTAST::SourcePackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+'JDTAST::ImportDeclaration' is a specialization of 'ASTNode'.
+'JDTAST::Expression' is a specialization of 'ASTNode'.
+'JDTAST::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'JDTAST::StringLiteral' is a specialization of 'Expression'.
+'JDTAST::ParameterizedType' is a specialization of 'Type'.
+'JDTAST::ConditionalExpression' is a specialization of 'Expression'.
+'JDTAST::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'JDTAST::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'JDTAST::SuperMethodInvocation' is a specialization of 'Expression'.
+'JDTAST::Type' (role 'JDTAST_Type209', cardinality 0..*) is associated with 'JDTAST::CastExpression' (role 'JDTAST_CastExpression208', cardinality 0..*).
+'JDTAST::IfStatement' (role 'JDTAST_IfStatement', cardinality 0..*) is associated with 'JDTAST::Statement' (role 'JDTAST_Statement341', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name287', cardinality 0..*) is associated with 'JDTAST::ThisExpression' (role 'JDTAST_ThisExpression', cardinality 0..*).
+'JDTAST::MethodRefParameter' (role 'JDTAST_MethodRefParameter', cardinality 0..*) is associated with 'JDTAST::MethodRef' (role 'JDTAST_MethodRef90', cardinality 0..*).
+'JDTAST::VariableDeclarationExpression' (role 'JDTAST_VariableDeclarationExpression296', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type297', cardinality 0..*).
+'JDTAST::TypeParameter' (role 'JDTAST_TypeParameter163', cardinality 0..*) is associated with 'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration162', cardinality 0..*).
+'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration153', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type154', cardinality 0..*).
+'JDTAST::IType' (role 'JDTAST_IType', cardinality 0..*) is associated with 'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit18', cardinality 0..*).
+'JDTAST::ITypeParameter' (role 'JDTAST_ITypeParameter', cardinality 0..*) is associated with 'JDTAST::IType' (role 'JDTAST_IType48', cardinality 0..*).
+'JDTAST::Comment' (role 'JDTAST_Comment64', cardinality 0..*) is associated with 'JDTAST::CompilationUnit' (role 'JDTAST_CompilationUnit63', cardinality 0..*).
+'JDTAST::ConstructorInvocation' (role 'JDTAST_ConstructorInvocation310', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type311', cardinality 0..*).
+'JDTAST::SynchronizedStatement' (role 'JDTAST_SynchronizedStatement', cardinality 0..*) is associated with 'JDTAST::Block' (role 'JDTAST_Block371', cardinality 0..*).
+'JDTAST::PackageDeclaration' (role 'JDTAST_PackageDeclaration99', cardinality 0..*) is associated with 'JDTAST::Javadoc' (role 'JDTAST_Javadoc100', cardinality 0..*).
+'JDTAST::SuperFieldAccess' (role 'JDTAST_SuperFieldAccess273', cardinality 0..*) is associated with 'JDTAST::Name' (role 'JDTAST_Name274', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name279', cardinality 0..*) is associated with 'JDTAST::SuperMethodInvocation' (role 'JDTAST_SuperMethodInvocation278', cardinality 0..*).
+'JDTAST::SynchronizedStatement' (role 'JDTAST_SynchronizedStatement373', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression374', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName93', cardinality 0..*) is associated with 'JDTAST::MethodRefParameter' (role 'JDTAST_MethodRefParameter92', cardinality 0..*).
+'JDTAST::IJavaProject' (role 'JDTAST_IJavaProject4', cardinality 0..*) is associated with 'JDTAST::IPackageFragmentRoot' (role 'JDTAST_IPackageFragmentRoot5', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName129', cardinality 0..*) is associated with 'JDTAST::AnnotationTypeMemberDeclaration' (role 'JDTAST_AnnotationTypeMemberDeclaration128', cardinality 0..*).
+'JDTAST::IType' (role 'JDTAST_IType44', cardinality 0..*) is associated with 'JDTAST::IType' (role 'JDTAST_IType46', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression241', cardinality 0..*) is associated with 'JDTAST::InfixExpression' (role 'JDTAST_InfixExpression240', cardinality 0..*).
+'JDTAST::TypeDeclaration' (role 'JDTAST_TypeDeclaration178', cardinality 0..*) is associated with 'JDTAST::TypeParameter' (role 'JDTAST_TypeParameter179', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name282', cardinality 0..*) is associated with 'JDTAST::SuperMethodInvocation' (role 'JDTAST_SuperMethodInvocation281', cardinality 0..*).
+'JDTAST::AbstractTypeDeclaration' (role 'JDTAST_AbstractTypeDeclaration120', cardinality 0..*) is associated with 'JDTAST::BodyDeclaration' (role 'JDTAST_BodyDeclaration121', cardinality 0..*).
+'JDTAST::ArrayType' (role 'JDTAST_ArrayType', cardinality 0..*) is associated with 'JDTAST::ArrayCreation' (role 'JDTAST_ArrayCreation196', cardinality 0..*).
+'JDTAST::AnonymousClassDeclaration' (role 'JDTAST_AnonymousClassDeclaration214', cardinality 0..*) is associated with 'JDTAST::ClassInstanceCreation' (role 'JDTAST_ClassInstanceCreation213', cardinality 0..*).
+'JDTAST::NormalAnnotation' (role 'JDTAST_NormalAnnotation', cardinality 0..*) is associated with 'JDTAST::MemberValuePair' (role 'JDTAST_MemberValuePair432', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName427', cardinality 0..*) is associated with 'JDTAST::QualifiedName' (role 'JDTAST_QualifiedName', cardinality 0..*).
+'JDTAST::ASTNode' (role 'JDTAST_ASTNode108', cardinality 0..*) is associated with 'JDTAST::TagElement' (role 'JDTAST_TagElement', cardinality 0..*).
+'JDTAST::ArrayAccess' (role 'JDTAST_ArrayAccess189', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression190', cardinality 0..*).
+'JDTAST::SuperMethodInvocation' (role 'JDTAST_SuperMethodInvocation', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression276', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression354', cardinality 0..*) is associated with 'JDTAST::ReturnStatement' (role 'JDTAST_ReturnStatement', cardinality 0..*).
+'JDTAST::IImportDeclaration' (role 'JDTAST_IImportDeclaration', cardinality 0..*) is associated with 'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit20', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression228', cardinality 0..*) is associated with 'JDTAST::ConditionalExpression' (role 'JDTAST_ConditionalExpression227', cardinality 0..*).
+'JDTAST::Block' (role 'JDTAST_Block304', cardinality 0..*) is associated with 'JDTAST::Statement' (role 'JDTAST_Statement', cardinality 0..*).
+'JDTAST::Assignment' (role 'JDTAST_Assignment203', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression204', cardinality 0..*).
+'JDTAST::IMember' (role 'JDTAST_IMember36', cardinality 0..*) is associated with 'JDTAST::ISourceRange' (role 'JDTAST_ISourceRange37', cardinality 0..*).
+'JDTAST::ImportDeclaration' (role 'JDTAST_ImportDeclaration74', cardinality 0..*) is associated with 'JDTAST::Name' (role 'JDTAST_Name', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression376', cardinality 0..*) is associated with 'JDTAST::ThrowStatement' (role 'JDTAST_ThrowStatement', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression251', cardinality 0..*) is associated with 'JDTAST::MethodInvocation' (role 'JDTAST_MethodInvocation', cardinality 0..*).
+'JDTAST::SwitchStatement' (role 'JDTAST_SwitchStatement368', cardinality 0..*) is associated with 'JDTAST::Statement' (role 'JDTAST_Statement369', cardinality 0..*).
+'JDTAST::IInitializer' (role 'JDTAST_IInitializer', cardinality 0..*) is associated with 'JDTAST::IType' (role 'JDTAST_IType39', cardinality 0..*).
+'JDTAST::BodyDeclaration' (role 'JDTAST_BodyDeclaration54', cardinality 0..*) is associated with 'JDTAST::ExtendedModifier' (role 'JDTAST_ExtendedModifier', cardinality 0..*).
+'JDTAST::MemberRef' (role 'JDTAST_MemberRef', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression359', cardinality 0..*) is associated with 'JDTAST::SuperConstructorInvocation' (role 'JDTAST_SuperConstructorInvocation358', cardinality 0..*).
+'JDTAST::Block' (role 'JDTAST_Block148', cardinality 0..*) is associated with 'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration', cardinality 0..*).
+'JDTAST::EnhancedForStatement' (role 'JDTAST_EnhancedForStatement322', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression323', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name417', cardinality 0..*) is associated with 'JDTAST::SimpleType' (role 'JDTAST_SimpleType', cardinality 0..*).
+'JDTAST::VariableDeclarationExpression' (role 'JDTAST_VariableDeclarationExpression', cardinality 0..*) is associated with 'JDTAST::VariableDeclarationFragment' (role 'JDTAST_VariableDeclarationFragment291', cardinality 0..*).
+'JDTAST::ParenthesizedExpression' (role 'JDTAST_ParenthesizedExpression', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression265', cardinality 0..*).
+'JDTAST::MethodInvocation' (role 'JDTAST_MethodInvocation262', cardinality 0..*) is associated with 'JDTAST::IMethod' (role 'JDTAST_IMethod263', cardinality 0..*).
+'JDTAST::AssertStatement' (role 'JDTAST_AssertStatement301', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression302', cardinality 0..*).
+'JDTAST::TypeDeclaration' (role 'JDTAST_TypeDeclaration', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type173', cardinality 0..*).
+'JDTAST::ExtendedModifier' (role 'JDTAST_ExtendedModifier294', cardinality 0..*) is associated with 'JDTAST::VariableDeclarationExpression' (role 'JDTAST_VariableDeclarationExpression293', cardinality 0..*).
+'JDTAST::Statement' (role 'JDTAST_Statement396', cardinality 0..*) is associated with 'JDTAST::WhileStatement' (role 'JDTAST_WhileStatement', cardinality 0..*).
+'JDTAST::EnumDeclaration' (role 'JDTAST_EnumDeclaration170', cardinality 0..*) is associated with 'JDTAST::EnumConstantDeclaration' (role 'JDTAST_EnumConstantDeclaration171', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type260', cardinality 0..*) is associated with 'JDTAST::MethodInvocation' (role 'JDTAST_MethodInvocation259', cardinality 0..*).
+'JDTAST::ClassInstanceCreation' (role 'JDTAST_ClassInstanceCreation222', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type223', cardinality 0..*).
+'JDTAST::IJavaProject' (role 'JDTAST_IJavaProject7', cardinality 0..*) is associated with 'JDTAST::IPackageFragmentRoot' (role 'JDTAST_IPackageFragmentRoot8', cardinality 0..*).
+'JDTAST::Comment' (role 'JDTAST_Comment', cardinality 0..*) is associated with 'JDTAST::ASTNode' (role 'JDTAST_ASTNode61', cardinality 0..*).
+'JDTAST::ArrayInitializer' (role 'JDTAST_ArrayInitializer198', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression199', cardinality 0..*).
+'JDTAST::IType' (role 'JDTAST_IType43', cardinality 0..*) is associated with 'JDTAST::IMethod' (role 'JDTAST_IMethod', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression238', cardinality 0..*) is associated with 'JDTAST::InfixExpression' (role 'JDTAST_InfixExpression', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression318', cardinality 0..*) is associated with 'JDTAST::DoStatement' (role 'JDTAST_DoStatement317', cardinality 0..*).
+'JDTAST::MemberRef' (role 'JDTAST_MemberRef77', cardinality 0..*) is associated with 'JDTAST::Name' (role 'JDTAST_Name78', cardinality 0..*).
+'JDTAST::Parameter' (role 'JDTAST_Parameter', cardinality 0..*) is associated with 'JDTAST::IMethod' (role 'JDTAST_IMethod50', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName118', cardinality 0..*) is associated with 'JDTAST::VariableDeclaration' (role 'JDTAST_VariableDeclaration117', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName151', cardinality 0..*) is associated with 'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration150', cardinality 0..*).
+'JDTAST::ConstructorInvocation' (role 'JDTAST_ConstructorInvocation', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression308', cardinality 0..*).
+'JDTAST::Annotation' (role 'JDTAST_Annotation184', cardinality 0..*) is associated with 'JDTAST::Name' (role 'JDTAST_Name185', cardinality 0..*).
+'JDTAST::IType' (role 'JDTAST_IType31', cardinality 0..*) is associated with 'JDTAST::IClassFile' (role 'JDTAST_IClassFile30', cardinality 0..*).
+'JDTAST::SwitchCase' (role 'JDTAST_SwitchCase', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression364', cardinality 0..*).
+'JDTAST::SingleVariableDeclaration' (role 'JDTAST_SingleVariableDeclaration424', cardinality 0..*) is associated with 'JDTAST::ExtendedModifier' (role 'JDTAST_ExtendedModifier425', cardinality 0..*).
+'JDTAST::CastExpression' (role 'JDTAST_CastExpression', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression206', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression299', cardinality 0..*) is associated with 'JDTAST::AssertStatement' (role 'JDTAST_AssertStatement', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression339', cardinality 0..*) is associated with 'JDTAST::ForStatement' (role 'JDTAST_ForStatement338', cardinality 0..*).
+'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit22', cardinality 0..*) is associated with 'JDTAST::IType' (role 'JDTAST_IType23', cardinality 0..*).
+'JDTAST::VariableDeclarationStatement' (role 'JDTAST_VariableDeclarationStatement', cardinality 0..*) is associated with 'JDTAST::VariableDeclarationFragment' (role 'JDTAST_VariableDeclarationFragment388', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression187', cardinality 0..*) is associated with 'JDTAST::ArrayAccess' (role 'JDTAST_ArrayAccess', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression', cardinality 0..*) is associated with 'JDTAST::IType' (role 'JDTAST_IType72', cardinality 0..*).
+'JDTAST::EnumConstantDeclaration' (role 'JDTAST_EnumConstantDeclaration136', cardinality 0..*) is associated with 'JDTAST::AnonymousClassDeclaration' (role 'JDTAST_AnonymousClassDeclaration137', cardinality 0..*).
+'JDTAST::QualifiedType' (role 'JDTAST_QualifiedType414', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type415', cardinality 0..*).
+'JDTAST::IPackageFragment' (role 'packageFragments', cardinality 0..*) is associated with 'JDTAST::IPackageFragmentRoot' (role 'IPackageFragmentRoot', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression126', cardinality 0..*) is associated with 'JDTAST::AnnotationTypeMemberDeclaration' (role 'JDTAST_AnnotationTypeMemberDeclaration', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName412', cardinality 0..*) is associated with 'JDTAST::QualifiedType' (role 'JDTAST_QualifiedType', cardinality 0..*).
+'JDTAST::EnumConstantDeclaration' (role 'JDTAST_EnumConstantDeclaration', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression134', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression333', cardinality 0..*) is associated with 'JDTAST::ForStatement' (role 'JDTAST_ForStatement332', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression192', cardinality 0..*) is associated with 'JDTAST::ArrayCreation' (role 'JDTAST_ArrayCreation', cardinality 0..*).
+'JDTAST::BodyDeclaration' (role 'JDTAST_BodyDeclaration56', cardinality 0..*) is associated with 'JDTAST::Javadoc' (role 'JDTAST_Javadoc', cardinality 0..*).
+'JDTAST::LabeledStatement' (role 'JDTAST_LabeledStatement', cardinality 0..*) is associated with 'JDTAST::Statement' (role 'JDTAST_Statement349', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name430', cardinality 0..*) is associated with 'JDTAST::QualifiedName' (role 'JDTAST_QualifiedName429', cardinality 0..*).
+'JDTAST::TypeDeclaration' (role 'JDTAST_TypeDeclaration175', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type176', cardinality 0..*).
+'JDTAST::AbstractTypeDeclaration' (role 'JDTAST_AbstractTypeDeclaration', cardinality 0..*) is associated with 'JDTAST::CompilationUnit' (role 'JDTAST_CompilationUnit70', cardinality 0..*).
+'JDTAST::PackageDeclaration' (role 'JDTAST_PackageDeclaration102', cardinality 0..*) is associated with 'JDTAST::Name' (role 'JDTAST_Name103', cardinality 0..*).
+'JDTAST::TryStatement' (role 'JDTAST_TryStatement380', cardinality 0..*) is associated with 'JDTAST::Block' (role 'JDTAST_Block381', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression201', cardinality 0..*) is associated with 'JDTAST::Assignment' (role 'JDTAST_Assignment', cardinality 0..*).
+'JDTAST::AnnotationTypeMemberDeclaration' (role 'JDTAST_AnnotationTypeMemberDeclaration131', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type132', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type407', cardinality 0..*) is associated with 'JDTAST::ParameterizedType' (role 'JDTAST_ParameterizedType', cardinality 0..*).
+'JDTAST::PackageDeclaration' (role 'JDTAST_PackageDeclaration97', cardinality 0..*) is associated with 'JDTAST::Annotation' (role 'JDTAST_Annotation', cardinality 0..*).
+'JDTAST::SwitchStatement' (role 'JDTAST_SwitchStatement', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression366', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression244', cardinality 0..*) is associated with 'JDTAST::InfixExpression' (role 'JDTAST_InfixExpression243', cardinality 0..*).
+'JDTAST::MethodInvocation' (role 'JDTAST_MethodInvocation256', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName257', cardinality 0..*).
+'JDTAST::Block' (role 'JDTAST_Block384', cardinality 0..*) is associated with 'JDTAST::TryStatement' (role 'JDTAST_TryStatement383', cardinality 0..*).
+'JDTAST::IMethod' (role 'JDTAST_IMethod166', cardinality 0..*) is associated with 'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration165', cardinality 0..*).
+'JDTAST::MethodRef' (role 'JDTAST_MethodRef', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName85', cardinality 0..*).
+'JDTAST::VariableDeclaration' (role 'JDTAST_VariableDeclaration', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression115', cardinality 0..*).
+'JDTAST::WildcardType' (role 'JDTAST_WildcardType', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type419', cardinality 0..*).
+'JDTAST::IType' (role 'JDTAST_IType41', cardinality 0..*) is associated with 'JDTAST::IField' (role 'JDTAST_IField', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression217', cardinality 0..*) is associated with 'JDTAST::ClassInstanceCreation' (role 'JDTAST_ClassInstanceCreation216', cardinality 0..*).
+'JDTAST::SuperConstructorInvocation' (role 'JDTAST_SuperConstructorInvocation361', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type362', cardinality 0..*).
+'JDTAST::ISourceRange' (role 'JDTAST_ISourceRange', cardinality 0..*) is associated with 'JDTAST::ISourceReference' (role 'JDTAST_ISourceReference', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName140', cardinality 0..*) is associated with 'JDTAST::EnumConstantDeclaration' (role 'JDTAST_EnumConstantDeclaration139', cardinality 0..*).
+'JDTAST::ContinueStatement' (role 'JDTAST_ContinueStatement', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName313', cardinality 0..*).
+'JDTAST::Block' (role 'JDTAST_Block', cardinality 0..*) is associated with 'JDTAST::CatchClause' (role 'JDTAST_CatchClause', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression225', cardinality 0..*) is associated with 'JDTAST::ConditionalExpression' (role 'JDTAST_ConditionalExpression', cardinality 0..*).
+'JDTAST::TypeParameter' (role 'JDTAST_TypeParameter', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName110', cardinality 0..*).
+'JDTAST::MethodInvocation' (role 'JDTAST_MethodInvocation253', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression254', cardinality 0..*).
+'JDTAST::InstanceofExpression' (role 'JDTAST_InstanceofExpression248', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type249', cardinality 0..*).
+'JDTAST::IJavaModel' (role 'JDTAST_IJavaModel', cardinality 0..*) is associated with 'JDTAST::IJavaProject' (role 'JDTAST_IJavaProject', cardinality 0..*).
+'JDTAST::SingleVariableDeclaration' (role 'JDTAST_SingleVariableDeclaration326', cardinality 0..*) is associated with 'JDTAST::EnhancedForStatement' (role 'JDTAST_EnhancedForStatement325', cardinality 0..*).
+'JDTAST::SuperFieldAccess' (role 'JDTAST_SuperFieldAccess', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName271', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type168', cardinality 0..*) is associated with 'JDTAST::EnumDeclaration' (role 'JDTAST_EnumDeclaration', cardinality 0..*).
+'JDTAST::TagElement' (role 'JDTAST_TagElement182', cardinality 0..*) is associated with 'JDTAST::Javadoc' (role 'JDTAST_Javadoc181', cardinality 0..*).
+'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit', cardinality 0..*) is associated with 'JDTAST::IPackageFragment' (role 'JDTAST_IPackageFragment16', cardinality 0..*).
+'JDTAST::SuperConstructorInvocation' (role 'JDTAST_SuperConstructorInvocation', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression356', cardinality 0..*).
+'JDTAST::SingleVariableDeclaration' (role 'JDTAST_SingleVariableDeclaration421', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type422', cardinality 0..*).
+'JDTAST::IClassFile' (role 'JDTAST_IClassFile', cardinality 0..*) is associated with 'JDTAST::IPackageFragment' (role 'JDTAST_IPackageFragment', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression336', cardinality 0..*) is associated with 'JDTAST::ForStatement' (role 'JDTAST_ForStatement335', cardinality 0..*).
+'JDTAST::Statement' (role 'JDTAST_Statement315', cardinality 0..*) is associated with 'JDTAST::DoStatement' (role 'JDTAST_DoStatement', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name160', cardinality 0..*) is associated with 'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration159', cardinality 0..*).
+'JDTAST::MemberValuePair' (role 'JDTAST_MemberValuePair', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName80', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type113', cardinality 0..*) is associated with 'JDTAST::TypeParameter' (role 'JDTAST_TypeParameter112', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type285', cardinality 0..*) is associated with 'JDTAST::SuperMethodInvocation' (role 'JDTAST_SuperMethodInvocation284', cardinality 0..*).
+'JDTAST::MethodRefParameter' (role 'JDTAST_MethodRefParameter95', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type', cardinality 0..*).
+'JDTAST::PackageDeclaration' (role 'JDTAST_PackageDeclaration', cardinality 0..*) is associated with 'JDTAST::CompilationUnit' (role 'JDTAST_CompilationUnit66', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName236', cardinality 0..*) is associated with 'JDTAST::FieldAccess' (role 'JDTAST_FieldAccess235', cardinality 0..*).
+'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit24', cardinality 0..*) is associated with 'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit26', cardinality 0..*).
+'JDTAST::IJavaProject' (role 'JDTAST_IJavaProject11', cardinality 0..*) is associated with 'JDTAST::IJavaProject' (role 'JDTAST_IJavaProject9', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type402', cardinality 0..*) is associated with 'JDTAST::ArrayType' (role 'JDTAST_ArrayType401', cardinality 0..*).
+'JDTAST::SingleVariableDeclaration' (role 'JDTAST_SingleVariableDeclaration157', cardinality 0..*) is associated with 'JDTAST::MethodDeclaration' (role 'JDTAST_MethodDeclaration156', cardinality 0..*).
+'JDTAST::Initializer' (role 'JDTAST_Initializer', cardinality 0..*) is associated with 'JDTAST::Block' (role 'JDTAST_Block146', cardinality 0..*).
+'JDTAST::Name' (role 'JDTAST_Name88', cardinality 0..*) is associated with 'JDTAST::MethodRef' (role 'JDTAST_MethodRef87', cardinality 0..*).
+'JDTAST::Statement' (role 'JDTAST_Statement320', cardinality 0..*) is associated with 'JDTAST::EnhancedForStatement' (role 'JDTAST_EnhancedForStatement', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression328', cardinality 0..*) is associated with 'JDTAST::ExpressionStatement' (role 'JDTAST_ExpressionStatement', cardinality 0..*).
+'JDTAST::TryStatement' (role 'JDTAST_TryStatement', cardinality 0..*) is associated with 'JDTAST::CatchClause' (role 'JDTAST_CatchClause378', cardinality 0..*).
+'JDTAST::AbstractTypeDeclaration' (role 'JDTAST_AbstractTypeDeclaration123', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName124', cardinality 0..*).
+'JDTAST::ICompilationUnit' (role 'JDTAST_ICompilationUnit28', cardinality 0..*) is associated with 'JDTAST::CompilationUnit' (role 'JDTAST_CompilationUnit', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type394', cardinality 0..*) is associated with 'JDTAST::VariableDeclarationStatement' (role 'JDTAST_VariableDeclarationStatement393', cardinality 0..*).
+'JDTAST::InstanceofExpression' (role 'JDTAST_InstanceofExpression', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression246', cardinality 0..*).
+'JDTAST::IPackageFragment' (role 'JDTAST_IPackageFragment106', cardinality 0..*) is associated with 'JDTAST::PackageDeclaration' (role 'JDTAST_PackageDeclaration105', cardinality 0..*).
+'JDTAST::SimpleName' (role 'JDTAST_SimpleName352', cardinality 0..*) is associated with 'JDTAST::LabeledStatement' (role 'JDTAST_LabeledStatement351', cardinality 0..*).
+'JDTAST::IfStatement' (role 'JDTAST_IfStatement343', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression344', cardinality 0..*).
+'JDTAST::TypeDeclarationStatement' (role 'JDTAST_TypeDeclarationStatement', cardinality 0..*) is associated with 'JDTAST::AbstractTypeDeclaration' (role 'JDTAST_AbstractTypeDeclaration386', cardinality 0..*).
+'JDTAST::IJavaModel' (role 'JDTAST_IJavaModel2', cardinality 0..*) is associated with 'JDTAST::IPackageFragmentRoot' (role 'JDTAST_IPackageFragmentRoot', cardinality 0..*).
+'JDTAST::ISourceRange' (role 'JDTAST_ISourceRange34', cardinality 0..*) is associated with 'JDTAST::IMember' (role 'JDTAST_IMember', cardinality 0..*).
+'JDTAST::ExtendedModifier' (role 'JDTAST_ExtendedModifier391', cardinality 0..*) is associated with 'JDTAST::VariableDeclarationStatement' (role 'JDTAST_VariableDeclarationStatement390', cardinality 0..*).
+'JDTAST::IPackageFragment' (role 'IPackageFragment', cardinality 0..*) is associated with 'JDTAST::IPackageFragmentRoot' (role 'packageFragmentRoot', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type144', cardinality 0..*) is associated with 'JDTAST::FieldDeclaration' (role 'JDTAST_FieldDeclaration143', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type220', cardinality 0..*) is associated with 'JDTAST::ClassInstanceCreation' (role 'JDTAST_ClassInstanceCreation219', cardinality 0..*).
+'JDTAST::ParameterizedType' (role 'JDTAST_ParameterizedType409', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type410', cardinality 0..*).
+'JDTAST::AST' (role 'JDTAST_AST', cardinality 0..*) is associated with 'JDTAST::ASTNode' (role 'JDTAST_ASTNode', cardinality 0..*).
+'JDTAST::CatchClause' (role 'JDTAST_CatchClause59', cardinality 0..*) is associated with 'JDTAST::SingleVariableDeclaration' (role 'JDTAST_SingleVariableDeclaration', cardinality 0..*).
+'JDTAST::WhileStatement' (role 'JDTAST_WhileStatement398', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression399', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression231', cardinality 0..*) is associated with 'JDTAST::ConditionalExpression' (role 'JDTAST_ConditionalExpression230', cardinality 0..*).
+'JDTAST::BreakStatement' (role 'JDTAST_BreakStatement', cardinality 0..*) is associated with 'JDTAST::SimpleName' (role 'JDTAST_SimpleName306', cardinality 0..*).
+'JDTAST::Statement' (role 'JDTAST_Statement347', cardinality 0..*) is associated with 'JDTAST::IfStatement' (role 'JDTAST_IfStatement346', cardinality 0..*).
+'JDTAST::TypeLiteral' (role 'JDTAST_TypeLiteral', cardinality 0..*) is associated with 'JDTAST::Type' (role 'JDTAST_Type289', cardinality 0..*).
+'JDTAST::Type' (role 'JDTAST_Type405', cardinality 0..*) is associated with 'JDTAST::ArrayType' (role 'JDTAST_ArrayType404', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression434', cardinality 0..*) is associated with 'JDTAST::SingleMemberAnnotation' (role 'JDTAST_SingleMemberAnnotation', cardinality 0..*).
+'JDTAST::FieldAccess' (role 'JDTAST_FieldAccess', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression233', cardinality 0..*).
+'JDTAST::Expression' (role 'JDTAST_Expression211', cardinality 0..*) is associated with 'JDTAST::ClassInstanceCreation' (role 'JDTAST_ClassInstanceCreation', cardinality 0..*).
+'JDTAST::ArrayInitializer' (role 'JDTAST_ArrayInitializer', cardinality 0..*) is associated with 'JDTAST::ArrayCreation' (role 'JDTAST_ArrayCreation194', cardinality 0..*).
+'JDTAST::BodyDeclaration' (role 'JDTAST_BodyDeclaration', cardinality 0..*) is associated with 'JDTAST::AnonymousClassDeclaration' (role 'JDTAST_AnonymousClassDeclaration', cardinality 0..*).
+'JDTAST::PrefixExpression' (role 'JDTAST_PrefixExpression', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression269', cardinality 0..*).
+'JDTAST::PostfixExpression' (role 'JDTAST_PostfixExpression', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression267', cardinality 0..*).
+'JDTAST::MemberValuePair' (role 'JDTAST_MemberValuePair82', cardinality 0..*) is associated with 'JDTAST::Expression' (role 'JDTAST_Expression83', cardinality 0..*).
+'JDTAST::FieldDeclaration' (role 'JDTAST_FieldDeclaration', cardinality 0..*) is associated with 'JDTAST::VariableDeclarationFragment' (role 'JDTAST_VariableDeclarationFragment', cardinality 0..*).
+'JDTAST::Statement' (role 'JDTAST_Statement330', cardinality 0..*) is associated with 'JDTAST::ForStatement' (role 'JDTAST_ForStatement', cardinality 0..*).
+'JDTAST::CompilationUnit' (role 'JDTAST_CompilationUnit68', cardinality 0..*) is associated with 'JDTAST::ImportDeclaration' (role 'JDTAST_ImportDeclaration', cardinality 0..*).

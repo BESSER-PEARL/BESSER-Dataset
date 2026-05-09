@@ -1,0 +1,51 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ecore_EModelElement  {
+
+
+
+
+
+
+    private List<ecore_EAnnotation> ecore_eannotations;
+
+
+
+
+    private ecore_EAnnotation ecore_eannotation;
+
+
+    public ecore_EModelElement(
+    ) {
+        this.ecore_eannotations = new ArrayList<>();
+    }
+
+    public ecore_EModelElement(
+        ArrayList<ecore_EAnnotation> ecore_eannotations    ) {
+        this.ecore_eannotations = ecore_eannotations;
+    }
+
+
+    public List<ecore_EAnnotation> getEcore_eannotations() {
+        return ecore_eannotations;
+    }
+
+    public void addEcore_eannotation(Ecore_eannotation ecore_eannotation) {
+        this.ecore_eannotations.add(ecore_eannotation);
+    }
+    public ecore_EAnnotation getEcore_eannotation() {
+        return ecore_eannotation;
+    }
+
+    public void setEcore_eannotation(ecore_EAnnotation ecore_eannotation) {
+        this.ecore_eannotation = ecore_eannotation;
+    }
+
+}

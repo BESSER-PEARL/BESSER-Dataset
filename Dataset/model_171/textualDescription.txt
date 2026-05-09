@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'petrinet::Place' has the following attributes: 'capacity' of type int; 'tokens' of type int.
+The class 'petrinet::Arc' has the following attributes: 'weight' of type int.
+The class 'petrinet::PlaceTransitionArc' has no attributes.
+The class 'petrinet::Node' has the following attributes: 'name' of type str.
+The class 'petrinet::Transition' has no attributes.
+The class 'petrinet::TransitionPlaceArc' has no attributes.
+The class 'petrinet::PetriNet' has the following attributes: 'name' of type str.
+The class 'Arc' has no attributes.
+The class 'Node' has no attributes.
+'petrinet::PlaceTransitionArc' is a specialization of 'Arc'.
+'petrinet::TransitionPlaceArc' is a specialization of 'Arc'.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::PetriNet' (role 'petrinet_PetriNet20', cardinality 0..*) is associated with 'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place7', cardinality 0..*) is associated with 'petrinet::TransitionPlaceArc' (role 'petrinet_TransitionPlaceArc6', cardinality 0..*).
+'petrinet::PlaceTransitionArc' (role 'petrinet_PlaceTransitionArc', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*) is associated with 'petrinet::PlaceTransitionArc' (role 'petrinet_PlaceTransitionArc2', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet14', cardinality 0..*) is associated with 'petrinet::PlaceTransitionArc' (role 'petrinet_PlaceTransitionArc15', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place9', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet22', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet17', cardinality 0..*) is associated with 'petrinet::TransitionPlaceArc' (role 'petrinet_TransitionPlaceArc18', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet11', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition12', cardinality 0..*).
+'petrinet::TransitionPlaceArc' (role 'petrinet_TransitionPlaceArc', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition4', cardinality 0..*).

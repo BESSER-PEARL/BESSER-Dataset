@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mohrndorf/henshin/plugins/org.eclipse.emf.henshin.text.examples/sort/ecore.ecore

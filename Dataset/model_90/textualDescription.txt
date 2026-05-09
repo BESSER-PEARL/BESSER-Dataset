@@ -1,0 +1,477 @@
+The model has 152 class(es).
+The class 'javaMM::ArrayAccess' has no attributes.
+The class 'Comment' has no attributes.
+The class 'javaMM::InstanceofExpression' has no attributes.
+The class 'javaMM::SynchronizedStatement' has no attributes.
+The class 'javaMM::TagElement' has the following attributes: 'tagName' of type str.
+The class 'javaMM::PrimitiveTypeInt' has no attributes.
+The class 'javaMM::IfStatement' has no attributes.
+The class 'NamespaceAccess' has no attributes.
+The class 'javaMM::MethodRef' has no attributes.
+The class 'javaMM::MethodRefParameter' has the following attributes: 'varargs' of type bool; 'name' of type str.
+The class 'VariableDeclaration' has no attributes.
+The class 'javaMM::ArrayCreation' has no attributes.
+The class 'AnnotationTypeDeclaration' has no attributes.
+The class 'javaMM::BreakStatement' has no attributes.
+The class 'javaMM::AnonymousClassDeclaration' has no attributes.
+The class 'javaMM::AbstractMethodInvocation' has no attributes.
+The class 'javaMM::AnnotationTypeDeclaration' has no attributes.
+The class 'AbstractMethodInvocation' has no attributes.
+The class 'javaMM::PrimitiveTypeVoid' has no attributes.
+The class 'javaMM::ContinueStatement' has no attributes.
+The class 'AbstractTypeQualifiedExpression' has no attributes.
+The class 'javaMM::BlockComment' has no attributes.
+The class 'javaMM::PrimitiveTypeDouble' has no attributes.
+The class 'javaMM::VariableDeclaration' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'javaMM::Expression' has no attributes.
+The class 'javaMM::PrimitiveType' has no attributes.
+The class 'javaMM::SwitchStatement' has no attributes.
+The class 'javaMM::Manifest' has no attributes.
+The class 'javaMM::ReturnStatement' has no attributes.
+The class 'javaMM::SuperMethodInvocation' has no attributes.
+The class 'javaMM::FieldAccess' has no attributes.
+The class 'javaMM::ExpressionStatement' has no attributes.
+The class 'javaMM::PrimitiveTypeLong' has no attributes.
+The class 'InterfaceDeclaration' has no attributes.
+The class 'javaMM::WhileStatement' has no attributes.
+The class 'javaMM::WildCardType' has the following attributes: 'upperBound' of type bool.
+The class 'javaMM::Comment' has the following attributes: 'content' of type str; 'prefixOfParent' of type bool; 'enclosedByParent' of type bool.
+The class 'javaMM::PrimitiveTypeChar' has no attributes.
+The class 'javaMM::CompilationUnit' has the following attributes: 'originalFilePath' of type str.
+The class 'Type' has no attributes.
+The class 'javaMM::CharacterLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'Statement' has no attributes.
+The class 'javaMM::Type' has no attributes.
+The class 'javaMM::Model' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'javaMM::AbstractTypeDeclaration' has no attributes.
+The class 'javaMM::NullLiteral' has no attributes.
+The class 'javaMM::ConditionalExpression' has no attributes.
+The class 'javaMM::MethodInvocation' has no attributes.
+The class 'javaMM::ConstructorInvocation' has no attributes.
+The class 'javaMM::UnresolvedItemAccess' has no attributes.
+The class 'javaMM::TypeParameter' has no attributes.
+The class 'javaMM::ImportDeclaration' has the following attributes: 'static' of type bool.
+The class 'javaMM::ClassDeclaration' has no attributes.
+The class 'javaMM::EmptyStatement' has no attributes.
+The class 'javaMM::UnresolvedEnumDeclaration' has no attributes.
+The class 'javaMM::MemberRef' has no attributes.
+The class 'javaMM::Statement' has no attributes.
+The class 'javaMM::SuperConstructorInvocation' has no attributes.
+The class 'javaMM::ParenthesizedExpression' has no attributes.
+The class 'javaMM::UnresolvedItem' has no attributes.
+The class 'javaMM::TypeDeclaration' has no attributes.
+The class 'AbstractMethodDeclaration' has no attributes.
+The class 'javaMM::UnresolvedInterfaceDeclaration' has no attributes.
+The class 'javaMM::TypeAccess' has no attributes.
+The class 'javaMM::Archive' has the following attributes: 'originalFilePath' of type str.
+The class 'javaMM::MethodDeclaration' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'javaMM::Annotation' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'javaMM::UnresolvedVariableDeclarationFragment' has no attributes.
+The class 'javaMM::ParameterizedType' has no attributes.
+The class 'EnumDeclaration' has no attributes.
+The class 'ClassDeclaration' has no attributes.
+The class 'javaMM::CastExpression' has no attributes.
+The class 'javaMM::PrimitiveTypeBoolean' has no attributes.
+The class 'LabeledStatement' has no attributes.
+The class 'javaMM::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'javaMM::UnresolvedAnnotationDeclaration' has no attributes.
+The class 'javaMM::NamespaceAccess' has no attributes.
+The class 'javaMM::ASTNode' has no attributes.
+The class 'javaMM::PackageAccess' has no attributes.
+The class 'javaMM::SingleVariableDeclaration' has the following attributes: 'varargs' of type bool.
+The class 'javaMM::EnhancedForStatement' has no attributes.
+The class 'javaMM::InterfaceDeclaration' has no attributes.
+The class 'javaMM::DoStatement' has no attributes.
+The class 'AbstractTypeDeclaration' has no attributes.
+The class 'javaMM::PrimitiveTypeByte' has no attributes.
+The class 'javaMM::AbstractVariablesContainer' has no attributes.
+The class 'javaMM::Javadoc' has no attributes.
+The class 'javaMM::AbstractTypeQualifiedExpression' has no attributes.
+The class 'javaMM::SingleVariableAccess' has no attributes.
+The class 'javaMM::FieldDeclaration' has no attributes.
+The class 'javaMM::ConstructorDeclaration' has no attributes.
+The class 'javaMM::TryStatement' has no attributes.
+The class 'SingleVariableDeclaration' has no attributes.
+The class 'javaMM::Package' has no attributes.
+The class 'javaMM::PrimitiveTypeShort' has no attributes.
+The class 'javaMM::AbstractMethodDeclaration' has no attributes.
+The class 'javaMM::UnresolvedSingleVariableDeclaration' has no attributes.
+The class 'UnresolvedItem' has no attributes.
+The class 'javaMM::ThisExpression' has no attributes.
+The class 'javaMM::LabeledStatement' has no attributes.
+The class 'javaMM::ManifestEntry' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'javaMM::ClassInstanceCreation' has no attributes.
+The class 'javaMM::AnnotationMemberValuePair' has no attributes.
+The class 'javaMM::UnresolvedAnnotationTypeMemberDeclaration' has no attributes.
+The class 'javaMM::Initializer' has no attributes.
+The class 'VariableDeclarationFragment' has no attributes.
+The class 'javaMM::LineComment' has no attributes.
+The class 'BodyDeclaration' has no attributes.
+The class 'javaMM::ArrayInitializer' has no attributes.
+The class 'javaMM::ClassFile' has the following attributes: 'originalFilePath' of type str.
+The class 'javaMM::SuperFieldAccess' has no attributes.
+The class 'javaMM::VariableDeclarationFragment' has no attributes.
+The class 'javaMM::PrefixExpression' has the following attributes: 'operator' of type str.
+The class 'javaMM::CatchClause' has no attributes.
+The class 'javaMM::AssertStatement' has no attributes.
+The class 'javaMM::Modifier' has the following attributes: 'strictfp' of type bool; 'synchronized' of type bool; 'inheritance' of type str; 'native' of type bool; 'volatile' of type bool; 'static' of type bool; 'transient' of type bool; 'visibility' of type str.
+The class 'javaMM::UnresolvedClassDeclaration' has no attributes.
+The class 'javaMM::TextElement' has the following attributes: 'text' of type str.
+The class 'javaMM::NumberLiteral' has the following attributes: 'tokenValue' of type str.
+The class 'javaMM::PrimitiveTypeFloat' has no attributes.
+The class 'javaMM::ThrowStatement' has no attributes.
+The class 'javaMM::AnnotationTypeMemberDeclaration' has no attributes.
+The class 'javaMM::UnresolvedTypeDeclaration' has no attributes.
+The class 'javaMM::ManifestAttribute' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'javaMM::SwitchCase' has the following attributes: 'default' of type bool.
+The class 'javaMM::ForStatement' has no attributes.
+The class 'javaMM::ArrayType' has the following attributes: 'dimensions' of type int.
+The class 'javaMM::BodyDeclaration' has no attributes.
+The class 'MethodDeclaration' has no attributes.
+The class 'AnnotationTypeMemberDeclaration' has no attributes.
+The class 'javaMM::StringLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'javaMM::TypeDeclarationStatement' has no attributes.
+The class 'javaMM::PostfixExpression' has the following attributes: 'operator' of type str.
+The class 'PrimitiveType' has no attributes.
+The class 'javaMM::UnresolvedType' has no attributes.
+The class 'javaMM::VariableDeclarationExpression' has no attributes.
+The class 'javaMM::NamedElement' has the following attributes: 'name' of type str; 'proxy' of type bool.
+The class 'javaMM::ArrayLengthAccess' has no attributes.
+The class 'javaMM::EnumDeclaration' has no attributes.
+The class 'javaMM::VariableDeclarationStatement' has the following attributes: 'extraArrayDimensions' of type int.
+The class 'javaMM::UnresolvedMethodDeclaration' has no attributes.
+The class 'javaMM::TypeLiteral' has no attributes.
+The class 'AbstractVariablesContainer' has no attributes.
+The class 'javaMM::Block' has no attributes.
+The class 'javaMM::UnresolvedLabeledStatement' has no attributes.
+The class 'javaMM::EnumConstantDeclaration' has no attributes.
+The class 'javaMM::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'javaMM::Assignment' has the following attributes: 'operator' of type str.
+The enumeration 'InheritanceKind' has the following literals: 'final', 'abstract', 'none'.
+The enumeration 'VisibilityKind' has the following literals: 'public', 'none', 'protected', 'private'.
+The enumeration 'PrefixExpressionKind' has the following literals: 'INCREMENT', 'PLUS', 'DECREMENT', 'COMPLEMENT', 'MINUS', 'NOT'.
+The enumeration 'AssignmentKind' has the following literals: 'PLUS_ASSIGN', 'BIT_XOR_ASSIGN', 'RIGHT_SHIFT_UNSIGNED_ASSIGN', 'RIGHT_SHIFT_SIGNED_ASSIGN', 'TIMES_ASSIGN', 'BIT_AND_ASSIGN', 'BIT_OR_ASSIGN', 'REMAINDER_ASSIGN', 'LEFT_SHIFT_ASSIGN', 'DIVIDE_ASSIGN', 'MINUS_ASSIGN', 'ASSIGN'.
+The enumeration 'InfixExpressionKind' has the following literals: 'REMAINDER', 'XOR', 'PLUS', 'NOT_EQUALS', 'AND', 'LEFT_SHIFT', 'RIGHT_SHIFT_UNSIGNED', 'GREATER_EQUALS', 'MINUS', 'GREATER', 'LESS', 'RIGHT_SHIFT_SIGNED', 'CONDITIONAL_AND', 'OR', 'CONDITIONAL_OR', 'DIVIDE', 'LESS_EQUALS', 'EQUALS', 'TIMES'.
+The enumeration 'PostfixExpressionKind' has the following literals: 'DECREMENT', 'INCREMENT'.
+'javaMM::Block' is a specialization of 'Statement'.
+'javaMM::MethodRefParameter' is a specialization of 'ASTNode'.
+'javaMM::ThisExpression' is a specialization of 'AbstractTypeQualifiedExpression'.
+'javaMM::NumberLiteral' is a specialization of 'Expression'.
+'javaMM::UnresolvedTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'javaMM::CastExpression' is a specialization of 'Expression'.
+'javaMM::UnresolvedEnumDeclaration' is a specialization of 'EnumDeclaration'.
+'javaMM::SuperFieldAccess' is a specialization of 'AbstractTypeQualifiedExpression'.
+'javaMM::ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'javaMM::TextElement' is a specialization of 'ASTNode'.
+'javaMM::Type' is a specialization of 'NamedElement'.
+'javaMM::TypeLiteral' is a specialization of 'Expression'.
+'javaMM::TagElement' is a specialization of 'ASTNode'.
+'javaMM::LabeledStatement' is a specialization of 'Statement'.
+'javaMM::VariableDeclarationStatement' is a specialization of 'AbstractVariablesContainer'.
+'javaMM::TypeAccess' is a specialization of 'Expression'.
+'javaMM::ArrayLengthAccess' is a specialization of 'Expression'.
+'javaMM::SingleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'javaMM::ImportDeclaration' is a specialization of 'ASTNode'.
+'javaMM::MethodInvocation' is a specialization of 'Expression'.
+'javaMM::EnhancedForStatement' is a specialization of 'Statement'.
+'javaMM::AbstractTypeQualifiedExpression' is a specialization of 'Expression'.
+'javaMM::NamespaceAccess' is a specialization of 'ASTNode'.
+'javaMM::UnresolvedLabeledStatement' is a specialization of 'UnresolvedItem'.
+'javaMM::SuperConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+'javaMM::UnresolvedSingleVariableDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::MemberRef' is a specialization of 'ASTNode'.
+'javaMM::UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'AnnotationTypeMemberDeclaration'.
+'javaMM::TypeDeclarationStatement' is a specialization of 'Statement'.
+'javaMM::ClassFile' is a specialization of 'NamedElement'.
+'javaMM::AbstractVariablesContainer' is a specialization of 'ASTNode'.
+'javaMM::PostfixExpression' is a specialization of 'Expression'.
+'javaMM::PrimitiveTypeBoolean' is a specialization of 'PrimitiveType'.
+'javaMM::UnresolvedVariableDeclarationFragment' is a specialization of 'VariableDeclarationFragment'.
+'javaMM::ExpressionStatement' is a specialization of 'Statement'.
+'javaMM::FieldAccess' is a specialization of 'Expression'.
+'javaMM::StringLiteral' is a specialization of 'Expression'.
+'javaMM::EnumDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'javaMM::TypeParameter' is a specialization of 'Type'.
+'javaMM::Assignment' is a specialization of 'Expression'.
+'javaMM::AnonymousClassDeclaration' is a specialization of 'ASTNode'.
+'javaMM::EnumConstantDeclaration' is a specialization of 'BodyDeclaration'.
+'javaMM::UnresolvedLabeledStatement' is a specialization of 'LabeledStatement'.
+'javaMM::FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+'javaMM::IfStatement' is a specialization of 'Statement'.
+'javaMM::Archive' is a specialization of 'NamedElement'.
+'javaMM::SwitchCase' is a specialization of 'Statement'.
+'javaMM::Modifier' is a specialization of 'ASTNode'.
+'javaMM::ForStatement' is a specialization of 'Statement'.
+'javaMM::Package' is a specialization of 'NamedElement'.
+'javaMM::NamedElement' is a specialization of 'ASTNode'.
+'javaMM::ArrayCreation' is a specialization of 'Expression'.
+'javaMM::WhileStatement' is a specialization of 'Statement'.
+'javaMM::AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+'javaMM::ThrowStatement' is a specialization of 'Statement'.
+'javaMM::AnnotationMemberValuePair' is a specialization of 'NamedElement'.
+'javaMM::UnresolvedVariableDeclarationFragment' is a specialization of 'UnresolvedItem'.
+'javaMM::ArrayInitializer' is a specialization of 'Expression'.
+'javaMM::ReturnStatement' is a specialization of 'Statement'.
+'javaMM::MethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+'javaMM::InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+'javaMM::PrimitiveTypeByte' is a specialization of 'PrimitiveType'.
+'javaMM::BreakStatement' is a specialization of 'Statement'.
+'javaMM::UnresolvedType' is a specialization of 'Type'.
+'javaMM::ClassDeclaration' is a specialization of 'TypeDeclaration'.
+'javaMM::UnresolvedInterfaceDeclaration' is a specialization of 'InterfaceDeclaration'.
+'javaMM::ClassInstanceCreation' is a specialization of 'Expression'.
+'javaMM::VariableDeclarationExpression' is a specialization of 'Expression'.
+'javaMM::CompilationUnit' is a specialization of 'NamedElement'.
+'javaMM::SingleVariableAccess' is a specialization of 'Expression'.
+'javaMM::MethodRef' is a specialization of 'ASTNode'.
+'javaMM::SuperMethodInvocation' is a specialization of 'AbstractTypeQualifiedExpression'.
+'javaMM::FieldDeclaration' is a specialization of 'BodyDeclaration'.
+'javaMM::AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'javaMM::EnumConstantDeclaration' is a specialization of 'VariableDeclaration'.
+'javaMM::PrimitiveTypeLong' is a specialization of 'PrimitiveType'.
+'javaMM::PrimitiveType' is a specialization of 'Type'.
+'javaMM::EmptyStatement' is a specialization of 'Statement'.
+'javaMM::DoStatement' is a specialization of 'Statement'.
+'javaMM::VariableDeclarationFragment' is a specialization of 'VariableDeclaration'.
+'javaMM::UnresolvedItem' is a specialization of 'NamedElement'.
+'javaMM::SuperConstructorInvocation' is a specialization of 'Statement'.
+'javaMM::UnresolvedItemAccess' is a specialization of 'Expression'.
+'javaMM::Initializer' is a specialization of 'BodyDeclaration'.
+'javaMM::SynchronizedStatement' is a specialization of 'Statement'.
+'javaMM::PackageAccess' is a specialization of 'NamespaceAccess'.
+'javaMM::UnresolvedClassDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::CharacterLiteral' is a specialization of 'Expression'.
+'javaMM::ArrayAccess' is a specialization of 'Expression'.
+'javaMM::LabeledStatement' is a specialization of 'NamedElement'.
+'javaMM::PrimitiveTypeDouble' is a specialization of 'PrimitiveType'.
+'javaMM::PrefixExpression' is a specialization of 'Expression'.
+'javaMM::UnresolvedType' is a specialization of 'UnresolvedItem'.
+'javaMM::InfixExpression' is a specialization of 'Expression'.
+'javaMM::ClassInstanceCreation' is a specialization of 'AbstractMethodInvocation'.
+'javaMM::ContinueStatement' is a specialization of 'Statement'.
+'javaMM::UnresolvedEnumDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::ConstructorInvocation' is a specialization of 'AbstractMethodInvocation'.
+'javaMM::NullLiteral' is a specialization of 'Expression'.
+'javaMM::BooleanLiteral' is a specialization of 'Expression'.
+'javaMM::UnresolvedInterfaceDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::ConstructorInvocation' is a specialization of 'Statement'.
+'javaMM::TypeAccess' is a specialization of 'NamespaceAccess'.
+'javaMM::Statement' is a specialization of 'ASTNode'.
+'javaMM::VariableDeclarationExpression' is a specialization of 'AbstractVariablesContainer'.
+'javaMM::PrimitiveTypeFloat' is a specialization of 'PrimitiveType'.
+'javaMM::SuperMethodInvocation' is a specialization of 'AbstractMethodInvocation'.
+'javaMM::SwitchStatement' is a specialization of 'Statement'.
+'javaMM::AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+'javaMM::Javadoc' is a specialization of 'Comment'.
+'javaMM::PrimitiveTypeVoid' is a specialization of 'PrimitiveType'.
+'javaMM::UnresolvedClassDeclaration' is a specialization of 'ClassDeclaration'.
+'javaMM::TryStatement' is a specialization of 'Statement'.
+'javaMM::TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+'javaMM::PrimitiveTypeShort' is a specialization of 'PrimitiveType'.
+'javaMM::UnresolvedMethodDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::Comment' is a specialization of 'ASTNode'.
+'javaMM::BodyDeclaration' is a specialization of 'NamedElement'.
+'javaMM::PrimitiveTypeInt' is a specialization of 'PrimitiveType'.
+'javaMM::UnresolvedAnnotationTypeMemberDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::UnresolvedItemAccess' is a specialization of 'NamespaceAccess'.
+'javaMM::AnnotationTypeMemberDeclaration' is a specialization of 'BodyDeclaration'.
+'javaMM::UnresolvedAnnotationDeclaration' is a specialization of 'AnnotationTypeDeclaration'.
+'javaMM::ParenthesizedExpression' is a specialization of 'Expression'.
+'javaMM::Expression' is a specialization of 'ASTNode'.
+'javaMM::ParameterizedType' is a specialization of 'Type'.
+'javaMM::VariableDeclarationStatement' is a specialization of 'Statement'.
+'javaMM::ConditionalExpression' is a specialization of 'Expression'.
+'javaMM::AbstractTypeDeclaration' is a specialization of 'Type'.
+'javaMM::PrimitiveTypeChar' is a specialization of 'PrimitiveType'.
+'javaMM::UnresolvedSingleVariableDeclaration' is a specialization of 'SingleVariableDeclaration'.
+'javaMM::LineComment' is a specialization of 'Comment'.
+'javaMM::AssertStatement' is a specialization of 'Statement'.
+'javaMM::BlockComment' is a specialization of 'Comment'.
+'javaMM::InstanceofExpression' is a specialization of 'Expression'.
+'javaMM::ArrayType' is a specialization of 'Type'.
+'javaMM::Annotation' is a specialization of 'Expression'.
+'javaMM::UnresolvedAnnotationDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::WildCardType' is a specialization of 'Type'.
+'javaMM::AbstractMethodInvocation' is a specialization of 'ASTNode'.
+'javaMM::UnresolvedMethodDeclaration' is a specialization of 'MethodDeclaration'.
+'javaMM::UnresolvedTypeDeclaration' is a specialization of 'UnresolvedItem'.
+'javaMM::VariableDeclaration' is a specialization of 'NamedElement'.
+'javaMM::MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+'javaMM::CatchClause' is a specialization of 'Statement'.
+'javaMM::Model' (role 'Model', cardinality 0..*) is associated with 'javaMM::Package' (role 'ownedElements262', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression172', cardinality 0..*) is associated with 'javaMM::ForStatement' (role 'javaMM_ForStatement171', cardinality 0..*).
+'javaMM::LabeledStatement' (role 'label', cardinality 0..*) is associated with 'javaMM::BreakStatement' (role 'BreakStatement', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'javaMM_AbstractMethodDeclaration', cardinality 0..*) is associated with 'javaMM::Block' (role 'javaMM_Block', cardinality 0..*).
+'javaMM::AnnotationTypeMemberDeclaration' (role 'javaMM_AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression53', cardinality 0..*).
+'javaMM::ArrayAccess' (role 'javaMM_ArrayAccess', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression62', cardinality 0..*).
+'javaMM::AbstractTypeDeclaration' (role 'javaMM_AbstractTypeDeclaration', cardinality 0..*) is associated with 'javaMM::Comment' (role 'javaMM_Comment', cardinality 0..*).
+'javaMM::IfStatement' (role 'javaMM_IfStatement179', cardinality 0..*) is associated with 'javaMM::Statement' (role 'javaMM_Statement180', cardinality 0..*).
+'javaMM::SynchronizedStatement' (role 'javaMM_SynchronizedStatement318', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression319', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression160', cardinality 0..*) is associated with 'javaMM::ExpressionStatement' (role 'javaMM_ExpressionStatement', cardinality 0..*).
+'javaMM::MethodRef' (role 'javaMM_MethodRef231', cardinality 0..*) is associated with 'javaMM::MethodRefParameter' (role 'javaMM_MethodRefParameter', cardinality 0..*).
+'javaMM::AnnotationTypeMemberDeclaration' (role 'AnnotationTypeMemberDeclaration', cardinality 0..*) is associated with 'javaMM::AnnotationMemberValuePair' (role 'usages48', cardinality 0..*).
+'javaMM::TryStatement' (role 'javaMM_TryStatement328', cardinality 0..*) is associated with 'javaMM::Block' (role 'javaMM_Block329', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression225', cardinality 0..*) is associated with 'javaMM::MethodInvocation' (role 'javaMM_MethodInvocation', cardinality 0..*).
+'javaMM::LabeledStatement' (role 'LabeledStatement', cardinality 0..*) is associated with 'javaMM::BreakStatement' (role 'usagesInBreakStatements', cardinality 0..*).
+'javaMM::AbstractTypeDeclaration' (role 'javaMM_AbstractTypeDeclaration17', cardinality 0..*) is associated with 'javaMM::Comment' (role 'javaMM_Comment18', cardinality 0..*).
+'javaMM::AnnotationMemberValuePair' (role 'javaMM_AnnotationMemberValuePair50', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression51', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression199', cardinality 0..*) is associated with 'javaMM::InstanceofExpression' (role 'javaMM_InstanceofExpression198', cardinality 0..*).
+'javaMM::CatchClause' (role 'CatchClause', cardinality 0..*) is associated with 'javaMM::SingleVariableDeclaration' (role 'exception', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'method8', cardinality 0..*) is associated with 'javaMM::AbstractMethodInvocation' (role 'AbstractMethodInvocation', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression164', cardinality 0..*) is associated with 'javaMM::FieldAccess' (role 'javaMM_FieldAccess163', cardinality 0..*).
+'javaMM::SingleVariableDeclaration' (role 'SingleVariableDeclaration253', cardinality 0..*) is associated with 'javaMM::Modifier' (role 'modifier252', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration', cardinality 0..*) is associated with 'javaMM::AbstractMethodInvocation' (role 'usages', cardinality 0..*).
+'javaMM::ClassFile' (role 'javaMM_ClassFile110', cardinality 0..*) is associated with 'javaMM::Package' (role 'javaMM_Package', cardinality 0..*).
+'javaMM::CastExpression' (role 'javaMM_CastExpression97', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess98', cardinality 0..*).
+'javaMM::Block' (role 'javaMM_Block316', cardinality 0..*) is associated with 'javaMM::SynchronizedStatement' (role 'javaMM_SynchronizedStatement', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression77', cardinality 0..*) is associated with 'javaMM::ArrayLengthAccess' (role 'javaMM_ArrayLengthAccess', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess218', cardinality 0..*) is associated with 'javaMM::MethodDeclaration' (role 'javaMM_MethodDeclaration', cardinality 0..*).
+'javaMM::Archive' (role 'javaMM_Archive34', cardinality 0..*) is associated with 'javaMM::Manifest' (role 'javaMM_Manifest', cardinality 0..*).
+'javaMM::Modifier' (role 'Modifier360', cardinality 0..*) is associated with 'javaMM::VariableDeclarationStatement' (role 'variableDeclarationStatement', cardinality 0..*).
+'javaMM::VariableDeclaration' (role 'variable', cardinality 0..*) is associated with 'javaMM::SingleVariableAccess' (role 'SingleVariableAccess', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression286', cardinality 0..*) is associated with 'javaMM::PrefixExpression' (role 'javaMM_PrefixExpression', cardinality 0..*).
+'javaMM::Type' (role 'javaMM_Type', cardinality 0..*) is associated with 'javaMM::Model' (role 'javaMM_Model', cardinality 0..*).
+'javaMM::EnhancedForStatement' (role 'EnhancedForStatement', cardinality 0..*) is associated with 'javaMM::SingleVariableDeclaration' (role 'parameter', cardinality 0..*).
+'javaMM::ImportDeclaration' (role 'usagesInImports', cardinality 0..*) is associated with 'javaMM::NamedElement' (role 'NamedElement', cardinality 0..*).
+'javaMM::TypeAccess' (role 'usagesInTypeAccess', cardinality 0..*) is associated with 'javaMM::Type' (role 'Type', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression324', cardinality 0..*) is associated with 'javaMM::ThrowStatement' (role 'javaMM_ThrowStatement', cardinality 0..*).
+'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit137', cardinality 0..*) is associated with 'javaMM::AbstractTypeDeclaration' (role 'javaMM_AbstractTypeDeclaration138', cardinality 0..*).
+'javaMM::TagElement' (role 'javaMM_TagElement321', cardinality 0..*) is associated with 'javaMM::ASTNode' (role 'javaMM_ASTNode322', cardinality 0..*).
+'javaMM::Package' (role 'Package266', cardinality 0..*) is associated with 'javaMM::Package' (role 'package265', cardinality 0..*).
+'javaMM::BodyDeclaration' (role 'BodyDeclaration59', cardinality 0..*) is associated with 'javaMM::AnonymousClassDeclaration' (role 'anonymousClassDeclarationOwner', cardinality 0..*).
+'javaMM::ImportDeclaration' (role 'ImportDeclaration', cardinality 0..*) is associated with 'javaMM::NamedElement' (role 'importedElement', cardinality 0..*).
+'javaMM::Package' (role 'Package269', cardinality 0..*) is associated with 'javaMM::Package' (role 'ownedPackages', cardinality 0..*).
+'javaMM::FieldAccess' (role 'javaMM_FieldAccess', cardinality 0..*) is associated with 'javaMM::SingleVariableAccess' (role 'javaMM_SingleVariableAccess', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression75', cardinality 0..*) is associated with 'javaMM::ArrayInitializer' (role 'javaMM_ArrayInitializer74', cardinality 0..*).
+'javaMM::UnresolvedItemAccess' (role 'javaMM_UnresolvedItemAccess349', cardinality 0..*) is associated with 'javaMM::ASTNode' (role 'javaMM_ASTNode350', cardinality 0..*).
+'javaMM::MethodRefParameter' (role 'javaMM_MethodRefParameter233', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess234', cardinality 0..*).
+'javaMM::WhileStatement' (role 'javaMM_WhileStatement', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression366', cardinality 0..*).
+'javaMM::Model' (role 'javaMM_Model239', cardinality 0..*) is associated with 'javaMM::UnresolvedItem' (role 'javaMM_UnresolvedItem', cardinality 0..*).
+'javaMM::AbstractVariablesContainer' (role 'AbstractVariablesContainer', cardinality 0..*) is associated with 'javaMM::VariableDeclarationFragment' (role 'fragments', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess229', cardinality 0..*) is associated with 'javaMM::MethodRef' (role 'javaMM_MethodRef', cardinality 0..*).
+'javaMM::Block' (role 'javaMM_Block92', cardinality 0..*) is associated with 'javaMM::Statement' (role 'javaMM_Statement', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression119', cardinality 0..*) is associated with 'javaMM::ConditionalExpression' (role 'javaMM_ConditionalExpression', cardinality 0..*).
+'javaMM::UnresolvedItemAccess' (role 'javaMM_UnresolvedItemAccess', cardinality 0..*) is associated with 'javaMM::UnresolvedItem' (role 'javaMM_UnresolvedItem347', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression95', cardinality 0..*) is associated with 'javaMM::CastExpression' (role 'javaMM_CastExpression', cardinality 0..*).
+'javaMM::EnumConstantDeclaration' (role 'javaMM_EnumConstantDeclaration', cardinality 0..*) is associated with 'javaMM::AnonymousClassDeclaration' (role 'javaMM_AnonymousClassDeclaration', cardinality 0..*).
+'javaMM::InfixExpression' (role 'javaMM_InfixExpression', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression186', cardinality 0..*).
+'javaMM::AbstractTypeDeclaration' (role 'AbstractTypeDeclaration', cardinality 0..*) is associated with 'javaMM::BodyDeclaration' (role 'bodyDeclarations', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression', cardinality 0..*) is associated with 'javaMM::AbstractMethodInvocation' (role 'javaMM_AbstractMethodInvocation', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'methodDeclaration', cardinality 0..*) is associated with 'javaMM::SingleVariableDeclaration' (role 'SingleVariableDeclaration', cardinality 0..*).
+'javaMM::Model' (role 'javaMM_Model241', cardinality 0..*) is associated with 'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit242', cardinality 0..*).
+'javaMM::EnhancedForStatement' (role 'javaMM_EnhancedForStatement149', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression150', cardinality 0..*).
+'javaMM::BodyDeclaration' (role 'BodyDeclaration250', cardinality 0..*) is associated with 'javaMM::Modifier' (role 'modifier', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression166', cardinality 0..*) is associated with 'javaMM::ForStatement' (role 'javaMM_ForStatement', cardinality 0..*).
+'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit134', cardinality 0..*) is associated with 'javaMM::Package' (role 'javaMM_Package135', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression311', cardinality 0..*) is associated with 'javaMM::SwitchStatement' (role 'javaMM_SwitchStatement', cardinality 0..*).
+'javaMM::Model' (role 'javaMM_Model247', cardinality 0..*) is associated with 'javaMM::Archive' (role 'javaMM_Archive248', cardinality 0..*).
+'javaMM::PackageAccess' (role 'javaMM_PackageAccess274', cardinality 0..*) is associated with 'javaMM::PackageAccess' (role 'javaMM_PackageAccess', cardinality 0..*).
+'javaMM::NamespaceAccess' (role 'javaMM_NamespaceAccess', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess336', cardinality 0..*).
+'javaMM::EnhancedForStatement' (role 'javaMM_EnhancedForStatement', cardinality 0..*) is associated with 'javaMM::Statement' (role 'javaMM_Statement147', cardinality 0..*).
+'javaMM::AbstractTypeDeclaration' (role 'javaMM_AbstractTypeDeclaration105', cardinality 0..*) is associated with 'javaMM::ClassFile' (role 'javaMM_ClassFile104', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess56', cardinality 0..*) is associated with 'javaMM::AnnotationTypeMemberDeclaration' (role 'javaMM_AnnotationTypeMemberDeclaration55', cardinality 0..*).
+'javaMM::SingleVariableDeclaration' (role 'parameters', cardinality 0..*) is associated with 'javaMM::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration301', cardinality 0..*).
+'javaMM::Block' (role 'javaMM_Block194', cardinality 0..*) is associated with 'javaMM::Initializer' (role 'javaMM_Initializer', cardinality 0..*).
+'javaMM::NamedElement' (role 'javaMM_NamedElement', cardinality 0..*) is associated with 'javaMM::MemberRef' (role 'javaMM_MemberRef', cardinality 0..*).
+'javaMM::WhileStatement' (role 'javaMM_WhileStatement368', cardinality 0..*) is associated with 'javaMM::Statement' (role 'javaMM_Statement369', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess216', cardinality 0..*) is associated with 'javaMM::MemberRef' (role 'javaMM_MemberRef215', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression125', cardinality 0..*) is associated with 'javaMM::ConditionalExpression' (role 'javaMM_ConditionalExpression124', cardinality 0..*).
+'javaMM::ClassInstanceCreation' (role 'ClassInstanceCreation', cardinality 0..*) is associated with 'javaMM::AnonymousClassDeclaration' (role 'anonymousClassDeclaration', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression309', cardinality 0..*) is associated with 'javaMM::SwitchCase' (role 'javaMM_SwitchCase', cardinality 0..*).
+'javaMM::ImportDeclaration' (role 'javaMM_ImportDeclaration', cardinality 0..*) is associated with 'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit132', cardinality 0..*).
+'javaMM::TypeParameter' (role 'javaMM_TypeParameter338', cardinality 0..*) is associated with 'javaMM::TypeDeclaration' (role 'javaMM_TypeDeclaration', cardinality 0..*).
+'javaMM::BodyDeclaration' (role 'bodyDeclaration', cardinality 0..*) is associated with 'javaMM::Modifier' (role 'Modifier', cardinality 0..*).
+'javaMM::DoStatement' (role 'javaMM_DoStatement144', cardinality 0..*) is associated with 'javaMM::Statement' (role 'javaMM_Statement145', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression65', cardinality 0..*) is associated with 'javaMM::ArrayAccess' (role 'javaMM_ArrayAccess64', cardinality 0..*).
+'javaMM::AbstractVariablesContainer' (role 'javaMM_AbstractVariablesContainer', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess26', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression122', cardinality 0..*) is associated with 'javaMM::ConditionalExpression' (role 'javaMM_ConditionalExpression121', cardinality 0..*).
+'javaMM::Modifier' (role 'Modifier294', cardinality 0..*) is associated with 'javaMM::SingleVariableDeclaration' (role 'singleVariableDeclaration', cardinality 0..*).
+'javaMM::Package' (role 'Package', cardinality 0..*) is associated with 'javaMM::AbstractTypeDeclaration' (role 'ownedElements', cardinality 0..*).
+'javaMM::EnumDeclaration' (role 'javaMM_EnumDeclaration', cardinality 0..*) is associated with 'javaMM::EnumConstantDeclaration' (role 'javaMM_EnumConstantDeclaration158', cardinality 0..*).
+'javaMM::Comment' (role 'javaMM_Comment41', cardinality 0..*) is associated with 'javaMM::ASTNode' (role 'javaMM_ASTNode', cardinality 0..*).
+'javaMM::SingleVariableDeclaration' (role 'javaMM_SingleVariableDeclaration298', cardinality 0..*) is associated with 'javaMM::Annotation' (role 'javaMM_Annotation299', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression169', cardinality 0..*) is associated with 'javaMM::ForStatement' (role 'javaMM_ForStatement168', cardinality 0..*).
+'javaMM::ArrayCreation' (role 'javaMM_ArrayCreation', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression67', cardinality 0..*).
+'javaMM::Comment' (role 'javaMM_Comment130', cardinality 0..*) is associated with 'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit129', cardinality 0..*).
+'javaMM::VariableDeclarationStatement' (role 'VariableDeclarationStatement', cardinality 0..*) is associated with 'javaMM::Modifier' (role 'modifier255', cardinality 0..*).
+'javaMM::ClassInstanceCreation' (role 'classInstanceCreation', cardinality 0..*) is associated with 'javaMM::AnonymousClassDeclaration' (role 'AnonymousClassDeclaration112', cardinality 0..*).
+'javaMM::TagElement' (role 'javaMM_TagElement', cardinality 0..*) is associated with 'javaMM::Javadoc' (role 'javaMM_Javadoc', cardinality 0..*).
+'javaMM::Package' (role 'package', cardinality 0..*) is associated with 'javaMM::AbstractTypeDeclaration' (role 'AbstractTypeDeclaration260', cardinality 0..*).
+'javaMM::InfixExpression' (role 'javaMM_InfixExpression191', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression192', cardinality 0..*).
+'javaMM::VariableDeclarationExpression' (role 'variableDeclarationExpression', cardinality 0..*) is associated with 'javaMM::Modifier' (role 'Modifier355', cardinality 0..*).
+'javaMM::ManifestEntry' (role 'javaMM_ManifestEntry211', cardinality 0..*) is associated with 'javaMM::ManifestAttribute' (role 'javaMM_ManifestAttribute212', cardinality 0..*).
+'javaMM::Annotation' (role 'javaMM_Annotation87', cardinality 0..*) is associated with 'javaMM::BodyDeclaration' (role 'javaMM_BodyDeclaration', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression352', cardinality 0..*) is associated with 'javaMM::VariableDeclaration' (role 'javaMM_VariableDeclaration', cardinality 0..*).
+'javaMM::ClassFile' (role 'javaMM_ClassFile107', cardinality 0..*) is associated with 'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit108', cardinality 0..*).
+'javaMM::MethodDeclaration' (role 'MethodDeclaration', cardinality 0..*) is associated with 'javaMM::MethodDeclaration' (role 'redefinitions', cardinality 0..*).
+'javaMM::Block' (role 'javaMM_Block326', cardinality 0..*) is associated with 'javaMM::TryStatement' (role 'javaMM_TryStatement', cardinality 0..*).
+'javaMM::Annotation' (role 'javaMM_Annotation362', cardinality 0..*) is associated with 'javaMM::VariableDeclarationStatement' (role 'javaMM_VariableDeclarationStatement', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess342', cardinality 0..*) is associated with 'javaMM::TypeLiteral' (role 'javaMM_TypeLiteral', cardinality 0..*).
+'javaMM::Assignment' (role 'javaMM_Assignment', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression81', cardinality 0..*).
+'javaMM::SuperConstructorInvocation' (role 'javaMM_SuperConstructorInvocation', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression305', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression84', cardinality 0..*) is associated with 'javaMM::Assignment' (role 'javaMM_Assignment83', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess29', cardinality 0..*) is associated with 'javaMM::Annotation' (role 'javaMM_Annotation', cardinality 0..*).
+'javaMM::ArrayInitializer' (role 'javaMM_ArrayInitializer', cardinality 0..*) is associated with 'javaMM::ArrayCreation' (role 'javaMM_ArrayCreation69', cardinality 0..*).
+'javaMM::InstanceofExpression' (role 'javaMM_InstanceofExpression', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess196', cardinality 0..*).
+'javaMM::CatchClause' (role 'javaMM_CatchClause332', cardinality 0..*) is associated with 'javaMM::TryStatement' (role 'javaMM_TryStatement331', cardinality 0..*).
+'javaMM::AnnotationTypeMemberDeclaration' (role 'member', cardinality 0..*) is associated with 'javaMM::AnnotationMemberValuePair' (role 'AnnotationMemberValuePair', cardinality 0..*).
+'javaMM::CompilationUnit' (role 'javaMM_CompilationUnit', cardinality 0..*) is associated with 'javaMM::ASTNode' (role 'javaMM_ASTNode43', cardinality 0..*).
+'javaMM::VariableDeclarationFragment' (role 'VariableDeclarationFragment', cardinality 0..*) is associated with 'javaMM::AbstractVariablesContainer' (role 'variablesContainer', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess', cardinality 0..*) is associated with 'javaMM::AbstractMethodDeclaration' (role 'javaMM_AbstractMethodDeclaration3', cardinality 0..*).
+'javaMM::ReturnStatement' (role 'javaMM_ReturnStatement', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression288', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'method', cardinality 0..*) is associated with 'javaMM::MethodRef' (role 'MethodRef', cardinality 0..*).
+'javaMM::TypeAccess' (role 'TypeAccess', cardinality 0..*) is associated with 'javaMM::Type' (role 'type', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess277', cardinality 0..*) is associated with 'javaMM::ParameterizedType' (role 'javaMM_ParameterizedType', cardinality 0..*).
+'javaMM::Package' (role 'package271', cardinality 0..*) is associated with 'javaMM::PackageAccess' (role 'PackageAccess', cardinality 0..*).
+'javaMM::SingleVariableAccess' (role 'javaMM_SingleVariableAccess291', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression292', cardinality 0..*).
+'javaMM::Statement' (role 'javaMM_Statement202', cardinality 0..*) is associated with 'javaMM::LabeledStatement' (role 'javaMM_LabeledStatement', cardinality 0..*).
+'javaMM::PackageAccess' (role 'usagesInPackageAccess', cardinality 0..*) is associated with 'javaMM::Package' (role 'Package273', cardinality 0..*).
+'javaMM::IfStatement' (role 'javaMM_IfStatement', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression177', cardinality 0..*).
+'javaMM::BodyDeclaration' (role 'BodyDeclaration', cardinality 0..*) is associated with 'javaMM::AbstractTypeDeclaration' (role 'abstractTypeDeclaration', cardinality 0..*).
+'javaMM::ClassFile' (role 'javaMM_ClassFile46', cardinality 0..*) is associated with 'javaMM::ASTNode' (role 'javaMM_ASTNode45', cardinality 0..*).
+'javaMM::SingleVariableDeclaration' (role 'SingleVariableDeclaration100', cardinality 0..*) is associated with 'javaMM::CatchClause' (role 'catchClause', cardinality 0..*).
+'javaMM::ClassDeclaration' (role 'javaMM_ClassDeclaration', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess127', cardinality 0..*).
+'javaMM::AbstractTypeDeclaration' (role 'javaMM_AbstractTypeDeclaration340', cardinality 0..*) is associated with 'javaMM::TypeDeclarationStatement' (role 'javaMM_TypeDeclarationStatement', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression284', cardinality 0..*) is associated with 'javaMM::PostfixExpression' (role 'javaMM_PostfixExpression', cardinality 0..*).
+'javaMM::Archive' (role 'javaMM_Archive', cardinality 0..*) is associated with 'javaMM::ClassFile' (role 'javaMM_ClassFile', cardinality 0..*).
+'javaMM::ContinueStatement' (role 'usagesInContinueStatements', cardinality 0..*) is associated with 'javaMM::LabeledStatement' (role 'LabeledStatement140', cardinality 0..*).
+'javaMM::Model' (role 'javaMM_Model244', cardinality 0..*) is associated with 'javaMM::ClassFile' (role 'javaMM_ClassFile245', cardinality 0..*).
+'javaMM::Annotation' (role 'javaMM_Annotation31', cardinality 0..*) is associated with 'javaMM::AnnotationMemberValuePair' (role 'javaMM_AnnotationMemberValuePair', cardinality 0..*).
+'javaMM::LabeledStatement' (role 'label205', cardinality 0..*) is associated with 'javaMM::ContinueStatement' (role 'ContinueStatement', cardinality 0..*).
+'javaMM::VariableDeclarationExpression' (role 'VariableDeclarationExpression', cardinality 0..*) is associated with 'javaMM::Modifier' (role 'modifier257', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression142', cardinality 0..*) is associated with 'javaMM::DoStatement' (role 'javaMM_DoStatement', cardinality 0..*).
+'javaMM::SingleVariableDeclaration' (role 'javaMM_SingleVariableDeclaration', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess296', cardinality 0..*).
+'javaMM::ManifestEntry' (role 'javaMM_ManifestEntry', cardinality 0..*) is associated with 'javaMM::Manifest' (role 'javaMM_Manifest209', cardinality 0..*).
+'javaMM::AbstractMethodInvocation' (role 'javaMM_AbstractMethodInvocation12', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess13', cardinality 0..*).
+'javaMM::VariableDeclarationExpression' (role 'javaMM_VariableDeclarationExpression', cardinality 0..*) is associated with 'javaMM::Annotation' (role 'javaMM_Annotation357', cardinality 0..*).
+'javaMM::Package' (role 'Package236', cardinality 0..*) is associated with 'javaMM::Model' (role 'model', cardinality 0..*).
+'javaMM::AbstractTypeDeclaration' (role 'javaMM_AbstractTypeDeclaration21', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess22', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'javaMM_AbstractMethodDeclaration5', cardinality 0..*) is associated with 'javaMM::TypeParameter' (role 'javaMM_TypeParameter', cardinality 0..*).
+'javaMM::Statement' (role 'javaMM_Statement175', cardinality 0..*) is associated with 'javaMM::ForStatement' (role 'javaMM_ForStatement174', cardinality 0..*).
+'javaMM::IfStatement' (role 'javaMM_IfStatement182', cardinality 0..*) is associated with 'javaMM::Statement' (role 'javaMM_Statement183', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess24', cardinality 0..*) is associated with 'javaMM::AbstractTypeQualifiedExpression' (role 'javaMM_AbstractTypeQualifiedExpression', cardinality 0..*).
+'javaMM::MethodDeclaration' (role 'MethodDeclaration223', cardinality 0..*) is associated with 'javaMM::MethodDeclaration' (role 'redefinedMethodDeclaration', cardinality 0..*).
+'javaMM::ParameterizedType' (role 'javaMM_ParameterizedType279', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess280', cardinality 0..*).
+'javaMM::ArrayType' (role 'javaMM_ArrayType', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess79', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression114', cardinality 0..*) is associated with 'javaMM::ClassInstanceCreation' (role 'javaMM_ClassInstanceCreation', cardinality 0..*).
+'javaMM::AssertStatement' (role 'javaMM_AssertStatement', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression36', cardinality 0..*).
+'javaMM::SingleVariableDeclaration' (role 'SingleVariableDeclaration152', cardinality 0..*) is associated with 'javaMM::EnhancedForStatement' (role 'enhancedForStatement', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess72', cardinality 0..*) is associated with 'javaMM::ArrayCreation' (role 'javaMM_ArrayCreation71', cardinality 0..*).
+'javaMM::ClassInstanceCreation' (role 'javaMM_ClassInstanceCreation116', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess117', cardinality 0..*).
+'javaMM::ManifestAttribute' (role 'javaMM_ManifestAttribute', cardinality 0..*) is associated with 'javaMM::Manifest' (role 'javaMM_Manifest207', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression189', cardinality 0..*) is associated with 'javaMM::InfixExpression' (role 'javaMM_InfixExpression188', cardinality 0..*).
+'javaMM::AbstractMethodDeclaration' (role 'AbstractMethodDeclaration227', cardinality 0..*) is associated with 'javaMM::MethodRef' (role 'usagesInDocComments', cardinality 0..*).
+'javaMM::Expression' (role 'javaMM_Expression282', cardinality 0..*) is associated with 'javaMM::ParenthesizedExpression' (role 'javaMM_ParenthesizedExpression', cardinality 0..*).
+'javaMM::SingleVariableAccess' (role 'javaMM_SingleVariableAccess307', cardinality 0..*) is associated with 'javaMM::SuperFieldAccess' (role 'javaMM_SuperFieldAccess', cardinality 0..*).
+'javaMM::CatchClause' (role 'javaMM_CatchClause', cardinality 0..*) is associated with 'javaMM::Block' (role 'javaMM_Block102', cardinality 0..*).
+'javaMM::AssertStatement' (role 'javaMM_AssertStatement38', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression39', cardinality 0..*).
+'javaMM::VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'javaMM::SingleVariableAccess' (role 'usageInVariableAccess', cardinality 0..*).
+'javaMM::Statement' (role 'javaMM_Statement314', cardinality 0..*) is associated with 'javaMM::SwitchStatement' (role 'javaMM_SwitchStatement313', cardinality 0..*).
+'javaMM::TypeAccess' (role 'javaMM_TypeAccess345', cardinality 0..*) is associated with 'javaMM::TypeParameter' (role 'javaMM_TypeParameter344', cardinality 0..*).
+'javaMM::EnumConstantDeclaration' (role 'javaMM_EnumConstantDeclaration155', cardinality 0..*) is associated with 'javaMM::Expression' (role 'javaMM_Expression156', cardinality 0..*).
+'javaMM::WildCardType' (role 'javaMM_WildCardType', cardinality 0..*) is associated with 'javaMM::TypeAccess' (role 'javaMM_TypeAccess364', cardinality 0..*).
+'javaMM::AnonymousClassDeclaration' (role 'AnonymousClassDeclaration', cardinality 0..*) is associated with 'javaMM::BodyDeclaration' (role 'bodyDeclarations89', cardinality 0..*).
