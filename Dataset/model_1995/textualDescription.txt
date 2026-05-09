@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'trace::EStructuralFeature' has no attributes.
+The class 'trace::EAttribute' has no attributes.
+The class 'trace::ReferenceMapping' has the following attributes: 'type' of type str.
+The class 'trace::ClassMapping' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::AttributeMapping' has no attributes.
+The class 'trace::EPackage' has no attributes.
+The class 'trace::EReference' has no attributes.
+The class 'trace::EClass' has no attributes.
+The enumeration 'ReferenceMappingType' has the following literals: 'NONE', 'MAPPED', 'TRANSLATED'.
+'trace::EClass' (role 'trace_EClass20', cardinality 0..*) is associated with 'trace::ClassMapping' (role 'trace_ClassMapping19', cardinality 0..*).
+'trace::EClass' (role 'trace_EClass', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace5', cardinality 0..*).
+'trace::ClassMapping' (role 'trace_ClassMapping16', cardinality 0..*) is associated with 'trace::EClass' (role 'trace_EClass17', cardinality 0..*).
+'trace::EPackage' (role 'trace_EPackage3', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace2', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace12', cardinality 0..*) is associated with 'trace::AttributeMapping' (role 'trace_AttributeMapping', cardinality 0..*).
+'trace::EAttribute' (role 'trace_EAttribute', cardinality 0..*) is associated with 'trace::AttributeMapping' (role 'trace_AttributeMapping22', cardinality 0..*).
+'trace::ReferenceMapping' (role 'trace_ReferenceMapping', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace14', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace7', cardinality 0..*) is associated with 'trace::EClass' (role 'trace_EClass8', cardinality 0..*).
+'trace::EAttribute' (role 'trace_EAttribute25', cardinality 0..*) is associated with 'trace::AttributeMapping' (role 'trace_AttributeMapping24', cardinality 0..*).
+'trace::EPackage' (role 'trace_EPackage', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).
+'trace::ReferenceMapping' (role 'trace_ReferenceMapping27', cardinality 0..*) is associated with 'trace::EReference' (role 'trace_EReference', cardinality 0..*).
+'trace::EStructuralFeature' (role 'trace_EStructuralFeature', cardinality 0..*) is associated with 'trace::ReferenceMapping' (role 'trace_ReferenceMapping29', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace10', cardinality 0..*) is associated with 'trace::ClassMapping' (role 'trace_ClassMapping', cardinality 0..*).

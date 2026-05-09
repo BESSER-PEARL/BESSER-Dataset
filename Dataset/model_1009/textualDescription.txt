@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'fsm::tp::Transition' has the following attributes: 'name' of type str; 'trigger' of type str.
+The class 'fsm::tp::InitialState' has no attributes.
+The class 'State' has no attributes.
+The class 'fsm::tp::FSM' has the following attributes: 'name' of type str.
+The class 'fsm::tp::State' has the following attributes: 'isFinal' of type bool; 'name' of type str.
+'fsm::tp::InitialState' is a specialization of 'State'.
+'fsm::tp::InitialState' (role 'fsm_tp_InitialState', cardinality 0..*) is associated with 'fsm::tp::FSM' (role 'fsm_tp_FSM4', cardinality 0..*).
+'fsm::tp::FSM' (role 'fsm_tp_FSM2', cardinality 0..*) is associated with 'fsm::tp::Transition' (role 'fsm_tp_Transition', cardinality 0..*).
+'fsm::tp::State' (role 'fsm_tp_State', cardinality 0..*) is associated with 'fsm::tp::FSM' (role 'fsm_tp_FSM', cardinality 0..*).
+'fsm::tp::State' (role 'fsm_tp_State10', cardinality 0..*) is associated with 'fsm::tp::Transition' (role 'fsm_tp_Transition9', cardinality 0..*).
+'fsm::tp::State' (role 'fsm_tp_State7', cardinality 0..*) is associated with 'fsm::tp::Transition' (role 'fsm_tp_Transition6', cardinality 0..*).

@@ -1,0 +1,116 @@
+The model has 53 class(es).
+The class 'oclinEcoreCST::AttributeCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'oclinEcoreCST::TypeParameterCS' has no attributes.
+The class 'ClassRef' has no attributes.
+The class 'ClassifierCS' has no attributes.
+The class 'ReferenceRef' has no attributes.
+The class 'oclinEcoreCST::DataTypeRef' has no attributes.
+The class 'oclinEcoreCST::ClassRef' has no attributes.
+The class 'oclinEcoreCST::ClassifierCS' has the following attributes: 'qualifiers' of type str; 'instanceClassName' of type str.
+The class 'oclinEcoreCST::StructuralFeatureCS' has no attributes.
+The class 'oclinEcoreCST::AttributeRef' has no attributes.
+The class 'oclinEcoreCST::EnumLiteralCS' has the following attributes: 'value' of type int.
+The class 'oclinEcoreCST::EClassRef' has no attributes.
+The class 'oclinEcoreCST::DataTypeOrEnumCS' has no attributes.
+The class 'oclinEcoreCST::EClass' has no attributes.
+The class 'DataTypeOrEnumCS' has no attributes.
+The class 'oclinEcoreCST::TypedElementCS' has the following attributes: 'multiplicity' of type str; 'upper' of type int; 'qualifiers' of type str; 'lower' of type int.
+The class 'oclinEcoreCST::EAttribute' has no attributes.
+The class 'oclinEcoreCST::ParameterCS' has no attributes.
+The class 'oclinEcoreCST::ClassCS' has no attributes.
+The class 'oclinEcoreCST::DataTypeCS' has no attributes.
+The class 'TypedElementCS' has no attributes.
+The class 'ModelElementCS' has no attributes.
+The class 'oclinEcoreCST::EDataTypeRef' has no attributes.
+The class 'oclinEcoreCST::OperationCS' has no attributes.
+The class 'oclinEcoreCST::ImportCS' has the following attributes: 'importedNamespace' of type str.
+The class 'oclinEcoreCST::ReferenceCS' has the following attributes: 'containment' of type bool.
+The class 'AttributeRef' has no attributes.
+The class 'oclinEcoreCST::PackageCS' has no attributes.
+The class 'oclinEcoreCST::OclExpressionCS' has no attributes.
+The class 'oclinEcoreCST::ClassifierCSRef' has no attributes.
+The class 'oclinEcoreCST::AnnotationCS' has the following attributes: 'stringSource' of type str; 'idSource' of type str.
+The class 'oclinEcoreCST::EDataType' has no attributes.
+The class 'oclinEcoreCST::ReferenceRef' has no attributes.
+The class 'oclinEcoreCST::ReferenceCSRef' has no attributes.
+The class 'oclinEcoreCST::ClassifierRef' has no attributes.
+The class 'oclinEcoreCST::EClassifierRef' has no attributes.
+The class 'oclinEcoreCST::EReferenceRef' has no attributes.
+The class 'oclinEcoreCST::EReference' has no attributes.
+The class 'oclinEcoreCST::NamedElementCS' has the following attributes: 'name' of type str.
+The class 'oclinEcoreCST::AttributeCSRef' has no attributes.
+The class 'DataTypeRef' has no attributes.
+The class 'oclinEcoreCST::EClassifier' has no attributes.
+The class 'oclinEcoreCST::ModelElementCS' has no attributes.
+The class 'oclinEcoreCST::DocumentCS' has no attributes.
+The class 'oclinEcoreCST::DataTypeCSRef' has no attributes.
+The class 'StructuralFeatureCS' has no attributes.
+The class 'oclinEcoreCST::DetailCS' has the following attributes: 'value' of type str; 'idName' of type str; 'stringName' of type str.
+The class 'oclinEcoreCST::EAttributeRef' has no attributes.
+The class 'oclinEcoreCST::ConstraintCS' has the following attributes: 'stereotype' of type str.
+The class 'oclinEcoreCST::ClassCSRef' has no attributes.
+The class 'ClassifierRef' has no attributes.
+The class 'oclinEcoreCST::EnumCS' has no attributes.
+'oclinEcoreCST::ClassifierCSRef' is a specialization of 'ClassifierRef'.
+'oclinEcoreCST::DataTypeOrEnumCS' is a specialization of 'ClassifierCS'.
+'oclinEcoreCST::TypedElementCS' is a specialization of 'NamedElementCS'.
+'oclinEcoreCST::ClassifierCS' is a specialization of 'NamedElementCS'.
+'oclinEcoreCST::EClassifierRef' is a specialization of 'ClassifierRef'.
+'oclinEcoreCST::EnumCS' is a specialization of 'DataTypeOrEnumCS'.
+'oclinEcoreCST::AnnotationCS' is a specialization of 'ModelElementCS'.
+'oclinEcoreCST::EAttributeRef' is a specialization of 'AttributeRef'.
+'oclinEcoreCST::ClassCS' is a specialization of 'ClassifierCS'.
+'oclinEcoreCST::PackageCS' is a specialization of 'NamedElementCS'.
+'oclinEcoreCST::OperationCS' is a specialization of 'TypedElementCS'.
+'oclinEcoreCST::NamedElementCS' is a specialization of 'ModelElementCS'.
+'oclinEcoreCST::ClassRef' is a specialization of 'ClassifierRef'.
+'oclinEcoreCST::EDataTypeRef' is a specialization of 'DataTypeRef'.
+'oclinEcoreCST::ParameterCS' is a specialization of 'TypedElementCS'.
+'oclinEcoreCST::ClassCSRef' is a specialization of 'ClassRef'.
+'oclinEcoreCST::ReferenceCSRef' is a specialization of 'ReferenceRef'.
+'oclinEcoreCST::StructuralFeatureCS' is a specialization of 'TypedElementCS'.
+'oclinEcoreCST::AttributeCS' is a specialization of 'StructuralFeatureCS'.
+'oclinEcoreCST::AttributeCSRef' is a specialization of 'AttributeRef'.
+'oclinEcoreCST::ReferenceCS' is a specialization of 'StructuralFeatureCS'.
+'oclinEcoreCST::EClassRef' is a specialization of 'ClassRef'.
+'oclinEcoreCST::TypeParameterCS' is a specialization of 'NamedElementCS'.
+'oclinEcoreCST::EReferenceRef' is a specialization of 'ReferenceRef'.
+'oclinEcoreCST::EnumLiteralCS' is a specialization of 'NamedElementCS'.
+'oclinEcoreCST::DataTypeCSRef' is a specialization of 'DataTypeRef'.
+'oclinEcoreCST::DataTypeCS' is a specialization of 'DataTypeOrEnumCS'.
+'oclinEcoreCST::ConstraintCS' is a specialization of 'NamedElementCS'.
+'oclinEcoreCST::DataTypeRef' is a specialization of 'ClassifierRef'.
+'oclinEcoreCST::ClassifierRef' (role 'oclinEcoreCST_ClassifierRef', cardinality 0..*) is associated with 'oclinEcoreCST::OperationCS' (role 'oclinEcoreCST_OperationCS37', cardinality 0..*).
+'oclinEcoreCST::ConstraintCS' (role 'oclinEcoreCST_ConstraintCS30', cardinality 0..*) is associated with 'oclinEcoreCST::OperationCS' (role 'oclinEcoreCST_OperationCS29', cardinality 0..*).
+'oclinEcoreCST::EReferenceRef' (role 'oclinEcoreCST_EReferenceRef', cardinality 0..*) is associated with 'oclinEcoreCST::EReference' (role 'oclinEcoreCST_EReference', cardinality 0..*).
+'oclinEcoreCST::ClassifierCS' (role 'oclinEcoreCST_ClassifierCS11', cardinality 0..*) is associated with 'oclinEcoreCST::TypeParameterCS' (role 'oclinEcoreCST_TypeParameterCS', cardinality 0..*).
+'oclinEcoreCST::ClassCSRef' (role 'oclinEcoreCST_ClassCSRef', cardinality 0..*) is associated with 'oclinEcoreCST::ClassCS' (role 'oclinEcoreCST_ClassCS8', cardinality 0..*).
+'oclinEcoreCST::TypedElementCS' (role 'oclinEcoreCST_TypedElementCS', cardinality 0..*) is associated with 'oclinEcoreCST::ClassifierRef' (role 'oclinEcoreCST_ClassifierRef53', cardinality 0..*).
+'oclinEcoreCST::ImportCS' (role 'oclinEcoreCST_ImportCS', cardinality 0..*) is associated with 'oclinEcoreCST::DocumentCS' (role 'oclinEcoreCST_DocumentCS', cardinality 0..*).
+'oclinEcoreCST::TypeParameterCS' (role 'oclinEcoreCST_TypeParameterCS55', cardinality 0..*) is associated with 'oclinEcoreCST::ClassifierRef' (role 'oclinEcoreCST_ClassifierRef56', cardinality 0..*).
+'oclinEcoreCST::StructuralFeatureCS' (role 'oclinEcoreCST_StructuralFeatureCS', cardinality 0..*) is associated with 'oclinEcoreCST::ClassCS' (role 'oclinEcoreCST_ClassCS6', cardinality 0..*).
+'oclinEcoreCST::TypeParameterCS' (role 'oclinEcoreCST_TypeParameterCS58', cardinality 0..*) is associated with 'oclinEcoreCST::ClassifierRef' (role 'oclinEcoreCST_ClassifierRef59', cardinality 0..*).
+'oclinEcoreCST::OperationCS' (role 'oclinEcoreCST_OperationCS', cardinality 0..*) is associated with 'oclinEcoreCST::ClassCS' (role 'oclinEcoreCST_ClassCS4', cardinality 0..*).
+'oclinEcoreCST::PackageCS' (role 'oclinEcoreCST_PackageCS39', cardinality 0..*) is associated with 'oclinEcoreCST::ClassifierCS' (role 'oclinEcoreCST_ClassifierCS40', cardinality 0..*).
+'oclinEcoreCST::AttributeCSRef' (role 'oclinEcoreCST_AttributeCSRef', cardinality 0..*) is associated with 'oclinEcoreCST::AttributeCS' (role 'oclinEcoreCST_AttributeCS', cardinality 0..*).
+'oclinEcoreCST::TypeParameterCS' (role 'oclinEcoreCST_TypeParameterCS35', cardinality 0..*) is associated with 'oclinEcoreCST::OperationCS' (role 'oclinEcoreCST_OperationCS34', cardinality 0..*).
+'oclinEcoreCST::DataTypeCSRef' (role 'oclinEcoreCST_DataTypeCSRef', cardinality 0..*) is associated with 'oclinEcoreCST::DataTypeOrEnumCS' (role 'oclinEcoreCST_DataTypeOrEnumCS', cardinality 0..*).
+'oclinEcoreCST::ConstraintCS' (role 'oclinEcoreCST_ConstraintCS', cardinality 0..*) is associated with 'oclinEcoreCST::ClassifierCS' (role 'oclinEcoreCST_ClassifierCS', cardinality 0..*).
+'oclinEcoreCST::ReferenceCSRef' (role 'oclinEcoreCST_ReferenceCSRef', cardinality 0..*) is associated with 'oclinEcoreCST::ReferenceCS' (role 'oclinEcoreCST_ReferenceCS48', cardinality 0..*).
+'oclinEcoreCST::ConstraintCS' (role 'oclinEcoreCST_ConstraintCS51', cardinality 0..*) is associated with 'oclinEcoreCST::StructuralFeatureCS' (role 'oclinEcoreCST_StructuralFeatureCS50', cardinality 0..*).
+'oclinEcoreCST::EClassifierRef' (role 'oclinEcoreCST_EClassifierRef', cardinality 0..*) is associated with 'oclinEcoreCST::EClassifier' (role 'oclinEcoreCST_EClassifier', cardinality 0..*).
+'oclinEcoreCST::ReferenceCS' (role 'oclinEcoreCST_ReferenceCS46', cardinality 0..*) is associated with 'oclinEcoreCST::AttributeRef' (role 'oclinEcoreCST_AttributeRef', cardinality 0..*).
+'oclinEcoreCST::AnnotationCS' (role 'oclinEcoreCST_AnnotationCS27', cardinality 0..*) is associated with 'oclinEcoreCST::ModelElementCS' (role 'oclinEcoreCST_ModelElementCS', cardinality 0..*).
+'oclinEcoreCST::OperationCS' (role 'oclinEcoreCST_OperationCS32', cardinality 0..*) is associated with 'oclinEcoreCST::ParameterCS' (role 'oclinEcoreCST_ParameterCS', cardinality 0..*).
+'oclinEcoreCST::ClassifierCSRef' (role 'oclinEcoreCST_ClassifierCSRef', cardinality 0..*) is associated with 'oclinEcoreCST::ClassifierCS' (role 'oclinEcoreCST_ClassifierCS13', cardinality 0..*).
+'oclinEcoreCST::ConstraintCS' (role 'oclinEcoreCST_ConstraintCS15', cardinality 0..*) is associated with 'oclinEcoreCST::OclExpressionCS' (role 'oclinEcoreCST_OclExpressionCS', cardinality 0..*).
+'oclinEcoreCST::DetailCS' (role 'oclinEcoreCST_DetailCS', cardinality 0..*) is associated with 'oclinEcoreCST::AnnotationCS' (role 'oclinEcoreCST_AnnotationCS', cardinality 0..*).
+'oclinEcoreCST::EClassRef' (role 'oclinEcoreCST_EClassRef', cardinality 0..*) is associated with 'oclinEcoreCST::EClass' (role 'oclinEcoreCST_EClass', cardinality 0..*).
+'oclinEcoreCST::EnumLiteralCS' (role 'oclinEcoreCST_EnumLiteralCS', cardinality 0..*) is associated with 'oclinEcoreCST::EnumCS' (role 'oclinEcoreCST_EnumCS', cardinality 0..*).
+'oclinEcoreCST::EDataTypeRef' (role 'oclinEcoreCST_EDataTypeRef', cardinality 0..*) is associated with 'oclinEcoreCST::EDataType' (role 'oclinEcoreCST_EDataType', cardinality 0..*).
+'oclinEcoreCST::DocumentCS' (role 'oclinEcoreCST_DocumentCS19', cardinality 0..*) is associated with 'oclinEcoreCST::PackageCS' (role 'oclinEcoreCST_PackageCS', cardinality 0..*).
+'oclinEcoreCST::EAttributeRef' (role 'oclinEcoreCST_EAttributeRef', cardinality 0..*) is associated with 'oclinEcoreCST::EAttribute' (role 'oclinEcoreCST_EAttribute', cardinality 0..*).
+'oclinEcoreCST::ReferenceCS' (role 'oclinEcoreCST_ReferenceCS', cardinality 0..*) is associated with 'oclinEcoreCST::ReferenceRef' (role 'oclinEcoreCST_ReferenceRef', cardinality 0..*).
+'oclinEcoreCST::PackageCS' (role 'oclinEcoreCST_PackageCS41', cardinality 0..*) is associated with 'oclinEcoreCST::PackageCS' (role 'oclinEcoreCST_PackageCS43', cardinality 0..*).
+'oclinEcoreCST::ClassCS' (role 'oclinEcoreCST_ClassCS', cardinality 0..*) is associated with 'oclinEcoreCST::ClassRef' (role 'oclinEcoreCST_ClassRef', cardinality 0..*).

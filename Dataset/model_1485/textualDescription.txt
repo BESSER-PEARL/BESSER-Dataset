@@ -1,0 +1,27 @@
+The model has 9 class(es).
+The class 'Identification' has no attributes.
+The class 'petriNetEMF::PlaceToTransitionArc' has no attributes.
+The class 'petriNetEMF::PetriNet' has no attributes.
+The class 'petriNetEMF::Arc' has no attributes.
+The class 'petriNetEMF::Transition' has no attributes.
+The class 'petriNetEMF::Identification' has the following attributes: 'name' of type str; 'ID' of type str.
+The class 'Arc' has no attributes.
+The class 'petriNetEMF::TransitionToPlaceArc' has no attributes.
+The class 'petriNetEMF::Place' has no attributes.
+'petriNetEMF::Arc' is a specialization of 'Identification'.
+'petriNetEMF::TransitionToPlaceArc' is a specialization of 'Arc'.
+'petriNetEMF::PetriNet' is a specialization of 'Identification'.
+'petriNetEMF::Transition' is a specialization of 'Identification'.
+'petriNetEMF::PlaceToTransitionArc' is a specialization of 'Arc'.
+'petriNetEMF::Place' is a specialization of 'Identification'.
+'petriNetEMF::Place' (role 'from_', cardinality 0..*) is associated with 'petriNetEMF::PlaceToTransitionArc' (role 'PlaceToTransitionArc', cardinality 0..*).
+'petriNetEMF::TransitionToPlaceArc' (role 'outgoingArcs16', cardinality 0..*) is associated with 'petriNetEMF::Transition' (role 'Transition17', cardinality 0..*).
+'petriNetEMF::TransitionToPlaceArc' (role 'TransitionToPlaceArc9', cardinality 0..*) is associated with 'petriNetEMF::Transition' (role 'from_8', cardinality 0..*).
+'petriNetEMF::Place' (role 'Place', cardinality 0..*) is associated with 'petriNetEMF::PlaceToTransitionArc' (role 'outgoingArcs', cardinality 0..*).
+'petriNetEMF::PetriNet' (role 'petriNetEMF_PetriNet2', cardinality 0..*) is associated with 'petriNetEMF::Transition' (role 'petriNetEMF_Transition', cardinality 0..*).
+'petriNetEMF::PetriNet' (role 'petriNetEMF_PetriNet4', cardinality 0..*) is associated with 'petriNetEMF::Arc' (role 'petriNetEMF_Arc', cardinality 0..*).
+'petriNetEMF::PetriNet' (role 'petriNetEMF_PetriNet', cardinality 0..*) is associated with 'petriNetEMF::Place' (role 'petriNetEMF_Place', cardinality 0..*).
+'petriNetEMF::PlaceToTransitionArc' (role 'incomingArcs', cardinality 0..*) is associated with 'petriNetEMF::Transition' (role 'Transition', cardinality 0..*).
+'petriNetEMF::PlaceToTransitionArc' (role 'PlaceToTransitionArc12', cardinality 0..*) is associated with 'petriNetEMF::Transition' (role 'to11', cardinality 0..*).
+'petriNetEMF::Place' (role 'to', cardinality 0..*) is associated with 'petriNetEMF::TransitionToPlaceArc' (role 'TransitionToPlaceArc', cardinality 0..*).
+'petriNetEMF::TransitionToPlaceArc' (role 'incomingArcs19', cardinality 0..*) is associated with 'petriNetEMF::Place' (role 'Place20', cardinality 0..*).

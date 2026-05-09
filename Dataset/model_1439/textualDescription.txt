@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'mention::graph::HashTag' has the following attributes: 'count' of type int.
+The class 'mention::graph::User' has no attributes.
+The class 'mention::graph::Edge' has no attributes.
+The class 'Node' has no attributes.
+The class 'mention::graph::Node' has the following attributes: 'value' of type str.
+The class 'mention::graph::MentionGraph' has no attributes.
+'mention::graph::HashTag' is a specialization of 'Node'.
+'mention::graph::User' is a specialization of 'Node'.
+'mention::graph::Edge' (role 'mention_graph_Edge', cardinality 0..*) is associated with 'mention::graph::MentionGraph' (role 'mention_graph_MentionGraph2', cardinality 0..*).
+'mention::graph::Edge' (role 'mention_graph_Edge5', cardinality 0..*) is associated with 'mention::graph::Node' (role 'mention_graph_Node6', cardinality 0..*).
+'mention::graph::Edge' (role 'mention_graph_Edge8', cardinality 0..*) is associated with 'mention::graph::Node' (role 'mention_graph_Node9', cardinality 0..*).
+'mention::graph::Node' (role 'mention_graph_Node', cardinality 0..*) is associated with 'mention::graph::MentionGraph' (role 'mention_graph_MentionGraph', cardinality 0..*).
+'mention::graph::User' (role 'mention_graph_User', cardinality 0..*) is associated with 'mention::graph::HashTag' (role 'mention_graph_HashTag', cardinality 0..*).

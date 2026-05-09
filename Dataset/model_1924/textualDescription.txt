@@ -1,0 +1,63 @@
+The model has 29 class(es).
+The class 'bibtex::ThesisEntry' has the following attributes: 'school' of type str.
+The class 'bibtex::Author' has the following attributes: 'author' of type str.
+The class 'bibtex::BookTitledEntry' has the following attributes: 'booktitle' of type str.
+The class 'bibtex::InBook' has the following attributes: 'chapter' of type int.
+The class 'DatedEntry' has no attributes.
+The class 'ThesisEntry' has no attributes.
+The class 'bibtex::Article' has the following attributes: 'journal' of type str.
+The class 'bibtex::BibTeXFile' has no attributes.
+The class 'bibtex::DatedEntry' has the following attributes: 'year' of type int.
+The class 'TitledEntry' has no attributes.
+The class 'Book' has no attributes.
+The class 'bibtex::InCollection' has no attributes.
+The class 'bibtex::Booklet' has no attributes.
+The class 'BibTeXEntry' has no attributes.
+The class 'bibtex::MasterThesis' has no attributes.
+The class 'AuthoredEntry' has no attributes.
+The class 'bibtex::InProceedings' has no attributes.
+The class 'bibtex::Proceedings' has no attributes.
+The class 'bibtex::PhDThesis' has no attributes.
+The class 'bibtex::TechReport' has no attributes.
+The class 'bibtex::TitledEntry' has the following attributes: 'title' of type str.
+The class 'bibtex::AuthoredEntry' has no attributes.
+The class 'bibtex::Manual' has no attributes.
+The class 'BookTitledEntry' has no attributes.
+The class 'Proceedings' has no attributes.
+The class 'bibtex::BibTeXEntry' has the following attributes: 'id' of type str.
+The class 'bibtex::Unpublished' has the following attributes: 'note' of type str.
+The class 'bibtex::Book' has the following attributes: 'publisher' of type str.
+The class 'bibtex::Misc' has no attributes.
+'bibtex::InBook' is a specialization of 'Book'.
+'bibtex::Booklet' is a specialization of 'DatedEntry'.
+'bibtex::PhDThesis' is a specialization of 'ThesisEntry'.
+'bibtex::InCollection' is a specialization of 'BookTitledEntry'.
+'bibtex::Unpublished' is a specialization of 'TitledEntry'.
+'bibtex::ThesisEntry' is a specialization of 'AuthoredEntry'.
+'bibtex::ThesisEntry' is a specialization of 'TitledEntry'.
+'bibtex::Manual' is a specialization of 'TitledEntry'.
+'bibtex::Article' is a specialization of 'AuthoredEntry'.
+'bibtex::Proceedings' is a specialization of 'DatedEntry'.
+'bibtex::InProceedings' is a specialization of 'AuthoredEntry'.
+'bibtex::Book' is a specialization of 'TitledEntry'.
+'bibtex::Proceedings' is a specialization of 'TitledEntry'.
+'bibtex::AuthoredEntry' is a specialization of 'BibTeXEntry'.
+'bibtex::Misc' is a specialization of 'BibTeXEntry'.
+'bibtex::TitledEntry' is a specialization of 'BibTeXEntry'.
+'bibtex::ThesisEntry' is a specialization of 'DatedEntry'.
+'bibtex::InProceedings' is a specialization of 'BookTitledEntry'.
+'bibtex::Article' is a specialization of 'DatedEntry'.
+'bibtex::Book' is a specialization of 'AuthoredEntry'.
+'bibtex::Unpublished' is a specialization of 'AuthoredEntry'.
+'bibtex::InProceedings' is a specialization of 'Proceedings'.
+'bibtex::BookTitledEntry' is a specialization of 'BibTeXEntry'.
+'bibtex::Article' is a specialization of 'TitledEntry'.
+'bibtex::Book' is a specialization of 'DatedEntry'.
+'bibtex::TechReport' is a specialization of 'DatedEntry'.
+'bibtex::InCollection' is a specialization of 'Book'.
+'bibtex::MasterThesis' is a specialization of 'ThesisEntry'.
+'bibtex::TechReport' is a specialization of 'AuthoredEntry'.
+'bibtex::DatedEntry' is a specialization of 'BibTeXEntry'.
+'bibtex::TechReport' is a specialization of 'TitledEntry'.
+'bibtex::Author' (role 'bibtex_Author', cardinality 0..*) is associated with 'bibtex::AuthoredEntry' (role 'bibtex_AuthoredEntry', cardinality 0..*).
+'bibtex::BibTeXFile' (role 'bibtex_BibTeXFile', cardinality 0..*) is associated with 'bibtex::BibTeXEntry' (role 'bibtex_BibTeXEntry', cardinality 0..*).

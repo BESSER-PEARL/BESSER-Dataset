@@ -1,0 +1,39 @@
+The model has 18 class(es).
+The class 'PetriNet::Arc' has the following attributes: 'weight' of type int.
+The class 'PlaceToTransition' has no attributes.
+The class 'PetriNet::LocatedElement' has the following attributes: 'location' of type str.
+The class 'PetriNet::PetriNet' has no attributes.
+The class 'PetriNet::NamedElement' has the following attributes: 'name' of type str.
+The class 'PetriNet' has no attributes.
+The class 'PetriNet::Place' has no attributes.
+The class 'TransitionToPlace' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Element' has no attributes.
+The class 'Place' has no attributes.
+The class 'PetriNet::PlaceToTransition' has no attributes.
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::Element' has no attributes.
+The class 'PetriNet::TransitionToPlace' has no attributes.
+The class 'Arc' has no attributes.
+The class 'Transition' has no attributes.
+'PetriNet::Element' is a specialization of 'NamedElement'.
+'PetriNet::Transition' is a specialization of 'Element'.
+'PetriNet::Arc' is a specialization of 'NamedElement'.
+'PetriNet::PlaceToTransition' is a specialization of 'Arc'.
+'PetriNet::NamedElement' is a specialization of 'LocatedElement'.
+'PetriNet::PetriNet' is a specialization of 'NamedElement'.
+'PetriNet::Place' is a specialization of 'Element'.
+'PetriNet::TransitionToPlace' is a specialization of 'Arc'.
+'Place' (role 'Place21', cardinality 0..*) is associated with 'PetriNet::TransitionToPlace' (role 'incomingArc20', cardinality 0..*).
+'PlaceToTransition' (role 'PlaceToTransition', cardinality 0..*) is associated with 'PetriNet::Place' (role 'from_', cardinality 0..*).
+'PetriNet' (role 'PetriNet13', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'arcs', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'PetriNet::PlaceToTransition' (role 'incomingArc', cardinality 0..*).
+'Arc' (role 'Arc', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'net2', cardinality 0..*).
+'Transition' (role 'Transition18', cardinality 0..*) is associated with 'PetriNet::TransitionToPlace' (role 'outgoingArc17', cardinality 0..*).
+'PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'PetriNet::Element' (role 'elements', cardinality 0..*).
+'PlaceToTransition' (role 'PlaceToTransition8', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'to7', cardinality 0..*).
+'PetriNet::Place' (role 'to', cardinality 0..*) is associated with 'TransitionToPlace' (role 'TransitionToPlace', cardinality 0..*).
+'PetriNet::Transition' (role 'from_10', cardinality 0..*) is associated with 'TransitionToPlace' (role 'TransitionToPlace11', cardinality 0..*).
+'Place' (role 'Place', cardinality 0..*) is associated with 'PetriNet::PlaceToTransition' (role 'outgoingArc', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'net', cardinality 0..*).

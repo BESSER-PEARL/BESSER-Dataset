@@ -1,0 +1,37 @@
+The model has 15 class(es).
+The class 'researchva::Keyword' has the following attributes: 'word' of type str.
+The class 'researchva::PublicationStructure' has no attributes.
+The class 'researchva::Write' has the following attributes: 'timeSpent' of type int.
+The class 'Counted' has no attributes.
+The class 'researchva::Counted' has the following attributes: 'id' of type int.
+The class 'Labelled' has no attributes.
+The class 'researchva::Named' has the following attributes: 'name' of type str.
+The class 'researchva::Researcher' has the following attributes: 'name' of type str; 'forName' of type str.
+The class 'researchva::Review' has the following attributes: 'date' of type date.
+The class 'Named' has no attributes.
+The class 'researchva::Labelled' has the following attributes: 'lname' of type str.
+The class 'researchva::Paragraph' has the following attributes: 'content' of type str.
+The class 'researchva::Skill' has the following attributes: 'description' of type str.
+The class 'researchva::Paper' has no attributes.
+The class 'researchva::ReviewNote' has the following attributes: 'content' of type str.
+'researchva::Paragraph' is a specialization of 'Named'.
+'researchva::Paper' is a specialization of 'Named'.
+'researchva::ReviewNote' is a specialization of 'Named'.
+'researchva::PublicationStructure' is a specialization of 'Named'.
+'researchva::Paragraph' is a specialization of 'Counted'.
+'researchva::Keyword' is a specialization of 'Named'.
+'researchva::Write' is a specialization of 'Labelled'.
+'researchva::Review' is a specialization of 'Labelled'.
+'researchva::PublicationStructure' (role 'researchva_PublicationStructure25', cardinality 0..*) is associated with 'researchva::Keyword' (role 'researchva_Keyword', cardinality 0..*).
+'researchva::Paragraph' (role 'researchva_Paragraph', cardinality 0..*) is associated with 'researchva::Paper' (role 'researchva_Paper', cardinality 0..*).
+'researchva::Researcher' (role 'researchva_Researcher20', cardinality 0..*) is associated with 'researchva::PublicationStructure' (role 'researchva_PublicationStructure', cardinality 0..*).
+'researchva::Paper' (role 'researchva_Paper8', cardinality 0..*) is associated with 'researchva::Paper' (role 'researchva_Paper10', cardinality 0..*).
+'researchva::Paragraph' (role 'researchva_Paragraph12', cardinality 0..*) is associated with 'researchva::ReviewNote' (role 'researchva_ReviewNote', cardinality 0..*).
+'researchva::Researcher' (role 'researchva_Researcher5', cardinality 0..*) is associated with 'researchva::Skill' (role 'researchva_Skill', cardinality 0..*).
+'researchva::Researcher' (role 'researchva_Researcher2', cardinality 0..*) is associated with 'researchva::Review' (role 'researchva_Review', cardinality 0..*).
+'researchva::PublicationStructure' (role 'researchva_PublicationStructure22', cardinality 0..*) is associated with 'researchva::Paper' (role 'researchva_Paper23', cardinality 0..*).
+'researchva::Paper' (role 'res_papers', cardinality 0..*) is associated with 'researchva::Researcher' (role 'Researcher', cardinality 0..*).
+'researchva::Write' (role 'researchva_Write14', cardinality 0..*) is associated with 'researchva::Paragraph' (role 'researchva_Paragraph15', cardinality 0..*).
+'researchva::Researcher' (role 'authors', cardinality 0..*) is associated with 'researchva::Paper' (role 'Paper', cardinality 0..*).
+'researchva::ReviewNote' (role 'researchva_ReviewNote18', cardinality 0..*) is associated with 'researchva::Review' (role 'researchva_Review17', cardinality 0..*).
+'researchva::Write' (role 'researchva_Write', cardinality 0..*) is associated with 'researchva::Researcher' (role 'researchva_Researcher', cardinality 0..*).

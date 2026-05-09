@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'library::Book' has the following attributes: 'name' of type str.
+The class 'library::Author' has the following attributes: 'surname' of type str; 'first_name' of type str.
+'library::Author' (role 'Author', cardinality 0..*) is associated with 'library::Book' (role 'books', cardinality 0..*).
+'library::Book' (role 'Book', cardinality 0..*) is associated with 'library::Author' (role 'author', cardinality 0..*).

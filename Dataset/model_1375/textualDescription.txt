@@ -1,0 +1,34 @@
+The model has 15 class(es).
+The class 'State2' has no attributes.
+The class 'Transition2' has no attributes.
+The class 'finitestatemachines::Trigger2' has the following attributes: 'expression' of type str.
+The class 'finitestatemachines::FinalState' has no attributes.
+The class 'finitestatemachines::State2' has the following attributes: 'finalTime' of type int; 'initialTime2' of type int.
+The class 'finitestatemachines::TimedTransition' has the following attributes: 'duration' of type int.
+The class 'finitestatemachines::Pseudostate' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'finitestatemachines::NamedElement' has the following attributes: 'name' of type str.
+The class 'Pseudostate' has no attributes.
+The class 'finitestatemachines::Fork' has no attributes.
+The class 'finitestatemachines::Join2' has no attributes.
+The class 'finitestatemachines::StateMachine' has no attributes.
+The class 'finitestatemachines::InitialState' has no attributes.
+The class 'finitestatemachines::Transition2' has the following attributes: 'initialTime' of type int; 'finalTime2' of type int.
+'finitestatemachines::Pseudostate' is a specialization of 'State2'.
+'finitestatemachines::TimedTransition' is a specialization of 'Transition2'.
+'finitestatemachines::State2' is a specialization of 'NamedElement'.
+'finitestatemachines::FinalState' is a specialization of 'State2'.
+'finitestatemachines::Fork' is a specialization of 'Pseudostate'.
+'finitestatemachines::StateMachine' is a specialization of 'NamedElement'.
+'finitestatemachines::InitialState' is a specialization of 'State2'.
+'finitestatemachines::Join2' is a specialization of 'Pseudostate'.
+'finitestatemachines::Transition2' is a specialization of 'NamedElement'.
+'finitestatemachines::Transition2' (role 'transitions2', cardinality 0..*) is associated with 'finitestatemachines::StateMachine' (role 'StateMachine13', cardinality 0..*).
+'finitestatemachines::State2' (role 'target', cardinality 0..*) is associated with 'finitestatemachines::Transition2' (role 'Transition25', cardinality 0..*).
+'finitestatemachines::Transition2' (role 'finitestatemachines_Transition2', cardinality 0..*) is associated with 'finitestatemachines::Trigger2' (role 'finitestatemachines_Trigger2', cardinality 0..*).
+'finitestatemachines::Transition2' (role 'Transition2', cardinality 0..*) is associated with 'finitestatemachines::StateMachine' (role 'stateMachine', cardinality 0..*).
+'finitestatemachines::Transition2' (role 'incoming', cardinality 0..*) is associated with 'finitestatemachines::State2' (role 'State28', cardinality 0..*).
+'finitestatemachines::State2' (role 'states2', cardinality 0..*) is associated with 'finitestatemachines::StateMachine' (role 'StateMachine', cardinality 0..*).
+'finitestatemachines::State2' (role 'State210', cardinality 0..*) is associated with 'finitestatemachines::Transition2' (role 'outgoing', cardinality 0..*).
+'finitestatemachines::StateMachine' (role 'stateMachine2', cardinality 0..*) is associated with 'finitestatemachines::State2' (role 'State2', cardinality 0..*).
+'finitestatemachines::State2' (role 'source', cardinality 0..*) is associated with 'finitestatemachines::Transition2' (role 'Transition23', cardinality 0..*).

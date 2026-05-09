@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'FiniteStateMachines::Transition' has the following attributes: 'input' of type str.
+The class 'FiniteStateMachines::FiniteStateMachine' has the following attributes: 'id' of type str.
+The class 'FiniteStateMachines::State' has the following attributes: 'name' of type str; 'isEndState' of type bool; 'isStartState' of type bool.
+'FiniteStateMachines::State' (role 'FiniteStateMachines_State7', cardinality 0..*) is associated with 'FiniteStateMachines::Transition' (role 'FiniteStateMachines_Transition6', cardinality 0..*).
+'FiniteStateMachines::FiniteStateMachine' (role 'FiniteStateMachines_FiniteStateMachine', cardinality 0..*) is associated with 'FiniteStateMachines::State' (role 'FiniteStateMachines_State', cardinality 0..*).
+'FiniteStateMachines::Transition' (role 'Transition', cardinality 0..*) is associated with 'FiniteStateMachines::State' (role 'startState', cardinality 0..*).
+'FiniteStateMachines::State' (role 'State', cardinality 0..*) is associated with 'FiniteStateMachines::Transition' (role 'transitions', cardinality 0..*).
+'FiniteStateMachines::FiniteStateMachine' (role 'FiniteStateMachines_FiniteStateMachine2', cardinality 0..*) is associated with 'FiniteStateMachines::Transition' (role 'FiniteStateMachines_Transition', cardinality 0..*).

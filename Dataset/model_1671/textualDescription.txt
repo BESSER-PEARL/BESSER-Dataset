@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'simplestatechart::Variable' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'simplestatechart::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'simplestatechart::Transition' has the following attributes: 'expression' of type str.
+The class 'simplestatechart::State' has the following attributes: 'activity' of type str; 'type' of type str; 'label' of type str.
+The class 'simplestatechart::Thing' has the following attributes: 'id' of type int.
+The class 'Thing' has no attributes.
+The class 'simplestatechart::RelatedTo' has the following attributes: 'since' of type str.
+'simplestatechart::Transition' is a specialization of 'NamedElement'.
+'simplestatechart::Thing' is a specialization of 'NamedElement'.
+'simplestatechart::RelatedTo' is a specialization of 'NamedElement'.
+'simplestatechart::State' is a specialization of 'NamedElement'.
+'simplestatechart::Variable' is a specialization of 'Thing'.
+'simplestatechart::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'simplestatechart::Thing' (role 'Thing', cardinality 0..*).
+'simplestatechart::State' (role 'simplestatechart_State14', cardinality 0..*) is associated with 'simplestatechart::Variable' (role 'simplestatechart_Variable', cardinality 0..*).
+'simplestatechart::State' (role 'simplestatechart_State16', cardinality 0..*) is associated with 'simplestatechart::Transition' (role 'simplestatechart_Transition17', cardinality 0..*).
+'simplestatechart::State' (role 'simplestatechart_State6', cardinality 0..*) is associated with 'simplestatechart::Transition' (role 'simplestatechart_Transition5', cardinality 0..*).
+'simplestatechart::State' (role 'simplestatechart_State10', cardinality 0..*) is associated with 'simplestatechart::State' (role 'simplestatechart_State12', cardinality 0..*).
+'simplestatechart::Thing' (role 'fromThing', cardinality 0..*) is associated with 'simplestatechart::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'simplestatechart::Transition' (role 'simplestatechart_Transition', cardinality 0..*) is associated with 'simplestatechart::State' (role 'simplestatechart_State', cardinality 0..*).
+'simplestatechart::RelatedTo' (role 'simplestatechart_RelatedTo', cardinality 0..*) is associated with 'simplestatechart::Thing' (role 'simplestatechart_Thing', cardinality 0..*).
+'simplestatechart::State' (role 'simplestatechart_State9', cardinality 0..*) is associated with 'simplestatechart::State' (role 'simplestatechart_State7', cardinality 0..*).

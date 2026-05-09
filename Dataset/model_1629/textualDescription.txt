@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'petri::Transition' has the following attributes: 'name' of type str.
+The class 'petri::RedPetri' has no attributes.
+The class 'petri::Place' has the following attributes: 'name' of type str; 'tokens' of type int.
+'petri::Transition' (role 'petri_Transition8', cardinality 0..*) is associated with 'petri::RedPetri' (role 'petri_RedPetri7', cardinality 0..*).
+'petri::Place' (role 'petri_Place3', cardinality 0..*) is associated with 'petri::Transition' (role 'petri_Transition2', cardinality 0..*).
+'petri::Transition' (role 'petri_Transition', cardinality 0..*) is associated with 'petri::Place' (role 'petri_Place', cardinality 0..*).
+'petri::RedPetri' (role 'petri_RedPetri', cardinality 0..*) is associated with 'petri::Place' (role 'petri_Place5', cardinality 0..*).

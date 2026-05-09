@@ -1,0 +1,81 @@
+The model has 53 class(es).
+The class 'IBooking' has no attributes.
+The class 'ClassDiagram::Facility::FacilityType' has the following attributes: 'kind' of type str.
+The class 'ClassDiagram::Company::Hotel' has the following attributes: 'name' of type str.
+The class 'ClassDiagram::Booking::PurchasedService' has the following attributes: 'price' of type float; 'name' of type str.
+The class 'ClassDiagram::HotelAdministration' has no attributes.
+The class 'ClassDiagram::StaffAdministration' has no attributes.
+The class 'BookingManager' has no attributes.
+The class 'IGuestManager' has no attributes.
+The class 'ClassDiagram::IBillManager' has no attributes.
+The class 'ClassDiagram::Hotel::Room' has the following attributes: 'maintenceStatus' of type bool; 'cleaningStatus' of type bool; 'roomNumber' of type int.
+The class 'ClassDiagram::Hotel::Booking' has the following attributes: 'bookingID' of type int; 'endDate' of type date; 'startDate' of type date; 'price' of type float; 'checkedIn' of type bool.
+The class 'ClassDiagram::ApplianceAdministration' has no attributes.
+The class 'IRoomManager' has no attributes.
+The class 'ClassDiagram::IHotelAdministration' has no attributes.
+The class 'ClassDiagram::Booking::BookedService' has the following attributes: 'price' of type float; 'date' of type date.
+The class 'ClassDiagram::StaffBooking' has no attributes.
+The class 'IStaffAdministration' has no attributes.
+The class 'ClassDiagram::IFacilityManager' has no attributes.
+The class 'ClassDiagram::Room::RoomAppliance' has the following attributes: 'name' of type str.
+The class 'IApplianceAdministration' has no attributes.
+The class 'ClassDiagram::ServiceBooking' has no attributes.
+The class 'ClassDiagram::IStaffAdministration' has no attributes.
+The class 'IFacilityManager' has no attributes.
+The class 'ClassDiagram::FacilityManager' has no attributes.
+The class 'ClassDiagram::FacilityAdministration' has no attributes.
+The class 'ClassDiagram::IFacilityAdministration' has no attributes.
+The class 'ClassDiagram::IGuestManager' has no attributes.
+The class 'ClassDiagram::RoomManager' has no attributes.
+The class 'ClassDiagram::Facility::FacilityService' has the following attributes: 'price' of type float; 'name' of type str.
+The class 'ClassDiagram::RoomAdministration' has no attributes.
+The class 'ClassDiagram::IRoomManager' has no attributes.
+The class 'ClassDiagram::IBooking' has no attributes.
+The class 'ClassDiagram::ApplianceType::ApplianceService' has the following attributes: 'price' of type float; 'name' of type str.
+The class 'ClassDiagram::Hotel::Staff' has the following attributes: 'stafftype' of type str; 'ssn' of type str; 'lastName' of type str; 'firstName' of type str.
+The class 'ClassDiagram::Hotel::Facility' has the following attributes: 'name' of type str.
+The class 'ClassDiagram::GuestManager' has no attributes.
+The class 'ClassDiagram::Room::RoomType' has the following attributes: 'maxNumberOfGuests' of type int; 'area' of type float; 'price' of type float.
+The class 'ClassDiagram::IServiceBooking' has no attributes.
+The class 'ClassDiagram::BillManager' has no attributes.
+The class 'IRoomAdministration' has no attributes.
+The class 'IBillManager' has no attributes.
+The class 'ClassDiagram::IRoomAdministration' has no attributes.
+The class 'ClassDiagram::RoomAppliance::ApplianceType' has the following attributes: 'name' of type str.
+The class 'ClassDiagram::BookingManager' has no attributes.
+The class 'ClassDiagram::Company' has the following attributes: 'name' of type str.
+The class 'IFacilityAdministration' has no attributes.
+The class 'ClassDiagram::IApplianceAdministration' has no attributes.
+The class 'IHotelAdministration' has no attributes.
+The class 'ClassDiagram::Room::RoomKey' has the following attributes: 'expirationDate' of type date.
+The class 'ClassDiagram::Booking::Bill' has the following attributes: 'paidAmount' of type float.
+The class 'ClassDiagram::Company::GuestRecord' has the following attributes: 'payment' of type str; 'name' of type str; 'ssn' of type str; 'phoneNumber' of type str; 'adress' of type str.
+The class 'ClassDiagram::GuestBooking' has no attributes.
+The class 'IServiceBooking' has no attributes.
+The enumeration 'StaffType' has the following literals: 'Receptionist', 'HouseKeeper', 'Manager', 'Janitor'.
+'ClassDiagram::RoomAdministration' is a specialization of 'IRoomAdministration'.
+'ClassDiagram::FacilityManager' is a specialization of 'IFacilityManager'.
+'ClassDiagram::BillManager' is a specialization of 'IBillManager'.
+'ClassDiagram::HotelAdministration' is a specialization of 'IHotelAdministration'.
+'ClassDiagram::ApplianceAdministration' is a specialization of 'IApplianceAdministration'.
+'ClassDiagram::GuestManager' is a specialization of 'IGuestManager'.
+'ClassDiagram::RoomManager' is a specialization of 'IRoomManager'.
+'ClassDiagram::StaffBooking' is a specialization of 'BookingManager'.
+'ClassDiagram::StaffAdministration' is a specialization of 'IStaffAdministration'.
+'ClassDiagram::GuestBooking' is a specialization of 'IBooking'.
+'ClassDiagram::FacilityAdministration' is a specialization of 'IFacilityAdministration'.
+'ClassDiagram::ServiceBooking' is a specialization of 'IServiceBooking'.
+'ClassDiagram::Company::Hotel' (role 'ClassDiagram_Company_Hotel6', cardinality 0..*) is associated with 'ClassDiagram::Hotel::Room' (role 'ClassDiagram_Hotel_Room', cardinality 0..*).
+'ClassDiagram::Facility::FacilityType' (role 'ClassDiagram_Facility_FacilityType', cardinality 0..*) is associated with 'ClassDiagram::Hotel::Facility' (role 'ClassDiagram_Hotel_Facility26', cardinality 0..*).
+'ClassDiagram::Company::Hotel' (role 'ClassDiagram_Company_Hotel4', cardinality 0..*) is associated with 'ClassDiagram::Hotel::Booking' (role 'ClassDiagram_Hotel_Booking', cardinality 0..*).
+'ClassDiagram::Hotel::Booking' (role 'ClassDiagram_Hotel_Booking12', cardinality 0..*) is associated with 'ClassDiagram::Booking::BookedService' (role 'ClassDiagram_Booking_BookedService', cardinality 0..*).
+'ClassDiagram::Hotel::Facility' (role 'ClassDiagram_Hotel_Facility', cardinality 0..*) is associated with 'ClassDiagram::Company::Hotel' (role 'ClassDiagram_Company_Hotel8', cardinality 0..*).
+'ClassDiagram::Hotel::Room' (role 'ClassDiagram_Hotel_Room17', cardinality 0..*) is associated with 'ClassDiagram::Room::RoomType' (role 'ClassDiagram_Room_RoomType', cardinality 0..*).
+'ClassDiagram::RoomAppliance::ApplianceType' (role 'ClassDiagram_RoomAppliance_ApplianceType', cardinality 0..*) is associated with 'ClassDiagram::Room::RoomAppliance' (role 'ClassDiagram_Room_RoomAppliance21', cardinality 0..*).
+'ClassDiagram::Booking::Bill' (role 'ClassDiagram_Booking_Bill', cardinality 0..*) is associated with 'ClassDiagram::Booking::PurchasedService' (role 'ClassDiagram_Booking_PurchasedService', cardinality 0..*).
+'ClassDiagram::Room::RoomKey' (role 'ClassDiagram_Room_RoomKey', cardinality 0..*) is associated with 'ClassDiagram::Hotel::Room' (role 'ClassDiagram_Hotel_Room19', cardinality 0..*).
+'ClassDiagram::Hotel::Room' (role 'ClassDiagram_Hotel_Room15', cardinality 0..*) is associated with 'ClassDiagram::Room::RoomAppliance' (role 'ClassDiagram_Room_RoomAppliance', cardinality 0..*).
+'ClassDiagram::Room::RoomAppliance' (role 'ClassDiagram_Room_RoomAppliance24', cardinality 0..*) is associated with 'ClassDiagram::Room::RoomType' (role 'ClassDiagram_Room_RoomType23', cardinality 0..*).
+'ClassDiagram::Company::Hotel' (role 'ClassDiagram_Company_Hotel10', cardinality 0..*) is associated with 'ClassDiagram::Hotel::Staff' (role 'ClassDiagram_Hotel_Staff', cardinality 0..*).
+'ClassDiagram::Company::GuestRecord' (role 'ClassDiagram_Company_GuestRecord', cardinality 0..*) is associated with 'ClassDiagram::Company' (role 'ClassDiagram_Company2', cardinality 0..*).
+'ClassDiagram::Company::Hotel' (role 'ClassDiagram_Company_Hotel', cardinality 0..*) is associated with 'ClassDiagram::Company' (role 'ClassDiagram_Company', cardinality 0..*).

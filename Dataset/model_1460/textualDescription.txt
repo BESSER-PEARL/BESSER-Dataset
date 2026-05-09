@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'graphs::Node' has the following attributes: 'name' of type str.
+The class 'graphs::Graph' has no attributes.
+The class 'graphs::CompositeNode' has no attributes.
+The class 'Node' has no attributes.
+The class 'graphs::Edge' has the following attributes: 'weight' of type int.
+'graphs::CompositeNode' is a specialization of 'Node'.
+'graphs::Graph' (role 'graphs_Graph4', cardinality 0..*) is associated with 'graphs::CompositeNode' (role 'graphs_CompositeNode', cardinality 0..*).
+'graphs::Node' (role 'graphs_Node13', cardinality 0..*) is associated with 'graphs::Edge' (role 'graphs_Edge12', cardinality 0..*).
+'graphs::Node' (role 'graphs_Node', cardinality 0..*) is associated with 'graphs::Graph' (role 'graphs_Graph', cardinality 0..*).
+'graphs::Edge' (role 'graphs_Edge', cardinality 0..*) is associated with 'graphs::Graph' (role 'graphs_Graph2', cardinality 0..*).
+'graphs::Edge' (role 'graphs_Edge6', cardinality 0..*) is associated with 'graphs::Node' (role 'graphs_Node7', cardinality 0..*).
+'graphs::Node' (role 'graphs_Node10', cardinality 0..*) is associated with 'graphs::Edge' (role 'graphs_Edge9', cardinality 0..*).

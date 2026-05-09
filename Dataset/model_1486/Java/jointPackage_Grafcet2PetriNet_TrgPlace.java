@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class jointPackage_Grafcet2PetriNet_TrgPlace extends TrgElement {
+
+
+
+
+    public jointPackage_Grafcet2PetriNet_TrgPlace(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

@@ -1,0 +1,50 @@
+The model has 20 class(es).
+The class 'Classes::IHotelManager' has no attributes.
+The class 'Classes::IHotelManagerImpl' has no attributes.
+The class 'Classes::Bill' has no attributes.
+The class 'Classes::Room' has the following attributes: 'status' of type str; 'roomNumber' of type str.
+The class 'IHotelManager' has no attributes.
+The class 'Classes::RoomType' has the following attributes: 'features' of type str; 'price' of type str; 'description' of type str; 'numberOfGuests' of type str; 'roomTypeName' of type str.
+The class 'IFinance' has no attributes.
+The class 'Classes::IBookingManagementImpl' has no attributes.
+The class 'IBookingManagement' has no attributes.
+The class 'Classes::IFinanceImpl' has no attributes.
+The class 'Classes::CustomerProvides' has no attributes.
+The class 'Classes::Customer' has no attributes.
+The class 'Classes::StaffMember' has the following attributes: 'admin' of type str; 'password' of type str; 'isLoggedIn' of type bool; 'username' of type str.
+The class 'Classes::IBookingManagement' has no attributes.
+The class 'Classes::Booking' has the following attributes: 'bookingID' of type str; 'checkOut' of type date; 'numberOfGuests' of type str; 'checkIn' of type date.
+The class 'Classes::AdministratorProvides' has no attributes.
+The class 'Classes::IPerson' has the following attributes: 'lastName' of type str; 'phoneNumber' of type str; 'firstName' of type str; 'email' of type str; 'address' of type str.
+The class 'Classes::IFinance' has no attributes.
+The class 'IPerson' has no attributes.
+The class 'Classes::Charge' has the following attributes: 'date' of type date; 'amount' of type int; 'chargeType' of type str.
+The enumeration 'RoomStatus' has the following literals: 'Cleaning', 'Maintenance', 'Occupied', 'Available'.
+The enumeration 'RoomTypeName' has the following literals: 'FamilySuite', 'SingleRoom', 'DoubleRoom'.
+The enumeration 'ChargeType' has the following literals: 'SingleRoom', 'LateCheckOutFee', 'CancellationFee', 'Breakfast', 'FamilySuite', 'DoubleRoom'.
+'Classes::IHotelManagerImpl' is a specialization of 'IHotelManager'.
+'Classes::Customer' is a specialization of 'IPerson'.
+'Classes::IBookingManagementImpl' is a specialization of 'IBookingManagement'.
+'Classes::IFinanceImpl' is a specialization of 'IFinance'.
+'Classes::StaffMember' is a specialization of 'IPerson'.
+'Classes::IBookingManagementImpl' (role 'Classes_IBookingManagementImpl', cardinality 0..*) is associated with 'Classes::Customer' (role 'Classes_Customer', cardinality 0..*).
+'Classes::Room' (role 'room3', cardinality 0..*) is associated with 'Classes::IBookingManagementImpl' (role 'IBookingManagementImpl', cardinality 0..*).
+'Classes::Booking' (role 'Classes_Booking18', cardinality 0..*) is associated with 'Classes::IBookingManagementImpl' (role 'Classes_IBookingManagementImpl17', cardinality 0..*).
+'Classes::IFinanceImpl' (role 'iFinanceImpl', cardinality 0..*) is associated with 'Classes::IBookingManagementImpl' (role 'IBookingManagementImpl34', cardinality 0..*).
+'Classes::Bill' (role 'Classes_Bill', cardinality 0..*) is associated with 'Classes::Booking' (role 'Classes_Booking', cardinality 0..*).
+'Classes::Charge' (role 'Classes_Charge', cardinality 0..*) is associated with 'Classes::Bill' (role 'Classes_Bill36', cardinality 0..*).
+'Classes::Room' (role 'Room', cardinality 0..*) is associated with 'Classes::RoomType' (role 'roomType', cardinality 0..*).
+'Classes::Booking' (role 'Booking12', cardinality 0..*) is associated with 'Classes::Customer' (role 'customer', cardinality 0..*).
+'Classes::IBookingManagementImpl' (role 'iBookingManagementImpl', cardinality 0..*) is associated with 'Classes::Room' (role 'Room15', cardinality 0..*).
+'Classes::Booking' (role 'Classes_Booking23', cardinality 0..*) is associated with 'Classes::IBookingManagementImpl' (role 'Classes_IBookingManagementImpl22', cardinality 0..*).
+'Classes::IHotelManagerImpl' (role 'IHotelManagerImpl', cardinality 0..*) is associated with 'Classes::IBookingManagementImpl' (role 'iBookingManagementImpl20', cardinality 0..*).
+'Classes::Room' (role 'Room10', cardinality 0..*) is associated with 'Classes::Booking' (role 'bookings', cardinality 0..*).
+'Classes::IBookingManagementImpl' (role 'IBookingManagementImpl31', cardinality 0..*) is associated with 'Classes::IHotelManagerImpl' (role 'iHotelManagerImpl', cardinality 0..*).
+'Classes::StaffMember' (role 'Classes_StaffMember', cardinality 0..*) is associated with 'Classes::IHotelManagerImpl' (role 'Classes_IHotelManagerImpl', cardinality 0..*).
+'Classes::RoomType' (role 'RoomType', cardinality 0..*) is associated with 'Classes::Room' (role 'room', cardinality 0..*).
+'Classes::Customer' (role 'Customer', cardinality 0..*) is associated with 'Classes::Booking' (role 'booking', cardinality 0..*).
+'Classes::IBookingManagementImpl' (role 'IBookingManagementImpl7', cardinality 0..*) is associated with 'Classes::Booking' (role 'confirmedBookings', cardinality 0..*).
+'Classes::CustomerProvides' (role 'Classes_CustomerProvides', cardinality 0..*) is associated with 'Classes::IFinanceImpl' (role 'Classes_IFinanceImpl', cardinality 0..*).
+'Classes::IBookingManagementImpl' (role 'iBookingManagementImpl25', cardinality 0..*) is associated with 'Classes::IFinanceImpl' (role 'IFinanceImpl', cardinality 0..*).
+'Classes::IBookingManagementImpl' (role 'iBookingManagementImpl27', cardinality 0..*) is associated with 'Classes::Booking' (role 'Booking28', cardinality 0..*).
+'Classes::Booking' (role 'Booking', cardinality 0..*) is associated with 'Classes::Room' (role 'rooms', cardinality 0..*).

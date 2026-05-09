@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/f-ast/mct/source/Ecore/family.ecore

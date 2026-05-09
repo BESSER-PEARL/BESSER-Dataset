@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/epsilonlabs/epsilon-sigma-executors/src/main/java/org/eclipse/epsilon/labs/sigma/executors/etl/EtlSimpleTrace.ecore

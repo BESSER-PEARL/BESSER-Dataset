@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'petrinetv1::Transition' has the following attributes: 'name' of type str.
+The class 'petrinetv1::Net' has no attributes.
+The class 'petrinetv1::Place' has the following attributes: 'tokens' of type int; 'initialTokens' of type int; 'name' of type str.
+'petrinetv1::Place' (role 'petrinetv1_Place', cardinality 0..*) is associated with 'petrinetv1::Net' (role 'petrinetv1_Net', cardinality 0..*).
+'petrinetv1::Transition' (role 'petrinetv1_Transition', cardinality 0..*) is associated with 'petrinetv1::Net' (role 'petrinetv1_Net2', cardinality 0..*).
+'petrinetv1::Transition' (role 'petrinetv1_Transition7', cardinality 0..*) is associated with 'petrinetv1::Place' (role 'petrinetv1_Place8', cardinality 0..*).
+'petrinetv1::Transition' (role 'petrinetv1_Transition4', cardinality 0..*) is associated with 'petrinetv1::Place' (role 'petrinetv1_Place5', cardinality 0..*).

@@ -1,0 +1,25 @@
+The model has 10 class(es).
+The class 'State' has no attributes.
+The class 'scmodel::PseudoState' has the following attributes: 'type' of type str.
+The class 'scmodel::State' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'scmodel::History' has the following attributes: 'shallow' of type bool.
+The class 'scmodel::FinalState' has no attributes.
+The class 'scmodel::StateMachine' has the following attributes: 'uuid' of type str; 'className' of type str; 'nextID' of type int; 'id' of type str; 'package' of type str; 'language' of type str; 'priority' of type float; 'agentType' of type str.
+The class 'scmodel::AbstractState' has the following attributes: 'id' of type str; 'onExit' of type str; 'onEnterImports' of type str; 'onEnter' of type str; 'uuid' of type str; 'language' of type str; 'onExitImports' of type str.
+The class 'scmodel::CompositeState' has no attributes.
+The class 'scmodel::Transition' has the following attributes: 'messageCheckerCodeImports' of type str; 'outOfBranch' of type bool; 'triggerType' of type str; 'priority' of type float; 'guard' of type str; 'triggerConditionCodeImports' of type str; 'uuid' of type str; 'onTransitionImports' of type str; 'triggerExpRateCodeImports' of type str; 'messageCheckerCode' of type str; 'triggerCodeLanguage' of type str; 'triggerProbCode' of type str; 'triggerExpRateCode' of type str; 'triggerTimedCodeImports' of type str; 'onTransition' of type str; 'messageCheckerType' of type str; 'messageCheckerConditionLanguage' of type str; 'id' of type str; 'triggerTimedCode' of type str; 'triggerConditionCode' of type str; 'triggerProbCodeImports' of type str; 'defaultTransition' of type bool; 'selfTransition' of type bool; 'messageCheckerClass' of type str; 'guardImports' of type str; 'triggerTime' of type float.
+The enumeration 'TriggerTypes' has the following literals: 'timed', 'exponential', 'condition', 'message', 'always', 'probability'.
+The enumeration 'MessageCheckerTypes' has the following literals: 'always', 'conditional', 'equals', 'unconditional'.
+The enumeration 'LanguageTypes' has the following literals: 'groovy', 'relogo', 'java'.
+The enumeration 'PseudoStateTypes' has the following literals: 'choice', 'initial', 'entry'.
+'scmodel::PseudoState' is a specialization of 'AbstractState'.
+'scmodel::State' is a specialization of 'AbstractState'.
+'scmodel::FinalState' is a specialization of 'State'.
+'scmodel::CompositeState' is a specialization of 'AbstractState'.
+'scmodel::History' is a specialization of 'State'.
+'scmodel::CompositeState' (role 'scmodel_CompositeState', cardinality 0..*) is associated with 'scmodel::AbstractState' (role 'scmodel_AbstractState10', cardinality 0..*).
+'scmodel::Transition' (role 'scmodel_Transition4', cardinality 0..*) is associated with 'scmodel::AbstractState' (role 'scmodel_AbstractState5', cardinality 0..*).
+'scmodel::AbstractState' (role 'scmodel_AbstractState', cardinality 0..*) is associated with 'scmodel::StateMachine' (role 'scmodel_StateMachine', cardinality 0..*).
+'scmodel::Transition' (role 'scmodel_Transition7', cardinality 0..*) is associated with 'scmodel::AbstractState' (role 'scmodel_AbstractState8', cardinality 0..*).
+'scmodel::StateMachine' (role 'scmodel_StateMachine2', cardinality 0..*) is associated with 'scmodel::Transition' (role 'scmodel_Transition', cardinality 0..*).

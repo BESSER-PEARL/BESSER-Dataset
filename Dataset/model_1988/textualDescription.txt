@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'trace::Trace' has the following attributes: 'name' of type str.
+The class 'trace::DecimalAny' has the following attributes: 'value' of type str.
+The class 'trace::BoolAny' has the following attributes: 'value' of type bool.
+The class 'trace::Any' has no attributes.
+The class 'trace::IntAny' has the following attributes: 'value' of type str.
+The class 'Any' has no attributes.
+The class 'trace::EObject' has no attributes.
+The class 'trace::ObjectAny' has no attributes.
+The class 'trace::StringAny' has the following attributes: 'value' of type str.
+'trace::IntAny' is a specialization of 'Any'.
+'trace::StringAny' is a specialization of 'Any'.
+'trace::DecimalAny' is a specialization of 'Any'.
+'trace::BoolAny' is a specialization of 'Any'.
+'trace::ObjectAny' is a specialization of 'Any'.
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::Any' (role 'trace_Any', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject7', cardinality 0..*) is associated with 'trace::ObjectAny' (role 'trace_ObjectAny', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject5', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace4', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace2', cardinality 0..*).

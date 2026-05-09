@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'petrinetv2::Transition' has the following attributes: 'name' of type str.
+The class 'petrinetv2::Token' has no attributes.
+The class 'petrinetv2::Place' has the following attributes: 'name' of type str; 'initialTokens' of type int.
+The class 'petrinetv2::Net' has no attributes.
+'petrinetv2::Token' (role 'petrinetv2_Token', cardinality 0..*) is associated with 'petrinetv2::Place' (role 'petrinetv2_Place10', cardinality 0..*).
+'petrinetv2::Transition' (role 'petrinetv2_Transition7', cardinality 0..*) is associated with 'petrinetv2::Place' (role 'petrinetv2_Place8', cardinality 0..*).
+'petrinetv2::Transition' (role 'petrinetv2_Transition4', cardinality 0..*) is associated with 'petrinetv2::Place' (role 'petrinetv2_Place5', cardinality 0..*).
+'petrinetv2::Place' (role 'petrinetv2_Place', cardinality 0..*) is associated with 'petrinetv2::Net' (role 'petrinetv2_Net', cardinality 0..*).
+'petrinetv2::Net' (role 'petrinetv2_Net2', cardinality 0..*) is associated with 'petrinetv2::Transition' (role 'petrinetv2_Transition', cardinality 0..*).

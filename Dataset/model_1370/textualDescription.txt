@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'HSM::AbstractState' has the following attributes: 'name' of type str.
+The class 'AbstractState' has no attributes.
+The class 'HSM::StateMachine' has the following attributes: 'name' of type str.
+The class 'HSM::Transition' has the following attributes: 'label' of type str.
+The class 'HSM::InitialState' has no attributes.
+The class 'HSM::CompositeState' has no attributes.
+The class 'HSM::RegularState' has no attributes.
+'HSM::RegularState' is a specialization of 'AbstractState'.
+'HSM::CompositeState' is a specialization of 'AbstractState'.
+'HSM::InitialState' is a specialization of 'AbstractState'.
+'HSM::StateMachine' (role 'stateMachine2', cardinality 0..*) is associated with 'HSM::AbstractState' (role 'AbstractState', cardinality 0..*).
+'HSM::AbstractState' (role 'HSM_AbstractState', cardinality 0..*) is associated with 'HSM::Transition' (role 'HSM_Transition', cardinality 0..*).
+'HSM::AbstractState' (role 'states', cardinality 0..*) is associated with 'HSM::StateMachine' (role 'StateMachine9', cardinality 0..*).
+'HSM::AbstractState' (role 'states11', cardinality 0..*) is associated with 'HSM::CompositeState' (role 'CompositeState', cardinality 0..*).
+'HSM::Transition' (role 'Transition', cardinality 0..*) is associated with 'HSM::StateMachine' (role 'stateMachine', cardinality 0..*).
+'HSM::AbstractState' (role 'HSM_AbstractState7', cardinality 0..*) is associated with 'HSM::Transition' (role 'HSM_Transition6', cardinality 0..*).
+'HSM::Transition' (role 'transitions', cardinality 0..*) is associated with 'HSM::StateMachine' (role 'StateMachine', cardinality 0..*).
+'HSM::CompositeState' (role 'compositeState', cardinality 0..*) is associated with 'HSM::AbstractState' (role 'AbstractState13', cardinality 0..*).

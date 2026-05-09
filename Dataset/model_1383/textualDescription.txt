@@ -1,0 +1,30 @@
+The model has 13 class(es).
+The class 'Vertex' has no attributes.
+The class 'Region' has no attributes.
+The class 'statemachine::Action' has the following attributes: 'name' of type str.
+The class 'statemachine::LabeledTransition' has no attributes.
+The class 'Transition' has no attributes.
+The class 'statemachine::Transition' has the following attributes: 'id' of type str.
+The class 'statemachine::Statemachine' has the following attributes: 'name' of type str.
+The class 'statemachine::Pseudostate' has the following attributes: 'kind' of type str; 'id' of type str.
+The class 'statemachine::State' has the following attributes: 'name' of type str.
+The class 'statemachine::Vertex' has no attributes.
+The class 'statemachine::ComplexState' has no attributes.
+The class 'statemachine::Region' has no attributes.
+The class 'State' has no attributes.
+The enumeration 'PseudostateKind' has the following literals: 'final', 'initial'.
+'statemachine::ComplexState' is a specialization of 'State'.
+'statemachine::Statemachine' is a specialization of 'Region'.
+'statemachine::LabeledTransition' is a specialization of 'Transition'.
+'statemachine::State' is a specialization of 'Vertex'.
+'statemachine::Pseudostate' is a specialization of 'Vertex'.
+'statemachine::LabeledTransition' (role 'statemachine_LabeledTransition', cardinality 0..*) is associated with 'statemachine::Action' (role 'statemachine_Action20', cardinality 0..*).
+'statemachine::ComplexState' (role 'statemachine_ComplexState', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition8', cardinality 0..*) is associated with 'statemachine::Vertex' (role 'statemachine_Vertex9', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine13', cardinality 0..*) is associated with 'statemachine::Action' (role 'statemachine_Action', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition11', cardinality 0..*).
+'statemachine::Region' (role 'statemachine_Region15', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State16', cardinality 0..*).
+'statemachine::Region' (role 'statemachine_Region18', cardinality 0..*) is associated with 'statemachine::Pseudostate' (role 'statemachine_Pseudostate', cardinality 0..*).
+'statemachine::Vertex' (role 'statemachine_Vertex', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::Region' (role 'statemachine_Region', cardinality 0..*) is associated with 'statemachine::ComplexState' (role 'statemachine_ComplexState3', cardinality 0..*).
+'statemachine::Vertex' (role 'statemachine_Vertex6', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition5', cardinality 0..*).

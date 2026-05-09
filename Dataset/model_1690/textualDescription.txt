@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'helloworld150::World' has no attributes.
+The class 'helloworld150::Comment' has the following attributes: 'content' of type str.
+The class 'helloworld150::Profession' has the following attributes: 'name' of type str.
+The class 'helloworld150::Person' has the following attributes: 'birthDate' of type str; 'forName' of type str.
+The class 'helloworld150::Own' has the following attributes: 'since' of type str; 'ownerName' of type str.
+The class 'helloworld150::Thing' has the following attributes: 'id' of type int.
+The class 'helloworld150::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+'helloworld150::Own' is a specialization of 'NamedElement'.
+'helloworld150::Person' is a specialization of 'NamedElement'.
+'helloworld150::Thing' is a specialization of 'NamedElement'.
+'helloworld150::Thing' (role 'thing', cardinality 0..*) is associated with 'helloworld150::Own' (role 'Own', cardinality 0..*).
+'helloworld150::Person' (role 'helloworld150_Person', cardinality 0..*) is associated with 'helloworld150::World' (role 'helloworld150_World2', cardinality 0..*).
+'helloworld150::Comment' (role 'helloworld150_Comment', cardinality 0..*) is associated with 'helloworld150::NamedElement' (role 'helloworld150_NamedElement', cardinality 0..*).
+'helloworld150::World' (role 'helloworld150_World4', cardinality 0..*) is associated with 'helloworld150::Profession' (role 'helloworld150_Profession', cardinality 0..*).
+'helloworld150::Own' (role 'ownership', cardinality 0..*) is associated with 'helloworld150::Thing' (role 'Thing', cardinality 0..*).
+'helloworld150::Person' (role 'helloworld150_Person14', cardinality 0..*) is associated with 'helloworld150::Profession' (role 'helloworld150_Profession15', cardinality 0..*).
+'helloworld150::Own' (role 'helloworld150_Own11', cardinality 0..*) is associated with 'helloworld150::Person' (role 'helloworld150_Person12', cardinality 0..*).
+'helloworld150::World' (role 'helloworld150_World', cardinality 0..*) is associated with 'helloworld150::Thing' (role 'helloworld150_Thing', cardinality 0..*).
+'helloworld150::Thing' (role 'helloworld150_Thing7', cardinality 0..*) is associated with 'helloworld150::Own' (role 'helloworld150_Own', cardinality 0..*).

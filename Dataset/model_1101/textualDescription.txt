@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'PetriNets::Transition' has the following attributes: 'priority' of type float.
+The class 'PetriNets::Token' has no attributes.
+The class 'PetriNets::Place' has the following attributes: 'bound' of type int; 'itokens' of type int.
+The class 'PetriNets::PetriNet' has no attributes.
+'PetriNets::Transition' (role 'trans', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNet6', cardinality 0..*).
+'PetriNets::Token' (role 'PetriNets_Token', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place', cardinality 0..*).
+'PetriNets::Place' (role 'PetriNets_Place8', cardinality 0..*) is associated with 'PetriNets::Transition' (role 'PetriNets_Transition', cardinality 0..*).
+'PetriNets::PetriNet' (role 'net2', cardinality 0..*) is associated with 'PetriNets::Transition' (role 'Transition', cardinality 0..*).
+'PetriNets::Place' (role 'Place', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'net', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition13', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place14', cardinality 0..*).
+'PetriNets::Place' (role 'PetriNets_Place17', cardinality 0..*) is associated with 'PetriNets::Transition' (role 'PetriNets_Transition16', cardinality 0..*).
+'PetriNets::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'PetriNets::Place' (role 'places', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition10', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place11', cardinality 0..*).

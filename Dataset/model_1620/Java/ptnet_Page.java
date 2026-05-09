@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ptnet_Page extends PnObject {
+
+
+
+
+
+
+    private ptnet_PetriNet ptnet_petrinet;
+
+
+
+
+    private ptnet_PetriNet ptnet_petrinet;
+
+
+    public ptnet_Page(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public ptnet_PetriNet getPtnet_petrinet() {
+        return ptnet_petrinet;
+    }
+
+    public void setPtnet_petrinet(ptnet_PetriNet ptnet_petrinet) {
+        this.ptnet_petrinet = ptnet_petrinet;
+    }
+    public ptnet_PetriNet getPtnet_petrinet() {
+        return ptnet_petrinet;
+    }
+
+    public void setPtnet_petrinet(ptnet_PetriNet ptnet_petrinet) {
+        this.ptnet_petrinet = ptnet_petrinet;
+    }
+
+}

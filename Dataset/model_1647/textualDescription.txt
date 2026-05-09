@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'helloworld123::World' has no attributes.
+The class 'helloworld123::Alias' has the following attributes: 'id' of type str.
+The class 'helloworld123::Thing' has the following attributes: 'id' of type int.
+The class 'helloworld123::NamedElement' has the following attributes: 'name' of type str.
+The class 'helloworld123::RelatedTo' has the following attributes: 'since' of type str.
+The class 'NamedElement' has no attributes.
+'helloworld123::RelatedTo' is a specialization of 'NamedElement'.
+'helloworld123::Thing' is a specialization of 'NamedElement'.
+'helloworld123::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'helloworld123::Thing' (role 'Thing', cardinality 0..*).
+'helloworld123::RelatedTo' (role 'helloworld123_RelatedTo', cardinality 0..*) is associated with 'helloworld123::Thing' (role 'helloworld123_Thing5', cardinality 0..*).
+'helloworld123::Thing' (role 'fromThing', cardinality 0..*) is associated with 'helloworld123::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'helloworld123::Alias' (role 'helloworld123_Alias', cardinality 0..*) is associated with 'helloworld123::NamedElement' (role 'helloworld123_NamedElement', cardinality 0..*).
+'helloworld123::World' (role 'helloworld123_World', cardinality 0..*) is associated with 'helloworld123::Thing' (role 'helloworld123_Thing', cardinality 0..*).

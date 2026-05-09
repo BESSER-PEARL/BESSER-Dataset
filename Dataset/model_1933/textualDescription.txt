@@ -1,0 +1,711 @@
+The model has 241 class(es).
+The class 'domain::OutputText' has no attributes.
+The class 'domain::InsertTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::UsingMappers' has no attributes.
+The class 'domain::Primitive' has no attributes.
+The class 'domain::CanvasView' has the following attributes: 'uid' of type str.
+The class 'domain::PREUpdateTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::DeploymentStarStep' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Link' has the following attributes: 'uid' of type str.
+The class 'ProxiesList' has no attributes.
+The class 'domain::MenuFolder' has the following attributes: 'uid' of type str; 'extensionPoint' of type bool; 'name' of type str.
+The class 'domain::ViewArea' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::QueryParameter' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Generalization' has no attributes.
+The class 'Orderable' has no attributes.
+The class 'InfrastructureComponent' has no attributes.
+The class 'domain::Artifact' has the following attributes: 'template' of type str; 'description' of type str; 'uid' of type str; 'name' of type str.
+The class 'domain::Infrastructure' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::MenuSeparator' has no attributes.
+The class 'domain::ViewInheritance' has the following attributes: 'uid' of type str.
+The class 'MenuExtensionRef' has no attributes.
+The class 'domain::Storage' has no attributes.
+The class 'FlexFields' has no attributes.
+The class 'TypePointer' has no attributes.
+The class 'NickNamed' has no attributes.
+The class 'domain::Uielement' has the following attributes: 'uid' of type str.
+The class 'domain::FormVariable' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Classifier' has the following attributes: 'details' of type str; 'uid' of type str.
+The class 'domain::InfrastructureLayer' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Recipe' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Hub' has no attributes.
+The class 'domain::HashProperty' has the following attributes: 'uid' of type str; 'fakeName' of type str.
+The class 'domain::TabPage' has no attributes.
+The class 'domain::Specifier' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Messages' has the following attributes: 'uid' of type str.
+The class 'Context' has no attributes.
+The class 'domain::Column' has the following attributes: 'label' of type str; 'uid' of type str.
+The class 'domain::JavaScriptMapper' has the following attributes: 'libraryUrl' of type str.
+The class 'domain::JavaComponent' has the following attributes: 'version' of type str; 'groupId' of type str; 'artifactId' of type str; 'basePackage' of type str.
+The class 'domain::ApplicationRole' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::ApplicationMessages' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'ContextValue' has no attributes.
+The class 'domain::ContinuousIintegration' has no attributes.
+The class 'domain::ConfigExtension' has the following attributes: 'uid' of type str.
+The class 'domain::StyleClass' has no attributes.
+The class 'domain::ApplicationUIPackage' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Operation' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Attribute' has the following attributes: 'uid' of type str; 'pk' of type bool; 'name' of type str.
+The class 'domain::ViewElement' has no attributes.
+The class 'domain::ViewPortTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::Button' has the following attributes: 'label' of type str.
+The class 'domain::JPAService' has no attributes.
+The class 'TypeElement' has no attributes.
+The class 'domain::GenerationHint' has the following attributes: 'name' of type str; 'uid' of type str; 'applyedClass' of type str.
+The class 'domain::FormParameter' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::ProxiesList' has no attributes.
+The class 'domain::Styles' has the following attributes: 'uid' of type str.
+The class 'domain::LanguageRef' has the following attributes: 'uid' of type str.
+The class 'domain::MenuView' has the following attributes: 'uid' of type str.
+The class 'domain::OptionSelection' has no attributes.
+The class 'ChildrenHolder' has no attributes.
+The class 'ContextParameters' has no attributes.
+The class 'domain::DomainApplication' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::ViewPortHolder' has no attributes.
+The class 'domain::FlexFields' has no attributes.
+The class 'domain::Group' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::ReturnValue' has the following attributes: 'uid' of type str.
+The class 'domain::MenuExtensionPoint' has no attributes.
+The class 'domain::Server' has no attributes.
+The class 'domain::ModelMapper' has the following attributes: 'artifactExecutionString' of type str; 'name' of type str; 'artifactRoot' of type str.
+The class 'Uielement' has no attributes.
+The class 'domain::Types' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Canvas' has no attributes.
+The class 'domain::Label' has the following attributes: 'label' of type str.
+The class 'domain::Type' has no attributes.
+The class 'domain::DeploymentComponent' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::DomainArtifact' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Date' has no attributes.
+The class 'domain::PREDeleteTrigger' has the following attributes: 'uid' of type str.
+The class 'MethodPointer' has no attributes.
+The class 'domain::Role' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::ApplicationMappers' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::TypeReference' has no attributes.
+The class 'domain::KeyValuePair' has the following attributes: 'key' of type str; 'value' of type str; 'uid' of type str.
+The class 'domain::ApplicationRecipe' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::UpdateTrigger' has the following attributes: 'uid' of type str.
+The class 'ArtifactRef' has no attributes.
+The class 'domain::StyleSet' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Assosiation' has the following attributes: 'type' of type str.
+The class 'domain::StylesPackage' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Orderable' has the following attributes: 'order' of type int.
+The class 'domain::Root' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'HTMLLayerHolder' has no attributes.
+The class 'domain::Parameter' has the following attributes: 'name' of type str; 'order' of type int; 'uid' of type str.
+The class 'domain::CreateTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::NickNamed' has the following attributes: 'nickname' of type str.
+The class 'domain::DomainArtifacts' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Menu' has the following attributes: 'fakeName' of type str.
+The class 'domain::Property' has the following attributes: 'fakeName' of type str; 'uid' of type str; 'value' of type str.
+The class 'domain::ApplicationRecipes' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Application' has the following attributes: 'uid' of type str.
+The class 'Mapper' has no attributes.
+The class 'domain::Package' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::PREQueryTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::CheckBox' has no attributes.
+The class 'domain::ApplicationInfrastructureLayer' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'ItemIcon' has no attributes.
+The class 'domain::LayerHolder' has no attributes.
+The class 'domain::Artifacts' has the following attributes: 'uid' of type str.
+The class 'domain::Mappers' has the following attributes: 'uid' of type str.
+The class 'domain::TypePointer' has the following attributes: 'fakeTypeName' of type str; 'fakePackageName' of type str.
+The class 'domain::ExpressionPart' has the following attributes: 'expressionType' of type str; 'uid' of type str; 'order' of type int.
+The class 'Categorized' has no attributes.
+The class 'domain::PREFormTrigger' has the following attributes: 'uid' of type str.
+The class 'EnabledUIItem' has no attributes.
+The class 'domain::References' has no attributes.
+The class 'domain::ArtifactRef' has the following attributes: 'uid' of type str.
+The class 'domain::MenuItem' has no attributes.
+The class 'domain::ApplicationUILayer' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::LinkToMessage' has the following attributes: 'uid' of type str.
+The class 'domain::Trigger' has no attributes.
+The class 'domain::Domain' has the following attributes: 'uid' of type str.
+The class 'domain::Enumarator' has no attributes.
+The class 'DomainArtifact' has no attributes.
+The class 'domain::AreaRef' has the following attributes: 'group' of type int.
+The class 'domain::Selection' has no attributes.
+The class 'domain::ORMEntity' has no attributes.
+The class 'domain::Mapper' has the following attributes: 'uiLayer' of type bool; 'uid' of type str; 'serviceLayer' of type bool.
+The class 'domain::Window' has no attributes.
+The class 'domain::Secured' has no attributes.
+The class 'domain::EJBService' has no attributes.
+The class 'MultiLangLabel' has no attributes.
+The class 'domain::Form' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Tree' has the following attributes: 'label' of type str.
+The class 'domain::Router' has no attributes.
+The class 'domain::TypesRepository' has the following attributes: 'uid' of type str.
+The class 'domain::Image' has no attributes.
+The class 'StyleElement' has no attributes.
+The class 'domain::Context' has no attributes.
+The class 'domain::Configuration' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::MenuExtensionRef' has no attributes.
+The class 'domain::ContextParameters' has no attributes.
+The class 'domain::DeleteTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::Option' has the following attributes: 'uid' of type str; 'value' of type str.
+The class 'domain::SubMenu' has no attributes.
+The class 'SourcesPointer' has no attributes.
+The class 'MenuHolder' has no attributes.
+The class 'domain::EnterpriseInfrastructure' has the following attributes: 'uid' of type str.
+The class 'domain::InputText' has no attributes.
+The class 'Component' has no attributes.
+The class 'domain::ConfigVariable' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::ChildrenHolder' has no attributes.
+The class 'domain::Controls' has the following attributes: 'uid' of type str.
+The class 'domain::DropDownSelection' has the following attributes: 'initialOptionValue' of type str.
+The class 'domain::TypeDefinition' has the following attributes: 'uid' of type str.
+The class 'domain::LinkToLabel' has the following attributes: 'uid' of type str.
+The class 'domain::FormView' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::StyleElement' has no attributes.
+The class 'domain::POSTQueryTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::DataControl' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::MenuDefinition' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Query' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::DeploymentComponents' has the following attributes: 'uid' of type str.
+The class 'domain::Table' has the following attributes: 'label' of type str; 'rowNumber' of type int.
+The class 'domain::DefaultCavas' has the following attributes: 'defaultCanvas' of type bool.
+The class 'TypeMapper' has no attributes.
+The class 'domain::Relation' has the following attributes: 'uid' of type str; 'isTree' of type bool; 'name' of type str.
+The class 'domain::InfrastructureConnection' has the following attributes: 'uid' of type str.
+The class 'domain::MessageLibrary' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::DeploymentSequence' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::TypeMapper' has no attributes.
+The class 'domain::EObject' has no attributes.
+The class 'domain::MultiLangLabel' has no attributes.
+The class 'domain::OrderBy' has the following attributes: 'uid' of type str; 'order' of type str.
+The class 'domain::GrantAccess' has the following attributes: 'uid' of type str.
+The class 'Secured' has no attributes.
+The class 'domain::ServerClaster' has no attributes.
+The class 'domain::ItemIcon' has no attributes.
+The class 'domain::ApplicationMapper' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::TabCanvas' has the following attributes: 'orientation' of type str.
+The class 'DefaultCavas' has no attributes.
+The class 'InputElement' has no attributes.
+The class 'CanvasFrame' has no attributes.
+The class 'domain::QueryVariable' has the following attributes: 'value' of type str; 'uid' of type str.
+The class 'domain::TabPagesInheritance' has the following attributes: 'uid' of type str.
+The class 'domain::ViewPort' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::PREInsertTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::Recipes' has the following attributes: 'uid' of type str.
+The class 'domain::CSSMapper' has the following attributes: 'fakePackageName' of type str; 'fakeTypeName' of type str; 'libraryUrl' of type str.
+The class 'domain::RelationShip' has the following attributes: 'uid' of type str.
+The class 'domain::Datacenter' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::InfrastructureComponent' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::MenuElement' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'Trigger' has no attributes.
+The class 'domain::HTMLLayerHolder' has the following attributes: 'columns' of type int.
+The class 'domain::Ingredient' has the following attributes: 'uid' of type str; 'layer' of type str; 'name' of type str.
+The class 'domain::Categorized' has no attributes.
+The class 'domain::InputElement' has no attributes.
+The class 'domain::DomainApplications' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'Formatable' has no attributes.
+The class 'MenuElement' has no attributes.
+The class 'domain::MappingSpecifier' has the following attributes: 'uid' of type str.
+The class 'domain::PopupCanvas' has the following attributes: 'modal' of type bool.
+The class 'OptionSelection' has no attributes.
+The class 'domain::Dependency' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::CanvasFrame' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::EnumAttribute' has the following attributes: 'value' of type str; 'name' of type str; 'uid' of type str.
+The class 'domain::UIPackage' has the following attributes: 'uid' of type str.
+The class 'domain::Orders' has the following attributes: 'uid' of type str.
+The class 'domain::FormDataControls' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::ArtificialField' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::EnabledUIItem' has no attributes.
+The class 'domain::DomainTypes' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::MethodPointer' has the following attributes: 'fakeMethod' of type str.
+The class 'domain::Message' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'ViewPortHolder' has no attributes.
+The class 'domain::SearchTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::MenuHolder' has no attributes.
+The class 'domain::Roles' has the following attributes: 'uid' of type str.
+The class 'domain::Formatable' has the following attributes: 'format' of type str.
+The class 'domain::Password' has no attributes.
+The class 'domain::RoleMapper' has the following attributes: 'localRoleName' of type str; 'globalRoleName' of type str; 'fakeRoleName' of type str.
+The class 'domain::FlexField' has no attributes.
+The class 'domain::Views' has the following attributes: 'uid' of type str.
+The class 'domain::POSTCreateTrigger' has the following attributes: 'uid' of type str.
+The class 'domain::ContextParameter' has the following attributes: 'operation' of type str; 'uid' of type str.
+The class 'domain::ModelQuery' has the following attributes: 'uid' of type str; 'query' of type str; 'name' of type str.
+The class 'domain::TypeElement' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::ApplicationStyle' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'domain::Language' has the following attributes: 'lang' of type str; 'code' of type str; 'uid' of type str; 'defaultLang' of type bool.
+The class 'RelationShip' has no attributes.
+The class 'UsingMappers' has no attributes.
+The class 'domain::ConfigHash' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'ViewElement' has no attributes.
+The class 'domain::MessageElement' has the following attributes: 'label' of type str.
+The class 'domain::SourcesPointer' has no attributes.
+The class 'domain::Component' has the following attributes: 'uid' of type str; 'name' of type str; 'componentRoot' of type str.
+The class 'domain::Subsystem' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::Translation' has the following attributes: 'uid' of type str; 'translation' of type str.
+The class 'domain::StyleLibrary' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'domain::JavaMapper' has the following attributes: 'version' of type str; 'mappedToPackageName' of type str; 'artifactId' of type str; 'mappedToClassName' of type str; 'artifactType' of type str; 'libraryName' of type str; 'groupId' of type str.
+The class 'domain::ContextValue' has the following attributes: 'value' of type str; 'uid' of type str; 'constant' of type bool.
+The enumeration 'Order' has the following literals: 'ASC', 'DESC'.
+The enumeration 'Orientation' has the following literals: 'Bottom', 'Left', 'Top', 'Right'.
+The enumeration 'Comparator' has the following literals: 'GEQ', 'GT', 'LEQ', 'LT', 'NEQ', 'EQ'.
+The enumeration 'PlatformLayers' has the following literals: 'ServiceLayer', 'UILayer'.
+The enumeration 'RelationType' has the following literals: 'Many2Many', 'One2One', 'One2Many'.
+'domain::Column' is a specialization of 'HTMLLayerHolder'.
+'domain::MenuFolder' is a specialization of 'EnabledUIItem'.
+'domain::Component' is a specialization of 'HTMLLayerHolder'.
+'domain::ORMEntity' is a specialization of 'DomainArtifact'.
+'domain::ApplicationUILayer' is a specialization of 'HTMLLayerHolder'.
+'domain::SubMenu' is a specialization of 'MenuElement'.
+'domain::Primitive' is a specialization of 'TypeElement'.
+'domain::ViewArea' is a specialization of 'ViewElement'.
+'domain::TypeReference' is a specialization of 'TypeElement'.
+'domain::Column' is a specialization of 'Orderable'.
+'domain::Type' is a specialization of 'Categorized'.
+'domain::Canvas' is a specialization of 'ViewPortHolder'.
+'domain::CanvasFrame' is a specialization of 'StyleElement'.
+'domain::Image' is a specialization of 'InputElement'.
+'domain::MessageLibrary' is a specialization of 'Categorized'.
+'domain::Button' is a specialization of 'MultiLangLabel'.
+'domain::Window' is a specialization of 'MultiLangLabel'.
+'domain::Date' is a specialization of 'InputElement'.
+'domain::MenuFolder' is a specialization of 'StyleElement'.
+'domain::DeleteTrigger' is a specialization of 'ProxiesList'.
+'domain::LayerHolder' is a specialization of 'Uielement'.
+'domain::MenuExtensionPoint' is a specialization of 'MenuElement'.
+'domain::MenuItem' is a specialization of 'FlexFields'.
+'domain::MethodPointer' is a specialization of 'TypePointer'.
+'domain::InputText' is a specialization of 'Formatable'.
+'domain::ServerClaster' is a specialization of 'InfrastructureComponent'.
+'domain::Password' is a specialization of 'Formatable'.
+'domain::ApplicationRecipes' is a specialization of 'HTMLLayerHolder'.
+'domain::References' is a specialization of 'RelationShip'.
+'domain::Canvas' is a specialization of 'CanvasFrame'.
+'domain::MenuElement' is a specialization of 'Categorized'.
+'domain::SearchTrigger' is a specialization of 'ProxiesList'.
+'domain::MenuExtensionPoint' is a specialization of 'MenuExtensionRef'.
+'domain::FormParameter' is a specialization of 'TypePointer'.
+'domain::JavaMapper' is a specialization of 'TypeMapper'.
+'domain::JavaScriptMapper' is a specialization of 'TypeMapper'.
+'domain::TypeReference' is a specialization of 'TypePointer'.
+'domain::LayerHolder' is a specialization of 'ChildrenHolder'.
+'domain::Uielement' is a specialization of 'NickNamed'.
+'domain::MenuItem' is a specialization of 'MenuElement'.
+'domain::PopupCanvas' is a specialization of 'FlexFields'.
+'domain::MenuDefinition' is a specialization of 'Categorized'.
+'domain::MenuElement' is a specialization of 'EnabledUIItem'.
+'domain::Label' is a specialization of 'MultiLangLabel'.
+'domain::PopupCanvas' is a specialization of 'CanvasFrame'.
+'domain::Recipe' is a specialization of 'UsingMappers'.
+'domain::PREDeleteTrigger' is a specialization of 'Trigger'.
+'domain::ArtificialField' is a specialization of 'TypePointer'.
+'domain::PREUpdateTrigger' is a specialization of 'Trigger'.
+'domain::StyleClass' is a specialization of 'ContextValue'.
+'domain::Window' is a specialization of 'CanvasFrame'.
+'domain::InsertTrigger' is a specialization of 'ProxiesList'.
+'domain::Context' is a specialization of 'ContextValue'.
+'domain::TabCanvas' is a specialization of 'DefaultCavas'.
+'domain::MenuFolder' is a specialization of 'HTMLLayerHolder'.
+'domain::MenuFolder' is a specialization of 'ItemIcon'.
+'domain::MessageElement' is a specialization of 'Uielement'.
+'domain::POSTCreateTrigger' is a specialization of 'Trigger'.
+'domain::PopupCanvas' is a specialization of 'DefaultCavas'.
+'domain::Table' is a specialization of 'SourcesPointer'.
+'domain::Uielement' is a specialization of 'EnabledUIItem'.
+'domain::CreateTrigger' is a specialization of 'Trigger'.
+'domain::Storage' is a specialization of 'InfrastructureComponent'.
+'domain::Server' is a specialization of 'InfrastructureComponent'.
+'domain::Window' is a specialization of 'Categorized'.
+'domain::ViewPort' is a specialization of 'Orderable'.
+'domain::PREFormTrigger' is a specialization of 'Trigger'.
+'domain::SubMenu' is a specialization of 'ItemIcon'.
+'domain::Assosiation' is a specialization of 'RelationShip'.
+'domain::Canvas' is a specialization of 'DefaultCavas'.
+'domain::MenuElement' is a specialization of 'StyleElement'.
+'domain::MenuDefinition' is a specialization of 'StyleElement'.
+'domain::Parameter' is a specialization of 'TypePointer'.
+'domain::Button' is a specialization of 'Uielement'.
+'domain::MenuSeparator' is a specialization of 'MenuElement'.
+'domain::MenuFolder' is a specialization of 'Categorized'.
+'domain::ApplicationStyle' is a specialization of 'HTMLLayerHolder'.
+'domain::UpdateTrigger' is a specialization of 'ProxiesList'.
+'domain::ViewPortHolder' is a specialization of 'HTMLLayerHolder'.
+'domain::ViewPortTrigger' is a specialization of 'Trigger'.
+'domain::TabPage' is a specialization of 'MultiLangLabel'.
+'domain::MenuElement' is a specialization of 'Orderable'.
+'domain::Selection' is a specialization of 'StyleElement'.
+'domain::Table' is a specialization of 'MultiLangLabel'.
+'domain::Canvas' is a specialization of 'Categorized'.
+'domain::TypeMapper' is a specialization of 'Mapper'.
+'domain::TabPage' is a specialization of 'Categorized'.
+'domain::Date' is a specialization of 'Formatable'.
+'domain::Types' is a specialization of 'HTMLLayerHolder'.
+'domain::MessageElement' is a specialization of 'MultiLangLabel'.
+'domain::Menu' is a specialization of 'Uielement'.
+'domain::PREQueryTrigger' is a specialization of 'Trigger'.
+'domain::FlexField' is a specialization of 'Context'.
+'domain::Button' is a specialization of 'ItemIcon'.
+'domain::Uielement' is a specialization of 'MenuHolder'.
+'domain::TabPage' is a specialization of 'Orderable'.
+'domain::LayerHolder' is a specialization of 'HTMLLayerHolder'.
+'domain::Uielement' is a specialization of 'FlexFields'.
+'domain::TabPage' is a specialization of 'CanvasFrame'.
+'domain::ViewElement' is a specialization of 'Categorized'.
+'domain::SearchTrigger' is a specialization of 'Trigger'.
+'domain::OutputText' is a specialization of 'Formatable'.
+'domain::ViewElement' is a specialization of 'NickNamed'.
+'domain::DeleteTrigger' is a specialization of 'Trigger'.
+'domain::Generalization' is a specialization of 'RelationShip'.
+'domain::Trigger' is a specialization of 'ContextParameters'.
+'domain::Tree' is a specialization of 'MultiLangLabel'.
+'domain::SourcesPointer' is a specialization of 'Uielement'.
+'domain::Column' is a specialization of 'StyleElement'.
+'domain::Operation' is a specialization of 'Secured'.
+'domain::Uielement' is a specialization of 'StyleElement'.
+'domain::Datacenter' is a specialization of 'HTMLLayerHolder'.
+'domain::DomainArtifacts' is a specialization of 'HTMLLayerHolder'.
+'domain::Tree' is a specialization of 'SourcesPointer'.
+'domain::Uielement' is a specialization of 'Categorized'.
+'domain::MenuItem' is a specialization of 'ItemIcon'.
+'domain::Window' is a specialization of 'ViewPortHolder'.
+'domain::Column' is a specialization of 'Categorized'.
+'domain::ApplicationMappers' is a specialization of 'HTMLLayerHolder'.
+'domain::PopupCanvas' is a specialization of 'MultiLangLabel'.
+'domain::ViewPort' is a specialization of 'ViewElement'.
+'domain::InputElement' is a specialization of 'SourcesPointer'.
+'domain::Ingredient' is a specialization of 'UsingMappers'.
+'domain::InputText' is a specialization of 'InputElement'.
+'domain::Label' is a specialization of 'Uielement'.
+'domain::PopupCanvas' is a specialization of 'Categorized'.
+'domain::MenuFolder' is a specialization of 'MultiLangLabel'.
+'domain::OutputText' is a specialization of 'InputElement'.
+'domain::JPAService' is a specialization of 'DomainArtifact'.
+'domain::Tree' is a specialization of 'HTMLLayerHolder'.
+'domain::DomainApplications' is a specialization of 'HTMLLayerHolder'.
+'domain::Hub' is a specialization of 'InfrastructureComponent'.
+'domain::FlexField' is a specialization of 'Categorized'.
+'domain::Password' is a specialization of 'InputElement'.
+'domain::Context' is a specialization of 'ContextParameters'.
+'domain::Router' is a specialization of 'InfrastructureComponent'.
+'domain::RoleMapper' is a specialization of 'Mapper'.
+'domain::TabCanvas' is a specialization of 'MultiLangLabel'.
+'domain::FormVariable' is a specialization of 'TypePointer'.
+'domain::UpdateTrigger' is a specialization of 'Trigger'.
+'domain::POSTQueryTrigger' is a specialization of 'Trigger'.
+'domain::Operation' is a specialization of 'Categorized'.
+'domain::ReturnValue' is a specialization of 'TypePointer'.
+'domain::TabPage' is a specialization of 'ViewPortHolder'.
+'domain::ModelMapper' is a specialization of 'ArtifactRef'.
+'domain::DropDownSelection' is a specialization of 'OptionSelection'.
+'domain::ViewElement' is a specialization of 'StyleElement'.
+'domain::CheckBox' is a specialization of 'InputElement'.
+'domain::Canvas' is a specialization of 'MultiLangLabel'.
+'domain::Attribute' is a specialization of 'Categorized'.
+'domain::Type' is a specialization of 'TypeElement'.
+'domain::Column' is a specialization of 'MultiLangLabel'.
+'domain::Ingredient' is a specialization of 'HTMLLayerHolder'.
+'domain::ContinuousIintegration' is a specialization of 'DomainArtifact'.
+'domain::Table' is a specialization of 'HTMLLayerHolder'.
+'domain::MenuElement' is a specialization of 'MultiLangLabel'.
+'domain::CSSMapper' is a specialization of 'Mapper'.
+'domain::TabCanvas' is a specialization of 'Categorized'.
+'domain::Attribute' is a specialization of 'TypePointer'.
+'domain::Window' is a specialization of 'Secured'.
+'domain::CreateTrigger' is a specialization of 'ProxiesList'.
+'domain::OptionSelection' is a specialization of 'InputElement'.
+'domain::PopupCanvas' is a specialization of 'ViewPortHolder'.
+'domain::JavaComponent' is a specialization of 'Component'.
+'domain::EJBService' is a specialization of 'DomainArtifact'.
+'domain::Trigger' is a specialization of 'MethodPointer'.
+'domain::InsertTrigger' is a specialization of 'Trigger'.
+'domain::PREInsertTrigger' is a specialization of 'Trigger'.
+'domain::TypeMapper' is a specialization of 'TypePointer'.
+'domain::Uielement' is a specialization of 'Orderable'.
+'domain::RelationShip' is a specialization of 'Categorized'.
+'domain::TabCanvas' is a specialization of 'CanvasFrame'.
+'domain::Enumarator' is a specialization of 'TypeElement'.
+'domain::ViewArea' is a specialization of 'Orderable'.
+'domain::Specifier' (role 'parent64', cardinality 0..*) is associated with 'domain::Option' (role 'Option', cardinality 0..*).
+'domain::InputElement' (role 'domain_InputElement', cardinality 0..*) is associated with 'domain::LinkToMessage' (role 'domain_LinkToMessage391', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject408', cardinality 0..*) is associated with 'domain::ExpressionPart' (role 'domain_ExpressionPart407', cardinality 0..*).
+'domain::ModelQuery' (role 'ModelQuery', cardinality 0..*) is associated with 'domain::Artifact' (role 'parent46', cardinality 0..*).
+'domain::TypePointer' (role 'domain_TypePointer481', cardinality 0..*) is associated with 'domain::ProxiesList' (role 'domain_ProxiesList', cardinality 0..*).
+'domain::ViewPort' (role 'domain_ViewPort', cardinality 0..*) is associated with 'domain::ViewPortTrigger' (role 'domain_ViewPortTrigger', cardinality 0..*).
+'domain::ConfigVariable' (role 'ConfigVariable', cardinality 0..*) is associated with 'domain::Artifact' (role 'parent42', cardinality 0..*).
+'domain::Recipes' (role 'Recipes218', cardinality 0..*) is associated with 'domain::Recipe' (role 'recipe', cardinality 0..*).
+'domain::FormParameter' (role 'domain_FormParameter', cardinality 0..*) is associated with 'domain::Form' (role 'domain_Form348', cardinality 0..*).
+'domain::Context' (role 'domain_Context430', cardinality 0..*) is associated with 'domain::ItemIcon' (role 'domain_ItemIcon', cardinality 0..*).
+'domain::Component' (role 'Component', cardinality 0..*) is associated with 'domain::Ingredient' (role 'parent234', cardinality 0..*).
+'domain::CanvasView' (role 'domain_CanvasView384', cardinality 0..*) is associated with 'domain::LinkToLabel' (role 'domain_LinkToLabel', cardinality 0..*).
+'domain::TypesRepository' (role 'typesrepository', cardinality 0..*) is associated with 'domain::DomainTypes' (role 'DomainTypes324', cardinality 0..*).
+'domain::ContextParameter' (role 'domain_ContextParameter410', cardinality 0..*) is associated with 'domain::ContextParameters' (role 'domain_ContextParameters', cardinality 0..*).
+'domain::TypeDefinition' (role 'TypeDefinition334', cardinality 0..*) is associated with 'domain::Package' (role 'parent333', cardinality 0..*).
+'domain::PREUpdateTrigger' (role 'domain_PREUpdateTrigger', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl508', cardinality 0..*).
+'domain::EnterpriseInfrastructure' (role 'domain_EnterpriseInfrastructure', cardinality 0..*) is associated with 'domain::InfrastructureConnection' (role 'domain_InfrastructureConnection', cardinality 0..*).
+'domain::MenuView' (role 'MenuView', cardinality 0..*) is associated with 'domain::MenuDefinition' (role 'parent365', cardinality 0..*).
+'domain::Form' (role 'domain_Form344', cardinality 0..*) is associated with 'domain::FormView' (role 'domain_FormView', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl500', cardinality 0..*) is associated with 'domain::POSTQueryTrigger' (role 'domain_POSTQueryTrigger', cardinality 0..*).
+'domain::Ingredient' (role 'ingredients', cardinality 0..*) is associated with 'domain::Recipe' (role 'Recipe232', cardinality 0..*).
+'domain::DeploymentStarStep' (role 'domain_DeploymentStarStep214', cardinality 0..*) is associated with 'domain::DeploymentComponent' (role 'domain_DeploymentComponent215', cardinality 0..*).
+'domain::MessageLibrary' (role 'domain_MessageLibrary137', cardinality 0..*) is associated with 'domain::Message' (role 'domain_Message', cardinality 0..*).
+'domain::AreaRef' (role 'domain_AreaRef', cardinality 0..*) is associated with 'domain::Uielement' (role 'domain_Uielement428', cardinality 0..*).
+'domain::DomainArtifact' (role 'parent32', cardinality 0..*) is associated with 'domain::Artifacts' (role 'Artifacts', cardinality 0..*).
+'domain::Messages' (role 'Messages', cardinality 0..*) is associated with 'domain::ApplicationMessages' (role 'parent88', cardinality 0..*).
+'domain::Application' (role 'Application94', cardinality 0..*) is associated with 'domain::ApplicationStyle' (role 'applicationStyle', cardinality 0..*).
+'domain::Recipes' (role 'parent185', cardinality 0..*) is associated with 'domain::Recipe' (role 'Recipe', cardinality 0..*).
+'domain::OptionSelection' (role 'domain_OptionSelection453', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl454', cardinality 0..*).
+'domain::Column' (role 'domain_Column468', cardinality 0..*) is associated with 'domain::Tree' (role 'domain_Tree467', cardinality 0..*).
+'domain::MenuView' (role 'domain_MenuView589', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject590', cardinality 0..*).
+'domain::RelationShip' (role 'domain_RelationShip289', cardinality 0..*) is associated with 'domain::TypeElement' (role 'domain_TypeElement290', cardinality 0..*).
+'domain::Attribute' (role 'attributes', cardinality 0..*) is associated with 'domain::Type' (role 'Type', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl502', cardinality 0..*) is associated with 'domain::PREInsertTrigger' (role 'domain_PREInsertTrigger', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject', cardinality 0..*) is associated with 'domain::Domain' (role 'domain_Domain', cardinality 0..*).
+'domain::Views' (role 'domain_Views356', cardinality 0..*) is associated with 'domain::TabPagesInheritance' (role 'domain_TabPagesInheritance', cardinality 0..*).
+'domain::Artifact' (role 'domain_Artifact', cardinality 0..*) is associated with 'domain::GenerationHint' (role 'domain_GenerationHint50', cardinality 0..*).
+'domain::ModelMapper' (role 'domain_ModelMapper254', cardinality 0..*) is associated with 'domain::Query' (role 'domain_Query', cardinality 0..*).
+'domain::Context' (role 'domain_Context465', cardinality 0..*) is associated with 'domain::Tree' (role 'domain_Tree', cardinality 0..*).
+'domain::StylesPackage' (role 'StylesPackage162', cardinality 0..*) is associated with 'domain::Styles' (role 'styles', cardinality 0..*).
+'domain::FormDataControls' (role 'domain_FormDataControls', cardinality 0..*) is associated with 'domain::Form' (role 'domain_Form346', cardinality 0..*).
+'domain::Artifacts' (role 'parent34', cardinality 0..*) is associated with 'domain::Artifact' (role 'Artifact', cardinality 0..*).
+'domain::Component' (role 'parent238', cardinality 0..*) is associated with 'domain::ModelMapper' (role 'ModelMapper', cardinality 0..*).
+'domain::UIPackage' (role 'domain_UIPackage', cardinality 0..*) is associated with 'domain::Form' (role 'domain_Form', cardinality 0..*).
+'domain::Attribute' (role 'domain_Attribute', cardinality 0..*) is associated with 'domain::Assosiation' (role 'domain_Assosiation296', cardinality 0..*).
+'domain::AreaRef' (role 'domain_AreaRef432', cardinality 0..*) is associated with 'domain::NickNamed' (role 'domain_NickNamed', cardinality 0..*).
+'domain::Mappers' (role 'parent170', cardinality 0..*) is associated with 'domain::Mapper' (role 'Mapper', cardinality 0..*).
+'domain::Controls' (role 'domain_Controls476', cardinality 0..*) is associated with 'domain::Dependency' (role 'domain_Dependency', cardinality 0..*).
+'domain::Application' (role 'parent76', cardinality 0..*) is associated with 'domain::ApplicationStyle' (role 'ApplicationStyle', cardinality 0..*).
+'domain::DomainTypes' (role 'domainTypes', cardinality 0..*) is associated with 'domain::Domain' (role 'Domain20', cardinality 0..*).
+'domain::Application' (role 'Application102', cardinality 0..*) is associated with 'domain::ApplicationUILayer' (role 'applicationUILayer', cardinality 0..*).
+'domain::Configuration' (role 'domain_Configuration245', cardinality 0..*) is associated with 'domain::Property' (role 'domain_Property', cardinality 0..*).
+'domain::GrantAccess' (role 'domain_GrantAccess13', cardinality 0..*) is associated with 'domain::Role' (role 'domain_Role', cardinality 0..*).
+'domain::ApplicationRecipes' (role 'ApplicationRecipes', cardinality 0..*) is associated with 'domain::Application' (role 'parent68', cardinality 0..*).
+'domain::MappingSpecifier' (role 'domain_MappingSpecifier264', cardinality 0..*) is associated with 'domain::Option' (role 'domain_Option', cardinality 0..*).
+'domain::Specifier' (role 'domain_Specifier', cardinality 0..*) is associated with 'domain::MappingSpecifier' (role 'domain_MappingSpecifier262', cardinality 0..*).
+'domain::Operation' (role 'Operation317', cardinality 0..*) is associated with 'domain::Parameter' (role 'parameters316', cardinality 0..*).
+'domain::Type' (role 'domain_Type451', cardinality 0..*) is associated with 'domain::OptionSelection' (role 'domain_OptionSelection450', cardinality 0..*).
+'domain::ApplicationMessages' (role 'applicationMessages', cardinality 0..*) is associated with 'domain::Application' (role 'Application86', cardinality 0..*).
+'domain::MessageElement' (role 'domain_MessageElement', cardinality 0..*) is associated with 'domain::LinkToMessage' (role 'domain_LinkToMessage393', cardinality 0..*).
+'domain::Controls' (role 'domain_Controls', cardinality 0..*) is associated with 'domain::Root' (role 'domain_Root', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject530', cardinality 0..*) is associated with 'domain::OrderBy' (role 'domain_OrderBy529', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject84', cardinality 0..*) is associated with 'domain::Application' (role 'domain_Application', cardinality 0..*).
+'domain::RelationShip' (role 'domain_RelationShip292', cardinality 0..*) is associated with 'domain::TypeElement' (role 'domain_TypeElement293', cardinality 0..*).
+'domain::InfrastructureComponent' (role 'domain_InfrastructureComponent', cardinality 0..*) is associated with 'domain::InfrastructureConnection' (role 'domain_InfrastructureConnection579', cardinality 0..*).
+'domain::Controls' (role 'domain_Controls474', cardinality 0..*) is associated with 'domain::Relation' (role 'domain_Relation', cardinality 0..*).
+'domain::Recipe' (role 'Recipe240', cardinality 0..*) is associated with 'domain::Infrastructure' (role 'infrastructures', cardinality 0..*).
+'domain::Artifact' (role 'Artifact54', cardinality 0..*) is associated with 'domain::ConfigHash' (role 'configHashes', cardinality 0..*).
+'domain::KeyValuePair' (role 'domain_KeyValuePair', cardinality 0..*) is associated with 'domain::HashProperty' (role 'domain_HashProperty260', cardinality 0..*).
+'domain::EnterpriseInfrastructure' (role 'infarastructure', cardinality 0..*) is associated with 'domain::ApplicationInfrastructureLayer' (role 'ApplicationInfrastructureLayer559', cardinality 0..*).
+'domain::Specifier' (role 'specifiers', cardinality 0..*) is associated with 'domain::Artifact' (role 'Artifact62', cardinality 0..*).
+'domain::ContextValue' (role 'domain_ContextValue', cardinality 0..*) is associated with 'domain::ContextParameter' (role 'domain_ContextParameter403', cardinality 0..*).
+'domain::TypePointer' (role 'domain_TypePointer491', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl490', cardinality 0..*).
+'domain::StyleLibrary' (role 'domain_StyleLibrary168', cardinality 0..*) is associated with 'domain::StyleSet' (role 'domain_StyleSet', cardinality 0..*).
+'domain::TypesRepository' (role 'domain_TypesRepository', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject326', cardinality 0..*).
+'domain::EnterpriseInfrastructure' (role 'EnterpriseInfrastructure567', cardinality 0..*) is associated with 'domain::Datacenter' (role 'datacenters', cardinality 0..*).
+'domain::DomainArtifacts' (role 'domainArtifacts', cardinality 0..*) is associated with 'domain::Domain' (role 'Domain', cardinality 0..*).
+'domain::InfrastructureComponent' (role 'domain_InfrastructureComponent582', cardinality 0..*) is associated with 'domain::InfrastructureConnection' (role 'domain_InfrastructureConnection581', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl542', cardinality 0..*) is associated with 'domain::Dependency' (role 'domain_Dependency541', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl545', cardinality 0..*) is associated with 'domain::Dependency' (role 'domain_Dependency544', cardinality 0..*).
+'domain::ApplicationRecipe' (role 'ApplicationRecipe191', cardinality 0..*) is associated with 'domain::Recipes' (role 'recipes190', cardinality 0..*).
+'domain::ApplicationInfrastructureLayer' (role 'parent557', cardinality 0..*) is associated with 'domain::EnterpriseInfrastructure' (role 'EnterpriseInfrastructure', cardinality 0..*).
+'domain::Operation' (role 'Operation', cardinality 0..*) is associated with 'domain::Type' (role 'parent307', cardinality 0..*).
+'domain::SourcesPointer' (role 'domain_SourcesPointer440', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl441', cardinality 0..*).
+'domain::RelationShip' (role 'domain_RelationShip', cardinality 0..*) is associated with 'domain::TypeDefinition' (role 'domain_TypeDefinition', cardinality 0..*).
+'domain::HashProperty' (role 'domain_HashProperty258', cardinality 0..*) is associated with 'domain::ConfigHash' (role 'domain_ConfigHash', cardinality 0..*).
+'domain::Recipe' (role 'recipe222', cardinality 0..*) is associated with 'domain::Infrastructure' (role 'Infrastructure', cardinality 0..*).
+'domain::Package' (role 'packages', cardinality 0..*) is associated with 'domain::Types' (role 'Types336', cardinality 0..*).
+'domain::Artifact' (role 'Artifact52', cardinality 0..*) is associated with 'domain::ConfigVariable' (role 'configVariables', cardinality 0..*).
+'domain::ConfigVariable' (role 'domain_ConfigVariable', cardinality 0..*) is associated with 'domain::Property' (role 'domain_Property256', cardinality 0..*).
+'domain::CanvasView' (role 'domain_CanvasView388', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject389', cardinality 0..*).
+'domain::Operation' (role 'parent312', cardinality 0..*) is associated with 'domain::Parameter' (role 'Parameter', cardinality 0..*).
+'domain::ApplicationRecipe' (role 'parent114', cardinality 0..*) is associated with 'domain::Recipes' (role 'Recipes', cardinality 0..*).
+'domain::MenuFolder' (role 'domain_MenuFolder603', cardinality 0..*) is associated with 'domain::SubMenu' (role 'domain_SubMenu', cardinality 0..*).
+'domain::DataControl' (role 'DataControl', cardinality 0..*) is associated with 'domain::Controls' (role 'parent472', cardinality 0..*).
+'domain::MessageLibrary' (role 'domain_MessageLibrary', cardinality 0..*) is associated with 'domain::Messages' (role 'domain_Messages', cardinality 0..*).
+'domain::Enumarator' (role 'Enumarator', cardinality 0..*) is associated with 'domain::EnumAttribute' (role 'values', cardinality 0..*).
+'domain::GrantAccess' (role 'domain_GrantAccess', cardinality 0..*) is associated with 'domain::Secured' (role 'domain_Secured', cardinality 0..*).
+'domain::ApplicationRecipes' (role 'applicationRecipes', cardinality 0..*) is associated with 'domain::Application' (role 'Application110', cardinality 0..*).
+'domain::OrderBy' (role 'domain_OrderBy', cardinality 0..*) is associated with 'domain::Orders' (role 'domain_Orders527', cardinality 0..*).
+'domain::Datacenter' (role 'Datacenter571', cardinality 0..*) is associated with 'domain::Subsystem' (role 'subsystems', cardinality 0..*).
+'domain::Server' (role 'domain_Server', cardinality 0..*) is associated with 'domain::ServerClaster' (role 'domain_ServerClaster', cardinality 0..*).
+'domain::TypePointer' (role 'domain_TypePointer494', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl493', cardinality 0..*).
+'domain::Mappers' (role 'Mappers177', cardinality 0..*) is associated with 'domain::Mapper' (role 'mappers176', cardinality 0..*).
+'domain::Option' (role 'options', cardinality 0..*) is associated with 'domain::Specifier' (role 'Specifier66', cardinality 0..*).
+'domain::Group' (role 'domain_Group159', cardinality 0..*) is associated with 'domain::Role' (role 'domain_Role160', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl506', cardinality 0..*) is associated with 'domain::POSTCreateTrigger' (role 'domain_POSTCreateTrigger', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl', cardinality 0..*) is associated with 'domain::SourcesPointer' (role 'domain_SourcesPointer', cardinality 0..*).
+'domain::MenuFolder' (role 'domain_MenuFolder', cardinality 0..*) is associated with 'domain::MenuView' (role 'domain_MenuView', cardinality 0..*).
+'domain::InfrastructureLayer' (role 'InfrastructureLayer584', cardinality 0..*) is associated with 'domain::InfrastructureComponent' (role 'infrastructureComponent', cardinality 0..*).
+'domain::Type' (role 'domain_Type', cardinality 0..*) is associated with 'domain::SourcesPointer' (role 'domain_SourcesPointer438', cardinality 0..*).
+'domain::EnterpriseInfrastructure' (role 'parent561', cardinality 0..*) is associated with 'domain::Datacenter' (role 'Datacenter', cardinality 0..*).
+'domain::Artifacts' (role 'artifact', cardinality 0..*) is associated with 'domain::DomainArtifact' (role 'DomainArtifact36', cardinality 0..*).
+'domain::Controls' (role 'formControl', cardinality 0..*) is associated with 'domain::FormDataControls' (role 'FormDataControls', cardinality 0..*).
+'domain::Datacenter' (role 'parent569', cardinality 0..*) is associated with 'domain::Subsystem' (role 'Subsystem', cardinality 0..*).
+'domain::Relation' (role 'domain_Relation532', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl533', cardinality 0..*).
+'domain::Package' (role 'Package', cardinality 0..*) is associated with 'domain::TypeDefinition' (role 'typedefinition', cardinality 0..*).
+'domain::MenuElement' (role 'domain_MenuElement', cardinality 0..*) is associated with 'domain::MenuFolder' (role 'domain_MenuFolder596', cardinality 0..*).
+'domain::AreaRef' (role 'domain_AreaRef601', cardinality 0..*) is associated with 'domain::MenuItem' (role 'domain_MenuItem600', cardinality 0..*).
+'domain::Ingredient' (role 'Ingredient', cardinality 0..*) is associated with 'domain::Recipe' (role 'parent220', cardinality 0..*).
+'domain::LinkToLabel' (role 'domain_LinkToLabel398', cardinality 0..*) is associated with 'domain::Label' (role 'domain_Label', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl525', cardinality 0..*) is associated with 'domain::Orders' (role 'domain_Orders', cardinality 0..*).
+'domain::StylesPackage' (role 'stylesPackage', cardinality 0..*) is associated with 'domain::ApplicationStyle' (role 'ApplicationStyle98', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl498', cardinality 0..*) is associated with 'domain::PREQueryTrigger' (role 'domain_PREQueryTrigger', cardinality 0..*).
+'domain::Recipes' (role 'domain_Recipes188', cardinality 0..*) is associated with 'domain::Infrastructure' (role 'domain_Infrastructure', cardinality 0..*).
+'domain::Column' (role 'domain_Column463', cardinality 0..*) is associated with 'domain::Table' (role 'domain_Table', cardinality 0..*).
+'domain::Classifier' (role 'domain_Classifier', cardinality 0..*) is associated with 'domain::Categorized' (role 'domain_Categorized', cardinality 0..*).
+'domain::StyleClass' (role 'domain_StyleClass', cardinality 0..*) is associated with 'domain::StyleElement' (role 'domain_StyleElement414', cardinality 0..*).
+'domain::Application' (role 'Application90', cardinality 0..*) is associated with 'domain::ApplicationRole' (role 'applicationRole', cardinality 0..*).
+'domain::Styles' (role 'domain_Styles', cardinality 0..*) is associated with 'domain::StyleLibrary' (role 'domain_StyleLibrary', cardinality 0..*).
+'domain::TabPagesInheritance' (role 'domain_TabPagesInheritance376', cardinality 0..*) is associated with 'domain::TabCanvas' (role 'domain_TabCanvas', cardinality 0..*).
+'domain::Controls' (role 'Controls496', cardinality 0..*) is associated with 'domain::DataControl' (role 'controls', cardinality 0..*).
+'domain::DomainApplications' (role 'parent22', cardinality 0..*) is associated with 'domain::DomainApplication' (role 'DomainApplication', cardinality 0..*).
+'domain::Controls' (role 'domain_Controls478', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject479', cardinality 0..*).
+'domain::ApplicationRole' (role 'parent92', cardinality 0..*) is associated with 'domain::Roles' (role 'Roles', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject133', cardinality 0..*) is associated with 'domain::Messages' (role 'domain_Messages132', cardinality 0..*).
+'domain::DeploymentStarStep' (role 'domain_DeploymentStarStep', cardinality 0..*) is associated with 'domain::DeploymentComponents' (role 'domain_DeploymentComponents204', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl504', cardinality 0..*) is associated with 'domain::PREDeleteTrigger' (role 'domain_PREDeleteTrigger', cardinality 0..*).
+'domain::CanvasFrame' (role 'domain_CanvasFrame374', cardinality 0..*) is associated with 'domain::ViewInheritance' (role 'domain_ViewInheritance373', cardinality 0..*).
+'domain::Attribute' (role 'domain_Attribute550', cardinality 0..*) is associated with 'domain::Link' (role 'domain_Link549', cardinality 0..*).
+'domain::DomainApplications' (role 'DomainApplications28', cardinality 0..*) is associated with 'domain::DomainApplication' (role 'applications', cardinality 0..*).
+'domain::Views' (role 'domain_Views360', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject361', cardinality 0..*).
+'domain::EnabledUIItem' (role 'domain_EnabledUIItem', cardinality 0..*) is associated with 'domain::Context' (role 'domain_Context420', cardinality 0..*).
+'domain::Attribute' (role 'domain_Attribute553', cardinality 0..*) is associated with 'domain::Link' (role 'domain_Link552', cardinality 0..*).
+'domain::EnumAttribute' (role 'EnumAttribute', cardinality 0..*) is associated with 'domain::Enumarator' (role 'parent319', cardinality 0..*).
+'domain::DataControl' (role 'DataControl547', cardinality 0..*) is associated with 'domain::ArtificialField' (role 'artificialFields', cardinality 0..*).
+'domain::ApplicationMappers' (role 'ApplicationMappers', cardinality 0..*) is associated with 'domain::Application' (role 'parent70', cardinality 0..*).
+'domain::DataControl' (role 'parent520', cardinality 0..*) is associated with 'domain::ArtificialField' (role 'ArtificialField', cardinality 0..*).
+'domain::Application' (role 'Application118', cardinality 0..*) is associated with 'domain::ApplicationMappers' (role 'applicationMappers', cardinality 0..*).
+'domain::DeploymentComponents' (role 'domain_DeploymentComponents202', cardinality 0..*) is associated with 'domain::DeploymentComponent' (role 'domain_DeploymentComponent', cardinality 0..*).
+'domain::ViewArea' (role 'parent368', cardinality 0..*) is associated with 'domain::CanvasView' (role 'CanvasView', cardinality 0..*).
+'domain::Type' (role 'parent305', cardinality 0..*) is associated with 'domain::Attribute' (role 'Attribute', cardinality 0..*).
+'domain::Artifact' (role 'parent48', cardinality 0..*) is associated with 'domain::Specifier' (role 'Specifier', cardinality 0..*).
+'domain::SourcesPointer' (role 'domain_SourcesPointer435', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject436', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject207', cardinality 0..*) is associated with 'domain::DeploymentComponents' (role 'domain_DeploymentComponents206', cardinality 0..*).
+'domain::Component' (role 'components', cardinality 0..*) is associated with 'domain::Ingredient' (role 'Ingredient236', cardinality 0..*).
+'domain::Types' (role 'parent330', cardinality 0..*) is associated with 'domain::Package' (role 'Package331', cardinality 0..*).
+'domain::CanvasView' (role 'domain_CanvasView386', cardinality 0..*) is associated with 'domain::LinkToMessage' (role 'domain_LinkToMessage', cardinality 0..*).
+'domain::ApplicationUILayer' (role 'parent104', cardinality 0..*) is associated with 'domain::ApplicationUIPackage' (role 'ApplicationUIPackage', cardinality 0..*).
+'domain::Context' (role 'domain_Context459', cardinality 0..*) is associated with 'domain::DropDownSelection' (role 'domain_DropDownSelection458', cardinality 0..*).
+'domain::CSSMapper' (role 'domain_CSSMapper180', cardinality 0..*) is associated with 'domain::StyleLibrary' (role 'domain_StyleLibrary181', cardinality 0..*).
+'domain::Mappers' (role 'domain_Mappers', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject174', cardinality 0..*).
+'domain::StylesPackage' (role 'StylesPackage', cardinality 0..*) is associated with 'domain::ApplicationStyle' (role 'parent96', cardinality 0..*).
+'domain::LanguageRef' (role 'domain_LanguageRef139', cardinality 0..*) is associated with 'domain::Language' (role 'domain_Language140', cardinality 0..*).
+'domain::DeploymentComponents' (role 'domain_DeploymentComponents', cardinality 0..*) is associated with 'domain::DeploymentSequence' (role 'domain_DeploymentSequence200', cardinality 0..*).
+'domain::StyleElement' (role 'domain_StyleElement', cardinality 0..*) is associated with 'domain::Context' (role 'domain_Context412', cardinality 0..*).
+'domain::TypePointer' (role 'domain_TypePointer', cardinality 0..*) is associated with 'domain::Package' (role 'domain_Package', cardinality 0..*).
+'domain::ApplicationRecipes' (role 'ApplicationRecipes116', cardinality 0..*) is associated with 'domain::ApplicationRecipe' (role 'recipes', cardinality 0..*).
+'domain::DomainApplication' (role 'parent26', cardinality 0..*) is associated with 'domain::Application' (role 'Application', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject443', cardinality 0..*) is associated with 'domain::Selection' (role 'domain_Selection', cardinality 0..*).
+'domain::FormVariable' (role 'domain_FormVariable', cardinality 0..*) is associated with 'domain::Root' (role 'domain_Root485', cardinality 0..*).
+'domain::Context' (role 'domain_Context598', cardinality 0..*) is associated with 'domain::MenuItem' (role 'domain_MenuItem', cardinality 0..*).
+'domain::Messages' (role 'messages', cardinality 0..*) is associated with 'domain::ApplicationMessages' (role 'ApplicationMessages127', cardinality 0..*).
+'domain::ApplicationMappers' (role 'parent120', cardinality 0..*) is associated with 'domain::ApplicationMapper' (role 'ApplicationMapper', cardinality 0..*).
+'domain::ViewInheritance' (role 'domain_ViewInheritance', cardinality 0..*) is associated with 'domain::Views' (role 'domain_Views354', cardinality 0..*).
+'domain::Styles' (role 'Styles', cardinality 0..*) is associated with 'domain::StylesPackage' (role 'parent100', cardinality 0..*).
+'domain::TypesRepository' (role 'TypesRepository328', cardinality 0..*) is associated with 'domain::Types' (role 'typeDefinition', cardinality 0..*).
+'domain::DomainApplications' (role 'domainApplications', cardinality 0..*) is associated with 'domain::Domain' (role 'Domain24', cardinality 0..*).
+'domain::Roles' (role 'domain_Roles151', cardinality 0..*) is associated with 'domain::Group' (role 'domain_Group', cardinality 0..*).
+'domain::ViewElement' (role 'domain_ViewElement', cardinality 0..*) is associated with 'domain::ViewPortHolder' (role 'domain_ViewPortHolder', cardinality 0..*).
+'domain::DomainArtifact' (role 'domainArtifact', cardinality 0..*) is associated with 'domain::DomainArtifacts' (role 'DomainArtifacts30', cardinality 0..*).
+'domain::ExpressionPart' (role 'domain_ExpressionPart', cardinality 0..*) is associated with 'domain::ContextValue' (role 'domain_ContextValue405', cardinality 0..*).
+'domain::ViewInheritance' (role 'domain_ViewInheritance370', cardinality 0..*) is associated with 'domain::ViewPort' (role 'domain_ViewPort371', cardinality 0..*).
+'domain::ApplicationMessages' (role 'ApplicationMessages', cardinality 0..*) is associated with 'domain::Application' (role 'parent80', cardinality 0..*).
+'domain::ApplicationUILayer' (role 'ApplicationUILayer106', cardinality 0..*) is associated with 'domain::ApplicationUIPackage' (role 'applicationUIPackages', cardinality 0..*).
+'domain::Root' (role 'domain_Root483', cardinality 0..*) is associated with 'domain::PREFormTrigger' (role 'domain_PREFormTrigger', cardinality 0..*).
+'domain::ConfigHash' (role 'ConfigHash', cardinality 0..*) is associated with 'domain::Artifact' (role 'parent44', cardinality 0..*).
+'domain::Application' (role 'parent72', cardinality 0..*) is associated with 'domain::ApplicationUILayer' (role 'ApplicationUILayer', cardinality 0..*).
+'domain::DomainApplication' (role 'DomainApplication82', cardinality 0..*) is associated with 'domain::Application' (role 'application', cardinality 0..*).
+'domain::Query' (role 'domain_Query271', cardinality 0..*) is associated with 'domain::QueryVariable' (role 'domain_QueryVariable', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject38', cardinality 0..*) is associated with 'domain::Artifacts' (role 'domain_Artifacts', cardinality 0..*).
+'domain::ModelQuery' (role 'domain_ModelQuery269', cardinality 0..*) is associated with 'domain::Query' (role 'domain_Query268', cardinality 0..*).
+'domain::TypeElement' (role 'domain_TypeElement', cardinality 0..*) is associated with 'domain::TypePointer' (role 'domain_TypePointer280', cardinality 0..*).
+'domain::FormView' (role 'parent350', cardinality 0..*) is associated with 'domain::Views' (role 'Views', cardinality 0..*).
+'domain::StyleClass' (role 'domain_StyleClass416', cardinality 0..*) is associated with 'domain::Classifier' (role 'domain_Classifier417', cardinality 0..*).
+'domain::Uielement' (role 'domain_Uielement425', cardinality 0..*) is associated with 'domain::Context' (role 'domain_Context426', cardinality 0..*).
+'domain::Operation' (role 'operations', cardinality 0..*) is associated with 'domain::Type' (role 'Type310', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl514', cardinality 0..*) is associated with 'domain::UpdateTrigger' (role 'domain_UpdateTrigger', cardinality 0..*).
+'domain::Translation' (role 'domain_Translation144', cardinality 0..*) is associated with 'domain::LanguageRef' (role 'domain_LanguageRef145', cardinality 0..*).
+'domain::ModelQuery' (role 'domain_ModelQuery', cardinality 0..*) is associated with 'domain::Query' (role 'domain_Query266', cardinality 0..*).
+'domain::Uielement' (role 'domain_Uielement461', cardinality 0..*) is associated with 'domain::Column' (role 'domain_Column', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl518', cardinality 0..*) is associated with 'domain::SearchTrigger' (role 'domain_SearchTrigger', cardinality 0..*).
+'domain::QueryParameter' (role 'parameters', cardinality 0..*) is associated with 'domain::ModelQuery' (role 'ModelQuery60', cardinality 0..*).
+'domain::ApplicationMapper' (role 'ApplicationMapper172', cardinality 0..*) is associated with 'domain::Mappers' (role 'mapper', cardinality 0..*).
+'domain::EnterpriseInfrastructure' (role 'domain_EnterpriseInfrastructure564', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject565', cardinality 0..*).
+'domain::InfrastructureLayer' (role 'InfrastructureLayer', cardinality 0..*) is associated with 'domain::Subsystem' (role 'parent573', cardinality 0..*).
+'domain::Artifact' (role 'Artifact56', cardinality 0..*) is associated with 'domain::ModelQuery' (role 'modelQuery', cardinality 0..*).
+'domain::TypeDefinition' (role 'parent282', cardinality 0..*) is associated with 'domain::TypeElement' (role 'TypeElement', cardinality 0..*).
+'domain::GrantAccess' (role 'domain_GrantAccess11', cardinality 0..*) is associated with 'domain::DomainApplication' (role 'domain_DomainApplication', cardinality 0..*).
+'domain::DeploymentSequence' (role 'domain_DeploymentSequence224', cardinality 0..*) is associated with 'domain::Recipe' (role 'domain_Recipe', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject401', cardinality 0..*) is associated with 'domain::ContextParameter' (role 'domain_ContextParameter', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject166', cardinality 0..*) is associated with 'domain::Styles' (role 'domain_Styles165', cardinality 0..*).
+'domain::ApplicationRecipe' (role 'ApplicationRecipe', cardinality 0..*) is associated with 'domain::ApplicationRecipes' (role 'parent112', cardinality 0..*).
+'domain::ApplicationRole' (role 'ApplicationRole147', cardinality 0..*) is associated with 'domain::Roles' (role 'roles', cardinality 0..*).
+'domain::TypeElement' (role 'types', cardinality 0..*) is associated with 'domain::TypeDefinition' (role 'TypeDefinition', cardinality 0..*).
+'domain::CanvasFrame' (role 'domain_CanvasFrame', cardinality 0..*) is associated with 'domain::Views' (role 'domain_Views', cardinality 0..*).
+'domain::UIPackage' (role 'uipackage', cardinality 0..*) is associated with 'domain::ApplicationUIPackage' (role 'ApplicationUIPackage338', cardinality 0..*).
+'domain::Messages' (role 'domain_Messages130', cardinality 0..*) is associated with 'domain::Language' (role 'domain_Language', cardinality 0..*).
+'domain::Assosiation' (role 'domain_Assosiation301', cardinality 0..*) is associated with 'domain::TypePointer' (role 'domain_TypePointer302', cardinality 0..*).
+'domain::InsertTrigger' (role 'domain_InsertTrigger', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl512', cardinality 0..*).
+'domain::DomainApplications' (role 'DomainApplications', cardinality 0..*) is associated with 'domain::Domain' (role 'parent4', cardinality 0..*).
+'domain::ApplicationInfrastructureLayer' (role 'ApplicationInfrastructureLayer', cardinality 0..*) is associated with 'domain::Application' (role 'parent74', cardinality 0..*).
+'domain::MenuFolder' (role 'domain_MenuFolder592', cardinality 0..*) is associated with 'domain::MenuHolder' (role 'domain_MenuHolder', cardinality 0..*).
+'domain::Group' (role 'domain_Group155', cardinality 0..*) is associated with 'domain::Group' (role 'domain_Group157', cardinality 0..*).
+'domain::ModelMapper' (role 'domain_ModelMapper252', cardinality 0..*) is associated with 'domain::MappingSpecifier' (role 'domain_MappingSpecifier', cardinality 0..*).
+'domain::LinkToLabel' (role 'domain_LinkToLabel395', cardinality 0..*) is associated with 'domain::InputElement' (role 'domain_InputElement396', cardinality 0..*).
+'domain::QueryParameter' (role 'QueryParameter', cardinality 0..*) is associated with 'domain::ModelQuery' (role 'parent58', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl448', cardinality 0..*) is associated with 'domain::OptionSelection' (role 'domain_OptionSelection', cardinality 0..*).
+'domain::DeleteTrigger' (role 'domain_DeleteTrigger', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl516', cardinality 0..*).
+'domain::UsingMappers' (role 'domain_UsingMappers', cardinality 0..*) is associated with 'domain::ApplicationMapper' (role 'domain_ApplicationMapper', cardinality 0..*).
+'domain::MenuDefinition' (role 'MenuDefinition', cardinality 0..*) is associated with 'domain::MenuView' (role 'menuView', cardinality 0..*).
+'domain::ArtifactRef' (role 'domain_ArtifactRef276', cardinality 0..*) is associated with 'domain::Artifact' (role 'domain_Artifact277', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject183', cardinality 0..*) is associated with 'domain::RoleMapper' (role 'domain_RoleMapper', cardinality 0..*).
+'domain::Infrastructure' (role 'infrastructure', cardinality 0..*) is associated with 'domain::Configuration' (role 'Configuration', cardinality 0..*).
+'domain::DeploymentComponent' (role 'domain_DeploymentComponent210', cardinality 0..*) is associated with 'domain::DeploymentComponent' (role 'domain_DeploymentComponent212', cardinality 0..*).
+'domain::Configuration' (role 'domain_Configuration247', cardinality 0..*) is associated with 'domain::HashProperty' (role 'domain_HashProperty', cardinality 0..*).
+'domain::Assosiation' (role 'domain_Assosiation', cardinality 0..*) is associated with 'domain::Link' (role 'domain_Link', cardinality 0..*).
+'domain::Domain' (role 'parent', cardinality 0..*) is associated with 'domain::DomainArtifacts' (role 'DomainArtifacts', cardinality 0..*).
+'domain::Controls' (role 'Controls', cardinality 0..*) is associated with 'domain::FormDataControls' (role 'parent380', cardinality 0..*).
+'domain::FormView' (role 'FormView', cardinality 0..*) is associated with 'domain::Views' (role 'view', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject446', cardinality 0..*) is associated with 'domain::Selection' (role 'domain_Selection445', cardinality 0..*).
+'domain::Recipes' (role 'domain_Recipes195', cardinality 0..*) is associated with 'domain::ConfigExtension' (role 'domain_ConfigExtension', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl536', cardinality 0..*) is associated with 'domain::Relation' (role 'domain_Relation535', cardinality 0..*).
+'domain::FormParameter' (role 'domain_FormParameter488', cardinality 0..*) is associated with 'domain::FormVariable' (role 'domain_FormVariable487', cardinality 0..*).
+'domain::ConfigExtension' (role 'domain_ConfigExtension229', cardinality 0..*) is associated with 'domain::Configuration' (role 'domain_Configuration230', cardinality 0..*).
+'domain::Uielement' (role 'domain_Uielement422', cardinality 0..*) is associated with 'domain::Context' (role 'domain_Context423', cardinality 0..*).
+'domain::ApplicationMapper' (role 'parent122', cardinality 0..*) is associated with 'domain::Mappers' (role 'Mappers', cardinality 0..*).
+'domain::MenuDefinition' (role 'domain_MenuDefinition', cardinality 0..*) is associated with 'domain::Views' (role 'domain_Views358', cardinality 0..*).
+'domain::ContextParameters' (role 'domain_ContextParameters523', cardinality 0..*) is associated with 'domain::DataControl' (role 'domain_DataControl522', cardinality 0..*).
+'domain::Roles' (role 'domain_Roles153', cardinality 0..*) is associated with 'domain::EObject' (role 'domain_EObject154', cardinality 0..*).
+'domain::InfrastructureLayer' (role 'parent577', cardinality 0..*) is associated with 'domain::InfrastructureComponent' (role 'InfrastructureComponent', cardinality 0..*).
+'domain::Artifact' (role 'artifacts', cardinality 0..*) is associated with 'domain::Artifacts' (role 'Artifacts40', cardinality 0..*).
+'domain::ModelMapper' (role 'domain_ModelMapper', cardinality 0..*) is associated with 'domain::DeploymentComponent' (role 'domain_DeploymentComponent209', cardinality 0..*).
+'domain::Types' (role 'Types', cardinality 0..*) is associated with 'domain::TypesRepository' (role 'parent322', cardinality 0..*).
+'domain::Selection' (role 'domain_Selection456', cardinality 0..*) is associated with 'domain::DropDownSelection' (role 'domain_DropDownSelection', cardinality 0..*).
+'domain::InfrastructureLayer' (role 'infrastructureLayer', cardinality 0..*) is associated with 'domain::Subsystem' (role 'Subsystem575', cardinality 0..*).
+'domain::Application' (role 'Application555', cardinality 0..*) is associated with 'domain::ApplicationInfrastructureLayer' (role 'applicationInfrastructureLayer', cardinality 0..*).
+'domain::Application' (role 'parent78', cardinality 0..*) is associated with 'domain::ApplicationRole' (role 'ApplicationRole', cardinality 0..*).
+'domain::MultiLangLabel' (role 'domain_MultiLangLabel', cardinality 0..*) is associated with 'domain::Context' (role 'domain_Context', cardinality 0..*).
+'domain::TypesRepository' (role 'TypesRepository', cardinality 0..*) is associated with 'domain::DomainTypes' (role 'parent18', cardinality 0..*).
+'domain::CSSMapper' (role 'domain_CSSMapper', cardinality 0..*) is associated with 'domain::StylesPackage' (role 'domain_StylesPackage', cardinality 0..*).
+'domain::CanvasView' (role 'canvasView', cardinality 0..*) is associated with 'domain::ViewArea' (role 'ViewArea', cardinality 0..*).
+'domain::UIPackage' (role 'UIPackage', cardinality 0..*) is associated with 'domain::ApplicationUIPackage' (role 'parent108', cardinality 0..*).
+'domain::Roles' (role 'domain_Roles', cardinality 0..*) is associated with 'domain::Role' (role 'domain_Role149', cardinality 0..*).
+'domain::ChildrenHolder' (role 'domain_ChildrenHolder', cardinality 0..*) is associated with 'domain::Uielement' (role 'domain_Uielement', cardinality 0..*).
+'domain::Message' (role 'domain_Message142', cardinality 0..*) is associated with 'domain::Translation' (role 'domain_Translation', cardinality 0..*).
+'domain::Configuration' (role 'domain_Configuration227', cardinality 0..*) is associated with 'domain::ConfigExtension' (role 'domain_ConfigExtension226', cardinality 0..*).
+'domain::TabPagesInheritance' (role 'domain_TabPagesInheritance378', cardinality 0..*) is associated with 'domain::TabPage' (role 'domain_TabPage', cardinality 0..*).
+'domain::DomainArtifact' (role 'DomainArtifact', cardinality 0..*) is associated with 'domain::DomainArtifacts' (role 'parent16', cardinality 0..*).
+'domain::ApplicationMappers' (role 'ApplicationMappers124', cardinality 0..*) is associated with 'domain::ApplicationMapper' (role 'mappers', cardinality 0..*).
+'domain::Domain' (role 'parent2', cardinality 0..*) is associated with 'domain::DomainTypes' (role 'DomainTypes', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject342', cardinality 0..*) is associated with 'domain::UIPackage' (role 'domain_UIPackage341', cardinality 0..*).
+'domain::MenuExtensionRef' (role 'domain_MenuExtensionRef', cardinality 0..*) is associated with 'domain::MenuFolder' (role 'domain_MenuFolder594', cardinality 0..*).
+'domain::ArtifactRef' (role 'domain_ArtifactRef', cardinality 0..*) is associated with 'domain::DomainArtifact' (role 'domain_DomainArtifact', cardinality 0..*).
+'domain::QueryVariable' (role 'domain_QueryVariable273', cardinality 0..*) is associated with 'domain::QueryParameter' (role 'domain_QueryParameter', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject198', cardinality 0..*) is associated with 'domain::Recipes' (role 'domain_Recipes197', cardinality 0..*).
+'domain::CanvasView' (role 'domain_CanvasView', cardinality 0..*) is associated with 'domain::LayerHolder' (role 'domain_LayerHolder', cardinality 0..*).
+'domain::Recipes' (role 'domain_Recipes', cardinality 0..*) is associated with 'domain::Configuration' (role 'domain_Configuration', cardinality 0..*).
+'domain::GenerationHint' (role 'domain_GenerationHint', cardinality 0..*) is associated with 'domain::Classifier' (role 'domain_Classifier8', cardinality 0..*).
+'domain::Infrastructure' (role 'Infrastructure243', cardinality 0..*) is associated with 'domain::Configuration' (role 'recipeConfig', cardinality 0..*).
+'domain::FlexField' (role 'domain_FlexField', cardinality 0..*) is associated with 'domain::FlexFields' (role 'domain_FlexFields', cardinality 0..*).
+'domain::Operation' (role 'domain_Operation', cardinality 0..*) is associated with 'domain::MethodPointer' (role 'domain_MethodPointer', cardinality 0..*).
+'domain::ModelMapper' (role 'mappers249', cardinality 0..*) is associated with 'domain::Component' (role 'Component250', cardinality 0..*).
+'domain::Recipes' (role 'domain_Recipes193', cardinality 0..*) is associated with 'domain::DeploymentSequence' (role 'domain_DeploymentSequence', cardinality 0..*).
+'domain::EObject' (role 'domain_EObject287', cardinality 0..*) is associated with 'domain::TypeDefinition' (role 'domain_TypeDefinition286', cardinality 0..*).
+'domain::Assosiation' (role 'domain_Assosiation298', cardinality 0..*) is associated with 'domain::Attribute' (role 'domain_Attribute299', cardinality 0..*).
+'domain::Relation' (role 'domain_Relation538', cardinality 0..*) is associated with 'domain::Link' (role 'domain_Link539', cardinality 0..*).
+'domain::DataControl' (role 'domain_DataControl510', cardinality 0..*) is associated with 'domain::CreateTrigger' (role 'domain_CreateTrigger', cardinality 0..*).
+'domain::Operation' (role 'domain_Operation314', cardinality 0..*) is associated with 'domain::ReturnValue' (role 'domain_ReturnValue', cardinality 0..*).
+'domain::MessageLibrary' (role 'domain_MessageLibrary135', cardinality 0..*) is associated with 'domain::LanguageRef' (role 'domain_LanguageRef', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mmyumu/doc-doc/RCP/net.mmyumu.docdoc.model/model/Library.ecore

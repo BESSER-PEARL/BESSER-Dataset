@@ -1,0 +1,109 @@
+The model has 34 class(es).
+The class 'library::NetXResource' has no attributes.
+The class 'library::Component' has the following attributes: 'description' of type str; 'name' of type str; 'duration' of type str.
+The class 'library::EquipmentGroup' has the following attributes: 'description' of type str; 'count' of type str; 'name' of type str.
+The class 'library::MetricSource' has no attributes.
+The class 'library::FunctionRelationship' has no attributes.
+The class 'library::Lifecycle' has no attributes.
+The class 'library::ProductInfo' has the following attributes: 'endOfSupportDate' of type str; 'salesCode' of type str; 'underDevelopmentDate' of type str; 'availableDate' of type str; 'productCode' of type str; 'endOfSalesDate' of type str.
+The class 'library::EquipmentRelationship' has no attributes.
+The class 'library::EObject' has no attributes.
+The class 'library::Library' has the following attributes: 'name' of type str; 'protocols' of type str.
+The class 'library::Equipment' has the following attributes: 'state' of type str; 'count' of type str; 'equipmentCode' of type str; 'position' of type str; 'redundancy' of type str.
+The class 'library::Vendor' has no attributes.
+The class 'library::MetricValueRange' has no attributes.
+The class 'library::Expression' has the following attributes: 'expressionLines' of type str; 'name' of type str.
+The class 'library::Tolerance' has the following attributes: 'name' of type str; 'level' of type str.
+The class 'BaseResource' has no attributes.
+The class 'library::LastEvaluationExpressionResult' has the following attributes: 'lastEvalResult' of type str.
+The class 'library::Value' has no attributes.
+The class 'Company' has no attributes.
+The class 'library::MultiImage' has no attributes.
+The class 'library::BaseExpressionResult' has no attributes.
+The class 'library::NodeType' has the following attributes: 'leafNode' of type str; 'name' of type str.
+The class 'Component' has no attributes.
+The class 'library::DiagramInfo' has no attributes.
+The class 'library::Protocol' has no attributes.
+The class 'library::Function' has no attributes.
+The class 'BaseExpressionResult' has no attributes.
+The class 'library::Metric' has no attributes.
+The class 'library::Unit' has the following attributes: 'name' of type str; 'code' of type str; 'description' of type str.
+The class 'library::ExpressionResult' has the following attributes: 'targetKindHint' of type str; 'targetRange' of type str; 'targetIntervalHint' of type str.
+The class 'library::Meta' has no attributes.
+The class 'Base' has no attributes.
+The class 'library::BaseResource' has the following attributes: 'longName' of type str; 'summaryDisplay' of type str; 'detailDisplay' of type str; 'expressionName' of type str; 'shortName' of type str.
+The class 'library::Parameter' has the following attributes: 'value' of type str; 'modifiable' of type str; 'description' of type str; 'expressionName' of type str; 'name' of type str.
+The enumeration 'LevelKind' has the following literals: 'GREEN', 'YELLOW', 'AMBER', 'RED'.
+The enumeration 'StateType' has the following literals: 'RESERVED', 'ACTIVE', 'STANDBY', 'IDLE', 'DEFECT'.
+The enumeration 'RedundancyType' has the following literals: 'n1', 'n', '_11'.
+The enumeration 'RangeKind' has the following literals: 'METRICREMOVE', 'UTILIZATION', 'METRIC', 'CAP', 'DERIVED', 'TRENDED', 'FORECASTCAP', 'TOLERANCE', 'FORECAST'.
+'library::Equipment' is a specialization of 'Component'.
+'library::Expression' is a specialization of 'Base'.
+'library::ExpressionResult' is a specialization of 'BaseExpressionResult'.
+'library::Vendor' is a specialization of 'Company'.
+'library::Component' is a specialization of 'Base'.
+'library::ProductInfo' is a specialization of 'Base'.
+'library::Unit' is a specialization of 'Base'.
+'library::Tolerance' is a specialization of 'Base'.
+'library::BaseResource' is a specialization of 'Base'.
+'library::LastEvaluationExpressionResult' is a specialization of 'BaseExpressionResult'.
+'library::Parameter' is a specialization of 'Base'.
+'library::Function' is a specialization of 'Component'.
+'library::NodeType' is a specialization of 'Base'.
+'library::NetXResource' is a specialization of 'BaseResource'.
+'library::EquipmentGroup' is a specialization of 'Base'.
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'library::Function' (role 'library_Function66', cardinality 0..*).
+'library::Library' (role 'library_Library84', cardinality 0..*) is associated with 'library::Expression' (role 'library_Expression85', cardinality 0..*).
+'library::Component' (role 'library_Component21', cardinality 0..*) is associated with 'library::MultiImage' (role 'library_MultiImage', cardinality 0..*).
+'library::Parameter' (role 'library_Parameter79', cardinality 0..*) is associated with 'library::Library' (role 'library_Library78', cardinality 0..*).
+'library::Equipment' (role 'library_Equipment28', cardinality 0..*) is associated with 'library::Equipment' (role 'library_Equipment30', cardinality 0..*).
+'library::Library' (role 'library_Library81', cardinality 0..*) is associated with 'library::Tolerance' (role 'library_Tolerance82', cardinality 0..*).
+'library::Component' (role 'library_Component8', cardinality 0..*) is associated with 'library::Expression' (role 'library_Expression9', cardinality 0..*).
+'library::Protocol' (role 'library_Protocol', cardinality 0..*) is associated with 'library::Component' (role 'library_Component13', cardinality 0..*).
+'library::Lifecycle' (role 'library_Lifecycle', cardinality 0..*) is associated with 'library::Component' (role 'library_Component', cardinality 0..*).
+'library::NetXResource' (role 'library_NetXResource104', cardinality 0..*) is associated with 'library::Value' (role 'library_Value105', cardinality 0..*).
+'library::Equipment' (role 'library_Equipment119', cardinality 0..*) is associated with 'library::ProductInfo' (role 'library_ProductInfo', cardinality 0..*).
+'library::Library' (role 'library_Library70', cardinality 0..*) is associated with 'library::Equipment' (role 'library_Equipment71', cardinality 0..*).
+'library::Value' (role 'library_Value99', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource98', cardinality 0..*).
+'library::Parameter' (role 'library_Parameter', cardinality 0..*) is associated with 'library::Component' (role 'library_Component15', cardinality 0..*).
+'library::Parameter' (role 'library_Parameter45', cardinality 0..*) is associated with 'library::EquipmentGroup' (role 'library_EquipmentGroup44', cardinality 0..*).
+'library::Value' (role 'library_Value108', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource107', cardinality 0..*).
+'library::Component' (role 'library_Component4', cardinality 0..*) is associated with 'library::Metric' (role 'library_Metric', cardinality 0..*).
+'library::Library' (role 'library_Library76', cardinality 0..*) is associated with 'library::MetricSource' (role 'library_MetricSource', cardinality 0..*).
+'library::NetXResource' (role 'library_NetXResource96', cardinality 0..*) is associated with 'library::MetricValueRange' (role 'library_MetricValueRange', cardinality 0..*).
+'library::Metric' (role 'library_Metric74', cardinality 0..*) is associated with 'library::Library' (role 'library_Library73', cardinality 0..*).
+'library::ExpressionResult' (role 'library_ExpressionResult', cardinality 0..*) is associated with 'library::BaseResource' (role 'library_BaseResource55', cardinality 0..*).
+'library::Component' (role 'Component', cardinality 0..*) is associated with 'library::NetXResource' (role 'resourceRefs', cardinality 0..*).
+'library::Equipment' (role 'library_Equipment27', cardinality 0..*) is associated with 'library::EquipmentRelationship' (role 'library_EquipmentRelationship', cardinality 0..*).
+'library::NodeType' (role 'library_NodeType116', cardinality 0..*) is associated with 'library::Equipment' (role 'library_Equipment117', cardinality 0..*).
+'library::Equipment' (role 'library_Equipment25', cardinality 0..*) is associated with 'library::EquipmentGroup' (role 'library_EquipmentGroup', cardinality 0..*).
+'library::Expression' (role 'library_Expression128', cardinality 0..*) is associated with 'library::Tolerance' (role 'library_Tolerance127', cardinality 0..*).
+'library::Component' (role 'library_Component11', cardinality 0..*) is associated with 'library::Tolerance' (role 'library_Tolerance', cardinality 0..*).
+'library::Expression' (role 'library_Expression', cardinality 0..*) is associated with 'library::Component' (role 'library_Component6', cardinality 0..*).
+'library::Meta' (role 'library_Meta', cardinality 0..*) is associated with 'library::Library' (role 'library_Library90', cardinality 0..*).
+'library::EquipmentGroup' (role 'library_EquipmentGroup35', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource36', cardinality 0..*).
+'library::Unit' (role 'library_Unit130', cardinality 0..*) is associated with 'library::MultiImage' (role 'library_MultiImage131', cardinality 0..*).
+'library::Function' (role 'library_Function122', cardinality 0..*) is associated with 'library::ProductInfo' (role 'library_ProductInfo121', cardinality 0..*).
+'library::NetXResource' (role 'library_NetXResource101', cardinality 0..*) is associated with 'library::Value' (role 'library_Value102', cardinality 0..*).
+'library::EquipmentGroup' (role 'library_EquipmentGroup47', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource48', cardinality 0..*).
+'library::BaseResource' (role 'library_BaseResource', cardinality 0..*) is associated with 'library::Unit' (role 'library_Unit', cardinality 0..*).
+'library::Equipment' (role 'library_Equipment22', cardinality 0..*) is associated with 'library::Equipment' (role 'library_Equipment', cardinality 0..*).
+'library::ProductInfo' (role 'library_ProductInfo124', cardinality 0..*) is associated with 'library::NodeType' (role 'library_NodeType125', cardinality 0..*).
+'library::EquipmentGroup' (role 'library_EquipmentGroup50', cardinality 0..*) is associated with 'library::Equipment' (role 'library_Equipment51', cardinality 0..*).
+'library::Function' (role 'library_Function62', cardinality 0..*) is associated with 'library::Function' (role 'library_Function64', cardinality 0..*).
+'library::Function' (role 'library_Function', cardinality 0..*) is associated with 'library::Function' (role 'library_Function58', cardinality 0..*).
+'library::Component' (role 'library_Component19', cardinality 0..*) is associated with 'library::DiagramInfo' (role 'library_DiagramInfo', cardinality 0..*).
+'library::EObject' (role 'library_EObject', cardinality 0..*) is associated with 'library::Expression' (role 'library_Expression53', cardinality 0..*).
+'library::ExpressionResult' (role 'library_ExpressionResult57', cardinality 0..*) is associated with 'library::Value' (role 'library_Value', cardinality 0..*).
+'library::Library' (role 'library_Library68', cardinality 0..*) is associated with 'library::NodeType' (role 'library_NodeType', cardinality 0..*).
+'library::ProductInfo' (role 'library_ProductInfo133', cardinality 0..*) is associated with 'library::Vendor' (role 'library_Vendor', cardinality 0..*).
+'library::Library' (role 'library_Library87', cardinality 0..*) is associated with 'library::Unit' (role 'library_Unit88', cardinality 0..*).
+'library::NetXResource' (role 'NetXResource', cardinality 0..*) is associated with 'library::Component' (role 'componentRef', cardinality 0..*).
+'library::Component' (role 'library_Component17', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource', cardinality 0..*).
+'library::Expression' (role 'library_Expression39', cardinality 0..*) is associated with 'library::EquipmentGroup' (role 'library_EquipmentGroup38', cardinality 0..*).
+'library::FunctionRelationship' (role 'library_FunctionRelationship', cardinality 0..*) is associated with 'library::Function' (role 'library_Function61', cardinality 0..*).
+'library::EquipmentGroup' (role 'library_EquipmentGroup32', cardinality 0..*) is associated with 'library::DiagramInfo' (role 'library_DiagramInfo33', cardinality 0..*).
+'library::Metric' (role 'library_Metric94', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource93', cardinality 0..*).
+'library::EquipmentGroup' (role 'library_EquipmentGroup41', cardinality 0..*) is associated with 'library::Equipment' (role 'library_Equipment42', cardinality 0..*).
+'library::Value' (role 'library_Value111', cardinality 0..*) is associated with 'library::NetXResource' (role 'library_NetXResource110', cardinality 0..*).
+'library::NodeType' (role 'library_NodeType113', cardinality 0..*) is associated with 'library::Function' (role 'library_Function114', cardinality 0..*).

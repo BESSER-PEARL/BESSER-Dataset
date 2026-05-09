@@ -1,0 +1,52 @@
+The model has 26 class(es).
+The class 'application::Language' has no attributes.
+The class 'application::ApplicationUIPackage' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::EnterpriseInfrastructure' has no attributes.
+The class 'application::Application' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationRecipes' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::Form' has no attributes.
+The class 'application::StyleLibrary' has no attributes.
+The class 'application::Roles' has no attributes.
+The class 'application::Mappers' has no attributes.
+The class 'application::ApplicationRecipe' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::Recipes' has no attributes.
+The class 'application::ApplicationLanguages' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationInfrastructureLayers' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::ApplicationMessageLibraries' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::ApplicationMapper' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::ApplicationStyleLibraries' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'application::MessageLibrary' has no attributes.
+The class 'application::ApplicationRealms' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::MappingLayer' has no attributes.
+The class 'application::ApplicationUILayer' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationMappers' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationGroup' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationStyle' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationInfrastructureLayer' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationRealm' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'application::ApplicationMessageLibrary' has the following attributes: 'name' of type str; 'uid' of type str.
+'application::StyleLibrary' (role 'application_StyleLibrary', cardinality 0..*) is associated with 'application::ApplicationStyle' (role 'application_ApplicationStyle34', cardinality 0..*).
+'application::ApplicationStyleLibraries' (role 'application_ApplicationStyleLibraries32', cardinality 0..*) is associated with 'application::ApplicationStyle' (role 'application_ApplicationStyle', cardinality 0..*).
+'application::ApplicationInfrastructureLayer' (role 'application_ApplicationInfrastructureLayer18', cardinality 0..*) is associated with 'application::EnterpriseInfrastructure' (role 'application_EnterpriseInfrastructure', cardinality 0..*).
+'application::ApplicationMessageLibrary' (role 'application_ApplicationMessageLibrary', cardinality 0..*) is associated with 'application::ApplicationMessageLibraries' (role 'application_ApplicationMessageLibraries20', cardinality 0..*).
+'application::ApplicationInfrastructureLayers' (role 'application_ApplicationInfrastructureLayers', cardinality 0..*) is associated with 'application::Application' (role 'application_Application8', cardinality 0..*).
+'application::ApplicationMapper' (role 'application_ApplicationMapper48', cardinality 0..*) is associated with 'application::Mappers' (role 'application_Mappers', cardinality 0..*).
+'application::ApplicationRecipes' (role 'application_ApplicationRecipes40', cardinality 0..*) is associated with 'application::ApplicationRecipe' (role 'application_ApplicationRecipe', cardinality 0..*).
+'application::Roles' (role 'application_Roles', cardinality 0..*) is associated with 'application::ApplicationRealm' (role 'application_ApplicationRealm30', cardinality 0..*).
+'application::Recipes' (role 'application_Recipes', cardinality 0..*) is associated with 'application::ApplicationRecipe' (role 'application_ApplicationRecipe42', cardinality 0..*).
+'application::Application' (role 'application_Application', cardinality 0..*) is associated with 'application::ApplicationGroup' (role 'application_ApplicationGroup', cardinality 0..*).
+'application::Application' (role 'application_Application4', cardinality 0..*) is associated with 'application::ApplicationMappers' (role 'application_ApplicationMappers', cardinality 0..*).
+'application::Application' (role 'application_Application2', cardinality 0..*) is associated with 'application::ApplicationRecipes' (role 'application_ApplicationRecipes', cardinality 0..*).
+'application::ApplicationUILayer' (role 'application_ApplicationUILayer', cardinality 0..*) is associated with 'application::Application' (role 'application_Application6', cardinality 0..*).
+'application::ApplicationInfrastructureLayer' (role 'application_ApplicationInfrastructureLayer', cardinality 0..*) is associated with 'application::ApplicationInfrastructureLayers' (role 'application_ApplicationInfrastructureLayers16', cardinality 0..*).
+'application::ApplicationUIPackage' (role 'application_ApplicationUIPackage38', cardinality 0..*) is associated with 'application::Form' (role 'application_Form', cardinality 0..*).
+'application::Application' (role 'application_Application12', cardinality 0..*) is associated with 'application::ApplicationRealms' (role 'application_ApplicationRealms', cardinality 0..*).
+'application::ApplicationUILayer' (role 'application_ApplicationUILayer36', cardinality 0..*) is associated with 'application::ApplicationUIPackage' (role 'application_ApplicationUIPackage', cardinality 0..*).
+'application::MappingLayer' (role 'application_MappingLayer', cardinality 0..*) is associated with 'application::ApplicationMappers' (role 'application_ApplicationMappers46', cardinality 0..*).
+'application::ApplicationStyleLibraries' (role 'application_ApplicationStyleLibraries', cardinality 0..*) is associated with 'application::Application' (role 'application_Application10', cardinality 0..*).
+'application::ApplicationMapper' (role 'application_ApplicationMapper', cardinality 0..*) is associated with 'application::ApplicationMappers' (role 'application_ApplicationMappers44', cardinality 0..*).
+'application::Application' (role 'application_Application14', cardinality 0..*) is associated with 'application::ApplicationMessageLibraries' (role 'application_ApplicationMessageLibraries', cardinality 0..*).
+'application::ApplicationLanguages' (role 'application_ApplicationLanguages24', cardinality 0..*) is associated with 'application::Language' (role 'application_Language', cardinality 0..*).
+'application::ApplicationRealms' (role 'application_ApplicationRealms28', cardinality 0..*) is associated with 'application::ApplicationRealm' (role 'application_ApplicationRealm', cardinality 0..*).
+'application::ApplicationLanguages' (role 'application_ApplicationLanguages', cardinality 0..*) is associated with 'application::ApplicationMessageLibraries' (role 'application_ApplicationMessageLibraries22', cardinality 0..*).
+'application::ApplicationMessageLibrary' (role 'application_ApplicationMessageLibrary26', cardinality 0..*) is associated with 'application::MessageLibrary' (role 'application_MessageLibrary', cardinality 0..*).

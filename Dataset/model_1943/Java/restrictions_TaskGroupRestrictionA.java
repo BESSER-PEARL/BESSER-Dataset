@@ -1,0 +1,22 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class restrictions_TaskGroupRestrictionA  {
+
+
+
+
+    public restrictions_TaskGroupRestrictionA(
+    ) {
+    }
+
+
+
+
+}

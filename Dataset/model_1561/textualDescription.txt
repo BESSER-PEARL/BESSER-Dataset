@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'graphs::Edge' has no attributes.
+The class 'graphs::Graph' has no attributes.
+The class 'graphs::Node' has no attributes.

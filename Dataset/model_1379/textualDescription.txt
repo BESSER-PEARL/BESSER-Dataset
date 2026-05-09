@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'tsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'tsm::StateMachine' has no attributes.
+The class 'tsm::State' has no attributes.
+The class 'tsm::Transition' has no attributes.
+The class 'tsm::TimeEvent' has the following attributes: 'time' of type int.
+The class 'NamedElement' has no attributes.
+'tsm::State' is a specialization of 'NamedElement'.
+'tsm::StateMachine' is a specialization of 'NamedElement'.
+'tsm::Transition' is a specialization of 'NamedElement'.
+'tsm::State' (role 'tsm_State5', cardinality 0..*) is associated with 'tsm::StateMachine' (role 'tsm_StateMachine4', cardinality 0..*).
+'tsm::Transition' (role 'Transition8', cardinality 0..*) is associated with 'tsm::State' (role 'source', cardinality 0..*).
+'tsm::StateMachine' (role 'tsm_StateMachine', cardinality 0..*) is associated with 'tsm::State' (role 'tsm_State', cardinality 0..*).
+'tsm::Transition' (role 'tsm_Transition10', cardinality 0..*) is associated with 'tsm::TimeEvent' (role 'tsm_TimeEvent', cardinality 0..*).
+'tsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'tsm::State' (role 'target', cardinality 0..*).
+'tsm::Transition' (role 'outgoing', cardinality 0..*) is associated with 'tsm::State' (role 'State13', cardinality 0..*).
+'tsm::StateMachine' (role 'tsm_StateMachine2', cardinality 0..*) is associated with 'tsm::Transition' (role 'tsm_Transition', cardinality 0..*).
+'tsm::State' (role 'State', cardinality 0..*) is associated with 'tsm::Transition' (role 'incoming', cardinality 0..*).

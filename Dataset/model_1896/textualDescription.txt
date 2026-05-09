@@ -1,0 +1,94 @@
+The model has 42 class(es).
+The class 'graphbt::OutputGUI' has no attributes.
+The class 'graphbt::Libraries' has no attributes.
+The class 'graphbt::TraceabilityStatusClass' has the following attributes: 'traceabilityStatusLiteral' of type str.
+The class 'graphbt::GUI' has the following attributes: 'codeImplementation' of type str; 'identifier' of type str.
+The class 'graphbt::Button' has the following attributes: 'label' of type str.
+The class 'graphbt::BehaviorTree' has the following attributes: 'name' of type str.
+The class 'graphbt::Information' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'graphbt::Library' has the following attributes: 'name' of type str; 'text' of type str; 'id' of type str; 'desc' of type str; 'location' of type str.
+The class 'graphbt::Requirement' has the following attributes: 'Description' of type str; 'Requirement' of type str; 'Id' of type str; 'Key' of type str.
+The class 'graphbt::Link' has no attributes.
+The class 'graphbt::RequirementList' has the following attributes: 'projectId' of type str.
+The class 'graphbt::SpecialEdge' has the following attributes: 'destination' of type int; 'type' of type str.
+The class 'GUI' has no attributes.
+The class 'graphbt::Component' has the following attributes: 'id' of type int; 'componentRef' of type str; 'componentName' of type str; 'componentDesc' of type str; 'enumerated' of type bool.
+The class 'graphbt::InputType' has no attributes.
+The class 'graphbt::Layout' has the following attributes: 'height' of type int; 'width' of type int; 'cRef' of type str; 'x' of type int; 'y' of type int; 'z' of type int.
+The class 'graphbt::Node' has the following attributes: 'id' of type str; 'index' of type int.
+The class 'graphbt::LayoutList' has no attributes.
+The class 'graphbt::FormulaList' has no attributes.
+The class 'graphbt::MethodDeclaration' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'graphbt::EmptyNode' has the following attributes: 'label' of type str.
+The class 'graphbt::AuthorList' has no attributes.
+The class 'graphbt::InputGUI' has no attributes.
+The class 'graphbt::Formula' has the following attributes: 'formulaName' of type str.
+The class 'graphbt::AlternativeClass' has the following attributes: 'alternativeAttribute' of type str.
+The class 'graphbt::GUIImplementable' has no attributes.
+The class 'graphbt::Author' has the following attributes: 'role' of type str; 'contact' of type str; 'name' of type str.
+The class 'graphbt::Attribute' has the following attributes: 'name' of type str; 'type' of type str; 'value' of type str.
+The class 'graphbt::OperatorClass' has the following attributes: 'operatorLiteral' of type str.
+The class 'graphbt::StandardNode' has the following attributes: 'componentRef' of type str; 'label' of type str; 'traceabilityLink' of type str; 'behaviorRef' of type str; 'traceabilityStatus' of type str; 'operator' of type str; 'leaf' of type bool.
+The class 'graphbt::Edge' has the following attributes: 'composition' of type str; 'branch' of type str.
+The class 'graphbt::State' has the following attributes: 'name' of type str; 'desc' of type str; 'ref' of type str.
+The class 'graphbt::BEModel' has the following attributes: 'subtitle' of type str; 'name' of type str; 'version' of type str.
+The class 'graphbt::ComponentList' has no attributes.
+The class 'graphbt::MapInformation' has no attributes.
+The class 'graphbt::CTEdge' has no attributes.
+The class 'graphbt::Behavior' has the following attributes: 'technicalDetail' of type str; 'behaviorDesc' of type str; 'behaviorRef' of type str; 'behaviorType' of type str; 'behaviorName' of type str.
+The class 'GUIImplementable' has no attributes.
+The class 'graphbt::OutputType' has no attributes.
+The class 'Node' has no attributes.
+The class 'Layout' has no attributes.
+The class 'graphbt::Parameter' has the following attributes: 'type' of type str; 'name' of type str.
+The enumeration 'SpecialEdgeEnum' has the following literals: 'Reference', 'Reversion', 'BranchKill', 'Synchronize'.
+The enumeration 'Branch' has the following literals: 'Alternative', 'Parallel'.
+The enumeration 'Operator' has the following literals: 'NoOperator', 'ExclusiveOR', 'Reversion', 'Reference', 'Synchronize', 'BranchKill', 'Disjunction', 'Conjunction'.
+The enumeration 'BehaviorType' has the following literals: 'Guard', 'StateRealization', 'InternalInput', 'ExternalInput', 'Selection', 'ExternalOutput', 'InternalOutput'.
+The enumeration 'EventType' has the following literals: 'InternalOutput', 'ExternalInput', 'InternalInput', 'ExternalOutput'.
+The enumeration 'Composition' has the following literals: 'Atomic', 'Sequential'.
+The enumeration 'TraceabilityStatus' has the following literals: 'Deleted', 'Updated', 'Original', 'Implied', 'DesignRefinement', 'Missing'.
+'graphbt::Button' is a specialization of 'Layout'.
+'graphbt::InputGUI' is a specialization of 'GUI'.
+'graphbt::StandardNode' is a specialization of 'Node'.
+'graphbt::EmptyNode' is a specialization of 'Node'.
+'graphbt::InputType' is a specialization of 'GUIImplementable'.
+'graphbt::OutputGUI' is a specialization of 'GUI'.
+'graphbt::OutputType' is a specialization of 'GUIImplementable'.
+'graphbt::BEModel' (role 'graphbt_BEModel10', cardinality 0..*) is associated with 'graphbt::StandardNode' (role 'graphbt_StandardNode', cardinality 0..*).
+'graphbt::FormulaList' (role 'graphbt_FormulaList67', cardinality 0..*) is associated with 'graphbt::Formula' (role 'graphbt_Formula', cardinality 0..*).
+'graphbt::Libraries' (role 'graphbt_Libraries77', cardinality 0..*) is associated with 'graphbt::Library' (role 'graphbt_Library78', cardinality 0..*).
+'graphbt::Edge' (role 'graphbt_Edge25', cardinality 0..*) is associated with 'graphbt::Link' (role 'graphbt_Link', cardinality 0..*).
+'graphbt::BEModel' (role 'graphbt_BEModel17', cardinality 0..*) is associated with 'graphbt::AuthorList' (role 'graphbt_AuthorList', cardinality 0..*).
+'graphbt::ComponentList' (role 'graphbt_ComponentList', cardinality 0..*) is associated with 'graphbt::BEModel' (role 'graphbt_BEModel2', cardinality 0..*).
+'graphbt::Component' (role 'graphbt_Component36', cardinality 0..*) is associated with 'graphbt::State' (role 'graphbt_State37', cardinality 0..*).
+'graphbt::Component' (role 'graphbt_Component44', cardinality 0..*) is associated with 'graphbt::Library' (role 'graphbt_Library', cardinality 0..*).
+'graphbt::Component' (role 'graphbt_Component38', cardinality 0..*) is associated with 'graphbt::Component' (role 'graphbt_Component40', cardinality 0..*).
+'graphbt::StandardNode' (role 'graphbt_StandardNode13', cardinality 0..*) is associated with 'graphbt::BEModel' (role 'graphbt_BEModel12', cardinality 0..*).
+'graphbt::Link' (role 'graphbt_Link72', cardinality 0..*) is associated with 'graphbt::Node' (role 'graphbt_Node73', cardinality 0..*).
+'graphbt::BehaviorTree' (role 'graphbt_BehaviorTree', cardinality 0..*) is associated with 'graphbt::BEModel' (role 'graphbt_BEModel', cardinality 0..*).
+'graphbt::LayoutList' (role 'graphbt_LayoutList82', cardinality 0..*) is associated with 'graphbt::Layout' (role 'graphbt_Layout', cardinality 0..*).
+'graphbt::Behavior' (role 'graphbt_Behavior54', cardinality 0..*) is associated with 'graphbt::Library' (role 'graphbt_Library53', cardinality 0..*).
+'graphbt::Library' (role 'graphbt_Library56', cardinality 0..*) is associated with 'graphbt::Attribute' (role 'graphbt_Attribute57', cardinality 0..*).
+'graphbt::State' (role 'graphbt_State', cardinality 0..*) is associated with 'graphbt::Component' (role 'graphbt_Component34', cardinality 0..*).
+'graphbt::BEModel' (role 'graphbt_BEModel15', cardinality 0..*) is associated with 'graphbt::LayoutList' (role 'graphbt_LayoutList', cardinality 0..*).
+'graphbt::Node' (role 'graphbt_Node21', cardinality 0..*) is associated with 'graphbt::Edge' (role 'graphbt_Edge', cardinality 0..*).
+'graphbt::State' (role 'graphbt_State51', cardinality 0..*) is associated with 'graphbt::Library' (role 'graphbt_Library50', cardinality 0..*).
+'graphbt::StandardNode' (role 'graphbt_StandardNode29', cardinality 0..*) is associated with 'graphbt::StandardNode' (role 'graphbt_StandardNode31', cardinality 0..*).
+'graphbt::RequirementList' (role 'graphbt_RequirementList64', cardinality 0..*) is associated with 'graphbt::Requirement' (role 'graphbt_Requirement65', cardinality 0..*).
+'graphbt::ComponentList' (role 'graphbt_ComponentList61', cardinality 0..*) is associated with 'graphbt::Component' (role 'graphbt_Component62', cardinality 0..*).
+'graphbt::Edge' (role 'graphbt_Edge27', cardinality 0..*) is associated with 'graphbt::Node' (role 'graphbt_Node28', cardinality 0..*).
+'graphbt::Information' (role 'graphbt_Information', cardinality 0..*) is associated with 'graphbt::MapInformation' (role 'graphbt_MapInformation75', cardinality 0..*).
+'graphbt::Link' (role 'graphbt_Link69', cardinality 0..*) is associated with 'graphbt::Node' (role 'graphbt_Node70', cardinality 0..*).
+'graphbt::Parameter' (role 'graphbt_Parameter', cardinality 0..*) is associated with 'graphbt::MethodDeclaration' (role 'graphbt_MethodDeclaration80', cardinality 0..*).
+'graphbt::Attribute' (role 'graphbt_Attribute', cardinality 0..*) is associated with 'graphbt::Component' (role 'graphbt_Component', cardinality 0..*).
+'graphbt::RequirementList' (role 'graphbt_RequirementList', cardinality 0..*) is associated with 'graphbt::BEModel' (role 'graphbt_BEModel4', cardinality 0..*).
+'graphbt::Behavior' (role 'graphbt_Behavior', cardinality 0..*) is associated with 'graphbt::Component' (role 'graphbt_Component42', cardinality 0..*).
+'graphbt::AuthorList' (role 'graphbt_AuthorList84', cardinality 0..*) is associated with 'graphbt::Author' (role 'graphbt_Author', cardinality 0..*).
+'graphbt::FormulaList' (role 'graphbt_FormulaList', cardinality 0..*) is associated with 'graphbt::BEModel' (role 'graphbt_BEModel6', cardinality 0..*).
+'graphbt::Requirement' (role 'graphbt_Requirement', cardinality 0..*) is associated with 'graphbt::StandardNode' (role 'graphbt_StandardNode59', cardinality 0..*).
+'graphbt::Node' (role 'graphbt_Node23', cardinality 0..*) is associated with 'graphbt::SpecialEdge' (role 'graphbt_SpecialEdge', cardinality 0..*).
+'graphbt::Library' (role 'graphbt_Library48', cardinality 0..*) is associated with 'graphbt::MethodDeclaration' (role 'graphbt_MethodDeclaration', cardinality 0..*).
+'graphbt::Node' (role 'graphbt_Node', cardinality 0..*) is associated with 'graphbt::BehaviorTree' (role 'graphbt_BehaviorTree19', cardinality 0..*).
+'graphbt::State' (role 'graphbt_State46', cardinality 0..*) is associated with 'graphbt::MapInformation' (role 'graphbt_MapInformation', cardinality 0..*).
+'graphbt::BEModel' (role 'graphbt_BEModel8', cardinality 0..*) is associated with 'graphbt::Libraries' (role 'graphbt_Libraries', cardinality 0..*).

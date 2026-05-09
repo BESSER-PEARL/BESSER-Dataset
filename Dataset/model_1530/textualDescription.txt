@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'tP1::EM::Transition' has the following attributes: 'name' of type str.
+The class 'tP1::EM::StateMachine' has the following attributes: 'name' of type str.
+The class 'tP1::EM::State' has the following attributes: 'name' of type str.
+'tP1::EM::State' (role 'from_', cardinality 0..*) is associated with 'tP1::EM::Transition' (role 'Transition8', cardinality 0..*).
+'tP1::EM::State' (role 'tP1_EM_State5', cardinality 0..*) is associated with 'tP1::EM::StateMachine' (role 'tP1_EM_StateMachine4', cardinality 0..*).
+'tP1::EM::State' (role 'tP1_EM_State', cardinality 0..*) is associated with 'tP1::EM::StateMachine' (role 'tP1_EM_StateMachine2', cardinality 0..*).
+'tP1::EM::Transition' (role 'incoming', cardinality 0..*) is associated with 'tP1::EM::State' (role 'State', cardinality 0..*).
+'tP1::EM::Transition' (role 'Transition', cardinality 0..*) is associated with 'tP1::EM::State' (role 'to', cardinality 0..*).
+'tP1::EM::Transition' (role 'tP1_EM_Transition', cardinality 0..*) is associated with 'tP1::EM::StateMachine' (role 'tP1_EM_StateMachine', cardinality 0..*).
+'tP1::EM::State' (role 'State11', cardinality 0..*) is associated with 'tP1::EM::Transition' (role 'outgoing', cardinality 0..*).

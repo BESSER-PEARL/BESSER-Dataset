@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'Contact' has no attributes.
+The class 'addressbook::Office' has the following attributes: 'company' of type str.
+The class 'addressbook::People' has the following attributes: 'name' of type str.
+The class 'addressbook::AddressBook' has no attributes.
+The class 'addressbook::Repository' has no attributes.
+The class 'addressbook::Contact' has no attributes.
+The class 'addressbook::Electronic' has the following attributes: 'email' of type str; 'website' of type str.
+The class 'addressbook::BookVersion' has the following attributes: 'id' of type int.
+'addressbook::Electronic' is a specialization of 'Contact'.
+'addressbook::Office' is a specialization of 'Contact'.
+'addressbook::Contact' (role 'addressbook_Contact', cardinality 0..*) is associated with 'addressbook::People' (role 'addressbook_People', cardinality 0..*).
+'addressbook::Repository' (role 'addressbook_Repository6', cardinality 0..*) is associated with 'addressbook::BookVersion' (role 'addressbook_BookVersion', cardinality 0..*).
+'addressbook::AddressBook' (role 'addressbook_AddressBook', cardinality 0..*) is associated with 'addressbook::People' (role 'addressbook_People2', cardinality 0..*).
+'addressbook::Repository' (role 'addressbook_Repository', cardinality 0..*) is associated with 'addressbook::AddressBook' (role 'addressbook_AddressBook4', cardinality 0..*).
+'addressbook::AddressBook' (role 'addressbook_AddressBook9', cardinality 0..*) is associated with 'addressbook::BookVersion' (role 'addressbook_BookVersion8', cardinality 0..*).

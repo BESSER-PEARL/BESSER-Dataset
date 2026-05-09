@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/goddrob/mdsd_hotel/CodePack.ecore

@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'hbmapkeys::StringToWriterMapEntry' has the following attributes: 'key' of type str.
+The class 'hbmapkeys::Writer' has the following attributes: 'name' of type str.
+The class 'hbmapkeys::Book' has the following attributes: 'title' of type str.
+The class 'hbmapkeys::WriterToCityMapEntry' has no attributes.
+The class 'hbmapkeys::City' has the following attributes: 'name' of type str.
+'hbmapkeys::WriterToCityMapEntry' (role 'hbmapkeys_WriterToCityMapEntry8', cardinality 0..*) is associated with 'hbmapkeys::Writer' (role 'hbmapkeys_Writer9', cardinality 0..*).
+'hbmapkeys::StringToWriterMapEntry' (role 'hbmapkeys_StringToWriterMapEntry5', cardinality 0..*) is associated with 'hbmapkeys::Writer' (role 'hbmapkeys_Writer6', cardinality 0..*).
+'hbmapkeys::WriterToCityMapEntry' (role 'hbmapkeys_WriterToCityMapEntry', cardinality 0..*) is associated with 'hbmapkeys::Book' (role 'hbmapkeys_Book2', cardinality 0..*).
+'hbmapkeys::StringToWriterMapEntry' (role 'hbmapkeys_StringToWriterMapEntry', cardinality 0..*) is associated with 'hbmapkeys::Book' (role 'hbmapkeys_Book', cardinality 0..*).
+'hbmapkeys::City' (role 'hbmapkeys_City12', cardinality 0..*) is associated with 'hbmapkeys::WriterToCityMapEntry' (role 'hbmapkeys_WriterToCityMapEntry11', cardinality 0..*).
+'hbmapkeys::City' (role 'hbmapkeys_City', cardinality 0..*) is associated with 'hbmapkeys::Writer' (role 'hbmapkeys_Writer', cardinality 0..*).

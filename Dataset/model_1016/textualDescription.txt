@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'fsm::StateMachine' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'label' of type str.
+The class 'AbstractState' has no attributes.
+The class 'fsm::AbstractState' has the following attributes: 'name' of type str.
+The class 'fsm::Root' has no attributes.
+The class 'fsm::CompositeState' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'fsm::RegularState' has no attributes.
+'fsm::InitialState' is a specialization of 'AbstractState'.
+'fsm::CompositeState' is a specialization of 'AbstractState'.
+'fsm::RegularState' is a specialization of 'AbstractState'.
+'fsm::StateMachine' (role 'StateMachine9', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'states', cardinality 0..*).
+'fsm::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'fsm::Transition' (role 'transitions', cardinality 0..*).
+'fsm::AbstractState' (role 'fsm_AbstractState', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*) is associated with 'fsm::Root' (role 'fsm_Root', cardinality 0..*).
+'fsm::CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'states11', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'stateMachine2', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState13', cardinality 0..*) is associated with 'fsm::CompositeState' (role 'compositeStates', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'stateMachine', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition6', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'fsm_AbstractState7', cardinality 0..*).

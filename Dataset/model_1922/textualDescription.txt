@@ -1,0 +1,240 @@
+The model has 94 class(es).
+The class 'libraryElement::AdapterFBType' has no attributes.
+The class 'libraryElement::Resource' has the following attributes: 'x' of type str; 'y' of type str; 'deviceTypeResource' of type str.
+The class 'libraryElement::With' has no attributes.
+The class 'Algorithm' has no attributes.
+The class 'libraryElement::AdapterEvent' has no attributes.
+The class 'libraryElement::Value' has the following attributes: 'value' of type str.
+The class 'libraryElement::AdapterFB' has no attributes.
+The class 'CompilableType' has no attributes.
+The class 'PositionableElement' has no attributes.
+The class 'libraryElement::ResourceTypeFB' has no attributes.
+The class 'libraryElement::Compiler' has the following attributes: 'language' of type str; 'vendor' of type str; 'product' of type str; 'version' of type str.
+The class 'libraryElement::InputPrimitive' has no attributes.
+The class 'libraryElement::TextAlgorithm' has the following attributes: 'text' of type str.
+The class 'libraryElement::AdapterType' has no attributes.
+The class 'LibraryElement' has no attributes.
+The class 'libraryElement::ECTransition' has the following attributes: 'comment' of type str; 'conditionExpression' of type str.
+The class 'libraryElement::ColorizableElement' has no attributes.
+The class 'libraryElement::Device' has the following attributes: 'profile' of type str.
+The class 'libraryElement::OutputPrimitive' has the following attributes: 'TestResult' of type str.
+The class 'Event' has no attributes.
+The class 'libraryElement::ServiceSequence' has the following attributes: 'TestResult' of type str.
+The class 'I4DIACElement' has no attributes.
+The class 'Connection' has no attributes.
+The class 'FBNetworkElement' has no attributes.
+The class 'libraryElement::ServiceTransaction' has the following attributes: 'TestResult' of type str.
+The class 'libraryElement::Color' has the following attributes: 'green' of type str; 'red' of type str; 'blue' of type str.
+The class 'Primitive' has no attributes.
+The class 'libraryElement::INamedElement' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'libraryElement::Identification' has the following attributes: 'type' of type str; 'function' of type str; 'description' of type str; 'classification' of type str; 'applicationDomain' of type str; 'standard' of type str.
+The class 'libraryElement::ECC' has no attributes.
+The class 'libraryElement::AdapterDeclaration' has no attributes.
+The class 'libraryElement::DataConnection' has no attributes.
+The class 'FB' has no attributes.
+The class 'libraryElement::ECAction' has no attributes.
+The class 'libraryElement::PositionableElement' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'libraryElement::SubApp' has no attributes.
+The class 'CompositeFBType' has no attributes.
+The class 'libraryElement::I4DIACElement' has no attributes.
+The class 'libraryElement::SubAppType' has no attributes.
+The class 'libraryElement::SegmentType' has no attributes.
+The class 'VarDeclaration' has no attributes.
+The class 'libraryElement::Annotation' has the following attributes: 'servity' of type str; 'name' of type str.
+The class 'libraryElement::Connection' has the following attributes: 'brokenConnection' of type str; 'dx2' of type str; 'resTypeConnection' of type str; 'dx1' of type str; 'dy' of type str.
+The class 'libraryElement::AdapterTypePaletteEntry' has no attributes.
+The class 'libraryElement::EventConnection' has no attributes.
+The class 'libraryElement::IInterfaceElement' has the following attributes: 'typeName' of type str; 'isInput' of type str.
+The class 'INamedElement' has no attributes.
+The class 'libraryElement::Link' has no attributes.
+The class 'libraryElement::ServiceInterfaceFBType' has no attributes.
+The class 'libraryElement::ServiceInterface' has no attributes.
+The class 'libraryElement::CompositeFBType' has no attributes.
+The class 'libraryElement::OtherAlgorithm' has the following attributes: 'language' of type str.
+The class 'libraryElement::Application' has no attributes.
+The class 'IInterfaceElement' has no attributes.
+The class 'libraryElement::ResourceTypeName' has the following attributes: 'name' of type str.
+The class 'libraryElement::ConfigurableObject' has no attributes.
+The class 'libraryElement::BasicFBType' has no attributes.
+The class 'IVarElement' has no attributes.
+The class 'libraryElement::FBNetwork' has no attributes.
+The class 'libraryElement::DeviceType' has the following attributes: 'profile' of type str.
+The class 'libraryElement::LibraryElement' has no attributes.
+The class 'libraryElement::AutomationSystem' has the following attributes: 'project' of type str.
+The class 'libraryElement::Algorithm' has no attributes.
+The class 'libraryElement::Parameter' has the following attributes: 'comment' of type str; 'value' of type str; 'name' of type str.
+The class 'libraryElement::CompilableType' has no attributes.
+The class 'libraryElement::Event' has no attributes.
+The class 'libraryElement::Service' has no attributes.
+The class 'ColorizableElement' has no attributes.
+The class 'DataType' has no attributes.
+The class 'libraryElement::InterfaceList' has no attributes.
+The class 'TypedConfigureableObject' has no attributes.
+The class 'libraryElement::Primitive' has the following attributes: 'event' of type str; 'parameters' of type str.
+The class 'libraryElement::IVarElement' has no attributes.
+The class 'TextAlgorithm' has no attributes.
+The class 'libraryElement::TypedConfigureableObject' has no attributes.
+The class 'libraryElement::DataType' has no attributes.
+The class 'libraryElement::VarDeclaration' has the following attributes: 'arraySize' of type str.
+The class 'libraryElement::VarInitialization' has no attributes.
+The class 'libraryElement::STAlgorithm' has no attributes.
+The class 'libraryElement::Mapping' has no attributes.
+The class 'libraryElement::Palette' has no attributes.
+The class 'libraryElement::FBType' has no attributes.
+The class 'libraryElement::PaletteEntry' has no attributes.
+The class 'libraryElement::CompilerInfo' has the following attributes: 'classdef' of type str; 'header' of type str.
+The class 'libraryElement::FB' has no attributes.
+The class 'ConfigurableObject' has no attributes.
+The class 'libraryElement::ResourceType' has no attributes.
+The class 'libraryElement::VersionInfo' has the following attributes: 'organization' of type str; 'version' of type str; 'author' of type str; 'date' of type str; 'remarks' of type str.
+The class 'libraryElement::FBNetworkElement' has no attributes.
+The class 'libraryElement::SystemConfiguration' has no attributes.
+The class 'libraryElement::Segment' has the following attributes: 'width' of type str.
+The class 'libraryElement::AdapterConnection' has no attributes.
+The class 'libraryElement::ECState' has no attributes.
+The class 'FBType' has no attributes.
+The enumeration 'Language' has the following literals: 'Java', 'C', 'Other', 'Cpp'.
+'libraryElement::AdapterFB' is a specialization of 'FB'.
+'libraryElement::ConfigurableObject' is a specialization of 'INamedElement'.
+'libraryElement::Segment' is a specialization of 'ColorizableElement'.
+'libraryElement::SubApp' is a specialization of 'FBNetworkElement'.
+'libraryElement::ResourceTypeFB' is a specialization of 'FB'.
+'libraryElement::Application' is a specialization of 'INamedElement'.
+'libraryElement::AdapterDeclaration' is a specialization of 'VarDeclaration'.
+'libraryElement::ResourceType' is a specialization of 'CompilableType'.
+'libraryElement::AdapterConnection' is a specialization of 'Connection'.
+'libraryElement::DeviceType' is a specialization of 'CompilableType'.
+'libraryElement::TextAlgorithm' is a specialization of 'Algorithm'.
+'libraryElement::SystemConfiguration' is a specialization of 'I4DIACElement'.
+'libraryElement::OtherAlgorithm' is a specialization of 'TextAlgorithm'.
+'libraryElement::BasicFBType' is a specialization of 'FBType'.
+'libraryElement::Service' is a specialization of 'I4DIACElement'.
+'libraryElement::FBNetworkElement' is a specialization of 'PositionableElement'.
+'libraryElement::ServiceInterfaceFBType' is a specialization of 'FBType'.
+'libraryElement::FBType' is a specialization of 'CompilableType'.
+'libraryElement::Segment' is a specialization of 'PositionableElement'.
+'libraryElement::LibraryElement' is a specialization of 'INamedElement'.
+'libraryElement::FBNetworkElement' is a specialization of 'TypedConfigureableObject'.
+'libraryElement::TypedConfigureableObject' is a specialization of 'ConfigurableObject'.
+'libraryElement::ECState' is a specialization of 'PositionableElement'.
+'libraryElement::Device' is a specialization of 'PositionableElement'.
+'libraryElement::ServiceSequence' is a specialization of 'INamedElement'.
+'libraryElement::OutputPrimitive' is a specialization of 'Primitive'.
+'libraryElement::INamedElement' is a specialization of 'I4DIACElement'.
+'libraryElement::Event' is a specialization of 'IInterfaceElement'.
+'libraryElement::CompositeFBType' is a specialization of 'FBType'.
+'libraryElement::Device' is a specialization of 'IVarElement'.
+'libraryElement::IInterfaceElement' is a specialization of 'INamedElement'.
+'libraryElement::ECState' is a specialization of 'INamedElement'.
+'libraryElement::DataConnection' is a specialization of 'Connection'.
+'libraryElement::AdapterEvent' is a specialization of 'Event'.
+'libraryElement::SubAppType' is a specialization of 'CompositeFBType'.
+'libraryElement::SegmentType' is a specialization of 'CompilableType'.
+'libraryElement::Device' is a specialization of 'ColorizableElement'.
+'libraryElement::Link' is a specialization of 'ConfigurableObject'.
+'libraryElement::VarDeclaration' is a specialization of 'IInterfaceElement'.
+'libraryElement::Segment' is a specialization of 'TypedConfigureableObject'.
+'libraryElement::ECTransition' is a specialization of 'PositionableElement'.
+'libraryElement::Algorithm' is a specialization of 'INamedElement'.
+'libraryElement::AdapterType' is a specialization of 'DataType'.
+'libraryElement::Resource' is a specialization of 'TypedConfigureableObject'.
+'libraryElement::EventConnection' is a specialization of 'Connection'.
+'libraryElement::AutomationSystem' is a specialization of 'LibraryElement'.
+'libraryElement::Connection' is a specialization of 'ConfigurableObject'.
+'libraryElement::FB' is a specialization of 'FBNetworkElement'.
+'libraryElement::ServiceInterface' is a specialization of 'INamedElement'.
+'libraryElement::AdapterFBType' is a specialization of 'FBType'.
+'libraryElement::CompilableType' is a specialization of 'LibraryElement'.
+'libraryElement::Resource' is a specialization of 'IVarElement'.
+'libraryElement::STAlgorithm' is a specialization of 'TextAlgorithm'.
+'libraryElement::Device' is a specialization of 'TypedConfigureableObject'.
+'libraryElement::InputPrimitive' is a specialization of 'Primitive'.
+'libraryElement::DeviceType' (role 'libraryElement_DeviceType', cardinality 0..*) is associated with 'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration17', cardinality 0..*).
+'libraryElement::BasicFBType' (role 'libraryElement_BasicFBType', cardinality 0..*) is associated with 'libraryElement::ECC' (role 'libraryElement_ECC', cardinality 0..*).
+'libraryElement::AdapterEvent' (role 'libraryElement_AdapterEvent', cardinality 0..*) is associated with 'libraryElement::AdapterDeclaration' (role 'libraryElement_AdapterDeclaration159', cardinality 0..*).
+'libraryElement::AdapterFB' (role 'AdapterFB', cardinality 0..*) is associated with 'libraryElement::AdapterDeclaration' (role 'adapterDecl', cardinality 0..*).
+'libraryElement::Link' (role 'Link', cardinality 0..*) is associated with 'libraryElement::Device' (role 'device15', cardinality 0..*).
+'libraryElement::ResourceType' (role 'libraryElement_ResourceType93', cardinality 0..*) is associated with 'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork94', cardinality 0..*).
+'libraryElement::IInterfaceElement' (role 'libraryElement_IInterfaceElement144', cardinality 0..*) is associated with 'libraryElement::Value' (role 'libraryElement_Value', cardinality 0..*).
+'libraryElement::CompositeFBType' (role 'libraryElement_CompositeFBType', cardinality 0..*) is associated with 'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork136', cardinality 0..*).
+'libraryElement::ResourceType' (role 'libraryElement_ResourceType96', cardinality 0..*) is associated with 'libraryElement::FBType' (role 'libraryElement_FBType97', cardinality 0..*).
+'libraryElement::AdapterDeclaration' (role 'libraryElement_AdapterDeclaration64', cardinality 0..*) is associated with 'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList63', cardinality 0..*).
+'libraryElement::CompilableType' (role 'libraryElement_CompilableType', cardinality 0..*) is associated with 'libraryElement::CompilerInfo' (role 'libraryElement_CompilerInfo133', cardinality 0..*).
+'libraryElement::Event' (role 'libraryElement_Event47', cardinality 0..*) is associated with 'libraryElement::ECTransition' (role 'libraryElement_ECTransition46', cardinality 0..*).
+'libraryElement::ServiceInterface' (role 'libraryElement_ServiceInterface164', cardinality 0..*) is associated with 'libraryElement::Service' (role 'libraryElement_Service163', cardinality 0..*).
+'libraryElement::Service' (role 'libraryElement_Service', cardinality 0..*) is associated with 'libraryElement::FBType' (role 'libraryElement_FBType58', cardinality 0..*).
+'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList72', cardinality 0..*) is associated with 'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration73', cardinality 0..*).
+'libraryElement::IInterfaceElement' (role 'IInterfaceElement', cardinality 0..*) is associated with 'libraryElement::Connection' (role 'outputConnections', cardinality 0..*).
+'libraryElement::AutomationSystem' (role 'libraryElement_AutomationSystem119', cardinality 0..*) is associated with 'libraryElement::Mapping' (role 'libraryElement_Mapping120', cardinality 0..*).
+'libraryElement::Connection' (role 'inputConnections', cardinality 0..*) is associated with 'libraryElement::IInterfaceElement' (role 'IInterfaceElement12', cardinality 0..*).
+'libraryElement::Event' (role 'libraryElement_Event70', cardinality 0..*) is associated with 'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList69', cardinality 0..*).
+'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration91', cardinality 0..*) is associated with 'libraryElement::ResourceType' (role 'libraryElement_ResourceType', cardinality 0..*).
+'libraryElement::Segment' (role 'libraryElement_Segment', cardinality 0..*) is associated with 'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration99', cardinality 0..*).
+'libraryElement::TypedConfigureableObject' (role 'libraryElement_TypedConfigureableObject', cardinality 0..*) is associated with 'libraryElement::PaletteEntry' (role 'libraryElement_PaletteEntry', cardinality 0..*).
+'libraryElement::FBNetworkElement' (role 'libraryElement_FBNetworkElement52', cardinality 0..*) is associated with 'libraryElement::Mapping' (role 'libraryElement_Mapping', cardinality 0..*).
+'libraryElement::Link' (role 'libraryElement_Link', cardinality 0..*) is associated with 'libraryElement::SystemConfiguration' (role 'libraryElement_SystemConfiguration151', cardinality 0..*).
+'libraryElement::ECAction' (role 'libraryElement_ECAction28', cardinality 0..*) is associated with 'libraryElement::Event' (role 'libraryElement_Event', cardinality 0..*).
+'libraryElement::ServiceInterface' (role 'libraryElement_ServiceInterface171', cardinality 0..*) is associated with 'libraryElement::Primitive' (role 'libraryElement_Primitive', cardinality 0..*).
+'libraryElement::ECState' (role 'ECState', cardinality 0..*) is associated with 'libraryElement::ECTransition' (role 'outTransitions', cardinality 0..*).
+'libraryElement::IInterfaceElement' (role 'libraryElement_IInterfaceElement', cardinality 0..*) is associated with 'libraryElement::DataType' (role 'libraryElement_DataType', cardinality 0..*).
+'libraryElement::Algorithm' (role 'libraryElement_Algorithm', cardinality 0..*) is associated with 'libraryElement::BasicFBType' (role 'libraryElement_BasicFBType6', cardinality 0..*).
+'libraryElement::ECTransition' (role 'inTransitions', cardinality 0..*) is associated with 'libraryElement::ECState' (role 'ECState44', cardinality 0..*).
+'libraryElement::AdapterDeclaration' (role 'libraryElement_AdapterDeclaration', cardinality 0..*) is associated with 'libraryElement::AdapterTypePaletteEntry' (role 'libraryElement_AdapterTypePaletteEntry', cardinality 0..*).
+'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork24', cardinality 0..*) is associated with 'libraryElement::DeviceType' (role 'libraryElement_DeviceType23', cardinality 0..*).
+'libraryElement::Service' (role 'libraryElement_Service166', cardinality 0..*) is associated with 'libraryElement::ServiceSequence' (role 'libraryElement_ServiceSequence167', cardinality 0..*).
+'libraryElement::Identification' (role 'libraryElement_Identification', cardinality 0..*) is associated with 'libraryElement::LibraryElement' (role 'libraryElement_LibraryElement130', cardinality 0..*).
+'libraryElement::VersionInfo' (role 'libraryElement_VersionInfo', cardinality 0..*) is associated with 'libraryElement::LibraryElement' (role 'libraryElement_LibraryElement', cardinality 0..*).
+'libraryElement::AutomationSystem' (role 'libraryElement_AutomationSystem123', cardinality 0..*) is associated with 'libraryElement::SystemConfiguration' (role 'libraryElement_SystemConfiguration', cardinality 0..*).
+'libraryElement::SegmentType' (role 'libraryElement_SegmentType', cardinality 0..*) is associated with 'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration154', cardinality 0..*).
+'libraryElement::AutomationSystem' (role 'automationSystem', cardinality 0..*) is associated with 'libraryElement::Palette' (role 'palette.ecorePalette', cardinality 0..*).
+'libraryElement::ECAction' (role 'libraryElement_ECAction38', cardinality 0..*) is associated with 'libraryElement::ECState' (role 'libraryElement_ECState37', cardinality 0..*).
+'libraryElement::Event' (role 'libraryElement_Event67', cardinality 0..*) is associated with 'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList66', cardinality 0..*).
+'libraryElement::Mapping' (role 'libraryElement_Mapping80', cardinality 0..*) is associated with 'libraryElement::FBNetworkElement' (role 'libraryElement_FBNetworkElement81', cardinality 0..*).
+'libraryElement::IInterfaceElement' (role 'destination138', cardinality 0..*) is associated with 'libraryElement::Connection' (role 'Connection', cardinality 0..*).
+'libraryElement::Compiler' (role 'libraryElement_Compiler', cardinality 0..*) is associated with 'libraryElement::CompilerInfo' (role 'libraryElement_CompilerInfo', cardinality 0..*).
+'libraryElement::AutomationSystem' (role 'libraryElement_AutomationSystem', cardinality 0..*) is associated with 'libraryElement::Application' (role 'libraryElement_Application117', cardinality 0..*).
+'libraryElement::ServiceTransaction' (role 'libraryElement_ServiceTransaction104', cardinality 0..*) is associated with 'libraryElement::InputPrimitive' (role 'libraryElement_InputPrimitive', cardinality 0..*).
+'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList60', cardinality 0..*) is associated with 'libraryElement::AdapterDeclaration' (role 'libraryElement_AdapterDeclaration61', cardinality 0..*).
+'libraryElement::Connection' (role 'Connection141', cardinality 0..*) is associated with 'libraryElement::IInterfaceElement' (role 'source140', cardinality 0..*).
+'libraryElement::VarDeclaration' (role 'VarDeclaration', cardinality 0..*) is associated with 'libraryElement::With' (role 'withs', cardinality 0..*).
+'libraryElement::DeviceType' (role 'libraryElement_DeviceType19', cardinality 0..*) is associated with 'libraryElement::ResourceTypeName' (role 'libraryElement_ResourceTypeName', cardinality 0..*).
+'libraryElement::DeviceType' (role 'libraryElement_DeviceType21', cardinality 0..*) is associated with 'libraryElement::Resource' (role 'libraryElement_Resource', cardinality 0..*).
+'libraryElement::ECTransition' (role 'ECTransition', cardinality 0..*) is associated with 'libraryElement::ECState' (role 'source', cardinality 0..*).
+'libraryElement::EventConnection' (role 'libraryElement_EventConnection', cardinality 0..*) is associated with 'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork113', cardinality 0..*).
+'libraryElement::ECAction' (role 'libraryElement_ECAction', cardinality 0..*) is associated with 'libraryElement::Algorithm' (role 'libraryElement_Algorithm26', cardinality 0..*).
+'libraryElement::Service' (role 'libraryElement_Service161', cardinality 0..*) is associated with 'libraryElement::ServiceInterface' (role 'libraryElement_ServiceInterface', cardinality 0..*).
+'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList', cardinality 0..*) is associated with 'libraryElement::FBNetworkElement' (role 'libraryElement_FBNetworkElement', cardinality 0..*).
+'libraryElement::DataConnection' (role 'libraryElement_DataConnection', cardinality 0..*) is associated with 'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork111', cardinality 0..*).
+'libraryElement::With' (role 'libraryElement_With', cardinality 0..*) is associated with 'libraryElement::Event' (role 'libraryElement_Event49', cardinality 0..*).
+'libraryElement::Device' (role 'Device', cardinality 0..*) is associated with 'libraryElement::Link' (role 'inConnections', cardinality 0..*).
+'libraryElement::With' (role 'With', cardinality 0..*) is associated with 'libraryElement::VarDeclaration' (role 'variables', cardinality 0..*).
+'libraryElement::FBNetworkElement' (role 'libraryElement_FBNetworkElement84', cardinality 0..*) is associated with 'libraryElement::Mapping' (role 'libraryElement_Mapping83', cardinality 0..*).
+'libraryElement::Annotation' (role 'libraryElement_Annotation', cardinality 0..*) is associated with 'libraryElement::I4DIACElement' (role 'libraryElement_I4DIACElement', cardinality 0..*).
+'libraryElement::Device' (role 'libraryElement_Device', cardinality 0..*) is associated with 'libraryElement::SystemConfiguration' (role 'libraryElement_SystemConfiguration146', cardinality 0..*).
+'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork', cardinality 0..*) is associated with 'libraryElement::Application' (role 'libraryElement_Application', cardinality 0..*).
+'libraryElement::SubApp' (role 'libraryElement_SubApp', cardinality 0..*) is associated with 'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork54', cardinality 0..*).
+'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration174', cardinality 0..*) is associated with 'libraryElement::IVarElement' (role 'libraryElement_IVarElement', cardinality 0..*).
+'libraryElement::ServiceTransaction' (role 'libraryElement_ServiceTransaction', cardinality 0..*) is associated with 'libraryElement::ServiceSequence' (role 'libraryElement_ServiceSequence', cardinality 0..*).
+'libraryElement::Link' (role 'outConnections', cardinality 0..*) is associated with 'libraryElement::Segment' (role 'Segment', cardinality 0..*).
+'libraryElement::ECC' (role 'libraryElement_ECC34', cardinality 0..*) is associated with 'libraryElement::ECState' (role 'libraryElement_ECState35', cardinality 0..*).
+'libraryElement::ECTransition' (role 'libraryElement_ECTransition', cardinality 0..*) is associated with 'libraryElement::ECC' (role 'libraryElement_ECC32', cardinality 0..*).
+'libraryElement::AdapterFB' (role 'adapterFB', cardinality 0..*) is associated with 'libraryElement::AdapterDeclaration' (role 'AdapterDeclaration', cardinality 0..*).
+'libraryElement::Parameter' (role 'libraryElement_Parameter', cardinality 0..*) is associated with 'libraryElement::ConfigurableObject' (role 'libraryElement_ConfigurableObject', cardinality 0..*).
+'libraryElement::LibraryElement' (role 'type', cardinality 0..*) is associated with 'libraryElement::PaletteEntry' (role 'palette.ecorePaletteEntry', cardinality 0..*).
+'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration76', cardinality 0..*) is associated with 'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList75', cardinality 0..*).
+'libraryElement::Resource' (role 'Resource', cardinality 0..*) is associated with 'libraryElement::Device' (role 'device', cardinality 0..*).
+'libraryElement::Link' (role 'Link101', cardinality 0..*) is associated with 'libraryElement::Segment' (role 'segment', cardinality 0..*).
+'libraryElement::ECState' (role 'libraryElement_ECState', cardinality 0..*) is associated with 'libraryElement::ECC' (role 'libraryElement_ECC30', cardinality 0..*).
+'libraryElement::AdapterFBType' (role 'libraryElement_AdapterFBType', cardinality 0..*) is associated with 'libraryElement::AdapterType' (role 'libraryElement_AdapterType', cardinality 0..*).
+'libraryElement::Resource' (role 'resource', cardinality 0..*) is associated with 'libraryElement::Device' (role 'Device89', cardinality 0..*).
+'libraryElement::SystemConfiguration' (role 'libraryElement_SystemConfiguration148', cardinality 0..*) is associated with 'libraryElement::Segment' (role 'libraryElement_Segment149', cardinality 0..*).
+'libraryElement::InterfaceList' (role 'libraryElement_InterfaceList56', cardinality 0..*) is associated with 'libraryElement::FBType' (role 'libraryElement_FBType', cardinality 0..*).
+'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork108', cardinality 0..*) is associated with 'libraryElement::FBNetworkElement' (role 'libraryElement_FBNetworkElement109', cardinality 0..*).
+'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork87', cardinality 0..*) is associated with 'libraryElement::Resource' (role 'libraryElement_Resource86', cardinality 0..*).
+'libraryElement::AdapterFBType' (role 'libraryElement_AdapterFBType156', cardinality 0..*) is associated with 'libraryElement::AdapterType' (role 'libraryElement_AdapterType157', cardinality 0..*).
+'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration', cardinality 0..*) is associated with 'libraryElement::BasicFBType' (role 'libraryElement_BasicFBType8', cardinality 0..*).
+'libraryElement::FBNetwork' (role 'libraryElement_FBNetwork115', cardinality 0..*) is associated with 'libraryElement::AdapterConnection' (role 'libraryElement_AdapterConnection', cardinality 0..*).
+'libraryElement::ECTransition' (role 'ECTransition41', cardinality 0..*) is associated with 'libraryElement::ECState' (role 'destination', cardinality 0..*).
+'libraryElement::VarDeclaration' (role 'libraryElement_VarDeclaration125', cardinality 0..*) is associated with 'libraryElement::VarInitialization' (role 'libraryElement_VarInitialization', cardinality 0..*).
+'libraryElement::OutputPrimitive' (role 'libraryElement_OutputPrimitive', cardinality 0..*) is associated with 'libraryElement::ServiceTransaction' (role 'libraryElement_ServiceTransaction106', cardinality 0..*).
+'libraryElement::ColorizableElement' (role 'libraryElement_ColorizableElement', cardinality 0..*) is associated with 'libraryElement::Color' (role 'libraryElement_Color', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'kiamacs::EObject' has no attributes.
+The class 'kiamacs::BaseCS' has no attributes.
+The class 'kiamacs::LeafCS' has no attributes.
+The class 'NodeCS' has no attributes.
+The class 'BaseCS' has no attributes.
+The class 'kiamacs::CompositeCS' has no attributes.
+The class 'kiamacs::TopCS' has no attributes.
+The class 'kiamacs::NodeCS' has no attributes.
+'kiamacs::LeafCS' is a specialization of 'NodeCS'.
+'kiamacs::CompositeCS' is a specialization of 'NodeCS'.
+'kiamacs::TopCS' is a specialization of 'BaseCS'.
+'kiamacs::NodeCS' is a specialization of 'BaseCS'.
+'kiamacs::CompositeCS' (role 'kiamacs_CompositeCS', cardinality 0..*) is associated with 'kiamacs::NodeCS' (role 'kiamacs_NodeCS2', cardinality 0..*).
+'kiamacs::EObject' (role 'kiamacs_EObject', cardinality 0..*) is associated with 'kiamacs::BaseCS' (role 'kiamacs_BaseCS', cardinality 0..*).
+'kiamacs::TopCS' (role 'kiamacs_TopCS', cardinality 0..*) is associated with 'kiamacs::NodeCS' (role 'kiamacs_NodeCS', cardinality 0..*).

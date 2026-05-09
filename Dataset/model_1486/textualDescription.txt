@@ -1,0 +1,70 @@
+The model has 27 class(es).
+The class 'TrgNamedElement' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::JointMM' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcNamedElement' has the following attributes: 'name' of type str.
+The class 'jointPackage::Grafcet2PetriNet::TrgArc' has the following attributes: 'weight' of type int.
+The class 'jointPackage::Grafcet2PetriNet::TrgTransitionToPlace' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcStep' has the following attributes: 'action' of type str; 'isActive' of type bool; 'isInitial' of type bool.
+The class 'jointPackage::Grafcet2PetriNet::SrcElement' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcLocatedElement' has the following attributes: 'location' of type str.
+The class 'jointPackage::Grafcet2PetriNet::SrcTransitionToStep' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcConnection' has no attributes.
+The class 'TrgElement' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::TrgPlaceToTransition' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcTransition' has the following attributes: 'condition' of type str.
+The class 'jointPackage::Grafcet2PetriNet::TrgTransition' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::TrgLocatedElement' has the following attributes: 'location' of type str.
+The class 'SrcElement' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcGrafcet' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::SrcStepToTransition' has no attributes.
+The class 'SrcConnection' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::TrgPlace' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::TrgNamedElement' has the following attributes: 'name' of type str.
+The class 'jointPackage::Grafcet2PetriNet::TrgElement' has no attributes.
+The class 'TrgArc' has no attributes.
+The class 'TrgLocatedElement' has no attributes.
+The class 'SrcLocatedElement' has no attributes.
+The class 'jointPackage::Grafcet2PetriNet::TrgPetriNet' has no attributes.
+The class 'SrcNamedElement' has no attributes.
+'jointPackage::Grafcet2PetriNet::SrcNamedElement' is a specialization of 'SrcLocatedElement'.
+'jointPackage::Grafcet2PetriNet::TrgPlace' is a specialization of 'TrgElement'.
+'jointPackage::Grafcet2PetriNet::TrgArc' is a specialization of 'TrgNamedElement'.
+'jointPackage::Grafcet2PetriNet::SrcElement' is a specialization of 'SrcNamedElement'.
+'jointPackage::Grafcet2PetriNet::TrgTransition' is a specialization of 'TrgElement'.
+'jointPackage::Grafcet2PetriNet::SrcTransition' is a specialization of 'SrcElement'.
+'jointPackage::Grafcet2PetriNet::SrcStepToTransition' is a specialization of 'SrcConnection'.
+'jointPackage::Grafcet2PetriNet::SrcTransitionToStep' is a specialization of 'SrcConnection'.
+'jointPackage::Grafcet2PetriNet::SrcGrafcet' is a specialization of 'SrcNamedElement'.
+'jointPackage::Grafcet2PetriNet::TrgTransitionToPlace' is a specialization of 'TrgArc'.
+'jointPackage::Grafcet2PetriNet::SrcStep' is a specialization of 'SrcElement'.
+'jointPackage::Grafcet2PetriNet::SrcConnection' is a specialization of 'SrcNamedElement'.
+'jointPackage::Grafcet2PetriNet::TrgNamedElement' is a specialization of 'TrgLocatedElement'.
+'jointPackage::Grafcet2PetriNet::TrgPetriNet' is a specialization of 'TrgNamedElement'.
+'jointPackage::Grafcet2PetriNet::TrgElement' is a specialization of 'TrgNamedElement'.
+'jointPackage::Grafcet2PetriNet::TrgPlaceToTransition' is a specialization of 'TrgArc'.
+'jointPackage::Grafcet2PetriNet::TrgPlace' (role 'TrgPlace49', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgTransitionToPlace' (role 'incomingArc48', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcGrafcet' (role 'grafcet5', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcConnection' (role 'SrcConnection', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcGrafcet' (role 'SrcGrafcet', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcElement' (role 'elements', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPlaceToTransition' (role 'TrgPlaceToTransition36', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgTransition' (role 'to35', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcStepToTransition' (role 'outgoingConnections', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcStep' (role 'SrcStep', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcTransitionToStep' (role 'incomingConnections23', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcStep' (role 'SrcStep24', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPlaceToTransition' (role 'TrgPlaceToTransition', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgPlace' (role 'from_33', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgTransitionToPlace' (role 'outgoingArc45', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgTransition' (role 'TrgTransition46', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcElement' (role 'SrcElement', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcGrafcet' (role 'grafcet', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcStep' (role 'to', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcTransitionToStep' (role 'SrcTransitionToStep', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPetriNet' (role 'TrgPetriNet41', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgArc' (role 'arcs', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcStepToTransition' (role 'incomingConnections', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcTransition' (role 'SrcTransition', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcTransition' (role 'from_13', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcTransitionToStep' (role 'SrcTransitionToStep14', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPetriNet' (role 'net', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgElement' (role 'TrgElement', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcStepToTransition' (role 'SrcStepToTransition11', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcTransition' (role 'to10', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPetriNet' (role 'TrgPetriNet', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgElement' (role 'elements29', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPlace' (role 'TrgPlace', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgPlaceToTransition' (role 'outgoingArc', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPetriNet' (role 'net27', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgArc' (role 'TrgArc', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPlace' (role 'to31', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgTransitionToPlace' (role 'TrgTransitionToPlace', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcConnection' (role 'connections', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcGrafcet' (role 'SrcGrafcet16', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgPetriNet' (role 'jointPackage_Grafcet2PetriNet_TrgPetriNet', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::JointMM' (role 'jointPackage_Grafcet2PetriNet_JointMM2', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcStepToTransition' (role 'SrcStepToTransition', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcStep' (role 'from_', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgTransitionToPlace' (role 'TrgTransitionToPlace39', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgTransition' (role 'from_38', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::TrgTransition' (role 'TrgTransition', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::TrgPlaceToTransition' (role 'incomingArc', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcTransition' (role 'SrcTransition21', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::SrcTransitionToStep' (role 'outgoingConnections20', cardinality 0..*).
+'jointPackage::Grafcet2PetriNet::SrcGrafcet' (role 'jointPackage_Grafcet2PetriNet_SrcGrafcet', cardinality 0..*) is associated with 'jointPackage::Grafcet2PetriNet::JointMM' (role 'jointPackage_Grafcet2PetriNet_JointMM', cardinality 0..*).

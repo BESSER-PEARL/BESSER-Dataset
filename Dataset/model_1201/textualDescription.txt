@@ -1,0 +1,205 @@
+The model has 90 class(es).
+The class 'ACG::ASMNode' has no attributes.
+The class 'Node' has no attributes.
+The class 'ACG::EmitWithOperandStat' has no attributes.
+The class 'ACG::Function' has the following attributes: 'name' of type str; 'context' of type str.
+The class 'ACG::Parameter' has no attributes.
+The class 'EmitWithLabelRefStat' has no attributes.
+The class 'ACG::SetStat' has no attributes.
+The class 'ACG::GotoStat' has no attributes.
+The class 'ACGElement' has no attributes.
+The class 'VariableDecl' has no attributes.
+The class 'ACG::OnceStat' has no attributes.
+The class 'ACG::IntegerExp' has the following attributes: 'value' of type str.
+The class 'ACG::EmitStat' has no attributes.
+The class 'ACG::SelfExp' has no attributes.
+The class 'ACG::VariableDecl' has the following attributes: 'name' of type str.
+The class 'ACG::StringExp' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'ACG::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'ACG::Attribute' has the following attributes: 'name' of type str; 'context' of type str.
+The class 'ACG::PushTStat' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'ACG::FindMEStat' has no attributes.
+The class 'EmitWithOperandStat' has no attributes.
+The class 'Statement' has no attributes.
+The class 'ACG::CollectionExp' has no attributes.
+The class 'ACG::ParamStat' has no attributes.
+The class 'LabelStat' has no attributes.
+The class 'PropertyCallExp' has no attributes.
+The class 'ACG::IfStat' has no attributes.
+The class 'ACG::ForEachStat' has no attributes.
+The class 'ACG::PushDStat' has no attributes.
+The class 'ACG::IsAExp' has the following attributes: 'type' of type str.
+The class 'ACG::SequenceExp' has no attributes.
+The class 'ACG::NewinStat' has no attributes.
+The class 'ACG::BooleanExp' has the following attributes: 'value' of type str.
+The class 'ACG::ACGElement' has no attributes.
+The class 'ACG::VariableStat' has no attributes.
+The class 'ACG::LetExp' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'ACG::ConditionalStat' has no attributes.
+The class 'ACG::OclUndefinedExp' has no attributes.
+The class 'ACG::IfExp' has no attributes.
+The class 'StatementBlock' has no attributes.
+The class 'ACG::LastExp' has no attributes.
+The class 'ACG::AnalyzeStat' has the following attributes: 'mode' of type str.
+The class 'ACG::ACG' has the following attributes: 'startsWith' of type str; 'metamodel' of type str.
+The class 'ACG::DupX1Stat' has no attributes.
+The class 'ACG::IteratorExp' has no attributes.
+The class 'ACG' has no attributes.
+The class 'CompoundStat' has no attributes.
+The class 'ACG::LiteralExp' has no attributes.
+The class 'ACG::PCallStat' has no attributes.
+The class 'ACG::PopStat' has no attributes.
+The class 'ACG::CompoundStat' has no attributes.
+The class 'ACG::StoreStat' has no attributes.
+The class 'ACG::SuperCallStat' has no attributes.
+The class 'ACG::LabelStat' has the following attributes: 'name' of type str.
+The class 'ACG::SwapStat' has no attributes.
+The class 'ACG::ReportStat' has the following attributes: 'severity' of type str.
+The class 'ACG::DeleteStat' has no attributes.
+The class 'ACG::GetAsmStat' has no attributes.
+The class 'ACG::Node' has the following attributes: 'element' of type str; 'mode' of type str.
+The class 'ACG::FieldStat' has no attributes.
+The class 'ACG::DupStat' has no attributes.
+The class 'ACG::PushStat' has no attributes.
+The class 'ACG::CallStat' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'ACG::OperatorCallExp' has no attributes.
+The class 'ACG::EmitWithLabelRefStat' has no attributes.
+The class 'EmitStat' has no attributes.
+The class 'CollectionExp' has no attributes.
+The class 'ACG::Statement' has no attributes.
+The class 'ACG::LetStat' has no attributes.
+The class 'ACG::NewStat' has no attributes.
+The class 'ACG::LoadStat' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'ACG::PropertyCallExp' has the following attributes: 'name' of type str.
+The class 'ACG::OperationCallExp' has no attributes.
+The class 'ACG::NavigationExp' has no attributes.
+The class 'ACG::GetStat' has no attributes.
+The class 'ACG::OperationStat' has no attributes.
+The class 'ACG::PushIStat' has no attributes.
+The class 'ACG::Expression' has no attributes.
+The class 'ACG::VariableExp' has no attributes.
+The class 'ACG::PushFStat' has no attributes.
+The class 'ACG::SimpleNode' has no attributes.
+The class 'ACG::StatementBlock' has no attributes.
+The class 'ACG::EndIterateStat' has no attributes.
+The class 'ACG::CodeNode' has no attributes.
+The class 'ACG::IterateStat' has no attributes.
+The enumeration 'Severity' has the following literals: 'error', 'warning', 'critic'.
+'ACG::IsAExp' is a specialization of 'Expression'.
+'ACG::EmitStat' is a specialization of 'Statement'.
+'ACG::VariableExp' is a specialization of 'Expression'.
+'ACG::Node' is a specialization of 'StatementBlock'.
+'ACG::StringExp' is a specialization of 'LiteralExp'.
+'ACG::FindMEStat' is a specialization of 'EmitStat'.
+'ACG::SwapStat' is a specialization of 'EmitStat'.
+'ACG::SetStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::ASMNode' is a specialization of 'Node'.
+'ACG::PushFStat' is a specialization of 'EmitStat'.
+'ACG::GetAsmStat' is a specialization of 'EmitStat'.
+'ACG::PushTStat' is a specialization of 'EmitStat'.
+'ACG::GetStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::ConditionalStat' is a specialization of 'CompoundStat'.
+'ACG::LoadStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::ACG' is a specialization of 'LocatedElement'.
+'ACG::OperatorCallExp' is a specialization of 'OperationCallExp'.
+'ACG::PushDStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::DupX1Stat' is a specialization of 'EmitStat'.
+'ACG::SuperCallStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::EndIterateStat' is a specialization of 'EmitStat'.
+'ACG::PushStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::CallStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::PopStat' is a specialization of 'EmitStat'.
+'ACG::LetExp' is a specialization of 'Expression'.
+'ACG::Function' is a specialization of 'ACGElement'.
+'ACG::Node' is a specialization of 'ACGElement'.
+'ACG::PCallStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::IterateStat' is a specialization of 'EmitStat'.
+'ACG::LetStat' is a specialization of 'CompoundStat'.
+'ACG::CodeNode' is a specialization of 'Node'.
+'ACG::ForEachStat' is a specialization of 'CompoundStat'.
+'ACG::EmitWithLabelRefStat' is a specialization of 'EmitStat'.
+'ACG::LastExp' is a specialization of 'Expression'.
+'ACG::SequenceExp' is a specialization of 'CollectionExp'.
+'ACG::OnceStat' is a specialization of 'CompoundStat'.
+'ACG::BooleanExp' is a specialization of 'LiteralExp'.
+'ACG::StoreStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::ACGElement' is a specialization of 'LocatedElement'.
+'ACG::GotoStat' is a specialization of 'EmitWithLabelRefStat'.
+'ACG::ParamStat' is a specialization of 'Statement'.
+'ACG::IntegerExp' is a specialization of 'LiteralExp'.
+'ACG::SimpleNode' is a specialization of 'Node'.
+'ACG::VariableDecl' is a specialization of 'LocatedElement'.
+'ACG::IfExp' is a specialization of 'Expression'.
+'ACG::NewStat' is a specialization of 'EmitStat'.
+'ACG::VariableStat' is a specialization of 'CompoundStat'.
+'ACG::CompoundStat' is a specialization of 'Statement'.
+'ACG::Attribute' is a specialization of 'ACGElement'.
+'ACG::IfStat' is a specialization of 'EmitWithLabelRefStat'.
+'ACG::AnalyzeStat' is a specialization of 'CompoundStat'.
+'ACG::FieldStat' is a specialization of 'Statement'.
+'ACG::OclUndefinedExp' is a specialization of 'LiteralExp'.
+'ACG::LiteralExp' is a specialization of 'Expression'.
+'ACG::ReportStat' is a specialization of 'Statement'.
+'ACG::SelfExp' is a specialization of 'Expression'.
+'ACG::Parameter' is a specialization of 'VariableDecl'.
+'ACG::DeleteStat' is a specialization of 'EmitStat'.
+'ACG::OperationCallExp' is a specialization of 'PropertyCallExp'.
+'ACG::OperationStat' is a specialization of 'CompoundStat'.
+'ACG::CollectionExp' is a specialization of 'LiteralExp'.
+'ACG::PushIStat' is a specialization of 'EmitWithOperandStat'.
+'ACG::Statement' is a specialization of 'LocatedElement'.
+'ACG::NewinStat' is a specialization of 'EmitStat'.
+'ACG::Expression' is a specialization of 'LocatedElement'.
+'ACG::StatementBlock' is a specialization of 'LocatedElement'.
+'ACG::PropertyCallExp' is a specialization of 'Expression'.
+'ACG::IteratorExp' is a specialization of 'PropertyCallExp'.
+'ACG::NavigationExp' is a specialization of 'PropertyCallExp'.
+'ACG::EmitWithOperandStat' is a specialization of 'EmitStat'.
+'ACG::DupStat' is a specialization of 'EmitStat'.
+'ACG::CompoundStat' is a specialization of 'StatementBlock'.
+'ACG::LabelStat' is a specialization of 'EmitStat'.
+'ACG::VariableStat' (role 'ACG_VariableStat', cardinality 0..*) is associated with 'Expression' (role 'Expression17', cardinality 0..*).
+'ACG::FieldStat' (role 'ACG_FieldStat43', cardinality 0..*) is associated with 'Expression' (role 'Expression44', cardinality 0..*).
+'ACG::CollectionExp' (role 'ACG_CollectionExp', cardinality 0..*) is associated with 'Expression' (role 'Expression85', cardinality 0..*).
+'ACGElement' (role 'ACGElement', cardinality 0..*) is associated with 'ACG::ACG' (role 'acg', cardinality 0..*).
+'LabelStat' (role 'LabelStat', cardinality 0..*) is associated with 'ACG::EmitWithLabelRefStat' (role 'ACG_EmitWithLabelRefStat', cardinality 0..*).
+'ACG::OperationStat' (role 'ACG_OperationStat', cardinality 0..*) is associated with 'Expression' (role 'Expression22', cardinality 0..*).
+'ACG::IsAExp' (role 'ACG_IsAExp', cardinality 0..*) is associated with 'Expression' (role 'Expression66', cardinality 0..*).
+'VariableDecl' (role 'VariableDecl78', cardinality 0..*) is associated with 'ACG::IteratorExp' (role 'ACG_IteratorExp', cardinality 0..*).
+'Expression' (role 'Expression74', cardinality 0..*) is associated with 'ACG::LetExp' (role 'ACG_LetExp73', cardinality 0..*).
+'ACG::ReportStat' (role 'ACG_ReportStat', cardinality 0..*) is associated with 'Expression' (role 'Expression39', cardinality 0..*).
+'Expression' (role 'Expression6', cardinality 0..*) is associated with 'ACG::Attribute' (role 'ACG_Attribute', cardinality 0..*).
+'ACG::LetExp' (role 'ACG_LetExp70', cardinality 0..*) is associated with 'Expression' (role 'Expression71', cardinality 0..*).
+'ACG::ParamStat' (role 'ACG_ParamStat48', cardinality 0..*) is associated with 'Expression' (role 'Expression49', cardinality 0..*).
+'ACG::Function' (role 'ACG_Function4', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'ACG::AnalyzeStat' (role 'ACG_AnalyzeStat', cardinality 0..*) is associated with 'Expression' (role 'Expression37', cardinality 0..*).
+'ACG::OperationCallExp' (role 'ACG_OperationCallExp', cardinality 0..*) is associated with 'Expression' (role 'Expression83', cardinality 0..*).
+'Expression' (role 'Expression53', cardinality 0..*) is associated with 'ACG::EmitWithOperandStat' (role 'ACG_EmitWithOperandStat', cardinality 0..*).
+'Expression' (role 'Expression10', cardinality 0..*) is associated with 'ACG::ASMNode' (role 'ACG_ASMNode', cardinality 0..*).
+'ACG::ForEachStat' (role 'ACG_ForEachStat14', cardinality 0..*) is associated with 'Expression' (role 'Expression15', cardinality 0..*).
+'Expression' (role 'Expression41', cardinality 0..*) is associated with 'ACG::FieldStat' (role 'ACG_FieldStat', cardinality 0..*).
+'Expression' (role 'Expression46', cardinality 0..*) is associated with 'ACG::ParamStat' (role 'ACG_ParamStat', cardinality 0..*).
+'Expression' (role 'Expression20', cardinality 0..*) is associated with 'ACG::VariableStat' (role 'ACG_VariableStat19', cardinality 0..*).
+'ACG::IfExp' (role 'ACG_IfExp', cardinality 0..*) is associated with 'Expression' (role 'Expression58', cardinality 0..*).
+'Expression' (role 'Expression76', cardinality 0..*) is associated with 'ACG::PropertyCallExp' (role 'ACG_PropertyCallExp', cardinality 0..*).
+'Expression' (role 'Expression64', cardinality 0..*) is associated with 'ACG::IfExp' (role 'ACG_IfExp63', cardinality 0..*).
+'Statement' (role 'Statement30', cardinality 0..*) is associated with 'ACG::ConditionalStat' (role 'ACG_ConditionalStat29', cardinality 0..*).
+'ACG::LetStat' (role 'ACG_LetStat', cardinality 0..*) is associated with 'VariableDecl' (role 'VariableDecl32', cardinality 0..*).
+'VariableDecl' (role 'VariableDecl56', cardinality 0..*) is associated with 'ACG::VariableExp' (role 'ACG_VariableExp', cardinality 0..*).
+'ACG::ACGElement' (role 'elements', cardinality 0..*) is associated with 'ACG' (role 'ACG', cardinality 0..*).
+'ACG::OperationStat' (role 'ACG_OperationStat24', cardinality 0..*) is associated with 'Expression' (role 'Expression25', cardinality 0..*).
+'Expression' (role 'Expression27', cardinality 0..*) is associated with 'ACG::ConditionalStat' (role 'ACG_ConditionalStat', cardinality 0..*).
+'Expression' (role 'Expression8', cardinality 0..*) is associated with 'ACG::Node' (role 'ACG_Node', cardinality 0..*).
+'Expression' (role 'Expression51', cardinality 0..*) is associated with 'ACG::LabelStat' (role 'ACG_LabelStat', cardinality 0..*).
+'ACG::IteratorExp' (role 'ACG_IteratorExp80', cardinality 0..*) is associated with 'Expression' (role 'Expression81', cardinality 0..*).
+'Expression' (role 'Expression61', cardinality 0..*) is associated with 'ACG::IfExp' (role 'ACG_IfExp60', cardinality 0..*).
+'ACG::LetExp' (role 'ACG_LetExp', cardinality 0..*) is associated with 'VariableDecl' (role 'VariableDecl68', cardinality 0..*).
+'ACG::ForEachStat' (role 'ACG_ForEachStat', cardinality 0..*) is associated with 'VariableDecl' (role 'VariableDecl', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'ACG::StatementBlock' (role 'ACG_StatementBlock', cardinality 0..*).
+'ACG::Function' (role 'ACG_Function', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'Expression' (role 'Expression35', cardinality 0..*) is associated with 'ACG::LetStat' (role 'ACG_LetStat34', cardinality 0..*).

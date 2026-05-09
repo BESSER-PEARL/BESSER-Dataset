@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'ZestGraph::NamedElement' has the following attributes: 'name' of type str.
+The class 'ZestGraph::GraphContainer' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'GraphItem' has no attributes.
+The class 'ZestGraph::ZestGraph' has no attributes.
+The class 'ZestGraph::GraphNode' has the following attributes: 'backColor' of type str; 'height' of type float; 'nodeStyle' of type str; 'width' of type float; 'shape' of type str.
+The class 'ZestGraph::GraphItem' has the following attributes: 'text' of type str.
+The class 'ZestGraph::GraphConnection' has the following attributes: 'color' of type str; 'lineWidth' of type int; 'lineStyle' of type int.
+'ZestGraph::GraphConnection' is a specialization of 'GraphItem'.
+'ZestGraph::GraphContainer' is a specialization of 'NamedElement'.
+'ZestGraph::GraphNode' is a specialization of 'GraphItem'.
+'ZestGraph::ZestGraph' is a specialization of 'NamedElement'.
+'ZestGraph::GraphConnection' (role 'outgoing', cardinality 0..*) is associated with 'ZestGraph::GraphNode' (role 'GraphNode', cardinality 0..*).
+'ZestGraph::GraphNode' (role 'targetNode', cardinality 0..*) is associated with 'ZestGraph::GraphConnection' (role 'GraphConnection7', cardinality 0..*).
+'ZestGraph::ZestGraph' (role 'graph', cardinality 0..*) is associated with 'ZestGraph::GraphItem' (role 'GraphItem', cardinality 0..*).
+'ZestGraph::GraphConnection' (role 'ingoing', cardinality 0..*) is associated with 'ZestGraph::GraphNode' (role 'GraphNode10', cardinality 0..*).
+'ZestGraph::GraphNode' (role 'ZestGraph_GraphNode', cardinality 0..*) is associated with 'ZestGraph::GraphContainer' (role 'ZestGraph_GraphContainer3', cardinality 0..*).
+'ZestGraph::GraphContainer' (role 'ZestGraph_GraphContainer', cardinality 0..*) is associated with 'ZestGraph::ZestGraph' (role 'ZestGraph_ZestGraph', cardinality 0..*).
+'ZestGraph::GraphConnection' (role 'GraphConnection', cardinality 0..*) is associated with 'ZestGraph::GraphNode' (role 'sourceNode', cardinality 0..*).
+'ZestGraph::GraphItem' (role 'items', cardinality 0..*) is associated with 'ZestGraph::ZestGraph' (role 'ZestGraph', cardinality 0..*).

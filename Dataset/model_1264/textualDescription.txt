@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'family::Person' has the following attributes: 'age' of type int.
+The class 'family::Family' has the following attributes: 'memberCount' of type int; 'averageAge' of type float.
+'family::Person' (role 'family_Person', cardinality 0..*) is associated with 'family::Family' (role 'family_Family', cardinality 0..*).

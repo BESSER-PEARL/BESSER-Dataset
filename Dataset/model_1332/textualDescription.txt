@@ -1,0 +1,42 @@
+The model has 15 class(es).
+The class 'classescs::ClassCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'classescs::PropertyCS' has no attributes.
+The class 'classescs::EObject' has no attributes.
+The class 'classescs::PathNameCS' has no attributes.
+The class 'classescs::RoundedBracketClause' has no attributes.
+The class 'classescs::NamedElementCS' has the following attributes: 'name' of type str.
+The class 'classescs::OperationCS' has the following attributes: 'params' of type str.
+The class 'ElementCS' has no attributes.
+The class 'classescs::ArgumentCS' has no attributes.
+The class 'classescs::PackageCS' has no attributes.
+The class 'classescs::PathElementCS' has no attributes.
+The class 'classescs::NameExpCS' has no attributes.
+The class 'classescs::RootCS' has no attributes.
+The class 'classescs::ElementCS' has no attributes.
+'classescs::NamedElementCS' is a specialization of 'ElementCS'.
+'classescs::PathNameCS' is a specialization of 'ElementCS'.
+'classescs::PathElementCS' is a specialization of 'NamedElementCS'.
+'classescs::NameExpCS' is a specialization of 'ElementCS'.
+'classescs::RootCS' is a specialization of 'ElementCS'.
+'classescs::ClassCS' is a specialization of 'NamedElementCS'.
+'classescs::PackageCS' is a specialization of 'NamedElementCS'.
+'classescs::RoundedBracketClause' is a specialization of 'ElementCS'.
+'classescs::ArgumentCS' is a specialization of 'NamedElementCS'.
+'classescs::PropertyCS' is a specialization of 'NamedElementCS'.
+'classescs::OperationCS' is a specialization of 'NamedElementCS'.
+'classescs::RoundedBracketClause' (role 'classescs_RoundedBracketClause', cardinality 0..*) is associated with 'classescs::NameExpCS' (role 'classescs_NameExpCS27', cardinality 0..*).
+'classescs::OperationCS' (role 'classescs_OperationCS21', cardinality 0..*) is associated with 'classescs::PathNameCS' (role 'classescs_PathNameCS22', cardinality 0..*).
+'classescs::NameExpCS' (role 'classescs_NameExpCS24', cardinality 0..*) is associated with 'classescs::PathNameCS' (role 'classescs_PathNameCS25', cardinality 0..*).
+'classescs::PackageCS' (role 'classescs_PackageCS2', cardinality 0..*) is associated with 'classescs::PackageCS' (role 'classescs_PackageCS4', cardinality 0..*).
+'classescs::ElementCS' (role 'classescs_ElementCS', cardinality 0..*) is associated with 'classescs::EObject' (role 'classescs_EObject', cardinality 0..*).
+'classescs::ClassCS' (role 'classescs_ClassCS', cardinality 0..*) is associated with 'classescs::PackageCS' (role 'classescs_PackageCS', cardinality 0..*).
+'classescs::NameExpCS' (role 'classescs_NameExpCS', cardinality 0..*) is associated with 'classescs::OperationCS' (role 'classescs_OperationCS19', cardinality 0..*).
+'classescs::NameExpCS' (role 'classescs_NameExpCS30', cardinality 0..*) is associated with 'classescs::NameExpCS' (role 'classescs_NameExpCS28', cardinality 0..*).
+'classescs::ClassCS' (role 'classescs_ClassCS8', cardinality 0..*) is associated with 'classescs::PropertyCS' (role 'classescs_PropertyCS', cardinality 0..*).
+'classescs::PathNameCS' (role 'classescs_PathNameCS', cardinality 0..*) is associated with 'classescs::ClassCS' (role 'classescs_ClassCS6', cardinality 0..*).
+'classescs::PathElementCS' (role 'classescs_PathElementCS', cardinality 0..*) is associated with 'classescs::PathNameCS' (role 'classescs_PathNameCS12', cardinality 0..*).
+'classescs::ArgumentCS' (role 'classescs_ArgumentCS', cardinality 0..*) is associated with 'classescs::RoundedBracketClause' (role 'classescs_RoundedBracketClause32', cardinality 0..*).
+'classescs::PathNameCS' (role 'classescs_PathNameCS17', cardinality 0..*) is associated with 'classescs::PropertyCS' (role 'classescs_PropertyCS16', cardinality 0..*).
+'classescs::OperationCS' (role 'classescs_OperationCS', cardinality 0..*) is associated with 'classescs::ClassCS' (role 'classescs_ClassCS10', cardinality 0..*).
+'classescs::PackageCS' (role 'classescs_PackageCS14', cardinality 0..*) is associated with 'classescs::RootCS' (role 'classescs_RootCS', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/plugins/examples/models/required-example.ecore

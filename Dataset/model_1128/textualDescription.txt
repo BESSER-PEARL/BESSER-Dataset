@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'research16::Position' has the following attributes: 'description' of type str.
+The class 'research16::Write' has the following attributes: 'timeSpent' of type int.
+The class 'Counted' has no attributes.
+The class 'research16::Counted' has the following attributes: 'id' of type int.
+The class 'research16::KnowledgeManager' has no attributes.
+The class 'research16::StateMachineObject' has the following attributes: 'label' of type str.
+The class 'research16::Review' has the following attributes: 'date' of type date.
+The class 'Named' has no attributes.
+The class 'research16::PublicationStructure' has no attributes.
+The class 'Labelled' has no attributes.
+The class 'research16::Action' has the following attributes: 'actionStatement' of type str; 'actionLabel' of type str.
+The class 'research16::Skill' has the following attributes: 'description' of type str.
+The class 'research16::PublicationStatus' has the following attributes: 'label' of type str.
+The class 'research16::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research16::State' has the following attributes: 'kind' of type str; 'name' of type str; 'id' of type int.
+The class 'research16::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'research16::Progress' has the following attributes: 'percent' of type int.
+The class 'research16::Transition' has the following attributes: 'guardLabel' of type str; 'guardExpression' of type str.
+The class 'StateMachineObject' has no attributes.
+The class 'research16::Paper' has no attributes.
+The class 'research16::PublicationSystem' has no attributes.
+The class 'research16::StateMachineVariable' has no attributes.
+The class 'research16::Phase' has the following attributes: 'name' of type str.
+The class 'research16::Paragraph' has the following attributes: 'content' of type str.
+The class 'research16::Named' has the following attributes: 'name' of type str.
+The class 'research16::Labelled' has the following attributes: 'lname' of type str.
+The class 'research16::Keyword' has the following attributes: 'word' of type str.
+The class 'research16::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'research16::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research16::PaperKeyword' has the following attributes: 'weight' of type int.
+The enumeration 'StateType' has the following literals: 'ongoing', 'initial', 'final'.
+'research16::ReviewNote' is a specialization of 'Named'.
+'research16::Write' is a specialization of 'Labelled'.
+'research16::PublicationSystem' is a specialization of 'Named'.
+'research16::Transition' is a specialization of 'StateMachineObject'.
+'research16::PublicationStructure' is a specialization of 'Named'.
+'research16::Paragraph' is a specialization of 'Named'.
+'research16::Paragraph' is a specialization of 'Counted'.
+'research16::Review' is a specialization of 'Labelled'.
+'research16::State' is a specialization of 'StateMachineObject'.
+'research16::PublicationProcess' is a specialization of 'Named'.
+'research16::Progress' is a specialization of 'Labelled'.
+'research16::Position' is a specialization of 'Named'.
+'research16::Paper' is a specialization of 'Named'.
+'research16::KnowledgeManager' is a specialization of 'Named'.
+'research16::Keyword' is a specialization of 'Named'.
+'research16::Researcher' (role 'research16_Researcher8', cardinality 0..*) is associated with 'research16::Position' (role 'research16_Position', cardinality 0..*).
+'research16::Keyword' (role 'research16_Keyword60', cardinality 0..*) is associated with 'research16::PaperKeyword' (role 'research16_PaperKeyword59', cardinality 0..*).
+'research16::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'research16::Paper' (role 'res_papers', cardinality 0..*).
+'research16::Position' (role 'research16_Position50', cardinality 0..*) is associated with 'research16::Position' (role 'research16_Position52', cardinality 0..*).
+'research16::Paper' (role 'research16_Paper', cardinality 0..*) is associated with 'research16::Paragraph' (role 'research16_Paragraph', cardinality 0..*).
+'research16::Keyword' (role 'research16_Keyword', cardinality 0..*) is associated with 'research16::Paper' (role 'research16_Paper54', cardinality 0..*).
+'research16::Researcher' (role 'research16_Researcher', cardinality 0..*) is associated with 'research16::Write' (role 'research16_Write', cardinality 0..*).
+'research16::Researcher' (role 'research16_Researcher10', cardinality 0..*) is associated with 'research16::Collaboration' (role 'research16_Collaboration', cardinality 0..*).
+'research16::PublicationSystem' (role 'research16_PublicationSystem49', cardinality 0..*) is associated with 'research16::PublicationStatus' (role 'research16_PublicationStatus', cardinality 0..*).
+'research16::PublicationStructure' (role 'research16_PublicationStructure36', cardinality 0..*) is associated with 'research16::Paper' (role 'research16_Paper37', cardinality 0..*).
+'research16::PublicationStatus' (role 'research16_PublicationStatus65', cardinality 0..*) is associated with 'research16::StateMachineVariable' (role 'research16_StateMachineVariable', cardinality 0..*).
+'research16::Write' (role 'research16_Write28', cardinality 0..*) is associated with 'research16::Paragraph' (role 'research16_Paragraph29', cardinality 0..*).
+'research16::ReviewNote' (role 'research16_ReviewNote32', cardinality 0..*) is associated with 'research16::Review' (role 'research16_Review31', cardinality 0..*).
+'research16::Paper' (role 'research16_Paper18', cardinality 0..*) is associated with 'research16::Paper' (role 'research16_Paper16', cardinality 0..*).
+'research16::Paper' (role 'research16_Paper20', cardinality 0..*) is associated with 'research16::State' (role 'research16_State', cardinality 0..*).
+'research16::Paper' (role 'Paper', cardinality 0..*) is associated with 'research16::Researcher' (role 'authors', cardinality 0..*).
+'research16::Paper' (role 'paper', cardinality 0..*) is associated with 'research16::Progress' (role 'Progress', cardinality 0..*).
+'research16::State' (role 'research16_State77', cardinality 0..*) is associated with 'research16::Transition' (role 'research16_Transition78', cardinality 0..*).
+'research16::Paper' (role 'research16_Paper15', cardinality 0..*) is associated with 'research16::PaperKeyword' (role 'research16_PaperKeyword', cardinality 0..*).
+'research16::Action' (role 'research16_Action', cardinality 0..*) is associated with 'research16::Transition' (role 'research16_Transition', cardinality 0..*).
+'research16::Collaboration' (role 'research16_Collaboration62', cardinality 0..*) is associated with 'research16::Paper' (role 'research16_Paper63', cardinality 0..*).
+'research16::Paper' (role 'Paper26', cardinality 0..*) is associated with 'research16::Progress' (role 'progress', cardinality 0..*).
+'research16::Phase' (role 'research16_Phase', cardinality 0..*) is associated with 'research16::PublicationProcess' (role 'research16_PublicationProcess', cardinality 0..*).
+'research16::Researcher' (role 'research16_Researcher3', cardinality 0..*) is associated with 'research16::Review' (role 'research16_Review', cardinality 0..*).
+'research16::PublicationProcess' (role 'research16_PublicationProcess41', cardinality 0..*) is associated with 'research16::PublicationSystem' (role 'research16_PublicationSystem', cardinality 0..*).
+'research16::Keyword' (role 'research16_Keyword57', cardinality 0..*) is associated with 'research16::KnowledgeManager' (role 'research16_KnowledgeManager56', cardinality 0..*).
+'research16::PublicationStatus' (role 'research16_PublicationStatus67', cardinality 0..*) is associated with 'research16::State' (role 'research16_State68', cardinality 0..*).
+'research16::State' (role 'research16_State80', cardinality 0..*) is associated with 'research16::Action' (role 'research16_Action81', cardinality 0..*).
+'research16::Researcher' (role 'research16_Researcher6', cardinality 0..*) is associated with 'research16::Skill' (role 'research16_Skill', cardinality 0..*).
+'research16::KnowledgeManager' (role 'research16_KnowledgeManager', cardinality 0..*) is associated with 'research16::PublicationStructure' (role 'research16_PublicationStructure39', cardinality 0..*).
+'research16::PublicationSystem' (role 'research16_PublicationSystem43', cardinality 0..*) is associated with 'research16::PublicationStructure' (role 'research16_PublicationStructure44', cardinality 0..*).
+'research16::Researcher' (role 'research16_Researcher34', cardinality 0..*) is associated with 'research16::PublicationStructure' (role 'research16_PublicationStructure', cardinality 0..*).
+'research16::PublicationProcess' (role 'research16_PublicationProcess24', cardinality 0..*) is associated with 'research16::Progress' (role 'research16_Progress', cardinality 0..*).
+'research16::PublicationSystem' (role 'research16_PublicationSystem46', cardinality 0..*) is associated with 'research16::Position' (role 'research16_Position47', cardinality 0..*).
+'research16::ReviewNote' (role 'research16_ReviewNote', cardinality 0..*) is associated with 'research16::Paragraph' (role 'research16_Paragraph22', cardinality 0..*).
+'research16::Action' (role 'research16_Action82', cardinality 0..*) is associated with 'research16::Action' (role 'research16_Action84', cardinality 0..*).
+'research16::Transition' (role 'research16_Transition74', cardinality 0..*) is associated with 'research16::State' (role 'research16_State75', cardinality 0..*).
+'research16::State' (role 'research16_State72', cardinality 0..*) is associated with 'research16::Transition' (role 'research16_Transition71', cardinality 0..*).

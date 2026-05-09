@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'message::Translation' has the following attributes: 'uid' of type str; 'translation' of type str.
+The class 'message::Message' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'message::Language' has the following attributes: 'defaultLang' of type bool; 'code' of type str; 'uid' of type str; 'lang' of type str.
+The class 'Categorized' has no attributes.
+The class 'message::MessageLibrary' has the following attributes: 'uid' of type str; 'name' of type str.
+'message::MessageLibrary' is a specialization of 'Categorized'.
+'message::Translation' (role 'message_Translation4', cardinality 0..*) is associated with 'message::Language' (role 'message_Language', cardinality 0..*).
+'message::Message' (role 'message_Message', cardinality 0..*) is associated with 'message::MessageLibrary' (role 'message_MessageLibrary', cardinality 0..*).
+'message::Message' (role 'message_Message2', cardinality 0..*) is associated with 'message::Translation' (role 'message_Translation', cardinality 0..*).

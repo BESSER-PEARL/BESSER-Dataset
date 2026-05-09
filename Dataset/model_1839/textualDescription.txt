@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'book::Book' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'book::EObject' has no attributes.
+The class 'book::BookCollection' has no attributes.
+'book::BookCollection' (role 'book_BookCollection', cardinality 0..*) is associated with 'book::Book' (role 'book_Book', cardinality 0..*).
+'book::EObject' (role 'book_EObject', cardinality 0..*) is associated with 'book::Book' (role 'book_Book2', cardinality 0..*).

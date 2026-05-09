@@ -1,0 +1,55 @@
+The model has 20 class(es).
+The class 'tp4::Paragraph' has the following attributes: 'content' of type str.
+The class 'tp4::ReviewNote' has the following attributes: 'content' of type str.
+The class 'tp4::Labelled' has the following attributes: 'lname' of type str.
+The class 'Named' has no attributes.
+The class 'tp4::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'tp4::PublicationSystem' has no attributes.
+The class 'tp4::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'tp4::Progress' has the following attributes: 'percent' of type int.
+The class 'Labelled' has no attributes.
+The class 'tp4::Paper' has no attributes.
+The class 'tp4::Write' has the following attributes: 'timeSpent' of type int.
+The class 'tp4::Phases' has the following attributes: 'name' of type str.
+The class 'Counted' has no attributes.
+The class 'tp4::Review' has the following attributes: 'date' of type date.
+The class 'tp4::Position' has the following attributes: 'description' of type str.
+The class 'tp4::Named' has the following attributes: 'name' of type str.
+The class 'tp4::Keyword' has the following attributes: 'description' of type str.
+The class 'tp4::PublicationStructure' has no attributes.
+The class 'tp4::Counted' has the following attributes: 'id' of type int.
+The class 'tp4::Skill' has the following attributes: 'description' of type str.
+'tp4::Position' is a specialization of 'Named'.
+'tp4::Paper' is a specialization of 'Named'.
+'tp4::Keyword' is a specialization of 'Named'.
+'tp4::ReviewNote' is a specialization of 'Named'.
+'tp4::Review' is a specialization of 'Labelled'.
+'tp4::PublicationStructure' is a specialization of 'Named'.
+'tp4::PublicationProcess' is a specialization of 'Named'.
+'tp4::Paragraph' is a specialization of 'Counted'.
+'tp4::PublicationSystem' is a specialization of 'Named'.
+'tp4::Progress' is a specialization of 'Labelled'.
+'tp4::Paragraph' is a specialization of 'Named'.
+'tp4::Write' is a specialization of 'Labelled'.
+'tp4::Keyword' (role 'tp4_Keyword', cardinality 0..*) is associated with 'tp4::Paper' (role 'tp4_Paper13', cardinality 0..*).
+'tp4::Progress' (role 'Progress', cardinality 0..*) is associated with 'tp4::Paper' (role 'paper', cardinality 0..*).
+'tp4::Researcher' (role 'authors', cardinality 0..*) is associated with 'tp4::Paper' (role 'Paper', cardinality 0..*).
+'tp4::PublicationProcess' (role 'tp4_PublicationProcess17', cardinality 0..*) is associated with 'tp4::Progress' (role 'tp4_Progress', cardinality 0..*).
+'tp4::Write' (role 'tp4_Write', cardinality 0..*) is associated with 'tp4::Researcher' (role 'tp4_Researcher', cardinality 0..*).
+'tp4::Researcher' (role 'tp4_Researcher27', cardinality 0..*) is associated with 'tp4::PublicationStructure' (role 'tp4_PublicationStructure', cardinality 0..*).
+'tp4::PublicationStructure' (role 'tp4_PublicationStructure29', cardinality 0..*) is associated with 'tp4::Paper' (role 'tp4_Paper30', cardinality 0..*).
+'tp4::ReviewNote' (role 'tp4_ReviewNote25', cardinality 0..*) is associated with 'tp4::Review' (role 'tp4_Review24', cardinality 0..*).
+'tp4::PublicationSystem' (role 'tp4_PublicationSystem37', cardinality 0..*) is associated with 'tp4::Position' (role 'tp4_Position38', cardinality 0..*).
+'tp4::Phases' (role 'tp4_Phases', cardinality 0..*) is associated with 'tp4::PublicationProcess' (role 'tp4_PublicationProcess', cardinality 0..*).
+'tp4::Researcher' (role 'tp4_Researcher3', cardinality 0..*) is associated with 'tp4::Review' (role 'tp4_Review', cardinality 0..*).
+'tp4::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'tp4::Paper' (role 'res_papers', cardinality 0..*).
+'tp4::Paper' (role 'Paper19', cardinality 0..*) is associated with 'tp4::Progress' (role 'progress', cardinality 0..*).
+'tp4::Paragraph' (role 'tp4_Paragraph', cardinality 0..*) is associated with 'tp4::Paper' (role 'tp4_Paper', cardinality 0..*).
+'tp4::PublicationStructure' (role 'tp4_PublicationStructure35', cardinality 0..*) is associated with 'tp4::PublicationSystem' (role 'tp4_PublicationSystem34', cardinality 0..*).
+'tp4::Keyword' (role 'tp4_Keyword41', cardinality 0..*) is associated with 'tp4::PublicationSystem' (role 'tp4_PublicationSystem40', cardinality 0..*).
+'tp4::Skill' (role 'tp4_Skill', cardinality 0..*) is associated with 'tp4::Researcher' (role 'tp4_Researcher6', cardinality 0..*).
+'tp4::PublicationSystem' (role 'tp4_PublicationSystem', cardinality 0..*) is associated with 'tp4::PublicationProcess' (role 'tp4_PublicationProcess32', cardinality 0..*).
+'tp4::Position' (role 'tp4_Position42', cardinality 0..*) is associated with 'tp4::Position' (role 'tp4_Position44', cardinality 0..*).
+'tp4::Paragraph' (role 'tp4_Paragraph22', cardinality 0..*) is associated with 'tp4::Write' (role 'tp4_Write21', cardinality 0..*).
+'tp4::Position' (role 'tp4_Position', cardinality 0..*) is associated with 'tp4::Researcher' (role 'tp4_Researcher8', cardinality 0..*).
+'tp4::ReviewNote' (role 'tp4_ReviewNote', cardinality 0..*) is associated with 'tp4::Paragraph' (role 'tp4_Paragraph15', cardinality 0..*).

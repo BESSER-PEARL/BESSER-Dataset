@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'writers::Catalog' has no attributes.
+The class 'writers::Book' has no attributes.
+The class 'writers::Writer' has the following attributes: 'name' of type str.
+'writers::Writer' (role 'writers_Writer', cardinality 0..*) is associated with 'writers::Catalog' (role 'writers_Catalog', cardinality 0..*).
+'writers::Book' (role 'books.ecoreBook', cardinality 0..*) is associated with 'writers::Writer' (role 'authors', cardinality 0..*).

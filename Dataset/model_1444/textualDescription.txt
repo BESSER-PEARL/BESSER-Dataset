@@ -1,0 +1,25 @@
+The model has 10 class(es).
+The class 'simpleGraph::Node' has no attributes.
+The class 'simpleGraph::GraphElement' has the following attributes: 'id' of type int; 'generated' of type bool.
+The class 'simpleGraph::Edge' has no attributes.
+The class 'Position' has no attributes.
+The class 'simpleGraph::Label' has the following attributes: 'value' of type str.
+The class 'simpleGraph::Parameter' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'simpleGraph::Position' has the following attributes: 'Y' of type int; 'X' of type int.
+The class 'GraphElement' has no attributes.
+The class 'simpleGraph::Nail' has no attributes.
+The class 'simpleGraph::Graph' has no attributes.
+'simpleGraph::Label' is a specialization of 'Position'.
+'simpleGraph::Position' is a specialization of 'GraphElement'.
+'simpleGraph::Nail' is a specialization of 'Position'.
+'simpleGraph::Node' is a specialization of 'Position'.
+'simpleGraph::Edge' is a specialization of 'GraphElement'.
+'simpleGraph::Graph' is a specialization of 'GraphElement'.
+'simpleGraph::Graph' (role 'simpleGraph_Graph2', cardinality 0..*) is associated with 'simpleGraph::Edge' (role 'simpleGraph_Edge', cardinality 0..*).
+'simpleGraph::Node' (role 'simpleGraph_Node', cardinality 0..*) is associated with 'simpleGraph::Graph' (role 'simpleGraph_Graph', cardinality 0..*).
+'simpleGraph::Label' (role 'simpleGraph_Label', cardinality 0..*) is associated with 'simpleGraph::Edge' (role 'simpleGraph_Edge11', cardinality 0..*).
+'simpleGraph::Edge' (role 'simpleGraph_Edge13', cardinality 0..*) is associated with 'simpleGraph::Nail' (role 'simpleGraph_Nail', cardinality 0..*).
+'simpleGraph::Label' (role 'simpleGraph_Label16', cardinality 0..*) is associated with 'simpleGraph::Node' (role 'simpleGraph_Node15', cardinality 0..*).
+'simpleGraph::Edge' (role 'simpleGraph_Edge5', cardinality 0..*) is associated with 'simpleGraph::Node' (role 'simpleGraph_Node6', cardinality 0..*).
+'simpleGraph::Edge' (role 'simpleGraph_Edge8', cardinality 0..*) is associated with 'simpleGraph::Node' (role 'simpleGraph_Node9', cardinality 0..*).
+'simpleGraph::GraphElement' (role 'simpleGraph_GraphElement', cardinality 0..*) is associated with 'simpleGraph::Parameter' (role 'simpleGraph_Parameter', cardinality 0..*).

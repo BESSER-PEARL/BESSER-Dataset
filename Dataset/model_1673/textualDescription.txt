@@ -1,0 +1,42 @@
+The model has 13 class(es).
+The class 'systemworkbench102::Thing' has the following attributes: 'id' of type int.
+The class 'Named' has no attributes.
+The class 'systemworkbench102::RelatedTo' has the following attributes: 'since' of type str.
+The class 'systemworkbench102::Function' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'systemworkbench102::NamedElement' has the following attributes: 'name' of type str.
+The class 'systemworkbench102::PatternCatalog' has the following attributes: 'id' of type int.
+The class 'systemworkbench102::Workbench' has the following attributes: 'aprop' of type str.
+The class 'systemworkbench102::FunctionProperty' has the following attributes: 'description' of type str.
+The class 'systemworkbench102::Component' has no attributes.
+The class 'systemworkbench102::System' has no attributes.
+The class 'systemworkbench102::Named' has the following attributes: 'ident' of type str.
+The class 'systemworkbench102::Thoughts' has no attributes.
+'systemworkbench102::FunctionProperty' is a specialization of 'Named'.
+'systemworkbench102::Thoughts' is a specialization of 'NamedElement'.
+'systemworkbench102::Component' is a specialization of 'Named'.
+'systemworkbench102::Thing' is a specialization of 'NamedElement'.
+'systemworkbench102::System' is a specialization of 'Named'.
+'systemworkbench102::RelatedTo' is a specialization of 'NamedElement'.
+'systemworkbench102::Workbench' is a specialization of 'Named'.
+'systemworkbench102::Function' is a specialization of 'Named'.
+'systemworkbench102::Component' (role 'systemworkbench102_Component37', cardinality 0..*) is associated with 'systemworkbench102::Function' (role 'systemworkbench102_Function36', cardinality 0..*).
+'systemworkbench102::System' (role 'systemworkbench102_System', cardinality 0..*) is associated with 'systemworkbench102::Workbench' (role 'systemworkbench102_Workbench4', cardinality 0..*).
+'systemworkbench102::PatternCatalog' (role 'systemworkbench102_PatternCatalog', cardinality 0..*) is associated with 'systemworkbench102::Workbench' (role 'systemworkbench102_Workbench8', cardinality 0..*).
+'systemworkbench102::Thing' (role 'Thing', cardinality 0..*) is associated with 'systemworkbench102::RelatedTo' (role 'relations', cardinality 0..*).
+'systemworkbench102::Thing' (role 'systemworkbench102_Thing12', cardinality 0..*) is associated with 'systemworkbench102::RelatedTo' (role 'systemworkbench102_RelatedTo', cardinality 0..*).
+'systemworkbench102::Workbench' (role 'systemworkbench102_Workbench', cardinality 0..*) is associated with 'systemworkbench102::Thing' (role 'systemworkbench102_Thing', cardinality 0..*).
+'systemworkbench102::System' (role 'systemworkbench102_System42', cardinality 0..*) is associated with 'systemworkbench102::Component' (role 'systemworkbench102_Component43', cardinality 0..*).
+'systemworkbench102::Component' (role 'systemworkbench102_Component25', cardinality 0..*) is associated with 'systemworkbench102::Function' (role 'systemworkbench102_Function', cardinality 0..*).
+'systemworkbench102::Component' (role 'systemworkbench102_Component21', cardinality 0..*) is associated with 'systemworkbench102::Component' (role 'systemworkbench102_Component23', cardinality 0..*).
+'systemworkbench102::Function' (role 'systemworkbench102_Function30', cardinality 0..*) is associated with 'systemworkbench102::FunctionProperty' (role 'systemworkbench102_FunctionProperty31', cardinality 0..*).
+'systemworkbench102::Workbench' (role 'systemworkbench102_Workbench6', cardinality 0..*) is associated with 'systemworkbench102::FunctionProperty' (role 'systemworkbench102_FunctionProperty', cardinality 0..*).
+'systemworkbench102::Thoughts' (role 'systemworkbench102_Thoughts', cardinality 0..*) is associated with 'systemworkbench102::Workbench' (role 'systemworkbench102_Workbench2', cardinality 0..*).
+'systemworkbench102::Function' (role 'systemworkbench102_Function32', cardinality 0..*) is associated with 'systemworkbench102::Function' (role 'systemworkbench102_Function34', cardinality 0..*).
+'systemworkbench102::Component' (role 'systemworkbench102_Component19', cardinality 0..*) is associated with 'systemworkbench102::Component' (role 'systemworkbench102_Component', cardinality 0..*).
+'systemworkbench102::Thing' (role 'fromThing', cardinality 0..*) is associated with 'systemworkbench102::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'systemworkbench102::Function' (role 'systemworkbench102_Function28', cardinality 0..*) is associated with 'systemworkbench102::Function' (role 'systemworkbench102_Function26', cardinality 0..*).
+'systemworkbench102::Function' (role 'systemworkbench102_Function46', cardinality 0..*) is associated with 'systemworkbench102::PatternCatalog' (role 'systemworkbench102_PatternCatalog45', cardinality 0..*).
+'systemworkbench102::FunctionProperty' (role 'systemworkbench102_FunctionProperty16', cardinality 0..*) is associated with 'systemworkbench102::FunctionProperty' (role 'systemworkbench102_FunctionProperty18', cardinality 0..*).
+'systemworkbench102::System' (role 'systemworkbench102_System39', cardinality 0..*) is associated with 'systemworkbench102::Function' (role 'systemworkbench102_Function40', cardinality 0..*).
+'systemworkbench102::Thoughts' (role 'systemworkbench102_Thoughts14', cardinality 0..*) is associated with 'systemworkbench102::Thing' (role 'systemworkbench102_Thing15', cardinality 0..*).

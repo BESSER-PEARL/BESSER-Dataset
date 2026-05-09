@@ -1,0 +1,60 @@
+The model has 21 class(es).
+The class 'research2::PublicationSystem' has no attributes.
+The class 'research2::KnowledgeManager' has no attributes.
+The class 'research2::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research2::PublicationStructure' has no attributes.
+The class 'research2::Paragraph' has the following attributes: 'content' of type str.
+The class 'research2::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research2::Keyword' has the following attributes: 'description' of type str.
+The class 'research2::Progress' has the following attributes: 'percent' of type int.
+The class 'research2::Labelled' has the following attributes: 'lname' of type str.
+The class 'research2::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'research2::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'Counted' has no attributes.
+The class 'Labelled' has no attributes.
+The class 'Named' has no attributes.
+The class 'research2::Position' has the following attributes: 'description' of type str.
+The class 'research2::Counted' has the following attributes: 'id' of type int.
+The class 'research2::Skill' has the following attributes: 'description' of type str.
+The class 'research2::Review' has the following attributes: 'date' of type date.
+The class 'research2::Phase' has the following attributes: 'name' of type str.
+The class 'research2::Named' has the following attributes: 'name' of type str.
+The class 'research2::Paper' has no attributes.
+'research2::Write' is a specialization of 'Labelled'.
+'research2::Progress' is a specialization of 'Labelled'.
+'research2::Position' is a specialization of 'Named'.
+'research2::Keyword' is a specialization of 'Named'.
+'research2::PublicationStructure' is a specialization of 'Named'.
+'research2::Paragraph' is a specialization of 'Named'.
+'research2::Review' is a specialization of 'Labelled'.
+'research2::ReviewNote' is a specialization of 'Named'.
+'research2::PublicationProcess' is a specialization of 'Named'.
+'research2::PublicationSystem' is a specialization of 'Named'.
+'research2::Paragraph' is a specialization of 'Counted'.
+'research2::KnowledgeManager' is a specialization of 'Named'.
+'research2::Paper' is a specialization of 'Named'.
+'research2::ReviewNote' (role 'research2_ReviewNote27', cardinality 0..*) is associated with 'research2::Review' (role 'research2_Review26', cardinality 0..*).
+'research2::Skill' (role 'research2_Skill', cardinality 0..*) is associated with 'research2::Researcher' (role 'research2_Researcher6', cardinality 0..*).
+'research2::PublicationSystem' (role 'research2_PublicationSystem38', cardinality 0..*) is associated with 'research2::PublicationStructure' (role 'research2_PublicationStructure39', cardinality 0..*).
+'research2::Write' (role 'research2_Write23', cardinality 0..*) is associated with 'research2::Paragraph' (role 'research2_Paragraph24', cardinality 0..*).
+'research2::Keyword' (role 'research2_Keyword', cardinality 0..*) is associated with 'research2::KnowledgeManager' (role 'research2_KnowledgeManager49', cardinality 0..*).
+'research2::PublicationStructure' (role 'research2_PublicationStructure31', cardinality 0..*) is associated with 'research2::Paper' (role 'research2_Paper32', cardinality 0..*).
+'research2::Write' (role 'research2_Write', cardinality 0..*) is associated with 'research2::Researcher' (role 'research2_Researcher', cardinality 0..*).
+'research2::Paper' (role 'research2_Paper13', cardinality 0..*) is associated with 'research2::Paper' (role 'research2_Paper15', cardinality 0..*).
+'research2::PublicationProcess' (role 'research2_PublicationProcess19', cardinality 0..*) is associated with 'research2::Progress' (role 'research2_Progress', cardinality 0..*).
+'research2::Researcher' (role 'research2_Researcher3', cardinality 0..*) is associated with 'research2::Review' (role 'research2_Review', cardinality 0..*).
+'research2::Paper' (role 'paper', cardinality 0..*) is associated with 'research2::Progress' (role 'Progress', cardinality 0..*).
+'research2::Researcher' (role 'authors', cardinality 0..*) is associated with 'research2::Paper' (role 'Paper', cardinality 0..*).
+'research2::Position' (role 'research2_Position', cardinality 0..*) is associated with 'research2::Researcher' (role 'research2_Researcher8', cardinality 0..*).
+'research2::Paper' (role 'Paper21', cardinality 0..*) is associated with 'research2::Progress' (role 'progress', cardinality 0..*).
+'research2::PublicationProcess' (role 'research2_PublicationProcess', cardinality 0..*) is associated with 'research2::Phase' (role 'research2_Phase', cardinality 0..*).
+'research2::Paper' (role 'research2_Paper', cardinality 0..*) is associated with 'research2::Paragraph' (role 'research2_Paragraph', cardinality 0..*).
+'research2::PublicationProcess' (role 'research2_PublicationProcess36', cardinality 0..*) is associated with 'research2::PublicationSystem' (role 'research2_PublicationSystem', cardinality 0..*).
+'research2::Position' (role 'research2_Position45', cardinality 0..*) is associated with 'research2::Position' (role 'research2_Position43', cardinality 0..*).
+'research2::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'research2::Paper' (role 'res_papers', cardinality 0..*).
+'research2::Researcher' (role 'research2_Researcher29', cardinality 0..*) is associated with 'research2::PublicationStructure' (role 'research2_PublicationStructure', cardinality 0..*).
+'research2::PublicationSystem' (role 'research2_PublicationSystem41', cardinality 0..*) is associated with 'research2::Position' (role 'research2_Position42', cardinality 0..*).
+'research2::Paper' (role 'Paper47', cardinality 0..*) is associated with 'research2::Keyword' (role 'keywords', cardinality 0..*).
+'research2::KnowledgeManager' (role 'research2_KnowledgeManager', cardinality 0..*) is associated with 'research2::PublicationStructure' (role 'research2_PublicationStructure34', cardinality 0..*).
+'research2::Paragraph' (role 'research2_Paragraph17', cardinality 0..*) is associated with 'research2::ReviewNote' (role 'research2_ReviewNote', cardinality 0..*).
+'research2::Paper' (role 'kpapers', cardinality 0..*) is associated with 'research2::Keyword' (role 'Keyword', cardinality 0..*).

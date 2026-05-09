@@ -1,0 +1,258 @@
+The model has 81 class(es).
+The class 'ItemizedlistType' has no attributes.
+The class 'Docbook::RefSect1Type' has the following attributes: 'id' of type str; 'group' of type str.
+The class 'Docbook::FuncprototypeType' has no attributes.
+The class 'Docbook::RevdescriptionType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::RevisionType' has no attributes.
+The class 'Docbook::SubtitleType' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'Docbook::LinkType' has the following attributes: 'linkend' of type str; 'mixed' of type str; 'value' of type str.
+The class 'Docbook::FuncdefType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::EntryType' has the following attributes: 'valign' of type str; 'nameend' of type str; 'mixed' of type str; 'namest' of type str; 'align' of type str; 'morerows' of type str.
+The class 'Docbook::CopyrightType' has the following attributes: 'group' of type str; 'year' of type str; 'holder' of type str.
+The class 'Docbook::MediaobjectType' has no attributes.
+The class 'Docbook::RefNameDivType' has the following attributes: 'refname' of type str; 'refpurpose' of type str; 'refclass' of type str.
+The class 'Docbook::ImagedataType' has the following attributes: 'align' of type str; 'fileref' of type str; 'width' of type str; 'depth' of type str; 'scale' of type str.
+The class 'Docbook::AbstractType' has no attributes.
+The class 'Docbook::TheadType' has no attributes.
+The class 'Docbook::FootnoteType' has the following attributes: 'id' of type str.
+The class 'Docbook::RowType' has no attributes.
+The class 'Docbook::PersonnameType' has no attributes.
+The class 'Docbook::ParamdefType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::AuthorType' has the following attributes: 'contrib' of type str.
+The class 'Docbook::CommandType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::TableType' has the following attributes: 'id' of type str.
+The class 'Docbook::RevnumberType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::LiteralType' has the following attributes: 'moreinfo' of type str; 'value' of type str.
+The class 'Docbook::TermType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::InformaltableType' has no attributes.
+The class 'Docbook::ImportantType' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'Docbook::LegalNoticeType' has the following attributes: 'group' of type str.
+The class 'Docbook::ExampleType' has the following attributes: 'id' of type str.
+The class 'Docbook::RefMetaType' has the following attributes: 'manvolnum' of type str.
+The class 'Docbook::VarListEntryType' has the following attributes: 'spacing' of type str; 'termlength' of type str.
+The class 'Docbook::FigureType' has the following attributes: 'id' of type str; 'float' of type str.
+The class 'Docbook::RefEntryTitleType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::SegmentedListType' has the following attributes: 'segtitle' of type str; 'group' of type str.
+The class 'Docbook::RefEntryType' has the following attributes: 'version' of type str.
+The class 'Docbook::NoteType' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'Docbook::ParaType' has the following attributes: 'group' of type str; 'mixed' of type str; 'role' of type str; 'id' of type str.
+The class 'Docbook::TitleType' has the following attributes: 'mixed' of type str; 'group' of type str.
+The class 'Docbook::EnvarType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::PrefaceType' has no attributes.
+The class 'Docbook::FunctionType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::SegType' has the following attributes: 'errortext' of type str; 'group' of type str; 'mixed' of type str; 'errorcode' of type str.
+The class 'Docbook::TbodyType' has no attributes.
+The class 'Docbook::VariableListType' has no attributes.
+The class 'Docbook::ArgType' has the following attributes: 'rep' of type str; 'choice' of type str; 'mixed' of type str.
+The class 'Docbook::ListitemType' has no attributes.
+The class 'Docbook::AuthorinitialsType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::OptionType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::OtheraddrType' has no attributes.
+The class 'Docbook::ReferenceType' has the following attributes: 'version' of type str.
+The class 'Docbook::ReplaceableType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::PhraseType' has the following attributes: 'id' of type str.
+The class 'Docbook::TipType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::PublisherType' has the following attributes: 'publishername' of type str.
+The class 'Docbook::ChapterType' has the following attributes: 'annotations' of type str.
+The class 'Docbook::DocumentRoot' has the following attributes: 'confsponsor' of type str; 'keyword' of type str; 'pubdate' of type str; 'publishername' of type str; 'firstname' of type str; 'state' of type str; 'warning' of type str; 'subtitle' of type str; 'mixed' of type str; 'superscript' of type str; 'caution' of type str; 'bibliomisc' of type str; 'conftitle' of type str; 'confnum' of type str; 'date' of type str.
+The class 'Docbook::FirstnameType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::AddressType' has the following attributes: 'email' of type str; 'state' of type str; 'format' of type str.
+The class 'Docbook::OrderedlistType' has the following attributes: 'inheritnum' of type str; 'continuation' of type str.
+The class 'Docbook::ProgramlistingType' has the following attributes: 'group' of type str; 'language' of type str; 'superscript' of type str; 'format' of type str; 'mixed' of type str; 'linenumbering' of type str.
+The class 'Docbook::SurnameType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::TgroupType' has the following attributes: 'colseq' of type str; 'cols' of type str; 'rowseq' of type str; 'align' of type str.
+The class 'Docbook::InfoType' has the following attributes: 'productname' of type str; 'bibliomisc' of type str; 'releaseinfo' of type str; 'pubdate' of type str; 'group' of type str; 'date' of type str.
+The class 'Docbook::SectionType' has the following attributes: 'group' of type str; 'annotations' of type str; 'warning' of type str; 'caution' of type str.
+The class 'Docbook::FuncsynopsisType' has no attributes.
+The class 'Docbook::SegListItemType' has no attributes.
+The class 'Docbook::RefSynopsisDivType' has no attributes.
+The class 'Docbook::EmphasisType' has the following attributes: 'mixed' of type str; 'role' of type str.
+The class 'Docbook::BookType' has the following attributes: 'label' of type str; 'version' of type str; 'lang' of type str.
+The class 'Docbook::DateType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::ParameterType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::ConfgroupType' has the following attributes: 'confnum' of type str; 'confsponsor' of type str; 'conftitle' of type str.
+The class 'Docbook::ItemizedlistType' has no attributes.
+The class 'Docbook::ImageobjectType' has no attributes.
+The class 'Docbook::ColspecType' has the following attributes: 'colname' of type str; 'colwidth' of type str.
+The class 'Docbook::UlinkType' has the following attributes: 'mixed' of type str; 'type' of type str; 'url' of type str.
+The class 'Docbook::KeywordsetType' has the following attributes: 'keyword' of type str.
+The class 'Docbook::FileNameType' has the following attributes: 'mixed' of type str.
+The class 'Docbook::RevhistoryType' has no attributes.
+The class 'Docbook::EStringToStringMapEntry' has no attributes.
+The class 'Docbook::CmdsynopsisType' has no attributes.
+'Docbook::OrderedlistType' is a specialization of 'ItemizedlistType'.
+'Docbook::RevhistoryType' (role 'Docbook_RevhistoryType', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType193', cardinality 0..*).
+'Docbook::RefEntryType' (role 'Docbook_RefEntryType299', cardinality 0..*) is associated with 'Docbook::ReferenceType' (role 'Docbook_ReferenceType298', cardinality 0..*).
+'Docbook::TableType' (role 'Docbook_TableType394', cardinality 0..*) is associated with 'Docbook::TitleType' (role 'Docbook_TitleType395', cardinality 0..*).
+'Docbook::VarListEntryType' (role 'Docbook_VarListEntryType', cardinality 0..*) is associated with 'Docbook::VariableListType' (role 'Docbook_VariableListType438', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType240', cardinality 0..*) is associated with 'Docbook::LiteralType' (role 'Docbook_LiteralType241', cardinality 0..*).
+'Docbook::FigureType' (role 'Docbook_FigureType146', cardinality 0..*) is associated with 'Docbook::MediaobjectType' (role 'Docbook_MediaobjectType147', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType307', cardinality 0..*) is associated with 'Docbook::RefSect1Type' (role 'Docbook_RefSect1Type306', cardinality 0..*).
+'Docbook::ListitemType' (role 'Docbook_ListitemType444', cardinality 0..*) is associated with 'Docbook::VarListEntryType' (role 'Docbook_VarListEntryType443', cardinality 0..*).
+'Docbook::ConfgroupType' (role 'Docbook_ConfgroupType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot54', cardinality 0..*).
+'Docbook::PrefaceType' (role 'Docbook_PrefaceType267', cardinality 0..*) is associated with 'Docbook::ImportantType' (role 'Docbook_ImportantType268', cardinality 0..*).
+'Docbook::SectionType' (role 'Docbook_SectionType353', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType355', cardinality 0..*).
+'Docbook::RefMetaType' (role 'Docbook_RefMetaType', cardinality 0..*) is associated with 'Docbook::RefEntryType' (role 'Docbook_RefEntryType284', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot80', cardinality 0..*) is associated with 'Docbook::LiteralType' (role 'Docbook_LiteralType', cardinality 0..*).
+'Docbook::FigureType' (role 'Docbook_FigureType143', cardinality 0..*) is associated with 'Docbook::TitleType' (role 'Docbook_TitleType144', cardinality 0..*).
+'Docbook::EmphasisType' (role 'Docbook_EmphasisType400', cardinality 0..*) is associated with 'Docbook::TermType' (role 'Docbook_TermType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot102', cardinality 0..*) is associated with 'Docbook::PublisherType' (role 'Docbook_PublisherType', cardinality 0..*).
+'Docbook::ParamdefType' (role 'Docbook_ParamdefType235', cardinality 0..*) is associated with 'Docbook::ParameterType' (role 'Docbook_ParameterType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot113', cardinality 0..*) is associated with 'Docbook::TgroupType' (role 'Docbook_TgroupType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot115', cardinality 0..*) is associated with 'Docbook::TheadType' (role 'Docbook_TheadType', cardinality 0..*).
+'Docbook::TableType' (role 'Docbook_TableType370', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType369', cardinality 0..*).
+'Docbook::RefEntryType' (role 'Docbook_RefEntryType', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType282', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot58', cardinality 0..*) is associated with 'Docbook::EntryType' (role 'Docbook_EntryType', cardinality 0..*).
+'Docbook::ListitemType' (role 'Docbook_ListitemType214', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType215', cardinality 0..*).
+'Docbook::OptionType' (role 'Docbook_OptionType', cardinality 0..*) is associated with 'Docbook::ArgType' (role 'Docbook_ArgType', cardinality 0..*).
+'Docbook::ReplaceableType' (role 'Docbook_ReplaceableType149', cardinality 0..*) is associated with 'Docbook::FileNameType' (role 'Docbook_FileNameType', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType', cardinality 0..*) is associated with 'Docbook::BookType' (role 'Docbook_BookType', cardinality 0..*).
+'Docbook::EmphasisType' (role 'Docbook_EmphasisType123', cardinality 0..*) is associated with 'Docbook::EmphasisType' (role 'Docbook_EmphasisType125', cardinality 0..*).
+'Docbook::OptionType' (role 'Docbook_OptionType403', cardinality 0..*) is associated with 'Docbook::TermType' (role 'Docbook_TermType402', cardinality 0..*).
+'Docbook::ListitemType' (role 'Docbook_ListitemType217', cardinality 0..*) is associated with 'Docbook::ItemizedlistType' (role 'Docbook_ItemizedlistType218', cardinality 0..*).
+'Docbook::PrefaceType' (role 'Docbook_PrefaceType270', cardinality 0..*) is associated with 'Docbook::TipType' (role 'Docbook_TipType271', cardinality 0..*).
+'Docbook::TheadType' (role 'Docbook_TheadType418', cardinality 0..*) is associated with 'Docbook::TgroupType' (role 'Docbook_TgroupType417', cardinality 0..*).
+'Docbook::ImagedataType' (role 'Docbook_ImagedataType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot64', cardinality 0..*).
+'Docbook::PersonnameType' (role 'Docbook_PersonnameType', cardinality 0..*) is associated with 'Docbook::AuthorType' (role 'Docbook_AuthorType', cardinality 0..*).
+'Docbook::RefSynopsisDivType' (role 'Docbook_RefSynopsisDivType317', cardinality 0..*) is associated with 'Docbook::FuncsynopsisType' (role 'Docbook_FuncsynopsisType318', cardinality 0..*).
+'Docbook::MediaobjectType' (role 'Docbook_MediaobjectType343', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType342', cardinality 0..*).
+'Docbook::ExampleType' (role 'Docbook_ExampleType379', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType378', cardinality 0..*).
+'Docbook::FuncsynopsisType' (role 'Docbook_FuncsynopsisType', cardinality 0..*) is associated with 'Docbook::FuncprototypeType' (role 'Docbook_FuncprototypeType159', cardinality 0..*).
+'Docbook::RefSynopsisDivType' (role 'Docbook_RefSynopsisDivType', cardinality 0..*) is associated with 'Docbook::RefEntryType' (role 'Docbook_RefEntryType288', cardinality 0..*).
+'Docbook::KeywordsetType' (role 'Docbook_KeywordsetType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot74', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType', cardinality 0..*) is associated with 'Docbook::ChapterType' (role 'Docbook_ChapterType17', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType93', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot92', cardinality 0..*).
+'Docbook::ImageobjectType' (role 'Docbook_ImageobjectType221', cardinality 0..*) is associated with 'Docbook::MediaobjectType' (role 'Docbook_MediaobjectType220', cardinality 0..*).
+'Docbook::NoteType' (role 'Docbook_NoteType223', cardinality 0..*) is associated with 'Docbook::LiteralType' (role 'Docbook_LiteralType224', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType255', cardinality 0..*) is associated with 'Docbook::VariableListType' (role 'Docbook_VariableListType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot78', cardinality 0..*) is associated with 'Docbook::ListitemType' (role 'Docbook_ListitemType', cardinality 0..*).
+'Docbook::SegType' (role 'Docbook_SegType', cardinality 0..*) is associated with 'Docbook::SegListItemType' (role 'Docbook_SegListItemType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot95', cardinality 0..*) is associated with 'Docbook::PhraseType' (role 'Docbook_PhraseType', cardinality 0..*).
+'Docbook::SectionType' (role 'Docbook_SectionType357', cardinality 0..*) is associated with 'Docbook::TitleType' (role 'Docbook_TitleType358', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot40', cardinality 0..*) is associated with 'Docbook::AuthorType' (role 'Docbook_AuthorType41', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot100', cardinality 0..*) is associated with 'Docbook::ProgramlistingType' (role 'Docbook_ProgramlistingType', cardinality 0..*).
+'Docbook::ImageobjectType' (role 'Docbook_ImageobjectType161', cardinality 0..*) is associated with 'Docbook::ImagedataType' (role 'Docbook_ImagedataType162', cardinality 0..*).
+'Docbook::ColspecType' (role 'Docbook_ColspecType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot52', cardinality 0..*).
+'Docbook::ExampleType' (role 'Docbook_ExampleType140', cardinality 0..*) is associated with 'Docbook::ProgramlistingType' (role 'Docbook_ProgramlistingType141', cardinality 0..*).
+'Docbook::TgroupType' (role 'Docbook_TgroupType420', cardinality 0..*) is associated with 'Docbook::TbodyType' (role 'Docbook_TbodyType421', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot34', cardinality 0..*) is associated with 'Docbook::AbstractType' (role 'Docbook_AbstractType35', cardinality 0..*).
+'Docbook::ItemizedlistType' (role 'Docbook_ItemizedlistType199', cardinality 0..*) is associated with 'Docbook::ListitemType' (role 'Docbook_ListitemType200', cardinality 0..*).
+'Docbook::RevdescriptionType' (role 'Docbook_RevdescriptionType331', cardinality 0..*) is associated with 'Docbook::RevisionType' (role 'Docbook_RevisionType330', cardinality 0..*).
+'Docbook::FileNameType' (role 'Docbook_FileNameType406', cardinality 0..*) is associated with 'Docbook::TermType' (role 'Docbook_TermType405', cardinality 0..*).
+'Docbook::ChapterType' (role 'Docbook_ChapterType50', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot49', cardinality 0..*).
+'Docbook::FuncsynopsisType' (role 'Docbook_FuncsynopsisType376', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType375', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot87', cardinality 0..*) is associated with 'Docbook::OrderedlistType' (role 'Docbook_OrderedlistType', cardinality 0..*).
+'Docbook::UlinkType' (role 'Docbook_UlinkType334', cardinality 0..*) is associated with 'Docbook::RevnumberType' (role 'Docbook_RevnumberType333', cardinality 0..*).
+'Docbook::SectionType' (role 'Docbook_SectionType381', cardinality 0..*) is associated with 'Docbook::CmdsynopsisType' (role 'Docbook_CmdsynopsisType382', cardinality 0..*).
+'Docbook::ItemizedlistType' (role 'Docbook_ItemizedlistType340', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType339', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType203', cardinality 0..*) is associated with 'Docbook::LegalNoticeType' (role 'Docbook_LegalNoticeType202', cardinality 0..*).
+'Docbook::AbstractType' (role 'Docbook_AbstractType', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType197', cardinality 0..*) is associated with 'Docbook::LegalNoticeType' (role 'Docbook_LegalNoticeType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot46', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType47', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot70', cardinality 0..*) is associated with 'Docbook::InformaltableType' (role 'Docbook_InformaltableType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot106', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType107', cardinality 0..*).
+'Docbook::NoteType' (role 'Docbook_NoteType226', cardinality 0..*) is associated with 'Docbook::UlinkType' (role 'Docbook_UlinkType227', cardinality 0..*).
+'Docbook::VariableListType' (role 'Docbook_VariableListType310', cardinality 0..*) is associated with 'Docbook::RefSect1Type' (role 'Docbook_RefSect1Type309', cardinality 0..*).
+'Docbook::PrefaceType' (role 'Docbook_PrefaceType', cardinality 0..*) is associated with 'Docbook::BookType' (role 'Docbook_BookType11', cardinality 0..*).
+'Docbook::RevisionType' (role 'Docbook_RevisionType328', cardinality 0..*) is associated with 'Docbook::AuthorinitialsType' (role 'Docbook_AuthorinitialsType', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType187', cardinality 0..*) is associated with 'Docbook::PublisherType' (role 'Docbook_PublisherType188', cardinality 0..*).
+'Docbook::FirstnameType' (role 'Docbook_FirstnameType', cardinality 0..*) is associated with 'Docbook::PersonnameType' (role 'Docbook_PersonnameType257', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType209', cardinality 0..*) is associated with 'Docbook::LegalNoticeType' (role 'Docbook_LegalNoticeType208', cardinality 0..*).
+'Docbook::RefSynopsisDivType' (role 'Docbook_RefSynopsisDivType314', cardinality 0..*) is associated with 'Docbook::CmdsynopsisType' (role 'Docbook_CmdsynopsisType315', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot111', cardinality 0..*) is associated with 'Docbook::TbodyType' (role 'Docbook_TbodyType', cardinality 0..*).
+'Docbook::CmdsynopsisType' (role 'Docbook_CmdsynopsisType', cardinality 0..*) is associated with 'Docbook::CommandType' (role 'Docbook_CommandType', cardinality 0..*).
+'Docbook::ItemizedlistType' (role 'Docbook_ItemizedlistType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot72', cardinality 0..*).
+'Docbook::ImportantType' (role 'Docbook_ImportantType167', cardinality 0..*) is associated with 'Docbook::UlinkType' (role 'Docbook_UlinkType168', cardinality 0..*).
+'Docbook::PrefaceType' (role 'Docbook_PrefaceType264', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType265', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType296', cardinality 0..*) is associated with 'Docbook::ReferenceType' (role 'Docbook_ReferenceType295', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType349', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType348', cardinality 0..*).
+'Docbook::UlinkType' (role 'Docbook_UlinkType233', cardinality 0..*) is associated with 'Docbook::OtheraddrType' (role 'Docbook_OtheraddrType232', cardinality 0..*).
+'Docbook::PersonnameType' (role 'Docbook_PersonnameType259', cardinality 0..*) is associated with 'Docbook::SurnameType' (role 'Docbook_SurnameType', cardinality 0..*).
+'Docbook::ReferenceType' (role 'Docbook_ReferenceType292', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType293', cardinality 0..*).
+'Docbook::ReplaceableType' (role 'Docbook_ReplaceableType230', cardinality 0..*) is associated with 'Docbook::OptionType' (role 'Docbook_OptionType229', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot122', cardinality 0..*) is associated with 'Docbook::UlinkType' (role 'Docbook_UlinkType', cardinality 0..*).
+'Docbook::ImportantType' (role 'Docbook_ImportantType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot68', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot82', cardinality 0..*) is associated with 'Docbook::MediaobjectType' (role 'Docbook_MediaobjectType', cardinality 0..*).
+'Docbook::EmphasisType' (role 'Docbook_EmphasisType436', cardinality 0..*) is associated with 'Docbook::UlinkType' (role 'Docbook_UlinkType435', cardinality 0..*).
+'Docbook::PrefaceType' (role 'Docbook_PrefaceType98', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot97', cardinality 0..*).
+'Docbook::BookType' (role 'Docbook_BookType44', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot43', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType184', cardinality 0..*) is associated with 'Docbook::AbstractType' (role 'Docbook_AbstractType185', cardinality 0..*).
+'Docbook::NoteType' (role 'Docbook_NoteType85', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot84', cardinality 0..*).
+'Docbook::ExampleType' (role 'Docbook_ExampleType', cardinality 0..*) is associated with 'Docbook::TitleType' (role 'Docbook_TitleType138', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType190', cardinality 0..*) is associated with 'Docbook::ConfgroupType' (role 'Docbook_ConfgroupType191', cardinality 0..*).
+'Docbook::ProgramlistingType' (role 'Docbook_ProgramlistingType128', cardinality 0..*) is associated with 'Docbook::EntryType' (role 'Docbook_EntryType127', cardinality 0..*).
+'Docbook::CopyrightType' (role 'Docbook_CopyrightType', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType195', cardinality 0..*).
+'Docbook::FootnoteType' (role 'Docbook_FootnoteType151', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType152', cardinality 0..*).
+'Docbook::RevisionType' (role 'Docbook_RevisionType326', cardinality 0..*) is associated with 'Docbook::DateType' (role 'Docbook_DateType', cardinality 0..*).
+'Docbook::ColspecType' (role 'Docbook_ColspecType415', cardinality 0..*) is associated with 'Docbook::TgroupType' (role 'Docbook_TgroupType414', cardinality 0..*).
+'Docbook::TheadType' (role 'Docbook_TheadType423', cardinality 0..*) is associated with 'Docbook::RowType' (role 'Docbook_RowType424', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot66', cardinality 0..*) is associated with 'Docbook::ImageobjectType' (role 'Docbook_ImageobjectType', cardinality 0..*).
+'Docbook::TableType' (role 'Docbook_TableType397', cardinality 0..*) is associated with 'Docbook::TgroupType' (role 'Docbook_TgroupType398', cardinality 0..*).
+'Docbook::SubtitleType' (role 'Docbook_SubtitleType388', cardinality 0..*) is associated with 'Docbook::EmphasisType' (role 'Docbook_EmphasisType389', cardinality 0..*).
+'Docbook::RefEntryType' (role 'Docbook_RefEntryType286', cardinality 0..*) is associated with 'Docbook::RefNameDivType' (role 'Docbook_RefNameDivType', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType246', cardinality 0..*) is associated with 'Docbook::FootnoteType' (role 'Docbook_FootnoteType247', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType320', cardinality 0..*) is associated with 'Docbook::RevdescriptionType' (role 'Docbook_RevdescriptionType', cardinality 0..*).
+'Docbook::NoteType' (role 'Docbook_NoteType346', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType345', cardinality 0..*).
+'Docbook::OtheraddrType' (role 'Docbook_OtheraddrType90', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot89', cardinality 0..*).
+'Docbook::FuncprototypeType' (role 'Docbook_FuncprototypeType157', cardinality 0..*) is associated with 'Docbook::ParamdefType' (role 'Docbook_ParamdefType', cardinality 0..*).
+'Docbook::FuncdefType' (role 'Docbook_FuncdefType155', cardinality 0..*) is associated with 'Docbook::FuncprototypeType' (role 'Docbook_FuncprototypeType', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType429', cardinality 0..*) is associated with 'Docbook::EmphasisType' (role 'Docbook_EmphasisType430', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType20', cardinality 0..*) is associated with 'Docbook::ChapterType' (role 'Docbook_ChapterType19', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType120', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot119', cardinality 0..*).
+'Docbook::EntryType' (role 'Docbook_EntryType130', cardinality 0..*) is associated with 'Docbook::MediaobjectType' (role 'Docbook_MediaobjectType131', cardinality 0..*).
+'Docbook::RefSect1Type' (role 'Docbook_RefSect1Type312', cardinality 0..*) is associated with 'Docbook::SegmentedListType' (role 'Docbook_SegmentedListType', cardinality 0..*).
+'Docbook::RevnumberType' (role 'Docbook_RevnumberType', cardinality 0..*) is associated with 'Docbook::RevisionType' (role 'Docbook_RevisionType324', cardinality 0..*).
+'Docbook::FootnoteType' (role 'Docbook_FootnoteType', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot62', cardinality 0..*).
+'Docbook::SectionType' (role 'Docbook_SectionType366', cardinality 0..*) is associated with 'Docbook::OrderedlistType' (role 'Docbook_OrderedlistType367', cardinality 0..*).
+'Docbook::EntryType' (role 'Docbook_EntryType337', cardinality 0..*) is associated with 'Docbook::RowType' (role 'Docbook_RowType336', cardinality 0..*).
+'Docbook::LegalNoticeType' (role 'Docbook_LegalNoticeType205', cardinality 0..*) is associated with 'Docbook::RevhistoryType' (role 'Docbook_RevhistoryType206', cardinality 0..*).
+'Docbook::SegListItemType' (role 'Docbook_SegListItemType386', cardinality 0..*) is associated with 'Docbook::SegmentedListType' (role 'Docbook_SegmentedListType385', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot117', cardinality 0..*) is associated with 'Docbook::TipType' (role 'Docbook_TipType', cardinality 0..*).
+'Docbook::ChapterType' (role 'Docbook_ChapterType24', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType', cardinality 0..*).
+'Docbook::SectionType' (role 'Docbook_SectionType360', cardinality 0..*) is associated with 'Docbook::FigureType' (role 'Docbook_FigureType361', cardinality 0..*).
+'Docbook::EmphasisType' (role 'Docbook_EmphasisType165', cardinality 0..*) is associated with 'Docbook::ImportantType' (role 'Docbook_ImportantType164', cardinality 0..*).
+'Docbook::InformaltableType' (role 'Docbook_InformaltableType170', cardinality 0..*) is associated with 'Docbook::TgroupType' (role 'Docbook_TgroupType171', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType304', cardinality 0..*) is associated with 'Docbook::RefSect1Type' (role 'Docbook_RefSect1Type303', cardinality 0..*).
+'Docbook::RowType' (role 'Docbook_RowType412', cardinality 0..*) is associated with 'Docbook::TbodyType' (role 'Docbook_TbodyType411', cardinality 0..*).
+'Docbook::PrefaceType' (role 'Docbook_PrefaceType261', cardinality 0..*) is associated with 'Docbook::TitleType' (role 'Docbook_TitleType262', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType173', cardinality 0..*) is associated with 'Docbook::AuthorType' (role 'Docbook_AuthorType174', cardinality 0..*).
+'Docbook::TermType' (role 'Docbook_TermType408', cardinality 0..*) is associated with 'Docbook::EnvarType' (role 'Docbook_EnvarType409', cardinality 0..*).
+'Docbook::EStringToStringMapEntry' (role 'Docbook_EStringToStringMapEntry32', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot31', cardinality 0..*).
+'Docbook::EStringToStringMapEntry' (role 'Docbook_EStringToStringMapEntry', cardinality 0..*) is associated with 'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot', cardinality 0..*).
+'Docbook::ProgramlistingType' (role 'Docbook_ProgramlistingType276', cardinality 0..*) is associated with 'Docbook::PhraseType' (role 'Docbook_PhraseType277', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType432', cardinality 0..*) is associated with 'Docbook::PhraseType' (role 'Docbook_PhraseType433', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot56', cardinality 0..*) is associated with 'Docbook::EmphasisType' (role 'Docbook_EmphasisType', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType252', cardinality 0..*) is associated with 'Docbook::ItemizedlistType' (role 'Docbook_ItemizedlistType253', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot60', cardinality 0..*) is associated with 'Docbook::FigureType' (role 'Docbook_FigureType', cardinality 0..*).
+'Docbook::EntryType' (role 'Docbook_EntryType133', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType134', cardinality 0..*).
+'Docbook::RevisionType' (role 'Docbook_RevisionType', cardinality 0..*) is associated with 'Docbook::RevhistoryType' (role 'Docbook_RevhistoryType322', cardinality 0..*).
+'Docbook::EnvarType' (role 'Docbook_EnvarType', cardinality 0..*) is associated with 'Docbook::ReplaceableType' (role 'Docbook_ReplaceableType136', cardinality 0..*).
+'Docbook::NoteType' (role 'Docbook_NoteType', cardinality 0..*) is associated with 'Docbook::ChapterType' (role 'Docbook_ChapterType22', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot37', cardinality 0..*) is associated with 'Docbook::AddressType' (role 'Docbook_AddressType38', cardinality 0..*).
+'Docbook::ArgType' (role 'Docbook_ArgType4', cardinality 0..*) is associated with 'Docbook::ReplaceableType' (role 'Docbook_ReplaceableType', cardinality 0..*).
+'Docbook::SubtitleType' (role 'Docbook_SubtitleType391', cardinality 0..*) is associated with 'Docbook::PhraseType' (role 'Docbook_PhraseType392', cardinality 0..*).
+'Docbook::FunctionType' (role 'Docbook_FunctionType', cardinality 0..*) is associated with 'Docbook::FuncdefType' (role 'Docbook_FuncdefType', cardinality 0..*).
+'Docbook::TipType' (role 'Docbook_TipType373', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType372', cardinality 0..*).
+'Docbook::OrderedlistType' (role 'Docbook_OrderedlistType212', cardinality 0..*) is associated with 'Docbook::LegalNoticeType' (role 'Docbook_LegalNoticeType211', cardinality 0..*).
+'Docbook::InfoType' (role 'Docbook_InfoType179', cardinality 0..*) is associated with 'Docbook::SubtitleType' (role 'Docbook_SubtitleType', cardinality 0..*).
+'Docbook::CmdsynopsisType' (role 'Docbook_CmdsynopsisType27', cardinality 0..*) is associated with 'Docbook::ArgType' (role 'Docbook_ArgType28', cardinality 0..*).
+'Docbook::RefEntryTitleType' (role 'Docbook_RefEntryTitleType', cardinality 0..*) is associated with 'Docbook::RefMetaType' (role 'Docbook_RefMetaType301', cardinality 0..*).
+'Docbook::ChapterType' (role 'Docbook_ChapterType', cardinality 0..*) is associated with 'Docbook::BookType' (role 'Docbook_BookType13', cardinality 0..*).
+'Docbook::VarListEntryType' (role 'Docbook_VarListEntryType440', cardinality 0..*) is associated with 'Docbook::TermType' (role 'Docbook_TermType441', cardinality 0..*).
+'Docbook::TitleType' (role 'Docbook_TitleType177', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType176', cardinality 0..*).
+'Docbook::UlinkType' (role 'Docbook_UlinkType244', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType243', cardinality 0..*).
+'Docbook::AddressType' (role 'Docbook_AddressType280', cardinality 0..*) is associated with 'Docbook::PublisherType' (role 'Docbook_PublisherType279', cardinality 0..*).
+'Docbook::UlinkType' (role 'Docbook_UlinkType427', cardinality 0..*) is associated with 'Docbook::TipType' (role 'Docbook_TipType426', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot109', cardinality 0..*) is associated with 'Docbook::TableType' (role 'Docbook_TableType', cardinality 0..*).
+'Docbook::RefSect1Type' (role 'Docbook_RefSect1Type', cardinality 0..*) is associated with 'Docbook::RefEntryType' (role 'Docbook_RefEntryType290', cardinality 0..*).
+'Docbook::AddressType' (role 'Docbook_AddressType8', cardinality 0..*) is associated with 'Docbook::AuthorType' (role 'Docbook_AuthorType7', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot76', cardinality 0..*) is associated with 'Docbook::LinkType' (role 'Docbook_LinkType', cardinality 0..*).
+'Docbook::ProgramlistingType' (role 'Docbook_ProgramlistingType273', cardinality 0..*) is associated with 'Docbook::EmphasisType' (role 'Docbook_EmphasisType274', cardinality 0..*).
+'Docbook::LinkType' (role 'Docbook_LinkType250', cardinality 0..*) is associated with 'Docbook::ParaType' (role 'Docbook_ParaType249', cardinality 0..*).
+'Docbook::ParaType' (role 'Docbook_ParaType237', cardinality 0..*) is associated with 'Docbook::EmphasisType' (role 'Docbook_EmphasisType238', cardinality 0..*).
+'Docbook::ProgramlistingType' (role 'Docbook_ProgramlistingType352', cardinality 0..*) is associated with 'Docbook::SectionType' (role 'Docbook_SectionType351', cardinality 0..*).
+'Docbook::OtheraddrType' (role 'Docbook_OtheraddrType', cardinality 0..*) is associated with 'Docbook::AddressType' (role 'Docbook_AddressType', cardinality 0..*).
+'Docbook::DocumentRoot' (role 'Docbook_DocumentRoot104', cardinality 0..*) is associated with 'Docbook::RowType' (role 'Docbook_RowType', cardinality 0..*).
+'Docbook::SectionType' (role 'Docbook_SectionType363', cardinality 0..*) is associated with 'Docbook::InformaltableType' (role 'Docbook_InformaltableType364', cardinality 0..*).
+'Docbook::KeywordsetType' (role 'Docbook_KeywordsetType182', cardinality 0..*) is associated with 'Docbook::InfoType' (role 'Docbook_InfoType181', cardinality 0..*).
+'Docbook::BookType' (role 'Docbook_BookType15', cardinality 0..*) is associated with 'Docbook::ReferenceType' (role 'Docbook_ReferenceType', cardinality 0..*).

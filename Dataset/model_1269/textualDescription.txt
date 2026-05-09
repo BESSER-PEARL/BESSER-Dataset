@@ -1,0 +1,40 @@
+The model has 19 class(es).
+The class 'columnFamilyDataModel::SimpleType' has the following attributes: 'type' of type str.
+The class 'columnFamilyDataModel::Table' has the following attributes: 'name' of type str.
+The class 'columnFamilyDataModel::List' has no attributes.
+The class 'Type' has no attributes.
+The class 'columnFamilyDataModel::PartitionKey' has no attributes.
+The class 'Collection' has no attributes.
+The class 'columnFamilyDataModel::Field' has the following attributes: 'name' of type str.
+The class 'Key' has no attributes.
+The class 'columnFamilyDataModel::UserDefinedType' has the following attributes: 'name' of type str.
+The class 'columnFamilyDataModel::ColumnFamily' has the following attributes: 'name' of type str.
+The class 'columnFamilyDataModel::Column' has the following attributes: 'name' of type str.
+The class 'columnFamilyDataModel::ColumnFamilyDataModel' has no attributes.
+The class 'columnFamilyDataModel::Tuple' has the following attributes: 'types' of type str.
+The class 'columnFamilyDataModel::Type' has no attributes.
+The class 'columnFamilyDataModel::Collection' has the following attributes: 'type' of type str.
+The class 'columnFamilyDataModel::ClusteringKey' has no attributes.
+The class 'columnFamilyDataModel::Key' has no attributes.
+The class 'columnFamilyDataModel::Set' has no attributes.
+The class 'columnFamilyDataModel::Map' has the following attributes: 'keyType' of type str.
+The enumeration 'PrimitiveType' has the following literals: 'DATE', 'TIMESTAMP', 'BOOLEAN', 'INT', 'FLOAT', 'ID', 'TEXT'.
+'columnFamilyDataModel::List' is a specialization of 'Collection'.
+'columnFamilyDataModel::Collection' is a specialization of 'Type'.
+'columnFamilyDataModel::Map' is a specialization of 'Collection'.
+'columnFamilyDataModel::Set' is a specialization of 'Collection'.
+'columnFamilyDataModel::UserDefinedType' is a specialization of 'Type'.
+'columnFamilyDataModel::SimpleType' is a specialization of 'Type'.
+'columnFamilyDataModel::PartitionKey' is a specialization of 'Key'.
+'columnFamilyDataModel::Tuple' is a specialization of 'Type'.
+'columnFamilyDataModel::ClusteringKey' is a specialization of 'Key'.
+'columnFamilyDataModel::Column' (role 'columnFamilyDataModel_Column12', cardinality 0..*) is associated with 'columnFamilyDataModel::ColumnFamily' (role 'columnFamilyDataModel_ColumnFamily13', cardinality 0..*).
+'columnFamilyDataModel::Field' (role 'columnFamilyDataModel_Field16', cardinality 0..*) is associated with 'columnFamilyDataModel::Type' (role 'columnFamilyDataModel_Type17', cardinality 0..*).
+'columnFamilyDataModel::UserDefinedType' (role 'columnFamilyDataModel_UserDefinedType', cardinality 0..*) is associated with 'columnFamilyDataModel::Field' (role 'columnFamilyDataModel_Field', cardinality 0..*).
+'columnFamilyDataModel::PartitionKey' (role 'columnFamilyDataModel_PartitionKey', cardinality 0..*) is associated with 'columnFamilyDataModel::Table' (role 'columnFamilyDataModel_Table6', cardinality 0..*).
+'columnFamilyDataModel::Table' (role 'columnFamilyDataModel_Table2', cardinality 0..*) is associated with 'columnFamilyDataModel::ColumnFamily' (role 'columnFamilyDataModel_ColumnFamily', cardinality 0..*).
+'columnFamilyDataModel::Column' (role 'columnFamilyDataModel_Column', cardinality 0..*) is associated with 'columnFamilyDataModel::Table' (role 'columnFamilyDataModel_Table4', cardinality 0..*).
+'columnFamilyDataModel::ColumnFamilyDataModel' (role 'columnFamilyDataModel_ColumnFamilyDataModel', cardinality 0..*) is associated with 'columnFamilyDataModel::Table' (role 'columnFamilyDataModel_Table', cardinality 0..*).
+'columnFamilyDataModel::Table' (role 'columnFamilyDataModel_Table8', cardinality 0..*) is associated with 'columnFamilyDataModel::ClusteringKey' (role 'columnFamilyDataModel_ClusteringKey', cardinality 0..*).
+'columnFamilyDataModel::Key' (role 'columnFamilyDataModel_Key', cardinality 0..*) is associated with 'columnFamilyDataModel::Column' (role 'columnFamilyDataModel_Column19', cardinality 0..*).
+'columnFamilyDataModel::Type' (role 'columnFamilyDataModel_Type', cardinality 0..*) is associated with 'columnFamilyDataModel::Column' (role 'columnFamilyDataModel_Column10', cardinality 0..*).

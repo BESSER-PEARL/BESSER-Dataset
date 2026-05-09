@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'graph::Dependency' has the following attributes: 'id' of type str; 'locality' of type str.
+The class 'graph::Cause' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'graph::Node' has the following attributes: 'id' of type str.
+The class 'graph::DependencyGraph' has no attributes.
+The class 'graph::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'graph::EStringToStringMapEntry' has no attributes.
+The class 'graph::DeploymentUnitType' has no attributes.
+'graph::Cause' (role 'graph_Cause', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency', cardinality 0..*).
+'graph::Dependency' (role 'graph_Dependency4', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node5', cardinality 0..*).
+'graph::DependencyGraph' (role 'graph_DependencyGraph9', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency10', cardinality 0..*).
+'graph::DocumentRoot' (role 'graph_DocumentRoot', cardinality 0..*) is associated with 'graph::EStringToStringMapEntry' (role 'graph_EStringToStringMapEntry', cardinality 0..*).
+'graph::DocumentRoot' (role 'graph_DocumentRoot19', cardinality 0..*) is associated with 'graph::DependencyGraph' (role 'graph_DependencyGraph20', cardinality 0..*).
+'graph::Dependency' (role 'graph_Dependency2', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node', cardinality 0..*).
+'graph::DocumentRoot' (role 'graph_DocumentRoot16', cardinality 0..*) is associated with 'graph::EStringToStringMapEntry' (role 'graph_EStringToStringMapEntry17', cardinality 0..*).
+'graph::Dependency' (role 'graph_Dependency25', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node24', cardinality 0..*).
+'graph::Node' (role 'graph_Node22', cardinality 0..*) is associated with 'graph::DeploymentUnitType' (role 'graph_DeploymentUnitType', cardinality 0..*).
+'graph::Node' (role 'graph_Node13', cardinality 0..*) is associated with 'graph::DependencyGraph' (role 'graph_DependencyGraph12', cardinality 0..*).
+'graph::DependencyGraph' (role 'graph_DependencyGraph', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node7', cardinality 0..*).

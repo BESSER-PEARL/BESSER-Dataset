@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'NamedElement' has no attributes.
+The class 'test::State' has the following attributes: 'kind' of type str.
+The class 'test::Transition' has no attributes.
+The class 'test::NamedElement' has no attributes.
+The class 'test::StateMachine' has the following attributes: 'name' of type str.
+The enumeration 'Kind' has the following literals: 'NotNice', 'Nice'.
+'test::StateMachine' is a specialization of 'NamedElement'.
+'test::Transition' is a specialization of 'NamedElement'.
+'test::State' is a specialization of 'NamedElement'.
+'test::State' (role 'test_State', cardinality 0..*) is associated with 'test::StateMachine' (role 'test_StateMachine2', cardinality 0..*).
+'test::State' (role 'test_State5', cardinality 0..*) is associated with 'test::Transition' (role 'test_Transition4', cardinality 0..*).
+'test::Transition' (role 'test_Transition7', cardinality 0..*) is associated with 'test::State' (role 'test_State8', cardinality 0..*).
+'test::Transition' (role 'test_Transition', cardinality 0..*) is associated with 'test::StateMachine' (role 'test_StateMachine', cardinality 0..*).

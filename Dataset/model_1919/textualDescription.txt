@@ -1,0 +1,171 @@
+The model has 64 class(es).
+The class 'eaglemodel::Eagle' has the following attributes: 'version' of type str.
+The class 'eaglemodel::Technologies' has no attributes.
+The class 'eaglemodel::Hole' has the following attributes: 'y' of type float; 'drill' of type float; 'x' of type float.
+The class 'eaglemodel::Connect' has the following attributes: 'pin' of type str; 'gate' of type str; 'pad' of type str; 'route' of type str.
+The class 'eaglemodel::Library' has the following attributes: 'name' of type str.
+The class 'eaglemodel::Text' has the following attributes: 'font' of type str; 'ratio' of type int; 'y' of type float; 'distance' of type int; 'rot' of type int; 'align' of type str; 'size' of type float; 'x' of type float; 'value' of type str; 'layer' of type int.
+The class 'eaglemodel::Variantdefs' has no attributes.
+The class 'eaglemodel::Gate' has the following attributes: 'symbol' of type str; 'y' of type float; 'swaplevel' of type int; 'x' of type float; 'name' of type str; 'addlevel' of type str.
+The class 'eaglemodel::Libraries' has no attributes.
+The class 'eaglemodel::Description' has the following attributes: 'language' of type str; 'value' of type str.
+The class 'eaglemodel::Device' has the following attributes: 'name' of type str; 'package' of type str.
+The class 'eaglemodel::Net' has the following attributes: 'name' of type str; 'class_' of type int.
+The class 'eaglemodel::Polygon' has the following attributes: 'thermals' of type bool; 'layer' of type int; 'pour' of type str; 'spacing' of type float; 'rank' of type int; 'isolate' of type float; 'width' of type float; 'orphans' of type bool.
+The class 'eaglemodel::Attributes' has no attributes.
+The class 'eaglemodel::Clearance' has the following attributes: 'class_' of type int; 'value' of type float.
+The class 'eaglemodel::Instance' has the following attributes: 'smashed' of type bool; 'part' of type str; 'gate' of type str; 'y' of type float; 'x' of type float; 'rot' of type int.
+The class 'eaglemodel::Segment' has no attributes.
+The class 'eaglemodel::Rectangle' has the following attributes: 'x2' of type float; 'rot' of type int; 'x1' of type float; 'layer' of type int; 'y1' of type float; 'y2' of type float.
+The class 'eaglemodel::Class' has the following attributes: 'width' of type float; 'number' of type int; 'drill' of type float; 'name' of type str.
+The class 'eaglemodel::Approved' has the following attributes: 'hash' of type str.
+The class 'eaglemodel::Setting' has the following attributes: 'alwaysvectorfont' of type bool; 'verticaltext' of type str.
+The class 'eaglemodel::Parts' has no attributes.
+The class 'eaglemodel::Schematic' has the following attributes: 'xrefpart' of type str; 'xreflabel' of type str.
+The class 'eaglemodel::Gates' has no attributes.
+The class 'eaglemodel::Layers' has no attributes.
+The class 'eaglemodel::Classes' has no attributes.
+The class 'eaglemodel::Settings' has no attributes.
+The class 'eaglemodel::Attribute' has the following attributes: 'layer' of type int; 'y' of type float; 'x' of type float; 'constant' of type bool; 'font' of type str; 'size' of type float; 'display' of type str; 'rot' of type int; 'ratio' of type int; 'value' of type str; 'name' of type str.
+The class 'eaglemodel::Pin' has the following attributes: 'name' of type str; 'visible' of type str; 'rot' of type int; 'direction' of type str; 'function' of type str; 'length' of type str; 'x' of type float; 'swaplevel' of type int; 'y' of type float.
+The class 'eaglemodel::Bus' has the following attributes: 'name' of type str.
+The class 'eaglemodel::Nets' has no attributes.
+The class 'eaglemodel::Circle' has the following attributes: 'y' of type float; 'radius' of type float; 'width' of type float; 'layer' of type int; 'x' of type float.
+The class 'eaglemodel::Grid' has the following attributes: 'altunit' of type str; 'altdistance' of type float; 'multiple' of type int; 'distance' of type float; 'style' of type str; 'unitdist' of type str; 'altunitdist' of type str; 'display' of type bool; 'unit' of type str.
+The class 'eaglemodel::Instances' has no attributes.
+The class 'eaglemodel::SMD' has the following attributes: 'dx' of type float; 'cream' of type bool; 'stop' of type bool; 'x' of type float; 'y' of type float; 'dy' of type float; 'rot' of type int; 'layer' of type int; 'name' of type str; 'roundness' of type int; 'thermals' of type bool.
+The class 'eaglemodel::Layer' has the following attributes: 'name' of type str; 'color' of type int; 'visible' of type bool; 'fill' of type int; 'number' of type int; 'active' of type bool.
+The class 'eaglemodel::Compatibility' has no attributes.
+The class 'eaglemodel::Sheet' has no attributes.
+The class 'eaglemodel::Connects' has no attributes.
+The class 'eaglemodel::Frame' has the following attributes: 'layer' of type int; 'rows' of type int; 'bordertop' of type bool; 'y1' of type float; 'x2' of type float; 'x1' of type float; 'y2' of type float; 'columns' of type int; 'borderright' of type bool; 'borderbottom' of type bool; 'borderleft' of type bool.
+The class 'eaglemodel::Pinref' has the following attributes: 'part' of type str; 'pin' of type str; 'gate' of type str.
+The class 'eaglemodel::Symbols' has no attributes.
+The class 'eaglemodel::Deviceset' has the following attributes: 'prefix' of type str; 'name' of type str; 'uservalue' of type bool.
+The class 'eaglemodel::Drawing' has no attributes.
+The class 'eaglemodel::Errors' has no attributes.
+The class 'eaglemodel::Technology' has the following attributes: 'name' of type str.
+The class 'eaglemodel::Note' has the following attributes: 'severity' of type str; 'version' of type str; 'value' of type str.
+The class 'eaglemodel::Variantdef' has the following attributes: 'name' of type str; 'current' of type bool.
+The class 'eaglemodel::Sheets' has no attributes.
+The class 'eaglemodel::Plain' has no attributes.
+The class 'eaglemodel::Junction' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'eaglemodel::Packages' has no attributes.
+The class 'eaglemodel::Devicesets' has no attributes.
+The class 'eaglemodel::Busses' has no attributes.
+The class 'eaglemodel::Devices' has no attributes.
+The class 'eaglemodel::Package' has the following attributes: 'name' of type str.
+The class 'eaglemodel::Variant' has the following attributes: 'technology' of type str; 'value' of type str; 'populate' of type bool; 'name' of type str.
+The class 'eaglemodel::Wire' has the following attributes: 'curve' of type float; 'y2' of type float; 'x1' of type float; 'extent' of type str; 'x2' of type float; 'layer' of type int; 'style' of type str; 'width' of type float; 'y1' of type float; 'cap' of type str.
+The class 'eaglemodel::Pad' has the following attributes: 'shape' of type str; 'diameter' of type float; 'name' of type str; 'stop' of type bool; 'x' of type float; 'y' of type float; 'rot' of type int; 'thermals' of type bool; 'first' of type bool; 'drill' of type float.
+The class 'eaglemodel::Symbol' has the following attributes: 'name' of type str.
+The class 'eaglemodel::Dimension' has the following attributes: 'textratio' of type int; 'extoffset' of type float; 'x3' of type float; 'x2' of type float; 'y2' of type float; 'layer' of type int; 'x1' of type float; 'textsize' of type float; 'extwidth' of type float; 'width' of type float; 'precision' of type int; 'y3' of type float; 'dtype' of type str; 'y1' of type float; 'unit' of type str; 'extlength' of type float; 'visible' of type bool.
+The class 'eaglemodel::Vertex' has the following attributes: 'y' of type float; 'x' of type float; 'curve' of type float.
+The class 'eaglemodel::Part' has the following attributes: 'uid' of type int; 'smashed' of type bool; 'x' of type float; 'deviceset' of type str; 'technology' of type str; 'y' of type float; 'gate' of type str; 'library' of type str; 'value' of type str; 'name' of type str; 'rot' of type int; 'device' of type str.
+The class 'eaglemodel::Label' has the following attributes: 'layer' of type int; 'rot' of type int; 'xref' of type bool; 'size' of type float; 'x' of type float; 'y' of type float; 'ratio' of type int; 'font' of type str.
+The enumeration 'GridUnit' has the following literals: 'mil', 'mic', 'mm', 'inch'.
+The enumeration 'PinVisible' has the following literals: 'pad', 'pin', 'both', 'off'.
+The enumeration 'Align' has the following literals: 'bottomleft', 'topleft', 'topcenter', 'topright', 'bottomcenter', 'center', 'centerleft', 'centerright', 'bottomright'.
+The enumeration 'PolygonPour' has the following literals: 'cutout', 'hatch', 'solid'.
+The enumeration 'PinFunction' has the following literals: 'dot', 'none', 'dotclk', 'clk'.
+The enumeration 'ContactRoute' has the following literals: 'all', 'any'.
+The enumeration 'PinDirection' has the following literals: 'pas', 'sup', 'pwr', 'hiz', 'io', 'in_', 'nc', 'oc', 'out'.
+The enumeration 'DimensionType' has the following literals: 'radius', 'vertical', 'horizontal', 'parallel', 'leader', 'diameter'.
+The enumeration 'WireStyle' has the following literals: 'continuous', 'dashdot', 'longdash', 'shortdash'.
+The enumeration 'WireCap' has the following literals: 'flat', 'round'.
+The enumeration 'PinLength' has the following literals: 'point', 'middle', 'short', 'long'.
+The enumeration 'TextFont' has the following literals: 'vector', 'proportional', 'fixed'.
+The enumeration 'GridStyle' has the following literals: 'dots', 'lines'.
+The enumeration 'AttributeDisplay' has the following literals: 'name', 'both', 'value', 'off'.
+The enumeration 'Severity' has the following literals: 'error', 'info', 'warning'.
+The enumeration 'GateAddLevel' has the following literals: 'always', 'must', 'can', 'next', 'request'.
+The enumeration 'VerticalText' has the following literals: 'up', 'down'.
+The enumeration 'PadShape' has the following literals: 'offset', 'octagon', 'long', 'round', 'square'.
+'eaglemodel::Drawing' (role 'eaglemodel_Drawing12', cardinality 0..*) is associated with 'eaglemodel::Schematic' (role 'eaglemodel_Schematic', cardinality 0..*).
+'eaglemodel::Library' (role 'eaglemodel_Library', cardinality 0..*) is associated with 'eaglemodel::Libraries' (role 'eaglemodel_Libraries34', cardinality 0..*).
+'eaglemodel::Circle' (role 'eaglemodel_Circle120', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol119', cardinality 0..*).
+'eaglemodel::Technology' (role 'eaglemodel_Technology151', cardinality 0..*) is associated with 'eaglemodel::Attribute' (role 'eaglemodel_Attribute152', cardinality 0..*).
+'eaglemodel::Bus' (role 'eaglemodel_Bus', cardinality 0..*) is associated with 'eaglemodel::Busses' (role 'eaglemodel_Busses183', cardinality 0..*).
+'eaglemodel::Class' (role 'eaglemodel_Class', cardinality 0..*) is associated with 'eaglemodel::Classes' (role 'eaglemodel_Classes49', cardinality 0..*).
+'eaglemodel::Plain' (role 'eaglemodel_Plain163', cardinality 0..*) is associated with 'eaglemodel::Dimension' (role 'eaglemodel_Dimension164', cardinality 0..*).
+'eaglemodel::Vertex' (role 'eaglemodel_Vertex', cardinality 0..*) is associated with 'eaglemodel::Polygon' (role 'eaglemodel_Polygon137', cardinality 0..*).
+'eaglemodel::Segment' (role 'eaglemodel_Segment190', cardinality 0..*) is associated with 'eaglemodel::Net' (role 'eaglemodel_Net189', cardinality 0..*).
+'eaglemodel::Wire' (role 'eaglemodel_Wire109', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol108', cardinality 0..*).
+'eaglemodel::Packages' (role 'eaglemodel_Packages', cardinality 0..*) is associated with 'eaglemodel::Library' (role 'eaglemodel_Library39', cardinality 0..*).
+'eaglemodel::Attribute' (role 'eaglemodel_Attribute', cardinality 0..*) is associated with 'eaglemodel::Attributes' (role 'eaglemodel_Attributes45', cardinality 0..*).
+'eaglemodel::Description' (role 'eaglemodel_Description103', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol102', cardinality 0..*).
+'eaglemodel::Gates' (role 'eaglemodel_Gates139', cardinality 0..*) is associated with 'eaglemodel::Gate' (role 'eaglemodel_Gate', cardinality 0..*).
+'eaglemodel::Circle' (role 'eaglemodel_Circle167', cardinality 0..*) is associated with 'eaglemodel::Plain' (role 'eaglemodel_Plain166', cardinality 0..*).
+'eaglemodel::Circle' (role 'eaglemodel_Circle', cardinality 0..*) is associated with 'eaglemodel::Package' (role 'eaglemodel_Package88', cardinality 0..*).
+'eaglemodel::Eagle' (role 'eaglemodel_Eagle', cardinality 0..*) is associated with 'eaglemodel::Compatibility' (role 'eaglemodel_Compatibility', cardinality 0..*).
+'eaglemodel::Segment' (role 'eaglemodel_Segment194', cardinality 0..*) is associated with 'eaglemodel::Wire' (role 'eaglemodel_Wire195', cardinality 0..*).
+'eaglemodel::Sheet' (role 'eaglemodel_Sheet65', cardinality 0..*) is associated with 'eaglemodel::Plain' (role 'eaglemodel_Plain', cardinality 0..*).
+'eaglemodel::Connects' (role 'eaglemodel_Connects', cardinality 0..*) is associated with 'eaglemodel::Device' (role 'eaglemodel_Device143', cardinality 0..*).
+'eaglemodel::Description' (role 'eaglemodel_Description63', cardinality 0..*) is associated with 'eaglemodel::Sheet' (role 'eaglemodel_Sheet62', cardinality 0..*).
+'eaglemodel::Sheet' (role 'eaglemodel_Sheet69', cardinality 0..*) is associated with 'eaglemodel::Busses' (role 'eaglemodel_Busses', cardinality 0..*).
+'eaglemodel::Part' (role 'eaglemodel_Part', cardinality 0..*) is associated with 'eaglemodel::Parts' (role 'eaglemodel_Parts53', cardinality 0..*).
+'eaglemodel::Rectangle' (role 'eaglemodel_Rectangle170', cardinality 0..*) is associated with 'eaglemodel::Plain' (role 'eaglemodel_Plain169', cardinality 0..*).
+'eaglemodel::Attribute' (role 'eaglemodel_Attribute181', cardinality 0..*) is associated with 'eaglemodel::Instance' (role 'eaglemodel_Instance180', cardinality 0..*).
+'eaglemodel::Schematic' (role 'eaglemodel_Schematic24', cardinality 0..*) is associated with 'eaglemodel::Variantdefs' (role 'eaglemodel_Variantdefs', cardinality 0..*).
+'eaglemodel::Packages' (role 'eaglemodel_Packages75', cardinality 0..*) is associated with 'eaglemodel::Package' (role 'eaglemodel_Package', cardinality 0..*).
+'eaglemodel::Plain' (role 'eaglemodel_Plain175', cardinality 0..*) is associated with 'eaglemodel::Hole' (role 'eaglemodel_Hole176', cardinality 0..*).
+'eaglemodel::Variantdef' (role 'eaglemodel_Variantdef', cardinality 0..*) is associated with 'eaglemodel::Variantdefs' (role 'eaglemodel_Variantdefs47', cardinality 0..*).
+'eaglemodel::Part' (role 'eaglemodel_Part58', cardinality 0..*) is associated with 'eaglemodel::Variant' (role 'eaglemodel_Variant', cardinality 0..*).
+'eaglemodel::Errors' (role 'eaglemodel_Errors', cardinality 0..*) is associated with 'eaglemodel::Schematic' (role 'eaglemodel_Schematic32', cardinality 0..*).
+'eaglemodel::Schematic' (role 'eaglemodel_Schematic20', cardinality 0..*) is associated with 'eaglemodel::Libraries' (role 'eaglemodel_Libraries', cardinality 0..*).
+'eaglemodel::Plain' (role 'eaglemodel_Plain154', cardinality 0..*) is associated with 'eaglemodel::Polygon' (role 'eaglemodel_Polygon155', cardinality 0..*).
+'eaglemodel::Symbol' (role 'eaglemodel_Symbol117', cardinality 0..*) is associated with 'eaglemodel::Pin' (role 'eaglemodel_Pin', cardinality 0..*).
+'eaglemodel::Net' (role 'eaglemodel_Net', cardinality 0..*) is associated with 'eaglemodel::Nets' (role 'eaglemodel_Nets187', cardinality 0..*).
+'eaglemodel::Layer' (role 'eaglemodel_Layer', cardinality 0..*) is associated with 'eaglemodel::Layers' (role 'eaglemodel_Layers16', cardinality 0..*).
+'eaglemodel::Technologies' (role 'eaglemodel_Technologies', cardinality 0..*) is associated with 'eaglemodel::Device' (role 'eaglemodel_Device145', cardinality 0..*).
+'eaglemodel::Sheets' (role 'eaglemodel_Sheets60', cardinality 0..*) is associated with 'eaglemodel::Sheet' (role 'eaglemodel_Sheet', cardinality 0..*).
+'eaglemodel::Package' (role 'eaglemodel_Package80', cardinality 0..*) is associated with 'eaglemodel::Polygon' (role 'eaglemodel_Polygon', cardinality 0..*).
+'eaglemodel::Description' (role 'eaglemodel_Description', cardinality 0..*) is associated with 'eaglemodel::Schematic' (role 'eaglemodel_Schematic18', cardinality 0..*).
+'eaglemodel::Drawing' (role 'eaglemodel_Drawing8', cardinality 0..*) is associated with 'eaglemodel::Grid' (role 'eaglemodel_Grid', cardinality 0..*).
+'eaglemodel::Approved' (role 'eaglemodel_Approved', cardinality 0..*) is associated with 'eaglemodel::Errors' (role 'eaglemodel_Errors73', cardinality 0..*).
+'eaglemodel::Symbols' (role 'eaglemodel_Symbols', cardinality 0..*) is associated with 'eaglemodel::Library' (role 'eaglemodel_Library41', cardinality 0..*).
+'eaglemodel::Symbols' (role 'eaglemodel_Symbols100', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol', cardinality 0..*).
+'eaglemodel::Plain' (role 'eaglemodel_Plain157', cardinality 0..*) is associated with 'eaglemodel::Wire' (role 'eaglemodel_Wire158', cardinality 0..*).
+'eaglemodel::Note' (role 'eaglemodel_Note', cardinality 0..*) is associated with 'eaglemodel::Compatibility' (role 'eaglemodel_Compatibility4', cardinality 0..*).
+'eaglemodel::Symbol' (role 'eaglemodel_Symbol111', cardinality 0..*) is associated with 'eaglemodel::Text' (role 'eaglemodel_Text112', cardinality 0..*).
+'eaglemodel::Attribute' (role 'eaglemodel_Attribute56', cardinality 0..*) is associated with 'eaglemodel::Part' (role 'eaglemodel_Part55', cardinality 0..*).
+'eaglemodel::Instance' (role 'eaglemodel_Instance', cardinality 0..*) is associated with 'eaglemodel::Instances' (role 'eaglemodel_Instances178', cardinality 0..*).
+'eaglemodel::Package' (role 'eaglemodel_Package92', cardinality 0..*) is associated with 'eaglemodel::Frame' (role 'eaglemodel_Frame', cardinality 0..*).
+'eaglemodel::Plain' (role 'eaglemodel_Plain160', cardinality 0..*) is associated with 'eaglemodel::Text' (role 'eaglemodel_Text161', cardinality 0..*).
+'eaglemodel::Devicesets' (role 'eaglemodel_Devicesets', cardinality 0..*) is associated with 'eaglemodel::Library' (role 'eaglemodel_Library43', cardinality 0..*).
+'eaglemodel::Sheets' (role 'eaglemodel_Sheets', cardinality 0..*) is associated with 'eaglemodel::Schematic' (role 'eaglemodel_Schematic30', cardinality 0..*).
+'eaglemodel::Package' (role 'eaglemodel_Package84', cardinality 0..*) is associated with 'eaglemodel::Text' (role 'eaglemodel_Text', cardinality 0..*).
+'eaglemodel::Schematic' (role 'eaglemodel_Schematic26', cardinality 0..*) is associated with 'eaglemodel::Classes' (role 'eaglemodel_Classes', cardinality 0..*).
+'eaglemodel::Package' (role 'eaglemodel_Package86', cardinality 0..*) is associated with 'eaglemodel::Dimension' (role 'eaglemodel_Dimension', cardinality 0..*).
+'eaglemodel::Pad' (role 'eaglemodel_Pad', cardinality 0..*) is associated with 'eaglemodel::Package' (role 'eaglemodel_Package96', cardinality 0..*).
+'eaglemodel::Frame' (role 'eaglemodel_Frame126', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol125', cardinality 0..*).
+'eaglemodel::Setting' (role 'eaglemodel_Setting', cardinality 0..*) is associated with 'eaglemodel::Settings' (role 'eaglemodel_Settings14', cardinality 0..*).
+'eaglemodel::Package' (role 'eaglemodel_Package77', cardinality 0..*) is associated with 'eaglemodel::Description' (role 'eaglemodel_Description78', cardinality 0..*).
+'eaglemodel::Plain' (role 'eaglemodel_Plain172', cardinality 0..*) is associated with 'eaglemodel::Frame' (role 'eaglemodel_Frame173', cardinality 0..*).
+'eaglemodel::Segment' (role 'eaglemodel_Segment197', cardinality 0..*) is associated with 'eaglemodel::Junction' (role 'eaglemodel_Junction', cardinality 0..*).
+'eaglemodel::Parts' (role 'eaglemodel_Parts', cardinality 0..*) is associated with 'eaglemodel::Schematic' (role 'eaglemodel_Schematic28', cardinality 0..*).
+'eaglemodel::Label' (role 'eaglemodel_Label', cardinality 0..*) is associated with 'eaglemodel::Segment' (role 'eaglemodel_Segment199', cardinality 0..*).
+'eaglemodel::Bus' (role 'eaglemodel_Bus185', cardinality 0..*) is associated with 'eaglemodel::Segment' (role 'eaglemodel_Segment', cardinality 0..*).
+'eaglemodel::Hole' (role 'eaglemodel_Hole', cardinality 0..*) is associated with 'eaglemodel::Package' (role 'eaglemodel_Package94', cardinality 0..*).
+'eaglemodel::Gates' (role 'eaglemodel_Gates', cardinality 0..*) is associated with 'eaglemodel::Deviceset' (role 'eaglemodel_Deviceset133', cardinality 0..*).
+'eaglemodel::Devicesets' (role 'eaglemodel_Devicesets128', cardinality 0..*) is associated with 'eaglemodel::Deviceset' (role 'eaglemodel_Deviceset', cardinality 0..*).
+'eaglemodel::Device' (role 'eaglemodel_Device', cardinality 0..*) is associated with 'eaglemodel::Devices' (role 'eaglemodel_Devices141', cardinality 0..*).
+'eaglemodel::Schematic' (role 'eaglemodel_Schematic22', cardinality 0..*) is associated with 'eaglemodel::Attributes' (role 'eaglemodel_Attributes', cardinality 0..*).
+'eaglemodel::Drawing' (role 'eaglemodel_Drawing6', cardinality 0..*) is associated with 'eaglemodel::Settings' (role 'eaglemodel_Settings', cardinality 0..*).
+'eaglemodel::Sheet' (role 'eaglemodel_Sheet67', cardinality 0..*) is associated with 'eaglemodel::Instances' (role 'eaglemodel_Instances', cardinality 0..*).
+'eaglemodel::Package' (role 'eaglemodel_Package90', cardinality 0..*) is associated with 'eaglemodel::Rectangle' (role 'eaglemodel_Rectangle', cardinality 0..*).
+'eaglemodel::Technology' (role 'eaglemodel_Technology', cardinality 0..*) is associated with 'eaglemodel::Technologies' (role 'eaglemodel_Technologies149', cardinality 0..*).
+'eaglemodel::SMD' (role 'eaglemodel_SMD', cardinality 0..*) is associated with 'eaglemodel::Package' (role 'eaglemodel_Package98', cardinality 0..*).
+'eaglemodel::Deviceset' (role 'eaglemodel_Deviceset135', cardinality 0..*) is associated with 'eaglemodel::Devices' (role 'eaglemodel_Devices', cardinality 0..*).
+'eaglemodel::Symbol' (role 'eaglemodel_Symbol122', cardinality 0..*) is associated with 'eaglemodel::Rectangle' (role 'eaglemodel_Rectangle123', cardinality 0..*).
+'eaglemodel::Pinref' (role 'eaglemodel_Pinref', cardinality 0..*) is associated with 'eaglemodel::Segment' (role 'eaglemodel_Segment192', cardinality 0..*).
+'eaglemodel::Dimension' (role 'eaglemodel_Dimension115', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol114', cardinality 0..*).
+'eaglemodel::Drawing' (role 'eaglemodel_Drawing', cardinality 0..*) is associated with 'eaglemodel::Eagle' (role 'eaglemodel_Eagle2', cardinality 0..*).
+'eaglemodel::Drawing' (role 'eaglemodel_Drawing10', cardinality 0..*) is associated with 'eaglemodel::Layers' (role 'eaglemodel_Layers', cardinality 0..*).
+'eaglemodel::Nets' (role 'eaglemodel_Nets', cardinality 0..*) is associated with 'eaglemodel::Sheet' (role 'eaglemodel_Sheet71', cardinality 0..*).
+'eaglemodel::Connects' (role 'eaglemodel_Connects147', cardinality 0..*) is associated with 'eaglemodel::Connect' (role 'eaglemodel_Connect', cardinality 0..*).
+'eaglemodel::Wire' (role 'eaglemodel_Wire', cardinality 0..*) is associated with 'eaglemodel::Package' (role 'eaglemodel_Package82', cardinality 0..*).
+'eaglemodel::Description' (role 'eaglemodel_Description37', cardinality 0..*) is associated with 'eaglemodel::Library' (role 'eaglemodel_Library36', cardinality 0..*).
+'eaglemodel::Description' (role 'eaglemodel_Description131', cardinality 0..*) is associated with 'eaglemodel::Deviceset' (role 'eaglemodel_Deviceset130', cardinality 0..*).
+'eaglemodel::Polygon' (role 'eaglemodel_Polygon106', cardinality 0..*) is associated with 'eaglemodel::Symbol' (role 'eaglemodel_Symbol105', cardinality 0..*).
+'eaglemodel::Class' (role 'eaglemodel_Class51', cardinality 0..*) is associated with 'eaglemodel::Clearance' (role 'eaglemodel_Clearance', cardinality 0..*).

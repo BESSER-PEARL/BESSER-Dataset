@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Conditions_PreConditionMessageExpression  {
+
+
+
+
+
+
+    private HALL_Conditions_PreConditionMessageExpressionElement hall_conditions_preconditionmessageexpressionelement;
+
+
+
+
+    private HALL_Messages_MessageTransition hall_messages_messagetransition;
+
+
+    public Conditions_PreConditionMessageExpression(
+    ) {
+    }
+
+
+
+    public HALL_Conditions_PreConditionMessageExpressionElement getHall_conditions_preconditionmessageexpressionelement() {
+        return hall_conditions_preconditionmessageexpressionelement;
+    }
+
+    public void setHall_conditions_preconditionmessageexpressionelement(HALL_Conditions_PreConditionMessageExpressionElement hall_conditions_preconditionmessageexpressionelement) {
+        this.hall_conditions_preconditionmessageexpressionelement = hall_conditions_preconditionmessageexpressionelement;
+    }
+    public HALL_Messages_MessageTransition getHall_messages_messagetransition() {
+        return hall_messages_messagetransition;
+    }
+
+    public void setHall_messages_messagetransition(HALL_Messages_MessageTransition hall_messages_messagetransition) {
+        this.hall_messages_messagetransition = hall_messages_messagetransition;
+    }
+
+}

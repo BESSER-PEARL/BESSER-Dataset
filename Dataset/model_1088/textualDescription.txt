@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'petriNet::Element' has no attributes.
+The class 'Node' has no attributes.
+The class 'petriNet::PetriNet' has the following attributes: 'diagramName' of type str.
+The class 'petriNet::Place' has the following attributes: 'noTokens' of type int.
+The class 'petriNet::Arc' has no attributes.
+The class 'Element' has no attributes.
+The class 'petriNet::Node' has no attributes.
+The class 'petriNet::Transition' has no attributes.
+'petriNet::Transition' is a specialization of 'Node'.
+'petriNet::Place' is a specialization of 'Node'.
+'petriNet::Node' is a specialization of 'Element'.
+'petriNet::Arc' is a specialization of 'Element'.
+'petriNet::Arc' (role 'Arc8', cardinality 0..*) is associated with 'petriNet::Node' (role 'target', cardinality 0..*).
+'petriNet::Arc' (role 'outgoingArcs', cardinality 0..*) is associated with 'petriNet::Node' (role 'Node', cardinality 0..*).
+'petriNet::Element' (role 'Element', cardinality 0..*) is associated with 'petriNet::PetriNet' (role 'diagram', cardinality 0..*).
+'petriNet::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'petriNet::Element' (role 'elements', cardinality 0..*).
+'petriNet::Place' (role 'petriNet_Place', cardinality 0..*) is associated with 'petriNet::Transition' (role 'petriNet_Transition', cardinality 0..*).
+'petriNet::Arc' (role 'incomingArcs', cardinality 0..*) is associated with 'petriNet::Node' (role 'Node5', cardinality 0..*).
+'petriNet::Arc' (role 'Arc', cardinality 0..*) is associated with 'petriNet::Node' (role 'source', cardinality 0..*).

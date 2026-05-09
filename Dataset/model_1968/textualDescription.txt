@@ -1,0 +1,23 @@
+The model has 13 class(es).
+The class 'ASPT::TraceLink' has the following attributes: 'relation' of type str; 'idrefx' of type str; 'idref' of type str.
+The class 'ASPT::TraceNbEdge' has no attributes.
+The class 'ASPT::TraceNbProp' has no attributes.
+The class 'ASPT::TraceModel' has the following attributes: 'MMS' of type str; 'ID' of type str.
+The class 'TraceProp' has no attributes.
+The class 'ASPT::TraceEdge' has the following attributes: 'idsx' of type str; 'idtx' of type str; 'idt' of type str; 'ids' of type str.
+The class 'TraceNode' has no attributes.
+The class 'ASPT::TraceNode' has no attributes.
+The class 'TraceEdge' has no attributes.
+The class 'ASPT::TraceNbNode' has no attributes.
+The class 'ASPT::TraceProp' has the following attributes: 'idpx' of type str; 'value' of type str; 'idp' of type str.
+The class 'TraceElement' has no attributes.
+The class 'ASPT::TraceElement' has the following attributes: 'metamodel' of type str; 'type' of type str; 'idx' of type str; 'id' of type str.
+'ASPT::TraceNode' is a specialization of 'TraceElement'.
+'ASPT::TraceNbNode' is a specialization of 'TraceNode'.
+'ASPT::TraceLink' is a specialization of 'TraceElement'.
+'ASPT::TraceNbEdge' is a specialization of 'TraceEdge'.
+'ASPT::TraceEdge' is a specialization of 'TraceElement'.
+'ASPT::TraceNbProp' is a specialization of 'TraceProp'.
+'ASPT::TraceProp' is a specialization of 'TraceElement'.
+'ASPT::TraceLink' (role 'ASPT_TraceLink', cardinality 0..*) is associated with 'ASPT::TraceModel' (role 'ASPT_TraceModel', cardinality 0..*).
+'ASPT::TraceModel' (role 'ASPT_TraceModel2', cardinality 0..*) is associated with 'ASPT::TraceElement' (role 'ASPT_TraceElement', cardinality 0..*).

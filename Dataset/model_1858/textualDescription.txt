@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'music::MusicLibrary' has the following attributes: 'name' of type str.
+The class 'music::Work' has the following attributes: 'mediaTypes' of type str; 'name' of type str; 'notes' of type str; 'whenMade' of type str.
+The class 'music::Artist' has the following attributes: 'name' of type str; 'notes' of type str.
+The enumeration 'MediaType' has the following literals: 'TAPE', 'CD', 'MP3'.
+'music::Artist' (role 'performer', cardinality 0..*) is associated with 'music::Work' (role 'Work', cardinality 0..*).
+'music::Artist' (role 'Artist', cardinality 0..*) is associated with 'music::Work' (role 'works', cardinality 0..*).
+'music::MusicLibrary' (role 'music_MusicLibrary', cardinality 0..*) is associated with 'music::Artist' (role 'music_Artist', cardinality 0..*).

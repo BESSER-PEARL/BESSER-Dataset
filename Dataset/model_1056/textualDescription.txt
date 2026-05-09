@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'fSM::State' has no attributes.
+The class 'fSM::Model' has no attributes.
+The class 'fSM::Transition' has no attributes.
+The class 'fSM::FSM' has no attributes.
+The class 'fSM::EnumerationType' has the following attributes: 'name' of type str.
+The class 'fSM::EnumerationLiteral' has the following attributes: 'name' of type str.
+'fSM::State' (role 'fSM_State14', cardinality 0..*) is associated with 'fSM::Transition' (role 'fSM_Transition13', cardinality 0..*).
+'fSM::FSM' (role 'fSM_FSM7', cardinality 0..*) is associated with 'fSM::State' (role 'fSM_State', cardinality 0..*).
+'fSM::EnumerationType' (role 'fSM_EnumerationType', cardinality 0..*) is associated with 'fSM::Model' (role 'fSM_Model', cardinality 0..*).
+'fSM::EnumerationLiteral' (role 'fSM_EnumerationLiteral17', cardinality 0..*) is associated with 'fSM::EnumerationType' (role 'fSM_EnumerationType16', cardinality 0..*).
+'fSM::Transition' (role 'fSM_Transition', cardinality 0..*) is associated with 'fSM::State' (role 'fSM_State11', cardinality 0..*).
+'fSM::State' (role 'fSM_State9', cardinality 0..*) is associated with 'fSM::EnumerationLiteral' (role 'fSM_EnumerationLiteral', cardinality 0..*).
+'fSM::EnumerationType' (role 'fSM_EnumerationType5', cardinality 0..*) is associated with 'fSM::FSM' (role 'fSM_FSM4', cardinality 0..*).
+'fSM::Model' (role 'fSM_Model2', cardinality 0..*) is associated with 'fSM::FSM' (role 'fSM_FSM', cardinality 0..*).

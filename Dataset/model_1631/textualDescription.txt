@@ -1,0 +1,95 @@
+The model has 40 class(es).
+The class 'pnmlcoremodel::Node' has no attributes.
+The class 'pnmlcoremodel::LabelProxy' has the following attributes: 'text' of type str.
+The class 'ToolInfo' has no attributes.
+The class 'PlaceNode' has no attributes.
+The class 'pnmlcoremodel::PetriNetType' has no attributes.
+The class 'pnmlcoremodel::ToolInfo' has the following attributes: 'tool' of type str; 'version' of type str.
+The class 'pnmlcoremodel::RefTransition' has no attributes.
+The class 'pnmlcoremodel::Place' has no attributes.
+The class 'TransitionNode' has no attributes.
+The class 'pnmlcoremodel::PetriNet' has no attributes.
+The class 'Graphics' has no attributes.
+The class 'pnmlcoremodel::Line' has the following attributes: 'style' of type str; 'color' of type str; 'shape' of type str; 'width' of type float.
+The class 'pnmlcoremodel::Graphics' has no attributes.
+The class 'pnmlcoremodel::Fill' has the following attributes: 'gradientColor' of type str; 'gradientrotation' of type str; 'color' of type str; 'image' of type str.
+The class 'pnmlcoremodel::EmptyType' has no attributes.
+The class 'PetriNetType' has no attributes.
+The class 'pnmlcoremodel::Label' has no attributes.
+The class 'Object' has no attributes.
+The class 'pnmlcoremodel::AnnotationGraphics' has no attributes.
+The class 'pnmlcoremodel::Page' has no attributes.
+The class 'pnmlcoremodel::ToolInfoText' has the following attributes: 'info' of type str.
+The class 'Label' has no attributes.
+The class 'Node' has no attributes.
+The class 'pnmlcoremodel::Font' has the following attributes: 'align' of type str; 'size' of type str; 'weight' of type str; 'family' of type str; 'decoration' of type str; 'style' of type str; 'rotation' of type float.
+The class 'pnmlcoremodel::ID' has the following attributes: 'id' of type str.
+The class 'pnmlcoremodel::RefPlace' has no attributes.
+The class 'pnmlcoremodel::AnyType' has no attributes.
+The class 'pnmlcoremodel::Transition' has no attributes.
+The class 'ID' has no attributes.
+The class 'pnmlcoremodel::PlaceNode' has no attributes.
+The class 'pnmlcoremodel::ArcGraphics' has no attributes.
+The class 'pnmlcoremodel::Object' has no attributes.
+The class 'pnmlcoremodel::Attribute' has no attributes.
+The class 'pnmlcoremodel::NodeGraphics' has no attributes.
+The class 'pnmlcoremodel::PageLabelProxy' has the following attributes: 'text' of type str.
+The class 'pnmlcoremodel::PetriNetDoc' has no attributes.
+The class 'pnmlcoremodel::Name' has the following attributes: 'text' of type str.
+The class 'pnmlcoremodel::Arc' has no attributes.
+The class 'pnmlcoremodel::TransitionNode' has no attributes.
+The class 'pnmlcoremodel::Coordinate' has the following attributes: 'y' of type float; 'x' of type float.
+The enumeration 'LineShape' has the following literals: 'line', 'curve'.
+'pnmlcoremodel::Place' is a specialization of 'PlaceNode'.
+'pnmlcoremodel::Arc' is a specialization of 'Object'.
+'pnmlcoremodel::Node' is a specialization of 'Object'.
+'pnmlcoremodel::PetriNet' is a specialization of 'ID'.
+'pnmlcoremodel::RefPlace' is a specialization of 'PlaceNode'.
+'pnmlcoremodel::NodeGraphics' is a specialization of 'Graphics'.
+'pnmlcoremodel::Transition' is a specialization of 'TransitionNode'.
+'pnmlcoremodel::Name' is a specialization of 'Label'.
+'pnmlcoremodel::ArcGraphics' is a specialization of 'Graphics'.
+'pnmlcoremodel::AnnotationGraphics' is a specialization of 'Graphics'.
+'pnmlcoremodel::ToolInfoText' is a specialization of 'ToolInfo'.
+'pnmlcoremodel::EmptyType' is a specialization of 'PetriNetType'.
+'pnmlcoremodel::Attribute' is a specialization of 'Label'.
+'pnmlcoremodel::TransitionNode' is a specialization of 'Node'.
+'pnmlcoremodel::Object' is a specialization of 'ID'.
+'pnmlcoremodel::PlaceNode' is a specialization of 'Node'.
+'pnmlcoremodel::RefTransition' is a specialization of 'TransitionNode'.
+'pnmlcoremodel::Page' is a specialization of 'Node'.
+'pnmlcoremodel::AnyType' (role 'pnmlcoremodel_AnyType', cardinality 0..*) is associated with 'pnmlcoremodel::PetriNet' (role 'pnmlcoremodel_PetriNet10', cardinality 0..*).
+'pnmlcoremodel::Node' (role 'Node', cardinality 0..*) is associated with 'pnmlcoremodel::Arc' (role 'out', cardinality 0..*).
+'pnmlcoremodel::Coordinate' (role 'pnmlcoremodel_Coordinate54', cardinality 0..*) is associated with 'pnmlcoremodel::NodeGraphics' (role 'pnmlcoremodel_NodeGraphics', cardinality 0..*).
+'pnmlcoremodel::AnyType' (role 'pnmlcoremodel_AnyType49', cardinality 0..*) is associated with 'pnmlcoremodel::Label' (role 'pnmlcoremodel_Label48', cardinality 0..*).
+'pnmlcoremodel::ArcGraphics' (role 'pnmlcoremodel_ArcGraphics52', cardinality 0..*) is associated with 'pnmlcoremodel::Coordinate' (role 'pnmlcoremodel_Coordinate', cardinality 0..*).
+'pnmlcoremodel::Label' (role 'pnmlcoremodel_Label45', cardinality 0..*) is associated with 'pnmlcoremodel::Graphics' (role 'pnmlcoremodel_Graphics46', cardinality 0..*).
+'pnmlcoremodel::Node' (role 'Node38', cardinality 0..*) is associated with 'pnmlcoremodel::Arc' (role 'in_', cardinality 0..*).
+'pnmlcoremodel::Line' (role 'pnmlcoremodel_Line60', cardinality 0..*) is associated with 'pnmlcoremodel::NodeGraphics' (role 'pnmlcoremodel_NodeGraphics59', cardinality 0..*).
+'pnmlcoremodel::PageLabelProxy' (role 'pnmlcoremodel_PageLabelProxy74', cardinality 0..*) is associated with 'pnmlcoremodel::Label' (role 'pnmlcoremodel_Label75', cardinality 0..*).
+'pnmlcoremodel::Object' (role 'pnmlcoremodel_Object24', cardinality 0..*) is associated with 'pnmlcoremodel::Graphics' (role 'pnmlcoremodel_Graphics', cardinality 0..*).
+'pnmlcoremodel::PetriNetDoc' (role 'pnmlcoremodel_PetriNetDoc', cardinality 0..*) is associated with 'pnmlcoremodel::PetriNet' (role 'pnmlcoremodel_PetriNet', cardinality 0..*).
+'pnmlcoremodel::Object' (role 'pnmlcoremodel_Object26', cardinality 0..*) is associated with 'pnmlcoremodel::AnyType' (role 'pnmlcoremodel_AnyType27', cardinality 0..*).
+'pnmlcoremodel::LabelProxy' (role 'pnmlcoremodel_LabelProxy', cardinality 0..*) is associated with 'pnmlcoremodel::Page' (role 'pnmlcoremodel_Page16', cardinality 0..*).
+'pnmlcoremodel::Object' (role 'pnmlcoremodel_Object', cardinality 0..*) is associated with 'pnmlcoremodel::Page' (role 'pnmlcoremodel_Page12', cardinality 0..*).
+'pnmlcoremodel::PetriNet' (role 'pnmlcoremodel_PetriNet2', cardinality 0..*) is associated with 'pnmlcoremodel::PetriNetType' (role 'pnmlcoremodel_PetriNetType', cardinality 0..*).
+'pnmlcoremodel::Fill' (role 'pnmlcoremodel_Fill64', cardinality 0..*) is associated with 'pnmlcoremodel::AnnotationGraphics' (role 'pnmlcoremodel_AnnotationGraphics', cardinality 0..*).
+'pnmlcoremodel::LabelProxy' (role 'pnmlcoremodel_LabelProxy31', cardinality 0..*) is associated with 'pnmlcoremodel::Object' (role 'pnmlcoremodel_Object32', cardinality 0..*).
+'pnmlcoremodel::Page' (role 'pnmlcoremodel_Page', cardinality 0..*) is associated with 'pnmlcoremodel::PetriNet' (role 'pnmlcoremodel_PetriNet6', cardinality 0..*).
+'pnmlcoremodel::RefPlace' (role 'pnmlcoremodel_RefPlace', cardinality 0..*) is associated with 'pnmlcoremodel::PlaceNode' (role 'pnmlcoremodel_PlaceNode', cardinality 0..*).
+'pnmlcoremodel::TransitionNode' (role 'pnmlcoremodel_TransitionNode', cardinality 0..*) is associated with 'pnmlcoremodel::RefTransition' (role 'pnmlcoremodel_RefTransition', cardinality 0..*).
+'pnmlcoremodel::Arc' (role 'Arc', cardinality 0..*) is associated with 'pnmlcoremodel::Node' (role 'source', cardinality 0..*).
+'pnmlcoremodel::AnnotationGraphics' (role 'pnmlcoremodel_AnnotationGraphics72', cardinality 0..*) is associated with 'pnmlcoremodel::Font' (role 'pnmlcoremodel_Font', cardinality 0..*).
+'pnmlcoremodel::Page' (role 'pnmlcoremodel_Page14', cardinality 0..*) is associated with 'pnmlcoremodel::PageLabelProxy' (role 'pnmlcoremodel_PageLabelProxy', cardinality 0..*).
+'pnmlcoremodel::ArcGraphics' (role 'pnmlcoremodel_ArcGraphics', cardinality 0..*) is associated with 'pnmlcoremodel::Line' (role 'pnmlcoremodel_Line', cardinality 0..*).
+'pnmlcoremodel::Line' (role 'pnmlcoremodel_Line67', cardinality 0..*) is associated with 'pnmlcoremodel::AnnotationGraphics' (role 'pnmlcoremodel_AnnotationGraphics66', cardinality 0..*).
+'pnmlcoremodel::LabelProxy' (role 'pnmlcoremodel_LabelProxy29', cardinality 0..*) is associated with 'pnmlcoremodel::Label' (role 'pnmlcoremodel_Label', cardinality 0..*).
+'pnmlcoremodel::Object' (role 'pnmlcoremodel_Object21', cardinality 0..*) is associated with 'pnmlcoremodel::ToolInfo' (role 'pnmlcoremodel_ToolInfo22', cardinality 0..*).
+'pnmlcoremodel::Node' (role 'target', cardinality 0..*) is associated with 'pnmlcoremodel::Arc' (role 'Arc35', cardinality 0..*).
+'pnmlcoremodel::Name' (role 'pnmlcoremodel_Name19', cardinality 0..*) is associated with 'pnmlcoremodel::Object' (role 'pnmlcoremodel_Object18', cardinality 0..*).
+'pnmlcoremodel::PetriNet' (role 'pnmlcoremodel_PetriNet8', cardinality 0..*) is associated with 'pnmlcoremodel::ToolInfo' (role 'pnmlcoremodel_ToolInfo', cardinality 0..*).
+'pnmlcoremodel::ToolInfo' (role 'pnmlcoremodel_ToolInfo43', cardinality 0..*) is associated with 'pnmlcoremodel::Label' (role 'pnmlcoremodel_Label42', cardinality 0..*).
+'pnmlcoremodel::NodeGraphics' (role 'pnmlcoremodel_NodeGraphics62', cardinality 0..*) is associated with 'pnmlcoremodel::Fill' (role 'pnmlcoremodel_Fill', cardinality 0..*).
+'pnmlcoremodel::NodeGraphics' (role 'pnmlcoremodel_NodeGraphics56', cardinality 0..*) is associated with 'pnmlcoremodel::Coordinate' (role 'pnmlcoremodel_Coordinate57', cardinality 0..*).
+'pnmlcoremodel::Name' (role 'pnmlcoremodel_Name', cardinality 0..*) is associated with 'pnmlcoremodel::PetriNet' (role 'pnmlcoremodel_PetriNet4', cardinality 0..*).
+'pnmlcoremodel::Coordinate' (role 'pnmlcoremodel_Coordinate70', cardinality 0..*) is associated with 'pnmlcoremodel::AnnotationGraphics' (role 'pnmlcoremodel_AnnotationGraphics69', cardinality 0..*).

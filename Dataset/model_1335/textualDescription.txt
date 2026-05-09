@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'classescs::ClassCS' has no attributes.
+The class 'classescs::PackageCS' has no attributes.
+The class 'classescs::PathNameCS' has no attributes.
+The class 'classescs::RootCS' has no attributes.
+The class 'classescs::NamedElementCS' has the following attributes: 'name' of type str.
+The class 'NamedElementCS' has no attributes.
+The class 'classescs::PathElementCS' has no attributes.
+'classescs::ClassCS' is a specialization of 'NamedElementCS'.
+'classescs::PackageCS' is a specialization of 'NamedElementCS'.
+'classescs::PathElementCS' is a specialization of 'NamedElementCS'.
+'classescs::PathNameCS' (role 'classescs_PathNameCS', cardinality 0..*) is associated with 'classescs::ClassCS' (role 'classescs_ClassCS2', cardinality 0..*).
+'classescs::PathElementCS' (role 'classescs_PathElementCS', cardinality 0..*) is associated with 'classescs::PathNameCS' (role 'classescs_PathNameCS4', cardinality 0..*).
+'classescs::PackageCS' (role 'classescs_PackageCS', cardinality 0..*) is associated with 'classescs::ClassCS' (role 'classescs_ClassCS', cardinality 0..*).
+'classescs::RootCS' (role 'classescs_RootCS', cardinality 0..*) is associated with 'classescs::PackageCS' (role 'classescs_PackageCS6', cardinality 0..*).

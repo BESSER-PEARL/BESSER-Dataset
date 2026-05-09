@@ -1,0 +1,42 @@
+The model has 13 class(es).
+The class 'syswb101::Named' has the following attributes: 'ident' of type str.
+The class 'syswb101::Component' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'syswb101::RelatedTo' has the following attributes: 'since' of type str.
+The class 'syswb101::Thoughts' has no attributes.
+The class 'syswb101::Function' has no attributes.
+The class 'Named' has no attributes.
+The class 'syswb101::Thing' has the following attributes: 'id' of type int.
+The class 'syswb101::NamedElement' has the following attributes: 'name' of type str.
+The class 'syswb101::System' has no attributes.
+The class 'syswb101::FunctionProperty' has the following attributes: 'description' of type str.
+The class 'syswb101::PatternCatalog' has the following attributes: 'id' of type str.
+The class 'syswb101::Workbench' has the following attributes: 'aprop' of type str.
+'syswb101::Thoughts' is a specialization of 'NamedElement'.
+'syswb101::Function' is a specialization of 'Named'.
+'syswb101::RelatedTo' is a specialization of 'NamedElement'.
+'syswb101::System' is a specialization of 'Named'.
+'syswb101::Component' is a specialization of 'Named'.
+'syswb101::Workbench' is a specialization of 'Named'.
+'syswb101::Thing' is a specialization of 'NamedElement'.
+'syswb101::FunctionProperty' is a specialization of 'Named'.
+'syswb101::Function' (role 'syswb101_Function28', cardinality 0..*) is associated with 'syswb101::Function' (role 'syswb101_Function26', cardinality 0..*).
+'syswb101::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'syswb101::Thing' (role 'fromThing', cardinality 0..*).
+'syswb101::Workbench' (role 'syswb101_Workbench6', cardinality 0..*) is associated with 'syswb101::FunctionProperty' (role 'syswb101_FunctionProperty', cardinality 0..*).
+'syswb101::Workbench' (role 'syswb101_Workbench8', cardinality 0..*) is associated with 'syswb101::PatternCatalog' (role 'syswb101_PatternCatalog', cardinality 0..*).
+'syswb101::FunctionProperty' (role 'syswb101_FunctionProperty18', cardinality 0..*) is associated with 'syswb101::FunctionProperty' (role 'syswb101_FunctionProperty16', cardinality 0..*).
+'syswb101::Workbench' (role 'syswb101_Workbench', cardinality 0..*) is associated with 'syswb101::Thing' (role 'syswb101_Thing', cardinality 0..*).
+'syswb101::Function' (role 'syswb101_Function46', cardinality 0..*) is associated with 'syswb101::PatternCatalog' (role 'syswb101_PatternCatalog45', cardinality 0..*).
+'syswb101::System' (role 'syswb101_System42', cardinality 0..*) is associated with 'syswb101::Component' (role 'syswb101_Component43', cardinality 0..*).
+'syswb101::Function' (role 'syswb101_Function36', cardinality 0..*) is associated with 'syswb101::Component' (role 'syswb101_Component37', cardinality 0..*).
+'syswb101::Thoughts' (role 'syswb101_Thoughts14', cardinality 0..*) is associated with 'syswb101::Thing' (role 'syswb101_Thing15', cardinality 0..*).
+'syswb101::Function' (role 'syswb101_Function30', cardinality 0..*) is associated with 'syswb101::FunctionProperty' (role 'syswb101_FunctionProperty31', cardinality 0..*).
+'syswb101::Function' (role 'syswb101_Function40', cardinality 0..*) is associated with 'syswb101::System' (role 'syswb101_System39', cardinality 0..*).
+'syswb101::Component' (role 'syswb101_Component19', cardinality 0..*) is associated with 'syswb101::Component' (role 'syswb101_Component', cardinality 0..*).
+'syswb101::Thing' (role 'syswb101_Thing12', cardinality 0..*) is associated with 'syswb101::RelatedTo' (role 'syswb101_RelatedTo', cardinality 0..*).
+'syswb101::Component' (role 'syswb101_Component21', cardinality 0..*) is associated with 'syswb101::Component' (role 'syswb101_Component23', cardinality 0..*).
+'syswb101::Workbench' (role 'syswb101_Workbench4', cardinality 0..*) is associated with 'syswb101::System' (role 'syswb101_System', cardinality 0..*).
+'syswb101::Function' (role 'syswb101_Function', cardinality 0..*) is associated with 'syswb101::Component' (role 'syswb101_Component25', cardinality 0..*).
+'syswb101::Function' (role 'syswb101_Function34', cardinality 0..*) is associated with 'syswb101::Function' (role 'syswb101_Function32', cardinality 0..*).
+'syswb101::Thing' (role 'Thing', cardinality 0..*) is associated with 'syswb101::RelatedTo' (role 'relations', cardinality 0..*).
+'syswb101::Thoughts' (role 'syswb101_Thoughts', cardinality 0..*) is associated with 'syswb101::Workbench' (role 'syswb101_Workbench2', cardinality 0..*).

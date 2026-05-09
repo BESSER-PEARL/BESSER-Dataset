@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'FSM::FStateMachine' has the following attributes: 'name' of type str.
+The class 'FSM::FTransition' has the following attributes: 'label' of type str.
+The class 'FSM::FAbstractState' has the following attributes: 'name' of type str.
+The class 'FAbstractState' has no attributes.
+The class 'FSM::FRegularState' has no attributes.
+The class 'FSM::FInitialState' has no attributes.
+'FSM::FRegularState' is a specialization of 'FAbstractState'.
+'FSM::FInitialState' is a specialization of 'FAbstractState'.
+'FSM::FStateMachine' (role 'stateMachine2', cardinality 0..*) is associated with 'FSM::FAbstractState' (role 'FAbstractState', cardinality 0..*).
+'FSM::FAbstractState' (role 'FSM_FAbstractState7', cardinality 0..*) is associated with 'FSM::FTransition' (role 'FSM_FTransition6', cardinality 0..*).
+'FSM::FAbstractState' (role 'states', cardinality 0..*) is associated with 'FSM::FStateMachine' (role 'FStateMachine9', cardinality 0..*).
+'FSM::FTransition' (role 'FTransition', cardinality 0..*) is associated with 'FSM::FStateMachine' (role 'stateMachine', cardinality 0..*).
+'FSM::FStateMachine' (role 'FStateMachine', cardinality 0..*) is associated with 'FSM::FTransition' (role 'transitions', cardinality 0..*).
+'FSM::FAbstractState' (role 'FSM_FAbstractState', cardinality 0..*) is associated with 'FSM::FTransition' (role 'FSM_FTransition', cardinality 0..*).

@@ -1,0 +1,33 @@
+The model has 14 class(es).
+The class 'NamedElement' has no attributes.
+The class 'relationpattern::NamedElement' has the following attributes: 'name' of type str.
+The class 'relationpattern::World' has no attributes.
+The class 'SourceNode' has no attributes.
+The class 'relationpattern::ThingA' has the following attributes: 'since' of type date.
+The class 'relationpattern::ThingB' has the following attributes: 'step' of type str.
+The class 'relationpattern::TargetNode' has no attributes.
+The class 'relationpattern::Category' has the following attributes: 'nom' of type str.
+The class 'relationpattern::SourceNode' has no attributes.
+The class 'relationpattern::RelatedTo' has no attributes.
+The class 'Category' has no attributes.
+The class 'Arrow' has no attributes.
+The class 'relationpattern::Arrow' has no attributes.
+The class 'TargetNode' has no attributes.
+The enumeration 'Scale' has the following literals: 'two', 'nothing', 'one', 'four', 'three'.
+'relationpattern::World' is a specialization of 'Category'.
+'relationpattern::RelatedTo' is a specialization of 'NamedElement'.
+'relationpattern::ThingB' is a specialization of 'NamedElement'.
+'relationpattern::ThingB' is a specialization of 'TargetNode'.
+'relationpattern::RelatedTo' is a specialization of 'Arrow'.
+'relationpattern::ThingA' is a specialization of 'SourceNode'.
+'relationpattern::ThingA' is a specialization of 'NamedElement'.
+'relationpattern::Arrow' (role 'relationpattern_Arrow13', cardinality 0..*) is associated with 'relationpattern::TargetNode' (role 'relationpattern_TargetNode', cardinality 0..*).
+'relationpattern::SourceNode' (role 'relationpattern_SourceNode15', cardinality 0..*) is associated with 'relationpattern::Category' (role 'relationpattern_Category', cardinality 0..*).
+'relationpattern::World' (role 'relationpattern_World', cardinality 0..*) is associated with 'relationpattern::ThingA' (role 'relationpattern_ThingA4', cardinality 0..*).
+'relationpattern::World' (role 'relationpattern_World9', cardinality 0..*) is associated with 'relationpattern::RelatedTo' (role 'relationpattern_RelatedTo10', cardinality 0..*).
+'relationpattern::TargetNode' (role 'relationpattern_TargetNode21', cardinality 0..*) is associated with 'relationpattern::Category' (role 'relationpattern_Category20', cardinality 0..*).
+'relationpattern::Arrow' (role 'relationpattern_Arrow', cardinality 0..*) is associated with 'relationpattern::SourceNode' (role 'relationpattern_SourceNode', cardinality 0..*).
+'relationpattern::RelatedTo' (role 'relationpattern_RelatedTo', cardinality 0..*) is associated with 'relationpattern::ThingA' (role 'relationpattern_ThingA', cardinality 0..*).
+'relationpattern::Arrow' (role 'relationpattern_Arrow18', cardinality 0..*) is associated with 'relationpattern::Category' (role 'relationpattern_Category17', cardinality 0..*).
+'relationpattern::RelatedTo' (role 'relationpattern_RelatedTo2', cardinality 0..*) is associated with 'relationpattern::ThingB' (role 'relationpattern_ThingB', cardinality 0..*).
+'relationpattern::ThingB' (role 'relationpattern_ThingB7', cardinality 0..*) is associated with 'relationpattern::World' (role 'relationpattern_World6', cardinality 0..*).

@@ -1,0 +1,50 @@
+The model has 26 class(es).
+The class 'serviceInterfaces::Interface' has the following attributes: 'description' of type str; 'qName' of type str.
+The class 'serviceInterfaces::codegen::SlotPlugInterfaceL1' has no attributes.
+The class 'Operation' has no attributes.
+The class 'serviceInterfaces::modelingenv::JavaClass' has no attributes.
+The class 'TransformationLibrary' has no attributes.
+The class 'serviceInterfaces::modelingenv::InjectorAcceptorInterfaceL0' has the following attributes: 'mode' of type str.
+The class 'serviceInterfaces::codegen::Pointcut' has the following attributes: 'type' of type str.
+The class 'JavaTypeDeclaration' has no attributes.
+The class 'ExtensionPoint' has no attributes.
+The class 'serviceInterfaces::Package' has the following attributes: 'name' of type str.
+The class 'serviceInterfaces::InterfaceRepository' has no attributes.
+The class 'Packageable' has no attributes.
+The class 'serviceInterfaces::codegen::MethodPoincut' has no attributes.
+The class 'serviceInterfaces::codegen::StatementPoincut' has no attributes.
+The class 'serviceInterfaces::modelingenv::Operation' has the following attributes: 'name' of type str.
+The class 'serviceInterfaces::codegen::InjectorAcceptorInterfaceL1' has no attributes.
+The class 'serviceInterfaces::codegen::TransformationLibrary' has the following attributes: 'name' of type str; 'language' of type str.
+The class 'serviceInterfaces::codegen::ClassPointcut' has no attributes.
+The class 'Pointcut' has no attributes.
+The class 'serviceInterfaces::codegen::ImportElementPointcut' has no attributes.
+The class 'serviceInterfaces::Packageable' has no attributes.
+The class 'serviceInterfaces::modelingenv::JavaInterface' has no attributes.
+The class 'serviceInterfaces::modelingenv::ExtensionPoint' has the following attributes: 'id' of type str.
+The class 'Interface' has no attributes.
+The class 'serviceInterfaces::modelingenv::JavaTypeDeclaration' has the following attributes: 'qualifiedName' of type str.
+The class 'serviceInterfaces::modelingenv::SlotPlugInterfaceL0' has no attributes.
+The enumeration 'InjectionMode' has the following literals: 'GOOGLE_JUICE', 'PLAIN_JAVA'.
+The enumeration 'PointcutType' has the following literals: 'AFTER', 'BEFORE_BODY', 'BEFORE', 'AFTER_BODY'.
+The enumeration 'CodeGenLanguage' has the following literals: 'ACCELEO'.
+'serviceInterfaces::modelingenv::JavaInterface' is a specialization of 'JavaTypeDeclaration'.
+'serviceInterfaces::modelingenv::InjectorAcceptorInterfaceL0' is a specialization of 'Interface'.
+'serviceInterfaces::codegen::ClassPointcut' is a specialization of 'Pointcut'.
+'serviceInterfaces::codegen::MethodPoincut' is a specialization of 'Pointcut'.
+'serviceInterfaces::codegen::ImportElementPointcut' is a specialization of 'Pointcut'.
+'serviceInterfaces::codegen::SlotPlugInterfaceL1' is a specialization of 'Interface'.
+'serviceInterfaces::codegen::InjectorAcceptorInterfaceL1' is a specialization of 'Interface'.
+'serviceInterfaces::Interface' is a specialization of 'Packageable'.
+'serviceInterfaces::Package' is a specialization of 'Packageable'.
+'serviceInterfaces::modelingenv::SlotPlugInterfaceL0' is a specialization of 'Interface'.
+'serviceInterfaces::modelingenv::JavaClass' is a specialization of 'JavaTypeDeclaration'.
+'serviceInterfaces::codegen::StatementPoincut' is a specialization of 'Pointcut'.
+'serviceInterfaces::modelingenv::InjectorAcceptorInterfaceL0' (role 'serviceInterfaces_modelingenv_InjectorAcceptorInterfaceL0', cardinality 0..*) is associated with 'JavaTypeDeclaration' (role 'JavaTypeDeclaration', cardinality 0..*).
+'Pointcut' (role 'Pointcut', cardinality 0..*) is associated with 'serviceInterfaces::codegen::SlotPlugInterfaceL1' (role 'serviceInterfaces_codegen_SlotPlugInterfaceL1', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'serviceInterfaces::modelingenv::JavaInterface' (role 'serviceInterfaces_modelingenv_JavaInterface', cardinality 0..*).
+'serviceInterfaces::codegen::InjectorAcceptorInterfaceL1' (role 'serviceInterfaces_codegen_InjectorAcceptorInterfaceL1', cardinality 0..*) is associated with 'TransformationLibrary' (role 'TransformationLibrary', cardinality 0..*).
+'serviceInterfaces::modelingenv::JavaClass' (role 'serviceInterfaces_modelingenv_JavaClass', cardinality 0..*) is associated with 'Operation' (role 'Operation8', cardinality 0..*).
+'serviceInterfaces::Package' (role 'serviceInterfaces_Package', cardinality 0..*) is associated with 'serviceInterfaces::Packageable' (role 'serviceInterfaces_Packageable2', cardinality 0..*).
+'serviceInterfaces::InterfaceRepository' (role 'serviceInterfaces_InterfaceRepository', cardinality 0..*) is associated with 'serviceInterfaces::Packageable' (role 'serviceInterfaces_Packageable', cardinality 0..*).
+'serviceInterfaces::modelingenv::SlotPlugInterfaceL0' (role 'serviceInterfaces_modelingenv_SlotPlugInterfaceL0', cardinality 0..*) is associated with 'ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*).

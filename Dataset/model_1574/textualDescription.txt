@@ -1,0 +1,32 @@
+The model has 11 class(es).
+The class 'graph::Graph' has the following attributes: 'direct' of type bool.
+The class 'graph::Label' has no attributes.
+The class 'Named' has no attributes.
+The class 'graph::Typed' has the following attributes: 'type' of type str.
+The class 'GraphElement' has no attributes.
+The class 'graph::Named' has the following attributes: 'name' of type str.
+The class 'graph::Entry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'graph::Vertex' has no attributes.
+The class 'Typed' has no attributes.
+The class 'graph::GraphElement' has the following attributes: 'id' of type int.
+The class 'graph::Edge' has no attributes.
+'graph::Label' is a specialization of 'Named'.
+'graph::GraphElement' is a specialization of 'Typed'.
+'graph::Graph' is a specialization of 'Named'.
+'graph::Edge' is a specialization of 'Typed'.
+'graph::Typed' is a specialization of 'Named'.
+'graph::Vertex' is a specialization of 'GraphElement'.
+'graph::Vertex' (role 'SourceVertex', cardinality 0..*) is associated with 'graph::Edge' (role 'Edge6', cardinality 0..*).
+'graph::Edge' (role 'ingoingEdges', cardinality 0..*) is associated with 'graph::Vertex' (role 'Vertex16', cardinality 0..*).
+'graph::Label' (role 'Label12', cardinality 0..*) is associated with 'graph::Edge' (role 'edge', cardinality 0..*).
+'graph::Edge' (role 'outgoingEdges', cardinality 0..*) is associated with 'graph::Vertex' (role 'Vertex14', cardinality 0..*).
+'graph::Label' (role 'label23', cardinality 0..*) is associated with 'graph::Entry' (role 'Entry', cardinality 0..*).
+'graph::Edge' (role 'edges', cardinality 0..*) is associated with 'graph::Graph' (role 'Graph10', cardinality 0..*).
+'graph::Graph' (role 'graph2', cardinality 0..*) is associated with 'graph::Vertex' (role 'Vertex', cardinality 0..*).
+'graph::Label' (role 'Label25', cardinality 0..*) is associated with 'graph::Entry' (role 'entries', cardinality 0..*).
+'graph::Vertex' (role 'vertices', cardinality 0..*) is associated with 'graph::Graph' (role 'Graph', cardinality 0..*).
+'graph::Label' (role 'label', cardinality 0..*) is associated with 'graph::Edge' (role 'Edge18', cardinality 0..*).
+'graph::Vertex' (role 'targetVertex', cardinality 0..*) is associated with 'graph::Edge' (role 'Edge8', cardinality 0..*).
+'graph::Edge' (role 'Edge', cardinality 0..*) is associated with 'graph::Graph' (role 'graph', cardinality 0..*).
+'graph::Label' (role 'Label', cardinality 0..*) is associated with 'graph::Vertex' (role 'vertex', cardinality 0..*).
+'graph::Vertex' (role 'Vertex21', cardinality 0..*) is associated with 'graph::Label' (role 'label20', cardinality 0..*).

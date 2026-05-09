@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'petrinet::Arc' has no attributes.
+The class 'Arc' has no attributes.
+The class 'petrinet::Place' has no attributes.
+The class 'Element' has no attributes.
+The class 'petrinet::InputArc' has no attributes.
+The class 'Node' has no attributes.
+The class 'petrinet::Element' has the following attributes: 'name' of type str.
+The class 'petrinet::OutputArc' has no attributes.
+The class 'petrinet::NetworkSystem' has no attributes.
+The class 'petrinet::PetriNet' has the following attributes: 'name' of type str.
+The class 'petrinet::Transition' has the following attributes: 'minDelay' of type float; 'maxDelay' of type float.
+The class 'petrinet::Node' has no attributes.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Arc' is a specialization of 'Element'.
+'petrinet::Node' is a specialization of 'Element'.
+'petrinet::InputArc' is a specialization of 'Arc'.
+'petrinet::OutputArc' is a specialization of 'Arc'.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::InputArc' (role 'petrinet_InputArc12', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place13', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet2', cardinality 0..*) is associated with 'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet5', cardinality 0..*) is associated with 'petrinet::Arc' (role 'petrinet_Arc4', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place', cardinality 0..*) is associated with 'petrinet::OutputArc' (role 'petrinet_OutputArc8', cardinality 0..*).
+'petrinet::InputArc' (role 'petrinet_InputArc', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition10', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet15', cardinality 0..*) is associated with 'petrinet::NetworkSystem' (role 'petrinet_NetworkSystem', cardinality 0..*).
+'petrinet::Element' (role 'petrinet_Element', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*) is associated with 'petrinet::OutputArc' (role 'petrinet_OutputArc', cardinality 0..*).

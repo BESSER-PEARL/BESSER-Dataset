@@ -1,0 +1,104 @@
+The model has 41 class(es).
+The class 'imperativeoclcs::ListTypeCS' has no attributes.
+The class 'ElementCS' has no attributes.
+The class 'StatementCS' has no attributes.
+The class 'imperativeoclcs::DictLiteralExpCS' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'imperativeoclcs::Type' has no attributes.
+The class 'imperativeoclcs::InstantiationExpCS' has no attributes.
+The class 'imperativeoclcs::WhileExpCS' has no attributes.
+The class 'imperativeoclcs::QuitExpCS' has the following attributes: 'keyword' of type str.
+The class 'imperativeoclcs::ExceptCS' has no attributes.
+The class 'imperativeoclcs::ComputeExpCS' has no attributes.
+The class 'imperativeoclcs::VariableCS' has no attributes.
+The class 'imperativeoclcs::RaiseExpCS' has no attributes.
+The class 'TypedRefCS' has no attributes.
+The class 'imperativeoclcs::TypeCS' has no attributes.
+The class 'imperativeoclcs::StatementCS' has no attributes.
+The class 'imperativeoclcs::CollectionLiteralPartCS' has no attributes.
+The class 'imperativeoclcs::AssignStatementCS' has the following attributes: 'incremental' of type bool.
+The class 'imperativeoclcs::ExpCS' has no attributes.
+The class 'imperativeoclcs::SwitchAltCS' has the following attributes: 'keyword' of type str.
+The class 'imperativeoclcs::SwitchExpCS' has no attributes.
+The class 'imperativeoclcs::BlockExpCS' has no attributes.
+The class 'imperativeoclcs::TypedRefCS' has no attributes.
+The class 'imperativeoclcs::PrimitiveLiteralExpCS' has no attributes.
+The class 'imperativeoclcs::AssertExpCS' has the following attributes: 'severity' of type str.
+The class 'imperativeoclcs::ImperativeIterateExpCS' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'imperativeoclcs::ExpressionBlockCS' has no attributes.
+The class 'imperativeoclcs::ReturnExpCS' has no attributes.
+The class 'imperativeoclcs::ExpressionStatementCS' has no attributes.
+The class 'imperativeoclcs::DictLiteralPartCS' has no attributes.
+The class 'imperativeoclcs::DoExpCS' has no attributes.
+The class 'imperativeoclcs::VariableInitializationCS' has the following attributes: 'simpleNameCS' of type str; 'withResult' of type bool.
+The class 'imperativeoclcs::ListLiteralExpCS' has no attributes.
+The class 'imperativeoclcs::LogExpCS' has no attributes.
+The class 'imperativeoclcs::TryExpCS' has no attributes.
+The class 'imperativeoclcs::ForExpCS' has no attributes.
+The class 'ExpressionBlockCS' has no attributes.
+The class 'ImperativeLoopExpCS' has no attributes.
+The class 'imperativeoclcs::DictTypeCS' has no attributes.
+The class 'imperativeoclcs::ImperativeLoopExpCS' has no attributes.
+'imperativeoclcs::ExpressionBlockCS' is a specialization of 'ExpCS'.
+'imperativeoclcs::ForExpCS' is a specialization of 'ImperativeLoopExpCS'.
+'imperativeoclcs::DoExpCS' is a specialization of 'ExpressionBlockCS'.
+'imperativeoclcs::VariableInitializationCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::SwitchExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::LogExpCS' is a specialization of 'CallExpCS'.
+'imperativeoclcs::ImperativeIterateExpCS' is a specialization of 'ImperativeLoopExpCS'.
+'imperativeoclcs::ListLiteralExpCS' is a specialization of 'ExpCS'.
+'imperativeoclcs::StatementCS' is a specialization of 'ExpCS'.
+'imperativeoclcs::ExceptCS' is a specialization of 'ElementCS'.
+'imperativeoclcs::TryExpCS' is a specialization of 'ExpressionBlockCS'.
+'imperativeoclcs::ExpressionStatementCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::QuitExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::ReturnExpCS' is a specialization of 'ExpCS'.
+'imperativeoclcs::DictTypeCS' is a specialization of 'TypedRefCS'.
+'imperativeoclcs::ListTypeCS' is a specialization of 'TypedRefCS'.
+'imperativeoclcs::ImperativeLoopExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::DictLiteralExpCS' is a specialization of 'ExpCS'.
+'imperativeoclcs::AssignStatementCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::RaiseExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::AssertExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::ComputeExpCS' is a specialization of 'ExpressionBlockCS'.
+'imperativeoclcs::DictLiteralPartCS' is a specialization of 'ElementCS'.
+'imperativeoclcs::InstantiationExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::BlockExpCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::ImperativeLoopExpCS' is a specialization of 'CallExpCS'.
+'imperativeoclcs::WhileExpCS' is a specialization of 'ExpressionBlockCS'.
+'imperativeoclcs::SwitchAltCS' is a specialization of 'StatementCS'.
+'imperativeoclcs::TypedRefCS' (role 'imperativeoclcs_TypedRefCS19', cardinality 0..*) is associated with 'imperativeoclcs::DictTypeCS' (role 'imperativeoclcs_DictTypeCS18', cardinality 0..*).
+'imperativeoclcs::AssertExpCS' (role 'imperativeoclcs_AssertExpCS', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS46', cardinality 0..*) is associated with 'imperativeoclcs::QuitExpCS' (role 'imperativeoclcs_QuitExpCS', cardinality 0..*).
+'imperativeoclcs::WhileExpCS' (role 'imperativeoclcs_WhileExpCS', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS67', cardinality 0..*).
+'imperativeoclcs::ImperativeIterateExpCS' (role 'imperativeoclcs_ImperativeIterateExpCS', cardinality 0..*) is associated with 'imperativeoclcs::VariableCS' (role 'imperativeoclcs_VariableCS22', cardinality 0..*).
+'imperativeoclcs::ListLiteralExpCS' (role 'imperativeoclcs_ListLiteralExpCS', cardinality 0..*) is associated with 'imperativeoclcs::CollectionLiteralPartCS' (role 'imperativeoclcs_CollectionLiteralPartCS', cardinality 0..*).
+'imperativeoclcs::SwitchExpCS' (role 'imperativeoclcs_SwitchExpCS57', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS58', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS50', cardinality 0..*) is associated with 'imperativeoclcs::SwitchAltCS' (role 'imperativeoclcs_SwitchAltCS', cardinality 0..*).
+'imperativeoclcs::AssignStatementCS' (role 'imperativeoclcs_AssignStatementCS', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS4', cardinality 0..*).
+'imperativeoclcs::ListTypeCS' (role 'imperativeoclcs_ListTypeCS', cardinality 0..*) is associated with 'imperativeoclcs::TypedRefCS' (role 'imperativeoclcs_TypedRefCS40', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS62', cardinality 0..*) is associated with 'imperativeoclcs::VariableInitializationCS' (role 'imperativeoclcs_VariableInitializationCS', cardinality 0..*).
+'imperativeoclcs::DictLiteralExpCS' (role 'imperativeoclcs_DictLiteralExpCS', cardinality 0..*) is associated with 'imperativeoclcs::DictLiteralPartCS' (role 'imperativeoclcs_DictLiteralPartCS', cardinality 0..*).
+'imperativeoclcs::TypeCS' (role 'imperativeoclcs_TypeCS', cardinality 0..*) is associated with 'imperativeoclcs::InstantiationExpCS' (role 'imperativeoclcs_InstantiationExpCS', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS38', cardinality 0..*) is associated with 'imperativeoclcs::ExpressionStatementCS' (role 'imperativeoclcs_ExpressionStatementCS', cardinality 0..*).
+'imperativeoclcs::AssignStatementCS' (role 'imperativeoclcs_AssignStatementCS6', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS7', cardinality 0..*).
+'imperativeoclcs::TryExpCS' (role 'imperativeoclcs_TryExpCS', cardinality 0..*) is associated with 'imperativeoclcs::ExceptCS' (role 'imperativeoclcs_ExceptCS60', cardinality 0..*).
+'imperativeoclcs::VariableCS' (role 'imperativeoclcs_VariableCS', cardinality 0..*) is associated with 'imperativeoclcs::ComputeExpCS' (role 'imperativeoclcs_ComputeExpCS', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS53', cardinality 0..*) is associated with 'imperativeoclcs::SwitchAltCS' (role 'imperativeoclcs_SwitchAltCS52', cardinality 0..*).
+'imperativeoclcs::VariableInitializationCS' (role 'imperativeoclcs_VariableInitializationCS64', cardinality 0..*) is associated with 'imperativeoclcs::TypeCS' (role 'imperativeoclcs_TypeCS65', cardinality 0..*).
+'imperativeoclcs::BlockExpCS' (role 'imperativeoclcs_BlockExpCS', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS9', cardinality 0..*).
+'imperativeoclcs::ExceptCS' (role 'imperativeoclcs_ExceptCS33', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS34', cardinality 0..*).
+'imperativeoclcs::PrimitiveLiteralExpCS' (role 'imperativeoclcs_PrimitiveLiteralExpCS', cardinality 0..*) is associated with 'imperativeoclcs::DictLiteralPartCS' (role 'imperativeoclcs_DictLiteralPartCS12', cardinality 0..*).
+'imperativeoclcs::AssertExpCS' (role 'imperativeoclcs_AssertExpCS2', cardinality 0..*) is associated with 'imperativeoclcs::LogExpCS' (role 'imperativeoclcs_LogExpCS', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS36', cardinality 0..*) is associated with 'imperativeoclcs::ExpressionBlockCS' (role 'imperativeoclcs_ExpressionBlockCS', cardinality 0..*).
+'imperativeoclcs::SwitchExpCS' (role 'imperativeoclcs_SwitchExpCS', cardinality 0..*) is associated with 'imperativeoclcs::SwitchAltCS' (role 'imperativeoclcs_SwitchAltCS55', cardinality 0..*).
+'imperativeoclcs::LogExpCS' (role 'imperativeoclcs_LogExpCS43', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS44', cardinality 0..*).
+'imperativeoclcs::Type' (role 'imperativeoclcs_Type', cardinality 0..*) is associated with 'imperativeoclcs::ExceptCS' (role 'imperativeoclcs_ExceptCS', cardinality 0..*).
+'imperativeoclcs::VariableCS' (role 'imperativeoclcs_VariableCS70', cardinality 0..*) is associated with 'imperativeoclcs::WhileExpCS' (role 'imperativeoclcs_WhileExpCS69', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS30', cardinality 0..*) is associated with 'imperativeoclcs::DoExpCS' (role 'imperativeoclcs_DoExpCS', cardinality 0..*).
+'imperativeoclcs::ImperativeLoopExpCS' (role 'imperativeoclcs_ImperativeLoopExpCS', cardinality 0..*) is associated with 'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS24', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS48', cardinality 0..*) is associated with 'imperativeoclcs::ReturnExpCS' (role 'imperativeoclcs_ReturnExpCS', cardinality 0..*).
+'imperativeoclcs::DictTypeCS' (role 'imperativeoclcs_DictTypeCS', cardinality 0..*) is associated with 'imperativeoclcs::TypedRefCS' (role 'imperativeoclcs_TypedRefCS', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS28', cardinality 0..*) is associated with 'imperativeoclcs::InstantiationExpCS' (role 'imperativeoclcs_InstantiationExpCS27', cardinality 0..*).
+'imperativeoclcs::ExpCS' (role 'imperativeoclcs_ExpCS15', cardinality 0..*) is associated with 'imperativeoclcs::DictLiteralPartCS' (role 'imperativeoclcs_DictLiteralPartCS14', cardinality 0..*).

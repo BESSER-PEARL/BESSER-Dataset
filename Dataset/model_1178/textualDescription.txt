@@ -1,0 +1,352 @@
+The model has 149 class(es).
+The class 'OperatorCallExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::NotOpCallExp' has no attributes.
+The class 'OclInstanceModel' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclFeatureDefinition' has the following attributes: 'static' of type str.
+The class 'CollectionType' has no attributes.
+The class 'NumericExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::MapType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclMetamodel' has the following attributes: 'uri' of type str.
+The class 'QualityMetamodel::QMM::OCL::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'QualityMetamodel::QMM::OCL::SequenceExp' has no attributes.
+The class 'Value' has no attributes.
+The class 'TupleExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::IntOpCallExp' has no attributes.
+The class 'LambdaType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'QualityMetamodel::QMM::OCL::NavigationOrAttributeCall' has the following attributes: 'name' of type str.
+The class 'MapType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::SetExp' has no attributes.
+The class 'MapExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclType' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::QMM::OCL::Attribute' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclInstanceModel' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::QMM::OCL::Parameter' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::BagExp' has no attributes.
+The class 'OclModelElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::StaticPropertyCall' has no attributes.
+The class 'QualityMetamodel::TextValueType' has the following attributes: 'value' of type str.
+The class 'Iterator' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::PropertyCall' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::MapExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::IteratorExp' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::QMM::OCL::EqOpCallExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::LambdaType' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'ModuleElement' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::TupleType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::Iterator' has no attributes.
+The class 'OclFeature' has no attributes.
+The class 'QualityMetamodel::SingleValue' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::TuplePart' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclFeature' has the following attributes: 'eq' of type str.
+The class 'OclModel' has no attributes.
+The class 'QualityMetamodel::EnumerationMetric' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::CollectionItem' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OperatorCallExp' has the following attributes: 'operationName' of type str.
+The class 'QualityMetamodel::QMM::OCL::OclModelElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::MulOpCallExp' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'IfExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OrderedSetType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::BagType' has no attributes.
+The class 'QualityMetamodel::BooleanValueType' has the following attributes: 'value' of type str.
+The class 'QualityMetamodel::QMM::OCL::OperationCall' has the following attributes: 'operationName' of type str.
+The class 'Import' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclExpression' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::CollectionExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::SelfExp' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::IterateExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::CollectionPart' has no attributes.
+The class 'OclType' has no attributes.
+The class 'QualityMetamodel::RealValueType' has the following attributes: 'value' of type str.
+The class 'OclFeatureDefinition' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::VariableExp' has no attributes.
+The class 'QualityMetamodel::AggregatedValue' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::VariableDeclaration' has the following attributes: 'varName' of type str.
+The class 'VariableExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclModelElementExp' has the following attributes: 'name' of type str.
+The class 'StaticPropertyCallExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::LetExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclAnyType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::NamedElement' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::QMM::OCL::OclContextDefinition' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::LocatedElement' has the following attributes: 'column' of type str; 'charStart' of type str; 'line' of type str; 'charEnd' of type str.
+The class 'QualityMetamodel::QMM::OCL::ModuleElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::BooleanType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'IterateExp' has no attributes.
+The class 'CollectionExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::EnumLiteralExp' has the following attributes: 'name' of type str.
+The class 'OclExpression' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::CollectionType' has no attributes.
+The class 'CollectionPart' has no attributes.
+The class 'OperationCall' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::Primitive' has no attributes.
+The class 'QualityMetamodel::QualityModel' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::CollectionRange' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::BraceExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::RealType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OrderedSetExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::LambdaCallExp' has no attributes.
+The class 'QualityMetamodel::MetricProvider' has the following attributes: 'id' of type str; 'description' of type str; 'name' of type str.
+The class 'PropertyCallExp' has no attributes.
+The class 'MapElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::PropertyCallExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::NumericType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::CollectionOperationCall' has no attributes.
+The class 'StaticPropertyCall' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+The class 'QualityMetamodel::ValueType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::EnvExp' has no attributes.
+The class 'PropertyCall' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::OclModel' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::StaticPropertyCallExp' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::RelOpCallExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::StringType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::AddOpCallExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::SuperExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::IfExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::StaticOperationCall' has the following attributes: 'operationName' of type str.
+The class 'LocalVariable' has no attributes.
+The class 'TuplePart' has no attributes.
+The class 'QualityMetamodel::AggregatedValueMetric' has the following attributes: 'median' of type str; 'maximum' of type str; 'average' of type str; 'minimum' of type str; 'standardDeviation' of type str.
+The class 'QualityMetamodel::QMM::OCL::LoopExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::LocalVariable' has the following attributes: 'eq' of type str.
+The class 'QualityMetamodel::EnumerationItem' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::QMM::OCL::OclUndefinedExp' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::Import' has no attributes.
+The class 'TupleTypeAttribute' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::MapElement' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::IntegerType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::Module' has no attributes.
+The class 'QualityMetamodel::RangeValueType' has the following attributes: 'min' of type str; 'max' of type str.
+The class 'QualityMetamodel::QMM::OCL::NumericExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::SequenceType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::EnvType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::SetType' has no attributes.
+The class 'QualityMetamodel::QualityAttribute' has no attributes.
+The class 'OclMetamodel' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::TupleExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::TupleTypeAttribute' has the following attributes: 'name' of type str.
+The class 'Module' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'QualityMetamodel::Value' has the following attributes: 'description' of type str.
+The class 'QualityMetamodel::IntegerValueType' has the following attributes: 'value' of type str.
+The class 'TupleType' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::PrimitiveExp' has no attributes.
+The class 'QualityMetamodel::Operation' has the following attributes: 'body' of type str; 'name' of type str.
+The class 'OclContextDefinition' has no attributes.
+The class 'Operation' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'QualityMetamodel::QMM::OCL::Operation' has no attributes.
+'QualityMetamodel::SingleValue' is a specialization of 'Value'.
+'QualityMetamodel::QMM::OCL::Primitive' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::LambdaCallExp' is a specialization of 'VariableExp'.
+'QualityMetamodel::QMM::OCL::NumericExp' is a specialization of 'PrimitiveExp'.
+'QualityMetamodel::QMM::OCL::OperatorCallExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::OclModel' is a specialization of 'NamedElement'.
+'QualityMetamodel::TextValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::LocalVariable' is a specialization of 'VariableDeclaration'.
+'QualityMetamodel::RealValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::EnvType' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::Parameter' is a specialization of 'VariableDeclaration'.
+'QualityMetamodel::IntegerValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::StaticOperationCall' is a specialization of 'StaticPropertyCall'.
+'QualityMetamodel::QMM::OCL::AddOpCallExp' is a specialization of 'OperatorCallExp'.
+'QualityMetamodel::QMM::OCL::SetType' is a specialization of 'CollectionType'.
+'QualityMetamodel::QMM::OCL::StringType' is a specialization of 'Primitive'.
+'QualityMetamodel::QMM::OCL::OclModelElement' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::NamedElement' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::BooleanExp' is a specialization of 'PrimitiveExp'.
+'QualityMetamodel::QMM::OCL::CollectionOperationCall' is a specialization of 'OperationCall'.
+'QualityMetamodel::QMM::OCL::OclContextDefinition' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::TupleTypeAttribute' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::OclInstanceModel' is a specialization of 'OclModel'.
+'QualityMetamodel::QMM::OCL::LetExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::NavigationOrAttributeCall' is a specialization of 'PropertyCall'.
+'QualityMetamodel::QMM::OCL::IntOpCallExp' is a specialization of 'OperatorCallExp'.
+'QualityMetamodel::QMM::OCL::PropertyCall' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::CollectionRange' is a specialization of 'CollectionPart'.
+'QualityMetamodel::QMM::OCL::SequenceType' is a specialization of 'CollectionType'.
+'QualityMetamodel::QMM::OCL::StaticPropertyCallExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::IfExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::Module' is a specialization of 'NamedElement'.
+'QualityMetamodel::QMM::OCL::BagType' is a specialization of 'CollectionType'.
+'QualityMetamodel::QMM::OCL::MapType' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::IteratorExp' is a specialization of 'LoopExp'.
+'QualityMetamodel::QMM::OCL::RealType' is a specialization of 'NumericType'.
+'QualityMetamodel::QMM::OCL::MapExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::CollectionType' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::Import' is a specialization of 'NamedElement'.
+'QualityMetamodel::QMM::OCL::OclUndefinedExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::CollectionItem' is a specialization of 'CollectionPart'.
+'QualityMetamodel::RangeValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::CollectionExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::Operation' is a specialization of 'OclFeature'.
+'QualityMetamodel::QMM::OCL::NotOpCallExp' is a specialization of 'OperatorCallExp'.
+'QualityMetamodel::ValueType' is a specialization of 'VariableDeclaration'.
+'QualityMetamodel::QMM::OCL::EqOpCallExp' is a specialization of 'OperatorCallExp'.
+'QualityMetamodel::QMM::OCL::OclModelElementExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::OclFeatureDefinition' is a specialization of 'ModuleElement'.
+'QualityMetamodel::QMM::OCL::ModuleElement' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::PrimitiveExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::SuperExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::CollectionPart' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QualityModel' is a specialization of 'Module'.
+'QualityMetamodel::QMM::OCL::MapElement' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::PropertyCallExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::Attribute' is a specialization of 'OclFeature'.
+'QualityMetamodel::QMM::OCL::OclMetamodel' is a specialization of 'OclModel'.
+'QualityMetamodel::QMM::OCL::RelOpCallExp' is a specialization of 'OperatorCallExp'.
+'QualityMetamodel::QMM::OCL::Iterator' is a specialization of 'VariableDeclaration'.
+'QualityMetamodel::BooleanValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::OclExpression' is a specialization of 'LocatedElement'.
+'QualityMetamodel::Value' is a specialization of 'VariableDeclaration'.
+'QualityMetamodel::QMM::OCL::VariableExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::VariableDeclaration' is a specialization of 'LocatedElement'.
+'QualityMetamodel::EnumerationMetric' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::StringExp' is a specialization of 'PrimitiveExp'.
+'QualityMetamodel::QMM::OCL::OperationCall' is a specialization of 'PropertyCall'.
+'QualityMetamodel::QMM::OCL::TupleType' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall' is a specialization of 'StaticPropertyCall'.
+'QualityMetamodel::QMM::OCL::MulOpCallExp' is a specialization of 'OperatorCallExp'.
+'QualityMetamodel::QMM::OCL::StaticPropertyCall' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::NumericType' is a specialization of 'Primitive'.
+'QualityMetamodel::QMM::OCL::OclAnyType' is a specialization of 'OclType'.
+'QualityMetamodel::QMM::OCL::IntegerType' is a specialization of 'NumericType'.
+'QualityMetamodel::QMM::OCL::TuplePart' is a specialization of 'LocalVariable'.
+'QualityMetamodel::QMM::OCL::BagExp' is a specialization of 'CollectionExp'.
+'QualityMetamodel::QMM::OCL::IntegerExp' is a specialization of 'NumericExp'.
+'QualityMetamodel::QMM::OCL::RealExp' is a specialization of 'NumericExp'.
+'QualityMetamodel::QMM::OCL::SelfExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::BraceExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QualityAttribute' is a specialization of 'VariableDeclaration'.
+'QualityMetamodel::QMM::OCL::SetExp' is a specialization of 'CollectionExp'.
+'QualityMetamodel::QMM::OCL::OclType' is a specialization of 'LocatedElement'.
+'QualityMetamodel::QMM::OCL::BooleanType' is a specialization of 'Primitive'.
+'QualityMetamodel::QMM::OCL::EnumLiteralExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::AggregatedValueMetric' is a specialization of 'ValueType'.
+'QualityMetamodel::QMM::OCL::EnvExp' is a specialization of 'OclExpression'.
+'QualityMetamodel::QMM::OCL::OrderedSetType' is a specialization of 'CollectionType'.
+'QualityMetamodel::QMM::OCL::IterateExp' is a specialization of 'LoopExp'.
+'QualityMetamodel::QMM::OCL::SequenceExp' is a specialization of 'CollectionExp'.
+'QualityMetamodel::QMM::OCL::LambdaType' is a specialization of 'OclType'.
+'QualityMetamodel::AggregatedValue' is a specialization of 'Value'.
+'QualityMetamodel::QMM::OCL::LoopExp' is a specialization of 'PropertyCall'.
+'QualityMetamodel::QMM::OCL::OrderedSetExp' is a specialization of 'CollectionExp'.
+'QualityMetamodel::QMM::OCL::OclFeature' is a specialization of 'NamedElement'.
+'QualityMetamodel::QMM::OCL::TupleExp' is a specialization of 'OclExpression'.
+'CollectionType' (role 'CollectionType', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclType' (role 'elementType', cardinality 0..*).
+'OclType' (role 'OclType159', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::MapType' (role 'mapType', cardinality 0..*).
+'LoopExp' (role 'LoopExp117', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Iterator' (role 'iterators', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::TupleExp' (role 'tuple', cardinality 0..*) is associated with 'TuplePart' (role 'TuplePart', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::LetExp' (role 'letExp100', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression101', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclType' (role 'type138', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration139', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'source', cardinality 0..*) is associated with 'PropertyCallExp' (role 'PropertyCallExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression183', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Operation' (role 'owningOperation', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'in_', cardinality 0..*) is associated with 'LetExp' (role 'LetExp', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'body', cardinality 0..*) is associated with 'LoopExp' (role 'LoopExp', cardinality 0..*).
+'LocalVariable' (role 'LocalVariable98', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::LetExp' (role 'letExp', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::CollectionRange' (role 'QualityMetamodel_QMM_OCL_CollectionRange57', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression58', cardinality 0..*).
+'QualityMetamodel::Value' (role 'QualityMetamodel_Value9', cardinality 0..*) is associated with 'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute8', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::VariableExp' (role 'variableExp', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::TupleTypeAttribute' (role 'tupleTypeAttribute', cardinality 0..*) is associated with 'OclType' (role 'OclType151', cardinality 0..*).
+'OclMetamodel' (role 'OclMetamodel', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Module' (role 'QualityMetamodel_QMM_OCL_Module', cardinality 0..*).
+'OclType' (role 'OclType161', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::LambdaType' (role 'lambdaReturnType', cardinality 0..*).
+'ModuleElement' (role 'ModuleElement', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Module' (role 'module30', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::MapElement' (role 'QualityMetamodel_QMM_OCL_MapElement69', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression70', cardinality 0..*).
+'OclContextDefinition' (role 'OclContextDefinition', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclType' (role 'context_', cardinality 0..*).
+'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel6', cardinality 0..*) is associated with 'QualityMetamodel::Value' (role 'QualityMetamodel_Value', cardinality 0..*).
+'OclExpression' (role 'OclExpression85', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OperatorCallExp' (role 'QualityMetamodel_QMM_OCL_OperatorCallExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression124', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclType' (role 'type', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::ModuleElement' (role 'elements', cardinality 0..*) is associated with 'Module' (role 'Module', cardinality 0..*).
+'QualityMetamodel::Value' (role 'Value', cardinality 0..*) is associated with 'QualityMetamodel::ValueType' (role 'valueType', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclType' (role 'returnType', cardinality 0..*) is associated with 'Operation' (role 'Operation126', cardinality 0..*).
+'LocalVariable' (role 'LocalVariable', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclExpression' (role 'initExpression', cardinality 0..*).
+'QualityMetamodel::EnumerationMetric' (role 'QualityMetamodel_EnumerationMetric25', cardinality 0..*) is associated with 'QualityMetamodel::EnumerationItem' (role 'QualityMetamodel_EnumerationItem26', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::StaticPropertyCallExp' (role 'staticCallExp', cardinality 0..*) is associated with 'StaticPropertyCall' (role 'StaticPropertyCall', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclType' (role 'argumentTypes', cardinality 0..*) is associated with 'LambdaType' (role 'LambdaType143', cardinality 0..*).
+'OclExpression' (role 'OclExpression55', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::CollectionRange' (role 'QualityMetamodel_QMM_OCL_CollectionRange', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclMetamodel' (role 'metamodel', cardinality 0..*) is associated with 'OclInstanceModel' (role 'OclInstanceModel', cardinality 0..*).
+'OclModel' (role 'OclModel', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclModelElementExp' (role 'QualityMetamodel_QMM_OCL_OclModelElementExp', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::TupleTypeAttribute' (role 'attributes', cardinality 0..*) is associated with 'TupleType' (role 'TupleType', cardinality 0..*).
+'Module' (role 'Module33', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Import' (role 'imports', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::LocalVariable' (role 'variable', cardinality 0..*) is associated with 'LetExp' (role 'LetExp112', cardinality 0..*).
+'TupleTypeAttribute' (role 'TupleTypeAttribute', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclType' (role 'type136', cardinality 0..*).
+'QualityMetamodel::Operation' (role 'QualityMetamodel_Operation22', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'QualityMetamodel::AggregatedValue' (role 'QualityMetamodel_AggregatedValue', cardinality 0..*) is associated with 'QualityMetamodel::Operation' (role 'QualityMetamodel_Operation', cardinality 0..*).
+'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel2', cardinality 0..*) is associated with 'QualityMetamodel::ValueType' (role 'QualityMetamodel_ValueType', cardinality 0..*).
+'OclType' (role 'OclType72', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::StaticPropertyCallExp' (role 'staticPropertyCall', cardinality 0..*).
+'StaticPropertyCallExp' (role 'StaticPropertyCallExp146', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclType' (role 'source145', cardinality 0..*).
+'OperatorCallExp' (role 'OperatorCallExp', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclExpression' (role 'source50', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclFeatureDefinition' (role 'definition166', cardinality 0..*) is associated with 'OclContextDefinition' (role 'OclContextDefinition167', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::LambdaCallExp' (role 'QualityMetamodel_QMM_OCL_LambdaCallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression89', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclFeatureDefinition' (role 'definition', cardinality 0..*) is associated with 'OclFeature' (role 'OclFeature', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclType' (role 'keyType', cardinality 0..*) is associated with 'MapType' (role 'MapType133', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclContextDefinition' (role 'definitions', cardinality 0..*) is associated with 'OclType' (role 'OclType171', cardinality 0..*).
+'IfExp' (role 'IfExp', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclExpression' (role 'elseExpression', cardinality 0..*).
+'OclExpression' (role 'OclExpression114', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::LocalVariable' (role 'initializedVariable', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclExpression' (role 'body44', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::LocalVariable' (role 'result', cardinality 0..*) is associated with 'IterateExp' (role 'IterateExp', cardinality 0..*).
+'OclType' (role 'OclType163', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::LambdaType' (role 'lambdaArgType', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclType' (role 'type130', cardinality 0..*) is associated with 'Attribute' (role 'Attribute131', cardinality 0..*).
+'OclType' (role 'OclType157', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::MapType' (role 'mapType2', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::Attribute' (role 'attribute', cardinality 0..*) is associated with 'OclType' (role 'OclType177', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclType' (role 'valueType128', cardinality 0..*) is associated with 'MapType' (role 'MapType', cardinality 0..*).
+'QualityMetamodel::EnumerationItem' (role 'QualityMetamodel_EnumerationItem', cardinality 0..*) is associated with 'QualityMetamodel::EnumerationMetric' (role 'QualityMetamodel_EnumerationMetric', cardinality 0..*).
+'OclType' (role 'OclType181', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Operation' (role 'operation180', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::TupleType' (role 'tupleType', cardinality 0..*) is associated with 'TupleTypeAttribute' (role 'TupleTypeAttribute149', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::IfExp' (role 'ifExp3', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression107', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::PropertyCallExp' (role 'callExp', cardinality 0..*) is associated with 'PropertyCall' (role 'PropertyCall', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::IfExp' (role 'ifExp2', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression103', cardinality 0..*).
+'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel', cardinality 0..*) is associated with 'QualityMetamodel::MetricProvider' (role 'QualityMetamodel_MetricProvider', cardinality 0..*).
+'OclExpression' (role 'OclExpression67', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::MapElement' (role 'QualityMetamodel_QMM_OCL_MapElement', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::BraceExp' (role 'QualityMetamodel_QMM_OCL_BraceExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression91', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Operation' (role 'operation', cardinality 0..*).
+'OclExpression' (role 'OclExpression87', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OperatorCallExp' (role 'appliedOperator', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::PropertyCallExp' (role 'appliedProperty', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression79', cardinality 0..*).
+'OclType' (role 'OclType121', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::CollectionType' (role 'collectionTypes', cardinality 0..*).
+'OclFeatureDefinition' (role 'OclFeatureDefinition173', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclFeature' (role 'feature', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'arguments', cardinality 0..*) is associated with 'OperationCall' (role 'OperationCall', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'initExpression48', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'Import' (role 'Import', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Module' (role 'module', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::Attribute' (role 'owningAttribute', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression175', cardinality 0..*).
+'Operation' (role 'Operation119', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::Parameter' (role 'parameters', cardinality 0..*).
+'OclExpression' (role 'OclExpression60', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::CollectionItem' (role 'QualityMetamodel_QMM_OCL_CollectionItem', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::PropertyCall' (role 'calls', cardinality 0..*) is associated with 'PropertyCallExp' (role 'PropertyCallExp81', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclModelElement' (role 'elements154', cardinality 0..*) is associated with 'OclModel' (role 'OclModel155', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::TuplePart' (role 'tuplePart', cardinality 0..*) is associated with 'TupleExp' (role 'TupleExp', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::StaticPropertyCall' (role 'staticCall', cardinality 0..*) is associated with 'StaticPropertyCallExp' (role 'StaticPropertyCallExp', cardinality 0..*).
+'QualityMetamodel::Value' (role 'QualityMetamodel_Value20', cardinality 0..*) is associated with 'QualityMetamodel::Operation' (role 'QualityMetamodel_Operation19', cardinality 0..*).
+'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute', cardinality 0..*) is associated with 'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel4', cardinality 0..*).
+'OclType' (role 'OclType', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclExpression' (role 'oclExpression', cardinality 0..*).
+'OclExpression' (role 'OclExpression83', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OperationCall' (role 'parentOperation', cardinality 0..*).
+'MapExp' (role 'MapExp', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::MapElement' (role 'elements65', cardinality 0..*).
+'QualityMetamodel::MetricProvider' (role 'QualityMetamodel_MetricProvider16', cardinality 0..*) is associated with 'QualityMetamodel::SingleValue' (role 'QualityMetamodel_SingleValue', cardinality 0..*).
+'QualityMetamodel::ValueType' (role 'ValueType', cardinality 0..*) is associated with 'QualityMetamodel::Value' (role 'val', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclContextDefinition' (role 'context_169', cardinality 0..*) is associated with 'OclFeatureDefinition' (role 'OclFeatureDefinition', cardinality 0..*).
+'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute12', cardinality 0..*) is associated with 'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute10', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'thenExpression', cardinality 0..*) is associated with 'IfExp' (role 'IfExp42', cardinality 0..*).
+'LambdaType' (role 'LambdaType', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclType' (role 'returnType141', cardinality 0..*).
+'CollectionPart' (role 'CollectionPart', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::CollectionExp' (role 'collection', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::LoopExp' (role 'loopExpr', cardinality 0..*) is associated with 'Iterator' (role 'Iterator', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclExpression' (role 'condition', cardinality 0..*) is associated with 'IfExp' (role 'IfExp46', cardinality 0..*).
+'LocalVariable' (role 'LocalVariable96', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::IterateExp' (role 'baseExp', cardinality 0..*).
+'OclMetamodel' (role 'OclMetamodel188', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::OclInstanceModel' (role 'model187', cardinality 0..*).
+'VariableExp' (role 'VariableExp', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::VariableDeclaration' (role 'referredVariable', cardinality 0..*).
+'OclExpression' (role 'OclExpression105', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::IfExp' (role 'ifExp1', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::OclModel' (role 'model', cardinality 0..*) is associated with 'OclModelElement' (role 'OclModelElement', cardinality 0..*).
+'CollectionExp' (role 'CollectionExp', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::CollectionPart' (role 'parts', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::MapExp' (role 'map', cardinality 0..*) is associated with 'MapElement' (role 'MapElement', cardinality 0..*).
+'QualityMetamodel::QMM::OCL::StaticOperationCall' (role 'QualityMetamodel_QMM_OCL_StaticOperationCall', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression76', cardinality 0..*).
+'OclExpression' (role 'OclExpression93', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::LoopExp' (role 'loopExp', cardinality 0..*).
+'OclType' (role 'OclType109', cardinality 0..*) is associated with 'QualityMetamodel::QMM::OCL::VariableDeclaration' (role 'variableDeclaration', cardinality 0..*).

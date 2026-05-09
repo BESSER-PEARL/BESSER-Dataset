@@ -1,0 +1,115 @@
+The model has 47 class(es).
+The class 'AbstractDomainCS' has no attributes.
+The class 'qvtrelation::cst::ObjectTemplateCS' has no attributes.
+The class 'qvtrelation::cst::VarDeclarationCS' has no attributes.
+The class 'qvtrelation::cst::AbstractDomainCS' has no attributes.
+The class 'IdentifiedCS' has no attributes.
+The class 'cst::qvtrelation::EClassifier' has no attributes.
+The class 'qvtrelation::cst::UnitCS' has no attributes.
+The class 'cst::AbstractDomainCS' has no attributes.
+The class 'VarDeclarationCS' has no attributes.
+The class 'qvtrelation::cst::DomainCS' has the following attributes: 'enforce' of type bool; 'checkonly' of type bool; 'replace' of type bool.
+The class 'TransformationCS' has no attributes.
+The class 'qvtrelation::cst::DefaultValueCS' has no attributes.
+The class 'KeyDeclCS' has no attributes.
+The class 'qvtrelation::cst::WhereCS' has no attributes.
+The class 'qvtrelation::cst::TemplateVariableCS' has no attributes.
+The class 'PathNameCS' has no attributes.
+The class 'qvtrelation::cst::TransformationCS' has no attributes.
+The class 'OperationCallExpCS' has no attributes.
+The class 'qvtrelation::cst::PrimitiveTypeDomainCS' has no attributes.
+The class 'qvtrelation::cst::PropertyTemplateCS' has the following attributes: 'opposite' of type bool.
+The class 'cst::OCLExpressionCS' has no attributes.
+The class 'cst::TemplateVariableCS' has no attributes.
+The class 'cst::qvtrelation::EStructuralFeature' has no attributes.
+The class 'qvtrelation::cst::KeyDeclCS' has no attributes.
+The class 'UnitCS' has no attributes.
+The class 'qvtrelation::cst::TopLevelCS' has no attributes.
+The class 'cst::qvtrelation::EClass' has no attributes.
+The class 'IdentifierCS' has no attributes.
+The class 'qvtrelation::cst::CollectionTemplateCS' has no attributes.
+The class 'qvtrelation::cst::ModelDeclCS' has no attributes.
+The class 'RelationCS' has no attributes.
+The class 'qvtrelation::cst::WhenCS' has no attributes.
+The class 'qvtrelation::cst::ParamDeclarationCS' has no attributes.
+The class 'WhereCS' has no attributes.
+The class 'OCLExpressionCS' has no attributes.
+The class 'DefaultValueCS' has no attributes.
+The class 'CSTNode' has no attributes.
+The class 'qvtrelation::cst::RelationCS' has the following attributes: 'top' of type bool.
+The class 'TypeCS' has no attributes.
+The class 'PropertyTemplateCS' has no attributes.
+The class 'qvtrelation::cst::TemplateCS' has no attributes.
+The class 'ModelDeclCS' has no attributes.
+The class 'WhenCS' has no attributes.
+The class 'QueryCS' has no attributes.
+The class 'ParamDeclarationCS' has no attributes.
+The class 'qvtrelation::cst::QueryCS' has no attributes.
+The class 'TemplateCS' has no attributes.
+'qvtrelation::cst::AbstractDomainCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::KeyDeclCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::PropertyTemplateCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::UnitCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::TemplateCS' is a specialization of 'cst::OCLExpressionCS'.
+'qvtrelation::cst::PrimitiveTypeDomainCS' is a specialization of 'cst::TemplateVariableCS'.
+'qvtrelation::cst::QueryCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::WhenCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::WhereCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::VarDeclarationCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::TransformationCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::DomainCS' is a specialization of 'AbstractDomainCS'.
+'qvtrelation::cst::ObjectTemplateCS' is a specialization of 'TemplateCS'.
+'qvtrelation::cst::CollectionTemplateCS' is a specialization of 'TemplateCS'.
+'qvtrelation::cst::PrimitiveTypeDomainCS' is a specialization of 'cst::AbstractDomainCS'.
+'qvtrelation::cst::ParamDeclarationCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::DefaultValueCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::TemplateVariableCS' is a specialization of 'IdentifiedCS'.
+'qvtrelation::cst::TopLevelCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::ModelDeclCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::RelationCS' is a specialization of 'CSTNode'.
+'qvtrelation::cst::TemplateCS' is a specialization of 'cst::TemplateVariableCS'.
+'IdentifierCS' (role 'IdentifierCS', cardinality 0..*) is associated with 'qvtrelation::cst::CollectionTemplateCS' (role 'qvtrelation_cst_CollectionTemplateCS4', cardinality 0..*).
+'qvtrelation::cst::ModelDeclCS' (role 'qvtrelation_cst_ModelDeclCS', cardinality 0..*) is associated with 'IdentifierCS' (role 'IdentifierCS22', cardinality 0..*).
+'IdentifiedCS' (role 'IdentifiedCS20', cardinality 0..*) is associated with 'qvtrelation::cst::KeyDeclCS' (role 'qvtrelation_cst_KeyDeclCS19', cardinality 0..*).
+'cst::qvtrelation::EStructuralFeature' (role 'cst_qvtrelation_EStructuralFeature', cardinality 0..*) is associated with 'qvtrelation::cst::PropertyTemplateCS' (role 'qvtrelation_cst_PropertyTemplateCS39', cardinality 0..*).
+'qvtrelation::cst::WhenCS' (role 'qvtrelation_cst_WhenCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS91', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS10', cardinality 0..*) is associated with 'qvtrelation::cst::DomainCS' (role 'qvtrelation_cst_DomainCS', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS76', cardinality 0..*) is associated with 'qvtrelation::cst::TransformationCS' (role 'qvtrelation_cst_TransformationCS75', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS54', cardinality 0..*) is associated with 'qvtrelation::cst::RelationCS' (role 'qvtrelation_cst_RelationCS53', cardinality 0..*).
+'TransformationCS' (role 'TransformationCS', cardinality 0..*) is associated with 'qvtrelation::cst::TopLevelCS' (role 'qvtrelation_cst_TopLevelCS69', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS25', cardinality 0..*) is associated with 'qvtrelation::cst::ModelDeclCS' (role 'qvtrelation_cst_ModelDeclCS24', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS93', cardinality 0..*) is associated with 'qvtrelation::cst::WhereCS' (role 'qvtrelation_cst_WhereCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS46', cardinality 0..*) is associated with 'qvtrelation::cst::QueryCS' (role 'qvtrelation_cst_QueryCS45', cardinality 0..*).
+'WhenCS' (role 'WhenCS', cardinality 0..*) is associated with 'qvtrelation::cst::RelationCS' (role 'qvtrelation_cst_RelationCS60', cardinality 0..*).
+'TemplateCS' (role 'TemplateCS', cardinality 0..*) is associated with 'qvtrelation::cst::DomainCS' (role 'qvtrelation_cst_DomainCS12', cardinality 0..*).
+'qvtrelation::cst::TransformationCS' (role 'qvtrelation_cst_TransformationCS72', cardinality 0..*) is associated with 'IdentifierCS' (role 'IdentifierCS73', cardinality 0..*).
+'qvtrelation::cst::RelationCS' (role 'qvtrelation_cst_RelationCS56', cardinality 0..*) is associated with 'VarDeclarationCS' (role 'VarDeclarationCS', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS84', cardinality 0..*) is associated with 'qvtrelation::cst::UnitCS' (role 'qvtrelation_cst_UnitCS', cardinality 0..*).
+'PropertyTemplateCS' (role 'PropertyTemplateCS', cardinality 0..*) is associated with 'qvtrelation::cst::ObjectTemplateCS' (role 'qvtrelation_cst_ObjectTemplateCS', cardinality 0..*).
+'QueryCS' (role 'QueryCS', cardinality 0..*) is associated with 'qvtrelation::cst::TransformationCS' (role 'qvtrelation_cst_TransformationCS80', cardinality 0..*).
+'qvtrelation::cst::DomainCS' (role 'qvtrelation_cst_DomainCS14', cardinality 0..*) is associated with 'DefaultValueCS' (role 'DefaultValueCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS64', cardinality 0..*) is associated with 'qvtrelation::cst::TemplateCS' (role 'qvtrelation_cst_TemplateCS', cardinality 0..*).
+'qvtrelation::cst::TransformationCS' (role 'qvtrelation_cst_TransformationCS78', cardinality 0..*) is associated with 'KeyDeclCS' (role 'KeyDeclCS', cardinality 0..*).
+'qvtrelation::cst::VarDeclarationCS' (role 'qvtrelation_cst_VarDeclarationCS88', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS89', cardinality 0..*).
+'IdentifiedCS' (role 'IdentifiedCS', cardinality 0..*) is associated with 'qvtrelation::cst::CollectionTemplateCS' (role 'qvtrelation_cst_CollectionTemplateCS', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS30', cardinality 0..*) is associated with 'qvtrelation::cst::ParamDeclarationCS' (role 'qvtrelation_cst_ParamDeclarationCS', cardinality 0..*).
+'qvtrelation::cst::QueryCS' (role 'qvtrelation_cst_QueryCS43', cardinality 0..*) is associated with 'ParamDeclarationCS' (role 'ParamDeclarationCS', cardinality 0..*).
+'qvtrelation::cst::TopLevelCS' (role 'qvtrelation_cst_TopLevelCS', cardinality 0..*) is associated with 'UnitCS' (role 'UnitCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS37', cardinality 0..*) is associated with 'qvtrelation::cst::PropertyTemplateCS' (role 'qvtrelation_cst_PropertyTemplateCS36', cardinality 0..*).
+'OperationCallExpCS' (role 'OperationCallExpCS', cardinality 0..*) is associated with 'qvtrelation::cst::DomainCS' (role 'qvtrelation_cst_DomainCS16', cardinality 0..*).
+'qvtrelation::cst::RelationCS' (role 'qvtrelation_cst_RelationCS', cardinality 0..*) is associated with 'IdentifierCS' (role 'IdentifierCS51', cardinality 0..*).
+'qvtrelation::cst::PropertyTemplateCS' (role 'qvtrelation_cst_PropertyTemplateCS', cardinality 0..*) is associated with 'IdentifiedCS' (role 'IdentifiedCS34', cardinality 0..*).
+'qvtrelation::cst::VarDeclarationCS' (role 'qvtrelation_cst_VarDeclarationCS', cardinality 0..*) is associated with 'IdentifierCS' (role 'IdentifierCS86', cardinality 0..*).
+'qvtrelation::cst::TransformationCS' (role 'qvtrelation_cst_TransformationCS', cardinality 0..*) is associated with 'ModelDeclCS' (role 'ModelDeclCS', cardinality 0..*).
+'qvtrelation::cst::DefaultValueCS' (role 'qvtrelation_cst_DefaultValueCS', cardinality 0..*) is associated with 'IdentifierCS' (role 'IdentifierCS6', cardinality 0..*).
+'qvtrelation::cst::ParamDeclarationCS' (role 'qvtrelation_cst_ParamDeclarationCS32', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS', cardinality 0..*) is associated with 'qvtrelation::cst::DefaultValueCS' (role 'qvtrelation_cst_DefaultValueCS8', cardinality 0..*).
+'cst::qvtrelation::EClassifier' (role 'cst_qvtrelation_EClassifier', cardinality 0..*) is associated with 'qvtrelation::cst::CollectionTemplateCS' (role 'qvtrelation_cst_CollectionTemplateCS2', cardinality 0..*).
+'qvtrelation::cst::QueryCS' (role 'qvtrelation_cst_QueryCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS41', cardinality 0..*).
+'AbstractDomainCS' (role 'AbstractDomainCS', cardinality 0..*) is associated with 'qvtrelation::cst::RelationCS' (role 'qvtrelation_cst_RelationCS58', cardinality 0..*).
+'TypeCS' (role 'TypeCS66', cardinality 0..*) is associated with 'qvtrelation::cst::TemplateVariableCS' (role 'qvtrelation_cst_TemplateVariableCS', cardinality 0..*).
+'qvtrelation::cst::KeyDeclCS' (role 'qvtrelation_cst_KeyDeclCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS', cardinality 0..*).
+'cst::qvtrelation::EClass' (role 'cst_qvtrelation_EClass', cardinality 0..*) is associated with 'qvtrelation::cst::ObjectTemplateCS' (role 'qvtrelation_cst_ObjectTemplateCS28', cardinality 0..*).
+'qvtrelation::cst::RelationCS' (role 'qvtrelation_cst_RelationCS62', cardinality 0..*) is associated with 'WhereCS' (role 'WhereCS', cardinality 0..*).
+'RelationCS' (role 'RelationCS', cardinality 0..*) is associated with 'qvtrelation::cst::TransformationCS' (role 'qvtrelation_cst_TransformationCS82', cardinality 0..*).
+'qvtrelation::cst::QueryCS' (role 'qvtrelation_cst_QueryCS48', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS49', cardinality 0..*).

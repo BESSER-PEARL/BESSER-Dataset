@@ -1,0 +1,36 @@
+The model has 14 class(es).
+The class 'yyk::Base' has the following attributes: 'id' of type int.
+The class 'yyk::NamedElement' has the following attributes: 'name' of type str.
+The class 'yyk::Relation' has the following attributes: 'since' of type str.
+The class 'Baz' has no attributes.
+The class 'yyk::Baz' has the following attributes: 'zig' of type str.
+The class 'yyk::Bar' has the following attributes: 'id' of type str.
+The class 'yyk::Foo' has the following attributes: 'id' of type str.
+The class 'yyk::Zing' has no attributes.
+The class 'yyk::Alias' has the following attributes: 'id' of type str.
+The class 'yyk::Rel' has the following attributes: 'id' of type str.
+The class 'yyk::Boul' has the following attributes: 'hi' of type str.
+The class 'yyk::Output' has the following attributes: 'id' of type str.
+The class 'yyk::Bouz' has the following attributes: 'bil' of type str.
+The class 'NamedElement' has no attributes.
+'yyk::Base' is a specialization of 'NamedElement'.
+'yyk::Relation' is a specialization of 'NamedElement'.
+'yyk::Baz' is a specialization of 'NamedElement'.
+'yyk::Boul' is a specialization of 'Baz'.
+'yyk::Zing' is a specialization of 'NamedElement'.
+'yyk::Bouz' is a specialization of 'Baz'.
+'yyk::Base' (role 'Base', cardinality 0..*) is associated with 'yyk::Relation' (role 'relations', cardinality 0..*).
+'yyk::NamedElement' (role 'yyk_NamedElement22', cardinality 0..*) is associated with 'yyk::Rel' (role 'yyk_Rel21', cardinality 0..*).
+'yyk::NamedElement' (role 'yyk_NamedElement8', cardinality 0..*) is associated with 'yyk::Bar' (role 'yyk_Bar', cardinality 0..*).
+'yyk::Relation' (role 'yyk_Relation14', cardinality 0..*) is associated with 'yyk::Relation' (role 'yyk_Relation16', cardinality 0..*).
+'yyk::Output' (role 'yyk_Output', cardinality 0..*) is associated with 'yyk::Base' (role 'yyk_Base3', cardinality 0..*).
+'yyk::Relation' (role 'yyk_Relation', cardinality 0..*) is associated with 'yyk::NamedElement' (role 'yyk_NamedElement13', cardinality 0..*).
+'yyk::Bouz' (role 'yyk_Bouz', cardinality 0..*) is associated with 'yyk::Zing' (role 'yyk_Zing29', cardinality 0..*).
+'yyk::Alias' (role 'yyk_Alias', cardinality 0..*) is associated with 'yyk::NamedElement' (role 'yyk_NamedElement', cardinality 0..*).
+'yyk::Rel' (role 'yyk_Rel24', cardinality 0..*) is associated with 'yyk::Relation' (role 'yyk_Relation25', cardinality 0..*).
+'yyk::Relation' (role 'Relation', cardinality 0..*) is associated with 'yyk::Base' (role 'fromThing', cardinality 0..*).
+'yyk::NamedElement' (role 'yyk_NamedElement10', cardinality 0..*) is associated with 'yyk::Rel' (role 'yyk_Rel', cardinality 0..*).
+'yyk::Foo' (role 'yyk_Foo', cardinality 0..*) is associated with 'yyk::Base' (role 'yyk_Base', cardinality 0..*).
+'yyk::Output' (role 'yyk_Output19', cardinality 0..*) is associated with 'yyk::Bar' (role 'yyk_Bar18', cardinality 0..*).
+'yyk::Baz' (role 'yyk_Baz', cardinality 0..*) is associated with 'yyk::Base' (role 'yyk_Base5', cardinality 0..*).
+'yyk::Zing' (role 'yyk_Zing', cardinality 0..*) is associated with 'yyk::Baz' (role 'yyk_Baz27', cardinality 0..*).

@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'family::Family' has the following attributes: 'mother' of type str; 'children' of type str; 'father' of type str.
+The class 'family::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+'family::Family' is a specialization of 'NamedElement'.

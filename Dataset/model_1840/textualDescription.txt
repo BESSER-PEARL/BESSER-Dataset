@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'BookStorePackage::Book' has the following attributes: 'name' of type str; 'isbn' of type int.
+The class 'BookStorePackage::BookStore' has the following attributes: 'owner' of type str; 'location' of type str.
+'BookStorePackage::Book' (role 'BookStorePackage_Book', cardinality 0..*) is associated with 'BookStorePackage::BookStore' (role 'BookStorePackage_BookStore', cardinality 0..*).

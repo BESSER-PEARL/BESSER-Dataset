@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'NHSM::Transition' has no attributes.
+The class 'NHSM::StateMachine' has no attributes.
+The class 'NHSM::State' has the following attributes: 'name' of type str.
+'NHSM::State' (role 'NHSM_State8', cardinality 0..*) is associated with 'NHSM::Transition' (role 'NHSM_Transition7', cardinality 0..*).
+'NHSM::State' (role 'NHSM_State5', cardinality 0..*) is associated with 'NHSM::Transition' (role 'NHSM_Transition4', cardinality 0..*).
+'NHSM::StateMachine' (role 'NHSM_StateMachine2', cardinality 0..*) is associated with 'NHSM::Transition' (role 'NHSM_Transition', cardinality 0..*).
+'NHSM::State' (role 'NHSM_State', cardinality 0..*) is associated with 'NHSM::StateMachine' (role 'NHSM_StateMachine', cardinality 0..*).

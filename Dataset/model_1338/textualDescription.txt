@@ -1,0 +1,161 @@
+The model has 69 class(es).
+The class 'LiteralExpCS' has no attributes.
+The class 'umlclassdiagram::PrimaryExpCS' has no attributes.
+The class 'umlclassdiagram::NavigationPathElementCS' has no attributes.
+The class 'umlclassdiagram::RootCS' has no attributes.
+The class 'LogicExpCS' has no attributes.
+The class 'umlclassdiagram::NavigationPathCS' has no attributes.
+The class 'umlclassdiagram::ClassCS' has the following attributes: 'name' of type str.
+The class 'umlclassdiagram::IteratorVarCS' has the following attributes: 'itName' of type str.
+The class 'umlclassdiagram::RoundedBracketClauseCS' has no attributes.
+The class 'umlclassdiagram::PathCS' has no attributes.
+The class 'umlclassdiagram::NavigationPathNameCS' has no attributes.
+The class 'umlclassdiagram::Modifier' has the following attributes: 'visibility' of type str; 'scope' of type str.
+The class 'NavigationExpCS' has no attributes.
+The class 'umlclassdiagram::OperationCS' has the following attributes: 'name' of type str.
+The class 'NavigationPathCS' has no attributes.
+The class 'umlclassdiagram::Operator' has the following attributes: 'operator' of type str.
+The class 'Feature' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'Relation' has no attributes.
+The class 'PrimaryExpCS' has no attributes.
+The class 'umlclassdiagram::ExistsExpCS' has no attributes.
+The class 'umlclassdiagram::AssociationClass' has no attributes.
+The class 'umlclassdiagram::PropertyCS' has the following attributes: 'name' of type str.
+The class 'Modifier' has no attributes.
+The class 'umlclassdiagram::Relation' has the following attributes: 'nsrc' of type str; 'derived' of type bool; 'ntar' of type str.
+The class 'umlclassdiagram::PathElementCS' has no attributes.
+The class 'umlclassdiagram::Dependency' has no attributes.
+The class 'umlclassdiagram::BooleanExpCS' has the following attributes: 'boolSymbol' of type bool.
+The class 'umlclassdiagram::Classifier' has the following attributes: 'derived' of type bool; 'abstract' of type bool.
+The class 'umlclassdiagram::ConstraintCS' has no attributes.
+The class 'umlclassdiagram::Parameter' has no attributes.
+The class 'umlclassdiagram::InvariantCS' has no attributes.
+The class 'umlclassdiagram::ClassDiagram' has no attributes.
+The class 'umlclassdiagram::AccVarCS' has the following attributes: 'accVarName' of type str.
+The class 'umlclassdiagram::LiteralExpCS' has no attributes.
+The class 'umlclassdiagram::ParameterCS' has the following attributes: 'name' of type str.
+The class 'umlclassdiagram::Attribute' has the following attributes: 'derived' of type bool.
+The class 'umlclassdiagram::PrimitiveElement' has the following attributes: 'type' of type str.
+The class 'umlclassdiagram::LogicExpCS' has the following attributes: 'op' of type str.
+The class 'umlclassdiagram::NavigationExpCS' has no attributes.
+The class 'umlclassdiagram::PathVariableCS' has the following attributes: 'varName' of type str.
+The class 'umlclassdiagram::StringLiteralExpCS' has the following attributes: 'stringSymbol' of type str.
+The class 'LoopExpCS' has no attributes.
+The class 'umlclassdiagram::Feature' has the following attributes: 'name' of type str; 'visibility' of type str; 'scope' of type str.
+The class 'umlclassdiagram::PathNameCS' has no attributes.
+The class 'umlclassdiagram::ExpCS' has no attributes.
+The class 'umlclassdiagram::ForAllExpCS' has no attributes.
+The class 'umlclassdiagram::IterateExpCS' has no attributes.
+The class 'umlclassdiagram::Composition' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'BooleanLiteralExpCS' has no attributes.
+The class 'umlclassdiagram::NavigationPathVariableCS' has the following attributes: 'varName' of type str.
+The class 'PathCS' has no attributes.
+The class 'umlclassdiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'umlclassdiagram::PackageCS' has the following attributes: 'name' of type str.
+The class 'umlclassdiagram::LoopExpCS' has the following attributes: 'logicOp' of type str.
+The class 'umlclassdiagram::Constraint' has the following attributes: 'id' of type str.
+The class 'umlclassdiagram::IntLiteralExpCS' has the following attributes: 'intSymbol' of type int.
+The class 'umlclassdiagram::CollectExpCS' has no attributes.
+The class 'umlclassdiagram::NameExpCS' has no attributes.
+The class 'umlclassdiagram::BooleanLiteralExpCS' has no attributes.
+The class 'umlclassdiagram::NavigationNameExpCS' has no attributes.
+The class 'umlclassdiagram::Operation' has no attributes.
+The class 'umlclassdiagram::Class' has no attributes.
+The class 'umlclassdiagram::CallExpCS' has no attributes.
+The class 'umlclassdiagram::Association' has no attributes.
+The class 'umlclassdiagram::Aggregation' has no attributes.
+The enumeration 'VisbilityType' has the following literals: 'public', 'package', 'protected', 'private'.
+The enumeration 'PrimitiveDataType' has the following literals: 'Integer', 'Double', 'String', 'Boolean', 'Date'.
+The enumeration 'OperatorType' has the following literals: 'module', 'gte', 'lte', 'negative', 'gt', 'equals', 'multiply', 'lt', 'or_', 'add', 'divide', 'not_', 'subtract', 'and_', 'distinct'.
+The enumeration 'ScopeType' has the following literals: 'instance', 'classifier'.
+'umlclassdiagram::ForAllExpCS' is a specialization of 'LoopExpCS'.
+'umlclassdiagram::Classifier' is a specialization of 'Modifier'.
+'umlclassdiagram::ExistsExpCS' is a specialization of 'LoopExpCS'.
+'umlclassdiagram::AssociationClass' is a specialization of 'Classifier'.
+'umlclassdiagram::Composition' is a specialization of 'Relation'.
+'umlclassdiagram::PrimaryExpCS' is a specialization of 'CallExpCS'.
+'umlclassdiagram::Attribute' is a specialization of 'Feature'.
+'umlclassdiagram::PathElementCS' is a specialization of 'PathCS'.
+'umlclassdiagram::Parameter' is a specialization of 'NamedElement'.
+'umlclassdiagram::NameExpCS' is a specialization of 'NavigationExpCS'.
+'umlclassdiagram::LogicExpCS' is a specialization of 'ExpCS'.
+'umlclassdiagram::PrimitiveElement' is a specialization of 'NamedElement'.
+'umlclassdiagram::IterateExpCS' is a specialization of 'LoopExpCS'.
+'umlclassdiagram::Dependency' is a specialization of 'Relation'.
+'umlclassdiagram::BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+'umlclassdiagram::BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'umlclassdiagram::NavigationNameExpCS' is a specialization of 'NavigationExpCS'.
+'umlclassdiagram::Operation' is a specialization of 'Feature'.
+'umlclassdiagram::Aggregation' is a specialization of 'Relation'.
+'umlclassdiagram::LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'umlclassdiagram::NavigationExpCS' is a specialization of 'PrimaryExpCS'.
+'umlclassdiagram::PathVariableCS' is a specialization of 'PathCS'.
+'umlclassdiagram::LoopExpCS' is a specialization of 'NavigationExpCS'.
+'umlclassdiagram::Modifier' is a specialization of 'NamedElement'.
+'umlclassdiagram::Class' is a specialization of 'Classifier'.
+'umlclassdiagram::CollectExpCS' is a specialization of 'LoopExpCS'.
+'umlclassdiagram::NavigationPathVariableCS' is a specialization of 'NavigationPathCS'.
+'umlclassdiagram::StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'umlclassdiagram::Association' is a specialization of 'Relation'.
+'umlclassdiagram::Relation' is a specialization of 'Modifier'.
+'umlclassdiagram::CallExpCS' is a specialization of 'LogicExpCS'.
+'umlclassdiagram::NavigationPathElementCS' is a specialization of 'NavigationPathCS'.
+'umlclassdiagram::IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'umlclassdiagram::AccVarCS' (role 'umlclassdiagram_AccVarCS60', cardinality 0..*) is associated with 'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS61', cardinality 0..*).
+'umlclassdiagram::RootCS' (role 'umlclassdiagram_RootCS110', cardinality 0..*) is associated with 'umlclassdiagram::Constraint' (role 'umlclassdiagram_Constraint109', cardinality 0..*).
+'umlclassdiagram::Parameter' (role 'umlclassdiagram_Parameter', cardinality 0..*) is associated with 'umlclassdiagram::NamedElement' (role 'umlclassdiagram_NamedElement', cardinality 0..*).
+'umlclassdiagram::Classifier' (role 'umlclassdiagram_Classifier101', cardinality 0..*) is associated with 'umlclassdiagram::Class' (role 'umlclassdiagram_Class', cardinality 0..*).
+'umlclassdiagram::Classifier' (role 'umlclassdiagram_Classifier120', cardinality 0..*) is associated with 'umlclassdiagram::Relation' (role 'umlclassdiagram_Relation119', cardinality 0..*).
+'umlclassdiagram::Operator' (role 'umlclassdiagram_Operator', cardinality 0..*) is associated with 'umlclassdiagram::Operation' (role 'umlclassdiagram_Operation114', cardinality 0..*).
+'umlclassdiagram::RoundedBracketClauseCS' (role 'umlclassdiagram_RoundedBracketClauseCS66', cardinality 0..*) is associated with 'umlclassdiagram::ExpCS' (role 'umlclassdiagram_ExpCS67', cardinality 0..*).
+'umlclassdiagram::ParameterCS' (role 'umlclassdiagram_ParameterCS25', cardinality 0..*) is associated with 'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS26', cardinality 0..*).
+'umlclassdiagram::NameExpCS' (role 'umlclassdiagram_NameExpCS', cardinality 0..*) is associated with 'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS45', cardinality 0..*).
+'umlclassdiagram::NavigationNameExpCS' (role 'umlclassdiagram_NavigationNameExpCS78', cardinality 0..*) is associated with 'umlclassdiagram::CallExpCS' (role 'umlclassdiagram_CallExpCS79', cardinality 0..*).
+'umlclassdiagram::CallExpCS' (role 'umlclassdiagram_CallExpCS', cardinality 0..*) is associated with 'umlclassdiagram::LogicExpCS' (role 'umlclassdiagram_LogicExpCS38', cardinality 0..*).
+'umlclassdiagram::ForAllExpCS' (role 'umlclassdiagram_ForAllExpCS', cardinality 0..*) is associated with 'umlclassdiagram::AccVarCS' (role 'umlclassdiagram_AccVarCS85', cardinality 0..*).
+'umlclassdiagram::PathElementCS' (role 'umlclassdiagram_PathElementCS', cardinality 0..*) is associated with 'umlclassdiagram::Feature' (role 'umlclassdiagram_Feature', cardinality 0..*).
+'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS16', cardinality 0..*) is associated with 'umlclassdiagram::PropertyCS' (role 'umlclassdiagram_PropertyCS15', cardinality 0..*).
+'umlclassdiagram::PrimitiveElement' (role 'umlclassdiagram_PrimitiveElement', cardinality 0..*) is associated with 'umlclassdiagram::ClassDiagram' (role 'umlclassdiagram_ClassDiagram90', cardinality 0..*).
+'umlclassdiagram::AccVarCS' (role 'umlclassdiagram_AccVarCS', cardinality 0..*) is associated with 'umlclassdiagram::IterateExpCS' (role 'umlclassdiagram_IterateExpCS', cardinality 0..*).
+'umlclassdiagram::NameExpCS' (role 'umlclassdiagram_NameExpCS47', cardinality 0..*) is associated with 'umlclassdiagram::RoundedBracketClauseCS' (role 'umlclassdiagram_RoundedBracketClauseCS', cardinality 0..*).
+'umlclassdiagram::Class' (role 'umlclassdiagram_Class107', cardinality 0..*) is associated with 'umlclassdiagram::Constraint' (role 'umlclassdiagram_Constraint106', cardinality 0..*).
+'umlclassdiagram::CallExpCS' (role 'umlclassdiagram_CallExpCS41', cardinality 0..*) is associated with 'umlclassdiagram::CallExpCS' (role 'umlclassdiagram_CallExpCS39', cardinality 0..*).
+'umlclassdiagram::PropertyCS' (role 'umlclassdiagram_PropertyCS', cardinality 0..*) is associated with 'umlclassdiagram::ClassCS' (role 'umlclassdiagram_ClassCS11', cardinality 0..*).
+'umlclassdiagram::ExpCS' (role 'umlclassdiagram_ExpCS', cardinality 0..*) is associated with 'umlclassdiagram::OperationCS' (role 'umlclassdiagram_OperationCS23', cardinality 0..*).
+'umlclassdiagram::ClassCS' (role 'umlclassdiagram_ClassCS', cardinality 0..*) is associated with 'umlclassdiagram::PackageCS' (role 'umlclassdiagram_PackageCS7', cardinality 0..*).
+'umlclassdiagram::LoopExpCS' (role 'umlclassdiagram_LoopExpCS', cardinality 0..*) is associated with 'umlclassdiagram::IteratorVarCS' (role 'umlclassdiagram_IteratorVarCS', cardinality 0..*).
+'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS69', cardinality 0..*) is associated with 'umlclassdiagram::PathCS' (role 'umlclassdiagram_PathCS', cardinality 0..*).
+'umlclassdiagram::ExpCS' (role 'umlclassdiagram_ExpCS34', cardinality 0..*) is associated with 'umlclassdiagram::InvariantCS' (role 'umlclassdiagram_InvariantCS33', cardinality 0..*).
+'umlclassdiagram::Relation' (role 'umlclassdiagram_Relation116', cardinality 0..*) is associated with 'umlclassdiagram::Classifier' (role 'umlclassdiagram_Classifier117', cardinality 0..*).
+'umlclassdiagram::RoundedBracketClauseCS' (role 'umlclassdiagram_RoundedBracketClauseCS76', cardinality 0..*) is associated with 'umlclassdiagram::NavigationNameExpCS' (role 'umlclassdiagram_NavigationNameExpCS75', cardinality 0..*).
+'umlclassdiagram::NameExpCS' (role 'umlclassdiagram_NameExpCS49', cardinality 0..*) is associated with 'umlclassdiagram::CallExpCS' (role 'umlclassdiagram_CallExpCS50', cardinality 0..*).
+'umlclassdiagram::ExistsExpCS' (role 'umlclassdiagram_ExistsExpCS', cardinality 0..*) is associated with 'umlclassdiagram::AccVarCS' (role 'umlclassdiagram_AccVarCS72', cardinality 0..*).
+'umlclassdiagram::OperationCS' (role 'umlclassdiagram_OperationCS20', cardinality 0..*) is associated with 'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS21', cardinality 0..*).
+'umlclassdiagram::ClassCS' (role 'umlclassdiagram_ClassCS13', cardinality 0..*) is associated with 'umlclassdiagram::OperationCS' (role 'umlclassdiagram_OperationCS', cardinality 0..*).
+'umlclassdiagram::LogicExpCS' (role 'umlclassdiagram_LogicExpCS35', cardinality 0..*) is associated with 'umlclassdiagram::LogicExpCS' (role 'umlclassdiagram_LogicExpCS', cardinality 0..*).
+'umlclassdiagram::LoopExpCS' (role 'umlclassdiagram_LoopExpCS53', cardinality 0..*) is associated with 'umlclassdiagram::ExpCS' (role 'umlclassdiagram_ExpCS54', cardinality 0..*).
+'umlclassdiagram::AssociationClass' (role 'umlclassdiagram_AssociationClass', cardinality 0..*) is associated with 'umlclassdiagram::Association' (role 'umlclassdiagram_Association', cardinality 0..*).
+'umlclassdiagram::ExpCS' (role 'umlclassdiagram_ExpCS64', cardinality 0..*) is associated with 'umlclassdiagram::AccVarCS' (role 'umlclassdiagram_AccVarCS63', cardinality 0..*).
+'umlclassdiagram::RootCS' (role 'umlclassdiagram_RootCS', cardinality 0..*) is associated with 'umlclassdiagram::PackageCS' (role 'umlclassdiagram_PackageCS', cardinality 0..*).
+'umlclassdiagram::Feature' (role 'umlclassdiagram_Feature83', cardinality 0..*) is associated with 'umlclassdiagram::NavigationPathElementCS' (role 'umlclassdiagram_NavigationPathElementCS', cardinality 0..*).
+'umlclassdiagram::NavigationPathNameCS' (role 'umlclassdiagram_NavigationPathNameCS81', cardinality 0..*) is associated with 'umlclassdiagram::NavigationPathCS' (role 'umlclassdiagram_NavigationPathCS', cardinality 0..*).
+'umlclassdiagram::PackageCS' (role 'umlclassdiagram_PackageCS5', cardinality 0..*) is associated with 'umlclassdiagram::PackageCS' (role 'umlclassdiagram_PackageCS3', cardinality 0..*).
+'umlclassdiagram::Classifier' (role 'umlclassdiagram_Classifier103', cardinality 0..*) is associated with 'umlclassdiagram::Class' (role 'umlclassdiagram_Class104', cardinality 0..*).
+'umlclassdiagram::Classifier' (role 'umlclassdiagram_Classifier98', cardinality 0..*) is associated with 'umlclassdiagram::Feature' (role 'umlclassdiagram_Feature99', cardinality 0..*).
+'umlclassdiagram::ClassDiagram' (role 'umlclassdiagram_ClassDiagram', cardinality 0..*) is associated with 'umlclassdiagram::Classifier' (role 'umlclassdiagram_Classifier', cardinality 0..*).
+'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS29', cardinality 0..*) is associated with 'umlclassdiagram::ConstraintCS' (role 'umlclassdiagram_ConstraintCS28', cardinality 0..*).
+'umlclassdiagram::OperationCS' (role 'umlclassdiagram_OperationCS18', cardinality 0..*) is associated with 'umlclassdiagram::ParameterCS' (role 'umlclassdiagram_ParameterCS', cardinality 0..*).
+'umlclassdiagram::ClassCS' (role 'umlclassdiagram_ClassCS9', cardinality 0..*) is associated with 'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS', cardinality 0..*).
+'umlclassdiagram::Constraint' (role 'umlclassdiagram_Constraint', cardinality 0..*) is associated with 'umlclassdiagram::ClassDiagram' (role 'umlclassdiagram_ClassDiagram92', cardinality 0..*).
+'umlclassdiagram::NavigationNameExpCS' (role 'umlclassdiagram_NavigationNameExpCS', cardinality 0..*) is associated with 'umlclassdiagram::NavigationPathNameCS' (role 'umlclassdiagram_NavigationPathNameCS', cardinality 0..*).
+'umlclassdiagram::Relation' (role 'umlclassdiagram_Relation', cardinality 0..*) is associated with 'umlclassdiagram::ClassDiagram' (role 'umlclassdiagram_ClassDiagram88', cardinality 0..*).
+'umlclassdiagram::Operation' (role 'umlclassdiagram_Operation', cardinality 0..*) is associated with 'umlclassdiagram::Parameter' (role 'umlclassdiagram_Parameter112', cardinality 0..*).
+'umlclassdiagram::NavigationExpCS' (role 'umlclassdiagram_NavigationExpCS', cardinality 0..*) is associated with 'umlclassdiagram::CallExpCS' (role 'umlclassdiagram_CallExpCS43', cardinality 0..*).
+'umlclassdiagram::IteratorVarCS' (role 'umlclassdiagram_IteratorVarCS56', cardinality 0..*) is associated with 'umlclassdiagram::PathNameCS' (role 'umlclassdiagram_PathNameCS57', cardinality 0..*).
+'umlclassdiagram::InvariantCS' (role 'umlclassdiagram_InvariantCS', cardinality 0..*) is associated with 'umlclassdiagram::ConstraintCS' (role 'umlclassdiagram_ConstraintCS31', cardinality 0..*).
+'umlclassdiagram::RootCS' (role 'umlclassdiagram_RootCS2', cardinality 0..*) is associated with 'umlclassdiagram::ConstraintCS' (role 'umlclassdiagram_ConstraintCS', cardinality 0..*).
+'umlclassdiagram::Feature' (role 'umlclassdiagram_Feature95', cardinality 0..*) is associated with 'umlclassdiagram::NamedElement' (role 'umlclassdiagram_NamedElement96', cardinality 0..*).

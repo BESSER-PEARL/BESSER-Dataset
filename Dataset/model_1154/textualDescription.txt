@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'model::FSM' has the following attributes: 'name' of type str.
+The class 'model::State' has the following attributes: 'name' of type str.
+The class 'model::Transition' has the following attributes: 'name' of type str.
+'model::State' (role 'to', cardinality 0..*) is associated with 'model::Transition' (role 'Transition', cardinality 0..*).
+'model::FSM' (role 'model_FSM', cardinality 0..*) is associated with 'model::State' (role 'model_State', cardinality 0..*).
+'model::FSM' (role 'model_FSM2', cardinality 0..*) is associated with 'model::Transition' (role 'model_Transition', cardinality 0..*).
+'model::Transition' (role 'outgoing', cardinality 0..*) is associated with 'model::State' (role 'State8', cardinality 0..*).
+'model::State' (role 'State', cardinality 0..*) is associated with 'model::Transition' (role 'incoming', cardinality 0..*).
+'model::State' (role 'from_', cardinality 0..*) is associated with 'model::Transition' (role 'Transition5', cardinality 0..*).

@@ -1,0 +1,38 @@
+The model has 11 class(es).
+The class 'td1::Program' has the following attributes: 'ComponentSize' of type int; 'Name' of type str.
+The class 'td1::Variable' has the following attributes: 'initVal' of type str; 'Name' of type str.
+The class 'td1::Guard' has the following attributes: 'Body' of type str; 'Name' of type str; 'codeFiacre' of type str.
+The class 'td1::Process' has the following attributes: 'StateSize' of type int; 'VarSize' of type int; 'Name' of type str.
+The class 'td1::Component' has the following attributes: 'ProcessSize' of type int; 'VarSize' of type int; 'Name' of type str.
+The class 'td1::Trigger' has the following attributes: 'Body' of type str; 'Name' of type str; 'ArgSize' of type int; 'codeFiacre' of type str.
+The class 'td1::State' has the following attributes: 'Name' of type str.
+The class 'td1::Port' has the following attributes: 'Name' of type str.
+The class 'td1::Action' has the following attributes: 'Name' of type str; 'Body' of type str; 'codeFiacre' of type str.
+The class 'td1::Transition' has the following attributes: 'Name' of type str.
+The class 'td1::DataType' has the following attributes: 'Name' of type str.
+'td1::Variable' (role 'td1_Variable', cardinality 0..*) is associated with 'td1::DataType' (role 'td1_DataType', cardinality 0..*).
+'td1::Variable' (role 'variables28', cardinality 0..*) is associated with 'td1::Component' (role 'Component', cardinality 0..*).
+'td1::State' (role 'initState', cardinality 0..*) is associated with 'td1::Process' (role 'Process', cardinality 0..*).
+'td1::Variable' (role 'Variable32', cardinality 0..*) is associated with 'td1::Component' (role 'components', cardinality 0..*).
+'td1::Trigger' (role 'td1_Trigger21', cardinality 0..*) is associated with 'td1::Transition' (role 'td1_Transition20', cardinality 0..*).
+'td1::Component' (role 'td1_Component', cardinality 0..*) is associated with 'td1::Process' (role 'td1_Process30', cardinality 0..*).
+'td1::Transition' (role 'Transition', cardinality 0..*) is associated with 'td1::State' (role 'source', cardinality 0..*).
+'td1::Port' (role 'td1_Port', cardinality 0..*) is associated with 'td1::Process' (role 'td1_Process10', cardinality 0..*).
+'td1::State' (role 'td1_State', cardinality 0..*) is associated with 'td1::Process' (role 'td1_Process7', cardinality 0..*).
+'td1::Process' (role 'td1_Process12', cardinality 0..*) is associated with 'td1::Trigger' (role 'td1_Trigger', cardinality 0..*).
+'td1::State' (role 'State', cardinality 0..*) is associated with 'td1::Process' (role 'process', cardinality 0..*).
+'td1::Program' (role 'td1_Program', cardinality 0..*) is associated with 'td1::Component' (role 'td1_Component37', cardinality 0..*).
+'td1::Variable' (role 'td1_Variable49', cardinality 0..*) is associated with 'td1::Trigger' (role 'td1_Trigger48', cardinality 0..*).
+'td1::Variable' (role 'td1_Variable40', cardinality 0..*) is associated with 'td1::Program' (role 'td1_Program39', cardinality 0..*).
+'td1::Transition' (role 'outTransitions', cardinality 0..*) is associated with 'td1::State' (role 'State14', cardinality 0..*).
+'td1::Transition' (role 'td1_Transition23', cardinality 0..*) is associated with 'td1::Action' (role 'td1_Action', cardinality 0..*).
+'td1::Program' (role 'td1_Program45', cardinality 0..*) is associated with 'td1::DataType' (role 'td1_DataType46', cardinality 0..*).
+'td1::Program' (role 'td1_Program42', cardinality 0..*) is associated with 'td1::Process' (role 'td1_Process43', cardinality 0..*).
+'td1::Component' (role 'td1_Component52', cardinality 0..*) is associated with 'td1::Port' (role 'td1_Port51', cardinality 0..*).
+'td1::Variable' (role 'variables', cardinality 0..*) is associated with 'td1::Process' (role 'Process26', cardinality 0..*).
+'td1::Port' (role 'td1_Port35', cardinality 0..*) is associated with 'td1::Component' (role 'td1_Component34', cardinality 0..*).
+'td1::Transition' (role 'td1_Transition', cardinality 0..*) is associated with 'td1::Process' (role 'td1_Process', cardinality 0..*).
+'td1::Transition' (role 'Transition2', cardinality 0..*) is associated with 'td1::State' (role 'target', cardinality 0..*).
+'td1::Process' (role 'processes', cardinality 0..*) is associated with 'td1::Variable' (role 'Variable', cardinality 0..*).
+'td1::Transition' (role 'td1_Transition18', cardinality 0..*) is associated with 'td1::Guard' (role 'td1_Guard', cardinality 0..*).
+'td1::State' (role 'State16', cardinality 0..*) is associated with 'td1::Transition' (role 'inTransitions', cardinality 0..*).

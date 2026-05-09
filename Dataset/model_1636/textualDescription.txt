@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'AbstractTransition' has no attributes.
+The class 'ptntim101::Transition' has the following attributes: 'weight' of type int.
+The class 'ptntim101::Token' has no attributes.
+The class 'ptntim101::AbstractNode' has the following attributes: 'name' of type str; 'tMax' of type int; 'tMin' of type int.
+The class 'AbstractNode' has no attributes.
+The class 'ptntim101::Place' has no attributes.
+The class 'ptntim101::AbstractTransition' has the following attributes: 'guard' of type str.
+'ptntim101::AbstractTransition' is a specialization of 'AbstractNode'.
+'ptntim101::Place' is a specialization of 'AbstractNode'.
+'ptntim101::Transition' is a specialization of 'AbstractTransition'.
+'ptntim101::AbstractNode' (role 'ptntim101_AbstractNode', cardinality 0..*) is associated with 'ptntim101::Place' (role 'ptntim101_Place3', cardinality 0..*).
+'ptntim101::Place' (role 'ptntim101_Place7', cardinality 0..*) is associated with 'ptntim101::Token' (role 'ptntim101_Token', cardinality 0..*).
+'ptntim101::Place' (role 'ptntim101_Place10', cardinality 0..*) is associated with 'ptntim101::AbstractTransition' (role 'ptntim101_AbstractTransition9', cardinality 0..*).
+'ptntim101::Place' (role 'ptntim101_Place0', cardinality 0..*) is associated with 'ptntim101::Place' (role 'ptntim101_Place', cardinality 0..*).
+'ptntim101::AbstractTransition' (role 'ptntim101_AbstractTransition', cardinality 0..*) is associated with 'ptntim101::Place' (role 'ptntim101_Place5', cardinality 0..*).

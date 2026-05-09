@@ -1,0 +1,27 @@
+The model has 13 class(es).
+The class 'sistedesMM::Publication' has no attributes.
+The class 'sistedesMM::Person' has the following attributes: 'email' of type str; 'nationality' of type str; 'name' of type str; 'surname' of type str.
+The class 'sistedesMM::University' has the following attributes: 'provinceOrState' of type str; 'city' of type str; 'name' of type str; 'country' of type str.
+The class 'Person' has no attributes.
+The class 'sistedesMM::Journal' has the following attributes: 'jcrIndexed' of type bool; 'acronym' of type str; 'name' of type str.
+The class 'sistedesMM::Article' has the following attributes: 'toPage' of type int; 'year' of type int; 'volume' of type str; 'title' of type str; 'fromPage' of type int; 'month' of type str; 'number' of type int.
+The class 'sistedesMM::Book' has the following attributes: 'isbn' of type str; 'series' of type str; 'month' of type str; 'year' of type int; 'title' of type str; 'volume' of type str; 'edition' of type int.
+The class 'sistedesMM::Publisher' has the following attributes: 'name' of type str; 'address' of type str.
+The class 'sistedesMM::Editor' has the following attributes: 'name' of type str.
+The class 'sistedesMM::Edition' has the following attributes: 'location' of type str; 'year' of type int.
+The class 'sistedesMM::InProceedings' has the following attributes: 'toPage' of type str; 'bookTitle' of type str; 'title' of type str; 'fromPage' of type str; 'year' of type int; 'month' of type str.
+The class 'Publication' has no attributes.
+The class 'sistedesMM::SistedesMember' has no attributes.
+'sistedesMM::Article' is a specialization of 'Publication'.
+'sistedesMM::InProceedings' is a specialization of 'Publication'.
+'sistedesMM::SistedesMember' is a specialization of 'Person'.
+'sistedesMM::Book' is a specialization of 'Publication'.
+'sistedesMM::Edition' (role 'sistedesMM_Edition', cardinality 0..*) is associated with 'sistedesMM::SistedesMember' (role 'sistedesMM_SistedesMember', cardinality 0..*).
+'sistedesMM::InProceedings' (role 'sistedesMM_InProceedings6', cardinality 0..*) is associated with 'sistedesMM::Editor' (role 'sistedesMM_Editor', cardinality 0..*).
+'sistedesMM::Person' (role 'sistedesMM_Person', cardinality 0..*) is associated with 'sistedesMM::University' (role 'sistedesMM_University', cardinality 0..*).
+'sistedesMM::Journal' (role 'Journal', cardinality 0..*) is associated with 'sistedesMM::Article' (role 'articles', cardinality 0..*).
+'sistedesMM::Publication' (role 'publications', cardinality 0..*) is associated with 'sistedesMM::Person' (role 'Person', cardinality 0..*).
+'sistedesMM::Article' (role 'Article', cardinality 0..*) is associated with 'sistedesMM::Journal' (role 'journal', cardinality 0..*).
+'sistedesMM::InProceedings' (role 'sistedesMM_InProceedings', cardinality 0..*) is associated with 'sistedesMM::Publisher' (role 'sistedesMM_Publisher', cardinality 0..*).
+'sistedesMM::Publication' (role 'Publication', cardinality 0..*) is associated with 'sistedesMM::Person' (role 'authors', cardinality 0..*).
+'sistedesMM::Publisher' (role 'sistedesMM_Publisher9', cardinality 0..*) is associated with 'sistedesMM::Book' (role 'sistedesMM_Book', cardinality 0..*).

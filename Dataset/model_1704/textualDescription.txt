@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'library::TextAnnotation' has the following attributes: 'color' of type str; 'comment' of type str.
+The class 'library::Metadata' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'library::Bookmark' has the following attributes: 'location' of type str; 'href' of type str; 'text' of type str; 'timestamp' of type date; 'page' of type int; 'id' of type str.
+The class 'library::Library' has the following attributes: 'version' of type str.
+The class 'Bookmark' has no attributes.
+The class 'library::Book' has the following attributes: 'collection' of type str; 'title' of type str; 'bookURN' of type str; 'bookURL' of type str; 'lastOpened' of type str; 'lastHref' of type str; 'author' of type str; 'lastLocation' of type str.
+The enumeration 'AnnotationColor' has the following literals: 'Red', 'Green', 'Purple', 'Underline', 'Blue', 'Yellow'.
+'library::TextAnnotation' is a specialization of 'Bookmark'.
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'library::Book' (role 'library_Book', cardinality 0..*).
+'library::Book' (role 'library_Book2', cardinality 0..*) is associated with 'library::Bookmark' (role 'library_Bookmark', cardinality 0..*).
+'library::Book' (role 'library_Book4', cardinality 0..*) is associated with 'library::Metadata' (role 'library_Metadata', cardinality 0..*).

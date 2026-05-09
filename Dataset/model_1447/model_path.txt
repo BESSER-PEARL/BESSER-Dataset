@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jlcanovas/gra2mol/examples/Grammar2Model.examples.wikiDB2Model/files/metamodels/wikiGraph-onekin.ecore

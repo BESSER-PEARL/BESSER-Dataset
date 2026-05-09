@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDEGroup/QMM/tools/QualityMetamodel.engine/resources/test_cases/Families.ecore

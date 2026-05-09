@@ -1,0 +1,55 @@
+The model has 26 class(es).
+The class 'nested103::EClass1' has no attributes.
+The class 'EClass8' has no attributes.
+The class 'nested103::EClass8' has no attributes.
+The class 'EClass11' has no attributes.
+The class 'nested103::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'nested103::EClass0' has no attributes.
+The class 'nested103::EClass4' has no attributes.
+The class 'nested103::EClass2' has no attributes.
+The class 'nested103::EClass12' has no attributes.
+The class 'nested103::EClass13' has no attributes.
+The class 'nested103::EClass11' has no attributes.
+The class 'nested103::World' has no attributes.
+The class 'nested103::EClass7' has no attributes.
+The class 'EClass6' has no attributes.
+The class 'nested103::Thing' has the following attributes: 'id' of type int.
+The class 'nested103::RelatedTo' has the following attributes: 'since' of type str.
+The class 'nested103::EClass3' has no attributes.
+The class 'Thing' has no attributes.
+The class 'nested103::EClass5' has no attributes.
+The class 'EClass9' has no attributes.
+The class 'nested103::EClass9' has the following attributes: 'name' of type str.
+The class 'EClass7' has no attributes.
+The class 'EClass12' has no attributes.
+The class 'nested103::EClass6' has no attributes.
+The class 'nested103::EClass10' has no attributes.
+'nested103::EClass7' is a specialization of 'Thing'.
+'nested103::RelatedTo' is a specialization of 'NamedElement'.
+'nested103::EClass1' is a specialization of 'NamedElement'.
+'nested103::EClass9' is a specialization of 'EClass12'.
+'nested103::EClass2' is a specialization of 'NamedElement'.
+'nested103::EClass3' is a specialization of 'NamedElement'.
+'nested103::EClass6' is a specialization of 'EClass8'.
+'nested103::EClass8' is a specialization of 'NamedElement'.
+'nested103::Thing' is a specialization of 'NamedElement'.
+'nested103::EClass6' is a specialization of 'EClass7'.
+'nested103::EClass10' is a specialization of 'EClass9'.
+'nested103::EClass9' is a specialization of 'EClass11'.
+'nested103::EClass4' is a specialization of 'NamedElement'.
+'nested103::EClass5' is a specialization of 'NamedElement'.
+'nested103::EClass0' is a specialization of 'NamedElement'.
+'nested103::EClass5' is a specialization of 'EClass6'.
+'nested103::EClass9' (role 'nested103_EClass9', cardinality 0..*) is associated with 'nested103::EClass13' (role 'nested103_EClass13', cardinality 0..*).
+'nested103::Thing' (role 'Thing', cardinality 0..*) is associated with 'nested103::RelatedTo' (role 'relations', cardinality 0..*).
+'nested103::EClass1' (role 'nested103_EClass1', cardinality 0..*) is associated with 'nested103::EClass0' (role 'nested103_EClass010', cardinality 0..*).
+'nested103::EClass0' (role 'nested103_EClass0', cardinality 0..*) is associated with 'nested103::Thing' (role 'nested103_Thing5', cardinality 0..*).
+'nested103::EClass3' (role 'nested103_EClass3', cardinality 0..*) is associated with 'nested103::EClass2' (role 'nested103_EClass214', cardinality 0..*).
+'nested103::EClass5' (role 'nested103_EClass5', cardinality 0..*) is associated with 'nested103::EClass4' (role 'nested103_EClass418', cardinality 0..*).
+'nested103::RelatedTo' (role 'nested103_RelatedTo', cardinality 0..*) is associated with 'nested103::Thing' (role 'nested103_Thing8', cardinality 0..*).
+'nested103::EClass4' (role 'nested103_EClass4', cardinality 0..*) is associated with 'nested103::EClass3' (role 'nested103_EClass316', cardinality 0..*).
+'nested103::EClass10' (role 'nested103_EClass10', cardinality 0..*) is associated with 'nested103::World' (role 'nested103_World2', cardinality 0..*).
+'nested103::EClass2' (role 'nested103_EClass2', cardinality 0..*) is associated with 'nested103::EClass1' (role 'nested103_EClass112', cardinality 0..*).
+'nested103::Thing' (role 'fromThing', cardinality 0..*) is associated with 'nested103::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'nested103::Thing' (role 'nested103_Thing', cardinality 0..*) is associated with 'nested103::World' (role 'nested103_World', cardinality 0..*).

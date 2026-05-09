@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'mydsl::Final' has no attributes.
+The class 'State' has no attributes.
+The class 'mydsl::State' has the following attributes: 'name' of type str.
+The class 'mydsl::FSM' has the following attributes: 'name' of type str.
+The class 'mydsl::Transition' has the following attributes: 'name' of type str; 'trigger' of type str.
+The class 'mydsl::Initial' has no attributes.
+'mydsl::Final' is a specialization of 'State'.
+'mydsl::Initial' is a specialization of 'State'.
+'mydsl::Final' (role 'mydsl_Final', cardinality 0..*) is associated with 'mydsl::FSM' (role 'mydsl_FSM4', cardinality 0..*).
+'mydsl::FSM' (role 'mydsl_FSM', cardinality 0..*) is associated with 'mydsl::State' (role 'mydsl_State', cardinality 0..*).
+'mydsl::Transition' (role 'mydsl_Transition8', cardinality 0..*) is associated with 'mydsl::State' (role 'mydsl_State9', cardinality 0..*).
+'mydsl::FSM' (role 'mydsl_FSM2', cardinality 0..*) is associated with 'mydsl::Transition' (role 'mydsl_Transition', cardinality 0..*).
+'mydsl::FSM' (role 'mydsl_FSM6', cardinality 0..*) is associated with 'mydsl::Initial' (role 'mydsl_Initial', cardinality 0..*).

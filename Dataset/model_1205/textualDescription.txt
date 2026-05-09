@@ -1,0 +1,64 @@
+The model has 59 class(es).
+The class 'ocl::expressions::LoopExp' has no attributes.
+The class 'ocl::expressions::MessageExp' has no attributes.
+The class 'ocl::types::ElementType' has no attributes.
+The class 'ocl::expressions::NullLiteralExp' has no attributes.
+The class 'ocl::types::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'ASTNode' has no attributes.
+The class 'ocl::expressions::TypeExp' has no attributes.
+The class 'ocl::types::SetType' has no attributes.
+The class 'ocl::expressions::PrimitiveLiteralExp' has no attributes.
+The class 'ocl::expressions::NavigationCallExp' has no attributes.
+The class 'ocl::utilities::Visitor' has no attributes.
+The class 'ocl::expressions::OCLExpression' has no attributes.
+The class 'ocl::utilities::PredefinedType' has no attributes.
+The class 'ocl::expressions::TupleLiteralPart' has no attributes.
+The class 'ocl::expressions::CollectionRange' has no attributes.
+The class 'ocl::utilities::TypedElement' has no attributes.
+The class 'ocl::types::CollectionType' has the following attributes: 'kind' of type str.
+The class 'ocl::expressions::IteratorExp' has no attributes.
+The class 'ocl::expressions::InvalidLiteralExp' has no attributes.
+The class 'ocl::expressions::NumericLiteralExp' has no attributes.
+The class 'ocl::expressions::Variable' has no attributes.
+The class 'ocl::types::MessageType' has no attributes.
+The class 'ocl::expressions::IterateExp' has no attributes.
+The class 'ocl::expressions::UnspecifiedValueExp' has no attributes.
+The class 'ocl::utilities::TypedASTNode' has the following attributes: 'typeStartPosition' of type int; 'typeEndPosition' of type int.
+The class 'ocl::types::PrimitiveType' has no attributes.
+The class 'ocl::types::VoidType' has no attributes.
+The class 'ocl::types::SequenceType' has no attributes.
+The class 'ocl::expressions::CollectionLiteralPart' has no attributes.
+The class 'ocl::expressions::RealLiteralExp' has the following attributes: 'realSymbol' of type str.
+The class 'ocl::expressions::CollectionItem' has no attributes.
+The class 'ocl::types::AnyType' has no attributes.
+The class 'ocl::expressions::PropertyCallExp' has no attributes.
+The class 'ocl::types::TupleType' has no attributes.
+The class 'ocl::utilities::ASTNode' has the following attributes: 'startPosition' of type int; 'endPosition' of type int.
+The class 'ocl::types::TypeType' has no attributes.
+The class 'ocl::expressions::TupleLiteralExp' has no attributes.
+The class 'ocl::expressions::CallExp' has no attributes.
+The class 'ocl::expressions::FeatureCallExp' has the following attributes: 'markedPre' of type bool.
+The class 'ocl::types::OrderedSetType' has no attributes.
+The class 'ocl::utilities::ExpressionInOCL' has no attributes.
+The class 'Visitable' has no attributes.
+The class 'ocl::types::BagType' has no attributes.
+The class 'ocl::expressions::StateExp' has no attributes.
+The class 'ocl::expressions::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'ocl::expressions::LetExp' has no attributes.
+The class 'ocl::expressions::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'ocl::expressions::CollectionLiteralExp' has the following attributes: 'kind' of type str; 'simpleRange' of type bool.
+The class 'ocl::expressions::AssociationClassCallExp' has no attributes.
+The class 'ocl::utilities::CallingASTNode' has the following attributes: 'propertyEndPosition' of type int; 'propertyStartPosition' of type int.
+The class 'ocl::expressions::LiteralExp' has no attributes.
+The class 'ocl::expressions::UnlimitedNaturalLiteralExp' has the following attributes: 'integerSymbol' of type str; 'unlimited' of type bool.
+The class 'ocl::expressions::IfExp' has no attributes.
+The class 'ocl::expressions::VariableExp' has no attributes.
+The class 'ocl::expressions::EnumLiteralExp' has no attributes.
+The class 'ocl::types::InvalidType' has no attributes.
+The class 'ocl::expressions::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type str.
+The class 'ocl::utilities::Visitable' has no attributes.
+The class 'ocl::expressions::OperationCallExp' has the following attributes: 'operationCode' of type int.
+The enumeration 'CollectionKind' has the following literals: 'Collection', 'OrderedSet', 'Set', 'Sequence', 'Bag'.
+'ocl::utilities::TypedASTNode' is a specialization of 'ASTNode'.
+'ocl::utilities::ExpressionInOCL' is a specialization of 'Visitable'.
+'ocl::utilities::CallingASTNode' is a specialization of 'ASTNode'.

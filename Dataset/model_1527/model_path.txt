@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/protossoftware/etrice/plugins/org.eclipse.etrice.generator.fsmtest/src-gen/org/eclipse/etrice/generator/FSMtest.ecore

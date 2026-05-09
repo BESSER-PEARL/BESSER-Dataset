@@ -1,0 +1,84 @@
+The model has 28 class(es).
+The class 'rtsc::State' has the following attributes: 'initial' of type bool; 'final' of type bool.
+The class 'rtsc::Vertex' has the following attributes: 'active' of type bool.
+The class 'rtsc::ClockConstraint' has the following attributes: 'bound' of type int.
+The class 'rtsc::MessageEvent' has no attributes.
+The class 'rtsc::ClockResetEvent' has no attributes.
+The class 'rtsc::Realtimestatechart' has the following attributes: 'rounds' of type int.
+The class 'rtsc::NamedElement' has the following attributes: 'name' of type str.
+The class 'rtsc::MessageType' has no attributes.
+The class 'rtsc::MessageBuffer' has no attributes.
+The class 'rtsc::VariableAssignmentEvent' has the following attributes: 'value' of type str.
+The class 'BehavioralElement' has no attributes.
+The class 'rtsc::Port' has no attributes.
+The class 'Event' has no attributes.
+The class 'rtsc::System' has no attributes.
+The class 'rtsc::Behavior' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'rtsc::BehavioralElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'rtsc::Event' has no attributes.
+The class 'rtsc::CoordinationProtocol' has no attributes.
+The class 'rtsc::Variable' has the following attributes: 'runtimeValue' of type str; 'initialValue' of type str.
+The class 'rtsc::Message' has no attributes.
+The class 'rtsc::Connector' has no attributes.
+The class 'rtsc::MessageTypeRepository' has no attributes.
+The class 'rtsc::Guard' has the following attributes: 'value' of type bool.
+The class 'rtsc::Clock' has the following attributes: 'uClock' of type bool.
+The class 'rtsc::Transition' has the following attributes: 'hitCount' of type int.
+'rtsc::BehavioralElement' is a specialization of 'NamedElement'.
+'rtsc::VariableAssignmentEvent' is a specialization of 'Event'.
+'rtsc::ClockResetEvent' is a specialization of 'Event'.
+'rtsc::Realtimestatechart' is a specialization of 'Behavior'.
+'rtsc::Variable' is a specialization of 'NamedElement'.
+'rtsc::Realtimestatechart' is a specialization of 'NamedElement'.
+'rtsc::MessageType' is a specialization of 'NamedElement'.
+'rtsc::Port' is a specialization of 'BehavioralElement'.
+'rtsc::State' is a specialization of 'NamedElement'.
+'rtsc::MessageEvent' is a specialization of 'Event'.
+'rtsc::State' is a specialization of 'Vertex'.
+'rtsc::Transition' is a specialization of 'NamedElement'.
+'rtsc::Clock' is a specialization of 'NamedElement'.
+'rtsc::CoordinationProtocol' is a specialization of 'NamedElement'.
+'rtsc::Variable' (role 'rtsc_Variable76', cardinality 0..*) is associated with 'rtsc::VariableAssignmentEvent' (role 'rtsc_VariableAssignmentEvent', cardinality 0..*).
+'rtsc::MessageType' (role 'rtsc_MessageType72', cardinality 0..*) is associated with 'rtsc::MessageEvent' (role 'rtsc_MessageEvent', cardinality 0..*).
+'rtsc::CoordinationProtocol' (role 'rtsc_CoordinationProtocol', cardinality 0..*) is associated with 'rtsc::Port' (role 'rtsc_Port55', cardinality 0..*).
+'rtsc::Port' (role 'endpoints', cardinality 0..*) is associated with 'rtsc::Connector' (role 'Connector', cardinality 0..*).
+'rtsc::System' (role 'rtsc_System64', cardinality 0..*) is associated with 'rtsc::CoordinationProtocol' (role 'rtsc_CoordinationProtocol65', cardinality 0..*).
+'rtsc::Clock' (role 'clocks', cardinality 0..*) is associated with 'rtsc::Realtimestatechart' (role 'Realtimestatechart43', cardinality 0..*).
+'rtsc::Transition' (role 'rtsc_Transition32', cardinality 0..*) is associated with 'rtsc::MessageType' (role 'rtsc_MessageType', cardinality 0..*).
+'rtsc::Behavior' (role 'behavior', cardinality 0..*) is associated with 'rtsc::BehavioralElement' (role 'BehavioralElement', cardinality 0..*).
+'rtsc::Port' (role 'Port', cardinality 0..*) is associated with 'rtsc::MessageBuffer' (role 'incomingBuffer', cardinality 0..*).
+'rtsc::Guard' (role 'rtsc_Guard37', cardinality 0..*) is associated with 'rtsc::Variable' (role 'rtsc_Variable', cardinality 0..*).
+'rtsc::Clock' (role 'Clock', cardinality 0..*) is associated with 'rtsc::Realtimestatechart' (role 'statechart8', cardinality 0..*).
+'rtsc::Transition' (role 'rtsc_Transition', cardinality 0..*) is associated with 'rtsc::Guard' (role 'rtsc_Guard', cardinality 0..*).
+'rtsc::State' (role 'source', cardinality 0..*) is associated with 'rtsc::Transition' (role 'Transition16', cardinality 0..*).
+'rtsc::State' (role 'rtsc_State', cardinality 0..*) is associated with 'rtsc::Realtimestatechart' (role 'rtsc_Realtimestatechart', cardinality 0..*).
+'rtsc::State' (role 'State25', cardinality 0..*) is associated with 'rtsc::Transition' (role 'incomingTransitions', cardinality 0..*).
+'rtsc::CoordinationProtocol' (role 'rtsc_CoordinationProtocol57', cardinality 0..*) is associated with 'rtsc::Connector' (role 'rtsc_Connector', cardinality 0..*).
+'rtsc::System' (role 'rtsc_System', cardinality 0..*) is associated with 'rtsc::Realtimestatechart' (role 'rtsc_Realtimestatechart62', cardinality 0..*).
+'rtsc::ClockConstraint' (role 'rtsc_ClockConstraint', cardinality 0..*) is associated with 'rtsc::Transition' (role 'rtsc_Transition28', cardinality 0..*).
+'rtsc::Event' (role 'rtsc_Event', cardinality 0..*) is associated with 'rtsc::State' (role 'rtsc_State18', cardinality 0..*).
+'rtsc::Realtimestatechart' (role 'Realtimestatechart30', cardinality 0..*) is associated with 'rtsc::Transition' (role 'transitions', cardinality 0..*).
+'rtsc::Realtimestatechart' (role 'Realtimestatechart41', cardinality 0..*) is associated with 'rtsc::Variable' (role 'variables', cardinality 0..*).
+'rtsc::Realtimestatechart' (role 'owningRTSC', cardinality 0..*) is associated with 'rtsc::State' (role 'State', cardinality 0..*).
+'rtsc::State' (role 'target', cardinality 0..*) is associated with 'rtsc::Transition' (role 'Transition14', cardinality 0..*).
+'rtsc::Realtimestatechart' (role 'statechart6', cardinality 0..*) is associated with 'rtsc::Variable' (role 'Variable', cardinality 0..*).
+'rtsc::MessageBuffer' (role 'rtsc_MessageBuffer', cardinality 0..*) is associated with 'rtsc::MessageType' (role 'rtsc_MessageType49', cardinality 0..*).
+'rtsc::State' (role 'rtsc_State20', cardinality 0..*) is associated with 'rtsc::Event' (role 'rtsc_Event21', cardinality 0..*).
+'rtsc::MessageBuffer' (role 'MessageBuffer', cardinality 0..*) is associated with 'rtsc::Port' (role 'port', cardinality 0..*).
+'rtsc::Connector' (role 'connector', cardinality 0..*) is associated with 'rtsc::Port' (role 'Port53', cardinality 0..*).
+'rtsc::Realtimestatechart' (role 'Realtimestatechart', cardinality 0..*) is associated with 'rtsc::State' (role 'states', cardinality 0..*).
+'rtsc::ClockResetEvent' (role 'rtsc_ClockResetEvent', cardinality 0..*) is associated with 'rtsc::Clock' (role 'rtsc_Clock74', cardinality 0..*).
+'rtsc::MessageType' (role 'rtsc_MessageType70', cardinality 0..*) is associated with 'rtsc::MessageTypeRepository' (role 'rtsc_MessageTypeRepository69', cardinality 0..*).
+'rtsc::BehavioralElement' (role 'behaviouralElement', cardinality 0..*) is associated with 'rtsc::Behavior' (role 'Behavior', cardinality 0..*).
+'rtsc::MessageType' (role 'rtsc_MessageType60', cardinality 0..*) is associated with 'rtsc::Message' (role 'rtsc_Message59', cardinality 0..*).
+'rtsc::Transition' (role 'rtsc_Transition34', cardinality 0..*) is associated with 'rtsc::Event' (role 'rtsc_Event35', cardinality 0..*).
+'rtsc::System' (role 'rtsc_System67', cardinality 0..*) is associated with 'rtsc::MessageTypeRepository' (role 'rtsc_MessageTypeRepository', cardinality 0..*).
+'rtsc::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'rtsc::State' (role 'State23', cardinality 0..*).
+'rtsc::ClockConstraint' (role 'rtsc_ClockConstraint39', cardinality 0..*) is associated with 'rtsc::Clock' (role 'rtsc_Clock', cardinality 0..*).
+'rtsc::Transition' (role 'Transition', cardinality 0..*) is associated with 'rtsc::Realtimestatechart' (role 'statechart', cardinality 0..*).
+'rtsc::Behavior' (role 'rtsc_Behavior', cardinality 0..*) is associated with 'rtsc::Port' (role 'rtsc_Port', cardinality 0..*).
+'rtsc::MessageBuffer' (role 'rtsc_MessageBuffer51', cardinality 0..*) is associated with 'rtsc::Message' (role 'rtsc_Message', cardinality 0..*).
+'rtsc::Realtimestatechart' (role 'rtsc_Realtimestatechart11', cardinality 0..*) is associated with 'rtsc::State' (role 'rtsc_State10', cardinality 0..*).

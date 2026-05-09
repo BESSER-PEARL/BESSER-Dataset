@@ -1,0 +1,33 @@
+The model has 14 class(es).
+The class 'Behaviour' has no attributes.
+The class 'statemachine::FinalState' has no attributes.
+The class 'statemachine::StateMachineDescription' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'statemachine::StateMachine' has no attributes.
+The class 'statemachine::State' has no attributes.
+The class 'StateMachineDescription' has no attributes.
+The class 'statemachine::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ObeoDSMObject' has no attributes.
+The class 'statemachine::AbstractState' has no attributes.
+The class 'statemachine::Transition' has the following attributes: 'guard' of type str.
+The class 'statemachine::InitialState' has no attributes.
+The class 'statemachine::Region' has no attributes.
+'statemachine::Region' is a specialization of 'StateMachineDescription'.
+'statemachine::StateMachine' is a specialization of 'Behaviour'.
+'statemachine::State' is a specialization of 'AbstractState'.
+'statemachine::StateMachineDescription' is a specialization of 'NamedElement'.
+'statemachine::Transition' is a specialization of 'ObeoDSMObject'.
+'statemachine::InitialState' is a specialization of 'AbstractState'.
+'statemachine::FinalState' is a specialization of 'AbstractState'.
+'statemachine::AbstractState' is a specialization of 'ObeoDSMObject'.
+'statemachine::State' is a specialization of 'NamedElement'.
+'statemachine::StateMachine' is a specialization of 'StateMachineDescription'.
+'statemachine::NamedElement' is a specialization of 'ObeoDSMObject'.
+'statemachine::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'AbstractState9', cardinality 0..*).
+'statemachine::Transition' (role 'outcomingTransitions', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'AbstractState', cardinality 0..*).
+'statemachine::Transition' (role 'Transition', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'to', cardinality 0..*).
+'statemachine::AbstractState' (role 'from_', cardinality 0..*) is associated with 'statemachine::Transition' (role 'Transition6', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*) is associated with 'statemachine::Region' (role 'statemachine_Region', cardinality 0..*).
+'statemachine::AbstractState' (role 'statemachine_AbstractState', cardinality 0..*) is associated with 'statemachine::StateMachineDescription' (role 'statemachine_StateMachineDescription', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*) is associated with 'statemachine::StateMachineDescription' (role 'statemachine_StateMachineDescription3', cardinality 0..*).

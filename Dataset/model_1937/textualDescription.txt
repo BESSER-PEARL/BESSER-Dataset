@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'restaurant::Table' has no attributes.
+The class 'restaurant::Booking' has no attributes.
+The class 'restaurant::Restaurant' has no attributes.
+The class 'restaurant::Waiter' has no attributes.
+The class 'restaurant::Menu' has no attributes.
+'restaurant::Restaurant' (role 'restaurant_Restaurant4', cardinality 0..*) is associated with 'restaurant::Waiter' (role 'restaurant_Waiter', cardinality 0..*).
+'restaurant::Restaurant' (role 'restaurant_Restaurant', cardinality 0..*) is associated with 'restaurant::Menu' (role 'restaurant_Menu', cardinality 0..*).
+'restaurant::Booking' (role 'restaurant_Booking', cardinality 0..*) is associated with 'restaurant::Restaurant' (role 'restaurant_Restaurant6', cardinality 0..*).
+'restaurant::Table' (role 'restaurant_Table', cardinality 0..*) is associated with 'restaurant::Restaurant' (role 'restaurant_Restaurant2', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'Books::System' has the following attributes: 'name' of type str.
+The class 'Books::Chapter' has the following attributes: 'title' of type str.
+The class 'Books::Author' has the following attributes: 'name' of type str.
+The class 'Books::Book' has the following attributes: 'title' of type str; 'collecName' of type str.
+'Books::Book' (role 'mybs', cardinality 0..*) is associated with 'Books::Author' (role 'Author', cardinality 0..*).
+'Books::Chapter' (role 'chaps', cardinality 0..*) is associated with 'Books::Book' (role 'Book', cardinality 0..*).
+'Books::Book' (role 'Book7', cardinality 0..*) is associated with 'Books::Author' (role 'auths', cardinality 0..*).
+'Books::Chapter' (role 'Chapter', cardinality 0..*) is associated with 'Books::Book' (role 'itsbook', cardinality 0..*).
+'Books::Book' (role 'Books_Book', cardinality 0..*) is associated with 'Books::System' (role 'Books_System', cardinality 0..*).
+'Books::Author' (role 'Books_Author', cardinality 0..*) is associated with 'Books::System' (role 'Books_System2', cardinality 0..*).

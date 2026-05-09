@@ -1,0 +1,7 @@
+The model has 2 class(es).
+The class 'family::ecore::Person' has the following attributes: 'name' of type str; 'age' of type int; 'height' of type float.
+The class 'family::ecore::Family' has no attributes.
+'family::ecore::Family' (role 'family_ecore_Family', cardinality 0..*) is associated with 'family::ecore::Person' (role 'family_ecore_Person9', cardinality 0..*).
+'family::ecore::Person' (role 'family_ecore_Person2', cardinality 0..*) is associated with 'family::ecore::Person' (role 'family_ecore_Person4', cardinality 0..*).
+'family::ecore::Person' (role 'family_ecore_Person0', cardinality 0..*) is associated with 'family::ecore::Person' (role 'family_ecore_Person', cardinality 0..*).
+'family::ecore::Person' (role 'family_ecore_Person5', cardinality 0..*) is associated with 'family::ecore::Person' (role 'family_ecore_Person7', cardinality 0..*).

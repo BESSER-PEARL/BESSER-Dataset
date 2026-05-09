@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'grapheditormodel::Edge' has the following attributes: 'Value' of type str.
+The class 'grapheditormodel::Graph' has no attributes.
+The class 'grapheditormodel::Node' has the following attributes: 'Name' of type str.
+'grapheditormodel::Node' (role 'grapheditormodel_Node', cardinality 0..*) is associated with 'grapheditormodel::Graph' (role 'grapheditormodel_Graph', cardinality 0..*).
+'grapheditormodel::Node' (role 'grapheditormodel_Node8', cardinality 0..*) is associated with 'grapheditormodel::Edge' (role 'grapheditormodel_Edge', cardinality 0..*).
+'grapheditormodel::Node' (role 'grapheditormodel_Node3', cardinality 0..*) is associated with 'grapheditormodel::Graph' (role 'grapheditormodel_Graph2', cardinality 0..*).
+'grapheditormodel::Node' (role 'grapheditormodel_Node10', cardinality 0..*) is associated with 'grapheditormodel::Edge' (role 'grapheditormodel_Edge11', cardinality 0..*).
+'grapheditormodel::Node' (role 'grapheditormodel_Node6', cardinality 0..*) is associated with 'grapheditormodel::Graph' (role 'grapheditormodel_Graph5', cardinality 0..*).
+'grapheditormodel::Edge' (role 'grapheditormodel_Edge13', cardinality 0..*) is associated with 'grapheditormodel::Node' (role 'grapheditormodel_Node14', cardinality 0..*).
+'grapheditormodel::Edge' (role 'grapheditormodel_Edge16', cardinality 0..*) is associated with 'grapheditormodel::Node' (role 'grapheditormodel_Node17', cardinality 0..*).

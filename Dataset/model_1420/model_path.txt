@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/plugbee/dslforge/examples/org.eclipse.xtext.example.fowlerdsl/model/generated/Statemachine.ecore

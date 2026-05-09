@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/petrinet/petrinetv3/fr.inria.diverse.sample.petrinetv3.model/model/petrinetv3.ecore

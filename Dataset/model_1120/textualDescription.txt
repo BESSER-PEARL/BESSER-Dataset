@@ -1,0 +1,44 @@
+The model has 12 class(es).
+The class 'MMInterModel::Event' has the following attributes: 'type' of type str; 'model' of type str.
+The class 'Element' has no attributes.
+The class 'MMInterModel::Attribute' has the following attributes: 'defaultValue' of type str; 'component' of type str; 'model' of type str; 'type' of type str; 'lowerBound' of type int; 'isArray' of type bool; 'upperBound' of type int; 'arraySize' of type int.
+The class 'MMInterModel::Transition' has the following attributes: 'stateMachine' of type str; 'action' of type str.
+The class 'MMInterModel::State' has the following attributes: 'exitBehaviour' of type str; 'duringBehaviour' of type str; 'entryBehaviour' of type str; 'stateConfiguration' of type str; 'stateMachine' of type str; 'stateNumber' of type int.
+The class 'MMInterModel::StateMachine' has the following attributes: 'component' of type str; 'type' of type str; 'superState' of type str.
+The class 'MMInterModel::Component' has the following attributes: 'numberOfSpares' of type int; 'model' of type str.
+The class 'MMInterModel::Element' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'MMInterModel::StringEnumeration' has the following attributes: 'attribute' of type str.
+The class 'MMInterModel::StateConfiguration' has the following attributes: 'model' of type str; 'configOperator' of type str; 'negation' of type bool; 'condition' of type str.
+The class 'MMInterModel::Guard' has the following attributes: 'specification' of type str; 'transition' of type str.
+The class 'MMInterModel::Model' has no attributes.
+'MMInterModel::Transition' is a specialization of 'Element'.
+'MMInterModel::StringEnumeration' is a specialization of 'Element'.
+'MMInterModel::State' is a specialization of 'Element'.
+'MMInterModel::Event' is a specialization of 'Element'.
+'MMInterModel::Model' is a specialization of 'Element'.
+'MMInterModel::StateMachine' is a specialization of 'Element'.
+'MMInterModel::StateConfiguration' is a specialization of 'Element'.
+'MMInterModel::Component' is a specialization of 'Element'.
+'MMInterModel::Attribute' is a specialization of 'Element'.
+'MMInterModel::Guard' is a specialization of 'Element'.
+'MMInterModel::Event' (role 'MMInterModel_Event45', cardinality 0..*) is associated with 'MMInterModel::Transition' (role 'MMInterModel_Transition46', cardinality 0..*).
+'MMInterModel::Event' (role 'MMInterModel_Event', cardinality 0..*) is associated with 'MMInterModel::Model' (role 'MMInterModel_Model4', cardinality 0..*).
+'MMInterModel::Component' (role 'MMInterModel_Component', cardinality 0..*) is associated with 'MMInterModel::Model' (role 'MMInterModel_Model', cardinality 0..*).
+'MMInterModel::State' (role 'MMInterModel_State49', cardinality 0..*) is associated with 'MMInterModel::StateConfiguration' (role 'MMInterModel_StateConfiguration48', cardinality 0..*).
+'MMInterModel::State' (role 'MMInterModel_State27', cardinality 0..*) is associated with 'MMInterModel::Transition' (role 'MMInterModel_Transition26', cardinality 0..*).
+'MMInterModel::StateConfiguration' (role 'MMInterModel_StateConfiguration', cardinality 0..*) is associated with 'MMInterModel::Model' (role 'MMInterModel_Model6', cardinality 0..*).
+'MMInterModel::Event' (role 'MMInterModel_Event30', cardinality 0..*) is associated with 'MMInterModel::Transition' (role 'MMInterModel_Transition29', cardinality 0..*).
+'MMInterModel::Component' (role 'MMInterModel_Component8', cardinality 0..*) is associated with 'MMInterModel::StateMachine' (role 'MMInterModel_StateMachine', cardinality 0..*).
+'MMInterModel::Attribute' (role 'MMInterModel_Attribute', cardinality 0..*) is associated with 'MMInterModel::Model' (role 'MMInterModel_Model2', cardinality 0..*).
+'MMInterModel::Component' (role 'MMInterModel_Component10', cardinality 0..*) is associated with 'MMInterModel::Attribute' (role 'MMInterModel_Attribute11', cardinality 0..*).
+'MMInterModel::State' (role 'MMInterModel_State21', cardinality 0..*) is associated with 'MMInterModel::StateMachine' (role 'MMInterModel_StateMachine20', cardinality 0..*).
+'MMInterModel::StateConfiguration' (role 'MMInterModel_StateConfiguration50', cardinality 0..*) is associated with 'MMInterModel::StateConfiguration' (role 'MMInterModel_StateConfiguration52', cardinality 0..*).
+'MMInterModel::State' (role 'MMInterModel_State24', cardinality 0..*) is associated with 'MMInterModel::Transition' (role 'MMInterModel_Transition23', cardinality 0..*).
+'MMInterModel::Transition' (role 'MMInterModel_Transition38', cardinality 0..*) is associated with 'MMInterModel::State' (role 'MMInterModel_State37', cardinality 0..*).
+'MMInterModel::StateMachine' (role 'MMInterModel_StateMachine16', cardinality 0..*) is associated with 'MMInterModel::Transition' (role 'MMInterModel_Transition', cardinality 0..*).
+'MMInterModel::State' (role 'MMInterModel_State34', cardinality 0..*) is associated with 'MMInterModel::Transition' (role 'MMInterModel_Transition35', cardinality 0..*).
+'MMInterModel::StringEnumeration' (role 'MMInterModel_StringEnumeration', cardinality 0..*) is associated with 'MMInterModel::Attribute' (role 'MMInterModel_Attribute43', cardinality 0..*).
+'MMInterModel::StateMachine' (role 'MMInterModel_StateMachine14', cardinality 0..*) is associated with 'MMInterModel::Component' (role 'MMInterModel_Component13', cardinality 0..*).
+'MMInterModel::State' (role 'MMInterModel_State', cardinality 0..*) is associated with 'MMInterModel::StateMachine' (role 'MMInterModel_StateMachine18', cardinality 0..*).
+'MMInterModel::StateMachine' (role 'MMInterModel_StateMachine41', cardinality 0..*) is associated with 'MMInterModel::State' (role 'MMInterModel_State40', cardinality 0..*).
+'MMInterModel::Transition' (role 'MMInterModel_Transition32', cardinality 0..*) is associated with 'MMInterModel::Guard' (role 'MMInterModel_Guard', cardinality 0..*).

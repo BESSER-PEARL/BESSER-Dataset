@@ -1,0 +1,55 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class express_expressions_AttributeBinding  {
+
+    private String position;
+
+
+
+
+
+    private Expression expression;
+
+
+
+
+    private ExplicitAttribute explicitattribute;
+
+
+    public express_expressions_AttributeBinding(
+        String position    ) {
+        this.position = position;
+    }
+
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public Expression getExpression() {
+        return expression;
+    }
+
+    public void setExpression(Expression expression) {
+        this.expression = expression;
+    }
+    public ExplicitAttribute getExplicitattribute() {
+        return explicitattribute;
+    }
+
+    public void setExplicitattribute(ExplicitAttribute explicitattribute) {
+        this.explicitattribute = explicitattribute;
+    }
+
+}

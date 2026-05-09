@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'petrinetv3::Token' has no attributes.
+The class 'petrinetv3::Transition' has the following attributes: 'clock' of type int; 'tmax' of type int; 'name' of type str; 'tmin' of type int.
+The class 'petrinetv3::Net' has no attributes.
+The class 'petrinetv3::Place' has the following attributes: 'name' of type str; 'initialTokens' of type int.
+'petrinetv3::Net' (role 'petrinetv3_Net', cardinality 0..*) is associated with 'petrinetv3::Place' (role 'petrinetv3_Place', cardinality 0..*).
+'petrinetv3::Place' (role 'petrinetv3_Place6', cardinality 0..*) is associated with 'petrinetv3::Transition' (role 'petrinetv3_Transition5', cardinality 0..*).
+'petrinetv3::Net' (role 'Net', cardinality 0..*) is associated with 'petrinetv3::Transition' (role 'transitions', cardinality 0..*).
+'petrinetv3::Place' (role 'petrinetv3_Place9', cardinality 0..*) is associated with 'petrinetv3::Token' (role 'petrinetv3_Token', cardinality 0..*).
+'petrinetv3::Net' (role 'parentNet', cardinality 0..*) is associated with 'petrinetv3::Transition' (role 'Transition', cardinality 0..*).
+'petrinetv3::Place' (role 'petrinetv3_Place3', cardinality 0..*) is associated with 'petrinetv3::Transition' (role 'petrinetv3_Transition', cardinality 0..*).

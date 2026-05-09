@@ -1,0 +1,183 @@
+The model has 78 class(es).
+The class 'myAtl::InPatternElement' has the following attributes: 'varName' of type str.
+The class 'myAtl::Binding' has the following attributes: 'propertyName' of type str.
+The class 'myAtl::EObject' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'myAtl::CalledRule' has no attributes.
+The class 'TypeLiteralCS' has no attributes.
+The class 'myAtl::NestedExpCS' has no attributes.
+The class 'myAtl::TypeLiteralExpCS' has no attributes.
+The class 'myAtl::PrefixedExpCS' has no attributes.
+The class 'myAtl::IfExpCS' has no attributes.
+The class 'myAtl::PrefixExpCS' has no attributes.
+The class 'myAtl::ForEachOutPatternElement' has no attributes.
+The class 'myAtl::MatchedRule' has no attributes.
+The class 'myAtl::NullLiteralExpCS' has no attributes.
+The class 'myAtl::LetVariableCS' has the following attributes: 'name' of type str.
+The class 'PrefixedExpCS' has no attributes.
+The class 'myAtl::SimpleOutPatternElement' has the following attributes: 'varName' of type str.
+The class 'IndexExpCS' has no attributes.
+The class 'myAtl::NameExpCS' has the following attributes: 'namespace' of type str; 'element' of type str.
+The class 'ModuleElement' has no attributes.
+The class 'myAtl::InvalidLiteralExpCS' has no attributes.
+The class 'myAtl::NavigatingExpCS::Base' has no attributes.
+The class 'myAtl::TupleLiteralExpCS' has no attributes.
+The class 'NavigatingExpCS::Base' has no attributes.
+The class 'Statement' has no attributes.
+The class 'myAtl::NavigatingBarArgCS' has the following attributes: 'prefix' of type str.
+The class 'myAtl::UnlimitedNaturalLiteralExpCS' has no attributes.
+The class 'myAtl::TypeExpCS' has no attributes.
+The class 'myAtl::PrimitiveLiteralExpCS' has no attributes.
+The class 'PrimaryExpCS' has no attributes.
+The class 'myAtl::CollectionTypeCS' has no attributes.
+The class 'myAtl::InPattern' has no attributes.
+The class 'myAtl::ExpCS' has no attributes.
+The class 'myAtl::NavigatingSemiArgCS' has the following attributes: 'prefix' of type str.
+The class 'myAtl::Helper' has no attributes.
+The class 'myAtl::PrimitiveTypeCS' has no attributes.
+The class 'myAtl::Statement' has no attributes.
+The class 'myAtl::NavigatingCommaArgCS' has the following attributes: 'prefix' of type str.
+The class 'myAtl::OutPatternElement' has no attributes.
+The class 'myAtl::ATLParameterCS' has the following attributes: 'varName' of type str.
+The class 'myAtl::QueryRule' has no attributes.
+The class 'myAtl::InfixExpCS' has no attributes.
+The class 'NavigatingExpCS' has no attributes.
+The class 'myAtl::tuplePartCS' has the following attributes: 'name' of type str.
+The class 'myAtl::BooleanLiteralExpCS' has the following attributes: 'name' of type str.
+The class 'myAtl::UnaryOperatorCS' has the following attributes: 'name' of type str.
+The class 'myAtl::RuleVariableDeclaration' has the following attributes: 'varName' of type str.
+The class 'myAtl::LetExpCS' has no attributes.
+The class 'myAtl::ModuleElement' has the following attributes: 'name' of type str.
+The class 'myAtl::PrimaryExpCS' has no attributes.
+The class 'myAtl::StringLiteralExpCS' has the following attributes: 'name' of type str.
+The class 'myAtl::ATLDefCS' has the following attributes: 'varName' of type str.
+The class 'myAtl::SelfExpCS' has no attributes.
+The class 'myAtl::Module' has the following attributes: 'name' of type str.
+The class 'myAtl::NavigatingArgExpCS' has no attributes.
+The class 'myAtl::TupleTypeCS' has the following attributes: 'backtrack' of type str.
+The class 'myAtl::TypeLiteralCS' has the following attributes: 'name' of type str.
+The class 'myAtl::BinaryOperatorCS' has the following attributes: 'name' of type str.
+The class 'myAtl::NavigationOperatorCS' has no attributes.
+The class 'myAtl::TypeNameExpCS' has the following attributes: 'namespace' of type str; 'element' of type str.
+The class 'myAtl::IndexExpCS' has no attributes.
+The class 'myAtl::ActionBlock' has no attributes.
+The class 'myAtl::InfixOperatorCS' has no attributes.
+The class 'myAtl::ATLType' has the following attributes: 'modelName' of type str.
+The class 'InfixedExpCS' has no attributes.
+The class 'myAtl::StringExpCs' has the following attributes: 'name' of type str.
+The class 'myAtl::NumberLiteralExpCS' has the following attributes: 'name' of type str.
+The class 'myAtl::InfixedExpCS' has no attributes.
+The class 'PrimitiveLiteralExpCS' has no attributes.
+The class 'NavigatingArgExpCS' has no attributes.
+The class 'myAtl::OutPattern' has no attributes.
+The class 'myAtl::BindingStat' has the following attributes: 'propertyName' of type str.
+The class 'BinaryOperatorCS' has no attributes.
+The class 'OutPatternElement' has no attributes.
+The class 'TypeExpCS' has no attributes.
+The class 'myAtl::NavigatingExpCS' has no attributes.
+The class 'myAtl::NavigatingArgCS' has no attributes.
+The class 'myAtl::TupleLiteralPartCS' has the following attributes: 'name' of type str.
+'myAtl::NavigationOperatorCS' is a specialization of 'BinaryOperatorCS'.
+'myAtl::LetExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'myAtl::QueryRule' is a specialization of 'ModuleElement'.
+'myAtl::BindingStat' is a specialization of 'Statement'.
+'myAtl::PrefixedExpCS' is a specialization of 'InfixedExpCS'.
+'myAtl::InfixExpCS' is a specialization of 'InfixedExpCS'.
+'myAtl::PrimitiveLiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::InfixedExpCS' is a specialization of 'ExpCS'.
+'myAtl::MatchedRule' is a specialization of 'ModuleElement'.
+'myAtl::NavigatingExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::CollectionTypeCS' is a specialization of 'TypeLiteralCS'.
+'myAtl::InfixOperatorCS' is a specialization of 'BinaryOperatorCS'.
+'myAtl::TypeNameExpCS' is a specialization of 'TypeExpCS'.
+'myAtl::IfExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::StringExpCs' is a specialization of 'PrimaryExpCS'.
+'myAtl::TupleLiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::PrimitiveTypeCS' is a specialization of 'TypeLiteralCS'.
+'myAtl::PrefixExpCS' is a specialization of 'PrefixedExpCS'.
+'myAtl::ExpCS' is a specialization of 'NavigatingArgExpCS'.
+'myAtl::NavigatingExpCS::Base' is a specialization of 'NavigatingExpCS'.
+'myAtl::TupleTypeCS' is a specialization of 'TypeLiteralCS'.
+'myAtl::NameExpCS' is a specialization of 'IndexExpCS'.
+'myAtl::BooleanLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'myAtl::IndexExpCS' is a specialization of 'NavigatingExpCS::Base'.
+'myAtl::SimpleOutPatternElement' is a specialization of 'OutPatternElement'.
+'myAtl::NullLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'myAtl::NumberLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'myAtl::TypeLiteralCS' is a specialization of 'TypeExpCS'.
+'myAtl::Helper' is a specialization of 'ModuleElement'.
+'myAtl::CalledRule' is a specialization of 'ModuleElement'.
+'myAtl::SelfExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::ForEachOutPatternElement' is a specialization of 'OutPatternElement'.
+'myAtl::PrimaryExpCS' is a specialization of 'PrefixedExpCS'.
+'myAtl::InvalidLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'myAtl::UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'myAtl::NestedExpCS' is a specialization of 'PrimaryExpCS'.
+'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS', cardinality 0..*) is associated with 'myAtl::ATLType' (role 'myAtl_ATLType72', cardinality 0..*).
+'myAtl::TupleLiteralPartCS' (role 'myAtl_TupleLiteralPartCS84', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS85', cardinality 0..*).
+'myAtl::IndexExpCS' (role 'myAtl_IndexExpCS', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS139', cardinality 0..*).
+'myAtl::NavigatingExpCS::Base' (role 'myAtl_NavigatingExpCS_Base', cardinality 0..*) is associated with 'myAtl::NavigatingExpCS' (role 'myAtl_NavigatingExpCS', cardinality 0..*).
+'myAtl::NavigatingCommaArgCS' (role 'myAtl_NavigatingCommaArgCS', cardinality 0..*) is associated with 'myAtl::NavigatingArgExpCS' (role 'myAtl_NavigatingArgExpCS103', cardinality 0..*).
+'myAtl::ActionBlock' (role 'myAtl_ActionBlock65', cardinality 0..*) is associated with 'myAtl::Statement' (role 'myAtl_Statement', cardinality 0..*).
+'myAtl::NavigatingArgCS' (role 'myAtl_NavigatingArgCS92', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS93', cardinality 0..*).
+'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS106', cardinality 0..*) is associated with 'myAtl::NavigatingCommaArgCS' (role 'myAtl_NavigatingCommaArgCS105', cardinality 0..*).
+'myAtl::IfExpCS' (role 'myAtl_IfExpCS121', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS122', cardinality 0..*).
+'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS114', cardinality 0..*) is associated with 'myAtl::NavigatingSemiArgCS' (role 'myAtl_NavigatingSemiArgCS113', cardinality 0..*).
+'myAtl::OutPattern' (role 'myAtl_OutPattern54', cardinality 0..*) is associated with 'myAtl::OutPatternElement' (role 'myAtl_OutPatternElement', cardinality 0..*).
+'myAtl::ATLDefCS' (role 'myAtl_ATLDefCS32', cardinality 0..*) is associated with 'myAtl::ATLType' (role 'myAtl_ATLType', cardinality 0..*).
+'myAtl::ExpCS' (role 'myAtl_ExpCS135', cardinality 0..*) is associated with 'myAtl::LetVariableCS' (role 'myAtl_LetVariableCS134', cardinality 0..*).
+'myAtl::ActionBlock' (role 'myAtl_ActionBlock', cardinality 0..*) is associated with 'myAtl::MatchedRule' (role 'myAtl_MatchedRule15', cardinality 0..*).
+'myAtl::ExpCS' (role 'myAtl_ExpCS109', cardinality 0..*) is associated with 'myAtl::NavigatingCommaArgCS' (role 'myAtl_NavigatingCommaArgCS108', cardinality 0..*).
+'myAtl::ATLDefCS' (role 'myAtl_ATLDefCS29', cardinality 0..*) is associated with 'myAtl::ATLParameterCS' (role 'myAtl_ATLParameterCS30', cardinality 0..*).
+'myAtl::OutPattern' (role 'myAtl_OutPattern20', cardinality 0..*) is associated with 'myAtl::CalledRule' (role 'myAtl_CalledRule19', cardinality 0..*).
+'myAtl::BinaryOperatorCS' (role 'myAtl_BinaryOperatorCS', cardinality 0..*) is associated with 'myAtl::InfixExpCS' (role 'myAtl_InfixExpCS148', cardinality 0..*).
+'myAtl::Module' (role 'myAtl_Module', cardinality 0..*) is associated with 'myAtl::NameExpCS' (role 'myAtl_NameExpCS', cardinality 0..*).
+'myAtl::NameExpCS' (role 'myAtl_NameExpCS3', cardinality 0..*) is associated with 'myAtl::Module' (role 'myAtl_Module2', cardinality 0..*).
+'myAtl::ATLParameterCS' (role 'myAtl_ATLParameterCS37', cardinality 0..*) is associated with 'myAtl::ATLType' (role 'myAtl_ATLType38', cardinality 0..*).
+'myAtl::SimpleOutPatternElement' (role 'myAtl_SimpleOutPatternElement', cardinality 0..*) is associated with 'myAtl::ATLType' (role 'myAtl_ATLType56', cardinality 0..*).
+'myAtl::NavigatingBarArgCS' (role 'myAtl_NavigatingBarArgCS97', cardinality 0..*) is associated with 'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS98', cardinality 0..*).
+'myAtl::TupleLiteralPartCS' (role 'myAtl_TupleLiteralPartCS81', cardinality 0..*) is associated with 'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS82', cardinality 0..*).
+'myAtl::RuleVariableDeclaration' (role 'myAtl_RuleVariableDeclaration17', cardinality 0..*) is associated with 'myAtl::CalledRule' (role 'myAtl_CalledRule', cardinality 0..*).
+'myAtl::PrimaryExpCS' (role 'myAtl_PrimaryExpCS', cardinality 0..*) is associated with 'myAtl::PrefixExpCS' (role 'myAtl_PrefixExpCS151', cardinality 0..*).
+'myAtl::TupleTypeCS' (role 'myAtl_TupleTypeCS', cardinality 0..*) is associated with 'myAtl::tuplePartCS' (role 'myAtl_tuplePartCS', cardinality 0..*).
+'myAtl::TupleLiteralPartCS' (role 'myAtl_TupleLiteralPartCS', cardinality 0..*) is associated with 'myAtl::TupleLiteralExpCS' (role 'myAtl_TupleLiteralExpCS', cardinality 0..*).
+'myAtl::ModuleElement' (role 'myAtl_ModuleElement', cardinality 0..*) is associated with 'myAtl::Module' (role 'myAtl_Module8', cardinality 0..*).
+'myAtl::ExpCS' (role 'myAtl_ExpCS117', cardinality 0..*) is associated with 'myAtl::NavigatingSemiArgCS' (role 'myAtl_NavigatingSemiArgCS116', cardinality 0..*).
+'myAtl::QueryRule' (role 'myAtl_QueryRule26', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS', cardinality 0..*).
+'myAtl::LetVariableCS' (role 'myAtl_LetVariableCS', cardinality 0..*) is associated with 'myAtl::LetExpCS' (role 'myAtl_LetExpCS', cardinality 0..*).
+'myAtl::ExpCS' (role 'myAtl_ExpCS60', cardinality 0..*) is associated with 'myAtl::ForEachOutPatternElement' (role 'myAtl_ForEachOutPatternElement', cardinality 0..*).
+'myAtl::NavigatingSemiArgCS' (role 'myAtl_NavigatingSemiArgCS', cardinality 0..*) is associated with 'myAtl::NavigatingArgExpCS' (role 'myAtl_NavigatingArgExpCS111', cardinality 0..*).
+'myAtl::MatchedRule' (role 'myAtl_MatchedRule13', cardinality 0..*) is associated with 'myAtl::OutPattern' (role 'myAtl_OutPattern', cardinality 0..*).
+'myAtl::InPattern' (role 'myAtl_InPattern46', cardinality 0..*) is associated with 'myAtl::InPatternElement' (role 'myAtl_InPatternElement', cardinality 0..*).
+'myAtl::NavigatingBarArgCS' (role 'myAtl_NavigatingBarArgCS100', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS101', cardinality 0..*).
+'myAtl::CalledRule' (role 'myAtl_CalledRule22', cardinality 0..*) is associated with 'myAtl::ActionBlock' (role 'myAtl_ActionBlock23', cardinality 0..*).
+'myAtl::Binding' (role 'myAtl_Binding', cardinality 0..*) is associated with 'myAtl::SimpleOutPatternElement' (role 'myAtl_SimpleOutPatternElement58', cardinality 0..*).
+'myAtl::IfExpCS' (role 'myAtl_IfExpCS', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS119', cardinality 0..*).
+'myAtl::EObject' (role 'myAtl_EObject', cardinality 0..*) is associated with 'myAtl::NavigatingExpCS' (role 'myAtl_NavigatingExpCS145', cardinality 0..*).
+'myAtl::ExpCS' (role 'myAtl_ExpCS125', cardinality 0..*) is associated with 'myAtl::IfExpCS' (role 'myAtl_IfExpCS124', cardinality 0..*).
+'myAtl::ATLParameterCS' (role 'myAtl_ATLParameterCS', cardinality 0..*) is associated with 'myAtl::QueryRule' (role 'myAtl_QueryRule', cardinality 0..*).
+'myAtl::NavigatingArgExpCS' (role 'myAtl_NavigatingArgExpCS', cardinality 0..*) is associated with 'myAtl::NavigatingArgCS' (role 'myAtl_NavigatingArgCS', cardinality 0..*).
+'myAtl::ATLType' (role 'myAtl_ATLType41', cardinality 0..*) is associated with 'myAtl::RuleVariableDeclaration' (role 'myAtl_RuleVariableDeclaration40', cardinality 0..*).
+'myAtl::PrefixExpCS' (role 'myAtl_PrefixExpCS', cardinality 0..*) is associated with 'myAtl::UnaryOperatorCS' (role 'myAtl_UnaryOperatorCS', cardinality 0..*).
+'myAtl::InPattern' (role 'myAtl_InPattern48', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS49', cardinality 0..*).
+'myAtl::Binding' (role 'myAtl_Binding62', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS63', cardinality 0..*).
+'myAtl::MatchedRule' (role 'myAtl_MatchedRule', cardinality 0..*) is associated with 'myAtl::InPattern' (role 'myAtl_InPattern', cardinality 0..*).
+'myAtl::BindingStat' (role 'myAtl_BindingStat69', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS70', cardinality 0..*).
+'myAtl::TypeLiteralCS' (role 'myAtl_TypeLiteralCS', cardinality 0..*) is associated with 'myAtl::TypeLiteralExpCS' (role 'myAtl_TypeLiteralExpCS', cardinality 0..*).
+'myAtl::MatchedRule' (role 'myAtl_MatchedRule11', cardinality 0..*) is associated with 'myAtl::RuleVariableDeclaration' (role 'myAtl_RuleVariableDeclaration', cardinality 0..*).
+'myAtl::LetVariableCS' (role 'myAtl_LetVariableCS131', cardinality 0..*) is associated with 'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS132', cardinality 0..*).
+'myAtl::NestedExpCS' (role 'myAtl_NestedExpCS', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS137', cardinality 0..*).
+'myAtl::NavigatingBarArgCS' (role 'myAtl_NavigatingBarArgCS', cardinality 0..*) is associated with 'myAtl::NavigatingArgExpCS' (role 'myAtl_NavigatingArgExpCS95', cardinality 0..*).
+'myAtl::NavigatingArgCS' (role 'myAtl_NavigatingArgCS89', cardinality 0..*) is associated with 'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS90', cardinality 0..*).
+'myAtl::InPatternElement' (role 'myAtl_InPatternElement51', cardinality 0..*) is associated with 'myAtl::ATLType' (role 'myAtl_ATLType52', cardinality 0..*).
+'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS78', cardinality 0..*) is associated with 'myAtl::tuplePartCS' (role 'myAtl_tuplePartCS77', cardinality 0..*).
+'myAtl::ATLDefCS' (role 'myAtl_ATLDefCS34', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS35', cardinality 0..*).
+'myAtl::LetExpCS' (role 'myAtl_LetExpCS128', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS129', cardinality 0..*).
+'myAtl::ExpCS' (role 'myAtl_ExpCS142', cardinality 0..*) is associated with 'myAtl::IndexExpCS' (role 'myAtl_IndexExpCS141', cardinality 0..*).
+'myAtl::RuleVariableDeclaration' (role 'myAtl_RuleVariableDeclaration43', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS44', cardinality 0..*).
+'myAtl::BindingStat' (role 'myAtl_BindingStat', cardinality 0..*) is associated with 'myAtl::ExpCS' (role 'myAtl_ExpCS67', cardinality 0..*).
+'myAtl::NameExpCS' (role 'myAtl_NameExpCS6', cardinality 0..*) is associated with 'myAtl::Module' (role 'myAtl_Module5', cardinality 0..*).
+'myAtl::TypeExpCS' (role 'myAtl_TypeExpCS74', cardinality 0..*) is associated with 'myAtl::CollectionTypeCS' (role 'myAtl_CollectionTypeCS', cardinality 0..*).
+'myAtl::PrefixedExpCS' (role 'myAtl_PrefixedExpCS', cardinality 0..*) is associated with 'myAtl::InfixExpCS' (role 'myAtl_InfixExpCS', cardinality 0..*).
+'myAtl::Helper' (role 'myAtl_Helper', cardinality 0..*) is associated with 'myAtl::ATLDefCS' (role 'myAtl_ATLDefCS', cardinality 0..*).

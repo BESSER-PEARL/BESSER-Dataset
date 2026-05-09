@@ -1,0 +1,36 @@
+The model has 18 class(es).
+The class 'netxstudio::Function' has no attributes.
+The class 'netxstudio::Meta' has no attributes.
+The class 'netxstudio::Equipment' has no attributes.
+The class 'netxstudio::Company' has no attributes.
+The class 'netxstudio::User' has no attributes.
+The class 'netxstudio::Room' has no attributes.
+The class 'netxstudio::RFSService' has no attributes.
+The class 'netxstudio::Metric' has no attributes.
+The class 'netxstudio::Unit' has no attributes.
+The class 'netxstudio::Library' has the following attributes: 'name' of type str; 'description' of type str; 'version' of type str.
+The class 'netxstudio::Site' has no attributes.
+The class 'netxstudio::Network' has no attributes.
+The class 'netxstudio::MetricSource' has no attributes.
+The class 'netxstudio::Expression' has no attributes.
+The class 'netxstudio::Protocol' has no attributes.
+The class 'netxstudio::Parameter' has no attributes.
+The class 'netxstudio::Country' has no attributes.
+The class 'netxstudio::Tolerance' has no attributes.
+'netxstudio::User' (role 'netxstudio_User', cardinality 0..*) is associated with 'netxstudio::Library' (role 'netxstudio_Library18', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library14', cardinality 0..*) is associated with 'netxstudio::Tolerance' (role 'netxstudio_Tolerance', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library6', cardinality 0..*) is associated with 'netxstudio::Metric' (role 'netxstudio_Metric', cardinality 0..*).
+'netxstudio::MetricSource' (role 'netxstudio_MetricSource', cardinality 0..*) is associated with 'netxstudio::Library' (role 'netxstudio_Library32', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library26', cardinality 0..*) is associated with 'netxstudio::Unit' (role 'netxstudio_Unit', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library10', cardinality 0..*) is associated with 'netxstudio::Protocol' (role 'netxstudio_Protocol', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library8', cardinality 0..*) is associated with 'netxstudio::Parameter' (role 'netxstudio_Parameter', cardinality 0..*).
+'netxstudio::Company' (role 'netxstudio_Company', cardinality 0..*) is associated with 'netxstudio::Library' (role 'netxstudio_Library12', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library16', cardinality 0..*) is associated with 'netxstudio::Expression' (role 'netxstudio_Expression', cardinality 0..*).
+'netxstudio::Site' (role 'netxstudio_Site', cardinality 0..*) is associated with 'netxstudio::Library' (role 'netxstudio_Library24', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library2', cardinality 0..*) is associated with 'netxstudio::Function' (role 'netxstudio_Function', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library30', cardinality 0..*) is associated with 'netxstudio::Meta' (role 'netxstudio_Meta', cardinality 0..*).
+'netxstudio::Network' (role 'netxstudio_Network', cardinality 0..*) is associated with 'netxstudio::Library' (role 'netxstudio_Library', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library28', cardinality 0..*) is associated with 'netxstudio::RFSService' (role 'netxstudio_RFSService', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library4', cardinality 0..*) is associated with 'netxstudio::Equipment' (role 'netxstudio_Equipment', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library22', cardinality 0..*) is associated with 'netxstudio::Country' (role 'netxstudio_Country', cardinality 0..*).
+'netxstudio::Library' (role 'netxstudio_Library20', cardinality 0..*) is associated with 'netxstudio::Room' (role 'netxstudio_Room', cardinality 0..*).

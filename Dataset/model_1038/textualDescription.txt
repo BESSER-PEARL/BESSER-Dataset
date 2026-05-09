@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'finalStateMachine::Transition' has the following attributes: 'name' of type str.
+The class 'finalStateMachine::State' has the following attributes: 'name' of type str.
+The class 'finalStateMachine::FSM' has the following attributes: 'name' of type str.
+The class 'finalStateMachine::FinalState' has no attributes.
+The class 'State' has no attributes.
+The class 'finalStateMachine::InitialState' has no attributes.
+'finalStateMachine::InitialState' is a specialization of 'State'.
+'finalStateMachine::FinalState' is a specialization of 'State'.
+'finalStateMachine::FSM' (role 'finalStateMachine_FSM', cardinality 0..*) is associated with 'finalStateMachine::Transition' (role 'finalStateMachine_Transition', cardinality 0..*).
+'finalStateMachine::State' (role 'finalStateMachine_State5', cardinality 0..*) is associated with 'finalStateMachine::Transition' (role 'finalStateMachine_Transition4', cardinality 0..*).
+'finalStateMachine::State' (role 'finalStateMachine_State8', cardinality 0..*) is associated with 'finalStateMachine::Transition' (role 'finalStateMachine_Transition7', cardinality 0..*).
+'finalStateMachine::FSM' (role 'finalStateMachine_FSM2', cardinality 0..*) is associated with 'finalStateMachine::State' (role 'finalStateMachine_State', cardinality 0..*).

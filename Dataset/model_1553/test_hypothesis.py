@@ -1,0 +1,3382 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from classes import (
+    R4ETextPosition,
+    model::R4EAnomalyTextPosition,
+    model::R4EUserReviews,
+    model::R4EPosition,
+    Location,
+    model::R4EContent,
+    Comment,
+    ReviewState,
+    model::R4EReviewState,
+    TaskReference,
+    CommentType,
+    model::R4ECommentType,
+    R4EContent,
+    model::R4ETextContent,
+    model::MapKeyToInfoAttributes,
+    Item,
+    R4EIDComponent,
+    model::R4EDelta,
+    model::R4EFileContext,
+    model::MapDateToDuration,
+    model::R4EID,
+    R4EUser,
+    ReviewComponent,
+    model::R4EReviewComponent,
+    User,
+    R4EPosition,
+    model::R4ETextPosition,
+    model::R4EReviewPhaseInfo,
+    model::R4EParticipant,
+    R4EReview,
+    model::R4EFormalReview,
+    model::R4EFileVersion,
+    model::R4EItem,
+    model::R4EMeetingData,
+    model::MapIDToComponent,
+    model::MapToUsers,
+    model::R4EReviewDecision,
+    Review,
+    model::MapUserIDToUserReviews,
+    model::MapNameToReview,
+    model::MapToAnomalyType,
+    model::R4EAnomalyType,
+    model::R4EDesignRule,
+    R4EComment,
+    Topic,
+    R4EReviewComponent,
+    model::R4EReview,
+    model::R4EComment,
+    model::R4ETaskReference,
+    model::R4EAnomaly,
+    model::R4EUser,
+    model::R4EIDComponent,
+    ReviewGroup,
+    model::R4EReviewGroup,
+    R4EAnomalyState,
+    R4EReviewType,
+    R4EContextType,
+    R4EDecision,
+    R4EUserRole,
+    R4EReviewPhase,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_r4etextposition_is_not_abstract():
+    assert not inspect.isabstract(R4ETextPosition)
+
+
+def test_r4etextposition_constructor_exists():
+    assert callable(R4ETextPosition.__init__)
+
+
+def test_r4etextposition_constructor_args():
+    sig = inspect.signature(R4ETextPosition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4eanomalytextposition_is_not_abstract():
+    assert not inspect.isabstract(model::R4EAnomalyTextPosition)
+
+
+def test_model::r4eanomalytextposition_constructor_exists():
+    assert callable(model::R4EAnomalyTextPosition.__init__)
+
+
+def test_model::r4eanomalytextposition_constructor_args():
+    sig = inspect.signature(model::R4EAnomalyTextPosition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4euserreviews_is_not_abstract():
+    assert not inspect.isabstract(model::R4EUserReviews)
+
+
+def test_model::r4euserreviews_constructor_exists():
+    assert callable(model::R4EUserReviews.__init__)
+
+
+def test_model::r4euserreviews_constructor_args():
+    sig = inspect.signature(model::R4EUserReviews.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "createdReviews" in params, "Missing parameter 'createdReviews'"
+
+def test_model::r4euserreviews_has_name():
+    assert hasattr(model::R4EUserReviews, "name")
+    descriptor = None
+    for klass in model::R4EUserReviews.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4euserreviews_has_createdReviews():
+    assert hasattr(model::R4EUserReviews, "createdReviews")
+    descriptor = None
+    for klass in model::R4EUserReviews.__mro__:
+        if "createdReviews" in klass.__dict__:
+            descriptor = klass.__dict__["createdReviews"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4eposition_is_not_abstract():
+    assert not inspect.isabstract(model::R4EPosition)
+
+
+def test_model::r4eposition_constructor_exists():
+    assert callable(model::R4EPosition.__init__)
+
+
+def test_model::r4eposition_constructor_args():
+    sig = inspect.signature(model::R4EPosition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_location_is_not_abstract():
+    assert not inspect.isabstract(Location)
+
+
+def test_location_constructor_exists():
+    assert callable(Location.__init__)
+
+
+def test_location_constructor_args():
+    sig = inspect.signature(Location.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4econtent_is_not_abstract():
+    assert not inspect.isabstract(model::R4EContent)
+
+
+def test_model::r4econtent_constructor_exists():
+    assert callable(model::R4EContent.__init__)
+
+
+def test_model::r4econtent_constructor_args():
+    sig = inspect.signature(model::R4EContent.__init__)
+    params = list(sig.parameters.keys())
+    assert "info" in params, "Missing parameter 'info'"
+
+def test_model::r4econtent_has_info():
+    assert hasattr(model::R4EContent, "info")
+    descriptor = None
+    for klass in model::R4EContent.__mro__:
+        if "info" in klass.__dict__:
+            descriptor = klass.__dict__["info"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_comment_is_not_abstract():
+    assert not inspect.isabstract(Comment)
+
+
+def test_comment_constructor_exists():
+    assert callable(Comment.__init__)
+
+
+def test_comment_constructor_args():
+    sig = inspect.signature(Comment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reviewstate_is_not_abstract():
+    assert not inspect.isabstract(ReviewState)
+
+
+def test_reviewstate_constructor_exists():
+    assert callable(ReviewState.__init__)
+
+
+def test_reviewstate_constructor_args():
+    sig = inspect.signature(ReviewState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4ereviewstate_is_not_abstract():
+    assert not inspect.isabstract(model::R4EReviewState)
+
+
+def test_model::r4ereviewstate_constructor_exists():
+    assert callable(model::R4EReviewState.__init__)
+
+
+def test_model::r4ereviewstate_constructor_args():
+    sig = inspect.signature(model::R4EReviewState.__init__)
+    params = list(sig.parameters.keys())
+    assert "state" in params, "Missing parameter 'state'"
+
+def test_model::r4ereviewstate_has_state():
+    assert hasattr(model::R4EReviewState, "state")
+    descriptor = None
+    for klass in model::R4EReviewState.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_taskreference_is_not_abstract():
+    assert not inspect.isabstract(TaskReference)
+
+
+def test_taskreference_constructor_exists():
+    assert callable(TaskReference.__init__)
+
+
+def test_taskreference_constructor_args():
+    sig = inspect.signature(TaskReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_commenttype_is_not_abstract():
+    assert not inspect.isabstract(CommentType)
+
+
+def test_commenttype_constructor_exists():
+    assert callable(CommentType.__init__)
+
+
+def test_commenttype_constructor_args():
+    sig = inspect.signature(CommentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4ecommenttype_is_not_abstract():
+    assert not inspect.isabstract(model::R4ECommentType)
+
+
+def test_model::r4ecommenttype_constructor_exists():
+    assert callable(model::R4ECommentType.__init__)
+
+
+def test_model::r4ecommenttype_constructor_args():
+    sig = inspect.signature(model::R4ECommentType.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_model::r4ecommenttype_has_type():
+    assert hasattr(model::R4ECommentType, "type")
+    descriptor = None
+    for klass in model::R4ECommentType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_r4econtent_is_not_abstract():
+    assert not inspect.isabstract(R4EContent)
+
+
+def test_r4econtent_constructor_exists():
+    assert callable(R4EContent.__init__)
+
+
+def test_r4econtent_constructor_args():
+    sig = inspect.signature(R4EContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4etextcontent_is_not_abstract():
+    assert not inspect.isabstract(model::R4ETextContent)
+
+
+def test_model::r4etextcontent_constructor_exists():
+    assert callable(model::R4ETextContent.__init__)
+
+
+def test_model::r4etextcontent_constructor_args():
+    sig = inspect.signature(model::R4ETextContent.__init__)
+    params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
+
+def test_model::r4etextcontent_has_content():
+    assert hasattr(model::R4ETextContent, "content")
+    descriptor = None
+    for klass in model::R4ETextContent.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::mapkeytoinfoattributes_is_not_abstract():
+    assert not inspect.isabstract(model::MapKeyToInfoAttributes)
+
+
+def test_model::mapkeytoinfoattributes_constructor_exists():
+    assert callable(model::MapKeyToInfoAttributes.__init__)
+
+
+def test_model::mapkeytoinfoattributes_constructor_args():
+    sig = inspect.signature(model::MapKeyToInfoAttributes.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_model::mapkeytoinfoattributes_has_value():
+    assert hasattr(model::MapKeyToInfoAttributes, "value")
+    descriptor = None
+    for klass in model::MapKeyToInfoAttributes.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::mapkeytoinfoattributes_has_key():
+    assert hasattr(model::MapKeyToInfoAttributes, "key")
+    descriptor = None
+    for klass in model::MapKeyToInfoAttributes.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_item_is_not_abstract():
+    assert not inspect.isabstract(Item)
+
+
+def test_item_constructor_exists():
+    assert callable(Item.__init__)
+
+
+def test_item_constructor_args():
+    sig = inspect.signature(Item.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_r4eidcomponent_is_not_abstract():
+    assert not inspect.isabstract(R4EIDComponent)
+
+
+def test_r4eidcomponent_constructor_exists():
+    assert callable(R4EIDComponent.__init__)
+
+
+def test_r4eidcomponent_constructor_args():
+    sig = inspect.signature(R4EIDComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4edelta_is_not_abstract():
+    assert not inspect.isabstract(model::R4EDelta)
+
+
+def test_model::r4edelta_constructor_exists():
+    assert callable(model::R4EDelta.__init__)
+
+
+def test_model::r4edelta_constructor_args():
+    sig = inspect.signature(model::R4EDelta.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4efilecontext_is_not_abstract():
+    assert not inspect.isabstract(model::R4EFileContext)
+
+
+def test_model::r4efilecontext_constructor_exists():
+    assert callable(model::R4EFileContext.__init__)
+
+
+def test_model::r4efilecontext_constructor_args():
+    sig = inspect.signature(model::R4EFileContext.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_model::r4efilecontext_has_type():
+    assert hasattr(model::R4EFileContext, "type")
+    descriptor = None
+    for klass in model::R4EFileContext.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::mapdatetoduration_is_not_abstract():
+    assert not inspect.isabstract(model::MapDateToDuration)
+
+
+def test_model::mapdatetoduration_constructor_exists():
+    assert callable(model::MapDateToDuration.__init__)
+
+
+def test_model::mapdatetoduration_constructor_args():
+    sig = inspect.signature(model::MapDateToDuration.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_model::mapdatetoduration_has_key():
+    assert hasattr(model::MapDateToDuration, "key")
+    descriptor = None
+    for klass in model::MapDateToDuration.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::mapdatetoduration_has_value():
+    assert hasattr(model::MapDateToDuration, "value")
+    descriptor = None
+    for klass in model::MapDateToDuration.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4eid_is_not_abstract():
+    assert not inspect.isabstract(model::R4EID)
+
+
+def test_model::r4eid_constructor_exists():
+    assert callable(model::R4EID.__init__)
+
+
+def test_model::r4eid_constructor_args():
+    sig = inspect.signature(model::R4EID.__init__)
+    params = list(sig.parameters.keys())
+    assert "sequenceID" in params, "Missing parameter 'sequenceID'"
+    assert "userID" in params, "Missing parameter 'userID'"
+
+def test_model::r4eid_has_sequenceID():
+    assert hasattr(model::R4EID, "sequenceID")
+    descriptor = None
+    for klass in model::R4EID.__mro__:
+        if "sequenceID" in klass.__dict__:
+            descriptor = klass.__dict__["sequenceID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eid_has_userID():
+    assert hasattr(model::R4EID, "userID")
+    descriptor = None
+    for klass in model::R4EID.__mro__:
+        if "userID" in klass.__dict__:
+            descriptor = klass.__dict__["userID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_r4euser_is_not_abstract():
+    assert not inspect.isabstract(R4EUser)
+
+
+def test_r4euser_constructor_exists():
+    assert callable(R4EUser.__init__)
+
+
+def test_r4euser_constructor_args():
+    sig = inspect.signature(R4EUser.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reviewcomponent_is_not_abstract():
+    assert not inspect.isabstract(ReviewComponent)
+
+
+def test_reviewcomponent_constructor_exists():
+    assert callable(ReviewComponent.__init__)
+
+
+def test_reviewcomponent_constructor_args():
+    sig = inspect.signature(ReviewComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4ereviewcomponent_is_not_abstract():
+    assert not inspect.isabstract(model::R4EReviewComponent)
+
+
+def test_model::r4ereviewcomponent_constructor_exists():
+    assert callable(model::R4EReviewComponent.__init__)
+
+
+def test_model::r4ereviewcomponent_constructor_args():
+    sig = inspect.signature(model::R4EReviewComponent.__init__)
+    params = list(sig.parameters.keys())
+    assert "assignedTo" in params, "Missing parameter 'assignedTo'"
+
+def test_model::r4ereviewcomponent_has_assignedTo():
+    assert hasattr(model::R4EReviewComponent, "assignedTo")
+    descriptor = None
+    for klass in model::R4EReviewComponent.__mro__:
+        if "assignedTo" in klass.__dict__:
+            descriptor = klass.__dict__["assignedTo"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_user_is_not_abstract():
+    assert not inspect.isabstract(User)
+
+
+def test_user_constructor_exists():
+    assert callable(User.__init__)
+
+
+def test_user_constructor_args():
+    sig = inspect.signature(User.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_r4eposition_is_not_abstract():
+    assert not inspect.isabstract(R4EPosition)
+
+
+def test_r4eposition_constructor_exists():
+    assert callable(R4EPosition.__init__)
+
+
+def test_r4eposition_constructor_args():
+    sig = inspect.signature(R4EPosition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4etextposition_is_not_abstract():
+    assert not inspect.isabstract(model::R4ETextPosition)
+
+
+def test_model::r4etextposition_constructor_exists():
+    assert callable(model::R4ETextPosition.__init__)
+
+
+def test_model::r4etextposition_constructor_args():
+    sig = inspect.signature(model::R4ETextPosition.__init__)
+    params = list(sig.parameters.keys())
+    assert "startLine" in params, "Missing parameter 'startLine'"
+    assert "length" in params, "Missing parameter 'length'"
+    assert "startPosition" in params, "Missing parameter 'startPosition'"
+    assert "endLine" in params, "Missing parameter 'endLine'"
+
+def test_model::r4etextposition_has_startLine():
+    assert hasattr(model::R4ETextPosition, "startLine")
+    descriptor = None
+    for klass in model::R4ETextPosition.__mro__:
+        if "startLine" in klass.__dict__:
+            descriptor = klass.__dict__["startLine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4etextposition_has_length():
+    assert hasattr(model::R4ETextPosition, "length")
+    descriptor = None
+    for klass in model::R4ETextPosition.__mro__:
+        if "length" in klass.__dict__:
+            descriptor = klass.__dict__["length"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4etextposition_has_startPosition():
+    assert hasattr(model::R4ETextPosition, "startPosition")
+    descriptor = None
+    for klass in model::R4ETextPosition.__mro__:
+        if "startPosition" in klass.__dict__:
+            descriptor = klass.__dict__["startPosition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4etextposition_has_endLine():
+    assert hasattr(model::R4ETextPosition, "endLine")
+    descriptor = None
+    for klass in model::R4ETextPosition.__mro__:
+        if "endLine" in klass.__dict__:
+            descriptor = klass.__dict__["endLine"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4ereviewphaseinfo_is_not_abstract():
+    assert not inspect.isabstract(model::R4EReviewPhaseInfo)
+
+
+def test_model::r4ereviewphaseinfo_constructor_exists():
+    assert callable(model::R4EReviewPhaseInfo.__init__)
+
+
+def test_model::r4ereviewphaseinfo_constructor_args():
+    sig = inspect.signature(model::R4EReviewPhaseInfo.__init__)
+    params = list(sig.parameters.keys())
+    assert "startDate" in params, "Missing parameter 'startDate'"
+    assert "endDate" in params, "Missing parameter 'endDate'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "phaseOwnerID" in params, "Missing parameter 'phaseOwnerID'"
+
+def test_model::r4ereviewphaseinfo_has_startDate():
+    assert hasattr(model::R4EReviewPhaseInfo, "startDate")
+    descriptor = None
+    for klass in model::R4EReviewPhaseInfo.__mro__:
+        if "startDate" in klass.__dict__:
+            descriptor = klass.__dict__["startDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewphaseinfo_has_endDate():
+    assert hasattr(model::R4EReviewPhaseInfo, "endDate")
+    descriptor = None
+    for klass in model::R4EReviewPhaseInfo.__mro__:
+        if "endDate" in klass.__dict__:
+            descriptor = klass.__dict__["endDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewphaseinfo_has_type():
+    assert hasattr(model::R4EReviewPhaseInfo, "type")
+    descriptor = None
+    for klass in model::R4EReviewPhaseInfo.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewphaseinfo_has_phaseOwnerID():
+    assert hasattr(model::R4EReviewPhaseInfo, "phaseOwnerID")
+    descriptor = None
+    for klass in model::R4EReviewPhaseInfo.__mro__:
+        if "phaseOwnerID" in klass.__dict__:
+            descriptor = klass.__dict__["phaseOwnerID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4eparticipant_is_not_abstract():
+    assert not inspect.isabstract(model::R4EParticipant)
+
+
+def test_model::r4eparticipant_constructor_exists():
+    assert callable(model::R4EParticipant.__init__)
+
+
+def test_model::r4eparticipant_constructor_args():
+    sig = inspect.signature(model::R4EParticipant.__init__)
+    params = list(sig.parameters.keys())
+    assert "focusArea" in params, "Missing parameter 'focusArea'"
+    assert "isPartOfDecision" in params, "Missing parameter 'isPartOfDecision'"
+    assert "roles" in params, "Missing parameter 'roles'"
+
+def test_model::r4eparticipant_has_focusArea():
+    assert hasattr(model::R4EParticipant, "focusArea")
+    descriptor = None
+    for klass in model::R4EParticipant.__mro__:
+        if "focusArea" in klass.__dict__:
+            descriptor = klass.__dict__["focusArea"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eparticipant_has_isPartOfDecision():
+    assert hasattr(model::R4EParticipant, "isPartOfDecision")
+    descriptor = None
+    for klass in model::R4EParticipant.__mro__:
+        if "isPartOfDecision" in klass.__dict__:
+            descriptor = klass.__dict__["isPartOfDecision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eparticipant_has_roles():
+    assert hasattr(model::R4EParticipant, "roles")
+    descriptor = None
+    for klass in model::R4EParticipant.__mro__:
+        if "roles" in klass.__dict__:
+            descriptor = klass.__dict__["roles"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_r4ereview_is_not_abstract():
+    assert not inspect.isabstract(R4EReview)
+
+
+def test_r4ereview_constructor_exists():
+    assert callable(R4EReview.__init__)
+
+
+def test_r4ereview_constructor_args():
+    sig = inspect.signature(R4EReview.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4eformalreview_is_not_abstract():
+    assert not inspect.isabstract(model::R4EFormalReview)
+
+
+def test_model::r4eformalreview_constructor_exists():
+    assert callable(model::R4EFormalReview.__init__)
+
+
+def test_model::r4eformalreview_constructor_args():
+    sig = inspect.signature(model::R4EFormalReview.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4efileversion_is_not_abstract():
+    assert not inspect.isabstract(model::R4EFileVersion)
+
+
+def test_model::r4efileversion_constructor_exists():
+    assert callable(model::R4EFileVersion.__init__)
+
+
+def test_model::r4efileversion_constructor_args():
+    sig = inspect.signature(model::R4EFileVersion.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "repositoryPath" in params, "Missing parameter 'repositoryPath'"
+    assert "localVersionID" in params, "Missing parameter 'localVersionID'"
+    assert "resource" in params, "Missing parameter 'resource'"
+    assert "platformURI" in params, "Missing parameter 'platformURI'"
+    assert "versionID" in params, "Missing parameter 'versionID'"
+    assert "fileRevision" in params, "Missing parameter 'fileRevision'"
+
+def test_model::r4efileversion_has_name():
+    assert hasattr(model::R4EFileVersion, "name")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4efileversion_has_repositoryPath():
+    assert hasattr(model::R4EFileVersion, "repositoryPath")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "repositoryPath" in klass.__dict__:
+            descriptor = klass.__dict__["repositoryPath"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4efileversion_has_localVersionID():
+    assert hasattr(model::R4EFileVersion, "localVersionID")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "localVersionID" in klass.__dict__:
+            descriptor = klass.__dict__["localVersionID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4efileversion_has_resource():
+    assert hasattr(model::R4EFileVersion, "resource")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "resource" in klass.__dict__:
+            descriptor = klass.__dict__["resource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4efileversion_has_platformURI():
+    assert hasattr(model::R4EFileVersion, "platformURI")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "platformURI" in klass.__dict__:
+            descriptor = klass.__dict__["platformURI"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4efileversion_has_versionID():
+    assert hasattr(model::R4EFileVersion, "versionID")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "versionID" in klass.__dict__:
+            descriptor = klass.__dict__["versionID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4efileversion_has_fileRevision():
+    assert hasattr(model::R4EFileVersion, "fileRevision")
+    descriptor = None
+    for klass in model::R4EFileVersion.__mro__:
+        if "fileRevision" in klass.__dict__:
+            descriptor = klass.__dict__["fileRevision"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4eitem_is_not_abstract():
+    assert not inspect.isabstract(model::R4EItem)
+
+
+def test_model::r4eitem_constructor_exists():
+    assert callable(model::R4EItem.__init__)
+
+
+def test_model::r4eitem_constructor_args():
+    sig = inspect.signature(model::R4EItem.__init__)
+    params = list(sig.parameters.keys())
+    assert "addedById" in params, "Missing parameter 'addedById'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "authorRep" in params, "Missing parameter 'authorRep'"
+    assert "repositoryRef" in params, "Missing parameter 'repositoryRef'"
+    assert "submitted" in params, "Missing parameter 'submitted'"
+    assert "ProjectURIs" in params, "Missing parameter 'ProjectURIs'"
+
+def test_model::r4eitem_has_addedById():
+    assert hasattr(model::R4EItem, "addedById")
+    descriptor = None
+    for klass in model::R4EItem.__mro__:
+        if "addedById" in klass.__dict__:
+            descriptor = klass.__dict__["addedById"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eitem_has_description():
+    assert hasattr(model::R4EItem, "description")
+    descriptor = None
+    for klass in model::R4EItem.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eitem_has_authorRep():
+    assert hasattr(model::R4EItem, "authorRep")
+    descriptor = None
+    for klass in model::R4EItem.__mro__:
+        if "authorRep" in klass.__dict__:
+            descriptor = klass.__dict__["authorRep"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eitem_has_repositoryRef():
+    assert hasattr(model::R4EItem, "repositoryRef")
+    descriptor = None
+    for klass in model::R4EItem.__mro__:
+        if "repositoryRef" in klass.__dict__:
+            descriptor = klass.__dict__["repositoryRef"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eitem_has_submitted():
+    assert hasattr(model::R4EItem, "submitted")
+    descriptor = None
+    for klass in model::R4EItem.__mro__:
+        if "submitted" in klass.__dict__:
+            descriptor = klass.__dict__["submitted"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eitem_has_ProjectURIs():
+    assert hasattr(model::R4EItem, "ProjectURIs")
+    descriptor = None
+    for klass in model::R4EItem.__mro__:
+        if "ProjectURIs" in klass.__dict__:
+            descriptor = klass.__dict__["ProjectURIs"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4emeetingdata_is_not_abstract():
+    assert not inspect.isabstract(model::R4EMeetingData)
+
+
+def test_model::r4emeetingdata_constructor_exists():
+    assert callable(model::R4EMeetingData.__init__)
+
+
+def test_model::r4emeetingdata_constructor_args():
+    sig = inspect.signature(model::R4EMeetingData.__init__)
+    params = list(sig.parameters.keys())
+    assert "receivers" in params, "Missing parameter 'receivers'"
+    assert "sentCount" in params, "Missing parameter 'sentCount'"
+    assert "subject" in params, "Missing parameter 'subject'"
+    assert "body" in params, "Missing parameter 'body'"
+    assert "location" in params, "Missing parameter 'location'"
+    assert "duration" in params, "Missing parameter 'duration'"
+    assert "startTime" in params, "Missing parameter 'startTime'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "sender" in params, "Missing parameter 'sender'"
+
+def test_model::r4emeetingdata_has_receivers():
+    assert hasattr(model::R4EMeetingData, "receivers")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "receivers" in klass.__dict__:
+            descriptor = klass.__dict__["receivers"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_sentCount():
+    assert hasattr(model::R4EMeetingData, "sentCount")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "sentCount" in klass.__dict__:
+            descriptor = klass.__dict__["sentCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_subject():
+    assert hasattr(model::R4EMeetingData, "subject")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "subject" in klass.__dict__:
+            descriptor = klass.__dict__["subject"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_body():
+    assert hasattr(model::R4EMeetingData, "body")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_location():
+    assert hasattr(model::R4EMeetingData, "location")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_duration():
+    assert hasattr(model::R4EMeetingData, "duration")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "duration" in klass.__dict__:
+            descriptor = klass.__dict__["duration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_startTime():
+    assert hasattr(model::R4EMeetingData, "startTime")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "startTime" in klass.__dict__:
+            descriptor = klass.__dict__["startTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_id():
+    assert hasattr(model::R4EMeetingData, "id")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4emeetingdata_has_sender():
+    assert hasattr(model::R4EMeetingData, "sender")
+    descriptor = None
+    for klass in model::R4EMeetingData.__mro__:
+        if "sender" in klass.__dict__:
+            descriptor = klass.__dict__["sender"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::mapidtocomponent_is_not_abstract():
+    assert not inspect.isabstract(model::MapIDToComponent)
+
+
+def test_model::mapidtocomponent_constructor_exists():
+    assert callable(model::MapIDToComponent.__init__)
+
+
+def test_model::mapidtocomponent_constructor_args():
+    sig = inspect.signature(model::MapIDToComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::maptousers_is_not_abstract():
+    assert not inspect.isabstract(model::MapToUsers)
+
+
+def test_model::maptousers_constructor_exists():
+    assert callable(model::MapToUsers.__init__)
+
+
+def test_model::maptousers_constructor_args():
+    sig = inspect.signature(model::MapToUsers.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_model::maptousers_has_key():
+    assert hasattr(model::MapToUsers, "key")
+    descriptor = None
+    for klass in model::MapToUsers.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4ereviewdecision_is_not_abstract():
+    assert not inspect.isabstract(model::R4EReviewDecision)
+
+
+def test_model::r4ereviewdecision_constructor_exists():
+    assert callable(model::R4EReviewDecision.__init__)
+
+
+def test_model::r4ereviewdecision_constructor_args():
+    sig = inspect.signature(model::R4EReviewDecision.__init__)
+    params = list(sig.parameters.keys())
+    assert "spentTime" in params, "Missing parameter 'spentTime'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_model::r4ereviewdecision_has_spentTime():
+    assert hasattr(model::R4EReviewDecision, "spentTime")
+    descriptor = None
+    for klass in model::R4EReviewDecision.__mro__:
+        if "spentTime" in klass.__dict__:
+            descriptor = klass.__dict__["spentTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewdecision_has_value():
+    assert hasattr(model::R4EReviewDecision, "value")
+    descriptor = None
+    for klass in model::R4EReviewDecision.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_review_is_not_abstract():
+    assert not inspect.isabstract(Review)
+
+
+def test_review_constructor_exists():
+    assert callable(Review.__init__)
+
+
+def test_review_constructor_args():
+    sig = inspect.signature(Review.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::mapuseridtouserreviews_is_not_abstract():
+    assert not inspect.isabstract(model::MapUserIDToUserReviews)
+
+
+def test_model::mapuseridtouserreviews_constructor_exists():
+    assert callable(model::MapUserIDToUserReviews.__init__)
+
+
+def test_model::mapuseridtouserreviews_constructor_args():
+    sig = inspect.signature(model::MapUserIDToUserReviews.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_model::mapuseridtouserreviews_has_key():
+    assert hasattr(model::MapUserIDToUserReviews, "key")
+    descriptor = None
+    for klass in model::MapUserIDToUserReviews.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::mapnametoreview_is_not_abstract():
+    assert not inspect.isabstract(model::MapNameToReview)
+
+
+def test_model::mapnametoreview_constructor_exists():
+    assert callable(model::MapNameToReview.__init__)
+
+
+def test_model::mapnametoreview_constructor_args():
+    sig = inspect.signature(model::MapNameToReview.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_model::mapnametoreview_has_key():
+    assert hasattr(model::MapNameToReview, "key")
+    descriptor = None
+    for klass in model::MapNameToReview.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::maptoanomalytype_is_not_abstract():
+    assert not inspect.isabstract(model::MapToAnomalyType)
+
+
+def test_model::maptoanomalytype_constructor_exists():
+    assert callable(model::MapToAnomalyType.__init__)
+
+
+def test_model::maptoanomalytype_constructor_args():
+    sig = inspect.signature(model::MapToAnomalyType.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_model::maptoanomalytype_has_key():
+    assert hasattr(model::MapToAnomalyType, "key")
+    descriptor = None
+    for klass in model::MapToAnomalyType.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4eanomalytype_is_not_abstract():
+    assert not inspect.isabstract(model::R4EAnomalyType)
+
+
+def test_model::r4eanomalytype_constructor_exists():
+    assert callable(model::R4EAnomalyType.__init__)
+
+
+def test_model::r4eanomalytype_constructor_args():
+    sig = inspect.signature(model::R4EAnomalyType.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_model::r4eanomalytype_has_type():
+    assert hasattr(model::R4EAnomalyType, "type")
+    descriptor = None
+    for klass in model::R4EAnomalyType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4edesignrule_is_not_abstract():
+    assert not inspect.isabstract(model::R4EDesignRule)
+
+
+def test_model::r4edesignrule_constructor_exists():
+    assert callable(model::R4EDesignRule.__init__)
+
+
+def test_model::r4edesignrule_constructor_args():
+    sig = inspect.signature(model::R4EDesignRule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_r4ecomment_is_not_abstract():
+    assert not inspect.isabstract(R4EComment)
+
+
+def test_r4ecomment_constructor_exists():
+    assert callable(R4EComment.__init__)
+
+
+def test_r4ecomment_constructor_args():
+    sig = inspect.signature(R4EComment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_topic_is_not_abstract():
+    assert not inspect.isabstract(Topic)
+
+
+def test_topic_constructor_exists():
+    assert callable(Topic.__init__)
+
+
+def test_topic_constructor_args():
+    sig = inspect.signature(Topic.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_r4ereviewcomponent_is_not_abstract():
+    assert not inspect.isabstract(R4EReviewComponent)
+
+
+def test_r4ereviewcomponent_constructor_exists():
+    assert callable(R4EReviewComponent.__init__)
+
+
+def test_r4ereviewcomponent_constructor_args():
+    sig = inspect.signature(R4EReviewComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4ereview_is_not_abstract():
+    assert not inspect.isabstract(model::R4EReview)
+
+
+def test_model::r4ereview_constructor_exists():
+    assert callable(model::R4EReview.__init__)
+
+
+def test_model::r4ereview_constructor_args():
+    sig = inspect.signature(model::R4EReview.__init__)
+    params = list(sig.parameters.keys())
+    assert "entryCriteria" in params, "Missing parameter 'entryCriteria'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "objectives" in params, "Missing parameter 'objectives'"
+    assert "components" in params, "Missing parameter 'components'"
+    assert "modifiedDate" in params, "Missing parameter 'modifiedDate'"
+    assert "endDate" in params, "Missing parameter 'endDate'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "dueDate" in params, "Missing parameter 'dueDate'"
+    assert "extraNotes" in params, "Missing parameter 'extraNotes'"
+    assert "project" in params, "Missing parameter 'project'"
+    assert "startDate" in params, "Missing parameter 'startDate'"
+    assert "referenceMaterial" in params, "Missing parameter 'referenceMaterial'"
+
+def test_model::r4ereview_has_entryCriteria():
+    assert hasattr(model::R4EReview, "entryCriteria")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "entryCriteria" in klass.__dict__:
+            descriptor = klass.__dict__["entryCriteria"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_type():
+    assert hasattr(model::R4EReview, "type")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_objectives():
+    assert hasattr(model::R4EReview, "objectives")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "objectives" in klass.__dict__:
+            descriptor = klass.__dict__["objectives"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_components():
+    assert hasattr(model::R4EReview, "components")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "components" in klass.__dict__:
+            descriptor = klass.__dict__["components"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_modifiedDate():
+    assert hasattr(model::R4EReview, "modifiedDate")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "modifiedDate" in klass.__dict__:
+            descriptor = klass.__dict__["modifiedDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_endDate():
+    assert hasattr(model::R4EReview, "endDate")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "endDate" in klass.__dict__:
+            descriptor = klass.__dict__["endDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_name():
+    assert hasattr(model::R4EReview, "name")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_dueDate():
+    assert hasattr(model::R4EReview, "dueDate")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "dueDate" in klass.__dict__:
+            descriptor = klass.__dict__["dueDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_extraNotes():
+    assert hasattr(model::R4EReview, "extraNotes")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "extraNotes" in klass.__dict__:
+            descriptor = klass.__dict__["extraNotes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_project():
+    assert hasattr(model::R4EReview, "project")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "project" in klass.__dict__:
+            descriptor = klass.__dict__["project"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_startDate():
+    assert hasattr(model::R4EReview, "startDate")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "startDate" in klass.__dict__:
+            descriptor = klass.__dict__["startDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereview_has_referenceMaterial():
+    assert hasattr(model::R4EReview, "referenceMaterial")
+    descriptor = None
+    for klass in model::R4EReview.__mro__:
+        if "referenceMaterial" in klass.__dict__:
+            descriptor = klass.__dict__["referenceMaterial"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4ecomment_is_not_abstract():
+    assert not inspect.isabstract(model::R4EComment)
+
+
+def test_model::r4ecomment_constructor_exists():
+    assert callable(model::R4EComment.__init__)
+
+
+def test_model::r4ecomment_constructor_args():
+    sig = inspect.signature(model::R4EComment.__init__)
+    params = list(sig.parameters.keys())
+    assert "createdOn" in params, "Missing parameter 'createdOn'"
+
+def test_model::r4ecomment_has_createdOn():
+    assert hasattr(model::R4EComment, "createdOn")
+    descriptor = None
+    for klass in model::R4EComment.__mro__:
+        if "createdOn" in klass.__dict__:
+            descriptor = klass.__dict__["createdOn"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4etaskreference_is_not_abstract():
+    assert not inspect.isabstract(model::R4ETaskReference)
+
+
+def test_model::r4etaskreference_constructor_exists():
+    assert callable(model::R4ETaskReference.__init__)
+
+
+def test_model::r4etaskreference_constructor_args():
+    sig = inspect.signature(model::R4ETaskReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4eanomaly_is_not_abstract():
+    assert not inspect.isabstract(model::R4EAnomaly)
+
+
+def test_model::r4eanomaly_constructor_exists():
+    assert callable(model::R4EAnomaly.__init__)
+
+
+def test_model::r4eanomaly_constructor_args():
+    sig = inspect.signature(model::R4EAnomaly.__init__)
+    params = list(sig.parameters.keys())
+    assert "ruleID" in params, "Missing parameter 'ruleID'"
+    assert "fixedByID" in params, "Missing parameter 'fixedByID'"
+    assert "isImported" in params, "Missing parameter 'isImported'"
+    assert "dueDate" in params, "Missing parameter 'dueDate'"
+    assert "decidedByID" in params, "Missing parameter 'decidedByID'"
+    assert "notAcceptedReason" in params, "Missing parameter 'notAcceptedReason'"
+    assert "state" in params, "Missing parameter 'state'"
+    assert "followUpByID" in params, "Missing parameter 'followUpByID'"
+    assert "rank" in params, "Missing parameter 'rank'"
+
+def test_model::r4eanomaly_has_ruleID():
+    assert hasattr(model::R4EAnomaly, "ruleID")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "ruleID" in klass.__dict__:
+            descriptor = klass.__dict__["ruleID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_fixedByID():
+    assert hasattr(model::R4EAnomaly, "fixedByID")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "fixedByID" in klass.__dict__:
+            descriptor = klass.__dict__["fixedByID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_isImported():
+    assert hasattr(model::R4EAnomaly, "isImported")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "isImported" in klass.__dict__:
+            descriptor = klass.__dict__["isImported"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_dueDate():
+    assert hasattr(model::R4EAnomaly, "dueDate")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "dueDate" in klass.__dict__:
+            descriptor = klass.__dict__["dueDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_decidedByID():
+    assert hasattr(model::R4EAnomaly, "decidedByID")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "decidedByID" in klass.__dict__:
+            descriptor = klass.__dict__["decidedByID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_notAcceptedReason():
+    assert hasattr(model::R4EAnomaly, "notAcceptedReason")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "notAcceptedReason" in klass.__dict__:
+            descriptor = klass.__dict__["notAcceptedReason"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_state():
+    assert hasattr(model::R4EAnomaly, "state")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_followUpByID():
+    assert hasattr(model::R4EAnomaly, "followUpByID")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "followUpByID" in klass.__dict__:
+            descriptor = klass.__dict__["followUpByID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4eanomaly_has_rank():
+    assert hasattr(model::R4EAnomaly, "rank")
+    descriptor = None
+    for klass in model::R4EAnomaly.__mro__:
+        if "rank" in klass.__dict__:
+            descriptor = klass.__dict__["rank"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4euser_is_not_abstract():
+    assert not inspect.isabstract(model::R4EUser)
+
+
+def test_model::r4euser_constructor_exists():
+    assert callable(model::R4EUser.__init__)
+
+
+def test_model::r4euser_constructor_args():
+    sig = inspect.signature(model::R4EUser.__init__)
+    params = list(sig.parameters.keys())
+    assert "groupPaths" in params, "Missing parameter 'groupPaths'"
+    assert "reviewCreatedByMe" in params, "Missing parameter 'reviewCreatedByMe'"
+    assert "reviewCompletedCode" in params, "Missing parameter 'reviewCompletedCode'"
+    assert "reviewCompleted" in params, "Missing parameter 'reviewCompleted'"
+    assert "sequenceIDCounter" in params, "Missing parameter 'sequenceIDCounter'"
+
+def test_model::r4euser_has_groupPaths():
+    assert hasattr(model::R4EUser, "groupPaths")
+    descriptor = None
+    for klass in model::R4EUser.__mro__:
+        if "groupPaths" in klass.__dict__:
+            descriptor = klass.__dict__["groupPaths"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4euser_has_reviewCreatedByMe():
+    assert hasattr(model::R4EUser, "reviewCreatedByMe")
+    descriptor = None
+    for klass in model::R4EUser.__mro__:
+        if "reviewCreatedByMe" in klass.__dict__:
+            descriptor = klass.__dict__["reviewCreatedByMe"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4euser_has_reviewCompletedCode():
+    assert hasattr(model::R4EUser, "reviewCompletedCode")
+    descriptor = None
+    for klass in model::R4EUser.__mro__:
+        if "reviewCompletedCode" in klass.__dict__:
+            descriptor = klass.__dict__["reviewCompletedCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4euser_has_reviewCompleted():
+    assert hasattr(model::R4EUser, "reviewCompleted")
+    descriptor = None
+    for klass in model::R4EUser.__mro__:
+        if "reviewCompleted" in klass.__dict__:
+            descriptor = klass.__dict__["reviewCompleted"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4euser_has_sequenceIDCounter():
+    assert hasattr(model::R4EUser, "sequenceIDCounter")
+    descriptor = None
+    for klass in model::R4EUser.__mro__:
+        if "sequenceIDCounter" in klass.__dict__:
+            descriptor = klass.__dict__["sequenceIDCounter"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model::r4eidcomponent_is_not_abstract():
+    assert not inspect.isabstract(model::R4EIDComponent)
+
+
+def test_model::r4eidcomponent_constructor_exists():
+    assert callable(model::R4EIDComponent.__init__)
+
+
+def test_model::r4eidcomponent_constructor_args():
+    sig = inspect.signature(model::R4EIDComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reviewgroup_is_not_abstract():
+    assert not inspect.isabstract(ReviewGroup)
+
+
+def test_reviewgroup_constructor_exists():
+    assert callable(ReviewGroup.__init__)
+
+
+def test_reviewgroup_constructor_args():
+    sig = inspect.signature(ReviewGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model::r4ereviewgroup_is_not_abstract():
+    assert not inspect.isabstract(model::R4EReviewGroup)
+
+
+def test_model::r4ereviewgroup_constructor_exists():
+    assert callable(model::R4EReviewGroup.__init__)
+
+
+def test_model::r4ereviewgroup_constructor_args():
+    sig = inspect.signature(model::R4EReviewGroup.__init__)
+    params = list(sig.parameters.keys())
+    assert "defaultEntryCriteria" in params, "Missing parameter 'defaultEntryCriteria'"
+    assert "designRuleLocations" in params, "Missing parameter 'designRuleLocations'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "availableProjects" in params, "Missing parameter 'availableProjects'"
+    assert "folder" in params, "Missing parameter 'folder'"
+    assert "availableComponents" in params, "Missing parameter 'availableComponents'"
+
+def test_model::r4ereviewgroup_has_defaultEntryCriteria():
+    assert hasattr(model::R4EReviewGroup, "defaultEntryCriteria")
+    descriptor = None
+    for klass in model::R4EReviewGroup.__mro__:
+        if "defaultEntryCriteria" in klass.__dict__:
+            descriptor = klass.__dict__["defaultEntryCriteria"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewgroup_has_designRuleLocations():
+    assert hasattr(model::R4EReviewGroup, "designRuleLocations")
+    descriptor = None
+    for klass in model::R4EReviewGroup.__mro__:
+        if "designRuleLocations" in klass.__dict__:
+            descriptor = klass.__dict__["designRuleLocations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewgroup_has_name():
+    assert hasattr(model::R4EReviewGroup, "name")
+    descriptor = None
+    for klass in model::R4EReviewGroup.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewgroup_has_availableProjects():
+    assert hasattr(model::R4EReviewGroup, "availableProjects")
+    descriptor = None
+    for klass in model::R4EReviewGroup.__mro__:
+        if "availableProjects" in klass.__dict__:
+            descriptor = klass.__dict__["availableProjects"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewgroup_has_folder():
+    assert hasattr(model::R4EReviewGroup, "folder")
+    descriptor = None
+    for klass in model::R4EReviewGroup.__mro__:
+        if "folder" in klass.__dict__:
+            descriptor = klass.__dict__["folder"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model::r4ereviewgroup_has_availableComponents():
+    assert hasattr(model::R4EReviewGroup, "availableComponents")
+    descriptor = None
+    for klass in model::R4EReviewGroup.__mro__:
+        if "availableComponents" in klass.__dict__:
+            descriptor = klass.__dict__["availableComponents"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_r4eanomalystate_exists():
+    # Check that the Enumeration exists
+    assert R4EAnomalyState is not None
+
+def test_r4eanomalystate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in R4EAnomalyState]
+    expected_literals = [
+        "R4E_ANOMALY_STATE_CREATED",
+        "R4E_ANOMALY_STATE_ACCEPTED",
+        "R4E_ANOMALY_STATE_FIXED",
+        "R4E_ANOMALY_STATE_DEFERRED",
+        "R4E_ANOMALY_STATE_REJECTED",
+        "R4E_ANOMALY_STATE_VERIFIED",
+        "R4E_ANOMALY_STATE_ASSIGNED",
+        "R4E_ANOMALY_STATE_DUPLICATED",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in R4EAnomalyState"
+
+def test_r4ereviewtype_exists():
+    # Check that the Enumeration exists
+    assert R4EReviewType is not None
+
+def test_r4ereviewtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in R4EReviewType]
+    expected_literals = [
+        "R4E_REVIEW_TYPE_FORMAL",
+        "R4E_REVIEW_TYPE_BASIC",
+        "R4E_REVIEW_TYPE_INFORMAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in R4EReviewType"
+
+def test_r4econtexttype_exists():
+    # Check that the Enumeration exists
+    assert R4EContextType is not None
+
+def test_r4econtexttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in R4EContextType]
+    expected_literals = [
+        "R4E_REPLACED",
+        "R4E_MODIFIED",
+        "R4E_UNDEFINED",
+        "R4E_ADDED",
+        "R4E_DELETED",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in R4EContextType"
+
+def test_r4edecision_exists():
+    # Check that the Enumeration exists
+    assert R4EDecision is not None
+
+def test_r4edecision_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in R4EDecision]
+    expected_literals = [
+        "R4E_REVIEW_DECISION_REJECTED",
+        "R4E_REVIEW_DECISION_NONE",
+        "R4E_REVIEW_DECISION_ACCEPTED",
+        "R4E_REVIEW_DECISION_ACCEPTED_FOLLOWUP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in R4EDecision"
+
+def test_r4euserrole_exists():
+    # Check that the Enumeration exists
+    assert R4EUserRole is not None
+
+def test_r4euserrole_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in R4EUserRole]
+    expected_literals = [
+        "R4E_ROLE_REVIEWER",
+        "R4E_ROLE_LEAD",
+        "R4E_ROLE_AUTHOR",
+        "R4E_ROLE_ORGANIZER",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in R4EUserRole"
+
+def test_r4ereviewphase_exists():
+    # Check that the Enumeration exists
+    assert R4EReviewPhase is not None
+
+def test_r4ereviewphase_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in R4EReviewPhase]
+    expected_literals = [
+        "R4E_REVIEW_PHASE_STARTED",
+        "R4E_REVIEW_PHASE_PREPARATION",
+        "R4E_REVIEW_PHASE_COMPLETED",
+        "R4E_REVIEW_PHASE_REWORK",
+        "R4E_REVIEW_PHASE_DECISION",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in R4EReviewPhase"
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+R4ETextPosition_strategy = st.builds(
+    R4ETextPosition,
+)
+model::R4EAnomalyTextPosition_strategy = st.builds(
+    model::R4EAnomalyTextPosition,
+)
+model::R4EUserReviews_strategy = st.builds(
+    model::R4EUserReviews,
+    name=
+        safe_text,
+    createdReviews=
+        safe_text
+)
+model::R4EPosition_strategy = st.builds(
+    model::R4EPosition,
+)
+Location_strategy = st.builds(
+    Location,
+)
+model::R4EContent_strategy = st.builds(
+    model::R4EContent,
+    info=
+        safe_text
+)
+Comment_strategy = st.builds(
+    Comment,
+)
+ReviewState_strategy = st.builds(
+    ReviewState,
+)
+model::R4EReviewState_strategy = st.builds(
+    model::R4EReviewState,
+    state=
+        safe_text
+)
+TaskReference_strategy = st.builds(
+    TaskReference,
+)
+CommentType_strategy = st.builds(
+    CommentType,
+)
+model::R4ECommentType_strategy = st.builds(
+    model::R4ECommentType,
+    type=
+        safe_text
+)
+R4EContent_strategy = st.builds(
+    R4EContent,
+)
+model::R4ETextContent_strategy = st.builds(
+    model::R4ETextContent,
+    content=
+        safe_text
+)
+model::MapKeyToInfoAttributes_strategy = st.builds(
+    model::MapKeyToInfoAttributes,
+    value=
+        safe_text,
+    key=
+        safe_text
+)
+Item_strategy = st.builds(
+    Item,
+)
+R4EIDComponent_strategy = st.builds(
+    R4EIDComponent,
+)
+model::R4EDelta_strategy = st.builds(
+    model::R4EDelta,
+)
+model::R4EFileContext_strategy = st.builds(
+    model::R4EFileContext,
+    type=
+        safe_text
+)
+model::MapDateToDuration_strategy = st.builds(
+    model::MapDateToDuration,
+    key=
+        st.dates(),
+    value=
+        safe_text
+)
+model::R4EID_strategy = st.builds(
+    model::R4EID,
+    sequenceID=
+        st.integers(),
+    userID=
+        safe_text
+)
+R4EUser_strategy = st.builds(
+    R4EUser,
+)
+ReviewComponent_strategy = st.builds(
+    ReviewComponent,
+)
+model::R4EReviewComponent_strategy = st.builds(
+    model::R4EReviewComponent,
+    assignedTo=
+        safe_text
+)
+User_strategy = st.builds(
+    User,
+)
+R4EPosition_strategy = st.builds(
+    R4EPosition,
+)
+model::R4ETextPosition_strategy = st.builds(
+    model::R4ETextPosition,
+    startLine=
+        st.integers(),
+    length=
+        st.integers(),
+    startPosition=
+        st.integers(),
+    endLine=
+        st.integers()
+)
+model::R4EReviewPhaseInfo_strategy = st.builds(
+    model::R4EReviewPhaseInfo,
+    startDate=
+        st.dates(),
+    endDate=
+        st.dates(),
+    type=
+        safe_text,
+    phaseOwnerID=
+        safe_text
+)
+model::R4EParticipant_strategy = st.builds(
+    model::R4EParticipant,
+    focusArea=
+        safe_text,
+    isPartOfDecision=
+        st.booleans(),
+    roles=
+        safe_text
+)
+R4EReview_strategy = st.builds(
+    R4EReview,
+)
+model::R4EFormalReview_strategy = st.builds(
+    model::R4EFormalReview,
+)
+model::R4EFileVersion_strategy = st.builds(
+    model::R4EFileVersion,
+    name=
+        safe_text,
+    repositoryPath=
+        safe_text,
+    localVersionID=
+        safe_text,
+    resource=
+        safe_text,
+    platformURI=
+        safe_text,
+    versionID=
+        safe_text,
+    fileRevision=
+        safe_text
+)
+model::R4EItem_strategy = st.builds(
+    model::R4EItem,
+    addedById=
+        safe_text,
+    description=
+        safe_text,
+    authorRep=
+        safe_text,
+    repositoryRef=
+        safe_text,
+    submitted=
+        st.dates(),
+    ProjectURIs=
+        safe_text
+)
+model::R4EMeetingData_strategy = st.builds(
+    model::R4EMeetingData,
+    receivers=
+        safe_text,
+    sentCount=
+        st.integers(),
+    subject=
+        safe_text,
+    body=
+        safe_text,
+    location=
+        safe_text,
+    duration=
+        st.integers(),
+    startTime=
+        safe_text,
+    id=
+        safe_text,
+    sender=
+        safe_text
+)
+model::MapIDToComponent_strategy = st.builds(
+    model::MapIDToComponent,
+)
+model::MapToUsers_strategy = st.builds(
+    model::MapToUsers,
+    key=
+        safe_text
+)
+model::R4EReviewDecision_strategy = st.builds(
+    model::R4EReviewDecision,
+    spentTime=
+        st.integers(),
+    value=
+        safe_text
+)
+Review_strategy = st.builds(
+    Review,
+)
+model::MapUserIDToUserReviews_strategy = st.builds(
+    model::MapUserIDToUserReviews,
+    key=
+        safe_text
+)
+model::MapNameToReview_strategy = st.builds(
+    model::MapNameToReview,
+    key=
+        safe_text
+)
+model::MapToAnomalyType_strategy = st.builds(
+    model::MapToAnomalyType,
+    key=
+        safe_text
+)
+model::R4EAnomalyType_strategy = st.builds(
+    model::R4EAnomalyType,
+    type=
+        safe_text
+)
+model::R4EDesignRule_strategy = st.builds(
+    model::R4EDesignRule,
+)
+R4EComment_strategy = st.builds(
+    R4EComment,
+)
+Topic_strategy = st.builds(
+    Topic,
+)
+R4EReviewComponent_strategy = st.builds(
+    R4EReviewComponent,
+)
+model::R4EReview_strategy = st.builds(
+    model::R4EReview,
+    entryCriteria=
+        safe_text,
+    type=
+        safe_text,
+    objectives=
+        safe_text,
+    components=
+        safe_text,
+    modifiedDate=
+        st.dates(),
+    endDate=
+        st.dates(),
+    name=
+        safe_text,
+    dueDate=
+        st.dates(),
+    extraNotes=
+        safe_text,
+    project=
+        safe_text,
+    startDate=
+        st.dates(),
+    referenceMaterial=
+        safe_text
+)
+model::R4EComment_strategy = st.builds(
+    model::R4EComment,
+    createdOn=
+        st.dates()
+)
+model::R4ETaskReference_strategy = st.builds(
+    model::R4ETaskReference,
+)
+model::R4EAnomaly_strategy = st.builds(
+    model::R4EAnomaly,
+    ruleID=
+        safe_text,
+    fixedByID=
+        safe_text,
+    isImported=
+        st.booleans(),
+    dueDate=
+        st.dates(),
+    decidedByID=
+        safe_text,
+    notAcceptedReason=
+        safe_text,
+    state=
+        safe_text,
+    followUpByID=
+        safe_text,
+    rank=
+        safe_text
+)
+model::R4EUser_strategy = st.builds(
+    model::R4EUser,
+    groupPaths=
+        safe_text,
+    reviewCreatedByMe=
+        st.booleans(),
+    reviewCompletedCode=
+        st.integers(),
+    reviewCompleted=
+        st.booleans(),
+    sequenceIDCounter=
+        st.integers()
+)
+model::R4EIDComponent_strategy = st.builds(
+    model::R4EIDComponent,
+)
+ReviewGroup_strategy = st.builds(
+    ReviewGroup,
+)
+model::R4EReviewGroup_strategy = st.builds(
+    model::R4EReviewGroup,
+    defaultEntryCriteria=
+        safe_text,
+    designRuleLocations=
+        safe_text,
+    name=
+        safe_text,
+    availableProjects=
+        safe_text,
+    folder=
+        safe_text,
+    availableComponents=
+        safe_text
+)
+
+@given(instance=R4ETextPosition_strategy)
+@settings(max_examples=50)
+def test_r4etextposition_instantiation(instance):
+    assert isinstance(instance, R4ETextPosition)
+
+@given(instance=model::R4EAnomalyTextPosition_strategy)
+@settings(max_examples=50)
+def test_model::r4eanomalytextposition_instantiation(instance):
+    assert isinstance(instance, model::R4EAnomalyTextPosition)
+
+@given(instance=model::R4EUserReviews_strategy)
+@settings(max_examples=50)
+def test_model::r4euserreviews_instantiation(instance):
+    assert isinstance(instance, model::R4EUserReviews)
+
+@given(instance=model::R4EUserReviews_strategy)
+def test_model::r4euserreviews_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=model::R4EUserReviews_strategy)
+def test_model::r4euserreviews_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model::R4EUserReviews_strategy)
+def test_model::r4euserreviews_createdReviews_type(instance):
+    assert isinstance(instance.createdReviews, str)
+
+
+@given(instance=model::R4EUserReviews_strategy)
+def test_model::r4euserreviews_createdReviews_setter(instance):
+    original = instance.createdReviews
+    instance.createdReviews = original
+    assert instance.createdReviews == original
+
+@given(instance=model::R4EPosition_strategy)
+@settings(max_examples=50)
+def test_model::r4eposition_instantiation(instance):
+    assert isinstance(instance, model::R4EPosition)
+
+@given(instance=Location_strategy)
+@settings(max_examples=50)
+def test_location_instantiation(instance):
+    assert isinstance(instance, Location)
+
+@given(instance=model::R4EContent_strategy)
+@settings(max_examples=50)
+def test_model::r4econtent_instantiation(instance):
+    assert isinstance(instance, model::R4EContent)
+
+@given(instance=model::R4EContent_strategy)
+def test_model::r4econtent_info_type(instance):
+    assert isinstance(instance.info, str)
+
+
+@given(instance=model::R4EContent_strategy)
+def test_model::r4econtent_info_setter(instance):
+    original = instance.info
+    instance.info = original
+    assert instance.info == original
+
+@given(instance=Comment_strategy)
+@settings(max_examples=50)
+def test_comment_instantiation(instance):
+    assert isinstance(instance, Comment)
+
+@given(instance=ReviewState_strategy)
+@settings(max_examples=50)
+def test_reviewstate_instantiation(instance):
+    assert isinstance(instance, ReviewState)
+
+@given(instance=model::R4EReviewState_strategy)
+@settings(max_examples=50)
+def test_model::r4ereviewstate_instantiation(instance):
+    assert isinstance(instance, model::R4EReviewState)
+
+@given(instance=model::R4EReviewState_strategy)
+def test_model::r4ereviewstate_state_type(instance):
+    assert isinstance(instance.state, str)
+
+
+@given(instance=model::R4EReviewState_strategy)
+def test_model::r4ereviewstate_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+@given(instance=TaskReference_strategy)
+@settings(max_examples=50)
+def test_taskreference_instantiation(instance):
+    assert isinstance(instance, TaskReference)
+
+@given(instance=CommentType_strategy)
+@settings(max_examples=50)
+def test_commenttype_instantiation(instance):
+    assert isinstance(instance, CommentType)
+
+@given(instance=model::R4ECommentType_strategy)
+@settings(max_examples=50)
+def test_model::r4ecommenttype_instantiation(instance):
+    assert isinstance(instance, model::R4ECommentType)
+
+@given(instance=model::R4ECommentType_strategy)
+def test_model::r4ecommenttype_type_type(instance):
+    assert isinstance(instance.type, str)
+
+
+@given(instance=model::R4ECommentType_strategy)
+def test_model::r4ecommenttype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=R4EContent_strategy)
+@settings(max_examples=50)
+def test_r4econtent_instantiation(instance):
+    assert isinstance(instance, R4EContent)
+
+@given(instance=model::R4ETextContent_strategy)
+@settings(max_examples=50)
+def test_model::r4etextcontent_instantiation(instance):
+    assert isinstance(instance, model::R4ETextContent)
+
+@given(instance=model::R4ETextContent_strategy)
+def test_model::r4etextcontent_content_type(instance):
+    assert isinstance(instance.content, str)
+
+
+@given(instance=model::R4ETextContent_strategy)
+def test_model::r4etextcontent_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
+
+@given(instance=model::MapKeyToInfoAttributes_strategy)
+@settings(max_examples=50)
+def test_model::mapkeytoinfoattributes_instantiation(instance):
+    assert isinstance(instance, model::MapKeyToInfoAttributes)
+
+@given(instance=model::MapKeyToInfoAttributes_strategy)
+def test_model::mapkeytoinfoattributes_value_type(instance):
+    assert isinstance(instance.value, str)
+
+
+@given(instance=model::MapKeyToInfoAttributes_strategy)
+def test_model::mapkeytoinfoattributes_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=model::MapKeyToInfoAttributes_strategy)
+def test_model::mapkeytoinfoattributes_key_type(instance):
+    assert isinstance(instance.key, str)
+
+
+@given(instance=model::MapKeyToInfoAttributes_strategy)
+def test_model::mapkeytoinfoattributes_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=Item_strategy)
+@settings(max_examples=50)
+def test_item_instantiation(instance):
+    assert isinstance(instance, Item)
+
+@given(instance=R4EIDComponent_strategy)
+@settings(max_examples=50)
+def test_r4eidcomponent_instantiation(instance):
+    assert isinstance(instance, R4EIDComponent)
+
+@given(instance=model::R4EDelta_strategy)
+@settings(max_examples=50)
+def test_model::r4edelta_instantiation(instance):
+    assert isinstance(instance, model::R4EDelta)
+
+@given(instance=model::R4EFileContext_strategy)
+@settings(max_examples=50)
+def test_model::r4efilecontext_instantiation(instance):
+    assert isinstance(instance, model::R4EFileContext)
+
+@given(instance=model::R4EFileContext_strategy)
+def test_model::r4efilecontext_type_type(instance):
+    assert isinstance(instance.type, str)
+
+
+@given(instance=model::R4EFileContext_strategy)
+def test_model::r4efilecontext_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=model::MapDateToDuration_strategy)
+@settings(max_examples=50)
+def test_model::mapdatetoduration_instantiation(instance):
+    assert isinstance(instance, model::MapDateToDuration)
+
+@given(instance=model::MapDateToDuration_strategy)
+def test_model::mapdatetoduration_key_type(instance):
+    assert isinstance(instance.key, date)
+
+
+@given(instance=model::MapDateToDuration_strategy)
+def test_model::mapdatetoduration_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=model::MapDateToDuration_strategy)
+def test_model::mapdatetoduration_value_type(instance):
+    assert isinstance(instance.value, str)
+
+
+@given(instance=model::MapDateToDuration_strategy)
+def test_model::mapdatetoduration_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=model::R4EID_strategy)
+@settings(max_examples=50)
+def test_model::r4eid_instantiation(instance):
+    assert isinstance(instance, model::R4EID)
+
+@given(instance=model::R4EID_strategy)
+def test_model::r4eid_sequenceID_type(instance):
+    assert isinstance(instance.sequenceID, int)
+
+
+@given(instance=model::R4EID_strategy)
+def test_model::r4eid_sequenceID_setter(instance):
+    original = instance.sequenceID
+    instance.sequenceID = original
+    assert instance.sequenceID == original
+
+@given(instance=model::R4EID_strategy)
+def test_model::r4eid_userID_type(instance):
+    assert isinstance(instance.userID, str)
+
+
+@given(instance=model::R4EID_strategy)
+def test_model::r4eid_userID_setter(instance):
+    original = instance.userID
+    instance.userID = original
+    assert instance.userID == original
+
+@given(instance=R4EUser_strategy)
+@settings(max_examples=50)
+def test_r4euser_instantiation(instance):
+    assert isinstance(instance, R4EUser)
+
+@given(instance=ReviewComponent_strategy)
+@settings(max_examples=50)
+def test_reviewcomponent_instantiation(instance):
+    assert isinstance(instance, ReviewComponent)
+
+@given(instance=model::R4EReviewComponent_strategy)
+@settings(max_examples=50)
+def test_model::r4ereviewcomponent_instantiation(instance):
+    assert isinstance(instance, model::R4EReviewComponent)
+
+@given(instance=model::R4EReviewComponent_strategy)
+def test_model::r4ereviewcomponent_assignedTo_type(instance):
+    assert isinstance(instance.assignedTo, str)
+
+
+@given(instance=model::R4EReviewComponent_strategy)
+def test_model::r4ereviewcomponent_assignedTo_setter(instance):
+    original = instance.assignedTo
+    instance.assignedTo = original
+    assert instance.assignedTo == original
+
+@given(instance=User_strategy)
+@settings(max_examples=50)
+def test_user_instantiation(instance):
+    assert isinstance(instance, User)
+
+@given(instance=R4EPosition_strategy)
+@settings(max_examples=50)
+def test_r4eposition_instantiation(instance):
+    assert isinstance(instance, R4EPosition)
+
+@given(instance=model::R4ETextPosition_strategy)
+@settings(max_examples=50)
+def test_model::r4etextposition_instantiation(instance):
+    assert isinstance(instance, model::R4ETextPosition)
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_startLine_type(instance):
+    assert isinstance(instance.startLine, int)
+
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_startLine_setter(instance):
+    original = instance.startLine
+    instance.startLine = original
+    assert instance.startLine == original
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_length_type(instance):
+    assert isinstance(instance.length, int)
+
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_length_setter(instance):
+    original = instance.length
+    instance.length = original
+    assert instance.length == original
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_startPosition_type(instance):
+    assert isinstance(instance.startPosition, int)
+
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_startPosition_setter(instance):
+    original = instance.startPosition
+    instance.startPosition = original
+    assert instance.startPosition == original
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_endLine_type(instance):
+    assert isinstance(instance.endLine, int)
+
+
+@given(instance=model::R4ETextPosition_strategy)
+def test_model::r4etextposition_endLine_setter(instance):
+    original = instance.endLine
+    instance.endLine = original
+    assert instance.endLine == original
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+@settings(max_examples=50)
+def test_model::r4ereviewphaseinfo_instantiation(instance):
+    assert isinstance(instance, model::R4EReviewPhaseInfo)
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_startDate_type(instance):
+    assert isinstance(instance.startDate, date)
+
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_startDate_setter(instance):
+    original = instance.startDate
+    instance.startDate = original
+    assert instance.startDate == original
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_endDate_type(instance):
+    assert isinstance(instance.endDate, date)
+
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_endDate_setter(instance):
+    original = instance.endDate
+    instance.endDate = original
+    assert instance.endDate == original
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_type_type(instance):
+    assert isinstance(instance.type, str)
+
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_phaseOwnerID_type(instance):
+    assert isinstance(instance.phaseOwnerID, str)
+
+
+@given(instance=model::R4EReviewPhaseInfo_strategy)
+def test_model::r4ereviewphaseinfo_phaseOwnerID_setter(instance):
+    original = instance.phaseOwnerID
+    instance.phaseOwnerID = original
+    assert instance.phaseOwnerID == original
+
+@given(instance=model::R4EParticipant_strategy)
+@settings(max_examples=50)
+def test_model::r4eparticipant_instantiation(instance):
+    assert isinstance(instance, model::R4EParticipant)
+
+@given(instance=model::R4EParticipant_strategy)
+def test_model::r4eparticipant_focusArea_type(instance):
+    assert isinstance(instance.focusArea, str)
+
+
+@given(instance=model::R4EParticipant_strategy)
+def test_model::r4eparticipant_focusArea_setter(instance):
+    original = instance.focusArea
+    instance.focusArea = original
+    assert instance.focusArea == original
+
+@given(instance=model::R4EParticipant_strategy)
+def test_model::r4eparticipant_isPartOfDecision_type(instance):
+    assert isinstance(instance.isPartOfDecision, bool)
+
+
+@given(instance=model::R4EParticipant_strategy)
+def test_model::r4eparticipant_isPartOfDecision_setter(instance):
+    original = instance.isPartOfDecision
+    instance.isPartOfDecision = original
+    assert instance.isPartOfDecision == original
+
+@given(instance=model::R4EParticipant_strategy)
+def test_model::r4eparticipant_roles_type(instance):
+    assert isinstance(instance.roles, str)
+
+
+@given(instance=model::R4EParticipant_strategy)
+def test_model::r4eparticipant_roles_setter(instance):
+    original = instance.roles
+    instance.roles = original
+    assert instance.roles == original
+
+@given(instance=R4EReview_strategy)
+@settings(max_examples=50)
+def test_r4ereview_instantiation(instance):
+    assert isinstance(instance, R4EReview)
+
+@given(instance=model::R4EFormalReview_strategy)
+@settings(max_examples=50)
+def test_model::r4eformalreview_instantiation(instance):
+    assert isinstance(instance, model::R4EFormalReview)
+
+@given(instance=model::R4EFileVersion_strategy)
+@settings(max_examples=50)
+def test_model::r4efileversion_instantiation(instance):
+    assert isinstance(instance, model::R4EFileVersion)
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_repositoryPath_type(instance):
+    assert isinstance(instance.repositoryPath, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_repositoryPath_setter(instance):
+    original = instance.repositoryPath
+    instance.repositoryPath = original
+    assert instance.repositoryPath == original
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_localVersionID_type(instance):
+    assert isinstance(instance.localVersionID, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_localVersionID_setter(instance):
+    original = instance.localVersionID
+    instance.localVersionID = original
+    assert instance.localVersionID == original
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_resource_type(instance):
+    assert isinstance(instance.resource, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_resource_setter(instance):
+    original = instance.resource
+    instance.resource = original
+    assert instance.resource == original
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_platformURI_type(instance):
+    assert isinstance(instance.platformURI, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_platformURI_setter(instance):
+    original = instance.platformURI
+    instance.platformURI = original
+    assert instance.platformURI == original
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_versionID_type(instance):
+    assert isinstance(instance.versionID, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_versionID_setter(instance):
+    original = instance.versionID
+    instance.versionID = original
+    assert instance.versionID == original
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_fileRevision_type(instance):
+    assert isinstance(instance.fileRevision, str)
+
+
+@given(instance=model::R4EFileVersion_strategy)
+def test_model::r4efileversion_fileRevision_setter(instance):
+    original = instance.fileRevision
+    instance.fileRevision = original
+    assert instance.fileRevision == original
+
+@given(instance=model::R4EItem_strategy)
+@settings(max_examples=50)
+def test_model::r4eitem_instantiation(instance):
+    assert isinstance(instance, model::R4EItem)
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_addedById_type(instance):
+    assert isinstance(instance.addedById, str)
+
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_addedById_setter(instance):
+    original = instance.addedById
+    instance.addedById = original
+    assert instance.addedById == original
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_description_type(instance):
+    assert isinstance(instance.description, str)
+
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_authorRep_type(instance):
+    assert isinstance(instance.authorRep, str)
+
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_authorRep_setter(instance):
+    original = instance.authorRep
+    instance.authorRep = original
+    assert instance.authorRep == original
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_repositoryRef_type(instance):
+    assert isinstance(instance.repositoryRef, str)
+
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_repositoryRef_setter(instance):
+    original = instance.repositoryRef
+    instance.repositoryRef = original
+    assert instance.repositoryRef == original
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_submitted_type(instance):
+    assert isinstance(instance.submitted, date)
+
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_submitted_setter(instance):
+    original = instance.submitted
+    instance.submitted = original
+    assert instance.submitted == original
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_ProjectURIs_type(instance):
+    assert isinstance(instance.ProjectURIs, str)
+
+
+@given(instance=model::R4EItem_strategy)
+def test_model::r4eitem_ProjectURIs_setter(instance):
+    original = instance.ProjectURIs
+    instance.ProjectURIs = original
+    assert instance.ProjectURIs == original
+
+@given(instance=model::R4EMeetingData_strategy)
+@settings(max_examples=50)
+def test_model::r4emeetingdata_instantiation(instance):
+    assert isinstance(instance, model::R4EMeetingData)
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_receivers_type(instance):
+    assert isinstance(instance.receivers, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_receivers_setter(instance):
+    original = instance.receivers
+    instance.receivers = original
+    assert instance.receivers == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_sentCount_type(instance):
+    assert isinstance(instance.sentCount, int)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_sentCount_setter(instance):
+    original = instance.sentCount
+    instance.sentCount = original
+    assert instance.sentCount == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_subject_type(instance):
+    assert isinstance(instance.subject, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_subject_setter(instance):
+    original = instance.subject
+    instance.subject = original
+    assert instance.subject == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_body_type(instance):
+    assert isinstance(instance.body, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_location_type(instance):
+    assert isinstance(instance.location, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_duration_type(instance):
+    assert isinstance(instance.duration, int)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_duration_setter(instance):
+    original = instance.duration
+    instance.duration = original
+    assert instance.duration == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_startTime_type(instance):
+    assert isinstance(instance.startTime, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_startTime_setter(instance):
+    original = instance.startTime
+    instance.startTime = original
+    assert instance.startTime == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_id_type(instance):
+    assert isinstance(instance.id, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_sender_type(instance):
+    assert isinstance(instance.sender, str)
+
+
+@given(instance=model::R4EMeetingData_strategy)
+def test_model::r4emeetingdata_sender_setter(instance):
+    original = instance.sender
+    instance.sender = original
+    assert instance.sender == original
+
+@given(instance=model::MapIDToComponent_strategy)
+@settings(max_examples=50)
+def test_model::mapidtocomponent_instantiation(instance):
+    assert isinstance(instance, model::MapIDToComponent)
+
+@given(instance=model::MapToUsers_strategy)
+@settings(max_examples=50)
+def test_model::maptousers_instantiation(instance):
+    assert isinstance(instance, model::MapToUsers)
+
+@given(instance=model::MapToUsers_strategy)
+def test_model::maptousers_key_type(instance):
+    assert isinstance(instance.key, str)
+
+
+@given(instance=model::MapToUsers_strategy)
+def test_model::maptousers_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=model::R4EReviewDecision_strategy)
+@settings(max_examples=50)
+def test_model::r4ereviewdecision_instantiation(instance):
+    assert isinstance(instance, model::R4EReviewDecision)
+
+@given(instance=model::R4EReviewDecision_strategy)
+def test_model::r4ereviewdecision_spentTime_type(instance):
+    assert isinstance(instance.spentTime, int)
+
+
+@given(instance=model::R4EReviewDecision_strategy)
+def test_model::r4ereviewdecision_spentTime_setter(instance):
+    original = instance.spentTime
+    instance.spentTime = original
+    assert instance.spentTime == original
+
+@given(instance=model::R4EReviewDecision_strategy)
+def test_model::r4ereviewdecision_value_type(instance):
+    assert isinstance(instance.value, str)
+
+
+@given(instance=model::R4EReviewDecision_strategy)
+def test_model::r4ereviewdecision_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=Review_strategy)
+@settings(max_examples=50)
+def test_review_instantiation(instance):
+    assert isinstance(instance, Review)
+
+@given(instance=model::MapUserIDToUserReviews_strategy)
+@settings(max_examples=50)
+def test_model::mapuseridtouserreviews_instantiation(instance):
+    assert isinstance(instance, model::MapUserIDToUserReviews)
+
+@given(instance=model::MapUserIDToUserReviews_strategy)
+def test_model::mapuseridtouserreviews_key_type(instance):
+    assert isinstance(instance.key, str)
+
+
+@given(instance=model::MapUserIDToUserReviews_strategy)
+def test_model::mapuseridtouserreviews_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=model::MapNameToReview_strategy)
+@settings(max_examples=50)
+def test_model::mapnametoreview_instantiation(instance):
+    assert isinstance(instance, model::MapNameToReview)
+
+@given(instance=model::MapNameToReview_strategy)
+def test_model::mapnametoreview_key_type(instance):
+    assert isinstance(instance.key, str)
+
+
+@given(instance=model::MapNameToReview_strategy)
+def test_model::mapnametoreview_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=model::MapToAnomalyType_strategy)
+@settings(max_examples=50)
+def test_model::maptoanomalytype_instantiation(instance):
+    assert isinstance(instance, model::MapToAnomalyType)
+
+@given(instance=model::MapToAnomalyType_strategy)
+def test_model::maptoanomalytype_key_type(instance):
+    assert isinstance(instance.key, str)
+
+
+@given(instance=model::MapToAnomalyType_strategy)
+def test_model::maptoanomalytype_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=model::R4EAnomalyType_strategy)
+@settings(max_examples=50)
+def test_model::r4eanomalytype_instantiation(instance):
+    assert isinstance(instance, model::R4EAnomalyType)
+
+@given(instance=model::R4EAnomalyType_strategy)
+def test_model::r4eanomalytype_type_type(instance):
+    assert isinstance(instance.type, str)
+
+
+@given(instance=model::R4EAnomalyType_strategy)
+def test_model::r4eanomalytype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=model::R4EDesignRule_strategy)
+@settings(max_examples=50)
+def test_model::r4edesignrule_instantiation(instance):
+    assert isinstance(instance, model::R4EDesignRule)
+
+@given(instance=R4EComment_strategy)
+@settings(max_examples=50)
+def test_r4ecomment_instantiation(instance):
+    assert isinstance(instance, R4EComment)
+
+@given(instance=Topic_strategy)
+@settings(max_examples=50)
+def test_topic_instantiation(instance):
+    assert isinstance(instance, Topic)
+
+@given(instance=R4EReviewComponent_strategy)
+@settings(max_examples=50)
+def test_r4ereviewcomponent_instantiation(instance):
+    assert isinstance(instance, R4EReviewComponent)
+
+@given(instance=model::R4EReview_strategy)
+@settings(max_examples=50)
+def test_model::r4ereview_instantiation(instance):
+    assert isinstance(instance, model::R4EReview)
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_entryCriteria_type(instance):
+    assert isinstance(instance.entryCriteria, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_entryCriteria_setter(instance):
+    original = instance.entryCriteria
+    instance.entryCriteria = original
+    assert instance.entryCriteria == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_type_type(instance):
+    assert isinstance(instance.type, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_objectives_type(instance):
+    assert isinstance(instance.objectives, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_objectives_setter(instance):
+    original = instance.objectives
+    instance.objectives = original
+    assert instance.objectives == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_components_type(instance):
+    assert isinstance(instance.components, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_components_setter(instance):
+    original = instance.components
+    instance.components = original
+    assert instance.components == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_modifiedDate_type(instance):
+    assert isinstance(instance.modifiedDate, date)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_modifiedDate_setter(instance):
+    original = instance.modifiedDate
+    instance.modifiedDate = original
+    assert instance.modifiedDate == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_endDate_type(instance):
+    assert isinstance(instance.endDate, date)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_endDate_setter(instance):
+    original = instance.endDate
+    instance.endDate = original
+    assert instance.endDate == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_dueDate_type(instance):
+    assert isinstance(instance.dueDate, date)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_dueDate_setter(instance):
+    original = instance.dueDate
+    instance.dueDate = original
+    assert instance.dueDate == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_extraNotes_type(instance):
+    assert isinstance(instance.extraNotes, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_extraNotes_setter(instance):
+    original = instance.extraNotes
+    instance.extraNotes = original
+    assert instance.extraNotes == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_project_type(instance):
+    assert isinstance(instance.project, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_project_setter(instance):
+    original = instance.project
+    instance.project = original
+    assert instance.project == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_startDate_type(instance):
+    assert isinstance(instance.startDate, date)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_startDate_setter(instance):
+    original = instance.startDate
+    instance.startDate = original
+    assert instance.startDate == original
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_referenceMaterial_type(instance):
+    assert isinstance(instance.referenceMaterial, str)
+
+
+@given(instance=model::R4EReview_strategy)
+def test_model::r4ereview_referenceMaterial_setter(instance):
+    original = instance.referenceMaterial
+    instance.referenceMaterial = original
+    assert instance.referenceMaterial == original
+
+@given(instance=model::R4EComment_strategy)
+@settings(max_examples=50)
+def test_model::r4ecomment_instantiation(instance):
+    assert isinstance(instance, model::R4EComment)
+
+@given(instance=model::R4EComment_strategy)
+def test_model::r4ecomment_createdOn_type(instance):
+    assert isinstance(instance.createdOn, date)
+
+
+@given(instance=model::R4EComment_strategy)
+def test_model::r4ecomment_createdOn_setter(instance):
+    original = instance.createdOn
+    instance.createdOn = original
+    assert instance.createdOn == original
+
+@given(instance=model::R4ETaskReference_strategy)
+@settings(max_examples=50)
+def test_model::r4etaskreference_instantiation(instance):
+    assert isinstance(instance, model::R4ETaskReference)
+
+@given(instance=model::R4EAnomaly_strategy)
+@settings(max_examples=50)
+def test_model::r4eanomaly_instantiation(instance):
+    assert isinstance(instance, model::R4EAnomaly)
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_ruleID_type(instance):
+    assert isinstance(instance.ruleID, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_ruleID_setter(instance):
+    original = instance.ruleID
+    instance.ruleID = original
+    assert instance.ruleID == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_fixedByID_type(instance):
+    assert isinstance(instance.fixedByID, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_fixedByID_setter(instance):
+    original = instance.fixedByID
+    instance.fixedByID = original
+    assert instance.fixedByID == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_isImported_type(instance):
+    assert isinstance(instance.isImported, bool)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_isImported_setter(instance):
+    original = instance.isImported
+    instance.isImported = original
+    assert instance.isImported == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_dueDate_type(instance):
+    assert isinstance(instance.dueDate, date)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_dueDate_setter(instance):
+    original = instance.dueDate
+    instance.dueDate = original
+    assert instance.dueDate == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_decidedByID_type(instance):
+    assert isinstance(instance.decidedByID, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_decidedByID_setter(instance):
+    original = instance.decidedByID
+    instance.decidedByID = original
+    assert instance.decidedByID == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_notAcceptedReason_type(instance):
+    assert isinstance(instance.notAcceptedReason, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_notAcceptedReason_setter(instance):
+    original = instance.notAcceptedReason
+    instance.notAcceptedReason = original
+    assert instance.notAcceptedReason == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_state_type(instance):
+    assert isinstance(instance.state, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_followUpByID_type(instance):
+    assert isinstance(instance.followUpByID, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_followUpByID_setter(instance):
+    original = instance.followUpByID
+    instance.followUpByID = original
+    assert instance.followUpByID == original
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_rank_type(instance):
+    assert isinstance(instance.rank, str)
+
+
+@given(instance=model::R4EAnomaly_strategy)
+def test_model::r4eanomaly_rank_setter(instance):
+    original = instance.rank
+    instance.rank = original
+    assert instance.rank == original
+
+@given(instance=model::R4EUser_strategy)
+@settings(max_examples=50)
+def test_model::r4euser_instantiation(instance):
+    assert isinstance(instance, model::R4EUser)
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_groupPaths_type(instance):
+    assert isinstance(instance.groupPaths, str)
+
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_groupPaths_setter(instance):
+    original = instance.groupPaths
+    instance.groupPaths = original
+    assert instance.groupPaths == original
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_reviewCreatedByMe_type(instance):
+    assert isinstance(instance.reviewCreatedByMe, bool)
+
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_reviewCreatedByMe_setter(instance):
+    original = instance.reviewCreatedByMe
+    instance.reviewCreatedByMe = original
+    assert instance.reviewCreatedByMe == original
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_reviewCompletedCode_type(instance):
+    assert isinstance(instance.reviewCompletedCode, int)
+
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_reviewCompletedCode_setter(instance):
+    original = instance.reviewCompletedCode
+    instance.reviewCompletedCode = original
+    assert instance.reviewCompletedCode == original
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_reviewCompleted_type(instance):
+    assert isinstance(instance.reviewCompleted, bool)
+
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_reviewCompleted_setter(instance):
+    original = instance.reviewCompleted
+    instance.reviewCompleted = original
+    assert instance.reviewCompleted == original
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_sequenceIDCounter_type(instance):
+    assert isinstance(instance.sequenceIDCounter, int)
+
+
+@given(instance=model::R4EUser_strategy)
+def test_model::r4euser_sequenceIDCounter_setter(instance):
+    original = instance.sequenceIDCounter
+    instance.sequenceIDCounter = original
+    assert instance.sequenceIDCounter == original
+
+@given(instance=model::R4EIDComponent_strategy)
+@settings(max_examples=50)
+def test_model::r4eidcomponent_instantiation(instance):
+    assert isinstance(instance, model::R4EIDComponent)
+
+@given(instance=ReviewGroup_strategy)
+@settings(max_examples=50)
+def test_reviewgroup_instantiation(instance):
+    assert isinstance(instance, ReviewGroup)
+
+@given(instance=model::R4EReviewGroup_strategy)
+@settings(max_examples=50)
+def test_model::r4ereviewgroup_instantiation(instance):
+    assert isinstance(instance, model::R4EReviewGroup)
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_defaultEntryCriteria_type(instance):
+    assert isinstance(instance.defaultEntryCriteria, str)
+
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_defaultEntryCriteria_setter(instance):
+    original = instance.defaultEntryCriteria
+    instance.defaultEntryCriteria = original
+    assert instance.defaultEntryCriteria == original
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_designRuleLocations_type(instance):
+    assert isinstance(instance.designRuleLocations, str)
+
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_designRuleLocations_setter(instance):
+    original = instance.designRuleLocations
+    instance.designRuleLocations = original
+    assert instance.designRuleLocations == original
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_availableProjects_type(instance):
+    assert isinstance(instance.availableProjects, str)
+
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_availableProjects_setter(instance):
+    original = instance.availableProjects
+    instance.availableProjects = original
+    assert instance.availableProjects == original
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_folder_type(instance):
+    assert isinstance(instance.folder, str)
+
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_folder_setter(instance):
+    original = instance.folder
+    instance.folder = original
+    assert instance.folder == original
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_availableComponents_type(instance):
+    assert isinstance(instance.availableComponents, str)
+
+
+@given(instance=model::R4EReviewGroup_strategy)
+def test_model::r4ereviewgroup_availableComponents_setter(instance):
+    original = instance.availableComponents
+    instance.availableComponents = original
+    assert instance.availableComponents == original

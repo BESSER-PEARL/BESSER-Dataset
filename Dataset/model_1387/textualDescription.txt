@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'SM::Transition' has the following attributes: 'effect' of type str; 'trigger' of type str.
+The class 'SM::FinalState' has no attributes.
+The class 'SM::StateMachine' has no attributes.
+The class 'SM::State' has the following attributes: 'name' of type str.
+The class 'SM::InitialState' has no attributes.
+The class 'State' has no attributes.
+'SM::FinalState' is a specialization of 'State'.
+'SM::InitialState' is a specialization of 'State'.
+'SM::StateMachine' (role 'owningStateMachine', cardinality 0..*) is associated with 'SM::State' (role 'State', cardinality 0..*).
+'SM::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'SM::State' (role 'ownedState', cardinality 0..*).
+'SM::Transition' (role 'ownedTransition', cardinality 0..*) is associated with 'SM::StateMachine' (role 'StateMachine6', cardinality 0..*).
+'SM::StateMachine' (role 'owningStateMachine9', cardinality 0..*) is associated with 'SM::Transition' (role 'Transition', cardinality 0..*).
+'SM::Transition' (role 'SM_Transition3', cardinality 0..*) is associated with 'SM::State' (role 'SM_State4', cardinality 0..*).
+'SM::State' (role 'SM_State', cardinality 0..*) is associated with 'SM::Transition' (role 'SM_Transition', cardinality 0..*).

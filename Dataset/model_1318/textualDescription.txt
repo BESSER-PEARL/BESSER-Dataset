@@ -1,0 +1,35 @@
+The model has 15 class(es).
+The class 'stateMachine::State' has the following attributes: 'name' of type str.
+The class 'stateMachine::Event' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'stateMachine::Transition' has no attributes.
+The class 'stateMachine::Condition' has the following attributes: 'name' of type str.
+The class 'stateMachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'stateMachine::Type' has the following attributes: 'type' of type str.
+The class 'stateMachine::Modifier' has the following attributes: 'visibility' of type str.
+The class 'stateMachine::StringType' has no attributes.
+The class 'stateMachine::FloatType' has no attributes.
+The class 'stateMachine::Test' has no attributes.
+The class 'stateMachine::DeclaredParameter' has no attributes.
+The class 'stateMachine::Command' has the following attributes: 'name' of type str.
+The class 'stateMachine::VarName' has the following attributes: 'value' of type str.
+The class 'stateMachine::model' has no attributes.
+The enumeration 'Visibility' has the following literals: 'Final', 'Initial'.
+'stateMachine::FloatType' is a specialization of 'Type'.
+'stateMachine::StringType' is a specialization of 'Type'.
+'stateMachine::model' (role 'stateMachine_model', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State12', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine11', cardinality 0..*).
+'stateMachine::Transition' (role 'stateMachine_Transition34', cardinality 0..*) is associated with 'stateMachine::Condition' (role 'stateMachine_Condition', cardinality 0..*).
+'stateMachine::Type' (role 'stateMachine_Type19', cardinality 0..*) is associated with 'stateMachine::Test' (role 'stateMachine_Test18', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine6', cardinality 0..*) is associated with 'stateMachine::State' (role 'stateMachine_State', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State9', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine8', cardinality 0..*).
+'stateMachine::Test' (role 'stateMachine_Test', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event16', cardinality 0..*).
+'stateMachine::Test' (role 'stateMachine_Test21', cardinality 0..*) is associated with 'stateMachine::DeclaredParameter' (role 'stateMachine_DeclaredParameter', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State26', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'stateMachine_Transition', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine2', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event', cardinality 0..*).
+'stateMachine::VarName' (role 'stateMachine_VarName', cardinality 0..*) is associated with 'stateMachine::DeclaredParameter' (role 'stateMachine_DeclaredParameter36', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State32', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'stateMachine_Transition31', cardinality 0..*).
+'stateMachine::Type' (role 'stateMachine_Type', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event14', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine4', cardinality 0..*) is associated with 'stateMachine::Command' (role 'stateMachine_Command', cardinality 0..*).
+'stateMachine::Command' (role 'stateMachine_Command24', cardinality 0..*) is associated with 'stateMachine::State' (role 'stateMachine_State23', cardinality 0..*).
+'stateMachine::Transition' (role 'stateMachine_Transition28', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event29', cardinality 0..*).

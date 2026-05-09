@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'graph::Graph' has no attributes.
+The class 'graph::GraphIntf' has no attributes.

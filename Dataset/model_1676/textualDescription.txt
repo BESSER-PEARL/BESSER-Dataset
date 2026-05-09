@@ -1,0 +1,31 @@
+The model has 11 class(es).
+The class 'hello122::Alias' has the following attributes: 'id' of type str.
+The class 'hello122::Thing' has the following attributes: 'id' of type int.
+The class 'NamedElement' has no attributes.
+The class 'hello122::Child' has the following attributes: 'id' of type str.
+The class 'hello122::Base' has no attributes.
+The class 'hello122::Clazoc' has no attributes.
+The class 'hello122::Third' has the following attributes: 'id' of type str.
+The class 'hello122::RelatedTo' has the following attributes: 'since' of type str.
+The class 'hello122::Classoc' has the following attributes: 'id' of type str.
+The class 'hello122::NamedElement' has the following attributes: 'name' of type str.
+The class 'hello122::Top' has the following attributes: 'id' of type str.
+'hello122::Thing' is a specialization of 'NamedElement'.
+'hello122::RelatedTo' is a specialization of 'NamedElement'.
+'hello122::Clazoc' is a specialization of 'NamedElement'.
+'hello122::Third' (role 'hello122_Third', cardinality 0..*) is associated with 'hello122::Thing' (role 'hello122_Thing8', cardinality 0..*).
+'hello122::Third' (role 'hello122_Third35', cardinality 0..*) is associated with 'hello122::Clazoc' (role 'hello122_Clazoc34', cardinality 0..*).
+'hello122::Child' (role 'hello122_Child', cardinality 0..*) is associated with 'hello122::Top' (role 'hello122_Top37', cardinality 0..*).
+'hello122::NamedElement' (role 'hello122_NamedElement', cardinality 0..*) is associated with 'hello122::Alias' (role 'hello122_Alias', cardinality 0..*).
+'hello122::RelatedTo' (role 'hello122_RelatedTo19', cardinality 0..*) is associated with 'hello122::Thing' (role 'hello122_Thing20', cardinality 0..*).
+'hello122::Top' (role 'hello122_Top', cardinality 0..*) is associated with 'hello122::Base' (role 'hello122_Base6', cardinality 0..*).
+'hello122::Classoc' (role 'hello122_Classoc', cardinality 0..*) is associated with 'hello122::Base' (role 'hello122_Base2', cardinality 0..*).
+'hello122::Clazoc' (role 'hello122_Clazoc', cardinality 0..*) is associated with 'hello122::Base' (role 'hello122_Base4', cardinality 0..*).
+'hello122::Thing' (role 'hello122_Thing32', cardinality 0..*) is associated with 'hello122::Clazoc' (role 'hello122_Clazoc31', cardinality 0..*).
+'hello122::Thing' (role 'hello122_Thing10', cardinality 0..*) is associated with 'hello122::Classoc' (role 'hello122_Classoc11', cardinality 0..*).
+'hello122::Base' (role 'hello122_Base26', cardinality 0..*) is associated with 'hello122::Classoc' (role 'hello122_Classoc25', cardinality 0..*).
+'hello122::RelatedTo' (role 'hello122_RelatedTo16', cardinality 0..*) is associated with 'hello122::Thing' (role 'hello122_Thing17', cardinality 0..*).
+'hello122::Third' (role 'hello122_Third23', cardinality 0..*) is associated with 'hello122::Classoc' (role 'hello122_Classoc22', cardinality 0..*).
+'hello122::Thing' (role 'hello122_Thing13', cardinality 0..*) is associated with 'hello122::RelatedTo' (role 'hello122_RelatedTo', cardinality 0..*).
+'hello122::Thing' (role 'hello122_Thing', cardinality 0..*) is associated with 'hello122::Base' (role 'hello122_Base', cardinality 0..*).
+'hello122::Classoc' (role 'hello122_Classoc28', cardinality 0..*) is associated with 'hello122::Thing' (role 'hello122_Thing29', cardinality 0..*).

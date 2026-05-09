@@ -1,0 +1,114 @@
+The model has 54 class(es).
+The class 'RootElement::RoomAttributeHandling' has no attributes.
+The class 'RootElement::RoomStructure' has no attributes.
+The class 'RootElement::RoomTypeHandling' has no attributes.
+The class 'RootElement::HotelSystem' has no attributes.
+The class 'RootElement::SysAdmin' has no attributes.
+The class 'ReceptionHandling' has no attributes.
+The class 'FeedbackReader' has no attributes.
+The class 'RootElement::CleaningHandler' has no attributes.
+The class 'Clerk' has no attributes.
+The class 'RoomHandling' has no attributes.
+The class 'RootElement::ServiceItemHandling' has no attributes.
+The class 'RootElement::FeedbackHandler' has no attributes.
+The class 'RootElement::HourlyRoomBooking' has no attributes.
+The class 'SupportTicketWriter' has no attributes.
+The class 'RootElement::RoomType' has the following attributes: 'capacity' of type str; 'name' of type str; 'price' of type str.
+The class 'RootElement::RoomBooking' has the following attributes: 'endDate' of type date; 'startDate' of type date; 'bookingStatus' of type str.
+The class 'RoomTypeHandling' has no attributes.
+The class 'RootElement::PaymentHandler' has no attributes.
+The class 'RootElement::MakeBooking' has no attributes.
+The class 'RootElement::SupportTicket' has the following attributes: 'roomName' of type str; 'problemDescription' of type str; 'fixed' of type str.
+The class 'ServiceItemHandling' has no attributes.
+The class 'Staff' has no attributes.
+The class 'RoomBooking' has no attributes.
+The class 'RootElement::Booking' has the following attributes: 'bookingID' of type str.
+The class 'RootElement::SupportTicketReader' has no attributes.
+The class 'RootElement::Cleaning' has no attributes.
+The class 'RootElement::ServiceItem' has the following attributes: 'name' of type str; 'description' of type str; 'price' of type str.
+The class 'FeedbackWriter' has no attributes.
+The class 'HotelSystem' has no attributes.
+The class 'RootElement::ReceptionHandling' has no attributes.
+The class 'RootElement::SupportTicketHandler' has no attributes.
+The class 'RootElement::Hotel' has no attributes.
+The class 'SysAdmin' has no attributes.
+The class 'RootElement::Feedback' has the following attributes: 'rating' of type str; 'feedbackDescription' of type str; 'read' of type str.
+The class 'Cleaning' has no attributes.
+The class 'RootElement::RoomAttribute' has the following attributes: 'description' of type str; 'name' of type str; 'id' of type str.
+The class 'RootElement::RoomFetcher' has no attributes.
+The class 'RootElement::FeedbackReader' has no attributes.
+The class 'RootElement::Clerk' has no attributes.
+The class 'MakeBooking' has no attributes.
+The class 'SupportTicketReader' has no attributes.
+The class 'RootElement::Staff' has the following attributes: 'name' of type str; 'staffID' of type str.
+The class 'RootElement::Guest' has the following attributes: 'mail' of type str; 'socialSecurityNumber' of type str; 'name' of type str; 'nextDestination' of type str; 'nationality' of type str; 'phoneNumber' of type str.
+The class 'Payment' has no attributes.
+The class 'RootElement::SupportTicketWriter' has no attributes.
+The class 'RoomAttributeHandling' has no attributes.
+The class 'RootElement::DailyRoomBooking' has the following attributes: 'nbrOfGuests' of type str.
+The class 'RootElement::RoomHandling' has no attributes.
+The class 'RootElement::Manager' has no attributes.
+The class 'RoomFetcher' has no attributes.
+The class 'RootElement::Room' has the following attributes: 'name' of type str; 'isOccupied' of type str; 'needCleaning' of type str.
+The class 'RootElement::Payment' has no attributes.
+The class 'RootElement::BookingHandler' has no attributes.
+The class 'RootElement::FeedbackWriter' has no attributes.
+The enumeration 'BookingStatus' has the following literals: 'CHECKED_OUT', 'BOOKED', 'NONE', 'CHECKED_IN'.
+'RootElement::Staff' is a specialization of 'SupportTicketWriter'.
+'RootElement::BookingHandler' is a specialization of 'ServiceItemHandling'.
+'RootElement::FeedbackHandler' is a specialization of 'FeedbackReader'.
+'RootElement::Guest' is a specialization of 'SupportTicketWriter'.
+'RootElement::Staff' is a specialization of 'SupportTicketReader'.
+'RootElement::Manager' is a specialization of 'Clerk'.
+'RootElement::DailyRoomBooking' is a specialization of 'RoomBooking'.
+'RootElement::Manager' is a specialization of 'FeedbackReader'.
+'RootElement::RoomStructure' is a specialization of 'RoomFetcher'.
+'RootElement::CleaningHandler' is a specialization of 'Cleaning'.
+'RootElement::SysAdmin' is a specialization of 'RoomTypeHandling'.
+'RootElement::Clerk' is a specialization of 'ReceptionHandling'.
+'RootElement::Clerk' is a specialization of 'ServiceItemHandling'.
+'RootElement::Staff' is a specialization of 'Cleaning'.
+'RootElement::RoomStructure' is a specialization of 'RoomAttributeHandling'.
+'RootElement::SysAdmin' is a specialization of 'RoomAttributeHandling'.
+'RootElement::Hotel' is a specialization of 'HotelSystem'.
+'RootElement::RoomStructure' is a specialization of 'RoomHandling'.
+'RootElement::RoomStructure' is a specialization of 'RoomTypeHandling'.
+'RootElement::SupportTicketHandler' is a specialization of 'SupportTicketWriter'.
+'RootElement::Clerk' is a specialization of 'Staff'.
+'RootElement::Guest' is a specialization of 'MakeBooking'.
+'RootElement::BookingHandler' is a specialization of 'MakeBooking'.
+'RootElement::Manager' is a specialization of 'SysAdmin'.
+'RootElement::Clerk' is a specialization of 'MakeBooking'.
+'RootElement::SysAdmin' is a specialization of 'RoomHandling'.
+'RootElement::Guest' is a specialization of 'FeedbackWriter'.
+'RootElement::PaymentHandler' is a specialization of 'Payment'.
+'RootElement::FeedbackHandler' is a specialization of 'FeedbackWriter'.
+'RootElement::Clerk' is a specialization of 'Payment'.
+'RootElement::SupportTicketHandler' is a specialization of 'SupportTicketReader'.
+'RootElement::BookingHandler' is a specialization of 'ReceptionHandling'.
+'RootElement::HourlyRoomBooking' is a specialization of 'RoomBooking'.
+'RootElement::Room' (role 'RootElement_Room', cardinality 0..*) is associated with 'RootElement::RoomBooking' (role 'RootElement_RoomBooking12', cardinality 0..*).
+'RootElement::FeedbackReader' (role 'RootElement_FeedbackReader', cardinality 0..*) is associated with 'RootElement::Manager' (role 'RootElement_Manager', cardinality 0..*).
+'RootElement::Guest' (role 'RootElement_Guest8', cardinality 0..*) is associated with 'RootElement::Booking' (role 'RootElement_Booking7', cardinality 0..*).
+'RootElement::Feedback' (role 'RootElement_Feedback', cardinality 0..*) is associated with 'RootElement::FeedbackHandler' (role 'RootElement_FeedbackHandler', cardinality 0..*).
+'RootElement::RoomType' (role 'RootElement_RoomType40', cardinality 0..*) is associated with 'RootElement::RoomStructure' (role 'RootElement_RoomStructure39', cardinality 0..*).
+'RootElement::Clerk' (role 'RootElement_Clerk', cardinality 0..*) is associated with 'RootElement::ReceptionHandling' (role 'RootElement_ReceptionHandling', cardinality 0..*).
+'RootElement::Guest' (role 'RootElement_Guest', cardinality 0..*) is associated with 'RootElement::SupportTicketWriter' (role 'RootElement_SupportTicketWriter', cardinality 0..*).
+'RootElement::SupportTicket' (role 'RootElement_SupportTicket', cardinality 0..*) is associated with 'RootElement::SupportTicketHandler' (role 'RootElement_SupportTicketHandler', cardinality 0..*).
+'RootElement::FeedbackWriter' (role 'RootElement_FeedbackWriter', cardinality 0..*) is associated with 'RootElement::Guest' (role 'RootElement_Guest4', cardinality 0..*).
+'RootElement::RoomType' (role 'RootElement_RoomType', cardinality 0..*) is associated with 'RootElement::Room' (role 'RootElement_Room14', cardinality 0..*).
+'RootElement::SupportTicketReader' (role 'RootElement_SupportTicketReader', cardinality 0..*) is associated with 'RootElement::Staff' (role 'RootElement_Staff19', cardinality 0..*).
+'RootElement::Cleaning' (role 'RootElement_Cleaning', cardinality 0..*) is associated with 'RootElement::Staff' (role 'RootElement_Staff', cardinality 0..*).
+'RootElement::RoomFetcher' (role 'RootElement_RoomFetcher', cardinality 0..*) is associated with 'RootElement::BookingHandler' (role 'RootElement_BookingHandler35', cardinality 0..*).
+'RootElement::RoomStructure' (role 'RootElement_RoomStructure42', cardinality 0..*) is associated with 'RootElement::RoomAttribute' (role 'RootElement_RoomAttribute43', cardinality 0..*).
+'RootElement::RoomBooking' (role 'RootElement_RoomBooking', cardinality 0..*) is associated with 'RootElement::Booking' (role 'RootElement_Booking', cardinality 0..*).
+'RootElement::CleaningHandler' (role 'RootElement_CleaningHandler', cardinality 0..*) is associated with 'RootElement::RoomFetcher' (role 'RootElement_RoomFetcher47', cardinality 0..*).
+'RootElement::RoomAttribute' (role 'RootElement_RoomAttribute', cardinality 0..*) is associated with 'RootElement::RoomType' (role 'RootElement_RoomType16', cardinality 0..*).
+'RootElement::BookingHandler' (role 'RootElement_BookingHandler', cardinality 0..*) is associated with 'RootElement::Booking' (role 'RootElement_Booking33', cardinality 0..*).
+'RootElement::Clerk' (role 'RootElement_Clerk27', cardinality 0..*) is associated with 'RootElement::MakeBooking' (role 'RootElement_MakeBooking28', cardinality 0..*).
+'RootElement::Staff' (role 'RootElement_Staff21', cardinality 0..*) is associated with 'RootElement::SupportTicketWriter' (role 'RootElement_SupportTicketWriter22', cardinality 0..*).
+'RootElement::Clerk' (role 'RootElement_Clerk30', cardinality 0..*) is associated with 'RootElement::Payment' (role 'RootElement_Payment', cardinality 0..*).
+'RootElement::ServiceItemHandling' (role 'RootElement_ServiceItemHandling', cardinality 0..*) is associated with 'RootElement::Clerk' (role 'RootElement_Clerk25', cardinality 0..*).
+'RootElement::ServiceItem' (role 'RootElement_ServiceItem', cardinality 0..*) is associated with 'RootElement::Booking' (role 'RootElement_Booking10', cardinality 0..*).
+'RootElement::Guest' (role 'RootElement_Guest2', cardinality 0..*) is associated with 'RootElement::MakeBooking' (role 'RootElement_MakeBooking', cardinality 0..*).
+'RootElement::Room' (role 'RootElement_Room37', cardinality 0..*) is associated with 'RootElement::RoomStructure' (role 'RootElement_RoomStructure', cardinality 0..*).

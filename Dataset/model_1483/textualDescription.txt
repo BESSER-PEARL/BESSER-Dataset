@@ -1,0 +1,79 @@
+The model has 34 class(es).
+The class 'transformr::Node' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'transformr::NamedElement' has the following attributes: 'name' of type str.
+The class 'transformr::Graph' has no attributes.
+The class 'transformr::Block' has no attributes.
+The class 'transformr::Executable' has no attributes.
+The class 'transformr::Or' has no attributes.
+The class 'transformr::ForAll' has no attributes.
+The class 'transformr::Variable' has no attributes.
+The class 'GraphElement' has no attributes.
+The class 'Executable' has no attributes.
+The class 'transformr::Assignment' has no attributes.
+The class 'transformr::Edge' has no attributes.
+The class 'transformr::Branch' has no attributes.
+The class 'BinaryConstraint' has no attributes.
+The class 'transformr::Expression' has the following attributes: 'expression' of type str.
+The class 'PatternConstraint' has no attributes.
+The class 'transformr::GraphElement' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'transformr::BinaryConstraint' has no attributes.
+The class 'Graph' has no attributes.
+The class 'transformr::VariableConstraint' has no attributes.
+The class 'transformr::And' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'transformr::Not' has no attributes.
+The class 'transformr::Constraint' has no attributes.
+The class 'transformr::Rule' has no attributes.
+The class 'transformr::Attribute' has no attributes.
+The class 'transformr::PatternConstraint' has no attributes.
+The class 'transformr::Pattern' has no attributes.
+The class 'transformr::TypedElement' has the following attributes: 'type' of type str.
+The class 'transformr::Exists' has no attributes.
+'transformr::VariableConstraint' is a specialization of 'Expression'.
+'transformr::Edge' is a specialization of 'GraphElement'.
+'transformr::Branch' is a specialization of 'Executable'.
+'transformr::Attribute' is a specialization of 'NamedElement'.
+'transformr::PatternConstraint' is a specialization of 'Constraint'.
+'transformr::Assignment' is a specialization of 'Expression'.
+'transformr::GraphElement' is a specialization of 'NamedElement'.
+'transformr::Exists' is a specialization of 'PatternConstraint'.
+'transformr::Attribute' is a specialization of 'TypedElement'.
+'transformr::Block' is a specialization of 'Executable'.
+'transformr::Executable' is a specialization of 'NamedElement'.
+'transformr::Rule' is a specialization of 'Executable'.
+'transformr::Node' is a specialization of 'GraphElement'.
+'transformr::Not' is a specialization of 'Constraint'.
+'transformr::BinaryConstraint' is a specialization of 'Constraint'.
+'transformr::Or' is a specialization of 'BinaryConstraint'.
+'transformr::And' is a specialization of 'BinaryConstraint'.
+'transformr::ForAll' is a specialization of 'PatternConstraint'.
+'transformr::Graph' is a specialization of 'NamedElement'.
+'transformr::GraphElement' is a specialization of 'TypedElement'.
+'transformr::Rule' is a specialization of 'Pattern'.
+'transformr::Variable' is a specialization of 'NamedElement'.
+'transformr::Pattern' is a specialization of 'Graph'.
+'transformr::VariableConstraint' is a specialization of 'Constraint'.
+'transformr::Expression' (role 'transformr_Expression', cardinality 0..*) is associated with 'transformr::Variable' (role 'transformr_Variable30', cardinality 0..*).
+'transformr::Not' (role 'transformr_Not', cardinality 0..*) is associated with 'transformr::Constraint' (role 'transformr_Constraint20', cardinality 0..*).
+'transformr::BinaryConstraint' (role 'transformr_BinaryConstraint', cardinality 0..*) is associated with 'transformr::Constraint' (role 'transformr_Constraint22', cardinality 0..*).
+'transformr::Attribute' (role 'transformr_Attribute', cardinality 0..*) is associated with 'transformr::Node' (role 'transformr_Node4', cardinality 0..*).
+'transformr::Graph' (role 'transformr_Graph', cardinality 0..*) is associated with 'transformr::Node' (role 'transformr_Node', cardinality 0..*).
+'transformr::BinaryConstraint' (role 'transformr_BinaryConstraint24', cardinality 0..*) is associated with 'transformr::Constraint' (role 'transformr_Constraint25', cardinality 0..*).
+'transformr::Rule' (role 'transformr_Rule', cardinality 0..*) is associated with 'transformr::GraphElement' (role 'transformr_GraphElement', cardinality 0..*).
+'transformr::GraphElement' (role 'transformr_GraphElement14', cardinality 0..*) is associated with 'transformr::Rule' (role 'transformr_Rule13', cardinality 0..*).
+'transformr::Executable' (role 'transformr_Executable42', cardinality 0..*) is associated with 'transformr::Block' (role 'transformr_Block', cardinality 0..*).
+'transformr::Node' (role 'transformr_Node2', cardinality 0..*) is associated with 'transformr::Edge' (role 'transformr_Edge', cardinality 0..*).
+'transformr::Pattern' (role 'transformr_Pattern35', cardinality 0..*) is associated with 'transformr::Branch' (role 'transformr_Branch', cardinality 0..*).
+'transformr::Branch' (role 'transformr_Branch37', cardinality 0..*) is associated with 'transformr::Executable' (role 'transformr_Executable', cardinality 0..*).
+'transformr::Node' (role 'transformr_Node7', cardinality 0..*) is associated with 'transformr::Edge' (role 'transformr_Edge6', cardinality 0..*).
+'transformr::Assignment' (role 'transformr_Assignment', cardinality 0..*) is associated with 'transformr::Rule' (role 'transformr_Rule16', cardinality 0..*).
+'transformr::Executable' (role 'transformr_Executable40', cardinality 0..*) is associated with 'transformr::Branch' (role 'transformr_Branch39', cardinality 0..*).
+'transformr::Pattern' (role 'transformr_Pattern10', cardinality 0..*) is associated with 'transformr::Variable' (role 'transformr_Variable', cardinality 0..*).
+'transformr::Pattern' (role 'transformr_Pattern', cardinality 0..*) is associated with 'transformr::Constraint' (role 'transformr_Constraint', cardinality 0..*).
+'transformr::PatternConstraint' (role 'transformr_PatternConstraint', cardinality 0..*) is associated with 'transformr::Pattern' (role 'transformr_Pattern18', cardinality 0..*).
+'transformr::Variable' (role 'transformr_Variable33', cardinality 0..*) is associated with 'transformr::Assignment' (role 'transformr_Assignment32', cardinality 0..*).
+'transformr::Attribute' (role 'transformr_Attribute28', cardinality 0..*) is associated with 'transformr::Variable' (role 'transformr_Variable27', cardinality 0..*).

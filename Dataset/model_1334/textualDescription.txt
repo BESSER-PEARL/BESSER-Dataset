@@ -1,0 +1,123 @@
+The model has 46 class(es).
+The class 'minioclcs::NullLiteralExpCS' has no attributes.
+The class 'minioclcs::NavigationExpCS' has no attributes.
+The class 'minioclcs::EObject' has no attributes.
+The class 'NavigationExpCS' has no attributes.
+The class 'minioclcs::LetVarCS' has the following attributes: 'name' of type str.
+The class 'minioclcs::IteratorVarCS' has the following attributes: 'itName' of type str.
+The class 'minioclcs::CallExpCS' has no attributes.
+The class 'minioclcs::SelfExpCS' has no attributes.
+The class 'minioclcs::NameExpCS' has no attributes.
+The class 'minioclcs::RoundedBracketClauseCS' has no attributes.
+The class 'minioclcs::CollectionLiteralExpCS' has the following attributes: 'kind' of type str.
+The class 'minioclcs::LetExpCS' has no attributes.
+The class 'minioclcs::EqualityExpCS' has the following attributes: 'opName' of type str.
+The class 'minioclcs::LoopExpCS' has no attributes.
+The class 'minioclcs::IterateExpCS' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'minioclcs::PathNameCS' has no attributes.
+The class 'minioclcs::BooleanLiteralExpCS' has no attributes.
+The class 'minioclcs::CSTrace' has no attributes.
+The class 'EqualityExpCS' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'CSTrace' has no attributes.
+The class 'minioclcs::IntLiteralExpCS' has the following attributes: 'intSymbol' of type int.
+The class 'LoopExpCS' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'minioclcs::LiteralExpCS' has no attributes.
+The class 'minioclcs::InvariantCS' has no attributes.
+The class 'minioclcs::ParameterCS' has the following attributes: 'name' of type str.
+The class 'minioclcs::EClass' has no attributes.
+The class 'minioclcs::OperationCS' has the following attributes: 'name' of type str.
+The class 'minioclcs::ImportCS' has the following attributes: 'alias' of type str; 'uri' of type str.
+The class 'BooleanLiteralExpCS' has no attributes.
+The class 'minioclcs::BooleanExpCS' has the following attributes: 'boolSymbol' of type bool.
+The class 'minioclcs::CollectionLiteralPartCS' has no attributes.
+The class 'minioclcs::PathElementCS' has no attributes.
+The class 'minioclcs::CollectExpCS' has no attributes.
+The class 'PrimaryExpCS' has no attributes.
+The class 'minioclcs::ClassCS' has the following attributes: 'name' of type str.
+The class 'minioclcs::AccVarCS' has the following attributes: 'accName' of type str.
+The class 'minioclcs::PropertyCS' has the following attributes: 'name' of type str.
+The class 'minioclcs::MultiplicityCS' has the following attributes: 'mandatory' of type int; 'mult' of type bool; 'upperMult' of type bool; 'lowerInt' of type int; 'opt' of type bool; 'upperInt' of type int.
+The class 'minioclcs::ConstraintsDefCS' has no attributes.
+The class 'minioclcs::PrimaryExpCS' has no attributes.
+The class 'minioclcs::ExpCS' has no attributes.
+The class 'minioclcs::PackageCS' has the following attributes: 'name' of type str.
+The class 'minioclcs::RootCS' has no attributes.
+The enumeration 'CollectionKindCS' has the following literals: 'Collection'.
+'minioclcs::PrimaryExpCS' is a specialization of 'CallExpCS'.
+'minioclcs::PathElementCS' is a specialization of 'CSTrace'.
+'minioclcs::LoopExpCS' is a specialization of 'NavigationExpCS'.
+'minioclcs::ParameterCS' is a specialization of 'CSTrace'.
+'minioclcs::LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'minioclcs::IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'minioclcs::LetExpCS' is a specialization of 'PrimaryExpCS'.
+'minioclcs::NavigationExpCS' is a specialization of 'CSTrace'.
+'minioclcs::InvariantCS' is a specialization of 'CSTrace'.
+'minioclcs::CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'minioclcs::PropertyCS' is a specialization of 'CSTrace'.
+'minioclcs::ClassCS' is a specialization of 'CSTrace'.
+'minioclcs::CollectExpCS' is a specialization of 'LoopExpCS'.
+'minioclcs::PathNameCS' is a specialization of 'CSTrace'.
+'minioclcs::OperationCS' is a specialization of 'CSTrace'.
+'minioclcs::ConstraintsDefCS' is a specialization of 'CSTrace'.
+'minioclcs::IteratorVarCS' is a specialization of 'CSTrace'.
+'minioclcs::CollectionLiteralPartCS' is a specialization of 'CSTrace'.
+'minioclcs::RootCS' is a specialization of 'CSTrace'.
+'minioclcs::NameExpCS' is a specialization of 'NavigationExpCS'.
+'minioclcs::SelfExpCS' is a specialization of 'PrimaryExpCS'.
+'minioclcs::AccVarCS' is a specialization of 'CSTrace'.
+'minioclcs::BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'minioclcs::BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+'minioclcs::RoundedBracketClauseCS' is a specialization of 'CSTrace'.
+'minioclcs::PackageCS' is a specialization of 'CSTrace'.
+'minioclcs::NullLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'minioclcs::ImportCS' is a specialization of 'CSTrace'.
+'minioclcs::MultiplicityCS' is a specialization of 'CSTrace'.
+'minioclcs::NameExpCS' is a specialization of 'PrimaryExpCS'.
+'minioclcs::LetVarCS' is a specialization of 'CSTrace'.
+'minioclcs::IterateExpCS' is a specialization of 'LoopExpCS'.
+'minioclcs::ExpCS' is a specialization of 'CSTrace'.
+'minioclcs::CallExpCS' is a specialization of 'EqualityExpCS'.
+'minioclcs::EqualityExpCS' is a specialization of 'ExpCS'.
+'minioclcs::CollectionLiteralExpCS' (role 'minioclcs_CollectionLiteralExpCS', cardinality 0..*) is associated with 'minioclcs::CollectionLiteralPartCS' (role 'minioclcs_CollectionLiteralPartCS', cardinality 0..*).
+'minioclcs::LoopExpCS' (role 'minioclcs_LoopExpCS', cardinality 0..*) is associated with 'minioclcs::IteratorVarCS' (role 'minioclcs_IteratorVarCS', cardinality 0..*).
+'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS25', cardinality 0..*) is associated with 'minioclcs::OperationCS' (role 'minioclcs_OperationCS24', cardinality 0..*).
+'minioclcs::PropertyCS' (role 'minioclcs_PropertyCS', cardinality 0..*) is associated with 'minioclcs::ClassCS' (role 'minioclcs_ClassCS13', cardinality 0..*).
+'minioclcs::PackageCS' (role 'minioclcs_PackageCS', cardinality 0..*) is associated with 'minioclcs::RootCS' (role 'minioclcs_RootCS2', cardinality 0..*).
+'minioclcs::RoundedBracketClauseCS' (role 'minioclcs_RoundedBracketClauseCS', cardinality 0..*) is associated with 'minioclcs::NameExpCS' (role 'minioclcs_NameExpCS65', cardinality 0..*).
+'minioclcs::EqualityExpCS' (role 'minioclcs_EqualityExpCS', cardinality 0..*) is associated with 'minioclcs::EqualityExpCS' (role 'minioclcs_EqualityExpCS39', cardinality 0..*).
+'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS82', cardinality 0..*) is associated with 'minioclcs::LetVarCS' (role 'minioclcs_LetVarCS81', cardinality 0..*).
+'minioclcs::InvariantCS' (role 'minioclcs_InvariantCS', cardinality 0..*) is associated with 'minioclcs::ConstraintsDefCS' (role 'minioclcs_ConstraintsDefCS35', cardinality 0..*).
+'minioclcs::ConstraintsDefCS' (role 'minioclcs_ConstraintsDefCS32', cardinality 0..*) is associated with 'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS33', cardinality 0..*).
+'minioclcs::NameExpCS' (role 'minioclcs_NameExpCS', cardinality 0..*) is associated with 'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS63', cardinality 0..*).
+'minioclcs::RootCS' (role 'minioclcs_RootCS', cardinality 0..*) is associated with 'minioclcs::ImportCS' (role 'minioclcs_ImportCS', cardinality 0..*).
+'minioclcs::OperationCS' (role 'minioclcs_OperationCS27', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS', cardinality 0..*).
+'minioclcs::EqualityExpCS' (role 'minioclcs_EqualityExpCS42', cardinality 0..*) is associated with 'minioclcs::CallExpCS' (role 'minioclcs_CallExpCS', cardinality 0..*).
+'minioclcs::ClassCS' (role 'minioclcs_ClassCS11', cardinality 0..*) is associated with 'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS', cardinality 0..*).
+'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS54', cardinality 0..*) is associated with 'minioclcs::IteratorVarCS' (role 'minioclcs_IteratorVarCS53', cardinality 0..*).
+'minioclcs::ParameterCS' (role 'minioclcs_ParameterCS29', cardinality 0..*) is associated with 'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS30', cardinality 0..*).
+'minioclcs::ExpCS' (role 'minioclcs_ExpCS85', cardinality 0..*) is associated with 'minioclcs::LetVarCS' (role 'minioclcs_LetVarCS84', cardinality 0..*).
+'minioclcs::LoopExpCS' (role 'minioclcs_LoopExpCS50', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS51', cardinality 0..*).
+'minioclcs::MultiplicityCS' (role 'minioclcs_MultiplicityCS', cardinality 0..*) is associated with 'minioclcs::PropertyCS' (role 'minioclcs_PropertyCS20', cardinality 0..*).
+'minioclcs::OperationCS' (role 'minioclcs_OperationCS', cardinality 0..*) is associated with 'minioclcs::ClassCS' (role 'minioclcs_ClassCS15', cardinality 0..*).
+'minioclcs::AccVarCS' (role 'minioclcs_AccVarCS57', cardinality 0..*) is associated with 'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS58', cardinality 0..*).
+'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS87', cardinality 0..*) is associated with 'minioclcs::PathElementCS' (role 'minioclcs_PathElementCS', cardinality 0..*).
+'minioclcs::EObject' (role 'minioclcs_EObject', cardinality 0..*) is associated with 'minioclcs::CSTrace' (role 'minioclcs_CSTrace', cardinality 0..*).
+'minioclcs::RoundedBracketClauseCS' (role 'minioclcs_RoundedBracketClauseCS67', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS68', cardinality 0..*).
+'minioclcs::CallExpCS' (role 'minioclcs_CallExpCS45', cardinality 0..*) is associated with 'minioclcs::CallExpCS' (role 'minioclcs_CallExpCS43', cardinality 0..*).
+'minioclcs::LetVarCS' (role 'minioclcs_LetVarCS', cardinality 0..*) is associated with 'minioclcs::LetExpCS' (role 'minioclcs_LetExpCS', cardinality 0..*).
+'minioclcs::CallExpCS' (role 'minioclcs_CallExpCS47', cardinality 0..*) is associated with 'minioclcs::NavigationExpCS' (role 'minioclcs_NavigationExpCS', cardinality 0..*).
+'minioclcs::LetExpCS' (role 'minioclcs_LetExpCS78', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS79', cardinality 0..*).
+'minioclcs::CollectionLiteralPartCS' (role 'minioclcs_CollectionLiteralPartCS74', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS75', cardinality 0..*).
+'minioclcs::PackageCS' (role 'minioclcs_PackageCS9', cardinality 0..*) is associated with 'minioclcs::ClassCS' (role 'minioclcs_ClassCS', cardinality 0..*).
+'minioclcs::IterateExpCS' (role 'minioclcs_IterateExpCS', cardinality 0..*) is associated with 'minioclcs::AccVarCS' (role 'minioclcs_AccVarCS', cardinality 0..*).
+'minioclcs::CollectionLiteralPartCS' (role 'minioclcs_CollectionLiteralPartCS71', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS72', cardinality 0..*).
+'minioclcs::ParameterCS' (role 'minioclcs_ParameterCS', cardinality 0..*) is associated with 'minioclcs::OperationCS' (role 'minioclcs_OperationCS22', cardinality 0..*).
+'minioclcs::InvariantCS' (role 'minioclcs_InvariantCS37', cardinality 0..*) is associated with 'minioclcs::ExpCS' (role 'minioclcs_ExpCS38', cardinality 0..*).
+'minioclcs::PathElementCS' (role 'minioclcs_PathElementCS89', cardinality 0..*) is associated with 'minioclcs::EClass' (role 'minioclcs_EClass', cardinality 0..*).
+'minioclcs::ConstraintsDefCS' (role 'minioclcs_ConstraintsDefCS', cardinality 0..*) is associated with 'minioclcs::RootCS' (role 'minioclcs_RootCS4', cardinality 0..*).
+'minioclcs::PackageCS' (role 'minioclcs_PackageCS7', cardinality 0..*) is associated with 'minioclcs::PackageCS' (role 'minioclcs_PackageCS5', cardinality 0..*).
+'minioclcs::PropertyCS' (role 'minioclcs_PropertyCS17', cardinality 0..*) is associated with 'minioclcs::PathNameCS' (role 'minioclcs_PathNameCS18', cardinality 0..*).
+'minioclcs::ExpCS' (role 'minioclcs_ExpCS61', cardinality 0..*) is associated with 'minioclcs::AccVarCS' (role 'minioclcs_AccVarCS60', cardinality 0..*).

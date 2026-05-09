@@ -1,0 +1,57 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class HALL_FSMInstructions_BinaryOperator extends PosConditionExpression {
+
+    private String operatorname;
+
+
+
+
+
+    private FSMInstructions_PosConditionExpression fsminstructions_posconditionexpression;
+
+
+
+
+    private FSMInstructions_PosConditionExpression fsminstructions_posconditionexpression;
+
+
+    public HALL_FSMInstructions_BinaryOperator(
+        String operatorname    ) {
+        super(
+        );
+        this.operatorname = operatorname;
+    }
+
+
+    public String getOperatorname() {
+        return operatorname;
+    }
+
+    public void setOperatorname(String operatorname) {
+        this.operatorname = operatorname;
+    }
+
+    public FSMInstructions_PosConditionExpression getFsminstructions_posconditionexpression() {
+        return fsminstructions_posconditionexpression;
+    }
+
+    public void setFsminstructions_posconditionexpression(FSMInstructions_PosConditionExpression fsminstructions_posconditionexpression) {
+        this.fsminstructions_posconditionexpression = fsminstructions_posconditionexpression;
+    }
+    public FSMInstructions_PosConditionExpression getFsminstructions_posconditionexpression() {
+        return fsminstructions_posconditionexpression;
+    }
+
+    public void setFsminstructions_posconditionexpression(FSMInstructions_PosConditionExpression fsminstructions_posconditionexpression) {
+        this.fsminstructions_posconditionexpression = fsminstructions_posconditionexpression;
+    }
+
+}

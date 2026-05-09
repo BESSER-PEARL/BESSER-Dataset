@@ -1,0 +1,739 @@
+The model has 292 class(es).
+The class 'eTJ::StatusSheet' has no attributes.
+The class 'NikuReportAttribute' has no attributes.
+The class 'eTJ::BookingTask' has no attributes.
+The class 'ResourceAttribute' has no attributes.
+The class 'eTJ::Account' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'eTJ::Vacation' has the following attributes: 'name' of type str.
+The class 'eTJ::ExtDate' has no attributes.
+The class 'Prolog' has no attributes.
+The class 'eTJ::ExtendTask' has no attributes.
+The class 'eTJ::Mandatory' has the following attributes: 'mandatory' of type bool.
+The class 'eTJ::Alert' has the following attributes: 'level' of type str.
+The class 'eTJ::Now' has no attributes.
+The class 'eTJ::RealFormat' has the following attributes: 'thousandsSeparator' of type str; 'fractionDigits' of type int; 'negativeSuffix' of type str; 'negativePrefix' of type str; 'fractionSeparator' of type str.
+The class 'eTJ::ChargeSet' has no attributes.
+The class 'eTJ::Flags' has the following attributes: 'flags' of type str.
+The class 'eTJ::ToolTip' has the following attributes: 'tip' of type str.
+The class 'eTJ::ShiftsAllocate' has no attributes.
+The class 'eTJ::Project' has the following attributes: 'id' of type str; 'version' of type str; 'name' of type str.
+The class 'eTJ::WeekStarts' has the following attributes: 'sunday' of type bool; 'monday' of type bool.
+The class 'StatusTimesheetAttribute' has no attributes.
+The class 'eTJ::TaskAttribute' has no attributes.
+The class 'eTJ::SortTasks' has no attributes.
+The class 'eTJ::Depends' has no attributes.
+The class 'eTJ::Defintions' has the following attributes: 'projectids' of type bool; 'tasks' of type bool; 'resources' of type bool; 'project' of type bool; 'flags' of type bool.
+The class 'eTJ::StatusSheetAttribute' has no attributes.
+The class 'eTJ::TextReport' has no attributes.
+The class 'Epilog' has no attributes.
+The class 'eTJ::SortJournalEntries' has no attributes.
+The class 'eTJ::CellColor' has no attributes.
+The class 'MonthlyMax' has no attributes.
+The class 'eTJ::WeeklyMax' has no attributes.
+The class 'TimesheetAttribute' has no attributes.
+The class 'eTJ::Global' has no attributes.
+The class 'eTJ::WorkingHours' has the following attributes: 'off' of type bool.
+The class 'eTJ::LogicalExpression' has the following attributes: 'op' of type str.
+The class 'eTJ::Limit' has no attributes.
+The class 'eTJ::ProjectId' has the following attributes: 'projectId' of type str.
+The class 'Right' has no attributes.
+The class 'eTJ::Timeoff' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'AllocateResourceAttribute' has no attributes.
+The class 'eTJ::Milestone' has the following attributes: 'milestone' of type bool.
+The class 'eTJ::Priority' has the following attributes: 'priority' of type int.
+The class 'eTJ::CurrencyFormat' has no attributes.
+The class 'TimesheetReportAttribute' has no attributes.
+The class 'eTJ::Column' has the following attributes: 'id' of type str.
+The class 'SortJournalEntries' has no attributes.
+The class 'eTJ::Definitions' has the following attributes: 'none' of type bool; 'all' of type bool.
+The class 'eTJ::YearlyWorkingDays' has the following attributes: 'yearlyWorkingDays' of type int.
+The class 'eTJ::ExportAttribute' has no attributes.
+The class 'eTJ::Headline' has no attributes.
+The class 'eTJ::ShiftTimesheet' has no attributes.
+The class 'eTJ::TaskDependency' has the following attributes: 'policy' of type str.
+The class 'eTJ::NumberFormat' has no attributes.
+The class 'WeeklyMin' has no attributes.
+The class 'eTJ::PurgeTask' has the following attributes: 'listAttribute' of type str.
+The class 'eTJ::StatusTimesheet' has the following attributes: 'text' of type str; 'level' of type str.
+The class 'eTJ::PurgeResource' has the following attributes: 'listAttribute' of type str.
+The class 'ShiftsResource' has no attributes.
+The class 'eTJ::Summary' has no attributes.
+The class 'eTJ::Email' has the following attributes: 'address' of type str.
+The class 'eTJ::SupplementReport' has no attributes.
+The class 'StatusStatusSheetAttribute' has no attributes.
+The class 'eTJ::IcalReport' has the following attributes: 'filename' of type str.
+The class 'eTJ::AllocateResourceAttribute' has no attributes.
+The class 'eTJ::Scheduling' has the following attributes: 'scheduling' of type str.
+The class 'eTJ::NikuReportAttribute' has no attributes.
+The class 'eTJ::LogicalFlagExpression' has the following attributes: 'columId' of type str.
+The class 'eTJ::Period' has no attributes.
+The class 'ProjectAttribute' has no attributes.
+The class 'eTJ::LogicalStringLiteral' has the following attributes: 'value' of type str.
+The class 'eTJ::ColumnAttribute' has no attributes.
+The class 'eTJ::MacroCall' has the following attributes: 'buildin' of type str.
+The class 'eTJ::Export' has the following attributes: 'filename' of type str; 'id' of type str.
+The class 'Caption' has no attributes.
+The class 'TextReport' has no attributes.
+The class 'eTJ::LimitsAttribute' has no attributes.
+The class 'eTJ::Maximum' has no attributes.
+The class 'eTJ::Fail' has no attributes.
+The class 'eTJ::ReportPrefix' has no attributes.
+The class 'eTJ::Efficiency' has the following attributes: 'efficiency' of type float.
+The class 'Left' has no attributes.
+The class 'GapLength' has no attributes.
+The class 'eTJ::CellText' has the following attributes: 'text' of type str.
+The class 'eTJ::TaskRoot' has no attributes.
+The class 'Center' has no attributes.
+The class 'eTJ::EndCredit' has the following attributes: 'credit' of type float.
+The class 'eTJ::LogicalNumeralLiteral' has the following attributes: 'value' of type float.
+The class 'eTJ::Navigator' has the following attributes: 'id' of type str.
+The class 'eTJ::Center' has no attributes.
+The class 'NavigatorAttribute' has no attributes.
+The class 'SortTasks' has no attributes.
+The class 'eTJ::NavigatorAttribute' has no attributes.
+The class 'eTJ::ScenarioIcal' has no attributes.
+The class 'eTJ::ListType' has the following attributes: 'type' of type str.
+The class 'eTJ::ProjectIds' has the following attributes: 'ids' of type str.
+The class 'eTJ::Columns' has no attributes.
+The class 'eTJ::TimesheetReport' has the following attributes: 'filename' of type str.
+The class 'eTJ::Left' has no attributes.
+The class 'ExtDate' has no attributes.
+The class 'ReportAttribute' has no attributes.
+The class 'eTJ::AccountShare' has the following attributes: 'share' of type float.
+The class 'eTJ::MinStart' has no attributes.
+The class 'eTJ::Currency' has the following attributes: 'currency' of type str.
+The class 'eTJ::Include' has the following attributes: 'importURI' of type str.
+The class 'eTJ::Scheduled' has the following attributes: 'scheduled' of type bool.
+The class 'eTJ::SortAccounts' has no attributes.
+The class 'Maximum' has no attributes.
+The class 'eTJ::ExtendedResourceAttribute' has the following attributes: 'value' of type str.
+The class 'eTJ::Scenarios' has no attributes.
+The class 'eTJ::ExtendedResourceAttributeColumn' has no attributes.
+The class 'eTJ::BookingResource' has no attributes.
+The class 'eTJ::TimesheetReportAttribute' has no attributes.
+The class 'eTJ::Booking' has the following attributes: 'overtime' of type int; 'sloppy' of type int.
+The class 'eTJ::RollupTask' has no attributes.
+The class 'eTJ::Width' has the following attributes: 'width' of type float.
+The class 'eTJ::Prolog' has no attributes.
+The class 'LimitsAttribute' has no attributes.
+The class 'eTJ::Interval4' has no attributes.
+The class 'NumberFormat' has no attributes.
+The class 'eTJ::Alternative' has no attributes.
+The class 'eTJ::SupplementAccount' has no attributes.
+The class 'eTJ::Copyright' has the following attributes: 'text' of type str.
+The class 'eTJ::Work' has the following attributes: 'unit' of type str; 'value' of type float.
+The class 'eTJ::Shifts' has no attributes.
+The class 'eTJ::Scale' has the following attributes: 'scale' of type str.
+The class 'eTJ::TaskStatusSheetAttribute' has no attributes.
+The class 'eTJ::GapLength' has no attributes.
+The class 'ExportAttribute' has no attributes.
+The class 'eTJ::WorkHours' has the following attributes: 'stop' of type str; 'start' of type str.
+The class 'eTJ::ExtendedTaskAttribute' has the following attributes: 'value' of type str.
+The class 'WeeklyMax' has no attributes.
+The class 'Property' has no attributes.
+The class 'eTJ::Footer' has no attributes.
+The class 'eTJ::MonthlyMin' has no attributes.
+The class 'eTJ::ResourcePrefix' has no attributes.
+The class 'End' has no attributes.
+The class 'eTJ::IcalReportAttribute' has no attributes.
+The class 'eTJ::MinEnd' has no attributes.
+The class 'eTJ::AllocateResource' has no attributes.
+The class 'eTJ::TimingResolution' has the following attributes: 'timingResolution' of type int.
+The class 'Footer' has no attributes.
+The class 'eTJ::Macro' has the following attributes: 'value' of type str; 'id' of type str.
+The class 'DailyMin' has no attributes.
+The class 'eTJ::ListItem' has no attributes.
+The class 'GapDuration' has no attributes.
+The class 'eTJ::ShortTimeFormat' has the following attributes: 'shortTimeFormat' of type str.
+The class 'eTJ::FontColor' has the following attributes: 'color' of type str.
+The class 'Definitions' has no attributes.
+The class 'eTJ::TaskPrefix' has no attributes.
+The class 'CurrencyFormat' has no attributes.
+The class 'eTJ::Precedes' has no attributes.
+The class 'eTJ::Scenario' has the following attributes: 'name' of type str; 'id' of type str; 'active' of type str.
+The class 'eTJ::Interval2' has no attributes.
+The class 'NewTaskAttribute' has no attributes.
+The class 'LogicalExpression' has no attributes.
+The class 'eTJ::ResourceAttribute' has no attributes.
+The class 'eTJ::Timezone' has the following attributes: 'timezone' of type str.
+The class 'eTJ::Credit' has the following attributes: 'amount' of type float; 'description' of type str.
+The class 'eTJ::Rate' has the following attributes: 'rate' of type float.
+The class 'Start' has no attributes.
+The class 'eTJ::Leaves' has no attributes.
+The class 'eTJ::Extend' has the following attributes: 'inherit' of type bool; 'description' of type str; 'scenariospecific' of type bool; 'name' of type str.
+The class 'eTJ::ShiftsResource' has no attributes.
+The class 'eTJ::LeaveDetails' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'eTJ::LoadUnit' has the following attributes: 'unit' of type str.
+The class 'eTJ::RichText' has the following attributes: 'text' of type str.
+The class 'eTJ::RollupAccount' has no attributes.
+The class 'eTJ::Weekdays' has the following attributes: 'first' of type str; 'last' of type str.
+The class 'eTJ::StatusSheetReport' has the following attributes: 'filename' of type str.
+The class 'eTJ::ShiftsTask' has no attributes.
+The class 'eTJ::AccountRoot' has no attributes.
+The class 'ResourceReport' has no attributes.
+The class 'eTJ::StatusStatusSheetAttribute' has no attributes.
+The class 'eTJ::Property' has no attributes.
+The class 'eTJ::JournalAttributes' has the following attributes: 'args' of type str.
+The class 'eTJ::ReportAttribute' has no attributes.
+The class 'eTJ::SupplementTask' has no attributes.
+The class 'eTJ::Effort' has no attributes.
+The class 'Precedes' has no attributes.
+The class 'eTJ::Epilog' has no attributes.
+The class 'eTJ::Allocate' has no attributes.
+The class 'AccountAttribute' has no attributes.
+The class 'eTJ::MaxEnd' has no attributes.
+The class 'StatusSheetAttribute' has no attributes.
+The class 'eTJ::TaskTimesheetAttribute' has no attributes.
+The class 'eTJ::Details' has no attributes.
+The class 'ShiftsTask' has no attributes.
+The class 'eTJ::Minimum' has no attributes.
+The class 'eTJ::Caption' has no attributes.
+The class 'eTJ::Warn' has no attributes.
+The class 'ColumnAttribute' has no attributes.
+The class 'eTJ::Criterion' has the following attributes: 'columnId' of type str; 'direction' of type str.
+The class 'eTJ::StatusTimesheetAttribute' has no attributes.
+The class 'eTJ::EObject' has no attributes.
+The class 'eTJ::LimitAttribute' has no attributes.
+The class 'eTJ::JournalEntry' has the following attributes: 'headline' of type str.
+The class 'eTJ::JournalMode' has the following attributes: 'mode' of type str.
+The class 'eTJ::StatusStatusSheet' has the following attributes: 'level' of type str; 'text' of type str.
+The class 'eTJ::Remaining' has no attributes.
+The class 'eTJ::ExtendResource' has no attributes.
+The class 'TaskStatusSheetAttribute' has no attributes.
+The class 'eTJ::SelfContained' has the following attributes: 'selfcontained' of type str.
+The class 'eTJ::DailyMax' has no attributes.
+The class 'eTJ::Sort' has the following attributes: 'tree' of type bool.
+The class 'eTJ::LogicalBooleanLiteral' has the following attributes: 'isTrue' of type bool.
+The class 'TaskTimesheetAttribute' has no attributes.
+The class 'eTJ::TagFile' has the following attributes: 'id' of type str; 'filename' of type str.
+The class 'eTJ::Interval3' has no attributes.
+The class 'eTJ::HideJournalEntry' has the following attributes: 'expression' of type str.
+The class 'eTJ::Interval1' has no attributes.
+The class 'eTJ::IncludeProperties' has the following attributes: 'importURI' of type str.
+The class 'eTJ::Responsible' has no attributes.
+The class 'eTJ::HideReport' has no attributes.
+The class 'Summary' has no attributes.
+The class 'eTJ::AccountAttribute' has no attributes.
+The class 'AccountReport' has no attributes.
+The class 'eTJ::DurationQuantity' has the following attributes: 'value' of type float; 'unit' of type str.
+The class 'ListItem' has no attributes.
+The class 'DailyMax' has no attributes.
+The class 'eTJ::TaskReport' has no attributes.
+The class 'eTJ::Resource' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'eTJ::WeeklyMin' has no attributes.
+The class 'eTJ::End' has no attributes.
+The class 'eTJ::Complete' has the following attributes: 'complete' of type float.
+The class 'TaskReport' has no attributes.
+The class 'eTJ::PurgeReport' has the following attributes: 'listAttribute' of type str.
+The class 'eTJ::SortResources' has no attributes.
+The class 'eTJ::Limits' has no attributes.
+The class 'eTJ::Task' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'eTJ::TimeFormat' has the following attributes: 'timeformat' of type str.
+The class 'eTJ::TrackingScenario' has no attributes.
+The class 'eTJ::Select' has the following attributes: 'argument' of type str.
+The class 'eTJ::Formats' has the following attributes: 'formats' of type str.
+The class 'eTJ::Report' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'eTJ::Persistent' has the following attributes: 'persistent' of type bool.
+The class 'Details' has no attributes.
+The class 'IncludePropertiesAttribute' has no attributes.
+The class 'eTJ::MonthlyMax' has no attributes.
+The class 'eTJ::TreeLevel' has the following attributes: 'level' of type str.
+The class 'eTJ::Note' has the following attributes: 'note' of type str.
+The class 'eTJ::ISODATE' has no attributes.
+The class 'eTJ::Duration' has no attributes.
+The class 'eTJ::Title' has the following attributes: 'title' of type str.
+The class 'SortResources' has no attributes.
+The class 'eTJ::AccountPrefix' has no attributes.
+The class 'eTJ::HideTask' has no attributes.
+The class 'IcalReportAttribute' has no attributes.
+The class 'eTJ::LogicalFunctionExpression' has no attributes.
+The class 'eTJ::Function' has the following attributes: 'level' of type int; 'parentId' of type str; 'distance' of type int.
+The class 'eTJ::Shift' has the following attributes: 'replace' of type str; 'name' of type str; 'id' of type str; 'timezone' of type str.
+The class 'eTJ::RollupResource' has no attributes.
+The class 'eTJ::ShiftsLimit' has no attributes.
+The class 'eTJ::StatusSheetReportAttribute' has no attributes.
+The class 'eTJ::RGB' has the following attributes: 'value' of type str.
+The class 'eTJ::Header' has no attributes.
+The class 'eTJ::SupplementResource' has no attributes.
+The class 'eTJ::GapDuration' has no attributes.
+The class 'eTJ::LogicalDateLiteral' has no attributes.
+The class 'eTJ::HAlign' has the following attributes: 'justification' of type str.
+The class 'eTJ::Timesheet' has no attributes.
+The class 'eTJ::Right' has no attributes.
+The class 'StatusSheetReportAttribute' has no attributes.
+The class 'eTJ::TaskAttributes' has the following attributes: 'minend' of type bool; 'all' of type bool; 'responsible' of type bool; 'note' of type bool; 'maxend' of type bool; 'priority' of type bool; 'minstart' of type bool; 'complete' of type bool; 'depends' of type bool; 'flags' of type bool; 'maxstart' of type bool; 'booking' of type bool; 'none' of type bool.
+The class 'eTJ::Balance' has no attributes.
+The class 'eTJ::HideResource' has no attributes.
+The class 'eTJ::AccountReport' has no attributes.
+The class 'eTJ::HideAccount' has the following attributes: 'expression' of type str.
+The class 'eTJ::DailyWorkingHours' has the following attributes: 'dailyWorkingHours' of type float.
+The class 'Minimum' has no attributes.
+The class 'eTJ::ResourceRoot' has no attributes.
+The class 'eTJ::NewTask' has the following attributes: 'text' of type str; 'id' of type str.
+The class 'eTJ::IncludePropertiesAttribute' has no attributes.
+The class 'SortAccounts' has no attributes.
+The class 'MonthlyMin' has no attributes.
+The class 'eTJ::MaxStart' has no attributes.
+The class 'eTJ::Charge' has the following attributes: 'applies' of type str; 'amount' of type float.
+The class 'eTJ::ResourceReport' has no attributes.
+The class 'eTJ::Length' has no attributes.
+The class 'Headline' has no attributes.
+The class 'eTJ::TaskTimesheet' has no attributes.
+The class 'eTJ::LogicalAbsoluteIdExression' has the following attributes: 'value' of type str.
+The class 'eTJ::TaskStatusSheet' has no attributes.
+The class 'eTJ::NikuReport' has the following attributes: 'filename' of type str.
+The class 'Header' has no attributes.
+The class 'eTJ::NewTaskAttribute' has no attributes.
+The class 'eTJ::Author' has no attributes.
+The class 'eTJ::ResourceAttributes' has the following attributes: 'all' of type bool; 'workingHours' of type bool; 'booking' of type bool; 'none' of type bool; 'vacation' of type bool.
+The class 'eTJ::TimesheetAttribute' has no attributes.
+The class 'eTJ::ProjectAttribute' has no attributes.
+The class 'eTJ::DailyMin' has no attributes.
+The class 'eTJ::Start' has no attributes.
+The class 'eTJ::Managers' has no attributes.
+The enumeration 'Justification' has the following literals: 'CENTER', 'LEFT', 'RIGHT'.
+The enumeration 'ScaleResolution' has the following literals: 'HOUR', 'YEAR', 'MONTH', 'QUARTER', 'WEEK', 'DAY'.
+The enumeration 'TimeUnit' has the following literals: 'MINUTE', 'MONTH', 'YEAR', 'HOUR', 'WEEK', 'DAY'.
+The enumeration 'ColumnId' has the following literals: 'duties', 'flags', 'managers', 'id', 'hourly', 'alert', 'followers', 'reports', 'sickleave', 'maxend', 'annualleavebalance', 'effort', 'freetime', 'priority', 'activetasks', 'responsible', 'daily', 'alertmessages', 'status', 'journal_sub', 'name', 'balance', 'alerttrend', 'journalmessages', 'duration', 'competitorcount', 'weekly', 'line', 'effortdone', 'turnover', 'directreports', 'minstart', 'cost', 'children', 'fte', 'pathcriticalness', 'journalsummaries', 'hierarchindex', 'maxstart', 'criticalness', 'closedtasks', 'bsi', 'revenue', 'resources', 'end', 'start', 'opentasks', 'wbs', 'efficiency', 'inputs', 'freework', 'chart', 'email', 'effortleft', 'rate', 'alertsummaries', 'specialleave', 'yearly', 'unpaidleave', 'headcount', 'scenario', 'note', 'no', 'scheduling', 'competitors', 'index', 'precursors', 'gauge', 'annualleave', 'seqno', 'quarterly', 'targets', 'complete', 'monthly', 'journal', 'minend', 'completed'.
+The enumeration 'BuildInMacro' has the following literals: 'projectstart', 'now', 'projectend'.
+The enumeration 'SchedulingPolicy' has the following literals: 'ALAP', 'ASAP'.
+The enumeration 'Weekday' has the following literals: 'SUN', 'FRI', 'TUE', 'SAT', 'THR', 'MON', 'WED'.
+The enumeration 'JournalModeValue' has the following literals: 'STATUS_UP', 'JOURNAL', 'JOURNAL_SUB', 'STATUS_DOWN', 'ALERTS_DOWN'.
+The enumeration 'LoadDisplayUnit' has the following literals: 'WEEKS', 'MONTHS', 'SHORTAUTO', 'MINUTES', 'HOURS', 'YEARS', 'DAYS', 'LONGAUTO'.
+The enumeration 'PurgeTaskAttribute' has the following literals: 'BOOKING', 'DEPENDS', 'CHARGESET', 'FAIL', 'CHARGE', 'WARN', 'PRECEDES', 'FLAGS'.
+The enumeration 'SelectArgument' has the following literals: 'RANDOM', 'MAXLOADED', 'MINALLOCATED', 'ORDER', 'MINLOADED'.
+The enumeration 'ChargeApplies' has the following literals: 'PERDAY', 'PERHOUR', 'PERWEEK', 'ONSTART', 'ONEND'.
+The enumeration 'PurgeResourceAttribute' has the following literals: 'FAIL', 'VACATIONS', 'FLAGS', 'MANAGERS', 'WARN', 'REPORTS'.
+The enumeration 'PurgeReportAttribute' has the following literals: 'FLAGS', 'JOURNALATTRIBUTES', 'DEFINITIONS', 'SORTACCOUNTS', 'FORMATS', 'SORTRESOURCES', 'SORTJOURNALENTRIES', 'SORTTASKS', 'SCENARIOS', 'COLUMNS'.
+The enumeration 'ListTypeValues' has the following literals: 'NUMBERED', 'COMMA', 'BULLETS'.
+The enumeration 'ReportFormat' has the following literals: 'HTML', 'CSV', 'NIKU'.
+The enumeration 'JournalEntrySortCriterion' has the following literals: 'DATE_DOWN', 'ALERT_DOWN', 'ALERT_UP', 'PROPERTY_UP', 'DATE_UP'.
+The enumeration 'AlertLevel' has the following literals: 'GREEN', 'YELLOW', 'RED'.
+The enumeration 'DependsPolicy' has the following literals: 'ONEND', 'ONSTART'.
+The enumeration 'WorkQuantityUnit' has the following literals: 'DAYS', 'HOURS', 'MINUTES', 'PERCENT'.
+The enumeration 'YesNo' has the following literals: 'YES', 'NO'.
+The enumeration 'JournalAttributeValues' has the following literals: 'summary', 'details', 'flags', 'NONE', 'author', 'alert', 'propertyid', 'ALL', 'property', 'timesheet', 'headline', 'date'.
+The enumeration 'CriterionDirection' has the following literals: 'UP', 'DOWN'.
+The enumeration 'LeaveType' has the following literals: 'sick', 'unemployed', 'annual', 'unpaid', 'project', 'special', 'holiday'.
+'eTJ::RichText' is a specialization of 'Prolog'.
+'eTJ::Start' is a specialization of 'ColumnAttribute'.
+'eTJ::DailyMax' is a specialization of 'LimitsAttribute'.
+'eTJ::Start' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::LogicalAbsoluteIdExression' is a specialization of 'LogicalExpression'.
+'eTJ::WeeklyMin' is a specialization of 'LimitsAttribute'.
+'eTJ::JournalAttributes' is a specialization of 'ReportAttribute'.
+'eTJ::MonthlyMax' is a specialization of 'LimitsAttribute'.
+'eTJ::Flags' is a specialization of 'AccountAttribute'.
+'eTJ::TaskAttributes' is a specialization of 'ExportAttribute'.
+'eTJ::Definitions' is a specialization of 'ExportAttribute'.
+'eTJ::Sort' is a specialization of 'SortResources'.
+'eTJ::TaskPrefix' is a specialization of 'IncludePropertiesAttribute'.
+'eTJ::Width' is a specialization of 'ColumnAttribute'.
+'eTJ::Vacation' is a specialization of 'Property'.
+'eTJ::Export' is a specialization of 'Property'.
+'eTJ::Flags' is a specialization of 'ReportAttribute'.
+'eTJ::Resource' is a specialization of 'ResourceAttribute'.
+'eTJ::NumberFormat' is a specialization of 'ReportAttribute'.
+'eTJ::Period' is a specialization of 'ReportAttribute'.
+'eTJ::LogicalStringLiteral' is a specialization of 'LogicalExpression'.
+'eTJ::Select' is a specialization of 'AllocateResourceAttribute'.
+'eTJ::Persistent' is a specialization of 'AllocateResourceAttribute'.
+'eTJ::TaskRoot' is a specialization of 'ReportAttribute'.
+'eTJ::StatusTimesheet' is a specialization of 'TimesheetAttribute'.
+'eTJ::RollupResource' is a specialization of 'ExportAttribute'.
+'eTJ::Remaining' is a specialization of 'NewTaskAttribute'.
+'eTJ::WeekStarts' is a specialization of 'ProjectAttribute'.
+'eTJ::RichText' is a specialization of 'Right'.
+'eTJ::PurgeResource' is a specialization of 'ResourceAttribute'.
+'eTJ::HideReport' is a specialization of 'NavigatorAttribute'.
+'eTJ::Timezone' is a specialization of 'ReportAttribute'.
+'eTJ::Title' is a specialization of 'ColumnAttribute'.
+'eTJ::StatusSheetReport' is a specialization of 'Property'.
+'eTJ::JournalEntry' is a specialization of 'ProjectAttribute'.
+'eTJ::End' is a specialization of 'ExportAttribute'.
+'eTJ::RollupTask' is a specialization of 'ExportAttribute'.
+'eTJ::Account' is a specialization of 'Property'.
+'eTJ::LoadUnit' is a specialization of 'ReportAttribute'.
+'eTJ::AccountRoot' is a specialization of 'ReportAttribute'.
+'eTJ::Report' is a specialization of 'ResourceReport'.
+'eTJ::TaskStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+'eTJ::ResourceAttributes' is a specialization of 'ExportAttribute'.
+'eTJ::Timezone' is a specialization of 'ExportAttribute'.
+'eTJ::Now' is a specialization of 'ProjectAttribute'.
+'eTJ::HideTask' is a specialization of 'NikuReportAttribute'.
+'eTJ::LogicalDateLiteral' is a specialization of 'LogicalExpression'.
+'eTJ::Rate' is a specialization of 'Property'.
+'eTJ::AccountReport' is a specialization of 'ReportAttribute'.
+'eTJ::Remaining' is a specialization of 'TaskTimesheetAttribute'.
+'eTJ::IncludeProperties' is a specialization of 'Property'.
+'eTJ::Start' is a specialization of 'TimesheetReportAttribute'.
+'eTJ::Rate' is a specialization of 'ResourceAttribute'.
+'eTJ::Minimum' is a specialization of 'LimitsAttribute'.
+'eTJ::Managers' is a specialization of 'ResourceAttribute'.
+'eTJ::Shifts' is a specialization of 'ShiftsTask'.
+'eTJ::Flags' is a specialization of 'ResourceAttribute'.
+'eTJ::HideTask' is a specialization of 'ExportAttribute'.
+'eTJ::End' is a specialization of 'ColumnAttribute'.
+'eTJ::Limit' is a specialization of 'WeeklyMin'.
+'eTJ::CellText' is a specialization of 'ColumnAttribute'.
+'eTJ::RealFormat' is a specialization of 'CurrencyFormat'.
+'eTJ::Balance' is a specialization of 'ReportAttribute'.
+'eTJ::DurationQuantity' is a specialization of 'GapDuration'.
+'eTJ::TagFile' is a specialization of 'Property'.
+'eTJ::Shifts' is a specialization of 'ShiftsResource'.
+'eTJ::HAlign' is a specialization of 'ColumnAttribute'.
+'eTJ::Limit' is a specialization of 'DailyMin'.
+'eTJ::Resource' is a specialization of 'Property'.
+'eTJ::Alternative' is a specialization of 'AllocateResourceAttribute'.
+'eTJ::Report' is a specialization of 'TextReport'.
+'eTJ::Timeoff' is a specialization of 'NikuReportAttribute'.
+'eTJ::Leaves' is a specialization of 'Property'.
+'eTJ::TimeFormat' is a specialization of 'ProjectAttribute'.
+'eTJ::SupplementReport' is a specialization of 'Property'.
+'eTJ::Flags' is a specialization of 'StatusTimesheetAttribute'.
+'eTJ::CurrencyFormat' is a specialization of 'ReportAttribute'.
+'eTJ::HideResource' is a specialization of 'ExportAttribute'.
+'eTJ::Period' is a specialization of 'IcalReportAttribute'.
+'eTJ::Limit' is a specialization of 'MonthlyMax'.
+'eTJ::HideResource' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::ReportPrefix' is a specialization of 'IncludePropertiesAttribute'.
+'eTJ::RichText' is a specialization of 'Details'.
+'eTJ::Start' is a specialization of 'ReportAttribute'.
+'eTJ::Timesheet' is a specialization of 'Property'.
+'eTJ::Header' is a specialization of 'ReportAttribute'.
+'eTJ::RichText' is a specialization of 'Caption'.
+'eTJ::RollupAccount' is a specialization of 'ReportAttribute'.
+'eTJ::ExtendResource' is a specialization of 'ProjectAttribute'.
+'eTJ::TaskDependency' is a specialization of 'Precedes'.
+'eTJ::IcalReport' is a specialization of 'Property'.
+'eTJ::Summary' is a specialization of 'StatusTimesheetAttribute'.
+'eTJ::LogicalNumeralLiteral' is a specialization of 'LogicalExpression'.
+'eTJ::HideTask' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::Limit' is a specialization of 'WeeklyMax'.
+'eTJ::RichText' is a specialization of 'Header'.
+'eTJ::ScenarioIcal' is a specialization of 'IcalReportAttribute'.
+'eTJ::Scenarios' is a specialization of 'ExportAttribute'.
+'eTJ::CellColor' is a specialization of 'Property'.
+'eTJ::HideJournalEntry' is a specialization of 'ReportAttribute'.
+'eTJ::Limit' is a specialization of 'DailyMax'.
+'eTJ::Limits' is a specialization of 'ResourceAttribute'.
+'eTJ::Details' is a specialization of 'StatusStatusSheetAttribute'.
+'eTJ::Period' is a specialization of 'TimesheetReportAttribute'.
+'eTJ::TaskStatusSheet' is a specialization of 'StatusSheetAttribute'.
+'eTJ::ExtendTask' is a specialization of 'ProjectAttribute'.
+'eTJ::MacroCall' is a specialization of 'Start'.
+'eTJ::NikuReport' is a specialization of 'Property'.
+'eTJ::TrackingScenario' is a specialization of 'ProjectAttribute'.
+'eTJ::HideAccount' is a specialization of 'ReportAttribute'.
+'eTJ::Title' is a specialization of 'ReportAttribute'.
+'eTJ::Leaves' is a specialization of 'ResourceAttribute'.
+'eTJ::AccountReport' is a specialization of 'Property'.
+'eTJ::SortTasks' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::HideTask' is a specialization of 'IcalReportAttribute'.
+'eTJ::Efficiency' is a specialization of 'ResourceAttribute'.
+'eTJ::ShortTimeFormat' is a specialization of 'ProjectAttribute'.
+'eTJ::HideTask' is a specialization of 'ReportAttribute'.
+'eTJ::Headline' is a specialization of 'NikuReportAttribute'.
+'eTJ::ResourceReport' is a specialization of 'Property'.
+'eTJ::CurrencyFormat' is a specialization of 'ProjectAttribute'.
+'eTJ::HideResource' is a specialization of 'TimesheetReportAttribute'.
+'eTJ::WorkingHours' is a specialization of 'ProjectAttribute'.
+'eTJ::Start' is a specialization of 'IcalReportAttribute'.
+'eTJ::Currency' is a specialization of 'ProjectAttribute'.
+'eTJ::ListType' is a specialization of 'ColumnAttribute'.
+'eTJ::Start' is a specialization of 'NikuReportAttribute'.
+'eTJ::RichText' is a specialization of 'Headline'.
+'eTJ::Headline' is a specialization of 'ReportAttribute'.
+'eTJ::RollupResource' is a specialization of 'IcalReportAttribute'.
+'eTJ::StatusTimesheet' is a specialization of 'TaskTimesheetAttribute'.
+'eTJ::Period' is a specialization of 'ExportAttribute'.
+'eTJ::TextReport' is a specialization of 'Property'.
+'eTJ::SortResources' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::ToolTip' is a specialization of 'Property'.
+'eTJ::ListItem' is a specialization of 'ColumnAttribute'.
+'eTJ::Account' is a specialization of 'AccountAttribute'.
+'eTJ::WeeklyMax' is a specialization of 'LimitsAttribute'.
+'eTJ::Warn' is a specialization of 'ResourceAttribute'.
+'eTJ::Task' is a specialization of 'Property'.
+'eTJ::ResourceRoot' is a specialization of 'ReportAttribute'.
+'eTJ::End' is a specialization of 'TaskTimesheetAttribute'.
+'eTJ::StatusStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+'eTJ::StatusSheet' is a specialization of 'Property'.
+'eTJ::Title' is a specialization of 'NikuReportAttribute'.
+'eTJ::Formats' is a specialization of 'ReportAttribute'.
+'eTJ::RichText' is a specialization of 'Center'.
+'eTJ::RollupTask' is a specialization of 'ReportAttribute'.
+'eTJ::SortResources' is a specialization of 'ReportAttribute'.
+'eTJ::Limits' is a specialization of 'Property'.
+'eTJ::Scenario' is a specialization of 'ProjectAttribute'.
+'eTJ::TimesheetReport' is a specialization of 'Property'.
+'eTJ::Details' is a specialization of 'StatusTimesheetAttribute'.
+'eTJ::TaskReport' is a specialization of 'ReportAttribute'.
+'eTJ::End' is a specialization of 'NikuReportAttribute'.
+'eTJ::JournalMode' is a specialization of 'ReportAttribute'.
+'eTJ::Left' is a specialization of 'ReportAttribute'.
+'eTJ::HideResource' is a specialization of 'ReportAttribute'.
+'eTJ::Maximum' is a specialization of 'LimitsAttribute'.
+'eTJ::HideResource' is a specialization of 'NikuReportAttribute'.
+'eTJ::Limit' is a specialization of 'Maximum'.
+'eTJ::Limit' is a specialization of 'Minimum'.
+'eTJ::End' is a specialization of 'IcalReportAttribute'.
+'eTJ::ResourceReport' is a specialization of 'ReportAttribute'.
+'eTJ::Credit' is a specialization of 'AccountAttribute'.
+'eTJ::Priority' is a specialization of 'NewTaskAttribute'.
+'eTJ::Scale' is a specialization of 'ColumnAttribute'.
+'eTJ::ProjectIds' is a specialization of 'Property'.
+'eTJ::HideResource' is a specialization of 'IcalReportAttribute'.
+'eTJ::Scenarios' is a specialization of 'ReportAttribute'.
+'eTJ::SortJournalEntries' is a specialization of 'ReportAttribute'.
+'eTJ::DailyWorkingHours' is a specialization of 'ProjectAttribute'.
+'eTJ::Email' is a specialization of 'ResourceAttribute'.
+'eTJ::SortTasks' is a specialization of 'ReportAttribute'.
+'eTJ::SelfContained' is a specialization of 'ReportAttribute'.
+'eTJ::SupplementAccount' is a specialization of 'Property'.
+'eTJ::CellColor' is a specialization of 'ColumnAttribute'.
+'eTJ::NumberFormat' is a specialization of 'NikuReportAttribute'.
+'eTJ::DurationQuantity' is a specialization of 'GapLength'.
+'eTJ::ExtendedResourceAttributeColumn' is a specialization of 'ColumnAttribute'.
+'eTJ::Report' is a specialization of 'TaskReport'.
+'eTJ::YearlyWorkingDays' is a specialization of 'ProjectAttribute'.
+'eTJ::SortAccounts' is a specialization of 'ReportAttribute'.
+'eTJ::SupplementTask' is a specialization of 'Property'.
+'eTJ::BookingResource' is a specialization of 'ResourceAttribute'.
+'eTJ::NumberFormat' is a specialization of 'ProjectAttribute'.
+'eTJ::AccountPrefix' is a specialization of 'IncludePropertiesAttribute'.
+'eTJ::End' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::Footer' is a specialization of 'ReportAttribute'.
+'eTJ::Balance' is a specialization of 'Property'.
+'eTJ::LogicalFlagExpression' is a specialization of 'LogicalExpression'.
+'eTJ::RichText' is a specialization of 'Left'.
+'eTJ::LogicalFunctionExpression' is a specialization of 'LogicalExpression'.
+'eTJ::TimeFormat' is a specialization of 'ReportAttribute'.
+'eTJ::ExtendedResourceAttribute' is a specialization of 'ResourceAttribute'.
+'eTJ::Start' is a specialization of 'ExportAttribute'.
+'eTJ::Author' is a specialization of 'StatusStatusSheetAttribute'.
+'eTJ::Sort' is a specialization of 'SortTasks'.
+'eTJ::RollupResource' is a specialization of 'ReportAttribute'.
+'eTJ::MacroCall' is a specialization of 'ExtDate'.
+'eTJ::PurgeReport' is a specialization of 'ReportAttribute'.
+'eTJ::Work' is a specialization of 'NewTaskAttribute'.
+'eTJ::Timezone' is a specialization of 'ProjectAttribute'.
+'eTJ::RollupTask' is a specialization of 'IcalReportAttribute'.
+'eTJ::Period' is a specialization of 'StatusSheetReportAttribute'.
+'eTJ::RichText' is a specialization of 'ListItem'.
+'eTJ::Prolog' is a specialization of 'ReportAttribute'.
+'eTJ::JournalEntry' is a specialization of 'ResourceAttribute'.
+'eTJ::ToolTip' is a specialization of 'ColumnAttribute'.
+'eTJ::Right' is a specialization of 'ReportAttribute'.
+'eTJ::ShiftsAllocate' is a specialization of 'AllocateResourceAttribute'.
+'eTJ::Formats' is a specialization of 'NikuReportAttribute'.
+'eTJ::Limit' is a specialization of 'MonthlyMin'.
+'eTJ::TimingResolution' is a specialization of 'ProjectAttribute'.
+'eTJ::TaskTimesheet' is a specialization of 'TimesheetAttribute'.
+'eTJ::Include' is a specialization of 'ProjectAttribute'.
+'eTJ::End' is a specialization of 'TimesheetReportAttribute'.
+'eTJ::Shift' is a specialization of 'Property'.
+'eTJ::Center' is a specialization of 'ReportAttribute'.
+'eTJ::Epilog' is a specialization of 'ReportAttribute'.
+'eTJ::SupplementResource' is a specialization of 'ResourceAttribute'.
+'eTJ::NewTask' is a specialization of 'TimesheetAttribute'.
+'eTJ::RichText' is a specialization of 'Epilog'.
+'eTJ::End' is a specialization of 'NewTaskAttribute'.
+'eTJ::Priority' is a specialization of 'TaskTimesheetAttribute'.
+'eTJ::Report' is a specialization of 'AccountReport'.
+'eTJ::HideJournalEntry' is a specialization of 'IcalReportAttribute'.
+'eTJ::Mandatory' is a specialization of 'AllocateResourceAttribute'.
+'eTJ::Period' is a specialization of 'ColumnAttribute'.
+'eTJ::RichText' is a specialization of 'Footer'.
+'eTJ::Copyright' is a specialization of 'Property'.
+'eTJ::TaskReport' is a specialization of 'Property'.
+'eTJ::TextReport' is a specialization of 'ReportAttribute'.
+'eTJ::ShiftsResource' is a specialization of 'ResourceAttribute'.
+'eTJ::RichText' is a specialization of 'Summary'.
+'eTJ::Macro' is a specialization of 'Property'.
+'eTJ::MacroCall' is a specialization of 'End'.
+'eTJ::Defintions' is a specialization of 'Definitions'.
+'eTJ::LogicalBooleanLiteral' is a specialization of 'LogicalExpression'.
+'eTJ::RealFormat' is a specialization of 'NumberFormat'.
+'eTJ::Navigator' is a specialization of 'Property'.
+'eTJ::Fail' is a specialization of 'ResourceAttribute'.
+'eTJ::MonthlyMin' is a specialization of 'LimitsAttribute'.
+'eTJ::SupplementResource' is a specialization of 'Property'.
+'eTJ::Vacation' is a specialization of 'ResourceAttribute'.
+'eTJ::Columns' is a specialization of 'ReportAttribute'.
+'eTJ::Summary' is a specialization of 'StatusStatusSheetAttribute'.
+'eTJ::Work' is a specialization of 'TaskTimesheetAttribute'.
+'eTJ::Sort' is a specialization of 'SortAccounts'.
+'eTJ::Caption' is a specialization of 'ReportAttribute'.
+'eTJ::ResourcePrefix' is a specialization of 'IncludePropertiesAttribute'.
+'eTJ::Period' is a specialization of 'NikuReportAttribute'.
+'eTJ::FontColor' is a specialization of 'ColumnAttribute'.
+'eTJ::End' is a specialization of 'ReportAttribute'.
+'eTJ::Flags' is a specialization of 'StatusStatusSheetAttribute'.
+'eTJ::WorkingHours' is a specialization of 'ResourceAttribute'.
+'eTJ::Flags' is a specialization of 'Property'.
+'eTJ::DailyMin' is a specialization of 'LimitsAttribute'.
+'eTJ::ShiftTimesheet' is a specialization of 'TimesheetAttribute'.
+'eTJ::Allocate' is a specialization of 'Property'.
+'eTJ::Sort' is a specialization of 'SortJournalEntries'.
+'eTJ::ISODATE' (role 'eTJ_ISODATE110', cardinality 0..*) is associated with 'eTJ::Interval2' (role 'eTJ_Interval2109', cardinality 0..*).
+'eTJ::ShiftsLimit' (role 'eTJ_ShiftsLimit205', cardinality 0..*) is associated with 'eTJ::Interval2' (role 'eTJ_Interval2206', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account42', cardinality 0..*) is associated with 'eTJ::Balance' (role 'eTJ_Balance41', cardinality 0..*).
+'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity329', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE328', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource269', cardinality 0..*) is associated with 'eTJ::Timesheet' (role 'eTJ_Timesheet', cardinality 0..*).
+'eTJ::StatusSheet' (role 'eTJ_StatusSheet223', cardinality 0..*) is associated with 'eTJ::StatusSheetAttribute' (role 'eTJ_StatusSheetAttribute', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account', cardinality 0..*) is associated with 'eTJ::AccountAttribute' (role 'eTJ_AccountAttribute', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE133', cardinality 0..*) is associated with 'eTJ::JournalEntry' (role 'eTJ_JournalEntry', cardinality 0..*).
+'eTJ::GapLength' (role 'eTJ_GapLength', cardinality 0..*) is associated with 'eTJ::TaskDependency' (role 'eTJ_TaskDependency324', cardinality 0..*).
+'eTJ::MacroCall' (role 'eTJ_MacroCall', cardinality 0..*) is associated with 'eTJ::Macro' (role 'eTJ_Macro', cardinality 0..*).
+'eTJ::RollupResource' (role 'eTJ_RollupResource', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression182', cardinality 0..*).
+'eTJ::Global' (role 'eTJ_Global2', cardinality 0..*) is associated with 'eTJ::Property' (role 'eTJ_Property', cardinality 0..*).
+'eTJ::Interval3' (role 'eTJ_Interval3', cardinality 0..*) is associated with 'eTJ::LeaveDetails' (role 'eTJ_LeaveDetails5', cardinality 0..*).
+'eTJ::Column' (role 'eTJ_Column298', cardinality 0..*) is associated with 'eTJ::ColumnAttribute' (role 'eTJ_ColumnAttribute', cardinality 0..*).
+'eTJ::Function' (role 'eTJ_Function', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE78', cardinality 0..*).
+'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression89', cardinality 0..*) is associated with 'eTJ::HAlign' (role 'eTJ_HAlign', cardinality 0..*).
+'eTJ::JournalEntry' (role 'eTJ_JournalEntry137', cardinality 0..*) is associated with 'eTJ::Author' (role 'eTJ_Author138', cardinality 0..*).
+'eTJ::AccountAttribute' (role 'eTJ_AccountAttribute229', cardinality 0..*) is associated with 'eTJ::SupplementAccount' (role 'eTJ_SupplementAccount228', cardinality 0..*).
+'eTJ::RollupTask' (role 'eTJ_RollupTask', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression184', cardinality 0..*).
+'eTJ::TaskAttribute' (role 'eTJ_TaskAttribute19', cardinality 0..*) is associated with 'eTJ::EObject' (role 'eTJ_EObject', cardinality 0..*).
+'eTJ::TagFile' (role 'eTJ_TagFile254', cardinality 0..*) is associated with 'eTJ::RollupTask' (role 'eTJ_RollupTask255', cardinality 0..*).
+'eTJ::Function' (role 'eTJ_Function331', cardinality 0..*) is associated with 'eTJ::LogicalFunctionExpression' (role 'eTJ_LogicalFunctionExpression', cardinality 0..*).
+'eTJ::Macro' (role 'eTJ_Macro153', cardinality 0..*) is associated with 'eTJ::Property' (role 'eTJ_Property154', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE128', cardinality 0..*) is associated with 'eTJ::Interval4' (role 'eTJ_Interval4127', cardinality 0..*).
+'eTJ::Shift' (role 'eTJ_Shift193', cardinality 0..*) is associated with 'eTJ::Shift' (role 'eTJ_Shift195', cardinality 0..*).
+'eTJ::Allocate' (role 'eTJ_Allocate', cardinality 0..*) is associated with 'eTJ::AllocateResource' (role 'eTJ_AllocateResource', cardinality 0..*).
+'eTJ::ToolTip' (role 'eTJ_ToolTip', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression277', cardinality 0..*).
+'eTJ::BookingTask' (role 'eTJ_BookingTask47', cardinality 0..*) is associated with 'eTJ::Booking' (role 'eTJ_Booking48', cardinality 0..*).
+'eTJ::CellColor' (role 'eTJ_CellColor', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression', cardinality 0..*).
+'eTJ::LimitAttribute' (role 'eTJ_LimitAttribute316', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE317', cardinality 0..*).
+'eTJ::TagFile' (role 'eTJ_TagFile251', cardinality 0..*) is associated with 'eTJ::RollupResource' (role 'eTJ_RollupResource252', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource87', cardinality 0..*) is associated with 'eTJ::Function' (role 'eTJ_Function86', cardinality 0..*).
+'eTJ::LimitsAttribute' (role 'eTJ_LimitsAttribute', cardinality 0..*) is associated with 'eTJ::Limits' (role 'eTJ_Limits', cardinality 0..*).
+'eTJ::Scenario' (role 'eTJ_Scenario81', cardinality 0..*) is associated with 'eTJ::Function' (role 'eTJ_Function80', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account10', cardinality 0..*) is associated with 'eTJ::AccountRoot' (role 'eTJ_AccountRoot', cardinality 0..*).
+'eTJ::LeaveDetails' (role 'eTJ_LeaveDetails', cardinality 0..*) is associated with 'eTJ::Leaves' (role 'eTJ_Leaves', cardinality 0..*).
+'eTJ::Limit' (role 'eTJ_Limit', cardinality 0..*) is associated with 'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity303', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE119', cardinality 0..*) is associated with 'eTJ::Interval3' (role 'eTJ_Interval3118', cardinality 0..*).
+'eTJ::ChargeSet' (role 'eTJ_ChargeSet', cardinality 0..*) is associated with 'eTJ::AccountShare' (role 'eTJ_AccountShare', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account226', cardinality 0..*) is associated with 'eTJ::SupplementAccount' (role 'eTJ_SupplementAccount', cardinality 0..*).
+'eTJ::Weekdays' (role 'eTJ_Weekdays', cardinality 0..*) is associated with 'eTJ::WorkingHours' (role 'eTJ_WorkingHours286', cardinality 0..*).
+'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity144', cardinality 0..*) is associated with 'eTJ::Length' (role 'eTJ_Length', cardinality 0..*).
+'eTJ::Shift' (role 'eTJ_Shift208', cardinality 0..*) is associated with 'eTJ::ShiftsAllocate' (role 'eTJ_ShiftsAllocate', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account8', cardinality 0..*) is associated with 'eTJ::AccountPrefix' (role 'eTJ_AccountPrefix', cardinality 0..*).
+'eTJ::StatusSheet' (role 'eTJ_StatusSheet220', cardinality 0..*) is associated with 'eTJ::Interval4' (role 'eTJ_Interval4221', cardinality 0..*).
+'eTJ::TagFile' (role 'eTJ_TagFile248', cardinality 0..*) is associated with 'eTJ::HideTask' (role 'eTJ_HideTask249', cardinality 0..*).
+'eTJ::TaskAttribute' (role 'eTJ_TaskAttribute17', cardinality 0..*) is associated with 'eTJ::Scenario' (role 'eTJ_Scenario', cardinality 0..*).
+'eTJ::Alternative' (role 'eTJ_Alternative', cardinality 0..*) is associated with 'eTJ::Resource' (role 'eTJ_Resource35', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE107', cardinality 0..*) is associated with 'eTJ::Interval2' (role 'eTJ_Interval2106', cardinality 0..*).
+'eTJ::TagFile' (role 'eTJ_TagFile', cardinality 0..*) is associated with 'eTJ::HideResource' (role 'eTJ_HideResource246', cardinality 0..*).
+'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression93', cardinality 0..*) is associated with 'eTJ::HideResource' (role 'eTJ_HideResource', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE214', cardinality 0..*) is associated with 'eTJ::Start' (role 'eTJ_Start', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource174', cardinality 0..*) is associated with 'eTJ::ResourcePrefix' (role 'eTJ_ResourcePrefix', cardinality 0..*).
+'eTJ::Criterion' (role 'eTJ_Criterion300', cardinality 0..*) is associated with 'eTJ::Scenario' (role 'eTJ_Scenario301', cardinality 0..*).
+'eTJ::Interval1' (role 'eTJ_Interval1311', cardinality 0..*) is associated with 'eTJ::LimitAttribute' (role 'eTJ_LimitAttribute310', cardinality 0..*).
+'eTJ::NewTaskAttribute' (role 'eTJ_NewTaskAttribute', cardinality 0..*) is associated with 'eTJ::NewTask' (role 'eTJ_NewTask', cardinality 0..*).
+'eTJ::Project' (role 'eTJ_Project', cardinality 0..*) is associated with 'eTJ::Global' (role 'eTJ_Global', cardinality 0..*).
+'eTJ::Shifts' (role 'eTJ_Shifts', cardinality 0..*) is associated with 'eTJ::ShiftsLimit' (role 'eTJ_ShiftsLimit', cardinality 0..*).
+'eTJ::ShiftsAllocate' (role 'eTJ_ShiftsAllocate210', cardinality 0..*) is associated with 'eTJ::Interval3' (role 'eTJ_Interval3211', cardinality 0..*).
+'eTJ::NikuReport' (role 'eTJ_NikuReport', cardinality 0..*) is associated with 'eTJ::NikuReportAttribute' (role 'eTJ_NikuReportAttribute', cardinality 0..*).
+'eTJ::Timesheet' (role 'eTJ_Timesheet271', cardinality 0..*) is associated with 'eTJ::Interval4' (role 'eTJ_Interval4272', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource28', cardinality 0..*) is associated with 'eTJ::AllocateResource' (role 'eTJ_AllocateResource27', cardinality 0..*).
+'eTJ::Interval3' (role 'eTJ_Interval3115', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE116', cardinality 0..*).
+'eTJ::Warn' (role 'eTJ_Warn', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression284', cardinality 0..*).
+'eTJ::ResourceAttribute' (role 'eTJ_ResourceAttribute', cardinality 0..*) is associated with 'eTJ::Resource' (role 'eTJ_Resource', cardinality 0..*).
+'eTJ::LogicalDateLiteral' (role 'eTJ_LogicalDateLiteral', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE335', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource236', cardinality 0..*) is associated with 'eTJ::SupplementResource' (role 'eTJ_SupplementResource', cardinality 0..*).
+'eTJ::StatusTimesheetAttribute' (role 'eTJ_StatusTimesheetAttribute', cardinality 0..*) is associated with 'eTJ::StatusTimesheet' (role 'eTJ_StatusTimesheet', cardinality 0..*).
+'eTJ::SupplementReport' (role 'eTJ_SupplementReport', cardinality 0..*) is associated with 'eTJ::Report' (role 'eTJ_Report231', cardinality 0..*).
+'eTJ::Summary' (role 'eTJ_Summary', cardinality 0..*) is associated with 'eTJ::JournalEntry' (role 'eTJ_JournalEntry142', cardinality 0..*).
+'eTJ::Shift' (role 'eTJ_Shift203', cardinality 0..*) is associated with 'eTJ::ShiftsLimit' (role 'eTJ_ShiftsLimit202', cardinality 0..*).
+'eTJ::Scenario' (role 'eTJ_Scenario191', cardinality 0..*) is associated with 'eTJ::Scenarios' (role 'eTJ_Scenarios', cardinality 0..*).
+'eTJ::HideReport' (role 'eTJ_HideReport', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression91', cardinality 0..*).
+'eTJ::Task' (role 'eTJ_Task50', cardinality 0..*) is associated with 'eTJ::BookingResource' (role 'eTJ_BookingResource', cardinality 0..*).
+'eTJ::Project' (role 'eTJ_Project14', cardinality 0..*) is associated with 'eTJ::ProjectAttribute' (role 'eTJ_ProjectAttribute', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE160', cardinality 0..*) is associated with 'eTJ::MaxStart' (role 'eTJ_MaxStart', cardinality 0..*).
+'eTJ::JournalEntry' (role 'eTJ_JournalEntry135', cardinality 0..*) is associated with 'eTJ::Alert' (role 'eTJ_Alert', cardinality 0..*).
+'eTJ::Vacation' (role 'eTJ_Vacation', cardinality 0..*) is associated with 'eTJ::Shift' (role 'eTJ_Shift', cardinality 0..*).
+'eTJ::TrackingScenario' (role 'eTJ_TrackingScenario', cardinality 0..*) is associated with 'eTJ::Scenario' (role 'eTJ_Scenario279', cardinality 0..*).
+'eTJ::Booking' (role 'eTJ_Booking', cardinality 0..*) is associated with 'eTJ::Interval4' (role 'eTJ_Interval4', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource45', cardinality 0..*) is associated with 'eTJ::BookingTask' (role 'eTJ_BookingTask', cardinality 0..*).
+'eTJ::Timesheet' (role 'eTJ_Timesheet274', cardinality 0..*) is associated with 'eTJ::TimesheetAttribute' (role 'eTJ_TimesheetAttribute', cardinality 0..*).
+'eTJ::Shift' (role 'eTJ_Shift197', cardinality 0..*) is associated with 'eTJ::WorkingHours' (role 'eTJ_WorkingHours', cardinality 0..*).
+'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity65', cardinality 0..*) is associated with 'eTJ::Effort' (role 'eTJ_Effort', cardinality 0..*).
+'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression149', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression151', cardinality 0..*).
+'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression146', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression148', cardinality 0..*).
+'eTJ::Extend' (role 'eTJ_Extend', cardinality 0..*) is associated with 'eTJ::ExtendResource' (role 'eTJ_ExtendResource', cardinality 0..*).
+'eTJ::SupplementTask' (role 'eTJ_SupplementTask243', cardinality 0..*) is associated with 'eTJ::TaskAttribute' (role 'eTJ_TaskAttribute244', cardinality 0..*).
+'eTJ::LogicalFlagExpression' (role 'eTJ_LogicalFlagExpression', cardinality 0..*) is associated with 'eTJ::Scenario' (role 'eTJ_Scenario337', cardinality 0..*).
+'eTJ::TaskTimesheetAttribute' (role 'eTJ_TaskTimesheetAttribute', cardinality 0..*) is associated with 'eTJ::TaskTimesheet' (role 'eTJ_TaskTimesheet263', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource178', cardinality 0..*) is associated with 'eTJ::Responsible' (role 'eTJ_Responsible', cardinality 0..*).
+'eTJ::IcalReportAttribute' (role 'eTJ_IcalReportAttribute', cardinality 0..*) is associated with 'eTJ::IcalReport' (role 'eTJ_IcalReport', cardinality 0..*).
+'eTJ::IncludePropertiesAttribute' (role 'eTJ_IncludePropertiesAttribute', cardinality 0..*) is associated with 'eTJ::IncludeProperties' (role 'eTJ_IncludeProperties', cardinality 0..*).
+'eTJ::Columns' (role 'eTJ_Columns', cardinality 0..*) is associated with 'eTJ::Column' (role 'eTJ_Column', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource176', cardinality 0..*) is associated with 'eTJ::ResourceRoot' (role 'eTJ_ResourceRoot', cardinality 0..*).
+'eTJ::GapDuration' (role 'eTJ_GapDuration', cardinality 0..*) is associated with 'eTJ::TaskDependency' (role 'eTJ_TaskDependency322', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource218', cardinality 0..*) is associated with 'eTJ::StatusSheet' (role 'eTJ_StatusSheet', cardinality 0..*).
+'eTJ::LimitAttribute' (role 'eTJ_LimitAttribute', cardinality 0..*) is associated with 'eTJ::Limit' (role 'eTJ_Limit305', cardinality 0..*).
+'eTJ::Report' (role 'eTJ_Report', cardinality 0..*) is associated with 'eTJ::ReportAttribute' (role 'eTJ_ReportAttribute', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE308', cardinality 0..*) is associated with 'eTJ::LimitAttribute' (role 'eTJ_LimitAttribute307', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE98', cardinality 0..*) is associated with 'eTJ::Interval1' (role 'eTJ_Interval1', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE326', cardinality 0..*) is associated with 'eTJ::ExtDate' (role 'eTJ_ExtDate', cardinality 0..*).
+'eTJ::TaskTimesheet' (role 'eTJ_TaskTimesheet', cardinality 0..*) is associated with 'eTJ::Task' (role 'eTJ_Task261', cardinality 0..*).
+'eTJ::HideTask' (role 'eTJ_HideTask', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression95', cardinality 0..*).
+'eTJ::Details' (role 'eTJ_Details', cardinality 0..*) is associated with 'eTJ::JournalEntry' (role 'eTJ_JournalEntry140', cardinality 0..*).
+'eTJ::Sort' (role 'eTJ_Sort', cardinality 0..*) is associated with 'eTJ::Criterion' (role 'eTJ_Criterion', cardinality 0..*).
+'eTJ::Credit' (role 'eTJ_Credit', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE', cardinality 0..*).
+'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity', cardinality 0..*) is associated with 'eTJ::Duration' (role 'eTJ_Duration', cardinality 0..*).
+'eTJ::TaskDependency' (role 'eTJ_TaskDependency', cardinality 0..*) is associated with 'eTJ::Depends' (role 'eTJ_Depends', cardinality 0..*).
+'eTJ::TimesheetReportAttribute' (role 'eTJ_TimesheetReportAttribute', cardinality 0..*) is associated with 'eTJ::TimesheetReport' (role 'eTJ_TimesheetReport', cardinality 0..*).
+'eTJ::Navigator' (role 'eTJ_Navigator', cardinality 0..*) is associated with 'eTJ::NavigatorAttribute' (role 'eTJ_NavigatorAttribute', cardinality 0..*).
+'eTJ::Shift' (role 'eTJ_Shift199', cardinality 0..*) is associated with 'eTJ::ShiftTimesheet' (role 'eTJ_ShiftTimesheet', cardinality 0..*).
+'eTJ::StatusSheetReportAttribute' (role 'eTJ_StatusSheetReportAttribute', cardinality 0..*) is associated with 'eTJ::StatusSheetReport' (role 'eTJ_StatusSheetReport', cardinality 0..*).
+'eTJ::ExtendedResourceAttributeColumn' (role 'eTJ_ExtendedResourceAttributeColumn296', cardinality 0..*) is associated with 'eTJ::Column' (role 'eTJ_Column295', cardinality 0..*).
+'eTJ::AllocateResourceAttribute' (role 'eTJ_AllocateResourceAttribute', cardinality 0..*) is associated with 'eTJ::AllocateResource' (role 'eTJ_AllocateResource30', cardinality 0..*).
+'eTJ::ExportAttribute' (role 'eTJ_ExportAttribute', cardinality 0..*) is associated with 'eTJ::Export' (role 'eTJ_Export', cardinality 0..*).
+'eTJ::CellText' (role 'eTJ_CellText', cardinality 0..*) is associated with 'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression58', cardinality 0..*).
+'eTJ::Interval1' (role 'eTJ_Interval1103', cardinality 0..*) is associated with 'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity104', cardinality 0..*).
+'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity170', cardinality 0..*) is associated with 'eTJ::Remaining' (role 'eTJ_Remaining', cardinality 0..*).
+'eTJ::Extend' (role 'eTJ_Extend293', cardinality 0..*) is associated with 'eTJ::ExtendedResourceAttributeColumn' (role 'eTJ_ExtendedResourceAttributeColumn', cardinality 0..*).
+'eTJ::Managers' (role 'eTJ_Managers', cardinality 0..*) is associated with 'eTJ::Resource' (role 'eTJ_Resource156', cardinality 0..*).
+'eTJ::WorkingHours' (role 'eTJ_WorkingHours288', cardinality 0..*) is associated with 'eTJ::WorkHours' (role 'eTJ_WorkHours', cardinality 0..*).
+'eTJ::Booking' (role 'eTJ_Booking53', cardinality 0..*) is associated with 'eTJ::BookingResource' (role 'eTJ_BookingResource52', cardinality 0..*).
+'eTJ::Extend' (role 'eTJ_Extend74', cardinality 0..*) is associated with 'eTJ::ExtendedTaskAttribute' (role 'eTJ_ExtendedTaskAttribute', cardinality 0..*).
+'eTJ::SupplementResource' (role 'eTJ_SupplementResource238', cardinality 0..*) is associated with 'eTJ::ResourceAttribute' (role 'eTJ_ResourceAttribute239', cardinality 0..*).
+'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression76', cardinality 0..*) is associated with 'eTJ::Fail' (role 'eTJ_Fail', cardinality 0..*).
+'eTJ::Interval4' (role 'eTJ_Interval4130', cardinality 0..*) is associated with 'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity131', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource37', cardinality 0..*) is associated with 'eTJ::Author' (role 'eTJ_Author', cardinality 0..*).
+'eTJ::Interval4' (role 'eTJ_Interval4124', cardinality 0..*) is associated with 'eTJ::ISODATE' (role 'eTJ_ISODATE125', cardinality 0..*).
+'eTJ::LogicalExpression' (role 'eTJ_LogicalExpression180', cardinality 0..*) is associated with 'eTJ::RollupAccount' (role 'eTJ_RollupAccount', cardinality 0..*).
+'eTJ::TaskStatusSheet' (role 'eTJ_TaskStatusSheet259', cardinality 0..*) is associated with 'eTJ::TaskStatusSheetAttribute' (role 'eTJ_TaskStatusSheetAttribute', cardinality 0..*).
+'eTJ::MacroCall' (role 'eTJ_MacroCall333', cardinality 0..*) is associated with 'eTJ::LogicalStringLiteral' (role 'eTJ_LogicalStringLiteral', cardinality 0..*).
+'eTJ::TaskAttribute' (role 'eTJ_TaskAttribute', cardinality 0..*) is associated with 'eTJ::Task' (role 'eTJ_Task', cardinality 0..*).
+'eTJ::Extend' (role 'eTJ_Extend72', cardinality 0..*) is associated with 'eTJ::ExtendTask' (role 'eTJ_ExtendTask', cardinality 0..*).
+'eTJ::Interval2' (role 'eTJ_Interval2', cardinality 0..*) is associated with 'eTJ::Project' (role 'eTJ_Project12', cardinality 0..*).
+'eTJ::Resource' (role 'eTJ_Resource314', cardinality 0..*) is associated with 'eTJ::LimitAttribute' (role 'eTJ_LimitAttribute313', cardinality 0..*).
+'eTJ::RGB' (role 'eTJ_RGB', cardinality 0..*) is associated with 'eTJ::CellColor' (role 'eTJ_CellColor56', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE67', cardinality 0..*) is associated with 'eTJ::End' (role 'eTJ_End', cardinality 0..*).
+'eTJ::TaskDependency' (role 'eTJ_TaskDependency319', cardinality 0..*) is associated with 'eTJ::Task' (role 'eTJ_Task320', cardinality 0..*).
+'eTJ::Task' (role 'eTJ_Task84', cardinality 0..*) is associated with 'eTJ::Function' (role 'eTJ_Function83', cardinality 0..*).
+'eTJ::TaskStatusSheet' (role 'eTJ_TaskStatusSheet', cardinality 0..*) is associated with 'eTJ::Task' (role 'eTJ_Task257', cardinality 0..*).
+'eTJ::StatusStatusSheet' (role 'eTJ_StatusStatusSheet', cardinality 0..*) is associated with 'eTJ::StatusStatusSheetAttribute' (role 'eTJ_StatusStatusSheetAttribute', cardinality 0..*).
+'eTJ::Interval3' (role 'eTJ_Interval3282', cardinality 0..*) is associated with 'eTJ::Vacation' (role 'eTJ_Vacation281', cardinality 0..*).
+'eTJ::Extend' (role 'eTJ_Extend70', cardinality 0..*) is associated with 'eTJ::ExtendedResourceAttribute' (role 'eTJ_ExtendedResourceAttribute', cardinality 0..*).
+'eTJ::Scenario' (role 'eTJ_Scenario189', cardinality 0..*) is associated with 'eTJ::ScenarioIcal' (role 'eTJ_ScenarioIcal', cardinality 0..*).
+'eTJ::Period' (role 'eTJ_Period', cardinality 0..*) is associated with 'eTJ::Interval2' (role 'eTJ_Interval2168', cardinality 0..*).
+'eTJ::SupplementReport' (role 'eTJ_SupplementReport233', cardinality 0..*) is associated with 'eTJ::ReportAttribute' (role 'eTJ_ReportAttribute234', cardinality 0..*).
+'eTJ::ReportPrefix' (role 'eTJ_ReportPrefix', cardinality 0..*) is associated with 'eTJ::Report' (role 'eTJ_Report172', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account291', cardinality 0..*) is associated with 'eTJ::AccountShare' (role 'eTJ_AccountShare290', cardinality 0..*).
+'eTJ::Interval3' (role 'eTJ_Interval3121', cardinality 0..*) is associated with 'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity122', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE164', cardinality 0..*) is associated with 'eTJ::MinStart' (role 'eTJ_MinStart', cardinality 0..*).
+'eTJ::SupplementTask' (role 'eTJ_SupplementTask', cardinality 0..*) is associated with 'eTJ::Task' (role 'eTJ_Task241', cardinality 0..*).
+'eTJ::TaskPrefix' (role 'eTJ_TaskPrefix', cardinality 0..*) is associated with 'eTJ::Task' (role 'eTJ_Task265', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE158', cardinality 0..*) is associated with 'eTJ::MaxEnd' (role 'eTJ_MaxEnd', cardinality 0..*).
+'eTJ::Interval2' (role 'eTJ_Interval2112', cardinality 0..*) is associated with 'eTJ::DurationQuantity' (role 'eTJ_DurationQuantity113', cardinality 0..*).
+'eTJ::Account' (role 'eTJ_Account39', cardinality 0..*) is associated with 'eTJ::Balance' (role 'eTJ_Balance', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE162', cardinality 0..*) is associated with 'eTJ::MinEnd' (role 'eTJ_MinEnd', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE166', cardinality 0..*) is associated with 'eTJ::Now' (role 'eTJ_Now', cardinality 0..*).
+'eTJ::Task' (role 'eTJ_Task267', cardinality 0..*) is associated with 'eTJ::TaskRoot' (role 'eTJ_TaskRoot', cardinality 0..*).
+'eTJ::ISODATE' (role 'eTJ_ISODATE101', cardinality 0..*) is associated with 'eTJ::Interval1' (role 'eTJ_Interval1100', cardinality 0..*).
+'eTJ::Scenario' (role 'eTJ_Scenario185', cardinality 0..*) is associated with 'eTJ::Scenario' (role 'eTJ_Scenario187', cardinality 0..*).

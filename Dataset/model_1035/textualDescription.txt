@@ -1,0 +1,37 @@
+The model has 15 class(es).
+The class 'NamedElement' has no attributes.
+The class 'fsm::Trigger' has the following attributes: 'expression' of type str.
+The class 'fsm::AbstractState' has no attributes.
+The class 'fsm::Region' has no attributes.
+The class 'State' has no attributes.
+The class 'fsm::Pseudostate' has no attributes.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::StateMachine' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsm::Block' has no attributes.
+The class 'fsm::State' has no attributes.
+The class 'AbstractState' has no attributes.
+'fsm::Region' is a specialization of 'NamedElement'.
+'fsm::Transition' is a specialization of 'NamedElement'.
+'fsm::AbstractState' is a specialization of 'NamedElement'.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::InitialState' is a specialization of 'Pseudostate'.
+'fsm::Pseudostate' is a specialization of 'AbstractState'.
+'fsm::State' is a specialization of 'AbstractState'.
+'fsm::Block' (role 'fsm_Block15', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State14', cardinality 0..*).
+'fsm::Block' (role 'fsm_Block', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'target', cardinality 0..*).
+'fsm::Transition' (role 'Transition6', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'source', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'fsm::Region' (role 'ownerRegion', cardinality 0..*).
+'fsm::StateMachine' (role 'ownerStateMachine', cardinality 0..*) is associated with 'fsm::Region' (role 'Region', cardinality 0..*).
+'fsm::AbstractState' (role 'subvertex', cardinality 0..*) is associated with 'fsm::Region' (role 'Region8', cardinality 0..*).
+'fsm::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'AbstractState19', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState21', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoing', cardinality 0..*).
+'fsm::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'fsm::Region' (role 'regions', cardinality 0..*).
+'fsm::Block' (role 'fsm_Block12', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State11', cardinality 0..*).
+'fsm::Trigger' (role 'fsm_Trigger', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition17', cardinality 0..*).

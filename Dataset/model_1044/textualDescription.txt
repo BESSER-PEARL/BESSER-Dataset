@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'sample::Transition' has the following attributes: 'name' of type str; 'trigger' of type str.
+The class 'sample::State' has the following attributes: 'name' of type str.
+The class 'sample::FSM' has the following attributes: 'name' of type str.
+The class 'sample::Finalstate' has no attributes.
+The class 'sample::Initstate' has no attributes.
+The class 'State' has no attributes.
+'sample::Finalstate' is a specialization of 'State'.
+'sample::Initstate' is a specialization of 'State'.
+'sample::State' (role 'sample_State8', cardinality 0..*) is associated with 'sample::Transition' (role 'sample_Transition7', cardinality 0..*).
+'sample::Transition' (role 'sample_Transition', cardinality 0..*) is associated with 'sample::FSM' (role 'sample_FSM', cardinality 0..*).
+'sample::State' (role 'sample_State5', cardinality 0..*) is associated with 'sample::Transition' (role 'sample_Transition4', cardinality 0..*).
+'sample::FSM' (role 'sample_FSM2', cardinality 0..*) is associated with 'sample::State' (role 'sample_State', cardinality 0..*).

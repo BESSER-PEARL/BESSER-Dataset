@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'lit::petriNets::Place' has the following attributes: 'name' of type str.
+The class 'lit::petriNets::Net' has no attributes.
+The class 'lit::petriNets::Transition' has the following attributes: 'name' of type str.
+'lit::petriNets::Net' (role 'net2', cardinality 0..*) is associated with 'lit::petriNets::Transition' (role 'Transition', cardinality 0..*).
+'lit::petriNets::Transition' (role 'transitions', cardinality 0..*) is associated with 'lit::petriNets::Net' (role 'Net9', cardinality 0..*).
+'lit::petriNets::Place' (role 'Place12', cardinality 0..*) is associated with 'lit::petriNets::Transition' (role 'dst11', cardinality 0..*).
+'lit::petriNets::Transition' (role 'Transition7', cardinality 0..*) is associated with 'lit::petriNets::Place' (role 'src', cardinality 0..*).
+'lit::petriNets::Transition' (role 'Transition5', cardinality 0..*) is associated with 'lit::petriNets::Place' (role 'dst', cardinality 0..*).
+'lit::petriNets::Transition' (role 'src14', cardinality 0..*) is associated with 'lit::petriNets::Place' (role 'Place15', cardinality 0..*).
+'lit::petriNets::Place' (role 'Place', cardinality 0..*) is associated with 'lit::petriNets::Net' (role 'net', cardinality 0..*).
+'lit::petriNets::Net' (role 'Net', cardinality 0..*) is associated with 'lit::petriNets::Place' (role 'places', cardinality 0..*).

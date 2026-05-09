@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'MediaArtifact' has no attributes.
+The class 'mode::MediaCollection' has the following attributes: 'name' of type str.
+The class 'mode::MediaLibrary' has no attributes.
+The class 'mode::Device' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'mode::Music' has the following attributes: 'length' of type int.
+The class 'mode::User' has the following attributes: 'name' of type str.
+The class 'mode::MediaArtifact' has the following attributes: 'source' of type str; 'identifier' of type str; 'name' of type str.
+The class 'mode::EBook' has no attributes.
+The class 'mode::AudioBook' has the following attributes: 'length' of type int.
+The class 'mode::Video' has the following attributes: 'length' of type int.
+The enumeration 'MediaSourceType' has the following literals: 'ExternalArtifact', 'MediaStore'.
+The enumeration 'DeviceType' has the following literals: 'Computer', 'Tablet', 'Smartphone'.
+'mode::AudioBook' is a specialization of 'MediaArtifact'.
+'mode::Video' is a specialization of 'MediaArtifact'.
+'mode::EBook' is a specialization of 'MediaArtifact'.
+'mode::Music' is a specialization of 'MediaArtifact'.
+'mode::MediaLibrary' (role 'mode_MediaLibrary4', cardinality 0..*) is associated with 'mode::MediaCollection' (role 'mode_MediaCollection', cardinality 0..*).
+'mode::MediaCollection' (role 'MediaCollection', cardinality 0..*) is associated with 'mode::User' (role 'ownedUser', cardinality 0..*).
+'mode::MediaLibrary' (role 'mode_MediaLibrary', cardinality 0..*) is associated with 'mode::Device' (role 'mode_Device', cardinality 0..*).
+'mode::MediaCollection' (role 'MediaCollection12', cardinality 0..*) is associated with 'mode::Device' (role 'synchronisedDevices', cardinality 0..*).
+'mode::MediaCollection' (role 'synchronisedCollections', cardinality 0..*) is associated with 'mode::Device' (role 'Device', cardinality 0..*).
+'mode::MediaCollection' (role 'MediaCollection10', cardinality 0..*) is associated with 'mode::MediaArtifact' (role 'mediaArtifacts', cardinality 0..*).
+'mode::MediaLibrary' (role 'mode_MediaLibrary2', cardinality 0..*) is associated with 'mode::User' (role 'mode_User', cardinality 0..*).
+'mode::User' (role 'User', cardinality 0..*) is associated with 'mode::MediaCollection' (role 'ownedCollections', cardinality 0..*).
+'mode::MediaCollection' (role 'collection', cardinality 0..*) is associated with 'mode::MediaArtifact' (role 'MediaArtifact', cardinality 0..*).

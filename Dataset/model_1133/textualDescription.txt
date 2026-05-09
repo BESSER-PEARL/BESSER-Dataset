@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'research31::KnowledgeManager' has no attributes.
+The class 'research31::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research31::Review' has the following attributes: 'date' of type date.
+The class 'research31::Paper' has no attributes.
+The class 'Counted' has no attributes.
+The class 'research31::StateMachineVariable' has no attributes.
+The class 'research31::PublicationStatus' has the following attributes: 'label' of type str.
+The class 'research31::Skill' has the following attributes: 'description' of type str.
+The class 'research31::Named' has the following attributes: 'name' of type str.
+The class 'research31::Phase' has the following attributes: 'name' of type str.
+The class 'research31::Transition' has the following attributes: 'guardExpression' of type str; 'guardLabel' of type str.
+The class 'research31::Labelled' has the following attributes: 'lname' of type str.
+The class 'Named' has no attributes.
+The class 'research31::Action' has the following attributes: 'actionLabel' of type str; 'actionStatement' of type str.
+The class 'research31::PublicationSystem' has no attributes.
+The class 'research31::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'research31::Position' has the following attributes: 'description' of type str.
+The class 'research31::Progress' has the following attributes: 'percent' of type int.
+The class 'research31::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'Labelled' has no attributes.
+The class 'research31::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'research31::Keyword' has the following attributes: 'word' of type str.
+The class 'research31::ReviewNote' has the following attributes: 'content' of type str.
+The class 'research31::Counted' has the following attributes: 'id' of type int.
+The class 'research31::StateMachineObject' has the following attributes: 'label' of type str.
+The class 'research31::Paragraph' has the following attributes: 'content' of type str.
+The class 'StateMachineObject' has no attributes.
+The class 'research31::PublicationProcess' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'research31::PublicationStructure' has no attributes.
+The class 'research31::State' has the following attributes: 'name' of type str; 'id' of type int; 'kind' of type str.
+The enumeration 'StateType' has the following literals: 'initial', 'final', 'ongoing'.
+'research31::Keyword' is a specialization of 'Named'.
+'research31::PublicationStructure' is a specialization of 'Named'.
+'research31::Transition' is a specialization of 'StateMachineObject'.
+'research31::PublicationProcess' is a specialization of 'Named'.
+'research31::Review' is a specialization of 'Labelled'.
+'research31::Progress' is a specialization of 'Labelled'.
+'research31::Position' is a specialization of 'Named'.
+'research31::Paragraph' is a specialization of 'Counted'.
+'research31::ReviewNote' is a specialization of 'Named'.
+'research31::PublicationSystem' is a specialization of 'Named'.
+'research31::Paragraph' is a specialization of 'Named'.
+'research31::KnowledgeManager' is a specialization of 'Named'.
+'research31::Write' is a specialization of 'Labelled'.
+'research31::State' is a specialization of 'StateMachineObject'.
+'research31::Paper' is a specialization of 'Named'.
+'research31::PublicationProcess' (role 'research31_PublicationProcess24', cardinality 0..*) is associated with 'research31::Progress' (role 'research31_Progress', cardinality 0..*).
+'research31::Paper' (role 'research31_Paper16', cardinality 0..*) is associated with 'research31::Paper' (role 'research31_Paper18', cardinality 0..*).
+'research31::PublicationStructure' (role 'research31_PublicationStructure46', cardinality 0..*) is associated with 'research31::PublicationSystem' (role 'research31_PublicationSystem45', cardinality 0..*).
+'research31::Researcher' (role 'research31_Researcher8', cardinality 0..*) is associated with 'research31::Position' (role 'research31_Position', cardinality 0..*).
+'research31::PaperKeyword' (role 'research31_PaperKeyword', cardinality 0..*) is associated with 'research31::Paper' (role 'research31_Paper15', cardinality 0..*).
+'research31::PaperKeyword' (role 'research31_PaperKeyword59', cardinality 0..*) is associated with 'research31::Keyword' (role 'research31_Keyword60', cardinality 0..*).
+'research31::Action' (role 'research31_Action82', cardinality 0..*) is associated with 'research31::Action' (role 'research31_Action84', cardinality 0..*).
+'research31::Paper' (role 'research31_Paper54', cardinality 0..*) is associated with 'research31::Keyword' (role 'research31_Keyword', cardinality 0..*).
+'research31::State' (role 'research31_State', cardinality 0..*) is associated with 'research31::Paper' (role 'research31_Paper20', cardinality 0..*).
+'research31::Transition' (role 'research31_Transition78', cardinality 0..*) is associated with 'research31::State' (role 'research31_State77', cardinality 0..*).
+'research31::PublicationProcess' (role 'research31_PublicationProcess43', cardinality 0..*) is associated with 'research31::PublicationSystem' (role 'research31_PublicationSystem', cardinality 0..*).
+'research31::Paper' (role 'research31_Paper', cardinality 0..*) is associated with 'research31::Paragraph' (role 'research31_Paragraph', cardinality 0..*).
+'research31::Paper' (role 'research31_Paper63', cardinality 0..*) is associated with 'research31::Collaboration' (role 'research31_Collaboration62', cardinality 0..*).
+'research31::KnowledgeManager' (role 'research31_KnowledgeManager', cardinality 0..*) is associated with 'research31::PublicationStructure' (role 'research31_PublicationStructure39', cardinality 0..*).
+'research31::Position' (role 'research31_Position50', cardinality 0..*) is associated with 'research31::Position' (role 'research31_Position52', cardinality 0..*).
+'research31::Researcher' (role 'authors', cardinality 0..*) is associated with 'research31::Paper' (role 'Paper', cardinality 0..*).
+'research31::Paragraph' (role 'research31_Paragraph22', cardinality 0..*) is associated with 'research31::ReviewNote' (role 'research31_ReviewNote', cardinality 0..*).
+'research31::Action' (role 'research31_Action', cardinality 0..*) is associated with 'research31::Transition' (role 'research31_Transition', cardinality 0..*).
+'research31::PublicationSystem' (role 'research31_PublicationSystem48', cardinality 0..*) is associated with 'research31::Position' (role 'research31_Position49', cardinality 0..*).
+'research31::Researcher' (role 'research31_Researcher10', cardinality 0..*) is associated with 'research31::Collaboration' (role 'research31_Collaboration', cardinality 0..*).
+'research31::Action' (role 'research31_Action81', cardinality 0..*) is associated with 'research31::State' (role 'research31_State80', cardinality 0..*).
+'research31::PublicationStructure' (role 'research31_PublicationStructure36', cardinality 0..*) is associated with 'research31::Paper' (role 'research31_Paper37', cardinality 0..*).
+'research31::State' (role 'research31_State75', cardinality 0..*) is associated with 'research31::Transition' (role 'research31_Transition74', cardinality 0..*).
+'research31::Progress' (role 'Progress', cardinality 0..*) is associated with 'research31::Paper' (role 'paper', cardinality 0..*).
+'research31::Transition' (role 'research31_Transition71', cardinality 0..*) is associated with 'research31::State' (role 'research31_State72', cardinality 0..*).
+'research31::Skill' (role 'research31_Skill', cardinality 0..*) is associated with 'research31::Researcher' (role 'research31_Researcher6', cardinality 0..*).
+'research31::PublicationStructure' (role 'research31_PublicationStructure', cardinality 0..*) is associated with 'research31::Researcher' (role 'research31_Researcher34', cardinality 0..*).
+'research31::Keyword' (role 'research31_Keyword57', cardinality 0..*) is associated with 'research31::KnowledgeManager' (role 'research31_KnowledgeManager56', cardinality 0..*).
+'research31::PublicationStatus' (role 'research31_PublicationStatus65', cardinality 0..*) is associated with 'research31::StateMachineVariable' (role 'research31_StateMachineVariable', cardinality 0..*).
+'research31::Paper' (role 'Paper26', cardinality 0..*) is associated with 'research31::Progress' (role 'progress', cardinality 0..*).
+'research31::Write' (role 'research31_Write', cardinality 0..*) is associated with 'research31::Researcher' (role 'research31_Researcher', cardinality 0..*).
+'research31::PublicationStatus' (role 'research31_PublicationStatus', cardinality 0..*) is associated with 'research31::PublicationStructure' (role 'research31_PublicationStructure41', cardinality 0..*).
+'research31::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research31::Researcher' (role 'Researcher', cardinality 0..*).
+'research31::Review' (role 'research31_Review31', cardinality 0..*) is associated with 'research31::ReviewNote' (role 'research31_ReviewNote32', cardinality 0..*).
+'research31::Researcher' (role 'research31_Researcher3', cardinality 0..*) is associated with 'research31::Review' (role 'research31_Review', cardinality 0..*).
+'research31::State' (role 'research31_State68', cardinality 0..*) is associated with 'research31::PublicationStatus' (role 'research31_PublicationStatus67', cardinality 0..*).
+'research31::Phase' (role 'research31_Phase', cardinality 0..*) is associated with 'research31::PublicationProcess' (role 'research31_PublicationProcess', cardinality 0..*).
+'research31::Paragraph' (role 'research31_Paragraph29', cardinality 0..*) is associated with 'research31::Write' (role 'research31_Write28', cardinality 0..*).

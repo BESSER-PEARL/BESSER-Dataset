@@ -1,0 +1,53 @@
+The model has 21 class(es).
+The class 'classes::CallExp' has no attributes.
+The class 'classes::Parameter' has no attributes.
+The class 'Visitable' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'classes::Class' has no attributes.
+The class 'classes::PropertyCallExp' has no attributes.
+The class 'classes::Argument' has no attributes.
+The class 'classes::TypedElement' has no attributes.
+The class 'classes::NamedElement' has the following attributes: 'name' of type str.
+The class 'CallExp' has no attributes.
+The class 'classes::Element' has no attributes.
+The class 'classes::Root' has no attributes.
+The class 'classes::Operation' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'classes::Visitable' has no attributes.
+The class 'classes::Namespace' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'classes::Package' has no attributes.
+The class 'classes::OperationCallExp' has no attributes.
+The class 'Element' has no attributes.
+The class 'classes::Property' has no attributes.
+'classes::Operation' is a specialization of 'NamedElement'.
+'classes::Operation' is a specialization of 'TypedElement'.
+'classes::OperationCallExp' is a specialization of 'CallExp'.
+'classes::Element' is a specialization of 'Visitable'.
+'classes::Argument' is a specialization of 'NamedElement'.
+'classes::Namespace' is a specialization of 'Element'.
+'classes::TypedElement' is a specialization of 'Element'.
+'classes::NamedElement' is a specialization of 'Element'.
+'classes::Root' is a specialization of 'Element'.
+'classes::Package' is a specialization of 'NamedElement'.
+'classes::Package' is a specialization of 'Namespace'.
+'classes::CallExp' is a specialization of 'TypedElement'.
+'classes::Property' is a specialization of 'TypedElement'.
+'classes::Class' is a specialization of 'NamedElement'.
+'classes::Parameter' is a specialization of 'NamedElement'.
+'classes::PropertyCallExp' is a specialization of 'CallExp'.
+'classes::Property' is a specialization of 'NamedElement'.
+'classes::CallExp' (role 'ownedCallExp', cardinality 0..*) is associated with 'classes::CallExp' (role 'CallExp5', cardinality 0..*).
+'classes::Parameter' (role 'classes_Parameter', cardinality 0..*) is associated with 'classes::Operation' (role 'classes_Operation21', cardinality 0..*).
+'classes::CallExp' (role 'CallExp', cardinality 0..*) is associated with 'classes::CallExp' (role 'owningSource', cardinality 0..*).
+'classes::Package' (role 'classes_Package', cardinality 0..*) is associated with 'classes::Root' (role 'classes_Root', cardinality 0..*).
+'classes::TypedElement' (role 'classes_TypedElement', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class', cardinality 0..*).
+'classes::OperationCallExp' (role 'classes_OperationCallExp28', cardinality 0..*) is associated with 'classes::Operation' (role 'classes_Operation29', cardinality 0..*).
+'classes::Property' (role 'classes_Property25', cardinality 0..*) is associated with 'classes::PropertyCallExp' (role 'classes_PropertyCallExp', cardinality 0..*).
+'classes::Operation' (role 'classes_Operation', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class17', cardinality 0..*).
+'classes::Class' (role 'classes_Class9', cardinality 0..*) is associated with 'classes::Package' (role 'classes_Package8', cardinality 0..*).
+'classes::Class' (role 'classes_Class13', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class15', cardinality 0..*).
+'classes::Package' (role 'classes_Package12', cardinality 0..*) is associated with 'classes::Package' (role 'classes_Package10', cardinality 0..*).
+'classes::OperationCallExp' (role 'classes_OperationCallExp', cardinality 0..*) is associated with 'classes::Argument' (role 'classes_Argument', cardinality 0..*).
+'classes::Class' (role 'classes_Class19', cardinality 0..*) is associated with 'classes::Property' (role 'classes_Property', cardinality 0..*).
+'classes::CallExp' (role 'classes_CallExp', cardinality 0..*) is associated with 'classes::Operation' (role 'classes_Operation23', cardinality 0..*).

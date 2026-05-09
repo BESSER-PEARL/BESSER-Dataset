@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'sunBooks::EStringToStringMapEntry' has no attributes.
+The class 'sunBooks::CollectionType' has no attributes.
+The class 'sunBooks::AuthorsType' has the following attributes: 'authorName' of type str.
+The class 'sunBooks::BooksType' has no attributes.
+The class 'sunBooks::PromotionType' has the following attributes: 'none' of type str; 'discount' of type str.
+The class 'sunBooks::BookType' has the following attributes: 'bookCategory' of type str; 'publicationDate' of type str; 'name' of type str; 'iSBN' of type str; 'description' of type str; 'price' of type str; 'itemId' of type str.
+The class 'sunBooks::DocumentRoot' has the following attributes: 'mixed' of type str.
+The enumeration 'BookCategoryType' has the following literals: 'magazine', 'other', 'fiction', 'novel'.
+The enumeration 'BookCategoryType1' has the following literals: 'magazine', 'novel', 'other', 'fiction'.
+'sunBooks::AuthorsType' (role 'sunBooks_AuthorsType', cardinality 0..*) is associated with 'sunBooks::BookType' (role 'sunBooks_BookType2', cardinality 0..*).
+'sunBooks::CollectionType' (role 'sunBooks_CollectionType', cardinality 0..*) is associated with 'sunBooks::BooksType' (role 'sunBooks_BooksType6', cardinality 0..*).
+'sunBooks::EStringToStringMapEntry' (role 'sunBooks_EStringToStringMapEntry10', cardinality 0..*) is associated with 'sunBooks::DocumentRoot' (role 'sunBooks_DocumentRoot9', cardinality 0..*).
+'sunBooks::BookType' (role 'sunBooks_BookType', cardinality 0..*) is associated with 'sunBooks::BooksType' (role 'sunBooks_BooksType', cardinality 0..*).
+'sunBooks::DocumentRoot' (role 'sunBooks_DocumentRoot', cardinality 0..*) is associated with 'sunBooks::EStringToStringMapEntry' (role 'sunBooks_EStringToStringMapEntry', cardinality 0..*).
+'sunBooks::CollectionType' (role 'sunBooks_CollectionType13', cardinality 0..*) is associated with 'sunBooks::DocumentRoot' (role 'sunBooks_DocumentRoot12', cardinality 0..*).
+'sunBooks::PromotionType' (role 'sunBooks_PromotionType', cardinality 0..*) is associated with 'sunBooks::BookType' (role 'sunBooks_BookType4', cardinality 0..*).

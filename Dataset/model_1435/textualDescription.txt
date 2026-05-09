@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'GraphMM::Node' has the following attributes: 'size' of type float; 'type' of type str; 'name' of type str.
+The class 'GraphMM::Edge' has no attributes.
+'GraphMM::Edge' (role 'GraphMM_Edge', cardinality 0..*) is associated with 'GraphMM::Node' (role 'GraphMM_Node', cardinality 0..*).
+'GraphMM::Node' (role 'GraphMM_Node3', cardinality 0..*) is associated with 'GraphMM::Edge' (role 'GraphMM_Edge2', cardinality 0..*).

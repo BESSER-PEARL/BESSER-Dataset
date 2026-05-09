@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/smartmdsd/org.eclipse.smartmdsd.parent/ecore.metamodels/base.metamodels/org.eclipse.smartmdsd.ecore.base.stateMachine/model/stateMachine.ecore

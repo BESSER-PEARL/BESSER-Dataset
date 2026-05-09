@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'docbook::Sect1Type' has the following attributes: 'title' of type str; 'para' of type str; 'mixed' of type str.
+The class 'docbook::ChapterType' has the following attributes: 'title' of type str; 'mixed' of type str; 'para' of type str.
+The class 'docbook::BookType' has the following attributes: 'title' of type str; 'info' of type str.
+The class 'docbook::EStringToStringMapEntry' has no attributes.
+The class 'docbook::DocumentRoot' has the following attributes: 'info' of type str; 'para' of type str; 'mixed' of type str; 'title' of type str.
+'docbook::ChapterType' (role 'docbook_ChapterType2', cardinality 0..*) is associated with 'docbook::Sect1Type' (role 'docbook_Sect1Type', cardinality 0..*).
+'docbook::Sect1Type' (role 'docbook_Sect1Type15', cardinality 0..*) is associated with 'docbook::DocumentRoot' (role 'docbook_DocumentRoot14', cardinality 0..*).
+'docbook::DocumentRoot' (role 'docbook_DocumentRoot5', cardinality 0..*) is associated with 'docbook::EStringToStringMapEntry' (role 'docbook_EStringToStringMapEntry6', cardinality 0..*).
+'docbook::ChapterType' (role 'docbook_ChapterType', cardinality 0..*) is associated with 'docbook::BookType' (role 'docbook_BookType', cardinality 0..*).
+'docbook::DocumentRoot' (role 'docbook_DocumentRoot', cardinality 0..*) is associated with 'docbook::EStringToStringMapEntry' (role 'docbook_EStringToStringMapEntry', cardinality 0..*).
+'docbook::DocumentRoot' (role 'docbook_DocumentRoot8', cardinality 0..*) is associated with 'docbook::BookType' (role 'docbook_BookType9', cardinality 0..*).
+'docbook::DocumentRoot' (role 'docbook_DocumentRoot11', cardinality 0..*) is associated with 'docbook::ChapterType' (role 'docbook_ChapterType12', cardinality 0..*).

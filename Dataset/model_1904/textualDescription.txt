@@ -1,0 +1,144 @@
+The model has 68 class(es).
+The class 'drn::CERCLEXY' has the following attributes: 'rayonCST' of type int.
+The class 'drn::InitialPositionY' has the following attributes: 'value' of type int.
+The class 'Root' has no attributes.
+The class 'drn::Limit' has the following attributes: 'name' of type str.
+The class 'Surface' has no attributes.
+The class 'drn::FORWARD' has no attributes.
+The class 'Movement' has no attributes.
+The class 'drn::RefPart' has no attributes.
+The class 'drn::TakeOff' has the following attributes: 'name' of type str.
+The class 'drn::InitialDirection' has the following attributes: 'value' of type str.
+The class 'drn::Library' has the following attributes: 'name' of type str.
+The class 'drn::InitialPosition' has no attributes.
+The class 'drn::CARREXY' has the following attributes: 'coteCST' of type int.
+The class 'drn::DepXYZ::IMPL' has no attributes.
+The class 'drn::DOWN' has no attributes.
+The class 'drn::And' has the following attributes: 'name' of type str.
+The class 'drn::CARREYZ' has the following attributes: 'coteCST' of type int.
+The class 'DepY::Impl' has no attributes.
+The class 'drn::UP' has no attributes.
+The class 'DepXY::IMPL' has no attributes.
+The class 'drn::Device' has the following attributes: 'name' of type str.
+The class 'drn::Wait' has the following attributes: 'name' of type str; 'tempsCST' of type int.
+The class 'drn::DepXZ::IMPL' has the following attributes: 'name' of type str; 'tempsCST' of type int.
+The class 'drn::Configuration' has the following attributes: 'name' of type str.
+The class 'drn::BACKWARD' has no attributes.
+The class 'DepX::Impl' has no attributes.
+The class 'drn::Expression' has the following attributes: 'repeatCST' of type int.
+The class 'DepYZ::IMPL' has no attributes.
+The class 'drn::Root' has no attributes.
+The class 'drn::MaxLength' has no attributes.
+The class 'drn::TypeGeneric' has the following attributes: 'name' of type str.
+The class 'drn::MaxSpeed' has the following attributes: 'value' of type int.
+The class 'drn::With' has the following attributes: 'name' of type str.
+The class 'Limit' has no attributes.
+The class 'drn::DepZ::Impl' has the following attributes: 'tempsCST' of type int; 'name' of type str; 'distanceCST' of type int.
+The class 'DepXZ::IMPL' has no attributes.
+The class 'drn::Bluetooth' has no attributes.
+The class 'drn::DepY::Impl' has the following attributes: 'distanceCST' of type int; 'tempsCST' of type int; 'name' of type str.
+The class 'drn::RIGHT' has no attributes.
+The class 'InitialPosition' has no attributes.
+The class 'drn::RefPartLib' has no attributes.
+The class 'drn::CERCLEYZ' has the following attributes: 'rayonCST' of type int.
+The class 'drn::Wifi' has no attributes.
+The class 'drn::DepX::Impl' has the following attributes: 'name' of type str; 'tempsCST' of type int; 'distanceCST' of type int.
+The class 'drn::LEFT' has no attributes.
+The class 'drn::Rotate' has the following attributes: 'angleCST' of type str; 'name' of type str; 'tempsCST' of type int.
+The class 'drn::CERCLEXZ' has the following attributes: 'rayonCST' of type int.
+The class 'drn::DepXY::IMPL' has the following attributes: 'name' of type str; 'tempsCST' of type int.
+The class 'ConnectionType' has no attributes.
+The class 'drn::Flip' has the following attributes: 'name' of type str.
+The class 'drn::RefDevice' has the following attributes: 'mode' of type str.
+The class 'drn::CARREXZ' has the following attributes: 'coteCST' of type int.
+The class 'drn::Context' has the following attributes: 'name' of type str; 'where' of type str.
+The class 'drn::DepYZ::IMPL' has the following attributes: 'name' of type str; 'tempsCST' of type int.
+The class 'drn::Declaration' has the following attributes: 'name' of type str; 'typePrimitif' of type str.
+The class 'drn::Element' has the following attributes: 'name' of type str.
+The class 'drn::InitialPositionX' has the following attributes: 'value' of type int.
+The class 'drn::Land' has the following attributes: 'name' of type str.
+The class 'drn::MaxWidth' has no attributes.
+The class 'drn::ConnectionType' has the following attributes: 'adress' of type str; 'name' of type str.
+The class 'drn::MaxHeight' has no attributes.
+The class 'drn::Model' has no attributes.
+The class 'drn::Surface' has the following attributes: 'value' of type int.
+The class 'drn::Assignement' has the following attributes: 'name' of type str.
+The class 'DepZ::Impl' has no attributes.
+The class 'DepXYZ::IMPL' has no attributes.
+The class 'drn::Movement' has no attributes.
+The class 'drn::Definition' has the following attributes: 'real' of type str; 'text' of type str; 'int' of type str; 'bool' of type str.
+The enumeration 'Where' has the following literals: 'OUTDOOR', 'INDOOR'.
+The enumeration 'TypePrimitif' has the following literals: 'boolType', 'intType', 'stringType', 'realType'.
+The enumeration 'EBool' has the following literals: 'FALSE', 'TRUE'.
+The enumeration 'Mode' has the following literals: 'OFF', 'ON'.
+The enumeration 'DirectionType' has the following literals: 'FRONT', 'LEFT', 'RIGHT', 'BEHIND'.
+'drn::DepXYZ::IMPL' is a specialization of 'Movement'.
+'drn::DepXZ::IMPL' is a specialization of 'Movement'.
+'drn::MaxSpeed' is a specialization of 'Limit'.
+'drn::RefPart' is a specialization of 'Movement'.
+'drn::DepY::Impl' is a specialization of 'Movement'.
+'drn::InitialPosition' is a specialization of 'Limit'.
+'drn::RefPartLib' is a specialization of 'Movement'.
+'drn::RIGHT' is a specialization of 'DepX::Impl'.
+'drn::InitialPositionY' is a specialization of 'InitialPosition'.
+'drn::Wait' is a specialization of 'Movement'.
+'drn::DepYZ::IMPL' is a specialization of 'Movement'.
+'drn::Flip' is a specialization of 'DepXYZ::IMPL'.
+'drn::InitialDirection' is a specialization of 'InitialPosition'.
+'drn::DepZ::Impl' is a specialization of 'Movement'.
+'drn::Rotate' is a specialization of 'Movement'.
+'drn::InitialPositionX' is a specialization of 'InitialPosition'.
+'drn::And' is a specialization of 'Movement'.
+'drn::CARREXZ' is a specialization of 'DepXZ::IMPL'.
+'drn::LEFT' is a specialization of 'DepX::Impl'.
+'drn::Configuration' is a specialization of 'Root'.
+'drn::DOWN' is a specialization of 'DepZ::Impl'.
+'drn::MaxHeight' is a specialization of 'Surface'.
+'drn::DepX::Impl' is a specialization of 'Movement'.
+'drn::DepXY::IMPL' is a specialization of 'Movement'.
+'drn::Model' is a specialization of 'Root'.
+'drn::CERCLEXY' is a specialization of 'DepXY::IMPL'.
+'drn::CERCLEXZ' is a specialization of 'DepXZ::IMPL'.
+'drn::CARREXY' is a specialization of 'DepXY::IMPL'.
+'drn::Library' is a specialization of 'Root'.
+'drn::UP' is a specialization of 'DepZ::Impl'.
+'drn::Wifi' is a specialization of 'ConnectionType'.
+'drn::MaxLength' is a specialization of 'Surface'.
+'drn::FORWARD' is a specialization of 'DepY::Impl'.
+'drn::Bluetooth' is a specialization of 'ConnectionType'.
+'drn::MaxWidth' is a specialization of 'Surface'.
+'drn::CERCLEYZ' is a specialization of 'DepYZ::IMPL'.
+'drn::TakeOff' is a specialization of 'Movement'.
+'drn::CARREYZ' is a specialization of 'DepYZ::IMPL'.
+'drn::Land' is a specialization of 'Movement'.
+'drn::Surface' is a specialization of 'Limit'.
+'drn::BACKWARD' is a specialization of 'DepY::Impl'.
+'drn::Expression' (role 'drn_Expression26', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression28', cardinality 0..*).
+'drn::DepY::Impl' (role 'drn_DepY_Impl', cardinality 0..*) is associated with 'drn::And' (role 'drn_And41', cardinality 0..*).
+'drn::Movement' (role 'drn_Movement', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression23', cardinality 0..*).
+'drn::Element' (role 'drn_Element63', cardinality 0..*) is associated with 'drn::TypeGeneric' (role 'drn_TypeGeneric62', cardinality 0..*).
+'drn::RefDevice' (role 'drn_RefDevice', cardinality 0..*) is associated with 'drn::With' (role 'drn_With54', cardinality 0..*).
+'drn::Configuration' (role 'drn_Configuration14', cardinality 0..*) is associated with 'drn::ConnectionType' (role 'drn_ConnectionType', cardinality 0..*).
+'drn::Model' (role 'drn_Model4', cardinality 0..*) is associated with 'drn::Context' (role 'drn_Context', cardinality 0..*).
+'drn::Library' (role 'drn_Library', cardinality 0..*) is associated with 'drn::Model' (role 'drn_Model2', cardinality 0..*).
+'drn::Model' (role 'drn_Model6', cardinality 0..*) is associated with 'drn::Assignement' (role 'drn_Assignement', cardinality 0..*).
+'drn::RefPartLib' (role 'drn_RefPartLib35', cardinality 0..*) is associated with 'drn::Assignement' (role 'drn_Assignement36', cardinality 0..*).
+'drn::TypeGeneric' (role 'drn_TypeGeneric', cardinality 0..*) is associated with 'drn::Configuration' (role 'drn_Configuration10', cardinality 0..*).
+'drn::Assignement' (role 'drn_Assignement21', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression', cardinality 0..*).
+'drn::Library' (role 'drn_Library16', cardinality 0..*) is associated with 'drn::Assignement' (role 'drn_Assignement17', cardinality 0..*).
+'drn::And' (role 'drn_And', cardinality 0..*) is associated with 'drn::Rotate' (role 'drn_Rotate', cardinality 0..*).
+'drn::RefPart' (role 'drn_RefPart30', cardinality 0..*) is associated with 'drn::Assignement' (role 'drn_Assignement31', cardinality 0..*).
+'drn::Device' (role 'drn_Device', cardinality 0..*) is associated with 'drn::Configuration' (role 'drn_Configuration12', cardinality 0..*).
+'drn::Declaration' (role 'drn_Declaration', cardinality 0..*) is associated with 'drn::Device' (role 'drn_Device45', cardinality 0..*).
+'drn::Definition' (role 'drn_Definition52', cardinality 0..*) is associated with 'drn::Element' (role 'drn_Element', cardinality 0..*).
+'drn::And' (role 'drn_And39', cardinality 0..*) is associated with 'drn::DepX::Impl' (role 'drn_DepX_Impl', cardinality 0..*).
+'drn::RefPartLib' (role 'drn_RefPartLib', cardinality 0..*) is associated with 'drn::Library' (role 'drn_Library33', cardinality 0..*).
+'drn::Declaration' (role 'drn_Declaration50', cardinality 0..*) is associated with 'drn::Definition' (role 'drn_Definition', cardinality 0..*).
+'drn::TypeGeneric' (role 'drn_TypeGeneric48', cardinality 0..*) is associated with 'drn::Declaration' (role 'drn_Declaration47', cardinality 0..*).
+'drn::RefDevice' (role 'drn_RefDevice56', cardinality 0..*) is associated with 'drn::Device' (role 'drn_Device57', cardinality 0..*).
+'drn::With' (role 'drn_With', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression25', cardinality 0..*).
+'drn::Configuration' (role 'drn_Configuration', cardinality 0..*) is associated with 'drn::Model' (role 'drn_Model', cardinality 0..*).
+'drn::Limit' (role 'drn_Limit', cardinality 0..*) is associated with 'drn::Context' (role 'drn_Context19', cardinality 0..*).
+'drn::And' (role 'drn_And43', cardinality 0..*) is associated with 'drn::DepZ::Impl' (role 'drn_DepZ_Impl', cardinality 0..*).
+'drn::RefPart' (role 'drn_RefPart', cardinality 0..*) is associated with 'drn::Model' (role 'drn_Model8', cardinality 0..*).
+'drn::Definition' (role 'drn_Definition60', cardinality 0..*) is associated with 'drn::RefDevice' (role 'drn_RefDevice59', cardinality 0..*).

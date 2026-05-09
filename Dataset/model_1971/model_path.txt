@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lunkpeter/org.eclipse.viatra/plugins/org.eclipse.viatra.cep.core.metamodels/models/Cep2AutomatonTrace.ecore

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kraxner/moliz-codegen/org.modelexecution.xmof.codegenerator/xmof.ecore

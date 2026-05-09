@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'FSM::AbstractState' has the following attributes: 'name' of type str; 'envs' of type str.
+The class 'FSM::StateMachine' has the following attributes: 'code' of type str.
+The class 'FSM::Transition' has no attributes.
+The class 'FSM::StartState' has no attributes.
+The class 'FSM::EndState' has no attributes.
+The class 'FSM::State' has no attributes.
+The class 'AbstractState' has no attributes.
+'FSM::EndState' is a specialization of 'AbstractState'.
+'FSM::StartState' is a specialization of 'AbstractState'.
+'FSM::State' is a specialization of 'AbstractState'.
+'FSM::Transition' (role 'target', cardinality 0..*) is associated with 'FSM::AbstractState' (role 'AbstractState11', cardinality 0..*).
+'FSM::Transition' (role 'Transition6', cardinality 0..*) is associated with 'FSM::AbstractState' (role 'tar', cardinality 0..*).
+'FSM::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'statemachine', cardinality 0..*).
+'FSM::AbstractState' (role 'states', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'StateMachine', cardinality 0..*).
+'FSM::AbstractState' (role 'src', cardinality 0..*) is associated with 'FSM::Transition' (role 'Transition4', cardinality 0..*).
+'FSM::Transition' (role 'transitions', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'StateMachine13', cardinality 0..*).
+'FSM::Transition' (role 'Transition', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'statemachine2', cardinality 0..*).
+'FSM::Transition' (role 'source', cardinality 0..*) is associated with 'FSM::AbstractState' (role 'AbstractState9', cardinality 0..*).

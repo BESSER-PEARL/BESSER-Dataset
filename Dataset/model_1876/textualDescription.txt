@@ -1,0 +1,35 @@
+The model has 16 class(es).
+The class 'eol::module::AnnotationBlock' has no attributes.
+The class 'eol::module::OperationDefinition' has no attributes.
+The class 'eol::module::Type' has no attributes.
+The class 'Expression' has no attributes.
+The class 'eol::module::EOLModule' has no attributes.
+The class 'eol::module::FormalParameterExpression' has no attributes.
+The class 'eol::module::Expression' has no attributes.
+The class 'eol::module::ExpressionOrStatementBlock' has no attributes.
+The class 'eol::module::Import' has the following attributes: 'imported' of type str.
+The class 'eol::module::ModelDeclarationStatement' has no attributes.
+The class 'eol::module::Block' has no attributes.
+The class 'eol::module::Statement' has no attributes.
+The class 'eol::module::NameExpression' has the following attributes: 'isType' of type bool; 'name' of type str.
+The class 'Block' has no attributes.
+The class 'EOLLibraryModule' has no attributes.
+The class 'eol::module::EOLLibraryModule' has the following attributes: 'name' of type str.
+'eol::module::NameExpression' is a specialization of 'Expression'.
+'eol::module::EOLModule' is a specialization of 'EOLLibraryModule'.
+'eol::module::AnnotationBlock' is a specialization of 'Block'.
+'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition', cardinality 0..*) is associated with 'eol::module::EOLLibraryModule' (role 'eol_module_EOLLibraryModule4', cardinality 0..*).
+'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition21', cardinality 0..*) is associated with 'eol::module::Type' (role 'eol_module_Type22', cardinality 0..*).
+'eol::module::NameExpression' (role 'eol_module_NameExpression', cardinality 0..*) is associated with 'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition29', cardinality 0..*).
+'eol::module::EOLLibraryModule' (role 'eol_module_EOLLibraryModule8', cardinality 0..*) is associated with 'eol::module::Import' (role 'eol_module_Import7', cardinality 0..*).
+'eol::module::EOLLibraryModule' (role 'eol_module_EOLLibraryModule2', cardinality 0..*) is associated with 'eol::module::ModelDeclarationStatement' (role 'eol_module_ModelDeclarationStatement', cardinality 0..*).
+'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition19', cardinality 0..*) is associated with 'eol::module::Type' (role 'eol_module_Type', cardinality 0..*).
+'eol::module::Block' (role 'eol_module_Block12', cardinality 0..*) is associated with 'eol::module::ExpressionOrStatementBlock' (role 'eol_module_ExpressionOrStatementBlock', cardinality 0..*).
+'eol::module::EOLModule' (role 'eol_module_EOLModule', cardinality 0..*) is associated with 'eol::module::Block' (role 'eol_module_Block', cardinality 0..*).
+'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition24', cardinality 0..*) is associated with 'eol::module::AnnotationBlock' (role 'eol_module_AnnotationBlock', cardinality 0..*).
+'eol::module::Block' (role 'eol_module_Block27', cardinality 0..*) is associated with 'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition26', cardinality 0..*).
+'eol::module::Expression' (role 'eol_module_Expression', cardinality 0..*) is associated with 'eol::module::ExpressionOrStatementBlock' (role 'eol_module_ExpressionOrStatementBlock14', cardinality 0..*).
+'eol::module::FormalParameterExpression' (role 'eol_module_FormalParameterExpression', cardinality 0..*) is associated with 'eol::module::OperationDefinition' (role 'eol_module_OperationDefinition31', cardinality 0..*).
+'eol::module::Statement' (role 'eol_module_Statement', cardinality 0..*) is associated with 'eol::module::Block' (role 'eol_module_Block10', cardinality 0..*).
+'eol::module::Expression' (role 'eol_module_Expression17', cardinality 0..*) is associated with 'eol::module::ExpressionOrStatementBlock' (role 'eol_module_ExpressionOrStatementBlock16', cardinality 0..*).
+'eol::module::Import' (role 'eol_module_Import', cardinality 0..*) is associated with 'eol::module::EOLLibraryModule' (role 'eol_module_EOLLibraryModule', cardinality 0..*).

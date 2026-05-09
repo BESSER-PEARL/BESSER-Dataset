@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/huybuidac20593/yakindu/archive/SCT1/tags/SCT_1.1.0_RELEASE/com.yakindu.statechart.model/plugins/org.mda4e.statemachine.model/src/org/mda4e/statemachine/model/statemachine.ecore

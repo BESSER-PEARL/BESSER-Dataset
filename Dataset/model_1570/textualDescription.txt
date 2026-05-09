@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'graphdom::Edge' has the following attributes: 'marked' of type bool; 'guid' of type str; 'weight' of type int.
+The class 'graphdom::Node' has the following attributes: 'dominating' of type bool; 'guid' of type str; 'xCoord' of type int; 'nodeName' of type str; 'yCoord' of type int; 'grade' of type str; 'dominated' of type bool; 'color' of type str.
+The class 'graphdom::Graph' has the following attributes: 'graphName' of type str.
+'graphdom::Edge' (role 'connectedEdges', cardinality 0..*) is associated with 'graphdom::Node' (role 'Node', cardinality 0..*).
+'graphdom::Graph' (role 'graphdom_Graph2', cardinality 0..*) is associated with 'graphdom::Edge' (role 'graphdom_Edge', cardinality 0..*).
+'graphdom::Edge' (role 'Edge', cardinality 0..*) is associated with 'graphdom::Node' (role 'connectedNodes', cardinality 0..*).
+'graphdom::Graph' (role 'graphdom_Graph', cardinality 0..*) is associated with 'graphdom::Node' (role 'graphdom_Node', cardinality 0..*).

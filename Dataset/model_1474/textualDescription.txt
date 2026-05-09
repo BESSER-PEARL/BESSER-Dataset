@@ -1,0 +1,57 @@
+The model has 20 class(es).
+The class 'GraphConstraint::ElementMapping' has no attributes.
+The class 'GraphConstraint::EAttribute' has no attributes.
+The class 'GraphConstraint::Edge' has no attributes.
+The class 'GraphConstraint::Mapping' has no attributes.
+The class 'GraphConstraint::True' has no attributes.
+The class 'GraphConstraint::Graph' has no attributes.
+The class 'GraphConstraint::QuantifiedGraphCondition' has the following attributes: 'quantifier' of type str.
+The class 'GraphConstraint::EReference' has no attributes.
+The class 'GraphConstraint::EPackage' has no attributes.
+The class 'GraphConstraint::NestedGraphCondition' has no attributes.
+The class 'GraphConstraint::Formula' has the following attributes: 'op' of type str.
+The class 'GraphConstraint::NestedGraphConstraint' has the following attributes: 'name' of type str.
+The class 'GraphConstraint::EDataType' has no attributes.
+The class 'GraphConstraint::Attribute' has the following attributes: 'value' of type str; 'op' of type str.
+The class 'GraphConstraint::Node' has no attributes.
+The class 'GraphElement' has no attributes.
+The class 'NestedGraphCondition' has no attributes.
+The class 'GraphConstraint::GraphElement' has the following attributes: 'name' of type str.
+The class 'GraphConstraint::EClass' has no attributes.
+The class 'GraphConstraint::Variable' has the following attributes: 'name' of type str.
+The enumeration 'Operator' has the following literals: 'IMPLIES', 'AND', 'OR', 'NOT'.
+The enumeration 'Quantifier' has the following literals: 'FORALL', 'EXISTS'.
+'GraphConstraint::Node' is a specialization of 'GraphElement'.
+'GraphConstraint::Edge' is a specialization of 'GraphElement'.
+'GraphConstraint::Attribute' is a specialization of 'GraphElement'.
+'GraphConstraint::QuantifiedGraphCondition' is a specialization of 'NestedGraphCondition'.
+'GraphConstraint::True' is a specialization of 'NestedGraphCondition'.
+'GraphConstraint::Formula' is a specialization of 'NestedGraphCondition'.
+'GraphConstraint::Formula' (role 'formula', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphCondition' (role 'NestedGraphCondition48', cardinality 0..*).
+'GraphConstraint::ElementMapping' (role 'GraphConstraint_ElementMapping32', cardinality 0..*) is associated with 'GraphConstraint::GraphElement' (role 'GraphConstraint_GraphElement33', cardinality 0..*).
+'GraphConstraint::QuantifiedGraphCondition' (role 'GraphConstraint_QuantifiedGraphCondition43', cardinality 0..*) is associated with 'GraphConstraint::Mapping' (role 'GraphConstraint_Mapping44', cardinality 0..*).
+'GraphConstraint::Edge' (role 'GraphConstraint_Edge16', cardinality 0..*) is associated with 'GraphConstraint::Node' (role 'GraphConstraint_Node17', cardinality 0..*).
+'GraphConstraint::NestedGraphCondition' (role 'GraphConstraint_NestedGraphCondition', cardinality 0..*) is associated with 'GraphConstraint::Graph' (role 'GraphConstraint_Graph54', cardinality 0..*).
+'GraphConstraint::Graph' (role 'GraphConstraint_Graph', cardinality 0..*) is associated with 'GraphConstraint::Edge' (role 'GraphConstraint_Edge', cardinality 0..*).
+'GraphConstraint::Graph' (role 'GraphConstraint_Graph7', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphConstraint' (role 'GraphConstraint_NestedGraphConstraint6', cardinality 0..*).
+'GraphConstraint::Edge' (role 'GraphConstraint_Edge13', cardinality 0..*) is associated with 'GraphConstraint::Node' (role 'GraphConstraint_Node14', cardinality 0..*).
+'GraphConstraint::EPackage' (role 'GraphConstraint_EPackage', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphConstraint' (role 'GraphConstraint_NestedGraphConstraint', cardinality 0..*).
+'GraphConstraint::QuantifiedGraphCondition' (role 'GraphConstraint_QuantifiedGraphCondition', cardinality 0..*) is associated with 'GraphConstraint::Graph' (role 'GraphConstraint_Graph35', cardinality 0..*).
+'GraphConstraint::Attribute' (role 'GraphConstraint_Attribute', cardinality 0..*) is associated with 'GraphConstraint::Node' (role 'GraphConstraint_Node9', cardinality 0..*).
+'GraphConstraint::NestedGraphCondition' (role 'condition', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphConstraint' (role 'NestedGraphConstraint', cardinality 0..*).
+'GraphConstraint::Graph' (role 'GraphConstraint_Graph26', cardinality 0..*) is associated with 'GraphConstraint::Mapping' (role 'GraphConstraint_Mapping25', cardinality 0..*).
+'GraphConstraint::Variable' (role 'GraphConstraint_Variable57', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphCondition' (role 'GraphConstraint_NestedGraphCondition56', cardinality 0..*).
+'GraphConstraint::QuantifiedGraphCondition' (role 'GraphConstraint_QuantifiedGraphCondition37', cardinality 0..*) is associated with 'GraphConstraint::Graph' (role 'GraphConstraint_Graph38', cardinality 0..*).
+'GraphConstraint::NestedGraphCondition' (role 'NestedGraphCondition46', cardinality 0..*) is associated with 'GraphConstraint::QuantifiedGraphCondition' (role 'qgc', cardinality 0..*).
+'GraphConstraint::Formula' (role 'Formula', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphCondition' (role 'args', cardinality 0..*).
+'GraphConstraint::EAttribute' (role 'GraphConstraint_EAttribute', cardinality 0..*) is associated with 'GraphConstraint::Attribute' (role 'GraphConstraint_Attribute21', cardinality 0..*).
+'GraphConstraint::Graph' (role 'GraphConstraint_Graph23', cardinality 0..*) is associated with 'GraphConstraint::Mapping' (role 'GraphConstraint_Mapping', cardinality 0..*).
+'GraphConstraint::Graph' (role 'GraphConstraint_Graph2', cardinality 0..*) is associated with 'GraphConstraint::Node' (role 'GraphConstraint_Node', cardinality 0..*).
+'GraphConstraint::EDataType' (role 'GraphConstraint_EDataType', cardinality 0..*) is associated with 'GraphConstraint::Variable' (role 'GraphConstraint_Variable', cardinality 0..*).
+'GraphConstraint::QuantifiedGraphCondition' (role 'GraphConstraint_QuantifiedGraphCondition40', cardinality 0..*) is associated with 'GraphConstraint::Mapping' (role 'GraphConstraint_Mapping41', cardinality 0..*).
+'GraphConstraint::Mapping' (role 'GraphConstraint_Mapping28', cardinality 0..*) is associated with 'GraphConstraint::ElementMapping' (role 'GraphConstraint_ElementMapping', cardinality 0..*).
+'GraphConstraint::NestedGraphCondition' (role 'NestedGraphCondition', cardinality 0..*) is associated with 'GraphConstraint::NestedGraphConstraint' (role 'gc', cardinality 0..*).
+'GraphConstraint::NestedGraphCondition' (role 'nested', cardinality 0..*) is associated with 'GraphConstraint::QuantifiedGraphCondition' (role 'QuantifiedGraphCondition', cardinality 0..*).
+'GraphConstraint::GraphElement' (role 'GraphConstraint_GraphElement', cardinality 0..*) is associated with 'GraphConstraint::ElementMapping' (role 'GraphConstraint_ElementMapping30', cardinality 0..*).
+'GraphConstraint::EClass' (role 'GraphConstraint_EClass', cardinality 0..*) is associated with 'GraphConstraint::Node' (role 'GraphConstraint_Node11', cardinality 0..*).
+'GraphConstraint::Edge' (role 'GraphConstraint_Edge19', cardinality 0..*) is associated with 'GraphConstraint::EReference' (role 'GraphConstraint_EReference', cardinality 0..*).

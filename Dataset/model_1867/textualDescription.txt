@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'datatypes::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'datatypes::DataType' has the following attributes: 'name' of type str.
+The class 'datatypes::TypeModel' has no attributes.
+The class 'datatypes::SimpleType' has no attributes.
+The class 'datatypes::DataTypeLibrary' has the following attributes: 'name' of type str.
+The class 'datatypes::AbstractElement' has no attributes.
+The class 'datatypes::Field' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'DataType' has no attributes.
+The class 'datatypes::ComplexType' has no attributes.
+The class 'AbstractElement' has no attributes.
+'datatypes::DataTypeLibrary' is a specialization of 'AbstractElement'.
+'datatypes::SimpleType' is a specialization of 'DataType'.
+'datatypes::Import' is a specialization of 'AbstractElement'.
+'datatypes::DataType' is a specialization of 'AbstractElement'.
+'datatypes::ComplexType' is a specialization of 'DataType'.
+'datatypes::AbstractElement' (role 'datatypes_AbstractElement2', cardinality 0..*) is associated with 'datatypes::DataTypeLibrary' (role 'datatypes_DataTypeLibrary', cardinality 0..*).
+'datatypes::TypeModel' (role 'datatypes_TypeModel', cardinality 0..*) is associated with 'datatypes::AbstractElement' (role 'datatypes_AbstractElement', cardinality 0..*).
+'datatypes::ComplexType' (role 'datatypes_ComplexType6', cardinality 0..*) is associated with 'datatypes::Field' (role 'datatypes_Field', cardinality 0..*).
+'datatypes::Field' (role 'datatypes_Field8', cardinality 0..*) is associated with 'datatypes::DataType' (role 'datatypes_DataType', cardinality 0..*).
+'datatypes::ComplexType' (role 'datatypes_ComplexType', cardinality 0..*) is associated with 'datatypes::ComplexType' (role 'datatypes_ComplexType3', cardinality 0..*).

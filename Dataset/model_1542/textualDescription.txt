@@ -1,0 +1,40 @@
+The model has 16 class(es).
+The class 'Labelled' has no attributes.
+The class 'researchvc::Labelled' has the following attributes: 'lname' of type str.
+The class 'researchvc::Write' has the following attributes: 'timeSpent' of type int.
+The class 'researchvc::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'Counted' has no attributes.
+The class 'researchvc::Counted' has the following attributes: 'id' of type int.
+The class 'researchvc::ReviewNote' has the following attributes: 'content' of type str.
+The class 'researchvc::Skill' has the following attributes: 'description' of type str.
+The class 'Named' has no attributes.
+The class 'researchvc::PublicationStructure' has no attributes.
+The class 'researchvc::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'researchvc::Review' has the following attributes: 'date' of type date.
+The class 'researchvc::Named' has the following attributes: 'name' of type str.
+The class 'researchvc::Paragraph' has the following attributes: 'content' of type str.
+The class 'researchvc::Keyword' has the following attributes: 'word' of type str.
+The class 'researchvc::Paper' has no attributes.
+'researchvc::Paragraph' is a specialization of 'Named'.
+'researchvc::Paragraph' is a specialization of 'Counted'.
+'researchvc::Review' is a specialization of 'Labelled'.
+'researchvc::Paper' is a specialization of 'Named'.
+'researchvc::ReviewNote' is a specialization of 'Named'.
+'researchvc::PublicationStructure' is a specialization of 'Named'.
+'researchvc::Write' is a specialization of 'Labelled'.
+'researchvc::Keyword' is a specialization of 'Named'.
+'researchvc::Paper' (role 'Paper', cardinality 0..*) is associated with 'researchvc::Researcher' (role 'authors', cardinality 0..*).
+'researchvc::Researcher' (role 'researchvc_Researcher', cardinality 0..*) is associated with 'researchvc::Write' (role 'researchvc_Write', cardinality 0..*).
+'researchvc::PublicationStructure' (role 'researchvc_PublicationStructure24', cardinality 0..*) is associated with 'researchvc::Paper' (role 'researchvc_Paper25', cardinality 0..*).
+'researchvc::Write' (role 'researchvc_Write16', cardinality 0..*) is associated with 'researchvc::Paragraph' (role 'researchvc_Paragraph17', cardinality 0..*).
+'researchvc::Paper' (role 'res_papers', cardinality 0..*) is associated with 'researchvc::Researcher' (role 'Researcher', cardinality 0..*).
+'researchvc::ReviewNote' (role 'researchvc_ReviewNote20', cardinality 0..*) is associated with 'researchvc::Review' (role 'researchvc_Review19', cardinality 0..*).
+'researchvc::Researcher' (role 'researchvc_Researcher5', cardinality 0..*) is associated with 'researchvc::Skill' (role 'researchvc_Skill', cardinality 0..*).
+'researchvc::PaperKeyword' (role 'researchvc_PaperKeyword', cardinality 0..*) is associated with 'researchvc::Paper' (role 'researchvc_Paper9', cardinality 0..*).
+'researchvc::Researcher' (role 'researchvc_Researcher22', cardinality 0..*) is associated with 'researchvc::PublicationStructure' (role 'researchvc_PublicationStructure', cardinality 0..*).
+'researchvc::PaperKeyword' (role 'researchvc_PaperKeyword29', cardinality 0..*) is associated with 'researchvc::Keyword' (role 'researchvc_Keyword30', cardinality 0..*).
+'researchvc::Review' (role 'researchvc_Review', cardinality 0..*) is associated with 'researchvc::Researcher' (role 'researchvc_Researcher2', cardinality 0..*).
+'researchvc::Paper' (role 'researchvc_Paper', cardinality 0..*) is associated with 'researchvc::Paragraph' (role 'researchvc_Paragraph', cardinality 0..*).
+'researchvc::Keyword' (role 'researchvc_Keyword', cardinality 0..*) is associated with 'researchvc::PublicationStructure' (role 'researchvc_PublicationStructure27', cardinality 0..*).
+'researchvc::Paper' (role 'researchvc_Paper10', cardinality 0..*) is associated with 'researchvc::Paper' (role 'researchvc_Paper12', cardinality 0..*).
+'researchvc::Paragraph' (role 'researchvc_Paragraph14', cardinality 0..*) is associated with 'researchvc::ReviewNote' (role 'researchvc_ReviewNote', cardinality 0..*).

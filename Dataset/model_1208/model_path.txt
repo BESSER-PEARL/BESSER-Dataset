@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/eclipse/ocl/tests/org.eclipse.ocl.examples.xtext.tests/src/org/eclipse/ocl/examples/test/xtext/models/OCL.reference.ecore

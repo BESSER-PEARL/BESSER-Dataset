@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'states::Event' has the following attributes: 'qualifiedName' of type str.
+The class 'states::ActionExecution' has no attributes.
+The class 'states::Trace' has no attributes.
+The class 'states::StateSystem' has no attributes.
+The class 'states::State' has no attributes.
+The class 'states::EObject' has no attributes.
+The class 'states::Transition' has no attributes.
+'states::Event' (role 'states_Event16', cardinality 0..*) is associated with 'states::ActionExecution' (role 'states_ActionExecution', cardinality 0..*).
+'states::State' (role 'states_State9', cardinality 0..*) is associated with 'states::EObject' (role 'states_EObject', cardinality 0..*).
+'states::State' (role 'source', cardinality 0..*) is associated with 'states::Transition' (role 'Transition', cardinality 0..*).
+'states::StateSystem' (role 'states_StateSystem4', cardinality 0..*) is associated with 'states::Trace' (role 'states_Trace', cardinality 0..*).
+'states::StateSystem' (role 'states_StateSystem2', cardinality 0..*) is associated with 'states::Transition' (role 'states_Transition', cardinality 0..*).
+'states::State' (role 'states_State', cardinality 0..*) is associated with 'states::StateSystem' (role 'states_StateSystem', cardinality 0..*).
+'states::Transition' (role 'incoming', cardinality 0..*) is associated with 'states::State' (role 'State12', cardinality 0..*).
+'states::Transition' (role 'Transition7', cardinality 0..*) is associated with 'states::State' (role 'target', cardinality 0..*).
+'states::Transition' (role 'outgoing', cardinality 0..*) is associated with 'states::State' (role 'State', cardinality 0..*).
+'states::Transition' (role 'states_Transition14', cardinality 0..*) is associated with 'states::Event' (role 'states_Event', cardinality 0..*).

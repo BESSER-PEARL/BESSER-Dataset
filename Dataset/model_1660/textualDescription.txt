@@ -1,0 +1,30 @@
+The model has 12 class(es).
+The class 'testcompat103::EClass2' has no attributes.
+The class 'testcompat103::EClass1' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'testcompat103::NamedElement' has the following attributes: 'name' of type str.
+The class 'testcompat103::Thing' has the following attributes: 'id' of type int.
+The class 'World' has no attributes.
+The class 'testcompat103::Foo' has no attributes.
+The class 'EClass0' has no attributes.
+The class 'testcompat103::RelatedTo' has the following attributes: 'since' of type str.
+The class 'testcompat103::EClass3' has no attributes.
+The class 'testcompat103::EClass0' has no attributes.
+The class 'testcompat103::World' has no attributes.
+'testcompat103::EClass3' is a specialization of 'World'.
+'testcompat103::Foo' is a specialization of 'NamedElement'.
+'testcompat103::World' is a specialization of 'NamedElement'.
+'testcompat103::RelatedTo' is a specialization of 'NamedElement'.
+'testcompat103::Thing' is a specialization of 'NamedElement'.
+'testcompat103::EClass1' is a specialization of 'NamedElement'.
+'testcompat103::EClass2' is a specialization of 'EClass0'.
+'testcompat103::EClass0' is a specialization of 'NamedElement'.
+'testcompat103::Foo' (role 'testcompat103_Foo', cardinality 0..*) is associated with 'testcompat103::World' (role 'testcompat103_World2', cardinality 0..*).
+'testcompat103::EClass3' (role 'testcompat103_EClass3', cardinality 0..*) is associated with 'testcompat103::EClass3' (role 'testcompat103_EClass313', cardinality 0..*).
+'testcompat103::EClass0' (role 'testcompat103_EClass012', cardinality 0..*) is associated with 'testcompat103::EClass1' (role 'testcompat103_EClass1', cardinality 0..*).
+'testcompat103::EClass2' (role 'testcompat103_EClass2', cardinality 0..*) is associated with 'testcompat103::World' (role 'testcompat103_World6', cardinality 0..*).
+'testcompat103::World' (role 'testcompat103_World', cardinality 0..*) is associated with 'testcompat103::Thing' (role 'testcompat103_Thing', cardinality 0..*).
+'testcompat103::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'testcompat103::Thing' (role 'Thing', cardinality 0..*).
+'testcompat103::Thing' (role 'testcompat103_Thing10', cardinality 0..*) is associated with 'testcompat103::RelatedTo' (role 'testcompat103_RelatedTo', cardinality 0..*).
+'testcompat103::EClass0' (role 'testcompat103_EClass0', cardinality 0..*) is associated with 'testcompat103::World' (role 'testcompat103_World4', cardinality 0..*).
+'testcompat103::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'testcompat103::Thing' (role 'fromThing', cardinality 0..*).

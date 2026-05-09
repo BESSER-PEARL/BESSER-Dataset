@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/psoursos/Sir-examples/StateChartDesign/model/stateChart.ecore

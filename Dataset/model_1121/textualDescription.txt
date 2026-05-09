@@ -1,0 +1,30 @@
+The model has 7 class(es).
+The class 'mngr::ManagerState' has the following attributes: 'Prob' of type float; 'isEnd' of type bool; 'isStart' of type bool.
+The class 'mngr::ManagerTransition' has the following attributes: 'Condition' of type str; 'Action' of type str; 'Event' of type str; 'transRate' of type float; 'output' of type str; 'transProb' of type float; 'input' of type str.
+The class 'NamedElement' has no attributes.
+The class 'mngr::Manager' has no attributes.
+The class 'mngr::OpaqueExpression' has no attributes.
+The class 'mngr::ManagedElement' has the following attributes: 'description' of type str.
+The class 'mngr::ManagerParameter' has the following attributes: 'LitteralInteger' of type int; 'LitteralBoolean' of type bool; 'LitteralUnlimitedNatural' of type float; 'isInput' of type bool; 'LitteralString' of type str.
+'mngr::ManagerState' is a specialization of 'NamedElement'.
+'mngr::ManagerParameter' is a specialization of 'NamedElement'.
+'mngr::Manager' is a specialization of 'NamedElement'.
+'mngr::ManagedElement' is a specialization of 'NamedElement'.
+'mngr::ManagerTransition' is a specialization of 'NamedElement'.
+'mngr::OpaqueExpression' (role 'mngr_OpaqueExpression', cardinality 0..*) is associated with 'mngr::ManagerParameter' (role 'mngr_ManagerParameter', cardinality 0..*).
+'mngr::ManagerState' (role 'ManagerState25', cardinality 0..*) is associated with 'mngr::ManagerParameter' (role 'contextParameters', cardinality 0..*).
+'mngr::ManagerState' (role 'mngr_ManagerState4', cardinality 0..*) is associated with 'mngr::Manager' (role 'mngr_Manager3', cardinality 0..*).
+'mngr::Manager' (role 'mngr_Manager', cardinality 0..*) is associated with 'mngr::ManagerState' (role 'mngr_ManagerState', cardinality 0..*).
+'mngr::ManagerTransition' (role 'ownedTransition', cardinality 0..*) is associated with 'mngr::Manager' (role 'Manager19', cardinality 0..*).
+'mngr::ManagerState' (role 'source', cardinality 0..*) is associated with 'mngr::ManagerTransition' (role 'ManagerTransition13', cardinality 0..*).
+'mngr::ManagerParameter' (role 'ManagerParameter', cardinality 0..*) is associated with 'mngr::Manager' (role 'owningManager6', cardinality 0..*).
+'mngr::Manager' (role 'owningManager10', cardinality 0..*) is associated with 'mngr::ManagerTransition' (role 'ManagerTransition', cardinality 0..*).
+'mngr::ManagerState' (role 'state', cardinality 0..*) is associated with 'mngr::ManagerParameter' (role 'ManagerParameter17', cardinality 0..*).
+'mngr::ManagedElement' (role 'managedElement', cardinality 0..*) is associated with 'mngr::Manager' (role 'Manager31', cardinality 0..*).
+'mngr::Manager' (role 'owningManager8', cardinality 0..*) is associated with 'mngr::ManagedElement' (role 'ManagedElement', cardinality 0..*).
+'mngr::Manager' (role 'Manager29', cardinality 0..*) is associated with 'mngr::ManagerParameter' (role 'contextParameters28', cardinality 0..*).
+'mngr::ManagerState' (role 'ownedState', cardinality 0..*) is associated with 'mngr::Manager' (role 'Manager', cardinality 0..*).
+'mngr::ManagerState' (role 'ManagerState23', cardinality 0..*) is associated with 'mngr::ManagerTransition' (role 'incomingTransition', cardinality 0..*).
+'mngr::ManagerTransition' (role 'outgoingTransition', cardinality 0..*) is associated with 'mngr::ManagerState' (role 'ManagerState21', cardinality 0..*).
+'mngr::Manager' (role 'owningManager', cardinality 0..*) is associated with 'mngr::ManagerState' (role 'ManagerState', cardinality 0..*).
+'mngr::ManagerState' (role 'target', cardinality 0..*) is associated with 'mngr::ManagerTransition' (role 'ManagerTransition15', cardinality 0..*).

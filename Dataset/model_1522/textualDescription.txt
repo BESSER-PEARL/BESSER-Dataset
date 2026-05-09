@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'minifsm::Terminal' has no attributes.
+The class 'minifsm::Initial' has no attributes.
+The class 'minifsm::FSM' has no attributes.
+The class 'minifsm::State' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'minifsm::Transition' has the following attributes: 'event' of type str.
+'minifsm::Initial' is a specialization of 'State'.
+'minifsm::Terminal' is a specialization of 'State'.
+'minifsm::FSM' (role 'FSM', cardinality 0..*) is associated with 'minifsm::Transition' (role 'transitions', cardinality 0..*).
+'minifsm::FSM' (role 'minifsm_FSM', cardinality 0..*) is associated with 'minifsm::State' (role 'minifsm_State', cardinality 0..*).
+'minifsm::State' (role 'minifsm_State6', cardinality 0..*) is associated with 'minifsm::Transition' (role 'minifsm_Transition5', cardinality 0..*).
+'minifsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'minifsm::FSM' (role 'fsm', cardinality 0..*).
+'minifsm::State' (role 'minifsm_State3', cardinality 0..*) is associated with 'minifsm::Transition' (role 'minifsm_Transition', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'dsl::State' has the following attributes: 'name' of type str; 'isFinal' of type bool.
+The class 'dsl::InitialState' has no attributes.
+The class 'dsl::Transition' has the following attributes: 'trigger' of type str; 'name' of type str.
+The class 'dsl::FSM' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+'dsl::InitialState' is a specialization of 'State'.
+'dsl::Transition' (role 'dsl_Transition6', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State7', cardinality 0..*).
+'dsl::State' (role 'dsl_State10', cardinality 0..*) is associated with 'dsl::Transition' (role 'dsl_Transition9', cardinality 0..*).
+'dsl::Transition' (role 'dsl_Transition', cardinality 0..*) is associated with 'dsl::FSM' (role 'dsl_FSM2', cardinality 0..*).
+'dsl::State' (role 'dsl_State', cardinality 0..*) is associated with 'dsl::FSM' (role 'dsl_FSM', cardinality 0..*).
+'dsl::InitialState' (role 'dsl_InitialState', cardinality 0..*) is associated with 'dsl::FSM' (role 'dsl_FSM4', cardinality 0..*).

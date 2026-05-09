@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'gemoc::Transition' has the following attributes: 'trigger' of type str; 'name' of type str.
+The class 'gemoc::State' has the following attributes: 'name' of type str.
+The class 'gemoc::FSM' has the following attributes: 'name' of type bool.
+'gemoc::FSM' (role 'gemoc_FSM2', cardinality 0..*) is associated with 'gemoc::Transition' (role 'gemoc_Transition', cardinality 0..*).
+'gemoc::Transition' (role 'Transition', cardinality 0..*) is associated with 'gemoc::State' (role 'state', cardinality 0..*).
+'gemoc::State' (role 'gemoc_State7', cardinality 0..*) is associated with 'gemoc::FSM' (role 'gemoc_FSM8', cardinality 0..*).
+'gemoc::State' (role 'State11', cardinality 0..*) is associated with 'gemoc::Transition' (role 'outcoming', cardinality 0..*).
+'gemoc::FSM' (role 'gemoc_FSM', cardinality 0..*) is associated with 'gemoc::State' (role 'gemoc_State', cardinality 0..*).
+'gemoc::State' (role 'State', cardinality 0..*) is associated with 'gemoc::Transition' (role 'incoming', cardinality 0..*).
+'gemoc::Transition' (role 'Transition5', cardinality 0..*) is associated with 'gemoc::State' (role 'src', cardinality 0..*).

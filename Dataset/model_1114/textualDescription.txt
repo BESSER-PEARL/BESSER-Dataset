@@ -1,0 +1,15 @@
+The model has 4 class(es).
+The class 'stateChart::Model' has the following attributes: 'name' of type str; 'metadata' of type str; 'description' of type str.
+The class 'stateChart::Transition' has the following attributes: 'TE' of type str; 'name' of type str; 'metadata' of type str.
+The class 'stateChart::Variable' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'stateChart::Node' has the following attributes: 'actions' of type str; 'label' of type str; 'name' of type str; 'metadata' of type str; 'activity' of type str; 'type' of type str.
+'stateChart::Transition' (role 'stateChart_Transition20', cardinality 0..*) is associated with 'stateChart::Node' (role 'stateChart_Node21', cardinality 0..*).
+'stateChart::Variable' (role 'stateChart_Variable15', cardinality 0..*) is associated with 'stateChart::Model' (role 'stateChart_Model14', cardinality 0..*).
+'stateChart::Variable' (role 'stateChart_Variable', cardinality 0..*) is associated with 'stateChart::Node' (role 'stateChart_Node', cardinality 0..*).
+'stateChart::Transition' (role 'stateChart_Transition18', cardinality 0..*) is associated with 'stateChart::Model' (role 'stateChart_Model17', cardinality 0..*).
+'stateChart::Node' (role 'stateChart_Node24', cardinality 0..*) is associated with 'stateChart::Transition' (role 'stateChart_Transition23', cardinality 0..*).
+'stateChart::Node' (role 'stateChart_Node9', cardinality 0..*) is associated with 'stateChart::Transition' (role 'stateChart_Transition10', cardinality 0..*).
+'stateChart::Node' (role 'Father', cardinality 0..*) is associated with 'stateChart::Node' (role 'Node', cardinality 0..*).
+'stateChart::Node' (role 'Node5', cardinality 0..*) is associated with 'stateChart::Node' (role 'Children', cardinality 0..*).
+'stateChart::Model' (role 'stateChart_Model', cardinality 0..*) is associated with 'stateChart::Node' (role 'stateChart_Node12', cardinality 0..*).
+'stateChart::Transition' (role 'stateChart_Transition', cardinality 0..*) is associated with 'stateChart::Node' (role 'stateChart_Node7', cardinality 0..*).

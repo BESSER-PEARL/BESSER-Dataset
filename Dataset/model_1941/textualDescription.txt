@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'Entry' has no attributes.
+The class 'addressbook::Entry' has the following attributes: 'id' of type int.
+The class 'addressbook::Organization' has the following attributes: 'homepage' of type str.
+The class 'NamedElement' has no attributes.
+The class 'addressbook::Category' has no attributes.
+The class 'addressbook::NamedElement' has the following attributes: 'name' of type str.
+The class 'addressbook::Contact' has the following attributes: 'email' of type str; 'lastName' of type str; 'firstName' of type str.
+The class 'addressbook::AddressBook' has no attributes.
+'addressbook::AddressBook' is a specialization of 'NamedElement'.
+'addressbook::Organization' is a specialization of 'Entry'.
+'addressbook::Contact' is a specialization of 'Entry'.
+'addressbook::Organization' is a specialization of 'NamedElement'.
+'addressbook::Category' is a specialization of 'NamedElement'.
+'addressbook::AddressBook' (role 'AddressBook', cardinality 0..*) is associated with 'addressbook::Category' (role 'categories', cardinality 0..*).
+'addressbook::AddressBook' (role 'addressBook', cardinality 0..*) is associated with 'addressbook::Category' (role 'Category', cardinality 0..*).
+'addressbook::Contact' (role 'employees', cardinality 0..*) is associated with 'addressbook::Organization' (role 'Organization', cardinality 0..*).
+'addressbook::Category' (role 'category', cardinality 0..*) is associated with 'addressbook::Entry' (role 'Entry', cardinality 0..*).
+'addressbook::Entry' (role 'entries', cardinality 0..*) is associated with 'addressbook::Category' (role 'Category4', cardinality 0..*).
+'addressbook::Contact' (role 'Contact', cardinality 0..*) is associated with 'addressbook::Organization' (role 'employers', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'lab1::Transition' has the following attributes: 'name' of type str.
+The class 'lab1::StateMachine' has the following attributes: 'name' of type str.
+The class 'lab1::State' has the following attributes: 'init' of type bool; 'name' of type str.
+'lab1::State' (role 'from_', cardinality 0..*) is associated with 'lab1::Transition' (role 'Transition', cardinality 0..*).
+'lab1::State' (role 'State9', cardinality 0..*) is associated with 'lab1::Transition' (role 'incoming', cardinality 0..*).
+'lab1::State' (role 'State', cardinality 0..*) is associated with 'lab1::StateMachine' (role 'fsm', cardinality 0..*).
+'lab1::Transition' (role 'lab1_Transition', cardinality 0..*) is associated with 'lab1::StateMachine' (role 'lab1_StateMachine', cardinality 0..*).
+'lab1::Transition' (role 'Transition4', cardinality 0..*) is associated with 'lab1::State' (role 'to', cardinality 0..*).
+'lab1::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'lab1::State' (role 'states', cardinality 0..*).
+'lab1::Transition' (role 'outgoing', cardinality 0..*) is associated with 'lab1::State' (role 'State7', cardinality 0..*).

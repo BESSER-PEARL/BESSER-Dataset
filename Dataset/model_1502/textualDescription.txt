@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'PetriNode' has no attributes.
+The class 'PetriModel' has no attributes.
+The class 'PetriNet::Place' has no attributes.
+The class 'PetriEdge' has no attributes.
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::Arc' has no attributes.
+The class 'PetriNet::PetriNode' has no attributes.
+The class 'PetriNet::PetriModel' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'PetriNet::PetriEdge' has no attributes.
+The class 'PetriNet::Token' has no attributes.
+'PetriNet::PetriEdge' is a specialization of 'PetriModel'.
+'PetriNet::Arc' is a specialization of 'PetriEdge'.
+'PetriNet::Place' is a specialization of 'PetriNode'.
+'PetriNet::Transition' is a specialization of 'PetriNode'.
+'PetriNet::Token' is a specialization of 'PetriNode'.
+'PetriNet::PetriNode' is a specialization of 'PetriModel'.
+'PetriNet::PetriModel' (role 'PetriNet_PetriModel7', cardinality 0..*) is associated with 'PetriNet::PetriModel' (role 'PetriNet_PetriModel', cardinality 0..*).
+'PetriNet::PetriNode' (role 'PetriNet_PetriNode3', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'PetriNet_Arc', cardinality 0..*).
+'PetriNet::Transition' (role 'PetriNet_Transition', cardinality 0..*) is associated with 'PetriNet::PetriNode' (role 'PetriNet_PetriNode', cardinality 0..*).
+'PetriNet::Arc' (role 'PetriNet_Arc5', cardinality 0..*) is associated with 'PetriNet::PetriNode' (role 'PetriNet_PetriNode6', cardinality 0..*).
+'PetriNet::Place' (role 'PetriNet_Place', cardinality 0..*) is associated with 'PetriNet::Token' (role 'PetriNet_Token', cardinality 0..*).

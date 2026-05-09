@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/PSI-Polska/texo/tests/org.eclipse.emf.texo.modelgenerator.test/src/org/eclipse/emf/texo/modelgenerator/test/models/samples/emap.ecore

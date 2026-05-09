@@ -1,0 +1,56 @@
+The model has 19 class(es).
+The class 'conf101::RevisionNote' has no attributes.
+The class 'conf101::Person' has no attributes.
+The class 'conf101::Conference' has no attributes.
+The class 'conf101::Chapter' has no attributes.
+The class 'conf101::Contribution' has no attributes.
+The class 'conf101::Session' has the following attributes: 'year' of type str.
+The class 'conf101::ProgramComitee' has no attributes.
+The class 'Person' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'conf101::Evaluation' has no attributes.
+The class 'conf101::System' has no attributes.
+The class 'conf101::NamedElement' has the following attributes: 'name' of type str.
+The class 'conf101::Location' has no attributes.
+The class 'conf101::Researcher' has no attributes.
+The class 'conf101::RevisionProcess' has no attributes.
+The class 'conf101::Admin' has no attributes.
+The class 'conf101::Publication' has no attributes.
+The class 'conf101::Laboratory' has no attributes.
+The class 'conf101::SteeringComitee' has no attributes.
+'conf101::Conference' is a specialization of 'NamedElement'.
+'conf101::Laboratory' is a specialization of 'NamedElement'.
+'conf101::Person' is a specialization of 'NamedElement'.
+'conf101::Evaluation' is a specialization of 'NamedElement'.
+'conf101::Chapter' is a specialization of 'NamedElement'.
+'conf101::Publication' is a specialization of 'NamedElement'.
+'conf101::Researcher' is a specialization of 'Person'.
+'conf101::Session' is a specialization of 'NamedElement'.
+'conf101::Admin' is a specialization of 'NamedElement'.
+'conf101::Contribution' is a specialization of 'NamedElement'.
+'conf101::Location' is a specialization of 'NamedElement'.
+'conf101::System' is a specialization of 'NamedElement'.
+'conf101::ProgramComitee' is a specialization of 'NamedElement'.
+'conf101::SteeringComitee' is a specialization of 'NamedElement'.
+'conf101::RevisionNote' (role 'conf101_RevisionNote', cardinality 0..*) is associated with 'conf101::Researcher' (role 'conf101_Researcher29', cardinality 0..*).
+'conf101::Laboratory' (role 'conf101_Laboratory21', cardinality 0..*) is associated with 'conf101::Researcher' (role 'conf101_Researcher', cardinality 0..*).
+'conf101::Researcher' (role 'conf101_Researcher27', cardinality 0..*) is associated with 'conf101::Chapter' (role 'conf101_Chapter', cardinality 0..*).
+'conf101::Publication' (role 'conf101_Publication46', cardinality 0..*) is associated with 'conf101::Contribution' (role 'conf101_Contribution45', cardinality 0..*).
+'conf101::Publication' (role 'conf101_Publication', cardinality 0..*) is associated with 'conf101::Laboratory' (role 'conf101_Laboratory23', cardinality 0..*).
+'conf101::Laboratory' (role 'conf101_Laboratory', cardinality 0..*) is associated with 'conf101::System' (role 'conf101_System2', cardinality 0..*).
+'conf101::ProgramComitee' (role 'conf101_ProgramComitee', cardinality 0..*) is associated with 'conf101::Session' (role 'conf101_Session9', cardinality 0..*).
+'conf101::Chapter' (role 'conf101_Chapter37', cardinality 0..*) is associated with 'conf101::RevisionNote' (role 'conf101_RevisionNote38', cardinality 0..*).
+'conf101::Publication' (role 'conf101_Publication49', cardinality 0..*) is associated with 'conf101::Evaluation' (role 'conf101_Evaluation48', cardinality 0..*).
+'conf101::System' (role 'conf101_System6', cardinality 0..*) is associated with 'conf101::RevisionProcess' (role 'conf101_RevisionProcess', cardinality 0..*).
+'conf101::SteeringComitee' (role 'conf101_SteeringComitee', cardinality 0..*) is associated with 'conf101::Session' (role 'conf101_Session11', cardinality 0..*).
+'conf101::Session' (role 'conf101_Session13', cardinality 0..*) is associated with 'conf101::Contribution' (role 'conf101_Contribution', cardinality 0..*).
+'conf101::Location' (role 'conf101_Location', cardinality 0..*) is associated with 'conf101::Session' (role 'conf101_Session', cardinality 0..*).
+'conf101::Admin' (role 'conf101_Admin15', cardinality 0..*) is associated with 'conf101::Location' (role 'conf101_Location16', cardinality 0..*).
+'conf101::Session' (role 'conf101_Session19', cardinality 0..*) is associated with 'conf101::Conference' (role 'conf101_Conference18', cardinality 0..*).
+'conf101::Person' (role 'conf101_Person', cardinality 0..*) is associated with 'conf101::SteeringComitee' (role 'conf101_SteeringComitee40', cardinality 0..*).
+'conf101::Researcher' (role 'conf101_Researcher31', cardinality 0..*) is associated with 'conf101::Publication' (role 'conf101_Publication32', cardinality 0..*).
+'conf101::ProgramComitee' (role 'conf101_ProgramComitee42', cardinality 0..*) is associated with 'conf101::Person' (role 'conf101_Person43', cardinality 0..*).
+'conf101::Admin' (role 'conf101_Admin', cardinality 0..*) is associated with 'conf101::System' (role 'conf101_System', cardinality 0..*).
+'conf101::System' (role 'conf101_System4', cardinality 0..*) is associated with 'conf101::Conference' (role 'conf101_Conference', cardinality 0..*).
+'conf101::Publication' (role 'conf101_Publication34', cardinality 0..*) is associated with 'conf101::Chapter' (role 'conf101_Chapter35', cardinality 0..*).
+'conf101::Researcher' (role 'conf101_Researcher25', cardinality 0..*) is associated with 'conf101::Evaluation' (role 'conf101_Evaluation', cardinality 0..*).

@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class eol_NegativeOperatorExpression extends UnaryOperatorExpression {
+
+
+
+
+    public eol_NegativeOperatorExpression(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

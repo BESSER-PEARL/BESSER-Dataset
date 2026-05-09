@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::Place' has the following attributes: 'marking' of type int.
+The class 'PetriNet::PetriNet' has the following attributes: 'name' of type str.
+The class 'PetriNet::Node' has the following attributes: 'name' of type str.
+The class 'Node' has no attributes.
+The class 'PetriNet::Arc' has the following attributes: 'weight' of type int.
+'PetriNet::Transition' is a specialization of 'Node'.
+'PetriNet::Place' is a specialization of 'Node'.
+'PetriNet::Arc' (role 'ingoing', cardinality 0..*) is associated with 'PetriNet::Node' (role 'Node8', cardinality 0..*).
+'PetriNet::PetriNet' (role 'PetriNet_PetriNet2', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'PetriNet_Arc', cardinality 0..*).
+'PetriNet::Arc' (role 'outgoing', cardinality 0..*) is associated with 'PetriNet::Node' (role 'Node', cardinality 0..*).
+'PetriNet::Node' (role 'PetriNet_Node', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet', cardinality 0..*).
+'PetriNet::Node' (role 'source', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'Arc', cardinality 0..*).
+'PetriNet::Node' (role 'target', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'Arc5', cardinality 0..*).

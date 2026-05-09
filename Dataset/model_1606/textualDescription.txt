@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'NamedElement' has no attributes.
+The class 'pn::Net' has the following attributes: 'incrementalID' of type str.
+The class 'NetElement' has no attributes.
+The class 'pn::Transition' has no attributes.
+The class 'pn::Place' has the following attributes: 'noOfTokens' of type int.
+The class 'pn::NetElement' has no attributes.
+The class 'pn::NamedElement' has the following attributes: 'name' of type str.
+'pn::Place' is a specialization of 'NetElement'.
+'pn::Place' is a specialization of 'NamedElement'.
+'pn::NetElement' is a specialization of 'NamedElement'.
+'pn::Net' is a specialization of 'NamedElement'.
+'pn::Transition' is a specialization of 'NetElement'.
+'pn::Net' (role 'net', cardinality 0..*) is associated with 'pn::NetElement' (role 'NetElement', cardinality 0..*).
+'pn::Transition' (role 'srcT2P', cardinality 0..*) is associated with 'pn::Place' (role 'Place', cardinality 0..*).
+'pn::Transition' (role 'Transition', cardinality 0..*) is associated with 'pn::Place' (role 'srcP2T', cardinality 0..*).
+'pn::NetElement' (role 'elements', cardinality 0..*) is associated with 'pn::Net' (role 'Net', cardinality 0..*).
+'pn::Transition' (role 'trgP2T', cardinality 0..*) is associated with 'pn::Place' (role 'Place4', cardinality 0..*).
+'pn::Place' (role 'trgT2P', cardinality 0..*) is associated with 'pn::Transition' (role 'Transition7', cardinality 0..*).

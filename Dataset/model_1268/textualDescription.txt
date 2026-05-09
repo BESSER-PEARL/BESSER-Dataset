@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'family::person' has the following attributes: 'age' of type str; 'name' of type str; 'cpr' of type str.
+The class 'family::family' has the following attributes: 'name' of type str.
+The class 'family::Root' has no attributes.
+The class 'family::studyprogramme' has the following attributes: 'name' of type str.
+The class 'family::university' has the following attributes: 'name' of type str.
+'family::person' (role 'family_person', cardinality 0..*) is associated with 'family::person' (role 'family_person1', cardinality 0..*).
+'family::Root' (role 'family_Root17', cardinality 0..*) is associated with 'family::university' (role 'family_university18', cardinality 0..*).
+'family::person' (role 'family_person8', cardinality 0..*) is associated with 'family::person' (role 'family_person6', cardinality 0..*).
+'family::studyprogramme' (role 'family_studyprogramme', cardinality 0..*) is associated with 'family::university' (role 'family_university', cardinality 0..*).
+'family::person' (role 'family_person5', cardinality 0..*) is associated with 'family::person' (role 'family_person3', cardinality 0..*).
+'family::person' (role 'family_person13', cardinality 0..*) is associated with 'family::studyprogramme' (role 'family_studyprogramme12', cardinality 0..*).
+'family::person' (role 'family_person10', cardinality 0..*) is associated with 'family::family' (role 'family_family', cardinality 0..*).
+'family::Root' (role 'family_Root', cardinality 0..*) is associated with 'family::family' (role 'family_family15', cardinality 0..*).

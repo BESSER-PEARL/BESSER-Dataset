@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'smach::InitStraightState' has no attributes.
+The class 'smach::SMACHTransition' has the following attributes: 'name' of type str.
+The class 'smach::ServiceState' has no attributes.
+The class 'ActionClient' has no attributes.
+The class 'Node' has no attributes.
+The class 'ServiceClient' has no attributes.
+The class 'smach::InitActionState' has no attributes.
+The class 'smach::ActionState' has no attributes.
+The class 'SMACHState' has no attributes.
+The class 'smach::SMACHStateMachine' has the following attributes: 'SkillInterface' of type bool.
+The class 'smach::FinalState' has the following attributes: 'type' of type str.
+The class 'smach::SMACHState' has the following attributes: 'remap_overwrite' of type str; 'goal' of type str; 'goal_type' of type str.
+The enumeration 'SMACHGoalTypes' has the following literals: 'userdata_goal', 'static_goal'.
+The enumeration 'SMACHStateOutcomes' has the following literals: 'preempted', 'succeeded', 'aborted'.
+'smach::SMACHStateMachine' is a specialization of 'Node'.
+'smach::InitActionState' is a specialization of 'SMACHState'.
+'smach::ServiceState' is a specialization of 'SMACHState'.
+'smach::FinalState' is a specialization of 'SMACHState'.
+'smach::ActionState' is a specialization of 'SMACHState'.
+'smach::ActionState' is a specialization of 'ActionClient'.
+'smach::InitStraightState' is a specialization of 'SMACHState'.
+'smach::ServiceState' is a specialization of 'ServiceClient'.
+'smach::FinalState' (role 'smach_FinalState', cardinality 0..*) is associated with 'smach::SMACHStateMachine' (role 'smach_SMACHStateMachine4', cardinality 0..*).
+'smach::SMACHStateMachine' (role 'smach_SMACHStateMachine6', cardinality 0..*) is associated with 'smach::InitActionState' (role 'smach_InitActionState', cardinality 0..*).
+'smach::SMACHStateMachine' (role 'smach_SMACHStateMachine', cardinality 0..*) is associated with 'smach::SMACHState' (role 'smach_SMACHState', cardinality 0..*).
+'smach::SMACHStateMachine' (role 'smach_SMACHStateMachine2', cardinality 0..*) is associated with 'smach::SMACHTransition' (role 'smach_SMACHTransition', cardinality 0..*).
+'smach::SMACHState' (role 'smach_SMACHState9', cardinality 0..*) is associated with 'smach::SMACHTransition' (role 'smach_SMACHTransition8', cardinality 0..*).
+'smach::SMACHState' (role 'smach_SMACHState12', cardinality 0..*) is associated with 'smach::SMACHTransition' (role 'smach_SMACHTransition11', cardinality 0..*).

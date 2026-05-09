@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'NamedElement' has no attributes.
+The class 'yya::Alias' has the following attributes: 'id' of type str.
+The class 'yya::Thing' has the following attributes: 'id' of type int.
+The class 'yya::NamedElement' has the following attributes: 'name' of type str.
+The class 'yya::RelatedTo' has the following attributes: 'since' of type str.
+'yya::Thing' is a specialization of 'NamedElement'.
+'yya::RelatedTo' is a specialization of 'NamedElement'.
+'yya::RelatedTo' (role 'yya_RelatedTo', cardinality 0..*) is associated with 'yya::Thing' (role 'yya_Thing', cardinality 0..*).
+'yya::Alias' (role 'yya_Alias', cardinality 0..*) is associated with 'yya::NamedElement' (role 'yya_NamedElement', cardinality 0..*).
+'yya::Thing' (role 'Thing', cardinality 0..*) is associated with 'yya::RelatedTo' (role 'relations', cardinality 0..*).
+'yya::Thing' (role 'fromThing', cardinality 0..*) is associated with 'yya::RelatedTo' (role 'RelatedTo', cardinality 0..*).

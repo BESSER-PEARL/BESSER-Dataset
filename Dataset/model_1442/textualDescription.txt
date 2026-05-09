@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'GraphOperations::Element' has the following attributes: 'id' of type str.
+The class 'GraphOperations::ConstantUtils' has no attributes.
+The class 'GraphOperations::Graph' has no attributes.
+The class 'GraphOperations::Edge' has the following attributes: 'weight' of type float; 'state' of type str.
+The class 'GraphOperations::Node' has the following attributes: 'degree' of type float; 'depth' of type int.
+The class 'Element' has no attributes.
+The class 'GraphOperations::Triangle' has no attributes.
+The class 'GraphOperations::EIntContainer' has the following attributes: 'value' of type int.
+The enumeration 'EdgeState' has the following literals: 'INACTIVE', 'ACTIVE'.
+'GraphOperations::Edge' is a specialization of 'Element'.
+'GraphOperations::Node' is a specialization of 'Element'.
+'GraphOperations::Node' (role 'target', cardinality 0..*) is associated with 'GraphOperations::Edge' (role 'Edge5', cardinality 0..*).
+'GraphOperations::Edge' (role 'edges', cardinality 0..*) is associated with 'GraphOperations::Graph' (role 'Graph9', cardinality 0..*).
+'GraphOperations::Node' (role 'nodes', cardinality 0..*) is associated with 'GraphOperations::Graph' (role 'Graph', cardinality 0..*).
+'GraphOperations::Triangle' (role 'GraphOperations_Triangle', cardinality 0..*) is associated with 'GraphOperations::Edge' (role 'GraphOperations_Edge', cardinality 0..*).
+'GraphOperations::Node' (role 'Node', cardinality 0..*) is associated with 'GraphOperations::Graph' (role 'graph', cardinality 0..*).
+'GraphOperations::Edge' (role 'GraphOperations_Edge17', cardinality 0..*) is associated with 'GraphOperations::Triangle' (role 'GraphOperations_Triangle16', cardinality 0..*).
+'GraphOperations::Node' (role 'Node11', cardinality 0..*) is associated with 'GraphOperations::Edge' (role 'outgoingEdges', cardinality 0..*).
+'GraphOperations::Edge' (role 'Edge7', cardinality 0..*) is associated with 'GraphOperations::Node' (role 'source', cardinality 0..*).
+'GraphOperations::Edge' (role 'Edge', cardinality 0..*) is associated with 'GraphOperations::Graph' (role 'graph2', cardinality 0..*).
+'GraphOperations::Edge' (role 'incomingEdges', cardinality 0..*) is associated with 'GraphOperations::Node' (role 'Node13', cardinality 0..*).

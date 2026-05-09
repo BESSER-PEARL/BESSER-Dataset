@@ -1,0 +1,98 @@
+The model has 34 class(es).
+The class 'graphpattern::Pattern' has no attributes.
+The class 'ParameterBinding' has no attributes.
+The class 'graphpattern::DependencyGraph' has no attributes.
+The class 'graphpattern::DependencyNode' has no attributes.
+The class 'graphpattern::SubGraph' has no attributes.
+The class 'graphpattern::Assignment' has no attributes.
+The class 'graphpattern::DependencyEdge' has no attributes.
+The class 'graphpattern::NodePattern' has no attributes.
+The class 'GraphElement' has no attributes.
+The class 'graphpattern::ValueBinding' has the following attributes: 'value' of type str.
+The class 'graphpattern::ParameterBinding' has no attributes.
+The class 'graphpattern::Matching' has no attributes.
+The class 'graphpattern::ObjectBinding' has no attributes.
+The class 'graphpattern::EdgePattern' has no attributes.
+The class 'graphpattern::EAttribute' has no attributes.
+The class 'graphpattern::PatternElement' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Pattern' has no attributes.
+The class 'graphpattern::EReference' has no attributes.
+The class 'graphpattern::Extendable' has no attributes.
+The class 'graphpattern::EPackage' has no attributes.
+The class 'graphpattern::Resource' has no attributes.
+The class 'graphpattern::Stereotype' has the following attributes: 'name' of type str.
+The class 'Extendable' has no attributes.
+The class 'PatternElement' has no attributes.
+The class 'graphpattern::Association' has no attributes.
+The class 'graphpattern::EObjectList' has the following attributes: 'label' of type str.
+The class 'graphpattern::EObject' has no attributes.
+The class 'graphpattern::Profile' has the following attributes: 'id' of type str; 'name' of type str; 'description' of type str.
+The class 'graphpattern::EClass' has no attributes.
+The class 'graphpattern::GraphElement' has no attributes.
+The class 'graphpattern::AttributePattern' has the following attributes: 'variables' of type str; 'constant' of type str; 'value' of type str.
+The class 'graphpattern::Bundle' has no attributes.
+The class 'graphpattern::GraphPattern' has no attributes.
+The class 'graphpattern::Parameter' has no attributes.
+'graphpattern::AttributePattern' is a specialization of 'GraphElement'.
+'graphpattern::SubGraph' is a specialization of 'PatternElement'.
+'graphpattern::NodePattern' is a specialization of 'GraphElement'.
+'graphpattern::PatternElement' is a specialization of 'Extendable'.
+'graphpattern::EdgePattern' is a specialization of 'GraphElement'.
+'graphpattern::Bundle' is a specialization of 'Pattern'.
+'graphpattern::GraphPattern' is a specialization of 'PatternElement'.
+'graphpattern::Pattern' is a specialization of 'PatternElement'.
+'graphpattern::Parameter' is a specialization of 'PatternElement'.
+'graphpattern::Association' is a specialization of 'PatternElement'.
+'graphpattern::GraphElement' is a specialization of 'PatternElement'.
+'graphpattern::ValueBinding' is a specialization of 'ParameterBinding'.
+'graphpattern::ObjectBinding' is a specialization of 'ParameterBinding'.
+'graphpattern::Stereotype' (role 'stereotypes', cardinality 0..*) is associated with 'graphpattern::Profile' (role 'Profile', cardinality 0..*).
+'graphpattern::NodePattern' (role 'NodePattern17', cardinality 0..*) is associated with 'graphpattern::EdgePattern' (role 'outgoings', cardinality 0..*).
+'graphpattern::Association' (role 'associations', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'NodePattern67', cardinality 0..*).
+'graphpattern::GraphPattern' (role 'graph', cardinality 0..*) is associated with 'graphpattern::DependencyGraph' (role 'DependencyGraph', cardinality 0..*).
+'graphpattern::AttributePattern' (role 'AttributePattern', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'node', cardinality 0..*).
+'graphpattern::Bundle' (role 'graphpattern_Bundle37', cardinality 0..*) is associated with 'graphpattern::Pattern' (role 'graphpattern_Pattern', cardinality 0..*).
+'graphpattern::GraphPattern' (role 'graphpattern_GraphPattern', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'graphpattern_NodePattern', cardinality 0..*).
+'graphpattern::Assignment' (role 'assignments', cardinality 0..*) is associated with 'graphpattern::Pattern' (role 'Pattern74', cardinality 0..*).
+'graphpattern::Pattern' (role 'pattern33', cardinality 0..*) is associated with 'graphpattern::Parameter' (role 'Parameter', cardinality 0..*).
+'graphpattern::ObjectBinding' (role 'graphpattern_ObjectBinding', cardinality 0..*) is associated with 'graphpattern::EObject' (role 'graphpattern_EObject76', cardinality 0..*).
+'graphpattern::DependencyEdge' (role 'outgoings62', cardinality 0..*) is associated with 'graphpattern::DependencyNode' (role 'DependencyNode', cardinality 0..*).
+'graphpattern::DependencyNode' (role 'graphpattern_DependencyNode', cardinality 0..*) is associated with 'graphpattern::DependencyGraph' (role 'graphpattern_DependencyGraph', cardinality 0..*).
+'graphpattern::EReference' (role 'graphpattern_EReference', cardinality 0..*) is associated with 'graphpattern::EdgePattern' (role 'graphpattern_EdgePattern21', cardinality 0..*).
+'graphpattern::EdgePattern' (role 'graphpattern_EdgePattern18', cardinality 0..*) is associated with 'graphpattern::EdgePattern' (role 'graphpattern_EdgePattern', cardinality 0..*).
+'graphpattern::EdgePattern' (role 'incomings', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'NodePattern', cardinality 0..*).
+'graphpattern::Bundle' (role 'graphpattern_Bundle30', cardinality 0..*) is associated with 'graphpattern::EPackage' (role 'graphpattern_EPackage', cardinality 0..*).
+'graphpattern::Extendable' (role 'graphpattern_Extendable', cardinality 0..*) is associated with 'graphpattern::Stereotype' (role 'graphpattern_Stereotype', cardinality 0..*).
+'graphpattern::Parameter' (role 'graphpattern_Parameter', cardinality 0..*) is associated with 'graphpattern::ParameterBinding' (role 'graphpattern_ParameterBinding', cardinality 0..*).
+'graphpattern::Profile' (role 'profile', cardinality 0..*) is associated with 'graphpattern::Stereotype' (role 'Stereotype', cardinality 0..*).
+'graphpattern::EObjectList' (role 'graphpattern_EObjectList', cardinality 0..*) is associated with 'graphpattern::EObject' (role 'graphpattern_EObject44', cardinality 0..*).
+'graphpattern::SubGraph' (role 'SubGraph', cardinality 0..*) is associated with 'graphpattern::GraphElement' (role 'elements', cardinality 0..*).
+'graphpattern::Pattern' (role 'Pattern', cardinality 0..*) is associated with 'graphpattern::GraphPattern' (role 'graphs', cardinality 0..*).
+'graphpattern::GraphElement' (role 'graphpattern_GraphElement', cardinality 0..*) is associated with 'graphpattern::Association' (role 'graphpattern_Association', cardinality 0..*).
+'graphpattern::NodePattern' (role 'graphpattern_NodePattern60', cardinality 0..*) is associated with 'graphpattern::DependencyNode' (role 'graphpattern_DependencyNode59', cardinality 0..*).
+'graphpattern::GraphPattern' (role 'GraphPattern47', cardinality 0..*) is associated with 'graphpattern::DependencyGraph' (role 'dependencyGraph', cardinality 0..*).
+'graphpattern::SubGraph' (role 'graphpattern_SubGraph80', cardinality 0..*) is associated with 'graphpattern::SubGraph' (role 'graphpattern_SubGraph78', cardinality 0..*).
+'graphpattern::ParameterBinding' (role 'graphpattern_ParameterBinding72', cardinality 0..*) is associated with 'graphpattern::Assignment' (role 'graphpattern_Assignment', cardinality 0..*).
+'graphpattern::EObject' (role 'graphpattern_EObject', cardinality 0..*) is associated with 'graphpattern::Matching' (role 'graphpattern_Matching', cardinality 0..*).
+'graphpattern::EObject' (role 'graphpattern_EObject87', cardinality 0..*) is associated with 'graphpattern::Resource' (role 'graphpattern_Resource', cardinality 0..*).
+'graphpattern::DependencyNode' (role 'target56', cardinality 0..*) is associated with 'graphpattern::DependencyEdge' (role 'DependencyEdge57', cardinality 0..*).
+'graphpattern::Profile' (role 'graphpattern_Profile', cardinality 0..*) is associated with 'graphpattern::Bundle' (role 'graphpattern_Bundle', cardinality 0..*).
+'graphpattern::GraphElement' (role 'GraphElement', cardinality 0..*) is associated with 'graphpattern::SubGraph' (role 'subgraphs', cardinality 0..*).
+'graphpattern::NodePattern' (role 'node10', cardinality 0..*) is associated with 'graphpattern::Matching' (role 'Matching', cardinality 0..*).
+'graphpattern::AttributePattern' (role 'attributes', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'NodePattern24', cardinality 0..*).
+'graphpattern::Matching' (role 'matching', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'NodePattern27', cardinality 0..*).
+'graphpattern::Assignment' (role 'Assignment', cardinality 0..*) is associated with 'graphpattern::Pattern' (role 'pattern35', cardinality 0..*).
+'graphpattern::DependencyNode' (role 'DependencyNode65', cardinality 0..*) is associated with 'graphpattern::DependencyEdge' (role 'incomings64', cardinality 0..*).
+'graphpattern::SubGraph' (role 'graphpattern_SubGraph', cardinality 0..*) is associated with 'graphpattern::GraphPattern' (role 'graphpattern_GraphPattern4', cardinality 0..*).
+'graphpattern::EClass' (role 'graphpattern_EClass', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'graphpattern_NodePattern7', cardinality 0..*).
+'graphpattern::Association' (role 'Association', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'source14', cardinality 0..*).
+'graphpattern::DependencyGraph' (role 'graphpattern_DependencyGraph49', cardinality 0..*) is associated with 'graphpattern::DependencyNode' (role 'graphpattern_DependencyNode50', cardinality 0..*).
+'graphpattern::GraphPattern' (role 'graphpattern_GraphPattern84', cardinality 0..*) is associated with 'graphpattern::GraphElement' (role 'graphpattern_GraphElement83', cardinality 0..*).
+'graphpattern::DependencyNode' (role 'source54', cardinality 0..*) is associated with 'graphpattern::DependencyEdge' (role 'DependencyEdge', cardinality 0..*).
+'graphpattern::Parameter' (role 'parameters', cardinality 0..*) is associated with 'graphpattern::Pattern' (role 'Pattern42', cardinality 0..*).
+'graphpattern::EAttribute' (role 'graphpattern_EAttribute', cardinality 0..*) is associated with 'graphpattern::AttributePattern' (role 'graphpattern_AttributePattern', cardinality 0..*).
+'graphpattern::Pattern' (role 'pattern', cardinality 0..*) is associated with 'graphpattern::GraphPattern' (role 'GraphPattern', cardinality 0..*).
+'graphpattern::NodePattern' (role 'source', cardinality 0..*) is associated with 'graphpattern::EdgePattern' (role 'EdgePattern', cardinality 0..*).
+'graphpattern::EdgePattern' (role 'EdgePattern12', cardinality 0..*) is associated with 'graphpattern::NodePattern' (role 'target', cardinality 0..*).
+'graphpattern::Pattern' (role 'graphpattern_Pattern38', cardinality 0..*) is associated with 'graphpattern::Pattern' (role 'graphpattern_Pattern40', cardinality 0..*).
+'graphpattern::DependencyGraph' (role 'graphpattern_DependencyGraph52', cardinality 0..*) is associated with 'graphpattern::DependencyEdge' (role 'graphpattern_DependencyEdge', cardinality 0..*).

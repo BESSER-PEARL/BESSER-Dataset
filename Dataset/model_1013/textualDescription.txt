@@ -1,0 +1,447 @@
+The model has 195 class(es).
+The class 'Conditions::PreConditionMessageExpression' has no attributes.
+The class 'State' has no attributes.
+The class 'HALL::Instructions::Let' has the following attributes: 'name' of type str.
+The class 'HALL::Instructions::SetMessageParameter' has the following attributes: 'field' of type str.
+The class 'HALL::TaskObject' has the following attributes: 'numberofgoalscompleted' of type int; 'completionTime' of type int.
+The class 'HALL::Geometry::Face' has the following attributes: 'labelText' of type str.
+The class 'TriggerExpression' has no attributes.
+The class 'HALL::Actions::ActionMessageExpression' has no attributes.
+The class 'PreConditionExpression' has no attributes.
+The class 'HALL::Geometry::AlphaTransparency' has the following attributes: 'value' of type int.
+The class 'HALL::Actions::GetMessageParameter' has the following attributes: 'field' of type str.
+The class 'HALL::FSMActions::Action' has no attributes.
+The class 'HALL::Types::Type' has the following attributes: 'name' of type str.
+The class 'HALL::Data' has the following attributes: 'initValue' of type str; 'name' of type str; 'currentValue' of type str.
+The class 'HALL::Goal' has the following attributes: 'condition' of type str.
+The class 'HALL::Instructions::BinaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::FSMActions::BinaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'FSMInstructions::HALL::Data' has no attributes.
+The class 'FSMConditions::HALL::Component' has no attributes.
+The class 'HALL::Types::Set' has no attributes.
+The class 'HALL::Types::SimpleType' has no attributes.
+The class 'HALL::FSMConditions::UnaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::Geometry::GeometryData3D' has no attributes.
+The class 'PreConditionMessageExpression' has no attributes.
+The class 'HALL::Conditions::PreConditionMessageExpression' has no attributes.
+The class 'HALL::Conditions::DomainPropertyGet' has the following attributes: 'name' of type str.
+The class 'Trigger::Trigger' has no attributes.
+The class 'HALL::Conditions::GetMessageParameter' has the following attributes: 'field' of type str.
+The class 'HALL::FSMConditions::PreCondition' has no attributes.
+The class 'HALL::FSMActions::DomainPropertySet' has the following attributes: 'name' of type str.
+The class 'FSMActions::HALL::Data' has no attributes.
+The class 'HALL::Messages::MessageHandler' has no attributes.
+The class 'RGBColor' has no attributes.
+The class 'Actions::HALL::Component' has no attributes.
+The class 'GeometryData2D' has no attributes.
+The class 'HALL::Actions::UnaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::FSMInstructions::Literal' has the following attributes: 'value' of type str.
+The class 'Actions::ActionMessage' has no attributes.
+The class 'SimpleType' has no attributes.
+The class 'HALL::Geometry::Point' has the following attributes: 'yCoord' of type int; 'xCoord' of type int.
+The class 'Transition' has no attributes.
+The class 'HALL::Instructions::DomainPropertyGet' has the following attributes: 'name' of type str.
+The class 'FSMConditions::HALL::Data' has no attributes.
+The class 'HALL::FSMInstructions::SetData' has the following attributes: 'field' of type str.
+The class 'HALL::FSMActions::VarRef' has no attributes.
+The class 'HALL::Types::Number' has no attributes.
+The class 'HALL::Conditions::GetMessageData' has the following attributes: 'field' of type str.
+The class 'HALL::Messages::RegularMessageState' has no attributes.
+The class 'HALL::FSMConditions::GetData' has no attributes.
+The class 'HALL::Instructions::SetData' has no attributes.
+The class 'HALL::Geometry::GeometryData2D' has the following attributes: 'labelText' of type str.
+The class 'FSMConditions::PreCondition' has no attributes.
+The class 'HALL::Types::String' has no attributes.
+The class 'HALL::Conditions::Literal' has the following attributes: 'value' of type str.
+The class 'HALL::Conditions::Let' has the following attributes: 'name' of type str.
+The class 'HALL::Messages::MessageState' has the following attributes: 'isContinue' of type bool; 'isActive' of type bool; 'isEnd' of type bool; 'name' of type str.
+The class 'AlphaTransparency' has no attributes.
+The class 'HALL::Messages::MessageDefinition' has the following attributes: 'name' of type str.
+The class 'Messages::HALL::Data' has no attributes.
+The class 'HALL::FSMConditions::DomainPropertyGet' has the following attributes: 'name' of type str.
+The class 'Instructions::PosConditionMessage' has no attributes.
+The class 'HALL::Actions::DomainPropertyGet' has the following attributes: 'name' of type str.
+The class 'Trigger::TriggerExpression' has no attributes.
+The class 'HALL::FSMActions::GetData' has no attributes.
+The class 'PosConditionMessageExpression' has no attributes.
+The class 'Geometry::HALL::VisualObject' has no attributes.
+The class 'HALL::Trigger::MessageNotification' has no attributes.
+The class 'MessageState' has no attributes.
+The class 'HALL::Conditions::UnaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'FSMActions::Action' has no attributes.
+The class 'HALL::FSMConditions::VarRef' has no attributes.
+The class 'HALL::Conditions::GetState' has no attributes.
+The class 'ColorState' has no attributes.
+The class 'HALL::Instructions::SetTopDown' has no attributes.
+The class 'NormalColors' has no attributes.
+The class 'HALL::Actions::GetData' has no attributes.
+The class 'MessageHandler' has no attributes.
+The class 'HALL::FSM::Transition' has the following attributes: 'name' of type str.
+The class 'Conditions::PreConditionMessage' has no attributes.
+The class 'DisabledColors' has no attributes.
+The class 'HALL::Trigger::TriggerExpression' has no attributes.
+The class 'Conditions::Let' has no attributes.
+The class 'FSMConditions::PreConditionExpression' has no attributes.
+The class 'HALL::Types::Boolean' has no attributes.
+The class 'HALL::FSM::InitialState' has no attributes.
+The class 'HALL::Parameter' has the following attributes: 'name' of type str.
+The class 'Instructions::PosConditionMessageExpression' has no attributes.
+The class 'HALL::Geometry::RGBColor' has the following attributes: 'blueValue' of type int; 'greenValue' of type int; 'redValue' of type int.
+The class 'Instructions::HALL::Component' has no attributes.
+The class 'HALL::FSMInstructions::PosCondition' has no attributes.
+The class 'HALL::Actions::MessageInvocation' has the following attributes: 'isTopDown' of type bool.
+The class 'FSMInstructions::PosConditionExpression' has no attributes.
+The class 'ColorData' has no attributes.
+The class 'FSMActions::ActionExpression' has no attributes.
+The class 'HALL::Conditions::GetData' has no attributes.
+The class 'Point3D' has no attributes.
+The class 'HALL::Geometry::GeometryData' has no attributes.
+The class 'HALL::FSMConditions::Literal' has the following attributes: 'value' of type str.
+The class 'InitialState' has no attributes.
+The class 'Component' has no attributes.
+The class 'Face' has no attributes.
+The class 'HALL::Conditions::PreConditionMessage' has no attributes.
+The class 'Messages::HALL::Parameter' has no attributes.
+The class 'Color' has no attributes.
+The class 'HALL::Actions::GetMessageData' has the following attributes: 'field' of type str.
+The class 'FSMConditions::Let' has no attributes.
+The class 'HALL::Instructions::PosConditionMessageExpression' has no attributes.
+The class 'HALL::VisualObject' has the following attributes: 'vtype' of type str.
+The class 'Point2D' has no attributes.
+The class 'RegularMessageState' has no attributes.
+The class 'HALL::Geometry::SelectedColors' has no attributes.
+The class 'HALL::Instructions::Literal' has the following attributes: 'value' of type str.
+The class 'HALL::Conditions::VarRef' has no attributes.
+The class 'HALL::Geometry::Point3D' has the following attributes: 'zCoord' of type int.
+The class 'HALL::FSMInstructions::SetState' has no attributes.
+The class 'HALL::FSMInstructions::Let' has the following attributes: 'name' of type str.
+The class 'HALL::FSMConditions::Let' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'HALL::Conditions::BinaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::Instructions::SetState' has no attributes.
+The class 'HALL::Instructions::VarRef' has no attributes.
+The class 'HALL::Instructions::GetMessageData' has the following attributes: 'field' of type str.
+The class 'HALL::Geometry::NormalColors' has no attributes.
+The class 'GeometryData3D' has no attributes.
+The class 'HALL::Instructions::PosConditionMessage' has no attributes.
+The class 'HALL::SystemComponent' has no attributes.
+The class 'HALL::FSMActions::DomainPropertyGet' has the following attributes: 'name' of type str.
+The class 'Instructions::HALL::Data' has no attributes.
+The class 'Conditions::HALL::Component' has no attributes.
+The class 'Set' has no attributes.
+The class 'HALL::Actions::BinaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::FSM::RegularState' has no attributes.
+The class 'MessageDefinition' has no attributes.
+The class 'HALL::FSMActions::UnaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::Instructions::GetData' has no attributes.
+The class 'FSM::HALL::Component' has no attributes.
+The class 'Instructions::Let' has no attributes.
+The class 'Messages::HALL::Model' has no attributes.
+The class 'HALL::Instructions::GetState' has no attributes.
+The class 'InitialMessageState' has no attributes.
+The class 'Messages::HALL::Component' has no attributes.
+The class 'FSMInstructions::HALL::Component' has no attributes.
+The class 'Actions::ActionMessageExpression' has no attributes.
+The class 'HALL::Actions::ActionMessage' has no attributes.
+The class 'HALL::Messages::MessageTransition' has the following attributes: 'name' of type str.
+The class 'HALL::Model' has no attributes.
+The class 'SelectedColors' has no attributes.
+The class 'HALL::FSMActions::MessageInvocation' has the following attributes: 'isTopDown' of type bool.
+The class 'MessageTransition' has no attributes.
+The class 'HALL::Actions::VarRef' has no attributes.
+The class 'HALL::Geometry::Color' has no attributes.
+The class 'GeometryData' has no attributes.
+The class 'HALL::Actions::Enable' has no attributes.
+The class 'HALL::Trigger::DomainEventFired' has the following attributes: 'name' of type str.
+The class 'FSMInstructions::Let' has no attributes.
+The class 'HALL::FSMInstructions::UnaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::Messages::InitialMessageState' has no attributes.
+The class 'HALL::FSMConditions::PreConditionExpression' has no attributes.
+The class 'HALL::FSM::State' has the following attributes: 'isActive' of type bool; 'name' of type str.
+The class 'HALL::Actions::Literal' has the following attributes: 'value' of type str.
+The class 'HALL::Instructions::SetMessageData' has the following attributes: 'field' of type str.
+The class 'Actions::Let' has no attributes.
+The class 'FSM' has no attributes.
+The class 'HALL::FSMConditions::GetState' has no attributes.
+The class 'HALL::FSMActions::Literal' has the following attributes: 'value' of type str.
+The class 'HALL::Trigger::Trigger' has no attributes.
+The class 'HALL::Component' has the following attributes: 'name' of type str.
+The class 'HALL::FSM::FSM' has no attributes.
+The class 'HALL::Geometry::DisabledColors' has no attributes.
+The class 'HALL::Instructions::UnaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::FSMInstructions::GetState' has no attributes.
+The class 'HALL::FSMInstructions::DomainPropertyGet' has the following attributes: 'name' of type str.
+The class 'HALL::Geometry::ColorState' has no attributes.
+The class 'HALL::FSMActions::ActionExpression' has no attributes.
+The class 'ActionMessageExpression' has no attributes.
+The class 'HALL::Actions::Let' has no attributes.
+The class 'HALL::Geometry::Point2D' has no attributes.
+The class 'HALL::FSMInstructions::PosConditionExpression' has no attributes.
+The class 'HALL::FSMActions::Let' has the following attributes: 'name' of type str.
+The class 'PosConditionExpression' has no attributes.
+The class 'Point' has no attributes.
+The class 'HALL::FSMInstructions::BinaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'HALL::UserProfile' has the following attributes: 'numberofcompletedtasks' of type int.
+The class 'HALL::Geometry::ColorData' has no attributes.
+The class 'ActionExpression' has no attributes.
+The class 'Conditions::HALL::Data' has no attributes.
+The class 'HALL::Instructions::GetMessageParameter' has the following attributes: 'field' of type str.
+The class 'RegularState' has no attributes.
+The class 'HALL::FSMConditions::BinaryOperator' has the following attributes: 'operatorname' of type str.
+The class 'FSMActions::Let' has no attributes.
+The class 'HALL::FSMInstructions::GetData' has the following attributes: 'field' of type str.
+The class 'HALL::FSMInstructions::VarRef' has no attributes.
+The class 'FSMInstructions::PosCondition' has no attributes.
+The class 'HALL::Actions::DomainPropertySet' has the following attributes: 'name' of type str.
+The class 'HALL::FSMActions::Enable' has no attributes.
+'HALL::Instructions::Literal' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Conditions::BinaryOperator' is a specialization of 'PreConditionMessageExpression'.
+'HALL::Geometry::SelectedColors' is a specialization of 'ColorState'.
+'HALL::Geometry::DisabledColors' is a specialization of 'ColorState'.
+'HALL::Geometry::GeometryData3D' is a specialization of 'GeometryData'.
+'HALL::FSMInstructions::GetData' is a specialization of 'PosConditionExpression'.
+'HALL::Geometry::GeometryData2D' is a specialization of 'GeometryData'.
+'HALL::Actions::DomainPropertySet' is a specialization of 'ActionMessageExpression'.
+'HALL::Geometry::NormalColors' is a specialization of 'ColorState'.
+'HALL::SystemComponent' is a specialization of 'Component'.
+'HALL::Conditions::DomainPropertyGet' is a specialization of 'PreConditionMessageExpression'.
+'HALL::VisualObject' is a specialization of 'Component'.
+'HALL::Actions::Let' is a specialization of 'ActionMessageExpression'.
+'HALL::UserProfile' is a specialization of 'Component'.
+'HALL::FSMInstructions::Let' is a specialization of 'PosConditionExpression'.
+'HALL::Actions::GetMessageParameter' is a specialization of 'ActionMessageExpression'.
+'HALL::TaskObject' is a specialization of 'Component'.
+'HALL::FSM::RegularState' is a specialization of 'State'.
+'HALL::Conditions::Literal' is a specialization of 'PreConditionMessageExpression'.
+'HALL::Actions::MessageInvocation' is a specialization of 'ActionMessageExpression'.
+'HALL::FSM::InitialState' is a specialization of 'State'.
+'HALL::Types::Number' is a specialization of 'SimpleType'.
+'HALL::Actions::GetMessageData' is a specialization of 'ActionMessageExpression'.
+'HALL::Types::String' is a specialization of 'SimpleType'.
+'HALL::FSMActions::UnaryOperator' is a specialization of 'ActionExpression'.
+'HALL::Types::Set' is a specialization of 'Type'.
+'HALL::FSMActions::MessageInvocation' is a specialization of 'ActionExpression'.
+'HALL::FSMActions::DomainPropertySet' is a specialization of 'ActionExpression'.
+'HALL::Types::Boolean' is a specialization of 'SimpleType'.
+'HALL::FSMInstructions::GetState' is a specialization of 'PosConditionExpression'.
+'HALL::Types::SimpleType' is a specialization of 'Type'.
+'HALL::Trigger::MessageNotification' is a specialization of 'TriggerExpression'.
+'HALL::Actions::GetData' is a specialization of 'ActionMessageExpression'.
+'HALL::FSMInstructions::BinaryOperator' is a specialization of 'PosConditionExpression'.
+'HALL::FSMActions::Literal' is a specialization of 'ActionExpression'.
+'HALL::FSMActions::DomainPropertyGet' is a specialization of 'ActionExpression'.
+'HALL::Actions::UnaryOperator' is a specialization of 'ActionMessageExpression'.
+'HALL::Conditions::VarRef' is a specialization of 'PreConditionMessageExpression'.
+'HALL::FSMActions::Let' is a specialization of 'ActionExpression'.
+'HALL::FSMConditions::UnaryOperator' is a specialization of 'PreConditionExpression'.
+'HALL::Actions::Enable' is a specialization of 'ActionMessageExpression'.
+'HALL::FSMConditions::GetState' is a specialization of 'PreConditionExpression'.
+'HALL::FSMConditions::VarRef' is a specialization of 'PreConditionExpression'.
+'HALL::FSMInstructions::DomainPropertyGet' is a specialization of 'PosConditionExpression'.
+'HALL::FSMConditions::DomainPropertyGet' is a specialization of 'PreConditionExpression'.
+'HALL::FSMActions::BinaryOperator' is a specialization of 'ActionExpression'.
+'HALL::Actions::DomainPropertyGet' is a specialization of 'ActionMessageExpression'.
+'HALL::FSMConditions::BinaryOperator' is a specialization of 'PreConditionExpression'.
+'HALL::FSMActions::GetData' is a specialization of 'ActionExpression'.
+'HALL::Conditions::UnaryOperator' is a specialization of 'PreConditionMessageExpression'.
+'HALL::FSMConditions::Literal' is a specialization of 'PreConditionExpression'.
+'HALL::FSMConditions::Let' is a specialization of 'PreConditionExpression'.
+'HALL::FSMInstructions::Literal' is a specialization of 'PosConditionExpression'.
+'HALL::Conditions::Let' is a specialization of 'PreConditionMessageExpression'.
+'HALL::FSMActions::Enable' is a specialization of 'ActionMessageExpression'.
+'HALL::FSMConditions::GetData' is a specialization of 'PreConditionExpression'.
+'HALL::FSMInstructions::SetData' is a specialization of 'PosConditionExpression'.
+'HALL::FSMInstructions::SetState' is a specialization of 'PosConditionExpression'.
+'HALL::Instructions::GetMessageData' is a specialization of 'PosConditionMessageExpression'.
+'HALL::FSMActions::VarRef' is a specialization of 'ActionExpression'.
+'HALL::Actions::Literal' is a specialization of 'ActionMessageExpression'.
+'HALL::Conditions::GetData' is a specialization of 'PreConditionMessageExpression'.
+'HALL::Actions::VarRef' is a specialization of 'ActionMessageExpression'.
+'HALL::FSMInstructions::VarRef' is a specialization of 'PosConditionExpression'.
+'HALL::Conditions::GetState' is a specialization of 'PreConditionMessageExpression'.
+'HALL::Instructions::GetMessageParameter' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Conditions::GetMessageData' is a specialization of 'PreConditionMessageExpression'.
+'HALL::FSMInstructions::UnaryOperator' is a specialization of 'PosConditionExpression'.
+'HALL::Instructions::VarRef' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Trigger::DomainEventFired' is a specialization of 'TriggerExpression'.
+'HALL::Instructions::SetTopDown' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Conditions::GetMessageParameter' is a specialization of 'PreConditionMessageExpression'.
+'HALL::Instructions::UnaryOperator' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::GetData' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::Let' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::DomainPropertyGet' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Actions::BinaryOperator' is a specialization of 'ActionMessageExpression'.
+'HALL::Instructions::GetState' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::BinaryOperator' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::SetState' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::SetData' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::SetMessageData' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Instructions::SetMessageParameter' is a specialization of 'PosConditionMessageExpression'.
+'HALL::Geometry::Point3D' is a specialization of 'Point'.
+'HALL::Messages::InitialMessageState' is a specialization of 'MessageState'.
+'HALL::Geometry::Point2D' is a specialization of 'Point'.
+'HALL::Messages::RegularMessageState' is a specialization of 'MessageState'.
+'HALL::TaskObject' (role 'TaskObject', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'taskObjectInv', cardinality 0..*).
+'FSMConditions::HALL::Data' (role 'FSMConditions_HALL_Data', cardinality 0..*) is associated with 'HALL::FSMConditions::GetData' (role 'HALL_FSMConditions_GetData', cardinality 0..*).
+'HALL::Geometry::AlphaTransparency' (role 'alphaTransparency', cardinality 0..*) is associated with 'ColorState' (role 'ColorState80', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression129', cardinality 0..*) is associated with 'HALL::Instructions::BinaryOperator' (role 'HALL_Instructions_BinaryOperator', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression196', cardinality 0..*) is associated with 'HALL::Actions::MessageInvocation' (role 'HALL_Actions_MessageInvocation195', cardinality 0..*).
+'HALL::Instructions::VarRef' (role 'HALL_Instructions_VarRef', cardinality 0..*) is associated with 'Instructions::Let' (role 'Instructions_Let', cardinality 0..*).
+'HALL::FSM::FSM' (role 'HALL_FSM_FSM', cardinality 0..*) is associated with 'InitialState' (role 'InitialState', cardinality 0..*).
+'HALL::FSMConditions::VarRef' (role 'HALL_FSMConditions_VarRef', cardinality 0..*) is associated with 'FSMConditions::Let' (role 'FSMConditions_Let', cardinality 0..*).
+'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression', cardinality 0..*) is associated with 'HALL::FSMActions::Action' (role 'HALL_FSMActions_Action', cardinality 0..*).
+'HALL::TaskObject' (role 'goalInv', cardinality 0..*) is associated with 'HALL::Goal' (role 'Goal', cardinality 0..*).
+'MessageDefinition' (role 'MessageDefinition54', cardinality 0..*) is associated with 'HALL::Parameter' (role 'parameter', cardinality 0..*).
+'HALL::FSMConditions::Let' (role 'HALL_FSMConditions_Let274', cardinality 0..*) is associated with 'FSMConditions::PreConditionExpression' (role 'FSMConditions_PreConditionExpression275', cardinality 0..*).
+'GeometryData2D' (role 'GeometryData2D', cardinality 0..*) is associated with 'HALL::Geometry::Point2D' (role 'point2d', cardinality 0..*).
+'HALL::Instructions::BinaryOperator' (role 'HALL_Instructions_BinaryOperator131', cardinality 0..*) is associated with 'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression132', cardinality 0..*).
+'HALL::Actions::UnaryOperator' (role 'HALL_Actions_UnaryOperator', cardinality 0..*) is associated with 'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression198', cardinality 0..*).
+'HALL::Component' (role 'dataInvComponent', cardinality 0..*) is associated with 'HALL::Data' (role 'Data', cardinality 0..*).
+'Conditions::PreConditionMessageExpression' (role 'Conditions_PreConditionMessageExpression', cardinality 0..*) is associated with 'HALL::Conditions::PreConditionMessage' (role 'HALL_Conditions_PreConditionMessage', cardinality 0..*).
+'RegularState' (role 'RegularState', cardinality 0..*) is associated with 'HALL::FSM::FSM' (role 'HALL_FSM_FSM212', cardinality 0..*).
+'HALL::Geometry::RGBColor' (role 'difuseColor', cardinality 0..*) is associated with 'Color' (role 'Color71', cardinality 0..*).
+'HALL::Geometry::RGBColor' (role 'ambianceColor', cardinality 0..*) is associated with 'Color' (role 'Color', cardinality 0..*).
+'HALL::FSMConditions::Let' (role 'HALL_FSMConditions_Let277', cardinality 0..*) is associated with 'Type' (role 'Type278', cardinality 0..*).
+'HALL::FSMConditions::UnaryOperator' (role 'HALL_FSMConditions_UnaryOperator', cardinality 0..*) is associated with 'FSMConditions::PreConditionExpression' (role 'FSMConditions_PreConditionExpression268', cardinality 0..*).
+'HALL::Model' (role 'messageDefinitionInv', cardinality 0..*) is associated with 'MessageDefinition' (role 'MessageDefinition', cardinality 0..*).
+'MessageState' (role 'MessageState', cardinality 0..*) is associated with 'HALL::Messages::MessageTransition' (role 'transitions', cardinality 0..*).
+'Messages::HALL::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'HALL::Messages::MessageDefinition' (role 'parameterInv', cardinality 0..*).
+'Actions::HALL::Component' (role 'Actions_HALL_Component', cardinality 0..*) is associated with 'HALL::Actions::GetData' (role 'HALL_Actions_GetData', cardinality 0..*).
+'HALL::Conditions::GetState' (role 'HALL_Conditions_GetState', cardinality 0..*) is associated with 'Conditions::HALL::Component' (role 'Conditions_HALL_Component', cardinality 0..*).
+'HALL::Trigger::MessageNotification' (role 'HALL_Trigger_MessageNotification', cardinality 0..*) is associated with 'MessageDefinition' (role 'MessageDefinition231', cardinality 0..*).
+'FSMConditions::PreConditionExpression' (role 'FSMConditions_PreConditionExpression263', cardinality 0..*) is associated with 'HALL::FSMConditions::BinaryOperator' (role 'HALL_FSMConditions_BinaryOperator', cardinality 0..*).
+'FSMConditions::PreConditionExpression' (role 'FSMConditions_PreConditionExpression272', cardinality 0..*) is associated with 'HALL::FSMConditions::Let' (role 'HALL_FSMConditions_Let', cardinality 0..*).
+'HALL::FSMActions::VarRef' (role 'HALL_FSMActions_VarRef', cardinality 0..*) is associated with 'FSMActions::Let' (role 'FSMActions_Let', cardinality 0..*).
+'HALL::TaskObject' (role 'TaskObject48', cardinality 0..*) is associated with 'HALL::TaskObject' (role 'componentSet47', cardinality 0..*).
+'HALL::Messages::MessageTransition' (role 'HALL_Messages_MessageTransition', cardinality 0..*) is associated with 'MessageState' (role 'MessageState104', cardinality 0..*).
+'ColorState' (role 'ColorState', cardinality 0..*) is associated with 'HALL::Geometry::Color' (role 'foregroundColor', cardinality 0..*).
+'Messages::HALL::Data' (role 'Data117', cardinality 0..*) is associated with 'HALL::Messages::MessageDefinition' (role 'dataInvMessageDefinition', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression201', cardinality 0..*) is associated with 'HALL::Actions::DomainPropertySet' (role 'HALL_Actions_DomainPropertySet', cardinality 0..*).
+'HALL::UserProfile' (role 'userProfile', cardinality 0..*) is associated with 'HALL::Model' (role 'Model29', cardinality 0..*).
+'HALL::VisualObject' (role 'componentSetInv', cardinality 0..*) is associated with 'HALL::VisualObject' (role 'VisualObject', cardinality 0..*).
+'Conditions::HALL::Data' (role 'Conditions_HALL_Data', cardinality 0..*) is associated with 'HALL::Conditions::GetData' (role 'HALL_Conditions_GetData', cardinality 0..*).
+'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression', cardinality 0..*) is associated with 'HALL::FSMInstructions::PosCondition' (role 'HALL_FSMInstructions_PosCondition', cardinality 0..*).
+'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression308', cardinality 0..*) is associated with 'HALL::FSMActions::UnaryOperator' (role 'HALL_FSMActions_UnaryOperator', cardinality 0..*).
+'HALL::SystemComponent' (role 'componentSet17', cardinality 0..*) is associated with 'HALL::SystemComponent' (role 'SystemComponent18', cardinality 0..*).
+'MessageDefinition' (role 'MessageDefinition119', cardinality 0..*) is associated with 'HALL::Messages::MessageHandler' (role 'HALL_Messages_MessageHandler', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression203', cardinality 0..*) is associated with 'HALL::Actions::Enable' (role 'HALL_Actions_Enable', cardinality 0..*).
+'Conditions::PreConditionMessage' (role 'Conditions_PreConditionMessage', cardinality 0..*) is associated with 'HALL::Messages::MessageTransition' (role 'HALL_Messages_MessageTransition106', cardinality 0..*).
+'Type' (role 'Type162', cardinality 0..*) is associated with 'HALL::Conditions::Let' (role 'HALL_Conditions_Let', cardinality 0..*).
+'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression234', cardinality 0..*) is associated with 'HALL::FSMInstructions::BinaryOperator' (role 'HALL_FSMInstructions_BinaryOperator', cardinality 0..*).
+'HALL::Data' (role 'data', cardinality 0..*) is associated with 'MessageDefinition' (role 'MessageDefinition58', cardinality 0..*).
+'HALL::FSMConditions::GetState' (role 'HALL_FSMConditions_GetState', cardinality 0..*) is associated with 'FSMConditions::HALL::Component' (role 'FSMConditions_HALL_Component', cardinality 0..*).
+'HALL::Geometry::SelectedColors' (role 'selectedColors', cardinality 0..*) is associated with 'ColorData' (role 'ColorData84', cardinality 0..*).
+'HALL::Geometry::Color' (role 'specularColorInv', cardinality 0..*) is associated with 'RGBColor' (role 'RGBColor65', cardinality 0..*).
+'HALL::VisualObject' (role 'VisualObject7', cardinality 0..*) is associated with 'HALL::VisualObject' (role 'componentSet', cardinality 0..*).
+'HALL::Types::Set' (role 'elementsTypeInv', cardinality 0..*) is associated with 'SimpleType' (role 'SimpleType', cardinality 0..*).
+'HALL::FSMInstructions::VarRef' (role 'HALL_FSMInstructions_VarRef', cardinality 0..*) is associated with 'FSMInstructions::Let' (role 'FSMInstructions_Let', cardinality 0..*).
+'HALL::Messages::MessageHandler' (role 'messageStateInv', cardinality 0..*) is associated with 'RegularMessageState' (role 'RegularMessageState', cardinality 0..*).
+'HALL::Actions::Let' (role 'HALL_Actions_Let', cardinality 0..*) is associated with 'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression185', cardinality 0..*).
+'HALL::VisualObject' (role 'visualObject', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'UserProfile', cardinality 0..*).
+'Instructions::PosConditionMessage' (role 'Instructions_PosConditionMessage', cardinality 0..*) is associated with 'HALL::Messages::MessageTransition' (role 'HALL_Messages_MessageTransition108', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression156', cardinality 0..*) is associated with 'HALL::Instructions::SetTopDown' (role 'HALL_Instructions_SetTopDown', cardinality 0..*).
+'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression237', cardinality 0..*) is associated with 'HALL::FSMInstructions::BinaryOperator' (role 'HALL_FSMInstructions_BinaryOperator236', cardinality 0..*).
+'ColorData' (role 'ColorData86', cardinality 0..*) is associated with 'HALL::Geometry::DisabledColors' (role 'disabledColors', cardinality 0..*).
+'HALL::Types::SimpleType' (role 'elementsType', cardinality 0..*) is associated with 'Set' (role 'Set', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'HALL::Instructions::SetState' (role 'HALL_Instructions_SetState', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression188', cardinality 0..*) is associated with 'HALL::Actions::Let' (role 'HALL_Actions_Let187', cardinality 0..*).
+'HALL::Messages::MessageTransition' (role 'HALL_Messages_MessageTransition110', cardinality 0..*) is associated with 'Actions::ActionMessage' (role 'Actions_ActionMessage', cardinality 0..*).
+'HALL::Conditions::BinaryOperator' (role 'HALL_Conditions_BinaryOperator', cardinality 0..*) is associated with 'Conditions::PreConditionMessageExpression' (role 'Conditions_PreConditionMessageExpression172', cardinality 0..*).
+'HALL::FSMInstructions::UnaryOperator' (role 'HALL_FSMInstructions_UnaryOperator', cardinality 0..*) is associated with 'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression239', cardinality 0..*).
+'SelectedColors' (role 'SelectedColors', cardinality 0..*) is associated with 'HALL::Geometry::ColorData' (role 'selectedColorsInv', cardinality 0..*).
+'HALL::FSMActions::Let' (role 'HALL_FSMActions_Let287', cardinality 0..*) is associated with 'Type' (role 'Type288', cardinality 0..*).
+'RGBColor' (role 'RGBColor63', cardinality 0..*) is associated with 'HALL::Geometry::Color' (role 'difuseColorInv', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression139', cardinality 0..*) is associated with 'HALL::Instructions::SetData' (role 'HALL_Instructions_SetData', cardinality 0..*).
+'Type' (role 'Type191', cardinality 0..*) is associated with 'HALL::Actions::Let' (role 'HALL_Actions_Let190', cardinality 0..*).
+'MessageHandler' (role 'MessageHandler112', cardinality 0..*) is associated with 'HALL::Messages::RegularMessageState' (role 'messageState', cardinality 0..*).
+'Conditions::PreConditionMessageExpression' (role 'Conditions_PreConditionMessageExpression175', cardinality 0..*) is associated with 'HALL::Conditions::BinaryOperator' (role 'HALL_Conditions_BinaryOperator174', cardinality 0..*).
+'FSMInstructions::HALL::Component' (role 'FSMInstructions_HALL_Component', cardinality 0..*) is associated with 'HALL::FSMInstructions::GetData' (role 'HALL_FSMInstructions_GetData', cardinality 0..*).
+'HALL::Model' (role 'HALL_Model', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'HALL::Geometry::ColorData' (role 'disabledColorsInv', cardinality 0..*) is associated with 'DisabledColors' (role 'DisabledColors', cardinality 0..*).
+'RGBColor' (role 'RGBColor', cardinality 0..*) is associated with 'HALL::Geometry::Color' (role 'ambianceColorInv', cardinality 0..*).
+'Instructions::HALL::Data' (role 'Instructions_HALL_Data142', cardinality 0..*) is associated with 'HALL::Instructions::SetData' (role 'HALL_Instructions_SetData141', cardinality 0..*).
+'State' (role 'State215', cardinality 0..*) is associated with 'HALL::FSM::Transition' (role 'transitions214', cardinality 0..*).
+'Messages::HALL::Model' (role 'Model114', cardinality 0..*) is associated with 'HALL::Messages::MessageDefinition' (role 'messageDefinition', cardinality 0..*).
+'Conditions::Let' (role 'Conditions_Let', cardinality 0..*) is associated with 'HALL::Conditions::VarRef' (role 'HALL_Conditions_VarRef', cardinality 0..*).
+'FSM' (role 'FSM228', cardinality 0..*) is associated with 'HALL::FSM::State' (role 'HALL_FSM_State', cardinality 0..*).
+'HALL::FSMActions::Let' (role 'HALL_FSMActions_Let284', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression285', cardinality 0..*).
+'ColorData' (role 'ColorData82', cardinality 0..*) is associated with 'HALL::Geometry::NormalColors' (role 'normalColors', cardinality 0..*).
+'NormalColors' (role 'NormalColors', cardinality 0..*) is associated with 'HALL::Geometry::ColorData' (role 'normalColorsInv', cardinality 0..*).
+'HALL::Component' (role 'Component', cardinality 0..*) is associated with 'HALL::Data' (role 'data60', cardinality 0..*).
+'HALL::Instructions::SetMessageData' (role 'HALL_Instructions_SetMessageData', cardinality 0..*) is associated with 'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression144', cardinality 0..*).
+'HALL::FSM::Transition' (role 'HALL_FSM_Transition', cardinality 0..*) is associated with 'State' (role 'State217', cardinality 0..*).
+'Point3D' (role 'Point3D', cardinality 0..*) is associated with 'HALL::Geometry::Face' (role 'point2dInv97', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression', cardinality 0..*) is associated with 'HALL::Actions::ActionMessage' (role 'HALL_Actions_ActionMessage', cardinality 0..*).
+'Trigger::TriggerExpression' (role 'Trigger_TriggerExpression', cardinality 0..*) is associated with 'HALL::Trigger::Trigger' (role 'HALL_Trigger_Trigger', cardinality 0..*).
+'HALL::FSMActions::Let' (role 'HALL_FSMActions_Let', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression282', cardinality 0..*).
+'HALL::UserProfile' (role 'componentSetInv32', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'UserProfile33', cardinality 0..*).
+'Geometry::HALL::VisualObject' (role 'VisualObject91', cardinality 0..*) is associated with 'HALL::Geometry::ColorData' (role 'colorData', cardinality 0..*).
+'HALL::Component' (role 'messageHandlerSetInv', cardinality 0..*) is associated with 'MessageHandler' (role 'MessageHandler', cardinality 0..*).
+'HALL::FSMActions::BinaryOperator' (role 'HALL_FSMActions_BinaryOperator305', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression306', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression146', cardinality 0..*) is associated with 'HALL::Instructions::SetMessageParameter' (role 'HALL_Instructions_SetMessageParameter', cardinality 0..*).
+'FSMConditions::PreCondition' (role 'FSMConditions_PreCondition', cardinality 0..*) is associated with 'HALL::FSM::Transition' (role 'HALL_FSM_Transition219', cardinality 0..*).
+'HALL::Geometry::Face' (role 'face', cardinality 0..*) is associated with 'GeometryData3D' (role 'GeometryData3D', cardinality 0..*).
+'HALL::Actions::VarRef' (role 'HALL_Actions_VarRef', cardinality 0..*) is associated with 'Actions::Let' (role 'Actions_Let', cardinality 0..*).
+'HALL::FSMInstructions::SetData' (role 'HALL_FSMInstructions_SetData251', cardinality 0..*) is associated with 'FSMInstructions::HALL::Data' (role 'FSMInstructions_HALL_Data', cardinality 0..*).
+'FSMInstructions::HALL::Component' (role 'FSMInstructions_HALL_Component244', cardinality 0..*) is associated with 'HALL::FSMInstructions::SetState' (role 'HALL_FSMInstructions_SetState', cardinality 0..*).
+'HALL::FSMInstructions::SetState' (role 'HALL_FSMInstructions_SetState246', cardinality 0..*) is associated with 'State' (role 'State247', cardinality 0..*).
+'HALL::FSMConditions::BinaryOperator' (role 'HALL_FSMConditions_BinaryOperator265', cardinality 0..*) is associated with 'FSMConditions::PreConditionExpression' (role 'FSMConditions_PreConditionExpression266', cardinality 0..*).
+'HALL::TaskObject' (role 'TaskObject44', cardinality 0..*) is associated with 'HALL::TaskObject' (role 'componentSetInv43', cardinality 0..*).
+'Geometry::HALL::VisualObject' (role 'VisualObject93', cardinality 0..*) is associated with 'HALL::Geometry::GeometryData' (role 'geometryData', cardinality 0..*).
+'HALL::Model' (role 'userProfileInv', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'UserProfile20', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression148', cardinality 0..*) is associated with 'HALL::Instructions::Let' (role 'HALL_Instructions_Let', cardinality 0..*).
+'FSMInstructions::PosCondition' (role 'FSMInstructions_PosCondition', cardinality 0..*) is associated with 'HALL::FSM::Transition' (role 'HALL_FSM_Transition221', cardinality 0..*).
+'Face' (role 'Face100', cardinality 0..*) is associated with 'HALL::Geometry::Point3D' (role 'point3d', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression180', cardinality 0..*) is associated with 'HALL::Actions::BinaryOperator' (role 'HALL_Actions_BinaryOperator', cardinality 0..*).
+'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression253', cardinality 0..*) is associated with 'HALL::FSMInstructions::Let' (role 'HALL_FSMInstructions_Let', cardinality 0..*).
+'HALL::FSMActions::BinaryOperator' (role 'HALL_FSMActions_BinaryOperator', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression303', cardinality 0..*).
+'ColorState' (role 'ColorState68', cardinality 0..*) is associated with 'HALL::Geometry::Color' (role 'backgroundColor', cardinality 0..*).
+'HALL::TaskObject' (role 'taskObject', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'UserProfile40', cardinality 0..*).
+'Face' (role 'Face', cardinality 0..*) is associated with 'HALL::Geometry::GeometryData3D' (role 'faceInv', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression151', cardinality 0..*) is associated with 'HALL::Instructions::Let' (role 'HALL_Instructions_Let150', cardinality 0..*).
+'FSMActions::Action' (role 'FSMActions_Action', cardinality 0..*) is associated with 'HALL::FSM::Transition' (role 'HALL_FSM_Transition223', cardinality 0..*).
+'InitialMessageState' (role 'InitialMessageState', cardinality 0..*) is associated with 'HALL::Messages::MessageHandler' (role 'initialMessageStateInv', cardinality 0..*).
+'Actions::ActionMessageExpression' (role 'Actions_ActionMessageExpression183', cardinality 0..*) is associated with 'HALL::Actions::BinaryOperator' (role 'HALL_Actions_BinaryOperator182', cardinality 0..*).
+'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression256', cardinality 0..*) is associated with 'HALL::FSMInstructions::Let' (role 'HALL_FSMInstructions_Let255', cardinality 0..*).
+'HALL::FSMActions::GetData' (role 'HALL_FSMActions_GetData', cardinality 0..*) is associated with 'FSMActions::HALL::Data' (role 'FSMActions_HALL_Data', cardinality 0..*).
+'ColorData' (role 'ColorData', cardinality 0..*) is associated with 'HALL::VisualObject' (role 'colorDataInv', cardinality 0..*).
+'GeometryData' (role 'GeometryData', cardinality 0..*) is associated with 'HALL::VisualObject' (role 'geometryDataInv', cardinality 0..*).
+'HALL::Geometry::GeometryData2D' (role 'point2dInv', cardinality 0..*) is associated with 'Point2D' (role 'Point2D', cardinality 0..*).
+'HALL::FSMConditions::PreCondition' (role 'HALL_FSMConditions_PreCondition', cardinality 0..*) is associated with 'FSMConditions::PreConditionExpression' (role 'FSMConditions_PreConditionExpression', cardinality 0..*).
+'HALL::FSMActions::DomainPropertySet' (role 'HALL_FSMActions_DomainPropertySet', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression300', cardinality 0..*).
+'FSM' (role 'FSM', cardinality 0..*) is associated with 'HALL::Component' (role 'FSMInv', cardinality 0..*).
+'HALL::Instructions::Let' (role 'HALL_Instructions_Let153', cardinality 0..*) is associated with 'Type' (role 'Type154', cardinality 0..*).
+'HALL::FSM::Transition' (role 'HALL_FSM_Transition225', cardinality 0..*) is associated with 'Trigger::Trigger' (role 'Trigger_Trigger', cardinality 0..*).
+'Messages::HALL::Component' (role 'Component123', cardinality 0..*) is associated with 'HALL::Messages::MessageHandler' (role 'messageHandlerSet', cardinality 0..*).
+'Conditions::PreConditionMessageExpression' (role 'Conditions_PreConditionMessageExpression165', cardinality 0..*) is associated with 'HALL::Conditions::Let' (role 'HALL_Conditions_Let164', cardinality 0..*).
+'HALL::UserProfile' (role 'UserProfile37', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'componentSet36', cardinality 0..*).
+'HALL::Model' (role 'systemComponentInv', cardinality 0..*) is associated with 'HALL::SystemComponent' (role 'SystemComponent22', cardinality 0..*).
+'Color' (role 'Color75', cardinality 0..*) is associated with 'HALL::Geometry::ColorState' (role 'foregroundColorInv', cardinality 0..*).
+'HALL::FSMInstructions::Let' (role 'HALL_FSMInstructions_Let258', cardinality 0..*) is associated with 'Type' (role 'Type259', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression134', cardinality 0..*) is associated with 'HALL::Instructions::UnaryOperator' (role 'HALL_Instructions_UnaryOperator', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'HALL::FSM::State' (role 'source', cardinality 0..*).
+'HALL::Messages::MessageState' (role 'transitionsInvMessageState', cardinality 0..*) is associated with 'MessageTransition' (role 'MessageTransition', cardinality 0..*).
+'HALL::Conditions::Let' (role 'HALL_Conditions_Let167', cardinality 0..*) is associated with 'Conditions::PreConditionMessageExpression' (role 'Conditions_PreConditionMessageExpression168', cardinality 0..*).
+'HALL::FSMActions::Enable' (role 'HALL_FSMActions_Enable297', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression298', cardinality 0..*).
+'Color' (role 'Color73', cardinality 0..*) is associated with 'HALL::Geometry::RGBColor' (role 'specularColor', cardinality 0..*).
+'HALL::VisualObject' (role 'VisualObject26', cardinality 0..*) is associated with 'HALL::UserProfile' (role 'visualObjectInv', cardinality 0..*).
+'Color' (role 'Color77', cardinality 0..*) is associated with 'HALL::Geometry::ColorState' (role 'backgroundColorInv', cardinality 0..*).
+'Instructions::HALL::Data' (role 'Instructions_HALL_Data', cardinality 0..*) is associated with 'HALL::Instructions::GetData' (role 'HALL_Instructions_GetData', cardinality 0..*).
+'MessageDefinition' (role 'MessageDefinition206', cardinality 0..*) is associated with 'HALL::Actions::Enable' (role 'HALL_Actions_Enable205', cardinality 0..*).
+'MessageHandler' (role 'MessageHandler126', cardinality 0..*) is associated with 'HALL::Messages::InitialMessageState' (role 'initialMessageState', cardinality 0..*).
+'Conditions::PreConditionMessageExpression' (role 'Conditions_PreConditionMessageExpression170', cardinality 0..*) is associated with 'HALL::Conditions::UnaryOperator' (role 'HALL_Conditions_UnaryOperator', cardinality 0..*).
+'FSMInstructions::HALL::Component' (role 'FSMInstructions_HALL_Component242', cardinality 0..*) is associated with 'HALL::FSMInstructions::GetState' (role 'HALL_FSMInstructions_GetState', cardinality 0..*).
+'HALL::SystemComponent' (role 'systemComponent', cardinality 0..*) is associated with 'HALL::Model' (role 'Model', cardinality 0..*).
+'HALL::FSMActions::Enable' (role 'HALL_FSMActions_Enable', cardinality 0..*) is associated with 'MessageDefinition' (role 'MessageDefinition295', cardinality 0..*).
+'HALL::SystemComponent' (role 'SystemComponent', cardinality 0..*) is associated with 'HALL::SystemComponent' (role 'componentSetInv14', cardinality 0..*).
+'HALL::Goal' (role 'goal', cardinality 0..*) is associated with 'HALL::TaskObject' (role 'TaskObject50', cardinality 0..*).
+'AlphaTransparency' (role 'AlphaTransparency', cardinality 0..*) is associated with 'HALL::Geometry::ColorState' (role 'alphaTransparencyInv', cardinality 0..*).
+'FSMInstructions::PosConditionExpression' (role 'FSMInstructions_PosConditionExpression249', cardinality 0..*) is associated with 'HALL::FSMInstructions::SetData' (role 'HALL_FSMInstructions_SetData', cardinality 0..*).
+'Instructions::HALL::Component' (role 'Instructions_HALL_Component', cardinality 0..*) is associated with 'HALL::Instructions::GetState' (role 'HALL_Instructions_GetState', cardinality 0..*).
+'FSM::HALL::Component' (role 'Component209', cardinality 0..*) is associated with 'HALL::FSM::FSM' (role 'FSM208', cardinality 0..*).
+'Instructions::PosConditionMessageExpression' (role 'Instructions_PosConditionMessageExpression', cardinality 0..*) is associated with 'HALL::Instructions::PosConditionMessage' (role 'HALL_Instructions_PosConditionMessage', cardinality 0..*).
+'MessageDefinition' (role 'MessageDefinition193', cardinality 0..*) is associated with 'HALL::Actions::MessageInvocation' (role 'HALL_Actions_MessageInvocation', cardinality 0..*).
+'MessageDefinition' (role 'MessageDefinition290', cardinality 0..*) is associated with 'HALL::FSMActions::MessageInvocation' (role 'HALL_FSMActions_MessageInvocation', cardinality 0..*).
+'HALL::FSMActions::MessageInvocation' (role 'HALL_FSMActions_MessageInvocation292', cardinality 0..*) is associated with 'FSMActions::ActionExpression' (role 'FSMActions_ActionExpression293', cardinality 0..*).
+'Type' (role 'Type52', cardinality 0..*) is associated with 'HALL::Parameter' (role 'HALL_Parameter', cardinality 0..*).
+'Type' (role 'Type56', cardinality 0..*) is associated with 'HALL::Data' (role 'HALL_Data', cardinality 0..*).

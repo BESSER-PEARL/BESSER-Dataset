@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'petrinet::Reseau' has the following attributes: 'nom' of type str.
+The class 'Element' has no attributes.
+The class 'petrinet::ReadArc' has no attributes.
+The class 'Arc' has no attributes.
+The class 'petrinet::Place' has the following attributes: 'jetons' of type int.
+The class 'petrinet::ArcSortant' has no attributes.
+The class 'ArcSortant' has no attributes.
+The class 'petrinet::ArcEntrant' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+The class 'petrinet::Arc' has the following attributes: 'nbJetons' of type int.
+The class 'petrinet::Element' has the following attributes: 'nom' of type str.
+'petrinet::ArcSortant' is a specialization of 'Arc'.
+'petrinet::Place' is a specialization of 'Element'.
+'petrinet::ReadArc' is a specialization of 'ArcSortant'.
+'petrinet::Transition' is a specialization of 'Element'.
+'petrinet::ArcEntrant' is a specialization of 'Arc'.
+'petrinet::Transition' (role 'predecesseur', cardinality 0..*) is associated with 'petrinet::ArcEntrant' (role 'ArcEntrant', cardinality 0..*).
+'petrinet::Transition' (role 'Transition', cardinality 0..*) is associated with 'petrinet::ArcSortant' (role 'predecesseurs', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::Reseau' (role 'petrinet_Reseau10', cardinality 0..*).
+'petrinet::ArcSortant' (role 'ArcSortant', cardinality 0..*) is associated with 'petrinet::Transition' (role 'successeur', cardinality 0..*).
+'petrinet::Reseau' (role 'petrinet_Reseau', cardinality 0..*) is associated with 'petrinet::Element' (role 'petrinet_Element', cardinality 0..*).
+'petrinet::ArcEntrant' (role 'successeurs', cardinality 0..*) is associated with 'petrinet::Transition' (role 'Transition7', cardinality 0..*).
+'petrinet::ArcSortant' (role 'petrinet_ArcSortant', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place', cardinality 0..*).
+'petrinet::ArcEntrant' (role 'petrinet_ArcEntrant', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place5', cardinality 0..*).

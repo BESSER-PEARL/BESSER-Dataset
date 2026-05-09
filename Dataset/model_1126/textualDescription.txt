@@ -1,0 +1,57 @@
+The model has 17 class(es).
+The class 'rosmodel::State' has the following attributes: 'name' of type str.
+The class 'rosmodel::ActionServer' has the following attributes: 'name' of type str.
+The class 'rosmodel::Action' has the following attributes: 'name' of type str.
+The class 'rosmodel::Subscriber' has the following attributes: 'queue_size' of type int; 'name' of type str; 'msg' of type str.
+The class 'rosmodel::Transition' has the following attributes: 'name' of type str.
+The class 'rosmodel::Field' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'rosmodel::ServiceType' has the following attributes: 'name' of type str.
+The class 'rosmodel::Package' has the following attributes: 'author_email' of type str; 'depends' of type str; 'author' of type str; 'description' of type str; 'name' of type str.
+The class 'rosmodel::Message' has the following attributes: 'name' of type str.
+The class 'rosmodel::Publisher' has the following attributes: 'name' of type str; 'queue_size' of type int; 'msg' of type str.
+The class 'rosmodel::Event' has the following attributes: 'name' of type str.
+The class 'rosmodel::Node' has the following attributes: 'name' of type str; 'frequency' of type float.
+The class 'rosmodel::Topic' has the following attributes: 'name' of type str.
+The class 'rosmodel::ActionMessage' has the following attributes: 'name' of type str.
+The class 'rosmodel::ServiceClient' has the following attributes: 'name' of type str.
+The class 'rosmodel::ActionClient' has the following attributes: 'name' of type str.
+The class 'rosmodel::ServiceServer' has the following attributes: 'name' of type str.
+The enumeration 'Datatype' has the following literals: 'msg', 'float32', 'string', 'int8', 'int32', 'int64', 'float64', 'int16'.
+'rosmodel::Field' (role 'rosmodel_Field54', cardinality 0..*) is associated with 'rosmodel::ActionMessage' (role 'rosmodel_ActionMessage53', cardinality 0..*).
+'rosmodel::Node' (role 'rosmodel_Node26', cardinality 0..*) is associated with 'rosmodel::Action' (role 'rosmodel_Action', cardinality 0..*).
+'rosmodel::State' (role 'rosmodel_State65', cardinality 0..*) is associated with 'rosmodel::Transition' (role 'rosmodel_Transition66', cardinality 0..*).
+'rosmodel::Event' (role 'rosmodel_Event81', cardinality 0..*) is associated with 'rosmodel::State' (role 'rosmodel_State80', cardinality 0..*).
+'rosmodel::ActionMessage' (role 'rosmodel_ActionMessage', cardinality 0..*) is associated with 'rosmodel::Package' (role 'rosmodel_Package8', cardinality 0..*).
+'rosmodel::Field' (role 'rosmodel_Field51', cardinality 0..*) is associated with 'rosmodel::ActionMessage' (role 'rosmodel_ActionMessage50', cardinality 0..*).
+'rosmodel::Topic' (role 'rosmodel_Topic31', cardinality 0..*) is associated with 'rosmodel::Publisher' (role 'rosmodel_Publisher30', cardinality 0..*).
+'rosmodel::State' (role 'rosmodel_State84', cardinality 0..*) is associated with 'rosmodel::Transition' (role 'rosmodel_Transition83', cardinality 0..*).
+'rosmodel::ServiceType' (role 'rosmodel_ServiceType48', cardinality 0..*) is associated with 'rosmodel::ServiceClient' (role 'rosmodel_ServiceClient47', cardinality 0..*).
+'rosmodel::Package' (role 'rosmodel_Package4', cardinality 0..*) is associated with 'rosmodel::Message' (role 'rosmodel_Message', cardinality 0..*).
+'rosmodel::Node' (role 'rosmodel_Node28', cardinality 0..*) is associated with 'rosmodel::Event' (role 'rosmodel_Event', cardinality 0..*).
+'rosmodel::Field' (role 'rosmodel_Field57', cardinality 0..*) is associated with 'rosmodel::ActionMessage' (role 'rosmodel_ActionMessage56', cardinality 0..*).
+'rosmodel::State' (role 'rosmodel_State', cardinality 0..*) is associated with 'rosmodel::Node' (role 'rosmodel_Node22', cardinality 0..*).
+'rosmodel::Transition' (role 'rosmodel_Transition', cardinality 0..*) is associated with 'rosmodel::Node' (role 'rosmodel_Node24', cardinality 0..*).
+'rosmodel::Action' (role 'rosmodel_Action90', cardinality 0..*) is associated with 'rosmodel::Transition' (role 'rosmodel_Transition89', cardinality 0..*).
+'rosmodel::Transition' (role 'rosmodel_Transition96', cardinality 0..*) is associated with 'rosmodel::Event' (role 'rosmodel_Event95', cardinality 0..*).
+'rosmodel::ActionServer' (role 'rosmodel_ActionServer59', cardinality 0..*) is associated with 'rosmodel::ActionMessage' (role 'rosmodel_ActionMessage60', cardinality 0..*).
+'rosmodel::ActionMessage' (role 'rosmodel_ActionMessage63', cardinality 0..*) is associated with 'rosmodel::ActionClient' (role 'rosmodel_ActionClient62', cardinality 0..*).
+'rosmodel::State' (role 'rosmodel_State87', cardinality 0..*) is associated with 'rosmodel::Transition' (role 'rosmodel_Transition86', cardinality 0..*).
+'rosmodel::ActionClient' (role 'rosmodel_ActionClient', cardinality 0..*) is associated with 'rosmodel::Node' (role 'rosmodel_Node18', cardinality 0..*).
+'rosmodel::Package' (role 'rosmodel_Package', cardinality 0..*) is associated with 'rosmodel::Node' (role 'rosmodel_Node', cardinality 0..*).
+'rosmodel::Topic' (role 'rosmodel_Topic34', cardinality 0..*) is associated with 'rosmodel::Subscriber' (role 'rosmodel_Subscriber33', cardinality 0..*).
+'rosmodel::State' (role 'rosmodel_State77', cardinality 0..*) is associated with 'rosmodel::Action' (role 'rosmodel_Action78', cardinality 0..*).
+'rosmodel::State' (role 'rosmodel_State67', cardinality 0..*) is associated with 'rosmodel::State' (role 'rosmodel_State69', cardinality 0..*).
+'rosmodel::Node' (role 'rosmodel_Node12', cardinality 0..*) is associated with 'rosmodel::Subscriber' (role 'rosmodel_Subscriber', cardinality 0..*).
+'rosmodel::Node' (role 'rosmodel_Node20', cardinality 0..*) is associated with 'rosmodel::ActionServer' (role 'rosmodel_ActionServer', cardinality 0..*).
+'rosmodel::ServiceType' (role 'rosmodel_ServiceType38', cardinality 0..*) is associated with 'rosmodel::Field' (role 'rosmodel_Field39', cardinality 0..*).
+'rosmodel::Field' (role 'rosmodel_Field42', cardinality 0..*) is associated with 'rosmodel::ServiceType' (role 'rosmodel_ServiceType41', cardinality 0..*).
+'rosmodel::Action' (role 'rosmodel_Action75', cardinality 0..*) is associated with 'rosmodel::State' (role 'rosmodel_State74', cardinality 0..*).
+'rosmodel::Node' (role 'rosmodel_Node16', cardinality 0..*) is associated with 'rosmodel::ServiceServer' (role 'rosmodel_ServiceServer', cardinality 0..*).
+'rosmodel::Action' (role 'rosmodel_Action72', cardinality 0..*) is associated with 'rosmodel::State' (role 'rosmodel_State71', cardinality 0..*).
+'rosmodel::Publisher' (role 'rosmodel_Publisher', cardinality 0..*) is associated with 'rosmodel::Node' (role 'rosmodel_Node10', cardinality 0..*).
+'rosmodel::Package' (role 'rosmodel_Package6', cardinality 0..*) is associated with 'rosmodel::ServiceType' (role 'rosmodel_ServiceType', cardinality 0..*).
+'rosmodel::ServiceType' (role 'rosmodel_ServiceType45', cardinality 0..*) is associated with 'rosmodel::ServiceServer' (role 'rosmodel_ServiceServer44', cardinality 0..*).
+'rosmodel::Package' (role 'rosmodel_Package2', cardinality 0..*) is associated with 'rosmodel::Topic' (role 'rosmodel_Topic', cardinality 0..*).
+'rosmodel::Action' (role 'rosmodel_Action93', cardinality 0..*) is associated with 'rosmodel::Transition' (role 'rosmodel_Transition92', cardinality 0..*).
+'rosmodel::Node' (role 'rosmodel_Node14', cardinality 0..*) is associated with 'rosmodel::ServiceClient' (role 'rosmodel_ServiceClient', cardinality 0..*).
+'rosmodel::Message' (role 'rosmodel_Message36', cardinality 0..*) is associated with 'rosmodel::Field' (role 'rosmodel_Field', cardinality 0..*).

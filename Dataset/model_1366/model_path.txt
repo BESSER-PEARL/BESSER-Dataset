@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/veriatl/Compiler.Emftvm2Boogie/fr.emn.atlanmod.veriatl.compiler/HSM2FSM/Source/SRCMM/HSM.ecore

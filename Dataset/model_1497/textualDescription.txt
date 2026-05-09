@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'PetriNet::Element' has the following attributes: 'name' of type str.
+The class 'PetriNet::Transition' has the following attributes: 'minTime' of type int; 'maxTime' of type int.
+The class 'PetriNet::Arc' has no attributes.
+The class 'PetriNet::PetriNetRoot' has no attributes.
+The class 'Element' has no attributes.
+The class 'PetriNet::Place' has the following attributes: 'Tokens' of type int.
+'PetriNet::Transition' is a specialization of 'Element'.
+'PetriNet::Place' is a specialization of 'Element'.
+'PetriNet::Element' (role 'PetriNet_Element', cardinality 0..*) is associated with 'PetriNet::PetriNetRoot' (role 'PetriNet_PetriNetRoot', cardinality 0..*).
+'PetriNet::Arc' (role 'PetriNet_Arc', cardinality 0..*) is associated with 'PetriNet::PetriNetRoot' (role 'PetriNet_PetriNetRoot2', cardinality 0..*).
+'PetriNet::Element' (role 'PetriNet_Element8', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'PetriNet_Arc7', cardinality 0..*).
+'PetriNet::Element' (role 'PetriNet_Element5', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'PetriNet_Arc4', cardinality 0..*).

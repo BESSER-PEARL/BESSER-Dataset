@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'stateMachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'stateMachine::Events' has no attributes.
+The class 'stateMachine::States' has no attributes.
+The class 'stateMachine::Event' has the following attributes: 'name' of type str.
+The class 'stateMachine::Transition' has no attributes.
+The class 'stateMachine::Variables' has no attributes.
+The class 'stateMachine::State' has the following attributes: 'name' of type str.
+The class 'stateMachine::Condition' has the following attributes: 'value' of type int; 'op' of type str.
+The class 'stateMachine::Variable' has the following attributes: 'name' of type str.
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine4', cardinality 0..*) is associated with 'stateMachine::States' (role 'stateMachine_States', cardinality 0..*).
+'stateMachine::Variables' (role 'stateMachine_Variables', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State', cardinality 0..*) is associated with 'stateMachine::States' (role 'stateMachine_States10', cardinality 0..*).
+'stateMachine::Variables' (role 'stateMachine_Variables6', cardinality 0..*) is associated with 'stateMachine::Variable' (role 'stateMachine_Variable', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State23', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'stateMachine_Transition22', cardinality 0..*).
+'stateMachine::Events' (role 'stateMachine_Events8', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event', cardinality 0..*).
+'stateMachine::Events' (role 'stateMachine_Events', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine2', cardinality 0..*).
+'stateMachine::Variable' (role 'stateMachine_Variable26', cardinality 0..*) is associated with 'stateMachine::Condition' (role 'stateMachine_Condition25', cardinality 0..*).
+'stateMachine::Transition' (role 'stateMachine_Transition20', cardinality 0..*) is associated with 'stateMachine::Condition' (role 'stateMachine_Condition', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State15', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'stateMachine_Transition', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State13', cardinality 0..*) is associated with 'stateMachine::States' (role 'stateMachine_States12', cardinality 0..*).
+'stateMachine::Transition' (role 'stateMachine_Transition17', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event18', cardinality 0..*).

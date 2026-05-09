@@ -1,0 +1,42 @@
+The model has 16 class(es).
+The class 'Counted' has no attributes.
+The class 'Labelled' has no attributes.
+The class 'publication103::Labelled' has the following attributes: 'lname' of type str.
+The class 'publication103::Review' has the following attributes: 'date' of type date.
+The class 'publication103::Counted' has the following attributes: 'id' of type int.
+The class 'publication103::Skill' has the following attributes: 'description' of type str.
+The class 'publication103::Paper' has no attributes.
+The class 'Named' has no attributes.
+The class 'publication103::Paragraph' has the following attributes: 'content' of type str.
+The class 'publication103::Position' has the following attributes: 'description' of type str.
+The class 'publication103::Write' has the following attributes: 'timeSpent' of type int.
+The class 'publication103::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'publication103::ReviewNote' has the following attributes: 'content' of type str.
+The class 'publication103::Named' has the following attributes: 'name' of type str.
+The class 'publication103::PublicationStructure' has no attributes.
+The class 'publication103::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+'publication103::Paragraph' is a specialization of 'Named'.
+'publication103::PublicationStructure' is a specialization of 'Named'.
+'publication103::Paper' is a specialization of 'Named'.
+'publication103::Position' is a specialization of 'Named'.
+'publication103::Review' is a specialization of 'Labelled'.
+'publication103::ReviewNote' is a specialization of 'Named'.
+'publication103::Write' is a specialization of 'Labelled'.
+'publication103::Paragraph' is a specialization of 'Counted'.
+'publication103::Paragraph' (role 'publication103_Paragraph19', cardinality 0..*) is associated with 'publication103::Write' (role 'publication103_Write18', cardinality 0..*).
+'publication103::Collaboration' (role 'publication103_Collaboration35', cardinality 0..*) is associated with 'publication103::Paper' (role 'publication103_Paper36', cardinality 0..*).
+'publication103::Review' (role 'publication103_Review21', cardinality 0..*) is associated with 'publication103::ReviewNote' (role 'publication103_ReviewNote22', cardinality 0..*).
+'publication103::Paper' (role 'publication103_Paper27', cardinality 0..*) is associated with 'publication103::PublicationStructure' (role 'publication103_PublicationStructure26', cardinality 0..*).
+'publication103::ReviewNote' (role 'publication103_ReviewNote', cardinality 0..*) is associated with 'publication103::Paragraph' (role 'publication103_Paragraph16', cardinality 0..*).
+'publication103::PublicationStructure' (role 'publication103_PublicationStructure29', cardinality 0..*) is associated with 'publication103::Position' (role 'publication103_Position30', cardinality 0..*).
+'publication103::Researcher' (role 'publication103_Researcher24', cardinality 0..*) is associated with 'publication103::PublicationStructure' (role 'publication103_PublicationStructure', cardinality 0..*).
+'publication103::Researcher' (role 'publication103_Researcher5', cardinality 0..*) is associated with 'publication103::Skill' (role 'publication103_Skill', cardinality 0..*).
+'publication103::Collaboration' (role 'publication103_Collaboration', cardinality 0..*) is associated with 'publication103::Researcher' (role 'publication103_Researcher9', cardinality 0..*).
+'publication103::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'publication103::Paper' (role 'res_papers', cardinality 0..*).
+'publication103::Write' (role 'publication103_Write', cardinality 0..*) is associated with 'publication103::Researcher' (role 'publication103_Researcher', cardinality 0..*).
+'publication103::Position' (role 'publication103_Position', cardinality 0..*) is associated with 'publication103::Researcher' (role 'publication103_Researcher7', cardinality 0..*).
+'publication103::Position' (role 'publication103_Position33', cardinality 0..*) is associated with 'publication103::Position' (role 'publication103_Position31', cardinality 0..*).
+'publication103::Paper' (role 'publication103_Paper', cardinality 0..*) is associated with 'publication103::Paragraph' (role 'publication103_Paragraph', cardinality 0..*).
+'publication103::Researcher' (role 'publication103_Researcher2', cardinality 0..*) is associated with 'publication103::Review' (role 'publication103_Review', cardinality 0..*).
+'publication103::Paper' (role 'Paper', cardinality 0..*) is associated with 'publication103::Researcher' (role 'authors', cardinality 0..*).
+'publication103::Paper' (role 'publication103_Paper12', cardinality 0..*) is associated with 'publication103::Paper' (role 'publication103_Paper14', cardinality 0..*).

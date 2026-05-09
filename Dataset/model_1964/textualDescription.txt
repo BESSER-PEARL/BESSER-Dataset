@@ -1,0 +1,346 @@
+The model has 123 class(es).
+The class 'AbstractDateCase' has no attributes.
+The class 'atem::DOWT' has the following attributes: 'dsl_Display_Mode' of type bool.
+The class 'atem::PageFooterEven' has no attributes.
+The class 'atem::HeaderFooterColumnRight' has no attributes.
+The class 'atem::PrefaceFragment' has no attributes.
+The class 'SectionElementType' has no attributes.
+The class 'atem::WhenModeOfWeek' has no attributes.
+The class 'AbstractDayCase' has no attributes.
+The class 'atem::Heading1' has no attributes.
+The class 'atem::Paragraph' has no attributes.
+The class 'atem::HeaderFooterColumnLeft' has no attributes.
+The class 'atem::NOP' has the following attributes: 'dsl_Display_Mode' of type bool.
+The class 'atem::WhenTriodionDay' has no attributes.
+The class 'atem::SectionElementType' has no attributes.
+The class 'atem::PageHeaderEven' has no attributes.
+The class 'atem::Info' has the following attributes: 'name' of type str.
+The class 'atem::HeaderFooterDate' has the following attributes: 'dsl_HeaderFooterDate' of type bool; 'dsl_HeaderFooterDate_Language' of type str.
+The class 'atem::MOW' has the following attributes: 'dsl_Display_Mode' of type bool.
+The class 'LdpType' has no attributes.
+The class 'atem::PageNumber' has the following attributes: 'dsl_PageNumber_value' of type int.
+The class 'atem::LitBook' has the following attributes: 'name' of type str.
+The class 'atem::DOWN' has the following attributes: 'dsl_Display_Mode' of type bool.
+The class 'atem::RestoreLocale' has the following attributes: 'dsl_RestoreLocale' of type bool.
+The class 'atem::AbstractDayNameCase' has no attributes.
+The class 'atem::HeaderFooterTitle' has the following attributes: 'dsl_HeaderFooterTitle' of type bool.
+The class 'atem::AbstractDayCase' has no attributes.
+The class 'atem::VersionSwitch' has the following attributes: 'dsl_VersionSwitch_flag' of type str.
+The class 'atem::MCD' has the following attributes: 'dsl_MCD_value' of type bool.
+The class 'atem::HeaderFooterColumn' has no attributes.
+The class 'atem::LdpType' has no attributes.
+The class 'atem::TaggedText' has no attributes.
+The class 'atem::HeaderFooterText' has the following attributes: 'dsl_HeaderFooterText' of type str.
+The class 'atem::WhenSundayAfterElevationOfCrossDay' has no attributes.
+The class 'atem::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'atem::WhenDayNameCase' has no attributes.
+The class 'AbstractDayNameCase' has no attributes.
+The class 'atem::WhenDateCase' has the following attributes: 'dsl_WhenDate_Case_Month' of type str.
+The class 'atem::GenDate' has the following attributes: 'dsl_Display_Date' of type bool.
+The class 'atem::Break' has the following attributes: 'dsl_break_type' of type str.
+The class 'atem::WhenPentecostarionDay' has no attributes.
+The class 'atem::ElementType' has no attributes.
+The class 'atem::Heading2' has no attributes.
+The class 'atem::Rubric' has no attributes.
+The class 'atem::DayRange' has the following attributes: 'dsl_Range_To' of type int; 'dsl_DayRange_from' of type int.
+The class 'atem::Head' has no attributes.
+The class 'atem::DayNameSet' has the following attributes: 'dslDayNameSet_Values' of type str.
+The class 'atem::TemplateStatus' has the following attributes: 'dsl_TemplateStatus' of type str.
+The class 'atem::PrefaceElementType' has no attributes.
+The class 'atem::Definition' has no attributes.
+The class 'atem::LDP' has no attributes.
+The class 'atem::SOL' has the following attributes: 'dsl_Display_StartLukan' of type bool.
+The class 'atem::Media' has no attributes.
+The class 'atem::Heading3' has no attributes.
+The class 'atem::HeaderFooterCommemoration' has the following attributes: 'dsl_HeaderFooterCommemoration' of type bool.
+The class 'atem::Date' has the following attributes: 'dsl_Date_month' of type int; 'dsl_Date_day' of type int; 'dsl_Date_year' of type int.
+The class 'atem::WOLC' has the following attributes: 'dsl_Display_DayLukan' of type bool.
+The class 'atem::SBT' has the following attributes: 'dsl_Display_SundaysBeforeTriodion' of type bool.
+The class 'atem::Preface' has the following attributes: 'name' of type str.
+The class 'atem::SectionFragment' has no attributes.
+The class 'atem::Version' has the following attributes: 'name' of type str.
+The class 'atem::PassThroughPdf' has the following attributes: 'dsl_Passthrough_pdf_text' of type str.
+The class 'atem::WhenPascha' has no attributes.
+The class 'atem::WhenSundaysBeforeTriodion' has no attributes.
+The class 'atem::Hymn' has no attributes.
+The class 'atem::Aid' has the following attributes: 'name' of type str.
+The class 'atem::SubTitle' has no attributes.
+The class 'atem::WhenModeOfWeekCase' has no attributes.
+The class 'atem::DayNameRange' has the following attributes: 'dsl_DayNameRange_To' of type str; 'dsl_DayNameRange_from' of type str.
+The class 'atem::InfoElementType' has no attributes.
+The class 'atem::Lookup' has the following attributes: 'dsl_Lookup_Override_Mode_Set' of type bool; 'dsl_Lookup_OverrideDay' of type str; 'dsl_Lookup_Override__Day_Set' of type bool; 'dsl_Lookup_OverrideMode' of type str; 'dsl_Lookup_Media_Off' of type bool.
+The class 'atem::PageFooterOdd' has no attributes.
+The class 'atem::HeaderFooterLookup' has the following attributes: 'dsl_HeaderFooterLookup_Language' of type str.
+The class 'atem::AbstractComponent' has no attributes.
+The class 'atem::SundaysBeforeTriodionCase' has the following attributes: 'dsl_SundaysBeforeTriodionCase_Days' of type int.
+The class 'atem::DOP' has the following attributes: 'dsl_Display_Mode' of type bool.
+The class 'atem::HeadComponent' has no attributes.
+The class 'atem::DOL' has the following attributes: 'dsl_Display_DayLukan' of type bool.
+The class 'atem::PageKeepWithNext' has the following attributes: 'dsl_PageKeepWithNext_value' of type str.
+The class 'atem::TemplateFragment' has no attributes.
+The class 'atem::SAEC' has the following attributes: 'dsl_Display_SundayAfterElevationCross' of type bool.
+The class 'atem::GenYear' has the following attributes: 'dsl_Display_Year' of type bool.
+The class 'atem::DOM' has the following attributes: 'dsl_Display_Mode' of type bool.
+The class 'atem::ResourceText' has the following attributes: 'dsl_ResourceText_Media_Off' of type bool.
+The class 'atem::Reading' has no attributes.
+The class 'atem::WhenDate' has no attributes.
+The class 'atem::Actor' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'atem::Block' has no attributes.
+The class 'ElementType' has no attributes.
+The class 'atem::HeaderFooterPageNumber' has the following attributes: 'dsl_HeaderFooterPageNumber' of type bool.
+The class 'atem::WhenDayName' has no attributes.
+The class 'atem::Dialog' has no attributes.
+The class 'atem::EOW' has the following attributes: 'dsl_Display_Eothinon' of type bool.
+The class 'atem::WhenMovableCycleDay' has no attributes.
+The class 'atem::WhenExists' has no attributes.
+The class 'atem::DateRange' has the following attributes: 'dsl_DateRange_To' of type int; 'dsl_DateRange_from' of type int.
+The class 'atem::WhenPeriodCase' has no attributes.
+The class 'PrefaceElementType' has no attributes.
+The class 'atem::WhenExistsCase' has no attributes.
+The class 'atem::DaySet' has the following attributes: 'dslSetValue_Days' of type int.
+The class 'atem::WhenOther' has no attributes.
+The class 'atem::Title' has no attributes.
+The class 'InfoElementType' has no attributes.
+The class 'atem::All' has the following attributes: 'dsl_Display_LiturgicalDayProperties' of type bool.
+The class 'atem::ModeOfWeekSet' has the following attributes: 'dsl_ModeOfWeekSet_MOWs' of type str.
+The class 'atem::SetLocale' has the following attributes: 'dsl_SetLocale_V1' of type str; 'dsl_SetLocale_V2' of type str.
+The class 'atem::Verse' has no attributes.
+The class 'atem::WDOLC' has the following attributes: 'dsl_Display_DayLukan' of type bool.
+The class 'HeadComponent' has no attributes.
+The class 'atem::HeaderFooterColumnCenter' has no attributes.
+The class 'atem::Driver' has the following attributes: 'dsl_Driver_RegEx' of type str; 'dsl_Driver_Status' of type str.
+The class 'atem::WhenLukanCycleDay' has no attributes.
+The class 'atem::Commemoration' has no attributes.
+The class 'atem::AbstractDateCase' has no attributes.
+The class 'HeaderFooterColumn' has no attributes.
+The class 'atem::Section' has the following attributes: 'name' of type str.
+The class 'atem::TemplateTitle' has no attributes.
+The class 'atem::HeaderFooterFragment' has no attributes.
+The class 'atem::AtemModel' has the following attributes: 'name' of type str.
+The class 'atem::PassThroughHtml' has the following attributes: 'dsl_Passthrough_html_text' of type str.
+The class 'atem::DateSet' has the following attributes: 'dslDateSet_Values' of type int.
+The class 'HeaderFooterFragment' has no attributes.
+The class 'atem::PageHeaderOdd' has no attributes.
+The enumeration 'Seasons' has the following literals: 'Apostles_Fast', 'Dormition_Fast', 'Nativity_Fast', 'Pentecostarion', 'Triodion'.
+The enumeration 'PeriodType' has the following literals: 'triodion', 'pentecostarion', 'pascha'.
+The enumeration 'Null' has the following literals: 'null'.
+The enumeration 'TemplateStatuses' has the following literals: 'Final', 'Review', 'NA', 'Draft'.
+The enumeration 'BreakType' has the following literals: 'page', 'line'.
+The enumeration 'DowTypes' has the following literals: 'D4', 'D7', 'D5', 'D6', 'D1', 'D3', 'D2'.
+The enumeration 'ModeTypes' has the following literals: 'M2', 'M4', 'M3', 'M6', 'M5', 'M1', 'M7', 'M8'.
+The enumeration 'DayOfWeek' has the following literals: 'Saturday', 'Monday', 'Wednesday', 'Thursday', 'Sunday', 'Tuesday', 'Friday'.
+The enumeration 'BookTypes' has the following literals: 'Heirmologion', 'Lectionary', 'Horologion', 'Other', 'Euchologion', 'Katavasias', 'Pentecostarion', 'Triodion', 'Psalter', 'Menaion', 'Eothina', 'Octochechos'.
+The enumeration 'MonthName' has the following literals: 'Sep', 'Apr', 'Jun', 'Nov', 'Oct', 'Dec', 'Aug', 'Jan', 'Feb', 'Jul', 'Mar', 'May'.
+The enumeration 'Language' has the following literals: 'L2', 'L1'.
+The enumeration 'VersionSwitchType' has the following literals: 'L1', 'L2', 'Both'.
+The enumeration 'DayOfMonthTypes' has the following literals: 'D22', 'D28', 'D25', 'D01', 'D07', 'D23', 'D31', 'D06', 'D05', 'D19', 'D02', 'D04', 'D29', 'D24', 'D15', 'D20', 'D26', 'D17', 'D10', 'D11', 'D21', 'D09', 'D03', 'D13', 'D12', 'D30', 'D16', 'D08', 'D27', 'D18', 'D14'.
+'atem::VersionSwitch' is a specialization of 'InfoElementType'.
+'atem::TemplateFragment' is a specialization of 'SectionElementType'.
+'atem::Version' is a specialization of 'AbstractComponent'.
+'atem::Reading' is a specialization of 'SectionElementType'.
+'atem::RestoreLocale' is a specialization of 'SectionElementType'.
+'atem::WhenMovableCycleDay' is a specialization of 'SectionElementType'.
+'atem::SectionFragment' is a specialization of 'AbstractComponent'.
+'atem::Date' is a specialization of 'SectionElementType'.
+'atem::SetLocale' is a specialization of 'SectionElementType'.
+'atem::Break' is a specialization of 'SectionElementType'.
+'atem::HeaderFooterText' is a specialization of 'HeaderFooterFragment'.
+'atem::Media' is a specialization of 'SectionElementType'.
+'atem::Heading3' is a specialization of 'AbstractComponent'.
+'atem::Block' is a specialization of 'PrefaceElementType'.
+'atem::GenYear' is a specialization of 'LdpType'.
+'atem::Title' is a specialization of 'SectionElementType'.
+'atem::WhenDayName' is a specialization of 'SectionElementType'.
+'atem::WhenDayName' is a specialization of 'AbstractComponent'.
+'atem::Section' is a specialization of 'AbstractComponent'.
+'atem::Verse' is a specialization of 'SectionElementType'.
+'atem::HeaderFooterLookup' is a specialization of 'HeaderFooterFragment'.
+'atem::PassThroughPdf' is a specialization of 'AbstractComponent'.
+'atem::Aid' is a specialization of 'AbstractComponent'.
+'atem::VersionSwitch' is a specialization of 'AbstractComponent'.
+'atem::WhenPentecostarionDay' is a specialization of 'SectionElementType'.
+'atem::Paragraph' is a specialization of 'PrefaceElementType'.
+'atem::Rubric' is a specialization of 'AbstractComponent'.
+'atem::HeaderFooterColumnRight' is a specialization of 'HeaderFooterColumn'.
+'atem::TemplateFragment' is a specialization of 'AbstractComponent'.
+'atem::Hymn' is a specialization of 'AbstractComponent'.
+'atem::Date' is a specialization of 'HeadComponent'.
+'atem::SectionFragment' is a specialization of 'PrefaceElementType'.
+'atem::SBT' is a specialization of 'LdpType'.
+'atem::DayRange' is a specialization of 'AbstractDayCase'.
+'atem::TemplateFragment' is a specialization of 'PrefaceElementType'.
+'atem::Title' is a specialization of 'InfoElementType'.
+'atem::WhenPascha' is a specialization of 'AbstractComponent'.
+'atem::PageHeaderEven' is a specialization of 'HeadComponent'.
+'atem::SectionFragment' is a specialization of 'SectionElementType'.
+'atem::WhenMovableCycleDay' is a specialization of 'AbstractComponent'.
+'atem::Heading3' is a specialization of 'SectionElementType'.
+'atem::Paragraph' is a specialization of 'InfoElementType'.
+'atem::PassThroughHtml' is a specialization of 'AbstractComponent'.
+'atem::WhenDate' is a specialization of 'AbstractComponent'.
+'atem::PassThroughPdf' is a specialization of 'SectionElementType'.
+'atem::DOL' is a specialization of 'LdpType'.
+'atem::PageFooterOdd' is a specialization of 'HeadComponent'.
+'atem::Actor' is a specialization of 'AbstractComponent'.
+'atem::RestoreLocale' is a specialization of 'AbstractComponent'.
+'atem::PageHeaderOdd' is a specialization of 'HeadComponent'.
+'atem::WhenSundayAfterElevationOfCrossDay' is a specialization of 'SectionElementType'.
+'atem::WhenModeOfWeek' is a specialization of 'AbstractComponent'.
+'atem::Heading1' is a specialization of 'SectionElementType'.
+'atem::SAEC' is a specialization of 'LdpType'.
+'atem::WhenSundaysBeforeTriodion' is a specialization of 'SectionElementType'.
+'atem::MCD' is a specialization of 'LdpType'.
+'atem::NOP' is a specialization of 'LdpType'.
+'atem::PageKeepWithNext' is a specialization of 'HeadComponent'.
+'atem::WhenModeOfWeek' is a specialization of 'SectionElementType'.
+'atem::Break' is a specialization of 'AbstractComponent'.
+'atem::MOW' is a specialization of 'LdpType'.
+'atem::WhenSundaysBeforeTriodion' is a specialization of 'AbstractComponent'.
+'atem::Paragraph' is a specialization of 'SectionElementType'.
+'atem::LitBook' is a specialization of 'AbstractComponent'.
+'atem::WhenDate' is a specialization of 'SectionElementType'.
+'atem::Commemoration' is a specialization of 'HeadComponent'.
+'atem::TemplateTitle' is a specialization of 'HeadComponent'.
+'atem::HeaderFooterPageNumber' is a specialization of 'HeaderFooterFragment'.
+'atem::Lookup' is a specialization of 'ElementType'.
+'atem::DateSet' is a specialization of 'AbstractDateCase'.
+'atem::WhenExists' is a specialization of 'SectionElementType'.
+'atem::PageNumber' is a specialization of 'HeadComponent'.
+'atem::Block' is a specialization of 'InfoElementType'.
+'atem::All' is a specialization of 'LdpType'.
+'atem::WhenPascha' is a specialization of 'SectionElementType'.
+'atem::SetLocale' is a specialization of 'AbstractComponent'.
+'atem::SOL' is a specialization of 'LdpType'.
+'atem::Dialog' is a specialization of 'AbstractComponent'.
+'atem::HeaderFooterColumnLeft' is a specialization of 'HeaderFooterColumn'.
+'atem::Paragraph' is a specialization of 'AbstractComponent'.
+'atem::WhenLukanCycleDay' is a specialization of 'SectionElementType'.
+'atem::EOW' is a specialization of 'LdpType'.
+'atem::Block' is a specialization of 'AbstractComponent'.
+'atem::Hymn' is a specialization of 'SectionElementType'.
+'atem::Heading2' is a specialization of 'AbstractComponent'.
+'atem::LDP' is a specialization of 'ElementType'.
+'atem::Section' is a specialization of 'SectionElementType'.
+'atem::WhenTriodionDay' is a specialization of 'SectionElementType'.
+'atem::DOP' is a specialization of 'LdpType'.
+'atem::HeaderFooterColumnCenter' is a specialization of 'HeaderFooterColumn'.
+'atem::Info' is a specialization of 'AbstractComponent'.
+'atem::DateRange' is a specialization of 'AbstractDateCase'.
+'atem::WhenLukanCycleDay' is a specialization of 'AbstractComponent'.
+'atem::Section' is a specialization of 'PrefaceElementType'.
+'atem::Actor' is a specialization of 'SectionElementType'.
+'atem::Reading' is a specialization of 'AbstractComponent'.
+'atem::Heading1' is a specialization of 'AbstractComponent'.
+'atem::WhenExists' is a specialization of 'AbstractComponent'.
+'atem::SubTitle' is a specialization of 'InfoElementType'.
+'atem::DOWN' is a specialization of 'LdpType'.
+'atem::DOWT' is a specialization of 'LdpType'.
+'atem::Block' is a specialization of 'SectionElementType'.
+'atem::HeaderFooterTitle' is a specialization of 'HeaderFooterFragment'.
+'atem::DaySet' is a specialization of 'AbstractDayCase'.
+'atem::Dialog' is a specialization of 'SectionElementType'.
+'atem::DOM' is a specialization of 'LdpType'.
+'atem::DayNameSet' is a specialization of 'AbstractDayNameCase'.
+'atem::Verse' is a specialization of 'AbstractComponent'.
+'atem::GenDate' is a specialization of 'LdpType'.
+'atem::WhenTriodionDay' is a specialization of 'AbstractComponent'.
+'atem::SubTitle' is a specialization of 'SectionElementType'.
+'atem::VersionSwitch' is a specialization of 'PrefaceElementType'.
+'atem::Title' is a specialization of 'AbstractComponent'.
+'atem::ResourceText' is a specialization of 'ElementType'.
+'atem::TaggedText' is a specialization of 'ElementType'.
+'atem::PageFooterEven' is a specialization of 'HeadComponent'.
+'atem::DayNameRange' is a specialization of 'AbstractDayNameCase'.
+'atem::WOLC' is a specialization of 'LdpType'.
+'atem::HeaderFooterDate' is a specialization of 'HeaderFooterFragment'.
+'atem::Heading2' is a specialization of 'SectionElementType'.
+'atem::HeaderFooterCommemoration' is a specialization of 'HeaderFooterFragment'.
+'atem::WhenPentecostarionDay' is a specialization of 'AbstractComponent'.
+'atem::Title' is a specialization of 'PrefaceElementType'.
+'atem::Rubric' is a specialization of 'SectionElementType'.
+'atem::WhenSundayAfterElevationOfCrossDay' is a specialization of 'AbstractComponent'.
+'atem::SubTitle' is a specialization of 'AbstractComponent'.
+'atem::Media' is a specialization of 'AbstractComponent'.
+'atem::PassThroughHtml' is a specialization of 'SectionElementType'.
+'atem::WDOLC' is a specialization of 'LdpType'.
+'atem::SubTitle' is a specialization of 'PrefaceElementType'.
+'atem::PageHeaderOdd' (role 'atem_PageHeaderOdd', cardinality 0..*) is associated with 'atem::HeaderFooterColumn' (role 'atem_HeaderFooterColumn16', cardinality 0..*).
+'atem::Verse' (role 'atem_Verse', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType74', cardinality 0..*).
+'atem::WhenDate' (role 'atem_WhenDate', cardinality 0..*) is associated with 'atem::WhenDateCase' (role 'atem_WhenDateCase', cardinality 0..*).
+'atem::Preface' (role 'atem_Preface', cardinality 0..*) is associated with 'atem::AtemModel' (role 'atem_AtemModel8', cardinality 0..*).
+'atem::Reading' (role 'atem_Reading', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType82', cardinality 0..*).
+'atem::WhenPascha' (role 'atem_WhenPascha133', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent134', cardinality 0..*).
+'atem::Actor' (role 'atem_Actor', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType76', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType68', cardinality 0..*) is associated with 'atem::Block' (role 'atem_Block67', cardinality 0..*).
+'atem::Head' (role 'atem_Head12', cardinality 0..*) is associated with 'atem::HeadComponent' (role 'atem_HeadComponent', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType78', cardinality 0..*) is associated with 'atem::Rubric' (role 'atem_Rubric', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther119', cardinality 0..*) is associated with 'atem::WhenMovableCycleDay' (role 'atem_WhenMovableCycleDay118', cardinality 0..*).
+'atem::AbstractDayCase' (role 'atem_AbstractDayCase', cardinality 0..*) is associated with 'atem::WhenPeriodCase' (role 'atem_WhenPeriodCase139', cardinality 0..*).
+'atem::Media' (role 'atem_Media', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType72', cardinality 0..*).
+'atem::WhenExistsCase' (role 'atem_WhenExistsCase', cardinality 0..*) is associated with 'atem::WhenExists' (role 'atem_WhenExists', cardinality 0..*).
+'atem::TemplateFragment' (role 'atem_TemplateFragment', cardinality 0..*) is associated with 'atem::AtemModel' (role 'atem_AtemModel44', cardinality 0..*).
+'atem::SubTitle' (role 'atem_SubTitle57', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType58', cardinality 0..*).
+'atem::WhenModeOfWeek' (role 'atem_WhenModeOfWeek', cardinality 0..*) is associated with 'atem::WhenModeOfWeekCase' (role 'atem_WhenModeOfWeekCase', cardinality 0..*).
+'atem::HeaderFooterFragment' (role 'atem_HeaderFooterFragment23', cardinality 0..*) is associated with 'atem::HeaderFooterColumn' (role 'atem_HeaderFooterColumn22', cardinality 0..*).
+'atem::HeaderFooterFragment' (role 'atem_HeaderFooterFragment26', cardinality 0..*) is associated with 'atem::Commemoration' (role 'atem_Commemoration', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther162', cardinality 0..*) is associated with 'atem::WhenExists' (role 'atem_WhenExists161', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther', cardinality 0..*) is associated with 'atem::WhenDate' (role 'atem_WhenDate91', cardinality 0..*).
+'atem::WhenDateCase' (role 'atem_WhenDateCase93', cardinality 0..*) is associated with 'atem::AbstractDateCase' (role 'atem_AbstractDateCase', cardinality 0..*).
+'atem::WhenPeriodCase' (role 'atem_WhenPeriodCase116', cardinality 0..*) is associated with 'atem::WhenMovableCycleDay' (role 'atem_WhenMovableCycleDay', cardinality 0..*).
+'atem::Definition' (role 'atem_Definition32', cardinality 0..*) is associated with 'atem::TaggedText' (role 'atem_TaggedText', cardinality 0..*).
+'atem::LdpType' (role 'atem_LdpType', cardinality 0..*) is associated with 'atem::LDP' (role 'atem_LDP', cardinality 0..*).
+'atem::Head' (role 'atem_Head', cardinality 0..*) is associated with 'atem::AtemModel' (role 'atem_AtemModel6', cardinality 0..*).
+'atem::PageFooterOdd' (role 'atem_PageFooterOdd', cardinality 0..*) is associated with 'atem::HeaderFooterColumn' (role 'atem_HeaderFooterColumn20', cardinality 0..*).
+'atem::WhenExistsCase' (role 'atem_WhenExistsCase167', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent168', cardinality 0..*).
+'atem::SundaysBeforeTriodionCase' (role 'atem_SundaysBeforeTriodionCase157', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent158', cardinality 0..*).
+'atem::TemplateStatus' (role 'atem_TemplateStatus', cardinality 0..*) is associated with 'atem::AtemModel' (role 'atem_AtemModel', cardinality 0..*).
+'atem::Heading1' (role 'atem_Heading1', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType84', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther155', cardinality 0..*) is associated with 'atem::WhenSundaysBeforeTriodion' (role 'atem_WhenSundaysBeforeTriodion154', cardinality 0..*).
+'atem::WhenModeOfWeekCase' (role 'atem_WhenModeOfWeekCase148', cardinality 0..*) is associated with 'atem::ModeOfWeekSet' (role 'atem_ModeOfWeekSet', cardinality 0..*).
+'atem::Definition' (role 'atem_Definition', cardinality 0..*) is associated with 'atem::ResourceText' (role 'atem_ResourceText', cardinality 0..*).
+'atem::Block' (role 'atem_Block', cardinality 0..*) is associated with 'atem::Definition' (role 'atem_Definition65', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType53', cardinality 0..*) is associated with 'atem::Title' (role 'atem_Title52', cardinality 0..*).
+'atem::SundaysBeforeTriodionCase' (role 'atem_SundaysBeforeTriodionCase', cardinality 0..*) is associated with 'atem::WhenSundaysBeforeTriodion' (role 'atem_WhenSundaysBeforeTriodion', cardinality 0..*).
+'atem::WhenPeriodCase' (role 'atem_WhenPeriodCase', cardinality 0..*) is associated with 'atem::WhenPentecostarionDay' (role 'atem_WhenPentecostarionDay', cardinality 0..*).
+'atem::PageFooterEven' (role 'atem_PageFooterEven', cardinality 0..*) is associated with 'atem::HeaderFooterColumn' (role 'atem_HeaderFooterColumn18', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType63', cardinality 0..*) is associated with 'atem::Paragraph' (role 'atem_Paragraph62', cardinality 0..*).
+'atem::Heading3' (role 'atem_Heading3', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType88', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType', cardinality 0..*) is associated with 'atem::HeaderFooterLookup' (role 'atem_HeaderFooterLookup', cardinality 0..*).
+'atem::Preface' (role 'atem_Preface38', cardinality 0..*) is associated with 'atem::PrefaceElementType' (role 'atem_PrefaceElementType', cardinality 0..*).
+'atem::AbstractDayNameCase' (role 'atem_AbstractDayNameCase', cardinality 0..*) is associated with 'atem::WhenDayNameCase' (role 'atem_WhenDayNameCase102', cardinality 0..*).
+'atem::TemplateTitle' (role 'atem_TemplateTitle', cardinality 0..*) is associated with 'atem::HeaderFooterFragment' (role 'atem_HeaderFooterFragment', cardinality 0..*).
+'atem::Definition' (role 'atem_Definition29', cardinality 0..*) is associated with 'atem::Lookup' (role 'atem_Lookup', cardinality 0..*).
+'atem::WhenSundayAfterElevationOfCrossDay' (role 'atem_WhenSundayAfterElevationOfCrossDay123', cardinality 0..*) is associated with 'atem::WhenOther' (role 'atem_WhenOther124', cardinality 0..*).
+'atem::Definition' (role 'atem_Definition55', cardinality 0..*) is associated with 'atem::SubTitle' (role 'atem_SubTitle', cardinality 0..*).
+'atem::WhenDateCase' (role 'atem_WhenDateCase95', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent96', cardinality 0..*).
+'atem::WhenDayNameCase' (role 'atem_WhenDayNameCase104', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent105', cardinality 0..*).
+'atem::WhenLukanCycleDay' (role 'atem_WhenLukanCycleDay', cardinality 0..*) is associated with 'atem::WhenPeriodCase' (role 'atem_WhenPeriodCase126', cardinality 0..*).
+'atem::Definition' (role 'atem_Definition165', cardinality 0..*) is associated with 'atem::WhenExistsCase' (role 'atem_WhenExistsCase164', cardinality 0..*).
+'atem::TaggedText' (role 'atem_TaggedText34', cardinality 0..*) is associated with 'atem::ElementType' (role 'atem_ElementType35', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther136', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent137', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType80', cardinality 0..*) is associated with 'atem::Dialog' (role 'atem_Dialog', cardinality 0..*).
+'atem::WhenDateCase' (role 'atem_WhenDateCase121', cardinality 0..*) is associated with 'atem::WhenSundayAfterElevationOfCrossDay' (role 'atem_WhenSundayAfterElevationOfCrossDay', cardinality 0..*).
+'atem::Preface' (role 'atem_Preface46', cardinality 0..*) is associated with 'atem::PrefaceFragment' (role 'atem_PrefaceFragment', cardinality 0..*).
+'atem::WhenDayNameCase' (role 'atem_WhenDayNameCase', cardinality 0..*) is associated with 'atem::WhenDayName' (role 'atem_WhenDayName', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther129', cardinality 0..*) is associated with 'atem::WhenLukanCycleDay' (role 'atem_WhenLukanCycleDay128', cardinality 0..*).
+'atem::WhenPascha' (role 'atem_WhenPascha', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent131', cardinality 0..*).
+'atem::WhenTriodionDay' (role 'atem_WhenTriodionDay', cardinality 0..*) is associated with 'atem::WhenPeriodCase' (role 'atem_WhenPeriodCase111', cardinality 0..*).
+'atem::Driver' (role 'atem_Driver', cardinality 0..*) is associated with 'atem::AtemModel' (role 'atem_AtemModel4', cardinality 0..*).
+'atem::Definition' (role 'atem_Definition50', cardinality 0..*) is associated with 'atem::Title' (role 'atem_Title', cardinality 0..*).
+'atem::Import' (role 'atem_Import', cardinality 0..*) is associated with 'atem::AtemModel' (role 'atem_AtemModel2', cardinality 0..*).
+'atem::AtemModel' (role 'atem_AtemModel10', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent', cardinality 0..*).
+'atem::Section' (role 'atem_Section42', cardinality 0..*) is associated with 'atem::SectionElementType' (role 'atem_SectionElementType', cardinality 0..*).
+'atem::WhenModeOfWeek' (role 'atem_WhenModeOfWeek145', cardinality 0..*) is associated with 'atem::WhenOther' (role 'atem_WhenOther146', cardinality 0..*).
+'atem::HeaderFooterColumn' (role 'atem_HeaderFooterColumn', cardinality 0..*) is associated with 'atem::PageHeaderEven' (role 'atem_PageHeaderEven', cardinality 0..*).
+'atem::SectionFragment' (role 'atem_SectionFragment', cardinality 0..*) is associated with 'atem::Section' (role 'atem_Section48', cardinality 0..*).
+'atem::WhenDayName' (role 'atem_WhenDayName99', cardinality 0..*) is associated with 'atem::WhenOther' (role 'atem_WhenOther100', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType86', cardinality 0..*) is associated with 'atem::Heading2' (role 'atem_Heading2', cardinality 0..*).
+'atem::Info' (role 'atem_Info', cardinality 0..*) is associated with 'atem::InfoElementType' (role 'atem_InfoElementType', cardinality 0..*).
+'atem::ElementType' (role 'atem_ElementType70', cardinality 0..*) is associated with 'atem::Hymn' (role 'atem_Hymn', cardinality 0..*).
+'atem::Paragraph' (role 'atem_Paragraph', cardinality 0..*) is associated with 'atem::Definition' (role 'atem_Definition60', cardinality 0..*).
+'atem::Section' (role 'atem_Section', cardinality 0..*) is associated with 'atem::Definition' (role 'atem_Definition40', cardinality 0..*).
+'atem::AbstractComponent' (role 'atem_AbstractComponent142', cardinality 0..*) is associated with 'atem::WhenPeriodCase' (role 'atem_WhenPeriodCase141', cardinality 0..*).
+'atem::WhenModeOfWeekCase' (role 'atem_WhenModeOfWeekCase150', cardinality 0..*) is associated with 'atem::AbstractComponent' (role 'atem_AbstractComponent151', cardinality 0..*).
+'atem::WhenTriodionDay' (role 'atem_WhenTriodionDay113', cardinality 0..*) is associated with 'atem::WhenOther' (role 'atem_WhenOther114', cardinality 0..*).
+'atem::WhenOther' (role 'atem_WhenOther109', cardinality 0..*) is associated with 'atem::WhenPentecostarionDay' (role 'atem_WhenPentecostarionDay108', cardinality 0..*).

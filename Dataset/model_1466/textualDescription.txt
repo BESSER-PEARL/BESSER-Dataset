@@ -1,0 +1,21 @@
+The model has 6 class(es).
+The class 'graph::EStringToStringMapEntry' has no attributes.
+The class 'graph::Dependency' has the following attributes: 'id' of type str; 'locality' of type str.
+The class 'graph::Cause' has the following attributes: 'name' of type str; 'version' of type str; 'type' of type str.
+The class 'graph::Node' has the following attributes: 'unitName' of type str; 'id' of type str; 'containerName' of type str; 'nodeName' of type str; 'unitVersion' of type str.
+The class 'graph::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'graph::EnvironmentGraph' has no attributes.
+'graph::Dependency' (role 'graph_Dependency32', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node31', cardinality 0..*).
+'graph::Node' (role 'graph_Node', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency2', cardinality 0..*).
+'graph::Node' (role 'graph_Node29', cardinality 0..*) is associated with 'graph::EnvironmentGraph' (role 'graph_EnvironmentGraph28', cardinality 0..*).
+'graph::Dependency' (role 'graph_Dependency35', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node34', cardinality 0..*).
+'graph::Cause' (role 'graph_Cause', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency', cardinality 0..*).
+'graph::Node' (role 'graph_Node5', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency4', cardinality 0..*).
+'graph::EStringToStringMapEntry' (role 'graph_EStringToStringMapEntry', cardinality 0..*) is associated with 'graph::DocumentRoot' (role 'graph_DocumentRoot', cardinality 0..*).
+'graph::DocumentRoot' (role 'graph_DocumentRoot17', cardinality 0..*) is associated with 'graph::EnvironmentGraph' (role 'graph_EnvironmentGraph', cardinality 0..*).
+'graph::EStringToStringMapEntry' (role 'graph_EStringToStringMapEntry9', cardinality 0..*) is associated with 'graph::DocumentRoot' (role 'graph_DocumentRoot8', cardinality 0..*).
+'graph::DocumentRoot' (role 'graph_DocumentRoot19', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node20', cardinality 0..*).
+'graph::Node' (role 'graph_Node23', cardinality 0..*) is associated with 'graph::EnvironmentGraph' (role 'graph_EnvironmentGraph22', cardinality 0..*).
+'graph::EnvironmentGraph' (role 'graph_EnvironmentGraph25', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency26', cardinality 0..*).
+'graph::DocumentRoot' (role 'graph_DocumentRoot14', cardinality 0..*) is associated with 'graph::Dependency' (role 'graph_Dependency15', cardinality 0..*).
+'graph::Cause' (role 'graph_Cause12', cardinality 0..*) is associated with 'graph::DocumentRoot' (role 'graph_DocumentRoot11', cardinality 0..*).

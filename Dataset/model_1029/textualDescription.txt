@@ -1,0 +1,69 @@
+The model has 28 class(es).
+The class 'fsm::AbstractState' has no attributes.
+The class 'fsm::Region' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'fsm::StateMachine' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'fsm::Conditional' has no attributes.
+The class 'fsm::Constraint' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::ShallowHistory' has no attributes.
+The class 'fsm::Program' has no attributes.
+The class 'fsm::Statement' has no attributes.
+The class 'fsm::Trigger' has the following attributes: 'expression' of type str.
+The class 'Trigger' has no attributes.
+The class 'fsm::Join' has no attributes.
+The class 'fsm::Pseudostate' has no attributes.
+The class 'fsm::AndTrigger' has no attributes.
+The class 'fsm::OrTrigger' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::Junction' has no attributes.
+The class 'fsm::State' has no attributes.
+The class 'State' has no attributes.
+The class 'fsm::NotTrigger' has no attributes.
+The class 'Statement' has no attributes.
+The class 'fsm::Fork' has no attributes.
+The class 'fsm::DeepHistory' has no attributes.
+'fsm::InitialState' is a specialization of 'Pseudostate'.
+'fsm::AndTrigger' is a specialization of 'Trigger'.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::State' is a specialization of 'AbstractState'.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::NotTrigger' is a specialization of 'Trigger'.
+'fsm::Join' is a specialization of 'Pseudostate'.
+'fsm::Junction' is a specialization of 'Pseudostate'.
+'fsm::DeepHistory' is a specialization of 'Pseudostate'.
+'fsm::Transition' is a specialization of 'NamedElement'.
+'fsm::Program' is a specialization of 'Statement'.
+'fsm::AbstractState' is a specialization of 'NamedElement'.
+'fsm::Pseudostate' is a specialization of 'AbstractState'.
+'fsm::Region' is a specialization of 'NamedElement'.
+'fsm::Conditional' is a specialization of 'Pseudostate'.
+'fsm::Fork' is a specialization of 'Pseudostate'.
+'fsm::ShallowHistory' is a specialization of 'Pseudostate'.
+'fsm::OrTrigger' is a specialization of 'Trigger'.
+'fsm::Trigger' (role 'fsm_Trigger31', cardinality 0..*) is associated with 'fsm::AndTrigger' (role 'fsm_AndTrigger', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState21', cardinality 0..*) is associated with 'fsm::Transition' (role 'incoming', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*).
+'fsm::Trigger' (role 'fsm_Trigger36', cardinality 0..*) is associated with 'fsm::OrTrigger' (role 'fsm_OrTrigger', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'fsm::Region' (role 'ownerRegion', cardinality 0..*).
+'fsm::NotTrigger' (role 'fsm_NotTrigger', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger29', cardinality 0..*).
+'fsm::State' (role 'fsm_State11', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program12', cardinality 0..*).
+'fsm::AndTrigger' (role 'fsm_AndTrigger33', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger34', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region3', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::Statement' (role 'fsm_Statement42', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program41', cardinality 0..*).
+'fsm::AbstractState' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::AbstractState' (role 'AbstractState23', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoing', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition19', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger', cardinality 0..*).
+'fsm::Region' (role 'Region17', cardinality 0..*) is associated with 'fsm::State' (role 'ownerState', cardinality 0..*).
+'fsm::OrTrigger' (role 'fsm_OrTrigger38', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger39', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition27', cardinality 0..*) is associated with 'fsm::Constraint' (role 'fsm_Constraint', cardinality 0..*).
+'fsm::Region' (role 'ownedRegions', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::Program' (role 'fsm_Program15', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State14', cardinality 0..*).
+'fsm::Statement' (role 'fsm_Statement', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition25', cardinality 0..*).
+'fsm::AbstractState' (role 'subvertex', cardinality 0..*) is associated with 'fsm::Region' (role 'Region', cardinality 0..*).
+'fsm::AbstractState' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition7', cardinality 0..*).

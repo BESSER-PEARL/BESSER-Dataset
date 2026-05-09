@@ -1,0 +1,254 @@
+The model has 107 class(es).
+The class 'Iterator' has no attributes.
+The class 'OCL::Attribute' has the following attributes: 'name' of type str.
+The class 'OCL::LoopExp' has no attributes.
+The class 'OclModelElement' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'OCL::LetExp' has no attributes.
+The class 'OCL::OclModel' has the following attributes: 'name' of type str.
+The class 'OCL::PropertyCallExp' has no attributes.
+The class 'OCL::IteratorExp' has the following attributes: 'name' of type str.
+The class 'Parameter' has no attributes.
+The class 'OCL::TupleTypeAttribute' has the following attributes: 'name' of type str.
+The class 'OCL::OperationCallExp' has the following attributes: 'operationName' of type str.
+The class 'Operation' has no attributes.
+The class 'OCL::SuperExp' has no attributes.
+The class 'OCL::Operation' has the following attributes: 'name' of type str.
+The class 'OCL::IntegerType' has no attributes.
+The class 'OCL::TupleType' has no attributes.
+The class 'OCL::VariableExp' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'ConceptBinding' has no attributes.
+The class 'OCL::OclFeature' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'TupleExp' has no attributes.
+The class 'OCL::CollectionType' has no attributes.
+The class 'CollectionExp' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'MapElement' has no attributes.
+The class 'PropertyCallExp' has no attributes.
+The class 'TupleTypeAttribute' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'OCL::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'MapType' has no attributes.
+The class 'OclContextDefinition' has no attributes.
+The class 'genericity::dsl::BindingModel' has the following attributes: 'metamodel' of type str; 'name' of type str.
+The class 'OCL::OclExpression' has no attributes.
+The class 'OCL::OclType' has the following attributes: 'name' of type str.
+The class 'OCL::PrimitiveExp' has no attributes.
+The class 'genericity::dsl::RenamingFeatureBinding' has the following attributes: 'concreteFeature' of type str.
+The class 'OCL::SequenceExp' has no attributes.
+The class 'genericity::dsl::ClassBinding' has no attributes.
+The class 'OCL::OrderedSetType' has no attributes.
+The class 'genericity::dsl::Metaclass' has the following attributes: 'name' of type str.
+The class 'Primitive' has no attributes.
+The class 'OCL::OrderedSetExp' has no attributes.
+The class 'OCL::BagExp' has no attributes.
+The class 'OCL::StringType' has no attributes.
+The class 'OCL::CollectionExp' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'OCL::Primitive' has no attributes.
+The class 'BHelper' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'NumericExp' has no attributes.
+The class 'Metaclass' has no attributes.
+The class 'OCL::NumericType' has no attributes.
+The class 'OCL::MapElement' has no attributes.
+The class 'OCL::TuplePart' has no attributes.
+The class 'OCL::SetExp' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'OCL::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'genericity::dsl::ConceptBinding' has the following attributes: 'debugName' of type str.
+The class 'OCL::BooleanType' has no attributes.
+The class 'OCL::TupleExp' has no attributes.
+The class 'OCL::MapType' has no attributes.
+The class 'OCL::OclUndefinedExp' has no attributes.
+The class 'OCL::MapExp' has no attributes.
+The class 'OCL::EnumLiteralExp' has the following attributes: 'name' of type str.
+The class 'OCL::BagType' has no attributes.
+The class 'TuplePart' has no attributes.
+The class 'MapExp' has no attributes.
+The class 'OCL::SequenceType' has no attributes.
+The class 'OCL::RealType' has no attributes.
+The class 'TupleType' has no attributes.
+The class 'OCL::IfExp' has no attributes.
+The class 'genericity::dsl::ConceptMetaclass' has no attributes.
+The class 'genericity::dsl::BaseFeatureBinding' has the following attributes: 'conceptFeature' of type str.
+The class 'OCL::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'IfExp' has no attributes.
+The class 'OCL::OclAnyType' has no attributes.
+The class 'genericity::dsl::ConcreteMetaclass' has no attributes.
+The class 'OCL::SetType' has no attributes.
+The class 'BindingModel' has no attributes.
+The class 'OCL::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+The class 'genericity::dsl::LocatedElement' has the following attributes: 'commentsBefore' of type str; 'location' of type str; 'commentsAfter' of type str.
+The class 'OCL::NumericExp' has no attributes.
+The class 'OclType' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'OclModel' has no attributes.
+The class 'IterateExp' has no attributes.
+The class 'genericity::dsl::BHelper' has the following attributes: 'feature' of type str.
+The class 'OCL::OclFeatureDefinition' has no attributes.
+The class 'genericity::dsl::OclFeatureBinding' has no attributes.
+The class 'OCL::OclModelElement' has no attributes.
+The class 'VariableExp' has no attributes.
+The class 'BaseFeatureBinding' has no attributes.
+The class 'OclFeatureDefinition' has no attributes.
+The class 'OCL::OperatorCallExp' has no attributes.
+The class 'OCL::VariableDeclaration' has the following attributes: 'id' of type str; 'varName' of type str.
+The class 'ConceptMetaclass' has no attributes.
+The class 'OCL::OclContextDefinition' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'OclFeature' has no attributes.
+The class 'ConcreteMetaclass' has no attributes.
+The class 'OCL::NavigationOrAttributeCallExp' has the following attributes: 'name' of type str.
+The class 'OCL::CollectionOperationCallExp' has no attributes.
+The class 'OCL::Parameter' has no attributes.
+The class 'OCL::IterateExp' has no attributes.
+The class 'OCL::Iterator' has no attributes.
+'genericity::dsl::ConceptBinding' is a specialization of 'LocatedElement'.
+'OCL::IntegerExp' is a specialization of 'NumericExp'.
+'OCL::NumericType' is a specialization of 'Primitive'.
+'OCL::VariableExp' is a specialization of 'OclExpression'.
+'OCL::OperationCallExp' is a specialization of 'PropertyCallExp'.
+'OCL::IntegerType' is a specialization of 'NumericType'.
+'OCL::SuperExp' is a specialization of 'OclExpression'.
+'OCL::RealType' is a specialization of 'NumericType'.
+'OCL::PrimitiveExp' is a specialization of 'OclExpression'.
+'OCL::OperatorCallExp' is a specialization of 'OperationCallExp'.
+'OCL::BagType' is a specialization of 'CollectionType'.
+'OCL::StringExp' is a specialization of 'PrimitiveExp'.
+'OCL::OrderedSetType' is a specialization of 'CollectionType'.
+'OCL::CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+'OCL::OclExpression' is a specialization of 'LocatedElement'.
+'OCL::SequenceType' is a specialization of 'CollectionType'.
+'OCL::LoopExp' is a specialization of 'PropertyCallExp'.
+'OCL::SetType' is a specialization of 'CollectionType'.
+'OCL::CollectionExp' is a specialization of 'OclExpression'.
+'OCL::IterateExp' is a specialization of 'LoopExp'.
+'OCL::OclModelElement' is a specialization of 'OclType'.
+'OCL::BagExp' is a specialization of 'CollectionExp'.
+'OCL::IteratorExp' is a specialization of 'LoopExp'.
+'OCL::MapType' is a specialization of 'OclType'.
+'OCL::OrderedSetExp' is a specialization of 'CollectionExp'.
+'OCL::LetExp' is a specialization of 'OclExpression'.
+'OCL::SequenceExp' is a specialization of 'CollectionExp'.
+'OCL::IfExp' is a specialization of 'OclExpression'.
+'OCL::OclFeatureDefinition' is a specialization of 'LocatedElement'.
+'genericity::dsl::BindingModel' is a specialization of 'LocatedElement'.
+'OCL::SetExp' is a specialization of 'CollectionExp'.
+'OCL::PropertyCallExp' is a specialization of 'OclExpression'.
+'OCL::OclContextDefinition' is a specialization of 'LocatedElement'.
+'OCL::TupleExp' is a specialization of 'OclExpression'.
+'OCL::NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+'OCL::OclFeature' is a specialization of 'LocatedElement'.
+'genericity::dsl::Metaclass' is a specialization of 'LocatedElement'.
+'OCL::TuplePart' is a specialization of 'VariableDeclaration'.
+'OCL::VariableDeclaration' is a specialization of 'LocatedElement'.
+'OCL::OclAnyType' is a specialization of 'OclType'.
+'OCL::Iterator' is a specialization of 'VariableDeclaration'.
+'OCL::MapExp' is a specialization of 'OclExpression'.
+'genericity::dsl::ClassBinding' is a specialization of 'ConceptBinding'.
+'OCL::TupleType' is a specialization of 'OclType'.
+'OCL::MapElement' is a specialization of 'LocatedElement'.
+'OCL::Parameter' is a specialization of 'VariableDeclaration'.
+'genericity::dsl::BaseFeatureBinding' is a specialization of 'ConceptBinding'.
+'OCL::TupleTypeAttribute' is a specialization of 'LocatedElement'.
+'OCL::CollectionType' is a specialization of 'OclType'.
+'genericity::dsl::RenamingFeatureBinding' is a specialization of 'BaseFeatureBinding'.
+'OCL::EnumLiteralExp' is a specialization of 'OclExpression'.
+'OCL::Operation' is a specialization of 'OclFeature'.
+'OCL::OclType' is a specialization of 'OclExpression'.
+'genericity::dsl::OclFeatureBinding' is a specialization of 'BaseFeatureBinding'.
+'OCL::OclUndefinedExp' is a specialization of 'OclExpression'.
+'OCL::OclModel' is a specialization of 'LocatedElement'.
+'OCL::Primitive' is a specialization of 'OclType'.
+'genericity::dsl::BHelper' is a specialization of 'LocatedElement'.
+'OCL::BooleanExp' is a specialization of 'PrimitiveExp'.
+'OCL::Attribute' is a specialization of 'OclFeature'.
+'OCL::StringType' is a specialization of 'Primitive'.
+'genericity::dsl::ConceptMetaclass' is a specialization of 'Metaclass'.
+'OCL::NumericExp' is a specialization of 'PrimitiveExp'.
+'OCL::BooleanType' is a specialization of 'Primitive'.
+'genericity::dsl::ConcreteMetaclass' is a specialization of 'Metaclass'.
+'OCL::RealExp' is a specialization of 'NumericExp'.
+'OclType' (role 'OclType127', cardinality 0..*) is associated with 'OCL::OclContextDefinition' (role 'definitions', cardinality 0..*).
+'CollectionType' (role 'CollectionType', cardinality 0..*) is associated with 'OCL::OclType' (role 'elementType', cardinality 0..*).
+'OclFeatureDefinition' (role 'OclFeatureDefinition129', cardinality 0..*) is associated with 'OCL::OclFeature' (role 'feature', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration45', cardinality 0..*) is associated with 'OCL::VariableExp' (role 'variableExp', cardinality 0..*).
+'Operation' (role 'Operation96', cardinality 0..*) is associated with 'OCL::OclType' (role 'returnType', cardinality 0..*).
+'OCL::CollectionExp' (role 'collection', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression47', cardinality 0..*).
+'genericity::dsl::BHelper' (role 'helpers', cardinality 0..*) is associated with 'BindingModel' (role 'BindingModel25', cardinality 0..*).
+'OclExpression' (role 'OclExpression75', cardinality 0..*) is associated with 'OCL::IfExp' (role 'ifExp1', cardinality 0..*).
+'OCL::OclType' (role 'type', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression94', cardinality 0..*).
+'VariableExp' (role 'VariableExp', cardinality 0..*) is associated with 'OCL::VariableDeclaration' (role 'referredVariable', cardinality 0..*).
+'OclExpression' (role 'OclExpression131', cardinality 0..*) is associated with 'OCL::Attribute' (role 'owningAttribute', cardinality 0..*).
+'OCL::OclExpression' (role 'elseExpression', cardinality 0..*) is associated with 'IfExp' (role 'IfExp', cardinality 0..*).
+'OCL::Iterator' (role 'iterators', cardinality 0..*) is associated with 'LoopExp' (role 'LoopExp87', cardinality 0..*).
+'OCL::OclContextDefinition' (role 'context_125', cardinality 0..*) is associated with 'OclFeatureDefinition' (role 'OclFeatureDefinition', cardinality 0..*).
+'OCL::MapType' (role 'mapType', cardinality 0..*) is associated with 'OclType' (role 'OclType119', cardinality 0..*).
+'OCL::OclExpression' (role 'oclExpression', cardinality 0..*) is associated with 'OclType' (role 'OclType27', cardinality 0..*).
+'TupleExp' (role 'TupleExp', cardinality 0..*) is associated with 'OCL::TuplePart' (role 'tuplePart', cardinality 0..*).
+'OclExpression' (role 'OclExpression81', cardinality 0..*) is associated with 'OCL::VariableDeclaration' (role 'initializedVariable', cardinality 0..*).
+'OclModel' (role 'OclModel', cardinality 0..*) is associated with 'OCL::OclModelElement' (role 'elements115', cardinality 0..*).
+'CollectionExp' (role 'CollectionExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'elements', cardinality 0..*).
+'ConceptBinding' (role 'ConceptBinding', cardinality 0..*) is associated with 'genericity::dsl::BindingModel' (role 'model_', cardinality 0..*).
+'OCL::MapExp' (role 'map', cardinality 0..*) is associated with 'MapElement' (role 'MapElement', cardinality 0..*).
+'OCL::MapType' (role 'mapType2', cardinality 0..*) is associated with 'OclType' (role 'OclType117', cardinality 0..*).
+'OclExpression' (role 'OclExpression59', cardinality 0..*) is associated with 'OCL::PropertyCallExp' (role 'appliedProperty', cardinality 0..*).
+'OclExpression' (role 'OclExpression57', cardinality 0..*) is associated with 'OCL::MapElement' (role 'OCL_MapElement56', cardinality 0..*).
+'OCL::OclExpression' (role 'source', cardinality 0..*) is associated with 'PropertyCallExp' (role 'PropertyCallExp', cardinality 0..*).
+'Operation' (role 'Operation89', cardinality 0..*) is associated with 'OCL::Parameter' (role 'parameters', cardinality 0..*).
+'OCL::TupleTypeAttribute' (role 'attributes', cardinality 0..*) is associated with 'TupleType' (role 'TupleType', cardinality 0..*).
+'OCL::CollectionType' (role 'collectionTypes', cardinality 0..*) is associated with 'OclType' (role 'OclType91', cardinality 0..*).
+'OclFeature' (role 'OclFeature', cardinality 0..*) is associated with 'OCL::OclFeatureDefinition' (role 'definition', cardinality 0..*).
+'OCL::OclFeatureDefinition' (role 'definition122', cardinality 0..*) is associated with 'OclContextDefinition' (role 'OclContextDefinition123', cardinality 0..*).
+'OclExpression' (role 'OclExpression73', cardinality 0..*) is associated with 'OCL::IfExp' (role 'ifExp2', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'variable', cardinality 0..*) is associated with 'LetExp' (role 'LetExp83', cardinality 0..*).
+'OCL::OclExpression' (role 'in_', cardinality 0..*) is associated with 'LetExp' (role 'LetExp', cardinality 0..*).
+'genericity::dsl::BHelper' (role 'genericity_dsl_BHelper20', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression21', cardinality 0..*).
+'OCL::IfExp' (role 'ifExp3', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression77', cardinality 0..*).
+'OCL::OclType' (role 'valueType', cardinality 0..*) is associated with 'MapType' (role 'MapType', cardinality 0..*).
+'OclExpression' (role 'OclExpression54', cardinality 0..*) is associated with 'OCL::MapElement' (role 'OCL_MapElement', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'result', cardinality 0..*) is associated with 'IterateExp' (role 'IterateExp', cardinality 0..*).
+'OCL::OclExpression' (role 'body', cardinality 0..*) is associated with 'LoopExp' (role 'LoopExp', cardinality 0..*).
+'OCL::TupleTypeAttribute' (role 'tupleTypeAttribute', cardinality 0..*) is associated with 'OclType' (role 'OclType112', cardinality 0..*).
+'OCL::OclExpression' (role 'initExpression', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration35', cardinality 0..*).
+'genericity::dsl::ConceptBinding' (role 'bindings', cardinality 0..*) is associated with 'BindingModel' (role 'BindingModel', cardinality 0..*).
+'OclType' (role 'OclType133', cardinality 0..*) is associated with 'OCL::Attribute' (role 'attribute', cardinality 0..*).
+'OperationCallExp' (role 'OperationCallExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'arguments', cardinality 0..*).
+'OCL::OclType' (role 'context_', cardinality 0..*) is associated with 'OclContextDefinition' (role 'OclContextDefinition', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'genericity::dsl::BindingModel' (role 'genericity_dsl_BindingModel', cardinality 0..*).
+'ConceptMetaclass' (role 'ConceptMetaclass18', cardinality 0..*) is associated with 'genericity::dsl::BHelper' (role 'genericity_dsl_BHelper', cardinality 0..*).
+'TupleTypeAttribute' (role 'TupleTypeAttribute110', cardinality 0..*) is associated with 'OCL::TupleType' (role 'tupleType', cardinality 0..*).
+'OCL::OclType' (role 'type107', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration108', cardinality 0..*).
+'OclExpression' (role 'OclExpression61', cardinality 0..*) is associated with 'OCL::OperationCallExp' (role 'parentOperation', cardinality 0..*).
+'OCL::Operation' (role 'operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'variableDeclaration', cardinality 0..*) is associated with 'OclType' (role 'OclType79', cardinality 0..*).
+'OCL::MapElement' (role 'elements52', cardinality 0..*) is associated with 'MapExp' (role 'MapExp', cardinality 0..*).
+'Attribute' (role 'Attribute100', cardinality 0..*) is associated with 'OCL::OclType' (role 'type99', cardinality 0..*).
+'OCL::LetExp' (role 'letExp70', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression71', cardinality 0..*).
+'OclType' (role 'OclType137', cardinality 0..*) is associated with 'OCL::Operation' (role 'operation136', cardinality 0..*).
+'ConcreteMetaclass' (role 'ConcreteMetaclass', cardinality 0..*) is associated with 'genericity::dsl::ClassBinding' (role 'genericity_dsl_ClassBinding7', cardinality 0..*).
+'ConceptMetaclass' (role 'ConceptMetaclass', cardinality 0..*) is associated with 'genericity::dsl::ClassBinding' (role 'genericity_dsl_ClassBinding', cardinality 0..*).
+'genericity::dsl::BaseFeatureBinding' (role 'genericity_dsl_BaseFeatureBinding', cardinality 0..*) is associated with 'ConceptMetaclass' (role 'ConceptMetaclass11', cardinality 0..*).
+'IfExp' (role 'IfExp37', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'thenExpression', cardinality 0..*).
+'genericity::dsl::OclFeatureBinding' (role 'genericity_dsl_OclFeatureBinding', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression16', cardinality 0..*).
+'OclExpression' (role 'OclExpression139', cardinality 0..*) is associated with 'OCL::Operation' (role 'owningOperation', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration68', cardinality 0..*) is associated with 'OCL::LetExp' (role 'letExp', cardinality 0..*).
+'OclType' (role 'OclType', cardinality 0..*) is associated with 'genericity::dsl::BHelper' (role 'genericity_dsl_BHelper23', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'body39', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration66', cardinality 0..*) is associated with 'OCL::IterateExp' (role 'baseExp', cardinality 0..*).
+'MapType' (role 'MapType102', cardinality 0..*) is associated with 'OCL::OclType' (role 'keyType', cardinality 0..*).
+'OclModel' (role 'OclModel141', cardinality 0..*) is associated with 'OCL::OclModel' (role 'model', cardinality 0..*).
+'ConcreteMetaclass' (role 'ConcreteMetaclass14', cardinality 0..*) is associated with 'genericity::dsl::BaseFeatureBinding' (role 'genericity_dsl_BaseFeatureBinding13', cardinality 0..*).
+'IfExp' (role 'IfExp41', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'condition', cardinality 0..*).
+'OCL::LoopExp' (role 'loopExpr', cardinality 0..*) is associated with 'Iterator' (role 'Iterator', cardinality 0..*).
+'BHelper' (role 'BHelper', cardinality 0..*) is associated with 'genericity::dsl::BindingModel' (role 'model_2', cardinality 0..*).
+'OCL::LoopExp' (role 'loopExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression63', cardinality 0..*).
+'OclModelElement' (role 'OclModelElement', cardinality 0..*) is associated with 'OCL::OclModel' (role 'model143', cardinality 0..*).
+'OCL::TupleExp' (role 'tuple', cardinality 0..*) is associated with 'TuplePart' (role 'TuplePart', cardinality 0..*).
+'OCL::OclType' (role 'type105', cardinality 0..*) is associated with 'TupleTypeAttribute' (role 'TupleTypeAttribute', cardinality 0..*).
+'genericity::dsl::ClassBinding' (role 'genericity_dsl_ClassBinding9', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'OCL::OclModel' (role 'metamodel', cardinality 0..*) is associated with 'OclModel' (role 'OclModel145', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'initExpression43', cardinality 0..*).

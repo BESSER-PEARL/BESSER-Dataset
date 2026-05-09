@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'error4::Component' has no attributes.
+The class 'error4::NamedElement' has the following attributes: 'name' of type str.
+The class 'error4::Thing' has the following attributes: 'id' of type int.
+The class 'error4::RelatedTo' has the following attributes: 'since' of type str.
+The class 'error4::World' has no attributes.
+The class 'NamedElement' has no attributes.
+'error4::Thing' is a specialization of 'NamedElement'.
+'error4::RelatedTo' is a specialization of 'NamedElement'.
+'error4::Component' is a specialization of 'NamedElement'.
+'error4::Component' (role 'error4_Component', cardinality 0..*) is associated with 'error4::Thing' (role 'error4_Thing3', cardinality 0..*).
+'error4::World' (role 'error4_World', cardinality 0..*) is associated with 'error4::Thing' (role 'error4_Thing', cardinality 0..*).
+'error4::Thing' (role 'fromThing', cardinality 0..*) is associated with 'error4::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'error4::RelatedTo' (role 'error4_RelatedTo', cardinality 0..*) is associated with 'error4::Thing' (role 'error4_Thing6', cardinality 0..*).
+'error4::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'error4::Thing' (role 'Thing', cardinality 0..*).
+'error4::Component' (role 'error4_Component9', cardinality 0..*) is associated with 'error4::RelatedTo' (role 'error4_RelatedTo8', cardinality 0..*).

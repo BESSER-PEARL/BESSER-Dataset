@@ -1,0 +1,17 @@
+The model has 5 class(es).
+The class 'metaModelStateMachine::Trigger' has no attributes.
+The class 'metaModelStateMachine::Transition' has no attributes.
+The class 'metaModelStateMachine::Guard' has no attributes.
+The class 'metaModelStateMachine::StateMachine' has no attributes.
+The class 'metaModelStateMachine::state' has no attributes.
+'metaModelStateMachine::state' (role 'metaModelStateMachine_state16', cardinality 0..*) is associated with 'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition15', cardinality 0..*).
+'metaModelStateMachine::Trigger' (role 'metaModelStateMachine_Trigger', cardinality 0..*) is associated with 'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition21', cardinality 0..*).
+'metaModelStateMachine::Guard' (role 'metaModelStateMachine_Guard24', cardinality 0..*) is associated with 'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition23', cardinality 0..*).
+'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition18', cardinality 0..*) is associated with 'metaModelStateMachine::StateMachine' (role 'metaModelStateMachine_StateMachine19', cardinality 0..*).
+'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition27', cardinality 0..*) is associated with 'metaModelStateMachine::Trigger' (role 'metaModelStateMachine_Trigger26', cardinality 0..*).
+'metaModelStateMachine::state' (role 'metaModelStateMachine_state', cardinality 0..*) is associated with 'metaModelStateMachine::StateMachine' (role 'metaModelStateMachine_StateMachine', cardinality 0..*).
+'metaModelStateMachine::StateMachine' (role 'metaModelStateMachine_StateMachine5', cardinality 0..*) is associated with 'metaModelStateMachine::state' (role 'metaModelStateMachine_state4', cardinality 0..*).
+'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition8', cardinality 0..*) is associated with 'metaModelStateMachine::state' (role 'metaModelStateMachine_state7', cardinality 0..*).
+'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition10', cardinality 0..*) is associated with 'metaModelStateMachine::Guard' (role 'metaModelStateMachine_Guard', cardinality 0..*).
+'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition12', cardinality 0..*) is associated with 'metaModelStateMachine::state' (role 'metaModelStateMachine_state13', cardinality 0..*).
+'metaModelStateMachine::Transition' (role 'metaModelStateMachine_Transition', cardinality 0..*) is associated with 'metaModelStateMachine::StateMachine' (role 'metaModelStateMachine_StateMachine2', cardinality 0..*).

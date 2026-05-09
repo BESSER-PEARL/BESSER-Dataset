@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'sm4::StateMachine' has no attributes.
+The class 'sm4::Transition' has the following attributes: 'event' of type str.
+The class 'State' has no attributes.
+The class 'sm4::State' has the following attributes: 'name' of type str.
+'sm4::StateMachine' is a specialization of 'State'.
+'sm4::State' (role 'tgt', cardinality 0..*) is associated with 'sm4::Transition' (role 'Transition7', cardinality 0..*).
+'sm4::Transition' (role 'incoming', cardinality 0..*) is associated with 'sm4::State' (role 'State11', cardinality 0..*).
+'sm4::StateMachine' (role 'sm4_StateMachine3', cardinality 0..*) is associated with 'sm4::Transition' (role 'sm4_Transition', cardinality 0..*).
+'sm4::State' (role 'State9', cardinality 0..*) is associated with 'sm4::Transition' (role 'outgoing', cardinality 0..*).
+'sm4::State' (role 'State', cardinality 0..*) is associated with 'sm4::StateMachine' (role 'sm', cardinality 0..*).
+'sm4::StateMachine' (role 'sm4_StateMachine', cardinality 0..*) is associated with 'sm4::State' (role 'sm4_State', cardinality 0..*).
+'sm4::Transition' (role 'Transition', cardinality 0..*) is associated with 'sm4::State' (role 'src', cardinality 0..*).
+'sm4::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'sm4::State' (role 'states', cardinality 0..*).

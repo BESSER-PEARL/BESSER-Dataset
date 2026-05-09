@@ -1,0 +1,34 @@
+The model has 14 class(es).
+The class 'ezdaap::EZDaapLibraryUnit' has the following attributes: 'name' of type str.
+The class 'ezdaap::EZDaapAlbum' has no attributes.
+The class 'ezdaap::EZDaapArtist' has no attributes.
+The class 'ezdaap::EZDaapElem' has no attributes.
+The class 'ezdaap::EZDaapIntelPropertyElem' has the following attributes: 'license' of type str.
+The class 'ezdaap::EZDaapDictionary' has no attributes.
+The class 'EZDaapLibraryUnit' has no attributes.
+The class 'ezdaap::EZDaapSong' has no attributes.
+The class 'ezdaap::EZDaapITunesInstance' has the following attributes: 'revID' of type int; 'sessionID' of type int; 'id' of type str; 'serverName' of type str.
+The class 'ezdaap::EZDaapPlayList' has no attributes.
+The class 'ezdaap::EZDaapLibrary' has no attributes.
+The class 'EZDaapElem' has no attributes.
+The class 'EZDaapIntelPropertyElem' has no attributes.
+The class 'ezdaap::EZDaapManager' has no attributes.
+The enumeration 'DAAP_CONNECTION_KIND' has the following literals: 'DB', 'USER'.
+The enumeration 'DAAP_COMM_CST' has the following literals: 'MAX_SIMULTATNEOUS_CONNECTIONS', 'MAX_USER_SIMULTANEOUS_CONNECTION', 'MAX_USER_CONNECTIONS_PER_SESSION'.
+'ezdaap::EZDaapAlbum' is a specialization of 'EZDaapIntelPropertyElem'.
+'ezdaap::EZDaapPlayList' is a specialization of 'EZDaapElem'.
+'ezdaap::EZDaapSong' is a specialization of 'EZDaapElem'.
+'ezdaap::EZDaapElem' is a specialization of 'EZDaapLibraryUnit'.
+'ezdaap::EZDaapLibrary' is a specialization of 'EZDaapLibraryUnit'.
+'ezdaap::EZDaapSong' is a specialization of 'EZDaapIntelPropertyElem'.
+'ezdaap::EZDaapAlbum' is a specialization of 'EZDaapElem'.
+'ezdaap::EZDaapITunesInstance' (role 'ezdaap_EZDaapITunesInstance8', cardinality 0..*) is associated with 'ezdaap::EZDaapArtist' (role 'ezdaap_EZDaapArtist', cardinality 0..*).
+'ezdaap::EZDaapLibrary' (role 'ezdaap_EZDaapLibrary18', cardinality 0..*) is associated with 'ezdaap::EZDaapLibraryUnit' (role 'ezdaap_EZDaapLibraryUnit', cardinality 0..*).
+'ezdaap::EZDaapPlayList' (role 'ezdaap_EZDaapPlayList', cardinality 0..*) is associated with 'ezdaap::EZDaapITunesInstance' (role 'ezdaap_EZDaapITunesInstance2', cardinality 0..*).
+'ezdaap::EZDaapSong' (role 'ezdaap_EZDaapSong13', cardinality 0..*) is associated with 'ezdaap::EZDaapAlbum' (role 'ezdaap_EZDaapAlbum12', cardinality 0..*).
+'ezdaap::EZDaapLibrary' (role 'ezdaap_EZDaapLibrary', cardinality 0..*) is associated with 'ezdaap::EZDaapITunesInstance' (role 'ezdaap_EZDaapITunesInstance', cardinality 0..*).
+'ezdaap::EZDaapITunesInstance' (role 'ezdaap_EZDaapITunesInstance4', cardinality 0..*) is associated with 'ezdaap::EZDaapSong' (role 'ezdaap_EZDaapSong', cardinality 0..*).
+'ezdaap::EZDaapAlbum' (role 'ezdaap_EZDaapAlbum', cardinality 0..*) is associated with 'ezdaap::EZDaapITunesInstance' (role 'ezdaap_EZDaapITunesInstance6', cardinality 0..*).
+'ezdaap::EZDaapManager' (role 'ezdaap_EZDaapManager', cardinality 0..*) is associated with 'ezdaap::EZDaapITunesInstance' (role 'ezdaap_EZDaapITunesInstance10', cardinality 0..*).
+'ezdaap::EZDaapArtist' (role 'ezdaap_EZDaapArtist20', cardinality 0..*) is associated with 'ezdaap::EZDaapIntelPropertyElem' (role 'ezdaap_EZDaapIntelPropertyElem', cardinality 0..*).
+'ezdaap::EZDaapPlayList' (role 'ezdaap_EZDaapPlayList15', cardinality 0..*) is associated with 'ezdaap::EZDaapSong' (role 'ezdaap_EZDaapSong16', cardinality 0..*).

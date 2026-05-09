@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sfrank90/MBSE-BibTex2HTML/de.tubs.bibtextohtml.bibtex/model/generated/BibTeX.ecore

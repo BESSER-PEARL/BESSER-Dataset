@@ -1,0 +1,213 @@
+The model has 90 class(es).
+The class 'OCL::OrderedSetType' has no attributes.
+The class 'OCL::IntegerType' has no attributes.
+The class 'OCL::Primitive' has no attributes.
+The class 'OCL::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+The class 'OCL::OrderedSetExp' has no attributes.
+The class 'IterateExp' has no attributes.
+The class 'MapType' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'OCL::OperationCallExp' has the following attributes: 'operationName' of type str.
+The class 'OCL::OclExpression' has no attributes.
+The class 'OclModel' has no attributes.
+The class 'OCL::CollectionExp' has no attributes.
+The class 'OCL::OclModel' has the following attributes: 'name' of type str.
+The class 'NumericExp' has no attributes.
+The class 'OCL::PropertyCallExp' has no attributes.
+The class 'OCL::PrimitiveExp' has no attributes.
+The class 'CollectionExp' has no attributes.
+The class 'OCL::NavigationOrAttributeCallExp' has the following attributes: 'name' of type str.
+The class 'OclModelElement' has no attributes.
+The class 'OCL::OclAnyType' has no attributes.
+The class 'OCL::OclContextDefinition' has no attributes.
+The class 'OCL::OclModelElement' has no attributes.
+The class 'OCL::EnumLiteralExp' has the following attributes: 'name' of type str.
+The class 'OCL::BagExp' has no attributes.
+The class 'OCL::OclUndefinedExp' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'OclType' has no attributes.
+The class 'OCL::SequenceExp' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'OCL::CollectionOperationCallExp' has no attributes.
+The class 'OCL::RealType' has no attributes.
+The class 'Operation' has no attributes.
+The class 'OCL::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'OCL::Operation' has the following attributes: 'name' of type str.
+The class 'CollectionType' has no attributes.
+The class 'OCL::OclFeature' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'OCL::TupleExp' has no attributes.
+The class 'OCL::IteratorExp' has the following attributes: 'name' of type str.
+The class 'PropertyCallExp' has no attributes.
+The class 'OCL::SetExp' has no attributes.
+The class 'OCL::TuplePart' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'MapExp' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'OCL::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'OclFeatureDefinition' has no attributes.
+The class 'TuplePart' has no attributes.
+The class 'OCL::OclType' has the following attributes: 'name' of type str.
+The class 'Iterator' has no attributes.
+The class 'OCL::LetExp' has no attributes.
+The class 'OCL::TupleType' has no attributes.
+The class 'OCL::CollectionType' has no attributes.
+The class 'OCL::VariableDeclaration' has the following attributes: 'id' of type str; 'varName' of type str.
+The class 'OCL::SetType' has no attributes.
+The class 'OclContextDefinition' has no attributes.
+The class 'ATL::LocatedElement' has the following attributes: 'location' of type str; 'commentsAfter' of type str; 'commentsBefore' of type str.
+The class 'OCL::NumericExp' has no attributes.
+The class 'TupleExp' has no attributes.
+The class 'OCL::IterateExp' has no attributes.
+The class 'OCL::SuperExp' has no attributes.
+The class 'VariableExp' has no attributes.
+The class 'MapElement' has no attributes.
+The class 'OCL::StringType' has no attributes.
+The class 'OCL::BagType' has no attributes.
+The class 'OCL::Iterator' has no attributes.
+The class 'OCL::MapElement' has no attributes.
+The class 'OCL::TupleTypeAttribute' has the following attributes: 'name' of type str.
+The class 'LoopExp' has no attributes.
+The class 'TupleType' has no attributes.
+The class 'OCL::IfExp' has no attributes.
+The class 'TupleTypeAttribute' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'OCL::MapExp' has no attributes.
+The class 'OCL::LoopExp' has no attributes.
+The class 'OCL::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'Parameter' has no attributes.
+The class 'OCL::OclFeatureDefinition' has no attributes.
+The class 'OCL::VariableExp' has no attributes.
+The class 'OCL::OperatorCallExp' has no attributes.
+The class 'OCL::BooleanType' has no attributes.
+The class 'OCL::MapType' has no attributes.
+The class 'OCL::Parameter' has no attributes.
+The class 'OCL::NumericType' has no attributes.
+The class 'OCL::Attribute' has the following attributes: 'name' of type str.
+The class 'OclFeature' has no attributes.
+The class 'IfExp' has no attributes.
+The class 'OCL::SequenceType' has no attributes.
+'OCL::IteratorExp' is a specialization of 'LoopExp'.
+'OCL::LoopExp' is a specialization of 'PropertyCallExp'.
+'OCL::EnumLiteralExp' is a specialization of 'OclExpression'.
+'OCL::Attribute' is a specialization of 'OclFeature'.
+'OCL::IntegerExp' is a specialization of 'NumericExp'.
+'OCL::SetType' is a specialization of 'CollectionType'.
+'OCL::OclFeature' is a specialization of 'LocatedElement'.
+'OCL::OclContextDefinition' is a specialization of 'LocatedElement'.
+'OCL::MapElement' is a specialization of 'LocatedElement'.
+'OCL::NumericType' is a specialization of 'Primitive'.
+'OCL::BagExp' is a specialization of 'CollectionExp'.
+'OCL::TupleTypeAttribute' is a specialization of 'LocatedElement'.
+'OCL::OclFeatureDefinition' is a specialization of 'LocatedElement'.
+'OCL::PropertyCallExp' is a specialization of 'OclExpression'.
+'OCL::OrderedSetType' is a specialization of 'CollectionType'.
+'OCL::StringExp' is a specialization of 'PrimitiveExp'.
+'OCL::TuplePart' is a specialization of 'VariableDeclaration'.
+'OCL::BooleanType' is a specialization of 'Primitive'.
+'OCL::MapType' is a specialization of 'OclType'.
+'OCL::TupleType' is a specialization of 'OclType'.
+'OCL::SequenceExp' is a specialization of 'CollectionExp'.
+'OCL::BooleanExp' is a specialization of 'PrimitiveExp'.
+'OCL::LetExp' is a specialization of 'OclExpression'.
+'OCL::NumericExp' is a specialization of 'PrimitiveExp'.
+'OCL::OperationCallExp' is a specialization of 'PropertyCallExp'.
+'OCL::PrimitiveExp' is a specialization of 'OclExpression'.
+'OCL::CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+'OCL::OclModelElement' is a specialization of 'OclType'.
+'OCL::IterateExp' is a specialization of 'LoopExp'.
+'OCL::TupleExp' is a specialization of 'OclExpression'.
+'OCL::VariableExp' is a specialization of 'OclExpression'.
+'OCL::Operation' is a specialization of 'OclFeature'.
+'OCL::OclUndefinedExp' is a specialization of 'OclExpression'.
+'OCL::NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+'OCL::OclType' is a specialization of 'OclExpression'.
+'OCL::CollectionExp' is a specialization of 'OclExpression'.
+'OCL::SequenceType' is a specialization of 'CollectionType'.
+'OCL::Parameter' is a specialization of 'VariableDeclaration'.
+'OCL::MapExp' is a specialization of 'OclExpression'.
+'OCL::OrderedSetExp' is a specialization of 'CollectionExp'.
+'OCL::VariableDeclaration' is a specialization of 'LocatedElement'.
+'OCL::OclAnyType' is a specialization of 'OclType'.
+'OCL::IfExp' is a specialization of 'OclExpression'.
+'OCL::RealType' is a specialization of 'NumericType'.
+'OCL::IntegerType' is a specialization of 'NumericType'.
+'OCL::Primitive' is a specialization of 'OclType'.
+'OCL::OperatorCallExp' is a specialization of 'OperationCallExp'.
+'OCL::OclExpression' is a specialization of 'LocatedElement'.
+'OCL::RealExp' is a specialization of 'NumericExp'.
+'OCL::SuperExp' is a specialization of 'OclExpression'.
+'OCL::StringType' is a specialization of 'Primitive'.
+'OCL::CollectionType' is a specialization of 'OclType'.
+'OCL::OclModel' is a specialization of 'LocatedElement'.
+'OCL::Iterator' is a specialization of 'VariableDeclaration'.
+'OCL::BagType' is a specialization of 'CollectionType'.
+'OCL::SetExp' is a specialization of 'CollectionExp'.
+'OCL::TupleTypeAttribute' (role 'attributes', cardinality 0..*) is associated with 'TupleType' (role 'TupleType', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'referredVariable', cardinality 0..*) is associated with 'VariableExp' (role 'VariableExp', cardinality 0..*).
+'OCL::Parameter' (role 'parameters', cardinality 0..*) is associated with 'Operation' (role 'Operation60', cardinality 0..*).
+'OCL::LetExp' (role 'letExp', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration39', cardinality 0..*).
+'OCL::OclType' (role 'type', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression65', cardinality 0..*).
+'OclFeatureDefinition' (role 'OclFeatureDefinition100', cardinality 0..*) is associated with 'OCL::OclFeature' (role 'feature', cardinality 0..*).
+'IfExp' (role 'IfExp13', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'condition', cardinality 0..*).
+'OCL::Attribute' (role 'attribute', cardinality 0..*) is associated with 'OclType' (role 'OclType104', cardinality 0..*).
+'OCL::OclModel' (role 'model', cardinality 0..*) is associated with 'OclModel' (role 'OclModel112', cardinality 0..*).
+'OclExpression' (role 'OclExpression32', cardinality 0..*) is associated with 'OCL::OperationCallExp' (role 'parentOperation', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'initializedVariable', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression52', cardinality 0..*).
+'OclExpression' (role 'OclExpression', cardinality 0..*) is associated with 'OCL::CollectionExp' (role 'collection', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'result', cardinality 0..*) is associated with 'IterateExp' (role 'IterateExp', cardinality 0..*).
+'OCL::CollectionType' (role 'collectionTypes', cardinality 0..*) is associated with 'OclType' (role 'OclType62', cardinality 0..*).
+'OCL::TupleTypeAttribute' (role 'tupleTypeAttribute', cardinality 0..*) is associated with 'OclType' (role 'OclType83', cardinality 0..*).
+'TupleTypeAttribute' (role 'TupleTypeAttribute', cardinality 0..*) is associated with 'OCL::OclType' (role 'type76', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration79', cardinality 0..*) is associated with 'OCL::OclType' (role 'type78', cardinality 0..*).
+'OCL::Operation' (role 'owningOperation', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression110', cardinality 0..*).
+'OCL::OclExpression' (role 'initExpression15', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'OclType' (role 'OclType', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'oclExpression', cardinality 0..*).
+'Operation' (role 'Operation67', cardinality 0..*) is associated with 'OCL::OclType' (role 'returnType', cardinality 0..*).
+'OclExpression' (role 'OclExpression42', cardinality 0..*) is associated with 'OCL::LetExp' (role 'letExp41', cardinality 0..*).
+'OCL::OclType' (role 'context_', cardinality 0..*) is associated with 'OclContextDefinition' (role 'OclContextDefinition', cardinality 0..*).
+'OCL::Iterator' (role 'iterators', cardinality 0..*) is associated with 'LoopExp' (role 'LoopExp58', cardinality 0..*).
+'OclType' (role 'OclType90', cardinality 0..*) is associated with 'OCL::MapType' (role 'mapType', cardinality 0..*).
+'OCL::OclExpression' (role 'in_', cardinality 0..*) is associated with 'LetExp' (role 'LetExp', cardinality 0..*).
+'OCL::OclModel' (role 'metamodel', cardinality 0..*) is associated with 'OclModel' (role 'OclModel116', cardinality 0..*).
+'OCL::OclType' (role 'elementType', cardinality 0..*) is associated with 'CollectionType' (role 'CollectionType', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'body11', cardinality 0..*).
+'OCL::IfExp' (role 'ifExp1', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression46', cardinality 0..*).
+'OCL::OclFeatureDefinition' (role 'definition', cardinality 0..*) is associated with 'OclFeature' (role 'OclFeature', cardinality 0..*).
+'OCL::MapType' (role 'mapType2', cardinality 0..*) is associated with 'OclType' (role 'OclType88', cardinality 0..*).
+'OCL::MapElement' (role 'OCL_MapElement', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression25', cardinality 0..*).
+'OCL::Operation' (role 'operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'OperationCallExp' (role 'OperationCallExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'arguments', cardinality 0..*).
+'OclExpression' (role 'OclExpression48', cardinality 0..*) is associated with 'OCL::IfExp' (role 'ifExp3', cardinality 0..*).
+'OCL::OclContextDefinition' (role 'definitions', cardinality 0..*) is associated with 'OclType' (role 'OclType98', cardinality 0..*).
+'OclContextDefinition' (role 'OclContextDefinition94', cardinality 0..*) is associated with 'OCL::OclFeatureDefinition' (role 'definition93', cardinality 0..*).
+'OCL::LoopExp' (role 'loopExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression34', cardinality 0..*).
+'OclType' (role 'OclType108', cardinality 0..*) is associated with 'OCL::Operation' (role 'operation107', cardinality 0..*).
+'OclModelElement' (role 'OclModelElement', cardinality 0..*) is associated with 'OCL::OclModel' (role 'model114', cardinality 0..*).
+'TupleExp' (role 'TupleExp', cardinality 0..*) is associated with 'OCL::TuplePart' (role 'tuplePart', cardinality 0..*).
+'OCL::TupleExp' (role 'tuple', cardinality 0..*) is associated with 'TuplePart' (role 'TuplePart', cardinality 0..*).
+'OCL::MapExp' (role 'map', cardinality 0..*) is associated with 'MapElement' (role 'MapElement', cardinality 0..*).
+'OCL::PropertyCallExp' (role 'appliedProperty', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression30', cardinality 0..*).
+'OCL::OclType' (role 'valueType', cardinality 0..*) is associated with 'MapType' (role 'MapType', cardinality 0..*).
+'MapType' (role 'MapType73', cardinality 0..*) is associated with 'OCL::OclType' (role 'keyType', cardinality 0..*).
+'CollectionExp' (role 'CollectionExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'elements', cardinality 0..*).
+'OCL::IfExp' (role 'ifExp2', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression44', cardinality 0..*).
+'Attribute' (role 'Attribute71', cardinality 0..*) is associated with 'OCL::OclType' (role 'type70', cardinality 0..*).
+'OCL::OclExpression' (role 'thenExpression', cardinality 0..*) is associated with 'IfExp' (role 'IfExp9', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'initExpression', cardinality 0..*).
+'OclFeatureDefinition' (role 'OclFeatureDefinition', cardinality 0..*) is associated with 'OCL::OclContextDefinition' (role 'context_96', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'variableDeclaration', cardinality 0..*) is associated with 'OclType' (role 'OclType50', cardinality 0..*).
+'LoopExp' (role 'LoopExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'body', cardinality 0..*).
+'OCL::OclModelElement' (role 'elements86', cardinality 0..*) is associated with 'OclModel' (role 'OclModel', cardinality 0..*).
+'OCL::OclExpression' (role 'elseExpression', cardinality 0..*) is associated with 'IfExp' (role 'IfExp', cardinality 0..*).
+'OCL::LoopExp' (role 'loopExpr', cardinality 0..*) is associated with 'Iterator' (role 'Iterator', cardinality 0..*).
+'MapExp' (role 'MapExp', cardinality 0..*) is associated with 'OCL::MapElement' (role 'elements23', cardinality 0..*).
+'PropertyCallExp' (role 'PropertyCallExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'source', cardinality 0..*).
+'OCL::IterateExp' (role 'baseExp', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration37', cardinality 0..*).
+'LetExp' (role 'LetExp54', cardinality 0..*) is associated with 'OCL::VariableDeclaration' (role 'variable', cardinality 0..*).
+'OCL::Attribute' (role 'owningAttribute', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression102', cardinality 0..*).
+'TupleTypeAttribute' (role 'TupleTypeAttribute81', cardinality 0..*) is associated with 'OCL::TupleType' (role 'tupleType', cardinality 0..*).
+'OclExpression' (role 'OclExpression28', cardinality 0..*) is associated with 'OCL::MapElement' (role 'OCL_MapElement27', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration17', cardinality 0..*) is associated with 'OCL::VariableExp' (role 'variableExp', cardinality 0..*).

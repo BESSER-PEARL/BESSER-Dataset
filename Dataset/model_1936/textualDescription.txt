@@ -1,0 +1,114 @@
+The model has 57 class(es).
+The class 'emig::NavigationOrAttributeCallExp' has no attributes.
+The class 'emig::OclUndefinedExp' has no attributes.
+The class 'emig::DotNavigationObjSX' has no attributes.
+The class 'emig::RewritingRule' has no attributes.
+The class 'emig::setterDef' has the following attributes: 'operator' of type str.
+The class 'EClass' has no attributes.
+The class 'emig::OrderedSetExp' has no attributes.
+The class 'OrderedSetExp' has no attributes.
+The class 'emig::Parameter' has the following attributes: 'name' of type str.
+The class 'EPackage' has no attributes.
+The class 'MapExp' has no attributes.
+The class 'emig::Reference' has no attributes.
+The class 'EReference' has no attributes.
+The class 'emig::Migrator' has no attributes.
+The class 'emig::SuperExp' has no attributes.
+The class 'emig::OclExpression' has no attributes.
+The class 'emig::Attribute' has no attributes.
+The class 'emig::BagExp' has no attributes.
+The class 'SetExp' has no attributes.
+The class 'emig::OpDef' has the following attributes: 'op' of type str.
+The class 'emig::EClass' has no attributes.
+The class 'BagExp' has no attributes.
+The class 'emig::VariableExp' has no attributes.
+The class 'Migrator' has no attributes.
+The class 'emig::EObject' has no attributes.
+The class 'OclUndefinedExp' has no attributes.
+The class 'emig::EStructuralFeature' has no attributes.
+The class 'SuperExp' has no attributes.
+The class 'emig::EAttributeOpDef' has no attributes.
+The class 'emig::EReferenceOpDef' has no attributes.
+The class 'emig::Rule' has the following attributes: 'name' of type str.
+The class 'emig::SequenceExp' has no attributes.
+The class 'emig::TupleExp' has no attributes.
+The class 'emig::EClassOpDef' has no attributes.
+The class 'emig::VariableDeclaration' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'emig::MigratorDX' has the following attributes: 'name' of type str.
+The class 'emig::MigratorSX' has no attributes.
+The class 'SequenceExp' has no attributes.
+The class 'OpDef' has no attributes.
+The class 'TupleExp' has no attributes.
+The class 'emig::EPackageOpDef' has no attributes.
+The class 'emig::EAttribute' has no attributes.
+The class 'VariableExp' has no attributes.
+The class 'emig::SetExp' has no attributes.
+The class 'emig::MyModel' has no attributes.
+The class 'EAttribute' has no attributes.
+The class 'emig::Artifact' has the following attributes: 'type' of type str.
+The class 'emig::DotNavigationObjDX' has no attributes.
+The class 'emig::MapExp' has no attributes.
+The class 'emig::MigrationProgram' has the following attributes: 'libs' of type str; 'migr' of type str; 'name' of type str; 'delta' of type str.
+The class 'emig::EReference' has no attributes.
+The class 'emig::Class' has no attributes.
+The class 'emig::EPackage' has no attributes.
+The class 'emig::MigrationLibrary' has the following attributes: 'title' of type str.
+The class 'emig::FilterMigrator' has no attributes.
+The class 'emig::Package' has no attributes.
+'emig::SequenceExp' is a specialization of 'SequenceExp'.
+'emig::VariableExp' is a specialization of 'VariableExp'.
+'emig::NavigationOrAttributeCallExp' is a specialization of 'OclExpression'.
+'emig::BagExp' is a specialization of 'BagExp'.
+'emig::OrderedSetExp' is a specialization of 'OrderedSetExp'.
+'emig::Reference' is a specialization of 'EReference'.
+'emig::OclUndefinedExp' is a specialization of 'OclUndefinedExp'.
+'emig::SuperExp' is a specialization of 'SuperExp'.
+'emig::Package' is a specialization of 'EPackage'.
+'emig::EPackageOpDef' is a specialization of 'OpDef'.
+'emig::Attribute' is a specialization of 'EAttribute'.
+'emig::MigratorSX' is a specialization of 'Migrator'.
+'emig::SetExp' is a specialization of 'SetExp'.
+'emig::EAttributeOpDef' is a specialization of 'OpDef'.
+'emig::EReferenceOpDef' is a specialization of 'OpDef'.
+'emig::MigratorDX' is a specialization of 'Migrator'.
+'emig::Class' is a specialization of 'EClass'.
+'emig::MapExp' is a specialization of 'MapExp'.
+'emig::TupleExp' is a specialization of 'TupleExp'.
+'emig::EClassOpDef' is a specialization of 'OpDef'.
+'emig::MigrationProgram' (role 'emig_MigrationProgram10', cardinality 0..*) is associated with 'emig::Rule' (role 'emig_Rule11', cardinality 0..*).
+'emig::EStructuralFeature' (role 'emig_EStructuralFeature', cardinality 0..*) is associated with 'emig::setterDef' (role 'emig_setterDef45', cardinality 0..*).
+'emig::RewritingRule' (role 'emig_RewritingRule53', cardinality 0..*) is associated with 'emig::MigratorSX' (role 'emig_MigratorSX54', cardinality 0..*).
+'emig::VariableDeclaration' (role 'emig_VariableDeclaration', cardinality 0..*) is associated with 'emig::MigratorSX' (role 'emig_MigratorSX56', cardinality 0..*).
+'emig::EAttributeOpDef' (role 'emig_EAttributeOpDef', cardinality 0..*) is associated with 'emig::EClassOpDef' (role 'emig_EClassOpDef31', cardinality 0..*).
+'emig::Parameter' (role 'emig_Parameter', cardinality 0..*) is associated with 'emig::setterDef' (role 'emig_setterDef47', cardinality 0..*).
+'emig::setterDef' (role 'emig_setterDef', cardinality 0..*) is associated with 'emig::OpDef' (role 'emig_OpDef17', cardinality 0..*).
+'emig::FilterMigrator' (role 'emig_FilterMigrator69', cardinality 0..*) is associated with 'emig::OclExpression' (role 'emig_OclExpression', cardinality 0..*).
+'emig::EPackageOpDef' (role 'emig_EPackageOpDef24', cardinality 0..*) is associated with 'emig::EClassOpDef' (role 'emig_EClassOpDef', cardinality 0..*).
+'emig::EPackage' (role 'emig_EPackage19', cardinality 0..*) is associated with 'emig::EPackageOpDef' (role 'emig_EPackageOpDef', cardinality 0..*).
+'emig::MigratorDX' (role 'emig_MigratorDX', cardinality 0..*) is associated with 'emig::RewritingRule' (role 'emig_RewritingRule51', cardinality 0..*).
+'emig::RewritingRule' (role 'emig_RewritingRule49', cardinality 0..*) is associated with 'emig::MigratorSX' (role 'emig_MigratorSX', cardinality 0..*).
+'emig::DotNavigationObjSX' (role 'emig_DotNavigationObjSX', cardinality 0..*) is associated with 'emig::EObject' (role 'emig_EObject', cardinality 0..*).
+'emig::EClass' (role 'emig_EClass64', cardinality 0..*) is associated with 'emig::MigratorDX' (role 'emig_MigratorDX63', cardinality 0..*).
+'emig::MigrationProgram' (role 'emig_MigrationProgram8', cardinality 0..*) is associated with 'emig::EPackage' (role 'emig_EPackage', cardinality 0..*).
+'emig::EPackage' (role 'emig_EPackage22', cardinality 0..*) is associated with 'emig::EPackageOpDef' (role 'emig_EPackageOpDef21', cardinality 0..*).
+'emig::EClass' (role 'emig_EClass', cardinality 0..*) is associated with 'emig::EClassOpDef' (role 'emig_EClassOpDef26', cardinality 0..*).
+'emig::MyModel' (role 'emig_MyModel2', cardinality 0..*) is associated with 'emig::MigrationProgram' (role 'emig_MigrationProgram', cardinality 0..*).
+'emig::EAttribute' (role 'emig_EAttribute38', cardinality 0..*) is associated with 'emig::EAttributeOpDef' (role 'emig_EAttributeOpDef37', cardinality 0..*).
+'emig::EClass' (role 'emig_EClass59', cardinality 0..*) is associated with 'emig::MigratorSX' (role 'emig_MigratorSX58', cardinality 0..*).
+'emig::EAttribute' (role 'emig_EAttribute', cardinality 0..*) is associated with 'emig::EAttributeOpDef' (role 'emig_EAttributeOpDef35', cardinality 0..*).
+'emig::MigratorSX' (role 'emig_MigratorSX61', cardinality 0..*) is associated with 'emig::FilterMigrator' (role 'emig_FilterMigrator', cardinality 0..*).
+'emig::Artifact' (role 'emig_Artifact', cardinality 0..*) is associated with 'emig::MigrationProgram' (role 'emig_MigrationProgram6', cardinality 0..*).
+'emig::DotNavigationObjSX' (role 'emig_DotNavigationObjSX72', cardinality 0..*) is associated with 'emig::EStructuralFeature' (role 'emig_EStructuralFeature73', cardinality 0..*).
+'emig::OclExpression' (role 'emig_OclExpression80', cardinality 0..*) is associated with 'emig::NavigationOrAttributeCallExp' (role 'emig_NavigationOrAttributeCallExp', cardinality 0..*).
+'emig::MigratorDX' (role 'emig_MigratorDX66', cardinality 0..*) is associated with 'emig::FilterMigrator' (role 'emig_FilterMigrator67', cardinality 0..*).
+'emig::Rule' (role 'emig_Rule13', cardinality 0..*) is associated with 'emig::OpDef' (role 'emig_OpDef', cardinality 0..*).
+'emig::DotNavigationObjDX' (role 'emig_DotNavigationObjDX77', cardinality 0..*) is associated with 'emig::EStructuralFeature' (role 'emig_EStructuralFeature78', cardinality 0..*).
+'emig::MigrationLibrary' (role 'emig_MigrationLibrary4', cardinality 0..*) is associated with 'emig::Rule' (role 'emig_Rule', cardinality 0..*).
+'emig::MyModel' (role 'emig_MyModel', cardinality 0..*) is associated with 'emig::MigrationLibrary' (role 'emig_MigrationLibrary', cardinality 0..*).
+'emig::EReferenceOpDef' (role 'emig_EReferenceOpDef40', cardinality 0..*) is associated with 'emig::EReference' (role 'emig_EReference', cardinality 0..*).
+'emig::EReferenceOpDef' (role 'emig_EReferenceOpDef42', cardinality 0..*) is associated with 'emig::EReference' (role 'emig_EReference43', cardinality 0..*).
+'emig::RewritingRule' (role 'emig_RewritingRule', cardinality 0..*) is associated with 'emig::Rule' (role 'emig_Rule15', cardinality 0..*).
+'emig::DotNavigationObjDX' (role 'emig_DotNavigationObjDX', cardinality 0..*) is associated with 'emig::EObject' (role 'emig_EObject75', cardinality 0..*).
+'emig::EClassOpDef' (role 'emig_EClassOpDef33', cardinality 0..*) is associated with 'emig::EReferenceOpDef' (role 'emig_EReferenceOpDef', cardinality 0..*).
+'emig::EClass' (role 'emig_EClass29', cardinality 0..*) is associated with 'emig::EClassOpDef' (role 'emig_EClassOpDef28', cardinality 0..*).

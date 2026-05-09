@@ -1,0 +1,34 @@
+The model has 17 class(es).
+The class 'library::Remove' has the following attributes: 'isbn' of type str.
+The class 'library::Show' has the following attributes: 'what' of type str.
+The class 'library::Search' has no attributes.
+The class 'Search' has no attributes.
+The class 'library::Check' has the following attributes: 'isbn' of type str.
+The class 'library::ByAuthor' has no attributes.
+The class 'library::Model' has no attributes.
+The class 'library::Lend' has the following attributes: 'secondname' of type str; 'isbn' of type str; 'firstname' of type str.
+The class 'library::Return' has the following attributes: 'isbn' of type str; 'secondname' of type str; 'firstname' of type str.
+The class 'library::AddAuthor' has the following attributes: 'isbn' of type str.
+The class 'library::ShowUserAccount' has the following attributes: 'secondname' of type str; 'firstname' of type str.
+The class 'library::ByYear' has the following attributes: 'year' of type str.
+The class 'Command' has no attributes.
+The class 'library::AddUser' has the following attributes: 'age' of type str; 'firstname' of type str; 'secondname' of type str.
+The class 'library::Author' has the following attributes: 'firstname' of type str; 'secondname' of type str.
+The class 'library::Add' has the following attributes: 'year' of type str; 'title' of type str; 'isbn' of type str.
+The class 'library::Command' has no attributes.
+'library::ByYear' is a specialization of 'Search'.
+'library::Show' is a specialization of 'Command'.
+'library::ShowUserAccount' is a specialization of 'Command'.
+'library::Search' is a specialization of 'Command'.
+'library::Return' is a specialization of 'Command'.
+'library::ByAuthor' is a specialization of 'Search'.
+'library::AddAuthor' is a specialization of 'Command'.
+'library::Lend' is a specialization of 'Command'.
+'library::Remove' is a specialization of 'Command'.
+'library::Check' is a specialization of 'Command'.
+'library::AddUser' is a specialization of 'Command'.
+'library::Add' is a specialization of 'Command'.
+'library::ByAuthor' (role 'library_ByAuthor', cardinality 0..*) is associated with 'library::Author' (role 'library_Author3', cardinality 0..*).
+'library::Command' (role 'library_Command', cardinality 0..*) is associated with 'library::Model' (role 'library_Model', cardinality 0..*).
+'library::Author' (role 'library_Author', cardinality 0..*) is associated with 'library::AddAuthor' (role 'library_AddAuthor', cardinality 0..*).
+'library::Author' (role 'library_Author5', cardinality 0..*) is associated with 'library::Add' (role 'library_Add', cardinality 0..*).

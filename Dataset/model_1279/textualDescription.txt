@@ -1,0 +1,126 @@
+The model has 59 class(es).
+The class 'ocl::exp::EOclExpression' has no attributes.
+The class 'ocl::type::EInvalidType' has no attributes.
+The class 'EDataType' has no attributes.
+The class 'ocl::type::ESequenceType' has no attributes.
+The class 'EIfExp' has no attributes.
+The class 'ocl::exp::EVariable' has the following attributes: 'name' of type str.
+The class 'ocl::type::EBagType' has no attributes.
+The class 'ocl::exp::EIterateExp' has no attributes.
+The class 'EPrimitiveType' has no attributes.
+The class 'ocl::dm::EDataModel' has no attributes.
+The class 'ocl::exp::ELiteralExp' has no attributes.
+The class 'ocl::exp::ENumericLiteralExp' has no attributes.
+The class 'ECollectionType' has no attributes.
+The class 'ENumericLiteralExp' has no attributes.
+The class 'EEntity' has no attributes.
+The class 'ocl::dm::EAttribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'ocl::dm::EEntity' has the following attributes: 'name' of type str.
+The class 'ocl::exp::EAssociationClassCallExp' has no attributes.
+The class 'ocl::dm::EAssociationEnd' has the following attributes: 'mult' of type str; 'opp' of type str; 'name' of type str.
+The class 'EFeatureCallExp' has no attributes.
+The class 'ocl::exp::EMessageExp' has no attributes.
+The class 'ocl::type::ETupleType' has no attributes.
+The class 'ocl::exp::EStringLiteralExp' has the following attributes: 'stringValue' of type str.
+The class 'ocl::exp::EStateExp' has no attributes.
+The class 'ocl::exp::ECallExp' has no attributes.
+The class 'ocl::type::EClassifier' has no attributes.
+The class 'ocl::type::EDataType' has no attributes.
+The class 'ENavigationCallExp' has no attributes.
+The class 'ocl::type::EVoidType' has no attributes.
+The class 'EIterateExp' has no attributes.
+The class 'EClassifier' has no attributes.
+The class 'EOclExpression' has no attributes.
+The class 'ocl::type::EMessageType' has the following attributes: 'referredOperation' of type str.
+The class 'ELiteralExp' has no attributes.
+The class 'EAssociationEnd' has no attributes.
+The class 'ocl::exp::EBooleanLiteralExp' has the following attributes: 'booleanValue' of type str.
+The class 'ocl::exp::ETypeExp' has no attributes.
+The class 'ocl::type::ECollectionType' has no attributes.
+The class 'EVariable' has no attributes.
+The class 'ocl::exp::EFeatureCallExp' has no attributes.
+The class 'ocl::type::EPrimitiveType' has no attributes.
+The class 'ocl::type::EAnyType' has no attributes.
+The class 'ocl::exp::EPrimitiveType' has no attributes.
+The class 'EOperationCallExp' has no attributes.
+The class 'ocl::exp::EPropertyCallExp' has no attributes.
+The class 'ocl::exp::EVariableExp' has no attributes.
+The class 'ELoopExp' has no attributes.
+The class 'ESignal' has no attributes.
+The class 'ocl::exp::EOperationCallExp' has the following attributes: 'referredOperation' of type str.
+The class 'ocl::type::ESignal' has no attributes.
+The class 'ocl::exp::EIfExp' has no attributes.
+The class 'EAttribute' has no attributes.
+The class 'ocl::exp::EIntegerLiteralExp' has the following attributes: 'integerValue' of type str.
+The class 'ocl::exp::ELoopExp' has no attributes.
+The class 'ocl::exp::EIteratorExp' has the following attributes: 'kind' of type str.
+The class 'ocl::type::EOrderedSetType' has no attributes.
+The class 'ocl::exp::ENavigationCallExp' has no attributes.
+The class 'ocl::type::ESetType' has no attributes.
+The class 'ECallExp' has no attributes.
+The enumeration 'EMultiplicity' has the following literals: 'many', 'one'.
+The enumeration 'EIteratorKind' has the following literals: 'collect', 'select', 'forAll', 'exists'.
+The enumeration 'EOperator' has the following literals: 'allInstances', 'notEmpty', 'AND', 'flatten', 'greaterOrEqual', 'lessOrEqual', 'notEqual', 'less', 'isEmpty', 'oclIsUndefined', 'size', 'isUnique', 'OR', 'equal', 'IMPLIES', 'greater', 'XOR'.
+'ocl::type::ESequenceType' is a specialization of 'ECollectionType'.
+'ocl::type::EMessageType' is a specialization of 'EClassifier'.
+'ocl::exp::ENavigationCallExp' is a specialization of 'EFeatureCallExp'.
+'ocl::type::EBagType' is a specialization of 'ECollectionType'.
+'ocl::exp::EIterateExp' is a specialization of 'ELoopExp'.
+'ocl::exp::EPropertyCallExp' is a specialization of 'ENavigationCallExp'.
+'ocl::exp::ELiteralExp' is a specialization of 'EOclExpression'.
+'ocl::exp::EPrimitiveType' is a specialization of 'ELiteralExp'.
+'ocl::exp::ENumericLiteralExp' is a specialization of 'EPrimitiveType'.
+'ocl::type::EInvalidType' is a specialization of 'EClassifier'.
+'ocl::type::EAnyType' is a specialization of 'EClassifier'.
+'ocl::exp::ECallExp' is a specialization of 'EOclExpression'.
+'ocl::exp::EOperationCallExp' is a specialization of 'EFeatureCallExp'.
+'ocl::type::ETupleType' is a specialization of 'EDataType'.
+'ocl::type::EOrderedSetType' is a specialization of 'ECollectionType'.
+'ocl::exp::EStringLiteralExp' is a specialization of 'EPrimitiveType'.
+'ocl::exp::EStateExp' is a specialization of 'EOclExpression'.
+'ocl::type::ESetType' is a specialization of 'ECollectionType'.
+'ocl::type::ECollectionType' is a specialization of 'EDataType'.
+'ocl::exp::EMessageExp' is a specialization of 'EOclExpression'.
+'ocl::type::EPrimitiveType' is a specialization of 'EDataType'.
+'ocl::exp::EVariableExp' is a specialization of 'EOclExpression'.
+'ocl::exp::EIteratorExp' is a specialization of 'ELoopExp'.
+'ocl::exp::ETypeExp' is a specialization of 'EOclExpression'.
+'ocl::type::EVoidType' is a specialization of 'EClassifier'.
+'ocl::exp::EIfExp' is a specialization of 'EOclExpression'.
+'ocl::exp::EFeatureCallExp' is a specialization of 'ECallExp'.
+'ocl::exp::EAssociationClassCallExp' is a specialization of 'ENavigationCallExp'.
+'ocl::exp::EIntegerLiteralExp' is a specialization of 'ENumericLiteralExp'.
+'ocl::exp::EBooleanLiteralExp' is a specialization of 'EPrimitiveType'.
+'ocl::exp::ELoopExp' is a specialization of 'ECallExp'.
+'ocl::dm::EEntity' is a specialization of 'EClassifier'.
+'ocl::type::EDataType' is a specialization of 'EClassifier'.
+'EAssociationEnd' (role 'EAssociationEnd12', cardinality 0..*) is associated with 'ocl::exp::EAssociationClassCallExp' (role 'ocl_exp_EAssociationClassCallExp', cardinality 0..*).
+'EOclExpression' (role 'EOclExpression38', cardinality 0..*) is associated with 'ocl::exp::EOperationCallExp' (role 'parentCall', cardinality 0..*).
+'ocl::exp::EOclExpression' (role 'source', cardinality 0..*) is associated with 'ECallExp' (role 'ECallExp', cardinality 0..*).
+'EOclExpression' (role 'EOclExpression42', cardinality 0..*) is associated with 'ocl::exp::EIfExp' (role 'ifOwner', cardinality 0..*).
+'EOclExpression' (role 'EOclExpression34', cardinality 0..*) is associated with 'ocl::exp::ECallExp' (role 'appliedElement', cardinality 0..*).
+'EOclExpression' (role 'EOclExpression36', cardinality 0..*) is associated with 'ocl::exp::ENavigationCallExp' (role 'parentNav', cardinality 0..*).
+'ocl::type::EMessageType' (role 'ocl_type_EMessageType', cardinality 0..*) is associated with 'ESignal' (role 'ESignal', cardinality 0..*).
+'EVariable' (role 'EVariable32', cardinality 0..*) is associated with 'ocl::exp::EIterateExp' (role 'baseExp', cardinality 0..*).
+'ocl::exp::EOclExpression' (role 'initExpression', cardinality 0..*) is associated with 'EVariable' (role 'EVariable23', cardinality 0..*).
+'ocl::exp::EIfExp' (role 'thenOwner', cardinality 0..*) is associated with 'EOclExpression' (role 'EOclExpression40', cardinality 0..*).
+'EIfExp' (role 'EIfExp28', cardinality 0..*) is associated with 'ocl::exp::EOclExpression' (role 'elseExpression', cardinality 0..*).
+'ocl::exp::ELoopExp' (role 'loopExp', cardinality 0..*) is associated with 'EVariable' (role 'EVariable10', cardinality 0..*).
+'ENavigationCallExp' (role 'ENavigationCallExp', cardinality 0..*) is associated with 'ocl::exp::EOclExpression' (role 'qualifier', cardinality 0..*).
+'ocl::exp::EVariable' (role 'initializedElement', cardinality 0..*) is associated with 'EOclExpression' (role 'EOclExpression16', cardinality 0..*).
+'ocl::exp::EPropertyCallExp' (role 'ocl_exp_EPropertyCallExp', cardinality 0..*) is associated with 'EAttribute' (role 'EAttribute18', cardinality 0..*).
+'EClassifier' (role 'EClassifier', cardinality 0..*) is associated with 'ocl::exp::ETypeExp' (role 'ocl_exp_ETypeExp', cardinality 0..*).
+'ocl::type::ECollectionType' (role 'ocl_type_ECollectionType', cardinality 0..*) is associated with 'EClassifier' (role 'EClassifier47', cardinality 0..*).
+'ocl::exp::EOclExpression' (role 'thenExpression', cardinality 0..*) is associated with 'EIfExp' (role 'EIfExp', cardinality 0..*).
+'EOclExpression' (role 'EOclExpression44', cardinality 0..*) is associated with 'ocl::exp::EIfExp' (role 'elseOwner', cardinality 0..*).
+'ocl::exp::EOclExpression' (role 'argument', cardinality 0..*) is associated with 'EOperationCallExp' (role 'EOperationCallExp', cardinality 0..*).
+'ocl::exp::EOclExpression' (role 'condition', cardinality 0..*) is associated with 'EIfExp' (role 'EIfExp26', cardinality 0..*).
+'EIterateExp' (role 'EIterateExp', cardinality 0..*) is associated with 'ocl::exp::EVariable' (role 'result', cardinality 0..*).
+'ocl::dm::EDataModel' (role 'ocl_dm_EDataModel', cardinality 0..*) is associated with 'EEntity' (role 'EEntity5', cardinality 0..*).
+'EAssociationEnd' (role 'EAssociationEnd', cardinality 0..*) is associated with 'ocl::dm::EEntity' (role 'ocl_dm_EEntity', cardinality 0..*).
+'EEntity' (role 'EEntity', cardinality 0..*) is associated with 'ocl::dm::EAssociationEnd' (role 'ocl_dm_EAssociationEnd', cardinality 0..*).
+'EAttribute' (role 'EAttribute', cardinality 0..*) is associated with 'ocl::dm::EEntity' (role 'ocl_dm_EEntity2', cardinality 0..*).
+'ocl::exp::EVariable' (role 'iterator', cardinality 0..*) is associated with 'ELoopExp' (role 'ELoopExp', cardinality 0..*).
+'ocl::exp::EOclExpression' (role 'body', cardinality 0..*) is associated with 'ELoopExp' (role 'ELoopExp20', cardinality 0..*).
+'EVariable' (role 'EVariable', cardinality 0..*) is associated with 'ocl::exp::EVariableExp' (role 'ocl_exp_EVariableExp', cardinality 0..*).
+'EOclExpression' (role 'EOclExpression', cardinality 0..*) is associated with 'ocl::exp::ELoopExp' (role 'loopBodyOwner', cardinality 0..*).

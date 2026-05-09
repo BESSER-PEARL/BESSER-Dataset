@@ -1,0 +1,28 @@
+The model has 10 class(es).
+The class 'tp6::PublicationStructure' has no attributes.
+The class 'tp6::Paragraph' has the following attributes: 'name' of type str; 'content' of type str; 'id' of type int.
+The class 'tp6::Paper' has the following attributes: 'name' of type str.
+The class 'tp6::KnowledgeManager' has the following attributes: 'name' of type str.
+The class 'tp6::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'tp6::PaperKeywords' has the following attributes: 'weight' of type int.
+The class 'tp6::Skill' has the following attributes: 'description' of type str.
+The class 'tp6::Position' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'tp6::Keyword' has the following attributes: 'key' of type str; 'description' of type str.
+The class 'tp6::Collaboration' has the following attributes: 'ratio' of type int.
+'tp6::PublicationStructure' (role 'tp6_PublicationStructure22', cardinality 0..*) is associated with 'tp6::KnowledgeManager' (role 'tp6_KnowledgeManager', cardinality 0..*).
+'tp6::PaperKeywords' (role 'tp6_PaperKeywords32', cardinality 0..*) is associated with 'tp6::Keyword' (role 'tp6_Keyword33', cardinality 0..*).
+'tp6::Position' (role 'tp6_Position20', cardinality 0..*) is associated with 'tp6::PublicationStructure' (role 'tp6_PublicationStructure19', cardinality 0..*).
+'tp6::Paper' (role 'tp6_Paper', cardinality 0..*) is associated with 'tp6::Paragraph' (role 'tp6_Paragraph', cardinality 0..*).
+'tp6::Researcher' (role 'tp6_Researcher5', cardinality 0..*) is associated with 'tp6::Collaboration' (role 'tp6_Collaboration', cardinality 0..*).
+'tp6::Position' (role 'tp6_Position23', cardinality 0..*) is associated with 'tp6::Position' (role 'tp6_Position25', cardinality 0..*).
+'tp6::Researcher' (role 'tp6_Researcher14', cardinality 0..*) is associated with 'tp6::PublicationStructure' (role 'tp6_PublicationStructure', cardinality 0..*).
+'tp6::Paper' (role 'tp6_Paper17', cardinality 0..*) is associated with 'tp6::PublicationStructure' (role 'tp6_PublicationStructure16', cardinality 0..*).
+'tp6::Paper' (role 'tp6_Paper12', cardinality 0..*) is associated with 'tp6::PaperKeywords' (role 'tp6_PaperKeywords', cardinality 0..*).
+'tp6::Researcher' (role 'tp6_Researcher3', cardinality 0..*) is associated with 'tp6::Position' (role 'tp6_Position', cardinality 0..*).
+'tp6::Paper' (role 'tp6_Paper28', cardinality 0..*) is associated with 'tp6::Collaboration' (role 'tp6_Collaboration27', cardinality 0..*).
+'tp6::Skill' (role 'tp6_Skill', cardinality 0..*) is associated with 'tp6::Researcher' (role 'tp6_Researcher', cardinality 0..*).
+'tp6::Keyword' (role 'tp6_Keyword36', cardinality 0..*) is associated with 'tp6::KnowledgeManager' (role 'tp6_KnowledgeManager35', cardinality 0..*).
+'tp6::Paper' (role 'tp6_Paper30', cardinality 0..*) is associated with 'tp6::Keyword' (role 'tp6_Keyword', cardinality 0..*).
+'tp6::Paper' (role 'tp6_Paper10', cardinality 0..*) is associated with 'tp6::Paper' (role 'tp6_Paper8', cardinality 0..*).
+'tp6::Paper' (role 'res_papers', cardinality 0..*) is associated with 'tp6::Researcher' (role 'Researcher', cardinality 0..*).
+'tp6::Researcher' (role 'authors', cardinality 0..*) is associated with 'tp6::Paper' (role 'Paper', cardinality 0..*).

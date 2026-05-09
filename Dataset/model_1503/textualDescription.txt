@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'petri::Transition' has no attributes.
+The class 'petri::Place' has the following attributes: 'tokens' of type int.
+The class 'petri::PetriNet' has no attributes.
+The class 'Arc' has no attributes.
+The class 'petri::PTArc' has no attributes.
+The class 'petri::Arc' has no attributes.
+The class 'petri::TPArc' has no attributes.
+The class 'petri::Node' has the following attributes: 'name' of type str.
+The class 'Node' has no attributes.
+'petri::Transition' is a specialization of 'Node'.
+'petri::Place' is a specialization of 'Node'.
+'petri::TPArc' is a specialization of 'Arc'.
+'petri::PTArc' is a specialization of 'Arc'.
+'petri::Node' (role 'petri_Node', cardinality 0..*) is associated with 'petri::PetriNet' (role 'petri_PetriNet', cardinality 0..*).
+'petri::TPArc' (role 'petri_TPArc', cardinality 0..*) is associated with 'petri::Transition' (role 'petri_Transition', cardinality 0..*).
+'petri::Place' (role 'petri_Place7', cardinality 0..*) is associated with 'petri::PTArc' (role 'petri_PTArc', cardinality 0..*).
+'petri::PTArc' (role 'petri_PTArc9', cardinality 0..*) is associated with 'petri::Transition' (role 'petri_Transition10', cardinality 0..*).
+'petri::Arc' (role 'petri_Arc', cardinality 0..*) is associated with 'petri::PetriNet' (role 'petri_PetriNet2', cardinality 0..*).
+'petri::TPArc' (role 'petri_TPArc5', cardinality 0..*) is associated with 'petri::Place' (role 'petri_Place', cardinality 0..*).

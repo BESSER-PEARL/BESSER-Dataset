@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'graph::Node' has no attributes.
+The class 'graph::HasName' has the following attributes: 'name' of type str.
+The class 'graph::Root' has no attributes.
+The class 'HasName' has no attributes.
+The class 'graph::SubNode' has no attributes.
+The class 'graph::Edge' has no attributes.
+'graph::Node' is a specialization of 'HasName'.
+'graph::SubNode' is a specialization of 'HasName'.
+'graph::Node' (role 'masterNode', cardinality 0..*) is associated with 'graph::SubNode' (role 'SubNode', cardinality 0..*).
+'graph::Node' (role 'sourceNode', cardinality 0..*) is associated with 'graph::Edge' (role 'Edge', cardinality 0..*).
+'graph::Edge' (role 'Edge2', cardinality 0..*) is associated with 'graph::Node' (role 'destinationNode', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge', cardinality 0..*) is associated with 'graph::Root' (role 'graph_Root', cardinality 0..*).
+'graph::Root' (role 'graph_Root9', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node', cardinality 0..*).
+'graph::Edge' (role 'incomingEdge', cardinality 0..*) is associated with 'graph::Node' (role 'Node', cardinality 0..*).
+'graph::SubNode' (role 'subNodes', cardinality 0..*) is associated with 'graph::Node' (role 'Node11', cardinality 0..*).
+'graph::Node' (role 'Node6', cardinality 0..*) is associated with 'graph::Edge' (role 'outgoingEdge', cardinality 0..*).

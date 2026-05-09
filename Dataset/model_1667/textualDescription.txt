@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'workbench101::Thoughts' has no attributes.
+The class 'workbench101::Thing' has the following attributes: 'id' of type int.
+The class 'NamedElement' has no attributes.
+The class 'workbench101::Workbench' has the following attributes: 'aprop' of type str.
+The class 'workbench101::RelatedTo' has the following attributes: 'since' of type str.
+The class 'workbench101::NamedElement' has the following attributes: 'name' of type str.
+'workbench101::Thoughts' is a specialization of 'NamedElement'.
+'workbench101::Thing' is a specialization of 'NamedElement'.
+'workbench101::RelatedTo' is a specialization of 'NamedElement'.
+'workbench101::Thoughts' (role 'workbench101_Thoughts8', cardinality 0..*) is associated with 'workbench101::Thing' (role 'workbench101_Thing9', cardinality 0..*).
+'workbench101::Thing' (role 'workbench101_Thing', cardinality 0..*) is associated with 'workbench101::Workbench' (role 'workbench101_Workbench', cardinality 0..*).
+'workbench101::Thoughts' (role 'workbench101_Thoughts', cardinality 0..*) is associated with 'workbench101::Workbench' (role 'workbench101_Workbench2', cardinality 0..*).
+'workbench101::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'workbench101::Thing' (role 'Thing', cardinality 0..*).
+'workbench101::Thing' (role 'workbench101_Thing6', cardinality 0..*) is associated with 'workbench101::RelatedTo' (role 'workbench101_RelatedTo', cardinality 0..*).
+'workbench101::Thing' (role 'fromThing', cardinality 0..*) is associated with 'workbench101::RelatedTo' (role 'RelatedTo', cardinality 0..*).

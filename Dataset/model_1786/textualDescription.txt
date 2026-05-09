@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'column::Book' has the following attributes: 'author' of type str; 'title' of type str; 'weight' of type str; 'pages' of type str.

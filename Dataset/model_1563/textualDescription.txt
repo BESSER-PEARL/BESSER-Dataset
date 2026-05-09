@@ -1,0 +1,10 @@
+The model has 7 class(es).
+The class 'processModels::Node' has no attributes.
+The class 'processModels::CompositeTask' has no attributes.
+The class 'Task' has no attributes.
+The class 'processModels::FlowEdge' has no attributes.
+The class 'processModels::ProcessModel' has no attributes.
+The class 'Node' has no attributes.
+The class 'processModels::Task' has no attributes.
+'processModels::CompositeTask' is a specialization of 'Task'.
+'processModels::Task' is a specialization of 'Node'.

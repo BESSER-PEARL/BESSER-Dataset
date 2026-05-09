@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/louismrose/migration_comparison/solutions/ecore2ecore/PetriNets/model/Before.ecore

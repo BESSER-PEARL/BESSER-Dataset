@@ -1,0 +1,28 @@
+The model has 9 class(es).
+The class 'ktest401::World' has no attributes.
+The class 'ktest401::EClass0' has no attributes.
+The class 'ktest401::RelatedTo' has the following attributes: 'since' of type str.
+The class 'ktest401::Thing' has the following attributes: 'id' of type int.
+The class 'ktest401::NamedElement' has the following attributes: 'name' of type str.
+The class 'ktest401::Line' has the following attributes: 'articleAid' of type str; 'quant' of type int.
+The class 'ktest401::EClass1' has the following attributes: 'bar' of type str; 'foo' of type str.
+The class 'ktest401::Article' has the following attributes: 'aid' of type str.
+The class 'NamedElement' has no attributes.
+'ktest401::RelatedTo' is a specialization of 'NamedElement'.
+'ktest401::EClass0' is a specialization of 'NamedElement'.
+'ktest401::Line' is a specialization of 'NamedElement'.
+'ktest401::Thing' is a specialization of 'NamedElement'.
+'ktest401::EClass1' is a specialization of 'NamedElement'.
+'ktest401::Article' is a specialization of 'NamedElement'.
+'ktest401::Line' (role 'ktest401_Line17', cardinality 0..*) is associated with 'ktest401::Article' (role 'ktest401_Article18', cardinality 0..*).
+'ktest401::Line' (role 'ktest401_Line14', cardinality 0..*) is associated with 'ktest401::Thing' (role 'ktest401_Thing15', cardinality 0..*).
+'ktest401::Thing' (role 'ktest401_Thing5', cardinality 0..*) is associated with 'ktest401::Line' (role 'ktest401_Line', cardinality 0..*).
+'ktest401::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'ktest401::Thing' (role 'Thing', cardinality 0..*).
+'ktest401::Thing' (role 'ktest401_Thing7', cardinality 0..*) is associated with 'ktest401::EClass0' (role 'ktest401_EClass0', cardinality 0..*).
+'ktest401::Thing' (role 'ktest401_Thing10', cardinality 0..*) is associated with 'ktest401::RelatedTo' (role 'ktest401_RelatedTo', cardinality 0..*).
+'ktest401::Thing' (role 'fromThing', cardinality 0..*) is associated with 'ktest401::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'ktest401::World' (role 'ktest401_World2', cardinality 0..*) is associated with 'ktest401::Article' (role 'ktest401_Article', cardinality 0..*).
+'ktest401::Thing' (role 'ktest401_Thing', cardinality 0..*) is associated with 'ktest401::World' (role 'ktest401_World', cardinality 0..*).
+'ktest401::RelatedTo' (role 'ktest401_RelatedTo12', cardinality 0..*) is associated with 'ktest401::EClass1' (role 'ktest401_EClass1', cardinality 0..*).
+'ktest401::EClass0' (role 'ktest401_EClass024', cardinality 0..*) is associated with 'ktest401::EClass1' (role 'ktest401_EClass123', cardinality 0..*).
+'ktest401::EClass1' (role 'ktest401_EClass120', cardinality 0..*) is associated with 'ktest401::RelatedTo' (role 'ktest401_RelatedTo21', cardinality 0..*).

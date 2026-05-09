@@ -1,0 +1,64 @@
+The model has 30 class(es).
+The class 'graph::GBoundsAware' has no attributes.
+The class 'graph::GBounds' has the following attributes: 'height' of type float; 'x' of type float; 'width' of type float; 'y' of type float.
+The class 'graph::GModelRoot' has the following attributes: 'revision' of type int.
+The class 'GModelElement' has no attributes.
+The class 'graph::GHtmlRoot' has the following attributes: 'classes' of type str.
+The class 'graph::GPreRenderedElement' has the following attributes: 'code' of type str.
+The class 'graph::GButton' has the following attributes: 'enabled' of type bool.
+The class 'GEdgeLayoutable' has no attributes.
+The class 'graph::GLabel' has the following attributes: 'text' of type str.
+The class 'graph::GEdgePlacement' has the following attributes: 'side' of type str; 'offset' of type str; 'position' of type str; 'rotate' of type bool.
+The class 'graph::GDimension' has the following attributes: 'width' of type float; 'height' of type float.
+The class 'GAlignable' has no attributes.
+The class 'graph::GIssue' has the following attributes: 'message' of type str; 'severity' of type str.
+The class 'graph::GPoint' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'graph::GModelElement' has the following attributes: 'trace' of type str; 'id' of type str; 'cssClasses' of type str; 'type' of type str.
+The class 'graph::GAlignable' has no attributes.
+The class 'graph::GEdge' has the following attributes: 'routerKind' of type str; 'targetId' of type str; 'sourceId' of type str.
+The class 'GModelRoot' has no attributes.
+The class 'graph::GEdgeLayoutable' has no attributes.
+The class 'graph::GGraph' has no attributes.
+The class 'graph::GNode' has no attributes.
+The class 'GShapeElement' has no attributes.
+The class 'GLayouting' has no attributes.
+The class 'graph::GLayouting' has the following attributes: 'layout' of type str.
+The class 'graph::GIssueMarker' has no attributes.
+The class 'GBoundsAware' has no attributes.
+The class 'graph::GPort' has no attributes.
+The class 'graph::GShapeElement' has no attributes.
+The class 'graph::GCompartment' has no attributes.
+The class 'graph::GLayoutOptions' has the following attributes: 'vAlign' of type str; 'paddingTop' of type str; 'paddingLeft' of type str; 'minHeight' of type str; 'hAlign' of type str; 'hGap' of type str; 'minWidth' of type str; 'vGap' of type str; 'resizeContainer' of type bool; 'paddingFactor' of type str; 'paddingRight' of type str; 'paddingBottom' of type str.
+The enumeration 'GSeverity' has the following literals: 'warning', 'error', 'info'.
+'graph::GModelRoot' is a specialization of 'GModelElement'.
+'graph::GNode' is a specialization of 'GLayouting'.
+'graph::GNode' is a specialization of 'GShapeElement'.
+'graph::GIssueMarker' is a specialization of 'GShapeElement'.
+'graph::GHtmlRoot' is a specialization of 'GModelRoot'.
+'graph::GCompartment' is a specialization of 'GLayouting'.
+'graph::GLabel' is a specialization of 'GShapeElement'.
+'graph::GGraph' is a specialization of 'GModelRoot'.
+'graph::GGraph' is a specialization of 'GBoundsAware'.
+'graph::GNode' is a specialization of 'GEdgeLayoutable'.
+'graph::GShapeElement' is a specialization of 'GModelElement'.
+'graph::GEdge' is a specialization of 'GModelElement'.
+'graph::GPreRenderedElement' is a specialization of 'GModelElement'.
+'graph::GButton' is a specialization of 'GShapeElement'.
+'graph::GLabel' is a specialization of 'GEdgeLayoutable'.
+'graph::GLabel' is a specialization of 'GAlignable'.
+'graph::GCompartment' is a specialization of 'GShapeElement'.
+'graph::GPort' is a specialization of 'GShapeElement'.
+'graph::GShapeElement' is a specialization of 'GBoundsAware'.
+'graph::GEdge' (role 'graph_GEdge11', cardinality 0..*) is associated with 'graph::GModelElement' (role 'graph_GModelElement12', cardinality 0..*).
+'graph::GModelElement' (role 'parent', cardinality 0..*) is associated with 'graph::GModelElement' (role 'GModelElement', cardinality 0..*).
+'graph::GEdgePlacement' (role 'graph_GEdgePlacement', cardinality 0..*) is associated with 'graph::GEdgeLayoutable' (role 'graph_GEdgeLayoutable', cardinality 0..*).
+'graph::GModelElement' (role 'GModelElement4', cardinality 0..*) is associated with 'graph::GModelElement' (role 'children', cardinality 0..*).
+'graph::GAlignable' (role 'graph_GAlignable', cardinality 0..*) is associated with 'graph::GPoint' (role 'graph_GPoint22', cardinality 0..*).
+'graph::GModelRoot' (role 'graph_GModelRoot', cardinality 0..*) is associated with 'graph::GBounds' (role 'graph_GBounds', cardinality 0..*).
+'graph::GDimension' (role 'graph_GDimension', cardinality 0..*) is associated with 'graph::GBoundsAware' (role 'graph_GBoundsAware17', cardinality 0..*).
+'graph::GIssueMarker' (role 'graph_GIssueMarker', cardinality 0..*) is associated with 'graph::GIssue' (role 'graph_GIssue', cardinality 0..*).
+'graph::GModelElement' (role 'graph_GModelElement', cardinality 0..*) is associated with 'graph::GEdge' (role 'graph_GEdge9', cardinality 0..*).
+'graph::GBoundsAware' (role 'graph_GBoundsAware', cardinality 0..*) is associated with 'graph::GPoint' (role 'graph_GPoint15', cardinality 0..*).
+'graph::GPoint' (role 'graph_GPoint', cardinality 0..*) is associated with 'graph::GEdge' (role 'graph_GEdge', cardinality 0..*).
+'graph::GLayoutOptions' (role 'graph_GLayoutOptions', cardinality 0..*) is associated with 'graph::GGraph' (role 'graph_GGraph', cardinality 0..*).
+'graph::GLayoutOptions' (role 'graph_GLayoutOptions20', cardinality 0..*) is associated with 'graph::GLayouting' (role 'graph_GLayouting', cardinality 0..*).

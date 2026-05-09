@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'ptn104::And' has no attributes.
+The class 'ptn104::Or' has no attributes.
+The class 'AbstractNode' has no attributes.
+The class 'ptn104::Place' has no attributes.
+The class 'ptn104::AbstractTransition' has the following attributes: 'guard' of type str.
+The class 'ptn104::Token' has no attributes.
+The class 'AbstractTransition' has no attributes.
+The class 'ptn104::AbstractNode' has the following attributes: 'name' of type str.
+'ptn104::Or' is a specialization of 'AbstractTransition'.
+'ptn104::Place' is a specialization of 'AbstractNode'.
+'ptn104::And' is a specialization of 'AbstractTransition'.
+'ptn104::AbstractTransition' is a specialization of 'AbstractNode'.
+'ptn104::Place' (role 'ptn104_Place5', cardinality 0..*) is associated with 'ptn104::AbstractTransition' (role 'ptn104_AbstractTransition', cardinality 0..*).
+'ptn104::Place' (role 'ptn104_Place10', cardinality 0..*) is associated with 'ptn104::AbstractTransition' (role 'ptn104_AbstractTransition9', cardinality 0..*).
+'ptn104::Place' (role 'ptn104_Place0', cardinality 0..*) is associated with 'ptn104::Place' (role 'ptn104_Place', cardinality 0..*).
+'ptn104::AbstractNode' (role 'ptn104_AbstractNode', cardinality 0..*) is associated with 'ptn104::Place' (role 'ptn104_Place3', cardinality 0..*).
+'ptn104::Token' (role 'ptn104_Token', cardinality 0..*) is associated with 'ptn104::Place' (role 'ptn104_Place7', cardinality 0..*).

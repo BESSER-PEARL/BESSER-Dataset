@@ -1,0 +1,29 @@
+The model has 10 class(es).
+The class 'GraphWiki::ArticleGraph' has no attributes.
+The class 'GraphWiki::ClassificationGraph' has no attributes.
+The class 'GraphWiki::Graph' has the following attributes: 'name' of type str.
+The class 'GraphWiki::IndexGraph' has no attributes.
+The class 'GraphWiki::Revision' has the following attributes: 'user' of type str; 'text_id' of type int; 'date' of type str.
+The class 'GraphWiki::Node' has the following attributes: 'visits' of type int; 'node_namespace' of type int; 'type' of type str; 'node_id' of type int; 'editions' of type int; 'title' of type str.
+The class 'GraphWiki::Edge' has the following attributes: 'type' of type str.
+The class 'GraphWiki::CategoryGraph' has no attributes.
+The class 'GraphWiki::Wiki' has the following attributes: 'title' of type str.
+The class 'Graph' has no attributes.
+'GraphWiki::CategoryGraph' is a specialization of 'Graph'.
+'GraphWiki::ClassificationGraph' is a specialization of 'Graph'.
+'GraphWiki::ArticleGraph' is a specialization of 'Graph'.
+'GraphWiki::IndexGraph' is a specialization of 'Graph'.
+'GraphWiki::Graph' (role 'GraphWiki_Graph16', cardinality 0..*) is associated with 'GraphWiki::Edge' (role 'GraphWiki_Edge17', cardinality 0..*).
+'GraphWiki::Node' (role 'GraphWiki_Node24', cardinality 0..*) is associated with 'GraphWiki::Edge' (role 'GraphWiki_Edge23', cardinality 0..*).
+'GraphWiki::ClassificationGraph' (role 'GraphWiki_ClassificationGraph', cardinality 0..*) is associated with 'GraphWiki::Wiki' (role 'GraphWiki_Wiki6', cardinality 0..*).
+'GraphWiki::Node' (role 'GraphWiki_Node27', cardinality 0..*) is associated with 'GraphWiki::Edge' (role 'GraphWiki_Edge26', cardinality 0..*).
+'GraphWiki::ArticleGraph' (role 'GraphWiki_ArticleGraph', cardinality 0..*) is associated with 'GraphWiki::Wiki' (role 'GraphWiki_Wiki4', cardinality 0..*).
+'GraphWiki::Wiki' (role 'GraphWiki_Wiki8', cardinality 0..*) is associated with 'GraphWiki::Node' (role 'GraphWiki_Node', cardinality 0..*).
+'GraphWiki::Wiki' (role 'GraphWiki_Wiki2', cardinality 0..*) is associated with 'GraphWiki::CategoryGraph' (role 'GraphWiki_CategoryGraph', cardinality 0..*).
+'GraphWiki::Node' (role 'Node', cardinality 0..*) is associated with 'GraphWiki::Revision' (role 'revisions', cardinality 0..*).
+'GraphWiki::Node' (role 'GraphWiki_Node14', cardinality 0..*) is associated with 'GraphWiki::Graph' (role 'GraphWiki_Graph', cardinality 0..*).
+'GraphWiki::Revision' (role 'GraphWiki_Revision', cardinality 0..*) is associated with 'GraphWiki::Wiki' (role 'GraphWiki_Wiki12', cardinality 0..*).
+'GraphWiki::Edge' (role 'GraphWiki_Edge', cardinality 0..*) is associated with 'GraphWiki::Wiki' (role 'GraphWiki_Wiki10', cardinality 0..*).
+'GraphWiki::Wiki' (role 'GraphWiki_Wiki', cardinality 0..*) is associated with 'GraphWiki::IndexGraph' (role 'GraphWiki_IndexGraph', cardinality 0..*).
+'GraphWiki::Node' (role 'node', cardinality 0..*) is associated with 'GraphWiki::Revision' (role 'Revision', cardinality 0..*).
+'GraphWiki::Revision' (role 'GraphWiki_Revision20', cardinality 0..*) is associated with 'GraphWiki::Node' (role 'GraphWiki_Node19', cardinality 0..*).

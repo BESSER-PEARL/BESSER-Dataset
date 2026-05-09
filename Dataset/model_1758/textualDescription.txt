@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'Sample::Person' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'Sample::EString' has no attributes.
+The class 'Sample::Library' has the following attributes: 'name' of type str.
+The class 'Sample::Book' has the following attributes: 'name' of type str; 'category' of type str.
+The enumeration 'Category' has the following literals: 'SF', 'Polar', 'Enfant'.
+'Sample::EString' (role 'Sample_EString', cardinality 0..*) is associated with 'Sample::Book' (role 'Sample_Book4', cardinality 0..*).
+'Sample::Library' (role 'Sample_Library', cardinality 0..*) is associated with 'Sample::Book' (role 'Sample_Book', cardinality 0..*).
+'Sample::Book' (role 'Sample_Book2', cardinality 0..*) is associated with 'Sample::Person' (role 'Sample_Person', cardinality 0..*).

@@ -1,0 +1,34 @@
+The model has 14 class(es).
+The class 'sgen::FeatureParameter' has the following attributes: 'parameterType' of type str; 'optional' of type bool.
+The class 'sgen::DeprecatableElement' has the following attributes: 'comment' of type str; 'deprecated' of type bool.
+The class 'sgen::FeatureConfiguration' has no attributes.
+The class 'sgen::GeneratorModel' has the following attributes: 'generatorId' of type str.
+The class 'sgen::Expression' has no attributes.
+The class 'DeprecatableElement' has no attributes.
+The class 'sgen::EObject' has no attributes.
+The class 'sgen::GeneratorConfiguration' has no attributes.
+The class 'sgen::FeatureType' has the following attributes: 'optional' of type bool.
+The class 'sgen::FeatureTypeLibrary' has the following attributes: 'name' of type str.
+The class 'sgen::GeneratorEntry' has the following attributes: 'contentType' of type str.
+The class 'sgen::Property' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'sgen::FeatureParameterValue' has no attributes.
+The enumeration 'ParameterTypes' has the following literals: 'BOOLEAN', 'FLOAT', 'STRING', 'INTEGER'.
+'sgen::FeatureType' is a specialization of 'NamedElement'.
+'sgen::FeatureParameter' is a specialization of 'DeprecatableElement'.
+'sgen::FeatureType' is a specialization of 'DeprecatableElement'.
+'sgen::FeatureParameter' is a specialization of 'NamedElement'.
+'sgen::FeatureType' (role 'FeatureType', cardinality 0..*) is associated with 'sgen::FeatureParameter' (role 'parameters', cardinality 0..*).
+'sgen::GeneratorModel' (role 'sgen_GeneratorModel2', cardinality 0..*) is associated with 'sgen::Property' (role 'sgen_Property', cardinality 0..*).
+'sgen::FeatureParameter' (role 'sgen_FeatureParameter', cardinality 0..*) is associated with 'sgen::FeatureParameterValue' (role 'sgen_FeatureParameterValue', cardinality 0..*).
+'sgen::Expression' (role 'sgen_Expression', cardinality 0..*) is associated with 'sgen::FeatureParameterValue' (role 'sgen_FeatureParameterValue19', cardinality 0..*).
+'sgen::FeatureParameter' (role 'FeatureParameter', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'featureType', cardinality 0..*).
+'sgen::GeneratorEntry' (role 'sgen_GeneratorEntry12', cardinality 0..*) is associated with 'sgen::EObject' (role 'sgen_EObject', cardinality 0..*).
+'sgen::FeatureConfiguration' (role 'FeatureConfiguration', cardinality 0..*) is associated with 'sgen::FeatureParameterValue' (role 'parameterValues', cardinality 0..*).
+'sgen::FeatureTypeLibrary' (role 'sgen_FeatureTypeLibrary21', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'sgen_FeatureType22', cardinality 0..*).
+'sgen::GeneratorEntry' (role 'sgen_GeneratorEntry14', cardinality 0..*) is associated with 'sgen::FeatureConfiguration' (role 'sgen_FeatureConfiguration15', cardinality 0..*).
+'sgen::GeneratorConfiguration' (role 'sgen_GeneratorConfiguration', cardinality 0..*) is associated with 'sgen::FeatureConfiguration' (role 'sgen_FeatureConfiguration', cardinality 0..*).
+'sgen::FeatureConfiguration' (role 'sgen_FeatureConfiguration8', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'sgen_FeatureType9', cardinality 0..*).
+'sgen::GeneratorEntry' (role 'sgen_GeneratorEntry', cardinality 0..*) is associated with 'sgen::GeneratorModel' (role 'sgen_GeneratorModel', cardinality 0..*).
+'sgen::FeatureTypeLibrary' (role 'sgen_FeatureTypeLibrary', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'sgen_FeatureType', cardinality 0..*).
+'sgen::FeatureParameterValue' (role 'FeatureParameterValue', cardinality 0..*) is associated with 'sgen::FeatureConfiguration' (role 'featureConfiguration', cardinality 0..*).

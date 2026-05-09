@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'simplegraph2graph::Graph2Graph' has the following attributes: 'name' of type str.
+The class 'simplegraph2graph::Edge' has no attributes.
+The class 'simplegraph2graph::Graph' has no attributes.
+The class 'simplegraph2graph::Node' has no attributes.
+The class 'simplegraph2graph::Element2Element' has no attributes.
+The class 'Element2Element' has no attributes.
+The class 'simplegraph2graph::Node2Node' has the following attributes: 'label' of type str.
+The class 'simplegraph2graph::Edge2Edge' has no attributes.
+'simplegraph2graph::Node2Node' is a specialization of 'Element2Element'.
+'simplegraph2graph::Edge2Edge' (role 'simplegraph2graph_Edge2Edge', cardinality 0..*) is associated with 'simplegraph2graph::Edge' (role 'simplegraph2graph_Edge', cardinality 0..*).
+'simplegraph2graph::Node' (role 'simplegraph2graph_Node19', cardinality 0..*) is associated with 'simplegraph2graph::Node2Node' (role 'simplegraph2graph_Node2Node18', cardinality 0..*).
+'simplegraph2graph::Graph2Graph' (role 'simplegraph2graph_Graph2Graph', cardinality 0..*) is associated with 'simplegraph2graph::Graph' (role 'simplegraph2graph_Graph', cardinality 0..*).
+'simplegraph2graph::Graph2Graph' (role 'Graph2Graph', cardinality 0..*) is associated with 'simplegraph2graph::Element2Element' (role 'element2Element', cardinality 0..*).
+'simplegraph2graph::Graph2Graph' (role 'simplegraph2graph_Graph2Graph2', cardinality 0..*) is associated with 'simplegraph2graph::Graph' (role 'simplegraph2graph_Graph3', cardinality 0..*).
+'simplegraph2graph::Edge2Edge' (role 'simplegraph2graph_Edge2Edge11', cardinality 0..*) is associated with 'simplegraph2graph::Node2Node' (role 'simplegraph2graph_Node2Node', cardinality 0..*).
+'simplegraph2graph::Edge2Edge' (role 'simplegraph2graph_Edge2Edge13', cardinality 0..*) is associated with 'simplegraph2graph::Node2Node' (role 'simplegraph2graph_Node2Node14', cardinality 0..*).
+'simplegraph2graph::Element2Element' (role 'Element2Element', cardinality 0..*) is associated with 'simplegraph2graph::Graph2Graph' (role 'owner', cardinality 0..*).
+'simplegraph2graph::Node' (role 'simplegraph2graph_Node', cardinality 0..*) is associated with 'simplegraph2graph::Node2Node' (role 'simplegraph2graph_Node2Node16', cardinality 0..*).
+'simplegraph2graph::Edge2Edge' (role 'simplegraph2graph_Edge2Edge8', cardinality 0..*) is associated with 'simplegraph2graph::Edge' (role 'simplegraph2graph_Edge9', cardinality 0..*).

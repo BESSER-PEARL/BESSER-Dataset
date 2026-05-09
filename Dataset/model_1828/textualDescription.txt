@@ -1,0 +1,48 @@
+The model has 23 class(es).
+The class 'book::Rotation' has the following attributes: 'toAngle' of type float; 'fromAngle' of type float.
+The class 'book::OpenPage' has no attributes.
+The class 'book::Control' has the following attributes: 'sound' of type str; 'image' of type str.
+The class 'book::Fade' has the following attributes: 'fromValue' of type float; 'toValue' of type float.
+The class 'book::Node' has the following attributes: 'enable' of type bool; 'opacity' of type float; 'foreground' of type str; 'background' of type str; 'bounds' of type str.
+The class 'book::Animation' has the following attributes: 'repeat' of type int; 'autoReverse' of type bool; 'duration' of type float; 'delay' of type float.
+The class 'book::Splash' has the following attributes: 'duration' of type int.
+The class 'book::Label' has the following attributes: 'font' of type str; 'text' of type str.
+The class 'Animation' has no attributes.
+The class 'book::Book' has the following attributes: 'description' of type str; 'resolution' of type str; 'title' of type str; 'version' of type str; 'author' of type str; 'bookId' of type str.
+The class 'book::Shape' has the following attributes: 'lineWidth' of type int; 'points' of type str.
+The class 'book::Group' has no attributes.
+The class 'book::Media' has the following attributes: 'duration' of type int; 'repeat' of type int; 'url' of type str; 'autoPlay' of type bool.
+The class 'Page' has no attributes.
+The class 'Action' has no attributes.
+The class 'book::Move' has the following attributes: 'toLocation' of type str; 'fromLocation' of type str.
+The class 'book::ImageFlash' has the following attributes: 'duration' of type int; 'images' of type str.
+The class 'book::Page' has the following attributes: 'name' of type str.
+The class 'book::Layer' has the following attributes: 'visible' of type bool.
+The class 'Control' has no attributes.
+The class 'book::Action' has no attributes.
+The class 'book::JSAction' has the following attributes: 'javaScript' of type str.
+The class 'Node' has no attributes.
+'book::Shape' is a specialization of 'Node'.
+'book::Fade' is a specialization of 'Animation'.
+'book::JSAction' is a specialization of 'Action'.
+'book::Control' is a specialization of 'Node'.
+'book::Splash' is a specialization of 'Page'.
+'book::ImageFlash' is a specialization of 'Control'.
+'book::OpenPage' is a specialization of 'Action'.
+'book::Rotation' is a specialization of 'Animation'.
+'book::Media' is a specialization of 'Control'.
+'book::Move' is a specialization of 'Animation'.
+'book::Label' is a specialization of 'Control'.
+'book::Animation' is a specialization of 'Action'.
+'book::Group' is a specialization of 'Control'.
+'book::Control' (role 'book_Control13', cardinality 0..*) is associated with 'book::Action' (role 'book_Action14', cardinality 0..*).
+'book::Node' (role 'book_Node', cardinality 0..*) is associated with 'book::Group' (role 'book_Group', cardinality 0..*).
+'book::Splash' (role 'book_Splash', cardinality 0..*) is associated with 'book::Book' (role 'book_Book2', cardinality 0..*).
+'book::Animation' (role 'book_Animation19', cardinality 0..*) is associated with 'book::ImageFlash' (role 'book_ImageFlash18', cardinality 0..*).
+'book::Action' (role 'book_Action', cardinality 0..*) is associated with 'book::Control' (role 'book_Control11', cardinality 0..*).
+'book::Page' (role 'book_Page21', cardinality 0..*) is associated with 'book::OpenPage' (role 'book_OpenPage', cardinality 0..*).
+'book::Control' (role 'book_Control', cardinality 0..*) is associated with 'book::Layer' (role 'book_Layer9', cardinality 0..*).
+'book::Page' (role 'book_Page7', cardinality 0..*) is associated with 'book::Layer' (role 'book_Layer', cardinality 0..*).
+'book::ImageFlash' (role 'book_ImageFlash', cardinality 0..*) is associated with 'book::Animation' (role 'book_Animation', cardinality 0..*).
+'book::Page' (role 'book_Page5', cardinality 0..*) is associated with 'book::Book' (role 'book_Book4', cardinality 0..*).
+'book::Book' (role 'book_Book', cardinality 0..*) is associated with 'book::Page' (role 'book_Page', cardinality 0..*).

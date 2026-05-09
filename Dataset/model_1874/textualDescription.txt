@@ -1,0 +1,29 @@
+The model has 16 class(es).
+The class 'basic::Library' has the following attributes: 'senchaTouchVersions' of type str; 'versions' of type str; 'builtin' of type bool; 'name' of type str.
+The class 'Alias' has no attributes.
+The class 'basic::TypeItem' has the following attributes: 'typeName' of type str; 'sourceStart' of type int; 'sourceEnd' of type int.
+The class 'basic::Feature' has no attributes.
+The class 'basic::Event' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'basic::LibrarySource' has the following attributes: 'type' of type str; 'exclusions' of type str; 'path' of type str; 'inclusions' of type str.
+The class 'basic::CoreVersionDefault' has the following attributes: 'version' of type str; 'facet' of type str; 'coreLib' of type str.
+The class 'TypeItem' has no attributes.
+The class 'basic::ExecutionEnvironment' has the following attributes: 'corePath' of type str; 'versions' of type str; 'libraries' of type str; 'facet' of type str; 'coreType' of type str; 'name' of type str; 'builtin' of type bool.
+The class 'basic::Parameter' has the following attributes: 'type' of type str; 'name' of type str; 'description' of type str.
+The class 'basic::ExtJSProject' has the following attributes: 'name' of type str.
+The class 'basic::Widget' has no attributes.
+The class 'basic::Plugin' has no attributes.
+The class 'basic::Alias' has the following attributes: 'rawName' of type str; 'name' of type str.
+The class 'basic::File' has the following attributes: 'name' of type str.
+The class 'basic::Layout' has no attributes.
+The enumeration 'LibrarySourceType' has the following literals: 'ZipFile', 'JavascriptFile', 'Folder'.
+'basic::Layout' is a specialization of 'Alias'.
+'basic::Plugin' is a specialization of 'Alias'.
+'basic::Alias' is a specialization of 'TypeItem'.
+'basic::Widget' is a specialization of 'Alias'.
+'basic::Feature' is a specialization of 'Alias'.
+'basic::Event' is a specialization of 'TypeItem'.
+'basic::LibrarySource' (role 'basic_LibrarySource', cardinality 0..*) is associated with 'basic::Library' (role 'basic_Library', cardinality 0..*).
+'basic::Alias' (role 'basic_Alias', cardinality 0..*) is associated with 'basic::File' (role 'basic_File2', cardinality 0..*).
+'basic::Event' (role 'basic_Event', cardinality 0..*) is associated with 'basic::Parameter' (role 'basic_Parameter', cardinality 0..*).
+'basic::ExtJSProject' (role 'basic_ExtJSProject', cardinality 0..*) is associated with 'basic::File' (role 'basic_File', cardinality 0..*).
+'basic::LibrarySource' (role 'basic_LibrarySource6', cardinality 0..*) is associated with 'basic::File' (role 'basic_File7', cardinality 0..*).

@@ -1,0 +1,33 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Book_Paragraph extends Chapter {
+
+    private String title;
+
+
+
+    public Book_Paragraph(
+        String title    ) {
+        super(
+        );
+        this.title = title;
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+}

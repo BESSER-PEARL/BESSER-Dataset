@@ -1,0 +1,287 @@
+The model has 109 class(es).
+The class 'rapidml::PrimitiveType' has no attributes.
+The class 'rapidml::ObjectRealization' has no attributes.
+The class 'rapidml::Extensible' has no attributes.
+The class 'rapidml::SimpleType' has no attributes.
+The class 'ReferenceElement' has no attributes.
+The class 'rapidml::ReferenceEmbed' has no attributes.
+The class 'rapidml::SourceReference' has no attributes.
+The class 'rapidml::ZenModel' has the following attributes: 'namespace' of type str; 'name' of type str.
+The class 'SingleValueType' has no attributes.
+The class 'rapidml::SecurityScope' has the following attributes: 'name' of type str.
+The class 'rapidml::SecuritySchemeLibrary' has the following attributes: 'name' of type str.
+The class 'rapidml::Inheritable' has no attributes.
+The class 'rapidml::TypedMessage' has the following attributes: 'useParentTypeReference' of type bool.
+The class 'rapidml::ResourceAPI' has the following attributes: 'name' of type str; 'version' of type str; 'baseURI' of type str.
+The class 'rapidml::ObjectResource' has no attributes.
+The class 'rapidml::CollectionReferenceElement' has no attributes.
+The class 'URISegment' has no attributes.
+The class 'rapidml::Documentation' has the following attributes: 'text' of type str.
+The class 'rapidml::Constraint' has no attributes.
+The class 'rapidml::CollectionParameter' has no attributes.
+The class 'rapidml::ReferenceLink' has the following attributes: 'name' of type str; 'collectionRealizationLevel' of type str.
+The class 'rapidml::CollectionResource' has the following attributes: 'resourceRealizationKind' of type str.
+The class 'rapidml::DataExample' has no attributes.
+The class 'rapidml::RealizationModelLocation' has the following attributes: 'uri' of type str.
+The class 'rapidml::SingleValueType' has no attributes.
+The class 'rapidml::PrimitiveTypeSourceReference' has no attributes.
+The class 'rapidml::ReferenceProperty' has the following attributes: 'container' of type bool; 'containment' of type bool.
+The class 'rapidml::Example' has no attributes.
+The class 'rapidml::RealizationContainer' has the following attributes: 'realizationName' of type str; 'withDefaultRealization' of type bool; 'effectiveRealization' of type str.
+The class 'rapidml::EnumConstant' has the following attributes: 'integerValue' of type int; 'literalValue' of type str; 'name' of type str.
+The class 'rapidml::Parameter' has the following attributes: 'fixed' of type str; 'name' of type str; 'required' of type bool; 'default' of type str.
+The class 'rapidml::Feature' has the following attributes: 'name' of type str; 'restriction' of type bool; 'key' of type bool; 'readOnly' of type bool.
+The class 'rapidml::SecuritySchemeParameter' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'Element' has no attributes.
+The class 'rapidml::DataType' has the following attributes: 'name' of type str.
+The class 'rapidml::TypedResponse' has the following attributes: 'statusCode' of type int.
+The class 'WithDataExamples' has no attributes.
+The class 'rapidml::ServiceDataResource' has the following attributes: 'default' of type bool.
+The class 'Parameter' has no attributes.
+The class 'rapidml::DataModel' has the following attributes: 'name' of type str.
+The class 'rapidml::ExternalExample' has the following attributes: 'path' of type str.
+The class 'rapidml::ResourceDefinition' has the following attributes: 'name' of type str.
+The class 'rapidml::TypedRequest' has no attributes.
+The class 'rapidml::HasSecurityValue' has no attributes.
+The class 'rapidml::NamedLinkDescriptor' has the following attributes: 'default' of type bool; 'name' of type str.
+The class 'rapidml::InlineDataExample' has the following attributes: 'body' of type str.
+The class 'rapidml::Enumeration' has no attributes.
+The class 'rapidml::URI' has no attributes.
+The class 'rapidml::WithDataExamples' has no attributes.
+The class 'rapidml::PropertyRealization' has the following attributes: 'cardinality' of type str.
+The class 'rapidml::LinkRelationsLibrary' has the following attributes: 'name' of type str.
+The class 'rapidml::InlineExample' has the following attributes: 'body' of type str.
+The class 'Inheritable' has no attributes.
+The class 'rapidml::MatrixParameter' has no attributes.
+The class 'rapidml::ReferenceElement' has no attributes.
+The class 'RealizationContainer' has no attributes.
+The class 'rapidml::HasStringValue' has no attributes.
+The class 'rapidml::Method' has the following attributes: 'httpMethod' of type str; 'id' of type str.
+The class 'rapidml::Documentable' has no attributes.
+The class 'rapidml::Extension' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'rapidml::LinkRelation' has the following attributes: 'name' of type str; 'specURL' of type str.
+The class 'rapidml::WithExamples' has no attributes.
+The class 'rapidml::AuthenticationMethod' has no attributes.
+The class 'ConstrainableType' has no attributes.
+The class 'WithExamples' has no attributes.
+The class 'rapidml::Structure' has no attributes.
+The class 'URIParameter' has no attributes.
+The class 'rapidml::ReferenceTreatment' has no attributes.
+The class 'rapidml::SecurityScheme' has the following attributes: 'name' of type str; 'flow' of type str; 'type' of type str.
+The class 'ServiceDataResource' has no attributes.
+The class 'rapidml::URIParameter' has no attributes.
+The class 'HasStringValue' has no attributes.
+The class 'DataType' has no attributes.
+The class 'rapidml::Operation' has the following attributes: 'name' of type str.
+The class 'ObjectRealization' has no attributes.
+The class 'rapidml::ConstrainableType' has no attributes.
+The class 'rapidml::ImportDeclaration' has the following attributes: 'importURI' of type str; 'alias' of type str; 'importedNamespace' of type str.
+The class 'rapidml::PathSegment' has no attributes.
+The class 'Feature' has no attributes.
+The class 'HasTitle' has no attributes.
+The class 'TypedMessage' has no attributes.
+The class 'SourceReference' has no attributes.
+The class 'rapidml::UserDefinedType' has no attributes.
+The class 'HasSecurityValue' has no attributes.
+The class 'Documentable' has no attributes.
+The class 'rapidml::HasTitle' has the following attributes: 'title' of type str.
+The class 'RESTElement' has no attributes.
+The class 'SimpleType' has no attributes.
+The class 'rapidml::RegExConstraint' has the following attributes: 'pattern' of type str.
+The class 'rapidml::ReferenceRealization' has the following attributes: 'realizationType' of type str; 'multiValued' of type bool.
+The class 'rapidml::Element' has the following attributes: 'cardinality' of type str.
+The class 'rapidml::TemplateParameter' has no attributes.
+The class 'ReferenceTreatment' has no attributes.
+The class 'DataExample' has no attributes.
+The class 'Extensible' has no attributes.
+The class 'rapidml::URISegment' has the following attributes: 'name' of type str.
+The class 'rapidml::MessageParameter' has the following attributes: 'httpLocation' of type str.
+The class 'Constraint' has no attributes.
+The class 'ResourceDefinition' has no attributes.
+The class 'rapidml::RESTElement' has no attributes.
+The class 'rapidml::ValueRangeConstraint' has the following attributes: 'minValueExclusive' of type bool; 'maxValueExclusive' of type bool; 'minValue' of type str; 'maxValue' of type str.
+The class 'rapidml::PrimitiveProperty' has no attributes.
+The class 'Example' has no attributes.
+The class 'rapidml::LengthConstraint' has the following attributes: 'maxLength' of type int; 'length' of type int; 'minLength' of type int.
+The class 'rapidml::MediaTypesLibrary' has no attributes.
+The class 'rapidml::MediaType' has the following attributes: 'specURL' of type str; 'name' of type str.
+The class 'rapidml::PrimitiveTypesLibrary' has the following attributes: 'name' of type str.
+The class 'rapidml::URISegmentWithParameter' has no attributes.
+The class 'rapidml::PropertyReference' has no attributes.
+The enumeration 'AuthenticationTypes' has the following literals: 'OAUTH2', 'CUSTOM', 'BASIC'.
+The enumeration 'ReferenceRealizationEnum' has the following literals: 'EMBED', 'LINK'.
+The enumeration 'AuthenticationFlows' has the following literals: 'IMPLICIT', 'PASSWORD', 'APPLICATION', 'ACCESS_CODE'.
+The enumeration 'HttpMessageParameterLocation' has the following literals: 'NONE', 'QUERY', 'HEADER'.
+The enumeration 'HTTPMethods' has the following literals: 'TRACE', 'HEAD', 'DELETE', 'PATCH', 'GET', 'OPTIONS', 'CONNECT', 'POST', 'PUT'.
+The enumeration 'CollectionRealizationEnum' has the following literals: 'REFERENCE_LINK_LIST', 'EMBEDDED_OBJECT_LIST'.
+The enumeration 'CollectionRealizationLevelEnum' has the following literals: 'COLLECTION_LEVEL', 'ITEM_LEVEL'.
+'rapidml::ReferenceElement' is a specialization of 'Element'.
+'rapidml::TypedMessage' is a specialization of 'RealizationContainer'.
+'rapidml::SimpleType' is a specialization of 'SingleValueType'.
+'rapidml::Feature' is a specialization of 'Documentable'.
+'rapidml::TypedMessage' is a specialization of 'WithExamples'.
+'rapidml::CollectionParameter' is a specialization of 'Parameter'.
+'rapidml::ReferenceRealization' is a specialization of 'RealizationContainer'.
+'rapidml::TypedMessage' is a specialization of 'RESTElement'.
+'rapidml::PropertyReference' is a specialization of 'SourceReference'.
+'rapidml::Method' is a specialization of 'RESTElement'.
+'rapidml::PrimitiveProperty' is a specialization of 'ConstrainableType'.
+'rapidml::CollectionReferenceElement' is a specialization of 'ReferenceElement'.
+'rapidml::PrimitiveType' is a specialization of 'SimpleType'.
+'rapidml::CollectionResource' is a specialization of 'ServiceDataResource'.
+'rapidml::PrimitiveProperty' is a specialization of 'Feature'.
+'rapidml::Constraint' is a specialization of 'Extensible'.
+'rapidml::ObjectRealization' is a specialization of 'Extensible'.
+'rapidml::SecuritySchemeLibrary' is a specialization of 'Documentable'.
+'rapidml::ObjectResource' is a specialization of 'ServiceDataResource'.
+'rapidml::MediaType' is a specialization of 'RESTElement'.
+'rapidml::ZenModel' is a specialization of 'Documentable'.
+'rapidml::LinkRelation' is a specialization of 'Documentable'.
+'rapidml::PrimitiveTypeSourceReference' is a specialization of 'SourceReference'.
+'rapidml::DataType' is a specialization of 'Documentable'.
+'rapidml::ZenModel' is a specialization of 'HasTitle'.
+'rapidml::URI' is a specialization of 'HasStringValue'.
+'rapidml::ReferenceProperty' is a specialization of 'Feature'.
+'rapidml::ReferenceEmbed' is a specialization of 'ReferenceTreatment'.
+'rapidml::SecurityScheme' is a specialization of 'Documentable'.
+'rapidml::EnumConstant' is a specialization of 'Documentable'.
+'rapidml::RESTElement' is a specialization of 'Extensible'.
+'rapidml::ResourceAPI' is a specialization of 'HasTitle'.
+'rapidml::ReferenceTreatment' is a specialization of 'Extensible'.
+'rapidml::Method' is a specialization of 'Extensible'.
+'rapidml::ResourceDefinition' is a specialization of 'HasSecurityValue'.
+'rapidml::DataModel' is a specialization of 'Documentable'.
+'rapidml::URIParameter' is a specialization of 'Parameter'.
+'rapidml::URISegment' is a specialization of 'HasStringValue'.
+'rapidml::Feature' is a specialization of 'Extensible'.
+'rapidml::Parameter' is a specialization of 'RESTElement'.
+'rapidml::SecurityScope' is a specialization of 'Documentable'.
+'rapidml::DataType' is a specialization of 'Extensible'.
+'rapidml::SecurityScheme' is a specialization of 'RESTElement'.
+'rapidml::ServiceDataResource' is a specialization of 'RealizationContainer'.
+'rapidml::PropertyRealization' is a specialization of 'ConstrainableType'.
+'rapidml::RealizationContainer' is a specialization of 'Extensible'.
+'rapidml::ZenModel' is a specialization of 'Extensible'.
+'rapidml::UserDefinedType' is a specialization of 'ConstrainableType'.
+'rapidml::RegExConstraint' is a specialization of 'Constraint'.
+'rapidml::ReferenceLink' is a specialization of 'ReferenceTreatment'.
+'rapidml::Feature' is a specialization of 'Element'.
+'rapidml::SecuritySchemeParameter' is a specialization of 'Documentable'.
+'rapidml::PrimitiveProperty' is a specialization of 'HasStringValue'.
+'rapidml::UserDefinedType' is a specialization of 'SimpleType'.
+'rapidml::TypedRequest' is a specialization of 'TypedMessage'.
+'rapidml::Operation' is a specialization of 'Documentable'.
+'rapidml::InlineExample' is a specialization of 'Example'.
+'rapidml::Enumeration' is a specialization of 'SingleValueType'.
+'rapidml::ResourceAPI' is a specialization of 'HasSecurityValue'.
+'rapidml::MessageParameter' is a specialization of 'Parameter'.
+'rapidml::RESTElement' is a specialization of 'Documentable'.
+'rapidml::Structure' is a specialization of 'DataType'.
+'rapidml::Method' is a specialization of 'HasSecurityValue'.
+'rapidml::InlineDataExample' is a specialization of 'DataExample'.
+'rapidml::TemplateParameter' is a specialization of 'URIParameter'.
+'rapidml::TypedResponse' is a specialization of 'TypedMessage'.
+'rapidml::ResourceDefinition' is a specialization of 'WithExamples'.
+'rapidml::NamedLinkDescriptor' is a specialization of 'ObjectRealization'.
+'rapidml::SingleValueType' is a specialization of 'DataType'.
+'rapidml::Parameter' is a specialization of 'Extensible'.
+'rapidml::ExternalExample' is a specialization of 'Example'.
+'rapidml::DataModel' is a specialization of 'HasTitle'.
+'rapidml::ResourceDefinition' is a specialization of 'RESTElement'.
+'rapidml::ReferenceProperty' is a specialization of 'ReferenceElement'.
+'rapidml::ValueRangeConstraint' is a specialization of 'Constraint'.
+'rapidml::Structure' is a specialization of 'Inheritable'.
+'rapidml::Structure' is a specialization of 'WithDataExamples'.
+'rapidml::LengthConstraint' is a specialization of 'Constraint'.
+'rapidml::URISegmentWithParameter' is a specialization of 'URISegment'.
+'rapidml::MatrixParameter' is a specialization of 'URIParameter'.
+'rapidml::ServiceDataResource' is a specialization of 'ResourceDefinition'.
+'rapidml::ResourceAPI' is a specialization of 'RESTElement'.
+'rapidml::ConstrainableType' is a specialization of 'Extensible'.
+'rapidml::ObjectRealization' (role 'rapidml_ObjectRealization96', cardinality 0..*) is associated with 'rapidml::Feature' (role 'rapidml_Feature97', cardinality 0..*).
+'rapidml::URIParameter' (role 'rapidml_URIParameter', cardinality 0..*) is associated with 'rapidml::URISegmentWithParameter' (role 'rapidml_URISegmentWithParameter', cardinality 0..*).
+'rapidml::Method' (role 'Method25', cardinality 0..*) is associated with 'rapidml::TypedResponse' (role 'responses', cardinality 0..*).
+'rapidml::DataModel' (role 'rapidml_DataModel', cardinality 0..*) is associated with 'rapidml::ZenModel' (role 'rapidml_ZenModel37', cardinality 0..*).
+'rapidml::ZenModel' (role 'rapidml_ZenModel39', cardinality 0..*) is associated with 'rapidml::MediaTypesLibrary' (role 'rapidml_MediaTypesLibrary', cardinality 0..*).
+'rapidml::ReferenceProperty' (role 'rapidml_ReferenceProperty139', cardinality 0..*) is associated with 'rapidml::ReferenceProperty' (role 'rapidml_ReferenceProperty137', cardinality 0..*).
+'rapidml::TypedMessage' (role 'rapidml_TypedMessage11', cardinality 0..*) is associated with 'rapidml::MediaType' (role 'rapidml_MediaType12', cardinality 0..*).
+'rapidml::PrimitiveProperty' (role 'rapidml_PrimitiveProperty141', cardinality 0..*) is associated with 'rapidml::SingleValueType' (role 'rapidml_SingleValueType', cardinality 0..*).
+'rapidml::Extension' (role 'rapidml_Extension', cardinality 0..*) is associated with 'rapidml::Extensible' (role 'rapidml_Extensible', cardinality 0..*).
+'rapidml::CollectionParameter' (role 'collectionParameters', cardinality 0..*) is associated with 'rapidml::CollectionResource' (role 'CollectionResource', cardinality 0..*).
+'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI', cardinality 0..*) is associated with 'rapidml::ZenModel' (role 'rapidml_ZenModel', cardinality 0..*).
+'rapidml::Parameter' (role 'containingParameter', cardinality 0..*) is associated with 'rapidml::SourceReference' (role 'SourceReference', cardinality 0..*).
+'rapidml::PrimitiveTypesLibrary' (role 'rapidml_PrimitiveTypesLibrary', cardinality 0..*) is associated with 'rapidml::ZenModel' (role 'rapidml_ZenModel43', cardinality 0..*).
+'rapidml::SecurityScheme' (role 'rapidml_SecurityScheme115', cardinality 0..*) is associated with 'rapidml::SecuritySchemeLibrary' (role 'rapidml_SecuritySchemeLibrary114', cardinality 0..*).
+'rapidml::Structure' (role 'rapidml_Structure145', cardinality 0..*) is associated with 'rapidml::Structure' (role 'rapidml_Structure143', cardinality 0..*).
+'rapidml::URI' (role 'rapidml_URI83', cardinality 0..*) is associated with 'rapidml::URISegment' (role 'rapidml_URISegment', cardinality 0..*).
+'rapidml::Structure' (role 'Structure', cardinality 0..*) is associated with 'rapidml::Feature' (role 'ownedFeatures', cardinality 0..*).
+'rapidml::SecuritySchemeLibrary' (role 'rapidml_SecuritySchemeLibrary', cardinality 0..*) is associated with 'rapidml::ZenModel' (role 'rapidml_ZenModel47', cardinality 0..*).
+'rapidml::DataModel' (role 'rapidml_DataModel154', cardinality 0..*) is associated with 'rapidml::DataType' (role 'rapidml_DataType', cardinality 0..*).
+'rapidml::Structure' (role 'rapidml_Structure163', cardinality 0..*) is associated with 'rapidml::ReferenceElement' (role 'rapidml_ReferenceElement162', cardinality 0..*).
+'rapidml::MediaType' (role 'rapidml_MediaType59', cardinality 0..*) is associated with 'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI58', cardinality 0..*).
+'rapidml::ReferenceElement' (role 'rapidml_ReferenceElement', cardinality 0..*) is associated with 'rapidml::ReferenceTreatment' (role 'rapidml_ReferenceTreatment', cardinality 0..*).
+'rapidml::MediaTypesLibrary' (role 'rapidml_MediaTypesLibrary126', cardinality 0..*) is associated with 'rapidml::MediaType' (role 'rapidml_MediaType127', cardinality 0..*).
+'rapidml::ResourceDefinition' (role 'containingResourceDefinition', cardinality 0..*) is associated with 'rapidml::Method' (role 'Method', cardinality 0..*).
+'rapidml::ResourceDefinition' (role 'rapidml_ResourceDefinition50', cardinality 0..*) is associated with 'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI49', cardinality 0..*).
+'rapidml::URI' (role 'URI', cardinality 0..*) is associated with 'rapidml::URIParameter' (role 'uriParameters', cardinality 0..*).
+'rapidml::MediaType' (role 'rapidml_MediaType', cardinality 0..*) is associated with 'rapidml::ResourceDefinition' (role 'rapidml_ResourceDefinition', cardinality 0..*).
+'rapidml::AuthenticationMethod' (role 'rapidml_AuthenticationMethod111', cardinality 0..*) is associated with 'rapidml::SecurityScope' (role 'rapidml_SecurityScope112', cardinality 0..*).
+'rapidml::RealizationContainer' (role 'RealizationContainer', cardinality 0..*) is associated with 'rapidml::ObjectRealization' (role 'inlineObjectRealization', cardinality 0..*).
+'rapidml::TypedRequest' (role 'request', cardinality 0..*) is associated with 'rapidml::Method' (role 'Method23', cardinality 0..*).
+'rapidml::ResourceDefinition' (role 'rapidml_ResourceDefinition6', cardinality 0..*) is associated with 'rapidml::URI' (role 'rapidml_URI', cardinality 0..*).
+'rapidml::ReferenceRealization' (role 'rapidml_ReferenceRealization75', cardinality 0..*) is associated with 'rapidml::ResourceDefinition' (role 'rapidml_ResourceDefinition76', cardinality 0..*).
+'rapidml::ReferenceRealization' (role 'rapidml_ReferenceRealization70', cardinality 0..*) is associated with 'rapidml::ReferenceTreatment' (role 'rapidml_ReferenceTreatment69', cardinality 0..*).
+'rapidml::CollectionReferenceElement' (role 'rapidml_CollectionReferenceElement', cardinality 0..*) is associated with 'rapidml::CollectionResource' (role 'rapidml_CollectionResource', cardinality 0..*).
+'rapidml::Operation' (role 'rapidml_Operation', cardinality 0..*) is associated with 'rapidml::Structure' (role 'rapidml_Structure147', cardinality 0..*).
+'rapidml::ObjectRealization' (role 'rapidml_ObjectRealization', cardinality 0..*) is associated with 'rapidml::PropertyRealization' (role 'rapidml_PropertyRealization91', cardinality 0..*).
+'rapidml::SecurityScheme' (role 'rapidml_SecurityScheme', cardinality 0..*) is associated with 'rapidml::SecurityScope' (role 'rapidml_SecurityScope', cardinality 0..*).
+'rapidml::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'rapidml::EnumConstant' (role 'enumConstants', cardinality 0..*).
+'rapidml::AuthenticationMethod' (role 'rapidml_AuthenticationMethod', cardinality 0..*) is associated with 'rapidml::HasSecurityValue' (role 'rapidml_HasSecurityValue', cardinality 0..*).
+'rapidml::Feature' (role 'Feature', cardinality 0..*) is associated with 'rapidml::Structure' (role 'containingDataType', cardinality 0..*).
+'rapidml::ZenModel' (role 'rapidml_ZenModel45', cardinality 0..*) is associated with 'rapidml::ImportDeclaration' (role 'rapidml_ImportDeclaration', cardinality 0..*).
+'rapidml::PrimitiveType' (role 'rapidml_PrimitiveType133', cardinality 0..*) is associated with 'rapidml::PrimitiveTypesLibrary' (role 'rapidml_PrimitiveTypesLibrary132', cardinality 0..*).
+'rapidml::SourceReference' (role 'sourceReference', cardinality 0..*) is associated with 'rapidml::Parameter' (role 'Parameter', cardinality 0..*).
+'rapidml::RealizationContainer' (role 'rapidml_RealizationContainer120', cardinality 0..*) is associated with 'rapidml::ReferenceTreatment' (role 'rapidml_ReferenceTreatment121', cardinality 0..*).
+'rapidml::ServiceDataResource' (role 'rapidml_ServiceDataResource', cardinality 0..*) is associated with 'rapidml::NamedLinkDescriptor' (role 'rapidml_NamedLinkDescriptor', cardinality 0..*).
+'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI55', cardinality 0..*) is associated with 'rapidml::MediaType' (role 'rapidml_MediaType56', cardinality 0..*).
+'rapidml::TypedMessage' (role 'containingMessage', cardinality 0..*) is associated with 'rapidml::MessageParameter' (role 'MessageParameter', cardinality 0..*).
+'rapidml::ResourceDefinition' (role 'rapidml_ResourceDefinition9', cardinality 0..*) is associated with 'rapidml::TypedMessage' (role 'rapidml_TypedMessage', cardinality 0..*).
+'rapidml::PrimitiveTypeSourceReference' (role 'rapidml_PrimitiveTypeSourceReference', cardinality 0..*) is associated with 'rapidml::PrimitiveType' (role 'rapidml_PrimitiveType', cardinality 0..*).
+'rapidml::LinkRelationsLibrary' (role 'rapidml_LinkRelationsLibrary129', cardinality 0..*) is associated with 'rapidml::LinkRelation' (role 'rapidml_LinkRelation130', cardinality 0..*).
+'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI61', cardinality 0..*) is associated with 'rapidml::LinkRelation' (role 'rapidml_LinkRelation', cardinality 0..*).
+'rapidml::MediaType' (role 'rapidml_MediaType21', cardinality 0..*) is associated with 'rapidml::MediaType' (role 'rapidml_MediaType19', cardinality 0..*).
+'rapidml::ReferenceLink' (role 'rapidml_ReferenceLink', cardinality 0..*) is associated with 'rapidml::LinkRelation' (role 'rapidml_LinkRelation78', cardinality 0..*).
+'rapidml::URI' (role 'containingURI', cardinality 0..*) is associated with 'rapidml::URIParameter' (role 'URIParameter', cardinality 0..*).
+'rapidml::Method' (role 'containingMethod', cardinality 0..*) is associated with 'rapidml::TypedRequest' (role 'TypedRequest', cardinality 0..*).
+'rapidml::CollectionResource' (role 'containingResourceDefinition29', cardinality 0..*) is associated with 'rapidml::CollectionParameter' (role 'CollectionParameter', cardinality 0..*).
+'rapidml::WithDataExamples' (role 'rapidml_WithDataExamples', cardinality 0..*) is associated with 'rapidml::DataExample' (role 'rapidml_DataExample', cardinality 0..*).
+'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI52', cardinality 0..*) is associated with 'rapidml::DataModel' (role 'rapidml_DataModel53', cardinality 0..*).
+'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI65', cardinality 0..*) is associated with 'rapidml::RealizationModelLocation' (role 'rapidml_RealizationModelLocation', cardinality 0..*).
+'rapidml::ObjectRealization' (role 'rapidml_ObjectRealization93', cardinality 0..*) is associated with 'rapidml::PropertyRealization' (role 'rapidml_PropertyRealization94', cardinality 0..*).
+'rapidml::LinkRelationsLibrary' (role 'rapidml_LinkRelationsLibrary', cardinality 0..*) is associated with 'rapidml::ZenModel' (role 'rapidml_ZenModel41', cardinality 0..*).
+'rapidml::PrimitiveType' (role 'rapidml_PrimitiveType158', cardinality 0..*) is associated with 'rapidml::Enumeration' (role 'rapidml_Enumeration', cardinality 0..*).
+'rapidml::Method' (role 'containingMethod15', cardinality 0..*) is associated with 'rapidml::TypedResponse' (role 'TypedResponse', cardinality 0..*).
+'rapidml::RealizationContainer' (role 'rapidml_RealizationContainer', cardinality 0..*) is associated with 'rapidml::ObjectRealization' (role 'rapidml_ObjectRealization118', cardinality 0..*).
+'rapidml::ConstrainableType' (role 'rapidml_ConstrainableType', cardinality 0..*) is associated with 'rapidml::Constraint' (role 'rapidml_Constraint', cardinality 0..*).
+'rapidml::SecurityScheme' (role 'rapidml_SecurityScheme104', cardinality 0..*) is associated with 'rapidml::MessageParameter' (role 'rapidml_MessageParameter', cardinality 0..*).
+'rapidml::PrimitiveProperty' (role 'rapidml_PrimitiveProperty', cardinality 0..*) is associated with 'rapidml::PropertyReference' (role 'rapidml_PropertyReference', cardinality 0..*).
+'rapidml::ReferenceElement' (role 'rapidml_ReferenceElement80', cardinality 0..*) is associated with 'rapidml::PathSegment' (role 'rapidml_PathSegment', cardinality 0..*).
+'rapidml::Inheritable' (role 'rapidml_Inheritable', cardinality 0..*) is associated with 'rapidml::Structure' (role 'rapidml_Structure149', cardinality 0..*).
+'rapidml::TypedResponse' (role 'rapidml_TypedResponse', cardinality 0..*) is associated with 'rapidml::SecurityScheme' (role 'rapidml_SecurityScheme106', cardinality 0..*).
+'rapidml::MediaType' (role 'rapidml_MediaType4', cardinality 0..*) is associated with 'rapidml::ResourceDefinition' (role 'rapidml_ResourceDefinition3', cardinality 0..*).
+'rapidml::ReferenceRealization' (role 'rapidml_ReferenceRealization73', cardinality 0..*) is associated with 'rapidml::ReferenceTreatment' (role 'rapidml_ReferenceTreatment72', cardinality 0..*).
+'rapidml::SecurityScheme' (role 'rapidml_SecurityScheme109', cardinality 0..*) is associated with 'rapidml::AuthenticationMethod' (role 'rapidml_AuthenticationMethod108', cardinality 0..*).
+'rapidml::ObjectRealization' (role 'ObjectRealization', cardinality 0..*) is associated with 'rapidml::RealizationContainer' (role 'realizationContainer', cardinality 0..*).
+'rapidml::ResourceDefinition' (role 'ResourceDefinition', cardinality 0..*) is associated with 'rapidml::Method' (role 'methods', cardinality 0..*).
+'rapidml::Structure' (role 'rapidml_Structure', cardinality 0..*) is associated with 'rapidml::RealizationContainer' (role 'rapidml_RealizationContainer123', cardinality 0..*).
+'rapidml::Inheritable' (role 'rapidml_Inheritable152', cardinality 0..*) is associated with 'rapidml::Structure' (role 'rapidml_Structure151', cardinality 0..*).
+'rapidml::Documentable' (role 'rapidml_Documentable', cardinality 0..*) is associated with 'rapidml::Documentation' (role 'rapidml_Documentation', cardinality 0..*).
+'rapidml::SimpleType' (role 'rapidml_SimpleType', cardinality 0..*) is associated with 'rapidml::UserDefinedType' (role 'rapidml_UserDefinedType', cardinality 0..*).
+'rapidml::Structure' (role 'rapidml_Structure136', cardinality 0..*) is associated with 'rapidml::ReferenceProperty' (role 'rapidml_ReferenceProperty', cardinality 0..*).
+'rapidml::Feature' (role 'rapidml_Feature', cardinality 0..*) is associated with 'rapidml::PropertyRealization' (role 'rapidml_PropertyRealization', cardinality 0..*).
+'rapidml::ReferenceRealization' (role 'rapidml_ReferenceRealization', cardinality 0..*) is associated with 'rapidml::ResourceAPI' (role 'rapidml_ResourceAPI63', cardinality 0..*).
+'rapidml::Example' (role 'rapidml_Example', cardinality 0..*) is associated with 'rapidml::WithExamples' (role 'rapidml_WithExamples', cardinality 0..*).
+'rapidml::ZenModel' (role 'rapidml_ZenModel89', cardinality 0..*) is associated with 'rapidml::ImportDeclaration' (role 'rapidml_ImportDeclaration88', cardinality 0..*).
+'rapidml::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'rapidml::EnumConstant' (role 'EnumConstant', cardinality 0..*).
+'rapidml::MessageParameter' (role 'parameters', cardinality 0..*) is associated with 'rapidml::TypedMessage' (role 'TypedMessage', cardinality 0..*).
+'rapidml::SecuritySchemeParameter' (role 'rapidml_SecuritySchemeParameter', cardinality 0..*) is associated with 'rapidml::SecurityScheme' (role 'rapidml_SecurityScheme102', cardinality 0..*).

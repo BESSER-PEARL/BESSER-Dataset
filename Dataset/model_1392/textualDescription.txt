@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'StatemachineMetamodel::Transition' has no attributes.
+The class 'StatemachineMetamodel::State' has the following attributes: 'name' of type str.
+The class 'StatemachineMetamodel::Statemachine' has no attributes.
+'StatemachineMetamodel::Transition' (role 'StatemachineMetamodel_Transition5', cardinality 0..*) is associated with 'StatemachineMetamodel::State' (role 'StatemachineMetamodel_State4', cardinality 0..*).
+'StatemachineMetamodel::State' (role 'StatemachineMetamodel_State', cardinality 0..*) is associated with 'StatemachineMetamodel::Statemachine' (role 'StatemachineMetamodel_Statemachine', cardinality 0..*).
+'StatemachineMetamodel::State' (role 'StatemachineMetamodel_State2', cardinality 0..*) is associated with 'StatemachineMetamodel::Transition' (role 'StatemachineMetamodel_Transition', cardinality 0..*).

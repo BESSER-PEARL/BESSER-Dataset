@@ -1,0 +1,13 @@
+The model has 3 class(es).
+The class 'simpleStateMachineMetaModel::State' has the following attributes: 'Name' of type str.
+The class 'simpleStateMachineMetaModel::SimpleStateMachine' has the following attributes: 'Name' of type str.
+The class 'simpleStateMachineMetaModel::Transition' has the following attributes: 'Name' of type str.
+'simpleStateMachineMetaModel::SimpleStateMachine' (role 'SimpleStateMachine', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::State' (role 'State', cardinality 0..*).
+'simpleStateMachineMetaModel::State' (role 'State7', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::Transition' (role 'Outgoing', cardinality 0..*).
+'simpleStateMachineMetaModel::SimpleStateMachine' (role 'simpleStateMachineMetaModel_SimpleStateMachine', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::State' (role 'simpleStateMachineMetaModel_State', cardinality 0..*).
+'simpleStateMachineMetaModel::Transition' (role 'Transition13', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::State' (role 'Source', cardinality 0..*).
+'simpleStateMachineMetaModel::State' (role 'States', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::SimpleStateMachine' (role 'SimpleStateMachine11', cardinality 0..*).
+'simpleStateMachineMetaModel::State' (role 'Target', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::Transition' (role 'Transition15', cardinality 0..*).
+'simpleStateMachineMetaModel::Transition' (role 'Transitions', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::SimpleStateMachine' (role 'SimpleStateMachine5', cardinality 0..*).
+'simpleStateMachineMetaModel::SimpleStateMachine' (role 'SimpleStateMachine2', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::Transition' (role 'Transition', cardinality 0..*).
+'simpleStateMachineMetaModel::Transition' (role 'Incoming', cardinality 0..*) is associated with 'simpleStateMachineMetaModel::State' (role 'State9', cardinality 0..*).

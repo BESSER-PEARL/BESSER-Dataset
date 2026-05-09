@@ -1,0 +1,69 @@
+The model has 34 class(es).
+The class 'QVTOperational::EntryOperation' has no attributes.
+The class 'QVTOperational::ConstructorBody' has no attributes.
+The class 'QVTOperational::Constructor' has no attributes.
+The class 'QVTOperational::OperationBody' has no attributes.
+The class 'ImperativeCallExp' has no attributes.
+The class 'ModuleImport' has no attributes.
+The class 'QVTOperational::MappingCallExp' has the following attributes: 'isStrict' of type str.
+The class 'QVTOperational::ImperativeCallExp' has the following attributes: 'isVirtual' of type str.
+The class 'ImperativeOperation' has no attributes.
+The class 'VarParameter' has no attributes.
+The class 'QVTOperational::ModelParameter' has no attributes.
+The class 'ModelType' has no attributes.
+The class 'QVTOperational::ObjectExp' has no attributes.
+The class 'ModelParameter' has no attributes.
+The class 'QVTOperational::ContextualProperty' has no attributes.
+The class 'ResolveExp' has no attributes.
+The class 'ConstructorBody' has no attributes.
+The class 'QVTOperational::Library' has no attributes.
+The class 'QVTOperational::Module' has the following attributes: 'isBlackbox' of type str.
+The class 'QVTOperational::ResolveExp' has the following attributes: 'one' of type str; 'isDeferred' of type str; 'isInverse' of type str.
+The class 'OperationBody' has no attributes.
+The class 'QVTOperational::ImperativeOperation' has the following attributes: 'isBlackbox' of type str.
+The class 'QVTOperational::MappingOperation' has no attributes.
+The class 'QVTOperational::MappingParameter' has no attributes.
+The class 'QVTOperational::ResolveInExp' has no attributes.
+The class 'QVTOperational::ModuleImport' has the following attributes: 'kind' of type str.
+The class 'QVTOperational::ModelType' has the following attributes: 'conformanceKind' of type str.
+The class 'QVTOperational::MappingBody' has no attributes.
+The class 'QVTOperational::OperationalTransformation' has no attributes.
+The class 'Module' has no attributes.
+The class 'EntryOperation' has no attributes.
+The class 'QVTOperational::Helper' has the following attributes: 'isQuery' of type str.
+The class 'QVTOperational::VarParameter' has the following attributes: 'kind' of type str.
+The class 'MappingOperation' has no attributes.
+The enumeration 'DirectionKind' has the following literals: 'in_', 'inout', 'out'.
+The enumeration 'ImportKind' has the following literals: 'access', 'extension'.
+'QVTOperational::MappingParameter' is a specialization of 'VarParameter'.
+'QVTOperational::Library' is a specialization of 'Module'.
+'QVTOperational::Helper' is a specialization of 'ImperativeOperation'.
+'QVTOperational::OperationalTransformation' is a specialization of 'Module'.
+'QVTOperational::ResolveInExp' is a specialization of 'ResolveExp'.
+'QVTOperational::EntryOperation' is a specialization of 'ImperativeOperation'.
+'QVTOperational::ConstructorBody' is a specialization of 'OperationBody'.
+'QVTOperational::MappingBody' is a specialization of 'OperationBody'.
+'QVTOperational::MappingOperation' is a specialization of 'ImperativeOperation'.
+'QVTOperational::MappingCallExp' is a specialization of 'ImperativeCallExp'.
+'QVTOperational::ModelParameter' is a specialization of 'VarParameter'.
+'QVTOperational::Constructor' is a specialization of 'ImperativeOperation'.
+'QVTOperational::ModuleImport' (role 'QVTOperational_ModuleImport', cardinality 0..*) is associated with 'ModelType' (role 'ModelType22', cardinality 0..*).
+'EntryOperation' (role 'EntryOperation', cardinality 0..*) is associated with 'QVTOperational::Module' (role 'QVTOperational_Module', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation', cardinality 0..*) is associated with 'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation34', cardinality 0..*) is associated with 'QVTOperational::ResolveInExp' (role 'QVTOperational_ResolveInExp', cardinality 0..*).
+'QVTOperational::OperationalTransformation' (role 'QVTOperational_OperationalTransformation', cardinality 0..*) is associated with 'ModelParameter' (role 'ModelParameter32', cardinality 0..*).
+'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation13', cardinality 0..*) is associated with 'MappingOperation' (role 'MappingOperation14', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation4', cardinality 0..*) is associated with 'ImperativeOperation' (role 'ImperativeOperation', cardinality 0..*).
+'ConstructorBody' (role 'ConstructorBody', cardinality 0..*) is associated with 'QVTOperational::ObjectExp' (role 'QVTOperational_ObjectExp', cardinality 0..*).
+'Module' (role 'Module27', cardinality 0..*) is associated with 'QVTOperational::ModuleImport' (role 'QVTOperational_ModuleImport26', cardinality 0..*).
+'ModelType' (role 'ModelType', cardinality 0..*) is associated with 'QVTOperational::Module' (role 'QVTOperational_Module20', cardinality 0..*).
+'ModuleImport' (role 'ModuleImport', cardinality 0..*) is associated with 'QVTOperational::Module' (role 'QVTOperational_Module18', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation36', cardinality 0..*) is associated with 'QVTOperational::VarParameter' (role 'QVTOperational_VarParameter', cardinality 0..*).
+'ModelParameter' (role 'ModelParameter', cardinality 0..*) is associated with 'QVTOperational::MappingParameter' (role 'QVTOperational_MappingParameter', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation30', cardinality 0..*) is associated with 'QVTOperational::OperationBody' (role 'QVTOperational_OperationBody', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation2', cardinality 0..*) is associated with 'VarParameter' (role 'VarParameter', cardinality 0..*).
+'VarParameter' (role 'VarParameter7', cardinality 0..*) is associated with 'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation6', cardinality 0..*).
+'Module' (role 'Module', cardinality 0..*) is associated with 'QVTOperational::ModuleImport' (role 'QVTOperational_ModuleImport24', cardinality 0..*).
+'QVTOperational::VarParameter' (role 'QVTOperational_VarParameter38', cardinality 0..*) is associated with 'ImperativeOperation' (role 'ImperativeOperation39', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation', cardinality 0..*) is associated with 'OperationBody' (role 'OperationBody', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation11', cardinality 0..*) is associated with 'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation10', cardinality 0..*).

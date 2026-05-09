@@ -1,0 +1,120 @@
+The model has 61 class(es).
+The class 'RoomComponent::IRoomAdministration' has no attributes.
+The class 'Implementation::StaffComponent::AccountManager' has no attributes.
+The class 'Implementation::Bank::AdministratorProvides' has no attributes.
+The class 'Implementation::StaffComponent' has no attributes.
+The class 'PaymentComponent::IPayment' has no attributes.
+The class 'Implementation::Bank' has no attributes.
+The class 'Implementation::RoomComponent::IRoomAdministration' has no attributes.
+The class 'Implementation::OccupancyComponent::IOccupancy' has no attributes.
+The class 'Implementation::AdditionalServiceComponent::AdditionalService' has the following attributes: 'usable' of type str; 'description' of type str; 'price' of type str; 'name' of type str.
+The class 'Implementation::DecisionSupportComponent::OccupancyDSSInfo' has the following attributes: 'roomNumber' of type str; 'checkOutDateTime' of type str; 'checkInDateTime' of type str; 'numberOfGuests' of type str.
+The class 'Implementation::StaffComponent::IAccountAdministration' has no attributes.
+The class 'Implementation::BookingComponent::RoomType' has the following attributes: 'roomType' of type str; 'cost' of type str.
+The class 'Implementation::PaymentComponent::PaymentHandler' has no attributes.
+The class 'BookingComponent::IBookingAdministration' has no attributes.
+The class 'Implementation::OccupancyComponent::Occupancy' has the following attributes: 'checkInDateTime' of type str; 'roomNumber' of type str; 'checkOutDateTime' of type str; 'bookingReference' of type str.
+The class 'Implementation::DecisionSupportComponent' has no attributes.
+The class 'Implementation::BookingComponent::IBookingAdministration' has no attributes.
+The class 'BookingComponent::IBookingDecision' has no attributes.
+The class 'Implementation::BookingComponent::BookingGuest' has the following attributes: 'lastName' of type str; 'phoneNumber' of type str; 'address' of type str; 'firstName' of type str.
+The class 'BookingComponent::IBookingInformation' has no attributes.
+The class 'Implementation::OccupancyComponent::IOccupancyDecision' has no attributes.
+The class 'Implementation::OccupancyComponent::OccupancyHandler' has no attributes.
+The class 'StaffComponent::IAuthentication' has no attributes.
+The class 'RoomComponent::IRoomInformation' has no attributes.
+The class 'OccupancyComponent::IOccupancyDecision' has no attributes.
+The class 'OccupancyComponent::IOccupancy' has no attributes.
+The class 'Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo' has the following attributes: 'additionalServiceName' of type str; 'additionalServicePrice' of type str.
+The class 'AdditionalServiceComponent::IAdditionalServiceAdministration' has no attributes.
+The class 'Implementation::AdditionalServiceComponent' has no attributes.
+The class 'AdditionalServiceComponent::IEventManagement' has no attributes.
+The class 'Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration' has no attributes.
+The class 'Implementation::RoomComponent::Bedroom' has the following attributes: 'bedCount' of type str.
+The class 'Implementation::RoomComponent::ConferenceRoom' has the following attributes: 'projector' of type bool; 'conferencePhone' of type bool; 'numberOfSeats' of type int.
+The class 'Implementation::Bank::CustomerProvides' has no attributes.
+The class 'Implementation::AdditionalServiceComponent::AdditionalServiceEvent' has the following attributes: 'currentAttendants' of type str; 'maxAttendant' of type str; 'dateTime' of type date; 'location' of type str.
+The class 'Implementation::RoomComponent::IRoomInformation' has no attributes.
+The class 'Implementation::RoomComponent' has no attributes.
+The class 'Implementation::DecisionSupportComponent::DSSController' has no attributes.
+The class 'Implementation::PaymentComponent::IPayment' has no attributes.
+The class 'Implementation::BookingComponent::PaymentDetails' has the following attributes: 'ccNumber' of type str; 'address' of type str; 'firstName' of type str; 'ccv' of type str; 'lastName' of type str; 'expiryMonth' of type str; 'expiryYear' of type str.
+The class 'Implementation::DecisionSupportComponent::IDecisionSupport' has no attributes.
+The class 'Implementation::OccupancyComponent' has no attributes.
+The class 'Implementation::BookingComponent::BookingHandler' has no attributes.
+The class 'Implementation::BookingComponent::Booking' has the following attributes: 'bookingReference' of type str; 'departureDate' of type date; 'currentCost' of type str; 'arrivalDate' of type date; 'isPaid' of type str; 'isActive' of type str.
+The class 'Implementation::RoomComponent::RoomHandler' has no attributes.
+The class 'Implementation::StaffComponent::IAuthentication' has no attributes.
+The class 'Implementation::AdditionalServiceComponent::AdditionalServiceHandler' has no attributes.
+The class 'Implementation::BookingComponent' has no attributes.
+The class 'Implementation::PaymentComponent::Payment' has the following attributes: 'amount' of type float; 'expiryMonth' of type str; 'ccNumber' of type str; 'ccv' of type str; 'expiryYear' of type str; 'firstName' of type str; 'lastName' of type str.
+The class 'Implementation::BookingComponent::IBookingDecision' has no attributes.
+The class 'Implementation::BookingComponent::IBookingInformation' has no attributes.
+The class 'StaffComponent::IAccountAdministration' has no attributes.
+The class 'Implementation::PaymentComponent' has no attributes.
+The class 'Implementation::DecisionSupportComponent::BookingDSSInfo' has the following attributes: 'address' of type str; 'numberOfGuests' of type str; 'customerLastName' of type str; 'arrivalDate' of type str; 'customerFirstName' of type str; 'roomType' of type str; 'departureDate' of type str.
+The class 'DecisionSupportComponent::IDecisionSupport' has no attributes.
+The class 'RoomComponent::Room' has no attributes.
+The class 'Implementation::RoomComponent::Room' has the following attributes: 'description' of type str; 'roomNumber' of type str; 'price' of type str; 'usable' of type str; 'roomTypeName' of type str.
+The class 'Implementation::StaffComponent::Employee' has the following attributes: 'name' of type str; 'ssn' of type str; 'email' of type str; 'password' of type str; 'phone' of type str; 'id' of type str.
+The class 'Implementation::BookingComponent::AdditionalService' has the following attributes: 'location' of type str; 'price' of type int; 'guestCount' of type str; 'name' of type str; 'dateTime' of type date.
+The class 'Implementation::AdditionalServiceComponent::IEventManagement' has no attributes.
+The class 'Implementation::OccupancyComponent::Guest' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+'Implementation::BookingComponent::BookingHandler' is a specialization of 'BookingComponent::IBookingAdministration'.
+'Implementation::AdditionalServiceComponent' is a specialization of 'AdditionalServiceComponent::IEventManagement'.
+'Implementation::RoomComponent' is a specialization of 'RoomComponent::IRoomInformation'.
+'Implementation::OccupancyComponent::OccupancyHandler' is a specialization of 'OccupancyComponent::IOccupancyDecision'.
+'Implementation::AdditionalServiceComponent::AdditionalServiceHandler' is a specialization of 'AdditionalServiceComponent::IEventManagement'.
+'Implementation::OccupancyComponent::OccupancyHandler' is a specialization of 'OccupancyComponent::IOccupancy'.
+'Implementation::RoomComponent::RoomHandler' is a specialization of 'RoomComponent::IRoomInformation'.
+'Implementation::RoomComponent' is a specialization of 'RoomComponent::IRoomAdministration'.
+'Implementation::RoomComponent::ConferenceRoom' is a specialization of 'RoomComponent::Room'.
+'Implementation::RoomComponent::RoomHandler' is a specialization of 'RoomComponent::IRoomAdministration'.
+'Implementation::DecisionSupportComponent' is a specialization of 'DecisionSupportComponent::IDecisionSupport'.
+'Implementation::AdditionalServiceComponent' is a specialization of 'AdditionalServiceComponent::IAdditionalServiceAdministration'.
+'Implementation::Bank' is a specialization of 'BookingComponent::IBookingInformation'.
+'Implementation::PaymentComponent' is a specialization of 'PaymentComponent::IPayment'.
+'Implementation::BookingComponent::BookingHandler' is a specialization of 'BookingComponent::IBookingInformation'.
+'Implementation::AdditionalServiceComponent::AdditionalServiceHandler' is a specialization of 'AdditionalServiceComponent::IAdditionalServiceAdministration'.
+'Implementation::StaffComponent' is a specialization of 'StaffComponent::IAuthentication'.
+'Implementation::StaffComponent::AccountManager' is a specialization of 'StaffComponent::IAuthentication'.
+'Implementation::PaymentComponent::PaymentHandler' is a specialization of 'PaymentComponent::IPayment'.
+'Implementation::BookingComponent::BookingHandler' is a specialization of 'BookingComponent::IBookingDecision'.
+'Implementation::StaffComponent::AccountManager' is a specialization of 'StaffComponent::IAccountAdministration'.
+'Implementation::Bank' is a specialization of 'BookingComponent::IBookingAdministration'.
+'Implementation::Bank' is a specialization of 'BookingComponent::IBookingDecision'.
+'Implementation::RoomComponent::Bedroom' is a specialization of 'RoomComponent::Room'.
+'Implementation::StaffComponent' is a specialization of 'StaffComponent::IAccountAdministration'.
+'Implementation::DecisionSupportComponent::DSSController' is a specialization of 'DecisionSupportComponent::IDecisionSupport'.
+'Implementation::PaymentComponent::IPayment' (role 'Implementation_PaymentComponent_IPayment', cardinality 0..*) is associated with 'Implementation::BookingComponent::BookingHandler' (role 'Implementation_BookingComponent_BookingHandler50', cardinality 0..*).
+'Implementation::StaffComponent::IAuthentication' (role 'Implementation_StaffComponent_IAuthentication57', cardinality 0..*) is associated with 'Implementation::StaffComponent::AccountManager' (role 'Implementation_StaffComponent_AccountManager56', cardinality 0..*).
+'Implementation::PaymentComponent::Payment' (role 'Implementation_PaymentComponent_Payment', cardinality 0..*) is associated with 'Implementation::PaymentComponent::PaymentHandler' (role 'Implementation_PaymentComponent_PaymentHandler', cardinality 0..*).
+'Implementation::BookingComponent::Booking' (role 'Implementation_BookingComponent_Booking36', cardinality 0..*) is associated with 'Implementation::BookingComponent::PaymentDetails' (role 'Implementation_BookingComponent_PaymentDetails', cardinality 0..*).
+'Implementation::BookingComponent::Booking' (role 'Implementation_BookingComponent_Booking34', cardinality 0..*) is associated with 'Implementation::BookingComponent::BookingGuest' (role 'Implementation_BookingComponent_BookingGuest', cardinality 0..*).
+'Implementation::BookingComponent::Booking' (role 'Implementation_BookingComponent_Booking', cardinality 0..*) is associated with 'Implementation::BookingComponent::AdditionalService' (role 'Implementation_BookingComponent_AdditionalService', cardinality 0..*).
+'Implementation::DecisionSupportComponent::DSSController' (role 'Implementation_DecisionSupportComponent_DSSController7', cardinality 0..*) is associated with 'Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo' (role 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo8', cardinality 0..*).
+'Implementation::DecisionSupportComponent::BookingDSSInfo' (role 'Implementation_DecisionSupportComponent_BookingDSSInfo', cardinality 0..*) is associated with 'Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo' (role 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo', cardinality 0..*).
+'Implementation::StaffComponent::AccountManager' (role 'Implementation_StaffComponent_AccountManager', cardinality 0..*) is associated with 'Implementation::StaffComponent::Employee' (role 'Implementation_StaffComponent_Employee', cardinality 0..*).
+'Implementation::AdditionalServiceComponent::AdditionalServiceEvent' (role 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent', cardinality 0..*) is associated with 'Implementation::AdditionalServiceComponent::AdditionalService' (role 'Implementation_AdditionalServiceComponent_AdditionalService', cardinality 0..*).
+'Implementation::RoomComponent::IRoomInformation' (role 'Implementation_RoomComponent_IRoomInformation', cardinality 0..*) is associated with 'Implementation::OccupancyComponent::OccupancyHandler' (role 'Implementation_OccupancyComponent_OccupancyHandler', cardinality 0..*).
+'Implementation::BookingComponent::Booking' (role 'Implementation_BookingComponent_Booking38', cardinality 0..*) is associated with 'Implementation::BookingComponent::RoomType' (role 'Implementation_BookingComponent_RoomType', cardinality 0..*).
+'Implementation::RoomComponent::Bedroom' (role 'Implementation_RoomComponent_Bedroom', cardinality 0..*) is associated with 'Implementation::RoomComponent::RoomHandler' (role 'Implementation_RoomComponent_RoomHandler61', cardinality 0..*).
+'Implementation::BookingComponent::Booking' (role 'Implementation_BookingComponent_Booking40', cardinality 0..*) is associated with 'Implementation::BookingComponent::BookingHandler' (role 'Implementation_BookingComponent_BookingHandler', cardinality 0..*).
+'Implementation::OccupancyComponent::OccupancyHandler' (role 'Implementation_OccupancyComponent_OccupancyHandler17', cardinality 0..*) is associated with 'Implementation::OccupancyComponent::Occupancy' (role 'Implementation_OccupancyComponent_Occupancy18', cardinality 0..*).
+'Implementation::AdditionalServiceComponent::IEventManagement' (role 'Implementation_AdditionalServiceComponent_IEventManagement', cardinality 0..*) is associated with 'Implementation::BookingComponent::BookingHandler' (role 'Implementation_BookingComponent_BookingHandler48', cardinality 0..*).
+'Implementation::StaffComponent::IAuthentication' (role 'Implementation_StaffComponent_IAuthentication59', cardinality 0..*) is associated with 'Implementation::RoomComponent::RoomHandler' (role 'Implementation_RoomComponent_RoomHandler', cardinality 0..*).
+'Implementation::AdditionalServiceComponent::AdditionalService' (role 'Implementation_AdditionalServiceComponent_AdditionalService29', cardinality 0..*) is associated with 'Implementation::AdditionalServiceComponent::AdditionalServiceHandler' (role 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler', cardinality 0..*).
+'Implementation::BookingComponent::BookingHandler' (role 'Implementation_BookingComponent_BookingHandler45', cardinality 0..*) is associated with 'Implementation::RoomComponent::IRoomInformation' (role 'Implementation_RoomComponent_IRoomInformation46', cardinality 0..*).
+'Implementation::Bank::AdministratorProvides' (role 'Implementation_Bank_AdministratorProvides', cardinality 0..*) is associated with 'Implementation::PaymentComponent::PaymentHandler' (role 'Implementation_PaymentComponent_PaymentHandler23', cardinality 0..*).
+'Implementation::DecisionSupportComponent::OccupancyDSSInfo' (role 'Implementation_DecisionSupportComponent_OccupancyDSSInfo', cardinality 0..*) is associated with 'Implementation::DecisionSupportComponent::DSSController' (role 'Implementation_DecisionSupportComponent_DSSController5', cardinality 0..*).
+'Implementation::BookingComponent::BookingHandler' (role 'Implementation_BookingComponent_BookingHandler42', cardinality 0..*) is associated with 'Implementation::StaffComponent::IAuthentication' (role 'Implementation_StaffComponent_IAuthentication43', cardinality 0..*).
+'Implementation::StaffComponent::IAuthentication' (role 'Implementation_StaffComponent_IAuthentication', cardinality 0..*) is associated with 'Implementation::AdditionalServiceComponent::AdditionalServiceHandler' (role 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler31', cardinality 0..*).
+'Implementation::StaffComponent::Employee' (role 'Implementation_StaffComponent_Employee54', cardinality 0..*) is associated with 'Implementation::StaffComponent::AccountManager' (role 'Implementation_StaffComponent_AccountManager53', cardinality 0..*).
+'Implementation::OccupancyComponent::IOccupancyDecision' (role 'Implementation_OccupancyComponent_IOccupancyDecision', cardinality 0..*) is associated with 'Implementation::DecisionSupportComponent::DSSController' (role 'Implementation_DecisionSupportComponent_DSSController', cardinality 0..*).
+'Implementation::OccupancyComponent::OccupancyHandler' (role 'Implementation_OccupancyComponent_OccupancyHandler15', cardinality 0..*) is associated with 'Implementation::BookingComponent::IBookingInformation' (role 'Implementation_BookingComponent_IBookingInformation', cardinality 0..*).
+'Implementation::AdditionalServiceComponent::AdditionalServiceEvent' (role 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent27', cardinality 0..*) is associated with 'Implementation::AdditionalServiceComponent::AdditionalService' (role 'Implementation_AdditionalServiceComponent_AdditionalService26', cardinality 0..*).
+'Implementation::DecisionSupportComponent::BookingDSSInfo' (role 'Implementation_DecisionSupportComponent_BookingDSSInfo11', cardinality 0..*) is associated with 'Implementation::DecisionSupportComponent::DSSController' (role 'Implementation_DecisionSupportComponent_DSSController10', cardinality 0..*).
+'Implementation::OccupancyComponent::Occupancy' (role 'Implementation_OccupancyComponent_Occupancy', cardinality 0..*) is associated with 'Implementation::OccupancyComponent::Guest' (role 'Implementation_OccupancyComponent_Guest', cardinality 0..*).
+'Implementation::RoomComponent::RoomHandler' (role 'Implementation_RoomComponent_RoomHandler63', cardinality 0..*) is associated with 'Implementation::RoomComponent::ConferenceRoom' (role 'Implementation_RoomComponent_ConferenceRoom', cardinality 0..*).
+'Implementation::BookingComponent::IBookingDecision' (role 'Implementation_BookingComponent_IBookingDecision', cardinality 0..*) is associated with 'Implementation::DecisionSupportComponent::DSSController' (role 'Implementation_DecisionSupportComponent_DSSController3', cardinality 0..*).
+'Implementation::PaymentComponent::PaymentHandler' (role 'Implementation_PaymentComponent_PaymentHandler21', cardinality 0..*) is associated with 'Implementation::Bank::CustomerProvides' (role 'Implementation_Bank_CustomerProvides', cardinality 0..*).

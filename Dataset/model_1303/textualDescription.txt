@@ -1,0 +1,35 @@
+The model has 12 class(es).
+The class 'StateMachines::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'Vertex' has no attributes.
+The class 'StateMachines::Transition' has the following attributes: 'kind' of type str.
+The class 'StateMachines::Region' has no attributes.
+The class 'StateMachines::Behavior' has no attributes.
+The class 'StateMachines::StateMachine' has no attributes.
+The class 'StateMachines::Vertex' has no attributes.
+The class 'StateMachines::ConnectionPointReference' has no attributes.
+The class 'StateMachines::FinalState' has no attributes.
+The class 'StateMachines::State' has no attributes.
+The class 'StateMachines::Trigger' has no attributes.
+The class 'State' has no attributes.
+The enumeration 'TransitionKind' has the following literals: 'internal', 'external', 'local'.
+The enumeration 'PseudoStateKind' has the following literals: 'deepHistory', 'join', 'exitPoint', 'junction', 'initial', 'entryPoint', 'fork', 'shallowHistory', 'choice', 'terminate'.
+'StateMachines::Pseudostate' is a specialization of 'Vertex'.
+'StateMachines::State' is a specialization of 'Vertex'.
+'StateMachines::ConnectionPointReference' is a specialization of 'Vertex'.
+'StateMachines::FinalState' is a specialization of 'State'.
+'StateMachines::Vertex' (role 'StateMachines_Vertex', cardinality 0..*) is associated with 'StateMachines::Region' (role 'StateMachines_Region2', cardinality 0..*).
+'StateMachines::Transition' (role 'StateMachines_Transition7', cardinality 0..*) is associated with 'StateMachines::Vertex' (role 'StateMachines_Vertex6', cardinality 0..*).
+'StateMachines::State' (role 'StateMachines_State23', cardinality 0..*) is associated with 'StateMachines::Behavior' (role 'StateMachines_Behavior24', cardinality 0..*).
+'StateMachines::Transition' (role 'StateMachines_Transition10', cardinality 0..*) is associated with 'StateMachines::Vertex' (role 'StateMachines_Vertex9', cardinality 0..*).
+'StateMachines::Trigger' (role 'StateMachines_Trigger29', cardinality 0..*) is associated with 'StateMachines::State' (role 'StateMachines_State28', cardinality 0..*).
+'StateMachines::StateMachine' (role 'StateMachines_StateMachine', cardinality 0..*) is associated with 'StateMachines::Region' (role 'StateMachines_Region', cardinality 0..*).
+'StateMachines::Pseudostate' (role 'StateMachines_Pseudostate35', cardinality 0..*) is associated with 'StateMachines::ConnectionPointReference' (role 'StateMachines_ConnectionPointReference34', cardinality 0..*).
+'StateMachines::Pseudostate' (role 'StateMachines_Pseudostate38', cardinality 0..*) is associated with 'StateMachines::ConnectionPointReference' (role 'StateMachines_ConnectionPointReference37', cardinality 0..*).
+'StateMachines::Trigger' (role 'StateMachines_Trigger', cardinality 0..*) is associated with 'StateMachines::Transition' (role 'StateMachines_Transition12', cardinality 0..*).
+'StateMachines::State' (role 'StateMachines_State18', cardinality 0..*) is associated with 'StateMachines::Behavior' (role 'StateMachines_Behavior', cardinality 0..*).
+'StateMachines::Region' (role 'StateMachines_Region14', cardinality 0..*) is associated with 'StateMachines::State' (role 'StateMachines_State', cardinality 0..*).
+'StateMachines::State' (role 'StateMachines_State31', cardinality 0..*) is associated with 'StateMachines::StateMachine' (role 'StateMachines_StateMachine32', cardinality 0..*).
+'StateMachines::State' (role 'StateMachines_State16', cardinality 0..*) is associated with 'StateMachines::Pseudostate' (role 'StateMachines_Pseudostate', cardinality 0..*).
+'StateMachines::Transition' (role 'StateMachines_Transition', cardinality 0..*) is associated with 'StateMachines::Region' (role 'StateMachines_Region4', cardinality 0..*).
+'StateMachines::ConnectionPointReference' (role 'StateMachines_ConnectionPointReference', cardinality 0..*) is associated with 'StateMachines::State' (role 'StateMachines_State26', cardinality 0..*).
+'StateMachines::State' (role 'StateMachines_State20', cardinality 0..*) is associated with 'StateMachines::Behavior' (role 'StateMachines_Behavior21', cardinality 0..*).

@@ -1,0 +1,73 @@
+The model has 33 class(es).
+The class 'TemplateableElementCS' has no attributes.
+The class 'TypedElementCS' has no attributes.
+The class 'DefCS' has no attributes.
+The class 'ModelElementCS' has no attributes.
+The class 'completeoclcs::PathNameDeclCS' has no attributes.
+The class 'completeoclcs::ContextDeclCS' has no attributes.
+The class 'completeoclcs::Package' has no attributes.
+The class 'completeoclcs::ExpSpecificationCS' has no attributes.
+The class 'completeoclcs::Operation' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'completeoclcs::VariableCS' has no attributes.
+The class 'FeatureContextDeclCS' has no attributes.
+The class 'completeoclcs::CompleteOCLDocumentCS' has no attributes.
+The class 'completeoclcs::ClassifierContextDeclCS' has the following attributes: 'selfName' of type str.
+The class 'completeoclcs::Class' has no attributes.
+The class 'completeoclcs::PackageDeclarationCS' has no attributes.
+The class 'completeoclcs::OperationContextDeclCS' has no attributes.
+The class 'completeoclcs::DefOperationCS' has no attributes.
+The class 'completeoclcs::DefCS' has the following attributes: 'isStatic' of type bool.
+The class 'completeoclcs::Property' has no attributes.
+The class 'completeoclcs::FeatureContextDeclCS' has no attributes.
+The class 'completeoclcs::ConstraintCS' has no attributes.
+The class 'PathNameDeclCS' has no attributes.
+The class 'ContextDeclCS' has no attributes.
+The class 'MorePivotable' has no attributes.
+The class 'completeoclcs::PathNameCS' has no attributes.
+The class 'completeoclcs::PropertyContextDeclCS' has no attributes.
+The class 'completeoclcs::TypedRefCS' has no attributes.
+The class 'completeoclcs::ParameterCS' has no attributes.
+The class 'NamespaceCS' has no attributes.
+The class 'RootCS' has no attributes.
+The class 'completeoclcs::OCLMessageArgCS' has no attributes.
+The class 'completeoclcs::DefPropertyCS' has no attributes.
+'completeoclcs::DefOperationCS' is a specialization of 'TemplateableElementCS'.
+'completeoclcs::ContextDeclCS' is a specialization of 'PathNameDeclCS'.
+'completeoclcs::OperationContextDeclCS' is a specialization of 'FeatureContextDeclCS'.
+'completeoclcs::PackageDeclarationCS' is a specialization of 'PathNameDeclCS'.
+'completeoclcs::PropertyContextDeclCS' is a specialization of 'FeatureContextDeclCS'.
+'completeoclcs::DefOperationCS' is a specialization of 'DefCS'.
+'completeoclcs::FeatureContextDeclCS' is a specialization of 'ContextDeclCS'.
+'completeoclcs::OperationContextDeclCS' is a specialization of 'TemplateableElementCS'.
+'completeoclcs::DefPropertyCS' is a specialization of 'DefCS'.
+'completeoclcs::ClassifierContextDeclCS' is a specialization of 'ContextDeclCS'.
+'completeoclcs::CompleteOCLDocumentCS' is a specialization of 'NamespaceCS'.
+'completeoclcs::CompleteOCLDocumentCS' is a specialization of 'RootCS'.
+'completeoclcs::ClassifierContextDeclCS' is a specialization of 'TemplateableElementCS'.
+'completeoclcs::DefCS' is a specialization of 'TypedElementCS'.
+'completeoclcs::PathNameDeclCS' is a specialization of 'MorePivotable'.
+'completeoclcs::OCLMessageArgCS' is a specialization of 'ExpCS'.
+'completeoclcs::PathNameDeclCS' is a specialization of 'ModelElementCS'.
+'completeoclcs::Class' (role 'completeoclcs_Class', cardinality 0..*) is associated with 'completeoclcs::ClassifierContextDeclCS' (role 'completeoclcs_ClassifierContextDeclCS3', cardinality 0..*).
+'completeoclcs::ConstraintCS' (role 'completeoclcs_ConstraintCS31', cardinality 0..*) is associated with 'completeoclcs::PackageDeclarationCS' (role 'completeoclcs_PackageDeclarationCS30', cardinality 0..*).
+'completeoclcs::CompleteOCLDocumentCS' (role 'completeoclcs_CompleteOCLDocumentCS6', cardinality 0..*) is associated with 'completeoclcs::PackageDeclarationCS' (role 'completeoclcs_PackageDeclarationCS', cardinality 0..*).
+'completeoclcs::OperationContextDeclCS' (role 'completeoclcs_OperationContextDeclCS25', cardinality 0..*) is associated with 'completeoclcs::Operation' (role 'completeoclcs_Operation', cardinality 0..*).
+'completeoclcs::PathNameCS' (role 'completeoclcs_PathNameCS', cardinality 0..*) is associated with 'completeoclcs::PathNameDeclCS' (role 'completeoclcs_PathNameDeclCS', cardinality 0..*).
+'completeoclcs::ConstraintCS' (role 'completeoclcs_ConstraintCS21', cardinality 0..*) is associated with 'completeoclcs::OperationContextDeclCS' (role 'completeoclcs_OperationContextDeclCS20', cardinality 0..*).
+'completeoclcs::VariableCS' (role 'completeoclcs_VariableCS', cardinality 0..*) is associated with 'completeoclcs::OperationContextDeclCS' (role 'completeoclcs_OperationContextDeclCS23', cardinality 0..*).
+'completeoclcs::PackageDeclarationCS' (role 'completeoclcs_PackageDeclarationCS33', cardinality 0..*) is associated with 'completeoclcs::Package' (role 'completeoclcs_Package', cardinality 0..*).
+'completeoclcs::PropertyContextDeclCS' (role 'completeoclcs_PropertyContextDeclCS41', cardinality 0..*) is associated with 'completeoclcs::Property' (role 'completeoclcs_Property', cardinality 0..*).
+'completeoclcs::TypedRefCS' (role 'completeoclcs_TypedRefCS', cardinality 0..*) is associated with 'completeoclcs::FeatureContextDeclCS' (role 'completeoclcs_FeatureContextDeclCS', cardinality 0..*).
+'completeoclcs::ContextDeclCS' (role 'completeoclcs_ContextDeclCS28', cardinality 0..*) is associated with 'completeoclcs::PackageDeclarationCS' (role 'completeoclcs_PackageDeclarationCS27', cardinality 0..*).
+'completeoclcs::ContextDeclCS' (role 'completeoclcs_ContextDeclCS', cardinality 0..*) is associated with 'completeoclcs::CompleteOCLDocumentCS' (role 'completeoclcs_CompleteOCLDocumentCS', cardinality 0..*).
+'completeoclcs::ExpSpecificationCS' (role 'completeoclcs_ExpSpecificationCS12', cardinality 0..*) is associated with 'completeoclcs::OperationContextDeclCS' (role 'completeoclcs_OperationContextDeclCS', cardinality 0..*).
+'completeoclcs::ConstraintCS' (role 'completeoclcs_ConstraintCS39', cardinality 0..*) is associated with 'completeoclcs::PropertyContextDeclCS' (role 'completeoclcs_PropertyContextDeclCS38', cardinality 0..*).
+'completeoclcs::OperationContextDeclCS' (role 'completeoclcs_OperationContextDeclCS14', cardinality 0..*) is associated with 'completeoclcs::ParameterCS' (role 'completeoclcs_ParameterCS15', cardinality 0..*).
+'completeoclcs::OperationContextDeclCS' (role 'completeoclcs_OperationContextDeclCS17', cardinality 0..*) is associated with 'completeoclcs::ConstraintCS' (role 'completeoclcs_ConstraintCS18', cardinality 0..*).
+'completeoclcs::PropertyContextDeclCS' (role 'completeoclcs_PropertyContextDeclCS', cardinality 0..*) is associated with 'completeoclcs::ExpSpecificationCS' (role 'completeoclcs_ExpSpecificationCS36', cardinality 0..*).
+'completeoclcs::DefCS' (role 'ownedDefinitions', cardinality 0..*) is associated with 'completeoclcs::ClassifierContextDeclCS' (role 'ClassifierContextDeclCS', cardinality 0..*).
+'completeoclcs::ParameterCS' (role 'completeoclcs_ParameterCS', cardinality 0..*) is associated with 'completeoclcs::DefOperationCS' (role 'completeoclcs_DefOperationCS', cardinality 0..*).
+'completeoclcs::DefCS' (role 'DefCS', cardinality 0..*) is associated with 'completeoclcs::ClassifierContextDeclCS' (role 'owningClassifierContextDecl', cardinality 0..*).
+'completeoclcs::ConstraintCS' (role 'completeoclcs_ConstraintCS', cardinality 0..*) is associated with 'completeoclcs::ClassifierContextDeclCS' (role 'completeoclcs_ClassifierContextDeclCS', cardinality 0..*).
+'completeoclcs::ExpSpecificationCS' (role 'completeoclcs_ExpSpecificationCS', cardinality 0..*) is associated with 'completeoclcs::DefCS' (role 'completeoclcs_DefCS', cardinality 0..*).

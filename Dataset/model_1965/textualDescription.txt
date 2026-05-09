@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'BaseObject' has no attributes.
+The class 'MediaPlayer::BaseObject' has the following attributes: 'propertyChangeSupport' of type str; 'id' of type int.
+The class 'MediaPlayer::MediaApi' has no attributes.
+The class 'MediaPlayer::Library' has no attributes.
+The class 'MediaPlayer::Playlist' has the following attributes: 'repeat' of type bool; 'name' of type str.
+The class 'MediaPlayer::PlayLayer' has no attributes.
+The class 'MediaPlayer::MediaObject' has the following attributes: 'album' of type str; 'state' of type str; 'location' of type str; 'title' of type str; 'year' of type int; 'artist' of type str.
+The enumeration 'State' has the following literals: 'STOPPED', 'PAUSED', 'PLAYING'.
+'MediaPlayer::Library' is a specialization of 'BaseObject'.
+'MediaPlayer::MediaObject' is a specialization of 'BaseObject'.
+'MediaPlayer::Playlist' is a specialization of 'BaseObject'.
+'MediaPlayer::MediaObject' (role 'MediaPlayer_MediaObject2', cardinality 0..*) is associated with 'MediaPlayer::MediaApi' (role 'MediaPlayer_MediaApi', cardinality 0..*).
+'MediaPlayer::MediaApi' (role 'MediaPlayer_MediaApi4', cardinality 0..*) is associated with 'MediaPlayer::MediaObject' (role 'MediaPlayer_MediaObject5', cardinality 0..*).
+'MediaPlayer::MediaObject' (role 'MediaPlayer_MediaObject', cardinality 0..*) is associated with 'MediaPlayer::Playlist' (role 'MediaPlayer_Playlist', cardinality 0..*).
+'MediaPlayer::PlayLayer' (role 'MediaPlayer_PlayLayer', cardinality 0..*) is associated with 'MediaPlayer::MediaApi' (role 'MediaPlayer_MediaApi7', cardinality 0..*).
+'MediaPlayer::MediaObject' (role 'MediaPlayer_MediaObject12', cardinality 0..*) is associated with 'MediaPlayer::Library' (role 'MediaPlayer_Library11', cardinality 0..*).
+'MediaPlayer::PlayLayer' (role 'MediaPlayer_PlayLayer9', cardinality 0..*) is associated with 'MediaPlayer::Library' (role 'MediaPlayer_Library', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'trace::EStructuralFeature' has no attributes.
+The class 'trace::OutputFile' has the following attributes: 'outlet' of type str; 'fileName' of type str.
+The class 'trace::EObject' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::InputElement' has no attributes.
+'trace::OutputFile' (role 'trace_OutputFile2', cardinality 0..*) is associated with 'trace::InputElement' (role 'trace_InputElement', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject', cardinality 0..*) is associated with 'trace::OutputFile' (role 'trace_OutputFile4', cardinality 0..*).
+'trace::InputElement' (role 'trace_InputElement6', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject7', cardinality 0..*).
+'trace::EStructuralFeature' (role 'trace_EStructuralFeature', cardinality 0..*) is associated with 'trace::InputElement' (role 'trace_InputElement9', cardinality 0..*).
+'trace::OutputFile' (role 'trace_OutputFile', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).

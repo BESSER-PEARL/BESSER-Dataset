@@ -1,0 +1,347 @@
+The model has 131 class(es).
+The class 'mMDSL::Statement' has no attributes.
+The class 'mMDSL::Mode' has the following attributes: 'name' of type str.
+The class 'mMDSL::Text' has the following attributes: 'value' of type str; 'y' of type str; 'x' of type str; 'fontsize' of type str.
+The class 'mMDSL::RefName' has no attributes.
+The class 'mMDSL::Line' has the following attributes: 'y2' of type str; 'y1' of type str; 'x2' of type str; 'x1' of type str.
+The class 'mMDSL::OperatorUnary' has the following attributes: 'not_' of type str.
+The class 'mMDSL::DirOperation' has no attributes.
+The class 'mMDSL::EmbedCodeType' has the following attributes: 'name' of type str.
+The class 'mMDSL::ModelSave' has no attributes.
+The class 'mMDSL::OperatorAnd' has the following attributes: 'and_' of type str.
+The class 'mMDSL::DirDelete' has the following attributes: 'dirname' of type str.
+The class 'mMDSL::FileRead' has the following attributes: 'filename' of type str.
+The class 'mMDSL::RemoveMenuItem' has no attributes.
+The class 'mMDSL::PathParametersS' has the following attributes: 'x' of type str; 'y' of type str; 'x2' of type str; 'y2' of type str.
+The class 'mMDSL::ClassInstanceDelete' has no attributes.
+The class 'mMDSL::Relation' has the following attributes: 'name' of type str.
+The class 'mMDSL::EqualExpression' has no attributes.
+The class 'mMDSL::Path' has no attributes.
+The class 'mMDSL::PathParametersA' has the following attributes: 'y' of type str; 'rx' of type str; 'xaxisrot' of type str; 'sweepflag' of type str; 'largearcflag' of type str; 'ry' of type str; 'x' of type str.
+The class 'mMDSL::LineTo' has no attributes.
+The class 'mMDSL::PathData' has the following attributes: 'closepath' of type str.
+The class 'mMDSL::Ellipse' has the following attributes: 'ry' of type str; 'cy' of type str; 'rx' of type str; 'cx' of type str.
+The class 'mMDSL::QuadraticBezierCurve' has no attributes.
+The class 'mMDSL::FillColor' has the following attributes: 'hexcolor' of type str; 'color' of type str.
+The class 'mMDSL::EObject' has no attributes.
+The class 'mMDSL::SmoothQuadraticBezierCurveTo' has no attributes.
+The class 'mMDSL::Attribute' has the following attributes: 'access' of type str; 'name' of type str.
+The class 'mMDSL::SVGCommand' has no attributes.
+The class 'mMDSL::Root' has no attributes.
+The class 'Expression' has no attributes.
+The class 'mMDSL::VarStatement' has no attributes.
+The class 'mMDSL::Enumeration' has the following attributes: 'name' of type str; 'enumvalues' of type str.
+The class 'mMDSL::Method' has no attributes.
+The class 'mMDSL::PathParametersHV' has the following attributes: 'x' of type str.
+The class 'mMDSL::ModelType' has the following attributes: 'name' of type str.
+The class 'mMDSL::PathParametersC' has the following attributes: 'y' of type str; 'x' of type str; 'x2' of type str; 'y1' of type str; 'x1' of type str; 'y2' of type str.
+The class 'mMDSL::ClassInstanceGet' has no attributes.
+The class 'mMDSL::MenuItem' has no attributes.
+The class 'mMDSL::WhileLoop' has no attributes.
+The class 'mMDSL::ModelLoad' has no attributes.
+The class 'mMDSL::FileCopy' has the following attributes: 'dest' of type str; 'src' of type str.
+The class 'mMDSL::AlgorithmOperation' has no attributes.
+The class 'mMDSL::OperatorMultyAssign' has the following attributes: 'addassign' of type str; 'divassign' of type str; 'multiassign' of type str; 'subassign' of type str.
+The class 'mMDSL::PathParametersMLT' has the following attributes: 'y' of type str; 'x' of type str.
+The class 'mMDSL::EmbedPlatformType' has the following attributes: 'name' of type str.
+The class 'mMDSL::LoopStatement' has no attributes.
+The class 'mMDSL::FontFamily' has the following attributes: 'font' of type str; 'fontstr' of type str.
+The class 'mMDSL::VerticalLineTo' has no attributes.
+The class 'mMDSL::ModelDelete' has no attributes.
+The class 'mMDSL::DirList' has the following attributes: 'dirname' of type str.
+The class 'mMDSL::RelationInstanceSet' has no attributes.
+The class 'mMDSL::DirCreate' has the following attributes: 'dirname' of type str.
+The class 'mMDSL::ModelOperation' has no attributes.
+The class 'mMDSL::CompareExpression' has no attributes.
+The class 'mMDSL::OperatorMultiply' has the following attributes: 'multiply' of type str; 'modulo' of type str; 'divide' of type str.
+The class 'mMDSL::StrokeColor' has the following attributes: 'color' of type str; 'hexcolor' of type str.
+The class 'mMDSL::ClassInstanceCreate' has the following attributes: 'name' of type str.
+The class 'mMDSL::ModelCreate' has the following attributes: 'name' of type str.
+The class 'mMDSL::ModelDiscard' has no attributes.
+The class 'mMDSL::Points' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'mMDSL::FileDelete' has the following attributes: 'filename' of type str.
+The class 'mMDSL::Reference' has the following attributes: 'name' of type str.
+The class 'mMDSL::ErrorBox' has the following attributes: 'title' of type str; 'buttontype' of type str; 'text' of type str.
+The class 'mMDSL::BreakContinue' has the following attributes: 'break_' of type str; 'continue_' of type str.
+The class 'mMDSL::IncludeLibraryType' has the following attributes: 'name' of type str.
+The class 'mMDSL::Algorithm' has the following attributes: 'name' of type str.
+The class 'mMDSL::OperatorAdd' has the following attributes: 'add' of type str; 'subtract' of type str.
+The class 'mMDSL::RelationInstanceCreate' has the following attributes: 'name' of type str.
+The class 'mMDSL::InstanceOperation' has no attributes.
+The class 'mMDSL::OperatorAssign' has the following attributes: 'assign' of type str.
+The class 'mMDSL::ClassInstanceGetAll' has no attributes.
+The class 'mMDSL::OperatorEqual' has the following attributes: 'equal' of type str; 'notequal' of type str.
+The class 'mMDSL::ClassInstanceSet' has no attributes.
+The class 'mMDSL::AttributeGet' has the following attributes: 'attrgetparams' of type str.
+The class 'mMDSL::ContextItem' has no attributes.
+The class 'mMDSL::AttributeOperation' has no attributes.
+The class 'mMDSL::RelationInstanceGet' has no attributes.
+The class 'mMDSL::SimpleUI' has no attributes.
+The class 'mMDSL::Class' has the following attributes: 'name' of type str.
+The class 'mMDSL::HorizontalLineTo' has no attributes.
+The class 'mMDSL::SmoothCurveTo' has no attributes.
+The class 'mMDSL::SymbolRelation' has the following attributes: 'name' of type str.
+The class 'mMDSL::RemoveContextItem' has no attributes.
+The class 'mMDSL::FileCreate' has the following attributes: 'filename' of type str.
+The class 'mMDSL::InfoBox' has the following attributes: 'title' of type str; 'text' of type str.
+The class 'mMDSL::MoveTo' has no attributes.
+The class 'mMDSL::FileWrite' has the following attributes: 'append' of type str; 'text' of type str; 'filename' of type str.
+The class 'mMDSL::SelectionStatement' has no attributes.
+The class 'mMDSL::InsertEmbedCode' has no attributes.
+The class 'mMDSL::EnumType' has no attributes.
+The class 'mMDSL::RelationInstanceDelete' has no attributes.
+The class 'mMDSL::DirGetWorking' has no attributes.
+The class 'mMDSL::InsertContextItem' has the following attributes: 'context' of type str; 'name' of type str.
+The class 'mMDSL::CurveTo' has no attributes.
+The class 'mMDSL::SymbolClass' has the following attributes: 'name' of type str.
+The class 'mMDSL::Polyline' has no attributes.
+The class 'mMDSL::Expr' has no attributes.
+The class 'mMDSL::EditBox' has the following attributes: 'text' of type str; 'title' of type str; 'okbuttontext' of type str.
+The class 'mMDSL::ClassAttribute' has the following attributes: 'name' of type str.
+The class 'mMDSL::OperatorCompare' has the following attributes: 'greaterequal' of type str; 'lesserequal' of type str; 'greater' of type str; 'lesser' of type str.
+The class 'mMDSL::RelationInstance' has no attributes.
+The class 'mMDSL::Event' has the following attributes: 'name' of type str.
+The class 'mMDSL::MethodName' has the following attributes: 'name' of type str.
+The class 'mMDSL::ForLoop' has the following attributes: 'start' of type int; 'stop' of type int; 'interval' of type int.
+The class 'mMDSL::ClassInstance' has no attributes.
+The class 'mMDSL::OperatorOr' has the following attributes: 'or_' of type str.
+The class 'mMDSL::Type' has the following attributes: 'simpletype' of type str.
+The class 'mMDSL::AdditionExpression' has no attributes.
+The class 'mMDSL::ItemOperation' has no attributes.
+The class 'mMDSL::AndExpression' has no attributes.
+The class 'mMDSL::EmbedCode' has the following attributes: 'name' of type str; 'embeddedcode' of type str.
+The class 'mMDSL::Rectangle' has the following attributes: 'x' of type str; 'y' of type str; 'height' of type str; 'width' of type str.
+The class 'mMDSL::Metamodel' has no attributes.
+The class 'mMDSL::OrExpression' has no attributes.
+The class 'mMDSL::RelationInstanceGetAll' has no attributes.
+The class 'mMDSL::ViewBox' has the following attributes: 'text' of type str; 'title' of type str.
+The class 'mMDSL::EllipticalArc' has no attributes.
+The class 'mMDSL::AttributeSet' has the following attributes: 'attrsetparams' of type str; 'valueRealNumber' of type str; 'valueString' of type str.
+The class 'mMDSL::WarningBox' has the following attributes: 'buttontype' of type str; 'title' of type str; 'text' of type str.
+The class 'mMDSL::Circle' has the following attributes: 'cx' of type str; 'r' of type str; 'cy' of type str.
+The class 'mMDSL::InsertMenuItem' has the following attributes: 'menu' of type str; 'name' of type str.
+The class 'mMDSL::PathParametersQ' has the following attributes: 'y' of type str; 'x1' of type str; 'y1' of type str; 'x' of type str.
+The class 'mMDSL::MultiplicationExpression' has no attributes.
+The class 'mMDSL::Polygon' has no attributes.
+The class 'mMDSL::IncludeLibrary' has the following attributes: 'name' of type str.
+The class 'mMDSL::Variable' has the following attributes: 'name' of type str.
+The class 'mMDSL::Expression' has the following attributes: 'false' of type str; 'valueString' of type str; 'valueRealNumber' of type str; 'true' of type str.
+The class 'mMDSL::DirSetWorking' has the following attributes: 'dirname' of type str.
+The class 'mMDSL::ModelIsLoaded' has no attributes.
+The class 'mMDSL::FileOperation' has no attributes.
+The class 'mMDSL::SymbolStyle' has the following attributes: 'fontsize' of type str; 'name' of type str; 'strokewidth' of type str.
+The enumeration 'AttrSetParams' has the following literals: 'value'.
+The enumeration 'ButtonType' has the following literals: 'ok', 'okcancel', 'defno', 'defyes', 'defretry', 'yesno', 'defcancel', 'retrycancel', 'defok', 'yesnocancel'.
+The enumeration 'SimpleType' has the following literals: 'Int', 'Double', 'String'.
+The enumeration 'Color' has the following literals: 'darkorange', 'sandybrown', 'indianred', 'darkgray', 'lemonchiffon', 'tan', 'darkseagreen', 'lightyellow', 'black', 'mediumvioletred', 'saddlebrown', 'sienna', 'silver', 'lightskyblue', 'wheat', 'palegoldenrod', 'olivedrab', 'white', 'blanchedalmond', 'lightcoral', 'turquoise', 'floralwhite', 'darkcyan', 'gray', 'bisque', 'lightcyan', 'dodgerblue', 'cyan', 'blueviolet', 'lightmagenta', 'mediumpurple', 'darkslategray', 'khaki', 'lightslategray', 'mediumorchid', 'antiquewhite', 'forestgreen', 'darkgreen', 'cornflowerblue', 'azure', 'darkslateblue', 'dimgray', 'darkolivegreen', 'thistle', 'cadetblue', 'rosybrown', 'beige', 'steelblue', 'deeppink', 'lavenderblush', 'darkorchid', 'darkred', 'magenta', 'oldlace', 'slateblue', 'lightgreen', 'firebrick', 'mediumturquoise', 'tomato', 'snow', 'lightsteelblue', 'moccasin', 'peachpuff', 'mediumseagreen', 'darkkhaki', 'teal', 'royalblue', 'chartreuse', 'linen', 'orchid', 'mistyrose', 'pink', 'gold', 'darkviolet', 'peru', 'fuchsia', 'seashell', 'papayawhip', 'red', 'palegreen', 'lawngreen', 'hotpink', 'palevioletred', 'darkturquoise', 'maroon', 'darkmagenta', 'yellowgreen', 'darkblue', 'ivory', 'gainsboro', 'midnightblue', 'lightpink', 'purple', 'lightblue', 'olive', 'lightgoldenrodyellow', 'lightsalmon', 'navajowhite', 'honeydew', 'orangered', 'lightseagreen', 'mediumaquamarine', 'green', 'violet', 'greenyellow', 'orange', 'brown', 'crimson', 'slategray', 'goldenrod', 'lightgray', 'navy', 'limegreen', 'skyblue', 'plum', 'aliceblue', 'darksalmon', 'yellow', 'coral', 'deepskyblue', 'powderblue', 'seagreen', 'springgreen', 'aquamarine', 'chocolate', 'lime', 'indigo', 'salmon', 'ghostwhite', 'cornsilk', 'paleturquoise', 'burlywood', 'darkgoldenrod', 'mediumspringgreen', 'lavender', 'mintcream', 'blue', 'mediumblue', 'mediumslateblue', 'whitesmoke', 'aqua'.
+The enumeration 'EventName' has the following literals: 'openmodel', 'createmodel', 'createrelationinstance', 'discardinstance', 'setattributevalue', 'aftercreatemodelingnode', 'deleteinstance', 'aftercreatemodelingconnector', 'savemodel', 'deleterelationinstance', 'beforecreaterelationinstance', 'discardmodel', 'beforedeletemodel', 'createinstance', 'beforedeleteinstance', 'beforecreatemodel', 'renameinstance', 'beforediscardmodel', 'beforesavemodel', 'aftereditattributevalue', 'deletemodel', 'toolinitialized'.
+The enumeration 'AccessType' has the following literals: 'internal', 'read', 'write'.
+The enumeration 'AttrGetParams' has the following literals: 'name', 'value', 'type'.
+The enumeration 'Font' has the following literals: 'impact', 'lucidaconsole', 'symbol', 'palatinolinotype', 'msserif', 'timesnewroman', 'trebuchetms', 'verdana', 'tahoma', 'georgia', 'arial', 'lucidasansunicode', 'windings', 'mssansserif', 'couriernew', 'comicsansms', 'webdings', 'arialblack'.
+'mMDSL::EqualExpression' is a specialization of 'Expression'.
+'mMDSL::OrExpression' is a specialization of 'Expression'.
+'mMDSL::MultiplicationExpression' is a specialization of 'Expression'.
+'mMDSL::AndExpression' is a specialization of 'Expression'.
+'mMDSL::CompareExpression' is a specialization of 'Expression'.
+'mMDSL::AdditionExpression' is a specialization of 'Expression'.
+'mMDSL::Text' (role 'mMDSL_Text', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand147', cardinality 0..*).
+'mMDSL::OperatorMultyAssign' (role 'mMDSL_OperatorMultyAssign', cardinality 0..*) is associated with 'mMDSL::OperatorAssign' (role 'mMDSL_OperatorAssign298', cardinality 0..*).
+'mMDSL::LineTo' (role 'mMDSL_LineTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData168', cardinality 0..*).
+'mMDSL::Reference' (role 'mMDSL_Reference281', cardinality 0..*) is associated with 'mMDSL::VarStatement' (role 'mMDSL_VarStatement280', cardinality 0..*).
+'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI', cardinality 0..*) is associated with 'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation326', cardinality 0..*).
+'mMDSL::ModelDiscard' (role 'mMDSL_ModelDiscard402', cardinality 0..*) is associated with 'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate403', cardinality 0..*).
+'mMDSL::Type' (role 'mMDSL_Type84', cardinality 0..*) is associated with 'mMDSL::ClassAttribute' (role 'mMDSL_ClassAttribute83', cardinality 0..*).
+'mMDSL::Variable' (role 'mMDSL_Variable482', cardinality 0..*) is associated with 'mMDSL::AttributeSet' (role 'mMDSL_AttributeSet481', cardinality 0..*).
+'mMDSL::DirOperation' (role 'mMDSL_DirOperation348', cardinality 0..*) is associated with 'mMDSL::DirCreate' (role 'mMDSL_DirCreate', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand149', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle150', cardinality 0..*).
+'mMDSL::FileOperation' (role 'mMDSL_FileOperation', cardinality 0..*) is associated with 'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation322', cardinality 0..*).
+'mMDSL::FileOperation' (role 'mMDSL_FileOperation336', cardinality 0..*) is associated with 'mMDSL::FileDelete' (role 'mMDSL_FileDelete', cardinality 0..*).
+'mMDSL::InsertEmbedCode' (role 'mMDSL_InsertEmbedCode214', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle213', cardinality 0..*).
+'mMDSL::Variable' (role 'mMDSL_Variable314', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression313', cardinality 0..*).
+'mMDSL::Method' (role 'mMDSL_Method37', cardinality 0..*) is associated with 'mMDSL::Event' (role 'mMDSL_Event', cardinality 0..*).
+'mMDSL::ModelIsLoaded' (role 'mMDSL_ModelIsLoaded411', cardinality 0..*) is associated with 'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate412', cardinality 0..*).
+'mMDSL::SmoothQuadraticBezierCurveTo' (role 'mMDSL_SmoothQuadraticBezierCurveTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData180', cardinality 0..*).
+'mMDSL::VarStatement' (role 'mMDSL_VarStatement289', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle290', cardinality 0..*).
+'mMDSL::Algorithm' (role 'mMDSL_Algorithm485', cardinality 0..*) is associated with 'mMDSL::Event' (role 'mMDSL_Event484', cardinality 0..*).
+'mMDSL::InsertEmbedCode' (role 'mMDSL_InsertEmbedCode79', cardinality 0..*) is associated with 'mMDSL::Relation' (role 'mMDSL_Relation78', cardinality 0..*).
+'mMDSL::ClassInstance' (role 'mMDSL_ClassInstance420', cardinality 0..*) is associated with 'mMDSL::ClassInstanceDelete' (role 'mMDSL_ClassInstanceDelete', cardinality 0..*).
+'mMDSL::PathParametersHV' (role 'mMDSL_PathParametersHV192', cardinality 0..*) is associated with 'mMDSL::VerticalLineTo' (role 'mMDSL_VerticalLineTo191', cardinality 0..*).
+'mMDSL::ModelDelete' (role 'mMDSL_ModelDelete', cardinality 0..*) is associated with 'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation386', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation103', cardinality 0..*) is associated with 'mMDSL::ModelType' (role 'mMDSL_ModelType102', cardinality 0..*).
+'mMDSL::PathData' (role 'mMDSL_PathData182', cardinality 0..*) is associated with 'mMDSL::EllipticalArc' (role 'mMDSL_EllipticalArc', cardinality 0..*).
+'mMDSL::VarStatement' (role 'mMDSL_VarStatement292', cardinality 0..*) is associated with 'mMDSL::EmbedCode' (role 'mMDSL_EmbedCode293', cardinality 0..*).
+'mMDSL::EmbedCode' (role 'mMDSL_EmbedCode20', cardinality 0..*) is associated with 'mMDSL::EmbedCodeType' (role 'mMDSL_EmbedCodeType21', cardinality 0..*).
+'mMDSL::QuadraticBezierCurve' (role 'mMDSL_QuadraticBezierCurve198', cardinality 0..*) is associated with 'mMDSL::PathParametersQ' (role 'mMDSL_PathParametersQ', cardinality 0..*).
+'mMDSL::FileOperation' (role 'mMDSL_FileOperation340', cardinality 0..*) is associated with 'mMDSL::FileRead' (role 'mMDSL_FileRead', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand133', cardinality 0..*) is associated with 'mMDSL::Rectangle' (role 'mMDSL_Rectangle', cardinality 0..*).
+'mMDSL::PathParametersHV' (role 'mMDSL_PathParametersHV', cardinality 0..*) is associated with 'mMDSL::HorizontalLineTo' (role 'mMDSL_HorizontalLineTo189', cardinality 0..*).
+'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation', cardinality 0..*) is associated with 'mMDSL::Statement' (role 'mMDSL_Statement224', cardinality 0..*).
+'mMDSL::MoveTo' (role 'mMDSL_MoveTo184', cardinality 0..*) is associated with 'mMDSL::PathParametersMLT' (role 'mMDSL_PathParametersMLT', cardinality 0..*).
+'mMDSL::EnumType' (role 'mMDSL_EnumType', cardinality 0..*) is associated with 'mMDSL::Type' (role 'mMDSL_Type94', cardinality 0..*).
+'mMDSL::ClassInstanceGetAll' (role 'mMDSL_ClassInstanceGetAll', cardinality 0..*) is associated with 'mMDSL::ClassInstance' (role 'mMDSL_ClassInstance426', cardinality 0..*).
+'mMDSL::RelationInstance' (role 'mMDSL_RelationInstance', cardinality 0..*) is associated with 'mMDSL::InstanceOperation' (role 'mMDSL_InstanceOperation416', cardinality 0..*).
+'mMDSL::DirOperation' (role 'mMDSL_DirOperation344', cardinality 0..*) is associated with 'mMDSL::DirSetWorking' (role 'mMDSL_DirSetWorking', cardinality 0..*).
+'mMDSL::Root' (role 'mMDSL_Root10', cardinality 0..*) is associated with 'mMDSL::EmbedCode' (role 'mMDSL_EmbedCode', cardinality 0..*).
+'mMDSL::PathParametersMLT' (role 'mMDSL_PathParametersMLT187', cardinality 0..*) is associated with 'mMDSL::LineTo' (role 'mMDSL_LineTo186', cardinality 0..*).
+'mMDSL::ClassInstanceGetAll' (role 'mMDSL_ClassInstanceGetAll437', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class438', cardinality 0..*).
+'mMDSL::FontFamily' (role 'mMDSL_FontFamily211', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle210', cardinality 0..*).
+'mMDSL::FontFamily' (role 'mMDSL_FontFamily', cardinality 0..*) is associated with 'mMDSL::Text' (role 'mMDSL_Text162', cardinality 0..*).
+'mMDSL::Expr' (role 'mMDSL_Expr', cardinality 0..*) is associated with 'mMDSL::SelectionStatement' (role 'mMDSL_SelectionStatement229', cardinality 0..*).
+'mMDSL::Attribute' (role 'mMDSL_Attribute475', cardinality 0..*) is associated with 'mMDSL::AttributeOperation' (role 'mMDSL_AttributeOperation474', cardinality 0..*).
+'mMDSL::Expr' (role 'mMDSL_Expr248', cardinality 0..*) is associated with 'mMDSL::WhileLoop' (role 'mMDSL_WhileLoop247', cardinality 0..*).
+'mMDSL::Attribute' (role 'mMDSL_Attribute76', cardinality 0..*) is associated with 'mMDSL::Relation' (role 'mMDSL_Relation75', cardinality 0..*).
+'mMDSL::Path' (role 'mMDSL_Path', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand145', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation454', cardinality 0..*) is associated with 'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate453', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class53', cardinality 0..*) is associated with 'mMDSL::ClassAttribute' (role 'mMDSL_ClassAttribute', cardinality 0..*).
+'mMDSL::InsertEmbedCode' (role 'mMDSL_InsertEmbedCode', cardinality 0..*) is associated with 'mMDSL::EmbedCode' (role 'mMDSL_EmbedCode23', cardinality 0..*).
+'mMDSL::VarStatement' (role 'mMDSL_VarStatement286', cardinality 0..*) is associated with 'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation287', cardinality 0..*).
+'mMDSL::Expression' (role 'mMDSL_Expression311', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression309', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand152', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle153', cardinality 0..*).
+'mMDSL::IncludeLibraryType' (role 'mMDSL_IncludeLibraryType15', cardinality 0..*) is associated with 'mMDSL::IncludeLibrary' (role 'mMDSL_IncludeLibrary14', cardinality 0..*).
+'mMDSL::InstanceOperation' (role 'mMDSL_InstanceOperation414', cardinality 0..*) is associated with 'mMDSL::ClassInstance' (role 'mMDSL_ClassInstance', cardinality 0..*).
+'mMDSL::MoveTo' (role 'mMDSL_MoveTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData166', cardinality 0..*).
+'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation392', cardinality 0..*) is associated with 'mMDSL::ModelLoad' (role 'mMDSL_ModelLoad', cardinality 0..*).
+'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate435', cardinality 0..*) is associated with 'mMDSL::ClassInstanceGet' (role 'mMDSL_ClassInstanceGet434', cardinality 0..*).
+'mMDSL::ModelType' (role 'mMDSL_ModelType', cardinality 0..*) is associated with 'mMDSL::Metamodel' (role 'mMDSL_Metamodel45', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement218', cardinality 0..*) is associated with 'mMDSL::SelectionStatement' (role 'mMDSL_SelectionStatement', cardinality 0..*).
+'mMDSL::VerticalLineTo' (role 'mMDSL_VerticalLineTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData172', cardinality 0..*).
+'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle205', cardinality 0..*) is associated with 'mMDSL::FillColor' (role 'mMDSL_FillColor206', cardinality 0..*).
+'mMDSL::Variable' (role 'mMDSL_Variable261', cardinality 0..*) is associated with 'mMDSL::OperatorAssign' (role 'mMDSL_OperatorAssign', cardinality 0..*).
+'mMDSL::ModelType' (role 'mMDSL_ModelType105', cardinality 0..*) is associated with 'mMDSL::Mode' (role 'mMDSL_Mode', cardinality 0..*).
+'mMDSL::PathParametersA' (role 'mMDSL_PathParametersA', cardinality 0..*) is associated with 'mMDSL::EllipticalArc' (role 'mMDSL_EllipticalArc203', cardinality 0..*).
+'mMDSL::DirOperation' (role 'mMDSL_DirOperation346', cardinality 0..*) is associated with 'mMDSL::DirGetWorking' (role 'mMDSL_DirGetWorking', cardinality 0..*).
+'mMDSL::Type' (role 'mMDSL_Type', cardinality 0..*) is associated with 'mMDSL::Attribute' (role 'mMDSL_Attribute81', cardinality 0..*).
+'mMDSL::ItemOperation' (role 'mMDSL_ItemOperation368', cardinality 0..*) is associated with 'mMDSL::ContextItem' (role 'mMDSL_ContextItem', cardinality 0..*).
+'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation', cardinality 0..*) is associated with 'mMDSL::Method' (role 'mMDSL_Method31', cardinality 0..*).
+'mMDSL::RelationInstanceSet' (role 'mMDSL_RelationInstanceSet471', cardinality 0..*) is associated with 'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate472', cardinality 0..*).
+'mMDSL::EmbedCode' (role 'mMDSL_EmbedCode17', cardinality 0..*) is associated with 'mMDSL::EmbedPlatformType' (role 'mMDSL_EmbedPlatformType18', cardinality 0..*).
+'mMDSL::SymbolClass' (role 'mMDSL_SymbolClass113', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle114', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation64', cardinality 0..*) is associated with 'mMDSL::Relation' (role 'mMDSL_Relation62', cardinality 0..*).
+'mMDSL::Attribute' (role 'mMDSL_Attribute', cardinality 0..*) is associated with 'mMDSL::Metamodel' (role 'mMDSL_Metamodel43', cardinality 0..*).
+'mMDSL::SymbolClass' (role 'mMDSL_SymbolClass', cardinality 0..*) is associated with 'mMDSL::Method' (role 'mMDSL_Method29', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement251', cardinality 0..*) is associated with 'mMDSL::WhileLoop' (role 'mMDSL_WhileLoop250', cardinality 0..*).
+'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate460', cardinality 0..*) is associated with 'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate459', cardinality 0..*).
+'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI356', cardinality 0..*) is associated with 'mMDSL::InfoBox' (role 'mMDSL_InfoBox', cardinality 0..*).
+'mMDSL::StrokeColor' (role 'mMDSL_StrokeColor', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle208', cardinality 0..*).
+'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI364', cardinality 0..*) is associated with 'mMDSL::ItemOperation' (role 'mMDSL_ItemOperation', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class100', cardinality 0..*) is associated with 'mMDSL::ModelType' (role 'mMDSL_ModelType99', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class108', cardinality 0..*) is associated with 'mMDSL::Mode' (role 'mMDSL_Mode107', cardinality 0..*).
+'mMDSL::Attribute' (role 'mMDSL_Attribute278', cardinality 0..*) is associated with 'mMDSL::VarStatement' (role 'mMDSL_VarStatement277', cardinality 0..*).
+'mMDSL::RefName' (role 'mMDSL_RefName', cardinality 0..*) is associated with 'mMDSL::Reference' (role 'mMDSL_Reference86', cardinality 0..*).
+'mMDSL::Variable' (role 'mMDSL_Variable263', cardinality 0..*) is associated with 'mMDSL::VarStatement' (role 'mMDSL_VarStatement', cardinality 0..*).
+'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate400', cardinality 0..*) is associated with 'mMDSL::ModelDelete' (role 'mMDSL_ModelDelete399', cardinality 0..*).
+'mMDSL::PathData' (role 'mMDSL_PathData', cardinality 0..*) is associated with 'mMDSL::Path' (role 'mMDSL_Path160', cardinality 0..*).
+'mMDSL::ClassInstance' (role 'mMDSL_ClassInstance424', cardinality 0..*) is associated with 'mMDSL::ClassInstanceSet' (role 'mMDSL_ClassInstanceSet', cardinality 0..*).
+'mMDSL::Metamodel' (role 'mMDSL_Metamodel39', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class', cardinality 0..*).
+'mMDSL::AttributeOperation' (role 'mMDSL_AttributeOperation477', cardinality 0..*) is associated with 'mMDSL::AttributeGet' (role 'mMDSL_AttributeGet', cardinality 0..*).
+'mMDSL::Method' (role 'mMDSL_Method35', cardinality 0..*) is associated with 'mMDSL::Algorithm' (role 'mMDSL_Algorithm', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement220', cardinality 0..*) is associated with 'mMDSL::LoopStatement' (role 'mMDSL_LoopStatement', cardinality 0..*).
+'mMDSL::EmbedCodeType' (role 'mMDSL_EmbedCodeType', cardinality 0..*) is associated with 'mMDSL::Root' (role 'mMDSL_Root6', cardinality 0..*).
+'mMDSL::Polygon' (role 'mMDSL_Polygon157', cardinality 0..*) is associated with 'mMDSL::Points' (role 'mMDSL_Points158', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement241', cardinality 0..*) is associated with 'mMDSL::SelectionStatement' (role 'mMDSL_SelectionStatement240', cardinality 0..*).
+'mMDSL::RemoveContextItem' (role 'mMDSL_RemoveContextItem381', cardinality 0..*) is associated with 'mMDSL::InsertContextItem' (role 'mMDSL_InsertContextItem382', cardinality 0..*).
+'mMDSL::CurveTo' (role 'mMDSL_CurveTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData174', cardinality 0..*).
+'mMDSL::RelationInstanceGet' (role 'mMDSL_RelationInstanceGet', cardinality 0..*) is associated with 'mMDSL::RelationInstance' (role 'mMDSL_RelationInstance447', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement', cardinality 0..*) is associated with 'mMDSL::Algorithm' (role 'mMDSL_Algorithm216', cardinality 0..*).
+'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation324', cardinality 0..*) is associated with 'mMDSL::DirOperation' (role 'mMDSL_DirOperation', cardinality 0..*).
+'mMDSL::PathParametersC' (role 'mMDSL_PathParametersC', cardinality 0..*) is associated with 'mMDSL::CurveTo' (role 'mMDSL_CurveTo194', cardinality 0..*).
+'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate409', cardinality 0..*) is associated with 'mMDSL::ModelLoad' (role 'mMDSL_ModelLoad408', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class58', cardinality 0..*) is associated with 'mMDSL::InsertEmbedCode' (role 'mMDSL_InsertEmbedCode59', cardinality 0..*).
+'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate432', cardinality 0..*) is associated with 'mMDSL::ClassInstanceDelete' (role 'mMDSL_ClassInstanceDelete431', cardinality 0..*).
+'mMDSL::Expression' (role 'mMDSL_Expression315', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression317', cardinality 0..*).
+'mMDSL::RefName' (role 'mMDSL_RefName88', cardinality 0..*) is associated with 'mMDSL::ModelType' (role 'mMDSL_ModelType89', cardinality 0..*).
+'mMDSL::ModelDiscard' (role 'mMDSL_ModelDiscard', cardinality 0..*) is associated with 'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation388', cardinality 0..*).
+'mMDSL::BreakContinue' (role 'mMDSL_BreakContinue', cardinality 0..*) is associated with 'mMDSL::WhileLoop' (role 'mMDSL_WhileLoop253', cardinality 0..*).
+'mMDSL::WarningBox' (role 'mMDSL_WarningBox', cardinality 0..*) is associated with 'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI360', cardinality 0..*).
+'mMDSL::SmoothQuadraticBezierCurveTo' (role 'mMDSL_SmoothQuadraticBezierCurveTo200', cardinality 0..*) is associated with 'mMDSL::PathParametersMLT' (role 'mMDSL_PathParametersMLT201', cardinality 0..*).
+'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation332', cardinality 0..*) is associated with 'mMDSL::AttributeOperation' (role 'mMDSL_AttributeOperation', cardinality 0..*).
+'mMDSL::Expression' (role 'mMDSL_Expression320', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression318', cardinality 0..*).
+'mMDSL::Ellipse' (role 'mMDSL_Ellipse', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand137', cardinality 0..*).
+'mMDSL::ForLoop' (role 'mMDSL_ForLoop255', cardinality 0..*) is associated with 'mMDSL::Statement' (role 'mMDSL_Statement256', cardinality 0..*).
+'mMDSL::IncludeLibrary' (role 'mMDSL_IncludeLibrary', cardinality 0..*) is associated with 'mMDSL::Root' (role 'mMDSL_Root8', cardinality 0..*).
+'mMDSL::DirOperation' (role 'mMDSL_DirOperation350', cardinality 0..*) is associated with 'mMDSL::DirDelete' (role 'mMDSL_DirDelete', cardinality 0..*).
+'mMDSL::MenuItem' (role 'mMDSL_MenuItem370', cardinality 0..*) is associated with 'mMDSL::InsertMenuItem' (role 'mMDSL_InsertMenuItem', cardinality 0..*).
+'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate441', cardinality 0..*) is associated with 'mMDSL::ClassInstanceSet' (role 'mMDSL_ClassInstanceSet440', cardinality 0..*).
+'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation', cardinality 0..*) is associated with 'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation328', cardinality 0..*).
+'mMDSL::RelationInstanceGet' (role 'mMDSL_RelationInstanceGet465', cardinality 0..*) is associated with 'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate466', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement238', cardinality 0..*) is associated with 'mMDSL::SelectionStatement' (role 'mMDSL_SelectionStatement237', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class92', cardinality 0..*) is associated with 'mMDSL::RefName' (role 'mMDSL_RefName91', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class275', cardinality 0..*) is associated with 'mMDSL::VarStatement' (role 'mMDSL_VarStatement274', cardinality 0..*).
+'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI362', cardinality 0..*) is associated with 'mMDSL::ViewBox' (role 'mMDSL_ViewBox', cardinality 0..*).
+'mMDSL::PathData' (role 'mMDSL_PathData178', cardinality 0..*) is associated with 'mMDSL::QuadraticBezierCurve' (role 'mMDSL_QuadraticBezierCurve', cardinality 0..*).
+'mMDSL::Metamodel' (role 'mMDSL_Metamodel', cardinality 0..*) is associated with 'mMDSL::Method' (role 'mMDSL_Method33', cardinality 0..*).
+'mMDSL::ForLoop' (role 'mMDSL_ForLoop', cardinality 0..*) is associated with 'mMDSL::LoopStatement' (role 'mMDSL_LoopStatement245', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand141', cardinality 0..*) is associated with 'mMDSL::Polyline' (role 'mMDSL_Polyline', cardinality 0..*).
+'mMDSL::Expression' (role 'mMDSL_Expression303', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression305', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation66', cardinality 0..*) is associated with 'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation67', cardinality 0..*).
+'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate', cardinality 0..*) is associated with 'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation384', cardinality 0..*).
+'mMDSL::FileCreate' (role 'mMDSL_FileCreate', cardinality 0..*) is associated with 'mMDSL::FileOperation' (role 'mMDSL_FileOperation338', cardinality 0..*).
+'mMDSL::Enumeration' (role 'mMDSL_Enumeration97', cardinality 0..*) is associated with 'mMDSL::EnumType' (role 'mMDSL_EnumType96', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement226', cardinality 0..*) is associated with 'mMDSL::InsertEmbedCode' (role 'mMDSL_InsertEmbedCode227', cardinality 0..*).
+'mMDSL::BreakContinue' (role 'mMDSL_BreakContinue259', cardinality 0..*) is associated with 'mMDSL::ForLoop' (role 'mMDSL_ForLoop258', cardinality 0..*).
+'mMDSL::Attribute' (role 'mMDSL_Attribute56', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class55', cardinality 0..*).
+'mMDSL::EditBox' (role 'mMDSL_EditBox', cardinality 0..*) is associated with 'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI354', cardinality 0..*).
+'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation394', cardinality 0..*) is associated with 'mMDSL::ModelIsLoaded' (role 'mMDSL_ModelIsLoaded', cardinality 0..*).
+'mMDSL::EmbedPlatformType' (role 'mMDSL_EmbedPlatformType', cardinality 0..*) is associated with 'mMDSL::Root' (role 'mMDSL_Root4', cardinality 0..*).
+'mMDSL::RemoveContextItem' (role 'mMDSL_RemoveContextItem', cardinality 0..*) is associated with 'mMDSL::ContextItem' (role 'mMDSL_ContextItem379', cardinality 0..*).
+'mMDSL::SmoothCurveTo' (role 'mMDSL_SmoothCurveTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData176', cardinality 0..*).
+'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation121', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand122', cardinality 0..*).
+'mMDSL::ModelSave' (role 'mMDSL_ModelSave', cardinality 0..*) is associated with 'mMDSL::ModelOperation' (role 'mMDSL_ModelOperation390', cardinality 0..*).
+'mMDSL::RelationInstance' (role 'mMDSL_RelationInstance445', cardinality 0..*) is associated with 'mMDSL::RelationInstanceDelete' (role 'mMDSL_RelationInstanceDelete', cardinality 0..*).
+'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation127', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand128', cardinality 0..*).
+'mMDSL::ItemOperation' (role 'mMDSL_ItemOperation366', cardinality 0..*) is associated with 'mMDSL::MenuItem' (role 'mMDSL_MenuItem', cardinality 0..*).
+'mMDSL::InsertContextItem' (role 'mMDSL_InsertContextItem', cardinality 0..*) is associated with 'mMDSL::ContextItem' (role 'mMDSL_ContextItem377', cardinality 0..*).
+'mMDSL::Expression' (role 'mMDSL_Expression302', cardinality 0..*) is associated with 'mMDSL::EObject' (role 'mMDSL_EObject', cardinality 0..*).
+'mMDSL::ErrorBox' (role 'mMDSL_ErrorBox', cardinality 0..*) is associated with 'mMDSL::SimpleUI' (role 'mMDSL_SimpleUI358', cardinality 0..*).
+'mMDSL::ModelType' (role 'mMDSL_ModelType397', cardinality 0..*) is associated with 'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate396', cardinality 0..*).
+'mMDSL::MenuItem' (role 'mMDSL_MenuItem372', cardinality 0..*) is associated with 'mMDSL::RemoveMenuItem' (role 'mMDSL_RemoveMenuItem', cardinality 0..*).
+'mMDSL::Polygon' (role 'mMDSL_Polygon', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand143', cardinality 0..*).
+'mMDSL::SelectionStatement' (role 'mMDSL_SelectionStatement231', cardinality 0..*) is associated with 'mMDSL::Statement' (role 'mMDSL_Statement232', cardinality 0..*).
+'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate', cardinality 0..*) is associated with 'mMDSL::ClassInstance' (role 'mMDSL_ClassInstance418', cardinality 0..*).
+'mMDSL::FileWrite' (role 'mMDSL_FileWrite', cardinality 0..*) is associated with 'mMDSL::FileOperation' (role 'mMDSL_FileOperation342', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand130', cardinality 0..*) is associated with 'mMDSL::InsertEmbedCode' (role 'mMDSL_InsertEmbedCode131', cardinality 0..*).
+'mMDSL::AttributeOperation' (role 'mMDSL_AttributeOperation479', cardinality 0..*) is associated with 'mMDSL::AttributeSet' (role 'mMDSL_AttributeSet', cardinality 0..*).
+'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation118', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle119', cardinality 0..*).
+'mMDSL::Method' (role 'mMDSL_Method25', cardinality 0..*) is associated with 'mMDSL::Enumeration' (role 'mMDSL_Enumeration', cardinality 0..*).
+'mMDSL::ModelSave' (role 'mMDSL_ModelSave405', cardinality 0..*) is associated with 'mMDSL::ModelCreate' (role 'mMDSL_ModelCreate406', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation69', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class70', cardinality 0..*).
+'mMDSL::FillColor' (role 'mMDSL_FillColor', cardinality 0..*) is associated with 'mMDSL::Text' (role 'mMDSL_Text164', cardinality 0..*).
+'mMDSL::Root' (role 'mMDSL_Root', cardinality 0..*) is associated with 'mMDSL::MethodName' (role 'mMDSL_MethodName', cardinality 0..*).
+'mMDSL::FileOperation' (role 'mMDSL_FileOperation334', cardinality 0..*) is associated with 'mMDSL::FileCopy' (role 'mMDSL_FileCopy', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation72', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class73', cardinality 0..*).
+'mMDSL::RelationInstanceSet' (role 'mMDSL_RelationInstanceSet', cardinality 0..*) is associated with 'mMDSL::RelationInstance' (role 'mMDSL_RelationInstance449', cardinality 0..*).
+'mMDSL::HorizontalLineTo' (role 'mMDSL_HorizontalLineTo', cardinality 0..*) is associated with 'mMDSL::PathData' (role 'mMDSL_PathData170', cardinality 0..*).
+'mMDSL::Statement' (role 'mMDSL_Statement222', cardinality 0..*) is associated with 'mMDSL::Variable' (role 'mMDSL_Variable', cardinality 0..*).
+'mMDSL::RelationInstanceDelete' (role 'mMDSL_RelationInstanceDelete462', cardinality 0..*) is associated with 'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate463', cardinality 0..*).
+'mMDSL::Root' (role 'mMDSL_Root12', cardinality 0..*) is associated with 'mMDSL::Method' (role 'mMDSL_Method', cardinality 0..*).
+'mMDSL::Expr' (role 'mMDSL_Expr269', cardinality 0..*) is associated with 'mMDSL::VarStatement' (role 'mMDSL_VarStatement268', cardinality 0..*).
+'mMDSL::Relation' (role 'mMDSL_Relation469', cardinality 0..*) is associated with 'mMDSL::RelationInstanceGetAll' (role 'mMDSL_RelationInstanceGetAll468', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class50', cardinality 0..*) is associated with 'mMDSL::SymbolClass' (role 'mMDSL_SymbolClass51', cardinality 0..*).
+'mMDSL::SymbolRelation' (role 'mMDSL_SymbolRelation124', cardinality 0..*) is associated with 'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand125', cardinality 0..*).
+'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation272', cardinality 0..*) is associated with 'mMDSL::VarStatement' (role 'mMDSL_VarStatement271', cardinality 0..*).
+'mMDSL::WhileLoop' (role 'mMDSL_WhileLoop', cardinality 0..*) is associated with 'mMDSL::LoopStatement' (role 'mMDSL_LoopStatement243', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand139', cardinality 0..*) is associated with 'mMDSL::Line' (role 'mMDSL_Line', cardinality 0..*).
+'mMDSL::Metamodel' (role 'mMDSL_Metamodel41', cardinality 0..*) is associated with 'mMDSL::Relation' (role 'mMDSL_Relation', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand', cardinality 0..*) is associated with 'mMDSL::SymbolClass' (role 'mMDSL_SymbolClass116', cardinality 0..*).
+'mMDSL::DirOperation' (role 'mMDSL_DirOperation352', cardinality 0..*) is associated with 'mMDSL::DirList' (role 'mMDSL_DirList', cardinality 0..*).
+'mMDSL::SVGCommand' (role 'mMDSL_SVGCommand135', cardinality 0..*) is associated with 'mMDSL::Circle' (role 'mMDSL_Circle', cardinality 0..*).
+'mMDSL::Reference' (role 'mMDSL_Reference', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class61', cardinality 0..*).
+'mMDSL::SmoothCurveTo' (role 'mMDSL_SmoothCurveTo196', cardinality 0..*) is associated with 'mMDSL::PathParametersS' (role 'mMDSL_PathParametersS', cardinality 0..*).
+'mMDSL::Variable' (role 'mMDSL_Variable264', cardinality 0..*) is associated with 'mMDSL::Variable' (role 'mMDSL_Variable266', cardinality 0..*).
+'mMDSL::VarStatement' (role 'mMDSL_VarStatement283', cardinality 0..*) is associated with 'mMDSL::SymbolClass' (role 'mMDSL_SymbolClass284', cardinality 0..*).
+'mMDSL::ClassInstanceGet' (role 'mMDSL_ClassInstanceGet', cardinality 0..*) is associated with 'mMDSL::ClassInstance' (role 'mMDSL_ClassInstance422', cardinality 0..*).
+'mMDSL::AlgorithmOperation' (role 'mMDSL_AlgorithmOperation330', cardinality 0..*) is associated with 'mMDSL::InstanceOperation' (role 'mMDSL_InstanceOperation', cardinality 0..*).
+'mMDSL::IncludeLibraryType' (role 'mMDSL_IncludeLibraryType', cardinality 0..*) is associated with 'mMDSL::Root' (role 'mMDSL_Root2', cardinality 0..*).
+'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate456', cardinality 0..*) is associated with 'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate457', cardinality 0..*).
+'mMDSL::RelationInstanceCreate' (role 'mMDSL_RelationInstanceCreate', cardinality 0..*) is associated with 'mMDSL::RelationInstance' (role 'mMDSL_RelationInstance443', cardinality 0..*).
+'mMDSL::Mode' (role 'mMDSL_Mode110', cardinality 0..*) is associated with 'mMDSL::Relation' (role 'mMDSL_Relation111', cardinality 0..*).
+'mMDSL::Expr' (role 'mMDSL_Expr235', cardinality 0..*) is associated with 'mMDSL::SelectionStatement' (role 'mMDSL_SelectionStatement234', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class429', cardinality 0..*) is associated with 'mMDSL::ClassInstanceCreate' (role 'mMDSL_ClassInstanceCreate428', cardinality 0..*).
+'mMDSL::Points' (role 'mMDSL_Points', cardinality 0..*) is associated with 'mMDSL::Polyline' (role 'mMDSL_Polyline155', cardinality 0..*).
+'mMDSL::Expr' (role 'mMDSL_Expr300', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression', cardinality 0..*).
+'mMDSL::Method' (role 'mMDSL_Method27', cardinality 0..*) is associated with 'mMDSL::SymbolStyle' (role 'mMDSL_SymbolStyle', cardinality 0..*).
+'mMDSL::Expression' (role 'mMDSL_Expression306', cardinality 0..*) is associated with 'mMDSL::Expression' (role 'mMDSL_Expression308', cardinality 0..*).
+'mMDSL::VarStatement' (role 'mMDSL_VarStatement295', cardinality 0..*) is associated with 'mMDSL::ModelType' (role 'mMDSL_ModelType296', cardinality 0..*).
+'mMDSL::RelationInstanceGetAll' (role 'mMDSL_RelationInstanceGetAll', cardinality 0..*) is associated with 'mMDSL::RelationInstance' (role 'mMDSL_RelationInstance451', cardinality 0..*).
+'mMDSL::RemoveMenuItem' (role 'mMDSL_RemoveMenuItem374', cardinality 0..*) is associated with 'mMDSL::InsertMenuItem' (role 'mMDSL_InsertMenuItem375', cardinality 0..*).
+'mMDSL::Class' (role 'mMDSL_Class46', cardinality 0..*) is associated with 'mMDSL::Class' (role 'mMDSL_Class48', cardinality 0..*).

@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class library_ByAuthor extends Search {
+
+
+
+
+
+
+    private library_Author library_author;
+
+
+    public library_ByAuthor(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public library_Author getLibrary_author() {
+        return library_author;
+    }
+
+    public void setLibrary_author(library_Author library_author) {
+        this.library_author = library_author;
+    }
+
+}

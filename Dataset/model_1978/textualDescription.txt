@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'TypeGraphTrace::ClassListTrace' has the following attributes: 'concatSignature' of type str.
+The class 'TypeGraphTrace::Trace' has no attributes.
+The class 'TypeGraphTrace::MethodSignatureTrace' has the following attributes: 'signatureString' of type str.
+The class 'TypeGraphTrace::TMethodSignature' has no attributes.
+The class 'TypeGraphTrace::TClass' has no attributes.
+The class 'TypeGraphTrace::TypeGraph' has no attributes.
+'TypeGraphTrace::ClassListTrace' (role 'TypeGraphTrace_ClassListTrace', cardinality 0..*) is associated with 'TypeGraphTrace::Trace' (role 'TypeGraphTrace_Trace4', cardinality 0..*).
+'TypeGraphTrace::Trace' (role 'TypeGraphTrace_Trace', cardinality 0..*) is associated with 'TypeGraphTrace::TypeGraph' (role 'TypeGraphTrace_TypeGraph', cardinality 0..*).
+'TypeGraphTrace::MethodSignatureTrace' (role 'TypeGraphTrace_MethodSignatureTrace6', cardinality 0..*) is associated with 'TypeGraphTrace::TMethodSignature' (role 'TypeGraphTrace_TMethodSignature', cardinality 0..*).
+'TypeGraphTrace::TClass' (role 'TypeGraphTrace_TClass', cardinality 0..*) is associated with 'TypeGraphTrace::ClassListTrace' (role 'TypeGraphTrace_ClassListTrace8', cardinality 0..*).
+'TypeGraphTrace::Trace' (role 'TypeGraphTrace_Trace2', cardinality 0..*) is associated with 'TypeGraphTrace::MethodSignatureTrace' (role 'TypeGraphTrace_MethodSignatureTrace', cardinality 0..*).

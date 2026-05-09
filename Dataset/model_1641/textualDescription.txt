@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'kiamacs::TopCS' has no attributes.
+The class 'kiamacs::NumCS' has the following attributes: 'value' of type int.
+The class 'kiamacs::NodeCS' has no attributes.
+The class 'kiamacs::PlusCS' has no attributes.
+The class 'NodeCS' has no attributes.
+'kiamacs::PlusCS' is a specialization of 'NodeCS'.
+'kiamacs::NumCS' is a specialization of 'NodeCS'.
+'kiamacs::NodeCS' (role 'kiamacs_NodeCS', cardinality 0..*) is associated with 'kiamacs::TopCS' (role 'kiamacs_TopCS', cardinality 0..*).
+'kiamacs::NodeCS' (role 'kiamacs_NodeCS5', cardinality 0..*) is associated with 'kiamacs::PlusCS' (role 'kiamacs_PlusCS4', cardinality 0..*).
+'kiamacs::PlusCS' (role 'kiamacs_PlusCS', cardinality 0..*) is associated with 'kiamacs::NodeCS' (role 'kiamacs_NodeCS2', cardinality 0..*).

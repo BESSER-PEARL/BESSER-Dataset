@@ -1,0 +1,47 @@
+The model has 17 class(es).
+The class 'graph::ElkEdge' has the following attributes: 'hierarchical' of type bool; 'selfloop' of type bool; 'connected' of type bool; 'hyperedge' of type bool.
+The class 'graph::ElkConnectableShape' has no attributes.
+The class 'EMapPropertyHolder' has no attributes.
+The class 'graph::ElkLabel' has the following attributes: 'text' of type str.
+The class 'graph::EMapPropertyHolder' has no attributes.
+The class 'graph::ElkPropertyToValueMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'graph::ElkShape' has the following attributes: 'x' of type float; 'height' of type float; 'y' of type float; 'width' of type float.
+The class 'graph::ElkEdgeSection' has the following attributes: 'endY' of type float; 'startY' of type float; 'identifier' of type str; 'endX' of type float; 'startX' of type float.
+The class 'graph::IPropertyHolder' has no attributes.
+The class 'IPropertyHolder' has no attributes.
+The class 'ElkConnectableShape' has no attributes.
+The class 'graph::ElkGraphElement' has the following attributes: 'identifier' of type str.
+The class 'ElkShape' has no attributes.
+The class 'graph::ElkPort' has no attributes.
+The class 'ElkGraphElement' has no attributes.
+The class 'graph::ElkBendPoint' has the following attributes: 'x' of type float; 'y' of type float.
+The class 'graph::ElkNode' has the following attributes: 'hierarchical' of type bool.
+'graph::ElkEdgeSection' is a specialization of 'EMapPropertyHolder'.
+'graph::ElkEdge' is a specialization of 'ElkGraphElement'.
+'graph::EMapPropertyHolder' is a specialization of 'IPropertyHolder'.
+'graph::ElkConnectableShape' is a specialization of 'ElkShape'.
+'graph::ElkShape' is a specialization of 'ElkGraphElement'.
+'graph::ElkPort' is a specialization of 'ElkConnectableShape'.
+'graph::ElkNode' is a specialization of 'ElkConnectableShape'.
+'graph::ElkLabel' is a specialization of 'ElkShape'.
+'graph::ElkGraphElement' is a specialization of 'EMapPropertyHolder'.
+'graph::ElkPort' (role 'ElkPort', cardinality 0..*) is associated with 'graph::ElkNode' (role 'parent7', cardinality 0..*).
+'graph::ElkBendPoint' (role 'graph_ElkBendPoint', cardinality 0..*) is associated with 'graph::ElkEdgeSection' (role 'graph_ElkEdgeSection', cardinality 0..*).
+'graph::ElkConnectableShape' (role 'ElkConnectableShape22', cardinality 0..*) is associated with 'graph::ElkEdge' (role 'incomingEdges', cardinality 0..*).
+'graph::ElkNode' (role 'ElkNode13', cardinality 0..*) is associated with 'graph::ElkNode' (role 'children', cardinality 0..*).
+'graph::ElkLabel' (role 'ElkLabel', cardinality 0..*) is associated with 'graph::ElkGraphElement' (role 'parent', cardinality 0..*).
+'graph::ElkPropertyToValueMapEntry' (role 'graph_ElkPropertyToValueMapEntry', cardinality 0..*) is associated with 'graph::EMapPropertyHolder' (role 'graph_EMapPropertyHolder', cardinality 0..*).
+'graph::ElkNode' (role 'ElkNode17', cardinality 0..*) is associated with 'graph::ElkPort' (role 'ports', cardinality 0..*).
+'graph::ElkConnectableShape' (role 'targets', cardinality 0..*) is associated with 'graph::ElkEdge' (role 'ElkEdge5', cardinality 0..*).
+'graph::ElkEdge' (role 'containedEdges', cardinality 0..*) is associated with 'graph::ElkNode' (role 'ElkNode19', cardinality 0..*).
+'graph::ElkEdge' (role 'ElkEdge15', cardinality 0..*) is associated with 'graph::ElkNode' (role 'containingNode', cardinality 0..*).
+'graph::ElkEdgeSection' (role 'graph_ElkEdgeSection31', cardinality 0..*) is associated with 'graph::ElkConnectableShape' (role 'graph_ElkConnectableShape32', cardinality 0..*).
+'graph::ElkEdgeSection' (role 'ElkEdgeSection38', cardinality 0..*) is associated with 'graph::ElkEdgeSection' (role 'outgoingSections', cardinality 0..*).
+'graph::ElkEdgeSection' (role 'ElkEdgeSection35', cardinality 0..*) is associated with 'graph::ElkEdgeSection' (role 'incomingSections', cardinality 0..*).
+'graph::ElkNode' (role 'ElkNode', cardinality 0..*) is associated with 'graph::ElkNode' (role 'parent10', cardinality 0..*).
+'graph::ElkEdgeSection' (role 'graph_ElkEdgeSection29', cardinality 0..*) is associated with 'graph::ElkConnectableShape' (role 'graph_ElkConnectableShape', cardinality 0..*).
+'graph::ElkEdge' (role 'ElkEdge', cardinality 0..*) is associated with 'graph::ElkConnectableShape' (role 'sources', cardinality 0..*).
+'graph::ElkLabel' (role 'labels', cardinality 0..*) is associated with 'graph::ElkGraphElement' (role 'ElkGraphElement', cardinality 0..*).
+'graph::ElkEdgeSection' (role 'ElkEdgeSection', cardinality 0..*) is associated with 'graph::ElkEdge' (role 'parent24', cardinality 0..*).
+'graph::ElkEdge' (role 'ElkEdge27', cardinality 0..*) is associated with 'graph::ElkEdgeSection' (role 'sections', cardinality 0..*).
+'graph::ElkConnectableShape' (role 'ElkConnectableShape', cardinality 0..*) is associated with 'graph::ElkEdge' (role 'outgoingEdges', cardinality 0..*).

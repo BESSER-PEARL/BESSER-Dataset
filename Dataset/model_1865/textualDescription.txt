@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'decobat::LibraryCategory' has the following attributes: 'shortDescription' of type str; 'name' of type str; 'description' of type str; 'created' of type date.
+The class 'decobat::Customer' has the following attributes: 'country' of type str; 'name' of type str; 'phone' of type str; 'fax' of type str; 'address' of type str; 'email' of type str; 'zip' of type str; 'code' of type str; 'city' of type str.
+The class 'decobat::Library' has the following attributes: 'width' of type str; 'shortDescription' of type str; 'update' of type date; 'name' of type str; 'depth' of type str; 'description' of type str; 'created' of type date; 'height' of type str.
+The class 'decobat::Object' has the following attributes: 'shortDescription' of type str; 'code' of type str; 'description' of type str; 'name' of type str.
+The class 'decobat::Project' has the following attributes: 'shortDescription' of type str; 'closed' of type date; 'name' of type str; 'description' of type str; 'created' of type date.
+The class 'decobat::Plan' has the following attributes: 'code' of type str; 'shortDescription' of type str; 'name' of type str; 'description' of type str.
+The class 'decobat::Product' has the following attributes: 'unitBilledPrice' of type str; 'depth' of type str; 'shortDescription' of type str; 'description' of type str; 'name' of type str; 'unitCostPrice' of type str; 'height' of type str; 'unitWeight' of type str; 'update' of type date; 'width' of type str; 'created' of type date.
+The class 'decobat::Level' has the following attributes: 'shortDescription' of type str; 'name' of type str; 'code' of type str; 'description' of type str.
+The class 'decobat::ProjectCategory' has the following attributes: 'name' of type str; 'shortDescription' of type str; 'created' of type date; 'description' of type str.
+The class 'decobat::Supplier' has the following attributes: 'country' of type str; 'phone' of type str; 'name' of type str; 'fax' of type str; 'address' of type str; 'email' of type str; 'zip' of type str; 'code' of type str; 'city' of type str.
+The class 'decobat::ProjectRevision' has the following attributes: 'comment' of type str; 'update' of type date; 'shortDescription' of type str; 'description' of type str.
+The class 'decobat::Service' has the following attributes: 'hourlyBilledPrice' of type str; 'name' of type str; 'description' of type str; 'code' of type str; 'hourlyCostPrice' of type str; 'shortDescription' of type str.
+'decobat::Level' (role 'decobat_Level12', cardinality 0..*) is associated with 'decobat::Library' (role 'decobat_Library13', cardinality 0..*).
+'decobat::Product' (role 'decobat_Product', cardinality 0..*) is associated with 'decobat::Supplier' (role 'decobat_Supplier', cardinality 0..*).
+'decobat::ProjectCategory' (role 'decobat_ProjectCategory', cardinality 0..*) is associated with 'decobat::Project' (role 'decobat_Project2', cardinality 0..*).
+'decobat::Plan' (role 'decobat_Plan10', cardinality 0..*) is associated with 'decobat::Level' (role 'decobat_Level', cardinality 0..*).
+'decobat::Project' (role 'decobat_Project6', cardinality 0..*) is associated with 'decobat::Customer' (role 'decobat_Customer', cardinality 0..*).
+'decobat::Project' (role 'decobat_Project4', cardinality 0..*) is associated with 'decobat::Plan' (role 'decobat_Plan', cardinality 0..*).
+'decobat::Object' (role 'decobat_Object', cardinality 0..*) is associated with 'decobat::Library' (role 'decobat_Library15', cardinality 0..*).
+'decobat::ProjectRevision' (role 'decobat_ProjectRevision', cardinality 0..*) is associated with 'decobat::Project' (role 'decobat_Project', cardinality 0..*).
+'decobat::Library' (role 'decobat_Library', cardinality 0..*) is associated with 'decobat::LibraryCategory' (role 'decobat_LibraryCategory', cardinality 0..*).

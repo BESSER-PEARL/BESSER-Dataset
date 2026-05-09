@@ -1,0 +1,22 @@
+The model has 5 class(es).
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::PTArc' has no attributes.
+The class 'PetriNet::TPArc' has no attributes.
+The class 'PetriNet::Place' has no attributes.
+The class 'PetriNet::Net' has no attributes.
+'PetriNet::TPArc' (role 'in232', cardinality 0..*) is associated with 'PetriNet::Place' (role 'Place33', cardinality 0..*).
+'PetriNet::Place' (role 'place', cardinality 0..*) is associated with 'PetriNet::Net' (role 'Net', cardinality 0..*).
+'PetriNet::PTArc' (role 'PTArc', cardinality 0..*) is associated with 'PetriNet::Place' (role 'src', cardinality 0..*).
+'PetriNet::Transition' (role 'Transition', cardinality 0..*) is associated with 'PetriNet::Net' (role 'net13', cardinality 0..*).
+'PetriNet::Place' (role 'Place', cardinality 0..*) is associated with 'PetriNet::Net' (role 'net', cardinality 0..*).
+'PetriNet::Net' (role 'net18', cardinality 0..*) is associated with 'PetriNet::TPArc' (role 'TPArc19', cardinality 0..*).
+'PetriNet::Transition' (role 'Transition23', cardinality 0..*) is associated with 'PetriNet::PTArc' (role 'in2', cardinality 0..*).
+'PetriNet::PTArc' (role 'ptArc', cardinality 0..*) is associated with 'PetriNet::Net' (role 'Net21', cardinality 0..*).
+'PetriNet::Net' (role 'net15', cardinality 0..*) is associated with 'PetriNet::PTArc' (role 'PTArc16', cardinality 0..*).
+'PetriNet::PTArc' (role 'PTArc7', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'dst6', cardinality 0..*).
+'PetriNet::Place' (role 'Place25', cardinality 0..*) is associated with 'PetriNet::PTArc' (role 'out', cardinality 0..*).
+'PetriNet::TPArc' (role 'out29', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'Transition30', cardinality 0..*).
+'PetriNet::Net' (role 'Net27', cardinality 0..*) is associated with 'PetriNet::TPArc' (role 'tpArc', cardinality 0..*).
+'PetriNet::Transition' (role 'src9', cardinality 0..*) is associated with 'PetriNet::TPArc' (role 'TPArc10', cardinality 0..*).
+'PetriNet::Net' (role 'Net4', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'transition', cardinality 0..*).
+'PetriNet::Place' (role 'dst', cardinality 0..*) is associated with 'PetriNet::TPArc' (role 'TPArc', cardinality 0..*).

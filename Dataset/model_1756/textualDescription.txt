@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'extralazy::Writer' has the following attributes: 'name' of type str.
+The class 'extralazy::Book' has the following attributes: 'subTitles' of type str; 'title' of type str.
+'extralazy::Book' (role 'extralazy_Book', cardinality 0..*) is associated with 'extralazy::Writer' (role 'extralazy_Writer', cardinality 0..*).

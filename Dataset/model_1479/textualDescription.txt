@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'Entity' has no attributes.
+The class 'graphmodelling::Node' has no attributes.
+The class 'graphmodelling::ModellingType' has the following attributes: 'name' of type str.
+The class 'graphmodelling::Graph' has no attributes.
+The class 'graphmodelling::Entity' has the following attributes: 'accessModifier' of type str; 'x' of type str; 'description' of type str; 'height' of type str; 'type' of type str; 'ID' of type str; 'value' of type str; 'category' of type str; 'group' of type str; 'y' of type str; 'name' of type str; 'className' of type str; 'width' of type str; 'text' of type str.
+The class 'graphmodelling::Property' has no attributes.
+The class 'graphmodelling::Operation' has no attributes.
+The class 'graphmodelling::Edge' has no attributes.
+'graphmodelling::Operation' is a specialization of 'Entity'.
+'graphmodelling::Graph' is a specialization of 'Entity'.
+'graphmodelling::Edge' is a specialization of 'Entity'.
+'graphmodelling::Property' is a specialization of 'Entity'.
+'graphmodelling::Node' is a specialization of 'Entity'.
+'graphmodelling::Node' (role 'graphmodelling_Node', cardinality 0..*) is associated with 'graphmodelling::Graph' (role 'graphmodelling_Graph', cardinality 0..*).
+'graphmodelling::Operation' (role 'graphmodelling_Operation', cardinality 0..*) is associated with 'graphmodelling::Node' (role 'graphmodelling_Node12', cardinality 0..*).
+'graphmodelling::Node' (role 'graphmodelling_Node5', cardinality 0..*) is associated with 'graphmodelling::Node' (role 'graphmodelling_Node3', cardinality 0..*).
+'graphmodelling::Node' (role 'graphmodelling_Node6', cardinality 0..*) is associated with 'graphmodelling::Node' (role 'graphmodelling_Node8', cardinality 0..*).
+'graphmodelling::Property' (role 'graphmodelling_Property', cardinality 0..*) is associated with 'graphmodelling::Node' (role 'graphmodelling_Node10', cardinality 0..*).
+'graphmodelling::Edge' (role 'graphmodelling_Edge14', cardinality 0..*) is associated with 'graphmodelling::Node' (role 'graphmodelling_Node15', cardinality 0..*).
+'graphmodelling::Node' (role 'graphmodelling_Node18', cardinality 0..*) is associated with 'graphmodelling::Edge' (role 'graphmodelling_Edge17', cardinality 0..*).
+'graphmodelling::Graph' (role 'graphmodelling_Graph2', cardinality 0..*) is associated with 'graphmodelling::Edge' (role 'graphmodelling_Edge', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'beans::NamedElement' has the following attributes: 'name' of type str.
+The class 'beans::BeanLibrary' has the following attributes: 'packageName' of type str.
+The class 'beans::Bean' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'beans::BeanProperty' has the following attributes: 'typeName' of type str; 'changeable' of type bool.
+'beans::Bean' is a specialization of 'NamedElement'.
+'beans::BeanProperty' is a specialization of 'NamedElement'.
+'beans::BeanLibrary' is a specialization of 'NamedElement'.
+'beans::BeanLibrary' (role 'BeanLibrary', cardinality 0..*) is associated with 'beans::Bean' (role 'beans', cardinality 0..*).
+'beans::Bean' (role 'Bean4', cardinality 0..*) is associated with 'beans::BeanProperty' (role 'properties', cardinality 0..*).
+'beans::BeanLibrary' (role 'beanLibrary', cardinality 0..*) is associated with 'beans::Bean' (role 'Bean', cardinality 0..*).
+'beans::Bean' (role 'bean', cardinality 0..*) is associated with 'beans::BeanProperty' (role 'BeanProperty', cardinality 0..*).

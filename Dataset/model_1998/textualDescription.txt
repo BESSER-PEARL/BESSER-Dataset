@@ -1,0 +1,73 @@
+The model has 34 class(es).
+The class 'trace::Trace' has no attributes.
+The class 'trace::model2Configuration::TracedC' has no attributes.
+The class 'model2Configuration::TracedB' has no attributes.
+The class 'model2Configuration::TracedC' has no attributes.
+The class 'trace::Events::EventOccurrence' has no attributes.
+The class 'trace::Events::C::doCEntryEventOccurrence' has no attributes.
+The class 'trace::States::B::b::State' has the following attributes: 'b' of type int.
+The class 'TracedObjects' has no attributes.
+The class 'EventOccurrence' has no attributes.
+The class 'trace::Events::Events' has no attributes.
+The class 'trace::States::C::c::State' has no attributes.
+The class 'trace::F' has no attributes.
+The class 'C::doCExitEventOccurrence' has no attributes.
+The class 'A::a::State' has no attributes.
+The class 'trace::StaticObjectsPools' has no attributes.
+The class 'States::trace::GlobalState' has no attributes.
+The class 'Events::trace::GlobalState' has no attributes.
+The class 'model2::TracedA' has no attributes.
+The class 'trace::GlobalState' has no attributes.
+The class 'trace::model2Configuration::TracedB' has no attributes.
+The class 'model2::trace::A' has no attributes.
+The class 'trace::Traced::TracedObjects' has no attributes.
+The class 'trace::States::A::a::State' has the following attributes: 'a' of type int.
+The class 'trace::model2::TracedA' has no attributes.
+The class 'C::doCEntryEventOccurrence' has no attributes.
+The class 'trace::Events::A::doAEntryEventOccurrence' has no attributes.
+The class 'A::doAEntryEventOccurrence' has no attributes.
+The class 'trace::Events::A::doAExitEventOccurrence' has no attributes.
+The class 'A::doAExitEventOccurrence' has no attributes.
+The class 'C::c::State' has no attributes.
+The class 'B::b::State' has no attributes.
+The class 'trace::Events::C::doCExitEventOccurrence' has no attributes.
+The class 'States::trace::F' has no attributes.
+The class 'Events' has no attributes.
+'trace::Events::A::doAEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::C::doCExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::C::doCEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::A::doAExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::States::C::c::State' (role 'trace_States_C_c_State', cardinality 0..*) is associated with 'States::trace::F' (role 'States_trace_F', cardinality 0..*).
+'A::a::State' (role 'A_a_State60', cardinality 0..*) is associated with 'trace::model2::TracedA' (role 'parent59', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::GlobalState' (role 'trace_GlobalState', cardinality 0..*).
+'trace::Events::C::doCEntryEventOccurrence' (role 'trace_Events_C_doCEntryEventOccurrence', cardinality 0..*) is associated with 'model2Configuration::TracedC' (role 'model2Configuration_TracedC29', cardinality 0..*).
+'model2::TracedA' (role 'TracedA', cardinality 0..*) is associated with 'trace::States::A::a::State' (role 'aTrace', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates10', cardinality 0..*) is associated with 'C::c::State' (role 'C_c_State', cardinality 0..*).
+'B::b::State' (role 'B_b_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates', cardinality 0..*).
+'A::doAEntryEventOccurrence' (role 'A_doAEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events', cardinality 0..*).
+'C::doCEntryEventOccurrence' (role 'C_doCEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events20', cardinality 0..*).
+'trace::model2Configuration::TracedB' (role 'parent', cardinality 0..*) is associated with 'B::b::State' (role 'B_b_State53', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState43', cardinality 0..*) is associated with 'trace::States::A::a::State' (role 'a_a_States', cardinality 0..*).
+'model2::TracedA' (role 'model2_TracedA', cardinality 0..*) is associated with 'trace::Events::A::doAEntryEventOccurrence' (role 'trace_Events_A_doAEntryEventOccurrence', cardinality 0..*).
+'model2Configuration::TracedC' (role 'TracedC', cardinality 0..*) is associated with 'trace::States::C::c::State' (role 'cTrace', cardinality 0..*).
+'trace::model2Configuration::TracedC' (role 'parent55', cardinality 0..*) is associated with 'C::c::State' (role 'C_c_State56', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace2', cardinality 0..*) is associated with 'Events' (role 'Events', cardinality 0..*).
+'trace::Events::C::doCExitEventOccurrence' (role 'trace_Events_C_doCExitEventOccurrence', cardinality 0..*) is associated with 'C::doCEntryEventOccurrence' (role 'C_doCEntryEventOccurrence33', cardinality 0..*).
+'trace::F' (role 'trace_F', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools14', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects47', cardinality 0..*) is associated with 'model2Configuration::TracedC' (role 'model2Configuration_TracedC48', cardinality 0..*).
+'trace::Events::C::doCEntryEventOccurrence' (role 'trace_Events_C_doCEntryEventOccurrence31', cardinality 0..*) is associated with 'model2Configuration::TracedB' (role 'model2Configuration_TracedB', cardinality 0..*).
+'trace::Events::EventOccurrence' (role 'eventsTriggeredDuringState', cardinality 0..*) is associated with 'Events::trace::GlobalState' (role 'GlobalState', cardinality 0..*).
+'model2Configuration::TracedB' (role 'model2Configuration_TracedB45', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects', cardinality 0..*).
+'model2::trace::A' (role 'model2_trace_A', cardinality 0..*) is associated with 'trace::model2::TracedA' (role 'trace_model2_TracedA', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates12', cardinality 0..*) is associated with 'A::a::State' (role 'A_a_State', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace4', cardinality 0..*) is associated with 'TracedObjects' (role 'TracedObjects', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState40', cardinality 0..*) is associated with 'trace::States::C::c::State' (role 'c_c_States', cardinality 0..*).
+'trace::States::B::b::State' (role 'b_b_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState36', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events18', cardinality 0..*) is associated with 'A::doAExitEventOccurrence' (role 'A_doAExitEventOccurrence', cardinality 0..*).
+'model2Configuration::TracedB' (role 'TracedB', cardinality 0..*) is associated with 'trace::States::B::b::State' (role 'bTrace', cardinality 0..*).
+'model2Configuration::TracedC' (role 'model2Configuration_TracedC', cardinality 0..*) is associated with 'trace::Events::A::doAEntryEventOccurrence' (role 'trace_Events_A_doAEntryEventOccurrence25', cardinality 0..*).
+'C::doCExitEventOccurrence' (role 'C_doCExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events22', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace6', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools', cardinality 0..*).
+'trace::Events::A::doAExitEventOccurrence' (role 'trace_Events_A_doAExitEventOccurrence', cardinality 0..*) is associated with 'A::doAEntryEventOccurrence' (role 'A_doAEntryEventOccurrence27', cardinality 0..*).
+'trace::GlobalState' (role 'stateDuringWhichTriggered', cardinality 0..*) is associated with 'EventOccurrence' (role 'EventOccurrence', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects50', cardinality 0..*) is associated with 'model2::TracedA' (role 'model2_TracedA51', cardinality 0..*).

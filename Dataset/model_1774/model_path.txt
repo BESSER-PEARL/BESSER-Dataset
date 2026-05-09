@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Fhma/MT_ATL/uk.ac.york.cs.emu.atl.examples.mutations.generator/src/uk/ac/york/cs/emu/atl/examples/mutations/generator/metamodels/Book.ecore

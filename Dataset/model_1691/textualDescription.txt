@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'mpupkb::NamedElement' has the following attributes: 'name' of type str.
+The class 'mpupkb::Own' has the following attributes: 'ownerName' of type str; 'since' of type str.
+The class 'mpupkb::Thing' has the following attributes: 'id' of type int.
+The class 'mpupkb::Comment' has the following attributes: 'content' of type str.
+The class 'NamedElement' has no attributes.
+'mpupkb::Thing' is a specialization of 'NamedElement'.
+'mpupkb::Own' is a specialization of 'NamedElement'.
+'mpupkb::Thing' (role 'Thing', cardinality 0..*) is associated with 'mpupkb::Own' (role 'ownership', cardinality 0..*).
+'mpupkb::NamedElement' (role 'mpupkb_NamedElement', cardinality 0..*) is associated with 'mpupkb::Comment' (role 'mpupkb_Comment', cardinality 0..*).
+'mpupkb::Thing' (role 'mpupkb_Thing', cardinality 0..*) is associated with 'mpupkb::Own' (role 'mpupkb_Own', cardinality 0..*).
+'mpupkb::Own' (role 'Own', cardinality 0..*) is associated with 'mpupkb::Thing' (role 'thing', cardinality 0..*).

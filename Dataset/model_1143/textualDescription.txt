@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'myStateMachines::State' has the following attributes: 'name' of type str; 'actions' of type str.
+The class 'myStateMachines::Event' has the following attributes: 'name' of type str.
+The class 'myStateMachines::Transition' has no attributes.
+The class 'myStateMachines::Statemachine' has no attributes.
+'myStateMachines::State' (role 'myStateMachines_State7', cardinality 0..*) is associated with 'myStateMachines::Transition' (role 'myStateMachines_Transition', cardinality 0..*).
+'myStateMachines::Transition' (role 'myStateMachines_Transition12', cardinality 0..*) is associated with 'myStateMachines::State' (role 'myStateMachines_State13', cardinality 0..*).
+'myStateMachines::Transition' (role 'myStateMachines_Transition9', cardinality 0..*) is associated with 'myStateMachines::Event' (role 'myStateMachines_Event10', cardinality 0..*).
+'myStateMachines::Statemachine' (role 'myStateMachines_Statemachine', cardinality 0..*) is associated with 'myStateMachines::Event' (role 'myStateMachines_Event', cardinality 0..*).
+'myStateMachines::Statemachine' (role 'myStateMachines_Statemachine5', cardinality 0..*) is associated with 'myStateMachines::State' (role 'myStateMachines_State4', cardinality 0..*).
+'myStateMachines::Statemachine' (role 'myStateMachines_Statemachine2', cardinality 0..*) is associated with 'myStateMachines::State' (role 'myStateMachines_State', cardinality 0..*).

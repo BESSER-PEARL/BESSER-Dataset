@@ -1,0 +1,116 @@
+The model has 57 class(es).
+The class 'EssentialOCL::IfExp' has no attributes.
+The class 'EssentialOCL::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'LoopExp' has no attributes.
+The class 'EssentialOCL::NullLiteralExp' has no attributes.
+The class 'EssentialOCL::IteratorExp' has no attributes.
+The class 'EssentialOCL::EnumLiteralExp' has no attributes.
+The class 'EssentialOCL::TupleType' has no attributes.
+The class 'EssentialOCL::NumericLiteralExp' has no attributes.
+The class 'FeatureCallExp' has no attributes.
+The class 'EssentialOCL::OrderedSetType' has no attributes.
+The class 'EssentialOCL::SequenceType' has no attributes.
+The class 'EssentialOCL::TupleLiteralPart' has no attributes.
+The class 'EssentialOCL::RealLiteralExp' has the following attributes: 'realSymbol' of type str.
+The class 'EssentialOCL::OperationCallExp' has no attributes.
+The class 'EssentialOCL::InvalidType' has no attributes.
+The class 'CollectionLiteralExp' has no attributes.
+The class 'EssentialOCL::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'EssentialOCL::VoidType' has no attributes.
+The class 'EssentialOCL::TypeExp' has no attributes.
+The class 'EssentialOCL::NavigationCallExp' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'TupleLiteralPart' has no attributes.
+The class 'EssentialOCL::CallExp' has no attributes.
+The class 'EssentialOCL::TupleLiteralExp' has no attributes.
+The class 'EssentialOCL::CollectionLiteralPart' has no attributes.
+The class 'EssentialOCL::SetType' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'EssentialOCL::UnlimitedNaturalExp' has the following attributes: 'symbol' of type str.
+The class 'EssentialOCL::ExpressionInOcl' has no attributes.
+The class 'EssentialOCL::LiteralExp' has no attributes.
+The class 'EssentialOCL::CollectionRange' has no attributes.
+The class 'EssentialOCL::PrimitiveLiteralExp' has no attributes.
+The class 'EssentialOCL::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'EssentialOCL::Variable' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'Variable' has no attributes.
+The class 'EssentialOCL::PropertyCallExp' has no attributes.
+The class 'EssentialOCL::OclExpression' has no attributes.
+The class 'EssentialOCL::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'NavigationCallExp' has no attributes.
+The class 'TupleLiteralExp' has no attributes.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'EssentialOCL::FeatureCallExp' has no attributes.
+The class 'EssentialOCL::IterateExp' has no attributes.
+The class 'EssentialOCL::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type str.
+The class 'EssentialOCL::VariableExp' has no attributes.
+The class 'EssentialOCL::InvalidLiteralExp' has no attributes.
+The class 'EssentialOCL::LetExp' has no attributes.
+The class 'EssentialOCL::CollectionItem' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'EssentialOCL::BagType' has no attributes.
+The class 'EssentialOCL::AnyType' has no attributes.
+The class 'EssentialOCL::CollectionType' has no attributes.
+The class 'EssentialOCL::LoopExp' has no attributes.
+The enumeration 'CollectionKind' has the following literals: 'Collection', 'Sequence', 'Set', 'OrderedSet', 'Bag'.
+'EssentialOCL::IfExp' is a specialization of 'OclExpression'.
+'EssentialOCL::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'EssentialOCL::OperationCallExp' is a specialization of 'FeatureCallExp'.
+'EssentialOCL::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'EssentialOCL::LoopExp' is a specialization of 'CallExp'.
+'EssentialOCL::PropertyCallExp' is a specialization of 'NavigationCallExp'.
+'EssentialOCL::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'EssentialOCL::BagType' is a specialization of 'CollectionType'.
+'EssentialOCL::NullLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::LetExp' is a specialization of 'OclExpression'.
+'EssentialOCL::LoopExp' is a specialization of 'OclExpression'.
+'EssentialOCL::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'EssentialOCL::CallExp' is a specialization of 'OclExpression'.
+'EssentialOCL::OrderedSetType' is a specialization of 'CollectionType'.
+'EssentialOCL::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::TypeExp' is a specialization of 'OclExpression'.
+'EssentialOCL::UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+'EssentialOCL::IteratorExp' is a specialization of 'LoopExp'.
+'EssentialOCL::FeatureCallExp' is a specialization of 'CallExp'.
+'EssentialOCL::SetType' is a specialization of 'CollectionType'.
+'EssentialOCL::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'EssentialOCL::NavigationCallExp' is a specialization of 'FeatureCallExp'.
+'EssentialOCL::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::VariableExp' is a specialization of 'OclExpression'.
+'EssentialOCL::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::IterateExp' is a specialization of 'LoopExp'.
+'EssentialOCL::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'EssentialOCL::SequenceType' is a specialization of 'CollectionType'.
+'EssentialOCL::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'EssentialOCL::LiteralExp' is a specialization of 'OclExpression'.
+'EssentialOCL::CallExp' (role 'EssentialOCL_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'OclExpression' (role 'OclExpression2', cardinality 0..*) is associated with 'EssentialOCL::CollectionItem' (role 'EssentialOCL_CollectionItem', cardinality 0..*).
+'OclExpression' (role 'OclExpression9', cardinality 0..*) is associated with 'EssentialOCL::CollectionRange' (role 'EssentialOCL_CollectionRange8', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl13', cardinality 0..*).
+'EssentialOCL::CollectionLiteralExp' (role 'EssentialOCL_CollectionLiteralExp', cardinality 0..*) is associated with 'CollectionLiteralPart' (role 'CollectionLiteralPart', cardinality 0..*).
+'TupleLiteralPart' (role 'TupleLiteralPart', cardinality 0..*) is associated with 'EssentialOCL::TupleLiteralExp' (role 'EssentialOCL_TupleLiteralExp', cardinality 0..*).
+'EssentialOCL::LoopExp' (role 'EssentialOCL_LoopExp38', cardinality 0..*) is associated with 'Variable' (role 'Variable39', cardinality 0..*).
+'Variable' (role 'Variable29', cardinality 0..*) is associated with 'EssentialOCL::IterateExp' (role 'EssentialOCL_IterateExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression41', cardinality 0..*) is associated with 'EssentialOCL::OperationCallExp' (role 'EssentialOCL_OperationCallExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression21', cardinality 0..*) is associated with 'EssentialOCL::IfExp' (role 'EssentialOCL_IfExp', cardinality 0..*).
+'LetExp' (role 'LetExp', cardinality 0..*) is associated with 'EssentialOCL::Variable' (role 'EssentialOCL_Variable50', cardinality 0..*).
+'EssentialOCL::IfExp' (role 'EssentialOCL_IfExp26', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression27', cardinality 0..*).
+'EssentialOCL::CollectionLiteralPart' (role 'EssentialOCL_CollectionLiteralPart', cardinality 0..*) is associated with 'CollectionLiteralExp' (role 'CollectionLiteralExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression31', cardinality 0..*) is associated with 'EssentialOCL::LetExp' (role 'EssentialOCL_LetExp', cardinality 0..*).
+'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression11', cardinality 0..*).
+'EssentialOCL::IfExp' (role 'EssentialOCL_IfExp23', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression24', cardinality 0..*).
+'Variable' (role 'Variable16', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl15', cardinality 0..*).
+'Variable' (role 'Variable19', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl18', cardinality 0..*).
+'EssentialOCL::Variable' (role 'EssentialOCL_Variable', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression48', cardinality 0..*).
+'EssentialOCL::LoopExp' (role 'EssentialOCL_LoopExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression36', cardinality 0..*).
+'OclExpression' (role 'OclExpression46', cardinality 0..*) is associated with 'EssentialOCL::TupleLiteralPart' (role 'EssentialOCL_TupleLiteralPart45', cardinality 0..*).
+'Variable' (role 'Variable52', cardinality 0..*) is associated with 'EssentialOCL::VariableExp' (role 'EssentialOCL_VariableExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression6', cardinality 0..*) is associated with 'EssentialOCL::CollectionRange' (role 'EssentialOCL_CollectionRange', cardinality 0..*).
+'EssentialOCL::LetExp' (role 'EssentialOCL_LetExp33', cardinality 0..*) is associated with 'Variable' (role 'Variable34', cardinality 0..*).
+'TupleLiteralExp' (role 'TupleLiteralExp', cardinality 0..*) is associated with 'EssentialOCL::TupleLiteralPart' (role 'EssentialOCL_TupleLiteralPart', cardinality 0..*).

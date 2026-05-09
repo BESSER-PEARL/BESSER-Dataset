@@ -1,0 +1,64 @@
+The model has 32 class(es).
+The class 'problog::Referable' has no attributes.
+The class 'problog::TermInstance' has no attributes.
+The class 'problog::Query' has no attributes.
+The class 'problog::ProbabilityMeasure' has no attributes.
+The class 'Collection' has no attributes.
+The class 'problog::Proposition' has no attributes.
+The class 'Statement' has no attributes.
+The class 'problog::ProbLogStatement' has no attributes.
+The class 'problog::ProbabilityFraction' has the following attributes: 'nominator' of type int; 'denominator' of type int.
+The class 'problog::Variable' has the following attributes: 'name' of type str.
+The class 'problog::Atom' has the following attributes: 'name' of type str.
+The class 'problog::Comment' has the following attributes: 'text' of type str.
+The class 'problog::Statement' has no attributes.
+The class 'problog::Collection' has no attributes.
+The class 'problog::PLList' has no attributes.
+The class 'problog::Evidence' has the following attributes: 'value' of type str.
+The class 'problog::Annotatable' has no attributes.
+The class 'problog::RHS' has no attributes.
+The class 'problog::ProbabilityLiteral' has the following attributes: 'value' of type float.
+The class 'problog::LHS' has no attributes.
+The class 'problog::PLTuple' has no attributes.
+The class 'problog::Cheat' has the following attributes: 'contents' of type str.
+The class 'ProbLogStatement' has no attributes.
+The class 'Referable' has no attributes.
+The class 'problog::ImportLibrary' has the following attributes: 'name' of type str.
+The class 'ProbabilityMeasure' has no attributes.
+The class 'Annotatable' has no attributes.
+The class 'problog::Rule' has no attributes.
+The class 'problog::ProbLogProgram' has no attributes.
+The class 'Proposition' has no attributes.
+The class 'problog::Term' has the following attributes: 'arguments' of type int; 'name' of type str.
+The class 'problog::AnnotatedReferable' has no attributes.
+'problog::Collection' is a specialization of 'Referable'.
+'problog::PLList' is a specialization of 'Collection'.
+'problog::ImportLibrary' is a specialization of 'Statement'.
+'problog::Variable' is a specialization of 'Referable'.
+'problog::Atom' is a specialization of 'Referable'.
+'problog::Rule' is a specialization of 'Statement'.
+'problog::AnnotatedReferable' is a specialization of 'Proposition'.
+'problog::ProbabilityFraction' is a specialization of 'ProbabilityMeasure'.
+'problog::PLTuple' is a specialization of 'Collection'.
+'problog::ProbLogStatement' is a specialization of 'Statement'.
+'problog::Atom' is a specialization of 'Annotatable'.
+'problog::TermInstance' is a specialization of 'Referable'.
+'problog::ProbabilityLiteral' is a specialization of 'ProbabilityMeasure'.
+'problog::Comment' is a specialization of 'Statement'.
+'problog::Query' is a specialization of 'ProbLogStatement'.
+'problog::Annotatable' is a specialization of 'Proposition'.
+'problog::Cheat' is a specialization of 'Statement'.
+'problog::TermInstance' is a specialization of 'Annotatable'.
+'problog::Evidence' is a specialization of 'ProbLogStatement'.
+'problog::Proposition' (role 'problog_Proposition', cardinality 0..*) is associated with 'problog::LHS' (role 'problog_LHS7', cardinality 0..*).
+'problog::LHS' (role 'problog_LHS', cardinality 0..*) is associated with 'problog::Rule' (role 'problog_Rule', cardinality 0..*).
+'problog::Annotatable' (role 'problog_Annotatable', cardinality 0..*) is associated with 'problog::AnnotatedReferable' (role 'problog_AnnotatedReferable12', cardinality 0..*).
+'problog::Referable' (role 'problog_Referable21', cardinality 0..*) is associated with 'problog::Collection' (role 'problog_Collection', cardinality 0..*).
+'problog::ProbLogProgram' (role 'problog_ProbLogProgram2', cardinality 0..*) is associated with 'problog::Term' (role 'problog_Term', cardinality 0..*).
+'problog::ProbLogProgram' (role 'problog_ProbLogProgram', cardinality 0..*) is associated with 'problog::Statement' (role 'problog_Statement', cardinality 0..*).
+'problog::Referable' (role 'problog_Referable14', cardinality 0..*) is associated with 'problog::ProbLogStatement' (role 'problog_ProbLogStatement', cardinality 0..*).
+'problog::Referable' (role 'problog_Referable19', cardinality 0..*) is associated with 'problog::TermInstance' (role 'problog_TermInstance18', cardinality 0..*).
+'problog::AnnotatedReferable' (role 'problog_AnnotatedReferable', cardinality 0..*) is associated with 'problog::ProbabilityMeasure' (role 'problog_ProbabilityMeasure', cardinality 0..*).
+'problog::RHS' (role 'problog_RHS9', cardinality 0..*) is associated with 'problog::Referable' (role 'problog_Referable', cardinality 0..*).
+'problog::Rule' (role 'problog_Rule5', cardinality 0..*) is associated with 'problog::RHS' (role 'problog_RHS', cardinality 0..*).
+'problog::Term' (role 'problog_Term16', cardinality 0..*) is associated with 'problog::TermInstance' (role 'problog_TermInstance', cardinality 0..*).

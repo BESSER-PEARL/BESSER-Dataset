@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'PetrinetDSL::TPEdge' has no attributes.
+The class 'Node' has no attributes.
+The class 'PetrinetDSL::PTEdge' has no attributes.
+The class 'PetrinetDSL::Node' has no attributes.
+The class 'PetrinetDSL::Edge' has no attributes.
+The class 'PetrinetDSL::Token' has no attributes.
+The class 'Petrinet' has no attributes.
+The class 'PetrinetDSL::Place' has no attributes.
+The class 'PetrinetDSL::Petrinet' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'PetrinetDSL::Transition' has no attributes.
+The class 'Edge' has no attributes.
+'PetrinetDSL::Edge' is a specialization of 'Petrinet'.
+'PetrinetDSL::TPEdge' is a specialization of 'Edge'.
+'PetrinetDSL::Place' is a specialization of 'Node'.
+'PetrinetDSL::Token' is a specialization of 'Node'.
+'PetrinetDSL::PTEdge' is a specialization of 'Edge'.
+'PetrinetDSL::Node' is a specialization of 'Petrinet'.
+'PetrinetDSL::Transition' is a specialization of 'Node'.
+'PetrinetDSL::TPEdge' (role 'PetrinetDSL_TPEdge', cardinality 0..*) is associated with 'PetrinetDSL::Transition' (role 'PetrinetDSL_Transition8', cardinality 0..*).
+'PetrinetDSL::Place' (role 'PetrinetDSL_Place11', cardinality 0..*) is associated with 'PetrinetDSL::TPEdge' (role 'PetrinetDSL_TPEdge10', cardinality 0..*).
+'PetrinetDSL::Transition' (role 'PetrinetDSL_Transition', cardinality 0..*) is associated with 'PetrinetDSL::PTEdge' (role 'PetrinetDSL_PTEdge6', cardinality 0..*).
+'PetrinetDSL::Place' (role 'PetrinetDSL_Place4', cardinality 0..*) is associated with 'PetrinetDSL::PTEdge' (role 'PetrinetDSL_PTEdge', cardinality 0..*).
+'PetrinetDSL::Token' (role 'PetrinetDSL_Token', cardinality 0..*) is associated with 'PetrinetDSL::Place' (role 'PetrinetDSL_Place', cardinality 0..*).
+'PetrinetDSL::Petrinet' (role 'PetrinetDSL_Petrinet0', cardinality 0..*) is associated with 'PetrinetDSL::Petrinet' (role 'PetrinetDSL_Petrinet', cardinality 0..*).

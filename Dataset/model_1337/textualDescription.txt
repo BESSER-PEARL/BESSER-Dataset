@@ -1,0 +1,106 @@
+The model has 47 class(es).
+The class 'NavigationPathCS' has no attributes.
+The class 'miniOCL::LiteralExpCS' has no attributes.
+The class 'miniOCL::NavigationPathCS' has no attributes.
+The class 'miniOCL::PropertyCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::PathElementCS' has no attributes.
+The class 'LoopExpCS' has no attributes.
+The class 'miniOCL::NavigationPathVariableCS' has the following attributes: 'varName' of type str.
+The class 'NavigationExpCS' has no attributes.
+The class 'miniOCL::NavigationNameExpCS' has no attributes.
+The class 'miniOCL::IterateExpCS' has no attributes.
+The class 'miniOCL::PackageCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::ExpCS' has no attributes.
+The class 'miniOCL::IntLiteralExpCS' has the following attributes: 'intSymbol' of type int.
+The class 'miniOCL::ExistsExpCS' has no attributes.
+The class 'miniOCL::BooleanLiteralExpCS' has no attributes.
+The class 'miniOCL::StringLiteralExpCS' has the following attributes: 'stringSymbol' of type str.
+The class 'miniOCL::NavigationPathNameCS' has no attributes.
+The class 'miniOCL::ParameterCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::PrimaryExpCS' has no attributes.
+The class 'miniOCL::NameExpCS' has no attributes.
+The class 'miniOCL::RootCS' has no attributes.
+The class 'miniOCL::CallExpCS' has no attributes.
+The class 'miniOCL::CollectExpCS' has no attributes.
+The class 'miniOCL::PathCS' has no attributes.
+The class 'PathCS' has no attributes.
+The class 'miniOCL::ForAllExpCS' has no attributes.
+The class 'miniOCL::IteratorVarCS' has the following attributes: 'itName' of type str.
+The class 'miniOCL::OperationCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::AccVarCS' has the following attributes: 'accVarName' of type str.
+The class 'ExpCS' has no attributes.
+The class 'miniOCL::RoundedBracketClauseCS' has no attributes.
+The class 'miniOCL::ConstraintCS' has no attributes.
+The class 'miniOCL::NavigationExpCS' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'miniOCL::InvariantCS' has no attributes.
+The class 'miniOCL::EStructuralFeature' has no attributes.
+The class 'miniOCL::LogicExpCS' has the following attributes: 'op' of type str.
+The class 'LogicExpCS' has no attributes.
+The class 'BooleanLiteralExpCS' has no attributes.
+The class 'miniOCL::LoopExpCS' has the following attributes: 'logicOp' of type str.
+The class 'miniOCL::BooleanExpCS' has the following attributes: 'boolSymbol' of type bool.
+The class 'miniOCL::PathNameCS' has no attributes.
+The class 'miniOCL::NavigationPathElementCS' has no attributes.
+The class 'miniOCL::ClassCS' has the following attributes: 'name' of type str.
+The class 'PrimaryExpCS' has no attributes.
+The class 'miniOCL::PathVariableCS' has the following attributes: 'varName' of type str.
+'miniOCL::NavigationNameExpCS' is a specialization of 'NavigationExpCS'.
+'miniOCL::NameExpCS' is a specialization of 'NavigationExpCS'.
+'miniOCL::ForAllExpCS' is a specialization of 'LoopExpCS'.
+'miniOCL::CallExpCS' is a specialization of 'LogicExpCS'.
+'miniOCL::LogicExpCS' is a specialization of 'ExpCS'.
+'miniOCL::NavigationPathVariableCS' is a specialization of 'NavigationPathCS'.
+'miniOCL::IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'miniOCL::NavigationPathElementCS' is a specialization of 'NavigationPathCS'.
+'miniOCL::ExistsExpCS' is a specialization of 'LoopExpCS'.
+'miniOCL::BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+'miniOCL::PathVariableCS' is a specialization of 'PathCS'.
+'miniOCL::IterateExpCS' is a specialization of 'LoopExpCS'.
+'miniOCL::NavigationExpCS' is a specialization of 'PrimaryExpCS'.
+'miniOCL::StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'miniOCL::LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'miniOCL::PrimaryExpCS' is a specialization of 'CallExpCS'.
+'miniOCL::BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'miniOCL::LoopExpCS' is a specialization of 'NavigationExpCS'.
+'miniOCL::CollectExpCS' is a specialization of 'LoopExpCS'.
+'miniOCL::PathElementCS' is a specialization of 'PathCS'.
+'miniOCL::LogicExpCS' (role 'miniOCL_LogicExpCS', cardinality 0..*) is associated with 'miniOCL::LogicExpCS' (role 'miniOCL_LogicExpCS35', cardinality 0..*).
+'miniOCL::InvariantCS' (role 'miniOCL_InvariantCS', cardinality 0..*) is associated with 'miniOCL::ConstraintCS' (role 'miniOCL_ConstraintCS31', cardinality 0..*).
+'miniOCL::OperationCS' (role 'miniOCL_OperationCS', cardinality 0..*) is associated with 'miniOCL::ClassCS' (role 'miniOCL_ClassCS13', cardinality 0..*).
+'miniOCL::NavigationNameExpCS' (role 'miniOCL_NavigationNameExpCS75', cardinality 0..*) is associated with 'miniOCL::RoundedBracketClauseCS' (role 'miniOCL_RoundedBracketClauseCS76', cardinality 0..*).
+'miniOCL::PropertyCS' (role 'miniOCL_PropertyCS15', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS16', cardinality 0..*).
+'miniOCL::LoopExpCS' (role 'miniOCL_LoopExpCS', cardinality 0..*) is associated with 'miniOCL::IteratorVarCS' (role 'miniOCL_IteratorVarCS', cardinality 0..*).
+'miniOCL::RootCS' (role 'miniOCL_RootCS', cardinality 0..*) is associated with 'miniOCL::PackageCS' (role 'miniOCL_PackageCS', cardinality 0..*).
+'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS', cardinality 0..*) is associated with 'miniOCL::LogicExpCS' (role 'miniOCL_LogicExpCS38', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS57', cardinality 0..*) is associated with 'miniOCL::IteratorVarCS' (role 'miniOCL_IteratorVarCS56', cardinality 0..*).
+'miniOCL::AccVarCS' (role 'miniOCL_AccVarCS85', cardinality 0..*) is associated with 'miniOCL::ForAllExpCS' (role 'miniOCL_ForAllExpCS', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS61', cardinality 0..*) is associated with 'miniOCL::AccVarCS' (role 'miniOCL_AccVarCS60', cardinality 0..*).
+'miniOCL::AccVarCS' (role 'miniOCL_AccVarCS63', cardinality 0..*) is associated with 'miniOCL::ExpCS' (role 'miniOCL_ExpCS64', cardinality 0..*).
+'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS50', cardinality 0..*) is associated with 'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS49', cardinality 0..*).
+'miniOCL::RoundedBracketClauseCS' (role 'miniOCL_RoundedBracketClauseCS66', cardinality 0..*) is associated with 'miniOCL::ExpCS' (role 'miniOCL_ExpCS67', cardinality 0..*).
+'miniOCL::EStructuralFeature' (role 'miniOCL_EStructuralFeature83', cardinality 0..*) is associated with 'miniOCL::NavigationPathElementCS' (role 'miniOCL_NavigationPathElementCS', cardinality 0..*).
+'miniOCL::ClassCS' (role 'miniOCL_ClassCS9', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS', cardinality 0..*).
+'miniOCL::PathElementCS' (role 'miniOCL_PathElementCS', cardinality 0..*) is associated with 'miniOCL::EStructuralFeature' (role 'miniOCL_EStructuralFeature', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS26', cardinality 0..*) is associated with 'miniOCL::ParameterCS' (role 'miniOCL_ParameterCS25', cardinality 0..*).
+'miniOCL::ExistsExpCS' (role 'miniOCL_ExistsExpCS', cardinality 0..*) is associated with 'miniOCL::AccVarCS' (role 'miniOCL_AccVarCS72', cardinality 0..*).
+'miniOCL::OperationCS' (role 'miniOCL_OperationCS23', cardinality 0..*) is associated with 'miniOCL::ExpCS' (role 'miniOCL_ExpCS', cardinality 0..*).
+'miniOCL::ConstraintCS' (role 'miniOCL_ConstraintCS28', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS29', cardinality 0..*).
+'miniOCL::AccVarCS' (role 'miniOCL_AccVarCS', cardinality 0..*) is associated with 'miniOCL::IterateExpCS' (role 'miniOCL_IterateExpCS', cardinality 0..*).
+'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS41', cardinality 0..*) is associated with 'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS39', cardinality 0..*).
+'miniOCL::InvariantCS' (role 'miniOCL_InvariantCS33', cardinality 0..*) is associated with 'miniOCL::ExpCS' (role 'miniOCL_ExpCS34', cardinality 0..*).
+'miniOCL::PropertyCS' (role 'miniOCL_PropertyCS', cardinality 0..*) is associated with 'miniOCL::ClassCS' (role 'miniOCL_ClassCS11', cardinality 0..*).
+'miniOCL::PackageCS' (role 'miniOCL_PackageCS5', cardinality 0..*) is associated with 'miniOCL::PackageCS' (role 'miniOCL_PackageCS3', cardinality 0..*).
+'miniOCL::RoundedBracketClauseCS' (role 'miniOCL_RoundedBracketClauseCS', cardinality 0..*) is associated with 'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS47', cardinality 0..*).
+'miniOCL::LoopExpCS' (role 'miniOCL_LoopExpCS53', cardinality 0..*) is associated with 'miniOCL::ExpCS' (role 'miniOCL_ExpCS54', cardinality 0..*).
+'miniOCL::NavigationPathNameCS' (role 'miniOCL_NavigationPathNameCS', cardinality 0..*) is associated with 'miniOCL::NavigationNameExpCS' (role 'miniOCL_NavigationNameExpCS', cardinality 0..*).
+'miniOCL::NavigationPathCS' (role 'miniOCL_NavigationPathCS', cardinality 0..*) is associated with 'miniOCL::NavigationPathNameCS' (role 'miniOCL_NavigationPathNameCS81', cardinality 0..*).
+'miniOCL::OperationCS' (role 'miniOCL_OperationCS20', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS21', cardinality 0..*).
+'miniOCL::ClassCS' (role 'miniOCL_ClassCS', cardinality 0..*) is associated with 'miniOCL::PackageCS' (role 'miniOCL_PackageCS7', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS45', cardinality 0..*) is associated with 'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS', cardinality 0..*).
+'miniOCL::RootCS' (role 'miniOCL_RootCS2', cardinality 0..*) is associated with 'miniOCL::ConstraintCS' (role 'miniOCL_ConstraintCS', cardinality 0..*).
+'miniOCL::ParameterCS' (role 'miniOCL_ParameterCS', cardinality 0..*) is associated with 'miniOCL::OperationCS' (role 'miniOCL_OperationCS18', cardinality 0..*).
+'miniOCL::NavigationNameExpCS' (role 'miniOCL_NavigationNameExpCS78', cardinality 0..*) is associated with 'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS79', cardinality 0..*).
+'miniOCL::PathCS' (role 'miniOCL_PathCS', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS69', cardinality 0..*).
+'miniOCL::NavigationExpCS' (role 'miniOCL_NavigationExpCS', cardinality 0..*) is associated with 'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS43', cardinality 0..*).

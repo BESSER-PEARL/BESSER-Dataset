@@ -1,0 +1,58 @@
+The model has 25 class(es).
+The class 'library::OCLPackageParent' has no attributes.
+The class 'library::OCLLibraryProperty' has the following attributes: 'class_' of type str; 'isStatic' of type bool.
+The class 'OCLType' has no attributes.
+The class 'library::OCLTypeDefinition' has no attributes.
+The class 'library::OCLBoundType' has no attributes.
+The class 'OCLPackageParent' has no attributes.
+The class 'OCLNamedElement' has no attributes.
+The class 'library::OCLLibrary' has no attributes.
+The class 'OCLElement' has no attributes.
+The class 'library::OCLPackage' has no attributes.
+The class 'library::OCLTypeReference' has no attributes.
+The class 'library::OCLElement' has no attributes.
+The class 'library::OCLType' has no attributes.
+The class 'library::OCLParameter' has no attributes.
+The class 'library::OCLTypeBinding' has no attributes.
+The class 'library::OCLLibraryOperation' has the following attributes: 'class_' of type str; 'isStatic' of type bool.
+The class 'library::OCLRoot' has no attributes.
+The class 'OCLRoot' has no attributes.
+The class 'library::OCLTypeParameter' has no attributes.
+The class 'library::OCLNamedElement' has the following attributes: 'name' of type str.
+The class 'library::OCLLibraryIteration' has the following attributes: 'iterator' of type str; 'iterators' of type bool; 'class_' of type str.
+The class 'library::OCLTypedElement' has no attributes.
+The class 'library::OCLTypeValue' has no attributes.
+The class 'OCLTypedElement' has no attributes.
+The class 'OCLTypeValue' has no attributes.
+'library::OCLLibraryIteration' is a specialization of 'OCLTypedElement'.
+'library::OCLPackageParent' is a specialization of 'OCLNamedElement'.
+'library::OCLBoundType' is a specialization of 'OCLTypeValue'.
+'library::OCLType' is a specialization of 'OCLNamedElement'.
+'library::OCLLibraryProperty' is a specialization of 'OCLTypedElement'.
+'library::OCLNamedElement' is a specialization of 'OCLElement'.
+'library::OCLTypeDefinition' is a specialization of 'OCLType'.
+'library::OCLTypedElement' is a specialization of 'OCLNamedElement'.
+'library::OCLLibrary' is a specialization of 'OCLRoot'.
+'library::OCLPackage' is a specialization of 'OCLPackageParent'.
+'library::OCLParameter' is a specialization of 'OCLTypedElement'.
+'library::OCLTypeParameter' is a specialization of 'OCLType'.
+'library::OCLLibrary' is a specialization of 'OCLPackageParent'.
+'library::OCLTypeReference' is a specialization of 'OCLTypeValue'.
+'library::OCLLibraryOperation' is a specialization of 'OCLTypedElement'.
+'library::OCLTypeValue' is a specialization of 'OCLElement'.
+'library::OCLTypeBinding' is a specialization of 'OCLElement'.
+'library::OCLBoundType' (role 'library_OCLBoundType2', cardinality 0..*) is associated with 'library::OCLTypeBinding' (role 'library_OCLTypeBinding', cardinality 0..*).
+'library::OCLLibraryOperation' (role 'library_OCLLibraryOperation24', cardinality 0..*) is associated with 'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition23', cardinality 0..*).
+'library::OCLTypeReference' (role 'library_OCLTypeReference', cardinality 0..*) is associated with 'library::OCLType' (role 'library_OCLType', cardinality 0..*).
+'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition9', cardinality 0..*) is associated with 'library::OCLPackage' (role 'library_OCLPackage', cardinality 0..*).
+'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition26', cardinality 0..*) is associated with 'library::OCLLibraryProperty' (role 'library_OCLLibraryProperty', cardinality 0..*).
+'library::OCLTypeValue' (role 'library_OCLTypeValue28', cardinality 0..*) is associated with 'library::OCLTypedElement' (role 'library_OCLTypedElement', cardinality 0..*).
+'library::OCLTypeParameter' (role 'library_OCLTypeParameter', cardinality 0..*) is associated with 'library::OCLLibraryOperation' (role 'library_OCLLibraryOperation', cardinality 0..*).
+'library::OCLLibraryIteration' (role 'library_OCLLibraryIteration', cardinality 0..*) is associated with 'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition21', cardinality 0..*).
+'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition', cardinality 0..*) is associated with 'library::OCLBoundType' (role 'library_OCLBoundType', cardinality 0..*).
+'library::OCLTypeParameter' (role 'library_OCLTypeParameter16', cardinality 0..*) is associated with 'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition15', cardinality 0..*).
+'library::OCLLibrary' (role 'library_OCLLibrary3', cardinality 0..*) is associated with 'library::OCLLibrary' (role 'library_OCLLibrary', cardinality 0..*).
+'library::OCLTypeBinding' (role 'library_OCLTypeBinding13', cardinality 0..*) is associated with 'library::OCLTypeValue' (role 'library_OCLTypeValue', cardinality 0..*).
+'library::OCLPackageParent' (role 'library_OCLPackageParent', cardinality 0..*) is associated with 'library::OCLPackage' (role 'library_OCLPackage11', cardinality 0..*).
+'library::OCLParameter' (role 'library_OCLParameter', cardinality 0..*) is associated with 'library::OCLLibraryOperation' (role 'library_OCLLibraryOperation7', cardinality 0..*).
+'library::OCLTypeValue' (role 'library_OCLTypeValue19', cardinality 0..*) is associated with 'library::OCLTypeDefinition' (role 'library_OCLTypeDefinition18', cardinality 0..*).

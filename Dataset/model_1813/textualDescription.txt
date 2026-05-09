@@ -1,0 +1,42 @@
+The model has 16 class(es).
+The class 'DBLP::Organization' has the following attributes: 'name' of type str.
+The class 'DBLP::Editor' has the following attributes: 'name' of type str.
+The class 'DBLP::Book' has the following attributes: 'edition' of type int; 'series' of type str; 'volume' of type int; 'year' of type int; 'month' of type str; 'isbn' of type str; 'title' of type str.
+The class 'DBLP::MastersThesis' has the following attributes: 'month' of type str; 'title' of type str; 'year' of type int.
+The class 'DBLP::Article' has the following attributes: 'toPage' of type int; 'month' of type str; 'title' of type str; 'fromPage' of type int; 'year' of type int; 'volume' of type str; 'number' of type int.
+The class 'DBLP::PhDThesis' has the following attributes: 'year' of type int; 'month' of type str; 'title' of type str.
+The class 'DBLP::Record' has the following attributes: 'url' of type str; 'mdate' of type str; 'key' of type str; 'ee' of type str.
+The class 'DBLP::Author' has the following attributes: 'name' of type str.
+The class 'DBLP::Publisher' has the following attributes: 'address' of type str; 'name' of type str.
+The class 'DBLP::Proceedings' has the following attributes: 'isbn' of type str; 'title' of type str; 'month' of type str; 'year' of type int.
+The class 'DBLP::Journal' has the following attributes: 'name' of type str.
+The class 'DBLP::InProceedings' has the following attributes: 'month' of type str; 'bootitle' of type str; 'toPage' of type int; 'title' of type str; 'fromPage' of type int; 'year' of type int.
+The class 'DBLP::School' has the following attributes: 'name' of type str; 'address' of type str.
+The class 'DBLP::Www' has the following attributes: 'month' of type str; 'year' of type int; 'title' of type str.
+The class 'Record' has no attributes.
+The class 'DBLP::InCollection' has the following attributes: 'title' of type str; 'year' of type int; 'bookTitle' of type str; 'month' of type str; 'fromPage' of type int; 'toPage' of type int.
+'DBLP::Proceedings' is a specialization of 'Record'.
+'DBLP::Article' is a specialization of 'Record'.
+'DBLP::Book' is a specialization of 'Record'.
+'DBLP::MastersThesis' is a specialization of 'Record'.
+'DBLP::Www' is a specialization of 'Record'.
+'DBLP::PhDThesis' is a specialization of 'Record'.
+'DBLP::InCollection' is a specialization of 'Record'.
+'DBLP::InProceedings' is a specialization of 'Record'.
+'DBLP::InProceedings' (role 'DBLP_InProceedings14', cardinality 0..*) is associated with 'DBLP::Organization' (role 'DBLP_Organization15', cardinality 0..*).
+'DBLP::Www' (role 'DBLP_Www', cardinality 0..*) is associated with 'DBLP::Editor' (role 'DBLP_Editor31', cardinality 0..*).
+'DBLP::Publisher' (role 'DBLP_Publisher18', cardinality 0..*) is associated with 'DBLP::InProceedings' (role 'DBLP_InProceedings17', cardinality 0..*).
+'DBLP::MastersThesis' (role 'DBLP_MastersThesis', cardinality 0..*) is associated with 'DBLP::School' (role 'DBLP_School', cardinality 0..*).
+'DBLP::Editor' (role 'DBLP_Editor12', cardinality 0..*) is associated with 'DBLP::InProceedings' (role 'DBLP_InProceedings', cardinality 0..*).
+'DBLP::Book' (role 'DBLP_Book', cardinality 0..*) is associated with 'DBLP::Publisher' (role 'DBLP_Publisher', cardinality 0..*).
+'DBLP::Publisher' (role 'DBLP_Publisher24', cardinality 0..*) is associated with 'DBLP::Proceedings' (role 'DBLP_Proceedings23', cardinality 0..*).
+'DBLP::Organization' (role 'DBLP_Organization', cardinality 0..*) is associated with 'DBLP::InCollection' (role 'DBLP_InCollection7', cardinality 0..*).
+'DBLP::InCollection' (role 'DBLP_InCollection9', cardinality 0..*) is associated with 'DBLP::Publisher' (role 'DBLP_Publisher10', cardinality 0..*).
+'DBLP::School' (role 'DBLP_School29', cardinality 0..*) is associated with 'DBLP::PhDThesis' (role 'DBLP_PhDThesis', cardinality 0..*).
+'DBLP::Editor' (role 'DBLP_Editor', cardinality 0..*) is associated with 'DBLP::InCollection' (role 'DBLP_InCollection', cardinality 0..*).
+'DBLP::Record' (role 'records', cardinality 0..*) is associated with 'DBLP::Author' (role 'Author', cardinality 0..*).
+'DBLP::Article' (role 'Article', cardinality 0..*) is associated with 'DBLP::Journal' (role 'journal', cardinality 0..*).
+'DBLP::Record' (role 'Record', cardinality 0..*) is associated with 'DBLP::Author' (role 'authors', cardinality 0..*).
+'DBLP::Proceedings' (role 'DBLP_Proceedings26', cardinality 0..*) is associated with 'DBLP::Organization' (role 'DBLP_Organization27', cardinality 0..*).
+'DBLP::Editor' (role 'DBLP_Editor21', cardinality 0..*) is associated with 'DBLP::Proceedings' (role 'DBLP_Proceedings', cardinality 0..*).
+'DBLP::Article' (role 'articles', cardinality 0..*) is associated with 'DBLP::Journal' (role 'Journal', cardinality 0..*).

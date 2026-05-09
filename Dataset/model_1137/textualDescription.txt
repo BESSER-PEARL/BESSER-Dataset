@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'esm::EndState' has no attributes.
+The class 'esm::EObject' has no attributes.
+The class 'esm::Machine' has no attributes.
+The class 'State' has no attributes.
+The class 'esm::State' has the following attributes: 'name' of type str.
+The class 'esm::Transition' has the following attributes: 'action' of type str.
+'esm::EndState' is a specialization of 'State'.
+'esm::State' (role 'source', cardinality 0..*) is associated with 'esm::Transition' (role 'Transition5', cardinality 0..*).
+'esm::EObject' (role 'esm_EObject', cardinality 0..*) is associated with 'esm::Transition' (role 'esm_Transition7', cardinality 0..*).
+'esm::State' (role 'esm_State', cardinality 0..*) is associated with 'esm::Machine' (role 'esm_Machine', cardinality 0..*).
+'esm::State' (role 'State', cardinality 0..*) is associated with 'esm::Transition' (role 'outgoing', cardinality 0..*).
+'esm::State' (role 'State10', cardinality 0..*) is associated with 'esm::Transition' (role 'incoming', cardinality 0..*).
+'esm::Transition' (role 'Transition', cardinality 0..*) is associated with 'esm::State' (role 'target', cardinality 0..*).
+'esm::Transition' (role 'esm_Transition', cardinality 0..*) is associated with 'esm::Machine' (role 'esm_Machine2', cardinality 0..*).

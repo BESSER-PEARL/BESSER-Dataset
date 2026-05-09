@@ -1,0 +1,64 @@
+The model has 38 class(es).
+The class 'AltExp' has no attributes.
+The class 'CatchExp' has no attributes.
+The class 'ImperativeOCL::Typedef' has no attributes.
+The class 'ImperativeOCL::ImperativeExpression' has no attributes.
+The class 'ImperativeOCL::UnlinkExp' has no attributes.
+The class 'LogExp' has no attributes.
+The class 'ImperativeOCL::LogExp' has no attributes.
+The class 'ImperativeOCL::TryExp' has no attributes.
+The class 'ImperativeOCL::OrderedTupleLiteralPart' has no attributes.
+The class 'ImperativeExpression' has no attributes.
+The class 'ImperativeOCL::AssertExp' has the following attributes: 'severity' of type str.
+The class 'ImperativeOCL::AltExp' has no attributes.
+The class 'ImperativeOCL::ForExp' has no attributes.
+The class 'ImperativeOCL::OrderedTupleType' has no attributes.
+The class 'ImperativeOCL::AssignExp' has the following attributes: 'isReset' of type str.
+The class 'ImperativeOCL::DictionaryType' has no attributes.
+The class 'ImperativeOCL::DictLiteralPart' has no attributes.
+The class 'ImperativeOCL::VariableInitExp' has the following attributes: 'withResult' of type str.
+The class 'ImperativeLoopExp' has no attributes.
+The class 'ImperativeOCL::BlockExp' has no attributes.
+The class 'ImperativeOCL::ContinueExp' has no attributes.
+The class 'ImperativeOCL::ImperativeIterateExp' has no attributes.
+The class 'ImperativeOCL::ReturnExp' has no attributes.
+The class 'ImperativeOCL::ListType' has no attributes.
+The class 'ImperativeOCL::ComputeExp' has no attributes.
+The class 'ImperativeOCL::ListLiteralExp' has no attributes.
+The class 'ImperativeOCL::WhileExp' has no attributes.
+The class 'ImperativeOCL::InstantiationExp' has no attributes.
+The class 'ImperativeOCL::BreakExp' has no attributes.
+The class 'DictLiteralPart' has no attributes.
+The class 'ImperativeOCL::DictLiteralExp' has no attributes.
+The class 'ImperativeOCL::CatchExp' has no attributes.
+The class 'ImperativeOCL::RaiseExp' has no attributes.
+The class 'ImperativeOCL::UnpackExp' has no attributes.
+The class 'ImperativeOCL::ImperativeLoopExp' has no attributes.
+The class 'ImperativeOCL::SwitchExp' has no attributes.
+The class 'OrderedTupleLiteralPart' has no attributes.
+The class 'ImperativeOCL::OrderedTupleLiteralExp' has no attributes.
+The enumeration 'SeverityKind' has the following literals: 'error', 'fatal', 'warning'.
+'ImperativeOCL::TryExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::UnlinkExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::UnpackExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::AssertExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::ComputeExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::SwitchExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::ReturnExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+'ImperativeOCL::VariableInitExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::BlockExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::InstantiationExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::ForExp' is a specialization of 'ImperativeLoopExp'.
+'ImperativeOCL::RaiseExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::CatchExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::BreakExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::WhileExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::AltExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::ContinueExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::AssignExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::AssertExp' (role 'ImperativeOCL_AssertExp', cardinality 0..*) is associated with 'LogExp' (role 'LogExp', cardinality 0..*).
+'ImperativeOCL::SwitchExp' (role 'ImperativeOCL_SwitchExp', cardinality 0..*) is associated with 'AltExp' (role 'AltExp', cardinality 0..*).
+'DictLiteralPart' (role 'DictLiteralPart', cardinality 0..*) is associated with 'ImperativeOCL::DictLiteralExp' (role 'ImperativeOCL_DictLiteralExp', cardinality 0..*).
+'ImperativeOCL::TryExp' (role 'ImperativeOCL_TryExp', cardinality 0..*) is associated with 'CatchExp' (role 'CatchExp', cardinality 0..*).
+'ImperativeOCL::OrderedTupleLiteralExp' (role 'ImperativeOCL_OrderedTupleLiteralExp', cardinality 0..*) is associated with 'OrderedTupleLiteralPart' (role 'OrderedTupleLiteralPart', cardinality 0..*).

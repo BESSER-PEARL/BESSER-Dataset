@@ -1,0 +1,30 @@
+The model has 9 class(es).
+The class 'syswb106::Component' has no attributes.
+The class 'syswb106::Workbench' has the following attributes: 'aprop' of type str.
+The class 'syswb106::RelatedTo' has the following attributes: 'since' of type str.
+The class 'syswb106::System' has no attributes.
+The class 'syswb106::FunctionProperty' has the following attributes: 'description' of type str.
+The class 'syswb106::Thoughts' has no attributes.
+The class 'syswb106::Thing' has the following attributes: 'id' of type int.
+The class 'syswb106::Function' has no attributes.
+The class 'syswb106::PatternCatalog' has the following attributes: 'id' of type str.
+'syswb106::Function' (role 'syswb106_Function28', cardinality 0..*) is associated with 'syswb106::Function' (role 'syswb106_Function26', cardinality 0..*).
+'syswb106::Workbench' (role 'syswb106_Workbench4', cardinality 0..*) is associated with 'syswb106::System' (role 'syswb106_System', cardinality 0..*).
+'syswb106::Component' (role 'syswb106_Component37', cardinality 0..*) is associated with 'syswb106::Function' (role 'syswb106_Function36', cardinality 0..*).
+'syswb106::Workbench' (role 'syswb106_Workbench6', cardinality 0..*) is associated with 'syswb106::FunctionProperty' (role 'syswb106_FunctionProperty', cardinality 0..*).
+'syswb106::Workbench' (role 'syswb106_Workbench2', cardinality 0..*) is associated with 'syswb106::Thoughts' (role 'syswb106_Thoughts', cardinality 0..*).
+'syswb106::Component' (role 'syswb106_Component21', cardinality 0..*) is associated with 'syswb106::Component' (role 'syswb106_Component23', cardinality 0..*).
+'syswb106::Workbench' (role 'syswb106_Workbench', cardinality 0..*) is associated with 'syswb106::Thing' (role 'syswb106_Thing', cardinality 0..*).
+'syswb106::System' (role 'syswb106_System39', cardinality 0..*) is associated with 'syswb106::Function' (role 'syswb106_Function40', cardinality 0..*).
+'syswb106::System' (role 'syswb106_System42', cardinality 0..*) is associated with 'syswb106::Component' (role 'syswb106_Component43', cardinality 0..*).
+'syswb106::Thing' (role 'syswb106_Thing12', cardinality 0..*) is associated with 'syswb106::RelatedTo' (role 'syswb106_RelatedTo', cardinality 0..*).
+'syswb106::PatternCatalog' (role 'syswb106_PatternCatalog', cardinality 0..*) is associated with 'syswb106::Workbench' (role 'syswb106_Workbench8', cardinality 0..*).
+'syswb106::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'syswb106::Thing' (role 'Thing', cardinality 0..*).
+'syswb106::Thing' (role 'fromThing', cardinality 0..*) is associated with 'syswb106::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'syswb106::Function' (role 'syswb106_Function', cardinality 0..*) is associated with 'syswb106::Component' (role 'syswb106_Component25', cardinality 0..*).
+'syswb106::Function' (role 'syswb106_Function34', cardinality 0..*) is associated with 'syswb106::Function' (role 'syswb106_Function32', cardinality 0..*).
+'syswb106::Component' (role 'syswb106_Component19', cardinality 0..*) is associated with 'syswb106::Component' (role 'syswb106_Component', cardinality 0..*).
+'syswb106::Thoughts' (role 'syswb106_Thoughts14', cardinality 0..*) is associated with 'syswb106::Thing' (role 'syswb106_Thing15', cardinality 0..*).
+'syswb106::FunctionProperty' (role 'syswb106_FunctionProperty31', cardinality 0..*) is associated with 'syswb106::Function' (role 'syswb106_Function30', cardinality 0..*).
+'syswb106::FunctionProperty' (role 'syswb106_FunctionProperty16', cardinality 0..*) is associated with 'syswb106::FunctionProperty' (role 'syswb106_FunctionProperty18', cardinality 0..*).
+'syswb106::Function' (role 'syswb106_Function46', cardinality 0..*) is associated with 'syswb106::PatternCatalog' (role 'syswb106_PatternCatalog45', cardinality 0..*).

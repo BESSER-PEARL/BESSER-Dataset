@@ -1,0 +1,24 @@
+The model has 10 class(es).
+The class 'expansionmodel::InducedRepresentation' has the following attributes: 'hint' of type str.
+The class 'expansionmodel::RepresentationKind' has the following attributes: 'name' of type str; 'editPartQualifiedName' of type str; 'viewFactory' of type str.
+The class 'expansionmodel::DiagramExpansion' has the following attributes: 'ID' of type str.
+The class 'Representation' has no attributes.
+The class 'AbstractRepresentation' has no attributes.
+The class 'expansionmodel::AbstractRepresentation' has the following attributes: 'viewFactory' of type str; 'editPartQualifiedName' of type str; 'name' of type str.
+The class 'expansionmodel::Representation' has the following attributes: 'graphicalElementType' of type str.
+The class 'expansionmodel::GraphicalElementLibrary' has the following attributes: 'name' of type str.
+The class 'expansionmodel::UseContext' has the following attributes: 'name' of type str; 'diagramType' of type str.
+The class 'expansionmodel::GMFT::BasedRepresentation' has the following attributes: 'reusedID' of type str.
+'expansionmodel::GMFT::BasedRepresentation' is a specialization of 'Representation'.
+'expansionmodel::InducedRepresentation' is a specialization of 'AbstractRepresentation'.
+'expansionmodel::Representation' is a specialization of 'AbstractRepresentation'.
+'expansionmodel::RepresentationKind' (role 'expansionmodel_RepresentationKind9', cardinality 0..*) is associated with 'expansionmodel::GraphicalElementLibrary' (role 'expansionmodel_GraphicalElementLibrary', cardinality 0..*).
+'expansionmodel::UseContext' (role 'expansionmodel_UseContext16', cardinality 0..*) is associated with 'expansionmodel::GMFT::BasedRepresentation' (role 'expansionmodel_GMFT_BasedRepresentation', cardinality 0..*).
+'expansionmodel::UseContext' (role 'expansionmodel_UseContext', cardinality 0..*) is associated with 'expansionmodel::Representation' (role 'expansionmodel_Representation14', cardinality 0..*).
+'expansionmodel::Representation' (role 'expansionmodel_Representation', cardinality 0..*) is associated with 'expansionmodel::InducedRepresentation' (role 'expansionmodel_InducedRepresentation', cardinality 0..*).
+'expansionmodel::AbstractRepresentation' (role 'expansionmodel_AbstractRepresentation', cardinality 0..*) is associated with 'expansionmodel::RepresentationKind' (role 'expansionmodel_RepresentationKind', cardinality 0..*).
+'expansionmodel::Representation' (role 'expansionmodel_Representation1', cardinality 0..*) is associated with 'expansionmodel::Representation' (role 'expansionmodel_Representation3', cardinality 0..*).
+'expansionmodel::Representation' (role 'expansionmodel_Representation7', cardinality 0..*) is associated with 'expansionmodel::InducedRepresentation' (role 'expansionmodel_InducedRepresentation6', cardinality 0..*).
+'expansionmodel::UseContext' (role 'expansionmodel_UseContext18', cardinality 0..*) is associated with 'expansionmodel::DiagramExpansion' (role 'expansionmodel_DiagramExpansion', cardinality 0..*).
+'expansionmodel::DiagramExpansion' (role 'expansionmodel_DiagramExpansion20', cardinality 0..*) is associated with 'expansionmodel::GraphicalElementLibrary' (role 'expansionmodel_GraphicalElementLibrary21', cardinality 0..*).
+'expansionmodel::GraphicalElementLibrary' (role 'expansionmodel_GraphicalElementLibrary11', cardinality 0..*) is associated with 'expansionmodel::AbstractRepresentation' (role 'expansionmodel_AbstractRepresentation12', cardinality 0..*).

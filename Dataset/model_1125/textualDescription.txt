@@ -1,0 +1,282 @@
+The model has 81 class(es).
+The class 'cjsidl::valueSpec' has the following attributes: 'comment' of type str; 'value' of type str; 'name' of type str.
+The class 'cjsidl::scopedTypeId' has the following attributes: 'optional' of type str; 'comment' of type str; 'scopedName' of type str.
+The class 'cjsidl::transition' has the following attributes: 'comment' of type str; 'name' of type str; 'type' of type str.
+The class 'cjsidl::protocolBehavior' has the following attributes: 'stateless' of type str; 'comment' of type str.
+The class 'cjsidl::constDef' has the following attributes: 'comment' of type str; 'constValue' of type str; 'fieldUnits' of type str; 'name' of type str.
+The class 'cjsidl::declaredTypeSetRef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::bodyScopedRef' has no attributes.
+The class 'cjsidl::formatEnumDef' has the following attributes: 'fieldFormat' of type str; 'index' of type str; 'fieldFormatStr' of type str.
+The class 'cjsidl::scaledRangeDef' has the following attributes: 'function' of type str; 'upperLim' of type str; 'interp' of type str; 'lowerLim' of type str.
+The class 'cjsidl::startState' has the following attributes: 'comment' of type str.
+The class 'cjsidl::declaredTypeSet' has the following attributes: 'typeName' of type str; 'version' of type str; 'name' of type str.
+The class 'cjsidl::subField' has the following attributes: 'toIndex' of type str; 'comment' of type str; 'name' of type str; 'fromIndex' of type str.
+The class 'cjsidl::transParams' has no attributes.
+The class 'cjsidl::defaultState' has the following attributes: 'comment' of type str.
+The class 'cjsidl::popTransition' has the following attributes: 'comment' of type str.
+The class 'cjsidl::description' has the following attributes: 'content' of type str.
+The class 'cjsidl::variantDef' has the following attributes: 'minCount' of type str; 'maxCount' of type str; 'vtagComment' of type str.
+The class 'cjsidl::typeReference' has the following attributes: 'comment' of type str; 'name' of type str; 'optional' of type str.
+The class 'cjsidl::varFormatField' has the following attributes: 'name' of type str; 'units' of type str; 'optional' of type str; 'countComment' of type str; 'comment' of type str.
+The class 'cjsidl::varLenField' has the following attributes: 'fieldFormat' of type str; 'lowerLim' of type str; 'optional' of type str; 'countComment' of type str; 'upperLim' of type str; 'comment' of type str; 'name' of type str.
+The class 'cjsidl::sendActionList' has no attributes.
+The class 'cjsidl::guardAction' has the following attributes: 'not_' of type str; 'name' of type str.
+The class 'cjsidl::headerScopedRef' has no attributes.
+The class 'cjsidl::valueRange' has the following attributes: 'comment' of type str; 'upperLim' of type str; 'lowerLimit_type' of type str; 'upperLimit_type' of type str; 'lowerLim' of type str.
+The class 'cjsidl::messageSet' has the following attributes: 'outputComment' of type str; 'comment' of type str; 'inputComment' of type str.
+The class 'cjsidl::listDef' has the following attributes: 'minCount' of type str; 'countComment' of type str; 'maxCount' of type str.
+The class 'cjsidl::guard' has the following attributes: 'comment' of type str; 'logicalOperator' of type str; 'equiv' of type str.
+The class 'cjsidl::constReference' has the following attributes: 'comment' of type str.
+The class 'cjsidl::nextState' has the following attributes: 'comment' of type str.
+The class 'cjsidl::footerDef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::messageScopedRef' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'cjsidl::action' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'cjsidl::taggedUnitsEnum' has the following attributes: 'fieldUnit' of type str; 'name' of type str; 'const_tag' of type str.
+The class 'cjsidl::defaultTransition' has the following attributes: 'type' of type str; 'comment' of type str.
+The class 'cjsidl::serviceDef' has the following attributes: 'serviceName' of type str; 'name' of type str; 'serviceVersion' of type str; 'assumpt' of type str.
+The class 'cjsidl::EObject' has no attributes.
+The class 'cjsidl::headerDef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::internalEventSet' has the following attributes: 'comment' of type str.
+The class 'cjsidl::declaredConstSetRef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::declaredEventDef' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'cjsidl::entry' has the following attributes: 'comment' of type str.
+The class 'cjsidl::messageDef' has the following attributes: 'messageID' of type str; 'command' of type str; 'name' of type str.
+The class 'cjsidl::refAttr' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::arrayDef' has the following attributes: 'arraySize' of type str; 'comment' of type str; 'optional' of type str; 'name' of type str.
+The class 'cjsidl::fixedFieldDef' has the following attributes: 'name' of type str; 'fieldUnit' of type str; 'optional' of type str; 'comment' of type str.
+The class 'cjsidl::messages' has no attributes.
+The class 'cjsidl::varField' has the following attributes: 'name' of type str; 'comment' of type str; 'optional' of type str.
+The class 'cjsidl::guardParam' has the following attributes: 'guardConst' of type str.
+The class 'cjsidl::simpleNumericType' has the following attributes: 'type' of type str.
+The class 'cjsidl::scopedType' has no attributes.
+The class 'cjsidl::valueSetDef' has the following attributes: 'offset' of type str.
+The class 'cjsidl::eventDef' has the following attributes: 'name' of type str.
+The class 'cjsidl::pushTransition' has the following attributes: 'comment' of type str.
+The class 'cjsidl::exit' has the following attributes: 'comment' of type str.
+The class 'cjsidl::transParam' has the following attributes: 'name' of type str; 'unsignedType' of type str; 'comment' of type str.
+The class 'cjsidl::scopedConstId' has no attributes.
+The class 'cjsidl::varLenString' has the following attributes: 'comment' of type str; 'name' of type str; 'lowerLim' of type str; 'optional' of type str; 'upperLim' of type str.
+The class 'cjsidl::taggedItemDef' has no attributes.
+The class 'cjsidl::footerScopedRef' has no attributes.
+The class 'cjsidl::references' has no attributes.
+The class 'cjsidl::sequenceDef' has no attributes.
+The class 'cjsidl::state' has the following attributes: 'name' of type str; 'initial' of type str; 'comment' of type str.
+The class 'containerDef' has no attributes.
+The class 'cjsidl::recordDef' has no attributes.
+The class 'cjsidl::bitfieldDef' has the following attributes: 'type' of type str; 'comment' of type str; 'name' of type str; 'optional' of type str.
+The class 'cjsidl::scopedEventType' has no attributes.
+The class 'cjsidl::containerDef' has the following attributes: 'optional' of type str; 'comment' of type str; 'name' of type str.
+The class 'cjsidl::jaus' has no attributes.
+The class 'cjsidl::bodyRef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::bodyDef' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'cjsidl::actionList' has no attributes.
+The class 'cjsidl::messageRef' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'cjsidl::containerRef' has the following attributes: 'optional' of type str; 'name' of type str; 'comment' of type str.
+The class 'cjsidl::declaredConstSet' has the following attributes: 'constName' of type str; 'name' of type str; 'constSetVersion' of type str.
+The class 'cjsidl::stateMachine' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'cjsidl::typeDef' has no attributes.
+The class 'cjsidl::headerRef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::internalTransition' has the following attributes: 'comment' of type str.
+The class 'cjsidl::footerRef' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'cjsidl::fixedLenString' has the following attributes: 'name' of type str; 'comment' of type str; 'optional' of type str; 'upperLim' of type str.
+The class 'cjsidl::simpleTransition' has the following attributes: 'comment' of type str.
+The enumeration 'FIELD_FORMAT' has the following literals: 'JPEG', 'USER_DEFINED', 'BMP', 'WAV', 'AU', 'MPEG2', 'MP4', 'JAUS_MESSAGE', 'RNC', 'MP2', 'XML', 'XSD', 'MJPEG', 'MPEG1', 'RNG', 'MP3', 'RAW'.
+The enumeration 'UNIT' has the following literals: 'AMPPERSQRMETER', 'AMP_PER_METER', 'CELSIUS', 'RADIAN', 'KELVIN', 'VOLT_PER_METER', 'BEL', 'HRZ', 'RAD_PER_SEC', 'RECIPROCAL_METER', 'PASCAL_SEC', 'TESLA', 'NEWTON_METER', 'HECTARE', 'ROENTGEN', 'METER_PER_SEC', 'BARN', 'LUMEN', 'GRAY_PER_SEC', 'SIEMENS', 'COULOMB_PER_KG', 'HENRY', 'RAD_PER_SEC_SQR', 'WATT', 'ANGSROM', 'JOULE', 'ONE', 'WEBER', 'NMILE', 'OHM', 'STE_RAD', 'FARAD_PER_METER', 'LTR', 'JOULE_PER_KELVIN', 'CANDELA_PER_SQUARE_METER', 'WATT_PER_SQR_METER_STERAD', 'BAR', 'NEWTON', 'SEC', 'JOULE_PER_MOLE_KELVIN', 'CURIE', 'COULOMB', 'COULOMB_PER_SQR_METER', 'CUBIC_METER', 'METER', 'DAY', 'VOLT', 'CANDELA', 'RAD', 'WATT_PER_SQR_METER', 'BECQUEREL', 'HENRY_PER_METER', 'CUBICMETERPERKG', 'MOLE_PER_CUBIC_METER', 'LUX', 'KG_PER_CUBIC_METER', 'MOLE', 'JOULES_PER_CUBIC_METER', 'NEWTON_PER_METER', 'SQR_METER', 'COULOMB_PER_CUBIC_METER', 'FARAD', 'HOUR', 'KATAL_PER_CUBIC_METER', 'KATAL', 'DEGREE', 'MTON', 'KNOT', 'KG', 'PASCAL', 'NEPER', 'SIEVERT', 'MIN', 'JOULE_PER_KG', 'REM', 'JOULE_PER_MOLE', 'AMP', 'ARE', 'METER_PER_SEC_SQR', 'WATT_PER_METER_KELVIN'.
+'cjsidl::sequenceDef' is a specialization of 'containerDef'.
+'cjsidl::recordDef' is a specialization of 'containerDef'.
+'cjsidl::variantDef' is a specialization of 'containerDef'.
+'cjsidl::listDef' is a specialization of 'containerDef'.
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId349', cardinality 0..*) is associated with 'cjsidl::formatEnumDef' (role 'cjsidl_formatEnumDef348', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference369', cardinality 0..*) is associated with 'cjsidl::scaledRangeDef' (role 'cjsidl_scaledRangeDef368', cardinality 0..*).
+'cjsidl::taggedUnitsEnum' (role 'cjsidl_taggedUnitsEnum334', cardinality 0..*) is associated with 'cjsidl::simpleNumericType' (role 'cjsidl_simpleNumericType335', cardinality 0..*).
+'cjsidl::transParams' (role 'cjsidl_transParams', cardinality 0..*) is associated with 'cjsidl::transParam' (role 'cjsidl_transParam', cardinality 0..*).
+'cjsidl::headerRef' (role 'cjsidl_headerRef', cardinality 0..*) is associated with 'cjsidl::headerDef' (role 'cjsidl_headerDef245', cardinality 0..*).
+'cjsidl::variantDef' (role 'cjsidl_variantDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef200', cardinality 0..*).
+'cjsidl::eventDef' (role 'cjsidl_eventDef287', cardinality 0..*) is associated with 'cjsidl::declaredEventDef' (role 'cjsidl_declaredEventDef', cardinality 0..*).
+'cjsidl::footerDef' (role 'cjsidl_footerDef253', cardinality 0..*) is associated with 'cjsidl::footerRef' (role 'cjsidl_footerRef', cardinality 0..*).
+'cjsidl::serviceDef' (role 'cjsidl_serviceDef3', cardinality 0..*) is associated with 'cjsidl::references' (role 'cjsidl_references', cardinality 0..*).
+'cjsidl::protocolBehavior' (role 'cjsidl_protocolBehavior', cardinality 0..*) is associated with 'cjsidl::serviceDef' (role 'cjsidl_serviceDef13', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef451', cardinality 0..*) is associated with 'cjsidl::scopedTypeId' (role 'cjsidl_scopedTypeId452', cardinality 0..*).
+'cjsidl::declaredConstSet' (role 'cjsidl_declaredConstSet25', cardinality 0..*) is associated with 'cjsidl::constDef' (role 'cjsidl_constDef', cardinality 0..*).
+'cjsidl::serviceDef' (role 'cjsidl_serviceDef21', cardinality 0..*) is associated with 'cjsidl::refAttr' (role 'cjsidl_refAttr20', cardinality 0..*).
+'cjsidl::varLenString' (role 'cjsidl_varLenString305', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId306', cardinality 0..*).
+'cjsidl::fixedLenString' (role 'cjsidl_fixedLenString', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef210', cardinality 0..*).
+'cjsidl::arrayDef' (role 'cjsidl_arrayDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef194', cardinality 0..*).
+'cjsidl::protocolBehavior' (role 'cjsidl_protocolBehavior69', cardinality 0..*) is associated with 'cjsidl::stateMachine' (role 'cjsidl_stateMachine', cardinality 0..*).
+'cjsidl::footerDef' (role 'cjsidl_footerDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef222', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject58', cardinality 0..*) is associated with 'cjsidl::eventDef' (role 'cjsidl_eventDef57', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject', cardinality 0..*) is associated with 'cjsidl::jaus' (role 'cjsidl_jaus', cardinality 0..*).
+'cjsidl::valueRange' (role 'cjsidl_valueRange', cardinality 0..*) is associated with 'cjsidl::varFormatField' (role 'cjsidl_varFormatField341', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject461', cardinality 0..*) is associated with 'cjsidl::arrayDef' (role 'cjsidl_arrayDef460', cardinality 0..*).
+'cjsidl::containerRef' (role 'cjsidl_containerRef285', cardinality 0..*) is associated with 'cjsidl::scopedType' (role 'cjsidl_scopedType', cardinality 0..*).
+'cjsidl::scaledRangeDef' (role 'cjsidl_scaledRangeDef371', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId372', cardinality 0..*).
+'cjsidl::messages' (role 'cjsidl_messages', cardinality 0..*) is associated with 'cjsidl::messageSet' (role 'cjsidl_messageSet41', cardinality 0..*).
+'cjsidl::declaredConstSetRef' (role 'cjsidl_declaredConstSetRef27', cardinality 0..*) is associated with 'cjsidl::declaredConstSet' (role 'cjsidl_declaredConstSet28', cardinality 0..*).
+'cjsidl::pushTransition' (role 'cjsidl_pushTransition', cardinality 0..*) is associated with 'cjsidl::nextState' (role 'cjsidl_nextState152', cardinality 0..*).
+'cjsidl::serviceDef' (role 'cjsidl_serviceDef9', cardinality 0..*) is associated with 'cjsidl::messageSet' (role 'cjsidl_messageSet', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state98', cardinality 0..*) is associated with 'cjsidl::state' (role 'cjsidl_state96', cardinality 0..*).
+'cjsidl::varFormatField' (role 'cjsidl_varFormatField343', cardinality 0..*) is associated with 'cjsidl::formatEnumDef' (role 'cjsidl_formatEnumDef', cardinality 0..*).
+'cjsidl::listDef' (role 'cjsidl_listDef383', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference384', cardinality 0..*).
+'cjsidl::constDef' (role 'cjsidl_constDef455', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference454', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state88', cardinality 0..*) is associated with 'cjsidl::exit' (role 'cjsidl_exit', cardinality 0..*).
+'cjsidl::defaultTransition' (role 'cjsidl_defaultTransition145', cardinality 0..*) is associated with 'cjsidl::sendActionList' (role 'cjsidl_sendActionList146', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId378', cardinality 0..*) is associated with 'cjsidl::scaledRangeDef' (role 'cjsidl_scaledRangeDef377', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef220', cardinality 0..*) is associated with 'cjsidl::bodyDef' (role 'cjsidl_bodyDef', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId393', cardinality 0..*) is associated with 'cjsidl::listDef' (role 'cjsidl_listDef392', cardinality 0..*).
+'cjsidl::pushTransition' (role 'cjsidl_pushTransition154', cardinality 0..*) is associated with 'cjsidl::simpleTransition' (role 'cjsidl_simpleTransition155', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject476', cardinality 0..*) is associated with 'cjsidl::scopedType' (role 'cjsidl_scopedType475', cardinality 0..*).
+'cjsidl::transParams' (role 'cjsidl_transParams126', cardinality 0..*) is associated with 'cjsidl::transition' (role 'cjsidl_transition125', cardinality 0..*).
+'cjsidl::bodyScopedRef' (role 'cjsidl_bodyScopedRef', cardinality 0..*) is associated with 'cjsidl::bodyRef' (role 'cjsidl_bodyRef251', cardinality 0..*).
+'cjsidl::variantDef' (role 'cjsidl_variantDef404', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId405', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state168', cardinality 0..*) is associated with 'cjsidl::nextState' (role 'cjsidl_nextState167', cardinality 0..*).
+'cjsidl::stateMachine' (role 'cjsidl_stateMachine78', cardinality 0..*) is associated with 'cjsidl::startState' (role 'cjsidl_startState79', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef191', cardinality 0..*) is associated with 'cjsidl::messageDef' (role 'cjsidl_messageDef192', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef196', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject467', cardinality 0..*) is associated with 'cjsidl::messageScopedRef' (role 'cjsidl_messageScopedRef466', cardinality 0..*).
+'cjsidl::bodyDef' (role 'cjsidl_bodyDef273', cardinality 0..*) is associated with 'cjsidl::bodyScopedRef' (role 'cjsidl_bodyScopedRef272', cardinality 0..*).
+'cjsidl::containerDef' (role 'cjsidl_containerDef416', cardinality 0..*) is associated with 'cjsidl::taggedItemDef' (role 'cjsidl_taggedItemDef415', cardinality 0..*).
+'cjsidl::messageDef' (role 'cjsidl_messageDef230', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject231', cardinality 0..*).
+'cjsidl::transition' (role 'cjsidl_transition128', cardinality 0..*) is associated with 'cjsidl::guard' (role 'cjsidl_guard', cardinality 0..*).
+'cjsidl::typeReference' (role 'cjsidl_typeReference449', cardinality 0..*) is associated with 'cjsidl::recordDef' (role 'cjsidl_recordDef448', cardinality 0..*).
+'cjsidl::messageDef' (role 'cjsidl_messageDef473', cardinality 0..*) is associated with 'cjsidl::messageScopedRef' (role 'cjsidl_messageScopedRef472', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject458', cardinality 0..*) is associated with 'cjsidl::typeReference' (role 'cjsidl_typeReference457', cardinality 0..*).
+'cjsidl::sequenceDef' (role 'cjsidl_sequenceDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef202', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject422', cardinality 0..*) is associated with 'cjsidl::sequenceDef' (role 'cjsidl_sequenceDef421', cardinality 0..*).
+'cjsidl::references' (role 'cjsidl_references17', cardinality 0..*) is associated with 'cjsidl::refAttr' (role 'cjsidl_refAttr18', cardinality 0..*).
+'cjsidl::fixedLenString' (role 'cjsidl_fixedLenString437', cardinality 0..*) is associated with 'cjsidl::recordDef' (role 'cjsidl_recordDef436', cardinality 0..*).
+'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet33', cardinality 0..*) is associated with 'cjsidl::declaredTypeSetRef' (role 'cjsidl_declaredTypeSetRef', cardinality 0..*).
+'cjsidl::fixedFieldDef' (role 'cjsidl_fixedFieldDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef204', cardinality 0..*).
+'cjsidl::scopedTypeId' (role 'cjsidl_scopedTypeId493', cardinality 0..*) is associated with 'cjsidl::scopedType' (role 'cjsidl_scopedType494', cardinality 0..*).
+'cjsidl::footerDef' (role 'cjsidl_footerDef282', cardinality 0..*) is associated with 'cjsidl::footerScopedRef' (role 'cjsidl_footerScopedRef281', cardinality 0..*).
+'cjsidl::messageDef' (role 'cjsidl_messageDef227', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject228', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject64', cardinality 0..*) is associated with 'cjsidl::eventDef' (role 'cjsidl_eventDef63', cardinality 0..*).
+'cjsidl::simpleNumericType' (role 'cjsidl_simpleNumericType309', cardinality 0..*) is associated with 'cjsidl::fixedFieldDef' (role 'cjsidl_fixedFieldDef308', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference402', cardinality 0..*) is associated with 'cjsidl::variantDef' (role 'cjsidl_variantDef401', cardinality 0..*).
+'cjsidl::varLenField' (role 'cjsidl_varLenField325', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId326', cardinality 0..*).
+'cjsidl::bodyRef' (role 'cjsidl_bodyRef', cardinality 0..*) is associated with 'cjsidl::bodyDef' (role 'cjsidl_bodyDef249', cardinality 0..*).
+'cjsidl::action' (role 'cjsidl_action181', cardinality 0..*) is associated with 'cjsidl::sendActionList' (role 'cjsidl_sendActionList180', cardinality 0..*).
+'cjsidl::startState' (role 'cjsidl_startState', cardinality 0..*) is associated with 'cjsidl::state' (role 'cjsidl_state', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference357', cardinality 0..*) is associated with 'cjsidl::valueRange' (role 'cjsidl_valueRange356', cardinality 0..*).
+'cjsidl::declaredConstSetRef' (role 'cjsidl_declaredConstSetRef31', cardinality 0..*) is associated with 'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet30', cardinality 0..*).
+'cjsidl::headerRef' (role 'cjsidl_headerRef247', cardinality 0..*) is associated with 'cjsidl::headerScopedRef' (role 'cjsidl_headerScopedRef', cardinality 0..*).
+'cjsidl::taggedUnitsEnum' (role 'cjsidl_taggedUnitsEnum339', cardinality 0..*) is associated with 'cjsidl::scaledRangeDef' (role 'cjsidl_scaledRangeDef', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef212', cardinality 0..*) is associated with 'cjsidl::varLenString' (role 'cjsidl_varLenString', cardinality 0..*).
+'cjsidl::valueSetDef' (role 'cjsidl_valueSetDef381', cardinality 0..*) is associated with 'cjsidl::subField' (role 'cjsidl_subField380', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId496', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject497', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject279', cardinality 0..*) is associated with 'cjsidl::footerScopedRef' (role 'cjsidl_footerScopedRef278', cardinality 0..*).
+'cjsidl::valueRange' (role 'cjsidl_valueRange359', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId360', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject491', cardinality 0..*) is associated with 'cjsidl::scopedEventType' (role 'cjsidl_scopedEventType490', cardinality 0..*).
+'cjsidl::messageSet' (role 'cjsidl_messageSet43', cardinality 0..*) is associated with 'cjsidl::messages' (role 'cjsidl_messages44', cardinality 0..*).
+'cjsidl::declaredTypeSetRef' (role 'cjsidl_declaredTypeSetRef188', cardinality 0..*) is associated with 'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet189', cardinality 0..*).
+'cjsidl::guardParam' (role 'cjsidl_guardParam184', cardinality 0..*) is associated with 'cjsidl::action' (role 'cjsidl_action183', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state162', cardinality 0..*) is associated with 'cjsidl::nextState' (role 'cjsidl_nextState161', cardinality 0..*).
+'cjsidl::taggedUnitsEnum' (role 'cjsidl_taggedUnitsEnum337', cardinality 0..*) is associated with 'cjsidl::valueSetDef' (role 'cjsidl_valueSetDef', cardinality 0..*).
+'cjsidl::transition' (role 'cjsidl_transition133', cardinality 0..*) is associated with 'cjsidl::sendActionList' (role 'cjsidl_sendActionList134', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject276', cardinality 0..*) is associated with 'cjsidl::footerScopedRef' (role 'cjsidl_footerScopedRef275', cardinality 0..*).
+'cjsidl::messageDef' (role 'cjsidl_messageDef233', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject234', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef445', cardinality 0..*) is associated with 'cjsidl::varFormatField' (role 'cjsidl_varFormatField446', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state90', cardinality 0..*) is associated with 'cjsidl::transition' (role 'cjsidl_transition', cardinality 0..*).
+'cjsidl::scaledRangeDef' (role 'cjsidl_scaledRangeDef374', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference375', cardinality 0..*).
+'cjsidl::subField' (role 'cjsidl_subField', cardinality 0..*) is associated with 'cjsidl::bitfieldDef' (role 'cjsidl_bitfieldDef354', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject312', cardinality 0..*) is associated with 'cjsidl::fixedFieldDef' (role 'cjsidl_fixedFieldDef311', cardinality 0..*).
+'cjsidl::defaultState' (role 'cjsidl_defaultState100', cardinality 0..*) is associated with 'cjsidl::transition' (role 'cjsidl_transition101', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference303', cardinality 0..*) is associated with 'cjsidl::varLenString' (role 'cjsidl_varLenString302', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId502', cardinality 0..*) is associated with 'cjsidl::constDef' (role 'cjsidl_constDef503', cardinality 0..*).
+'cjsidl::description' (role 'cjsidl_description225', cardinality 0..*) is associated with 'cjsidl::messageDef' (role 'cjsidl_messageDef224', cardinality 0..*).
+'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet37', cardinality 0..*) is associated with 'cjsidl::typeReference' (role 'cjsidl_typeReference', cardinality 0..*).
+'cjsidl::actionList' (role 'cjsidl_actionList131', cardinality 0..*) is associated with 'cjsidl::transition' (role 'cjsidl_transition130', cardinality 0..*).
+'cjsidl::scopedEventType' (role 'cjsidl_scopedEventType484', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject485', cardinality 0..*).
+'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet35', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef', cardinality 0..*).
+'cjsidl::messages' (role 'cjsidl_messages46', cardinality 0..*) is associated with 'cjsidl::messageDef' (role 'cjsidl_messageDef', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state92', cardinality 0..*) is associated with 'cjsidl::defaultTransition' (role 'cjsidl_defaultTransition', cardinality 0..*).
+'cjsidl::constDef' (role 'cjsidl_constDef186', cardinality 0..*) is associated with 'cjsidl::simpleNumericType' (role 'cjsidl_simpleNumericType', cardinality 0..*).
+'cjsidl::serviceDef' (role 'cjsidl_serviceDef', cardinality 0..*) is associated with 'cjsidl::description' (role 'cjsidl_description', cardinality 0..*).
+'cjsidl::description' (role 'cjsidl_description55', cardinality 0..*) is associated with 'cjsidl::eventDef' (role 'cjsidl_eventDef', cardinality 0..*).
+'cjsidl::exit' (role 'cjsidl_exit110', cardinality 0..*) is associated with 'cjsidl::actionList' (role 'cjsidl_actionList111', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef218', cardinality 0..*) is associated with 'cjsidl::headerDef' (role 'cjsidl_headerDef', cardinality 0..*).
+'cjsidl::messageScopedRef' (role 'cjsidl_messageScopedRef469', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject470', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef430', cardinality 0..*) is associated with 'cjsidl::varField' (role 'cjsidl_varField431', cardinality 0..*).
+'cjsidl::containerDef' (role 'cjsidl_containerDef', cardinality 0..*) is associated with 'cjsidl::containerRef' (role 'cjsidl_containerRef', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject352', cardinality 0..*) is associated with 'cjsidl::valueSetDef' (role 'cjsidl_valueSetDef351', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId332', cardinality 0..*) is associated with 'cjsidl::taggedUnitsEnum' (role 'cjsidl_taggedUnitsEnum331', cardinality 0..*).
+'cjsidl::actionList' (role 'cjsidl_actionList143', cardinality 0..*) is associated with 'cjsidl::defaultTransition' (role 'cjsidl_defaultTransition142', cardinality 0..*).
+'cjsidl::guardAction' (role 'cjsidl_guardAction172', cardinality 0..*) is associated with 'cjsidl::guardParam' (role 'cjsidl_guardParam173', cardinality 0..*).
+'cjsidl::taggedItemDef' (role 'cjsidl_taggedItemDef418', cardinality 0..*) is associated with 'cjsidl::containerRef' (role 'cjsidl_containerRef419', cardinality 0..*).
+'cjsidl::transition' (role 'cjsidl_transition136', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject137', cardinality 0..*).
+'cjsidl::transition' (role 'cjsidl_transition157', cardinality 0..*) is associated with 'cjsidl::popTransition' (role 'cjsidl_popTransition', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference408', cardinality 0..*) is associated with 'cjsidl::variantDef' (role 'cjsidl_variantDef407', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject149', cardinality 0..*) is associated with 'cjsidl::defaultTransition' (role 'cjsidl_defaultTransition148', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef206', cardinality 0..*) is associated with 'cjsidl::varField' (role 'cjsidl_varField', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject488', cardinality 0..*) is associated with 'cjsidl::scopedEventType' (role 'cjsidl_scopedEventType487', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference', cardinality 0..*) is associated with 'cjsidl::fixedLenString' (role 'cjsidl_fixedLenString292', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId499', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject500', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId', cardinality 0..*) is associated with 'cjsidl::fixedLenString' (role 'cjsidl_fixedLenString294', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef216', cardinality 0..*) is associated with 'cjsidl::varFormatField' (role 'cjsidl_varFormatField', cardinality 0..*).
+'cjsidl::containerDef' (role 'cjsidl_containerDef399', cardinality 0..*) is associated with 'cjsidl::listDef' (role 'cjsidl_listDef398', cardinality 0..*).
+'cjsidl::stateMachine' (role 'cjsidl_stateMachine83', cardinality 0..*) is associated with 'cjsidl::state' (role 'cjsidl_state84', cardinality 0..*).
+'cjsidl::transParam' (role 'cjsidl_transParam117', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject118', cardinality 0..*).
+'cjsidl::eventDef' (role 'cjsidl_eventDef60', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject61', cardinality 0..*).
+'cjsidl::guardParam' (role 'cjsidl_guardParam', cardinality 0..*) is associated with 'cjsidl::popTransition' (role 'cjsidl_popTransition159', cardinality 0..*).
+'cjsidl::nextState' (role 'cjsidl_nextState164', cardinality 0..*) is associated with 'cjsidl::state' (role 'cjsidl_state165', cardinality 0..*).
+'cjsidl::footerScopedRef' (role 'cjsidl_footerScopedRef', cardinality 0..*) is associated with 'cjsidl::footerRef' (role 'cjsidl_footerRef255', cardinality 0..*).
+'cjsidl::taggedUnitsEnum' (role 'cjsidl_taggedUnitsEnum328', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference329', cardinality 0..*).
+'cjsidl::defaultTransition' (role 'cjsidl_defaultTransition104', cardinality 0..*) is associated with 'cjsidl::defaultState' (role 'cjsidl_defaultState103', cardinality 0..*).
+'cjsidl::declaredConstSetRef' (role 'cjsidl_declaredConstSetRef', cardinality 0..*) is associated with 'cjsidl::declaredConstSet' (role 'cjsidl_declaredConstSet23', cardinality 0..*).
+'cjsidl::taggedUnitsEnum' (role 'cjsidl_taggedUnitsEnum', cardinality 0..*) is associated with 'cjsidl::varField' (role 'cjsidl_varField314', cardinality 0..*).
+'cjsidl::bodyScopedRef' (role 'cjsidl_bodyScopedRef269', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject270', cardinality 0..*).
+'cjsidl::defaultState' (role 'cjsidl_defaultState', cardinality 0..*) is associated with 'cjsidl::stateMachine' (role 'cjsidl_stateMachine81', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject479', cardinality 0..*) is associated with 'cjsidl::scopedType' (role 'cjsidl_scopedType478', cardinality 0..*).
+'cjsidl::stateMachine' (role 'cjsidl_stateMachine75', cardinality 0..*) is associated with 'cjsidl::refAttr' (role 'cjsidl_refAttr76', cardinality 0..*).
+'cjsidl::exit' (role 'cjsidl_exit113', cardinality 0..*) is associated with 'cjsidl::sendActionList' (role 'cjsidl_sendActionList114', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject53', cardinality 0..*) is associated with 'cjsidl::internalEventSet' (role 'cjsidl_internalEventSet52', cardinality 0..*).
+'cjsidl::refAttr' (role 'cjsidl_refAttr123', cardinality 0..*) is associated with 'cjsidl::transition' (role 'cjsidl_transition122', cardinality 0..*).
+'cjsidl::action' (role 'cjsidl_action', cardinality 0..*) is associated with 'cjsidl::actionList' (role 'cjsidl_actionList178', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference346', cardinality 0..*) is associated with 'cjsidl::formatEnumDef' (role 'cjsidl_formatEnumDef345', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference297', cardinality 0..*) is associated with 'cjsidl::varLenString' (role 'cjsidl_varLenString296', cardinality 0..*).
+'cjsidl::containerRef' (role 'cjsidl_containerRef396', cardinality 0..*) is associated with 'cjsidl::listDef' (role 'cjsidl_listDef395', cardinality 0..*).
+'cjsidl::refAttr' (role 'cjsidl_refAttr', cardinality 0..*) is associated with 'cjsidl::references' (role 'cjsidl_references15', cardinality 0..*).
+'cjsidl::guardAction' (role 'cjsidl_guardAction', cardinality 0..*) is associated with 'cjsidl::guard' (role 'cjsidl_guard170', cardinality 0..*).
+'cjsidl::valueRange' (role 'cjsidl_valueRange362', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference363', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject482', cardinality 0..*) is associated with 'cjsidl::scopedType' (role 'cjsidl_scopedType481', cardinality 0..*).
+'cjsidl::taggedItemDef' (role 'cjsidl_taggedItemDef', cardinality 0..*) is associated with 'cjsidl::variantDef' (role 'cjsidl_variantDef413', cardinality 0..*).
+'cjsidl::listDef' (role 'cjsidl_listDef386', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId387', cardinality 0..*).
+'cjsidl::transParam' (role 'cjsidl_transParam176', cardinality 0..*) is associated with 'cjsidl::guardParam' (role 'cjsidl_guardParam175', cardinality 0..*).
+'cjsidl::declaredEventDef' (role 'cjsidl_declaredEventDef289', cardinality 0..*) is associated with 'cjsidl::scopedEventType' (role 'cjsidl_scopedEventType290', cardinality 0..*).
+'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet', cardinality 0..*) is associated with 'cjsidl::serviceDef' (role 'cjsidl_serviceDef7', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef424', cardinality 0..*) is associated with 'cjsidl::arrayDef' (role 'cjsidl_arrayDef425', cardinality 0..*).
+'cjsidl::internalEventSet' (role 'cjsidl_internalEventSet', cardinality 0..*) is associated with 'cjsidl::serviceDef' (role 'cjsidl_serviceDef11', cardinality 0..*).
+'cjsidl::constReference' (role 'cjsidl_constReference390', cardinality 0..*) is associated with 'cjsidl::listDef' (role 'cjsidl_listDef389', cardinality 0..*).
+'cjsidl::entry' (role 'cjsidl_entry108', cardinality 0..*) is associated with 'cjsidl::sendActionList' (role 'cjsidl_sendActionList', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId411', cardinality 0..*) is associated with 'cjsidl::variantDef' (role 'cjsidl_variantDef410', cardinality 0..*).
+'cjsidl::messages' (role 'cjsidl_messages50', cardinality 0..*) is associated with 'cjsidl::messageScopedRef' (role 'cjsidl_messageScopedRef', cardinality 0..*).
+'cjsidl::headerScopedRef' (role 'cjsidl_headerScopedRef257', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject258', cardinality 0..*).
+'cjsidl::bitfieldDef' (role 'cjsidl_bitfieldDef', cardinality 0..*) is associated with 'cjsidl::typeDef' (role 'cjsidl_typeDef208', cardinality 0..*).
+'cjsidl::valueRange' (role 'cjsidl_valueRange365', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId366', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef214', cardinality 0..*) is associated with 'cjsidl::varLenField' (role 'cjsidl_varLenField', cardinality 0..*).
+'cjsidl::varLenString' (role 'cjsidl_varLenString299', cardinality 0..*) is associated with 'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId300', cardinality 0..*).
+'cjsidl::messages' (role 'cjsidl_messages48', cardinality 0..*) is associated with 'cjsidl::messageRef' (role 'cjsidl_messageRef', cardinality 0..*).
+'cjsidl::entry' (role 'cjsidl_entry', cardinality 0..*) is associated with 'cjsidl::state' (role 'cjsidl_state86', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject240', cardinality 0..*) is associated with 'cjsidl::bodyDef' (role 'cjsidl_bodyDef239', cardinality 0..*).
+'cjsidl::varLenField' (role 'cjsidl_varLenField316', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference317', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef433', cardinality 0..*) is associated with 'cjsidl::bitfieldDef' (role 'cjsidl_bitfieldDef434', cardinality 0..*).
+'cjsidl::headerDef' (role 'cjsidl_headerDef236', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject237', cardinality 0..*).
+'cjsidl::arrayDef' (role 'cjsidl_arrayDef463', cardinality 0..*) is associated with 'cjsidl::scopedType' (role 'cjsidl_scopedType464', cardinality 0..*).
+'cjsidl::declaredConstSet' (role 'cjsidl_declaredConstSet', cardinality 0..*) is associated with 'cjsidl::serviceDef' (role 'cjsidl_serviceDef5', cardinality 0..*).
+'cjsidl::fixedFieldDef' (role 'cjsidl_fixedFieldDef428', cardinality 0..*) is associated with 'cjsidl::recordDef' (role 'cjsidl_recordDef427', cardinality 0..*).
+'cjsidl::scopedConstId' (role 'cjsidl_scopedConstId320', cardinality 0..*) is associated with 'cjsidl::varLenField' (role 'cjsidl_varLenField319', cardinality 0..*).
+'cjsidl::headerScopedRef' (role 'cjsidl_headerScopedRef263', cardinality 0..*) is associated with 'cjsidl::headerDef' (role 'cjsidl_headerDef264', cardinality 0..*).
+'cjsidl::messageDef' (role 'cjsidl_messageDef67', cardinality 0..*) is associated with 'cjsidl::messageRef' (role 'cjsidl_messageRef66', cardinality 0..*).
+'cjsidl::guard' (role 'cjsidl_guard140', cardinality 0..*) is associated with 'cjsidl::defaultTransition' (role 'cjsidl_defaultTransition139', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject243', cardinality 0..*) is associated with 'cjsidl::footerDef' (role 'cjsidl_footerDef242', cardinality 0..*).
+'cjsidl::recordDef' (role 'cjsidl_recordDef439', cardinality 0..*) is associated with 'cjsidl::varLenString' (role 'cjsidl_varLenString440', cardinality 0..*).
+'cjsidl::scopedEventType' (role 'cjsidl_scopedEventType', cardinality 0..*) is associated with 'cjsidl::transParam' (role 'cjsidl_transParam120', cardinality 0..*).
+'cjsidl::simpleTransition' (role 'cjsidl_simpleTransition', cardinality 0..*) is associated with 'cjsidl::nextState' (role 'cjsidl_nextState', cardinality 0..*).
+'cjsidl::defaultState' (role 'cjsidl_defaultState95', cardinality 0..*) is associated with 'cjsidl::state' (role 'cjsidl_state94', cardinality 0..*).
+'cjsidl::typeDef' (role 'cjsidl_typeDef198', cardinality 0..*) is associated with 'cjsidl::listDef' (role 'cjsidl_listDef', cardinality 0..*).
+'cjsidl::declaredTypeSet' (role 'cjsidl_declaredTypeSet39', cardinality 0..*) is associated with 'cjsidl::scopedTypeId' (role 'cjsidl_scopedTypeId', cardinality 0..*).
+'cjsidl::actionList' (role 'cjsidl_actionList', cardinality 0..*) is associated with 'cjsidl::entry' (role 'cjsidl_entry106', cardinality 0..*).
+'cjsidl::varLenField' (role 'cjsidl_varLenField322', cardinality 0..*) is associated with 'cjsidl::constReference' (role 'cjsidl_constReference323', cardinality 0..*).
+'cjsidl::EObject' (role 'cjsidl_EObject261', cardinality 0..*) is associated with 'cjsidl::headerScopedRef' (role 'cjsidl_headerScopedRef260', cardinality 0..*).
+'cjsidl::state' (role 'cjsidl_state73', cardinality 0..*) is associated with 'cjsidl::startState' (role 'cjsidl_startState72', cardinality 0..*).
+'cjsidl::bodyScopedRef' (role 'cjsidl_bodyScopedRef266', cardinality 0..*) is associated with 'cjsidl::EObject' (role 'cjsidl_EObject267', cardinality 0..*).
+'cjsidl::varLenField' (role 'cjsidl_varLenField443', cardinality 0..*) is associated with 'cjsidl::recordDef' (role 'cjsidl_recordDef442', cardinality 0..*).

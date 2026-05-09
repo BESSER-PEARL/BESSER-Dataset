@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'library::Book' has the following attributes: 'author' of type str.
+The class 'library::Library' has the following attributes: 'address' of type str.
+The class 'library::CD' has no attributes.
+The class 'library::Magazine' has no attributes.
+The class 'Borrowable' has no attributes.
+The class 'library::Borrowable' has the following attributes: 'copiesAvailable' of type int; 'title' of type str.
+The class 'library::Customer' has the following attributes: 'name' of type str.
+'library::Book' is a specialization of 'Borrowable'.
+'library::Magazine' is a specialization of 'Borrowable'.
+'library::CD' is a specialization of 'Borrowable'.
+'library::Library' (role 'Library', cardinality 0..*) is associated with 'library::Borrowable' (role 'borrowables', cardinality 0..*).
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'library::Customer' (role 'library_Customer', cardinality 0..*).
+'library::Borrowable' (role 'Borrowable', cardinality 0..*) is associated with 'library::Library' (role 'library', cardinality 0..*).
+'library::Borrowable' (role 'library_Borrowable', cardinality 0..*) is associated with 'library::Customer' (role 'library_Customer3', cardinality 0..*).

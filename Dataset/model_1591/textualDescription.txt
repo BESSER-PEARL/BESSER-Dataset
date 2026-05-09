@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'petrinet101::Token' has no attributes.
+The class 'petrinet101::Place' has no attributes.
+The class 'petrinet101::Node' has no attributes.
+The class 'Node' has no attributes.
+The class 'petrinet101::Arc' has no attributes.
+The class 'petrinet101::Transition' has no attributes.
+The class 'petrinet101::Petrinet' has no attributes.
+'petrinet101::Place' is a specialization of 'Node'.
+'petrinet101::Transition' is a specialization of 'Node'.
+'petrinet101::Node' (role 'petrinet101_Node', cardinality 0..*) is associated with 'petrinet101::Petrinet' (role 'petrinet101_Petrinet', cardinality 0..*).
+'petrinet101::Place' (role 'petrinet101_Place', cardinality 0..*) is associated with 'petrinet101::Token' (role 'petrinet101_Token', cardinality 0..*).
+'petrinet101::Arc' (role 'petrinet101_Arc5', cardinality 0..*) is associated with 'petrinet101::Node' (role 'petrinet101_Node6', cardinality 0..*).
+'petrinet101::Petrinet' (role 'petrinet101_Petrinet2', cardinality 0..*) is associated with 'petrinet101::Arc' (role 'petrinet101_Arc', cardinality 0..*).
+'petrinet101::Arc' (role 'petrinet101_Arc8', cardinality 0..*) is associated with 'petrinet101::Node' (role 'petrinet101_Node9', cardinality 0..*).

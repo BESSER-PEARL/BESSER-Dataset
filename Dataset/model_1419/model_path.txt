@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LolloCorte/emf-components/examples/it.rcpvision.emf.components.examples.fowlerdsl/src-gen/it/rcpvision/emf/components/examples/fowlerdsl/Statemachine.ecore

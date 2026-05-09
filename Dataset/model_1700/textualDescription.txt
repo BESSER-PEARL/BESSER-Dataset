@@ -1,0 +1,36 @@
+The model has 14 class(es).
+The class 'yyh::Zing' has no attributes.
+The class 'yyh::Boz' has the following attributes: 'since' of type str.
+The class 'Baz' has no attributes.
+The class 'yyh::Bouz' has the following attributes: 'bil' of type str.
+The class 'yyh::Foo' has the following attributes: 'id' of type str.
+The class 'yyh::Base' has the following attributes: 'id' of type int.
+The class 'yyh::NamedElement' has the following attributes: 'name' of type str.
+The class 'yyh::Output' has the following attributes: 'id' of type str.
+The class 'yyh::Boul' has the following attributes: 'hi' of type str.
+The class 'yyh::Baz' has the following attributes: 'zig' of type str.
+The class 'yyh::Rel' has the following attributes: 'id' of type str.
+The class 'yyh::Bar' has the following attributes: 'id' of type str.
+The class 'yyh::Alias' has the following attributes: 'id' of type str.
+The class 'NamedElement' has no attributes.
+'yyh::Zing' is a specialization of 'NamedElement'.
+'yyh::Boz' is a specialization of 'NamedElement'.
+'yyh::Baz' is a specialization of 'NamedElement'.
+'yyh::Boul' is a specialization of 'Baz'.
+'yyh::Bouz' is a specialization of 'Baz'.
+'yyh::Base' is a specialization of 'NamedElement'.
+'yyh::Alias' (role 'yyh_Alias', cardinality 0..*) is associated with 'yyh::NamedElement' (role 'yyh_NamedElement', cardinality 0..*).
+'yyh::Zing' (role 'yyh_Zing', cardinality 0..*) is associated with 'yyh::Baz' (role 'yyh_Baz27', cardinality 0..*).
+'yyh::Boz' (role 'yyh_Boz25', cardinality 0..*) is associated with 'yyh::Rel' (role 'yyh_Rel24', cardinality 0..*).
+'yyh::Boz' (role 'yyh_Boz16', cardinality 0..*) is associated with 'yyh::Boz' (role 'yyh_Boz14', cardinality 0..*).
+'yyh::Bar' (role 'yyh_Bar', cardinality 0..*) is associated with 'yyh::NamedElement' (role 'yyh_NamedElement8', cardinality 0..*).
+'yyh::Bar' (role 'yyh_Bar18', cardinality 0..*) is associated with 'yyh::Output' (role 'yyh_Output19', cardinality 0..*).
+'yyh::Base' (role 'fromThing', cardinality 0..*) is associated with 'yyh::Boz' (role 'Boz', cardinality 0..*).
+'yyh::Rel' (role 'yyh_Rel', cardinality 0..*) is associated with 'yyh::NamedElement' (role 'yyh_NamedElement10', cardinality 0..*).
+'yyh::Base' (role 'Base', cardinality 0..*) is associated with 'yyh::Boz' (role 'relations', cardinality 0..*).
+'yyh::Zing' (role 'yyh_Zing29', cardinality 0..*) is associated with 'yyh::Bouz' (role 'yyh_Bouz', cardinality 0..*).
+'yyh::NamedElement' (role 'yyh_NamedElement13', cardinality 0..*) is associated with 'yyh::Boz' (role 'yyh_Boz', cardinality 0..*).
+'yyh::Output' (role 'yyh_Output', cardinality 0..*) is associated with 'yyh::Base' (role 'yyh_Base3', cardinality 0..*).
+'yyh::NamedElement' (role 'yyh_NamedElement22', cardinality 0..*) is associated with 'yyh::Rel' (role 'yyh_Rel21', cardinality 0..*).
+'yyh::Baz' (role 'yyh_Baz', cardinality 0..*) is associated with 'yyh::Base' (role 'yyh_Base5', cardinality 0..*).
+'yyh::Base' (role 'yyh_Base', cardinality 0..*) is associated with 'yyh::Foo' (role 'yyh_Foo', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'PetriNet::Place' has no attributes.
+The class 'PetriNet::PlaceToTransArc' has no attributes.
+The class 'PetriNet::Transition' has no attributes.
+The class 'Arc' has no attributes.
+The class 'PetriNet::PetriNet' has no attributes.
+The class 'PetriNet::TransToPlaceArc' has no attributes.
+The class 'PetriNet::Arc' has the following attributes: 'weight' of type int.
+'PetriNet::PlaceToTransArc' is a specialization of 'Arc'.
+'PetriNet::TransToPlaceArc' is a specialization of 'Arc'.
+'PetriNet::Transition' (role 'PetriNet_Transition', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet2', cardinality 0..*).
+'PetriNet::Place' (role 'PetriNet_Place', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet', cardinality 0..*).
+'PetriNet::Transition' (role 'PetriNet_Transition11', cardinality 0..*) is associated with 'PetriNet::TransToPlaceArc' (role 'PetriNet_TransToPlaceArc', cardinality 0..*).
+'PetriNet::Place' (role 'PetriNet_Place14', cardinality 0..*) is associated with 'PetriNet::TransToPlaceArc' (role 'PetriNet_TransToPlaceArc13', cardinality 0..*).
+'PetriNet::PlaceToTransArc' (role 'PetriNet_PlaceToTransArc', cardinality 0..*) is associated with 'PetriNet::Place' (role 'PetriNet_Place6', cardinality 0..*).
+'PetriNet::Arc' (role 'PetriNet_Arc', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet4', cardinality 0..*).
+'PetriNet::Transition' (role 'PetriNet_Transition9', cardinality 0..*) is associated with 'PetriNet::PlaceToTransArc' (role 'PetriNet_PlaceToTransArc8', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'petrinet::Net' has no attributes.
+The class 'petrinet::Place' has the following attributes: 'initialTokens' of type int; 'name' of type str.
+The class 'petrinet::Token' has no attributes.
+The class 'petrinet::Transition' has the following attributes: 'name' of type str.
+'petrinet::Transition' (role 'petrinet_Transition9', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place10', cardinality 0..*).
+'petrinet::Token' (role 'petrinet_Token', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place4', cardinality 0..*).
+'petrinet::Net' (role 'petrinet_Net2', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place', cardinality 0..*) is associated with 'petrinet::Net' (role 'petrinet_Net', cardinality 0..*).
+'petrinet::Transition' (role 'petrinet_Transition6', cardinality 0..*) is associated with 'petrinet::Place' (role 'petrinet_Place7', cardinality 0..*).

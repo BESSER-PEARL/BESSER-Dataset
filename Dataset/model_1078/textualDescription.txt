@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'PetriNets::Transition' has no attributes.
+The class 'PetriNets::PetriNet' has no attributes.
+The class 'PetriNet' has no attributes.
+The class 'PetriNets::Place' has the following attributes: 'itokens' of type int.
+The class 'PetriNets::Token' has no attributes.
+'PetriNets::Transition' is a specialization of 'PetriNet'.
+'PetriNets::Token' (role 'tokens', cardinality 0..*) is associated with 'PetriNets::Place' (role 'Place6', cardinality 0..*).
+'PetriNets::Place' (role 'place', cardinality 0..*) is associated with 'PetriNets::Token' (role 'Token', cardinality 0..*).
+'PetriNets::Transition' (role 'Transition', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'net2', cardinality 0..*).
+'PetriNets::Place' (role 'Place', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'net', cardinality 0..*).
+'PetriNets::Transition' (role 'trans', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNet8', cardinality 0..*).
+'PetriNets::Place' (role 'places', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNet', cardinality 0..*).
+'PetriNets::Place' (role 'PetriNets_Place', cardinality 0..*) is associated with 'PetriNets::Transition' (role 'PetriNets_Transition', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition11', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place12', cardinality 0..*).

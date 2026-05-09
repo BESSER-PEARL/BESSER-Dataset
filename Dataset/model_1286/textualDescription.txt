@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'StateMachine::StateMachine' has no attributes.
+The class 'StateMachine::SimpleState' has no attributes.
+The class 'StateMachine::FinalState' has no attributes.
+The class 'StateMachine::Transition' has the following attributes: 'name' of type str.
+The class 'StateMachine::StateVertex' has the following attributes: 'name' of type str.
+The class 'StateMachine::Event' has no attributes.
+The class 'StateMachine::InitialState' has no attributes.
+The class 'StateVertex' has no attributes.
+'StateMachine::SimpleState' is a specialization of 'StateVertex'.
+'StateMachine::InitialState' is a specialization of 'StateVertex'.
+'StateMachine::FinalState' is a specialization of 'StateVertex'.
+'StateMachine::StateMachine' (role 'StateMachine_StateMachine', cardinality 0..*) is associated with 'StateMachine::StateVertex' (role 'StateMachine_StateVertex', cardinality 0..*).
+'StateMachine::Transition' (role 'Transition5', cardinality 0..*) is associated with 'StateMachine::StateVertex' (role 'target', cardinality 0..*).
+'StateMachine::StateVertex' (role 'StateVertex', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'outgoing', cardinality 0..*).
+'StateMachine::StateMachine' (role 'StateMachine_StateMachine2', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition', cardinality 0..*).
+'StateMachine::StateVertex' (role 'source', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'Transition', cardinality 0..*).
+'StateMachine::Event' (role 'StateMachine_Event', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition7', cardinality 0..*).
+'StateMachine::StateVertex' (role 'StateVertex10', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'incoming', cardinality 0..*).

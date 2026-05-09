@@ -1,0 +1,51 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Docbook_PrefaceType  {
+
+
+
+
+
+
+    private List<Docbook_ParaType> docbook_paratypes;
+
+
+
+
+    private Docbook_BookType docbook_booktype;
+
+
+    public Docbook_PrefaceType(
+    ) {
+        this.docbook_paratypes = new ArrayList<>();
+    }
+
+    public Docbook_PrefaceType(
+        ArrayList<Docbook_ParaType> docbook_paratypes    ) {
+        this.docbook_paratypes = docbook_paratypes;
+    }
+
+
+    public List<Docbook_ParaType> getDocbook_paratypes() {
+        return docbook_paratypes;
+    }
+
+    public void addDocbook_paratype(Docbook_paratype docbook_paratype) {
+        this.docbook_paratypes.add(docbook_paratype);
+    }
+    public Docbook_BookType getDocbook_booktype() {
+        return docbook_booktype;
+    }
+
+    public void setDocbook_booktype(Docbook_BookType docbook_booktype) {
+        this.docbook_booktype = docbook_booktype;
+    }
+
+}

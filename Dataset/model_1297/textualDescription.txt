@@ -1,0 +1,51 @@
+The model has 16 class(es).
+The class 'State' has no attributes.
+The class 'StateMachinesProv::State' has the following attributes: 'isComposite' of type bool; 'isOrthogonal' of type bool; 'isSimple' of type bool; 'isSubmachineState' of type bool.
+The class 'StateMachinesProv::FinalState' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'StateMachinesProv::ProtocolTransition' has no attributes.
+The class 'StateMachinesProv::StateMachine' has no attributes.
+The class 'StateMachinesProv::ProtocolStateMachine' has no attributes.
+The class 'StateMachinesProv::Pseudostate' has no attributes.
+The class 'StateMachinesProv::Vertex' has no attributes.
+The class 'StateMachinesProv::Transition' has no attributes.
+The class 'Transition' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'StateMachinesProv::TimeEvent' has no attributes.
+The class 'StateMachinesProv::ProtocolConformance' has no attributes.
+The class 'StateMachinesProv::ConnectionPointReference' has no attributes.
+The class 'StateMachinesProv::Region' has no attributes.
+'StateMachinesProv::FinalState' is a specialization of 'State'.
+'StateMachinesProv::State' is a specialization of 'Vertex'.
+'StateMachinesProv::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'StateMachinesProv::Pseudostate' is a specialization of 'Vertex'.
+'StateMachinesProv::ProtocolTransition' is a specialization of 'Transition'.
+'StateMachinesProv::ConnectionPointReference' is a specialization of 'Vertex'.
+'StateMachinesProv::State' (role 'StateMachinesProv_State67', cardinality 0..*) is associated with 'StateMachinesProv::State' (role 'StateMachinesProv_State65', cardinality 0..*).
+'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition39', cardinality 0..*) is associated with 'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition41', cardinality 0..*).
+'StateMachinesProv::Region' (role 'StateMachinesProv_Region18', cardinality 0..*) is associated with 'StateMachinesProv::Region' (role 'StateMachinesProv_Region20', cardinality 0..*).
+'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine12', cardinality 0..*) is associated with 'StateMachinesProv::Region' (role 'StateMachinesProv_Region11', cardinality 0..*).
+'StateMachinesProv::State' (role 'StateMachinesProv_State44', cardinality 0..*) is associated with 'StateMachinesProv::Pseudostate' (role 'StateMachinesProv_Pseudostate43', cardinality 0..*).
+'StateMachinesProv::State' (role 'StateMachinesProv_State17', cardinality 0..*) is associated with 'StateMachinesProv::Region' (role 'StateMachinesProv_Region16', cardinality 0..*).
+'StateMachinesProv::ConnectionPointReference' (role 'StateMachinesProv_ConnectionPointReference55', cardinality 0..*) is associated with 'StateMachinesProv::State' (role 'StateMachinesProv_State54', cardinality 0..*).
+'StateMachinesProv::Region' (role 'StateMachinesProv_Region38', cardinality 0..*) is associated with 'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition37', cardinality 0..*).
+'StateMachinesProv::State' (role 'StateMachinesProv_State52', cardinality 0..*) is associated with 'StateMachinesProv::ConnectionPointReference' (role 'StateMachinesProv_ConnectionPointReference51', cardinality 0..*).
+'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition', cardinality 0..*) is associated with 'StateMachinesProv::Region' (role 'StateMachinesProv_Region14', cardinality 0..*).
+'StateMachinesProv::State' (role 'StateMachinesProv_State60', cardinality 0..*) is associated with 'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine61', cardinality 0..*).
+'StateMachinesProv::ConnectionPointReference' (role 'StateMachinesProv_ConnectionPointReference48', cardinality 0..*) is associated with 'StateMachinesProv::Pseudostate' (role 'StateMachinesProv_Pseudostate49', cardinality 0..*).
+'StateMachinesProv::State' (role 'StateMachinesProv_State', cardinality 0..*) is associated with 'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine4', cardinality 0..*).
+'StateMachinesProv::Vertex' (role 'StateMachinesProv_Vertex28', cardinality 0..*) is associated with 'StateMachinesProv::Region' (role 'StateMachinesProv_Region29', cardinality 0..*).
+'StateMachinesProv::ProtocolConformance' (role 'StateMachinesProv_ProtocolConformance70', cardinality 0..*) is associated with 'StateMachinesProv::ProtocolStateMachine' (role 'StateMachinesProv_ProtocolStateMachine71', cardinality 0..*).
+'StateMachinesProv::Vertex' (role 'StateMachinesProv_Vertex22', cardinality 0..*) is associated with 'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition23', cardinality 0..*).
+'StateMachinesProv::Vertex' (role 'StateMachinesProv_Vertex25', cardinality 0..*) is associated with 'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition26', cardinality 0..*).
+'StateMachinesProv::ConnectionPointReference' (role 'StateMachinesProv_ConnectionPointReference', cardinality 0..*) is associated with 'StateMachinesProv::Pseudostate' (role 'StateMachinesProv_Pseudostate46', cardinality 0..*).
+'StateMachinesProv::ProtocolStateMachine' (role 'StateMachinesProv_ProtocolStateMachine74', cardinality 0..*) is associated with 'StateMachinesProv::ProtocolConformance' (role 'StateMachinesProv_ProtocolConformance73', cardinality 0..*).
+'StateMachinesProv::State' (role 'StateMachinesProv_State57', cardinality 0..*) is associated with 'StateMachinesProv::Pseudostate' (role 'StateMachinesProv_Pseudostate58', cardinality 0..*).
+'StateMachinesProv::Region' (role 'StateMachinesProv_Region9', cardinality 0..*) is associated with 'StateMachinesProv::Vertex' (role 'StateMachinesProv_Vertex', cardinality 0..*).
+'StateMachinesProv::Region' (role 'StateMachinesProv_Region', cardinality 0..*) is associated with 'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine', cardinality 0..*).
+'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition31', cardinality 0..*) is associated with 'StateMachinesProv::Vertex' (role 'StateMachinesProv_Vertex32', cardinality 0..*).
+'StateMachinesProv::Transition' (role 'StateMachinesProv_Transition34', cardinality 0..*) is associated with 'StateMachinesProv::Vertex' (role 'StateMachinesProv_Vertex35', cardinality 0..*).
+'StateMachinesProv::ProtocolConformance' (role 'StateMachinesProv_ProtocolConformance', cardinality 0..*) is associated with 'StateMachinesProv::ProtocolStateMachine' (role 'StateMachinesProv_ProtocolStateMachine', cardinality 0..*).
+'StateMachinesProv::Region' (role 'StateMachinesProv_Region64', cardinality 0..*) is associated with 'StateMachinesProv::State' (role 'StateMachinesProv_State63', cardinality 0..*).
+'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine5', cardinality 0..*) is associated with 'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine7', cardinality 0..*).
+'StateMachinesProv::Pseudostate' (role 'StateMachinesProv_Pseudostate', cardinality 0..*) is associated with 'StateMachinesProv::StateMachine' (role 'StateMachinesProv_StateMachine2', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'oclstates::Transition' has no attributes.
+The class 'oclstates::State' has the following attributes: 'initial' of type bool; 'name' of type str.
+The class 'oclstates::CompoundState' has no attributes.
+The class 'State' has no attributes.
+The class 'oclstates::Event' has the following attributes: 'name' of type str.
+The class 'oclstates::Module' has the following attributes: 'name' of type str.
+The class 'oclstates::Statemachine' has the following attributes: 'initial' of type bool; 'name' of type str; 'value' of type int.
+The class 'oclstates::SimpleState' has the following attributes: 'value' of type int.
+'oclstates::SimpleState' is a specialization of 'State'.
+'oclstates::CompoundState' is a specialization of 'State'.
+'oclstates::CompoundState' (role 'oclstates_CompoundState', cardinality 0..*) is associated with 'oclstates::Statemachine' (role 'oclstates_Statemachine11', cardinality 0..*).
+'oclstates::Statemachine' (role 'oclstates_Statemachine9', cardinality 0..*) is associated with 'oclstates::State' (role 'oclstates_State8', cardinality 0..*).
+'oclstates::State' (role 'oclstates_State', cardinality 0..*) is associated with 'oclstates::Statemachine' (role 'oclstates_Statemachine4', cardinality 0..*).
+'oclstates::Statemachine' (role 'oclstates_Statemachine2', cardinality 0..*) is associated with 'oclstates::Event' (role 'oclstates_Event', cardinality 0..*).
+'oclstates::Event' (role 'oclstates_Event14', cardinality 0..*) is associated with 'oclstates::Transition' (role 'oclstates_Transition13', cardinality 0..*).
+'oclstates::Transition' (role 'oclstates_Transition16', cardinality 0..*) is associated with 'oclstates::State' (role 'oclstates_State17', cardinality 0..*).
+'oclstates::Transition' (role 'oclstates_Transition', cardinality 0..*) is associated with 'oclstates::State' (role 'oclstates_State6', cardinality 0..*).
+'oclstates::Module' (role 'oclstates_Module', cardinality 0..*) is associated with 'oclstates::Statemachine' (role 'oclstates_Statemachine', cardinality 0..*).

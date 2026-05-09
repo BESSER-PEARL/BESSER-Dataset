@@ -1,0 +1,30 @@
+The model has 11 class(es).
+The class 'pnw::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'pnw::Place' has the following attributes: 'noOfTokens' of type int.
+The class 'pnw::Net' has the following attributes: 'incrementalID' of type str.
+The class 'pnw::TPEdge' has no attributes.
+The class 'NetElement' has no attributes.
+The class 'pnw::PTEdge' has no attributes.
+The class 'pnw::Edge' has the following attributes: 'weight' of type int.
+The class 'Edge' has no attributes.
+The class 'pnw::Transition' has no attributes.
+The class 'pnw::NetElement' has no attributes.
+'pnw::TPEdge' is a specialization of 'Edge'.
+'pnw::Net' is a specialization of 'NamedElement'.
+'pnw::Transition' is a specialization of 'NetElement'.
+'pnw::Place' is a specialization of 'NamedElement'.
+'pnw::Edge' is a specialization of 'NetElement'.
+'pnw::Place' is a specialization of 'NetElement'.
+'pnw::PTEdge' is a specialization of 'Edge'.
+'pnw::Transition' is a specialization of 'NamedElement'.
+'pnw::Place' (role 'fromPlace', cardinality 0..*) is associated with 'pnw::PTEdge' (role 'PTEdge5', cardinality 0..*).
+'pnw::TPEdge' (role 'TPEdge7', cardinality 0..*) is associated with 'pnw::Place' (role 'toPlace', cardinality 0..*).
+'pnw::Place' (role 'Place', cardinality 0..*) is associated with 'pnw::TPEdge' (role 'inTPEdges', cardinality 0..*).
+'pnw::Transition' (role 'Transition', cardinality 0..*) is associated with 'pnw::TPEdge' (role 'outTPEdges', cardinality 0..*).
+'pnw::Place' (role 'Place11', cardinality 0..*) is associated with 'pnw::PTEdge' (role 'outPTEdges', cardinality 0..*).
+'pnw::PTEdge' (role 'inPTEdges', cardinality 0..*) is associated with 'pnw::Transition' (role 'Transition13', cardinality 0..*).
+'pnw::NetElement' (role 'elements', cardinality 0..*) is associated with 'pnw::Net' (role 'Net', cardinality 0..*).
+'pnw::NetElement' (role 'NetElement', cardinality 0..*) is associated with 'pnw::Net' (role 'net', cardinality 0..*).
+'pnw::Transition' (role 'fromTransition', cardinality 0..*) is associated with 'pnw::TPEdge' (role 'TPEdge', cardinality 0..*).
+'pnw::PTEdge' (role 'PTEdge', cardinality 0..*) is associated with 'pnw::Transition' (role 'toTransition', cardinality 0..*).

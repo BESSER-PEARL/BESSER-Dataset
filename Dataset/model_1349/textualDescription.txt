@@ -1,0 +1,28 @@
+The model has 12 class(es).
+The class 'source::Y1' has no attributes.
+The class 'source::Z' has no attributes.
+The class 'source::EObject' has no attributes.
+The class 'source::Y2' has no attributes.
+The class 'SElement' has no attributes.
+The class 'source::X' has the following attributes: 'name' of type str; 'isA1' of type bool; 'isA2' of type bool.
+The class 'source::SElement' has no attributes.
+The class 'source::PathNameCS' has no attributes.
+The class 'source::SRoot' has no attributes.
+The class 'Y' has no attributes.
+The class 'source::PathElementCS' has the following attributes: 'name' of type str.
+The class 'source::Y' has the following attributes: 'name' of type str.
+'source::SRoot' is a specialization of 'SElement'.
+'source::Z' is a specialization of 'SElement'.
+'source::Y2' is a specialization of 'Y'.
+'source::Y' is a specialization of 'SElement'.
+'source::Y1' is a specialization of 'Y'.
+'source::X' is a specialization of 'SElement'.
+'source::PathElementCS' (role 'PathElementCS', cardinality 0..*) is associated with 'source::PathNameCS' (role 'pathName', cardinality 0..*).
+'source::SElement' (role 'source_SElement', cardinality 0..*) is associated with 'source::EObject' (role 'source_EObject', cardinality 0..*).
+'source::PathNameCS' (role 'PathNameCS', cardinality 0..*) is associated with 'source::PathElementCS' (role 'path', cardinality 0..*).
+'source::Y' (role 'Y', cardinality 0..*) is associated with 'source::X' (role 'toX', cardinality 0..*).
+'source::Y' (role 'Y4', cardinality 0..*) is associated with 'source::Z' (role 'ownsZ', cardinality 0..*).
+'source::X' (role 'X', cardinality 0..*) is associated with 'source::Y' (role 'ownsY', cardinality 0..*).
+'source::Z' (role 'Z', cardinality 0..*) is associated with 'source::Y' (role 'toY', cardinality 0..*).
+'source::PathNameCS' (role 'source_PathNameCS', cardinality 0..*) is associated with 'source::Z' (role 'source_Z', cardinality 0..*).
+'source::X' (role 'source_X', cardinality 0..*) is associated with 'source::SRoot' (role 'source_SRoot', cardinality 0..*).

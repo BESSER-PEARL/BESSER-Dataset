@@ -1,0 +1,42 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class top_OCL_VariableDeclaration extends LocatedElement {
+
+    private String id;
+    private String varName;
+
+
+
+    public top_OCL_VariableDeclaration(
+        String id,        String varName    ) {
+        super(
+        );
+        this.id = id;
+        this.varName = varName;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getVarname() {
+        return varName;
+    }
+
+    public void setVarname(String varName) {
+        this.varName = varName;
+    }
+
+
+}

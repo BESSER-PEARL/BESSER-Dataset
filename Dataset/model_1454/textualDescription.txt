@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'mydsl::Node' has the following attributes: 'isInvisible' of type bool; 'content' of type str; 'name' of type str.
+The class 'mydsl::Graph' has the following attributes: 'name' of type str.
+The class 'mydsl::Edge' has the following attributes: 'parsed_target' of type str; 'label' of type str; 'parsed_source' of type str.
+'mydsl::Edge' (role 'mydsl_Edge', cardinality 0..*) is associated with 'mydsl::Graph' (role 'mydsl_Graph', cardinality 0..*).
+'mydsl::Node' (role 'mydsl_Node', cardinality 0..*) is associated with 'mydsl::Graph' (role 'mydsl_Graph2', cardinality 0..*).
+'mydsl::Node' (role 'mydsl_Node11', cardinality 0..*) is associated with 'mydsl::Edge' (role 'mydsl_Edge10', cardinality 0..*).
+'mydsl::Node' (role 'mydsl_Node8', cardinality 0..*) is associated with 'mydsl::Edge' (role 'mydsl_Edge7', cardinality 0..*).
+'mydsl::Graph' (role 'mydsl_Graph5', cardinality 0..*) is associated with 'mydsl::Graph' (role 'mydsl_Graph3', cardinality 0..*).

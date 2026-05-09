@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'mytry::Author' has the following attributes: 'name' of type str.
+The class 'mytry::Book' has the following attributes: 'title' of type str.
+The class 'mytry::Library' has no attributes.
+'mytry::Book' (role 'books', cardinality 0..*) is associated with 'mytry::Author' (role 'Author', cardinality 0..*).
+'mytry::Library' (role 'mytry_Library', cardinality 0..*) is associated with 'mytry::Book' (role 'mytry_Book', cardinality 0..*).
+'mytry::Book' (role 'Book', cardinality 0..*) is associated with 'mytry::Author' (role 'authors', cardinality 0..*).
+'mytry::Author' (role 'mytry_Author', cardinality 0..*) is associated with 'mytry::Library' (role 'mytry_Library2', cardinality 0..*).

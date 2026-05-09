@@ -1,0 +1,206 @@
+The model has 92 class(es).
+The class 'UnifiedMetamodel::::MD' has no attributes.
+The class 'UnifiedMetamodel::::War' has no attributes.
+The class 'File' has no attributes.
+The class 'UnifiedMetamodel::::Store' has no attributes.
+The class 'UnifiedMetamodel::::Exchange' has no attributes.
+The class 'UnifiedMetamodel::::ComponentFront' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::EInterface' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::ActionCreator' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::File' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'ModuleFront' has no attributes.
+The class 'UnifiedMetamodel::::Annotation' has the following attributes: 'properties' of type str.
+The class 'UnifiedMetamodel::::Create' has no attributes.
+The class 'UnifiedMetamodel::::Directory' has the following attributes: 'name' of type str; 'isRoot' of type bool; 'purpose' of type str.
+The class 'UnifiedMetamodel::::Component' has the following attributes: 'name' of type str.
+The class 'Entity' has no attributes.
+The class 'ComponentFront' has no attributes.
+The class 'UnifiedMetamodel::::JavaApp' has no attributes.
+The class 'UnifiedMetamodel::::Util' has no attributes.
+The class 'UnifiedMetamodel::::GeneralEntity' has no attributes.
+The class 'UnifiedMetamodel::::RelationArch' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Submodule' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Attribute' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Composition' has no attributes.
+The class 'UnifiedMetamodel::::Ejb' has no attributes.
+The class 'UnifiedMetamodel::::ServicesFront' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::EClass' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::GenericClass' has no attributes.
+The class 'UnifiedMetamodel::::Actions' has no attributes.
+The class 'UnifiedMetamodel::::RestEntity' has no attributes.
+The class 'UnifiedMetamodel::::Metamodel' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::JEE::Project' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::RelationDom' has no attributes.
+The class 'UnifiedMetamodel::::AbstractClass' has no attributes.
+The class 'UnifiedMetamodel::::State' has no attributes.
+The class 'UnifiedMetamodel::::LayerSegment' has no attributes.
+The class 'UnifiedMetamodel::::ModuleFront' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Library' has the following attributes: 'isNative' of type bool; 'name' of type str.
+The class 'UnifiedMetamodel::::JSON' has no attributes.
+The class 'UnifiedMetamodel::::Containers' has no attributes.
+The class 'UnifiedMetamodel::::AbstractMethod' has the following attributes: 'name' of type str.
+The class 'Component' has no attributes.
+The class 'UnifiedMetamodel::::Action' has the following attributes: 'name' of type str.
+The class 'Layer' has no attributes.
+The class 'UnifiedMetamodel::::Read' has no attributes.
+The class 'UnifiedMetamodel::::Redux' has no attributes.
+The class 'UnifiedMetamodel::::ArquitectureMetamodel' has no attributes.
+The class 'Transaction' has no attributes.
+The class 'UnifiedMetamodel::::Module' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::MethodBack' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Operations' has no attributes.
+The class 'UnifiedMetamodel::::Visualizer' has no attributes.
+The class 'SubLayerSegment' has no attributes.
+The class 'UnifiedMetamodel::::Descriptor' has the following attributes: 'path' of type str; 'name' of type str.
+The class 'UnifiedMetamodel::::UIFront' has no attributes.
+The class 'UnifiedMetamodel::::JS' has no attributes.
+The class 'UnifiedMetamodel::::Pojo' has no attributes.
+The class 'UnifiedMetamodel::::RouterComponent' has no attributes.
+The class 'Operations' has no attributes.
+The class 'UnifiedMetamodel::::ActionDispatcher' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Services' has no attributes.
+The class 'UnifiedMetamodel::::React' has no attributes.
+The class 'UnifiedMetamodel::::CSS' has no attributes.
+The class 'UnifiedMetamodel::::Subproject' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::APICall' has no attributes.
+The class 'UIFront' has no attributes.
+The class 'UnifiedMetamodel::::Reducer' has the following attributes: 'name' of type str.
+The class 'EClass' has no attributes.
+The class 'UnifiedMetamodel::::Reducers' has no attributes.
+The class 'UnifiedMetamodel::::DomainMetamodel' has no attributes.
+The class 'UnifiedMetamodel::::Property' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'UnifiedMetamodel::::NativeClass' has the following attributes: 'primitiveRef' of type str.
+The class 'RelationDom' has no attributes.
+The class 'UnifiedMetamodel::::Layer' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::JavaScript' has no attributes.
+The class 'UnifiedMetamodel::::Epackage' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Entity' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Router' has no attributes.
+The class 'UnifiedMetamodel::::Design' has no attributes.
+The class 'UnifiedMetamodel::::SubLayerSegment' has no attributes.
+The class 'UnifiedMetamodel::::UI' has no attributes.
+The class 'UnifiedMetamodel::::Back' has no attributes.
+The class 'LayerSegment' has no attributes.
+The class 'UnifiedMetamodel::::Container' has no attributes.
+The class 'UnifiedMetamodel::::Sale' has no attributes.
+The class 'UnifiedMetamodel::::Front' has no attributes.
+The class 'UnifiedMetamodel::::Facade' has no attributes.
+The class 'UnifiedMetamodel::::Functionality' has the following attributes: 'name' of type str.
+The class 'UnifiedMetamodel::::Transaction' has no attributes.
+The class 'UnifiedMetamodel::::Dto' has no attributes.
+The class 'UnifiedMetamodel::::ReactApp' has no attributes.
+The class 'UnifiedMetamodel::::SpecialEntity' has no attributes.
+The class 'UnifiedMetamodel::::TechnologyMetamodel' has no attributes.
+'UnifiedMetamodel::::Store' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::GenericClass' is a specialization of 'EClass'.
+'UnifiedMetamodel::::Facade' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::Util' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::Reducers' is a specialization of 'SubLayerSegment'.
+'UnifiedMetamodel::::Containers' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::GeneralEntity' is a specialization of 'Entity'.
+'UnifiedMetamodel::::AbstractClass' is a specialization of 'EClass'.
+'UnifiedMetamodel::::RestEntity' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::Actions' is a specialization of 'SubLayerSegment'.
+'UnifiedMetamodel::::UIFront' is a specialization of 'ComponentFront'.
+'UnifiedMetamodel::::RouterComponent' is a specialization of 'UIFront'.
+'UnifiedMetamodel::::JSON' is a specialization of 'File'.
+'UnifiedMetamodel::::Visualizer' is a specialization of 'UIFront'.
+'UnifiedMetamodel::::War' is a specialization of 'Layer'.
+'UnifiedMetamodel::::SpecialEntity' is a specialization of 'Entity'.
+'UnifiedMetamodel::::Ejb' is a specialization of 'Layer'.
+'UnifiedMetamodel::::Front' is a specialization of 'Component'.
+'UnifiedMetamodel::::Container' is a specialization of 'ComponentFront'.
+'UnifiedMetamodel::::MD' is a specialization of 'File'.
+'UnifiedMetamodel::::APICall' is a specialization of 'ModuleFront'.
+'UnifiedMetamodel::::Back' is a specialization of 'Component'.
+'UnifiedMetamodel::::Redux' is a specialization of 'ModuleFront'.
+'UnifiedMetamodel::::Annotation' is a specialization of 'EClass'.
+'UnifiedMetamodel::::Dto' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::Services' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::NativeClass' is a specialization of 'EClass'.
+'UnifiedMetamodel::::Sale' is a specialization of 'Transaction'.
+'UnifiedMetamodel::::Read' is a specialization of 'Operations'.
+'UnifiedMetamodel::::Create' is a specialization of 'Operations'.
+'UnifiedMetamodel::::CSS' is a specialization of 'File'.
+'UnifiedMetamodel::::Pojo' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::Exchange' is a specialization of 'Transaction'.
+'UnifiedMetamodel::::JavaScript' is a specialization of 'Layer'.
+'UnifiedMetamodel::::Design' is a specialization of 'ModuleFront'.
+'UnifiedMetamodel::::React' is a specialization of 'ModuleFront'.
+'UnifiedMetamodel::::Router' is a specialization of 'ModuleFront'.
+'UnifiedMetamodel::::UI' is a specialization of 'LayerSegment'.
+'UnifiedMetamodel::::JS' is a specialization of 'File'.
+'UnifiedMetamodel::::Composition' is a specialization of 'RelationDom'.
+'UnifiedMetamodel::::ModuleFront' (role 'UnifiedMetamodel__ModuleFront109', cardinality 0..*) is associated with 'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory110', cardinality 0..*).
+'UnifiedMetamodel::::Action' (role 'UnifiedMetamodel__Action', cardinality 0..*) is associated with 'UnifiedMetamodel::::State' (role 'UnifiedMetamodel__State', cardinality 0..*).
+'UnifiedMetamodel::::Submodule' (role 'UnifiedMetamodel__Submodule', cardinality 0..*) is associated with 'UnifiedMetamodel::::Module' (role 'UnifiedMetamodel__Module', cardinality 0..*).
+'UnifiedMetamodel::::ActionDispatcher' (role 'UnifiedMetamodel__ActionDispatcher81', cardinality 0..*) is associated with 'UnifiedMetamodel::::Action' (role 'UnifiedMetamodel__Action80', cardinality 0..*).
+'UnifiedMetamodel::::Component' (role 'UnifiedMetamodel__Component', cardinality 0..*) is associated with 'UnifiedMetamodel::::Layer' (role 'UnifiedMetamodel__Layer7', cardinality 0..*).
+'UnifiedMetamodel::::Functionality' (role 'UnifiedMetamodel__Functionality71', cardinality 0..*) is associated with 'UnifiedMetamodel::::State' (role 'UnifiedMetamodel__State72', cardinality 0..*).
+'UnifiedMetamodel::::Action' (role 'UnifiedMetamodel__Action86', cardinality 0..*) is associated with 'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory87', cardinality 0..*).
+'UnifiedMetamodel::::RelationDom' (role 'UnifiedMetamodel__RelationDom47', cardinality 0..*) is associated with 'UnifiedMetamodel::::DomainMetamodel' (role 'UnifiedMetamodel__DomainMetamodel46', cardinality 0..*).
+'UnifiedMetamodel::::Attribute' (role 'UnifiedMetamodel__Attribute', cardinality 0..*) is associated with 'UnifiedMetamodel::::Annotation' (role 'UnifiedMetamodel__Annotation125', cardinality 0..*).
+'UnifiedMetamodel::::Descriptor' (role 'UnifiedMetamodel__Descriptor158', cardinality 0..*) is associated with 'UnifiedMetamodel::::Subproject' (role 'UnifiedMetamodel__Subproject157', cardinality 0..*).
+'UnifiedMetamodel::::State' (role 'UnifiedMetamodel__State55', cardinality 0..*) is associated with 'UnifiedMetamodel::::Reducer' (role 'UnifiedMetamodel__Reducer', cardinality 0..*).
+'UnifiedMetamodel::::SubLayerSegment' (role 'UnifiedMetamodel__SubLayerSegment', cardinality 0..*) is associated with 'UnifiedMetamodel::::LayerSegment' (role 'UnifiedMetamodel__LayerSegment3', cardinality 0..*).
+'UnifiedMetamodel::::Operations' (role 'UnifiedMetamodel__Operations', cardinality 0..*) is associated with 'UnifiedMetamodel::::Entity' (role 'UnifiedMetamodel__Entity', cardinality 0..*).
+'UnifiedMetamodel::::AbstractClass' (role 'UnifiedMetamodel__AbstractClass141', cardinality 0..*) is associated with 'UnifiedMetamodel::::AbstractMethod' (role 'UnifiedMetamodel__AbstractMethod142', cardinality 0..*).
+'UnifiedMetamodel::::Reducer' (role 'UnifiedMetamodel__Reducer103', cardinality 0..*) is associated with 'UnifiedMetamodel::::ActionCreator' (role 'UnifiedMetamodel__ActionCreator104', cardinality 0..*).
+'UnifiedMetamodel::::LayerSegment' (role 'UnifiedMetamodel__LayerSegment', cardinality 0..*) is associated with 'UnifiedMetamodel::::LayerSegment' (role 'UnifiedMetamodel__LayerSegment0', cardinality 0..*).
+'UnifiedMetamodel::::Annotation' (role 'UnifiedMetamodel__Annotation155', cardinality 0..*) is associated with 'UnifiedMetamodel::::Descriptor' (role 'UnifiedMetamodel__Descriptor', cardinality 0..*).
+'UnifiedMetamodel::::ActionDispatcher' (role 'UnifiedMetamodel__ActionDispatcher60', cardinality 0..*) is associated with 'UnifiedMetamodel::::Container' (role 'UnifiedMetamodel__Container', cardinality 0..*).
+'UnifiedMetamodel::::ComponentFront' (role 'UnifiedMetamodel__ComponentFront100', cardinality 0..*) is associated with 'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory101', cardinality 0..*).
+'UnifiedMetamodel::::GenericClass' (role 'UnifiedMetamodel__GenericClass', cardinality 0..*) is associated with 'UnifiedMetamodel::::EInterface' (role 'UnifiedMetamodel__EInterface129', cardinality 0..*).
+'UnifiedMetamodel::::ServicesFront' (role 'UnifiedMetamodel__ServicesFront75', cardinality 0..*) is associated with 'UnifiedMetamodel::::Functionality' (role 'UnifiedMetamodel__Functionality74', cardinality 0..*).
+'UnifiedMetamodel::::AbstractMethod' (role 'UnifiedMetamodel__AbstractMethod166', cardinality 0..*) is associated with 'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass167', cardinality 0..*).
+'UnifiedMetamodel::::RelationArch' (role 'UnifiedMetamodel__RelationArch17', cardinality 0..*) is associated with 'UnifiedMetamodel::::ArquitectureMetamodel' (role 'UnifiedMetamodel__ArquitectureMetamodel16', cardinality 0..*).
+'UnifiedMetamodel::::Functionality' (role 'UnifiedMetamodel__Functionality', cardinality 0..*) is associated with 'UnifiedMetamodel::::ComponentFront' (role 'UnifiedMetamodel__ComponentFront', cardinality 0..*).
+'UnifiedMetamodel::::ArquitectureMetamodel' (role 'UnifiedMetamodel__ArquitectureMetamodel19', cardinality 0..*) is associated with 'UnifiedMetamodel::::Metamodel' (role 'UnifiedMetamodel__Metamodel', cardinality 0..*).
+'UnifiedMetamodel::::ModuleFront' (role 'UnifiedMetamodel__ModuleFront', cardinality 0..*) is associated with 'UnifiedMetamodel::::State' (role 'UnifiedMetamodel__State57', cardinality 0..*).
+'UnifiedMetamodel::::Subproject' (role 'UnifiedMetamodel__Subproject163', cardinality 0..*) is associated with 'UnifiedMetamodel::::Library' (role 'UnifiedMetamodel__Library164', cardinality 0..*).
+'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass152', cardinality 0..*) is associated with 'UnifiedMetamodel::::Annotation' (role 'UnifiedMetamodel__Annotation153', cardinality 0..*).
+'UnifiedMetamodel::::Operations' (role 'UnifiedMetamodel__Operations38', cardinality 0..*) is associated with 'UnifiedMetamodel::::Submodule' (role 'UnifiedMetamodel__Submodule37', cardinality 0..*).
+'UnifiedMetamodel::::JEE::Project' (role 'UnifiedMetamodel__JEE_Project119', cardinality 0..*) is associated with 'UnifiedMetamodel::::Subproject' (role 'UnifiedMetamodel__Subproject', cardinality 0..*).
+'UnifiedMetamodel::::Entity' (role 'UnifiedMetamodel__Entity33', cardinality 0..*) is associated with 'UnifiedMetamodel::::RelationDom' (role 'UnifiedMetamodel__RelationDom32', cardinality 0..*).
+'UnifiedMetamodel::::ComponentFront' (role 'UnifiedMetamodel__ComponentFront97', cardinality 0..*) is associated with 'UnifiedMetamodel::::ModuleFront' (role 'UnifiedMetamodel__ModuleFront98', cardinality 0..*).
+'UnifiedMetamodel::::Transaction' (role 'UnifiedMetamodel__Transaction', cardinality 0..*) is associated with 'UnifiedMetamodel::::SpecialEntity' (role 'UnifiedMetamodel__SpecialEntity', cardinality 0..*).
+'UnifiedMetamodel::::JEE::Project' (role 'UnifiedMetamodel__JEE_Project', cardinality 0..*) is associated with 'UnifiedMetamodel::::JavaApp' (role 'UnifiedMetamodel__JavaApp117', cardinality 0..*).
+'UnifiedMetamodel::::ModuleFront' (role 'UnifiedMetamodel__ModuleFront92', cardinality 0..*) is associated with 'UnifiedMetamodel::::ReactApp' (role 'UnifiedMetamodel__ReactApp91', cardinality 0..*).
+'UnifiedMetamodel::::EInterface' (role 'UnifiedMetamodel__EInterface', cardinality 0..*) is associated with 'UnifiedMetamodel::::AbstractMethod' (role 'UnifiedMetamodel__AbstractMethod', cardinality 0..*).
+'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory78', cardinality 0..*) is associated with 'UnifiedMetamodel::::Functionality' (role 'UnifiedMetamodel__Functionality77', cardinality 0..*).
+'UnifiedMetamodel::::NativeClass' (role 'UnifiedMetamodel__NativeClass', cardinality 0..*) is associated with 'UnifiedMetamodel::::Library' (role 'UnifiedMetamodel__Library', cardinality 0..*).
+'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass136', cardinality 0..*) is associated with 'UnifiedMetamodel::::MethodBack' (role 'UnifiedMetamodel__MethodBack135', cardinality 0..*).
+'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass144', cardinality 0..*) is associated with 'UnifiedMetamodel::::Epackage' (role 'UnifiedMetamodel__Epackage', cardinality 0..*).
+'UnifiedMetamodel::::Layer' (role 'UnifiedMetamodel__Layer', cardinality 0..*) is associated with 'UnifiedMetamodel::::LayerSegment' (role 'UnifiedMetamodel__LayerSegment5', cardinality 0..*).
+'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory52', cardinality 0..*) is associated with 'UnifiedMetamodel::::File' (role 'UnifiedMetamodel__File', cardinality 0..*).
+'UnifiedMetamodel::::RouterComponent' (role 'UnifiedMetamodel__RouterComponent', cardinality 0..*) is associated with 'UnifiedMetamodel::::UIFront' (role 'UnifiedMetamodel__UIFront', cardinality 0..*).
+'UnifiedMetamodel::::Metamodel' (role 'UnifiedMetamodel__Metamodel21', cardinality 0..*) is associated with 'UnifiedMetamodel::::DomainMetamodel' (role 'UnifiedMetamodel__DomainMetamodel', cardinality 0..*).
+'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass149', cardinality 0..*) is associated with 'UnifiedMetamodel::::MethodBack' (role 'UnifiedMetamodel__MethodBack150', cardinality 0..*).
+'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory107', cardinality 0..*) is associated with 'UnifiedMetamodel::::Reducer' (role 'UnifiedMetamodel__Reducer106', cardinality 0..*).
+'UnifiedMetamodel::::AbstractMethod' (role 'UnifiedMetamodel__AbstractMethod169', cardinality 0..*) is associated with 'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass170', cardinality 0..*).
+'UnifiedMetamodel::::Layer' (role 'UnifiedMetamodel__Layer12', cardinality 0..*) is associated with 'UnifiedMetamodel::::RelationArch' (role 'UnifiedMetamodel__RelationArch11', cardinality 0..*).
+'UnifiedMetamodel::::Property' (role 'UnifiedMetamodel__Property', cardinality 0..*) is associated with 'UnifiedMetamodel::::Entity' (role 'UnifiedMetamodel__Entity28', cardinality 0..*).
+'UnifiedMetamodel::::ActionDispatcher' (role 'UnifiedMetamodel__ActionDispatcher', cardinality 0..*) is associated with 'UnifiedMetamodel::::ActionCreator' (role 'UnifiedMetamodel__ActionCreator', cardinality 0..*).
+'UnifiedMetamodel::::ReactApp' (role 'UnifiedMetamodel__ReactApp115', cardinality 0..*) is associated with 'UnifiedMetamodel::::TechnologyMetamodel' (role 'UnifiedMetamodel__TechnologyMetamodel114', cardinality 0..*).
+'UnifiedMetamodel::::MethodBack' (role 'UnifiedMetamodel__MethodBack', cardinality 0..*) is associated with 'UnifiedMetamodel::::Annotation' (role 'UnifiedMetamodel__Annotation133', cardinality 0..*).
+'UnifiedMetamodel::::Attribute' (role 'UnifiedMetamodel__Attribute147', cardinality 0..*) is associated with 'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass146', cardinality 0..*).
+'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory', cardinality 0..*) is associated with 'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory49', cardinality 0..*).
+'UnifiedMetamodel::::ReactApp' (role 'UnifiedMetamodel__ReactApp94', cardinality 0..*) is associated with 'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory95', cardinality 0..*).
+'UnifiedMetamodel::::TechnologyMetamodel' (role 'UnifiedMetamodel__TechnologyMetamodel112', cardinality 0..*) is associated with 'UnifiedMetamodel::::JavaApp' (role 'UnifiedMetamodel__JavaApp', cardinality 0..*).
+'UnifiedMetamodel::::Subproject' (role 'UnifiedMetamodel__Subproject160', cardinality 0..*) is associated with 'UnifiedMetamodel::::Epackage' (role 'UnifiedMetamodel__Epackage161', cardinality 0..*).
+'UnifiedMetamodel::::Component' (role 'UnifiedMetamodel__Component14', cardinality 0..*) is associated with 'UnifiedMetamodel::::ArquitectureMetamodel' (role 'UnifiedMetamodel__ArquitectureMetamodel', cardinality 0..*).
+'UnifiedMetamodel::::ActionCreator' (role 'UnifiedMetamodel__ActionCreator84', cardinality 0..*) is associated with 'UnifiedMetamodel::::Action' (role 'UnifiedMetamodel__Action83', cardinality 0..*).
+'UnifiedMetamodel::::Annotation' (role 'UnifiedMetamodel__Annotation', cardinality 0..*) is associated with 'UnifiedMetamodel::::Library' (role 'UnifiedMetamodel__Library123', cardinality 0..*).
+'UnifiedMetamodel::::Attribute' (role 'UnifiedMetamodel__Attribute127', cardinality 0..*) is associated with 'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass', cardinality 0..*).
+'UnifiedMetamodel::::ReactApp' (role 'UnifiedMetamodel__ReactApp', cardinality 0..*) is associated with 'UnifiedMetamodel::::Functionality' (role 'UnifiedMetamodel__Functionality89', cardinality 0..*).
+'UnifiedMetamodel::::GeneralEntity' (role 'UnifiedMetamodel__GeneralEntity', cardinality 0..*) is associated with 'UnifiedMetamodel::::Transaction' (role 'UnifiedMetamodel__Transaction35', cardinality 0..*).
+'UnifiedMetamodel::::RelationArch' (role 'UnifiedMetamodel__RelationArch', cardinality 0..*) is associated with 'UnifiedMetamodel::::Layer' (role 'UnifiedMetamodel__Layer9', cardinality 0..*).
+'UnifiedMetamodel::::GenericClass' (role 'UnifiedMetamodel__GenericClass131', cardinality 0..*) is associated with 'UnifiedMetamodel::::AbstractClass' (role 'UnifiedMetamodel__AbstractClass', cardinality 0..*).
+'UnifiedMetamodel::::Entity' (role 'UnifiedMetamodel__Entity30', cardinality 0..*) is associated with 'UnifiedMetamodel::::RelationDom' (role 'UnifiedMetamodel__RelationDom', cardinality 0..*).
+'UnifiedMetamodel::::TechnologyMetamodel' (role 'UnifiedMetamodel__TechnologyMetamodel', cardinality 0..*) is associated with 'UnifiedMetamodel::::Metamodel' (role 'UnifiedMetamodel__Metamodel23', cardinality 0..*).
+'UnifiedMetamodel::::Entity' (role 'UnifiedMetamodel__Entity41', cardinality 0..*) is associated with 'UnifiedMetamodel::::Submodule' (role 'UnifiedMetamodel__Submodule40', cardinality 0..*).
+'UnifiedMetamodel::::Reducer' (role 'UnifiedMetamodel__Reducer63', cardinality 0..*) is associated with 'UnifiedMetamodel::::Container' (role 'UnifiedMetamodel__Container62', cardinality 0..*).
+'UnifiedMetamodel::::MethodBack' (role 'UnifiedMetamodel__MethodBack138', cardinality 0..*) is associated with 'UnifiedMetamodel::::EClass' (role 'UnifiedMetamodel__EClass139', cardinality 0..*).
+'UnifiedMetamodel::::Module' (role 'UnifiedMetamodel__Module44', cardinality 0..*) is associated with 'UnifiedMetamodel::::DomainMetamodel' (role 'UnifiedMetamodel__DomainMetamodel43', cardinality 0..*).
+'UnifiedMetamodel::::ServicesFront' (role 'UnifiedMetamodel__ServicesFront', cardinality 0..*) is associated with 'UnifiedMetamodel::::ModuleFront' (role 'UnifiedMetamodel__ModuleFront65', cardinality 0..*).
+'UnifiedMetamodel::::Directory' (role 'UnifiedMetamodel__Directory68', cardinality 0..*) is associated with 'UnifiedMetamodel::::ServicesFront' (role 'UnifiedMetamodel__ServicesFront67', cardinality 0..*).

@@ -1,0 +1,157 @@
+The model has 61 class(es).
+The class 'oCLlite::SetType' has the following attributes: 'name' of type str.
+The class 'oCLlite::BagType' has the following attributes: 'name' of type str.
+The class 'oCLlite::EqOpCallExp' has no attributes.
+The class 'oCLlite::OclLAnyType' has the following attributes: 'name' of type str.
+The class 'oCLlite::MapExp' has no attributes.
+The class 'oCLlite::PrimitiveExp' has no attributes.
+The class 'oCLlite::TupleExp' has no attributes.
+The class 'oCLlite::ElseIfThenExp' has no attributes.
+The class 'oCLlite::BooleanLiteralExp' has the following attributes: 'symbol' of type str.
+The class 'oCLlite::NavigationExp' has no attributes.
+The class 'oCLlite::OclLType' has no attributes.
+The class 'oCLlite::SetExp' has no attributes.
+The class 'oCLlite::LambdaExp' has no attributes.
+The class 'oCLlite::SequenceExp' has no attributes.
+The class 'oCLlite::StringLiteralExp' has the following attributes: 'segments' of type str.
+The class 'oCLlite::OperationCall' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'oCLlite::NumberLiteralExp' has the following attributes: 'symbol' of type int.
+The class 'oCLlite::ComOpCallExp' has no attributes.
+The class 'oCLlite::TuplePart' has the following attributes: 'name' of type str.
+The class 'CollectionExp' has no attributes.
+The class 'oCLlite::BagExp' has no attributes.
+The class 'oCLlite::RealType' has the following attributes: 'name' of type str.
+The class 'oCLlite::Iterator' has the following attributes: 'name' of type str.
+The class 'oCLlite::OrderedSetType' has the following attributes: 'name' of type str.
+The class 'oCLlite::InvalidLiteralExp' has no attributes.
+The class 'oCLlite::LocalVariable' has the following attributes: 'name' of type str.
+The class 'OclLExpression' has no attributes.
+The class 'oCLlite::CollectionExp' has no attributes.
+The class 'oCLlite::OclLModelElementExp' has the following attributes: 'name' of type str.
+The class 'oCLlite::UnlimitedNaturalLiteralExp' has no attributes.
+The class 'oCLlite::ModuleElement' has no attributes.
+The class 'oCLlite::Import' has the following attributes: 'name' of type str.
+The class 'oCLlite::StringType' has the following attributes: 'name' of type str.
+The class 'oCLlite::CollectionOpCallExp' has no attributes.
+The class 'ModuleElement' has no attributes.
+The class 'oCLlite::BooleanType' has the following attributes: 'name' of type str.
+The class 'oCLlite::OrderedSetExp' has no attributes.
+The class 'oCLlite::EnvType' has the following attributes: 'name' of type str.
+The class 'oCLlite::IteratorExp' has no attributes.
+The class 'oCLlite::IfExp' has no attributes.
+The class 'oCLlite::IntegerType' has the following attributes: 'name' of type str.
+The class 'oCLlite::OclLModel' has the following attributes: 'name' of type str.
+The class 'oCLlite::TupleType' has no attributes.
+The class 'oCLlite::Module' has the following attributes: 'name' of type str.
+The class 'oCLlite::SelfExp' has no attributes.
+The class 'OclLType' has no attributes.
+The class 'oCLlite::NullLiteralExp' has no attributes.
+The class 'oCLlite::OclLExpression' has the following attributes: 'elements' of type str; 'name' of type str.
+The class 'oCLlite::MapType' has the following attributes: 'name' of type str.
+The class 'oCLlite::IterateExp' has no attributes.
+The class 'oCLlite::LambdaType' has the following attributes: 'name' of type str.
+The class 'oCLlite::Query' has the following attributes: 'name' of type str.
+The class 'oCLlite::AddOpCallExp' has no attributes.
+The class 'oCLlite::URI::' has the following attributes: 'scheme' of type str; 'authority' of type str; 'fragment_' of type str.
+The class 'oCLlite::MulOpCallExp' has no attributes.
+The class 'oCLlite::BoolOpCallExp' has no attributes.
+The class 'oCLlite::NestedExp' has no attributes.
+The class 'oCLlite::NavigationOrAttributeCall' has the following attributes: 'feature' of type str.
+The class 'oCLlite::SequenceType' has the following attributes: 'name' of type str.
+The class 'oCLlite::MapElement' has no attributes.
+'oCLlite::IntegerType' is a specialization of 'OclLType'.
+'oCLlite::Query' is a specialization of 'ModuleElement'.
+'oCLlite::ElseIfThenExp' is a specialization of 'OclLExpression'.
+'oCLlite::SequenceType' is a specialization of 'OclLType'.
+'oCLlite::SelfExp' is a specialization of 'OclLExpression'.
+'oCLlite::RealType' is a specialization of 'OclLType'.
+'oCLlite::UnlimitedNaturalLiteralExp' is a specialization of 'PrimitiveExp'.
+'oCLlite::SetType' is a specialization of 'OclLType'.
+'oCLlite::BooleanLiteralExp' is a specialization of 'PrimitiveExp'.
+'oCLlite::InvalidLiteralExp' is a specialization of 'PrimitiveExp'.
+'oCLlite::StringLiteralExp' is a specialization of 'PrimitiveExp'.
+'oCLlite::OclLAnyType' is a specialization of 'OclLType'.
+'oCLlite::IteratorExp' is a specialization of 'OclLExpression'.
+'oCLlite::NumberLiteralExp' is a specialization of 'PrimitiveExp'.
+'oCLlite::NavigationExp' is a specialization of 'OclLExpression'.
+'oCLlite::IterateExp' is a specialization of 'OclLExpression'.
+'oCLlite::PrimitiveExp' is a specialization of 'OclLExpression'.
+'oCLlite::CollectionOpCallExp' is a specialization of 'OclLExpression'.
+'oCLlite::NestedExp' is a specialization of 'OclLExpression'.
+'oCLlite::OrderedSetExp' is a specialization of 'CollectionExp'.
+'oCLlite::AddOpCallExp' is a specialization of 'OclLExpression'.
+'oCLlite::ComOpCallExp' is a specialization of 'OclLExpression'.
+'oCLlite::EqOpCallExp' is a specialization of 'OclLExpression'.
+'oCLlite::MapExp' is a specialization of 'OclLExpression'.
+'oCLlite::TupleType' is a specialization of 'OclLType'.
+'oCLlite::SetExp' is a specialization of 'CollectionExp'.
+'oCLlite::SequenceExp' is a specialization of 'CollectionExp'.
+'oCLlite::TupleExp' is a specialization of 'OclLExpression'.
+'oCLlite::MapType' is a specialization of 'OclLType'.
+'oCLlite::CollectionExp' is a specialization of 'OclLExpression'.
+'oCLlite::LambdaType' is a specialization of 'OclLType'.
+'oCLlite::BagExp' is a specialization of 'CollectionExp'.
+'oCLlite::LambdaExp' is a specialization of 'OclLExpression'.
+'oCLlite::EnvType' is a specialization of 'OclLType'.
+'oCLlite::OclLModelElementExp' is a specialization of 'OclLType'.
+'oCLlite::OperationCall' is a specialization of 'OclLExpression'.
+'oCLlite::BoolOpCallExp' is a specialization of 'OclLExpression'.
+'oCLlite::StringType' is a specialization of 'OclLType'.
+'oCLlite::IfExp' is a specialization of 'OclLExpression'.
+'oCLlite::NavigationOrAttributeCall' is a specialization of 'OclLExpression'.
+'oCLlite::MulOpCallExp' is a specialization of 'OclLExpression'.
+'oCLlite::BagType' is a specialization of 'OclLType'.
+'oCLlite::NullLiteralExp' is a specialization of 'PrimitiveExp'.
+'oCLlite::BooleanType' is a specialization of 'OclLType'.
+'oCLlite::OrderedSetType' is a specialization of 'OclLType'.
+'oCLlite::IterateExp' (role 'oCLlite_IterateExp', cardinality 0..*) is associated with 'oCLlite::Iterator' (role 'oCLlite_Iterator89', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType', cardinality 0..*) is associated with 'oCLlite::Iterator' (role 'oCLlite_Iterator', cardinality 0..*).
+'oCLlite::IfExp' (role 'oCLlite_IfExp52', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression53', cardinality 0..*).
+'oCLlite::MapElement' (role 'oCLlite_MapElement33', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression34', cardinality 0..*).
+'oCLlite::IterateExp' (role 'oCLlite_IterateExp91', cardinality 0..*) is associated with 'oCLlite::LocalVariable' (role 'oCLlite_LocalVariable92', cardinality 0..*).
+'oCLlite::IterateExp' (role 'oCLlite_IterateExp94', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression95', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType69', cardinality 0..*) is associated with 'oCLlite::SequenceType' (role 'oCLlite_SequenceType', cardinality 0..*).
+'oCLlite::TupleExp' (role 'oCLlite_TupleExp', cardinality 0..*) is associated with 'oCLlite::TuplePart' (role 'oCLlite_TuplePart106', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression15', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression13', cardinality 0..*).
+'oCLlite::NestedExp' (role 'oCLlite_NestedExp', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression113', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression47', cardinality 0..*) is associated with 'oCLlite::IfExp' (role 'oCLlite_IfExp46', cardinality 0..*).
+'oCLlite::OclLModelElementExp' (role 'oCLlite_OclLModelElementExp', cardinality 0..*) is associated with 'oCLlite::OclLModel' (role 'oCLlite_OclLModel55', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType67', cardinality 0..*) is associated with 'oCLlite::SetType' (role 'oCLlite_SetType', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType73', cardinality 0..*) is associated with 'oCLlite::BagType' (role 'oCLlite_BagType', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType60', cardinality 0..*) is associated with 'oCLlite::LambdaType' (role 'oCLlite_LambdaType59', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression83', cardinality 0..*) is associated with 'oCLlite::MulOpCallExp' (role 'oCLlite_MulOpCallExp', cardinality 0..*).
+'oCLlite::CollectionOpCallExp' (role 'oCLlite_CollectionOpCallExp', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression87', cardinality 0..*).
+'oCLlite::CollectionExp' (role 'oCLlite_CollectionExp', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression30', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression102', cardinality 0..*) is associated with 'oCLlite::OperationCall' (role 'oCLlite_OperationCall', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression77', cardinality 0..*) is associated with 'oCLlite::EqOpCallExp' (role 'oCLlite_EqOpCallExp', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression50', cardinality 0..*) is associated with 'oCLlite::IfExp' (role 'oCLlite_IfExp49', cardinality 0..*).
+'oCLlite::LocalVariable' (role 'oCLlite_LocalVariable', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression12', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression18', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression16', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression81', cardinality 0..*) is associated with 'oCLlite::AddOpCallExp' (role 'oCLlite_AddOpCallExp', cardinality 0..*).
+'oCLlite::OclLModel' (role 'oCLlite_OclLModel', cardinality 0..*) is associated with 'oCLlite::Module' (role 'oCLlite_Module', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression100', cardinality 0..*) is associated with 'oCLlite::IteratorExp' (role 'oCLlite_IteratorExp99', cardinality 0..*).
+'oCLlite::MapExp' (role 'oCLlite_MapExp', cardinality 0..*) is associated with 'oCLlite::MapElement' (role 'oCLlite_MapElement', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression111', cardinality 0..*) is associated with 'oCLlite::ElseIfThenExp' (role 'oCLlite_ElseIfThenExp110', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression28', cardinality 0..*) is associated with 'oCLlite::LocalVariable' (role 'oCLlite_LocalVariable27', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType57', cardinality 0..*) is associated with 'oCLlite::LambdaType' (role 'oCLlite_LambdaType', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType65', cardinality 0..*) is associated with 'oCLlite::MapType' (role 'oCLlite_MapType64', cardinality 0..*).
+'oCLlite::Module' (role 'oCLlite_Module5', cardinality 0..*) is associated with 'oCLlite::Import' (role 'oCLlite_Import', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression85', cardinality 0..*) is associated with 'oCLlite::NavigationExp' (role 'oCLlite_NavigationExp', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression', cardinality 0..*) is associated with 'oCLlite::Query' (role 'oCLlite_Query', cardinality 0..*).
+'oCLlite::ModuleElement' (role 'oCLlite_ModuleElement', cardinality 0..*) is associated with 'oCLlite::Module' (role 'oCLlite_Module7', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression79', cardinality 0..*) is associated with 'oCLlite::ComOpCallExp' (role 'oCLlite_ComOpCallExp', cardinality 0..*).
+'oCLlite::BoolOpCallExp' (role 'oCLlite_BoolOpCallExp', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression75', cardinality 0..*).
+'oCLlite::OclLType' (role 'oCLlite_OclLType71', cardinality 0..*) is associated with 'oCLlite::OrderedSetType' (role 'oCLlite_OrderedSetType', cardinality 0..*).
+'oCLlite::LocalVariable' (role 'oCLlite_LocalVariable24', cardinality 0..*) is associated with 'oCLlite::OclLType' (role 'oCLlite_OclLType25', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression44', cardinality 0..*) is associated with 'oCLlite::IfExp' (role 'oCLlite_IfExp', cardinality 0..*).
+'oCLlite::Module' (role 'oCLlite_Module2', cardinality 0..*) is associated with 'oCLlite::OclLModel' (role 'oCLlite_OclLModel3', cardinality 0..*).
+'oCLlite::MapElement' (role 'oCLlite_MapElement36', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression37', cardinality 0..*).
+'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression42', cardinality 0..*) is associated with 'oCLlite::TuplePart' (role 'oCLlite_TuplePart41', cardinality 0..*).
+'oCLlite::URI::' (role 'oCLlite_URI_', cardinality 0..*) is associated with 'oCLlite::OclLModel' (role 'oCLlite_OclLModel9', cardinality 0..*).
+'oCLlite::MapType' (role 'oCLlite_MapType', cardinality 0..*) is associated with 'oCLlite::OclLType' (role 'oCLlite_OclLType62', cardinality 0..*).
+'oCLlite::ElseIfThenExp' (role 'oCLlite_ElseIfThenExp', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression108', cardinality 0..*).
+'oCLlite::OclLModel' (role 'oCLlite_OclLModel21', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression20', cardinality 0..*).
+'oCLlite::TuplePart' (role 'oCLlite_TuplePart', cardinality 0..*) is associated with 'oCLlite::OclLType' (role 'oCLlite_OclLType39', cardinality 0..*).
+'oCLlite::Iterator' (role 'oCLlite_Iterator97', cardinality 0..*) is associated with 'oCLlite::IteratorExp' (role 'oCLlite_IteratorExp', cardinality 0..*).
+'oCLlite::LambdaExp' (role 'oCLlite_LambdaExp', cardinality 0..*) is associated with 'oCLlite::OclLExpression' (role 'oCLlite_OclLExpression104', cardinality 0..*).

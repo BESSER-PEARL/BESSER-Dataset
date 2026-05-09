@@ -1,0 +1,92 @@
+The model has 40 class(es).
+The class 'capellacommon::TerminatePseudoState' has no attributes.
+The class 'capellacommon::InitialPseudoState' has no attributes.
+The class 'capellacommon::EntryPointPseudoState' has no attributes.
+The class 'capellacommon::Constraint' has no attributes.
+The class 'AbstractBehavior' has no attributes.
+The class 'capellacommon::DeepHistoryPseudoState' has no attributes.
+The class 'capellacommon::TraceableElement' has no attributes.
+The class 'AbstractEvent' has no attributes.
+The class 'capellacommon::TimeEvent' has the following attributes: 'time' of type str; 'kind' of type str.
+The class 'capellacommon::ForkPseudoState' has no attributes.
+The class 'capellacommon::Mode' has no attributes.
+The class 'capellacommon::FinalState' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'capellacommon::AbstractEvent' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'capellacommon::StateTransition' has the following attributes: 'triggerDescription' of type str; 'kind' of type str.
+The class 'capellacommon::FunctionalChain' has no attributes.
+The class 'CapellaElement' has no attributes.
+The class 'TraceableElement' has no attributes.
+The class 'capellacommon::ChoicePseudoState' has no attributes.
+The class 'StateEvent' has no attributes.
+The class 'capellacommon::ShallowHistoryPseudoState' has no attributes.
+The class 'capellacommon::StateEvent' has no attributes.
+The class 'capellacommon::ChangeEvent' has the following attributes: 'kind' of type str.
+The class 'capellacommon::ExitPointPseudoState' has no attributes.
+The class 'Structure' has no attributes.
+The class 'capellacommon::AbstractCapability' has no attributes.
+The class 'capellacommon::GenericTrace' has no attributes.
+The class 'capellacommon::Region' has no attributes.
+The class 'State' has no attributes.
+The class 'capellacommon::JoinPseudoState' has no attributes.
+The class 'capellacommon::Pseudostate' has no attributes.
+The class 'IState' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'capellacommon::State' has no attributes.
+The class 'capellacommon::AbstractCapabilityPkg' has no attributes.
+The class 'capellacommon::AbstractState' has no attributes.
+The class 'capellacommon::AbstractFunction' has no attributes.
+The class 'capellacommon::StateMachine' has no attributes.
+The class 'Pseudostate' has no attributes.
+The enumeration 'TimeEventKind' has the following literals: 'AT', 'AFTER'.
+The enumeration 'ChangeEventKind' has the following literals: 'WHEN'.
+The enumeration 'TransitionKind' has the following literals: 'external', 'local', 'internal'.
+'capellacommon::TerminatePseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::GenericTrace' is a specialization of 'ModelElement'.
+'capellacommon::AbstractCapabilityPkg' is a specialization of 'Structure'.
+'capellacommon::StateEvent' is a specialization of 'AbstractEvent'.
+'capellacommon::GenericTrace' is a specialization of 'TraceableElement'.
+'capellacommon::StateTransition' is a specialization of 'CapellaElement'.
+'capellacommon::TimeEvent' is a specialization of 'StateEvent'.
+'capellacommon::ChoicePseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::ChangeEvent' is a specialization of 'StateEvent'.
+'capellacommon::JoinPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::AbstractState' is a specialization of 'IState'.
+'capellacommon::Region' is a specialization of 'NamedElement'.
+'capellacommon::StateMachine' is a specialization of 'CapellaElement'.
+'capellacommon::GenericTrace' is a specialization of 'CapellaElement'.
+'capellacommon::StateTransition' is a specialization of 'ModelElement'.
+'capellacommon::ExitPointPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::Pseudostate' is a specialization of 'AbstractState'.
+'capellacommon::State' is a specialization of 'AbstractState'.
+'capellacommon::AbstractState' is a specialization of 'NamedElement'.
+'capellacommon::StateEvent' is a specialization of 'NamedElement'.
+'capellacommon::Mode' is a specialization of 'State'.
+'capellacommon::EntryPointPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::StateTransition' is a specialization of 'NamedElement'.
+'capellacommon::InitialPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::DeepHistoryPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::FinalState' is a specialization of 'State'.
+'capellacommon::StateMachine' is a specialization of 'AbstractBehavior'.
+'capellacommon::ShallowHistoryPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::ForkPseudoState' is a specialization of 'Pseudostate'.
+'capellacommon::AbstractCapability' (role 'capellacommon_AbstractCapability', cardinality 0..*) is associated with 'capellacommon::State' (role 'capellacommon_State19', cardinality 0..*).
+'capellacommon::AbstractEvent' (role 'capellacommon_AbstractEvent', cardinality 0..*) is associated with 'capellacommon::State' (role 'capellacommon_State21', cardinality 0..*).
+'capellacommon::AbstractState' (role 'capellacommon_AbstractState', cardinality 0..*) is associated with 'capellacommon::Region' (role 'capellacommon_Region6', cardinality 0..*).
+'capellacommon::AbstractEvent' (role 'capellacommon_AbstractEvent38', cardinality 0..*) is associated with 'capellacommon::StateTransition' (role 'capellacommon_StateTransition37', cardinality 0..*).
+'capellacommon::AbstractState' (role 'capellacommon_AbstractState29', cardinality 0..*) is associated with 'capellacommon::StateTransition' (role 'capellacommon_StateTransition28', cardinality 0..*).
+'capellacommon::Region' (role 'capellacommon_Region13', cardinality 0..*) is associated with 'capellacommon::State' (role 'capellacommon_State', cardinality 0..*).
+'capellacommon::TraceableElement' (role 'capellacommon_TraceableElement', cardinality 0..*) is associated with 'capellacommon::GenericTrace' (role 'capellacommon_GenericTrace', cardinality 0..*).
+'capellacommon::Region' (role 'capellacommon_Region8', cardinality 0..*) is associated with 'capellacommon::StateTransition' (role 'capellacommon_StateTransition', cardinality 0..*).
+'capellacommon::StateEvent' (role 'capellacommon_StateEvent', cardinality 0..*) is associated with 'capellacommon::Constraint' (role 'capellacommon_Constraint43', cardinality 0..*).
+'capellacommon::StateMachine' (role 'capellacommon_StateMachine', cardinality 0..*) is associated with 'capellacommon::Region' (role 'capellacommon_Region', cardinality 0..*).
+'capellacommon::GenericTrace' (role 'capellacommon_GenericTrace2', cardinality 0..*) is associated with 'capellacommon::TraceableElement' (role 'capellacommon_TraceableElement3', cardinality 0..*).
+'capellacommon::AbstractFunction' (role 'capellacommon_AbstractFunction', cardinality 0..*) is associated with 'capellacommon::State' (role 'capellacommon_State15', cardinality 0..*).
+'capellacommon::StateTransition' (role 'capellacommon_StateTransition26', cardinality 0..*) is associated with 'capellacommon::Constraint' (role 'capellacommon_Constraint', cardinality 0..*).
+'capellacommon::AbstractState' (role 'capellacommon_AbstractState32', cardinality 0..*) is associated with 'capellacommon::StateTransition' (role 'capellacommon_StateTransition31', cardinality 0..*).
+'capellacommon::Region' (role 'capellacommon_Region10', cardinality 0..*) is associated with 'capellacommon::AbstractState' (role 'capellacommon_AbstractState11', cardinality 0..*).
+'capellacommon::State' (role 'capellacommon_State17', cardinality 0..*) is associated with 'capellacommon::FunctionalChain' (role 'capellacommon_FunctionalChain', cardinality 0..*).
+'capellacommon::StateTransition' (role 'capellacommon_StateTransition41', cardinality 0..*) is associated with 'capellacommon::StateTransition' (role 'capellacommon_StateTransition39', cardinality 0..*).
+'capellacommon::AbstractState' (role 'capellacommon_AbstractState24', cardinality 0..*) is associated with 'capellacommon::AbstractState' (role 'capellacommon_AbstractState22', cardinality 0..*).
+'capellacommon::AbstractEvent' (role 'capellacommon_AbstractEvent35', cardinality 0..*) is associated with 'capellacommon::StateTransition' (role 'capellacommon_StateTransition34', cardinality 0..*).

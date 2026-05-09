@@ -1,0 +1,25 @@
+The model has 9 class(es).
+The class 'simpleparts::World' has no attributes.
+The class 'simpleparts::Piece' has no attributes.
+The class 'simpleparts::Element' has no attributes.
+The class 'simpleparts::Part' has no attributes.
+The class 'simpleparts::Thing' has the following attributes: 'id' of type int.
+The class 'simpleparts::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'simpleparts::RelatedTo' has the following attributes: 'since' of type str.
+The class 'simpleparts::Item' has no attributes.
+'simpleparts::Part' is a specialization of 'NamedElement'.
+'simpleparts::Piece' is a specialization of 'NamedElement'.
+'simpleparts::Element' is a specialization of 'NamedElement'.
+'simpleparts::Item' is a specialization of 'NamedElement'.
+'simpleparts::Thing' is a specialization of 'NamedElement'.
+'simpleparts::RelatedTo' is a specialization of 'NamedElement'.
+'simpleparts::Thing' (role 'simpleparts_Thing', cardinality 0..*) is associated with 'simpleparts::World' (role 'simpleparts_World', cardinality 0..*).
+'simpleparts::Thing' (role 'Thing', cardinality 0..*) is associated with 'simpleparts::RelatedTo' (role 'relations', cardinality 0..*).
+'simpleparts::Thing' (role 'simpleparts_Thing5', cardinality 0..*) is associated with 'simpleparts::Element' (role 'simpleparts_Element', cardinality 0..*).
+'simpleparts::Thing' (role 'simpleparts_Thing3', cardinality 0..*) is associated with 'simpleparts::Part' (role 'simpleparts_Part', cardinality 0..*).
+'simpleparts::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'simpleparts::Thing' (role 'fromThing', cardinality 0..*).
+'simpleparts::Piece' (role 'simpleparts_Piece', cardinality 0..*) is associated with 'simpleparts::Thing' (role 'simpleparts_Thing9', cardinality 0..*).
+'simpleparts::Thing' (role 'simpleparts_Thing12', cardinality 0..*) is associated with 'simpleparts::RelatedTo' (role 'simpleparts_RelatedTo', cardinality 0..*).
+'simpleparts::Piece' (role 'simpleparts_Piece14', cardinality 0..*) is associated with 'simpleparts::Part' (role 'simpleparts_Part15', cardinality 0..*).
+'simpleparts::Item' (role 'simpleparts_Item', cardinality 0..*) is associated with 'simpleparts::Thing' (role 'simpleparts_Thing7', cardinality 0..*).

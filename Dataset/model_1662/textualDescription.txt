@@ -1,0 +1,33 @@
+The model has 14 class(es).
+The class 'error3::Required' has the following attributes: 'ir' of type str.
+The class 'error3::Bazbar' has the following attributes: 'b' of type str.
+The class 'error3::Provided' has the following attributes: 'ip' of type str.
+The class 'NamedElement' has no attributes.
+The class 'error3::NestedComponent' has no attributes.
+The class 'error3::World' has no attributes.
+The class 'error3::Level2' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'error3::RecursiveComponen' has no attributes.
+The class 'error3::RelatedTo' has the following attributes: 'since' of type str.
+The class 'error3::AbstractComponent' has the following attributes: 'name' of type str.
+The class 'error3::NamedElement' has the following attributes: 'name' of type str.
+The class 'error3::Binding' has the following attributes: 'type' of type str.
+The class 'error3::Thing' has the following attributes: 'id' of type int.
+'error3::Thing' is a specialization of 'NamedElement'.
+'error3::Level2' is a specialization of 'AbstractComponent'.
+'error3::RecursiveComponen' is a specialization of 'AbstractComponent'.
+'error3::NestedComponent' is a specialization of 'AbstractComponent'.
+'error3::RelatedTo' is a specialization of 'NamedElement'.
+'error3::AbstractComponent' (role 'error3_AbstractComponent14', cardinality 0..*) is associated with 'error3::Provided' (role 'error3_Provided15', cardinality 0..*).
+'error3::Provided' (role 'error3_Provided', cardinality 0..*) is associated with 'error3::Binding' (role 'error3_Binding10', cardinality 0..*).
+'error3::Required' (role 'error3_Required', cardinality 0..*) is associated with 'error3::Binding' (role 'error3_Binding', cardinality 0..*).
+'error3::Bazbar' (role 'error3_Bazbar', cardinality 0..*) is associated with 'error3::RecursiveComponen' (role 'error3_RecursiveComponen20', cardinality 0..*).
+'error3::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'error3::Thing' (role 'Thing', cardinality 0..*).
+'error3::Thing' (role 'fromThing', cardinality 0..*) is associated with 'error3::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'error3::Level2' (role 'error3_Level2', cardinality 0..*) is associated with 'error3::NestedComponent' (role 'error3_NestedComponent', cardinality 0..*).
+'error3::RecursiveComponen' (role 'error3_RecursiveComponen', cardinality 0..*) is associated with 'error3::NestedComponent' (role 'error3_NestedComponent18', cardinality 0..*).
+'error3::Thing' (role 'error3_Thing', cardinality 0..*) is associated with 'error3::World' (role 'error3_World', cardinality 0..*).
+'error3::RelatedTo' (role 'error3_RelatedTo', cardinality 0..*) is associated with 'error3::Thing' (role 'error3_Thing4', cardinality 0..*).
+'error3::Required' (role 'error3_Required8', cardinality 0..*) is associated with 'error3::Binding' (role 'error3_Binding7', cardinality 0..*).
+'error3::Required' (role 'error3_Required12', cardinality 0..*) is associated with 'error3::AbstractComponent' (role 'error3_AbstractComponent', cardinality 0..*).
+'error3::RecursiveComponen' (role 'error3_RecursiveComponen23', cardinality 0..*) is associated with 'error3::RecursiveComponen' (role 'error3_RecursiveComponen21', cardinality 0..*).

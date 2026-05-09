@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'errya::Alias' has the following attributes: 'id' of type str.
+The class 'NamedElement' has no attributes.
+The class 'errya::Thing' has the following attributes: 'id' of type int.
+The class 'errya::World' has no attributes.
+The class 'errya::NamedElement' has the following attributes: 'name' of type str.
+The class 'errya::RelatedTo' has the following attributes: 'since' of type str.
+'errya::Thing' is a specialization of 'NamedElement'.
+'errya::RelatedTo' is a specialization of 'NamedElement'.
+'errya::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'errya::Thing' (role 'fromThing', cardinality 0..*).
+'errya::World' (role 'errya_World', cardinality 0..*) is associated with 'errya::Thing' (role 'errya_Thing', cardinality 0..*).
+'errya::Alias' (role 'errya_Alias', cardinality 0..*) is associated with 'errya::NamedElement' (role 'errya_NamedElement', cardinality 0..*).
+'errya::RelatedTo' (role 'errya_RelatedTo', cardinality 0..*) is associated with 'errya::Thing' (role 'errya_Thing5', cardinality 0..*).
+'errya::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'errya::Thing' (role 'Thing', cardinality 0..*).

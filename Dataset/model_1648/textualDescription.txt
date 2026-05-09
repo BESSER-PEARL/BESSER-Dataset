@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'visualworld::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'visualworld::World' has no attributes.
+The class 'visualworld::Thing' has the following attributes: 'id' of type int.
+The class 'visualworld::RelatedTo' has the following attributes: 'since' of type str.
+'visualworld::Thing' is a specialization of 'NamedElement'.
+'visualworld::RelatedTo' is a specialization of 'NamedElement'.
+'visualworld::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'visualworld::Thing' (role 'Thing', cardinality 0..*).
+'visualworld::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'visualworld::Thing' (role 'fromThing', cardinality 0..*).
+'visualworld::Thing' (role 'visualworld_Thing', cardinality 0..*) is associated with 'visualworld::World' (role 'visualworld_World', cardinality 0..*).
+'visualworld::RelatedTo' (role 'visualworld_RelatedTo', cardinality 0..*) is associated with 'visualworld::Thing' (role 'visualworld_Thing4', cardinality 0..*).

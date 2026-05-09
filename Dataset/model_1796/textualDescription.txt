@@ -1,0 +1,36 @@
+The model has 12 class(es).
+The class 'university::Vehicle' has the following attributes: 'registrationNumber' of type str.
+The class 'university::NamedElement' has the following attributes: 'name' of type str.
+The class 'university::StaffMember' has the following attributes: 'staffMemberType' of type str.
+The class 'university::Department' has no attributes.
+The class 'university::Library' has no attributes.
+The class 'university::University' has no attributes.
+The class 'university::PrimitiveType' has the following attributes: 'b' of type int; 'l' of type str; 'm' of type str; 'g' of type str; 'c' of type str; 'd' of type bool; 'i' of type float; 'h' of type str; 'bigIntList' of type str; 'f' of type float; 'j' of type str; 'o' of type str; 'a' of type str; 'k' of type str; 'e' of type str; 'p' of type str; 'n' of type str.
+The class 'university::Book' has the following attributes: 'ISBN' of type str; 'authorNames' of type str.
+The class 'NamedElement' has no attributes.
+The class 'university::Student' has the following attributes: 'studentId' of type float.
+The class 'university::Module' has no attributes.
+The class 'university::Computer' has no attributes.
+The enumeration 'StaffMemberType' has the following literals: 'Honary', 'Admin', 'ResearchStudent', 'Technical', 'Other', 'Academic', 'Research'.
+'university::Department' is a specialization of 'NamedElement'.
+'university::Computer' is a specialization of 'NamedElement'.
+'university::Library' is a specialization of 'NamedElement'.
+'university::Student' is a specialization of 'NamedElement'.
+'university::Module' is a specialization of 'NamedElement'.
+'university::Book' is a specialization of 'NamedElement'.
+'university::StaffMember' is a specialization of 'NamedElement'.
+'university::University' is a specialization of 'NamedElement'.
+'university::StaffMember' (role 'university_StaffMember21', cardinality 0..*) is associated with 'university::Department' (role 'university_Department20', cardinality 0..*).
+'university::University' (role 'university_University2', cardinality 0..*) is associated with 'university::Library' (role 'university_Library', cardinality 0..*).
+'university::Vehicle' (role 'university_Vehicle13', cardinality 0..*) is associated with 'university::Library' (role 'university_Library12', cardinality 0..*).
+'university::Library' (role 'university_Library8', cardinality 0..*) is associated with 'university::Computer' (role 'university_Computer', cardinality 0..*).
+'university::Vehicle' (role 'university_Vehicle', cardinality 0..*) is associated with 'university::Student' (role 'university_Student', cardinality 0..*).
+'university::Module' (role 'taughtModules', cardinality 0..*) is associated with 'university::StaffMember' (role 'StaffMember', cardinality 0..*).
+'university::University' (role 'university_University4', cardinality 0..*) is associated with 'university::StaffMember' (role 'university_StaffMember', cardinality 0..*).
+'university::University' (role 'university_University', cardinality 0..*) is associated with 'university::Department' (role 'university_Department', cardinality 0..*).
+'university::Vehicle' (role 'university_Vehicle18', cardinality 0..*) is associated with 'university::StaffMember' (role 'university_StaffMember17', cardinality 0..*).
+'university::StaffMember' (role 'moduleLecturers', cardinality 0..*) is associated with 'university::Module' (role 'Module15', cardinality 0..*).
+'university::Module' (role 'Module', cardinality 0..*) is associated with 'university::Student' (role 'enrolledStudents', cardinality 0..*).
+'university::Module' (role 'enrolledModules', cardinality 0..*) is associated with 'university::Student' (role 'Student', cardinality 0..*).
+'university::Student' (role 'university_Student24', cardinality 0..*) is associated with 'university::Department' (role 'university_Department23', cardinality 0..*).
+'university::Library' (role 'university_Library10', cardinality 0..*) is associated with 'university::Book' (role 'university_Book', cardinality 0..*).

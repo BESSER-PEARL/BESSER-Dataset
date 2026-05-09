@@ -1,0 +1,349 @@
+The model has 139 class(es).
+The class 'eol::ExpressionStatement' has no attributes.
+The class 'eol::EPackage' has no attributes.
+The class 'ArithmeticOperatorExpression' has no attributes.
+The class 'VariableDeclarationExpression' has no attributes.
+The class 'eol::PrimitiveExpression' has no attributes.
+The class 'EolLibraryModule' has no attributes.
+The class 'eol::ContinueStatement' has no attributes.
+The class 'eol::AbortStatement' has no attributes.
+The class 'eol::AnnotationBlock' has no attributes.
+The class 'eol::GreaterThanOrEqualToOperatorExpression' has no attributes.
+The class 'LiteralExpression' has no attributes.
+The class 'ComparisonOperatorExpression' has no attributes.
+The class 'eol::TransactionStatement' has no attributes.
+The class 'eol::OperationArgType' has no attributes.
+The class 'eol::AndOperatorExpression' has no attributes.
+The class 'EolElement' has no attributes.
+The class 'eol::UnaryOperatorExpression' has no attributes.
+The class 'LogicalOperatorExpression' has no attributes.
+The class 'eol::SetType' has no attributes.
+The class 'eol::EType' has no attributes.
+The class 'OperatorExpression' has no attributes.
+The class 'eol::NativeType' has no attributes.
+The class 'eol::ExpressionOrStatementBlock' has no attributes.
+The class 'eol::AssignmentStatement' has no attributes.
+The class 'eol::StringType' has no attributes.
+The class 'eol::BooleanType' has no attributes.
+The class 'eol::ComparisonOperatorExpression' has no attributes.
+The class 'eol::DeleteStatement' has no attributes.
+The class 'eol::CollectionInitValue' has no attributes.
+The class 'eol::TextRegion' has no attributes.
+The class 'SwitchCaseStatement' has no attributes.
+The class 'eol::Statement' has no attributes.
+The class 'eol::EolLibraryModule' has no attributes.
+The class 'eol::ExpRange' has no attributes.
+The class 'Type' has no attributes.
+The class 'eol::PropertyCallExpression' has no attributes.
+The class 'eol::RealType' has no attributes.
+The class 'eol::NotEqualsOperatorExpression' has no attributes.
+The class 'eol::CollectionType' has no attributes.
+The class 'eol::RealExpression' has the following attributes: 'val' of type float.
+The class 'Statement' has no attributes.
+The class 'eol::EObject' has no attributes.
+The class 'eol::SimpleAnnotation' has no attributes.
+The class 'eol::BreakStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'eol::IfStatement' has no attributes.
+The class 'eol::OrderedSetType' has no attributes.
+The class 'UniqueCollectionType' has no attributes.
+The class 'eol::MapType' has no attributes.
+The class 'eol::MultiplyOperatorExpression' has no attributes.
+The class 'eol::SetExpression' has no attributes.
+The class 'eol::XorOperatorExpression' has no attributes.
+The class 'eol::GreaterThanOperatorExpression' has no attributes.
+The class 'eol::EolProgram' has no attributes.
+The class 'eol::BagExpression' has no attributes.
+The class 'eol::DivideOperatorExpression' has no attributes.
+The class 'eol::ReturnStatement' has no attributes.
+The class 'eol::SelfInnermostType' has no attributes.
+The class 'eol::ModelType' has no attributes.
+The class 'eol::ThrowStatement' has no attributes.
+The class 'PseudoType' has no attributes.
+The class 'eol::OperatorExpression' has no attributes.
+The class 'eol::IntegerType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'CollectionExpression' has no attributes.
+The class 'eol::LessThanOperatorExpression' has no attributes.
+The class 'eol::SpecialNameExpression' has no attributes.
+The class 'eol::Import' has no attributes.
+The class 'eol::VoidType' has no attributes.
+The class 'eol::ModelExpression' has no attributes.
+The class 'eol::SelfType' has no attributes.
+The class 'eol::OrderedCollectionType' has no attributes.
+The class 'eol::ImpliesOperatorExpression' has no attributes.
+The class 'eol::PseudoType' has no attributes.
+The class 'eol::ModelDeclarationStatement' has no attributes.
+The class 'eol::FOLMethodCallExpression' has no attributes.
+The class 'eol::ForStatement' has no attributes.
+The class 'eol::SelfContentType' has no attributes.
+The class 'eol::FormalParameterExpression' has no attributes.
+The class 'eol::OrOperatorExpression' has no attributes.
+The class 'eol::LiteralExpression' has no attributes.
+The class 'eol::EqualsOperatorExpression' has no attributes.
+The class 'eol::Annotation' has no attributes.
+The class 'eol::Block' has no attributes.
+The class 'eol::SpecialAssignmentStatement' has no attributes.
+The class 'eol::ModelElementType' has the following attributes: 'elementName' of type str; 'modelName' of type str.
+The class 'eol::MinusOperatorExpression' has no attributes.
+The class 'eol::Expression' has no attributes.
+The class 'eol::MethodCallExpression' has no attributes.
+The class 'eol::ModelDeclarationParameter' has no attributes.
+The class 'eol::ArithmeticOperatorExpression' has no attributes.
+The class 'eol::NotOperatorExpression' has no attributes.
+The class 'eol::KeyValue' has no attributes.
+The class 'eol::LogicalOperatorExpression' has no attributes.
+The class 'eol::BreakAllStatement' has no attributes.
+The class 'eol::EolElement' has the following attributes: 'uri' of type str; 'line' of type int; 'column' of type int.
+The class 'eol::ExprList' has no attributes.
+The class 'eol::FeatureCallExpression' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'CollectionInitValue' has no attributes.
+The class 'eol::CollectionExpression' has no attributes.
+The class 'eol::BooleanExpression' has the following attributes: 'val' of type bool.
+The class 'eol::OperationDefinition' has no attributes.
+The class 'eol::StringExpression' has the following attributes: 'val' of type str.
+The class 'eol::AnyType' has the following attributes: 'declared' of type bool.
+The class 'UnaryOperatorExpression' has no attributes.
+The class 'eol::LessThanOrEqualToOperatorExpression' has no attributes.
+The class 'eol::IntegerExpression' has the following attributes: 'val' of type int.
+The class 'eol::PlusOperatorExpression' has no attributes.
+The class 'FeatureCallExpression' has no attributes.
+The class 'eol::TextPosition' has the following attributes: 'column' of type int; 'line' of type int.
+The class 'OrderedCollectionType' has no attributes.
+The class 'eol::NewExpression' has no attributes.
+The class 'eol::WhileStatement' has no attributes.
+The class 'NameExpression' has no attributes.
+The class 'eol::VariableDeclarationExpression' has the following attributes: 'definitionPoints' of type str.
+The class 'eol::PrimitiveType' has no attributes.
+The class 'eol::EClassifier' has no attributes.
+The class 'PrimitiveExpression' has no attributes.
+The class 'eol::NameExpression' has the following attributes: 'resolvedContent' of type str; 'name' of type str.
+The class 'eol::OrderedSetExpression' has no attributes.
+The class 'eol::ExecutableAnnotation' has no attributes.
+The class 'eol::SwitchCaseStatement' has no attributes.
+The class 'BinaryOperatorExpression' has no attributes.
+The class 'eol::SwitchCaseExpressionStatement' has no attributes.
+The class 'eol::MapExpression' has no attributes.
+The class 'eol::SequenceExpression' has no attributes.
+The class 'eol::EnumerationLiteralExpression' has no attributes.
+The class 'eol::Type' has no attributes.
+The class 'eol::SequenceType' has no attributes.
+The class 'eol::NegativeOperatorExpression' has no attributes.
+The class 'eol::BinaryOperatorExpression' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'eol::NativeExpression' has no attributes.
+The class 'eol::SwitchStatement' has no attributes.
+The class 'eol::BagType' has no attributes.
+The class 'AssignmentStatement' has no attributes.
+The class 'eol::UniqueCollectionType' has no attributes.
+The class 'eol::SwitchCaseDefaultStatement' has no attributes.
+'eol::FormalParameterExpression' is a specialization of 'VariableDeclarationExpression'.
+'eol::SimpleAnnotation' is a specialization of 'Annotation'.
+'eol::CollectionInitValue' is a specialization of 'Expression'.
+'eol::SetExpression' is a specialization of 'CollectionExpression'.
+'eol::AnyType' is a specialization of 'Type'.
+'eol::OrderedSetExpression' is a specialization of 'CollectionExpression'.
+'eol::NegativeOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+'eol::AssignmentStatement' is a specialization of 'Statement'.
+'eol::MapType' is a specialization of 'Type'.
+'eol::BagType' is a specialization of 'CollectionType'.
+'eol::AndOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::ModelExpression' is a specialization of 'NameExpression'.
+'eol::IntegerExpression' is a specialization of 'PrimitiveExpression'.
+'eol::AnnotationBlock' is a specialization of 'EolElement'.
+'eol::UniqueCollectionType' is a specialization of 'CollectionType'.
+'eol::OrOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::ReturnStatement' is a specialization of 'Statement'.
+'eol::ExpressionStatement' is a specialization of 'Statement'.
+'eol::AbortStatement' is a specialization of 'Statement'.
+'eol::ExpRange' is a specialization of 'CollectionInitValue'.
+'eol::SequenceType' is a specialization of 'OrderedCollectionType'.
+'eol::Statement' is a specialization of 'EolElement'.
+'eol::EType' is a specialization of 'Type'.
+'eol::WhileStatement' is a specialization of 'Statement'.
+'eol::IntegerType' is a specialization of 'PrimitiveType'.
+'eol::SwitchCaseDefaultStatement' is a specialization of 'SwitchCaseStatement'.
+'eol::Expression' is a specialization of 'EolElement'.
+'eol::NotEqualsOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::BagExpression' is a specialization of 'CollectionExpression'.
+'eol::SelfType' is a specialization of 'PseudoType'.
+'eol::BooleanExpression' is a specialization of 'PrimitiveExpression'.
+'eol::EqualsOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::NameExpression' is a specialization of 'Expression'.
+'eol::KeyValue' is a specialization of 'Expression'.
+'eol::NativeExpression' is a specialization of 'LiteralExpression'.
+'eol::StringExpression' is a specialization of 'PrimitiveExpression'.
+'eol::CollectionExpression' is a specialization of 'LiteralExpression'.
+'eol::BreakStatement' is a specialization of 'Statement'.
+'eol::PrimitiveExpression' is a specialization of 'LiteralExpression'.
+'eol::GreaterThanOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::ExprList' is a specialization of 'CollectionInitValue'.
+'eol::ModelDeclarationStatement' is a specialization of 'Statement'.
+'eol::LessThanOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::RealType' is a specialization of 'PrimitiveType'.
+'eol::Block' is a specialization of 'EolElement'.
+'eol::ExpressionOrStatementBlock' is a specialization of 'EolElement'.
+'eol::ImpliesOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::VoidType' is a specialization of 'Type'.
+'eol::LiteralExpression' is a specialization of 'Expression'.
+'eol::SpecialNameExpression' is a specialization of 'NameExpression'.
+'eol::RealExpression' is a specialization of 'PrimitiveExpression'.
+'eol::SwitchCaseStatement' is a specialization of 'Statement'.
+'eol::CollectionType' is a specialization of 'Type'.
+'eol::DivideOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::SpecialAssignmentStatement' is a specialization of 'AssignmentStatement'.
+'eol::MethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'eol::MapExpression' is a specialization of 'LiteralExpression'.
+'eol::SelfInnermostType' is a specialization of 'PseudoType'.
+'eol::FeatureCallExpression' is a specialization of 'Expression'.
+'eol::ModelDeclarationParameter' is a specialization of 'Expression'.
+'eol::ThrowStatement' is a specialization of 'Statement'.
+'eol::StringType' is a specialization of 'PrimitiveType'.
+'eol::Import' is a specialization of 'EolElement'.
+'eol::BreakAllStatement' is a specialization of 'Statement'.
+'eol::XorOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::DeleteStatement' is a specialization of 'Statement'.
+'eol::PseudoType' is a specialization of 'Type'.
+'eol::EnumerationLiteralExpression' is a specialization of 'Expression'.
+'eol::GreaterThanOrEqualToOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::OrderedSetType' is a specialization of 'UniqueCollectionType'.
+'eol::MinusOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::OrderedCollectionType' is a specialization of 'CollectionType'.
+'eol::ModelElementType' is a specialization of 'Type'.
+'eol::TransactionStatement' is a specialization of 'Statement'.
+'eol::UnaryOperatorExpression' is a specialization of 'OperatorExpression'.
+'eol::NotOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+'eol::EolProgram' is a specialization of 'EolLibraryModule'.
+'eol::MultiplyOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::SelfContentType' is a specialization of 'PseudoType'.
+'eol::ComparisonOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'eol::LogicalOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'eol::PrimitiveType' is a specialization of 'Type'.
+'eol::VariableDeclarationExpression' is a specialization of 'Expression'.
+'eol::LessThanOrEqualToOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::OrderedSetType' is a specialization of 'OrderedCollectionType'.
+'eol::ContinueStatement' is a specialization of 'Statement'.
+'eol::ExecutableAnnotation' is a specialization of 'Annotation'.
+'eol::PlusOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::ArithmeticOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'eol::SwitchStatement' is a specialization of 'Statement'.
+'eol::Type' is a specialization of 'EolElement'.
+'eol::FOLMethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'eol::ModelType' is a specialization of 'Type'.
+'eol::Annotation' is a specialization of 'EolElement'.
+'eol::BooleanType' is a specialization of 'PrimitiveType'.
+'eol::SwitchCaseExpressionStatement' is a specialization of 'SwitchCaseStatement'.
+'eol::NewExpression' is a specialization of 'Expression'.
+'eol::ForStatement' is a specialization of 'Statement'.
+'eol::SequenceExpression' is a specialization of 'CollectionExpression'.
+'eol::OperatorExpression' is a specialization of 'Expression'.
+'eol::OperationArgType' is a specialization of 'PseudoType'.
+'eol::OperationDefinition' is a specialization of 'EolElement'.
+'eol::BinaryOperatorExpression' is a specialization of 'OperatorExpression'.
+'eol::PropertyCallExpression' is a specialization of 'FeatureCallExpression'.
+'eol::EolLibraryModule' is a specialization of 'EolElement'.
+'eol::SetType' is a specialization of 'UniqueCollectionType'.
+'eol::IfStatement' is a specialization of 'Statement'.
+'eol::NativeType' is a specialization of 'Type'.
+'eol::OperationDefinition' (role 'eol_OperationDefinition78', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression79', cardinality 0..*).
+'eol::MapType' (role 'eol_MapType', cardinality 0..*) is associated with 'eol::Type' (role 'eol_Type160', cardinality 0..*).
+'eol::BooleanExpression' (role 'eol_BooleanExpression43', cardinality 0..*) is associated with 'eol::NameExpression' (role 'eol_NameExpression42', cardinality 0..*).
+'eol::OperationDefinition' (role 'eol_OperationDefinition73', cardinality 0..*) is associated with 'eol::FormalParameterExpression' (role 'eol_FormalParameterExpression', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression172', cardinality 0..*) is associated with 'eol::KeyValue' (role 'eol_KeyValue171', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression227', cardinality 0..*) is associated with 'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock226', cardinality 0..*).
+'eol::FOLMethodCallExpression' (role 'eol_FOLMethodCallExpression141', cardinality 0..*) is associated with 'eol::NameExpression' (role 'eol_NameExpression142', cardinality 0..*).
+'eol::EClassifier' (role 'eol_EClassifier221', cardinality 0..*) is associated with 'eol::EType' (role 'eol_EType', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression147', cardinality 0..*) is associated with 'eol::SwitchCaseExpressionStatement' (role 'eol_SwitchCaseExpressionStatement146', cardinality 0..*).
+'eol::NameExpression' (role 'eol_NameExpression190', cardinality 0..*) is associated with 'eol::ModelDeclarationParameter' (role 'eol_ModelDeclarationParameter189', cardinality 0..*).
+'eol::EolLibraryModule' (role 'eol_EolLibraryModule232', cardinality 0..*) is associated with 'eol::Import' (role 'eol_Import233', cardinality 0..*).
+'eol::NameExpression' (role 'eol_NameExpression165', cardinality 0..*) is associated with 'eol::Annotation' (role 'eol_Annotation', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression23', cardinality 0..*) is associated with 'eol::BinaryOperatorExpression' (role 'eol_BinaryOperatorExpression22', cardinality 0..*).
+'eol::AnnotationBlock' (role 'eol_AnnotationBlock', cardinality 0..*) is associated with 'eol::OperationDefinition' (role 'eol_OperationDefinition65', cardinality 0..*).
+'eol::DeleteStatement' (role 'eol_DeleteStatement', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression89', cardinality 0..*).
+'eol::Type' (role 'eol_Type158', cardinality 0..*) is associated with 'eol::CollectionType' (role 'eol_CollectionType', cardinality 0..*).
+'eol::NativeExpression' (role 'eol_NativeExpression218', cardinality 0..*) is associated with 'eol::BooleanExpression' (role 'eol_BooleanExpression219', cardinality 0..*).
+'eol::Type' (role 'eol_Type60', cardinality 0..*) is associated with 'eol::OperationDefinition' (role 'eol_OperationDefinition', cardinality 0..*).
+'eol::NameExpression' (role 'eol_NameExpression27', cardinality 0..*) is associated with 'eol::EnumerationLiteralExpression' (role 'eol_EnumerationLiteralExpression26', cardinality 0..*).
+'eol::AnnotationBlock' (role 'eol_AnnotationBlock186', cardinality 0..*) is associated with 'eol::ExecutableAnnotation' (role 'eol_ExecutableAnnotation187', cardinality 0..*).
+'eol::AnnotationBlock' (role 'eol_AnnotationBlock183', cardinality 0..*) is associated with 'eol::SimpleAnnotation' (role 'eol_SimpleAnnotation184', cardinality 0..*).
+'eol::ModelElementType' (role 'eol_ModelElementType178', cardinality 0..*) is associated with 'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement179', cardinality 0..*).
+'eol::ModelDeclarationParameter' (role 'eol_ModelDeclarationParameter', cardinality 0..*) is associated with 'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement131', cardinality 0..*).
+'eol::Block' (role 'eol_Block224', cardinality 0..*) is associated with 'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock223', cardinality 0..*).
+'eol::CollectionInitValue' (role 'eol_CollectionInitValue', cardinality 0..*) is associated with 'eol::CollectionExpression' (role 'eol_CollectionExpression', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression108', cardinality 0..*) is associated with 'eol::SwitchStatement' (role 'eol_SwitchStatement', cardinality 0..*).
+'eol::EnumerationLiteralExpression' (role 'eol_EnumerationLiteralExpression29', cardinality 0..*) is associated with 'eol::ModelExpression' (role 'eol_ModelExpression', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression87', cardinality 0..*) is associated with 'eol::AssignmentStatement' (role 'eol_AssignmentStatement86', cardinality 0..*).
+'eol::Statement' (role 'eol_Statement', cardinality 0..*) is associated with 'eol::Block' (role 'eol_Block18', cardinality 0..*).
+'eol::EolElement' (role 'eol_EolElement0', cardinality 0..*) is associated with 'eol::EolElement' (role 'eol_EolElement', cardinality 0..*).
+'eol::MapType' (role 'eol_MapType162', cardinality 0..*) is associated with 'eol::Type' (role 'eol_Type163', cardinality 0..*).
+'eol::StringExpression' (role 'eol_StringExpression181', cardinality 0..*) is associated with 'eol::NativeType' (role 'eol_NativeType', cardinality 0..*).
+'eol::Type' (role 'eol_Type156', cardinality 0..*) is associated with 'eol::AnyType' (role 'eol_AnyType', cardinality 0..*).
+'eol::StringExpression' (role 'eol_StringExpression', cardinality 0..*) is associated with 'eol::Import' (role 'eol_Import', cardinality 0..*).
+'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement', cardinality 0..*) is associated with 'eol::EPackage' (role 'eol_EPackage', cardinality 0..*).
+'eol::OperationDefinition' (role 'eol_OperationDefinition80', cardinality 0..*) is associated with 'eol::OperationDefinition' (role 'eol_OperationDefinition82', cardinality 0..*).
+'eol::BooleanExpression' (role 'eol_BooleanExpression55', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression54', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression94', cardinality 0..*) is associated with 'eol::ForStatement' (role 'eol_ForStatement93', cardinality 0..*).
+'eol::EolLibraryModule' (role 'eol_EolLibraryModule238', cardinality 0..*) is associated with 'eol::NameExpression' (role 'eol_NameExpression239', cardinality 0..*).
+'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock104', cardinality 0..*) is associated with 'eol::IfStatement' (role 'eol_IfStatement103', cardinality 0..*).
+'eol::NameExpression' (role 'eol_NameExpression52', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression', cardinality 0..*).
+'eol::WhileStatement' (role 'eol_WhileStatement', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression116', cardinality 0..*).
+'eol::NewExpression' (role 'eol_NewExpression211', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression212', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression175', cardinality 0..*) is associated with 'eol::KeyValue' (role 'eol_KeyValue174', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression106', cardinality 0..*) is associated with 'eol::ReturnStatement' (role 'eol_ReturnStatement', cardinality 0..*).
+'eol::Import' (role 'eol_Import15', cardinality 0..*) is associated with 'eol::EolLibraryModule' (role 'eol_EolLibraryModule', cardinality 0..*).
+'eol::Type' (role 'eol_Type63', cardinality 0..*) is associated with 'eol::OperationDefinition' (role 'eol_OperationDefinition62', cardinality 0..*).
+'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement122', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression123', cardinality 0..*).
+'eol::ExprList' (role 'eol_ExprList', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression202', cardinality 0..*).
+'eol::SwitchCaseStatement' (role 'eol_SwitchCaseStatement', cardinality 0..*) is associated with 'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock114', cardinality 0..*).
+'eol::PropertyCallExpression' (role 'eol_PropertyCallExpression', cardinality 0..*) is associated with 'eol::NameExpression' (role 'eol_NameExpression47', cardinality 0..*).
+'eol::MethodCallExpression' (role 'eol_MethodCallExpression37', cardinality 0..*) is associated with 'eol::NameExpression' (role 'eol_NameExpression38', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression35', cardinality 0..*) is associated with 'eol::MethodCallExpression' (role 'eol_MethodCallExpression', cardinality 0..*).
+'eol::SwitchStatement' (role 'eol_SwitchStatement110', cardinality 0..*) is associated with 'eol::SwitchCaseExpressionStatement' (role 'eol_SwitchCaseExpressionStatement', cardinality 0..*).
+'eol::AssignmentStatement' (role 'eol_AssignmentStatement', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression84', cardinality 0..*).
+'eol::FeatureCallExpression' (role 'eol_FeatureCallExpression33', cardinality 0..*) is associated with 'eol::BooleanExpression' (role 'eol_BooleanExpression', cardinality 0..*).
+'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement125', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression126', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression20', cardinality 0..*) is associated with 'eol::BinaryOperatorExpression' (role 'eol_BinaryOperatorExpression', cardinality 0..*).
+'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock101', cardinality 0..*) is associated with 'eol::IfStatement' (role 'eol_IfStatement100', cardinality 0..*).
+'eol::EolProgram' (role 'eol_EolProgram12', cardinality 0..*) is associated with 'eol::Block' (role 'eol_Block', cardinality 0..*).
+'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement230', cardinality 0..*) is associated with 'eol::EolLibraryModule' (role 'eol_EolLibraryModule229', cardinality 0..*).
+'eol::ExpressionStatement' (role 'eol_ExpressionStatement', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression144', cardinality 0..*).
+'eol::TransactionStatement' (role 'eol_TransactionStatement199', cardinality 0..*) is associated with 'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock200', cardinality 0..*).
+'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock119', cardinality 0..*) is associated with 'eol::WhileStatement' (role 'eol_WhileStatement118', cardinality 0..*).
+'eol::SwitchCaseDefaultStatement' (role 'eol_SwitchCaseDefaultStatement', cardinality 0..*) is associated with 'eol::SwitchStatement' (role 'eol_SwitchStatement112', cardinality 0..*).
+'eol::TextRegion' (role 'eol_TextRegion', cardinality 0..*) is associated with 'eol::EolElement' (role 'eol_EolElement3', cardinality 0..*).
+'eol::ExecutableAnnotation' (role 'eol_ExecutableAnnotation', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression167', cardinality 0..*).
+'eol::ForStatement' (role 'eol_ForStatement', cardinality 0..*) is associated with 'eol::FormalParameterExpression' (role 'eol_FormalParameterExpression91', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression139', cardinality 0..*) is associated with 'eol::FOLMethodCallExpression' (role 'eol_FOLMethodCallExpression138', cardinality 0..*).
+'eol::StringExpression' (role 'eol_StringExpression169', cardinality 0..*) is associated with 'eol::SimpleAnnotation' (role 'eol_SimpleAnnotation', cardinality 0..*).
+'eol::OperationDefinition' (role 'eol_OperationDefinition236', cardinality 0..*) is associated with 'eol::EolLibraryModule' (role 'eol_EolLibraryModule235', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression58', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression57', cardinality 0..*).
+'eol::TextPosition' (role 'eol_TextPosition', cardinality 0..*) is associated with 'eol::TextRegion' (role 'eol_TextRegion5', cardinality 0..*).
+'eol::NameExpression' (role 'eol_NameExpression197', cardinality 0..*) is associated with 'eol::TransactionStatement' (role 'eol_TransactionStatement', cardinality 0..*).
+'eol::FormalParameterExpression' (role 'eol_FormalParameterExpression136', cardinality 0..*) is associated with 'eol::FOLMethodCallExpression' (role 'eol_FOLMethodCallExpression', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression31', cardinality 0..*) is associated with 'eol::FeatureCallExpression' (role 'eol_FeatureCallExpression', cardinality 0..*).
+'eol::ExpRange' (role 'eol_ExpRange206', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression207', cardinality 0..*).
+'eol::EolProgram' (role 'eol_EolProgram', cardinality 0..*) is associated with 'eol::EolProgram' (role 'eol_EolProgram9', cardinality 0..*).
+'eol::OperationDefinition' (role 'eol_OperationDefinition70', cardinality 0..*) is associated with 'eol::NameExpression' (role 'eol_NameExpression71', cardinality 0..*).
+'eol::LiteralExpression' (role 'eol_LiteralExpression', cardinality 0..*) is associated with 'eol::CollectionExpression' (role 'eol_CollectionExpression153', cardinality 0..*).
+'eol::TextRegion' (role 'eol_TextRegion7', cardinality 0..*) is associated with 'eol::TextPosition' (role 'eol_TextPosition8', cardinality 0..*).
+'eol::OperationDefinition' (role 'eol_OperationDefinition67', cardinality 0..*) is associated with 'eol::Block' (role 'eol_Block68', cardinality 0..*).
+'eol::NewExpression' (role 'eol_NewExpression', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression209', cardinality 0..*).
+'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement132', cardinality 0..*) is associated with 'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement134', cardinality 0..*).
+'eol::BooleanExpression' (role 'eol_BooleanExpression50', cardinality 0..*) is associated with 'eol::PropertyCallExpression' (role 'eol_PropertyCallExpression49', cardinality 0..*).
+'eol::NameExpression' (role 'eol_NameExpression', cardinality 0..*) is associated with 'eol::EnumerationLiteralExpression' (role 'eol_EnumerationLiteralExpression', cardinality 0..*).
+'eol::ModelType' (role 'eol_ModelType', cardinality 0..*) is associated with 'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement214', cardinality 0..*).
+'eol::OperationDefinition' (role 'eol_OperationDefinition75', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression76', cardinality 0..*).
+'eol::KeyValue' (role 'eol_KeyValue', cardinality 0..*) is associated with 'eol::MapExpression' (role 'eol_MapExpression', cardinality 0..*).
+'eol::IfStatement' (role 'eol_IfStatement', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression98', cardinality 0..*).
+'eol::ModelDeclarationParameter' (role 'eol_ModelDeclarationParameter192', cardinality 0..*) is associated with 'eol::StringExpression' (role 'eol_StringExpression193', cardinality 0..*).
+'eol::StringExpression' (role 'eol_StringExpression216', cardinality 0..*) is associated with 'eol::NativeExpression' (role 'eol_NativeExpression', cardinality 0..*).
+'eol::ExpRange' (role 'eol_ExpRange', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression204', cardinality 0..*).
+'eol::ModelDeclarationStatement' (role 'eol_ModelDeclarationStatement128', cardinality 0..*) is associated with 'eol::VariableDeclarationExpression' (role 'eol_VariableDeclarationExpression129', cardinality 0..*).
+'eol::ExpressionOrStatementBlock' (role 'eol_ExpressionOrStatementBlock', cardinality 0..*) is associated with 'eol::ForStatement' (role 'eol_ForStatement96', cardinality 0..*).
+'eol::MethodCallExpression' (role 'eol_MethodCallExpression40', cardinality 0..*) is associated with 'eol::EObject' (role 'eol_EObject', cardinality 0..*).
+'eol::Expression' (role 'eol_Expression', cardinality 0..*) is associated with 'eol::Type' (role 'eol_Type', cardinality 0..*).
+'eol::CollectionExpression' (role 'eol_CollectionExpression150', cardinality 0..*) is associated with 'eol::Type' (role 'eol_Type151', cardinality 0..*).
+'eol::ThrowStatement' (role 'eol_ThrowStatement', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression195', cardinality 0..*).
+'eol::UnaryOperatorExpression' (role 'eol_UnaryOperatorExpression', cardinality 0..*) is associated with 'eol::Expression' (role 'eol_Expression45', cardinality 0..*).
+'eol::ModelElementType' (role 'eol_ModelElementType', cardinality 0..*) is associated with 'eol::EClassifier' (role 'eol_EClassifier', cardinality 0..*).

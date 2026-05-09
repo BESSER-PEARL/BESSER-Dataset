@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'resourceunload::Library' has the following attributes: 'name' of type str.
+The class 'resourceunload::Book' has the following attributes: 'title' of type str.
+'resourceunload::Library' (role 'resourceunload_Library', cardinality 0..*) is associated with 'resourceunload::Book' (role 'resourceunload_Book', cardinality 0..*).

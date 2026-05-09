@@ -1,0 +1,42 @@
+The model has 18 class(es).
+The class 'nested102::Thing' has the following attributes: 'id' of type int.
+The class 'nested102::EClass4' has no attributes.
+The class 'nested102::EClass3' has no attributes.
+The class 'nested102::EClass8' has no attributes.
+The class 'nested102::World' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'nested102::EClass2' has no attributes.
+The class 'EClass7' has no attributes.
+The class 'nested102::EClass5' has no attributes.
+The class 'nested102::EClass1' has no attributes.
+The class 'nested102::NamedElement' has the following attributes: 'name' of type str.
+The class 'nested102::EClass7' has no attributes.
+The class 'Thing' has no attributes.
+The class 'EClass6' has no attributes.
+The class 'nested102::EClass0' has no attributes.
+The class 'nested102::EClass6' has no attributes.
+The class 'EClass8' has no attributes.
+The class 'nested102::RelatedTo' has the following attributes: 'since' of type str.
+'nested102::EClass5' is a specialization of 'EClass6'.
+'nested102::EClass5' is a specialization of 'NamedElement'.
+'nested102::EClass2' is a specialization of 'NamedElement'.
+'nested102::EClass0' is a specialization of 'NamedElement'.
+'nested102::Thing' is a specialization of 'NamedElement'.
+'nested102::EClass7' is a specialization of 'Thing'.
+'nested102::EClass4' is a specialization of 'NamedElement'.
+'nested102::EClass3' is a specialization of 'NamedElement'.
+'nested102::EClass8' is a specialization of 'NamedElement'.
+'nested102::EClass1' is a specialization of 'NamedElement'.
+'nested102::RelatedTo' is a specialization of 'NamedElement'.
+'nested102::EClass6' is a specialization of 'EClass8'.
+'nested102::EClass6' is a specialization of 'EClass7'.
+'nested102::EClass1' (role 'nested102_EClass110', cardinality 0..*) is associated with 'nested102::EClass2' (role 'nested102_EClass2', cardinality 0..*).
+'nested102::RelatedTo' (role 'nested102_RelatedTo', cardinality 0..*) is associated with 'nested102::Thing' (role 'nested102_Thing6', cardinality 0..*).
+'nested102::Thing' (role 'Thing', cardinality 0..*) is associated with 'nested102::RelatedTo' (role 'relations', cardinality 0..*).
+'nested102::EClass4' (role 'nested102_EClass416', cardinality 0..*) is associated with 'nested102::EClass5' (role 'nested102_EClass5', cardinality 0..*).
+'nested102::EClass2' (role 'nested102_EClass212', cardinality 0..*) is associated with 'nested102::EClass3' (role 'nested102_EClass3', cardinality 0..*).
+'nested102::Thing' (role 'nested102_Thing', cardinality 0..*) is associated with 'nested102::World' (role 'nested102_World', cardinality 0..*).
+'nested102::Thing' (role 'fromThing', cardinality 0..*) is associated with 'nested102::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'nested102::Thing' (role 'nested102_Thing3', cardinality 0..*) is associated with 'nested102::EClass0' (role 'nested102_EClass0', cardinality 0..*).
+'nested102::EClass3' (role 'nested102_EClass314', cardinality 0..*) is associated with 'nested102::EClass4' (role 'nested102_EClass4', cardinality 0..*).
+'nested102::EClass0' (role 'nested102_EClass08', cardinality 0..*) is associated with 'nested102::EClass1' (role 'nested102_EClass1', cardinality 0..*).

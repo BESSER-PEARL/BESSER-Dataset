@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'library::Book' has no attributes.
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'LibraryContent' has no attributes.
+The class 'library::Magazine' has no attributes.
+The class 'library::LibraryContent' has the following attributes: 'author' of type str; 'name' of type str.
+'library::Magazine' is a specialization of 'LibraryContent'.
+'library::Book' is a specialization of 'LibraryContent'.
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'library::LibraryContent' (role 'library_LibraryContent', cardinality 0..*).

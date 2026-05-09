@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'trace::GenLinkTrace' has no attributes.
+The class 'GenNodeTrace' has no attributes.
+The class 'trace::GenNodeTrace' has no attributes.
+The class 'MatchingTrace' has no attributes.
+The class 'trace::GenNodeLabelTrace' has no attributes.
+The class 'trace::GenCompartmentTrace' has no attributes.
+The class 'trace::TraceModel' has no attributes.
+The class 'trace::GenChildNodeTrace' has no attributes.
+The class 'trace::MatchingTrace' has the following attributes: 'queryText' of type str.
+The class 'trace::GenLinkLabelTrace' has no attributes.
+The class 'trace::ToolGroupTrace' has no attributes.
+The class 'trace::AbstractTrace' has the following attributes: 'visualID' of type int; 'processed' of type bool.
+The class 'AbstractTrace' has no attributes.
+'trace::GenLinkTrace' is a specialization of 'MatchingTrace'.
+'trace::GenNodeTrace' is a specialization of 'MatchingTrace'.
+'trace::MatchingTrace' is a specialization of 'AbstractTrace'.
+'trace::GenCompartmentTrace' is a specialization of 'MatchingTrace'.
+'trace::ToolGroupTrace' is a specialization of 'MatchingTrace'.
+'trace::GenChildNodeTrace' is a specialization of 'GenNodeTrace'.
+'trace::GenNodeLabelTrace' is a specialization of 'MatchingTrace'.
+'trace::GenLinkLabelTrace' is a specialization of 'MatchingTrace'.
+'trace::GenChildNodeTrace' (role 'trace_GenChildNodeTrace', cardinality 0..*) is associated with 'trace::TraceModel' (role 'trace_TraceModel2', cardinality 0..*).
+'trace::TraceModel' (role 'trace_TraceModel4', cardinality 0..*) is associated with 'trace::GenLinkTrace' (role 'trace_GenLinkTrace', cardinality 0..*).
+'trace::GenNodeTrace' (role 'trace_GenNodeTrace10', cardinality 0..*) is associated with 'trace::GenCompartmentTrace' (role 'trace_GenCompartmentTrace', cardinality 0..*).
+'trace::ToolGroupTrace' (role 'trace_ToolGroupTrace', cardinality 0..*) is associated with 'trace::TraceModel' (role 'trace_TraceModel6', cardinality 0..*).
+'trace::GenNodeTrace' (role 'trace_GenNodeTrace8', cardinality 0..*) is associated with 'trace::GenNodeLabelTrace' (role 'trace_GenNodeLabelTrace', cardinality 0..*).
+'trace::GenLinkLabelTrace' (role 'trace_GenLinkLabelTrace', cardinality 0..*) is associated with 'trace::GenLinkTrace' (role 'trace_GenLinkTrace12', cardinality 0..*).
+'trace::GenNodeTrace' (role 'trace_GenNodeTrace', cardinality 0..*) is associated with 'trace::TraceModel' (role 'trace_TraceModel', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'EtlSimpleTrace::TraceLink' has the following attributes: 'description' of type str.
+The class 'EtlSimpleTrace::EObject' has no attributes.
+The class 'EtlSimpleTrace::Trace' has no attributes.
+'EtlSimpleTrace::EObject' (role 'EtlSimpleTrace_EObject', cardinality 0..*) is associated with 'EtlSimpleTrace::TraceLink' (role 'EtlSimpleTrace_TraceLink2', cardinality 0..*).
+'EtlSimpleTrace::EObject' (role 'EtlSimpleTrace_EObject5', cardinality 0..*) is associated with 'EtlSimpleTrace::TraceLink' (role 'EtlSimpleTrace_TraceLink4', cardinality 0..*).
+'EtlSimpleTrace::Trace' (role 'EtlSimpleTrace_Trace', cardinality 0..*) is associated with 'EtlSimpleTrace::TraceLink' (role 'EtlSimpleTrace_TraceLink', cardinality 0..*).

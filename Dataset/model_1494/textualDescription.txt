@@ -1,0 +1,24 @@
+The model has 10 class(es).
+The class 'PetriNets::TPArc' has no attributes.
+The class 'Arc' has no attributes.
+The class 'PetriNets::PetriNet' has the following attributes: 'bound' of type int.
+The class 'PetriNets::Token' has no attributes.
+The class 'PetriNets::Place' has the following attributes: 'tokens' of type int.
+The class 'PetriNets::PTArc' has no attributes.
+The class 'PetriNets::Transition' has no attributes.
+The class 'Node' has no attributes.
+The class 'PetriNets::Arc' has the following attributes: 'weight' of type int.
+The class 'PetriNets::Node' has the following attributes: 'name' of type str.
+'PetriNets::PTArc' is a specialization of 'Arc'.
+'PetriNets::Place' is a specialization of 'Node'.
+'PetriNets::TPArc' is a specialization of 'Arc'.
+'PetriNets::Transition' is a specialization of 'Node'.
+'PetriNets::Place' (role 'PetriNets_Place11', cardinality 0..*) is associated with 'PetriNets::TPArc' (role 'PetriNets_TPArc10', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition8', cardinality 0..*) is associated with 'PetriNets::TPArc' (role 'PetriNets_TPArc', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition4', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place5', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition13', cardinality 0..*) is associated with 'PetriNets::PTArc' (role 'PetriNets_PTArc', cardinality 0..*).
+'PetriNets::Arc' (role 'PetriNets_Arc', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'PetriNets_PetriNet', cardinality 0..*).
+'PetriNets::Node' (role 'Node', cardinality 0..*) is associated with 'PetriNets::PetriNet' (role 'net', cardinality 0..*).
+'PetriNets::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'PetriNets::Node' (role 'nodes', cardinality 0..*).
+'PetriNets::Place' (role 'PetriNets_Place16', cardinality 0..*) is associated with 'PetriNets::PTArc' (role 'PetriNets_PTArc15', cardinality 0..*).
+'PetriNets::Transition' (role 'PetriNets_Transition', cardinality 0..*) is associated with 'PetriNets::Place' (role 'PetriNets_Place', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/bluedolmen/SIDE/MetaModel/Requirements/legacy/com.bluexml.side.Requirements.interpretation/src/documentation/documentation.ecore

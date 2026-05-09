@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/elordin/model-transformer/model/05_StateMachine/StateMachine.ecore

@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'bookOrder::BookOrder' has the following attributes: 'info' of type str.
+The class 'bookOrder::Universe' has no attributes.
+The class 'bookOrder::Book' has the following attributes: 'title' of type str.
+'bookOrder::Universe' (role 'bookOrder_Universe', cardinality 0..*) is associated with 'bookOrder::BookOrder' (role 'bookOrder_BookOrder', cardinality 0..*).
+'bookOrder::Book' (role 'bookOrder_Book', cardinality 0..*) is associated with 'bookOrder::BookOrder' (role 'bookOrder_BookOrder2', cardinality 0..*).

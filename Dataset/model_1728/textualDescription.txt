@@ -1,0 +1,45 @@
+The model has 24 class(es).
+The class 'extlibraryprofile::BookOnTape' has no attributes.
+The class 'extlibraryprofile::Library' has the following attributes: 'name' of type str.
+The class 'CirculatingItem' has no attributes.
+The class 'extlibraryprofile::Class' has no attributes.
+The class 'extlibraryprofile::Periodical' has the following attributes: 'issuesPerYear' of type str.
+The class 'extlibraryprofile::Item' has the following attributes: 'publicationDate' of type str; 'title' of type str.
+The class 'AudioVisualItem' has no attributes.
+The class 'extlibraryprofile::Addressable' has the following attributes: 'address' of type str.
+The class 'extlibraryprofile::Borrows' has no attributes.
+The class 'extlibraryprofile::Book' has the following attributes: 'category' of type str; 'pages' of type str.
+The class 'extlibraryprofile::Lendable' has the following attributes: 'copies' of type str.
+The class 'extlibraryprofile::Dependency' has no attributes.
+The class 'extlibraryprofile::Package' has no attributes.
+The class 'extlibraryprofile::Writer' has the following attributes: 'name' of type str.
+The class 'Item' has no attributes.
+The class 'Lendable' has no attributes.
+The class 'Person' has no attributes.
+The class 'extlibraryprofile::VideoCassete' has no attributes.
+The class 'extlibraryprofile::Person' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'extlibraryprofile::CirculatingItem' has no attributes.
+The class 'Addressable' has no attributes.
+The class 'extlibraryprofile::AudioVisualItem' has the following attributes: 'damaged' of type str; 'minutesLength' of type str.
+The class 'extlibraryprofile::Borrower' has no attributes.
+The class 'extlibraryprofile::Employee' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Biography', 'Mystery'.
+'extlibraryprofile::Borrower' is a specialization of 'Person'.
+'extlibraryprofile::Person' is a specialization of 'Addressable'.
+'extlibraryprofile::AudioVisualItem' is a specialization of 'CirculatingItem'.
+'extlibraryprofile::Book' is a specialization of 'CirculatingItem'.
+'extlibraryprofile::VideoCassete' is a specialization of 'AudioVisualItem'.
+'extlibraryprofile::Employee' is a specialization of 'Person'.
+'extlibraryprofile::Writer' is a specialization of 'Person'.
+'extlibraryprofile::Periodical' is a specialization of 'Item'.
+'extlibraryprofile::Library' is a specialization of 'Addressable'.
+'extlibraryprofile::BookOnTape' is a specialization of 'AudioVisualItem'.
+'extlibraryprofile::CirculatingItem' is a specialization of 'Lendable'.
+'extlibraryprofile::CirculatingItem' is a specialization of 'Item'.
+'extlibraryprofile::Person' (role 'extlibraryprofile_Person5', cardinality 0..*) is associated with 'extlibraryprofile::BookOnTape' (role 'extlibraryprofile_BookOnTape6', cardinality 0..*).
+'extlibraryprofile::Dependency' (role 'extlibraryprofile_Dependency', cardinality 0..*) is associated with 'extlibraryprofile::Borrows' (role 'extlibraryprofile_Borrows', cardinality 0..*).
+'extlibraryprofile::BookOnTape' (role 'extlibraryprofile_BookOnTape', cardinality 0..*) is associated with 'extlibraryprofile::Writer' (role 'extlibraryprofile_Writer', cardinality 0..*).
+'extlibraryprofile::Class' (role 'extlibraryprofile_Class9', cardinality 0..*) is associated with 'extlibraryprofile::Person' (role 'extlibraryprofile_Person8', cardinality 0..*).
+'extlibraryprofile::Package' (role 'extlibraryprofile_Package', cardinality 0..*) is associated with 'extlibraryprofile::Library' (role 'extlibraryprofile_Library', cardinality 0..*).
+'extlibraryprofile::Item' (role 'extlibraryprofile_Item', cardinality 0..*) is associated with 'extlibraryprofile::Class' (role 'extlibraryprofile_Class', cardinality 0..*).
+'extlibraryprofile::Person' (role 'extlibraryprofile_Person', cardinality 0..*) is associated with 'extlibraryprofile::VideoCassete' (role 'extlibraryprofile_VideoCassete', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'states::Event' has the following attributes: 'name' of type str.
+The class 'states::CompoundState' has no attributes.
+The class 'states::Transition' has no attributes.
+The class 'states::Statemachine' has the following attributes: 'initial' of type bool; 'name' of type str; 'value' of type int.
+The class 'states::SimpleState' has the following attributes: 'value' of type int.
+The class 'State' has no attributes.
+The class 'states::Module' has the following attributes: 'name' of type str.
+The class 'states::State' has the following attributes: 'initial' of type bool; 'name' of type str.
+'states::CompoundState' is a specialization of 'State'.
+'states::SimpleState' is a specialization of 'State'.
+'states::Statemachine' (role 'states_Statemachine', cardinality 0..*) is associated with 'states::Module' (role 'states_Module', cardinality 0..*).
+'states::State' (role 'states_State14', cardinality 0..*) is associated with 'states::Transition' (role 'states_Transition13', cardinality 0..*).
+'states::Event' (role 'states_Event', cardinality 0..*) is associated with 'states::Statemachine' (role 'states_Statemachine2', cardinality 0..*).
+'states::Transition' (role 'states_Transition10', cardinality 0..*) is associated with 'states::Event' (role 'states_Event11', cardinality 0..*).
+'states::Transition' (role 'states_Transition', cardinality 0..*) is associated with 'states::State' (role 'states_State6', cardinality 0..*).
+'states::Statemachine' (role 'states_Statemachine8', cardinality 0..*) is associated with 'states::CompoundState' (role 'states_CompoundState', cardinality 0..*).
+'states::Statemachine' (role 'states_Statemachine4', cardinality 0..*) is associated with 'states::State' (role 'states_State', cardinality 0..*).

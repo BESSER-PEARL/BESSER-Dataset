@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/mondo-atlzoo-benchmark/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/Grafcet2PetriNet/PetriNet.ecore

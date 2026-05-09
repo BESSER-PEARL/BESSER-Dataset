@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adilinam/QVTdCaseStudy/org.eclipse.ocl.examples.xtext.tests/src/org/eclipse/ocl/examples/test/xtext/models/MiniOCL2.ecore

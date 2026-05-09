@@ -1,0 +1,37 @@
+The model has 13 class(es).
+The class 'model::PrimaryObject' has the following attributes: 'unsettableAttribute' of type str; 'featureMapAttributeCollection' of type str; 'name' of type str; 'featureMapReferenceCollection' of type str; 'unsettableAttributeWithDefault' of type str; 'featureMapAttributeType1' of type str; 'featureMapAttributeType2' of type str; 'id' of type int.
+The class 'model::Book' has the following attributes: 'title' of type str; 'tags' of type str; 'data' of type str.
+The class 'model::BNode' has the following attributes: 'id' of type int.
+The class 'model::PersonBNode' has the following attributes: 'name' of type str.
+The class 'model::Movie' has the following attributes: 'id' of type int; 'title' of type str.
+The class 'model::Location' has the following attributes: 'id' of type str; 'address' of type str.
+The class 'model::TargetObject' has the following attributes: 'id' of type int; 'singleAttribute' of type str; 'arrayAttribute' of type str.
+The class 'model::MappedLibrary' has the following attributes: 'books' of type str.
+The class 'model::BookBNode' has the following attributes: 'title' of type str.
+The class 'model::Library' has no attributes.
+The class 'model::ETypes' has the following attributes: 'eBigDecimal' of type str; 'eChar' of type str; 'eString' of type str; 'eFloat' of type float; 'eDate' of type date; 'eDouble' of type float; 'uris' of type str; 'eByteArray' of type str; 'eInt' of type int; 'eBoolean' of type bool; 'eShort' of type str; 'eByte' of type str; 'eLong' of type str; 'eBigInteger' of type str.
+The class 'model::Actor' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'model::Person' has the following attributes: 'name' of type str.
+'model::Book' (role 'model_Book16', cardinality 0..*) is associated with 'model::Location' (role 'model_Location15', cardinality 0..*).
+'model::Book' (role 'Book', cardinality 0..*) is associated with 'model::Person' (role 'authors', cardinality 0..*).
+'model::Movie' (role 'actorOf', cardinality 0..*) is associated with 'model::Actor' (role 'Actor', cardinality 0..*).
+'model::Person' (role 'Person', cardinality 0..*) is associated with 'model::Book' (role 'books', cardinality 0..*).
+'model::MappedLibrary' (role 'model_MappedLibrary23', cardinality 0..*) is associated with 'model::Book' (role 'model_Book24', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject45', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject46', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject33', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject34', cardinality 0..*).
+'model::MappedLibrary' (role 'model_MappedLibrary20', cardinality 0..*) is associated with 'model::Book' (role 'model_Book21', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject36', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject37', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject39', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject40', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject28', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject27', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject43', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject42', cardinality 0..*).
+'model::PersonBNode' (role 'model_PersonBNode5', cardinality 0..*) is associated with 'model::BookBNode' (role 'model_BookBNode4', cardinality 0..*).
+'model::PersonBNode' (role 'model_PersonBNode', cardinality 0..*) is associated with 'model::BookBNode' (role 'model_BookBNode', cardinality 0..*).
+'model::Book' (role 'model_Book', cardinality 0..*) is associated with 'model::Library' (role 'model_Library', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject48', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject49', cardinality 0..*).
+'model::Library' (role 'model_Library12', cardinality 0..*) is associated with 'model::Book' (role 'model_Book13', cardinality 0..*).
+'model::Actor' (role 'actors', cardinality 0..*) is associated with 'model::Movie' (role 'Movie', cardinality 0..*).
+'model::Library' (role 'model_Library10', cardinality 0..*) is associated with 'model::Location' (role 'model_Location', cardinality 0..*).
+'model::BNode' (role 'model_BNode6', cardinality 0..*) is associated with 'model::BNode' (role 'model_BNode', cardinality 0..*).
+'model::MappedLibrary' (role 'model_MappedLibrary', cardinality 0..*) is associated with 'model::Location' (role 'model_Location18', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject30', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject31', cardinality 0..*).

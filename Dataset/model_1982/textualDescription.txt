@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Traces::Trace' has the following attributes: 'name' of type str.
+The class 'Traces::EObject' has no attributes.
+'Traces::EObject' (role 'Traces_EObject', cardinality 0..*) is associated with 'Traces::Trace' (role 'Traces_Trace', cardinality 0..*).
+'Traces::Trace' (role 'Traces_Trace2', cardinality 0..*) is associated with 'Traces::EObject' (role 'Traces_EObject3', cardinality 0..*).

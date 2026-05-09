@@ -1,0 +1,217 @@
+The model has 103 class(es).
+The class 'ir::MetamodelFeatureRef' has no attributes.
+The class 'ir::InvalidTypeRef' has no attributes.
+The class 'Operation' has no attributes.
+The class 'ir::EStructuralFeature' has no attributes.
+The class 'ir::ocl::OperationCallExp' has the following attributes: 'name' of type str.
+The class 'ocl::ir::TypeRef' has no attributes.
+The class 'ir::ocl::WithContextVariable' has no attributes.
+The class 'ir::OrderedSetTypeRef' has no attributes.
+The class 'TypeRef' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'ir::ocl::OclOperation' has no attributes.
+The class 'ir::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'ir::MetaTypeRef' has no attributes.
+The class 'PropertyFeatureRef' has no attributes.
+The class 'ir::DerivedPropertyRef' has no attributes.
+The class 'ir::ocl::OclAnyLibElement' has no attributes.
+The class 'ir::ocl::OclExpression' has no attributes.
+The class 'AbstractOperationCallExp' has no attributes.
+The class 'ir::CollectionTypeRef' has no attributes.
+The class 'ir::EFType' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'ir::DerivedProperty' has no attributes.
+The class 'ir::ocl::LoopExp' has no attributes.
+The class 'ir::TypeRef' has no attributes.
+The class 'ir::ocl::IntegerLiteralExp' has the following attributes: 'value' of type str.
+The class 'ir::ocl::OperatorCallExp' has the following attributes: 'operator' of type str.
+The class 'ir::ocl::TuplePart' has the following attributes: 'name' of type str.
+The class 'ir::ocl::ModelElement' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'ir::EClass' has no attributes.
+The class 'ir::EEnum' has no attributes.
+The class 'ocl::ir::EFTupleType' has no attributes.
+The class 'ir::EPackage' has no attributes.
+The class 'ir::Operation' has no attributes.
+The class 'ir::PropertyFeatureRef' has no attributes.
+The class 'ir::TypedElement' has no attributes.
+The class 'ir::ocl::VarExp' has no attributes.
+The class 'ir::ocl::IteratorExp' has the following attributes: 'name' of type str.
+The class 'ir::ocl::IfExp' has no attributes.
+The class 'ocl::ir::VariableDeclaration' has no attributes.
+The class 'ocl::ir::EFClass' has no attributes.
+The class 'ir::ocl::LetExp' has no attributes.
+The class 'ir::ocl::OclInvalid' has no attributes.
+The class 'ir::OperationFeatureRef' has no attributes.
+The class 'ir::ocl::CallExp' has no attributes.
+The class 'ir::ocl::PropertyCallExp' has the following attributes: 'name' of type str.
+The class 'ir::ocl::EnumLiteralExp' has no attributes.
+The class 'ir::ocl::BagLiteralExp' has no attributes.
+The class 'ir::FeatureRef' has no attributes.
+The class 'ir::ocl::OrderedSetLiteralExp' has no attributes.
+The class 'ocl::ir::OperationFeatureRef' has no attributes.
+The class 'CollectionTypeRef' has no attributes.
+The class 'Iterator' has no attributes.
+The class 'ir::ocl::BooleanLiteralExp' has the following attributes: 'value' of type bool.
+The class 'ir::EFTupleType' has the following attributes: 'id' of type str.
+The class 'ir::BagTypeRef' has no attributes.
+The class 'ir::BuiltinOperationRef' has no attributes.
+The class 'AbstractFunction' has no attributes.
+The class 'ir::ocl::OclInvariant' has no attributes.
+The class 'FeatureRef' has no attributes.
+The class 'ocl::ir::EFEnumLiteral' has no attributes.
+The class 'EFType' has no attributes.
+The class 'ir::AbstractFunction' has the following attributes: 'name' of type str.
+The class 'ir::SequenceTypeRef' has no attributes.
+The class 'ir::SetTypeRef' has no attributes.
+The class 'ir::ocl::CollectionLiteralExp' has no attributes.
+The class 'ir::Specification' has no attributes.
+The class 'ir::EFMetamodel' has no attributes.
+The class 'ir::ocl::LiteralExp' has no attributes.
+The class 'ir::DefinedOperationRef' has no attributes.
+The class 'ir::TupleFieldRef' has the following attributes: 'name' of type str.
+The class 'ir::ocl::SetLiteralExp' has no attributes.
+The class 'ir::ocl::IterateExp' has no attributes.
+The class 'ir::BuiltinPropertyRef' has no attributes.
+The class 'ir::ocl::UnsupportedExp' has the following attributes: 'reason' of type str; 'description' of type str.
+The class 'ir::EFEnumLiteral' has the following attributes: 'name' of type str.
+The class 'ir::TupleTypeElement' has the following attributes: 'name' of type str.
+The class 'ir::EFPackage' has no attributes.
+The class 'CollectionLiteralExp' has no attributes.
+The class 'ir::EFEnum' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'ir::ocl::StringLiteralExp' has the following attributes: 'value' of type str.
+The class 'TypedElement' has no attributes.
+The class 'ocl::WithContextVariable' has no attributes.
+The class 'ir::ocl::TupleLiteralExp' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'ir::Parameter' has no attributes.
+The class 'ir::ocl::OclDerivedProperty' has no attributes.
+The class 'ir::ocl::SequenceLiteralExp' has no attributes.
+The class 'ocl::ir::MetaTypeRef' has no attributes.
+The class 'ir::EFClass' has no attributes.
+The class 'ir::ocl::OclUndefined' has no attributes.
+The class 'ir::ocl::RealLiteralExp' has the following attributes: 'value' of type str.
+The class 'ir::ocl::CollectionCallExp' has the following attributes: 'name' of type str.
+The class 'ir::ocl::Iterator' has no attributes.
+The class 'ir::ocl::AbstractOperationCallExp' has no attributes.
+The class 'DerivedProperty' has no attributes.
+The class 'ir::EFPrimitiveType' has the following attributes: 'name' of type str.
+The class 'TuplePart' has no attributes.
+The class 'ocl::ir::PropertyFeatureRef' has no attributes.
+The class 'OperationFeatureRef' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'ir::Constraint' has the following attributes: 'name' of type str.
+The enumeration 'OperatorKind' has the following literals: 'GREATER', 'DIV', 'XOR', 'NOT', 'PLUS', 'DISTINCT', 'GREATER_OR_EQUAL', 'MUL', 'IMPLIES', 'LESS', 'LESS_OR_EQUAL', 'OR', 'AND', 'MINUS', 'EQUAL'.
+'ir::ocl::OperationCallExp' is a specialization of 'AbstractOperationCallExp'.
+'ir::ocl::Iterator' is a specialization of 'VariableDeclaration'.
+'ir::ocl::OrderedSetLiteralExp' is a specialization of 'CollectionLiteralExp'.
+'ir::BuiltinPropertyRef' is a specialization of 'PropertyFeatureRef'.
+'ir::BagTypeRef' is a specialization of 'CollectionTypeRef'.
+'ir::ocl::VarExp' is a specialization of 'OclExpression'.
+'ir::BuiltinOperationRef' is a specialization of 'OperationFeatureRef'.
+'ir::Parameter' is a specialization of 'VariableDeclaration'.
+'ir::ocl::StringLiteralExp' is a specialization of 'LiteralExp'.
+'ir::EFEnum' is a specialization of 'EFType'.
+'ir::MetamodelFeatureRef' is a specialization of 'PropertyFeatureRef'.
+'ir::ocl::OclDerivedProperty' is a specialization of 'ocl::WithContextVariable'.
+'ir::ocl::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'ir::PropertyFeatureRef' is a specialization of 'FeatureRef'.
+'ir::ocl::IterateExp' is a specialization of 'LoopExp'.
+'ir::ocl::OclOperation' is a specialization of 'Operation'.
+'ir::DerivedPropertyRef' is a specialization of 'PropertyFeatureRef'.
+'ir::OperationFeatureRef' is a specialization of 'FeatureRef'.
+'ir::ocl::ModelElement' is a specialization of 'OclExpression'.
+'ir::ocl::OclInvariant' is a specialization of 'Constraint'.
+'ir::ocl::IfExp' is a specialization of 'OclExpression'.
+'ir::ocl::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'ir::ocl::IteratorExp' is a specialization of 'LoopExp'.
+'ir::ocl::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'ir::ocl::OclDerivedProperty' is a specialization of 'DerivedProperty'.
+'ir::AbstractFunction' is a specialization of 'TypedElement'.
+'ir::ocl::CollectionCallExp' is a specialization of 'AbstractOperationCallExp'.
+'ir::ocl::LiteralExp' is a specialization of 'OclExpression'.
+'ir::DefinedOperationRef' is a specialization of 'OperationFeatureRef'.
+'ir::ocl::OclInvariant' is a specialization of 'ocl::WithContextVariable'.
+'ir::ocl::OclInvalid' is a specialization of 'LiteralExp'.
+'ir::SetTypeRef' is a specialization of 'CollectionTypeRef'.
+'ir::ocl::BooleanLiteralExp' is a specialization of 'LiteralExp'.
+'ir::DerivedProperty' is a specialization of 'AbstractFunction'.
+'ir::OrderedSetTypeRef' is a specialization of 'CollectionTypeRef'.
+'ir::ocl::OperatorCallExp' is a specialization of 'CallExp'.
+'ir::SequenceTypeRef' is a specialization of 'CollectionTypeRef'.
+'ir::ocl::UnsupportedExp' is a specialization of 'OclExpression'.
+'ir::ocl::OclUndefined' is a specialization of 'LiteralExp'.
+'ir::ocl::CallExp' is a specialization of 'OclExpression'.
+'ir::ocl::SetLiteralExp' is a specialization of 'CollectionLiteralExp'.
+'ir::MetaTypeRef' is a specialization of 'TypeRef'.
+'ir::ocl::OclOperation' is a specialization of 'ocl::WithContextVariable'.
+'ir::ocl::RealLiteralExp' is a specialization of 'LiteralExp'.
+'ir::TupleFieldRef' is a specialization of 'PropertyFeatureRef'.
+'ir::CollectionTypeRef' is a specialization of 'TypeRef'.
+'ir::ocl::SequenceLiteralExp' is a specialization of 'CollectionLiteralExp'.
+'ir::EFClass' is a specialization of 'EFType'.
+'ir::ocl::LetExp' is a specialization of 'OclExpression'.
+'ir::InvalidTypeRef' is a specialization of 'TypeRef'.
+'ir::ocl::PropertyCallExp' is a specialization of 'CallExp'.
+'ir::ocl::IntegerLiteralExp' is a specialization of 'LiteralExp'.
+'ir::ocl::AbstractOperationCallExp' is a specialization of 'CallExp'.
+'ir::ocl::BagLiteralExp' is a specialization of 'CollectionLiteralExp'.
+'ir::EFPrimitiveType' is a specialization of 'EFType'.
+'ir::EFTupleType' is a specialization of 'EFType'.
+'ir::ocl::LoopExp' is a specialization of 'CallExp'.
+'ir::Operation' is a specialization of 'AbstractFunction'.
+'ir::EFPrimitiveType' (role 'ir_EFPrimitiveType', cardinality 0..*) is associated with 'ir::Specification' (role 'ir_Specification10', cardinality 0..*).
+'OclExpression' (role 'OclExpression68', cardinality 0..*) is associated with 'ir::ocl::LoopExp' (role 'ir_ocl_LoopExp67', cardinality 0..*).
+'TuplePart' (role 'TuplePart', cardinality 0..*) is associated with 'ir::ocl::TupleLiteralExp' (role 'ir_ocl_TupleLiteralExp96', cardinality 0..*).
+'ocl::ir::MetaTypeRef' (role 'ocl_ir_MetaTypeRef', cardinality 0..*) is associated with 'ir::ocl::EnumLiteralExp' (role 'ir_ocl_EnumLiteralExp', cardinality 0..*).
+'ir::EFTupleType' (role 'ir_EFTupleType', cardinality 0..*) is associated with 'ir::Specification' (role 'ir_Specification12', cardinality 0..*).
+'ir::ocl::OclInvariant' (role 'ir_ocl_OclInvariant53', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'ir::TypeRef' (role 'ir_TypeRef45', cardinality 0..*) is associated with 'ir::TupleTypeElement' (role 'ir_TupleTypeElement44', cardinality 0..*).
+'ir::ocl::LetExp' (role 'ir_ocl_LetExp', cardinality 0..*) is associated with 'ocl::ir::VariableDeclaration' (role 'ocl_ir_VariableDeclaration83', cardinality 0..*).
+'ocl::ir::VariableDeclaration' (role 'ocl_ir_VariableDeclaration', cardinality 0..*) is associated with 'ir::ocl::WithContextVariable' (role 'ir_ocl_WithContextVariable', cardinality 0..*).
+'ir::ocl::OclExpression' (role 'ir_ocl_OclExpression', cardinality 0..*) is associated with 'ocl::ir::TypeRef' (role 'ocl_ir_TypeRef', cardinality 0..*).
+'ir::ocl::OperatorCallExp' (role 'ir_ocl_OperatorCallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression91', cardinality 0..*).
+'ir::Operation' (role 'ir_Operation18', cardinality 0..*) is associated with 'ir::DefinedOperationRef' (role 'ir_DefinedOperationRef', cardinality 0..*).
+'ir::EFMetamodel' (role 'ir_EFMetamodel', cardinality 0..*) is associated with 'ir::Specification' (role 'ir_Specification', cardinality 0..*).
+'ir::ocl::PropertyCallExp' (role 'ir_ocl_PropertyCallExp', cardinality 0..*) is associated with 'ocl::ir::PropertyFeatureRef' (role 'ocl_ir_PropertyFeatureRef', cardinality 0..*).
+'ir::MetaTypeRef' (role 'ir_MetaTypeRef', cardinality 0..*) is associated with 'ir::EFType' (role 'ir_EFType47', cardinality 0..*).
+'OclExpression' (role 'OclExpression98', cardinality 0..*) is associated with 'ir::ocl::TuplePart' (role 'ir_ocl_TuplePart', cardinality 0..*).
+'ir::VariableDeclaration' (role 'ir_VariableDeclaration', cardinality 0..*) is associated with 'ir::TypeRef' (role 'ir_TypeRef25', cardinality 0..*).
+'Iterator' (role 'Iterator', cardinality 0..*) is associated with 'ir::ocl::LoopExp' (role 'ir_ocl_LoopExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression103', cardinality 0..*) is associated with 'ir::ocl::CollectionLiteralExp' (role 'ir_ocl_CollectionLiteralExp', cardinality 0..*).
+'ir::TypeRef' (role 'ir_TypeRef49', cardinality 0..*) is associated with 'ir::CollectionTypeRef' (role 'ir_CollectionTypeRef', cardinality 0..*).
+'ir::EFTupleType' (role 'ir_EFTupleType42', cardinality 0..*) is associated with 'ir::TupleTypeElement' (role 'ir_TupleTypeElement', cardinality 0..*).
+'OclExpression' (role 'OclExpression57', cardinality 0..*) is associated with 'ir::ocl::OclOperation' (role 'ir_ocl_OclOperation', cardinality 0..*).
+'ir::EFMetamodel' (role 'ir_EFMetamodel27', cardinality 0..*) is associated with 'ir::EFPackage' (role 'ir_EFPackage', cardinality 0..*).
+'ir::EFClass' (role 'ir_EFClass32', cardinality 0..*) is associated with 'ir::EFPackage' (role 'ir_EFPackage31', cardinality 0..*).
+'ocl::ir::VariableDeclaration' (role 'ocl_ir_VariableDeclaration93', cardinality 0..*) is associated with 'ir::ocl::VarExp' (role 'ir_ocl_VarExp', cardinality 0..*).
+'ocl::ir::VariableDeclaration' (role 'ocl_ir_VariableDeclaration70', cardinality 0..*) is associated with 'ir::ocl::IterateExp' (role 'ir_ocl_IterateExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression73', cardinality 0..*) is associated with 'ir::ocl::IterateExp' (role 'ir_ocl_IterateExp72', cardinality 0..*).
+'ir::Operation' (role 'ir_Operation16', cardinality 0..*) is associated with 'ir::Parameter' (role 'ir_Parameter', cardinality 0..*).
+'ir::ocl::IfExp' (role 'ir_ocl_IfExp80', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression81', cardinality 0..*).
+'ir::EFEnum' (role 'ir_EFEnum40', cardinality 0..*) is associated with 'ir::EFEnumLiteral' (role 'ir_EFEnumLiteral', cardinality 0..*).
+'ir::ocl::IfExp' (role 'ir_ocl_IfExp77', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression78', cardinality 0..*).
+'ir::Operation' (role 'ir_Operation', cardinality 0..*) is associated with 'ir::Specification' (role 'ir_Specification8', cardinality 0..*).
+'ir::EFEnum' (role 'ir_EFEnum38', cardinality 0..*) is associated with 'ir::EEnum' (role 'ir_EEnum', cardinality 0..*).
+'ir::DerivedPropertyRef' (role 'ir_DerivedPropertyRef', cardinality 0..*) is associated with 'ir::DerivedProperty' (role 'ir_DerivedProperty22', cardinality 0..*).
+'ir::EFClass' (role 'ir_EFClass36', cardinality 0..*) is associated with 'ir::EClass' (role 'ir_EClass', cardinality 0..*).
+'ocl::ir::EFEnumLiteral' (role 'ocl_ir_EFEnumLiteral', cardinality 0..*) is associated with 'ir::ocl::EnumLiteralExp' (role 'ir_ocl_EnumLiteralExp101', cardinality 0..*).
+'ir::EFPackage' (role 'ir_EFPackage34', cardinality 0..*) is associated with 'ir::EFEnum' (role 'ir_EFEnum', cardinality 0..*).
+'ir::DerivedProperty' (role 'ir_DerivedProperty', cardinality 0..*) is associated with 'ir::Specification' (role 'ir_Specification6', cardinality 0..*).
+'ir::EStructuralFeature' (role 'ir_EStructuralFeature', cardinality 0..*) is associated with 'ir::MetamodelFeatureRef' (role 'ir_MetamodelFeatureRef', cardinality 0..*).
+'ir::EFType' (role 'ir_EFType', cardinality 0..*) is associated with 'ir::AbstractFunction' (role 'ir_AbstractFunction', cardinality 0..*).
+'ir::ocl::AbstractOperationCallExp' (role 'ir_ocl_AbstractOperationCallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression62', cardinality 0..*).
+'ir::EFPackage' (role 'ir_EFPackage29', cardinality 0..*) is associated with 'ir::EPackage' (role 'ir_EPackage', cardinality 0..*).
+'OclExpression' (role 'OclExpression75', cardinality 0..*) is associated with 'ir::ocl::IfExp' (role 'ir_ocl_IfExp', cardinality 0..*).
+'ir::ocl::TupleLiteralExp' (role 'ir_ocl_TupleLiteralExp', cardinality 0..*) is associated with 'ocl::ir::EFTupleType' (role 'ocl_ir_EFTupleType', cardinality 0..*).
+'ir::ocl::OclDerivedProperty' (role 'ir_ocl_OclDerivedProperty', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression55', cardinality 0..*).
+'ir::ocl::OperationCallExp' (role 'ir_ocl_OperationCallExp', cardinality 0..*) is associated with 'ocl::ir::OperationFeatureRef' (role 'ocl_ir_OperationFeatureRef', cardinality 0..*).
+'ir::ocl::LetExp' (role 'ir_ocl_LetExp85', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression86', cardinality 0..*).
+'OclExpression' (role 'OclExpression89', cardinality 0..*) is associated with 'ir::ocl::LetExp' (role 'ir_ocl_LetExp88', cardinality 0..*).
+'ir::Specification' (role 'ir_Specification2', cardinality 0..*) is associated with 'ir::Constraint' (role 'ir_Constraint', cardinality 0..*).
+'ir::EFClass' (role 'ir_EFClass', cardinality 0..*) is associated with 'ir::Specification' (role 'ir_Specification4', cardinality 0..*).
+'ir::EFTupleType' (role 'ir_EFTupleType20', cardinality 0..*) is associated with 'ir::TupleFieldRef' (role 'ir_TupleFieldRef', cardinality 0..*).
+'ir::ocl::CallExp' (role 'ir_ocl_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression60', cardinality 0..*).
+'ir::TypeRef' (role 'ir_TypeRef', cardinality 0..*) is associated with 'ir::TypedElement' (role 'ir_TypedElement', cardinality 0..*).
+'ir::ocl::OclInvariant' (role 'ir_ocl_OclInvariant', cardinality 0..*) is associated with 'ocl::ir::EFClass' (role 'ocl_ir_EFClass', cardinality 0..*).

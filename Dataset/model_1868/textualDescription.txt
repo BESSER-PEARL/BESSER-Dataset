@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'metrics::Metric' has no attributes.
+The class 'metrics::MetricLibrary' has the following attributes: 'name' of type str.
+The class 'metrics::MetricSource' has the following attributes: 'metricLocation' of type str; 'name' of type str; 'metrickind' of type str; 'lastPurge' of type str; 'lastContact' of type str; 'mappingFile' of type str.
+The enumeration 'MetricKind' has the following literals: 'RDMS', 'FILE'.
+'metrics::MetricSource' (role 'metricSource', cardinality 0..*) is associated with 'metrics::Metric' (role 'networks.ecoreMetric', cardinality 0..*).
+'metrics::MetricSource' (role 'metrics_MetricSource', cardinality 0..*) is associated with 'metrics::MetricLibrary' (role 'metrics_MetricLibrary', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::Statemachine' has the following attributes: 'name' of type str.
+The class 'statemachine::State' has the following attributes: 'name' of type str.
+The class 'statemachine::Event' has the following attributes: 'name' of type str.
+'statemachine::Statemachine' (role 'statemachine_Statemachine2', cardinality 0..*) is associated with 'statemachine::Event' (role 'statemachine_Event', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine4', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition9', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State10', cardinality 0..*).
+'statemachine::Event' (role 'statemachine_Event13', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition12', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State7', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine6', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State16', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition15', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).

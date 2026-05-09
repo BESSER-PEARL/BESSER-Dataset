@@ -1,0 +1,27 @@
+The model has 11 class(es).
+The class 'statechart::ModelElement' has the following attributes: 'name' of type str.
+The class 'statechart::Action' has the following attributes: 'kind' of type str.
+The class 'statechart::AbstractState' has no attributes.
+The class 'statechart::StateMachine' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'statechart::InitialState' has no attributes.
+The class 'statechart::SimpleState' has no attributes.
+The class 'statechart::Transition' has the following attributes: 'guard' of type str; 'event' of type str.
+The class 'ModelElement' has no attributes.
+The class 'statechart::CompositeState' has no attributes.
+The class 'statechart::FinalState' has no attributes.
+The enumeration 'ActionKind' has the following literals: 'EXIT', 'ENTRY'.
+'statechart::CompositeState' is a specialization of 'AbstractState'.
+'statechart::SimpleState' is a specialization of 'AbstractState'.
+'statechart::Transition' is a specialization of 'ModelElement'.
+'statechart::AbstractState' is a specialization of 'ModelElement'.
+'statechart::InitialState' is a specialization of 'AbstractState'.
+'statechart::FinalState' is a specialization of 'AbstractState'.
+'statechart::CompositeState' (role 'statechart_CompositeState12', cardinality 0..*) is associated with 'statechart::StateMachine' (role 'statechart_StateMachine', cardinality 0..*).
+'statechart::Transition' (role 'statechart_Transition', cardinality 0..*) is associated with 'statechart::CompositeState' (role 'statechart_CompositeState10', cardinality 0..*).
+'statechart::Action' (role 'statechart_Action', cardinality 0..*) is associated with 'statechart::AbstractState' (role 'statechart_AbstractState', cardinality 0..*).
+'statechart::AbstractState' (role 'statechart_AbstractState8', cardinality 0..*) is associated with 'statechart::CompositeState' (role 'statechart_CompositeState', cardinality 0..*).
+'statechart::Transition' (role 'Transition', cardinality 0..*) is associated with 'statechart::AbstractState' (role 'to', cardinality 0..*).
+'statechart::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'statechart::Transition' (role 'outgoing', cardinality 0..*).
+'statechart::Transition' (role 'Transition5', cardinality 0..*) is associated with 'statechart::AbstractState' (role 'from_', cardinality 0..*).
+'statechart::Transition' (role 'incoming', cardinality 0..*) is associated with 'statechart::AbstractState' (role 'AbstractState2', cardinality 0..*).

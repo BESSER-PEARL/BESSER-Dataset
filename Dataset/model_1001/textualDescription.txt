@@ -1,0 +1,50 @@
+The model has 20 class(es).
+The class 'Edge' has no attributes.
+The class 'GraphML::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'GraphML::Port' has the following attributes: 'name' of type str.
+The class 'GraphML::Data' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'GraphML::Graph' has the following attributes: 'edgeDefault' of type str.
+The class 'GraphML::EndPoint' has no attributes.
+The class 'GraphML::Edge' has the following attributes: 'directed' of type str.
+The class 'Graph' has no attributes.
+The class 'GraphML::Node' has no attributes.
+The class 'Port' has no attributes.
+The class 'Data' has no attributes.
+The class 'GraphML::HyperEdge' has no attributes.
+The class 'Element' has no attributes.
+The class 'Key' has no attributes.
+The class 'GraphML::Key' has the following attributes: 'for_' of type str; 'type' of type str; 'attrName' of type str; 'defValue' of type str.
+The class 'Node' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'EndPoint' has no attributes.
+The class 'GraphML::Element' has the following attributes: 'id' of type str.
+The class 'GraphML::Root' has no attributes.
+The enumeration 'AttrType' has the following literals: 'string', 'integer', 'double', 'boolean'.
+The enumeration 'ElemType' has the following literals: 'node', 'graph', 'edge'.
+The enumeration 'EdgeType' has the following literals: 'undirected', 'directed'.
+'GraphML::Port' is a specialization of 'LocatedElement'.
+'GraphML::Edge' is a specialization of 'Element'.
+'GraphML::Element' is a specialization of 'LocatedElement'.
+'GraphML::HyperEdge' is a specialization of 'Element'.
+'GraphML::Node' is a specialization of 'Element'.
+'GraphML::Key' is a specialization of 'Element'.
+'GraphML::Graph' is a specialization of 'Element'.
+'GraphML::EndPoint' is a specialization of 'LocatedElement'.
+'GraphML::Data' is a specialization of 'LocatedElement'.
+'GraphML::Root' is a specialization of 'LocatedElement'.
+'GraphML::Node' (role 'GraphML_Node18', cardinality 0..*) is associated with 'Port' (role 'Port19', cardinality 0..*).
+'Key' (role 'Key', cardinality 0..*) is associated with 'GraphML::Root' (role 'GraphML_Root', cardinality 0..*).
+'Node' (role 'Node24', cardinality 0..*) is associated with 'GraphML::EndPoint' (role 'GraphML_EndPoint', cardinality 0..*).
+'GraphML::Root' (role 'GraphML_Root2', cardinality 0..*) is associated with 'Graph' (role 'Graph', cardinality 0..*).
+'Edge' (role 'Edge22', cardinality 0..*) is associated with 'GraphML::Node' (role 'target', cardinality 0..*).
+'GraphML::Graph' (role 'graph', cardinality 0..*) is associated with 'Element' (role 'Element', cardinality 0..*).
+'GraphML::Node' (role 'source', cardinality 0..*) is associated with 'Edge' (role 'Edge', cardinality 0..*).
+'Graph' (role 'Graph16', cardinality 0..*) is associated with 'GraphML::Node' (role 'GraphML_Node', cardinality 0..*).
+'GraphML::EndPoint' (role 'GraphML_EndPoint26', cardinality 0..*) is associated with 'Port' (role 'Port27', cardinality 0..*).
+'GraphML::Edge' (role 'targetOf', cardinality 0..*) is associated with 'Node' (role 'Node9', cardinality 0..*).
+'Node' (role 'Node', cardinality 0..*) is associated with 'GraphML::Edge' (role 'sourceOf', cardinality 0..*).
+'Port' (role 'Port13', cardinality 0..*) is associated with 'GraphML::Edge' (role 'GraphML_Edge12', cardinality 0..*).
+'GraphML::Edge' (role 'GraphML_Edge', cardinality 0..*) is associated with 'Port' (role 'Port', cardinality 0..*).
+'GraphML::Element' (role 'GraphML_Element', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'EndPoint' (role 'EndPoint', cardinality 0..*) is associated with 'GraphML::HyperEdge' (role 'GraphML_HyperEdge', cardinality 0..*).
+'Graph' (role 'Graph5', cardinality 0..*) is associated with 'GraphML::Element' (role 'contents', cardinality 0..*).

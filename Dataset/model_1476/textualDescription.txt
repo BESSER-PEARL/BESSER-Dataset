@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'mgraph::MNode' has the following attributes: 'name' of type str.
+The class 'mgraph::MEdge' has the following attributes: 'name' of type str.
+The class 'mgraph::MGraph' has the following attributes: 'name' of type str.
+'mgraph::MNode' (role 'inComing', cardinality 0..*) is associated with 'mgraph::MEdge' (role 'MEdge13', cardinality 0..*).
+'mgraph::MNode' (role 'MNode4', cardinality 0..*) is associated with 'mgraph::MEdge' (role 'to', cardinality 0..*).
+'mgraph::MGraph' (role 'graph', cardinality 0..*) is associated with 'mgraph::MNode' (role 'MNode', cardinality 0..*).
+'mgraph::MGraph' (role 'MGraph', cardinality 0..*) is associated with 'mgraph::MEdge' (role 'edges', cardinality 0..*).
+'mgraph::MNode' (role 'nodes', cardinality 0..*) is associated with 'mgraph::MGraph' (role 'MGraph9', cardinality 0..*).
+'mgraph::MEdge' (role 'from_', cardinality 0..*) is associated with 'mgraph::MNode' (role 'MNode6', cardinality 0..*).
+'mgraph::MEdge' (role 'MEdge', cardinality 0..*) is associated with 'mgraph::MGraph' (role 'graph2', cardinality 0..*).
+'mgraph::MEdge' (role 'MEdge11', cardinality 0..*) is associated with 'mgraph::MNode' (role 'outGoing', cardinality 0..*).

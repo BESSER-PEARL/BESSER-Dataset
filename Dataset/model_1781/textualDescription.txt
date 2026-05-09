@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'imports::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'imports::EStringToStringMapEntry' has no attributes.
+The class 'imports::RootElementType' has the following attributes: 'importURI' of type str.
+The class 'imports::BookType' has the following attributes: 'title' of type str; 'isbn' of type str; 'author' of type str.
+'imports::RootElementType' (role 'imports_RootElementType7', cardinality 0..*) is associated with 'imports::BookType' (role 'imports_BookType', cardinality 0..*).
+'imports::EStringToStringMapEntry' (role 'imports_EStringToStringMapEntry', cardinality 0..*) is associated with 'imports::DocumentRoot' (role 'imports_DocumentRoot', cardinality 0..*).
+'imports::EStringToStringMapEntry' (role 'imports_EStringToStringMapEntry3', cardinality 0..*) is associated with 'imports::DocumentRoot' (role 'imports_DocumentRoot2', cardinality 0..*).
+'imports::RootElementType' (role 'imports_RootElementType', cardinality 0..*) is associated with 'imports::DocumentRoot' (role 'imports_DocumentRoot5', cardinality 0..*).

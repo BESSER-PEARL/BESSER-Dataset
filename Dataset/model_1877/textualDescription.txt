@@ -1,0 +1,58 @@
+The model has 28 class(es).
+The class 'Classes::Interactionlayer::LoginController' has no attributes.
+The class 'UserHandler' has no attributes.
+The class 'Classes::Datalayer::Database' has the following attributes: 'extrasDB' of type str.
+The class 'GUIController' has no attributes.
+The class 'Classes::Buissnesslayer::Employee' has the following attributes: 'Password' of type str; 'ID' of type int.
+The class 'Classes::BuisnessLogicLayer::PaymentInfo' has the following attributes: 'CreditCard' of type int; 'CVV' of type int; 'PaymentComplete' of type bool; 'ExpiryDate' of type int.
+The class 'PaymentHandler' has no attributes.
+The class 'Classes::Buissnesslayer::Room' has the following attributes: 'roomType' of type int.
+The class 'Classes::Buissnesslayer::BookingHandler' has no attributes.
+The class 'Booking' has no attributes.
+The class 'Classes::Buissnesslayer::Address' has the following attributes: 'postalNumber' of type int; 'street' of type str; 'city' of type str; 'country' of type str.
+The class 'Room' has no attributes.
+The class 'BookingHandler' has no attributes.
+The class 'Address' has no attributes.
+The class 'Classes::Interactionlayer::GUI' has no attributes.
+The class 'User' has no attributes.
+The class 'Classes::Buissnesslayer::Guest' has the following attributes: 'wrokAround' of type int.
+The class 'Database' has no attributes.
+The class 'Classes::Buissnesslayer::Booking' has the following attributes: 'nrOfGuests' of type int; 'bookingID' of type int; 'guest' of type int; 'payment' of type str; 'checkedIn' of type bool; 'checkedOut' of type bool; 'extras' of type str; 'endDate' of type str; 'parkings' of type str; 'paymentComplete' of type bool; 'startDate' of type str.
+The class 'Classes::Interactionlayer::LoginController::DataType1' has no attributes.
+The class 'Classes::Buissnesslayer::UserHandler' has the following attributes: 'Users' of type str.
+The class 'Classes::BuisnessLogicLayer::PaymentHandler' has no attributes.
+The class 'Classes::Buissnesslayer::User' has the following attributes: 'Email' of type str; 'Name' of type str.
+The class 'Guest' has no attributes.
+The class 'GUI' has no attributes.
+The class 'LoginController' has no attributes.
+The class 'Classes::Interactionlayer::GUIController' has no attributes.
+The class 'Employee' has no attributes.
+'Classes::Buissnesslayer::Guest' is a specialization of 'User'.
+'Classes::Buissnesslayer::Employee' is a specialization of 'User'.
+'Booking' (role 'Booking', cardinality 0..*) is associated with 'Classes::Datalayer::Database' (role 'Classes_Datalayer_Database5', cardinality 0..*).
+'UserHandler' (role 'UserHandler52', cardinality 0..*) is associated with 'Classes::Interactionlayer::LoginController' (role 'logincontroller51', cardinality 0..*).
+'Classes::Buissnesslayer::User' (role 'Classes_Buissnesslayer_User29', cardinality 0..*) is associated with 'Address' (role 'Address', cardinality 0..*).
+'LoginController' (role 'LoginController40', cardinality 0..*) is associated with 'Classes::Interactionlayer::GUIController' (role 'guicontroller', cardinality 0..*).
+'UserHandler' (role 'UserHandler', cardinality 0..*) is associated with 'Classes::Datalayer::Database' (role 'database', cardinality 0..*).
+'Classes::Buissnesslayer::User' (role 'User31', cardinality 0..*) is associated with 'BookingHandler' (role 'BookingHandler', cardinality 0..*).
+'UserHandler' (role 'UserHandler23', cardinality 0..*) is associated with 'Classes::Buissnesslayer::BookingHandler' (role 'Classes_Buissnesslayer_BookingHandler22', cardinality 0..*).
+'UserHandler' (role 'UserHandler27', cardinality 0..*) is associated with 'Classes::Buissnesslayer::User' (role 'Classes_Buissnesslayer_User26', cardinality 0..*).
+'Classes::Buissnesslayer::BookingHandler' (role 'Classes_Buissnesslayer_BookingHandler20', cardinality 0..*) is associated with 'Database' (role 'Database', cardinality 0..*).
+'Classes::BuisnessLogicLayer::PaymentInfo' (role 'Classes_BuisnessLogicLayer_PaymentInfo', cardinality 0..*) is associated with 'PaymentHandler' (role 'PaymentHandler54', cardinality 0..*).
+'Classes::Buissnesslayer::Booking' (role 'Classes_Buissnesslayer_Booking', cardinality 0..*) is associated with 'Room' (role 'Room9', cardinality 0..*).
+'GUI' (role 'GUI', cardinality 0..*) is associated with 'Classes::Interactionlayer::GUIController' (role 'Classes_Interactionlayer_GUIController', cardinality 0..*).
+'User' (role 'User47', cardinality 0..*) is associated with 'Classes::Interactionlayer::LoginController' (role 'Classes_Interactionlayer_LoginController', cardinality 0..*).
+'Classes::Datalayer::Database' (role 'Classes_Datalayer_Database3', cardinality 0..*) is associated with 'Employee' (role 'Employee', cardinality 0..*).
+'Classes::Buissnesslayer::BookingHandler' (role 'Classes_Buissnesslayer_BookingHandler', cardinality 0..*) is associated with 'Booking' (role 'Booking14', cardinality 0..*).
+'Classes::Buissnesslayer::UserHandler' (role 'userhandler35', cardinality 0..*) is associated with 'LoginController' (role 'LoginController36', cardinality 0..*).
+'LoginController' (role 'LoginController', cardinality 0..*) is associated with 'Classes::Buissnesslayer::User' (role 'Classes_Buissnesslayer_User', cardinality 0..*).
+'Classes::Buissnesslayer::BookingHandler' (role 'bookinghandler', cardinality 0..*) is associated with 'User' (role 'User', cardinality 0..*).
+'Classes::Datalayer::Database' (role 'Classes_Datalayer_Database7', cardinality 0..*) is associated with 'Room' (role 'Room', cardinality 0..*).
+'Classes::Buissnesslayer::BookingHandler' (role 'Classes_Buissnesslayer_BookingHandler16', cardinality 0..*) is associated with 'Booking' (role 'Booking17', cardinality 0..*).
+'Classes::Buissnesslayer::Booking' (role 'Classes_Buissnesslayer_Booking11', cardinality 0..*) is associated with 'Room' (role 'Room12', cardinality 0..*).
+'PaymentHandler' (role 'PaymentHandler', cardinality 0..*) is associated with 'Classes::Interactionlayer::LoginController' (role 'Classes_Interactionlayer_LoginController49', cardinality 0..*).
+'Database' (role 'Database33', cardinality 0..*) is associated with 'Classes::Buissnesslayer::UserHandler' (role 'userhandler', cardinality 0..*).
+'GUIController' (role 'GUIController45', cardinality 0..*) is associated with 'Classes::Interactionlayer::LoginController' (role 'logincontroller', cardinality 0..*).
+'Classes::Interactionlayer::GUI' (role 'Classes_Interactionlayer_GUI', cardinality 0..*) is associated with 'GUIController' (role 'GUIController', cardinality 0..*).
+'Classes::Interactionlayer::GUIController' (role 'Classes_Interactionlayer_GUIController42', cardinality 0..*) is associated with 'BookingHandler' (role 'BookingHandler43', cardinality 0..*).
+'Classes::Datalayer::Database' (role 'Classes_Datalayer_Database', cardinality 0..*) is associated with 'Guest' (role 'Guest', cardinality 0..*).

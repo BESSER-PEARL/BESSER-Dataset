@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'ptn::AbstractNode' has the following attributes: 'tMax' of type int; 'tMin' of type int; 'name' of type str.
+The class 'ptn::Place' has no attributes.
+The class 'ptn::Token' has no attributes.
+The class 'AbstractNode' has no attributes.
+The class 'ptn::Transition' has the following attributes: 'weight' of type int.
+The class 'ptn::AbstractTransition' has the following attributes: 'guard' of type str.
+The class 'AbstractTransition' has no attributes.
+'ptn::AbstractTransition' is a specialization of 'AbstractNode'.
+'ptn::Place' is a specialization of 'AbstractNode'.
+'ptn::Transition' is a specialization of 'AbstractTransition'.
+'ptn::Place' (role 'ptn_Place7', cardinality 0..*) is associated with 'ptn::Token' (role 'ptn_Token', cardinality 0..*).
+'ptn::Place' (role 'ptn_Place0', cardinality 0..*) is associated with 'ptn::Place' (role 'ptn_Place', cardinality 0..*).
+'ptn::Place' (role 'ptn_Place3', cardinality 0..*) is associated with 'ptn::AbstractNode' (role 'ptn_AbstractNode', cardinality 0..*).
+'ptn::Place' (role 'ptn_Place5', cardinality 0..*) is associated with 'ptn::AbstractTransition' (role 'ptn_AbstractTransition', cardinality 0..*).
+'ptn::Place' (role 'ptn_Place10', cardinality 0..*) is associated with 'ptn::AbstractTransition' (role 'ptn_AbstractTransition9', cardinality 0..*).

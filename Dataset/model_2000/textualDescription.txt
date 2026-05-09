@@ -1,0 +1,48 @@
+The model has 17 class(es).
+The class 'iTrace::Feature' has the following attributes: 'value' of type str; 'attribute' of type str.
+The class 'Artefact' has no attributes.
+The class 'TraceLinkElement' has no attributes.
+The class 'iTrace::TargetElement' has no attributes.
+The class 'iTrace::M2MLink' has no attributes.
+The class 'iTrace::TraceLink' has the following attributes: 'createdBy' of type str; 'comment' of type str; 'type' of type str; 'technicalBinding' of type str; 'mode' of type str; 'fromFileName' of type str; 'createdOn' of type str; 'ruleName' of type str.
+The class 'iTrace::SpecificFeature' has the following attributes: 'groupName' of type str.
+The class 'iTrace::iTraceModel' has the following attributes: 'version' of type str; 'projectName' of type str.
+The class 'TraceLink' has no attributes.
+The class 'iTrace::Artefact' has the following attributes: 'path' of type str; 'abstractionLevel' of type str; 'name' of type str; 'aspect' of type str.
+The class 'iTrace::Code' has no attributes.
+The class 'iTrace::EObject' has no attributes.
+The class 'iTrace::SourceElement' has no attributes.
+The class 'iTrace::M2TLink' has no attributes.
+The class 'iTrace::Block' has the following attributes: 'blockNumber' of type int; 'startLine' of type int; 'endColumn' of type int; 'endLine' of type int; 'startColumn' of type int.
+The class 'iTrace::TraceLinkElement' has the following attributes: 'type' of type str; 'ref' of type str; 'name' of type str.
+The class 'iTrace::Model' has the following attributes: 'metamodel' of type str.
+The enumeration 'Type' has the following literals: 'Annotation', 'Transformation'.
+The enumeration 'Aspect' has the following literals: 'Behaviour', 'Content', 'Semantics', 'Unspecified', 'Quality', 'Architecture', 'Interface'.
+The enumeration 'Mode' has the following literals: 'Automatic', 'Manual'.
+The enumeration 'ModelType' has the following literals: 'Both', 'None_', 'Target', 'Source'.
+The enumeration 'AbstractionLevel' has the following literals: 'CIM', 'UNSPECIFIED', 'PSM', 'CODE', 'PDM', 'ANNOTATION', 'PIM'.
+'iTrace::M2MLink' is a specialization of 'TraceLink'.
+'iTrace::Code' is a specialization of 'Artefact'.
+'iTrace::Model' is a specialization of 'Artefact'.
+'iTrace::TargetElement' is a specialization of 'TraceLinkElement'.
+'iTrace::M2TLink' is a specialization of 'TraceLink'.
+'iTrace::SourceElement' is a specialization of 'TraceLinkElement'.
+'iTrace::Feature' (role 'Feature', cardinality 0..*) is associated with 'iTrace::SpecificFeature' (role 'specificFeature', cardinality 0..*).
+'iTrace::TraceLinkElement' (role 'elements', cardinality 0..*) is associated with 'iTrace::Model' (role 'Model', cardinality 0..*).
+'iTrace::SourceElement' (role 'SourceElement', cardinality 0..*) is associated with 'iTrace::TraceLink' (role 'traceLink', cardinality 0..*).
+'iTrace::iTraceModel' (role 'iTraceModel7', cardinality 0..*) is associated with 'iTrace::TraceLink' (role 'traceLinks', cardinality 0..*).
+'iTrace::M2MLink' (role 'M2MLink', cardinality 0..*) is associated with 'iTrace::TargetElement' (role 'targetElements', cardinality 0..*).
+'iTrace::Block' (role 'Block', cardinality 0..*) is associated with 'iTrace::M2TLink' (role 'traceLink13', cardinality 0..*).
+'iTrace::M2MLink' (role 'traceLink11', cardinality 0..*) is associated with 'iTrace::TargetElement' (role 'TargetElement', cardinality 0..*).
+'iTrace::TraceLinkElement' (role 'iTrace_TraceLinkElement', cardinality 0..*) is associated with 'iTrace::EObject' (role 'iTrace_EObject', cardinality 0..*).
+'iTrace::SourceElement' (role 'sourceElements', cardinality 0..*) is associated with 'iTrace::TraceLink' (role 'TraceLink22', cardinality 0..*).
+'iTrace::iTraceModel' (role 'iTraceModel', cardinality 0..*) is associated with 'iTrace::TraceLink' (role 'TraceLink', cardinality 0..*).
+'iTrace::SpecificFeature' (role 'specificFeatures', cardinality 0..*) is associated with 'iTrace::iTraceModel' (role 'iTraceModel28', cardinality 0..*).
+'iTrace::Block' (role 'targetBlocks', cardinality 0..*) is associated with 'iTrace::M2TLink' (role 'M2TLink', cardinality 0..*).
+'iTrace::SpecificFeature' (role 'SpecificFeature', cardinality 0..*) is associated with 'iTrace::iTraceModel' (role 'iTraceModel4', cardinality 0..*).
+'iTrace::Block' (role 'Block17', cardinality 0..*) is associated with 'iTrace::Code' (role 'code', cardinality 0..*).
+'iTrace::SpecificFeature' (role 'SpecificFeature25', cardinality 0..*) is associated with 'iTrace::Feature' (role 'features', cardinality 0..*).
+'iTrace::TraceLinkElement' (role 'TraceLinkElement', cardinality 0..*) is associated with 'iTrace::Model' (role 'model', cardinality 0..*).
+'iTrace::Artefact' (role 'Artefact', cardinality 0..*) is associated with 'iTrace::iTraceModel' (role 'iTraceModel2', cardinality 0..*).
+'iTrace::iTraceModel' (role 'iTraceModel15', cardinality 0..*) is associated with 'iTrace::Artefact' (role 'artefacts', cardinality 0..*).
+'iTrace::Code' (role 'Code', cardinality 0..*) is associated with 'iTrace::Block' (role 'blocks', cardinality 0..*).

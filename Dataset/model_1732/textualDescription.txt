@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'library::CD' has no attributes.
+The class 'library::MultimediaItem' has the following attributes: 'length' of type float.
+The class 'library::DVD' has no attributes.
+The class 'library::LibraryShelf' has the following attributes: 'name' of type str.
+The class 'library::Book' has the following attributes: 'numPages' of type int.
+The class 'MultimediaItem' has no attributes.
+The class 'Item' has no attributes.
+The class 'library::Item' has the following attributes: 'pubDate' of type date; 'title' of type str.
+The class 'library::BlueRay' has no attributes.
+'library::Book' is a specialization of 'Item'.
+'library::MultimediaItem' is a specialization of 'Item'.
+'library::CD' is a specialization of 'MultimediaItem'.
+'library::BlueRay' is a specialization of 'MultimediaItem'.
+'library::DVD' is a specialization of 'MultimediaItem'.
+'library::LibraryShelf' (role 'library_LibraryShelf', cardinality 0..*) is associated with 'library::Item' (role 'library_Item', cardinality 0..*).

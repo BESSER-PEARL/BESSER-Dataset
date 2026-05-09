@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'simpleworld101::Element' has the following attributes: 'description' of type str.
+The class 'Named' has no attributes.
+The class 'simpleworld101::Named' has the following attributes: 'name' of type str.
+The class 'simpleworld101::Part' has the following attributes: 'id' of type int; 'content' of type str.
+The class 'simpleworld101::World' has no attributes.
+The class 'simpleworld101::Person' has the following attributes: 'foreName' of type str; 'name' of type str.
+The class 'simpleworld101::Thing' has no attributes.
+The class 'simpleworld101::Relations' has the following attributes: 'since' of type int.
+'simpleworld101::Part' is a specialization of 'Named'.
+'simpleworld101::Thing' is a specialization of 'Named'.
+'simpleworld101::World' is a specialization of 'Named'.
+'simpleworld101::Person' (role 'Person', cardinality 0..*) is associated with 'simpleworld101::Thing' (role 'things', cardinality 0..*).
+'simpleworld101::Person' (role 'simpleworld101_Person', cardinality 0..*) is associated with 'simpleworld101::Relations' (role 'simpleworld101_Relations', cardinality 0..*).
+'simpleworld101::Person' (role 'simpleworld101_Person16', cardinality 0..*) is associated with 'simpleworld101::World' (role 'simpleworld101_World', cardinality 0..*).
+'simpleworld101::Person' (role 'persons', cardinality 0..*) is associated with 'simpleworld101::Thing' (role 'Thing', cardinality 0..*).
+'simpleworld101::Thing' (role 'simpleworld101_Thing9', cardinality 0..*) is associated with 'simpleworld101::Thing' (role 'simpleworld101_Thing11', cardinality 0..*).
+'simpleworld101::Relations' (role 'simpleworld101_Relations13', cardinality 0..*) is associated with 'simpleworld101::Part' (role 'simpleworld101_Part14', cardinality 0..*).
+'simpleworld101::Thing' (role 'simpleworld101_Thing19', cardinality 0..*) is associated with 'simpleworld101::World' (role 'simpleworld101_World18', cardinality 0..*).
+'simpleworld101::Thing' (role 'simpleworld101_Thing', cardinality 0..*) is associated with 'simpleworld101::Person' (role 'simpleworld101_Person4', cardinality 0..*).
+'simpleworld101::Person' (role 'simpleworld101_Person2', cardinality 0..*) is associated with 'simpleworld101::Element' (role 'simpleworld101_Element', cardinality 0..*).
+'simpleworld101::Part' (role 'simpleworld101_Part', cardinality 0..*) is associated with 'simpleworld101::Thing' (role 'simpleworld101_Thing7', cardinality 0..*).

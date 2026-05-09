@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'imported::model::Library' has no attributes.
+The class 'imported::model::Book' has the following attributes: 'pages' of type int.
+The enumeration 'E' has the following literals: 'B', 'C', 'A'.
+'imported::model::Library' (role 'imported_model_Library', cardinality 0..*) is associated with 'imported::model::Book' (role 'imported_model_Book', cardinality 0..*).

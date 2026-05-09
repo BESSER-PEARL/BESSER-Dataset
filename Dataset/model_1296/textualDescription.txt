@@ -1,0 +1,101 @@
+The model has 42 class(es).
+The class 'StateMachines::ProtocolStateMachines::Port' has no attributes.
+The class 'ConnectionPointReference' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::NamedElement' has no attributes.
+The class 'BehaviorStateMachines::Vertex' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::ConnectionPointReference' has no attributes.
+The class 'State' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'StateMachines::ProtocolStateMachines::DirectedRelationship' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::RedefinableElement' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'ProtocolConformance' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Transition' has the following attributes: 'kind' of type str.
+The class 'StateMachines::BehaviorStateMachines::Trigger' has no attributes.
+The class 'BehaviorStateMachines::Namespace' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Namespace' has no attributes.
+The class 'Transition' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'StateMachines::ProtocolStateMachines::ProtocolConformance' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Region' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::FinalState' has no attributes.
+The class 'Operation' has no attributes.
+The class 'ProtocolStateMachine' has no attributes.
+The class 'StateMachines::ProtocolStateMachines::Operation' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::StateMachine' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::State' has the following attributes: 'isComposite' of type bool; 'isSubmachineState' of type bool; 'isOrthogonal' of type bool; 'isSimple' of type bool.
+The class 'StateMachines::ProtocolStateMachines::Interface' has no attributes.
+The class 'BehaviorStateMachines::RedefinableElement' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Classifier' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Vertex' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Constraint' has no attributes.
+The class 'Region' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Behavior' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::Pseudostate' has no attributes.
+The class 'StateMachines::ProtocolStateMachines::ProtocolStateMachine' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'StateMachines::BehaviorStateMachines::TimeEvent' has no attributes.
+The class 'StateMachines::ProtocolStateMachines::ProtocolTransition' has no attributes.
+The enumeration 'TransitionKind' has the following literals: 'internal', 'external'.
+'StateMachines::BehaviorStateMachines::State' is a specialization of 'BehaviorStateMachines::Vertex'.
+'StateMachines::ProtocolStateMachines::ProtocolConformance' is a specialization of 'DirectedRelationship'.
+'StateMachines::BehaviorStateMachines::StateMachine' is a specialization of 'Behavior'.
+'StateMachines::BehaviorStateMachines::Transition' is a specialization of 'BehaviorStateMachines::Namespace'.
+'StateMachines::BehaviorStateMachines::Pseudostate' is a specialization of 'Vertex'.
+'StateMachines::BehaviorStateMachines::State' is a specialization of 'BehaviorStateMachines::RedefinableElement'.
+'StateMachines::ProtocolStateMachines::Interface' is a specialization of 'Classifier'.
+'StateMachines::BehaviorStateMachines::State' is a specialization of 'BehaviorStateMachines::Namespace'.
+'StateMachines::BehaviorStateMachines::Vertex' is a specialization of 'NamedElement'.
+'StateMachines::ProtocolStateMachines::ProtocolTransition' is a specialization of 'Transition'.
+'StateMachines::BehaviorStateMachines::Transition' is a specialization of 'BehaviorStateMachines::RedefinableElement'.
+'StateMachines::ProtocolStateMachines::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'StateMachines::BehaviorStateMachines::FinalState' is a specialization of 'State'.
+'StateMachines::BehaviorStateMachines::Region' is a specialization of 'BehaviorStateMachines::Namespace'.
+'StateMachines::BehaviorStateMachines::ConnectionPointReference' is a specialization of 'Vertex'.
+'StateMachines::BehaviorStateMachines::Region' is a specialization of 'BehaviorStateMachines::RedefinableElement'.
+'StateMachines::BehaviorStateMachines::Vertex' (role 'source', cardinality 0..*) is associated with 'Transition' (role 'Transition16', cardinality 0..*).
+'Behavior' (role 'Behavior', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Transition' (role 'StateMachines_BehaviorStateMachines_Transition', cardinality 0..*).
+'Transition' (role 'Transition34', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Transition' (role 'StateMachines_BehaviorStateMachines_Transition33', cardinality 0..*).
+'StateMachines::ProtocolStateMachines::ProtocolConformance' (role 'conformance', cardinality 0..*) is associated with 'ProtocolStateMachine' (role 'ProtocolStateMachine', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::ConnectionPointReference' (role 'StateMachines_BehaviorStateMachines_ConnectionPointReference', cardinality 0..*) is associated with 'Pseudostate' (role 'Pseudostate38', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::State' (role 'state', cardinality 0..*) is associated with 'ConnectionPointReference' (role 'ConnectionPointReference', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Region' (role 'container9', cardinality 0..*).
+'Constraint' (role 'Constraint66', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::State' (role 'StateMachines_BehaviorStateMachines_State65', cardinality 0..*).
+'Vertex' (role 'Vertex22', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Transition' (role 'outgoing', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Transition' (role 'StateMachines_BehaviorStateMachines_Transition27', cardinality 0..*) is associated with 'Trigger' (role 'Trigger', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::StateMachine' (role 'StateMachines_BehaviorStateMachines_StateMachine', cardinality 0..*) is associated with 'Pseudostate' (role 'Pseudostate', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::State' (role 'StateMachines_BehaviorStateMachines_State', cardinality 0..*) is associated with 'Trigger' (role 'Trigger54', cardinality 0..*).
+'StateMachine' (role 'StateMachine49', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::State' (role 'submachineState', cardinality 0..*).
+'StateMachine' (role 'StateMachine7', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Region' (role 'region', cardinality 0..*).
+'ProtocolConformance' (role 'ProtocolConformance', cardinality 0..*) is associated with 'StateMachines::ProtocolStateMachines::ProtocolStateMachine' (role 'specificMachine', cardinality 0..*).
+'Pseudostate' (role 'Pseudostate47', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::State' (role 'state46', cardinality 0..*).
+'Transition' (role 'Transition18', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Vertex' (role 'target', cardinality 0..*).
+'Region' (role 'Region', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::StateMachine' (role 'stateMachine', cardinality 0..*).
+'ProtocolStateMachine' (role 'ProtocolStateMachine75', cardinality 0..*) is associated with 'StateMachines::ProtocolStateMachines::Port' (role 'StateMachines_ProtocolStateMachines_Port', cardinality 0..*).
+'StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::StateMachine' (role 'StateMachines_BehaviorStateMachines_StateMachine4', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Transition' (role 'incoming', cardinality 0..*) is associated with 'Vertex' (role 'Vertex24', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::State' (role 'StateMachines_BehaviorStateMachines_State68', cardinality 0..*) is associated with 'State' (role 'State69', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::State' (role 'StateMachines_BehaviorStateMachines_State62', cardinality 0..*) is associated with 'Behavior' (role 'Behavior63', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::State' (role 'state51', cardinality 0..*) is associated with 'Region' (role 'Region52', cardinality 0..*).
+'Pseudostate' (role 'Pseudostate41', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::ConnectionPointReference' (role 'StateMachines_BehaviorStateMachines_ConnectionPointReference40', cardinality 0..*).
+'StateMachines::ProtocolStateMachines::ProtocolTransition' (role 'StateMachines_ProtocolStateMachines_ProtocolTransition84', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Region' (role 'region11', cardinality 0..*) is associated with 'State' (role 'State12', cardinality 0..*).
+'StateMachines::ProtocolStateMachines::ProtocolTransition' (role 'StateMachines_ProtocolStateMachines_ProtocolTransition', cardinality 0..*) is associated with 'Constraint' (role 'Constraint79', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::ConnectionPointReference' (role 'connection', cardinality 0..*) is associated with 'State' (role 'State43', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Transition' (role 'StateMachines_BehaviorStateMachines_Transition29', cardinality 0..*) is associated with 'Constraint' (role 'Constraint', cardinality 0..*).
+'ProtocolStateMachine' (role 'ProtocolStateMachine77', cardinality 0..*) is associated with 'StateMachines::ProtocolStateMachines::Interface' (role 'StateMachines_ProtocolStateMachines_Interface', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::State' (role 'StateMachines_BehaviorStateMachines_State59', cardinality 0..*) is associated with 'Behavior' (role 'Behavior60', cardinality 0..*).
+'Behavior' (role 'Behavior57', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::State' (role 'StateMachines_BehaviorStateMachines_State56', cardinality 0..*).
+'StateMachines::ProtocolStateMachines::ProtocolTransition' (role 'StateMachines_ProtocolStateMachines_ProtocolTransition81', cardinality 0..*) is associated with 'Constraint' (role 'Constraint82', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Pseudostate' (role 'connectionPoint', cardinality 0..*) is associated with 'State' (role 'State36', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Vertex' (role 'subvertex', cardinality 0..*) is associated with 'Region' (role 'Region20', cardinality 0..*).
+'StateMachines::ProtocolStateMachines::ProtocolConformance' (role 'StateMachines_ProtocolStateMachines_ProtocolConformance', cardinality 0..*) is associated with 'ProtocolStateMachine' (role 'ProtocolStateMachine73', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Region' (role 'StateMachines_BehaviorStateMachines_Region', cardinality 0..*) is associated with 'Region' (role 'Region14', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::Region' (role 'container', cardinality 0..*) is associated with 'Vertex' (role 'Vertex', cardinality 0..*).
+'StateMachines::BehaviorStateMachines::StateMachine' (role 'submachine', cardinality 0..*) is associated with 'State' (role 'State', cardinality 0..*).
+'Region' (role 'Region31', cardinality 0..*) is associated with 'StateMachines::BehaviorStateMachines::Transition' (role 'transition', cardinality 0..*).

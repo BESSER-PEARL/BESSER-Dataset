@@ -1,0 +1,50 @@
+The model has 12 class(es).
+The class 'fiacremm::Variable' has the following attributes: 'initVal' of type str; 'Name' of type str.
+The class 'fiacremm::State' has the following attributes: 'Name' of type str.
+The class 'fiacremm::Process' has the following attributes: 'StateSize' of type int; 'Name' of type str; 'VarSize' of type int.
+The class 'fiacremm::Action' has the following attributes: 'Body' of type str; 'codeFiacre' of type str; 'Name' of type str.
+The class 'fiacremm::Port' has the following attributes: 'Name' of type str.
+The class 'fiacremm::Component' has the following attributes: 'Name' of type str; 'ProcessSize' of type int; 'VarSize' of type int.
+The class 'fiacremm::Program' has the following attributes: 'Name' of type str; 'ComponentSize' of type int.
+The class 'fiacremm::Guard' has the following attributes: 'Name' of type str; 'codeFiacre' of type str; 'Body' of type str.
+The class 'fiacremm::DataType' has the following attributes: 'Name' of type str.
+The class 'fiacremm::Transition' has the following attributes: 'Name' of type str.
+The class 'fiacremm::Trigger' has the following attributes: 'Name' of type str; 'ArgSize' of type int; 'codeFiacre' of type str; 'Body' of type str.
+The class 'EModelElement' has no attributes.
+'fiacremm::Trigger' is a specialization of 'EModelElement'.
+'fiacremm::Program' is a specialization of 'EModelElement'.
+'fiacremm::Variable' is a specialization of 'EModelElement'.
+'fiacremm::Port' is a specialization of 'EModelElement'.
+'fiacremm::Action' is a specialization of 'EModelElement'.
+'fiacremm::State' is a specialization of 'EModelElement'.
+'fiacremm::Transition' is a specialization of 'EModelElement'.
+'fiacremm::Process' is a specialization of 'EModelElement'.
+'fiacremm::Component' is a specialization of 'EModelElement'.
+'fiacremm::DataType' is a specialization of 'EModelElement'.
+'fiacremm::Guard' is a specialization of 'EModelElement'.
+'fiacremm::Component' (role 'fiacremm_Component52', cardinality 0..*) is associated with 'fiacremm::Port' (role 'fiacremm_Port51', cardinality 0..*).
+'fiacremm::Variable' (role 'variables28', cardinality 0..*) is associated with 'fiacremm::Component' (role 'Component', cardinality 0..*).
+'fiacremm::Variable' (role 'Variable', cardinality 0..*) is associated with 'fiacremm::Process' (role 'processes', cardinality 0..*).
+'fiacremm::Process' (role 'process', cardinality 0..*) is associated with 'fiacremm::State' (role 'State', cardinality 0..*).
+'fiacremm::Process' (role 'Process26', cardinality 0..*) is associated with 'fiacremm::Variable' (role 'variables', cardinality 0..*).
+'fiacremm::Guard' (role 'fiacremm_Guard', cardinality 0..*) is associated with 'fiacremm::Transition' (role 'fiacremm_Transition18', cardinality 0..*).
+'fiacremm::Process' (role 'fiacremm_Process30', cardinality 0..*) is associated with 'fiacremm::Component' (role 'fiacremm_Component', cardinality 0..*).
+'fiacremm::Port' (role 'fiacremm_Port35', cardinality 0..*) is associated with 'fiacremm::Component' (role 'fiacremm_Component34', cardinality 0..*).
+'fiacremm::Component' (role 'fiacremm_Component37', cardinality 0..*) is associated with 'fiacremm::Program' (role 'fiacremm_Program', cardinality 0..*).
+'fiacremm::Trigger' (role 'fiacremm_Trigger48', cardinality 0..*) is associated with 'fiacremm::Variable' (role 'fiacremm_Variable49', cardinality 0..*).
+'fiacremm::Transition' (role 'fiacremm_Transition', cardinality 0..*) is associated with 'fiacremm::Process' (role 'fiacremm_Process', cardinality 0..*).
+'fiacremm::Trigger' (role 'fiacremm_Trigger21', cardinality 0..*) is associated with 'fiacremm::Transition' (role 'fiacremm_Transition20', cardinality 0..*).
+'fiacremm::Process' (role 'fiacremm_Process12', cardinality 0..*) is associated with 'fiacremm::Trigger' (role 'fiacremm_Trigger', cardinality 0..*).
+'fiacremm::DataType' (role 'fiacremm_DataType46', cardinality 0..*) is associated with 'fiacremm::Program' (role 'fiacremm_Program45', cardinality 0..*).
+'fiacremm::Port' (role 'fiacremm_Port', cardinality 0..*) is associated with 'fiacremm::Process' (role 'fiacremm_Process10', cardinality 0..*).
+'fiacremm::State' (role 'State16', cardinality 0..*) is associated with 'fiacremm::Transition' (role 'inTransitions', cardinality 0..*).
+'fiacremm::State' (role 'State14', cardinality 0..*) is associated with 'fiacremm::Transition' (role 'outTransitions', cardinality 0..*).
+'fiacremm::Variable' (role 'fiacremm_Variable40', cardinality 0..*) is associated with 'fiacremm::Program' (role 'fiacremm_Program39', cardinality 0..*).
+'fiacremm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fiacremm::State' (role 'source', cardinality 0..*).
+'fiacremm::State' (role 'fiacremm_State', cardinality 0..*) is associated with 'fiacremm::Process' (role 'fiacremm_Process7', cardinality 0..*).
+'fiacremm::Action' (role 'fiacremm_Action', cardinality 0..*) is associated with 'fiacremm::Transition' (role 'fiacremm_Transition23', cardinality 0..*).
+'fiacremm::State' (role 'target', cardinality 0..*) is associated with 'fiacremm::Transition' (role 'Transition2', cardinality 0..*).
+'fiacremm::Variable' (role 'Variable32', cardinality 0..*) is associated with 'fiacremm::Component' (role 'components', cardinality 0..*).
+'fiacremm::Variable' (role 'fiacremm_Variable', cardinality 0..*) is associated with 'fiacremm::DataType' (role 'fiacremm_DataType', cardinality 0..*).
+'fiacremm::Process' (role 'Process', cardinality 0..*) is associated with 'fiacremm::State' (role 'initState', cardinality 0..*).
+'fiacremm::Program' (role 'fiacremm_Program42', cardinality 0..*) is associated with 'fiacremm::Process' (role 'fiacremm_Process43', cardinality 0..*).

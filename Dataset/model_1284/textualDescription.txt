@@ -1,0 +1,287 @@
+The model has 118 class(es).
+The class 'morel::BooleanAndExpChild' has no attributes.
+The class 'morel::AdditionalConstraint' has no attributes.
+The class 'morel::EPackage' has no attributes.
+The class 'morel::EEnumLiteral' has no attributes.
+The class 'Variable' has no attributes.
+The class 'morel::RealLiteralExp' has the following attributes: 'realSymbol' of type float.
+The class 'BooleanOrExpChild' has no attributes.
+The class 'AdditiveExpChild' has no attributes.
+The class 'morel::RelationalExp' has the following attributes: 'operator' of type str.
+The class 'morel::SetType' has no attributes.
+The class 'morel::EnclosureLinkConstraint' has no attributes.
+The class 'Section' has no attributes.
+The class 'PrimitiveConstraint' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'morel::Section' has the following attributes: 'type' of type str.
+The class 'morel::EEnum' has no attributes.
+The class 'morel::SequenceType' has no attributes.
+The class 'morel::PrimitiveConstraint' has no attributes.
+The class 'morel::TypeLiteralExp' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'morel::NamedElement' has the following attributes: 'name' of type str.
+The class 'morel::EDataType' has no attributes.
+The class 'morel::UnaryExp' has the following attributes: 'operator' of type str.
+The class 'morel::UnaryExpChild' has no attributes.
+The class 'morel::Clause' has no attributes.
+The class 'ImperativeExp' has no attributes.
+The class 'morel::TransformationModel' has no attributes.
+The class 'morel::CollectionType' has no attributes.
+The class 'morel::LinkConstraint' has no attributes.
+The class 'morel::MultiplicativeExp' has the following attributes: 'operators' of type str.
+The class 'morel::ImperativeExp' has no attributes.
+The class 'morel::NestedExp' has no attributes.
+The class 'morel::BooleanAndExp' has the following attributes: 'operators' of type str.
+The class 'morel::MultiValueConstraint' has no attributes.
+The class 'morel::BagType' has no attributes.
+The class 'morel::BooleanImpliesExpChild' has no attributes.
+The class 'AtomicExp' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'morel::CollectionLiteralExp' has the following attributes: 'type' of type str.
+The class 'ObjectVariable' has no attributes.
+The class 'morel::UndefinedLiteralExp' has the following attributes: 'value' of type str.
+The class 'morel::PredefinedVariableExp' has the following attributes: 'variable' of type str.
+The class 'morel::OrderConstraint' has no attributes.
+The class 'Expression' has no attributes.
+The class 'BooleanImpliesExpChild' has no attributes.
+The class 'morel::RelationalExpChild' has no attributes.
+The class 'Unit' has no attributes.
+The class 'MultiplicativeExpChild' has no attributes.
+The class 'BooleanAndExpChild' has no attributes.
+The class 'morel::ConditionExp' has no attributes.
+The class 'morel::SimpleLinkConstraint' has no attributes.
+The class 'morel::EnumLiteralExp' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'morel::AtomicExp' has no attributes.
+The class 'morel::EClassifier' has no attributes.
+The class 'morel::BooleanOrExp' has the following attributes: 'operators' of type str.
+The class 'morel::BlockStatement' has no attributes.
+The class 'morel::LetExp' has no attributes.
+The class 'morel::VariableExp' has no attributes.
+The class 'LinkConstraint' has no attributes.
+The class 'ImperativeStatement' has no attributes.
+The class 'morel::LoopPathExp' has no attributes.
+The class 'Statement' has no attributes.
+The class 'morel::IteratorPathExp' has the following attributes: 'type' of type str.
+The class 'morel::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type int.
+The class 'morel::ArrayLiteralExp' has no attributes.
+The class 'morel::TypedModel' has the following attributes: 'type' of type str.
+The class 'PrimitiveVariable' has no attributes.
+The class 'morel::OrderedSetType' has no attributes.
+The class 'morel::CallPathExp' has no attributes.
+The class 'morel::RuleElement' has no attributes.
+The class 'morel::OperationPathExp' has the following attributes: 'separator' of type str; 'operation' of type str.
+The class 'morel::PathConstraint' has the following attributes: 'maxLength' of type int; 'minLength' of type int.
+The class 'morel::AdditiveExp' has the following attributes: 'operators' of type str.
+The class 'morel::Query' has no attributes.
+The class 'AdditionalConstraint' has no attributes.
+The class 'morel::PrimitiveVariable' has no attributes.
+The class 'morel::LiteralExp' has no attributes.
+The class 'morel::BooleanLiteralExp' has the following attributes: 'boolSymbol' of type bool.
+The class 'EDataType' has no attributes.
+The class 'morel::DeclarativeStatement' has no attributes.
+The class 'morel::VariableWithInit' has no attributes.
+The class 'morel::ObjectVariable' has no attributes.
+The class 'morel::ValueRangeConstraint' has no attributes.
+The class 'morel::IfStatement' has no attributes.
+The class 'morel::ImperativeStatement' has no attributes.
+The class 'morel::ForStatement' has no attributes.
+The class 'UnaryExpChild' has no attributes.
+The class 'morel::EReference' has no attributes.
+The class 'morel::PredefinedBindExp' has no attributes.
+The class 'morel::FeaturePathExp' has the following attributes: 'feature' of type str.
+The class 'morel::Rule' has no attributes.
+The class 'morel::BooleanImpliesExp' has the following attributes: 'operator' of type str.
+The class 'morel::MultiplicativeExpChild' has no attributes.
+The class 'morel::Expression' has no attributes.
+The class 'RelationalExpChild' has no attributes.
+The class 'morel::BindExp' has no attributes.
+The class 'morel::AllDifferentConstraint' has no attributes.
+The class 'morel::Statement' has no attributes.
+The class 'morel::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'morel::Pattern' has no attributes.
+The class 'morel::RuleGroup' has the following attributes: 'scope' of type str; 'maxIteration' of type int; 'scopeSize' of type int; 'repetition' of type str; 'iteration' of type str; 'order' of type str.
+The class 'morel::ReflectiveVariableExp' has no attributes.
+The class 'morel::PrimitiveVariableWithInit' has no attributes.
+The class 'VariableWithInit' has no attributes.
+The class 'RuleElement' has no attributes.
+The class 'morel::EAttribute' has no attributes.
+The class 'morel::Unit' has no attributes.
+The class 'morel::AdditiveExpChild' has no attributes.
+The class 'CallPathExp' has no attributes.
+The class 'morel::Variable' has no attributes.
+The class 'morel::BooleanOrExpChild' has no attributes.
+The class 'morel::Executable' has the following attributes: 'active' of type bool; 'parameters' of type str.
+The class 'morel::QueryModel' has no attributes.
+The class 'morel::EClass' has no attributes.
+The class 'Executable' has no attributes.
+The class 'LoopPathExp' has no attributes.
+The class 'morel::ObjectVariableWithInit' has no attributes.
+The enumeration 'TypedModelAction' has the following literals: 'transient', 'createOnly', 'normal', 'viewOnly', 'readOnly'.
+The enumeration 'OrderType' has the following literals: 'parallel', 'default', 'sequential'.
+The enumeration 'MultiplicativeOperator' has the following literals: 'div', 'multi'.
+The enumeration 'RelationalOperator' has the following literals: 'lessOrEq', 'equal', 'greaterOrEq', 'greater', 'less', 'notEqual'.
+The enumeration 'SectionType' has the following literals: 'NAC', 'POST', 'PRE', 'RHS', 'LHS', 'PAC'.
+The enumeration 'AdditiveOperator' has the following literals: 'plus', 'minus'.
+The enumeration 'UndefinedLiteral' has the following literals: 'NULL', 'INVALID'.
+The enumeration 'UnaryOperator' has the following literals: 'plus', 'not_', 'minus'.
+The enumeration 'IterationType' has the following literals: 'shuffle', 'default'.
+The enumeration 'OperationSeparator' has the following literals: 'arrow', 'dot'.
+The enumeration 'BooleanOperator' has the following literals: 'or_', 'not_', 'implies', 'and_'.
+The enumeration 'RepetitionType' has the following literals: 'randomOne', 'allMatches', 'first'.
+The enumeration 'ScopeType' has the following literals: 'all', 'dynamicRandom', 'staticRandom'.
+The enumeration 'IteratorType' has the following literals: 'select', 'forAll', 'closure', 'exists', 'reject', 'collect'.
+The enumeration 'PredefinedVariable' has the following literals: 'id', 'this'.
+'morel::BlockStatement' is a specialization of 'ImperativeStatement'.
+'morel::VariableExp' is a specialization of 'AtomicExp'.
+'morel::PredefinedVariableExp' is a specialization of 'AtomicExp'.
+'morel::VariableWithInit' is a specialization of 'Variable'.
+'morel::StringLiteralExp' is a specialization of 'LiteralExp'.
+'morel::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'morel::MultiValueConstraint' is a specialization of 'PrimitiveConstraint'.
+'morel::ObjectVariableWithInit' is a specialization of 'VariableWithInit'.
+'morel::EnclosureLinkConstraint' is a specialization of 'LinkConstraint'.
+'morel::Pattern' is a specialization of 'Section'.
+'morel::ImperativeExp' is a specialization of 'Expression'.
+'morel::BooleanLiteralExp' is a specialization of 'LiteralExp'.
+'morel::NestedExp' is a specialization of 'AtomicExp'.
+'morel::RuleGroup' is a specialization of 'RuleElement'.
+'morel::DeclarativeStatement' is a specialization of 'Statement'.
+'morel::ValueRangeConstraint' is a specialization of 'PrimitiveConstraint'.
+'morel::UnaryExpChild' is a specialization of 'MultiplicativeExpChild'.
+'morel::QueryModel' is a specialization of 'Unit'.
+'morel::RelationalExpChild' is a specialization of 'BooleanAndExpChild'.
+'morel::BooleanAndExp' is a specialization of 'BooleanOrExpChild'.
+'morel::Clause' is a specialization of 'Section'.
+'morel::PrimitiveVariableWithInit' is a specialization of 'PrimitiveVariable'.
+'morel::ObjectVariable' is a specialization of 'Variable'.
+'morel::OrderConstraint' is a specialization of 'AdditionalConstraint'.
+'morel::IfStatement' is a specialization of 'ImperativeStatement'.
+'morel::LetExp' is a specialization of 'ImperativeExp'.
+'morel::PrimitiveVariableWithInit' is a specialization of 'VariableWithInit'.
+'morel::LetExp' is a specialization of 'Expression'.
+'morel::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'morel::BooleanOrExp' is a specialization of 'BooleanImpliesExpChild'.
+'morel::ImperativeStatement' is a specialization of 'Statement'.
+'morel::TypedModel' is a specialization of 'NamedElement'.
+'morel::BooleanOrExpChild' is a specialization of 'BooleanImpliesExpChild'.
+'morel::PrimitiveVariable' is a specialization of 'Variable'.
+'morel::AdditiveExp' is a specialization of 'RelationalExpChild'.
+'morel::AtomicExp' is a specialization of 'UnaryExpChild'.
+'morel::ConditionExp' is a specialization of 'Expression'.
+'morel::SimpleLinkConstraint' is a specialization of 'LinkConstraint'.
+'morel::CollectionType' is a specialization of 'EDataType'.
+'morel::PathConstraint' is a specialization of 'LinkConstraint'.
+'morel::Rule' is a specialization of 'RuleElement'.
+'morel::LiteralExp' is a specialization of 'AtomicExp'.
+'morel::PredefinedBindExp' is a specialization of 'ImperativeExp'.
+'morel::BooleanAndExpChild' is a specialization of 'BooleanOrExpChild'.
+'morel::OperationPathExp' is a specialization of 'CallPathExp'.
+'morel::MultiplicativeExp' is a specialization of 'AdditiveExpChild'.
+'morel::AllDifferentConstraint' is a specialization of 'AdditionalConstraint'.
+'morel::SequenceType' is a specialization of 'CollectionType'.
+'morel::ArrayLiteralExp' is a specialization of 'LiteralExp'.
+'morel::RuleElement' is a specialization of 'Executable'.
+'morel::IntegerLiteralExp' is a specialization of 'LiteralExp'.
+'morel::Query' is a specialization of 'Executable'.
+'morel::BindExp' is a specialization of 'ImperativeExp'.
+'morel::Variable' is a specialization of 'NamedElement'.
+'morel::RelationalExp' is a specialization of 'BooleanAndExpChild'.
+'morel::BooleanImpliesExp' is a specialization of 'Expression'.
+'morel::ForStatement' is a specialization of 'ImperativeStatement'.
+'morel::Query' is a specialization of 'NamedElement'.
+'morel::TransformationModel' is a specialization of 'Unit'.
+'morel::RealLiteralExp' is a specialization of 'LiteralExp'.
+'morel::FeaturePathExp' is a specialization of 'CallPathExp'.
+'morel::UndefinedLiteralExp' is a specialization of 'LiteralExp'.
+'morel::SetType' is a specialization of 'CollectionType'.
+'morel::TypeLiteralExp' is a specialization of 'LiteralExp'.
+'morel::MultiplicativeExpChild' is a specialization of 'AdditiveExpChild'.
+'morel::ReflectiveVariableExp' is a specialization of 'Expression'.
+'morel::BagType' is a specialization of 'CollectionType'.
+'morel::AdditiveExpChild' is a specialization of 'RelationalExpChild'.
+'morel::IteratorPathExp' is a specialization of 'LoopPathExp'.
+'morel::LoopPathExp' is a specialization of 'CallPathExp'.
+'morel::TransformationModel' is a specialization of 'NamedElement'.
+'morel::BooleanImpliesExpChild' is a specialization of 'Expression'.
+'morel::Query' is a specialization of 'Pattern'.
+'morel::OrderedSetType' is a specialization of 'CollectionType'.
+'morel::RuleElement' is a specialization of 'NamedElement'.
+'morel::UnaryExp' is a specialization of 'MultiplicativeExpChild'.
+'morel::ObjectVariableWithInit' is a specialization of 'ObjectVariable'.
+'morel::ConditionExp' (role 'morel_ConditionExp76', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression77', cardinality 0..*).
+'morel::PathConstraint' (role 'morel_PathConstraint33', cardinality 0..*) is associated with 'morel::EClass' (role 'morel_EClass34', cardinality 0..*).
+'morel::VariableWithInit' (role 'morel_VariableWithInit114', cardinality 0..*) is associated with 'morel::ForStatement' (role 'morel_ForStatement', cardinality 0..*).
+'morel::OrderConstraint' (role 'morel_OrderConstraint', cardinality 0..*) is associated with 'morel::ObjectVariable' (role 'morel_ObjectVariable143', cardinality 0..*).
+'morel::ConditionExp' (role 'morel_ConditionExp', cardinality 0..*) is associated with 'morel::BooleanImpliesExp' (role 'morel_BooleanImpliesExp', cardinality 0..*).
+'morel::AdditionalConstraint' (role 'morel_AdditionalConstraint', cardinality 0..*) is associated with 'morel::Pattern' (role 'morel_Pattern6', cardinality 0..*).
+'morel::MultiValueConstraint' (role 'morel_MultiValueConstraint155', cardinality 0..*) is associated with 'morel::EAttribute' (role 'morel_EAttribute', cardinality 0..*).
+'morel::TypedModel' (role 'morel_TypedModel', cardinality 0..*) is associated with 'morel::ObjectVariable' (role 'morel_ObjectVariable12', cardinality 0..*).
+'morel::CollectionLiteralExp' (role 'morel_CollectionLiteralExp', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression45', cardinality 0..*).
+'morel::BooleanAndExp' (role 'morel_BooleanAndExp', cardinality 0..*) is associated with 'morel::BooleanAndExpChild' (role 'morel_BooleanAndExpChild', cardinality 0..*).
+'morel::Pattern' (role 'morel_Pattern4', cardinality 0..*) is associated with 'morel::Statement' (role 'morel_Statement', cardinality 0..*).
+'morel::SimpleLinkConstraint' (role 'morel_SimpleLinkConstraint', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression', cardinality 0..*).
+'morel::Unit' (role 'morel_Unit', cardinality 0..*) is associated with 'morel::TypedModel' (role 'morel_TypedModel39', cardinality 0..*).
+'morel::Executable' (role 'morel_Executable', cardinality 0..*) is associated with 'morel::PrimitiveVariable' (role 'morel_PrimitiveVariable138', cardinality 0..*).
+'morel::Expression' (role 'morel_Expression120', cardinality 0..*) is associated with 'morel::ForStatement' (role 'morel_ForStatement119', cardinality 0..*).
+'morel::Expression' (role 'morel_Expression73', cardinality 0..*) is associated with 'morel::VariableWithInit' (role 'morel_VariableWithInit72', cardinality 0..*).
+'morel::EPackage' (role 'morel_EPackage', cardinality 0..*) is associated with 'morel::TypedModel' (role 'morel_TypedModel37', cardinality 0..*).
+'morel::RelationalExpChild' (role 'morel_RelationalExpChild', cardinality 0..*) is associated with 'morel::RelationalExp' (role 'morel_RelationalExp', cardinality 0..*).
+'morel::IfStatement' (role 'morel_IfStatement111', cardinality 0..*) is associated with 'morel::ImperativeStatement' (role 'morel_ImperativeStatement112', cardinality 0..*).
+'morel::Variable' (role 'morel_Variable60', cardinality 0..*) is associated with 'morel::IteratorPathExp' (role 'morel_IteratorPathExp', cardinality 0..*).
+'morel::PathConstraint' (role 'morel_PathConstraint30', cardinality 0..*) is associated with 'morel::EReference' (role 'morel_EReference31', cardinality 0..*).
+'morel::PrimitiveVariable' (role 'morel_PrimitiveVariable', cardinality 0..*) is associated with 'morel::EDataType' (role 'morel_EDataType', cardinality 0..*).
+'morel::BooleanOrExp' (role 'morel_BooleanOrExp', cardinality 0..*) is associated with 'morel::BooleanOrExpChild' (role 'morel_BooleanOrExpChild', cardinality 0..*).
+'morel::LinkConstraint' (role 'morel_LinkConstraint', cardinality 0..*) is associated with 'morel::Pattern' (role 'morel_Pattern2', cardinality 0..*).
+'morel::ObjectVariable' (role 'morel_ObjectVariable19', cardinality 0..*) is associated with 'morel::LinkConstraint' (role 'morel_LinkConstraint18', cardinality 0..*).
+'morel::UnaryExpChild' (role 'morel_UnaryExpChild', cardinality 0..*) is associated with 'morel::UnaryExp' (role 'morel_UnaryExp', cardinality 0..*).
+'morel::Variable' (role 'morel_Variable', cardinality 0..*) is associated with 'morel::PathConstraint' (role 'morel_PathConstraint', cardinality 0..*).
+'morel::IteratorPathExp' (role 'morel_IteratorPathExp65', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression66', cardinality 0..*).
+'morel::BlockStatement' (role 'morel_BlockStatement', cardinality 0..*) is associated with 'morel::Statement' (role 'morel_Statement125', cardinality 0..*).
+'morel::BooleanImpliesExp' (role 'morel_BooleanImpliesExp107', cardinality 0..*) is associated with 'morel::IfStatement' (role 'morel_IfStatement', cardinality 0..*).
+'morel::OrderConstraint' (role 'morel_OrderConstraint145', cardinality 0..*) is associated with 'morel::EReference' (role 'morel_EReference146', cardinality 0..*).
+'morel::EReference' (role 'morel_EReference', cardinality 0..*) is associated with 'morel::SimpleLinkConstraint' (role 'morel_SimpleLinkConstraint22', cardinality 0..*).
+'morel::CallPathExp' (role 'morel_CallPathExp54', cardinality 0..*) is associated with 'morel::CallPathExp' (role 'morel_CallPathExp56', cardinality 0..*).
+'morel::AdditiveExpChild' (role 'morel_AdditiveExpChild', cardinality 0..*) is associated with 'morel::AdditiveExp' (role 'morel_AdditiveExp', cardinality 0..*).
+'morel::EClass' (role 'morel_EClass27', cardinality 0..*) is associated with 'morel::EnclosureLinkConstraint' (role 'morel_EnclosureLinkConstraint26', cardinality 0..*).
+'morel::Query' (role 'morel_Query', cardinality 0..*) is associated with 'morel::QueryModel' (role 'morel_QueryModel', cardinality 0..*).
+'morel::LetExp' (role 'morel_LetExp69', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression70', cardinality 0..*).
+'morel::BooleanImpliesExp' (role 'morel_BooleanImpliesExp84', cardinality 0..*) is associated with 'morel::BooleanImpliesExpChild' (role 'morel_BooleanImpliesExpChild85', cardinality 0..*).
+'morel::BooleanImpliesExpChild' (role 'morel_BooleanImpliesExpChild', cardinality 0..*) is associated with 'morel::BooleanImpliesExp' (role 'morel_BooleanImpliesExp82', cardinality 0..*).
+'morel::Unit' (role 'morel_Unit41', cardinality 0..*) is associated with 'morel::EDataType' (role 'morel_EDataType42', cardinality 0..*).
+'morel::MultiplicativeExp' (role 'morel_MultiplicativeExp', cardinality 0..*) is associated with 'morel::MultiplicativeExpChild' (role 'morel_MultiplicativeExpChild', cardinality 0..*).
+'morel::MultiValueConstraint' (role 'morel_MultiValueConstraint', cardinality 0..*) is associated with 'morel::ObjectVariable' (role 'morel_ObjectVariable153', cardinality 0..*).
+'morel::Expression' (role 'morel_Expression105', cardinality 0..*) is associated with 'morel::PredefinedBindExp' (role 'morel_PredefinedBindExp104', cardinality 0..*).
+'morel::EEnum' (role 'morel_EEnum', cardinality 0..*) is associated with 'morel::EnumLiteralExp' (role 'morel_EnumLiteralExp', cardinality 0..*).
+'morel::ObjectVariable' (role 'morel_ObjectVariable10', cardinality 0..*) is associated with 'morel::EClass' (role 'morel_EClass', cardinality 0..*).
+'morel::EEnumLiteral' (role 'morel_EEnumLiteral', cardinality 0..*) is associated with 'morel::EnumLiteralExp' (role 'morel_EnumLiteralExp48', cardinality 0..*).
+'morel::Expression' (role 'morel_Expression80', cardinality 0..*) is associated with 'morel::ConditionExp' (role 'morel_ConditionExp79', cardinality 0..*).
+'morel::Pattern' (role 'morel_Pattern128', cardinality 0..*) is associated with 'morel::Rule' (role 'morel_Rule', cardinality 0..*).
+'morel::ForStatement' (role 'morel_ForStatement122', cardinality 0..*) is associated with 'morel::ImperativeStatement' (role 'morel_ImperativeStatement123', cardinality 0..*).
+'morel::Variable' (role 'morel_Variable134', cardinality 0..*) is associated with 'morel::ReflectiveVariableExp' (role 'morel_ReflectiveVariableExp', cardinality 0..*).
+'morel::OperationPathExp' (role 'morel_OperationPathExp', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression58', cardinality 0..*).
+'morel::CollectionType' (role 'morel_CollectionType', cardinality 0..*) is associated with 'morel::EClassifier' (role 'morel_EClassifier96', cardinality 0..*).
+'morel::DeclarativeStatement' (role 'morel_DeclarativeStatement', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression132', cardinality 0..*).
+'morel::IfStatement' (role 'morel_IfStatement109', cardinality 0..*) is associated with 'morel::ImperativeStatement' (role 'morel_ImperativeStatement', cardinality 0..*).
+'morel::NestedExp' (role 'morel_NestedExp', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression53', cardinality 0..*).
+'morel::OrderConstraint' (role 'morel_OrderConstraint148', cardinality 0..*) is associated with 'morel::EClass' (role 'morel_EClass149', cardinality 0..*).
+'morel::Rule' (role 'morel_Rule130', cardinality 0..*) is associated with 'morel::RuleGroup' (role 'morel_RuleGroup', cardinality 0..*).
+'morel::LetExp' (role 'morel_LetExp', cardinality 0..*) is associated with 'morel::VariableWithInit' (role 'morel_VariableWithInit', cardinality 0..*).
+'morel::TypeLiteralExp' (role 'morel_TypeLiteralExp', cardinality 0..*) is associated with 'morel::EClassifier' (role 'morel_EClassifier', cardinality 0..*).
+'morel::VariableExp' (role 'morel_VariableExp', cardinality 0..*) is associated with 'morel::Variable' (role 'morel_Variable51', cardinality 0..*).
+'morel::ObjectVariable' (role 'morel_ObjectVariable', cardinality 0..*) is associated with 'morel::Pattern' (role 'morel_Pattern', cardinality 0..*).
+'morel::EnclosureLinkConstraint' (role 'morel_EnclosureLinkConstraint', cardinality 0..*) is associated with 'morel::EReference' (role 'morel_EReference24', cardinality 0..*).
+'morel::Variable' (role 'morel_Variable63', cardinality 0..*) is associated with 'morel::IteratorPathExp' (role 'morel_IteratorPathExp62', cardinality 0..*).
+'morel::RelationalExpChild' (role 'morel_RelationalExpChild91', cardinality 0..*) is associated with 'morel::RelationalExp' (role 'morel_RelationalExp90', cardinality 0..*).
+'morel::BindExp' (role 'morel_BindExp', cardinality 0..*) is associated with 'morel::VariableExp' (role 'morel_VariableExp98', cardinality 0..*).
+'morel::Expression' (role 'morel_Expression101', cardinality 0..*) is associated with 'morel::BindExp' (role 'morel_BindExp100', cardinality 0..*).
+'morel::RuleElement' (role 'morel_RuleElement', cardinality 0..*) is associated with 'morel::TransformationModel' (role 'morel_TransformationModel', cardinality 0..*).
+'morel::Statement' (role 'morel_Statement8', cardinality 0..*) is associated with 'morel::Clause' (role 'morel_Clause', cardinality 0..*).
+'morel::ArrayLiteralExp' (role 'morel_ArrayLiteralExp', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression136', cardinality 0..*).
+'morel::PrimitiveVariable' (role 'morel_PrimitiveVariable151', cardinality 0..*) is associated with 'morel::PrimitiveConstraint' (role 'morel_PrimitiveConstraint', cardinality 0..*).
+'morel::ForStatement' (role 'morel_ForStatement116', cardinality 0..*) is associated with 'morel::BooleanImpliesExp' (role 'morel_BooleanImpliesExp117', cardinality 0..*).
+'morel::ValueRangeConstraint' (role 'morel_ValueRangeConstraint', cardinality 0..*) is associated with 'morel::Expression' (role 'morel_Expression157', cardinality 0..*).
+'morel::PredefinedBindExp' (role 'morel_PredefinedBindExp', cardinality 0..*) is associated with 'morel::PredefinedVariableExp' (role 'morel_PredefinedVariableExp', cardinality 0..*).
+'morel::AdditionalConstraint' (role 'morel_AdditionalConstraint140', cardinality 0..*) is associated with 'morel::Variable' (role 'morel_Variable141', cardinality 0..*).
+'morel::AtomicExp' (role 'morel_AtomicExp', cardinality 0..*) is associated with 'morel::CallPathExp' (role 'morel_CallPathExp', cardinality 0..*).
+'morel::ObjectVariable' (role 'morel_ObjectVariable16', cardinality 0..*) is associated with 'morel::LinkConstraint' (role 'morel_LinkConstraint15', cardinality 0..*).

@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'myFirstEditorCustom::StartState' has no attributes.
+The class 'myFirstEditorCustom::StateMachine' has the following attributes: 'name' of type str.
+The class 'myFirstEditorCustom::State' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'myFirstEditorCustom::EndState' has no attributes.
+The class 'myFirstEditorCustom::Transition' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+'myFirstEditorCustom::EndState' is a specialization of 'State'.
+'myFirstEditorCustom::StartState' is a specialization of 'State'.
+'myFirstEditorCustom::StateMachine' (role 'myFirstEditorCustom_StateMachine2', cardinality 0..*) is associated with 'myFirstEditorCustom::Transition' (role 'myFirstEditorCustom_Transition', cardinality 0..*).
+'myFirstEditorCustom::State' (role 'source', cardinality 0..*) is associated with 'myFirstEditorCustom::Transition' (role 'Transition5', cardinality 0..*).
+'myFirstEditorCustom::State' (role 'State8', cardinality 0..*) is associated with 'myFirstEditorCustom::Transition' (role 'in_', cardinality 0..*).
+'myFirstEditorCustom::StateMachine' (role 'myFirstEditorCustom_StateMachine', cardinality 0..*) is associated with 'myFirstEditorCustom::State' (role 'myFirstEditorCustom_State', cardinality 0..*).
+'myFirstEditorCustom::State' (role 'State', cardinality 0..*) is associated with 'myFirstEditorCustom::Transition' (role 'out', cardinality 0..*).
+'myFirstEditorCustom::State' (role 'target', cardinality 0..*) is associated with 'myFirstEditorCustom::Transition' (role 'Transition', cardinality 0..*).

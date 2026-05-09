@@ -1,0 +1,118 @@
+The model has 39 class(es).
+The class 'mtl::Template' has the following attributes: 'main' of type bool.
+The class 'mtl::TraceBlock' has no attributes.
+The class 'mtl::TypedModel' has no attributes.
+The class 'mtl::EPackage' has no attributes.
+The class 'ModuleElement' has no attributes.
+The class 'TemplateExpression' has no attributes.
+The class 'OCLExpression' has no attributes.
+The class 'Variable' has no attributes.
+The class 'mtl::InitSection' has no attributes.
+The class 'mtl::FileBlock' has the following attributes: 'openMode' of type str.
+The class 'mtl::ModuleDocumentation' has the following attributes: 'since' of type str; 'author' of type str; 'version' of type str.
+The class 'mtl::EClassifier' has no attributes.
+The class 'mtl::ProtectedAreaBlock' has no attributes.
+The class 'mtl::Block' has no attributes.
+The class 'mtl::TemplateInvocation' has the following attributes: 'super' of type bool.
+The class 'ENamedElement' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'mtl::Query' has no attributes.
+The class 'DocumentedElement' has no attributes.
+The class 'utilities::ASTNode' has no attributes.
+The class 'mtl::Documentation' has no attributes.
+The class 'mtl::QueryInvocation' has no attributes.
+The class 'mtl::ParameterDocumentation' has no attributes.
+The class 'mtl::Comment' has no attributes.
+The class 'mtl::DocumentedElement' has the following attributes: 'deprecated' of type bool.
+The class 'mtl::Macro' has no attributes.
+The class 'Documentation' has no attributes.
+The class 'mtl::MacroInvocation' has no attributes.
+The class 'EPackage' has no attributes.
+The class 'mtl::CommentBody' has the following attributes: 'value' of type str; 'startPosition' of type int; 'endPosition' of type int.
+The class 'mtl::LetBlock' has no attributes.
+The class 'mtl::IfBlock' has no attributes.
+The class 'mtl::Module' has the following attributes: 'endHeaderPosition' of type int; 'startHeaderPosition' of type int.
+The class 'Block' has no attributes.
+The class 'mtl::ModuleElementDocumentation' has no attributes.
+The class 'mtl::TemplateExpression' has no attributes.
+The class 'Comment' has no attributes.
+The class 'mtl::ModuleElement' has the following attributes: 'visibility' of type str.
+The class 'mtl::ForBlock' has no attributes.
+The enumeration 'OpenModeKind' has the following literals: 'OverWrite', 'Append'.
+The enumeration 'VisibilityKind' has the following literals: 'Protected', 'Private', 'Public'.
+'mtl::TemplateInvocation' is a specialization of 'TemplateExpression'.
+'mtl::ModuleElement' is a specialization of 'ENamedElement'.
+'mtl::LetBlock' is a specialization of 'Block'.
+'mtl::Query' is a specialization of 'DocumentedElement'.
+'mtl::MacroInvocation' is a specialization of 'TemplateExpression'.
+'mtl::ProtectedAreaBlock' is a specialization of 'Block'.
+'mtl::Comment' is a specialization of 'ModuleElement'.
+'mtl::TemplateExpression' is a specialization of 'OCLExpression'.
+'mtl::TraceBlock' is a specialization of 'Block'.
+'mtl::InitSection' is a specialization of 'ASTNode'.
+'mtl::Macro' is a specialization of 'Block'.
+'mtl::ModuleElement' is a specialization of 'utilities::ASTNode'.
+'mtl::Macro' is a specialization of 'ModuleElement'.
+'mtl::FileBlock' is a specialization of 'Block'.
+'mtl::ModuleElementDocumentation' is a specialization of 'Documentation'.
+'mtl::ParameterDocumentation' is a specialization of 'Comment'.
+'mtl::Template' is a specialization of 'Block'.
+'mtl::QueryInvocation' is a specialization of 'TemplateExpression'.
+'mtl::IfBlock' is a specialization of 'Block'.
+'mtl::ModuleDocumentation' is a specialization of 'Documentation'.
+'mtl::Template' is a specialization of 'DocumentedElement'.
+'mtl::ForBlock' is a specialization of 'Block'.
+'mtl::Query' is a specialization of 'ModuleElement'.
+'mtl::Module' is a specialization of 'DocumentedElement'.
+'mtl::Documentation' is a specialization of 'Comment'.
+'mtl::Macro' is a specialization of 'DocumentedElement'.
+'mtl::Module' is a specialization of 'EPackage'.
+'mtl::Block' is a specialization of 'TemplateExpression'.
+'mtl::Template' is a specialization of 'ModuleElement'.
+'Variable' (role 'Variable40', cardinality 0..*) is associated with 'mtl::Query' (role 'mtl_Query', cardinality 0..*).
+'mtl::Block' (role 'mtl_Block82', cardinality 0..*) is associated with 'mtl::LetBlock' (role 'mtl_LetBlock81', cardinality 0..*).
+'mtl::Module' (role 'mtl_Module4', cardinality 0..*) is associated with 'mtl::Module' (role 'mtl_Module6', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression57', cardinality 0..*) is associated with 'mtl::ForBlock' (role 'mtl_ForBlock56', cardinality 0..*).
+'mtl::Block' (role 'mtl_Block', cardinality 0..*) is associated with 'mtl::InitSection' (role 'mtl_InitSection', cardinality 0..*).
+'mtl::EClassifier' (role 'mtl_EClassifier', cardinality 0..*) is associated with 'mtl::Query' (role 'mtl_Query45', cardinality 0..*).
+'mtl::IfBlock' (role 'mtl_IfBlock', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression71', cardinality 0..*).
+'mtl::LetBlock' (role 'mtl_LetBlock', cardinality 0..*) is associated with 'mtl::LetBlock' (role 'mtl_LetBlock78', cardinality 0..*).
+'mtl::TraceBlock' (role 'mtl_TraceBlock', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression95', cardinality 0..*).
+'mtl::ParameterDocumentation' (role 'mtl_ParameterDocumentation', cardinality 0..*) is associated with 'mtl::ModuleElementDocumentation' (role 'mtl_ModuleElementDocumentation', cardinality 0..*).
+'mtl::Documentation' (role 'Documentation', cardinality 0..*) is associated with 'mtl::DocumentedElement' (role 'documentedElement', cardinality 0..*).
+'mtl::FileBlock' (role 'mtl_FileBlock', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression87', cardinality 0..*).
+'mtl::ForBlock' (role 'mtl_ForBlock65', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression66', cardinality 0..*).
+'mtl::Module' (role 'mtl_Module8', cardinality 0..*) is associated with 'mtl::ModuleElement' (role 'mtl_ModuleElement', cardinality 0..*).
+'mtl::Block' (role 'mtl_Block11', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression', cardinality 0..*).
+'mtl::TemplateInvocation' (role 'mtl_TemplateInvocation37', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression38', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression24', cardinality 0..*) is associated with 'mtl::Template' (role 'mtl_Template23', cardinality 0..*).
+'mtl::Template' (role 'mtl_Template14', cardinality 0..*) is associated with 'mtl::Template' (role 'mtl_Template', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression93', cardinality 0..*) is associated with 'mtl::FileBlock' (role 'mtl_FileBlock92', cardinality 0..*).
+'mtl::ForBlock' (role 'mtl_ForBlock', cardinality 0..*) is associated with 'Variable' (role 'Variable54', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression63', cardinality 0..*) is associated with 'mtl::ForBlock' (role 'mtl_ForBlock62', cardinality 0..*).
+'mtl::Template' (role 'mtl_Template26', cardinality 0..*) is associated with 'mtl::TemplateInvocation' (role 'mtl_TemplateInvocation', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression43', cardinality 0..*) is associated with 'mtl::Query' (role 'mtl_Query42', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression29', cardinality 0..*) is associated with 'mtl::TemplateInvocation' (role 'mtl_TemplateInvocation28', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression90', cardinality 0..*) is associated with 'mtl::FileBlock' (role 'mtl_FileBlock89', cardinality 0..*).
+'mtl::Macro' (role 'mtl_Macro102', cardinality 0..*) is associated with 'mtl::MacroInvocation' (role 'mtl_MacroInvocation', cardinality 0..*).
+'mtl::IfBlock' (role 'mtl_IfBlock73', cardinality 0..*) is associated with 'mtl::Block' (role 'mtl_Block74', cardinality 0..*).
+'mtl::Module' (role 'mtl_Module3', cardinality 0..*) is associated with 'mtl::Module' (role 'mtl_Module1', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression69', cardinality 0..*) is associated with 'mtl::ForBlock' (role 'mtl_ForBlock68', cardinality 0..*).
+'mtl::CommentBody' (role 'mtl_CommentBody', cardinality 0..*) is associated with 'mtl::Comment' (role 'mtl_Comment', cardinality 0..*).
+'mtl::Module' (role 'mtl_Module', cardinality 0..*) is associated with 'mtl::TypedModel' (role 'mtl_TypedModel', cardinality 0..*).
+'Variable' (role 'Variable18', cardinality 0..*) is associated with 'mtl::Template' (role 'mtl_Template17', cardinality 0..*).
+'mtl::EPackage' (role 'mtl_EPackage', cardinality 0..*) is associated with 'mtl::TypedModel' (role 'mtl_TypedModel107', cardinality 0..*).
+'mtl::Template' (role 'mtl_Template20', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression21', cardinality 0..*).
+'mtl::InitSection' (role 'mtl_InitSection13', cardinality 0..*) is associated with 'Variable' (role 'Variable', cardinality 0..*).
+'mtl::Documentation' (role 'documentation', cardinality 0..*) is associated with 'mtl::DocumentedElement' (role 'DocumentedElement', cardinality 0..*).
+'mtl::TemplateInvocation' (role 'mtl_TemplateInvocation34', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression35', cardinality 0..*).
+'mtl::IfBlock' (role 'mtl_IfBlock75', cardinality 0..*) is associated with 'mtl::IfBlock' (role 'mtl_IfBlock77', cardinality 0..*).
+'mtl::QueryInvocation' (role 'mtl_QueryInvocation', cardinality 0..*) is associated with 'mtl::Query' (role 'mtl_Query47', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression52', cardinality 0..*) is associated with 'mtl::ProtectedAreaBlock' (role 'mtl_ProtectedAreaBlock', cardinality 0..*).
+'mtl::TemplateInvocation' (role 'mtl_TemplateInvocation31', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression32', cardinality 0..*).
+'mtl::Macro' (role 'mtl_Macro', cardinality 0..*) is associated with 'Variable' (role 'Variable97', cardinality 0..*).
+'mtl::Macro' (role 'mtl_Macro99', cardinality 0..*) is associated with 'mtl::EClassifier' (role 'mtl_EClassifier100', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression105', cardinality 0..*) is associated with 'mtl::MacroInvocation' (role 'mtl_MacroInvocation104', cardinality 0..*).
+'mtl::QueryInvocation' (role 'mtl_QueryInvocation49', cardinality 0..*) is associated with 'OCLExpression' (role 'OCLExpression50', cardinality 0..*).
+'OCLExpression' (role 'OCLExpression60', cardinality 0..*) is associated with 'mtl::ForBlock' (role 'mtl_ForBlock59', cardinality 0..*).
+'mtl::LetBlock' (role 'mtl_LetBlock84', cardinality 0..*) is associated with 'Variable' (role 'Variable85', cardinality 0..*).

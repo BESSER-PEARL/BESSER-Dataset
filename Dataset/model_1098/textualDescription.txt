@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::Place' has no attributes.
+The class 'PetriNet::Net' has no attributes.
+'PetriNet::Place' (role 'Place10', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'src9', cardinality 0..*).
+'PetriNet::Transition' (role 'Transition15', cardinality 0..*) is associated with 'PetriNet::Net' (role 'net14', cardinality 0..*).
+'PetriNet::Net' (role 'Net', cardinality 0..*) is associated with 'PetriNet::Place' (role 'place', cardinality 0..*).
+'PetriNet::Transition' (role 'transition', cardinality 0..*) is associated with 'PetriNet::Net' (role 'Net5', cardinality 0..*).
+'PetriNet::Place' (role 'dst', cardinality 0..*) is associated with 'PetriNet::Transition' (role 'Transition', cardinality 0..*).
+'PetriNet::Transition' (role 'Transition3', cardinality 0..*) is associated with 'PetriNet::Place' (role 'src', cardinality 0..*).
+'PetriNet::Transition' (role 'dst7', cardinality 0..*) is associated with 'PetriNet::Place' (role 'Place', cardinality 0..*).
+'PetriNet::Net' (role 'net', cardinality 0..*) is associated with 'PetriNet::Place' (role 'Place12', cardinality 0..*).

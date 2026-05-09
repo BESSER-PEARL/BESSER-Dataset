@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'petri::net::Place' has no attributes.
+The class 'petri::net::Arc' has the following attributes: 'name' of type str.
+The class 'petri::net::Node' has the following attributes: 'name' of type str.
+The class 'Node' has no attributes.
+The class 'petri::net::PetriNet' has the following attributes: 'name' of type str.
+The class 'petri::net::Transition' has no attributes.
+'petri::net::Place' is a specialization of 'Node'.
+'petri::net::Transition' is a specialization of 'Node'.
+'petri::net::Arc' (role 'petri_net_Arc4', cardinality 0..*) is associated with 'petri::net::Node' (role 'petri_net_Node5', cardinality 0..*).
+'petri::net::Arc' (role 'petri_net_Arc', cardinality 0..*) is associated with 'petri::net::PetriNet' (role 'petri_net_PetriNet2', cardinality 0..*).
+'petri::net::PetriNet' (role 'petri_net_PetriNet', cardinality 0..*) is associated with 'petri::net::Node' (role 'petri_net_Node', cardinality 0..*).
+'petri::net::Node' (role 'petri_net_Node8', cardinality 0..*) is associated with 'petri::net::Arc' (role 'petri_net_Arc7', cardinality 0..*).

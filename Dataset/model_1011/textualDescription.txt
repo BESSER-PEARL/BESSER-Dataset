@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'fsm::StateOff' has no attributes.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'name' of type str.
+The class 'fsm::FSM' has the following attributes: 'name' of type str.
+The class 'fsm::StateOn' has no attributes.
+The class 'State' has no attributes.
+The class 'fsm::StateFinal' has no attributes.
+'fsm::StateOff' is a specialization of 'State'.
+'fsm::StateOn' is a specialization of 'State'.
+'fsm::StateFinal' is a specialization of 'State'.
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM2', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition4', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State5', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition7', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State8', cardinality 0..*).

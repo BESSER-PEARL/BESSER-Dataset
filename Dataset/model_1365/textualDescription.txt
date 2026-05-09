@@ -1,0 +1,63 @@
+The model has 27 class(es).
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::StateMachine' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'statemachine::Behavior' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'statemachine::Region' has no attributes.
+The class 'statemachine::Event' has no attributes.
+The class 'statemachine::Class' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'statemachine::NamedElement' has no attributes.
+The class 'statemachine::PseudoState' has the following attributes: 'kind' of type str.
+The class 'statemachine::Trigger' has no attributes.
+The class 'statemachine::MessageEvent' has no attributes.
+The class 'statemachine::State' has no attributes.
+The class 'statemachine::CallEvent' has no attributes.
+The class 'State' has no attributes.
+The class 'MessageEvent' has no attributes.
+The class 'statemachine::Vertex' has no attributes.
+The class 'statemachine::BehavioredClassifier' has no attributes.
+The class 'statemachine::Operation' has no attributes.
+The class 'statemachine::OpaqueBehavior' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'Vertex' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'statemachine::Constraint' has no attributes.
+The class 'statemachine::BehavioralFeature' has no attributes.
+The class 'Event' has no attributes.
+The class 'statemachine::FinalState' has no attributes.
+The enumeration 'PseudoStateKind' has the following literals: 'initial'.
+'statemachine::PseudoState' is a specialization of 'Vertex'.
+'statemachine::Transition' is a specialization of 'NamedElement'.
+'statemachine::MessageEvent' is a specialization of 'Event'.
+'statemachine::Vertex' is a specialization of 'NamedElement'.
+'statemachine::State' is a specialization of 'Vertex'.
+'statemachine::Operation' is a specialization of 'BehavioralFeature'.
+'statemachine::CallEvent' is a specialization of 'MessageEvent'.
+'statemachine::FinalState' is a specialization of 'State'.
+'statemachine::OpaqueBehavior' is a specialization of 'Behavior'.
+'statemachine::Class' is a specialization of 'BehavioredClassifier'.
+'statemachine::StateMachine' is a specialization of 'Behavior'.
+'statemachine::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'statemachine::Region' (role 'regionvertex', cardinality 0..*).
+'statemachine::Trigger' (role 'statemachine_Trigger30', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition31', cardinality 0..*).
+'statemachine::Transition' (role 'Transition', cardinality 0..*) is associated with 'statemachine::Region' (role 'transitionregion', cardinality 0..*).
+'statemachine::Operation' (role 'statemachine_Operation', cardinality 0..*) is associated with 'statemachine::CallEvent' (role 'statemachine_CallEvent', cardinality 0..*).
+'statemachine::Transition' (role 'Transition8', cardinality 0..*) is associated with 'statemachine::Behavior' (role 'effect', cardinality 0..*).
+'statemachine::Vertex' (role 'Vertex13', cardinality 0..*) is associated with 'statemachine::Transition' (role 'incoming', cardinality 0..*).
+'statemachine::StateMachine' (role 'machine', cardinality 0..*) is associated with 'statemachine::Region' (role 'Region', cardinality 0..*).
+'statemachine::Transition' (role 'behaviortransition', cardinality 0..*) is associated with 'statemachine::Behavior' (role 'Behavior18', cardinality 0..*).
+'statemachine::Vertex' (role 'Vertex11', cardinality 0..*) is associated with 'statemachine::Transition' (role 'outgoing', cardinality 0..*).
+'statemachine::BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*) is associated with 'statemachine::Behavior' (role 'ownedBehavior', cardinality 0..*).
+'statemachine::Event' (role 'Event', cardinality 0..*) is associated with 'statemachine::Trigger' (role 'eventtrigger', cardinality 0..*).
+'statemachine::Behavior' (role 'behavior', cardinality 0..*) is associated with 'statemachine::BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*).
+'statemachine::Behavior' (role 'Behavior28', cardinality 0..*) is associated with 'statemachine::BehavioralFeature' (role 'specification', cardinality 0..*).
+'statemachine::Transition' (role 'constrainttransition', cardinality 0..*) is associated with 'statemachine::Constraint' (role 'Constraint', cardinality 0..*).
+'statemachine::Transition' (role 'Transition20', cardinality 0..*) is associated with 'statemachine::Vertex' (role 'source', cardinality 0..*).
+'statemachine::Trigger' (role 'statemachine_Trigger', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::Region' (role 'Region24', cardinality 0..*) is associated with 'statemachine::Vertex' (role 'subvertex', cardinality 0..*).
+'statemachine::Behavior' (role 'Behavior', cardinality 0..*) is associated with 'statemachine::BehavioredClassifier' (role 'context', cardinality 0..*).
+'statemachine::Event' (role 'event', cardinality 0..*) is associated with 'statemachine::Trigger' (role 'Trigger', cardinality 0..*).
+'statemachine::Transition' (role 'transition', cardinality 0..*) is associated with 'statemachine::Region' (role 'Region15', cardinality 0..*).
+'statemachine::Region' (role 'region', cardinality 0..*) is associated with 'statemachine::StateMachine' (role 'StateMachine', cardinality 0..*).
+'statemachine::Transition' (role 'Transition22', cardinality 0..*) is associated with 'statemachine::Vertex' (role 'target', cardinality 0..*).
+'statemachine::Constraint' (role 'guard', cardinality 0..*) is associated with 'statemachine::Transition' (role 'Transition34', cardinality 0..*).

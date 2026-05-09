@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/MODELS2017Tutorial/code/languagewb/org.gemoc.models17.fsm.model/model/model.ecore

@@ -1,0 +1,123 @@
+The model has 44 class(es).
+The class 'stateMachineDsl::CommandAction' has no attributes.
+The class 'stateMachineDsl::VarRef' has no attributes.
+The class 'stateMachineDsl::StringExp' has the following attributes: 'value' of type str.
+The class 'stateMachineDsl::DecrementAction' has no attributes.
+The class 'stateMachineDsl::Function' has no attributes.
+The class 'stateMachineDsl::FunctionUse' has no attributes.
+The class 'ExtDeclaration' has no attributes.
+The class 'stateMachineDsl::Equality' has the following attributes: 'op' of type str.
+The class 'stateMachineDsl::Not' has no attributes.
+The class 'stateMachineDsl::Event' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::ProcedureUse' has no attributes.
+The class 'stateMachineDsl::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'stateMachineDsl::Condition' has no attributes.
+The class 'stateMachineDsl::MemberState' has no attributes.
+The class 'stateMachineDsl::ExtDeclaration' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::Procedure' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::NumberExp' has the following attributes: 'negative' of type str; 'value' of type int.
+The class 'stateMachineDsl::DoubleExp' has the following attributes: 'negative' of type str; 'number' of type int; 'decimal' of type int.
+The class 'Expression' has no attributes.
+The class 'stateMachineDsl::VarParName' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::ChangeAction' has no attributes.
+The class 'stateMachineDsl::Declaration' has no attributes.
+The class 'stateMachineDsl::SetAction' has no attributes.
+The class 'stateMachineDsl::Parenthesis' has no attributes.
+The class 'ChangeAction' has no attributes.
+The class 'stateMachineDsl::Variable' has no attributes.
+The class 'stateMachineDsl::IncrementAction' has no attributes.
+The class 'stateMachineDsl::EObject' has no attributes.
+The class 'stateMachineDsl::VarType' has the following attributes: 'vt' of type str.
+The class 'stateMachineDsl::Parameter' has no attributes.
+The class 'stateMachineDsl::Action' has no attributes.
+The class 'stateMachineDsl::StateMachine' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::And' has no attributes.
+The class 'stateMachineDsl::ResetAction' has no attributes.
+The class 'stateMachineDsl::State' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::ParameterFunction' has the following attributes: 'name' of type str.
+The class 'stateMachineDsl::Expression' has no attributes.
+The class 'stateMachineDsl::Comparison' has the following attributes: 'op' of type str.
+The class 'stateMachineDsl::Member' has no attributes.
+The class 'stateMachineDsl::Transition' has no attributes.
+The class 'stateMachineDsl::BoolExp' has the following attributes: 'value' of type str.
+The class 'stateMachineDsl::Or' has no attributes.
+The class 'stateMachineDsl::MinusCond' has no attributes.
+The class 'stateMachineDsl::PlusCond' has no attributes.
+'stateMachineDsl::StringExp' is a specialization of 'Expression'.
+'stateMachineDsl::CommandAction' is a specialization of 'ExtDeclaration'.
+'stateMachineDsl::DecrementAction' is a specialization of 'ChangeAction'.
+'stateMachineDsl::Parenthesis' is a specialization of 'Expression'.
+'stateMachineDsl::And' is a specialization of 'Expression'.
+'stateMachineDsl::PlusCond' is a specialization of 'Expression'.
+'stateMachineDsl::MinusCond' is a specialization of 'Expression'.
+'stateMachineDsl::MulOrDiv' is a specialization of 'Expression'.
+'stateMachineDsl::Function' is a specialization of 'ExtDeclaration'.
+'stateMachineDsl::NumberExp' is a specialization of 'Expression'.
+'stateMachineDsl::Or' is a specialization of 'Expression'.
+'stateMachineDsl::BoolExp' is a specialization of 'Expression'.
+'stateMachineDsl::Not' is a specialization of 'Expression'.
+'stateMachineDsl::DoubleExp' is a specialization of 'Expression'.
+'stateMachineDsl::VarRef' is a specialization of 'Expression'.
+'stateMachineDsl::Equality' is a specialization of 'Expression'.
+'stateMachineDsl::Comparison' is a specialization of 'Expression'.
+'stateMachineDsl::FunctionUse' is a specialization of 'Expression'.
+'stateMachineDsl::IncrementAction' is a specialization of 'ChangeAction'.
+'stateMachineDsl::ResetAction' is a specialization of 'ChangeAction'.
+'stateMachineDsl::Event' (role 'stateMachineDsl_Event45', cardinality 0..*) is associated with 'stateMachineDsl::Condition' (role 'stateMachineDsl_Condition46', cardinality 0..*).
+'stateMachineDsl::Transition' (role 'stateMachineDsl_Transition32', cardinality 0..*) is associated with 'stateMachineDsl::Condition' (role 'stateMachineDsl_Condition', cardinality 0..*).
+'stateMachineDsl::Member' (role 'stateMachineDsl_Member', cardinality 0..*) is associated with 'stateMachineDsl::Event' (role 'stateMachineDsl_Event48', cardinality 0..*).
+'stateMachineDsl::State' (role 'stateMachineDsl_State', cardinality 0..*) is associated with 'stateMachineDsl::StateMachine' (role 'stateMachineDsl_StateMachine2', cardinality 0..*).
+'stateMachineDsl::FunctionUse' (role 'stateMachineDsl_FunctionUse', cardinality 0..*) is associated with 'stateMachineDsl::Function' (role 'stateMachineDsl_Function87', cardinality 0..*).
+'stateMachineDsl::FunctionUse' (role 'stateMachineDsl_FunctionUse89', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression90', cardinality 0..*).
+'stateMachineDsl::MemberState' (role 'stateMachineDsl_MemberState24', cardinality 0..*) is associated with 'stateMachineDsl::CommandAction' (role 'stateMachineDsl_CommandAction', cardinality 0..*).
+'stateMachineDsl::Action' (role 'stateMachineDsl_Action75', cardinality 0..*) is associated with 'stateMachineDsl::EObject' (role 'stateMachineDsl_EObject', cardinality 0..*).
+'stateMachineDsl::ProcedureUse' (role 'stateMachineDsl_ProcedureUse94', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression95', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression98', cardinality 0..*) is associated with 'stateMachineDsl::Condition' (role 'stateMachineDsl_Condition97', cardinality 0..*).
+'stateMachineDsl::And' (role 'stateMachineDsl_And', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression105', cardinality 0..*).
+'stateMachineDsl::ParameterFunction' (role 'stateMachineDsl_ParameterFunction', cardinality 0..*) is associated with 'stateMachineDsl::ExtDeclaration' (role 'stateMachineDsl_ExtDeclaration43', cardinality 0..*).
+'stateMachineDsl::Procedure' (role 'stateMachineDsl_Procedure52', cardinality 0..*) is associated with 'stateMachineDsl::Condition' (role 'stateMachineDsl_Condition53', cardinality 0..*).
+'stateMachineDsl::Comparison' (role 'stateMachineDsl_Comparison', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression115', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression135', cardinality 0..*) is associated with 'stateMachineDsl::Parenthesis' (role 'stateMachineDsl_Parenthesis', cardinality 0..*).
+'stateMachineDsl::Transition' (role 'stateMachineDsl_Transition29', cardinality 0..*) is associated with 'stateMachineDsl::Event' (role 'stateMachineDsl_Event30', cardinality 0..*).
+'stateMachineDsl::MulOrDiv' (role 'stateMachineDsl_MulOrDiv', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression130', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression103', cardinality 0..*) is associated with 'stateMachineDsl::Or' (role 'stateMachineDsl_Or102', cardinality 0..*).
+'stateMachineDsl::PlusCond' (role 'stateMachineDsl_PlusCond122', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression123', cardinality 0..*).
+'stateMachineDsl::State' (role 'stateMachineDsl_State5', cardinality 0..*) is associated with 'stateMachineDsl::StateMachine' (role 'stateMachineDsl_StateMachine4', cardinality 0..*).
+'stateMachineDsl::Variable' (role 'stateMachineDsl_Variable65', cardinality 0..*) is associated with 'stateMachineDsl::Member' (role 'stateMachineDsl_Member64', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression108', cardinality 0..*) is associated with 'stateMachineDsl::And' (role 'stateMachineDsl_And107', cardinality 0..*).
+'stateMachineDsl::State' (role 'stateMachineDsl_State27', cardinality 0..*) is associated with 'stateMachineDsl::Transition' (role 'stateMachineDsl_Transition26', cardinality 0..*).
+'stateMachineDsl::Equality' (role 'stateMachineDsl_Equality', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression110', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression133', cardinality 0..*) is associated with 'stateMachineDsl::MulOrDiv' (role 'stateMachineDsl_MulOrDiv132', cardinality 0..*).
+'stateMachineDsl::Procedure' (role 'stateMachineDsl_Procedure', cardinality 0..*) is associated with 'stateMachineDsl::Declaration' (role 'stateMachineDsl_Declaration13', cardinality 0..*).
+'stateMachineDsl::PlusCond' (role 'stateMachineDsl_PlusCond', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression120', cardinality 0..*).
+'stateMachineDsl::MinusCond' (role 'stateMachineDsl_MinusCond127', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression128', cardinality 0..*).
+'stateMachineDsl::SetAction' (role 'stateMachineDsl_SetAction', cardinality 0..*) is associated with 'stateMachineDsl::VarParName' (role 'stateMachineDsl_VarParName80', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression139', cardinality 0..*) is associated with 'stateMachineDsl::Not' (role 'stateMachineDsl_Not', cardinality 0..*).
+'stateMachineDsl::MemberState' (role 'stateMachineDsl_MemberState22', cardinality 0..*) is associated with 'stateMachineDsl::Transition' (role 'stateMachineDsl_Transition', cardinality 0..*).
+'stateMachineDsl::Declaration' (role 'stateMachineDsl_Declaration', cardinality 0..*) is associated with 'stateMachineDsl::StateMachine' (role 'stateMachineDsl_StateMachine', cardinality 0..*).
+'stateMachineDsl::VarParName' (role 'stateMachineDsl_VarParName137', cardinality 0..*) is associated with 'stateMachineDsl::VarRef' (role 'stateMachineDsl_VarRef', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression100', cardinality 0..*) is associated with 'stateMachineDsl::Or' (role 'stateMachineDsl_Or', cardinality 0..*).
+'stateMachineDsl::Action' (role 'stateMachineDsl_Action77', cardinality 0..*) is associated with 'stateMachineDsl::Condition' (role 'stateMachineDsl_Condition78', cardinality 0..*).
+'stateMachineDsl::Equality' (role 'stateMachineDsl_Equality112', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression113', cardinality 0..*).
+'stateMachineDsl::Declaration' (role 'stateMachineDsl_Declaration9', cardinality 0..*) is associated with 'stateMachineDsl::ExtDeclaration' (role 'stateMachineDsl_ExtDeclaration', cardinality 0..*).
+'stateMachineDsl::VarParName' (role 'stateMachineDsl_VarParName', cardinality 0..*) is associated with 'stateMachineDsl::Variable' (role 'stateMachineDsl_Variable37', cardinality 0..*).
+'stateMachineDsl::Procedure' (role 'stateMachineDsl_Procedure92', cardinality 0..*) is associated with 'stateMachineDsl::ProcedureUse' (role 'stateMachineDsl_ProcedureUse', cardinality 0..*).
+'stateMachineDsl::Function' (role 'stateMachineDsl_Function', cardinality 0..*) is associated with 'stateMachineDsl::VarType' (role 'stateMachineDsl_VarType70', cardinality 0..*).
+'stateMachineDsl::MemberState' (role 'stateMachineDsl_MemberState20', cardinality 0..*) is associated with 'stateMachineDsl::Action' (role 'stateMachineDsl_Action', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression125', cardinality 0..*) is associated with 'stateMachineDsl::MinusCond' (role 'stateMachineDsl_MinusCond', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression', cardinality 0..*) is associated with 'stateMachineDsl::Variable' (role 'stateMachineDsl_Variable41', cardinality 0..*).
+'stateMachineDsl::VarParName' (role 'stateMachineDsl_VarParName85', cardinality 0..*) is associated with 'stateMachineDsl::ChangeAction' (role 'stateMachineDsl_ChangeAction', cardinality 0..*).
+'stateMachineDsl::Variable' (role 'stateMachineDsl_Variable', cardinality 0..*) is associated with 'stateMachineDsl::Declaration' (role 'stateMachineDsl_Declaration7', cardinality 0..*).
+'stateMachineDsl::VarType' (role 'stateMachineDsl_VarType73', cardinality 0..*) is associated with 'stateMachineDsl::ParameterFunction' (role 'stateMachineDsl_ParameterFunction72', cardinality 0..*).
+'stateMachineDsl::State' (role 'stateMachineDsl_State15', cardinality 0..*) is associated with 'stateMachineDsl::MemberState' (role 'stateMachineDsl_MemberState', cardinality 0..*).
+'stateMachineDsl::VarType' (role 'stateMachineDsl_VarType', cardinality 0..*) is associated with 'stateMachineDsl::Variable' (role 'stateMachineDsl_Variable39', cardinality 0..*).
+'stateMachineDsl::Parameter' (role 'stateMachineDsl_Parameter58', cardinality 0..*) is associated with 'stateMachineDsl::VarType' (role 'stateMachineDsl_VarType59', cardinality 0..*).
+'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression118', cardinality 0..*) is associated with 'stateMachineDsl::Comparison' (role 'stateMachineDsl_Comparison117', cardinality 0..*).
+'stateMachineDsl::Declaration' (role 'stateMachineDsl_Declaration11', cardinality 0..*) is associated with 'stateMachineDsl::Event' (role 'stateMachineDsl_Event', cardinality 0..*).
+'stateMachineDsl::Variable' (role 'stateMachineDsl_Variable18', cardinality 0..*) is associated with 'stateMachineDsl::MemberState' (role 'stateMachineDsl_MemberState17', cardinality 0..*).
+'stateMachineDsl::Action' (role 'stateMachineDsl_Action68', cardinality 0..*) is associated with 'stateMachineDsl::Member' (role 'stateMachineDsl_Member67', cardinality 0..*).
+'stateMachineDsl::Parameter' (role 'stateMachineDsl_Parameter61', cardinality 0..*) is associated with 'stateMachineDsl::VarParName' (role 'stateMachineDsl_VarParName62', cardinality 0..*).
+'stateMachineDsl::Member' (role 'stateMachineDsl_Member56', cardinality 0..*) is associated with 'stateMachineDsl::Procedure' (role 'stateMachineDsl_Procedure55', cardinality 0..*).
+'stateMachineDsl::SetAction' (role 'stateMachineDsl_SetAction82', cardinality 0..*) is associated with 'stateMachineDsl::Expression' (role 'stateMachineDsl_Expression83', cardinality 0..*).
+'stateMachineDsl::Parameter' (role 'stateMachineDsl_Parameter', cardinality 0..*) is associated with 'stateMachineDsl::Procedure' (role 'stateMachineDsl_Procedure50', cardinality 0..*).
+'stateMachineDsl::Action' (role 'stateMachineDsl_Action35', cardinality 0..*) is associated with 'stateMachineDsl::Transition' (role 'stateMachineDsl_Transition34', cardinality 0..*).

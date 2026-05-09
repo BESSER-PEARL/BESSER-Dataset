@@ -1,0 +1,95 @@
+The model has 44 class(es).
+The class 'Wires::BasicDataType' has no attributes.
+The class 'DataType' has no attributes.
+The class 'Wires::WiresSpecification' has no attributes.
+The class 'Wires::BasicData' has the following attributes: 'path' of type str.
+The class 'WiresSpecification' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Wires::CompositeTransformationType' has no attributes.
+The class 'ActualParameter' has no attributes.
+The class 'Wires::ActualParameter' has no attributes.
+The class 'Wires::TransformationType' has no attributes.
+The class 'Wires::OutputActualParameter' has no attributes.
+The class 'WiresElement' has no attributes.
+The class 'Wires::ModelType' has the following attributes: 'uri' of type str.
+The class 'AtomicModelTransformation' has no attributes.
+The class 'Wires::DecisionNode' has the following attributes: 'expression' of type str.
+The class 'Wires::Type' has the following attributes: 'path' of type str.
+The class 'Wires::DataType' has no attributes.
+The class 'Wires::InputActualParameter' has no attributes.
+The class 'Transformation' has no attributes.
+The class 'Wires::AtomicModelTransfomationType' has no attributes.
+The class 'Wires::FormalParameter' has the following attributes: 'typeName' of type str.
+The class 'Wires::WiresElement' has no attributes.
+The class 'Wires::AtomicModelTransformation' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'FormalParameter' has no attributes.
+The class 'Wires::TypedElement' has no attributes.
+The class 'Wires::InputFormalParameter' has no attributes.
+The class 'Wires::GenericTransformation' has no attributes.
+The class 'Type' has no attributes.
+The class 'Wires::Model' has the following attributes: 'path' of type str.
+The class 'Wires::ConnectableElement' has the following attributes: 'name' of type str.
+The class 'Wires::Transformation' has no attributes.
+The class 'Wires::Library' has the following attributes: 'name' of type str; 'path' of type str.
+The class 'Wires::DataFlow' has no attributes.
+The class 'Wires::Query' has no attributes.
+The class 'Wires::GenericQuery' has no attributes.
+The class 'Wires::TypeParameter' has no attributes.
+The class 'Wires::IdentityTransformation' has no attributes.
+The class 'Query' has no attributes.
+The class 'TransformationType' has no attributes.
+The class 'Wires::QueryType' has no attributes.
+The class 'Wires::CompositeTransformation' has no attributes.
+The class 'Wires::LibraryRef' has the following attributes: 'name' of type str.
+The class 'Wires::OutputFormalParameter' has no attributes.
+'Wires::Model' is a specialization of 'TypedElement'.
+'Wires::Library' is a specialization of 'WiresElement'.
+'Wires::TransformationType' is a specialization of 'Type'.
+'Wires::Query' is a specialization of 'Transformation'.
+'Wires::InputActualParameter' is a specialization of 'ActualParameter'.
+'Wires::AtomicModelTransformation' is a specialization of 'Transformation'.
+'Wires::TypedElement' is a specialization of 'ConnectableElement'.
+'Wires::DataType' is a specialization of 'Type'.
+'Wires::IdentityTransformation' is a specialization of 'AtomicModelTransformation'.
+'Wires::AtomicModelTransfomationType' is a specialization of 'TransformationType'.
+'Wires::ModelType' is a specialization of 'DataType'.
+'Wires::BasicData' is a specialization of 'TypedElement'.
+'Wires::OutputFormalParameter' is a specialization of 'FormalParameter'.
+'Wires::CompositeTransformationType' is a specialization of 'WiresSpecification'.
+'Wires::ConnectableElement' is a specialization of 'WiresElement'.
+'Wires::Type' is a specialization of 'ConnectableElement'.
+'Wires::CompositeTransformation' is a specialization of 'Transformation'.
+'Wires::OutputActualParameter' is a specialization of 'ActualParameter'.
+'Wires::GenericTransformation' is a specialization of 'AtomicModelTransformation'.
+'Wires::CompositeTransformationType' is a specialization of 'TransformationType'.
+'Wires::ActualParameter' is a specialization of 'TypedElement'.
+'Wires::DecisionNode' is a specialization of 'WiresElement'.
+'Wires::InputFormalParameter' is a specialization of 'FormalParameter'.
+'Wires::TypeParameter' is a specialization of 'ActualParameter'.
+'Wires::DataFlow' is a specialization of 'WiresElement'.
+'Wires::QueryType' is a specialization of 'TransformationType'.
+'Wires::Transformation' is a specialization of 'TypedElement'.
+'Wires::FormalParameter' is a specialization of 'Type'.
+'Wires::GenericQuery' is a specialization of 'Query'.
+'Wires::BasicDataType' is a specialization of 'DataType'.
+'Wires::Library' (role 'Wires_Library31', cardinality 0..*) is associated with 'Wires::LibraryRef' (role 'Wires_LibraryRef32', cardinality 0..*).
+'Wires::TransformationType' (role 'Wires_TransformationType20', cardinality 0..*) is associated with 'Wires::LibraryRef' (role 'Wires_LibraryRef', cardinality 0..*).
+'Wires::GenericQuery' (role 'Wires_GenericQuery', cardinality 0..*) is associated with 'Wires::TypeParameter' (role 'Wires_TypeParameter35', cardinality 0..*).
+'Wires::Transformation' (role 'Wires_Transformation4', cardinality 0..*) is associated with 'Wires::DecisionNode' (role 'Wires_DecisionNode', cardinality 0..*).
+'Wires::TypedElement' (role 'Wires_TypedElement', cardinality 0..*) is associated with 'Wires::Type' (role 'Wires_Type', cardinality 0..*).
+'Wires::DataType' (role 'Wires_DataType', cardinality 0..*) is associated with 'Wires::FormalParameter' (role 'Wires_FormalParameter', cardinality 0..*).
+'Wires::TransformationType' (role 'Wires_TransformationType', cardinality 0..*) is associated with 'Wires::OutputFormalParameter' (role 'Wires_OutputFormalParameter', cardinality 0..*).
+'Wires::ConnectableElement' (role 'ConnectableElement17', cardinality 0..*) is associated with 'Wires::DataFlow' (role 'outgoing', cardinality 0..*).
+'Wires::Transformation' (role 'Wires_Transformation', cardinality 0..*) is associated with 'Wires::InputActualParameter' (role 'Wires_InputActualParameter', cardinality 0..*).
+'Wires::DataFlow' (role 'DataFlow', cardinality 0..*) is associated with 'Wires::ConnectableElement' (role 'target', cardinality 0..*).
+'Wires::WiresElement' (role 'Wires_WiresElement', cardinality 0..*) is associated with 'Wires::WiresSpecification' (role 'Wires_WiresSpecification', cardinality 0..*).
+'Wires::ConnectableElement' (role 'src', cardinality 0..*) is associated with 'Wires::DataFlow' (role 'DataFlow26', cardinality 0..*).
+'Wires::DecisionNode' (role 'Wires_DecisionNode10', cardinality 0..*) is associated with 'Wires::Transformation' (role 'Wires_Transformation11', cardinality 0..*).
+'Wires::Transformation' (role 'Wires_Transformation8', cardinality 0..*) is associated with 'Wires::DecisionNode' (role 'Wires_DecisionNode7', cardinality 0..*).
+'Wires::ConnectableElement' (role 'ConnectableElement', cardinality 0..*) is associated with 'Wires::DataFlow' (role 'incoming', cardinality 0..*).
+'Wires::LibraryRef' (role 'Wires_LibraryRef29', cardinality 0..*) is associated with 'Wires::Library' (role 'Wires_Library', cardinality 0..*).
+'Wires::Transformation' (role 'Wires_Transformation2', cardinality 0..*) is associated with 'Wires::OutputActualParameter' (role 'Wires_OutputActualParameter', cardinality 0..*).
+'Wires::GenericTransformation' (role 'Wires_GenericTransformation', cardinality 0..*) is associated with 'Wires::TypeParameter' (role 'Wires_TypeParameter', cardinality 0..*).
+'Wires::DecisionNode' (role 'Wires_DecisionNode13', cardinality 0..*) is associated with 'Wires::InputActualParameter' (role 'Wires_InputActualParameter14', cardinality 0..*).
+'Wires::TransformationType' (role 'Wires_TransformationType22', cardinality 0..*) is associated with 'Wires::InputFormalParameter' (role 'Wires_InputFormalParameter', cardinality 0..*).

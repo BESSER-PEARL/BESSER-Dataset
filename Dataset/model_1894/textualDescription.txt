@@ -1,0 +1,83 @@
+The model has 51 class(es).
+The class 'RoomBooked' has no attributes.
+The class 'ICheckIn' has no attributes.
+The class 'CodePack::DataModels::RoomBooked' has the following attributes: 'booking_id' of type int; 'room_number' of type int; 'date_end' of type date; 'date_start' of type date.
+The class 'CodePack::IStaffAdmin' has no attributes.
+The class 'CodePack::StaffGUI' has no attributes.
+The class 'ServiceType' has no attributes.
+The class 'CodePack::Backend::CheckInHandler' has no attributes.
+The class 'CodePack::DataModels::StaffMember' has the following attributes: 'password' of type str; 'role_name' of type str; 'full_name' of type str; 'phone_no' of type int; 'pers_no' of type str; 'email' of type str.
+The class 'IManagement' has no attributes.
+The class 'CodePack::Shared::ContactData' has the following attributes: 'phone_no' of type int; 'e_mail' of type str; 'full_name' of type str.
+The class 'CodePack::UserGUI' has no attributes.
+The class 'CodePack::IUserAccount' has no attributes.
+The class 'StaffMember' has no attributes.
+The class 'CustomerHandler' has no attributes.
+The class 'CodePack::DataModels::ServiceType' has the following attributes: 'type_name' of type str; 'price' of type float; 'description' of type str.
+The class 'IStaffAuthentication' has no attributes.
+The class 'RoomType' has no attributes.
+The class 'IBookings' has no attributes.
+The class 'CodePack::Backend::ManagementHandler' has no attributes.
+The class 'CodePack::IStaffAuthentication' has no attributes.
+The class 'CodePack::IManagement' has no attributes.
+The class 'CodePack::DataModels::Guest' has the following attributes: 'name' of type str; 'booking_id' of type int.
+The class 'Room' has no attributes.
+The class 'CodePack::IReceptionOperations::rename::required' has no attributes.
+The class 'Booking' has no attributes.
+The class 'IStaffAdmin' has no attributes.
+The class 'CodePack::ICheckIn' has no attributes.
+The class 'Customer' has no attributes.
+The class 'CodePack::Backend::CustomerHandler' has no attributes.
+The class 'IUserAccount' has no attributes.
+The class 'CodePack::DataBank' has no attributes.
+The class 'Backend::CodePack::BankComponent' has no attributes.
+The class 'CodePack::DataModels::ExtraService' has the following attributes: 'type' of type str; 'booking_id' of type int; 'total_price' of type float; 'date_end' of type date; 'date_start' of type date.
+The class 'CodePack::DataModels::Room' has the following attributes: 'description' of type str; 'room_type' of type str; 'number' of type int; 'isAvailable' of type bool.
+The class 'StaffRole' has no attributes.
+The class 'CodePack::DataModels::Customer' has the following attributes: 'bonus_points' of type int; 'first_name' of type str; 'phone_no' of type int; 'customer_id' of type int; 'e_mail' of type str; 'payment_id' of type int; 'last_name' of type str; 'date_of_birth' of type date; 'password' of type str.
+The class 'CodePack::DataModels::RoomType' has the following attributes: 'typename' of type str; 'description' of type str; 'rate' of type float; 'max_guests' of type int.
+The class 'CodePack::CheckInMachine' has no attributes.
+The class 'CodePack::DataModels::Bill' has the following attributes: 'total_price' of type float; 'booking_id' of type int.
+The class 'Guest' has no attributes.
+The class 'CodePack::IBookings' has no attributes.
+The class 'ExtraService' has no attributes.
+The class 'IReceptionOperations::rename::required' has no attributes.
+The class 'CheckInHandler' has no attributes.
+The class 'ReceptionHandler' has no attributes.
+The class 'ManagementHandler' has no attributes.
+The class 'CodePack::DataModels::StaffRole' has the following attributes: 'canManageServices' of type bool; 'canManageBookings' of type bool; 'name' of type str; 'canManageRooms' of type bool; 'canManageAccounts' of type bool.
+The class 'CodePack::Backend::ReceptionHandler' has no attributes.
+The class 'CodePack::DataModels::PaymentData' has the following attributes: 'id' of type int; 'cc_year' of type int; 'cc_number' of type str; 'cc_month' of type int; 'cc_first_name' of type str; 'cc_ccv' of type str; 'cc_last_name' of type str.
+The class 'CodePack::DataModels::Booking' has the following attributes: 'contact_phone' of type int; 'bonus_points_used' of type int; 'date_check_in' of type date; 'customer_id' of type int; 'contact_email' of type str; 'date_check_out' of type date; 'payment_id' of type int; 'total_price' of type float; 'id' of type int; 'contact_name' of type str; 'isCheckedIn' of type bool.
+The class 'PaymentData' has no attributes.
+'CodePack::IReceptionOperations::rename::required' is a specialization of 'ICheckIn'.
+'CodePack::Backend::CheckInHandler' is a specialization of 'ICheckIn'.
+'CodePack::Backend::CustomerHandler' is a specialization of 'IUserAccount'.
+'CodePack::Backend::ReceptionHandler' is a specialization of 'IReceptionOperations::rename::required'.
+'CodePack::IReceptionOperations::rename::required' is a specialization of 'IBookings'.
+'CodePack::Backend::ManagementHandler' is a specialization of 'IManagement'.
+'CodePack::IUserAccount' is a specialization of 'IBookings'.
+'CodePack::IManagement' is a specialization of 'IStaffAuthentication'.
+'CodePack::IReceptionOperations::rename::required' is a specialization of 'IStaffAuthentication'.
+'CodePack::IManagement' is a specialization of 'IStaffAdmin'.
+'CodePack::DataBank' (role 'CodePack_DataBank11', cardinality 0..*) is associated with 'RoomType' (role 'RoomType', cardinality 0..*).
+'ExtraService' (role 'ExtraService', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank17', cardinality 0..*).
+'StaffMember' (role 'StaffMember', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank25', cardinality 0..*).
+'ExtraService' (role 'ExtraService32', cardinality 0..*) is associated with 'CodePack::DataModels::Bill' (role 'CodePack_DataModels_Bill31', cardinality 0..*).
+'CodePack::StaffGUI' (role 'CodePack_StaffGUI', cardinality 0..*) is associated with 'ManagementHandler' (role 'ManagementHandler', cardinality 0..*).
+'RoomBooked' (role 'RoomBooked', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank15', cardinality 0..*).
+'Room' (role 'Room', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank', cardinality 0..*).
+'Customer' (role 'Customer', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank9', cardinality 0..*).
+'CodePack::DataModels::Booking' (role 'CodePack_DataModels_Booking', cardinality 0..*) is associated with 'Room' (role 'Room34', cardinality 0..*).
+'CodePack::DataBank' (role 'CodePack_DataBank7', cardinality 0..*) is associated with 'Booking' (role 'Booking', cardinality 0..*).
+'StaffRole' (role 'StaffRole', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank23', cardinality 0..*).
+'CodePack::DataBank' (role 'CodePack_DataBank19', cardinality 0..*) is associated with 'ServiceType' (role 'ServiceType', cardinality 0..*).
+'CodePack::DataBank' (role 'CodePack_DataBank13', cardinality 0..*) is associated with 'PaymentData' (role 'PaymentData', cardinality 0..*).
+'CodePack::DataModels::Bill' (role 'CodePack_DataModels_Bill', cardinality 0..*) is associated with 'Room' (role 'Room29', cardinality 0..*).
+'CodePack::CheckInMachine' (role 'CodePack_CheckInMachine', cardinality 0..*) is associated with 'CheckInHandler' (role 'CheckInHandler', cardinality 0..*).
+'Backend::CodePack::BankComponent' (role 'Backend_CodePack_BankComponent', cardinality 0..*) is associated with 'CodePack::Backend::CustomerHandler' (role 'CodePack_Backend_CustomerHandler', cardinality 0..*).
+'CodePack::Backend::ReceptionHandler' (role 'CodePack_Backend_ReceptionHandler', cardinality 0..*) is associated with 'Backend::CodePack::BankComponent' (role 'Backend_CodePack_BankComponent37', cardinality 0..*).
+'Guest' (role 'Guest', cardinality 0..*) is associated with 'CodePack::DataBank' (role 'CodePack_DataBank21', cardinality 0..*).
+'ReceptionHandler' (role 'ReceptionHandler', cardinality 0..*) is associated with 'CodePack::StaffGUI' (role 'CodePack_StaffGUI2', cardinality 0..*).
+'CodePack::DataModels::RoomBooked' (role 'CodePack_DataModels_RoomBooked', cardinality 0..*) is associated with 'Booking' (role 'Booking27', cardinality 0..*).
+'CodePack::UserGUI' (role 'CodePack_UserGUI', cardinality 0..*) is associated with 'CustomerHandler' (role 'CustomerHandler', cardinality 0..*).

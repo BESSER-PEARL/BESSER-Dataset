@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kuentinozaure/TP_DSL/com.m1ice.fsm/model/fsm.ecore

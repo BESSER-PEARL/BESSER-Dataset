@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'petrinetDsl::PutStatement' has the following attributes: 'count' of type int.
+The class 'petrinetDsl::AssureStatement' has the following attributes: 'count' of type int.
+The class 'petrinetDsl::Storage' has the following attributes: 'capacity' of type int; 'count' of type int.
+The class 'petrinetDsl::Place' has the following attributes: 'name' of type str.
+The class 'petrinetDsl::Resource' has the following attributes: 'name' of type str.
+The class 'petrinetDsl::PetriNet' has no attributes.
+The class 'petrinetDsl::TakeStatement' has the following attributes: 'count' of type int.
+The class 'petrinetDsl::Transaction' has the following attributes: 'name' of type str.
+'petrinetDsl::AssureStatement' (role 'petrinetDsl_AssureStatement17', cardinality 0..*) is associated with 'petrinetDsl::Resource' (role 'petrinetDsl_Resource18', cardinality 0..*).
+'petrinetDsl::AssureStatement' (role 'petrinetDsl_AssureStatement', cardinality 0..*) is associated with 'petrinetDsl::Transaction' (role 'petrinetDsl_Transaction11', cardinality 0..*).
+'petrinetDsl::PetriNet' (role 'petrinetDsl_PetriNet', cardinality 0..*) is associated with 'petrinetDsl::Resource' (role 'petrinetDsl_Resource', cardinality 0..*).
+'petrinetDsl::Resource' (role 'petrinetDsl_Resource30', cardinality 0..*) is associated with 'petrinetDsl::PutStatement' (role 'petrinetDsl_PutStatement29', cardinality 0..*).
+'petrinetDsl::Storage' (role 'petrinetDsl_Storage8', cardinality 0..*) is associated with 'petrinetDsl::Resource' (role 'petrinetDsl_Resource9', cardinality 0..*).
+'petrinetDsl::Place' (role 'petrinetDsl_Place', cardinality 0..*) is associated with 'petrinetDsl::PetriNet' (role 'petrinetDsl_PetriNet2', cardinality 0..*).
+'petrinetDsl::Transaction' (role 'petrinetDsl_Transaction15', cardinality 0..*) is associated with 'petrinetDsl::PutStatement' (role 'petrinetDsl_PutStatement', cardinality 0..*).
+'petrinetDsl::AssureStatement' (role 'petrinetDsl_AssureStatement20', cardinality 0..*) is associated with 'petrinetDsl::Place' (role 'petrinetDsl_Place21', cardinality 0..*).
+'petrinetDsl::Place' (role 'petrinetDsl_Place33', cardinality 0..*) is associated with 'petrinetDsl::PutStatement' (role 'petrinetDsl_PutStatement32', cardinality 0..*).
+'petrinetDsl::Transaction' (role 'petrinetDsl_Transaction', cardinality 0..*) is associated with 'petrinetDsl::PetriNet' (role 'petrinetDsl_PetriNet4', cardinality 0..*).
+'petrinetDsl::TakeStatement' (role 'petrinetDsl_TakeStatement', cardinality 0..*) is associated with 'petrinetDsl::Transaction' (role 'petrinetDsl_Transaction13', cardinality 0..*).
+'petrinetDsl::Place' (role 'petrinetDsl_Place6', cardinality 0..*) is associated with 'petrinetDsl::Storage' (role 'petrinetDsl_Storage', cardinality 0..*).
+'petrinetDsl::TakeStatement' (role 'petrinetDsl_TakeStatement23', cardinality 0..*) is associated with 'petrinetDsl::Resource' (role 'petrinetDsl_Resource24', cardinality 0..*).
+'petrinetDsl::TakeStatement' (role 'petrinetDsl_TakeStatement26', cardinality 0..*) is associated with 'petrinetDsl::Place' (role 'petrinetDsl_Place27', cardinality 0..*).

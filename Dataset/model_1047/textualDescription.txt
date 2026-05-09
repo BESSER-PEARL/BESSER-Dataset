@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'State' has no attributes.
+The class 'fMS::State' has the following attributes: 'name' of type str.
+The class 'fMS::FinalState' has no attributes.
+The class 'fMS::Transition' has the following attributes: 'name' of type str.
+The class 'fMS::FSM' has the following attributes: 'name' of type str.
+The class 'fMS::InitState' has no attributes.
+'fMS::FinalState' is a specialization of 'State'.
+'fMS::InitState' is a specialization of 'State'.
+'fMS::State' (role 'fMS_State', cardinality 0..*) is associated with 'fMS::FSM' (role 'fMS_FSM', cardinality 0..*).
+'fMS::Transition' (role 'fMS_Transition4', cardinality 0..*) is associated with 'fMS::State' (role 'fMS_State5', cardinality 0..*).
+'fMS::FSM' (role 'fMS_FSM2', cardinality 0..*) is associated with 'fMS::Transition' (role 'fMS_Transition', cardinality 0..*).
+'fMS::State' (role 'fMS_State8', cardinality 0..*) is associated with 'fMS::Transition' (role 'fMS_Transition7', cardinality 0..*).

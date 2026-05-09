@@ -1,0 +1,65 @@
+The model has 27 class(es).
+The class 'pycom::Boolean' has the following attributes: 'value' of type str.
+The class 'pycom::ConditionalAction' has the following attributes: 'type' of type str.
+The class 'pycom::ModuleName' has the following attributes: 'name' of type str.
+The class 'pycom::Pin' has no attributes.
+The class 'pycom::Connection' has the following attributes: 'portnumber' of type int.
+The class 'pycom::Sensor' has no attributes.
+The class 'pycom::Function' has no attributes.
+The class 'pycom::Expression' has the following attributes: 'outputValue' of type int.
+The class 'pycom::Board' has the following attributes: 'boardType' of type str; 'name' of type str; 'communicationRate' of type int.
+The class 'pycom::Communication' has no attributes.
+The class 'pycom::ComparisonExp' has the following attributes: 'op' of type str.
+The class 'pycom::Server' has the following attributes: 'name' of type str.
+The class 'pycom::ParameterType' has the following attributes: 'text' of type str; 'number' of type int.
+The class 'BoardMember' has no attributes.
+The class 'pycom::Actuator' has no attributes.
+The class 'pycom::ExpMember' has no attributes.
+The class 'pycom::ModuleType' has the following attributes: 'name' of type str.
+The class 'pycom::LogicExp' has no attributes.
+The class 'pycom::BoardMember' has no attributes.
+The class 'ExpMember' has no attributes.
+The class 'pycom::PinName' has the following attributes: 'name' of type str.
+The class 'pycom::CommunicationType' has the following attributes: 'name' of type str; 'ssid' of type str; 'password' of type str.
+The class 'pycom::Host' has the following attributes: 'website' of type str; 'ipAdr' of type str.
+The class 'pycom::Library' has the following attributes: 'name' of type str.
+The class 'pycom::System' has no attributes.
+The class 'pycom::Import' has the following attributes: 'name' of type str; 'path' of type str.
+The class 'pycom::Condition' has the following attributes: 'operator' of type str.
+'pycom::ConditionalAction' is a specialization of 'ExpMember'.
+'pycom::Communication' is a specialization of 'BoardMember'.
+'pycom::Actuator' is a specialization of 'BoardMember'.
+'pycom::Function' is a specialization of 'ExpMember'.
+'pycom::Host' (role 'pycom_Host', cardinality 0..*) is associated with 'pycom::Connection' (role 'pycom_Connection17', cardinality 0..*).
+'pycom::ComparisonExp' (role 'pycom_ComparisonExp59', cardinality 0..*) is associated with 'pycom::Expression' (role 'pycom_Expression', cardinality 0..*).
+'pycom::Expression' (role 'pycom_Expression62', cardinality 0..*) is associated with 'pycom::ComparisonExp' (role 'pycom_ComparisonExp61', cardinality 0..*).
+'pycom::ConditionalAction' (role 'pycom_ConditionalAction', cardinality 0..*) is associated with 'pycom::Server' (role 'pycom_Server15', cardinality 0..*).
+'pycom::Pin' (role 'pycom_Pin', cardinality 0..*) is associated with 'pycom::Sensor' (role 'pycom_Sensor34', cardinality 0..*).
+'pycom::Function' (role 'pycom_Function69', cardinality 0..*) is associated with 'pycom::Import' (role 'pycom_Import70', cardinality 0..*).
+'pycom::Sensor' (role 'pycom_Sensor32', cardinality 0..*) is associated with 'pycom::ModuleName' (role 'pycom_ModuleName', cardinality 0..*).
+'pycom::Expression' (role 'pycom_Expression64', cardinality 0..*) is associated with 'pycom::Function' (role 'pycom_Function', cardinality 0..*).
+'pycom::Library' (role 'pycom_Library8', cardinality 0..*) is associated with 'pycom::Import' (role 'pycom_Import9', cardinality 0..*).
+'pycom::CommunicationType' (role 'pycom_CommunicationType', cardinality 0..*) is associated with 'pycom::Communication' (role 'pycom_Communication', cardinality 0..*).
+'pycom::Board' (role 'pycom_Board19', cardinality 0..*) is associated with 'pycom::Library' (role 'pycom_Library20', cardinality 0..*).
+'pycom::System' (role 'pycom_System2', cardinality 0..*) is associated with 'pycom::Import' (role 'pycom_Import', cardinality 0..*).
+'pycom::ModuleType' (role 'pycom_ModuleType', cardinality 0..*) is associated with 'pycom::Sensor' (role 'pycom_Sensor30', cardinality 0..*).
+'pycom::PinName' (role 'pycom_PinName48', cardinality 0..*) is associated with 'pycom::Pin' (role 'pycom_Pin47', cardinality 0..*).
+'pycom::Server' (role 'pycom_Server13', cardinality 0..*) is associated with 'pycom::Connection' (role 'pycom_Connection', cardinality 0..*).
+'pycom::BoardMember' (role 'pycom_BoardMember', cardinality 0..*) is associated with 'pycom::Board' (role 'pycom_Board22', cardinality 0..*).
+'pycom::Condition' (role 'pycom_Condition50', cardinality 0..*) is associated with 'pycom::LogicExp' (role 'pycom_LogicExp', cardinality 0..*).
+'pycom::System' (role 'pycom_System4', cardinality 0..*) is associated with 'pycom::Board' (role 'pycom_Board', cardinality 0..*).
+'pycom::ConditionalAction' (role 'pycom_ConditionalAction26', cardinality 0..*) is associated with 'pycom::Condition' (role 'pycom_Condition', cardinality 0..*).
+'pycom::Boolean' (role 'pycom_Boolean', cardinality 0..*) is associated with 'pycom::LogicExp' (role 'pycom_LogicExp55', cardinality 0..*).
+'pycom::BoardMember' (role 'pycom_BoardMember24', cardinality 0..*) is associated with 'pycom::Sensor' (role 'pycom_Sensor', cardinality 0..*).
+'pycom::Actuator' (role 'pycom_Actuator38', cardinality 0..*) is associated with 'pycom::ModuleName' (role 'pycom_ModuleName39', cardinality 0..*).
+'pycom::Actuator' (role 'pycom_Actuator41', cardinality 0..*) is associated with 'pycom::Pin' (role 'pycom_Pin42', cardinality 0..*).
+'pycom::ComparisonExp' (role 'pycom_ComparisonExp', cardinality 0..*) is associated with 'pycom::LogicExp' (role 'pycom_LogicExp57', cardinality 0..*).
+'pycom::Function' (role 'pycom_Function72', cardinality 0..*) is associated with 'pycom::Pin' (role 'pycom_Pin73', cardinality 0..*).
+'pycom::ParameterType' (role 'pycom_ParameterType', cardinality 0..*) is associated with 'pycom::Import' (role 'pycom_Import11', cardinality 0..*).
+'pycom::ExpMember' (role 'pycom_ExpMember', cardinality 0..*) is associated with 'pycom::ConditionalAction' (role 'pycom_ConditionalAction28', cardinality 0..*).
+'pycom::Actuator' (role 'pycom_Actuator', cardinality 0..*) is associated with 'pycom::ModuleType' (role 'pycom_ModuleType36', cardinality 0..*).
+'pycom::System' (role 'pycom_System', cardinality 0..*) is associated with 'pycom::Library' (role 'pycom_Library', cardinality 0..*).
+'pycom::Board' (role 'pycom_Board67', cardinality 0..*) is associated with 'pycom::Function' (role 'pycom_Function66', cardinality 0..*).
+'pycom::Pin' (role 'pycom_Pin45', cardinality 0..*) is associated with 'pycom::PinName' (role 'pycom_PinName', cardinality 0..*).
+'pycom::Condition' (role 'pycom_Condition51', cardinality 0..*) is associated with 'pycom::Condition' (role 'pycom_Condition53', cardinality 0..*).
+'pycom::Server' (role 'pycom_Server', cardinality 0..*) is associated with 'pycom::System' (role 'pycom_System6', cardinality 0..*).

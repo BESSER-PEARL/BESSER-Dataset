@@ -1,0 +1,48 @@
+The model has 25 class(es).
+The class 'apromore::CanonicalProcess' has the following attributes: 'author' of type str; 'version' of type str; 'uri' of type str.
+The class 'apromore::ANDJoin' has no attributes.
+The class 'apromore::Net' has the following attributes: 'ident' of type int.
+The class 'apromore::Routing' has no attributes.
+The class 'apromore::ORSplit' has no attributes.
+The class 'Event' has no attributes.
+The class 'apromore::Event' has no attributes.
+The class 'apromore::ANDSplit' has no attributes.
+The class 'apromore::Split' has no attributes.
+The class 'apromore::ORJoin' has no attributes.
+The class 'Node' has no attributes.
+The class 'apromore::XORSplit' has no attributes.
+The class 'Split' has no attributes.
+The class 'Routing' has no attributes.
+The class 'apromore::Time' has no attributes.
+The class 'Work' has no attributes.
+The class 'apromore::Message' has no attributes.
+The class 'apromore::Task' has no attributes.
+The class 'apromore::Node' has the following attributes: 'configurable' of type bool; 'ident' of type int; 'name' of type str.
+The class 'apromore::Edge' has the following attributes: 'ident' of type int; 'condition' of type str; 'default' of type bool.
+The class 'apromore::Join' has no attributes.
+The class 'Join' has no attributes.
+The class 'apromore::State' has no attributes.
+The class 'apromore::Work' has no attributes.
+The class 'apromore::XORJoin' has no attributes.
+'apromore::ORJoin' is a specialization of 'Join'.
+'apromore::ANDSplit' is a specialization of 'Split'.
+'apromore::Work' is a specialization of 'Node'.
+'apromore::XORSplit' is a specialization of 'Split'.
+'apromore::Join' is a specialization of 'Routing'.
+'apromore::Message' is a specialization of 'Event'.
+'apromore::Event' is a specialization of 'Work'.
+'apromore::Task' is a specialization of 'Work'.
+'apromore::Routing' is a specialization of 'Node'.
+'apromore::XORJoin' is a specialization of 'Join'.
+'apromore::ANDJoin' is a specialization of 'Join'.
+'apromore::State' is a specialization of 'Routing'.
+'apromore::Split' is a specialization of 'Routing'.
+'apromore::ORSplit' is a specialization of 'Split'.
+'apromore::Time' is a specialization of 'Event'.
+'apromore::Node' (role 'apromore_Node13', cardinality 0..*) is associated with 'apromore::Edge' (role 'apromore_Edge12', cardinality 0..*).
+'apromore::Node' (role 'apromore_Node10', cardinality 0..*) is associated with 'apromore::Edge' (role 'apromore_Edge9', cardinality 0..*).
+'apromore::Net' (role 'apromore_Net15', cardinality 0..*) is associated with 'apromore::Task' (role 'apromore_Task', cardinality 0..*).
+'apromore::Net' (role 'apromore_Net5', cardinality 0..*) is associated with 'apromore::Node' (role 'apromore_Node', cardinality 0..*).
+'apromore::Net' (role 'apromore_Net3', cardinality 0..*) is associated with 'apromore::CanonicalProcess' (role 'apromore_CanonicalProcess2', cardinality 0..*).
+'apromore::Net' (role 'apromore_Net', cardinality 0..*) is associated with 'apromore::CanonicalProcess' (role 'apromore_CanonicalProcess', cardinality 0..*).
+'apromore::Net' (role 'apromore_Net7', cardinality 0..*) is associated with 'apromore::Edge' (role 'apromore_Edge', cardinality 0..*).

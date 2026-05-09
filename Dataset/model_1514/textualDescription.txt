@@ -1,0 +1,21 @@
+The model has 5 class(es).
+The class 'model::System' has no attributes.
+The class 'model::Transition' has the following attributes: 'trigger' of type str; 'name' of type str; 'action' of type str.
+The class 'model::State' has the following attributes: 'name' of type str.
+The class 'model::Buffer' has the following attributes: 'initialValue' of type str; 'name' of type str.
+The class 'model::FSM' has the following attributes: 'name' of type str.
+'model::State' (role 'tgt', cardinality 0..*) is associated with 'model::Transition' (role 'Transition8', cardinality 0..*).
+'model::FSM' (role 'outgoingFSM', cardinality 0..*) is associated with 'model::Buffer' (role 'Buffer', cardinality 0..*).
+'model::FSM' (role 'FSM21', cardinality 0..*) is associated with 'model::Transition' (role 'ownedTransitions', cardinality 0..*).
+'model::State' (role 'State', cardinality 0..*) is associated with 'model::FSM' (role 'fsm', cardinality 0..*).
+'model::Transition' (role 'Transition', cardinality 0..*) is associated with 'model::FSM' (role 'fsm2', cardinality 0..*).
+'model::System' (role 'model_System', cardinality 0..*) is associated with 'model::FSM' (role 'model_FSM23', cardinality 0..*).
+'model::System' (role 'model_System25', cardinality 0..*) is associated with 'model::Buffer' (role 'model_Buffer', cardinality 0..*).
+'model::Buffer' (role 'Buffer5', cardinality 0..*) is associated with 'model::FSM' (role 'incomingFSM', cardinality 0..*).
+'model::State' (role 'ownedStates', cardinality 0..*) is associated with 'model::FSM' (role 'FSM', cardinality 0..*).
+'model::Transition' (role 'outgoing', cardinality 0..*) is associated with 'model::State' (role 'State19', cardinality 0..*).
+'model::Transition' (role 'incoming', cardinality 0..*) is associated with 'model::State' (role 'State17', cardinality 0..*).
+'model::Buffer' (role 'inputBuffer', cardinality 0..*) is associated with 'model::FSM' (role 'FSM13', cardinality 0..*).
+'model::FSM' (role 'model_FSM', cardinality 0..*) is associated with 'model::State' (role 'model_State', cardinality 0..*).
+'model::Buffer' (role 'outputBuffer', cardinality 0..*) is associated with 'model::FSM' (role 'FSM15', cardinality 0..*).
+'model::Transition' (role 'Transition10', cardinality 0..*) is associated with 'model::State' (role 'src', cardinality 0..*).

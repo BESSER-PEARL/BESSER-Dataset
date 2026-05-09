@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'research32::Write' has the following attributes: 'timeSpent' of type int.
+The class 'research32::Position' has the following attributes: 'description' of type str.
+The class 'research32::ReviewNote' has the following attributes: 'content' of type str.
+The class 'StateMachineObject' has no attributes.
+The class 'research32::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'research32::Counted' has the following attributes: 'id' of type int.
+The class 'research32::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'research32::Labelled' has the following attributes: 'lname' of type str.
+The class 'research32::KnowledgeManager' has no attributes.
+The class 'research32::PublicationStructure' has no attributes.
+The class 'Counted' has no attributes.
+The class 'research32::PublicationSystem' has no attributes.
+The class 'Labelled' has no attributes.
+The class 'research32::Paper' has no attributes.
+The class 'research32::StateMachineVariable' has no attributes.
+The class 'research32::Paragraph' has the following attributes: 'content' of type str.
+The class 'research32::Progress' has the following attributes: 'percent' of type int.
+The class 'research32::State' has the following attributes: 'id' of type int; 'name' of type str; 'kind' of type str.
+The class 'research32::Skill' has the following attributes: 'description' of type str.
+The class 'research32::Transition' has the following attributes: 'guardLabel' of type str; 'guardExpression' of type str.
+The class 'research32::Keyword' has the following attributes: 'word' of type str.
+The class 'research32::Named' has the following attributes: 'name' of type str.
+The class 'research32::StateMachineObject' has the following attributes: 'label' of type str.
+The class 'research32::Review' has the following attributes: 'date' of type date.
+The class 'research32::Action' has the following attributes: 'actionStatement' of type str; 'actionLabel' of type str.
+The class 'research32::PublicationProcess' has the following attributes: 'maxTime' of type int; 'minTime' of type int.
+The class 'research32::PublicationStatus' has the following attributes: 'label' of type str.
+The class 'research32::Phase' has the following attributes: 'name' of type str.
+The class 'research32::PaperKeyword' has the following attributes: 'weight' of type int.
+The class 'Named' has no attributes.
+The enumeration 'StateType' has the following literals: 'final', 'initial', 'ongoing'.
+'research32::ReviewNote' is a specialization of 'Named'.
+'research32::Transition' is a specialization of 'StateMachineObject'.
+'research32::PublicationProcess' is a specialization of 'Named'.
+'research32::Position' is a specialization of 'Named'.
+'research32::Paragraph' is a specialization of 'Counted'.
+'research32::Progress' is a specialization of 'Labelled'.
+'research32::Keyword' is a specialization of 'Named'.
+'research32::Paper' is a specialization of 'Named'.
+'research32::PublicationStructure' is a specialization of 'Named'.
+'research32::State' is a specialization of 'StateMachineObject'.
+'research32::Paragraph' is a specialization of 'Named'.
+'research32::Review' is a specialization of 'Labelled'.
+'research32::KnowledgeManager' is a specialization of 'Named'.
+'research32::PublicationSystem' is a specialization of 'Named'.
+'research32::Write' is a specialization of 'Labelled'.
+'research32::Transition' (role 'research32_Transition', cardinality 0..*) is associated with 'research32::Action' (role 'research32_Action', cardinality 0..*).
+'research32::Paper' (role 'res_papers', cardinality 0..*) is associated with 'research32::Researcher' (role 'Researcher', cardinality 0..*).
+'research32::Review' (role 'research32_Review', cardinality 0..*) is associated with 'research32::Researcher' (role 'research32_Researcher3', cardinality 0..*).
+'research32::Paper' (role 'Paper26', cardinality 0..*) is associated with 'research32::Progress' (role 'progress', cardinality 0..*).
+'research32::PublicationProcess' (role 'research32_PublicationProcess24', cardinality 0..*) is associated with 'research32::Progress' (role 'research32_Progress', cardinality 0..*).
+'research32::State' (role 'research32_State', cardinality 0..*) is associated with 'research32::Paper' (role 'research32_Paper20', cardinality 0..*).
+'research32::Position' (role 'research32_Position50', cardinality 0..*) is associated with 'research32::Position' (role 'research32_Position52', cardinality 0..*).
+'research32::Paper' (role 'research32_Paper37', cardinality 0..*) is associated with 'research32::PublicationStructure' (role 'research32_PublicationStructure36', cardinality 0..*).
+'research32::Paper' (role 'research32_Paper16', cardinality 0..*) is associated with 'research32::Paper' (role 'research32_Paper18', cardinality 0..*).
+'research32::PaperKeyword' (role 'research32_PaperKeyword', cardinality 0..*) is associated with 'research32::Paper' (role 'research32_Paper15', cardinality 0..*).
+'research32::Transition' (role 'research32_Transition74', cardinality 0..*) is associated with 'research32::State' (role 'research32_State75', cardinality 0..*).
+'research32::Researcher' (role 'authors', cardinality 0..*) is associated with 'research32::Paper' (role 'Paper', cardinality 0..*).
+'research32::Paper' (role 'paper', cardinality 0..*) is associated with 'research32::Progress' (role 'Progress', cardinality 0..*).
+'research32::Action' (role 'research32_Action82', cardinality 0..*) is associated with 'research32::Action' (role 'research32_Action84', cardinality 0..*).
+'research32::Position' (role 'research32_Position49', cardinality 0..*) is associated with 'research32::PublicationSystem' (role 'research32_PublicationSystem48', cardinality 0..*).
+'research32::PublicationStructure' (role 'research32_PublicationStructure46', cardinality 0..*) is associated with 'research32::PublicationSystem' (role 'research32_PublicationSystem45', cardinality 0..*).
+'research32::PublicationStatus' (role 'research32_PublicationStatus65', cardinality 0..*) is associated with 'research32::StateMachineVariable' (role 'research32_StateMachineVariable', cardinality 0..*).
+'research32::Keyword' (role 'research32_Keyword60', cardinality 0..*) is associated with 'research32::PaperKeyword' (role 'research32_PaperKeyword59', cardinality 0..*).
+'research32::Skill' (role 'research32_Skill', cardinality 0..*) is associated with 'research32::Researcher' (role 'research32_Researcher6', cardinality 0..*).
+'research32::State' (role 'research32_State68', cardinality 0..*) is associated with 'research32::PublicationStatus' (role 'research32_PublicationStatus67', cardinality 0..*).
+'research32::PublicationSystem' (role 'research32_PublicationSystem', cardinality 0..*) is associated with 'research32::PublicationProcess' (role 'research32_PublicationProcess43', cardinality 0..*).
+'research32::PublicationStructure' (role 'research32_PublicationStructure41', cardinality 0..*) is associated with 'research32::PublicationStatus' (role 'research32_PublicationStatus', cardinality 0..*).
+'research32::State' (role 'research32_State72', cardinality 0..*) is associated with 'research32::Transition' (role 'research32_Transition71', cardinality 0..*).
+'research32::Researcher' (role 'research32_Researcher', cardinality 0..*) is associated with 'research32::Write' (role 'research32_Write', cardinality 0..*).
+'research32::KnowledgeManager' (role 'research32_KnowledgeManager', cardinality 0..*) is associated with 'research32::PublicationStructure' (role 'research32_PublicationStructure39', cardinality 0..*).
+'research32::Keyword' (role 'research32_Keyword', cardinality 0..*) is associated with 'research32::Paper' (role 'research32_Paper54', cardinality 0..*).
+'research32::Keyword' (role 'research32_Keyword57', cardinality 0..*) is associated with 'research32::KnowledgeManager' (role 'research32_KnowledgeManager56', cardinality 0..*).
+'research32::Collaboration' (role 'research32_Collaboration', cardinality 0..*) is associated with 'research32::Researcher' (role 'research32_Researcher10', cardinality 0..*).
+'research32::Review' (role 'research32_Review31', cardinality 0..*) is associated with 'research32::ReviewNote' (role 'research32_ReviewNote32', cardinality 0..*).
+'research32::Researcher' (role 'research32_Researcher8', cardinality 0..*) is associated with 'research32::Position' (role 'research32_Position', cardinality 0..*).
+'research32::Collaboration' (role 'research32_Collaboration62', cardinality 0..*) is associated with 'research32::Paper' (role 'research32_Paper63', cardinality 0..*).
+'research32::Phase' (role 'research32_Phase', cardinality 0..*) is associated with 'research32::PublicationProcess' (role 'research32_PublicationProcess', cardinality 0..*).
+'research32::Action' (role 'research32_Action81', cardinality 0..*) is associated with 'research32::State' (role 'research32_State80', cardinality 0..*).
+'research32::Paper' (role 'research32_Paper', cardinality 0..*) is associated with 'research32::Paragraph' (role 'research32_Paragraph', cardinality 0..*).
+'research32::Paragraph' (role 'research32_Paragraph29', cardinality 0..*) is associated with 'research32::Write' (role 'research32_Write28', cardinality 0..*).
+'research32::Transition' (role 'research32_Transition78', cardinality 0..*) is associated with 'research32::State' (role 'research32_State77', cardinality 0..*).
+'research32::Researcher' (role 'research32_Researcher34', cardinality 0..*) is associated with 'research32::PublicationStructure' (role 'research32_PublicationStructure', cardinality 0..*).
+'research32::Paragraph' (role 'research32_Paragraph22', cardinality 0..*) is associated with 'research32::ReviewNote' (role 'research32_ReviewNote', cardinality 0..*).

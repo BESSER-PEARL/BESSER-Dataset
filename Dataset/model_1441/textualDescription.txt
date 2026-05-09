@@ -1,0 +1,25 @@
+The model has 12 class(es).
+The class 'RepresentationGraph::Rhombus' has the following attributes: 'height' of type str; 'width' of type str.
+The class 'RepresentationGraph::Circle' has the following attributes: 'radius' of type str.
+The class 'RepresentationGraph::ContainerElement' has no attributes.
+The class 'RepresentationGraph::NodeElement' has the following attributes: 'label' of type str.
+The class 'ContainerElement' has no attributes.
+The class 'RepresentationGraph::Diagram' has no attributes.
+The class 'RepresentationGraph::Rectangle' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'RepresentationGraph::IconElement' has the following attributes: 'filepath' of type str.
+The class 'NodeElement' has no attributes.
+The class 'RepresentationGraph::EdgeElement' has no attributes.
+The class 'RepresentationGraph::GraphicElement' has the following attributes: 'color' of type str; 'paletteName' of type str; 'paletteIconPath' of type str.
+The class 'GraphicElement' has no attributes.
+'RepresentationGraph::Rhombus' is a specialization of 'ContainerElement'.
+'RepresentationGraph::Circle' is a specialization of 'ContainerElement'.
+'RepresentationGraph::NodeElement' is a specialization of 'GraphicElement'.
+'RepresentationGraph::Rectangle' is a specialization of 'ContainerElement'.
+'RepresentationGraph::EdgeElement' is a specialization of 'GraphicElement'.
+'RepresentationGraph::IconElement' is a specialization of 'NodeElement'.
+'RepresentationGraph::ContainerElement' is a specialization of 'NodeElement'.
+'RepresentationGraph::NodeElement' (role 'RepresentationGraph_NodeElement9', cardinality 0..*) is associated with 'RepresentationGraph::ContainerElement' (role 'RepresentationGraph_ContainerElement', cardinality 0..*).
+'RepresentationGraph::NodeElement' (role 'RepresentationGraph_NodeElement7', cardinality 0..*) is associated with 'RepresentationGraph::NodeElement' (role 'RepresentationGraph_NodeElement5', cardinality 0..*).
+'RepresentationGraph::NodeElement' (role 'RepresentationGraph_NodeElement', cardinality 0..*) is associated with 'RepresentationGraph::EdgeElement' (role 'RepresentationGraph_EdgeElement', cardinality 0..*).
+'RepresentationGraph::NodeElement' (role 'RepresentationGraph_NodeElement4', cardinality 0..*) is associated with 'RepresentationGraph::EdgeElement' (role 'RepresentationGraph_EdgeElement3', cardinality 0..*).
+'RepresentationGraph::Diagram' (role 'RepresentationGraph_Diagram', cardinality 0..*) is associated with 'RepresentationGraph::GraphicElement' (role 'RepresentationGraph_GraphicElement', cardinality 0..*).

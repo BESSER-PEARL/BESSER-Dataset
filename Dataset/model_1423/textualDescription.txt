@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'statemachine::Signal' has the following attributes: 'name' of type str.
+The class 'statemachine::OutputSignal' has no attributes.
+The class 'Signal' has no attributes.
+The class 'statemachine::InputSignal' has no attributes.
+The class 'statemachine::State' has the following attributes: 'name' of type str.
+The class 'statemachine::Command' has the following attributes: 'newValue' of type bool.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::Condition' has no attributes.
+The class 'statemachine::Event' has the following attributes: 'value' of type bool.
+The class 'statemachine::Statemachine' has no attributes.
+'statemachine::OutputSignal' is a specialization of 'Signal'.
+'statemachine::InputSignal' is a specialization of 'Signal'.
+'statemachine::Command' (role 'statemachine_Command', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State4', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine2', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).
+'statemachine::Condition' (role 'statemachine_Condition', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition8', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State6', cardinality 0..*).
+'statemachine::Command' (role 'statemachine_Command18', cardinality 0..*) is associated with 'statemachine::Signal' (role 'statemachine_Signal19', cardinality 0..*).
+'statemachine::Signal' (role 'statemachine_Signal16', cardinality 0..*) is associated with 'statemachine::Event' (role 'statemachine_Event15', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine', cardinality 0..*) is associated with 'statemachine::Signal' (role 'statemachine_Signal', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition10', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State11', cardinality 0..*).
+'statemachine::Condition' (role 'statemachine_Condition13', cardinality 0..*) is associated with 'statemachine::Event' (role 'statemachine_Event', cardinality 0..*).

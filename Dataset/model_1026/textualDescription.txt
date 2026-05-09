@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'tp01::FSM' has the following attributes: 'name' of type str.
+The class 'tp01::State' has the following attributes: 'name' of type str.
+The class 'tp01::StartState' has no attributes.
+The class 'tp01::Transition' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'tp01::FinalState' has no attributes.
+'tp01::FinalState' is a specialization of 'State'.
+'tp01::StartState' is a specialization of 'State'.
+'tp01::State' (role 'tp01_State', cardinality 0..*) is associated with 'tp01::FSM' (role 'tp01_FSM', cardinality 0..*).
+'tp01::FSM' (role 'tp01_FSM2', cardinality 0..*) is associated with 'tp01::Transition' (role 'tp01_Transition', cardinality 0..*).
+'tp01::State' (role 'tp01_State8', cardinality 0..*) is associated with 'tp01::Transition' (role 'tp01_Transition7', cardinality 0..*).
+'tp01::Transition' (role 'tp01_Transition4', cardinality 0..*) is associated with 'tp01::State' (role 'tp01_State5', cardinality 0..*).

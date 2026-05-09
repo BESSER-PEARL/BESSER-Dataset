@@ -1,0 +1,55 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class HALL_FSM_Transition  {
+
+    private String name;
+
+
+
+
+
+    private State state;
+
+
+
+
+    private State state;
+
+
+    public HALL_FSM_Transition(
+        String name    ) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+}

@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'iupjwq::RelatedTo' has the following attributes: 'since' of type str.
+The class 'iupjwq::Thing' has the following attributes: 'id' of type int.
+The class 'iupjwq::World' has no attributes.
+'iupjwq::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'iupjwq::Thing' (role 'fromThing', cardinality 0..*).
+'iupjwq::RelatedTo' (role 'iupjwq_RelatedTo', cardinality 0..*) is associated with 'iupjwq::Thing' (role 'iupjwq_Thing4', cardinality 0..*).
+'iupjwq::World' (role 'iupjwq_World', cardinality 0..*) is associated with 'iupjwq::Thing' (role 'iupjwq_Thing', cardinality 0..*).
+'iupjwq::Thing' (role 'Thing', cardinality 0..*) is associated with 'iupjwq::RelatedTo' (role 'relations', cardinality 0..*).

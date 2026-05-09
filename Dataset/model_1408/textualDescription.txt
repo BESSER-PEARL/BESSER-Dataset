@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'NamedElement' has no attributes.
+The class 'hfsm::State' has no attributes.
+The class 'hfsm::Region' has no attributes.
+The class 'hfsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'AbstractState' has no attributes.
+The class 'hfsm::Transition' has no attributes.
+The class 'hfsm::AbstractState' has no attributes.
+'hfsm::AbstractState' is a specialization of 'NamedElement'.
+'hfsm::Region' is a specialization of 'NamedElement'.
+'hfsm::Transition' is a specialization of 'NamedElement'.
+'hfsm::State' is a specialization of 'AbstractState'.
+'hfsm::Region' (role 'hfsm_Region2', cardinality 0..*) is associated with 'hfsm::State' (role 'hfsm_State3', cardinality 0..*).
+'hfsm::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'hfsm::Region' (role 'ownerRegion', cardinality 0..*).
+'hfsm::AbstractState' (role 'AbstractState10', cardinality 0..*) is associated with 'hfsm::Transition' (role 'incoming', cardinality 0..*).
+'hfsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'hfsm::AbstractState' (role 'target', cardinality 0..*).
+'hfsm::AbstractState' (role 'subvertex', cardinality 0..*) is associated with 'hfsm::Region' (role 'Region', cardinality 0..*).
+'hfsm::AbstractState' (role 'source', cardinality 0..*) is associated with 'hfsm::Transition' (role 'Transition7', cardinality 0..*).
+'hfsm::Transition' (role 'outgoing', cardinality 0..*) is associated with 'hfsm::AbstractState' (role 'AbstractState12', cardinality 0..*).
+'hfsm::Region' (role 'hfsm_Region', cardinality 0..*) is associated with 'hfsm::State' (role 'hfsm_State', cardinality 0..*).

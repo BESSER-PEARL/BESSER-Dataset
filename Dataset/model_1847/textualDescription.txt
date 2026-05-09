@@ -1,0 +1,722 @@
+The model has 285 class(es).
+The class 'ReportAttribute' has no attributes.
+The class 'project::StatusStatusSheetAttribute' has no attributes.
+The class 'project::ColumnAttribute' has no attributes.
+The class 'StatusSheetAttribute' has no attributes.
+The class 'StatusStatusSheetAttribute' has no attributes.
+The class 'project::NewTask' has the following attributes: 'text' of type str; 'id' of type str.
+The class 'IcalReportAttribute' has no attributes.
+The class 'project::RollupAccount' has no attributes.
+The class 'project::IcalReportAttribute' has no attributes.
+The class 'project::PurgeTask' has the following attributes: 'listAttribute' of type str.
+The class 'project::Title' has the following attributes: 'title' of type str.
+The class 'project::Charge' has the following attributes: 'applies' of type str; 'amount' of type float.
+The class 'ExportAttribute' has no attributes.
+The class 'project::Shift' has the following attributes: 'timezone' of type str; 'id' of type str; 'name' of type str; 'replace' of type str.
+The class 'project::LogicalExpression' has no attributes.
+The class 'project::ListType' has the following attributes: 'type' of type str.
+The class 'project::StatusSheet' has no attributes.
+The class 'project::FontColor' has the following attributes: 'color' of type str.
+The class 'project::TaskTimesheetAttribute' has no attributes.
+The class 'project::HideAccount' has the following attributes: 'expression' of type str.
+The class 'project::Booking' has the following attributes: 'sloppy' of type int; 'overtime' of type int.
+The class 'project::TaskTimesheet' has no attributes.
+The class 'project::Right' has no attributes.
+The class 'project::Author' has no attributes.
+The class 'project::Definitions' has the following attributes: 'none' of type bool; 'all' of type bool.
+The class 'project::WorkHours' has the following attributes: 'start' of type str; 'stop' of type str.
+The class 'project::AccountAttribute' has no attributes.
+The class 'project::ShiftsAllocate' has no attributes.
+The class 'project::Resource' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'project::CellColor' has no attributes.
+The class 'Maximum' has no attributes.
+The class 'project::PurgeReport' has the following attributes: 'listAttribute' of type str.
+The class 'project::LimitsAttribute' has no attributes.
+The class 'project::RollupTask' has no attributes.
+The class 'project::Prolog' has no attributes.
+The class 'NavigatorAttribute' has no attributes.
+The class 'project::MaxStart' has the following attributes: 'maxStart' of type str.
+The class 'project::XBinaryOperation' has no attributes.
+The class 'project::Headline' has no attributes.
+The class 'project::GapDuration' has no attributes.
+The class 'project::TimeFormat' has the following attributes: 'timeformat' of type str.
+The class 'project::ProjectAttribute' has no attributes.
+The class 'project::ExtendedResourceAttribute' has the following attributes: 'value' of type str.
+The class 'project::NavigatorAttribute' has no attributes.
+The class 'project::Responsible' has no attributes.
+The class 'project::LogicalBooleanLiteral' has the following attributes: 'isTrue' of type bool.
+The class 'project::TimesheetAttribute' has no attributes.
+The class 'project::WorkingHours' has the following attributes: 'off' of type bool.
+The class 'NewTaskAttribute' has no attributes.
+The class 'project::ToolTip' has the following attributes: 'tip' of type str.
+The class 'project::Allocate' has no attributes.
+The class 'project::HideJournalEntry' has the following attributes: 'expression' of type str.
+The class 'project::ListItem' has no attributes.
+The class 'MonthlyMin' has no attributes.
+The class 'project::Center' has no attributes.
+The class 'project::TagFile' has the following attributes: 'filename' of type str; 'id' of type str.
+The class 'project::HideReport' has no attributes.
+The class 'project::SelfContained' has the following attributes: 'selfcontained' of type str.
+The class 'project::RollupResource' has no attributes.
+The class 'project::Export' has the following attributes: 'filename' of type str; 'id' of type str.
+The class 'project::ResourceAttribute' has no attributes.
+The class 'project::Limits' has no attributes.
+The class 'project::SupplementReport' has no attributes.
+The class 'StatusTimesheetAttribute' has no attributes.
+The class 'project::Interval1' has the following attributes: 'start' of type str; 'end' of type str.
+The class 'project::Interval2' has the following attributes: 'end' of type str; 'start' of type str.
+The class 'project::Interval3' has the following attributes: 'start' of type str; 'end' of type str.
+The class 'project::TreeLevel' has the following attributes: 'level' of type str.
+The class 'project::Interval4' has the following attributes: 'end' of type str; 'start' of type str.
+The class 'project::Limit' has no attributes.
+The class 'project::Persistent' has the following attributes: 'persistent' of type bool.
+The class 'project::Column' has the following attributes: 'id' of type str.
+The class 'project::WeeklyMax' has no attributes.
+The class 'project::Priority' has the following attributes: 'priority' of type int.
+The class 'project::ShortTimeFormat' has the following attributes: 'shortTimeFormat' of type str.
+The class 'Left' has no attributes.
+The class 'AccountAttribute' has no attributes.
+The class 'project::Length' has no attributes.
+The class 'project::MaxEnd' has the following attributes: 'maxEnd' of type str.
+The class 'project::IncludePropertiesAttribute' has no attributes.
+The class 'project::SupplementTask' has no attributes.
+The class 'project::Navigator' has the following attributes: 'id' of type str.
+The class 'project::LogicalDateLiteral' has the following attributes: 'value' of type str.
+The class 'project::Left' has no attributes.
+The class 'project::TaskAttributes' has the following attributes: 'flags' of type bool; 'maxstart' of type bool; 'booking' of type bool; 'note' of type bool; 'priority' of type bool; 'complete' of type bool; 'none' of type bool; 'maxend' of type bool; 'minstart' of type bool; 'all' of type bool; 'minend' of type bool; 'depends' of type bool; 'responsible' of type bool.
+The class 'project::AllocateResource' has no attributes.
+The class 'project::CurrencyFormat' has no attributes.
+The class 'project::TaskPrefix' has no attributes.
+The class 'project::StatusSheetReport' has the following attributes: 'filename' of type str.
+The class 'project::Extend' has the following attributes: 'name' of type str; 'scenariospecific' of type bool; 'id' of type str; 'inherit' of type bool.
+The class 'project::BookingResource' has no attributes.
+The class 'project::Summary' has no attributes.
+The class 'project::Scenarios' has no attributes.
+The class 'project::Defintions' has the following attributes: 'projectids' of type bool; 'resources' of type bool; 'flags' of type bool; 'project' of type bool; 'tasks' of type bool.
+The class 'project::ReportAttribute' has no attributes.
+The class 'WeeklyMax' has no attributes.
+The class 'project::Period' has no attributes.
+The class 'project::ResourceAttributes' has the following attributes: 'none' of type bool; 'booking' of type bool; 'workingHours' of type bool; 'vacation' of type bool; 'all' of type bool.
+The class 'project::Vacation' has the following attributes: 'name' of type str.
+The class 'project::Effort' has no attributes.
+The class 'TextReport' has no attributes.
+The class 'project::Mandatory' has the following attributes: 'mandatory' of type bool.
+The class 'GapLength' has no attributes.
+The class 'project::ExportAttribute' has no attributes.
+The class 'WeeklyMin' has no attributes.
+The class 'project::Include' has the following attributes: 'importURI' of type str.
+The class 'project::Scenario' has the following attributes: 'name' of type str; 'active' of type str; 'id' of type str.
+The class 'project::Alternative' has no attributes.
+The class 'project::LogicalAbsoluteIdExression' has the following attributes: 'value' of type str.
+The class 'Right' has no attributes.
+The class 'project::LogicalNumeralLiteral' has the following attributes: 'value' of type float.
+The class 'project::JournalAttributes' has the following attributes: 'propertyid' of type bool; 'all' of type bool; 'none' of type bool; '_property' of type bool; 'summary' of type bool; 'details' of type bool; 'author' of type bool; 'headline' of type bool; 'timesheet' of type bool; 'date' of type bool; 'flags' of type bool.
+The class 'project::SupplementResource' has no attributes.
+The class 'project::Caption' has no attributes.
+The class 'project::StatusTimesheet' has the following attributes: 'text' of type str; 'level' of type str.
+The class 'SortResources' has no attributes.
+The class 'TaskReport' has no attributes.
+The class 'project::DailyWorkingHours' has the following attributes: 'dailyWorkingHours' of type float.
+The class 'project::Report' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'NikuReportAttribute' has no attributes.
+The class 'AllocateResourceAttribute' has no attributes.
+The class 'MonthlyMax' has no attributes.
+The class 'project::Start' has the following attributes: 'start' of type str.
+The class 'SortTasks' has no attributes.
+The class 'Header' has no attributes.
+The class 'project::TimingResolution' has the following attributes: 'timingResolution' of type int.
+The class 'LimitsAttribute' has no attributes.
+The class 'project::CellText' has the following attributes: 'text' of type str.
+The class 'project::Scheduling' has the following attributes: 'scheduling' of type str.
+The class 'project::Warn' has no attributes.
+The class 'project::Depends' has no attributes.
+The class 'project::StatusSheetReportAttribute' has no attributes.
+The class 'project::AllocateResourceAttribute' has no attributes.
+The class 'project::PurgeResource' has the following attributes: 'listAttribute' of type str.
+The class 'project::Project' has the following attributes: 'name' of type str; 'id' of type str; 'version' of type str.
+The class 'SortAccounts' has no attributes.
+The class 'project::LogicalStringLiteral' has the following attributes: 'value' of type str.
+The class 'Epilog' has no attributes.
+The class 'project::SortAccounts' has no attributes.
+The class 'project::Columns' has no attributes.
+The class 'project::Now' has the following attributes: 'now' of type str.
+The class 'project::Scheduled' has the following attributes: 'scheduled' of type bool.
+The class 'project::ChargeSet' has no attributes.
+The class 'project::Fail' has no attributes.
+The class 'project::TrackingScenario' has no attributes.
+The class 'project::MonthlyMin' has no attributes.
+The class 'project::End' has the following attributes: 'end' of type str.
+The class 'project::ResourceReport' has no attributes.
+The class 'Headline' has no attributes.
+The class 'project::GapLength' has no attributes.
+The class 'TimesheetAttribute' has no attributes.
+The class 'project::Details' has no attributes.
+The class 'project::Credit' has the following attributes: 'date' of type str; 'description' of type str; 'amount' of type float.
+The class 'ColumnAttribute' has no attributes.
+The class 'project::MinStart' has the following attributes: 'minStart' of type str.
+The class 'project::StatusTimesheetAttribute' has no attributes.
+The class 'project::StatusSheetAttribute' has no attributes.
+The class 'project::JournalMode' has the following attributes: 'mode' of type str.
+The class 'project::Rate' has the following attributes: 'rate' of type float.
+The class 'project::TaskAttribute' has no attributes.
+The class 'project::Scale' has the following attributes: 'scale' of type str.
+The class 'project::BookingTask' has no attributes.
+The class 'project::Milestone' has the following attributes: 'milestone' of type bool.
+The class 'project::WeeklyMin' has no attributes.
+The class 'project::Efficiency' has the following attributes: 'efficiency' of type float.
+The class 'project::Alert' has the following attributes: 'level' of type str.
+The class 'Details' has no attributes.
+The class 'Summary' has no attributes.
+The class 'project::DurationQuantity' has the following attributes: 'unit' of type str; 'value' of type float.
+The class 'project::TaskRoot' has no attributes.
+The class 'LogicalExpression' has no attributes.
+The class 'project::Account' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'project::ShiftsLimit' has no attributes.
+The class 'project::LogicalFunctionExpression' has no attributes.
+The class 'project::Footer' has no attributes.
+The class 'project::Task' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'Depends' has no attributes.
+The class 'project::Copyright' has the following attributes: 'text' of type str.
+The class 'project::HideTask' has no attributes.
+The class 'CurrencyFormat' has no attributes.
+The class 'project::AccountRoot' has no attributes.
+The class 'project::NumberFormat' has no attributes.
+The class 'ShiftsResource' has no attributes.
+The class 'project::JournalEntry' has the following attributes: 'headline' of type str; 'date' of type str.
+The class 'project::Select' has the following attributes: 'argument' of type str.
+The class 'StatusSheetReportAttribute' has no attributes.
+The class 'project::Formats' has the following attributes: 'formats' of type str.
+The class 'project::HideResource' has no attributes.
+The class 'DailyMax' has no attributes.
+The class 'project::Timesheet' has no attributes.
+The class 'project::Complete' has the following attributes: 'complete' of type float.
+The class 'project::Minimum' has no attributes.
+The class 'project::Balance' has no attributes.
+The class 'project::ResourceRoot' has no attributes.
+The class 'project::Remaining' has no attributes.
+The class 'project::Timeoff' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'project::SupplementAccount' has no attributes.
+The class 'project::TaskReport' has no attributes.
+The class 'ShiftsTask' has no attributes.
+The class 'AccountReport' has no attributes.
+The class 'project::Weekdays' has the following attributes: 'first' of type str; 'last' of type str.
+The class 'project::TimesheetReportAttribute' has no attributes.
+The class 'project::NikuReportAttribute' has no attributes.
+The class 'TaskAttribute' has no attributes.
+The class 'TimesheetReportAttribute' has no attributes.
+The class 'project::Width' has the following attributes: 'width' of type float.
+The class 'project::EndCredit' has the following attributes: 'credit' of type float.
+The class 'project::ProjectIds' has the following attributes: 'ids' of type str.
+The class 'TaskTimesheetAttribute' has no attributes.
+The class 'project::Function' has the following attributes: 'parentId' of type str; 'level' of type int; 'date' of type str; 'distance' of type int.
+The class 'project::YearlyWorkingDays' has the following attributes: 'yearlyWorkingDays' of type int.
+The class 'project::Flags' has the following attributes: 'flags' of type str.
+The class 'project::IcalReport' has the following attributes: 'filename' of type str.
+The class 'project::Criterion' has the following attributes: 'columnId' of type str; 'direction' of type str.
+The class 'project::ScenarioIcal' has no attributes.
+The class 'project::Shifts' has no attributes.
+The class 'project::Property' has no attributes.
+The class 'project::TaskStatusSheetAttribute' has no attributes.
+The class 'project::Maximum' has no attributes.
+The class 'project::WeekStarts' has the following attributes: 'sunday' of type bool; 'monday' of type bool.
+The class 'project::ShiftsResource' has no attributes.
+The class 'project::SortTasks' has no attributes.
+The class 'project::Global' has no attributes.
+The class 'project::DailyMax' has no attributes.
+The class 'project::MinEnd' has the following attributes: 'minEnd' of type str.
+The class 'project::Timezone' has the following attributes: 'timezone' of type str.
+The class 'project::StatusStatusSheet' has the following attributes: 'text' of type str; 'level' of type str.
+The class 'project::AccountPrefix' has no attributes.
+The class 'project::TextReport' has no attributes.
+The class 'project::Epilog' has no attributes.
+The class 'project::ProjectId' has the following attributes: 'projectId' of type str.
+The class 'Property' has no attributes.
+The class 'project::ExtendTask' has no attributes.
+The class 'project::ExtendResource' has no attributes.
+The class 'project::ReportPrefix' has no attributes.
+The class 'IncludePropertiesAttribute' has no attributes.
+The class 'project::Macro' has the following attributes: 'value' of type str.
+The class 'DailyMin' has no attributes.
+The class 'project::DailyMin' has no attributes.
+The class 'Prolog' has no attributes.
+The class 'project::MonthlyMax' has no attributes.
+The class 'project::RealFormat' has the following attributes: 'fractionSeparator' of type str; 'thousandsSeparator' of type str; 'fractionDigits' of type int; 'negativePrefix' of type str; 'negativeSuffix' of type str.
+The class 'project::Note' has the following attributes: 'note' of type str.
+The class 'ListItem' has no attributes.
+The class 'project::SortResources' has no attributes.
+The class 'project::LimitAttribute' has the following attributes: 'end' of type str; 'start' of type str.
+The class 'project::TaskStatusSheet' has no attributes.
+The class 'GapDuration' has no attributes.
+The class 'ProjectAttribute' has no attributes.
+The class 'project::ExtendedTaskAttribute' has the following attributes: 'value' of type str.
+The class 'Minimum' has no attributes.
+The class 'project::AccountShare' has the following attributes: 'share' of type float.
+The class 'project::ShiftsTask' has no attributes.
+The class 'SortJournalEntries' has no attributes.
+The class 'project::Header' has no attributes.
+The class 'project::Email' has the following attributes: 'address' of type str.
+The class 'Caption' has no attributes.
+The class 'project::NewTaskAttribute' has no attributes.
+The class 'project::HAlign' has the following attributes: 'justification' of type str.
+The class 'NumberFormat' has no attributes.
+The class 'project::RGB' has the following attributes: 'value' of type str.
+The class 'project::Precedes' has no attributes.
+The class 'TaskStatusSheetAttribute' has no attributes.
+The class 'Precedes' has no attributes.
+The class 'project::Sort' has the following attributes: 'tree' of type bool.
+The class 'ResourceAttribute' has no attributes.
+The class 'project::SortJournalEntries' has no attributes.
+The class 'project::JvmIdentifiableElement' has no attributes.
+The class 'project::LoadUnit' has the following attributes: 'unit' of type str.
+The class 'project::TaskDependency' has the following attributes: 'policy' of type str.
+The class 'project::AccountReport' has no attributes.
+The class 'project::ShiftTimesheet' has no attributes.
+The class 'project::ResourcePrefix' has no attributes.
+The class 'Footer' has no attributes.
+The class 'ResourceReport' has no attributes.
+The class 'Definitions' has no attributes.
+The class 'Center' has no attributes.
+The class 'project::NikuReport' has the following attributes: 'filename' of type str.
+The class 'project::Duration' has no attributes.
+The class 'project::Currency' has the following attributes: 'currency' of type str.
+The class 'project::Work' has the following attributes: 'unit' of type str; 'value' of type float.
+The class 'project::TimesheetReport' has the following attributes: 'filename' of type str.
+The class 'project::RichText' has the following attributes: 'text' of type str.
+The class 'project::Managers' has no attributes.
+The class 'project::IncludeProperties' has the following attributes: 'importURI' of type str.
+The enumeration 'PurgeReportAttribute' has the following literals: 'JOURNALATTRIBUTES', 'DEFINITIONS', 'FORMATS', 'SORTRESOURCES', 'SCENARIOS', 'SORTTASKS', 'COLUMNS', 'FLAGS', 'SORTACCOUNTS', 'SORTJOURNALENTRIES'.
+The enumeration 'Justification' has the following literals: 'LEFT', 'RIGHT', 'CENTER'.
+The enumeration 'PurgeResourceAttribute' has the following literals: 'FAIL', 'REPORTS', 'WARN', 'FLAGS', 'VACATIONS', 'MANAGERS'.
+The enumeration 'DependsPolicy' has the following literals: 'ONSTART', 'ONEND'.
+The enumeration 'ListTypeValues' has the following literals: 'COMMA', 'NUMBERED', 'BULLETS'.
+The enumeration 'ReportFormat' has the following literals: 'NIKU', 'CSV', 'HTML'.
+The enumeration 'PurgeTaskAttribute' has the following literals: 'WARN', 'DEPENDS', 'CHARGESET', 'BOOKING', 'PRECEDES', 'CHARGE', 'FAIL', 'FLAGS'.
+The enumeration 'ChargeApplies' has the following literals: 'ONEND', 'ONSTART', 'PERHOUR', 'PERWEEK', 'PERDAY'.
+The enumeration 'JournalEntrySortCriterion' has the following literals: 'ALERT_UP', 'PROPERTY_UP', 'DATE_DOWN', 'DATE_UP', 'ALERT_DOWN'.
+The enumeration 'JournalModeValue' has the following literals: 'ALERTS_DOWN', 'JOURNAL_SUB', 'STATUS_DOWN', 'STATUS_UP', 'JOURNAL'.
+The enumeration 'CriterionDirection' has the following literals: 'DOWN', 'UP'.
+The enumeration 'ScaleResolution' has the following literals: 'MONTH', 'WEEK', 'QUARTER', 'HOUR', 'DAY', 'YEAR'.
+The enumeration 'LoadDisplayUnit' has the following literals: 'LONGAUTO', 'MONTHS', 'YEARS', 'SHORTAUTO', 'WEEKS', 'DAYS', 'MINUTES', 'HOURS'.
+The enumeration 'ColumnId' has the following literals: 'RESPONSIBLE', 'HIERARCHINDEX', 'CHART', 'HEADCOUNT', 'FREEWORK', 'REVENUE', 'MINSTART', 'END', 'SCENARIO', 'TARGETS', 'EFFORTLEFT', 'EFFICIENCY', 'EFFORTDONE', 'START', 'FREETIME', 'HOURLY', 'ALERTSUMMARY', 'MONTHLY', 'QUARTERLY', 'INDEX', 'RATE', 'RESOURCES', 'FLAGS', 'DAILY', 'SEQNO', 'EMAIL', 'DURATION', 'NOTE', 'WBS', 'FOLLOWERS', 'PRIORITY', 'WEEKLY', 'PATHCRITICALNESS', 'MINEND', 'STATUS', 'LINE', 'COST', 'COMPLETE', 'ALERTTREND', 'FTE', 'DUTIES', 'COMPLETED', 'YEARLY', 'ALERTMESSAGE', 'EFFORT', 'NAME', 'MAXEND', 'ALERT', 'ID', 'JOURNAL', 'CRITICALNESS', 'NO', 'PRECURSOR', 'MAXSTART'.
+The enumeration 'TimeUnit' has the following literals: 'MINUTE', 'HOUR', 'DAY', 'YEAR', 'MONTH', 'WEEK'.
+The enumeration 'WorkQuantityUnit' has the following literals: 'DAYS', 'PERCENT', 'HOURS', 'MINUTES'.
+The enumeration 'AlertLevel' has the following literals: 'YELLOW', 'RED', 'GREEN'.
+The enumeration 'SchedulingPolicy' has the following literals: 'ASAP', 'ALAP'.
+The enumeration 'Weekday' has the following literals: 'MON', 'THR', 'FRI', 'SAT', 'SUN', 'WED', 'TUE'.
+The enumeration 'SelectArgument' has the following literals: 'ORDER', 'MINLOADED', 'MAXLOADED', 'MINALLOCATED', 'RANDOM'.
+The enumeration 'YesNo' has the following literals: 'NO', 'YES'.
+'project::HideJournalEntry' is a specialization of 'ReportAttribute'.
+'project::JournalEntry' is a specialization of 'TaskAttribute'.
+'project::Period' is a specialization of 'IcalReportAttribute'.
+'project::WeekStarts' is a specialization of 'ProjectAttribute'.
+'project::ResourceReport' is a specialization of 'Property'.
+'project::Task' is a specialization of 'Property'.
+'project::RichText' is a specialization of 'Header'.
+'project::ResourceRoot' is a specialization of 'ReportAttribute'.
+'project::TagFile' is a specialization of 'Property'.
+'project::Period' is a specialization of 'TimesheetReportAttribute'.
+'project::Select' is a specialization of 'AllocateResourceAttribute'.
+'project::Start' is a specialization of 'ReportAttribute'.
+'project::ProjectIds' is a specialization of 'Property'.
+'project::Balance' is a specialization of 'ReportAttribute'.
+'project::Resource' is a specialization of 'Property'.
+'project::Flags' is a specialization of 'AccountAttribute'.
+'project::ShiftsResource' is a specialization of 'ResourceAttribute'.
+'project::SortTasks' is a specialization of 'StatusSheetReportAttribute'.
+'project::Sort' is a specialization of 'SortJournalEntries'.
+'project::HideTask' is a specialization of 'StatusSheetReportAttribute'.
+'project::WeeklyMin' is a specialization of 'LimitsAttribute'.
+'project::Formats' is a specialization of 'NikuReportAttribute'.
+'project::Prolog' is a specialization of 'ReportAttribute'.
+'project::Warn' is a specialization of 'TaskAttribute'.
+'project::Scheduling' is a specialization of 'TaskAttribute'.
+'project::SortAccounts' is a specialization of 'ReportAttribute'.
+'project::Limit' is a specialization of 'Maximum'.
+'project::RollupResource' is a specialization of 'ReportAttribute'.
+'project::Sort' is a specialization of 'SortAccounts'.
+'project::IcalReport' is a specialization of 'Property'.
+'project::Precedes' is a specialization of 'TaskAttribute'.
+'project::Shifts' is a specialization of 'ShiftsTask'.
+'project::Width' is a specialization of 'ColumnAttribute'.
+'project::Navigator' is a specialization of 'Property'.
+'project::Details' is a specialization of 'StatusTimesheetAttribute'.
+'project::SupplementAccount' is a specialization of 'Property'.
+'project::NewTask' is a specialization of 'TimesheetAttribute'.
+'project::Shift' is a specialization of 'Property'.
+'project::Flags' is a specialization of 'StatusStatusSheetAttribute'.
+'project::AccountReport' is a specialization of 'Property'.
+'project::JournalAttributes' is a specialization of 'ReportAttribute'.
+'project::Vacation' is a specialization of 'Property'.
+'project::Caption' is a specialization of 'ReportAttribute'.
+'project::Currency' is a specialization of 'ProjectAttribute'.
+'project::Limit' is a specialization of 'WeeklyMin'.
+'project::RichText' is a specialization of 'Headline'.
+'project::LogicalBooleanLiteral' is a specialization of 'LogicalExpression'.
+'project::Rate' is a specialization of 'Property'.
+'project::Limits' is a specialization of 'Property'.
+'project::TimeFormat' is a specialization of 'ReportAttribute'.
+'project::Scenario' is a specialization of 'ProjectAttribute'.
+'project::Minimum' is a specialization of 'LimitsAttribute'.
+'project::PurgeResource' is a specialization of 'ResourceAttribute'.
+'project::SortTasks' is a specialization of 'ReportAttribute'.
+'project::Report' is a specialization of 'TextReport'.
+'project::HideResource' is a specialization of 'ReportAttribute'.
+'project::End' is a specialization of 'ExportAttribute'.
+'project::NumberFormat' is a specialization of 'NikuReportAttribute'.
+'project::Managers' is a specialization of 'ResourceAttribute'.
+'project::Columns' is a specialization of 'ReportAttribute'.
+'project::RollupTask' is a specialization of 'ReportAttribute'.
+'project::RollupResource' is a specialization of 'IcalReportAttribute'.
+'project::CellColor' is a specialization of 'ColumnAttribute'.
+'project::SupplementResource' is a specialization of 'Property'.
+'project::SelfContained' is a specialization of 'ReportAttribute'.
+'project::SortJournalEntries' is a specialization of 'ReportAttribute'.
+'project::Priority' is a specialization of 'TaskAttribute'.
+'project::HideTask' is a specialization of 'NikuReportAttribute'.
+'project::End' is a specialization of 'NewTaskAttribute'.
+'project::TaskDependency' is a specialization of 'Depends'.
+'project::ProjectId' is a specialization of 'TaskAttribute'.
+'project::ResourcePrefix' is a specialization of 'IncludePropertiesAttribute'.
+'project::Timezone' is a specialization of 'ProjectAttribute'.
+'project::Remaining' is a specialization of 'TaskTimesheetAttribute'.
+'project::LogicalAbsoluteIdExression' is a specialization of 'LogicalExpression'.
+'project::Balance' is a specialization of 'Property'.
+'project::Limits' is a specialization of 'TaskAttribute'.
+'project::TaskReport' is a specialization of 'Property'.
+'project::Export' is a specialization of 'Property'.
+'project::HAlign' is a specialization of 'ColumnAttribute'.
+'project::HideTask' is a specialization of 'ReportAttribute'.
+'project::End' is a specialization of 'StatusSheetReportAttribute'.
+'project::StatusSheetReport' is a specialization of 'Property'.
+'project::TaskStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+'project::Efficiency' is a specialization of 'ResourceAttribute'.
+'project::CurrencyFormat' is a specialization of 'ReportAttribute'.
+'project::Sort' is a specialization of 'SortTasks'.
+'project::Header' is a specialization of 'ReportAttribute'.
+'project::RichText' is a specialization of 'Summary'.
+'project::HideTask' is a specialization of 'IcalReportAttribute'.
+'project::TimingResolution' is a specialization of 'ProjectAttribute'.
+'project::PurgeTask' is a specialization of 'TaskAttribute'.
+'project::ShortTimeFormat' is a specialization of 'ProjectAttribute'.
+'project::NikuReport' is a specialization of 'Property'.
+'project::HideTask' is a specialization of 'ExportAttribute'.
+'project::AccountRoot' is a specialization of 'ReportAttribute'.
+'project::RealFormat' is a specialization of 'CurrencyFormat'.
+'project::Headline' is a specialization of 'ReportAttribute'.
+'project::FontColor' is a specialization of 'ColumnAttribute'.
+'project::Limit' is a specialization of 'MonthlyMin'.
+'project::TextReport' is a specialization of 'Property'.
+'project::JournalEntry' is a specialization of 'ProjectAttribute'.
+'project::Task' is a specialization of 'TaskAttribute'.
+'project::Epilog' is a specialization of 'ReportAttribute'.
+'project::Account' is a specialization of 'Property'.
+'project::ExtendTask' is a specialization of 'ProjectAttribute'.
+'project::Note' is a specialization of 'TaskAttribute'.
+'project::Period' is a specialization of 'ColumnAttribute'.
+'project::TaskAttributes' is a specialization of 'ExportAttribute'.
+'project::RealFormat' is a specialization of 'NumberFormat'.
+'project::Maximum' is a specialization of 'LimitsAttribute'.
+'project::DailyWorkingHours' is a specialization of 'ProjectAttribute'.
+'project::DurationQuantity' is a specialization of 'GapLength'.
+'project::EndCredit' is a specialization of 'TaskAttribute'.
+'project::TimeFormat' is a specialization of 'ProjectAttribute'.
+'project::RichText' is a specialization of 'Epilog'.
+'project::TrackingScenario' is a specialization of 'ProjectAttribute'.
+'project::RichText' is a specialization of 'Footer'.
+'project::RichText' is a specialization of 'Center'.
+'project::Macro' is a specialization of 'Property'.
+'project::Length' is a specialization of 'TaskAttribute'.
+'project::RichText' is a specialization of 'Caption'.
+'project::Depends' is a specialization of 'TaskAttribute'.
+'project::DailyMax' is a specialization of 'LimitsAttribute'.
+'project::Scenarios' is a specialization of 'ExportAttribute'.
+'project::End' is a specialization of 'TaskTimesheetAttribute'.
+'project::StatusTimesheet' is a specialization of 'TaskTimesheetAttribute'.
+'project::End' is a specialization of 'TimesheetReportAttribute'.
+'project::Work' is a specialization of 'TaskTimesheetAttribute'.
+'project::End' is a specialization of 'NikuReportAttribute'.
+'project::IncludeProperties' is a specialization of 'Property'.
+'project::Limits' is a specialization of 'ResourceAttribute'.
+'project::Title' is a specialization of 'ReportAttribute'.
+'project::Fail' is a specialization of 'TaskAttribute'.
+'project::Start' is a specialization of 'NikuReportAttribute'.
+'project::JournalMode' is a specialization of 'ReportAttribute'.
+'project::RichText' is a specialization of 'Right'.
+'project::Account' is a specialization of 'AccountAttribute'.
+'project::TaskStatusSheet' is a specialization of 'StatusSheetAttribute'.
+'project::ToolTip' is a specialization of 'ColumnAttribute'.
+'project::End' is a specialization of 'IcalReportAttribute'.
+'project::Title' is a specialization of 'NikuReportAttribute'.
+'project::ChargeSet' is a specialization of 'TaskAttribute'.
+'project::ShiftsTask' is a specialization of 'TaskAttribute'.
+'project::TaskReport' is a specialization of 'ReportAttribute'.
+'project::JournalEntry' is a specialization of 'ResourceAttribute'.
+'project::WorkingHours' is a specialization of 'ResourceAttribute'.
+'project::HideResource' is a specialization of 'StatusSheetReportAttribute'.
+'project::StatusSheet' is a specialization of 'Property'.
+'project::HideResource' is a specialization of 'ExportAttribute'.
+'project::Flags' is a specialization of 'StatusTimesheetAttribute'.
+'project::RichText' is a specialization of 'Prolog'.
+'project::Shifts' is a specialization of 'ShiftsResource'.
+'project::MonthlyMax' is a specialization of 'LimitsAttribute'.
+'project::Effort' is a specialization of 'TaskAttribute'.
+'project::LogicalNumeralLiteral' is a specialization of 'LogicalExpression'.
+'project::Alternative' is a specialization of 'AllocateResourceAttribute'.
+'project::Left' is a specialization of 'ReportAttribute'.
+'project::Headline' is a specialization of 'NikuReportAttribute'.
+'project::Summary' is a specialization of 'StatusStatusSheetAttribute'.
+'project::Period' is a specialization of 'ReportAttribute'.
+'project::Period' is a specialization of 'TaskAttribute'.
+'project::Sort' is a specialization of 'SortResources'.
+'project::HideJournalEntry' is a specialization of 'IcalReportAttribute'.
+'project::Remaining' is a specialization of 'NewTaskAttribute'.
+'project::ExtendedResourceAttribute' is a specialization of 'ResourceAttribute'.
+'project::TimesheetReport' is a specialization of 'Property'.
+'project::NumberFormat' is a specialization of 'ReportAttribute'.
+'project::End' is a specialization of 'ColumnAttribute'.
+'project::Limit' is a specialization of 'Minimum'.
+'project::Fail' is a specialization of 'ResourceAttribute'.
+'project::MinEnd' is a specialization of 'TaskAttribute'.
+'project::Start' is a specialization of 'TimesheetReportAttribute'.
+'project::WeeklyMax' is a specialization of 'LimitsAttribute'.
+'project::Period' is a specialization of 'StatusSheetReportAttribute'.
+'project::ExtendResource' is a specialization of 'ProjectAttribute'.
+'project::MonthlyMin' is a specialization of 'LimitsAttribute'.
+'project::Summary' is a specialization of 'StatusTimesheetAttribute'.
+'project::YearlyWorkingDays' is a specialization of 'ProjectAttribute'.
+'project::Right' is a specialization of 'ReportAttribute'.
+'project::Definitions' is a specialization of 'ExportAttribute'.
+'project::Timeoff' is a specialization of 'NikuReportAttribute'.
+'project::HideAccount' is a specialization of 'ReportAttribute'.
+'project::LogicalDateLiteral' is a specialization of 'LogicalExpression'.
+'project::Allocate' is a specialization of 'TaskAttribute'.
+'project::MinStart' is a specialization of 'TaskAttribute'.
+'project::SupplementResource' is a specialization of 'ResourceAttribute'.
+'project::Start' is a specialization of 'IcalReportAttribute'.
+'project::SupplementTask' is a specialization of 'TaskAttribute'.
+'project::RollupTask' is a specialization of 'ExportAttribute'.
+'project::TextReport' is a specialization of 'ReportAttribute'.
+'project::HideResource' is a specialization of 'TimesheetReportAttribute'.
+'project::Mandatory' is a specialization of 'AllocateResourceAttribute'.
+'project::Timezone' is a specialization of 'ReportAttribute'.
+'project::RollupResource' is a specialization of 'ExportAttribute'.
+'project::SupplementReport' is a specialization of 'Property'.
+'project::WorkingHours' is a specialization of 'ProjectAttribute'.
+'project::Footer' is a specialization of 'ReportAttribute'.
+'project::Period' is a specialization of 'ExportAttribute'.
+'project::TaskRoot' is a specialization of 'ReportAttribute'.
+'project::RichText' is a specialization of 'ListItem'.
+'project::DurationQuantity' is a specialization of 'GapDuration'.
+'project::RichText' is a specialization of 'Details'.
+'project::HideResource' is a specialization of 'NikuReportAttribute'.
+'project::ResourceReport' is a specialization of 'ReportAttribute'.
+'project::Report' is a specialization of 'AccountReport'.
+'project::Formats' is a specialization of 'ReportAttribute'.
+'project::Priority' is a specialization of 'NewTaskAttribute'.
+'project::Credit' is a specialization of 'AccountAttribute'.
+'project::Responsible' is a specialization of 'TaskAttribute'.
+'project::SupplementTask' is a specialization of 'Property'.
+'project::ShiftsAllocate' is a specialization of 'AllocateResourceAttribute'.
+'project::Scheduled' is a specialization of 'TaskAttribute'.
+'project::Copyright' is a specialization of 'Property'.
+'project::RollupAccount' is a specialization of 'ReportAttribute'.
+'project::RollupTask' is a specialization of 'IcalReportAttribute'.
+'project::StatusStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+'project::PurgeReport' is a specialization of 'ReportAttribute'.
+'project::Title' is a specialization of 'ColumnAttribute'.
+'project::Defintions' is a specialization of 'Definitions'.
+'project::Period' is a specialization of 'NikuReportAttribute'.
+'project::LoadUnit' is a specialization of 'ReportAttribute'.
+'project::ReportPrefix' is a specialization of 'IncludePropertiesAttribute'.
+'project::AccountReport' is a specialization of 'ReportAttribute'.
+'project::Flags' is a specialization of 'Property'.
+'project::Flags' is a specialization of 'TaskAttribute'.
+'project::ListType' is a specialization of 'ColumnAttribute'.
+'project::Center' is a specialization of 'ReportAttribute'.
+'project::SortResources' is a specialization of 'StatusSheetReportAttribute'.
+'project::TaskDependency' is a specialization of 'Precedes'.
+'project::Rate' is a specialization of 'ResourceAttribute'.
+'project::Milestone' is a specialization of 'TaskAttribute'.
+'project::ResourceAttributes' is a specialization of 'ExportAttribute'.
+'project::Scenarios' is a specialization of 'ReportAttribute'.
+'project::Author' is a specialization of 'StatusStatusSheetAttribute'.
+'project::Timezone' is a specialization of 'ExportAttribute'.
+'project::StatusTimesheet' is a specialization of 'TimesheetAttribute'.
+'project::MaxStart' is a specialization of 'TaskAttribute'.
+'project::Report' is a specialization of 'ResourceReport'.
+'project::LogicalFunctionExpression' is a specialization of 'LogicalExpression'.
+'project::Flags' is a specialization of 'ReportAttribute'.
+'project::NumberFormat' is a specialization of 'ProjectAttribute'.
+'project::SortResources' is a specialization of 'ReportAttribute'.
+'project::ScenarioIcal' is a specialization of 'IcalReportAttribute'.
+'project::End' is a specialization of 'TaskAttribute'.
+'project::MaxEnd' is a specialization of 'TaskAttribute'.
+'project::Scale' is a specialization of 'ColumnAttribute'.
+'project::Include' is a specialization of 'ProjectAttribute'.
+'project::Details' is a specialization of 'StatusStatusSheetAttribute'.
+'project::Limit' is a specialization of 'WeeklyMax'.
+'project::ShiftTimesheet' is a specialization of 'TimesheetAttribute'.
+'project::BookingResource' is a specialization of 'ResourceAttribute'.
+'project::Start' is a specialization of 'ExportAttribute'.
+'project::TaskTimesheet' is a specialization of 'TimesheetAttribute'.
+'project::Work' is a specialization of 'NewTaskAttribute'.
+'project::CurrencyFormat' is a specialization of 'ProjectAttribute'.
+'project::Timesheet' is a specialization of 'Property'.
+'project::RichText' is a specialization of 'Left'.
+'project::AccountPrefix' is a specialization of 'IncludePropertiesAttribute'.
+'project::BookingTask' is a specialization of 'TaskAttribute'.
+'project::Start' is a specialization of 'StatusSheetReportAttribute'.
+'project::DailyMin' is a specialization of 'LimitsAttribute'.
+'project::HideResource' is a specialization of 'IcalReportAttribute'.
+'project::Now' is a specialization of 'ProjectAttribute'.
+'project::Vacation' is a specialization of 'ResourceAttribute'.
+'project::Email' is a specialization of 'ResourceAttribute'.
+'project::Start' is a specialization of 'ColumnAttribute'.
+'project::End' is a specialization of 'ReportAttribute'.
+'project::Flags' is a specialization of 'ResourceAttribute'.
+'project::TaskPrefix' is a specialization of 'IncludePropertiesAttribute'.
+'project::Complete' is a specialization of 'TaskAttribute'.
+'project::Persistent' is a specialization of 'AllocateResourceAttribute'.
+'project::Limit' is a specialization of 'DailyMax'.
+'project::XBinaryOperation' is a specialization of 'LogicalExpression'.
+'project::ExtendedTaskAttribute' is a specialization of 'TaskAttribute'.
+'project::Start' is a specialization of 'TaskAttribute'.
+'project::Resource' is a specialization of 'ResourceAttribute'.
+'project::LogicalStringLiteral' is a specialization of 'LogicalExpression'.
+'project::Duration' is a specialization of 'TaskAttribute'.
+'project::Limit' is a specialization of 'MonthlyMax'.
+'project::Report' is a specialization of 'TaskReport'.
+'project::HideReport' is a specialization of 'NavigatorAttribute'.
+'project::Priority' is a specialization of 'TaskTimesheetAttribute'.
+'project::Charge' is a specialization of 'TaskAttribute'.
+'project::ListItem' is a specialization of 'ColumnAttribute'.
+'project::Limit' is a specialization of 'DailyMin'.
+'project::CellText' is a specialization of 'ColumnAttribute'.
+'project::Warn' is a specialization of 'ResourceAttribute'.
+'project::Global' (role 'project_Global', cardinality 0..*) is associated with 'project::Project' (role 'project_Project', cardinality 0..*).
+'project::Extend' (role 'project_Extend', cardinality 0..*) is associated with 'project::ExtendResource' (role 'project_ExtendResource', cardinality 0..*).
+'project::GapDuration' (role 'project_GapDuration', cardinality 0..*) is associated with 'project::TaskDependency' (role 'project_TaskDependency242', cardinality 0..*).
+'project::Resource' (role 'project_Resource111', cardinality 0..*) is associated with 'project::ResourcePrefix' (role 'project_ResourcePrefix', cardinality 0..*).
+'project::Export' (role 'project_Export', cardinality 0..*) is associated with 'project::ExportAttribute' (role 'project_ExportAttribute', cardinality 0..*).
+'project::IcalReportAttribute' (role 'project_IcalReportAttribute', cardinality 0..*) is associated with 'project::IcalReport' (role 'project_IcalReport', cardinality 0..*).
+'project::JournalEntry' (role 'project_JournalEntry93', cardinality 0..*) is associated with 'project::Author' (role 'project_Author94', cardinality 0..*).
+'project::Report' (role 'project_Report109', cardinality 0..*) is associated with 'project::ReportPrefix' (role 'project_ReportPrefix', cardinality 0..*).
+'project::Allocate' (role 'project_Allocate', cardinality 0..*) is associated with 'project::AllocateResource' (role 'project_AllocateResource', cardinality 0..*).
+'project::Scenarios' (role 'project_Scenarios', cardinality 0..*) is associated with 'project::Scenario' (role 'project_Scenario128', cardinality 0..*).
+'project::TaskTimesheetAttribute' (role 'project_TaskTimesheetAttribute', cardinality 0..*) is associated with 'project::TaskTimesheet' (role 'project_TaskTimesheet198', cardinality 0..*).
+'project::Alert' (role 'project_Alert', cardinality 0..*) is associated with 'project::JournalEntry' (role 'project_JournalEntry', cardinality 0..*).
+'project::StatusSheet' (role 'project_StatusSheet', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource153', cardinality 0..*).
+'project::TaskStatusSheetAttribute' (role 'project_TaskStatusSheetAttribute', cardinality 0..*) is associated with 'project::TaskStatusSheet' (role 'project_TaskStatusSheet194', cardinality 0..*).
+'project::Column' (role 'project_Column228', cardinality 0..*) is associated with 'project::ColumnAttribute' (role 'project_ColumnAttribute', cardinality 0..*).
+'project::LogicalFunctionExpression' (role 'project_LogicalFunctionExpression', cardinality 0..*) is associated with 'project::Function' (role 'project_Function253', cardinality 0..*).
+'project::XBinaryOperation' (role 'project_XBinaryOperation248', cardinality 0..*) is associated with 'project::JvmIdentifiableElement' (role 'project_JvmIdentifiableElement', cardinality 0..*).
+'project::CellColor' (role 'project_CellColor', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression246', cardinality 0..*) is associated with 'project::XBinaryOperation' (role 'project_XBinaryOperation', cardinality 0..*).
+'project::Period' (role 'project_Period', cardinality 0..*) is associated with 'project::Interval2' (role 'project_Interval2105', cardinality 0..*).
+'project::StatusTimesheetAttribute' (role 'project_StatusTimesheetAttribute', cardinality 0..*) is associated with 'project::StatusTimesheet' (role 'project_StatusTimesheet', cardinality 0..*).
+'project::Managers' (role 'project_Managers', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource103', cardinality 0..*).
+'project::NikuReportAttribute' (role 'project_NikuReportAttribute', cardinality 0..*) is associated with 'project::NikuReport' (role 'project_NikuReport', cardinality 0..*).
+'project::Task' (role 'project_Task196', cardinality 0..*) is associated with 'project::TaskTimesheet' (role 'project_TaskTimesheet', cardinality 0..*).
+'project::Balance' (role 'project_Balance33', cardinality 0..*) is associated with 'project::Account' (role 'project_Account34', cardinality 0..*).
+'project::Account' (role 'project_Account5', cardinality 0..*) is associated with 'project::AccountPrefix' (role 'project_AccountPrefix', cardinality 0..*).
+'project::Column' (role 'project_Column', cardinality 0..*) is associated with 'project::Columns' (role 'project_Columns', cardinality 0..*).
+'project::Extend' (role 'project_Extend60', cardinality 0..*) is associated with 'project::ExtendTask' (role 'project_ExtendTask', cardinality 0..*).
+'project::LimitsAttribute' (role 'project_LimitsAttribute', cardinality 0..*) is associated with 'project::Limits' (role 'project_Limits', cardinality 0..*).
+'project::SupplementReport' (role 'project_SupplementReport168', cardinality 0..*) is associated with 'project::ReportAttribute' (role 'project_ReportAttribute169', cardinality 0..*).
+'project::ScenarioIcal' (role 'project_ScenarioIcal', cardinality 0..*) is associated with 'project::Scenario' (role 'project_Scenario126', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression77', cardinality 0..*) is associated with 'project::HideResource' (role 'project_HideResource', cardinality 0..*).
+'project::Sort' (role 'project_Sort', cardinality 0..*) is associated with 'project::Criterion' (role 'project_Criterion', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression79', cardinality 0..*) is associated with 'project::HideTask' (role 'project_HideTask', cardinality 0..*).
+'project::Interval4' (role 'project_Interval4207', cardinality 0..*) is associated with 'project::Timesheet' (role 'project_Timesheet206', cardinality 0..*).
+'project::TagFile' (role 'project_TagFile183', cardinality 0..*) is associated with 'project::HideTask' (role 'project_HideTask184', cardinality 0..*).
+'project::Account' (role 'project_Account', cardinality 0..*) is associated with 'project::AccountAttribute' (role 'project_AccountAttribute', cardinality 0..*).
+'project::AccountAttribute' (role 'project_AccountAttribute164', cardinality 0..*) is associated with 'project::SupplementAccount' (role 'project_SupplementAccount163', cardinality 0..*).
+'project::Interval2' (role 'project_Interval2143', cardinality 0..*) is associated with 'project::ShiftsLimit' (role 'project_ShiftsLimit142', cardinality 0..*).
+'project::Task' (role 'project_Task', cardinality 0..*) is associated with 'project::TaskAttribute' (role 'project_TaskAttribute', cardinality 0..*).
+'project::Fail' (role 'project_Fail', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression64', cardinality 0..*).
+'project::ShiftsAllocate' (role 'project_ShiftsAllocate', cardinality 0..*) is associated with 'project::Shift' (role 'project_Shift145', cardinality 0..*).
+'project::Booking' (role 'project_Booking45', cardinality 0..*) is associated with 'project::BookingResource' (role 'project_BookingResource44', cardinality 0..*).
+'project::Function' (role 'project_Function67', cardinality 0..*) is associated with 'project::Task' (role 'project_Task68', cardinality 0..*).
+'project::XBinaryOperation' (role 'project_XBinaryOperation250', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression251', cardinality 0..*).
+'project::Resource' (role 'project_Resource29', cardinality 0..*) is associated with 'project::Author' (role 'project_Author', cardinality 0..*).
+'project::NewTask' (role 'project_NewTask', cardinality 0..*) is associated with 'project::NewTaskAttribute' (role 'project_NewTaskAttribute', cardinality 0..*).
+'project::Summary' (role 'project_Summary', cardinality 0..*) is associated with 'project::JournalEntry' (role 'project_JournalEntry98', cardinality 0..*).
+'project::Global' (role 'project_Global2', cardinality 0..*) is associated with 'project::Property' (role 'project_Property', cardinality 0..*).
+'project::Shift' (role 'project_Shift', cardinality 0..*) is associated with 'project::Vacation' (role 'project_Vacation', cardinality 0..*).
+'project::DurationQuantity' (role 'project_DurationQuantity230', cardinality 0..*) is associated with 'project::Limit' (role 'project_Limit', cardinality 0..*).
+'project::Shifts' (role 'project_Shifts', cardinality 0..*) is associated with 'project::ShiftsLimit' (role 'project_ShiftsLimit', cardinality 0..*).
+'project::SupplementResource' (role 'project_SupplementResource173', cardinality 0..*) is associated with 'project::ResourceAttribute' (role 'project_ResourceAttribute174', cardinality 0..*).
+'project::Scenario' (role 'project_Scenario214', cardinality 0..*) is associated with 'project::TrackingScenario' (role 'project_TrackingScenario', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression75', cardinality 0..*) is associated with 'project::HideReport' (role 'project_HideReport', cardinality 0..*).
+'project::JournalEntry' (role 'project_JournalEntry96', cardinality 0..*) is associated with 'project::Details' (role 'project_Details', cardinality 0..*).
+'project::ExtendedResourceAttribute' (role 'project_ExtendedResourceAttribute', cardinality 0..*) is associated with 'project::Extend' (role 'project_Extend58', cardinality 0..*).
+'project::StatusStatusSheet' (role 'project_StatusStatusSheet', cardinality 0..*) is associated with 'project::StatusStatusSheetAttribute' (role 'project_StatusStatusSheetAttribute', cardinality 0..*).
+'project::TaskPrefix' (role 'project_TaskPrefix', cardinality 0..*) is associated with 'project::Task' (role 'project_Task200', cardinality 0..*).
+'project::StatusSheet' (role 'project_StatusSheet155', cardinality 0..*) is associated with 'project::Interval4' (role 'project_Interval4156', cardinality 0..*).
+'project::Balance' (role 'project_Balance', cardinality 0..*) is associated with 'project::Account' (role 'project_Account31', cardinality 0..*).
+'project::DurationQuantity' (role 'project_DurationQuantity87', cardinality 0..*) is associated with 'project::Interval3' (role 'project_Interval3', cardinality 0..*).
+'project::Effort' (role 'project_Effort', cardinality 0..*) is associated with 'project::DurationQuantity' (role 'project_DurationQuantity55', cardinality 0..*).
+'project::RollupTask' (role 'project_RollupTask', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression121', cardinality 0..*).
+'project::AccountShare' (role 'project_AccountShare225', cardinality 0..*) is associated with 'project::Account' (role 'project_Account226', cardinality 0..*).
+'project::Account' (role 'project_Account7', cardinality 0..*) is associated with 'project::AccountRoot' (role 'project_AccountRoot', cardinality 0..*).
+'project::WorkHours' (role 'project_WorkHours', cardinality 0..*) is associated with 'project::WorkingHours' (role 'project_WorkingHours223', cardinality 0..*).
+'project::DurationQuantity' (role 'project_DurationQuantity85', cardinality 0..*) is associated with 'project::Interval2' (role 'project_Interval284', cardinality 0..*).
+'project::TimesheetReportAttribute' (role 'project_TimesheetReportAttribute', cardinality 0..*) is associated with 'project::TimesheetReport' (role 'project_TimesheetReport', cardinality 0..*).
+'project::Interval3' (role 'project_Interval3217', cardinality 0..*) is associated with 'project::Vacation' (role 'project_Vacation216', cardinality 0..*).
+'project::IncludePropertiesAttribute' (role 'project_IncludePropertiesAttribute', cardinality 0..*) is associated with 'project::IncludeProperties' (role 'project_IncludeProperties', cardinality 0..*).
+'project::TaskRoot' (role 'project_TaskRoot', cardinality 0..*) is associated with 'project::Task' (role 'project_Task202', cardinality 0..*).
+'project::Task' (role 'project_Task176', cardinality 0..*) is associated with 'project::SupplementTask' (role 'project_SupplementTask', cardinality 0..*).
+'project::StatusSheetAttribute' (role 'project_StatusSheetAttribute', cardinality 0..*) is associated with 'project::StatusSheet' (role 'project_StatusSheet158', cardinality 0..*).
+'project::AccountShare' (role 'project_AccountShare', cardinality 0..*) is associated with 'project::ChargeSet' (role 'project_ChargeSet', cardinality 0..*).
+'project::Resource' (role 'project_Resource71', cardinality 0..*) is associated with 'project::Function' (role 'project_Function70', cardinality 0..*).
+'project::ShiftTimesheet' (role 'project_ShiftTimesheet', cardinality 0..*) is associated with 'project::Shift' (role 'project_Shift136', cardinality 0..*).
+'project::LimitAttribute' (role 'project_LimitAttribute234', cardinality 0..*) is associated with 'project::Interval1' (role 'project_Interval1235', cardinality 0..*).
+'project::ResourceAttribute' (role 'project_ResourceAttribute', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource', cardinality 0..*).
+'project::HAlign' (role 'project_HAlign', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression73', cardinality 0..*).
+'project::SupplementReport' (role 'project_SupplementReport', cardinality 0..*) is associated with 'project::Report' (role 'project_Report166', cardinality 0..*).
+'project::BookingTask' (role 'project_BookingTask', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource37', cardinality 0..*).
+'project::Scenario' (role 'project_Scenario122', cardinality 0..*) is associated with 'project::Scenario' (role 'project_Scenario124', cardinality 0..*).
+'project::Account' (role 'project_Account161', cardinality 0..*) is associated with 'project::SupplementAccount' (role 'project_SupplementAccount', cardinality 0..*).
+'project::Shift' (role 'project_Shift132', cardinality 0..*) is associated with 'project::Shift' (role 'project_Shift130', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression50', cardinality 0..*) is associated with 'project::CellText' (role 'project_CellText', cardinality 0..*).
+'project::SupplementResource' (role 'project_SupplementResource', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource171', cardinality 0..*).
+'project::RollupResource' (role 'project_RollupResource187', cardinality 0..*) is associated with 'project::TagFile' (role 'project_TagFile186', cardinality 0..*).
+'project::HideResource' (role 'project_HideResource181', cardinality 0..*) is associated with 'project::TagFile' (role 'project_TagFile', cardinality 0..*).
+'project::StatusSheetReportAttribute' (role 'project_StatusSheetReportAttribute', cardinality 0..*) is associated with 'project::StatusSheetReport' (role 'project_StatusSheetReport', cardinality 0..*).
+'project::RGB' (role 'project_RGB', cardinality 0..*) is associated with 'project::CellColor' (role 'project_CellColor48', cardinality 0..*).
+'project::Length' (role 'project_Length', cardinality 0..*) is associated with 'project::DurationQuantity' (role 'project_DurationQuantity100', cardinality 0..*).
+'project::LimitAttribute' (role 'project_LimitAttribute237', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource238', cardinality 0..*).
+'project::AllocateResource' (role 'project_AllocateResource22', cardinality 0..*) is associated with 'project::AllocateResourceAttribute' (role 'project_AllocateResourceAttribute', cardinality 0..*).
+'project::Interval4' (role 'project_Interval4', cardinality 0..*) is associated with 'project::Booking' (role 'project_Booking', cardinality 0..*).
+'project::TaskStatusSheet' (role 'project_TaskStatusSheet', cardinality 0..*) is associated with 'project::Task' (role 'project_Task192', cardinality 0..*).
+'project::Interval1' (role 'project_Interval1', cardinality 0..*) is associated with 'project::DurationQuantity' (role 'project_DurationQuantity82', cardinality 0..*).
+'project::Resource' (role 'project_Resource20', cardinality 0..*) is associated with 'project::AllocateResource' (role 'project_AllocateResource19', cardinality 0..*).
+'project::Interval4' (role 'project_Interval489', cardinality 0..*) is associated with 'project::DurationQuantity' (role 'project_DurationQuantity90', cardinality 0..*).
+'project::Shift' (role 'project_Shift140', cardinality 0..*) is associated with 'project::ShiftsLimit' (role 'project_ShiftsLimit139', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression212', cardinality 0..*) is associated with 'project::ToolTip' (role 'project_ToolTip', cardinality 0..*).
+'project::ReportAttribute' (role 'project_ReportAttribute', cardinality 0..*) is associated with 'project::Report' (role 'project_Report', cardinality 0..*).
+'project::NavigatorAttribute' (role 'project_NavigatorAttribute', cardinality 0..*) is associated with 'project::Navigator' (role 'project_Navigator', cardinality 0..*).
+'project::ShiftsAllocate' (role 'project_ShiftsAllocate147', cardinality 0..*) is associated with 'project::Interval3' (role 'project_Interval3148', cardinality 0..*).
+'project::Weekdays' (role 'project_Weekdays', cardinality 0..*) is associated with 'project::WorkingHours' (role 'project_WorkingHours221', cardinality 0..*).
+'project::DurationQuantity' (role 'project_DurationQuantity107', cardinality 0..*) is associated with 'project::Remaining' (role 'project_Remaining', cardinality 0..*).
+'project::TaskDependency' (role 'project_TaskDependency244', cardinality 0..*) is associated with 'project::GapLength' (role 'project_GapLength', cardinality 0..*).
+'project::TaskAttribute' (role 'project_TaskAttribute179', cardinality 0..*) is associated with 'project::SupplementTask' (role 'project_SupplementTask178', cardinality 0..*).
+'project::Extend' (role 'project_Extend62', cardinality 0..*) is associated with 'project::ExtendedTaskAttribute' (role 'project_ExtendedTaskAttribute', cardinality 0..*).
+'project::TagFile' (role 'project_TagFile189', cardinality 0..*) is associated with 'project::RollupTask' (role 'project_RollupTask190', cardinality 0..*).
+'project::Scenario' (role 'project_Scenario', cardinality 0..*) is associated with 'project::Function' (role 'project_Function', cardinality 0..*).
+'project::Resource' (role 'project_Resource204', cardinality 0..*) is associated with 'project::Timesheet' (role 'project_Timesheet', cardinality 0..*).
+'project::RollupResource' (role 'project_RollupResource', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression119', cardinality 0..*).
+'project::LogicalExpression' (role 'project_LogicalExpression117', cardinality 0..*) is associated with 'project::RollupAccount' (role 'project_RollupAccount', cardinality 0..*).
+'project::Resource' (role 'project_Resource115', cardinality 0..*) is associated with 'project::Responsible' (role 'project_Responsible', cardinality 0..*).
+'project::Limit' (role 'project_Limit232', cardinality 0..*) is associated with 'project::LimitAttribute' (role 'project_LimitAttribute', cardinality 0..*).
+'project::Resource' (role 'project_Resource27', cardinality 0..*) is associated with 'project::Alternative' (role 'project_Alternative', cardinality 0..*).
+'project::Task' (role 'project_Task42', cardinality 0..*) is associated with 'project::BookingResource' (role 'project_BookingResource', cardinality 0..*).
+'project::Warn' (role 'project_Warn', cardinality 0..*) is associated with 'project::LogicalExpression' (role 'project_LogicalExpression219', cardinality 0..*).
+'project::TaskDependency' (role 'project_TaskDependency', cardinality 0..*) is associated with 'project::Task' (role 'project_Task240', cardinality 0..*).
+'project::Project' (role 'project_Project11', cardinality 0..*) is associated with 'project::ProjectAttribute' (role 'project_ProjectAttribute', cardinality 0..*).
+'project::ResourceRoot' (role 'project_ResourceRoot', cardinality 0..*) is associated with 'project::Resource' (role 'project_Resource113', cardinality 0..*).
+'project::BookingTask' (role 'project_BookingTask39', cardinality 0..*) is associated with 'project::Booking' (role 'project_Booking40', cardinality 0..*).
+'project::Timesheet' (role 'project_Timesheet209', cardinality 0..*) is associated with 'project::TimesheetAttribute' (role 'project_TimesheetAttribute', cardinality 0..*).
+'project::Duration' (role 'project_Duration', cardinality 0..*) is associated with 'project::DurationQuantity' (role 'project_DurationQuantity', cardinality 0..*).
+'project::WorkingHours' (role 'project_WorkingHours', cardinality 0..*) is associated with 'project::Shift' (role 'project_Shift134', cardinality 0..*).
+'project::Interval2' (role 'project_Interval2', cardinality 0..*) is associated with 'project::Project' (role 'project_Project9', cardinality 0..*).

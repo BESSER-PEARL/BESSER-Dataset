@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'library::OclLibrary' has the following attributes: 'name' of type str.
+The class 'library::OclExpression' has the following attributes: 'name' of type str; 'query' of type str; 'context' of type str; 'description' of type str.
+'library::OclLibrary' (role 'library_OclLibrary', cardinality 0..*) is associated with 'library::OclExpression' (role 'library_OclExpression', cardinality 0..*).

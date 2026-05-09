@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'file::ByteFile' has the following attributes: 'Encoding' of type str.
+The class 'file::FileInMemory' has the following attributes: 'Content' of type str.
+The class 'file::Files' has the following attributes: 'Name' of type str.
+The class 'file::FileLocal' has the following attributes: 'FilePath' of type str.
+The class 'file::FileReaderWriter' has the following attributes: 'WriteFeedback' of type str; 'CloseFeedback' of type str; 'Open' of type bool; 'ReadFeedback' of type str.
+The class 'file::File' has the following attributes: 'Name' of type str.
+The class 'ByteFile' has no attributes.
+The class 'FileOwner' has no attributes.
+The class 'file::FileRemote' has the following attributes: 'URL' of type str.
+The class 'FileHandler' has no attributes.
+The class 'file::FileOutput' has no attributes.
+The class 'file::FileHandler' has no attributes.
+The class 'File' has no attributes.
+The class 'file::FileOwner' has no attributes.
+The enumeration 'FileEncoding' has the following literals: 'US_ASCII', 'ISO_8859_1', 'UTF_8', 'UTF_16LE', 'UTF_16', 'UTF_16BE'.
+'file::FileLocal' is a specialization of 'ByteFile'.
+'file::FileRemote' is a specialization of 'ByteFile'.
+'file::FileInMemory' is a specialization of 'File'.
+'file::FileOutput' is a specialization of 'FileOwner'.
+'file::ByteFile' is a specialization of 'File'.
+'file::FileReaderWriter' is a specialization of 'FileHandler'.
+'file::Files' is a specialization of 'FileOwner'.
+'file::FileHandler' is a specialization of 'FileOwner'.
+'file::FileOutput' (role 'file_FileOutput', cardinality 0..*) is associated with 'file::File' (role 'file_File7', cardinality 0..*).
+'file::File' (role 'file_File3', cardinality 0..*) is associated with 'file::FileHandler' (role 'file_FileHandler2', cardinality 0..*).
+'file::File' (role 'file_File', cardinality 0..*) is associated with 'file::FileHandler' (role 'file_FileHandler', cardinality 0..*).
+'file::FileOwner' (role 'file_FileOwner', cardinality 0..*) is associated with 'file::File' (role 'file_File5', cardinality 0..*).

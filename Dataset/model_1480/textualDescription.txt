@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'graphmodel::ModellingType' has the following attributes: 'name' of type str.
+The class 'graphmodel::Edge' has no attributes.
+The class 'graphmodel::Property' has no attributes.
+The class 'graphmodel::Entity' has the following attributes: 'text' of type str; 'value' of type str; 'height' of type str; 'className' of type str; 'category' of type str; 'x' of type str; 'width' of type str; 'ID' of type str; 'accessModifier' of type str; 'name' of type str; 'description' of type str; 'type' of type str; 'group' of type str; 'y' of type str.
+The class 'graphmodel::Node' has no attributes.
+The class 'Entity' has no attributes.
+The class 'graphmodel::Graph' has no attributes.
+The class 'graphmodel::Operation' has no attributes.
+'graphmodel::Operation' is a specialization of 'Entity'.
+'graphmodel::Node' is a specialization of 'Entity'.
+'graphmodel::Property' is a specialization of 'Entity'.
+'graphmodel::Graph' is a specialization of 'Entity'.
+'graphmodel::Edge' is a specialization of 'Entity'.
+'graphmodel::Node' (role 'graphmodel_Node3', cardinality 0..*) is associated with 'graphmodel::Node' (role 'graphmodel_Node5', cardinality 0..*).
+'graphmodel::Node' (role 'graphmodel_Node12', cardinality 0..*) is associated with 'graphmodel::Operation' (role 'graphmodel_Operation', cardinality 0..*).
+'graphmodel::Graph' (role 'graphmodel_Graph', cardinality 0..*) is associated with 'graphmodel::Node' (role 'graphmodel_Node', cardinality 0..*).
+'graphmodel::Edge' (role 'graphmodel_Edge', cardinality 0..*) is associated with 'graphmodel::Graph' (role 'graphmodel_Graph2', cardinality 0..*).
+'graphmodel::Node' (role 'graphmodel_Node15', cardinality 0..*) is associated with 'graphmodel::Edge' (role 'graphmodel_Edge14', cardinality 0..*).
+'graphmodel::Node' (role 'graphmodel_Node18', cardinality 0..*) is associated with 'graphmodel::Edge' (role 'graphmodel_Edge17', cardinality 0..*).
+'graphmodel::Node' (role 'graphmodel_Node6', cardinality 0..*) is associated with 'graphmodel::Node' (role 'graphmodel_Node8', cardinality 0..*).
+'graphmodel::Node' (role 'graphmodel_Node10', cardinality 0..*) is associated with 'graphmodel::Property' (role 'graphmodel_Property', cardinality 0..*).

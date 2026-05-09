@@ -1,0 +1,188 @@
+The model has 111 class(es).
+The class 'RoomLocation' has no attributes.
+The class 'Classes::Bookables::BookablesManager' has no attributes.
+The class 'Feedback' has no attributes.
+The class 'Classes::Guests::Guest' has the following attributes: 'phone' of type str; 'email' of type str; 'stays' of type str; 'requests' of type str; 'title' of type str; 'ssid' of type str; 'firstname' of type str; 'lastname' of type str; 'account' of type str.
+The class 'IBookings' has no attributes.
+The class 'Classes::Customers::ICustomers' has no attributes.
+The class 'Classes::Bookables::HotelRoom' has the following attributes: 'category' of type str; 'nbrBeds' of type str.
+The class 'Classes::Bookings::Booking' has the following attributes: 'requests' of type str; 'bookedStays' of type str; 'issueDate' of type date; 'bookingNbr' of type str; 'customer' of type str; 'nbrGuests' of type str.
+The class 'Classes::Restaurants::RestaurantMenu' has the following attributes: 'name' of type str; 'items' of type str.
+The class 'Classes::Restaurants::Reservation' has the following attributes: 'from_' of type date; 'reservedBy' of type str; 'to' of type date; 'id' of type str.
+The class 'Classes::Guests::IGuests' has no attributes.
+The class 'Classes::Bookings::BookingsManager' has no attributes.
+The class 'Classes::Accounts::IAccountsAccess' has no attributes.
+The class 'RoomServiceMenu' has no attributes.
+The class 'IRequests' has no attributes.
+The class 'Stay' has no attributes.
+The class 'Classes::Inventory::InventoryManager' has no attributes.
+The class 'Date' has no attributes.
+The class 'Request' has no attributes.
+The class 'Classes::Bookings::IBookings' has no attributes.
+The class 'Accounts::IManageAccounts' has no attributes.
+The class 'Service' has no attributes.
+The class 'IInventoryAccess' has no attributes.
+The class 'Classes::Statistics::StatisticEntry' has the following attributes: 'value' of type str.
+The class 'Classes::Restaurants::IRestaurantsAccess' has no attributes.
+The class 'Classes::Stays::Stay' has the following attributes: 'booking' of type str; 'toDate' of type date; 'ID' of type str; 'bookable' of type str; 'fromDate' of type date; 'checkedInGuests' of type str; 'checkedOutGuests' of type str; 'bills' of type str.
+The class 'Classes::Feedback::IFeedback' has no attributes.
+The class 'IStatisticsGenerator' has no attributes.
+The class 'IRestaurantsAccess' has no attributes.
+The class 'Classes::Stays::CreditCard' has the following attributes: 'firstName' of type str; 'ccNumber' of type str; 'lastName' of type str; 'expiryYear' of type str; 'ccv' of type str; 'expiryMonth' of type str.
+The class 'Classes::Staff::SalaryContract' has no attributes.
+The class 'Classes::Stays::IStays' has no attributes.
+The class 'SalaryContract' has no attributes.
+The class 'Classes::Staff::HourlySalaryContract' has the following attributes: 'salary' of type float.
+The class 'Classes::Bills::BillsManager' has no attributes.
+The class 'IManageInventory' has no attributes.
+The class 'IGuests' has no attributes.
+The class 'Classes::Accounts::AccountsManager' has no attributes.
+The class 'Classes::Stays::StaysManager' has no attributes.
+The class 'Classes::Staff::StaffManager' has no attributes.
+The class 'Bookable' has no attributes.
+The class 'IStaff' has no attributes.
+The class 'RestaurantMenu' has no attributes.
+The class 'Restaurant' has no attributes.
+The class 'Classes::Bills::Bill' has the following attributes: 'id' of type str; 'issueDate' of type date; 'totalAmount' of type float; 'isPaid' of type str; 'items' of type str; 'services' of type str; 'bookable' of type str; 'paymentDate' of type date; 'paymentType' of type str.
+The class 'Classes::Bookables::HostelBed' has no attributes.
+The class 'Classes::Services::RoomServiceMenu' has the following attributes: 'items' of type str; 'name' of type str.
+The class 'Classes::Feedback::FeedbackManager' has no attributes.
+The class 'Classes::Statistics::Date' has no attributes.
+The class 'Classes::Services::IServicesManage' has no attributes.
+The class 'RoomServiceOrder' has no attributes.
+The class 'ICustomers' has no attributes.
+The class 'Classes::Bookables::Room' has no attributes.
+The class 'CreditCard' has no attributes.
+The class 'Classes::Restaurants::IRestaurantsManage' has no attributes.
+The class 'Item' has no attributes.
+The class 'Room' has no attributes.
+The class 'Classes::Services::Service' has the following attributes: 'price' of type float; 'expense' of type float; 'id' of type str; 'name' of type str.
+The class 'Classes::Accounts::IManageAccounts' has no attributes.
+The class 'Classes::Staff::Staff' has the following attributes: 'email' of type str; 'phone' of type str; 'lastName' of type str; 'job' of type str; 'ssid' of type str; 'firstName' of type str.
+The class 'Classes::Bookables::IBookablesAccess' has no attributes.
+The class 'StatisticEntry' has no attributes.
+The class 'Classes::Staff::MonthlySalaryContract' has the following attributes: 'salary' of type float.
+The class 'Classes::Restaurants::RestaurantTable' has the following attributes: 'numberOfSeats' of type str; 'tableNumber' of type str.
+The class 'Classes::Statistics::Statistic' has the following attributes: 'type' of type str.
+The class 'Classes::Inventory::IManageInventory' has no attributes.
+The class 'Classes::Customers::CustomersManager' has no attributes.
+The class 'Classes::Inventory::IInventoryAccess' has no attributes.
+The class 'IBookablesAccess' has no attributes.
+The class 'Classes::Statistics::IStatisticsGenerator' has no attributes.
+The class 'Bill' has no attributes.
+The class 'Classes::Bookables::RoomLocation' has the following attributes: 'addtionalInfo' of type str; 'floor' of type str.
+The class 'Classes::Bookables::IBookablesManage' has no attributes.
+The class 'Classes::Inventory::Item' has the following attributes: 'stock' of type str; 'price' of type float; 'name' of type str; 'id' of type str; 'expense' of type float.
+The class 'Reservation' has no attributes.
+The class 'Classes::Statistics::StatisticsGenerator' has the following attributes: 'staticExpenses' of type float.
+The class 'CustomerProvides' has no attributes.
+The class 'Classes::Requests::IRequests' has no attributes.
+The class 'Classes::Restaurants::RestaurantsManager' has no attributes.
+The class 'Classes::Accounts::Account' has the following attributes: 'username' of type str; 'password' of type str; 'accountType' of type str.
+The class 'RestaurantTable' has no attributes.
+The class 'IManageAccounts' has no attributes.
+The class 'IServicesManage' has no attributes.
+The class 'Classes::Restaurants::Restaurant' has the following attributes: 'name' of type str.
+The class 'Classes::Bookables::Bookable' has the following attributes: 'id' of type str; 'description' of type str; 'baseprice' of type float.
+The class 'IFeedback' has no attributes.
+The class 'Classes::Bills::IBills' has no attributes.
+The class 'IBookablesManage' has no attributes.
+The class 'Classes::Banking::AdministratorProvides' has no attributes.
+The class 'Classes::Banking::CustomerProvides' has no attributes.
+The class 'IRestaurantsManage' has no attributes.
+The class 'Accounts::IAccountsAccess' has no attributes.
+The class 'Staff' has no attributes.
+The class 'Classes::Services::ServiceManager' has no attributes.
+The class 'Classes::Customers::Customer' has the following attributes: 'lastname' of type str; 'title' of type str; 'ssid' of type str; 'requests' of type str; 'bookings' of type str; 'email' of type str; 'firstname' of type str; 'phone' of type str.
+The class 'IStays' has no attributes.
+The class 'Booking' has no attributes.
+The class 'Classes::Services::RoomServiceOrder' has the following attributes: 'items' of type str; 'bill' of type str; 'isDelivered' of type str; 'deliveryDate' of type date; 'id' of type str; 'bookable' of type str.
+The class 'Customer' has no attributes.
+The class 'IServicesAccess' has no attributes.
+The class 'Classes::Bookables::ConferenceRoom' has the following attributes: 'capacity' of type str; 'category' of type str.
+The class 'Account' has no attributes.
+The class 'Classes::Requests::RequestsManager' has no attributes.
+The class 'IBills' has no attributes.
+The class 'Classes::Guests::GuestsManager' has no attributes.
+The class 'Guest' has no attributes.
+The class 'Classes::Requests::Request' has the following attributes: 'isResolved' of type str; 'id' of type str; 'description' of type str.
+The class 'Classes::Services::IServicesAccess' has no attributes.
+The class 'HotelRoom' has no attributes.
+The class 'Classes::Staff::IStaff' has no attributes.
+The class 'Classes::Feedback::Feedback' has the following attributes: 'isResolved' of type str; 'isNoted' of type str; 'id' of type str; 'description' of type str.
+The enumeration 'ConferenceRoomCategory' has the following literals: 'LectureRoom', 'Other', 'MeetingRoom', 'DiningRoom'.
+The enumeration 'AccountType' has the following literals: 'Staff', 'Guest', 'Manager', 'CustomerService'.
+The enumeration 'HotelRoomCategory' has the following literals: 'Suite', 'StandardRoom', 'FamilyRoom'.
+'Classes::Feedback::FeedbackManager' is a specialization of 'IFeedback'.
+'Classes::Requests::RequestsManager' is a specialization of 'IRequests'.
+'Classes::Inventory::IManageInventory' is a specialization of 'IInventoryAccess'.
+'Classes::Services::ServiceManager' is a specialization of 'IServicesManage'.
+'Classes::Bookables::ConferenceRoom' is a specialization of 'Room'.
+'Classes::Accounts::AccountsManager' is a specialization of 'Accounts::IManageAccounts'.
+'Classes::Stays::StaysManager' is a specialization of 'IStays'.
+'Classes::Bookables::HotelRoom' is a specialization of 'Room'.
+'Classes::Inventory::InventoryManager' is a specialization of 'IManageInventory'.
+'Classes::Staff::HourlySalaryContract' is a specialization of 'SalaryContract'.
+'Classes::Restaurants::RestaurantsManager' is a specialization of 'IRestaurantsManage'.
+'Classes::Restaurants::IRestaurantsManage' is a specialization of 'IRestaurantsAccess'.
+'Classes::Bookables::Room' is a specialization of 'Bookable'.
+'Classes::Bookables::HostelBed' is a specialization of 'Bookable'.
+'Classes::Guests::GuestsManager' is a specialization of 'IGuests'.
+'Classes::Bookables::BookablesManager' is a specialization of 'IBookablesManage'.
+'Classes::Bills::BillsManager' is a specialization of 'IBills'.
+'Classes::Customers::CustomersManager' is a specialization of 'ICustomers'.
+'Classes::Services::IServicesManage' is a specialization of 'IServicesAccess'.
+'Classes::Bookables::IBookablesManage' is a specialization of 'IBookablesAccess'.
+'Classes::Statistics::StatisticsGenerator' is a specialization of 'IStatisticsGenerator'.
+'Classes::Accounts::AccountsManager' is a specialization of 'Accounts::IAccountsAccess'.
+'Classes::Bookings::BookingsManager' is a specialization of 'IBookings'.
+'Classes::Staff::MonthlySalaryContract' is a specialization of 'SalaryContract'.
+'Classes::Staff::StaffManager' is a specialization of 'IStaff'.
+'Classes::Bills::BillsManager' (role 'Classes_Bills_BillsManager18', cardinality 0..*) is associated with 'IBookablesAccess' (role 'IBookablesAccess', cardinality 0..*).
+'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager51', cardinality 0..*) is associated with 'ICustomers' (role 'ICustomers', cardinality 0..*).
+'Date' (role 'Date63', cardinality 0..*) is associated with 'Classes::Statistics::StatisticEntry' (role 'Classes_Statistics_StatisticEntry', cardinality 0..*).
+'Stay' (role 'Stay', cardinality 0..*) is associated with 'Classes::Stays::StaysManager' (role 'Classes_Stays_StaysManager', cardinality 0..*).
+'IStays' (role 'IStays43', cardinality 0..*) is associated with 'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager42', cardinality 0..*).
+'Classes::Staff::Staff' (role 'Classes_Staff_Staff', cardinality 0..*) is associated with 'SalaryContract' (role 'SalaryContract', cardinality 0..*).
+'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager39', cardinality 0..*) is associated with 'IBookablesAccess' (role 'IBookablesAccess40', cardinality 0..*).
+'IGuests' (role 'IGuests', cardinality 0..*) is associated with 'Classes::Stays::StaysManager' (role 'Classes_Stays_StaysManager12', cardinality 0..*).
+'Classes::Statistics::StatisticsGenerator' (role 'Classes_Statistics_StatisticsGenerator67', cardinality 0..*) is associated with 'IBookings' (role 'IBookings', cardinality 0..*).
+'Classes::Bills::BillsManager' (role 'Classes_Bills_BillsManager22', cardinality 0..*) is associated with 'IServicesAccess' (role 'IServicesAccess', cardinality 0..*).
+'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager45', cardinality 0..*) is associated with 'CustomerProvides' (role 'CustomerProvides46', cardinality 0..*).
+'Classes::Guests::GuestsManager' (role 'Classes_Guests_GuestsManager', cardinality 0..*) is associated with 'Guest' (role 'Guest', cardinality 0..*).
+'Classes::Bookables::Room' (role 'Classes_Bookables_Room', cardinality 0..*) is associated with 'RoomLocation' (role 'RoomLocation', cardinality 0..*).
+'IStaff' (role 'IStaff', cardinality 0..*) is associated with 'Classes::Statistics::StatisticsGenerator' (role 'Classes_Statistics_StatisticsGenerator69', cardinality 0..*).
+'Classes::Services::ServiceManager' (role 'Classes_Services_ServiceManager', cardinality 0..*) is associated with 'Service' (role 'Service', cardinality 0..*).
+'IGuests' (role 'IGuests49', cardinality 0..*) is associated with 'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager48', cardinality 0..*).
+'Classes::Statistics::Statistic' (role 'Classes_Statistics_Statistic', cardinality 0..*) is associated with 'StatisticEntry' (role 'StatisticEntry', cardinality 0..*).
+'Classes::Statistics::Statistic' (role 'Classes_Statistics_Statistic60', cardinality 0..*) is associated with 'Date' (role 'Date61', cardinality 0..*).
+'Staff' (role 'Staff', cardinality 0..*) is associated with 'Classes::Staff::StaffManager' (role 'Classes_Staff_StaffManager', cardinality 0..*).
+'Classes::Requests::RequestsManager' (role 'Classes_Requests_RequestsManager', cardinality 0..*) is associated with 'Request' (role 'Request', cardinality 0..*).
+'Classes::Inventory::InventoryManager' (role 'Classes_Inventory_InventoryManager', cardinality 0..*) is associated with 'Item' (role 'Item', cardinality 0..*).
+'Restaurant' (role 'Restaurant', cardinality 0..*) is associated with 'Classes::Restaurants::RestaurantsManager' (role 'Classes_Restaurants_RestaurantsManager', cardinality 0..*).
+'Classes::Accounts::AccountsManager' (role 'Classes_Accounts_AccountsManager', cardinality 0..*) is associated with 'Account' (role 'Account', cardinality 0..*).
+'Classes::Staff::StaffManager' (role 'Classes_Staff_StaffManager72', cardinality 0..*) is associated with 'IStatisticsGenerator' (role 'IStatisticsGenerator', cardinality 0..*).
+'RestaurantMenu' (role 'RestaurantMenu', cardinality 0..*) is associated with 'Classes::Restaurants::Restaurant' (role 'Classes_Restaurants_Restaurant79', cardinality 0..*).
+'Classes::Customers::CustomersManager' (role 'Classes_Customers_CustomersManager', cardinality 0..*) is associated with 'Customer' (role 'Customer', cardinality 0..*).
+'RoomServiceMenu' (role 'RoomServiceMenu', cardinality 0..*) is associated with 'Classes::Services::ServiceManager' (role 'Classes_Services_ServiceManager28', cardinality 0..*).
+'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager53', cardinality 0..*) is associated with 'IBills' (role 'IBills54', cardinality 0..*).
+'Bill' (role 'Bill', cardinality 0..*) is associated with 'Classes::Bills::BillsManager' (role 'Classes_Bills_BillsManager', cardinality 0..*).
+'IInventoryAccess' (role 'IInventoryAccess', cardinality 0..*) is associated with 'Classes::Bills::BillsManager' (role 'Classes_Bills_BillsManager20', cardinality 0..*).
+'Service' (role 'Service30', cardinality 0..*) is associated with 'Classes::Services::RoomServiceOrder' (role 'Classes_Services_RoomServiceOrder', cardinality 0..*).
+'RoomServiceOrder' (role 'RoomServiceOrder', cardinality 0..*) is associated with 'Classes::Services::ServiceManager' (role 'Classes_Services_ServiceManager26', cardinality 0..*).
+'Classes::Restaurants::Reservation' (role 'Classes_Restaurants_Reservation', cardinality 0..*) is associated with 'RestaurantTable' (role 'RestaurantTable81', cardinality 0..*).
+'IBills' (role 'IBills', cardinality 0..*) is associated with 'Classes::Stays::StaysManager' (role 'Classes_Stays_StaysManager10', cardinality 0..*).
+'Classes::Bookings::Booking' (role 'Classes_Bookings_Booking', cardinality 0..*) is associated with 'CreditCard' (role 'CreditCard36', cardinality 0..*).
+'CustomerProvides' (role 'CustomerProvides16', cardinality 0..*) is associated with 'Classes::Bills::BillsManager' (role 'Classes_Bills_BillsManager15', cardinality 0..*).
+'IBills' (role 'IBills65', cardinality 0..*) is associated with 'Classes::Statistics::StatisticsGenerator' (role 'Classes_Statistics_StatisticsGenerator', cardinality 0..*).
+'Classes::Restaurants::Restaurant' (role 'Classes_Restaurants_Restaurant77', cardinality 0..*) is associated with 'RestaurantTable' (role 'RestaurantTable', cardinality 0..*).
+'Date' (role 'Date', cardinality 0..*) is associated with 'Classes::Statistics::Statistic' (role 'Classes_Statistics_Statistic58', cardinality 0..*).
+'Bookable' (role 'Bookable', cardinality 0..*) is associated with 'Classes::Bookables::BookablesManager' (role 'Classes_Bookables_BookablesManager', cardinality 0..*).
+'Reservation' (role 'Reservation', cardinality 0..*) is associated with 'Classes::Restaurants::Restaurant' (role 'Classes_Restaurants_Restaurant', cardinality 0..*).
+'Booking' (role 'Booking', cardinality 0..*) is associated with 'Classes::Bookings::BookingsManager' (role 'Classes_Bookings_BookingsManager', cardinality 0..*).
+'Feedback' (role 'Feedback', cardinality 0..*) is associated with 'Classes::Feedback::FeedbackManager' (role 'Classes_Feedback_FeedbackManager', cardinality 0..*).
+'HotelRoom' (role 'HotelRoom', cardinality 0..*) is associated with 'Classes::Bookables::HostelBed' (role 'Classes_Bookables_HostelBed', cardinality 0..*).
+'CreditCard' (role 'CreditCard', cardinality 0..*) is associated with 'Classes::Stays::Stay' (role 'Classes_Stays_Stay', cardinality 0..*).
+'IStays' (role 'IStays', cardinality 0..*) is associated with 'Classes::Bookables::BookablesManager' (role 'Classes_Bookables_BookablesManager4', cardinality 0..*).
+'CustomerProvides' (role 'CustomerProvides', cardinality 0..*) is associated with 'Classes::Stays::StaysManager' (role 'Classes_Stays_StaysManager8', cardinality 0..*).
+'Classes::Guests::GuestsManager' (role 'Classes_Guests_GuestsManager33', cardinality 0..*) is associated with 'IManageAccounts' (role 'IManageAccounts', cardinality 0..*).

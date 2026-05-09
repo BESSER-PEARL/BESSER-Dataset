@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'PetriNets::PetriNet' has no attributes.
+The class 'PetriNets::Place' has no attributes.
+The class 'PetriNets::Transition' has no attributes.

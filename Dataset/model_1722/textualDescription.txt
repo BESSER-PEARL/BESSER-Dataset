@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'library::Book' has the following attributes: 'name' of type str.
+The class 'library::Text' has no attributes.
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'library::Image' has no attributes.
+The class 'library::Chapter' has the following attributes: 'pages' of type int; 'name' of type str.
+The class 'library::Content' has no attributes.
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'library::Book' (role 'library_Book', cardinality 0..*).
+'library::Content' (role 'library_Content8', cardinality 0..*) is associated with 'library::Image' (role 'library_Image', cardinality 0..*).
+'library::Book' (role 'library_Book2', cardinality 0..*) is associated with 'library::Chapter' (role 'library_Chapter', cardinality 0..*).
+'library::Content' (role 'library_Content', cardinality 0..*) is associated with 'library::Chapter' (role 'library_Chapter4', cardinality 0..*).
+'library::Text' (role 'library_Text', cardinality 0..*) is associated with 'library::Content' (role 'library_Content6', cardinality 0..*).

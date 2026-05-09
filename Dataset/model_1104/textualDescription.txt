@@ -1,0 +1,39 @@
+The model has 19 class(es).
+The class 'PlaceToTransition' has no attributes.
+The class 'TransitionToPlace' has no attributes.
+The class 'evoPetrinet::NamedElement' has the following attributes: 'name' of type str.
+The class 'evoPetrinet::Arc' has the following attributes: 'weight' of type str.
+The class 'PetriNet' has no attributes.
+The class 'Transition' has no attributes.
+The class 'Place' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'Arc' has no attributes.
+The class 'evoPetrinet::TransitionToPlace' has no attributes.
+The class 'Element' has no attributes.
+The class 'evoPetrinet::LocatedElement' has the following attributes: 'location' of type str.
+The class 'evoPetrinet::PetriNetModel' has no attributes.
+The class 'evoPetrinet::PetriNet' has no attributes.
+The class 'evoPetrinet::PlaceToTransition' has no attributes.
+The class 'evoPetrinet::Element' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'evoPetrinet::Transition' has no attributes.
+The class 'evoPetrinet::Place' has no attributes.
+'evoPetrinet::PetriNet' is a specialization of 'NamedElement'.
+'evoPetrinet::Place' is a specialization of 'Element'.
+'evoPetrinet::Element' is a specialization of 'NamedElement'.
+'evoPetrinet::Arc' is a specialization of 'Element'.
+'evoPetrinet::NamedElement' is a specialization of 'LocatedElement'.
+'evoPetrinet::PlaceToTransition' is a specialization of 'Arc'.
+'evoPetrinet::Transition' is a specialization of 'Element'.
+'evoPetrinet::TransitionToPlace' is a specialization of 'Arc'.
+'evoPetrinet::TransitionToPlace' (role 'outgoingArc15', cardinality 0..*) is associated with 'Transition' (role 'Transition16', cardinality 0..*).
+'Place' (role 'Place', cardinality 0..*) is associated with 'evoPetrinet::PlaceToTransition' (role 'outgoingArc', cardinality 0..*).
+'evoPetrinet::Place' (role 'src', cardinality 0..*) is associated with 'PlaceToTransition' (role 'PlaceToTransition', cardinality 0..*).
+'evoPetrinet::Transition' (role 'dst7', cardinality 0..*) is associated with 'PlaceToTransition' (role 'PlaceToTransition8', cardinality 0..*).
+'evoPetrinet::PetriNetModel' (role 'evoPetrinet_PetriNetModel', cardinality 0..*) is associated with 'PetriNet' (role 'PetriNet', cardinality 0..*).
+'evoPetrinet::TransitionToPlace' (role 'incomingArc18', cardinality 0..*) is associated with 'Place' (role 'Place19', cardinality 0..*).
+'evoPetrinet::Place' (role 'dst', cardinality 0..*) is associated with 'TransitionToPlace' (role 'TransitionToPlace', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'evoPetrinet::PlaceToTransition' (role 'incomingArc', cardinality 0..*).
+'evoPetrinet::Element' (role 'elements', cardinality 0..*) is associated with 'PetriNet' (role 'PetriNet3', cardinality 0..*).
+'TransitionToPlace' (role 'TransitionToPlace11', cardinality 0..*) is associated with 'evoPetrinet::Transition' (role 'src10', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'evoPetrinet::PetriNet' (role 'net', cardinality 0..*).

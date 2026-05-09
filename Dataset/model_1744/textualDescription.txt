@@ -1,0 +1,26 @@
+The model has 8 class(es).
+The class 'model::Person' has the following attributes: 'name' of type str.
+The class 'model::ETypes' has the following attributes: 'eBigInteger' of type str; 'eByte' of type str; 'eString' of type str; 'eDate' of type date; 'eBigDecimal' of type str; 'uris' of type str; 'eLong' of type str; 'eShort' of type str; 'eFloat' of type float; 'eInt' of type int; 'eByteArray' of type str; 'eDouble' of type float; 'eChar' of type str; 'eBoolean' of type bool.
+The class 'model::Library' has no attributes.
+The class 'model::Location' has the following attributes: 'address' of type str; 'id' of type str.
+The class 'model::Book' has the following attributes: 'title' of type str; 'tags' of type str; 'data' of type str.
+The class 'model::PrimaryObject' has the following attributes: 'featureMapReferenceCollection' of type str; 'featureMapAttributeType1' of type str; 'featureMapAttributeCollection' of type str; 'featureMapAttributeType2' of type str; 'name' of type str.
+The class 'model::MappedLibrary' has the following attributes: 'books' of type str.
+The class 'model::TargetObject' has the following attributes: 'singleAttribute' of type str; 'arrayAttribute' of type str.
+'model::PrimaryObject' (role 'model_PrimaryObject', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject30', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject31', cardinality 0..*).
+'model::Book' (role 'model_Book', cardinality 0..*) is associated with 'model::Library' (role 'model_Library', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject39', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject40', cardinality 0..*).
+'model::Book' (role 'model_Book15', cardinality 0..*) is associated with 'model::MappedLibrary' (role 'model_MappedLibrary14', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject25', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject24', cardinality 0..*).
+'model::Location' (role 'model_Location', cardinality 0..*) is associated with 'model::Library' (role 'model_Library4', cardinality 0..*).
+'model::Book' (role 'model_Book7', cardinality 0..*) is associated with 'model::Library' (role 'model_Library6', cardinality 0..*).
+'model::Book' (role 'model_Book18', cardinality 0..*) is associated with 'model::MappedLibrary' (role 'model_MappedLibrary17', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject33', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject34', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject21', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject22', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject28', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject27', cardinality 0..*).
+'model::Location' (role 'model_Location9', cardinality 0..*) is associated with 'model::Book' (role 'model_Book10', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject36', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject37', cardinality 0..*).
+'model::Book' (role 'Book', cardinality 0..*) is associated with 'model::Person' (role 'authors', cardinality 0..*).
+'model::MappedLibrary' (role 'model_MappedLibrary', cardinality 0..*) is associated with 'model::Location' (role 'model_Location12', cardinality 0..*).
+'model::Book' (role 'books', cardinality 0..*) is associated with 'model::Person' (role 'Person', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'kiamaas::Node' has the following attributes: 'depth' of type str; 'height' of type str.
+The class 'kiamaas::Top' has no attributes.
+The class 'kiamaas::Composite' has no attributes.
+The class 'kiamaas::Leaf' has no attributes.
+The class 'Node' has no attributes.
+'kiamaas::Composite' is a specialization of 'Node'.
+'kiamaas::Leaf' is a specialization of 'Node'.
+'kiamaas::Top' (role 'kiamaas_Top', cardinality 0..*) is associated with 'kiamaas::Node' (role 'kiamaas_Node', cardinality 0..*).
+'kiamaas::Node' (role 'kiamaas_Node2', cardinality 0..*) is associated with 'kiamaas::Composite' (role 'kiamaas_Composite', cardinality 0..*).

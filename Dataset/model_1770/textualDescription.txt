@@ -1,0 +1,15 @@
+The model has 4 class(es).
+The class 'book::Article' has the following attributes: 'title' of type str.
+The class 'book::DocBook' has no attributes.
+The class 'book::Book' has the following attributes: 'title' of type str.
+The class 'book::Person' has the following attributes: 'name' of type str.
+'book::Article' (role 'Article18', cardinality 0..*) is associated with 'book::Person' (role 'author17', cardinality 0..*).
+'book::Article' (role 'articles', cardinality 0..*) is associated with 'book::Book' (role 'Book8', cardinality 0..*).
+'book::Book' (role 'book6', cardinality 0..*) is associated with 'book::Article' (role 'Article', cardinality 0..*).
+'book::Book' (role 'book', cardinality 0..*) is associated with 'book::DocBook' (role 'DocBook', cardinality 0..*).
+'book::Book' (role 'Book', cardinality 0..*) is associated with 'book::DocBook' (role 'docBook', cardinality 0..*).
+'book::Book' (role 'Book15', cardinality 0..*) is associated with 'book::Person' (role 'author', cardinality 0..*).
+'book::Person' (role 'Person', cardinality 0..*) is associated with 'book::Book' (role 'edited', cardinality 0..*).
+'book::Article' (role 'articles10', cardinality 0..*) is associated with 'book::Person' (role 'Person11', cardinality 0..*).
+'book::Book' (role 'Book13', cardinality 0..*) is associated with 'book::Person' (role 'editor', cardinality 0..*).
+'book::Person' (role 'Person4', cardinality 0..*) is associated with 'book::Book' (role 'authored', cardinality 0..*).

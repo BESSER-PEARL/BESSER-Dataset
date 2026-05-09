@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'statemodel::State' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'statemodel::Transition' has the following attributes: 'guard' of type str; 'action' of type str.
+The class 'statemodel::Statemachine' has no attributes.
+The class 'statemodel::Import' has the following attributes: 'importURI' of type str.
+The class 'statemodel::Model' has no attributes.
+The class 'statemodel::TransitionBlock' has the following attributes: 'event' of type str.
+The class 'Activity' has no attributes.
+The class 'statemodel::Activity' has no attributes.
+The class 'statemodel::Element' has no attributes.
+The class 'Element' has no attributes.
+The enumeration 'StateType' has the following literals: 'FINAL', 'INITIAL', 'NONE'.
+'statemodel::State' is a specialization of 'Activity'.
+'statemodel::State' is a specialization of 'Element'.
+'statemodel::Statemachine' is a specialization of 'Element'.
+'statemodel::TransitionBlock' is a specialization of 'Activity'.
+'statemodel::State' (role 'statemodel_State9', cardinality 0..*) is associated with 'statemodel::Transition' (role 'statemodel_Transition8', cardinality 0..*).
+'statemodel::Element' (role 'statemodel_Element', cardinality 0..*) is associated with 'statemodel::Model' (role 'statemodel_Model2', cardinality 0..*).
+'statemodel::Transition' (role 'statemodel_Transition', cardinality 0..*) is associated with 'statemodel::TransitionBlock' (role 'statemodel_TransitionBlock', cardinality 0..*).
+'statemodel::State' (role 'statemodel_State5', cardinality 0..*) is associated with 'statemodel::Activity' (role 'statemodel_Activity', cardinality 0..*).
+'statemodel::State' (role 'statemodel_State', cardinality 0..*) is associated with 'statemodel::Statemachine' (role 'statemodel_Statemachine', cardinality 0..*).
+'statemodel::Import' (role 'statemodel_Import', cardinality 0..*) is associated with 'statemodel::Model' (role 'statemodel_Model', cardinality 0..*).

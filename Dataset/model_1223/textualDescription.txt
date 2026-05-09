@@ -1,0 +1,773 @@
+The model has 328 class(es).
+The class 'Procedure' has no attributes.
+The class 'RangeRole' has no attributes.
+The class 'core::ConcreteType' has no attributes.
+The class 'core::InstantiableType' has no attributes.
+The class 'express::statements::ProcedureCall' has no attributes.
+The class 'express::core::GeneralARRAYType' has the following attributes: 'isOptional' of type str.
+The class 'express::expressions::StringIndex' has no attributes.
+The class 'express::statements::ReturnStatement' has no attributes.
+The class 'PartialEntityType' has no attributes.
+The class 'InverseAttribute' has no attributes.
+The class 'NamedRule' has no attributes.
+The class 'express::core::LengthConstraint' has the following attributes: 'maxLength' of type str; 'isFixed' of type str.
+The class 'express::core::InverseAttribute' has the following attributes: 'isUnique' of type str.
+The class 'RealValue' has no attributes.
+The class 'core::DataType' has no attributes.
+The class 'FunctionResult' has no attributes.
+The class 'express::instances::RoleName' has no attributes.
+The class 'express::core::ConcreteAggregationType' has no attributes.
+The class 'express::instances::TypeName' has no attributes.
+The class 'express::expressions::IndexOperation' has no attributes.
+The class 'express::core::Instance' has no attributes.
+The class 'express::expressions::PartialEntityConstructor' has the following attributes: 'id' of type str.
+The class 'express::core::DomainRole' has no attributes.
+The class 'express::instances::StringValue' has no attributes.
+The class 'Extent' has no attributes.
+The class 'express::core::ArrayBound' has the following attributes: 'bound' of type str.
+The class 'express::core::Attribute' has the following attributes: 'position' of type str; 'isAbstract' of type str.
+The class 'ScopedId' has no attributes.
+The class 'express::core::LISTType' has no attributes.
+The class 'express::core::DataType' has no attributes.
+The class 'express::core::NumericType' has no attributes.
+The class 'VARExpression' has no attributes.
+The class 'express::algorithms::NamedVariable' has no attributes.
+The class 'express::instances::LISTValue' has no attributes.
+The class 'InterfacedElement' has no attributes.
+The class 'VariableType' has no attributes.
+The class 'DomainConstraint' has no attributes.
+The class 'SelectType' has no attributes.
+The class 'express::expressions::FunctionCall' has no attributes.
+The class 'CaseAction' has no attributes.
+The class 'express::core::SETType' has no attributes.
+The class 'SETValue' has no attributes.
+The class 'express::core::EnumerationType' has the following attributes: 'isExtensible' of type str.
+The class 'express::instances::AttributeValue' has no attributes.
+The class 'express::algorithms::ActualARRAYType' has the following attributes: 'isOptional' of type str.
+The class 'core::AggregationType' has no attributes.
+The class 'instances::ConcreteValue' has no attributes.
+The class 'express::instances::SETValue' has no attributes.
+The class 'EntityValue' has no attributes.
+The class 'core::VariableType' has no attributes.
+The class 'express::algorithms::VARParameter' has no attributes.
+The class 'express::expressions::QueryExpression' has no attributes.
+The class 'express::core::DerivedAttribute' has no attributes.
+The class 'express::instances::BooleanValue' has no attributes.
+The class 'express::core::StringType' has no attributes.
+The class 'express::statements::AttributeCell' has the following attributes: 'id' of type str.
+The class 'Function' has no attributes.
+The class 'Schema' has no attributes.
+The class 'EntityType' has no attributes.
+The class 'express::expressions::Literal' has no attributes.
+The class 'express::instances::SimpleValue' has the following attributes: 'name' of type str.
+The class 'express::algorithms::Function' has no attributes.
+The class 'EntityInstance' has no attributes.
+The class 'SingleEntityType' has no attributes.
+The class 'express::core::AlgorithmScope' has no attributes.
+The class 'ActualStructureConstraint' has no attributes.
+The class 'express::statements::SkipStatement' has no attributes.
+The class 'RepeatStatement' has no attributes.
+The class 'ConcreteAggregationType' has no attributes.
+The class 'express::expressions::ActualParameter' has the following attributes: 'position' of type str.
+The class 'express::rules::ONEOFConstraint' has no attributes.
+The class 'core::SchemaElement' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'express::algorithms::ActualAggregationType' has no attributes.
+The class 'express::instances::BagMember' has the following attributes: 'count' of type str.
+The class 'express::expressions::GroupRef' has the following attributes: 'id' of type str.
+The class 'express::core::GeneralizedType' has no attributes.
+The class 'express::instances::LogicalValue' has no attributes.
+The class 'express::expressions::ParameterRef' has the following attributes: 'id' of type str.
+The class 'express::core::GeneralBAGType' has no attributes.
+The class 'express::algorithms::ActualDataType' has no attributes.
+The class 'AnonymousType' has no attributes.
+The class 'express::core::BinaryType' has no attributes.
+The class 'express::statements::StatementBlock' has the following attributes: 'delimited' of type str.
+The class 'express::core::SizeConstraint' has the following attributes: 'bound' of type str.
+The class 'core::TypeElement' has no attributes.
+The class 'express::rules::GlobalRule' has no attributes.
+The class 'AttributeBinding' has no attributes.
+The class 'express::core::Relationship' has no attributes.
+The class 'core::Instance' has no attributes.
+The class 'IndexOperation' has no attributes.
+The class 'UniqueRule' has no attributes.
+The class 'ProcedureCall' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'express::algorithms::ActualLISTType' has no attributes.
+The class 'express::core::InvertibleAttribute' has no attributes.
+The class 'DomainRule' has no attributes.
+The class 'express::instances::BAGValue' has no attributes.
+The class 'express::statements::EscapeStatement' has no attributes.
+The class 'LocalScope' has no attributes.
+The class 'MemberBinding' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'express::core::EntityType' has the following attributes: 'isAbstract' of type str.
+The class 'express::expressions::Operation' has no attributes.
+The class 'Remark' has no attributes.
+The class 'express::expressions::Selector' has no attributes.
+The class 'express::algorithms::Variable' has no attributes.
+The class 'LogicalValue' has no attributes.
+The class 'ActualParameter' has no attributes.
+The class 'AliasVariable' has no attributes.
+The class 'express::core::Role' has no attributes.
+The class 'Instance' has no attributes.
+The class 'CommonElement' has no attributes.
+The class 'express::statements::NullStatement' has no attributes.
+The class 'express::core::GenericType' has the following attributes: 'isEntity' of type str.
+The class 'core::AlgorithmScope' has no attributes.
+The class 'express::statements::VARCell' has the following attributes: 'id' of type str.
+The class 'PartialEntityValue' has no attributes.
+The class 'express::statements::GroupCell' has the following attributes: 'id' of type str.
+The class 'express::core::CommonElement' has no attributes.
+The class 'core::ActualType' has no attributes.
+The class 'express::instances::ArrayMember' has the following attributes: 'index' of type str.
+The class 'GenericType' has no attributes.
+The class 'express::instances::GenericAggregate' has no attributes.
+The class 'express::expressions::VariableRef' has the following attributes: 'id' of type str.
+The class 'AGGREGATEType' has no attributes.
+The class 'Statement' has no attributes.
+The class 'express::core::DomainRule' has the following attributes: 'position' of type str.
+The class 'express::instances::EntityValue' has no attributes.
+The class 'express::expressions::AggregateInitializer' has no attributes.
+The class 'ConcreteValue' has no attributes.
+The class 'EnumerationItem' has no attributes.
+The class 'express::core::RealType' has the following attributes: 'precision' of type str.
+The class 'Operation' has no attributes.
+The class 'express::statements::MemberCell' has no attributes.
+The class 'express::statements::ControlStatement' has no attributes.
+The class 'express::core::LocalElement' has no attributes.
+The class 'NamedVariable' has no attributes.
+The class 'ActualDataType' has no attributes.
+The class 'express::expressions::AttributeRef' has the following attributes: 'id' of type str.
+The class 'express::instances::MultiLeafInstance' has no attributes.
+The class 'express::expressions::BinaryIndex' has no attributes.
+The class 'SchemaElement' has no attributes.
+The class 'express::instances::NumberValue' has no attributes.
+The class 'express::core::GeneralAggregationType' has no attributes.
+The class 'EnumerationType' has no attributes.
+The class 'express::core::BAGType' has no attributes.
+The class 'DefinedType' has no attributes.
+The class 'SingleEntityValue' has no attributes.
+The class 'Population' has no attributes.
+The class 'express::expressions::RepeatCount' has no attributes.
+The class 'express::expressions::EnumItemRef' has the following attributes: 'id' of type str.
+The class 'express::instances::IntegerValue' has no attributes.
+The class 'express::core::InterfacedElement' has the following attributes: 'isUSE' of type str.
+The class 'express::instances::Population' has no attributes.
+The class 'express::core::SpecializedType' has no attributes.
+The class 'express::instances::PartialEntityValue' has no attributes.
+The class 'SimpleValue' has no attributes.
+The class 'InParameter' has no attributes.
+The class 'express::algorithms::Parameter' has the following attributes: 'inout' of type str; 'position' of type str.
+The class 'Scope' has no attributes.
+The class 'express::rules::SubtypeConstraint' has no attributes.
+The class 'core::Scope' has no attributes.
+The class 'core::Expression' has no attributes.
+The class 'TypedInstance' has no attributes.
+The class 'algorithms::VARVariable' has no attributes.
+The class 'ParameterType' has no attributes.
+The class 'express::core::DomainConstraint' has no attributes.
+The class 'express::expressions::QueryVariable' has no attributes.
+The class 'express::algorithms::Procedure' has no attributes.
+The class 'core::LocalScope' has no attributes.
+The class 'StringValue' has no attributes.
+The class 'express::rules::NamedRule' has the following attributes: 'position' of type str.
+The class 'express::core::DefinedType' has no attributes.
+The class 'express::expressions::MemberBinding' has the following attributes: 'position' of type str.
+The class 'express::expressions::IndeterminateRef' has no attributes.
+The class 'express::core::ParameterType' has no attributes.
+The class 'Variable' has no attributes.
+The class 'core::GenericType' has no attributes.
+The class 'Algorithm' has no attributes.
+The class 'express::core::ScopedId' has the following attributes: 'localName' of type str.
+The class 'express::instances::EnumerationItem' has the following attributes: 'position' of type str.
+The class 'express::expressions::Primary' has no attributes.
+The class 'express::expressions::UnaryOperation' has the following attributes: 'operator' of type str.
+The class 'LengthConstraint' has no attributes.
+The class 'Role' has no attributes.
+The class 'express::expressions::UsedInRef' has no attributes.
+The class 'LISTValue' has no attributes.
+The class 'express::expressions::SELFRef' has no attributes.
+The class 'express::core::ActualType' has no attributes.
+The class 'core::CommonElement' has no attributes.
+The class 'express::core::AnonymousType' has no attributes.
+The class 'express::expressions::ConstantRef' has the following attributes: 'id' of type str.
+The class 'express::algorithms::Algorithm' has no attributes.
+The class 'express::statements::CaseAction' has the following attributes: 'isDefault' of type str.
+The class 'express::core::Scope' has no attributes.
+The class 'algorithms::Parameter' has no attributes.
+The class 'express::core::PartialEntityType' has no attributes.
+The class 'RepeatCount' has no attributes.
+The class 'express::algorithms::ActualSETType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'express::expressions::AggregateIndex' has no attributes.
+The class 'SubtypeConstraint' has no attributes.
+The class 'algorithms::Statement' has no attributes.
+The class 'VARVariable' has no attributes.
+The class 'express::algorithms::ActualStructure' has no attributes.
+The class 'express::core::SingleEntityType' has no attributes.
+The class 'express::core::Remark' has the following attributes: 'isTagged' of type str; 'text' of type str; 'isTail' of type str.
+The class 'express::statements::CaseStatement' has no attributes.
+The class 'express::instances::BinaryValue' has no attributes.
+The class 'express::algorithms::ActualTypeConstraint' has the following attributes: 'label' of type str.
+The class 'Constant' has no attributes.
+The class 'express::core::UniqueRule' has the following attributes: 'position' of type str.
+The class 'express::expressions::Coercion' has no attributes.
+The class 'express::statements::IfStatement' has no attributes.
+The class 'ConcreteType' has no attributes.
+The class 'express::algorithms::Statement' has the following attributes: 'text' of type str.
+The class 'Redeclaration' has no attributes.
+The class 'express::core::AGGREGATEType' has no attributes.
+The class 'DomainRole' has no attributes.
+The class 'express::instances::TypedInstance' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'Selector' has no attributes.
+The class 'DataType' has no attributes.
+The class 'LocalElement' has no attributes.
+The class 'EscapeStatement' has no attributes.
+The class 'AttributeValue' has no attributes.
+The class 'express::algorithms::LocalVariable' has no attributes.
+The class 'express::algorithms::VARVariable' has no attributes.
+The class 'core::AGGREGATEType' has no attributes.
+The class 'express::instances::Constant' has no attributes.
+The class 'express::statements::ControlVariable' has no attributes.
+The class 'core::ParameterType' has no attributes.
+The class 'express::core::AttributeType' has no attributes.
+The class 'core::AttributeType' has no attributes.
+The class 'GeneralAggregationType' has no attributes.
+The class 'express::rules::TOTAL::OVERConstraint' has no attributes.
+The class 'AggregateValue' has no attributes.
+The class 'express::core::NamedElement' has no attributes.
+The class 'express::algorithms::ActualBAGType' has no attributes.
+The class 'ExplicitAttribute' has no attributes.
+The class 'AttributeType' has no attributes.
+The class 'express::instances::ConcreteValue' has no attributes.
+The class 'ActualTypeConstraint' has no attributes.
+The class 'express::instances::RealValue' has no attributes.
+The class 'QueryVariable' has no attributes.
+The class 'express::core::InstantiableType' has no attributes.
+The class 'SizeConstraint' has no attributes.
+The class 'express::statements::RepeatStatement' has no attributes.
+The class 'express::algorithms::ActualStructureConstraint' has the following attributes: 'label' of type str.
+The class 'express::algorithms::ActualGenericType' has the following attributes: 'isEntity' of type str; 'label' of type str.
+The class 'StatementBlock' has no attributes.
+The class 'express::core::LogicType' has no attributes.
+The class 'express::core::TypeElement' has no attributes.
+The class 'express::core::ExplicitAttribute' has the following attributes: 'isOptional' of type str.
+The class 'NumberValue' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ActualAggregationType' has no attributes.
+The class 'express::core::AggregationType' has the following attributes: 'ordering' of type str; 'isUnique' of type str.
+The class 'BagMember' has no attributes.
+The class 'GeneralizedType' has no attributes.
+The class 'express::algorithms::InParameter' has no attributes.
+The class 'algorithms::GenericElement' has no attributes.
+The class 'InVariable' has no attributes.
+The class 'core::NamedType' has no attributes.
+The class 'express::instances::Indeterminate' has no attributes.
+The class 'express::statements::AliasVariable' has no attributes.
+The class 'core::DomainConstraint' has no attributes.
+The class 'express::instances::SingleEntityValue' has no attributes.
+The class 'express::algorithms::InVariable' has no attributes.
+The class 'core::AnonymousType' has no attributes.
+The class 'express::statements::AliasStatement' has no attributes.
+The class 'express::instances::ARRAYValue' has no attributes.
+The class 'express::core::SelectType' has the following attributes: 'isExtensible' of type str; 'isEntity' of type str.
+The class 'ArrayMember' has no attributes.
+The class 'InvertibleAttribute' has no attributes.
+The class 'express::instances::EntityInstance' has the following attributes: 'id' of type str.
+The class 'express::core::ARRAYType' has the following attributes: 'isOptional' of type str.
+The class 'SimpleType' has no attributes.
+The class 'express::core::SchemaElement' has no attributes.
+The class 'ControlVariable' has no attributes.
+The class 'express::core::GeneralLISTType' has no attributes.
+The class 'ArrayBound' has no attributes.
+The class 'express::core::GeneralSETType' has no attributes.
+The class 'express::instances::AggregateValue' has no attributes.
+The class 'express::core::VariableType' has no attributes.
+The class 'FunctionCall' has no attributes.
+The class 'TypeElement' has no attributes.
+The class 'express::statements::Assignment' has no attributes.
+The class 'ControlStatement' has no attributes.
+The class 'express::core::LocalScope' has no attributes.
+The class 'algorithms::NamedVariable' has no attributes.
+The class 'GenericAggregate' has no attributes.
+The class 'express::core::SimpleType' has the following attributes: 'id' of type str.
+The class 'express::instances::ListMember' has the following attributes: 'position' of type str.
+The class 'express::core::Redeclaration' has the following attributes: 'position' of type str; 'isMandatory' of type str.
+The class 'instances::TypedInstance' has no attributes.
+The class 'express::expressions::AttributeBinding' has the following attributes: 'position' of type str.
+The class 'express::core::Expression' has the following attributes: 'text' of type str.
+The class 'ActualStructure' has no attributes.
+The class 'GlobalRule' has no attributes.
+The class 'Primary' has no attributes.
+The class 'express::core::ConcreteType' has no attributes.
+The class 'express::instances::SpecializedValue' has no attributes.
+The class 'ListMember' has no attributes.
+The class 'express::expressions::BinaryOperation' has the following attributes: 'operator' of type str.
+The class 'express::statements::VariableCell' has the following attributes: 'id' of type str.
+The class 'express::core::NamedType' has no attributes.
+The class 'express::core::RangeRole' has no attributes.
+The class 'AlgorithmScope' has no attributes.
+The class 'SkipStatement' has no attributes.
+The class 'express::statements::VARExpression' has the following attributes: 'text' of type str.
+The class 'core::GeneralizedType' has no attributes.
+The class 'NamedType' has no attributes.
+The class 'ActualType' has no attributes.
+The class 'express::rules::SupertypeRule' has the following attributes: 'assertsAbstract' of type str.
+The class 'express::rules::ANDConstraint' has no attributes.
+The class 'express::algorithms::FunctionResult' has no attributes.
+The class 'Indeterminate' has no attributes.
+The class 'instances::AggregateValue' has no attributes.
+The class 'express::rules::Extent' has no attributes.
+The class 'express::algorithms::ActualAGGREGATEType' has the following attributes: 'label' of type str.
+The class 'SupertypeRule' has no attributes.
+The class 'InstantiableType' has no attributes.
+The class 'express::algorithms::GenericElement' has no attributes.
+The class 'express::core::Schema' has the following attributes: 'name' of type str; 'version' of type str.
+The class 'express::instances::SingleLeafInstance' has no attributes.
+The class 'express::expressions::ExtentRef' has the following attributes: 'id' of type str.
+'express::instances::RealValue' is a specialization of 'NumberValue'.
+'express::core::GeneralizedType' is a specialization of 'core::ParameterType'.
+'express::instances::LISTValue' is a specialization of 'instances::AggregateValue'.
+'express::algorithms::Function' is a specialization of 'Algorithm'.
+'express::expressions::Primary' is a specialization of 'Expression'.
+'express::statements::SkipStatement' is a specialization of 'ControlStatement'.
+'express::rules::TOTAL::OVERConstraint' is a specialization of 'SubtypeConstraint'.
+'express::rules::GlobalRule' is a specialization of 'core::AlgorithmScope'.
+'express::algorithms::Procedure' is a specialization of 'Algorithm'.
+'express::algorithms::ActualGenericType' is a specialization of 'ActualType'.
+'express::instances::LISTValue' is a specialization of 'core::Instance'.
+'express::core::Schema' is a specialization of 'Scope'.
+'express::algorithms::FunctionResult' is a specialization of 'Variable'.
+'express::algorithms::Parameter' is a specialization of 'LocalElement'.
+'express::core::ExplicitAttribute' is a specialization of 'Attribute'.
+'express::rules::ONEOFConstraint' is a specialization of 'SubtypeConstraint'.
+'express::expressions::QueryVariable' is a specialization of 'NamedVariable'.
+'express::expressions::SELFRef' is a specialization of 'Primary'.
+'express::expressions::EnumItemRef' is a specialization of 'Primary'.
+'express::instances::BAGValue' is a specialization of 'AggregateValue'.
+'express::instances::SpecializedValue' is a specialization of 'TypedInstance'.
+'express::instances::MultiLeafInstance' is a specialization of 'EntityInstance'.
+'express::statements::AliasVariable' is a specialization of 'algorithms::NamedVariable'.
+'express::expressions::AttributeRef' is a specialization of 'Selector'.
+'express::core::LocalElement' is a specialization of 'NamedElement'.
+'express::algorithms::InParameter' is a specialization of 'Parameter'.
+'express::statements::AttributeCell' is a specialization of 'VARExpression'.
+'express::instances::SimpleValue' is a specialization of 'ConcreteValue'.
+'express::expressions::ExtentRef' is a specialization of 'Primary'.
+'express::algorithms::ActualStructure' is a specialization of 'core::AGGREGATEType'.
+'express::expressions::Coercion' is a specialization of 'Operation'.
+'express::instances::PartialEntityValue' is a specialization of 'Instance'.
+'express::expressions::Operation' is a specialization of 'Expression'.
+'express::statements::RepeatStatement' is a specialization of 'algorithms::Statement'.
+'express::core::UniqueRule' is a specialization of 'TypeElement'.
+'express::statements::EscapeStatement' is a specialization of 'ControlStatement'.
+'express::core::NamedType' is a specialization of 'core::CommonElement'.
+'express::core::StringType' is a specialization of 'SimpleType'.
+'express::statements::VariableCell' is a specialization of 'VARExpression'.
+'express::core::SelectType' is a specialization of 'DefinedType'.
+'express::expressions::Selector' is a specialization of 'Expression'.
+'express::core::Attribute' is a specialization of 'TypeElement'.
+'express::expressions::AggregateIndex' is a specialization of 'IndexOperation'.
+'express::core::LocalScope' is a specialization of 'Scope'.
+'express::statements::ReturnStatement' is a specialization of 'ControlStatement'.
+'express::instances::ARRAYValue' is a specialization of 'AggregateValue'.
+'express::core::GeneralBAGType' is a specialization of 'GeneralAggregationType'.
+'express::algorithms::ActualSETType' is a specialization of 'ActualAggregationType'.
+'express::algorithms::VARParameter' is a specialization of 'algorithms::VARVariable'.
+'express::instances::GenericAggregate' is a specialization of 'LISTValue'.
+'express::instances::AggregateValue' is a specialization of 'ConcreteValue'.
+'express::core::NamedType' is a specialization of 'core::InstantiableType'.
+'express::instances::EnumerationItem' is a specialization of 'instances::TypedInstance'.
+'express::algorithms::Variable' is a specialization of 'NamedVariable'.
+'express::statements::VARCell' is a specialization of 'VARExpression'.
+'express::statements::IfStatement' is a specialization of 'Statement'.
+'express::instances::BooleanValue' is a specialization of 'LogicalValue'.
+'express::core::ARRAYType' is a specialization of 'ConcreteAggregationType'.
+'express::statements::MemberCell' is a specialization of 'VARExpression'.
+'express::expressions::QueryExpression' is a specialization of 'core::LocalScope'.
+'express::statements::ProcedureCall' is a specialization of 'Statement'.
+'express::algorithms::ActualStructure' is a specialization of 'algorithms::GenericElement'.
+'express::core::EntityType' is a specialization of 'core::NamedType'.
+'express::core::ConcreteAggregationType' is a specialization of 'core::AnonymousType'.
+'express::expressions::ParameterRef' is a specialization of 'Primary'.
+'express::instances::SETValue' is a specialization of 'AggregateValue'.
+'express::instances::NumberValue' is a specialization of 'SimpleValue'.
+'express::statements::CaseStatement' is a specialization of 'Statement'.
+'express::core::LISTType' is a specialization of 'ConcreteAggregationType'.
+'express::algorithms::ActualAGGREGATEType' is a specialization of 'ActualType'.
+'express::core::LengthConstraint' is a specialization of 'DomainConstraint'.
+'express::expressions::VariableRef' is a specialization of 'Primary'.
+'express::statements::ControlVariable' is a specialization of 'NamedVariable'.
+'express::statements::AliasStatement' is a specialization of 'core::LocalScope'.
+'express::rules::GlobalRule' is a specialization of 'core::SchemaElement'.
+'express::algorithms::GenericElement' is a specialization of 'LocalElement'.
+'express::expressions::StringIndex' is a specialization of 'IndexOperation'.
+'express::algorithms::Algorithm' is a specialization of 'core::AlgorithmScope'.
+'express::statements::ControlStatement' is a specialization of 'Statement'.
+'express::algorithms::LocalVariable' is a specialization of 'Variable'.
+'express::algorithms::InVariable' is a specialization of 'Variable'.
+'express::core::SpecializedType' is a specialization of 'DefinedType'.
+'express::core::DomainRule' is a specialization of 'core::TypeElement'.
+'express::core::DomainRule' is a specialization of 'core::DomainConstraint'.
+'express::instances::EnumerationItem' is a specialization of 'instances::ConcreteValue'.
+'express::algorithms::ActualBAGType' is a specialization of 'ActualAggregationType'.
+'express::core::DefinedType' is a specialization of 'core::ConcreteType'.
+'express::expressions::GroupRef' is a specialization of 'Selector'.
+'express::core::SimpleType' is a specialization of 'AnonymousType'.
+'express::algorithms::ActualARRAYType' is a specialization of 'ActualAggregationType'.
+'express::core::GeneralSETType' is a specialization of 'GeneralAggregationType'.
+'express::expressions::BinaryIndex' is a specialization of 'IndexOperation'.
+'express::instances::SingleLeafInstance' is a specialization of 'EntityInstance'.
+'express::rules::ANDConstraint' is a specialization of 'SubtypeConstraint'.
+'express::expressions::UsedInRef' is a specialization of 'Selector'.
+'express::core::BinaryType' is a specialization of 'SimpleType'.
+'express::expressions::Literal' is a specialization of 'Primary'.
+'express::core::InstantiableType' is a specialization of 'core::VariableType'.
+'express::instances::StringValue' is a specialization of 'SimpleValue'.
+'express::instances::EntityValue' is a specialization of 'PartialEntityValue'.
+'express::core::InverseAttribute' is a specialization of 'Attribute'.
+'express::algorithms::ActualAggregationType' is a specialization of 'core::AggregationType'.
+'express::core::GeneralAggregationType' is a specialization of 'core::GeneralizedType'.
+'express::statements::Assignment' is a specialization of 'Statement'.
+'express::rules::SupertypeRule' is a specialization of 'CommonElement'.
+'express::core::AnonymousType' is a specialization of 'core::ConcreteType'.
+'express::core::DerivedAttribute' is a specialization of 'Attribute'.
+'express::core::LogicType' is a specialization of 'SimpleType'.
+'express::core::InstantiableType' is a specialization of 'core::ParameterType'.
+'express::statements::GroupCell' is a specialization of 'VARExpression'.
+'express::instances::LogicalValue' is a specialization of 'SimpleValue'.
+'express::statements::NullStatement' is a specialization of 'ControlStatement'.
+'express::core::NumericType' is a specialization of 'SimpleType'.
+'express::rules::NamedRule' is a specialization of 'LocalElement'.
+'express::instances::TypeName' is a specialization of 'StringValue'.
+'express::expressions::UnaryOperation' is a specialization of 'Operation'.
+'express::instances::RoleName' is a specialization of 'StringValue'.
+'express::core::EnumerationType' is a specialization of 'DefinedType'.
+'express::core::BAGType' is a specialization of 'ConcreteAggregationType'.
+'express::expressions::BinaryOperation' is a specialization of 'Operation'.
+'express::statements::AliasStatement' is a specialization of 'algorithms::Statement'.
+'express::algorithms::ActualAggregationType' is a specialization of 'core::ActualType'.
+'express::core::VariableType' is a specialization of 'core::DataType'.
+'express::core::TypeElement' is a specialization of 'NamedElement'.
+'express::instances::Indeterminate' is a specialization of 'Instance'.
+'express::statements::AliasVariable' is a specialization of 'algorithms::VARVariable'.
+'express::rules::Extent' is a specialization of 'SETValue'.
+'express::core::NamedType' is a specialization of 'core::Scope'.
+'express::expressions::IndexOperation' is a specialization of 'Expression'.
+'express::core::AlgorithmScope' is a specialization of 'LocalScope'.
+'express::expressions::AggregateInitializer' is a specialization of 'Expression'.
+'express::core::SchemaElement' is a specialization of 'NamedElement'.
+'express::expressions::ConstantRef' is a specialization of 'Primary'.
+'express::core::PartialEntityType' is a specialization of 'DataType'.
+'express::expressions::IndeterminateRef' is a specialization of 'Primary'.
+'express::core::DefinedType' is a specialization of 'core::NamedType'.
+'express::core::RangeRole' is a specialization of 'Role'.
+'express::statements::StatementBlock' is a specialization of 'Statement'.
+'express::algorithms::ActualDataType' is a specialization of 'algorithms::GenericElement'.
+'express::algorithms::ActualLISTType' is a specialization of 'ActualAggregationType'.
+'express::core::GeneralizedType' is a specialization of 'core::AttributeType'.
+'express::core::EntityType' is a specialization of 'core::InstantiableType'.
+'express::core::SizeConstraint' is a specialization of 'DomainConstraint'.
+'express::expressions::FunctionCall' is a specialization of 'Expression'.
+'express::core::GenericType' is a specialization of 'GeneralizedType'.
+'express::algorithms::ActualDataType' is a specialization of 'core::GenericType'.
+'express::statements::RepeatStatement' is a specialization of 'core::LocalScope'.
+'express::core::GeneralARRAYType' is a specialization of 'GeneralAggregationType'.
+'express::instances::EntityInstance' is a specialization of 'TypedInstance'.
+'express::instances::TypedInstance' is a specialization of 'Instance'.
+'express::instances::Constant' is a specialization of 'CommonElement'.
+'express::instances::ConcreteValue' is a specialization of 'Instance'.
+'express::core::GeneralAggregationType' is a specialization of 'core::AggregationType'.
+'express::core::NamedType' is a specialization of 'core::AttributeType'.
+'express::expressions::PartialEntityConstructor' is a specialization of 'Expression'.
+'express::core::SETType' is a specialization of 'ConcreteAggregationType'.
+'express::core::AGGREGATEType' is a specialization of 'GeneralizedType'.
+'express::core::AnonymousType' is a specialization of 'core::InstantiableType'.
+'express::expressions::QueryExpression' is a specialization of 'core::Expression'.
+'express::core::DomainRole' is a specialization of 'Role'.
+'express::algorithms::Algorithm' is a specialization of 'core::CommonElement'.
+'express::core::RealType' is a specialization of 'NumericType'.
+'express::core::InvertibleAttribute' is a specialization of 'ExplicitAttribute'.
+'express::algorithms::NamedVariable' is a specialization of 'LocalElement'.
+'express::core::GeneralLISTType' is a specialization of 'GeneralAggregationType'.
+'express::algorithms::VARParameter' is a specialization of 'algorithms::Parameter'.
+'express::core::ConcreteAggregationType' is a specialization of 'core::AggregationType'.
+'express::core::ConcreteType' is a specialization of 'InstantiableType'.
+'express::instances::BinaryValue' is a specialization of 'SimpleValue'.
+'express::instances::EnumerationItem' is a specialization of 'core::TypeElement'.
+'express::core::CommonElement' is a specialization of 'SchemaElement'.
+'express::core::VariableType' is a specialization of 'core::AttributeType'.
+'express::instances::IntegerValue' is a specialization of 'RealValue'.
+'express::core::ActualType' is a specialization of 'VariableType'.
+'express::core::GeneralARRAYType' (role 'express_core_GeneralARRAYType351', cardinality 0..*) is associated with 'ArrayBound' (role 'ArrayBound352', cardinality 0..*).
+'express::algorithms::LocalVariable' (role 'express_algorithms_LocalVariable', cardinality 0..*) is associated with 'Expression' (role 'Expression411', cardinality 0..*).
+'express::expressions::RepeatCount' (role 'express_expressions_RepeatCount', cardinality 0..*) is associated with 'Expression' (role 'Expression94', cardinality 0..*).
+'express::core::EntityType' (role 'domain', cardinality 0..*) is associated with 'DomainRole' (role 'DomainRole251', cardinality 0..*).
+'express::statements::ControlVariable' (role 'express_statements_ControlVariable', cardinality 0..*) is associated with 'Expression' (role 'Expression32', cardinality 0..*).
+'InstantiableType' (role 'InstantiableType', cardinality 0..*) is associated with 'express::core::InstantiableType' (role 'express_core_InstantiableType', cardinality 0..*).
+'ArrayMember' (role 'ArrayMember', cardinality 0..*) is associated with 'express::instances::ARRAYValue' (role 'express_instances_ARRAYValue', cardinality 0..*).
+'express::statements::ControlVariable' (role 'express_statements_ControlVariable34', cardinality 0..*) is associated with 'Expression' (role 'Expression35', cardinality 0..*).
+'Instance' (role 'Instance509', cardinality 0..*) is associated with 'express::instances::SETValue' (role 'express_instances_SETValue', cardinality 0..*).
+'express::core::SelectType' (role 'express_core_SelectType', cardinality 0..*) is associated with 'NamedType' (role 'NamedType389', cardinality 0..*).
+'express::instances::RoleName' (role 'express_instances_RoleName471', cardinality 0..*) is associated with 'ScopedId' (role 'ScopedId472', cardinality 0..*).
+'express::core::InterfacedElement' (role 'referencedAs', cardinality 0..*) is associated with 'SchemaElement' (role 'SchemaElement279', cardinality 0..*).
+'express::core::ActualType' (role 'express_core_ActualType', cardinality 0..*) is associated with 'Algorithm' (role 'Algorithm', cardinality 0..*).
+'SupertypeRule' (role 'SupertypeRule', cardinality 0..*) is associated with 'express::rules::SubtypeConstraint' (role 'constraints5', cardinality 0..*).
+'Expression' (role 'Expression325', cardinality 0..*) is associated with 'express::core::DerivedAttribute' (role 'express_core_DerivedAttribute', cardinality 0..*).
+'express::expressions::ActualParameter' (role 'actualParameters', cardinality 0..*) is associated with 'ProcedureCall' (role 'ProcedureCall', cardinality 0..*).
+'express::core::ArrayBound' (role 'express_core_ArrayBound', cardinality 0..*) is associated with 'Expression' (role 'Expression212', cardinality 0..*).
+'ArrayBound' (role 'ArrayBound429', cardinality 0..*) is associated with 'express::algorithms::ActualARRAYType' (role 'express_algorithms_ActualARRAYType428', cardinality 0..*).
+'ScopedId' (role 'ScopedId332', cardinality 0..*) is associated with 'express::core::RangeRole' (role 'express_core_RangeRole', cardinality 0..*).
+'express::statements::AliasStatement' (role 'express_statements_AliasStatement27', cardinality 0..*) is associated with 'Statement' (role 'Statement28', cardinality 0..*).
+'RangeRole' (role 'RangeRole274', cardinality 0..*) is associated with 'express::core::InvertibleAttribute' (role 'domainView', cardinality 0..*).
+'express::statements::RepeatStatement' (role 'express_statements_RepeatStatement63', cardinality 0..*) is associated with 'ControlVariable' (role 'ControlVariable', cardinality 0..*).
+'AlgorithmScope' (role 'AlgorithmScope', cardinality 0..*) is associated with 'express::core::CommonElement' (role 'commonElements', cardinality 0..*).
+'express::core::Instance' (role 'instances', cardinality 0..*) is associated with 'DataType' (role 'DataType319', cardinality 0..*).
+'Population' (role 'Population317', cardinality 0..*) is associated with 'express::core::Instance' (role 'compositionInstance', cardinality 0..*).
+'ScopedId' (role 'ScopedId', cardinality 0..*) is associated with 'express::rules::Extent' (role 'express_rules_Extent15', cardinality 0..*).
+'express::statements::RepeatStatement' (role 'express_statements_RepeatStatement65', cardinality 0..*) is associated with 'Expression' (role 'Expression66', cardinality 0..*).
+'express::instances::Constant' (role 'express_instances_Constant482', cardinality 0..*) is associated with 'InstantiableType' (role 'InstantiableType483', cardinality 0..*).
+'express::expressions::PartialEntityConstructor' (role 'express_expressions_PartialEntityConstructor', cardinality 0..*) is associated with 'PartialEntityValue' (role 'PartialEntityValue', cardinality 0..*).
+'express::expressions::AttributeRef' (role 'express_expressions_AttributeRef', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'ActualType' (role 'ActualType', cardinality 0..*) is associated with 'express::algorithms::ActualAggregationType' (role 'express_algorithms_ActualAggregationType', cardinality 0..*).
+'DomainConstraint' (role 'DomainConstraint', cardinality 0..*) is associated with 'express::core::AttributeType' (role 'domain323', cardinality 0..*).
+'QueryVariable' (role 'QueryVariable', cardinality 0..*) is associated with 'express::expressions::QueryExpression' (role 'express_expressions_QueryExpression153', cardinality 0..*).
+'express::algorithms::ActualGenericType' (role 'express_algorithms_ActualGenericType', cardinality 0..*) is associated with 'ActualDataType' (role 'ActualDataType413', cardinality 0..*).
+'Function' (role 'Function', cardinality 0..*) is associated with 'express::expressions::FunctionCall' (role 'express_expressions_FunctionCall', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'express::statements::VariableCell' (role 'express_statements_VariableCell', cardinality 0..*).
+'Expression' (role 'Expression98', cardinality 0..*) is associated with 'express::expressions::BinaryIndex' (role 'express_expressions_BinaryIndex', cardinality 0..*).
+'express::expressions::MemberBinding' (role 'express_expressions_MemberBinding173', cardinality 0..*) is associated with 'Expression' (role 'Expression174', cardinality 0..*).
+'DomainRole' (role 'DomainRole', cardinality 0..*) is associated with 'express::core::InverseAttribute' (role 'rangeView', cardinality 0..*).
+'Parameter' (role 'Parameter455', cardinality 0..*) is associated with 'express::algorithms::Algorithm' (role 'express_algorithms_Algorithm', cardinality 0..*).
+'express::instances::EntityValue' (role 'express_instances_EntityValue', cardinality 0..*) is associated with 'EntityType' (role 'EntityType505', cardinality 0..*).
+'EntityType' (role 'EntityType475', cardinality 0..*) is associated with 'express::instances::EntityInstance' (role 'express_instances_EntityInstance', cardinality 0..*).
+'express::statements::ProcedureCall' (role 'inProcedureCall', cardinality 0..*) is associated with 'ActualParameter' (role 'ActualParameter', cardinality 0..*).
+'express::core::InvertibleAttribute' (role 'usedIn', cardinality 0..*) is associated with 'EntityType' (role 'EntityType269', cardinality 0..*).
+'express::expressions::PartialEntityConstructor' (role 'express_expressions_PartialEntityConstructor123', cardinality 0..*) is associated with 'AttributeBinding' (role 'AttributeBinding', cardinality 0..*).
+'express::expressions::BinaryOperation' (role 'express_expressions_BinaryOperation108', cardinality 0..*) is associated with 'Expression' (role 'Expression109', cardinality 0..*).
+'ScopedId' (role 'ScopedId291', cardinality 0..*) is associated with 'express::core::DomainRole' (role 'express_core_DomainRole', cardinality 0..*).
+'express::core::Role' (role 'express_core_Role', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint344', cardinality 0..*).
+'Attribute' (role 'Attribute321', cardinality 0..*) is associated with 'express::core::AttributeType' (role 'attributeType', cardinality 0..*).
+'express::instances::Population' (role 'appearsInPopulation', cardinality 0..*) is associated with 'Instance' (role 'Instance515', cardinality 0..*).
+'express::instances::RoleName' (role 'express_instances_RoleName', cardinality 0..*) is associated with 'Attribute' (role 'Attribute469', cardinality 0..*).
+'VARVariable' (role 'VARVariable', cardinality 0..*) is associated with 'express::statements::VARCell' (role 'express_statements_VARCell', cardinality 0..*).
+'express::instances::AttributeValue' (role 'express_instances_AttributeValue', cardinality 0..*) is associated with 'Instance' (role 'Instance463', cardinality 0..*).
+'express::instances::AttributeValue' (role 'express_instances_AttributeValue465', cardinality 0..*) is associated with 'ExplicitAttribute' (role 'ExplicitAttribute466', cardinality 0..*).
+'express::statements::GroupCell' (role 'express_statements_GroupCell70', cardinality 0..*) is associated with 'SingleEntityType' (role 'SingleEntityType', cardinality 0..*).
+'EntityType' (role 'EntityType289', cardinality 0..*) is associated with 'express::core::DomainRole' (role 'playsDomainRole', cardinality 0..*).
+'RangeRole' (role 'RangeRole', cardinality 0..*) is associated with 'express::core::EntityType' (role 'range', cardinality 0..*).
+'express::expressions::FunctionCall' (role 'express_expressions_FunctionCall168', cardinality 0..*) is associated with 'FunctionResult' (role 'FunctionResult', cardinality 0..*).
+'express::algorithms::Statement' (role 'body', cardinality 0..*) is associated with 'RepeatStatement' (role 'RepeatStatement', cardinality 0..*).
+'Algorithm' (role 'Algorithm421', cardinality 0..*) is associated with 'express::algorithms::Statement' (role 'body420', cardinality 0..*).
+'VARExpression' (role 'VARExpression57', cardinality 0..*) is associated with 'express::statements::MemberCell' (role 'express_statements_MemberCell56', cardinality 0..*).
+'express::core::SchemaElement' (role 'schemaElements', cardinality 0..*) is associated with 'Schema' (role 'Schema397', cardinality 0..*).
+'express::core::Redeclaration' (role 'express_core_Redeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression214', cardinality 0..*).
+'express::algorithms::ActualAGGREGATEType' (role 'express_algorithms_ActualAGGREGATEType435', cardinality 0..*) is associated with 'VariableType' (role 'VariableType436', cardinality 0..*).
+'express::rules::Extent' (role 'constrainedExtents', cardinality 0..*) is associated with 'GlobalRule' (role 'GlobalRule', cardinality 0..*).
+'express::instances::TypeName' (role 'express_instances_TypeName', cardinality 0..*) is associated with 'NamedType' (role 'NamedType522', cardinality 0..*).
+'SizeConstraint' (role 'SizeConstraint224', cardinality 0..*) is associated with 'express::core::Redeclaration' (role 'express_core_Redeclaration223', cardinality 0..*).
+'express::core::NamedElement' (role 'express_core_NamedElement', cardinality 0..*) is associated with 'ScopedId' (role 'ScopedId303', cardinality 0..*).
+'LocalElement' (role 'LocalElement', cardinality 0..*) is associated with 'express::core::LocalScope' (role 'express_core_LocalScope', cardinality 0..*).
+'express::expressions::ActualParameter' (role 'express_expressions_ActualParameter133', cardinality 0..*) is associated with 'VARExpression' (role 'VARExpression134', cardinality 0..*).
+'NamedType' (role 'NamedType', cardinality 0..*) is associated with 'express::expressions::ExtentRef' (role 'express_expressions_ExtentRef', cardinality 0..*).
+'express::core::Attribute' (role 'attributes', cardinality 0..*) is associated with 'EntityType' (role 'EntityType309', cardinality 0..*).
+'express::core::EnumerationType' (role 'express_core_EnumerationType', cardinality 0..*) is associated with 'EnumerationItem' (role 'EnumerationItem204', cardinality 0..*).
+'LengthConstraint' (role 'LengthConstraint', cardinality 0..*) is associated with 'express::core::StringType' (role 'express_core_StringType', cardinality 0..*).
+'express::core::RangeRole' (role 'playsRangeRole', cardinality 0..*) is associated with 'EntityType' (role 'EntityType330', cardinality 0..*).
+'express::core::EntityType' (role 'scope', cardinality 0..*) is associated with 'Redeclaration' (role 'Redeclaration239', cardinality 0..*).
+'Expression' (role 'Expression142', cardinality 0..*) is associated with 'express::expressions::AggregateIndex' (role 'express_expressions_AggregateIndex', cardinality 0..*).
+'Instance' (role 'Instance259', cardinality 0..*) is associated with 'express::core::DataType' (role 'ofType', cardinality 0..*).
+'InvertibleAttribute' (role 'InvertibleAttribute249', cardinality 0..*) is associated with 'express::core::EntityType' (role 'referencingType', cardinality 0..*).
+'Expression' (role 'Expression22', cardinality 0..*) is associated with 'express::rules::NamedRule' (role 'express_rules_NamedRule', cardinality 0..*).
+'express::core::Remark' (role 'includesRemarks', cardinality 0..*) is associated with 'Scope' (role 'Scope336', cardinality 0..*).
+'express::statements::IfStatement' (role 'express_statements_IfStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression77', cardinality 0..*).
+'express::expressions::ActualParameter' (role 'actualParameters130', cardinality 0..*) is associated with 'FunctionCall' (role 'FunctionCall', cardinality 0..*).
+'SchemaElement' (role 'SchemaElement266', cardinality 0..*) is associated with 'express::core::Schema' (role 'referencedIn', cardinality 0..*).
+'ArrayBound' (role 'ArrayBound426', cardinality 0..*) is associated with 'express::algorithms::ActualARRAYType' (role 'express_algorithms_ActualARRAYType', cardinality 0..*).
+'ActualTypeConstraint' (role 'ActualTypeConstraint', cardinality 0..*) is associated with 'express::core::GenericType' (role 'matchingType', cardinality 0..*).
+'ArrayBound' (role 'ArrayBound', cardinality 0..*) is associated with 'express::core::GeneralARRAYType' (role 'express_core_GeneralARRAYType', cardinality 0..*).
+'express::expressions::BinaryIndex' (role 'express_expressions_BinaryIndex100', cardinality 0..*) is associated with 'Expression' (role 'Expression101', cardinality 0..*).
+'express::core::AGGREGATEType' (role 'express_core_AGGREGATEType190', cardinality 0..*) is associated with 'ParameterType' (role 'ParameterType', cardinality 0..*).
+'express::core::AGGREGATEType' (role 'express_core_AGGREGATEType', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint', cardinality 0..*).
+'express::expressions::Coercion' (role 'express_expressions_Coercion', cardinality 0..*) is associated with 'Expression' (role 'Expression125', cardinality 0..*).
+'express::core::InterfacedElement' (role 'interfaces', cardinality 0..*) is associated with 'Schema' (role 'Schema', cardinality 0..*).
+'VariableType' (role 'VariableType', cardinality 0..*) is associated with 'express::expressions::Coercion' (role 'express_expressions_Coercion127', cardinality 0..*).
+'express::core::Role' (role 'express_core_Role346', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint347', cardinality 0..*).
+'express::algorithms::ActualTypeConstraint' (role 'constraint', cardinality 0..*) is associated with 'GenericType' (role 'GenericType', cardinality 0..*).
+'Parameter' (role 'Parameter458', cardinality 0..*) is associated with 'express::algorithms::GenericElement' (role 'express_algorithms_GenericElement', cardinality 0..*).
+'Variable' (role 'Variable315', cardinality 0..*) is associated with 'express::core::AlgorithmScope' (role 'express_core_AlgorithmScope', cardinality 0..*).
+'express::instances::SingleLeafInstance' (role 'express_instances_SingleLeafInstance', cardinality 0..*) is associated with 'EntityType' (role 'EntityType499', cardinality 0..*).
+'express::core::UniqueRule' (role 'express_core_UniqueRule', cardinality 0..*) is associated with 'Attribute' (role 'Attribute285', cardinality 0..*).
+'InvertibleAttribute' (role 'InvertibleAttribute328', cardinality 0..*) is associated with 'express::core::RangeRole' (role 'modelsRole327', cardinality 0..*).
+'express::expressions::ActualParameter' (role 'express_expressions_ActualParameter136', cardinality 0..*) is associated with 'Expression' (role 'Expression137', cardinality 0..*).
+'express::core::Scope' (role 'namespace', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement375', cardinality 0..*).
+'express::algorithms::ActualAGGREGATEType' (role 'express_algorithms_ActualAGGREGATEType438', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint439', cardinality 0..*).
+'Expression' (role 'Expression156', cardinality 0..*) is associated with 'express::expressions::QueryExpression' (role 'express_expressions_QueryExpression155', cardinality 0..*).
+'Role' (role 'Role356', cardinality 0..*) is associated with 'express::core::Relationship' (role 'inRelationship', cardinality 0..*).
+'express::rules::Extent' (role 'express_rules_Extent10', cardinality 0..*) is associated with 'Population' (role 'Population', cardinality 0..*).
+'express::instances::SpecializedValue' (role 'express_instances_SpecializedValue', cardinality 0..*) is associated with 'ConcreteValue' (role 'ConcreteValue', cardinality 0..*).
+'SizeConstraint' (role 'SizeConstraint221', cardinality 0..*) is associated with 'express::core::Redeclaration' (role 'express_core_Redeclaration220', cardinality 0..*).
+'Extent' (role 'Extent18', cardinality 0..*) is associated with 'express::rules::GlobalRule' (role 'constraintRules', cardinality 0..*).
+'NamedRule' (role 'NamedRule', cardinality 0..*) is associated with 'express::rules::GlobalRule' (role 'express_rules_GlobalRule20', cardinality 0..*).
+'Redeclaration' (role 'Redeclaration', cardinality 0..*) is associated with 'express::core::Redeclaration' (role 'express_core_Redeclaration218', cardinality 0..*).
+'express::algorithms::ActualAGGREGATEType' (role 'express_algorithms_ActualAGGREGATEType433', cardinality 0..*) is associated with 'ActualStructure' (role 'ActualStructure', cardinality 0..*).
+'Instance' (role 'Instance480', cardinality 0..*) is associated with 'express::instances::Constant' (role 'express_instances_Constant479', cardinality 0..*).
+'Remark' (role 'Remark', cardinality 0..*) is associated with 'express::core::Schema' (role 'describesSchema', cardinality 0..*).
+'StatementBlock' (role 'StatementBlock', cardinality 0..*) is associated with 'express::algorithms::Statement' (role 'bodyStatements_Statement', cardinality 0..*).
+'Scope' (role 'Scope', cardinality 0..*) is associated with 'express::core::Expression' (role 'express_core_Expression198', cardinality 0..*).
+'Indeterminate' (role 'Indeterminate', cardinality 0..*) is associated with 'express::expressions::IndeterminateRef' (role 'express_expressions_IndeterminateRef', cardinality 0..*).
+'GenericAggregate' (role 'GenericAggregate', cardinality 0..*) is associated with 'express::expressions::AggregateInitializer' (role 'express_expressions_AggregateInitializer', cardinality 0..*).
+'express::statements::CaseAction' (role 'express_statements_CaseAction', cardinality 0..*) is associated with 'Expression' (role 'Expression49', cardinality 0..*).
+'express::expressions::EnumItemRef' (role 'express_expressions_EnumItemRef', cardinality 0..*) is associated with 'EnumerationItem' (role 'EnumerationItem', cardinality 0..*).
+'InvertibleAttribute' (role 'InvertibleAttribute255', cardinality 0..*) is associated with 'express::core::EntityType' (role 'rangeType', cardinality 0..*).
+'express::core::Remark' (role 'documentation338', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).
+'express::instances::Constant' (role 'express_instances_Constant', cardinality 0..*) is associated with 'Expression' (role 'Expression477', cardinality 0..*).
+'express::statements::MemberCell' (role 'express_statements_MemberCell', cardinality 0..*) is associated with 'Expression' (role 'Expression54', cardinality 0..*).
+'Statement' (role 'Statement47', cardinality 0..*) is associated with 'express::statements::StatementBlock' (role 'inBlock', cardinality 0..*).
+'Parameter' (role 'Parameter139', cardinality 0..*) is associated with 'express::expressions::ParameterRef' (role 'express_expressions_ParameterRef', cardinality 0..*).
+'express::instances::SingleEntityValue' (role 'express_instances_SingleEntityValue496', cardinality 0..*) is associated with 'AttributeValue' (role 'AttributeValue497', cardinality 0..*).
+'Expression' (role 'Expression92', cardinality 0..*) is associated with 'express::expressions::Selector' (role 'express_expressions_Selector', cardinality 0..*).
+'express::statements::AttributeCell' (role 'express_statements_AttributeCell', cardinality 0..*) is associated with 'ExplicitAttribute' (role 'ExplicitAttribute', cardinality 0..*).
+'Attribute' (role 'Attribute148', cardinality 0..*) is associated with 'express::expressions::UsedInRef' (role 'express_expressions_UsedInRef', cardinality 0..*).
+'express::core::ParameterType' (role 'occursIn', cardinality 0..*) is associated with 'GeneralizedType' (role 'GeneralizedType379', cardinality 0..*).
+'express::instances::BAGValue' (role 'express_instances_BAGValue', cardinality 0..*) is associated with 'BagMember' (role 'BagMember', cardinality 0..*).
+'express::expressions::AggregateInitializer' (role 'express_expressions_AggregateInitializer112', cardinality 0..*) is associated with 'MemberBinding' (role 'MemberBinding', cardinality 0..*).
+'express::statements::ControlVariable' (role 'express_statements_ControlVariable37', cardinality 0..*) is associated with 'Expression' (role 'Expression38', cardinality 0..*).
+'express::core::InterfacedElement' (role 'express_core_InterfacedElement', cardinality 0..*) is associated with 'ScopedId' (role 'ScopedId281', cardinality 0..*).
+'NamedType' (role 'NamedType381', cardinality 0..*) is associated with 'express::core::SelectType' (role 'instantiates', cardinality 0..*).
+'Expression' (role 'Expression106', cardinality 0..*) is associated with 'express::expressions::BinaryOperation' (role 'express_expressions_BinaryOperation', cardinality 0..*).
+'ScopedId' (role 'ScopedId234', cardinality 0..*) is associated with 'express::core::Redeclaration' (role 'express_core_Redeclaration233', cardinality 0..*).
+'express::core::AggregationType' (role 'express_core_AggregationType372', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint373', cardinality 0..*).
+'VARExpression' (role 'VARExpression90', cardinality 0..*) is associated with 'express::statements::Assignment' (role 'express_statements_Assignment89', cardinality 0..*).
+'express::algorithms::GenericElement' (role 'express_algorithms_GenericElement460', cardinality 0..*) is associated with 'ScopedId' (role 'ScopedId461', cardinality 0..*).
+'EntityInstance' (role 'EntityInstance513', cardinality 0..*) is associated with 'express::instances::Population' (role 'express_instances_Population', cardinality 0..*).
+'express::expressions::UnaryOperation' (role 'express_expressions_UnaryOperation', cardinality 0..*) is associated with 'Expression' (role 'Expression146', cardinality 0..*).
+'ListMember' (role 'ListMember520', cardinality 0..*) is associated with 'express::instances::LISTValue' (role 'express_instances_LISTValue', cardinality 0..*).
+'ActualDataType' (role 'ActualDataType', cardinality 0..*) is associated with 'express::algorithms::ActualTypeConstraint' (role 'express_algorithms_ActualTypeConstraint', cardinality 0..*).
+'express::statements::CaseStatement' (role 'express_statements_CaseStatement74', cardinality 0..*) is associated with 'Expression' (role 'Expression75', cardinality 0..*).
+'express::algorithms::Function' (role 'express_algorithms_Function', cardinality 0..*) is associated with 'FunctionResult' (role 'FunctionResult408', cardinality 0..*).
+'PartialEntityValue' (role 'PartialEntityValue491', cardinality 0..*) is associated with 'express::instances::SingleEntityValue' (role 'express_instances_SingleEntityValue', cardinality 0..*).
+'SingleEntityType' (role 'SingleEntityType261', cardinality 0..*) is associated with 'express::core::PartialEntityType' (role 'express_core_PartialEntityType', cardinality 0..*).
+'express::statements::Assignment' (role 'express_statements_Assignment', cardinality 0..*) is associated with 'Expression' (role 'Expression87', cardinality 0..*).
+'EntityType' (role 'EntityType226', cardinality 0..*) is associated with 'express::core::Redeclaration' (role 'redeclarations', cardinality 0..*).
+'express::core::Relationship' (role 'express_core_Relationship', cardinality 0..*) is associated with 'DomainRole' (role 'DomainRole354', cardinality 0..*).
+'SelectType' (role 'SelectType384', cardinality 0..*) is associated with 'express::core::SelectType' (role 'base383', cardinality 0..*).
+'express::instances::SingleEntityValue' (role 'express_instances_SingleEntityValue493', cardinality 0..*) is associated with 'SingleEntityType' (role 'SingleEntityType494', cardinality 0..*).
+'express::instances::TypeName' (role 'express_instances_TypeName524', cardinality 0..*) is associated with 'ScopedId' (role 'ScopedId525', cardinality 0..*).
+'express::core::GeneralAggregationType' (role 'express_core_GeneralAggregationType', cardinality 0..*) is associated with 'GeneralizedType' (role 'GeneralizedType', cardinality 0..*).
+'express::core::Role' (role 'playsRole', cardinality 0..*) is associated with 'EntityType' (role 'EntityType342', cardinality 0..*).
+'ArrayBound' (role 'ArrayBound401', cardinality 0..*) is associated with 'express::core::ARRAYType' (role 'express_core_ARRAYType', cardinality 0..*).
+'express::algorithms::Parameter' (role 'express_algorithms_Parameter446', cardinality 0..*) is associated with 'ParameterType' (role 'ParameterType447', cardinality 0..*).
+'express::core::AlgorithmScope' (role 'localScope', cardinality 0..*) is associated with 'CommonElement' (role 'CommonElement', cardinality 0..*).
+'express::instances::EntityValue' (role 'state', cardinality 0..*) is associated with 'EntityInstance' (role 'EntityInstance507', cardinality 0..*).
+'express::core::Scope' (role 'appearsIn', cardinality 0..*) is associated with 'Remark' (role 'Remark377', cardinality 0..*).
+'ActualStructureConstraint' (role 'ActualStructureConstraint', cardinality 0..*) is associated with 'express::core::AGGREGATEType' (role 'matchingStructure', cardinality 0..*).
+'express::expressions::AttributeBinding' (role 'express_expressions_AttributeBinding162', cardinality 0..*) is associated with 'ExplicitAttribute' (role 'ExplicitAttribute163', cardinality 0..*).
+'SingleEntityType' (role 'SingleEntityType307', cardinality 0..*) is associated with 'express::core::Attribute' (role 'declaresAttribute', cardinality 0..*).
+'express::core::ConcreteAggregationType' (role 'express_core_ConcreteAggregationType', cardinality 0..*) is associated with 'InstantiableType' (role 'InstantiableType399', cardinality 0..*).
+'express::algorithms::ActualStructureConstraint' (role 'express_algorithms_ActualStructureConstraint', cardinality 0..*) is associated with 'ActualStructure' (role 'ActualStructure451', cardinality 0..*).
+'express::algorithms::ActualStructureConstraint' (role 'constraint449', cardinality 0..*) is associated with 'AGGREGATEType' (role 'AGGREGATEType', cardinality 0..*).
+'EntityType' (role 'EntityType182', cardinality 0..*) is associated with 'express::core::SingleEntityType' (role 'declares', cardinality 0..*).
+'express::core::Redeclaration' (role 'express_core_Redeclaration216', cardinality 0..*) is associated with 'AttributeType' (role 'AttributeType', cardinality 0..*).
+'SizeConstraint' (role 'SizeConstraint370', cardinality 0..*) is associated with 'express::core::AggregationType' (role 'express_core_AggregationType', cardinality 0..*).
+'express::core::NamedElement' (role 'describesElement', cardinality 0..*) is associated with 'Remark' (role 'Remark301', cardinality 0..*).
+'Role' (role 'Role237', cardinality 0..*) is associated with 'express::core::EntityType' (role 'ofEntity236', cardinality 0..*).
+'express::rules::SubtypeConstraint' (role 'constraints', cardinality 0..*) is associated with 'Extent' (role 'Extent', cardinality 0..*).
+'Scope' (role 'Scope368', cardinality 0..*) is associated with 'express::core::ScopedId' (role 'express_core_ScopedId', cardinality 0..*).
+'express::expressions::ActualParameter' (role 'express_expressions_ActualParameter', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'SimpleValue' (role 'SimpleValue', cardinality 0..*) is associated with 'express::expressions::Literal' (role 'express_expressions_Literal', cardinality 0..*).
+'express::core::SelectType' (role 'extension386', cardinality 0..*) is associated with 'SelectType' (role 'SelectType387', cardinality 0..*).
+'express::statements::IfStatement' (role 'express_statements_IfStatement79', cardinality 0..*) is associated with 'Statement' (role 'Statement80', cardinality 0..*).
+'SkipStatement' (role 'SkipStatement', cardinality 0..*) is associated with 'express::algorithms::Statement' (role 'express_algorithms_Statement', cardinality 0..*).
+'express::core::Redeclaration' (role 'express_core_Redeclaration228', cardinality 0..*) is associated with 'Attribute' (role 'Attribute229', cardinality 0..*).
+'express::expressions::FunctionCall' (role 'inFunctionCall', cardinality 0..*) is associated with 'ActualParameter' (role 'ActualParameter165', cardinality 0..*).
+'AttributeType' (role 'AttributeType305', cardinality 0..*) is associated with 'express::core::Attribute' (role 'role', cardinality 0..*).
+'express::algorithms::InVariable' (role 'variable', cardinality 0..*) is associated with 'InParameter' (role 'InParameter', cardinality 0..*).
+'express::expressions::MemberBinding' (role 'express_expressions_MemberBinding', cardinality 0..*) is associated with 'RepeatCount' (role 'RepeatCount', cardinality 0..*).
+'express::core::SingleEntityType' (role 'ofEntity', cardinality 0..*) is associated with 'Attribute' (role 'Attribute180', cardinality 0..*).
+'ScopedId' (role 'ScopedId187', cardinality 0..*) is associated with 'express::core::SingleEntityType' (role 'express_core_SingleEntityType186', cardinality 0..*).
+'SchemaElement' (role 'SchemaElement', cardinality 0..*) is associated with 'express::core::Schema' (role 'definedIn', cardinality 0..*).
+'express::core::EntityType' (role 'forType', cardinality 0..*) is associated with 'Extent' (role 'Extent247', cardinality 0..*).
+'express::instances::EntityInstance' (role 'describes', cardinality 0..*) is associated with 'EntityValue' (role 'EntityValue', cardinality 0..*).
+'EntityType' (role 'EntityType272', cardinality 0..*) is associated with 'express::core::InvertibleAttribute' (role 'invertibleAttributes', cardinality 0..*).
+'express::statements::CaseStatement' (role 'express_statements_CaseStatement', cardinality 0..*) is associated with 'CaseAction' (role 'CaseAction', cardinality 0..*).
+'express::core::Expression' (role 'express_core_Expression', cardinality 0..*) is associated with 'Instance' (role 'Instance', cardinality 0..*).
+'express::core::DomainRole' (role 'modelsRole', cardinality 0..*) is associated with 'InverseAttribute' (role 'InverseAttribute287', cardinality 0..*).
+'express::expressions::PartialEntityConstructor' (role 'express_expressions_PartialEntityConstructor120', cardinality 0..*) is associated with 'SingleEntityType' (role 'SingleEntityType121', cardinality 0..*).
+'Relationship' (role 'Relationship', cardinality 0..*) is associated with 'express::core::InvertibleAttribute' (role 'basedOn', cardinality 0..*).
+'express::core::DomainConstraint' (role 'constraints293', cardinality 0..*) is associated with 'AttributeType' (role 'AttributeType294', cardinality 0..*).
+'LengthConstraint' (role 'LengthConstraint366', cardinality 0..*) is associated with 'express::core::BinaryType' (role 'express_core_BinaryType', cardinality 0..*).
+'Schema' (role 'Schema395', cardinality 0..*) is associated with 'express::core::SchemaElement' (role 'interfacedElements', cardinality 0..*).
+'express::core::Relationship' (role 'express_core_Relationship360', cardinality 0..*) is associated with 'RangeRole' (role 'RangeRole361', cardinality 0..*).
+'express::rules::Extent' (role 'express_rules_Extent', cardinality 0..*) is associated with 'EntityInstance' (role 'EntityInstance', cardinality 0..*).
+'VARExpression' (role 'VARExpression', cardinality 0..*) is associated with 'express::statements::AliasStatement' (role 'express_statements_AliasStatement', cardinality 0..*).
+'express::core::Remark' (role 'documentation', cardinality 0..*) is associated with 'Schema' (role 'Schema334', cardinality 0..*).
+'Constant' (role 'Constant', cardinality 0..*) is associated with 'express::expressions::ConstantRef' (role 'express_expressions_ConstantRef', cardinality 0..*).
+'express::statements::RepeatStatement' (role 'express_statements_RepeatStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression59', cardinality 0..*).
+'express::core::Redeclaration' (role 'express_core_Redeclaration231', cardinality 0..*) is associated with 'Role' (role 'Role', cardinality 0..*).
+'express::core::Relationship' (role 'createsRelationship', cardinality 0..*) is associated with 'InvertibleAttribute' (role 'InvertibleAttribute358', cardinality 0..*).
+'EnumerationType' (role 'EnumerationType503', cardinality 0..*) is associated with 'express::instances::EnumerationItem' (role 'declaredItems', cardinality 0..*).
+'UniqueRule' (role 'UniqueRule', cardinality 0..*) is associated with 'express::core::EntityType' (role 'domain253', cardinality 0..*).
+'express::expressions::QueryExpression' (role 'express_expressions_QueryExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression151', cardinality 0..*).
+'express::core::NamedType' (role 'express_core_NamedType', cardinality 0..*) is associated with 'DomainRule' (role 'DomainRule', cardinality 0..*).
+'Schema' (role 'Schema518', cardinality 0..*) is associated with 'express::instances::Population' (role 'express_instances_Population517', cardinality 0..*).
+'express::statements::IfStatement' (role 'express_statements_IfStatement82', cardinality 0..*) is associated with 'Statement' (role 'Statement83', cardinality 0..*).
+'DataType' (role 'DataType', cardinality 0..*) is associated with 'express::core::Expression' (role 'express_core_Expression200', cardinality 0..*).
+'EnumerationItem' (role 'EnumerationItem206', cardinality 0..*) is associated with 'express::core::EnumerationType' (role 'declaredIn', cardinality 0..*).
+'express::algorithms::Parameter' (role 'express_algorithms_Parameter443', cardinality 0..*) is associated with 'ActualTypeConstraint' (role 'ActualTypeConstraint444', cardinality 0..*).
+'express::rules::SupertypeRule' (role 'collection', cardinality 0..*) is associated with 'SubtypeConstraint' (role 'SubtypeConstraint', cardinality 0..*).
+'NamedVariable' (role 'NamedVariable', cardinality 0..*) is associated with 'express::expressions::VariableRef' (role 'express_expressions_VariableRef', cardinality 0..*).
+'express::algorithms::Algorithm' (role 'implements', cardinality 0..*) is associated with 'Statement' (role 'Statement453', cardinality 0..*).
+'express::expressions::AttributeBinding' (role 'express_expressions_AttributeBinding', cardinality 0..*) is associated with 'Expression' (role 'Expression158', cardinality 0..*).
+'express::statements::AliasVariable' (role 'express_statements_AliasVariable', cardinality 0..*) is associated with 'VARExpression' (role 'VARExpression40', cardinality 0..*).
+'VARExpression' (role 'VARExpression68', cardinality 0..*) is associated with 'express::statements::GroupCell' (role 'express_statements_GroupCell', cardinality 0..*).
+'EnumerationType' (role 'EnumerationType', cardinality 0..*) is associated with 'express::core::EnumerationType' (role 'base', cardinality 0..*).
+'EscapeStatement' (role 'EscapeStatement', cardinality 0..*) is associated with 'express::algorithms::Statement' (role 'express_algorithms_Statement417', cardinality 0..*).
+'Instance' (role 'Instance489', cardinality 0..*) is associated with 'express::instances::BagMember' (role 'express_instances_BagMember', cardinality 0..*).
+'PartialEntityType' (role 'PartialEntityType', cardinality 0..*) is associated with 'express::core::SingleEntityType' (role 'express_core_SingleEntityType184', cardinality 0..*).
+'express::statements::AttributeCell' (role 'express_statements_AttributeCell44', cardinality 0..*) is associated with 'VARExpression' (role 'VARExpression45', cardinality 0..*).
+'express::core::SpecializedType' (role 'express_core_SpecializedType', cardinality 0..*) is associated with 'ConcreteType' (role 'ConcreteType', cardinality 0..*).
+'Expression' (role 'Expression296', cardinality 0..*) is associated with 'express::core::DomainConstraint' (role 'express_core_DomainConstraint', cardinality 0..*).
+'express::algorithms::ActualAGGREGATEType' (role 'express_algorithms_ActualAGGREGATEType', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint431', cardinality 0..*).
+'Expression' (role 'Expression104', cardinality 0..*) is associated with 'express::expressions::IndexOperation' (role 'express_expressions_IndexOperation', cardinality 0..*).
+'express::rules::Extent' (role 'extension', cardinality 0..*) is associated with 'EntityType' (role 'EntityType13', cardinality 0..*).
+'express::core::UniqueRule' (role 'uniqueRules', cardinality 0..*) is associated with 'EntityType' (role 'EntityType283', cardinality 0..*).
+'express::instances::ListMember' (role 'express_instances_ListMember', cardinality 0..*) is associated with 'Instance' (role 'Instance487', cardinality 0..*).
+'Statement' (role 'Statement61', cardinality 0..*) is associated with 'express::statements::RepeatStatement' (role 'controlledBy', cardinality 0..*).
+'Relationship' (role 'Relationship340', cardinality 0..*) is associated with 'express::core::Role' (role 'roles', cardinality 0..*).
+'Attribute' (role 'Attribute241', cardinality 0..*) is associated with 'express::core::EntityType' (role 'owningEntity', cardinality 0..*).
+'EntityType' (role 'EntityType257', cardinality 0..*) is associated with 'express::core::EntityType' (role 'express_core_EntityType', cardinality 0..*).
+'ActualStructureConstraint' (role 'ActualStructureConstraint441', cardinality 0..*) is associated with 'express::algorithms::Parameter' (role 'express_algorithms_Parameter', cardinality 0..*).
+'express::algorithms::NamedVariable' (role 'express_algorithms_NamedVariable', cardinality 0..*) is associated with 'VariableType' (role 'VariableType423', cardinality 0..*).
+'express::expressions::GroupRef' (role 'express_expressions_GroupRef', cardinality 0..*) is associated with 'SingleEntityType' (role 'SingleEntityType144', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'express::rules::SubtypeConstraint' (role 'express_rules_SubtypeConstraint', cardinality 0..*).
+'InvertibleAttribute' (role 'InvertibleAttribute', cardinality 0..*) is associated with 'express::core::InverseAttribute' (role 'inverse', cardinality 0..*).
+'express::expressions::MemberBinding' (role 'express_expressions_MemberBinding171', cardinality 0..*) is associated with 'ListMember' (role 'ListMember', cardinality 0..*).
+'express::core::EntityType' (role 'declaredIn244', cardinality 0..*) is associated with 'SingleEntityType' (role 'SingleEntityType245', cardinality 0..*).
+'Statement' (role 'Statement52', cardinality 0..*) is associated with 'express::statements::CaseAction' (role 'express_statements_CaseAction51', cardinality 0..*).
+'express::rules::GlobalRule' (role 'express_rules_GlobalRule', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'express::core::EnumerationType' (role 'extension209', cardinality 0..*) is associated with 'EnumerationType' (role 'EnumerationType210', cardinality 0..*).
+'express::instances::ArrayMember' (role 'express_instances_ArrayMember', cardinality 0..*) is associated with 'Instance' (role 'Instance511', cardinality 0..*).
+'Expression' (role 'Expression117', cardinality 0..*) is associated with 'express::expressions::StringIndex' (role 'express_expressions_StringIndex116', cardinality 0..*).
+'express::core::ARRAYType' (role 'express_core_ARRAYType403', cardinality 0..*) is associated with 'ArrayBound' (role 'ArrayBound404', cardinality 0..*).
+'SelectType' (role 'SelectType485', cardinality 0..*) is associated with 'express::instances::TypedInstance' (role 'express_instances_TypedInstance', cardinality 0..*).
+'express::statements::AliasStatement' (role 'express_statements_AliasStatement30', cardinality 0..*) is associated with 'AliasVariable' (role 'AliasVariable', cardinality 0..*).
+'express::core::AnonymousType' (role 'express_core_AnonymousType', cardinality 0..*) is associated with 'AnonymousType' (role 'AnonymousType', cardinality 0..*).
+'express::instances::PartialEntityValue' (role 'express_instances_PartialEntityValue', cardinality 0..*) is associated with 'SingleEntityValue' (role 'SingleEntityValue', cardinality 0..*).
+'Procedure' (role 'Procedure', cardinality 0..*) is associated with 'express::statements::ProcedureCall' (role 'express_statements_ProcedureCall', cardinality 0..*).
+'express::statements::ReturnStatement' (role 'express_statements_ReturnStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression85', cardinality 0..*).
+'express::expressions::StringIndex' (role 'express_expressions_StringIndex', cardinality 0..*) is associated with 'Expression' (role 'Expression114', cardinality 0..*).
+'InverseAttribute' (role 'InverseAttribute', cardinality 0..*) is associated with 'express::core::InvertibleAttribute' (role 'explicit', cardinality 0..*).
+'InterfacedElement' (role 'InterfacedElement', cardinality 0..*) is associated with 'express::core::Schema' (role 'interfacingSchema', cardinality 0..*).
+'express::rules::Extent' (role 'constrainedSubtypes', cardinality 0..*) is associated with 'SubtypeConstraint' (role 'SubtypeConstraint7', cardinality 0..*).
+'express::core::SingleEntityType' (role 'express_core_SingleEntityType', cardinality 0..*) is associated with 'ExplicitAttribute' (role 'ExplicitAttribute178', cardinality 0..*).
+'express::core::AGGREGATEType' (role 'express_core_AGGREGATEType193', cardinality 0..*) is associated with 'SizeConstraint' (role 'SizeConstraint194', cardinality 0..*).
+'express::core::NamedElement' (role 'namedElements', cardinality 0..*) is associated with 'Scope' (role 'Scope299', cardinality 0..*).
+'express::core::NamedType' (role 'allowedTypes', cardinality 0..*) is associated with 'SelectType' (role 'SelectType', cardinality 0..*).
+'express::core::SchemaElement' (role 'refersTo', cardinality 0..*) is associated with 'InterfacedElement' (role 'InterfacedElement393', cardinality 0..*).
+'InVariable' (role 'InVariable', cardinality 0..*) is associated with 'express::algorithms::InParameter' (role 'source', cardinality 0..*).
+'ParameterType' (role 'ParameterType276', cardinality 0..*) is associated with 'express::core::GeneralizedType' (role 'contains', cardinality 0..*).
+'express::expressions::AttributeBinding' (role 'express_expressions_AttributeBinding160', cardinality 0..*) is associated with 'AttributeValue' (role 'AttributeValue', cardinality 0..*).
+'express::rules::SupertypeRule' (role 'express_rules_SupertypeRule', cardinality 0..*) is associated with 'EntityType' (role 'EntityType', cardinality 0..*).

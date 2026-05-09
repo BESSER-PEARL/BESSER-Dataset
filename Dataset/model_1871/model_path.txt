@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ipa320/bride/bride_plugin_source/src/org.best_of_robotics.model.datatypes/model/DataTypes.ecore

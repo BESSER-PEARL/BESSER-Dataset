@@ -1,0 +1,75 @@
+The model has 30 class(es).
+The class 'syswbeff106::And' has no attributes.
+The class 'syswbeff106::Flow' has no attributes.
+The class 'syswbeff106::ProcessNode' has the following attributes: 'label' of type str.
+The class 'syswbeff106::Description' has the following attributes: 'content' of type str.
+The class 'Sequence' has no attributes.
+The class 'ProcessNode' has no attributes.
+The class 'syswbeff106::Start' has no attributes.
+The class 'syswbeff106::Item' has the following attributes: 'name' of type str.
+The class 'syswbeff106::LoopExit' has no attributes.
+The class 'syswbeff106::FunctionProperty' has the following attributes: 'description' of type str.
+The class 'syswbeff106::Function' has the following attributes: 'domain' of type str.
+The class 'syswbeff106::Port' has the following attributes: 'id' of type str.
+The class 'syswbeff106::Thoughts' has no attributes.
+The class 'syswbeff106::Sequence' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'syswbeff106::Or' has no attributes.
+The class 'syswbeff106::Iteration' has no attributes.
+The class 'syswbeff106::Thing' has the following attributes: 'id' of type int.
+The class 'syswbeff106::InputPort' has no attributes.
+The class 'syswbeff106::Loop' has no attributes.
+The class 'syswbeff106::Final' has no attributes.
+The class 'syswbeff106::RelatedTo' has the following attributes: 'since' of type str.
+The class 'syswbeff106::SequenceNode' has the following attributes: 'name' of type str; 'tMax' of type int; 'tMin' of type int.
+The class 'syswbeff106::PatternCatalog' has the following attributes: 'id' of type str.
+The class 'syswbeff106::System' has no attributes.
+The class 'syswbeff106::OutputPort' has no attributes.
+The class 'syswbeff106::Workbench' has the following attributes: 'aprop' of type str.
+The class 'Port' has no attributes.
+The class 'syswbeff106::Component' has the following attributes: 'name' of type str.
+The class 'syswbeff106::Token' has no attributes.
+The enumeration 'FunctionDomain' has the following literals: 'time', 'space', 'form'.
+'syswbeff106::And' is a specialization of 'Sequence'.
+'syswbeff106::Or' is a specialization of 'Sequence'.
+'syswbeff106::Sequence' is a specialization of 'SequenceNode'.
+'syswbeff106::Iteration' is a specialization of 'Sequence'.
+'syswbeff106::LoopExit' is a specialization of 'Sequence'.
+'syswbeff106::Final' is a specialization of 'Sequence'.
+'syswbeff106::Function' is a specialization of 'SequenceNode'.
+'syswbeff106::Function' is a specialization of 'ProcessNode'.
+'syswbeff106::InputPort' is a specialization of 'Port'.
+'syswbeff106::Start' is a specialization of 'Sequence'.
+'syswbeff106::Flow' is a specialization of 'ProcessNode'.
+'syswbeff106::Loop' is a specialization of 'Sequence'.
+'syswbeff106::OutputPort' is a specialization of 'Port'.
+'syswbeff106::Function' (role 'syswbeff106_Function58', cardinality 0..*) is associated with 'syswbeff106::PatternCatalog' (role 'syswbeff106_PatternCatalog', cardinality 0..*).
+'syswbeff106::Flow' (role 'syswbeff106_Flow24', cardinality 0..*) is associated with 'syswbeff106::InputPort' (role 'syswbeff106_InputPort25', cardinality 0..*).
+'syswbeff106::OutputPort' (role 'syswbeff106_OutputPort29', cardinality 0..*) is associated with 'syswbeff106::Flow' (role 'syswbeff106_Flow30', cardinality 0..*).
+'syswbeff106::FunctionProperty' (role 'syswbeff106_FunctionProperty40', cardinality 0..*) is associated with 'syswbeff106::FunctionProperty' (role 'syswbeff106_FunctionProperty42', cardinality 0..*).
+'syswbeff106::Component' (role 'syswbeff106_Component', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function20', cardinality 0..*).
+'syswbeff106::Description' (role 'syswbeff106_Description', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function11', cardinality 0..*).
+'syswbeff106::SequenceNode' (role 'syswbeff106_SequenceNode', cardinality 0..*) is associated with 'syswbeff106::SequenceNode' (role 'syswbeff106_SequenceNode21', cardinality 0..*).
+'syswbeff106::Thing' (role 'syswbeff106_Thing39', cardinality 0..*) is associated with 'syswbeff106::Thoughts' (role 'syswbeff106_Thoughts', cardinality 0..*).
+'syswbeff106::InputPort' (role 'syswbeff106_InputPort', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function9', cardinality 0..*).
+'syswbeff106::System' (role 'syswbeff106_System', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function53', cardinality 0..*).
+'syswbeff106::Function' (role 'syswbeff106_Function7', cardinality 0..*) is associated with 'syswbeff106::OutputPort' (role 'syswbeff106_OutputPort', cardinality 0..*).
+'syswbeff106::RelatedTo' (role 'syswbeff106_RelatedTo33', cardinality 0..*) is associated with 'syswbeff106::Thing' (role 'syswbeff106_Thing34', cardinality 0..*).
+'syswbeff106::System' (role 'syswbeff106_System55', cardinality 0..*) is associated with 'syswbeff106::Component' (role 'syswbeff106_Component56', cardinality 0..*).
+'syswbeff106::Workbench' (role 'syswbeff106_Workbench', cardinality 0..*) is associated with 'syswbeff106::Thing' (role 'syswbeff106_Thing60', cardinality 0..*).
+'syswbeff106::Function' (role 'syswbeff106_Function15', cardinality 0..*) is associated with 'syswbeff106::FunctionProperty' (role 'syswbeff106_FunctionProperty', cardinality 0..*).
+'syswbeff106::Component' (role 'syswbeff106_Component46', cardinality 0..*) is associated with 'syswbeff106::Component' (role 'syswbeff106_Component48', cardinality 0..*).
+'syswbeff106::Function' (role 'syswbeff106_Function3', cardinality 0..*) is associated with 'syswbeff106::Sequence' (role 'syswbeff106_Sequence', cardinality 0..*).
+'syswbeff106::Workbench' (role 'syswbeff106_Workbench68', cardinality 0..*) is associated with 'syswbeff106::FunctionProperty' (role 'syswbeff106_FunctionProperty69', cardinality 0..*).
+'syswbeff106::Token' (role 'syswbeff106_Token', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function13', cardinality 0..*).
+'syswbeff106::Workbench' (role 'syswbeff106_Workbench62', cardinality 0..*) is associated with 'syswbeff106::Thoughts' (role 'syswbeff106_Thoughts63', cardinality 0..*).
+'syswbeff106::Function' (role 'syswbeff106_Function16', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function18', cardinality 0..*).
+'syswbeff106::Thing' (role 'syswbeff106_Thing', cardinality 0..*) is associated with 'syswbeff106::RelatedTo' (role 'syswbeff106_RelatedTo', cardinality 0..*).
+'syswbeff106::Item' (role 'syswbeff106_Item', cardinality 0..*) is associated with 'syswbeff106::Flow' (role 'syswbeff106_Flow27', cardinality 0..*).
+'syswbeff106::System' (role 'syswbeff106_System66', cardinality 0..*) is associated with 'syswbeff106::Workbench' (role 'syswbeff106_Workbench65', cardinality 0..*).
+'syswbeff106::Thing' (role 'syswbeff106_Thing36', cardinality 0..*) is associated with 'syswbeff106::RelatedTo' (role 'syswbeff106_RelatedTo37', cardinality 0..*).
+'syswbeff106::Component' (role 'syswbeff106_Component43', cardinality 0..*) is associated with 'syswbeff106::Component' (role 'syswbeff106_Component45', cardinality 0..*).
+'syswbeff106::Flow' (role 'syswbeff106_Flow', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function5', cardinality 0..*).
+'syswbeff106::PatternCatalog' (role 'syswbeff106_PatternCatalog72', cardinality 0..*) is associated with 'syswbeff106::Workbench' (role 'syswbeff106_Workbench71', cardinality 0..*).
+'syswbeff106::Component' (role 'syswbeff106_Component50', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function51', cardinality 0..*).
+'syswbeff106::Function' (role 'syswbeff106_Function0', cardinality 0..*) is associated with 'syswbeff106::Function' (role 'syswbeff106_Function', cardinality 0..*).

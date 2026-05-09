@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'tree::Node' has the following attributes: 'name' of type str.
+The class 'tree::Diagram' has no attributes.
+The class 'tree::Edge' has no attributes.
+'tree::Node' (role 'tree_Node', cardinality 0..*) is associated with 'tree::Diagram' (role 'tree_Diagram', cardinality 0..*).
+'tree::Edge' (role 'tree_Edge', cardinality 0..*) is associated with 'tree::Diagram' (role 'tree_Diagram2', cardinality 0..*).
+'tree::Edge' (role 'tree_Edge7', cardinality 0..*) is associated with 'tree::Node' (role 'tree_Node8', cardinality 0..*).
+'tree::Node' (role 'tree_Node11', cardinality 0..*) is associated with 'tree::Edge' (role 'tree_Edge10', cardinality 0..*).
+'tree::Node' (role 'tree_Node3', cardinality 0..*) is associated with 'tree::Node' (role 'tree_Node5', cardinality 0..*).

@@ -1,0 +1,98 @@
+The model has 31 class(es).
+The class 'cst::ModuleElement' has the following attributes: 'name' of type str; 'visibility' of type str.
+The class 'cst::Block' has no attributes.
+The class 'cst::ModuleExtendsValue' has the following attributes: 'name' of type str.
+The class 'cst::ForBlock' has no attributes.
+The class 'cst::TemplateOverridesValue' has the following attributes: 'name' of type str.
+The class 'cst::TypedModel' has no attributes.
+The class 'cst::CSTNode' has the following attributes: 'endPosition' of type int; 'startPosition' of type int.
+The class 'cst::ModelExpression' has the following attributes: 'body' of type str.
+The class 'cst::FileBlock' has the following attributes: 'openMode' of type str.
+The class 'cst::LetBlock' has no attributes.
+The class 'ModuleElement' has no attributes.
+The class 'cst::EPackage' has no attributes.
+The class 'Comment' has no attributes.
+The class 'cst::Comment' has the following attributes: 'body' of type str.
+The class 'cst::Module' has no attributes.
+The class 'cst::ProtectedAreaBlock' has no attributes.
+The class 'CSTNode' has no attributes.
+The class 'cst::Template' has no attributes.
+The class 'cst::Variable' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'cst::Query' has the following attributes: 'type' of type str.
+The class 'EPackage' has no attributes.
+The class 'cst::ModuleImportsValue' has the following attributes: 'name' of type str.
+The class 'cst::TemplateExpression' has no attributes.
+The class 'cst::IfBlock' has no attributes.
+The class 'cst::InitSection' has no attributes.
+The class 'cst::TextExpression' has the following attributes: 'value' of type str.
+The class 'cst::Macro' has the following attributes: 'type' of type str.
+The class 'TemplateExpression' has no attributes.
+The class 'Block' has no attributes.
+The class 'cst::TraceBlock' has no attributes.
+The class 'cst::Documentation' has no attributes.
+The enumeration 'OpenModeKind' has the following literals: 'OverWrite', 'Append'.
+The enumeration 'VisibilityKind' has the following literals: 'Protected', 'Private', 'Public'.
+'cst::Template' is a specialization of 'Block'.
+'cst::ModuleImportsValue' is a specialization of 'CSTNode'.
+'cst::Documentation' is a specialization of 'Comment'.
+'cst::TemplateExpression' is a specialization of 'CSTNode'.
+'cst::TextExpression' is a specialization of 'TemplateExpression'.
+'cst::Query' is a specialization of 'ModuleElement'.
+'cst::Macro' is a specialization of 'Block'.
+'cst::TypedModel' is a specialization of 'CSTNode'.
+'cst::ProtectedAreaBlock' is a specialization of 'Block'.
+'cst::TraceBlock' is a specialization of 'Block'.
+'cst::InitSection' is a specialization of 'CSTNode'.
+'cst::Template' is a specialization of 'ModuleElement'.
+'cst::Comment' is a specialization of 'ModuleElement'.
+'cst::Module' is a specialization of 'CSTNode'.
+'cst::Block' is a specialization of 'TemplateExpression'.
+'cst::ModuleElement' is a specialization of 'CSTNode'.
+'cst::ModelExpression' is a specialization of 'TemplateExpression'.
+'cst::Variable' is a specialization of 'CSTNode'.
+'cst::TemplateOverridesValue' is a specialization of 'CSTNode'.
+'cst::FileBlock' is a specialization of 'Block'.
+'cst::ForBlock' is a specialization of 'Block'.
+'cst::IfBlock' is a specialization of 'Block'.
+'cst::Comment' is a specialization of 'TemplateExpression'.
+'cst::Macro' is a specialization of 'ModuleElement'.
+'cst::LetBlock' is a specialization of 'Block'.
+'cst::ModuleExtendsValue' is a specialization of 'CSTNode'.
+'cst::Module' is a specialization of 'EPackage'.
+'cst::ModuleImportsValue' (role 'cst_ModuleImportsValue', cardinality 0..*) is associated with 'cst::Module' (role 'cst_Module6', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression55', cardinality 0..*) is associated with 'cst::ForBlock' (role 'cst_ForBlock54', cardinality 0..*).
+'cst::Variable' (role 'cst_Variable83', cardinality 0..*) is associated with 'cst::Macro' (role 'cst_Macro', cardinality 0..*).
+'cst::EPackage' (role 'cst_EPackage', cardinality 0..*) is associated with 'cst::TypedModel' (role 'cst_TypedModel10', cardinality 0..*).
+'cst::TemplateOverridesValue' (role 'cst_TemplateOverridesValue', cardinality 0..*) is associated with 'cst::Template' (role 'cst_Template', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression43', cardinality 0..*) is associated with 'cst::ForBlock' (role 'cst_ForBlock42', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression24', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression22', cardinality 0..*).
+'cst::LetBlock' (role 'cst_LetBlock', cardinality 0..*) is associated with 'cst::LetBlock' (role 'cst_LetBlock64', cardinality 0..*).
+'cst::Block' (role 'cst_Block', cardinality 0..*) is associated with 'cst::InitSection' (role 'cst_InitSection', cardinality 0..*).
+'cst::Module' (role 'cst_Module4', cardinality 0..*) is associated with 'cst::ModuleExtendsValue' (role 'cst_ModuleExtendsValue', cardinality 0..*).
+'cst::LetBlock' (role 'cst_LetBlock67', cardinality 0..*) is associated with 'cst::Block' (role 'cst_Block68', cardinality 0..*).
+'cst::ForBlock' (role 'cst_ForBlock', cardinality 0..*) is associated with 'cst::Variable' (role 'cst_Variable40', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression38', cardinality 0..*) is associated with 'cst::ProtectedAreaBlock' (role 'cst_ProtectedAreaBlock', cardinality 0..*).
+'cst::Variable' (role 'cst_Variable71', cardinality 0..*) is associated with 'cst::LetBlock' (role 'cst_LetBlock70', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression81', cardinality 0..*) is associated with 'cst::TraceBlock' (role 'cst_TraceBlock', cardinality 0..*).
+'cst::Variable' (role 'cst_Variable20', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression21', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression73', cardinality 0..*) is associated with 'cst::FileBlock' (role 'cst_FileBlock', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression28', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression30', cardinality 0..*).
+'cst::InitSection' (role 'cst_InitSection35', cardinality 0..*) is associated with 'cst::Variable' (role 'cst_Variable36', cardinality 0..*).
+'cst::Module' (role 'cst_Module8', cardinality 0..*) is associated with 'cst::Documentation' (role 'cst_Documentation', cardinality 0..*).
+'cst::IfBlock' (role 'cst_IfBlock61', cardinality 0..*) is associated with 'cst::IfBlock' (role 'cst_IfBlock63', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression46', cardinality 0..*) is associated with 'cst::ForBlock' (role 'cst_ForBlock45', cardinality 0..*).
+'cst::Module' (role 'cst_Module', cardinality 0..*) is associated with 'cst::TypedModel' (role 'cst_TypedModel', cardinality 0..*).
+'cst::Template' (role 'cst_Template17', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression18', cardinality 0..*).
+'cst::ForBlock' (role 'cst_ForBlock51', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression52', cardinality 0..*).
+'cst::IfBlock' (role 'cst_IfBlock', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression57', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression88', cardinality 0..*) is associated with 'cst::Query' (role 'cst_Query87', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression25', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression27', cardinality 0..*).
+'cst::Block' (role 'cst_Block60', cardinality 0..*) is associated with 'cst::IfBlock' (role 'cst_IfBlock59', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression76', cardinality 0..*) is associated with 'cst::FileBlock' (role 'cst_FileBlock75', cardinality 0..*).
+'cst::Template' (role 'cst_Template15', cardinality 0..*) is associated with 'cst::ModelExpression' (role 'cst_ModelExpression', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression79', cardinality 0..*) is associated with 'cst::FileBlock' (role 'cst_FileBlock78', cardinality 0..*).
+'cst::ModelExpression' (role 'cst_ModelExpression49', cardinality 0..*) is associated with 'cst::ForBlock' (role 'cst_ForBlock48', cardinality 0..*).
+'cst::Query' (role 'cst_Query', cardinality 0..*) is associated with 'cst::Variable' (role 'cst_Variable85', cardinality 0..*).
+'cst::Variable' (role 'cst_Variable', cardinality 0..*) is associated with 'cst::Template' (role 'cst_Template13', cardinality 0..*).
+'cst::Block' (role 'cst_Block33', cardinality 0..*) is associated with 'cst::TemplateExpression' (role 'cst_TemplateExpression', cardinality 0..*).
+'cst::Module' (role 'cst_Module2', cardinality 0..*) is associated with 'cst::ModuleElement' (role 'cst_ModuleElement', cardinality 0..*).

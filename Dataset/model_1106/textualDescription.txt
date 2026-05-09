@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'fsml::FSMTransition' has the following attributes: 'input' of type str; 'action' of type str.
+The class 'fsml::FSMState' has the following attributes: 'initial' of type bool; 'name' of type str.
+The class 'fsml::FSM' has no attributes.
+'fsml::FSMTransition' (role 'fsml_FSMTransition4', cardinality 0..*) is associated with 'fsml::FSMState' (role 'fsml_FSMState5', cardinality 0..*).
+'fsml::FSMTransition' (role 'fsml_FSMTransition', cardinality 0..*) is associated with 'fsml::FSMState' (role 'fsml_FSMState2', cardinality 0..*).
+'fsml::FSMState' (role 'fsml_FSMState', cardinality 0..*) is associated with 'fsml::FSM' (role 'fsml_FSM', cardinality 0..*).

@@ -1,0 +1,1067 @@
+The model has 341 class(es).
+The class 'oaam::functions::SignalGroup' has no attributes.
+The class 'oaam::capabilities::MessageOnConnectionOrDeviceCapability' has the following attributes: 'worstCaseTransmissionTime' of type float.
+The class 'allocations::AllocationsContainerA' has no attributes.
+The class 'ExternalTaskLink' has no attributes.
+The class 'AnatomyContainerA' has no attributes.
+The class 'oaam::scenario::ScenarioParameterA' has no attributes.
+The class 'Restrictions' has no attributes.
+The class 'IoGroup' has no attributes.
+The class 'Subsystem' has no attributes.
+The class 'oaam::allocations::SignalAssignment' has no attributes.
+The class 'TaskRedundancy' has no attributes.
+The class 'library::ResourceProviderA' has no attributes.
+The class 'oaam::capabilities::SubdeviceInDeviceCapability' has no attributes.
+The class 'SynchronicityRestriction' has no attributes.
+The class 'restrictions::DeviceRestrictionA' has no attributes.
+The class 'Duct' has no attributes.
+The class 'oaam::restrictions::SynchronicityRestriction' has the following attributes: 'maxJitter' of type float.
+The class 'oaam::anatomy::Position3D' has the following attributes: 'x' of type float; 'y' of type float; 'z' of type float.
+The class 'oaam::library::ConnectionType' has the following attributes: 'maxInterfaceToJointDistance' of type float; 'isPower' of type bool; 'isSwitched' of type bool; 'nJoints' of type int; 'allowsCircles' of type bool; 'maxJointBranches' of type int; 'isUnidirectional' of type bool; 'isWireless' of type bool; 'nStartingPoints' of type int; 'directConnectionsAllowed' of type bool; 'maxLength' of type float; 'requiresMaster' of type bool; 'isInformation' of type bool; 'nEndPoints' of type int.
+The class 'oaam::allocations::SubdeviceAssignment' has no attributes.
+The class 'AttributeA' has no attributes.
+The class 'CapabilitiesContainerA' has no attributes.
+The class 'ConnectionRestriction' has no attributes.
+The class 'BoolOperation' has no attributes.
+The class 'oaam::anatomy::Subanatomy' has no attributes.
+The class 'ResourceAlternatives' has no attributes.
+The class 'TaskOnDeviceCapability' has no attributes.
+The class 'oaam::functions::FailureCondition' has the following attributes: 'maxOccurrenceProbability' of type float; 'noSingleFailure' of type bool.
+The class 'oaam::scenario::Scenario' has no attributes.
+The class 'restrictions::SignalGroupRestrictionA' has no attributes.
+The class 'TaskParameter' has no attributes.
+The class 'oaam::hardware::Subhardware' has no attributes.
+The class 'oaam::anatomy::DuctOpening' has no attributes.
+The class 'BoolA' has no attributes.
+The class 'oaam::functions::Input' has the following attributes: 'queueLength' of type int.
+The class 'oaam::capabilities::SignalOnConnectionOrDeviceCapability' has the following attributes: 'worstCaseTransmissionTime' of type float.
+The class 'oaam::anatomy::AnatomyContainerA' has no attributes.
+The class 'oaam::restrictions::Restrictions' has no attributes.
+The class 'oaam::library::DuctType' has no attributes.
+The class 'oaam::common::Byte' has the following attributes: 'nBits' of type int.
+The class 'oaam::library::ResourceBundle' has the following attributes: 'mtbf' of type float; 'mass' of type float; 'cost' of type float.
+The class 'oaam::restrictions::TimeDelayRestriction' has the following attributes: 'delay' of type float.
+The class 'Sublibrary' has no attributes.
+The class 'MessageOnBusCapability' has no attributes.
+The class 'oaam::systems::InformationPower' has the following attributes: 'power' of type float.
+The class 'oaam::allocations::SignalToMessageAssignment' has the following attributes: 'position' of type int.
+The class 'ResourceLink' has no attributes.
+The class 'oaam::anatomy::Anatomy' has no attributes.
+The class 'Subanatomy' has no attributes.
+The class 'ConnectionAssignment' has no attributes.
+The class 'common::BoolA' has no attributes.
+The class 'oaam::library::ResourceAlternatives' has no attributes.
+The class 'oaam::capabilities::ResourceConsumption' has the following attributes: 'count' of type float.
+The class 'oaam::library::ResourceProviderInstanceA' has no attributes.
+The class 'oaam::scenario::OperationModeReference' has the following attributes: 'activeProbability' of type float.
+The class 'oaam::allocations::Schedule' has the following attributes: 'rate' of type float; 'isPeriodic' of type bool; 'priority' of type int.
+The class 'oaam::common::OaamBaseElementA' has the following attributes: 'documentation' of type str; 'id' of type str; 'traceLink' of type str; 'modified' of type date; 'style' of type str; 'name' of type str; 'modifier' of type str.
+The class 'oaam::capabilities::CapabilitiesContainerA' has no attributes.
+The class 'oaam::restrictions::DeviceRestriction' has the following attributes: 'isForbidden' of type bool; 'deviceName' of type str.
+The class 'scenario::ModeDependentElementA' has no attributes.
+The class 'AllocationsContainerA' has no attributes.
+The class 'oaam::scenario::OperationMode' has no attributes.
+The class 'TaskAssignment' has no attributes.
+The class 'restrictions::SubfunctionRestrictionA' has no attributes.
+The class 'BoolNot' has no attributes.
+The class 'oaam::capabilities::Capabilities' has no attributes.
+The class 'oaam::restrictions::DeviceTypeRestriction' has the following attributes: 'deviceTypeName' of type str; 'isForbidden' of type bool.
+The class 'oaam::library::Resource' has the following attributes: 'count' of type float.
+The class 'System' has no attributes.
+The class 'TaskParameterDeclaration' has no attributes.
+The class 'oaam::common::Integer' has the following attributes: 'endianess' of type str; 'nBits' of type int; 'signed' of type bool.
+The class 'oaam::library::ResourceTypeModifierLevel' has no attributes.
+The class 'anatomy::AnatomyContainerA' has no attributes.
+The class 'oaam::library::InputDeclaration' has the following attributes: 'precondition' of type str; 'lowerBound' of type int; 'upperBound' of type int; 'range' of type str; 'unit' of type str.
+The class 'Subfunctions' has no attributes.
+The class 'ResourceTypeModifierLevel' has no attributes.
+The class 'oaam::scenario::ScenarioParameterNumeric' has the following attributes: 'value' of type float.
+The class 'ResourceConsumption' has no attributes.
+The class 'oaam::library::DeviceType' has the following attributes: 'canHaveSubdevices' of type bool; 'mtbf' of type float; 'cost' of type float; 'isSelfManaging' of type bool; 'isSubdevice' of type bool; 'weight' of type float.
+The class 'SignalAssignment' has no attributes.
+The class 'TaskSymmetry' has no attributes.
+The class 'ResourceTypeDissimilarity' has no attributes.
+The class 'oaam::hardware::Hardware' has no attributes.
+The class 'oaam::library::DuctOpeningDeclaration' has no attributes.
+The class 'oaam::library::ResourceTypeModifier' has no attributes.
+The class 'PowerSourceRestriction' has no attributes.
+The class 'library::ResourceConsumerA' has no attributes.
+The class 'ConnectionInDuctOrLocationCapability' has no attributes.
+The class 'oaam::systems::RequiredInformationA' has no attributes.
+The class 'IoType' has no attributes.
+The class 'TimeDelayRestriction' has no attributes.
+The class 'oaam::common::Boolean' has the following attributes: 'nBits' of type int.
+The class 'OperationMode' has no attributes.
+The class 'oaam::anatomy::Location' has the following attributes: 'length' of type float.
+The class 'oaam::allocations::MessageA' has the following attributes: 'length' of type int; 'isPersistent' of type bool.
+The class 'oaam::common::BoolOperation' has the following attributes: 'type' of type str.
+The class 'oaam::common::DataTypeA' has no attributes.
+The class 'oaam::capabilities::SignalInMessageCapability' has no attributes.
+The class 'oaam::common::Character' has the following attributes: 'encoding' of type str; 'nBits' of type int.
+The class 'restrictions::TaskRestrictionA' has no attributes.
+The class 'OutputDeclaration' has no attributes.
+The class 'MessageA' has no attributes.
+The class 'WireType' has no attributes.
+The class 'ResourceTypeModifierReference' has no attributes.
+The class 'restrictions::ConnectionRestrinctionA' has no attributes.
+The class 'oaam::functions::TaskRedundancy' has no attributes.
+The class 'ConnectionAssignmentSegment' has no attributes.
+The class 'oaam::hardware::Bus' has no attributes.
+The class 'RestrictionsContainerA' has no attributes.
+The class 'oaam::functions::Signal' has the following attributes: 'inIndex' of type int; 'outIndex' of type int.
+The class 'MessageSegment' has no attributes.
+The class 'InformationPower' has no attributes.
+The class 'InputSegregation' has no attributes.
+The class 'systems::ProvidedInformationA' has no attributes.
+The class 'scenario::VariantDependentElementA' has no attributes.
+The class 'oaam::restrictions::ConnectionRestrinctionA' has no attributes.
+The class 'ResourceTypeModifier' has no attributes.
+The class 'FaultPropagation' has no attributes.
+The class 'oaam::library::ResourceProviderA' has no attributes.
+The class 'oaam::functions::TaskSymmetry' has no attributes.
+The class 'oaam::capabilities::ConnectionInDuctOrLocationCapability' has no attributes.
+The class 'oaam::systems::LinearPower' has the following attributes: 'force' of type float; 'velocity' of type float.
+The class 'Allocations' has no attributes.
+The class 'restrictions::SignalRestrictionA' has no attributes.
+The class 'oaam::functions::ExternalTaskLink' has the following attributes: 'filter' of type str.
+The class 'Hardware' has no attributes.
+The class 'oaam::library::DeviceTypeDissimilarity' has the following attributes: 'percentageOfCommonHardware' of type float.
+The class 'oaam::functions::Subfunctions' has the following attributes: 'multiplicityMax' of type int; 'multiplicityMin' of type int.
+The class 'oaam::hardware::Io' has no attributes.
+The class 'Task' has no attributes.
+The class 'oaam::capabilities::SubmessageInMessageCapability' has no attributes.
+The class 'oaam::allocations::DeviceAssignment' has no attributes.
+The class 'oaam::allocations::ConnectionAssignment' has no attributes.
+The class 'oaam::library::PowerSource' has no attributes.
+The class 'oaam::capabilities::MessageOnBusCapability' has no attributes.
+The class 'oaam::library::TaskType' has the following attributes: 'isDeterministic' of type bool; 'preferredExecutionRate' of type float.
+The class 'oaam::capabilities::CapabilityA' has no attributes.
+The class 'Functions' has no attributes.
+The class 'DuctOpeningDeclaration' has no attributes.
+The class 'oaam::library::IoType' has the following attributes: 'direction' of type str.
+The class 'BusType' has no attributes.
+The class 'oaam::allocations::AllocationsContainerA' has no attributes.
+The class 'oaam::common::Struct' has the following attributes: 'alignment' of type int; 'isAbstract' of type bool.
+The class 'oaam::library::IoGroup' has no attributes.
+The class 'oaam::allocations::ScheduledTime' has the following attributes: 'duration' of type float; 'restart' of type bool; 'startTime' of type float; 'cycle' of type int.
+The class 'IoDeclaration' has no attributes.
+The class 'SubconnectionAssignment' has no attributes.
+The class 'Resource' has no attributes.
+The class 'InputDeclaration' has no attributes.
+The class 'oaam::capabilities::SubconnectionInDeviceCapability' has no attributes.
+The class 'oaam::functions::Task' has the following attributes: 'nParallels' of type int; 'fixedRate' of type float.
+The class 'oaam::systems::InformationMaterial' has the following attributes: 'velocity' of type float; 'density' of type float.
+The class 'DuctOpening' has no attributes.
+The class 'PowerSource' has no attributes.
+The class 'LocationRestriction' has no attributes.
+The class 'ResourceBundle' has no attributes.
+The class 'oaam::systems::SystemsContainerA' has no attributes.
+The class 'oaam::allocations::SignalAssignmentSegment' has no attributes.
+The class 'DeviceTypeDissimilarity' has no attributes.
+The class 'LocationSymmetry' has no attributes.
+The class 'oaam::capabilities::Subcapabilities' has no attributes.
+The class 'ResourceGroup' has no attributes.
+The class 'oaam::restrictions::LocationRestriction' has the following attributes: 'isForbidden' of type bool; 'locationName' of type str.
+The class 'oaam::common::FloatingPoint' has the following attributes: 'nBits' of type int; 'endianess' of type str.
+The class 'OutputIntegrityState' has no attributes.
+The class 'ConnectionTypeRestriction' has no attributes.
+The class 'oaam::library::IoDeclaration' has no attributes.
+The class 'oaam::library::ResourceLink' has no attributes.
+The class 'oaam::library::ResourceType' has the following attributes: 'isConsumed' of type bool; 'isConfigurable' of type bool; 'isDistinguishable' of type bool; 'isIo' of type bool; 'isPropagated' of type bool; 'direction' of type str; 'unit' of type str.
+The class 'OaamBaseElementA' has no attributes.
+The class 'ExternalOutputLink' has no attributes.
+The class 'oaam::common::AttributeContainment' has no attributes.
+The class 'oaam::anatomy::AreaSymmetry' has no attributes.
+The class 'Output' has no attributes.
+The class 'Area' has no attributes.
+The class 'Message' has no attributes.
+The class 'oaam::anatomy::Duct' has the following attributes: 'length' of type float.
+The class 'Library' has no attributes.
+The class 'oaam::capabilities::TaskOnDeviceCapability' has the following attributes: 'failureProbability' of type float; 'worstCaseExecutionTime' of type float.
+The class 'oaam::library::TaskStateDeclaration' has no attributes.
+The class 'oaam::allocations::Message' has no attributes.
+The class 'DeviceAssignment' has no attributes.
+The class 'capabilities::CapabilitiesContainerA' has no attributes.
+The class 'DataTypeA' has no attributes.
+The class 'oaam::library::TaskParameterDeclaration' has no attributes.
+The class 'library::ResourceProviderInstanceA' has no attributes.
+The class 'ResourceType' has no attributes.
+The class 'Suballocations' has no attributes.
+The class 'DeviceTypeSymmetry' has no attributes.
+The class 'FailureCondition' has no attributes.
+The class 'Device' has no attributes.
+The class 'oaam::restrictions::TaskRestrictionA' has no attributes.
+The class 'TaskInputState' has no attributes.
+The class 'oaam::systems::InformationSignal' has the following attributes: 'latency' of type float; 'rate' of type float; 'unit' of type str; 'accuracy' of type float; 'resolution' of type float.
+The class 'DeviceTypeRestriction' has no attributes.
+The class 'oaam::library::TaskTypeDissimilarity' has the following attributes: 'percentageOfCommonCode' of type float.
+The class 'oaam::systems::InformationFlow' has no attributes.
+The class 'oaam::restrictions::ConnectionRestriction' has the following attributes: 'isForbidden' of type bool; 'connectionName' of type str.
+The class 'oaam::library::TaskInputState' has the following attributes: 'state' of type str.
+The class 'oaam::common::AttributeNumeric' has the following attributes: 'value' of type float.
+The class 'systems::SystemsContainerA' has no attributes.
+The class 'oaam::systems::ElectricPower' has the following attributes: 'nPhases' of type int; 'voltage' of type float; 'current' of type float; 'frequency' of type float.
+The class 'oaam::restrictions::SignalRestrictionA' has no attributes.
+The class 'MessageOnConnectionOrDeviceCapability' has no attributes.
+The class 'oaam::library::FaultPropagation' has the following attributes: 'outputState' of type str.
+The class 'restrictions::TaskGroupRestrictionA' has no attributes.
+The class 'TaskGroup' has no attributes.
+The class 'SegregationRestriction' has no attributes.
+The class 'TaskType' has no attributes.
+The class 'oaam::systems::InputSegregation' has the following attributes: 'dissimilarRoute' of type bool; 'dissimilarSource' of type bool; 'dissimilarTechnology' of type bool.
+The class 'SubmessageInMessageCapability' has no attributes.
+The class 'oaam::library::ResourceTypeModifierReference' has no attributes.
+The class 'Io' has no attributes.
+The class 'oaam::restrictions::TaskSymmetryRestriction' has the following attributes: 'type' of type str.
+The class 'oaam::library::WireType' has the following attributes: 'minBendingRadius' of type float; 'mtbf' of type float; 'specificPrice' of type float; 'nShields' of type int; 'specificWeight' of type float; 'nConductors' of type int.
+The class 'Bus' has no attributes.
+The class 'SignalInMessageCapability' has no attributes.
+The class 'ProvidedInformationA' has no attributes.
+The class 'oaam::systems::ProvidedInformationA' has no attributes.
+The class 'oaam::allocations::ConnectionAssignmentSegment' has no attributes.
+The class 'Subhardware' has no attributes.
+The class 'oaam::systems::System' has no attributes.
+The class 'DuctType' has no attributes.
+The class 'TaskInputTrigger' has no attributes.
+The class 'oaam::common::BoolNot' has no attributes.
+The class 'oaam::restrictions::PowerSourceRestriction' has the following attributes: 'powerSourceName' of type str; 'isForbidden' of type bool.
+The class 'oaam::library::ResourceTypeDissimilarity' has no attributes.
+The class 'Struct' has no attributes.
+The class 'oaam::common::BoolA' has no attributes.
+The class 'LibraryContainerA' has no attributes.
+The class 'Subcapabilities' has no attributes.
+The class 'oaam::library::DeviceTypeSymmetry' has no attributes.
+The class 'SystemsContainerA' has no attributes.
+The class 'SignalToMessageAssignment' has no attributes.
+The class 'Connection' has no attributes.
+The class 'oaam::restrictions::SubfunctionRestrictionA' has no attributes.
+The class 'SignalOnConnectionOrDeviceCapability' has no attributes.
+The class 'SignalType' has no attributes.
+The class 'DeviceType' has no attributes.
+The class 'oaam::hardware::Device' has no attributes.
+The class 'TaskSymmetryRestriction' has no attributes.
+The class 'oaam::common::AttributeReference' has no attributes.
+The class 'RequiredInformationA' has no attributes.
+The class 'oaam::restrictions::ConnectionTypeRestriction' has the following attributes: 'connectionTypeName' of type str; 'isForbidden' of type bool.
+The class 'scenario::ScenarioParameterA' has no attributes.
+The class 'oaam::common::Array' has the following attributes: 'alignment' of type int; 'nElements' of type int.
+The class 'oaam::library::Sublibrary' has no attributes.
+The class 'Schedule' has no attributes.
+The class 'oaam::allocations::Submessage' has the following attributes: 'position' of type int.
+The class 'oaam::scenario::VariantDependentElementA' has no attributes.
+The class 'Capabilities' has no attributes.
+The class 'oaam::library::Library' has no attributes.
+The class 'AttributeDefinition' has no attributes.
+The class 'SignalAssignmentSegment' has no attributes.
+The class 'Location' has no attributes.
+The class 'FunctionsContainerA' has no attributes.
+The class 'oaam::library::LibraryContainerA' has no attributes.
+The class 'Subscenario' has no attributes.
+The class 'oaam::common::AttributeA' has no attributes.
+The class 'oaam::scenario::ScenarioContainerA' has no attributes.
+The class 'oaam::restrictions::SegregationRestriction' has the following attributes: 'dissimilarTechnology' of type bool; 'dissimilarArea' of type bool; 'dissimilarPowerSource' of type bool; 'dissimilarLocation' of type bool.
+The class 'Position3D' has no attributes.
+The class 'Anatomy' has no attributes.
+The class 'DeviceRestriction' has no attributes.
+The class 'ScenarioParameterA' has no attributes.
+The class 'oaam::library::ResourceGroup' has no attributes.
+The class 'oaam::systems::HydraulicPower' has the following attributes: 'massFlowRate' of type float; 'pressure' of type float.
+The class 'oaam::systems::Systems' has no attributes.
+The class 'restrictions::RestrictionsContainerA' has no attributes.
+The class 'ScenarioContainerA' has no attributes.
+The class 'oaam::functions::FunctionsContainerA' has no attributes.
+The class 'AreaSymmetry' has no attributes.
+The class 'oaam::anatomy::LocationSymmetry' has no attributes.
+The class 'oaam::library::LocationType' has the following attributes: 'isJoint' of type bool.
+The class 'oaam::library::BusType' has the following attributes: 'isSelfManaging' of type bool; 'mtbf' of type float; 'requiresMaster' of type bool.
+The class 'oaam::library::TaskInputTrigger' has no attributes.
+The class 'SubconnectionInDeviceCapability' has no attributes.
+The class 'oaam::library::TaskOutputTrigger' has the following attributes: 'fixedRate' of type float; 'isFixedRate' of type bool.
+The class 'TaskStateDeclaration' has no attributes.
+The class 'AreaRestriction' has no attributes.
+The class 'TaskOutputTrigger' has no attributes.
+The class 'oaam::Architecture' has no attributes.
+The class 'oaam::scenario::ModeDependentElementA' has no attributes.
+The class 'oaam::hardware::Connection' has no attributes.
+The class 'oaam::functions::ExternalOutputLink' has the following attributes: 'filter' of type str.
+The class 'oaam::allocations::TaskAssignment' has no attributes.
+The class 'oaam::hardware::HardwareContainerA' has no attributes.
+The class 'oaam::restrictions::SignalGroupRestrictionA' has no attributes.
+The class 'OperationModeReference' has no attributes.
+The class 'oaam::scenario::ScenarioParameterBool' has the following attributes: 'value' of type bool.
+The class 'oaam::allocations::SubconnectionAssignment' has no attributes.
+The class 'Variant' has no attributes.
+The class 'hardware::HardwareContainerA' has no attributes.
+The class 'oaam::systems::RotaryPower' has the following attributes: 'angularVelocity' of type float; 'momentum' of type float.
+The class 'oaam::allocations::MessageSegment' has no attributes.
+The class 'oaam::allocations::Allocations' has no attributes.
+The class 'Signal' has no attributes.
+The class 'Subrestrictions' has no attributes.
+The class 'oaam::scenario::Variant' has no attributes.
+The class 'oaam::functions::Output' has the following attributes: 'fixedRate' of type float.
+The class 'oaam::functions::Functions' has no attributes.
+The class 'oaam::restrictions::Subrestrictions' has no attributes.
+The class 'DeviceSymmetry' has no attributes.
+The class 'SubdeviceInDeviceCapability' has no attributes.
+The class 'oaam::capabilities::DeviceInLocationCapability' has no attributes.
+The class 'oaam::library::SignalType' has no attributes.
+The class 'oaam::restrictions::DeviceRestrictionA' has no attributes.
+The class 'oaam::library::OutputDeclaration' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int; 'range' of type str; 'postcondition' of type str; 'unit' of type str.
+The class 'oaam::restrictions::TaskGroupRestrictionA' has no attributes.
+The class 'oaam::common::AttributeString' has the following attributes: 'value' of type str.
+The class 'systems::RequiredInformationA' has no attributes.
+The class 'LocationType' has no attributes.
+The class 'oaam::library::ResourceConsumerA' has no attributes.
+The class 'oaam::restrictions::RestrictionsContainerA' has no attributes.
+The class 'SignalGroup' has no attributes.
+The class 'DeviceInLocationCapability' has no attributes.
+The class 'capabilities::CapabilityA' has no attributes.
+The class 'oaam::functions::TaskGroup' has no attributes.
+The class 'InformationFlow' has no attributes.
+The class 'ScheduledTime' has no attributes.
+The class 'MessageType' has no attributes.
+The class 'oaam::systems::Subsystem' has no attributes.
+The class 'oaam::functions::TaskParameter' has the following attributes: 'value' of type str.
+The class 'Submessage' has no attributes.
+The class 'Systems' has no attributes.
+The class 'oaam::allocations::Suballocations' has no attributes.
+The class 'ConnectionType' has no attributes.
+The class 'TaskTypeDissimilarity' has no attributes.
+The class 'Input' has no attributes.
+The class 'oaam::restrictions::TaskAtomicRestriction' has no attributes.
+The class 'TaskAtomicRestriction' has no attributes.
+The class 'oaam::library::AttributeDefinition' has the following attributes: 'dataType' of type str; 'target' of type str.
+The class 'SubdeviceAssignment' has no attributes.
+The class 'oaam::anatomy::Area' has no attributes.
+The class 'oaam::restrictions::AreaRestriction' has the following attributes: 'isForbidden' of type bool; 'areaName' of type str.
+The class 'oaam::scenario::Subscenario' has no attributes.
+The class 'Scenario' has no attributes.
+The class 'oaam::functions::OutputIntegrityState' has the following attributes: 'state' of type str.
+The class 'oaam::hardware::DeviceSymmetry' has no attributes.
+The class 'oaam::library::MessageType' has the following attributes: 'minLength' of type int; 'maxLength' of type int; 'alignment' of type int.
+The class 'common::OaamBaseElementA' has no attributes.
+The enumeration 'SymmetryTypesE' has the following literals: 'DEVICE', 'AREA', 'DEVICE_TYPE', 'LOCATION'.
+The enumeration 'IoDirectionE' has the following literals: 'IN', 'BOTH', 'NONE', 'OUT'.
+The enumeration 'AttributeTypesE' has the following literals: 'STRING', 'BOOL', 'NUMERIC'.
+The enumeration 'EndianessE' has the following literals: 'BIG', 'LITTLE'.
+The enumeration 'BoolOperationTypesE' has the following literals: 'XOR', 'OR', 'AND'.
+The enumeration 'AttributeTargetsE' has the following literals: 'SIGNAL', 'RESOURCE_BUNDLE', 'RESOURCE', 'SIGNAL_TYPE', 'TASK_TYPE', 'RESOURCE_TYPE', 'AREA', 'WIRE_TYPE', 'DEVICE', 'CONNECTION_TYPE', 'CONNECTION', 'LOCATION_TYPE', 'RESOURCE_ALTERNATIVE', 'RESOURCE_GROUP', 'VARIANT', 'TASK', 'DUCT_TYPE', 'LOCATION', 'DEVICE_TYPE', 'DUCT'.
+The enumeration 'IntegretyStateE' has the following literals: 'OK', 'UNKNOWN', 'FAILED'.
+'oaam::capabilities::MessageOnConnectionOrDeviceCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::functions::TaskGroup' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::systems::InformationPower' is a specialization of 'systems::ProvidedInformationA'.
+'oaam::functions::Output' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::systems::System' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::hardware::Device' is a specialization of 'library::ResourceProviderInstanceA'.
+'oaam::library::BusType' is a specialization of 'library::ResourceProviderA'.
+'oaam::restrictions::RestrictionsContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::capabilities::SubmessageInMessageCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::ConnectionAssignment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::DeviceTypeDissimilarity' is a specialization of 'OaamBaseElementA'.
+'oaam::systems::InformationMaterial' is a specialization of 'common::OaamBaseElementA'.
+'oaam::capabilities::DeviceInLocationCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::TaskAtomicRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::capabilities::MessageOnBusCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::TaskParameterDeclaration' is a specialization of 'OaamBaseElementA'.
+'oaam::common::AttributeString' is a specialization of 'AttributeA'.
+'oaam::functions::Subfunctions' is a specialization of 'FunctionsContainerA'.
+'oaam::functions::TaskParameter' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::TimeDelayRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::anatomy::DuctOpening' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Connection' is a specialization of 'library::ResourceProviderInstanceA'.
+'oaam::allocations::SubconnectionAssignment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::InformationSignal' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::TaskInputState' is a specialization of 'common::BoolA'.
+'oaam::functions::TaskSymmetry' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::TaskOutputTrigger' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::Restrictions' is a specialization of 'RestrictionsContainerA'.
+'oaam::restrictions::Subrestrictions' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::systems::RotaryPower' is a specialization of 'InformationPower'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::library::TaskType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::functions::TaskRedundancy' is a specialization of 'common::OaamBaseElementA'.
+'oaam::common::Byte' is a specialization of 'DataTypeA'.
+'oaam::anatomy::Duct' is a specialization of 'library::ResourceProviderInstanceA'.
+'oaam::anatomy::Duct' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::capabilities::SubconnectionInDeviceCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::Subanatomy' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::TaskAtomicRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::anatomy::Duct' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::ConnectionTypeRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::SignalAssignment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::scenario::OperationMode' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::ConnectionRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::systems::HydraulicPower' is a specialization of 'InformationPower'.
+'oaam::allocations::MessageSegment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::ConnectionTypeRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::library::ConnectionType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::ResourceBundle' is a specialization of 'library::ResourceConsumerA'.
+'oaam::functions::Input' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::scenario::Subscenario' is a specialization of 'ScenarioContainerA'.
+'oaam::capabilities::SubmessageInMessageCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::ResourceType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Device' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::DeviceAssignment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::TaskTypeDissimilarity' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::TaskSymmetryRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::anatomy::Subanatomy' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::SubdeviceAssignment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::common::Character' is a specialization of 'DataTypeA'.
+'oaam::library::IoDeclaration' is a specialization of 'OaamBaseElementA'.
+'oaam::capabilities::DeviceInLocationCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::functions::Signal' is a specialization of 'common::OaamBaseElementA'.
+'oaam::capabilities::Subcapabilities' is a specialization of 'capabilities::CapabilitiesContainerA'.
+'oaam::allocations::Suballocations' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::Position3D' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::SynchronicityRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::anatomy::AreaSymmetry' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::ConnectionAssignmentSegment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::allocations::SubdeviceAssignment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::ConnectionRestrinctionA'.
+'oaam::allocations::Schedule' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::DeviceTypeSymmetry' is a specialization of 'OaamBaseElementA'.
+'oaam::library::InputDeclaration' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::ConnectionRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::MessageType' is a specialization of 'library::ResourceConsumerA'.
+'oaam::systems::InformationFlow' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::SynchronicityRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::TaskSymmetry' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::anatomy::Location' is a specialization of 'library::ResourceProviderInstanceA'.
+'oaam::systems::Subsystem' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::hardware::Hardware' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::common::Integer' is a specialization of 'DataTypeA'.
+'oaam::library::ResourceGroup' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::DeviceRestrictionA'.
+'oaam::functions::OutputIntegrityState' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::allocations::SubdeviceAssignment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::Architecture' is a specialization of 'OaamBaseElementA'.
+'oaam::functions::SignalGroup' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::systems::SystemsContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::scenario::ScenarioParameterA' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::hardware::Io' is a specialization of 'common::OaamBaseElementA'.
+'oaam::anatomy::Subanatomy' is a specialization of 'anatomy::AnatomyContainerA'.
+'oaam::functions::ExternalOutputLink' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::allocations::TaskAssignment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::InformationMaterial' is a specialization of 'systems::ProvidedInformationA'.
+'oaam::capabilities::Capabilities' is a specialization of 'CapabilitiesContainerA'.
+'oaam::scenario::ScenarioParameterNumeric' is a specialization of 'scenario::ScenarioParameterA'.
+'oaam::capabilities::SubmessageInMessageCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::SignalAssignmentSegment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::anatomy::Location' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::scenario::Variant' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Io' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::MessageType' is a specialization of 'library::ResourceProviderA'.
+'oaam::hardware::Bus' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::allocations::TaskAssignment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::SubdeviceInDeviceCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::allocations::DeviceAssignment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::Sublibrary' is a specialization of 'LibraryContainerA'.
+'oaam::allocations::SignalAssignment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::common::AttributeNumeric' is a specialization of 'AttributeA'.
+'oaam::common::BoolOperation' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::DeviceSymmetry' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::systems::InputSegregation' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::DuctOpening' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::ExternalTaskLink' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::Task' is a specialization of 'common::OaamBaseElementA'.
+'oaam::anatomy::Location' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::TaskSymmetry' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::ConnectionRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::Area' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::ConnectionRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::functions::SignalGroup' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::LocationType' is a specialization of 'library::ResourceProviderA'.
+'oaam::anatomy::Location' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::Suballocations' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::TaskSymmetryRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::ExternalTaskLink' is a specialization of 'common::OaamBaseElementA'.
+'oaam::anatomy::Area' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'restrictions::DeviceRestrictionA'.
+'oaam::library::ResourceType' is a specialization of 'library::ResourceConsumerA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::functions::ExternalOutputLink' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::library::WireType' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::TaskInputState' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::capabilities::TaskOnDeviceCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::TaskAtomicRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::BusType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::SegregationRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::Library' is a specialization of 'LibraryContainerA'.
+'oaam::hardware::Subhardware' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::common::BoolNot' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::LinearPower' is a specialization of 'InformationPower'.
+'oaam::library::FaultPropagation' is a specialization of 'OaamBaseElementA'.
+'oaam::scenario::ScenarioContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::capabilities::SubconnectionInDeviceCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::allocations::ConnectionAssignment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::scenario::Scenario' is a specialization of 'ScenarioContainerA'.
+'oaam::functions::Output' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::TaskAssignment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::capabilities::SubconnectionInDeviceCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::TaskSymmetryRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::FailureCondition' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::LocationSymmetry' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::MessageOnConnectionOrDeviceCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::common::Struct' is a specialization of 'DataTypeA'.
+'oaam::capabilities::ResourceConsumption' is a specialization of 'OaamBaseElementA'.
+'oaam::systems::InformationPower' is a specialization of 'common::OaamBaseElementA'.
+'oaam::functions::SignalGroup' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::hardware::Hardware' is a specialization of 'hardware::HardwareContainerA'.
+'oaam::functions::ExternalOutputLink' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::MessageA' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::hardware::Subhardware' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::TaskSymmetryRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::common::FloatingPoint' is a specialization of 'DataTypeA'.
+'oaam::capabilities::MessageOnBusCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::SynchronicityRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::anatomy::Anatomy' is a specialization of 'AnatomyContainerA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::library::Resource' is a specialization of 'OaamBaseElementA'.
+'oaam::library::OutputDeclaration' is a specialization of 'OaamBaseElementA'.
+'oaam::library::DuctType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::capabilities::SignalInMessageCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::Signal' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::ConnectionInDuctOrLocationCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::hardware::Hardware' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::ConnectionRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::library::ResourceTypeModifierLevel' is a specialization of 'library::ResourceConsumerA'.
+'oaam::restrictions::TaskAtomicRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::restrictions::SegregationRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::functions::FunctionsContainerA' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::Area' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::ConnectionRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::functions::Signal' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::hardware::DeviceSymmetry' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::TaskOnDeviceCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::allocations::MessageSegment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::ConnectionType' is a specialization of 'library::ResourceProviderA'.
+'oaam::library::DeviceType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::capabilities::TaskOnDeviceCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::capabilities::ConnectionInDuctOrLocationCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::scenario::OperationModeReference' is a specialization of 'OaamBaseElementA'.
+'oaam::scenario::ScenarioParameterBool' is a specialization of 'common::OaamBaseElementA'.
+'oaam::capabilities::SubmessageInMessageCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::FailureCondition' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Device' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::Subsystem' is a specialization of 'systems::SystemsContainerA'.
+'oaam::functions::Input' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::IoType' is a specialization of 'OaamBaseElementA'.
+'oaam::capabilities::SignalInMessageCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::System' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::Subrestrictions' is a specialization of 'restrictions::RestrictionsContainerA'.
+'oaam::anatomy::LocationSymmetry' is a specialization of 'common::OaamBaseElementA'.
+'oaam::functions::Task' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::DeviceRestrictionA'.
+'oaam::allocations::MessageSegment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::AreaSymmetry' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::TaskSymmetryRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::capabilities::MessageOnBusCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Bus' is a specialization of 'library::ResourceProviderInstanceA'.
+'oaam::allocations::DeviceAssignment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::SubconnectionAssignment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::ResourceAlternatives' is a specialization of 'OaamBaseElementA'.
+'oaam::library::ResourceTypeDissimilarity' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::SegregationRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::ConnectionRestrinctionA'.
+'oaam::systems::InformationSignal' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::hardware::Connection' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::OutputIntegrityState' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::capabilities::MessageOnConnectionOrDeviceCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::Schedule' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::systems::InformationSignal' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::systems::ElectricPower' is a specialization of 'InformationPower'.
+'oaam::anatomy::DuctOpening' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::allocations::Message' is a specialization of 'MessageA'.
+'oaam::systems::InformationSignal' is a specialization of 'systems::RequiredInformationA'.
+'oaam::capabilities::ConnectionInDuctOrLocationCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::functions::ExternalTaskLink' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::anatomy::Position3D' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::systems::InformationSignal' is a specialization of 'systems::ProvidedInformationA'.
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::systems::InformationMaterial' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::MessageOnConnectionOrDeviceCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::PowerSource' is a specialization of 'OaamBaseElementA'.
+'oaam::functions::FunctionsContainerA' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::ConnectionAssignment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::hardware::Connection' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::Submessage' is a specialization of 'MessageA'.
+'oaam::scenario::OperationMode' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::systems::InformationMaterial' is a specialization of 'systems::RequiredInformationA'.
+'oaam::library::LocationType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::anatomy::Position3D' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::ConnectionAssignmentSegment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::allocations::ScheduledTime' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::common::AttributeReference' is a specialization of 'AttributeA'.
+'oaam::scenario::ScenarioParameterBool' is a specialization of 'scenario::ScenarioParameterA'.
+'oaam::capabilities::MessageOnBusCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::systems::InformationPower' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::ResourceLink' is a specialization of 'OaamBaseElementA'.
+'oaam::allocations::ConnectionAssignmentSegment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::common::DataTypeA' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::TimeDelayRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::common::Array' is a specialization of 'DataTypeA'.
+'oaam::capabilities::SubconnectionInDeviceCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::library::ResourceTypeModifier' is a specialization of 'OaamBaseElementA'.
+'oaam::capabilities::SubdeviceInDeviceCapability' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::MessageA' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::anatomy::LocationSymmetry' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::SubconnectionAssignment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::TaskType' is a specialization of 'library::ResourceConsumerA'.
+'oaam::restrictions::TaskSymmetryRestriction' is a specialization of 'restrictions::TaskGroupRestrictionA'.
+'oaam::library::MessageType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::ConnectionTypeRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::TaskOnDeviceCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::SignalAssignment' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::SignalType' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::FailureCondition' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::anatomy::AnatomyContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::TimeDelayRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::common::AttributeA' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::TaskAtomicRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::Subsystem' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::allocations::AllocationsContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::systems::System' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::hardware::Connection' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::common::AttributeContainment' is a specialization of 'AttributeA'.
+'oaam::allocations::ScheduledTime' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::PowerSourceRestriction' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::TaskRedundancy' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::functions::Functions' is a specialization of 'FunctionsContainerA'.
+'oaam::capabilities::CapabilitiesContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::TaskAtomicRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::hardware::Bus' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::SignalAssignmentSegment' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::functions::TaskRedundancy' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::TaskInputTrigger' is a specialization of 'common::BoolA'.
+'oaam::functions::FunctionsContainerA' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::DeviceTypeRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::capabilities::SignalInMessageCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::ResourceBundle' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Subhardware' is a specialization of 'hardware::HardwareContainerA'.
+'oaam::allocations::Suballocations' is a specialization of 'allocations::AllocationsContainerA'.
+'oaam::library::DeviceType' is a specialization of 'library::ResourceConsumerA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::restrictions::ConnectionTypeRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::systems::InformationFlow' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::AreaRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::allocations::Allocations' is a specialization of 'AllocationsContainerA'.
+'oaam::common::Boolean' is a specialization of 'DataTypeA'.
+'oaam::functions::TaskGroup' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::InformationFlow' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::ResourceTypeModifierLevel' is a specialization of 'common::OaamBaseElementA'.
+'oaam::allocations::Schedule' is a specialization of 'common::OaamBaseElementA'.
+'oaam::common::BoolOperation' is a specialization of 'common::BoolA'.
+'oaam::hardware::DeviceSymmetry' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::Subrestrictions' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::systems::Systems' is a specialization of 'SystemsContainerA'.
+'oaam::capabilities::SubdeviceInDeviceCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::allocations::ScheduledTime' is a specialization of 'common::OaamBaseElementA'.
+'oaam::anatomy::Duct' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::capabilities::SignalInMessageCapability' is a specialization of 'capabilities::CapabilityA'.
+'oaam::restrictions::ConnectionTypeRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::scenario::ScenarioParameterA' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::Output' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::scenario::ScenarioParameterNumeric' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::Bus' is a specialization of 'common::OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::SubfunctionRestrictionA'.
+'oaam::library::SignalType' is a specialization of 'library::ResourceConsumerA'.
+'oaam::library::TaskStateDeclaration' is a specialization of 'OaamBaseElementA'.
+'oaam::allocations::MessageA' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::DeviceType' is a specialization of 'library::ResourceProviderA'.
+'oaam::allocations::SignalAssignmentSegment' is a specialization of 'common::OaamBaseElementA'.
+'oaam::functions::TaskGroup' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::DeviceInLocationCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::DuctOpeningDeclaration' is a specialization of 'OaamBaseElementA'.
+'oaam::hardware::Device' is a specialization of 'common::OaamBaseElementA'.
+'oaam::systems::InformationMaterial' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::Task' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::hardware::Io' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::systems::InformationPower' is a specialization of 'systems::RequiredInformationA'.
+'oaam::functions::Input' is a specialization of 'common::OaamBaseElementA'.
+'oaam::library::ConnectionType' is a specialization of 'library::ResourceConsumerA'.
+'oaam::restrictions::SynchronicityRestriction' is a specialization of 'restrictions::TaskRestrictionA'.
+'oaam::library::IoGroup' is a specialization of 'OaamBaseElementA'.
+'oaam::restrictions::LocationRestriction' is a specialization of 'restrictions::SignalGroupRestrictionA'.
+'oaam::common::BoolNot' is a specialization of 'common::BoolA'.
+'oaam::library::AttributeDefinition' is a specialization of 'OaamBaseElementA'.
+'oaam::systems::InformationPower' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::ConnectionInDuctOrLocationCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::TaskInputTrigger' is a specialization of 'common::OaamBaseElementA'.
+'oaam::capabilities::Subcapabilities' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::library::ResourceTypeModifierReference' is a specialization of 'OaamBaseElementA'.
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::library::DuctType' is a specialization of 'library::ResourceProviderA'.
+'oaam::scenario::Variant' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::DeviceRestriction' is a specialization of 'restrictions::SignalRestrictionA'.
+'oaam::capabilities::DeviceInLocationCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::capabilities::Subcapabilities' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::functions::OutputIntegrityState' is a specialization of 'common::BoolA'.
+'oaam::capabilities::SubdeviceInDeviceCapability' is a specialization of 'scenario::ModeDependentElementA'.
+'oaam::restrictions::ConnectionTypeRestriction' is a specialization of 'common::OaamBaseElementA'.
+'oaam::hardware::HardwareContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::library::LibraryContainerA' is a specialization of 'OaamBaseElementA'.
+'oaam::functions::OutputIntegrityState' is a specialization of 'scenario::VariantDependentElementA'.
+'oaam::anatomy::AreaSymmetry' is a specialization of 'scenario::ModeDependentElementA'.
+'DeviceType' (role 'DeviceType', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA66', cardinality 0..*).
+'BusType' (role 'BusType381', cardinality 0..*) is associated with 'oaam::hardware::Bus' (role 'oaam_hardware_Bus', cardinality 0..*).
+'Device' (role 'Device657', cardinality 0..*) is associated with 'oaam::allocations::DeviceAssignment' (role 'oaam_allocations_DeviceAssignment', cardinality 0..*).
+'oaam::allocations::MessageSegment' (role 'oaam_allocations_MessageSegment703', cardinality 0..*) is associated with 'Device' (role 'Device704', cardinality 0..*).
+'oaam::library::DeviceType' (role 'oaam_library_DeviceType', cardinality 0..*) is associated with 'IoDeclaration' (role 'IoDeclaration', cardinality 0..*).
+'oaam::library::ResourceLink' (role 'oaam_library_ResourceLink165', cardinality 0..*) is associated with 'Resource' (role 'Resource166', cardinality 0..*).
+'Output' (role 'Output283', cardinality 0..*) is associated with 'oaam::functions::ExternalTaskLink' (role 'oaam_functions_ExternalTaskLink282', cardinality 0..*).
+'oaam::library::ResourceProviderA' (role 'oaam_library_ResourceProviderA40', cardinality 0..*) is associated with 'ResourceType' (role 'ResourceType', cardinality 0..*).
+'oaam::allocations::TaskAssignment' (role 'oaam_allocations_TaskAssignment630', cardinality 0..*) is associated with 'Task' (role 'Task631', cardinality 0..*).
+'oaam::capabilities::MessageOnConnectionOrDeviceCapability' (role 'oaam_capabilities_MessageOnConnectionOrDeviceCapability', cardinality 0..*) is associated with 'MessageType' (role 'MessageType497', cardinality 0..*).
+'TaskType' (role 'TaskType', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA60', cardinality 0..*).
+'oaam::anatomy::AnatomyContainerA' (role 'oaam_anatomy_AnatomyContainerA399', cardinality 0..*) is associated with 'AreaSymmetry' (role 'AreaSymmetry', cardinality 0..*).
+'AttributeA' (role 'AttributeA725', cardinality 0..*) is associated with 'oaam::allocations::SignalToMessageAssignment' (role 'oaam_allocations_SignalToMessageAssignment724', cardinality 0..*).
+'TaskTypeDissimilarity' (role 'TaskTypeDissimilarity', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA62', cardinality 0..*).
+'oaam::allocations::ConnectionAssignmentSegment' (role 'oaam_allocations_ConnectionAssignmentSegment667', cardinality 0..*) is associated with 'Location' (role 'Location668', cardinality 0..*).
+'SubmessageInMessageCapability' (role 'SubmessageInMessageCapability720', cardinality 0..*) is associated with 'oaam::allocations::Submessage' (role 'oaam_allocations_Submessage', cardinality 0..*).
+'oaam::restrictions::TimeDelayRestriction' (role 'oaam_restrictions_TimeDelayRestriction610', cardinality 0..*) is associated with 'Task' (role 'Task611', cardinality 0..*).
+'ResourceGroup' (role 'ResourceGroup43', cardinality 0..*) is associated with 'oaam::library::ResourceProviderA' (role 'oaam_library_ResourceProviderA42', cardinality 0..*).
+'oaam::hardware::HardwareContainerA' (role 'oaam_hardware_HardwareContainerA', cardinality 0..*) is associated with 'Device' (role 'Device339', cardinality 0..*).
+'oaam::allocations::Message' (role 'oaam_allocations_Message717', cardinality 0..*) is associated with 'Device' (role 'Device718', cardinality 0..*).
+'oaam::capabilities::SignalInMessageCapability' (role 'oaam_capabilities_SignalInMessageCapability512', cardinality 0..*) is associated with 'SignalType' (role 'SignalType513', cardinality 0..*).
+'DeviceType' (role 'DeviceType128', cardinality 0..*) is associated with 'oaam::library::ConnectionType' (role 'oaam_library_ConnectionType127', cardinality 0..*).
+'oaam::capabilities::SubconnectionInDeviceCapability' (role 'oaam_capabilities_SubconnectionInDeviceCapability484', cardinality 0..*) is associated with 'DeviceType' (role 'DeviceType485', cardinality 0..*).
+'ResourceType' (role 'ResourceType122', cardinality 0..*) is associated with 'oaam::library::ConnectionType' (role 'oaam_library_ConnectionType121', cardinality 0..*).
+'TaskType' (role 'TaskType277', cardinality 0..*) is associated with 'oaam::functions::ExternalTaskLink' (role 'oaam_functions_ExternalTaskLink', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA76', cardinality 0..*) is associated with 'LocationType' (role 'LocationType', cardinality 0..*).
+'BoolNot' (role 'BoolNot', cardinality 0..*) is associated with 'oaam::library::FaultPropagation' (role 'oaam_library_FaultPropagation157', cardinality 0..*).
+'oaam::functions::FailureCondition' (role 'oaam_functions_FailureCondition', cardinality 0..*) is associated with 'BoolA' (role 'BoolA294', cardinality 0..*).
+'LocationType' (role 'LocationType401', cardinality 0..*) is associated with 'oaam::anatomy::Location' (role 'oaam_anatomy_Location', cardinality 0..*).
+'Task' (role 'Task608', cardinality 0..*) is associated with 'oaam::restrictions::TimeDelayRestriction' (role 'oaam_restrictions_TimeDelayRestriction', cardinality 0..*).
+'DeviceType' (role 'DeviceType454', cardinality 0..*) is associated with 'oaam::capabilities::TaskOnDeviceCapability' (role 'oaam_capabilities_TaskOnDeviceCapability453', cardinality 0..*).
+'oaam::functions::Input' (role 'oaam_functions_Input', cardinality 0..*) is associated with 'InputDeclaration' (role 'InputDeclaration318', cardinality 0..*).
+'DuctType' (role 'DuctType467', cardinality 0..*) is associated with 'oaam::capabilities::ConnectionInDuctOrLocationCapability' (role 'oaam_capabilities_ConnectionInDuctOrLocationCapability466', cardinality 0..*).
+'Schedule' (role 'Schedule690', cardinality 0..*) is associated with 'oaam::allocations::MessageA' (role 'oaam_allocations_MessageA', cardinality 0..*).
+'oaam::Architecture' (role 'oaam_Architecture0', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture', cardinality 0..*).
+'Subfunctions' (role 'Subfunctions', cardinality 0..*) is associated with 'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA262', cardinality 0..*).
+'oaam::allocations::SignalToMessageAssignment' (role 'oaam_allocations_SignalToMessageAssignment', cardinality 0..*) is associated with 'Signal' (role 'Signal722', cardinality 0..*).
+'DeviceTypeSymmetry' (role 'DeviceTypeSymmetry', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA68', cardinality 0..*).
+'oaam::hardware::Device' (role 'oaam_hardware_Device360', cardinality 0..*) is associated with 'PowerSource' (role 'PowerSource361', cardinality 0..*).
+'oaam::allocations::ConnectionAssignment' (role 'oaam_allocations_ConnectionAssignment', cardinality 0..*) is associated with 'ConnectionAssignmentSegment' (role 'ConnectionAssignmentSegment', cardinality 0..*).
+'ResourceBundle' (role 'ResourceBundle54', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA53', cardinality 0..*).
+'oaam::hardware::Device' (role 'oaam_hardware_Device352', cardinality 0..*) is associated with 'Io' (role 'Io353', cardinality 0..*).
+'Schedule' (role 'Schedule', cardinality 0..*) is associated with 'oaam::allocations::TaskAssignment' (role 'oaam_allocations_TaskAssignment636', cardinality 0..*).
+'oaam::library::TaskInputState' (role 'oaam_library_TaskInputState', cardinality 0..*) is associated with 'InputDeclaration' (role 'InputDeclaration161', cardinality 0..*).
+'DeviceType' (role 'DeviceType480', cardinality 0..*) is associated with 'oaam::capabilities::SubdeviceInDeviceCapability' (role 'oaam_capabilities_SubdeviceInDeviceCapability479', cardinality 0..*).
+'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA258', cardinality 0..*) is associated with 'SignalGroup' (role 'SignalGroup', cardinality 0..*).
+'DeviceSymmetry' (role 'DeviceSymmetry', cardinality 0..*) is associated with 'oaam::hardware::HardwareContainerA' (role 'oaam_hardware_HardwareContainerA341', cardinality 0..*).
+'oaam::allocations::SubconnectionAssignment' (role 'oaam_allocations_SubconnectionAssignment', cardinality 0..*) is associated with 'SubconnectionInDeviceCapability' (role 'SubconnectionInDeviceCapability681', cardinality 0..*).
+'Subhardware' (role 'Subhardware', cardinality 0..*) is associated with 'oaam::hardware::HardwareContainerA' (role 'oaam_hardware_HardwareContainerA346', cardinality 0..*).
+'ResourceType' (role 'ResourceType51', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA50', cardinality 0..*).
+'InputDeclaration' (role 'InputDeclaration', cardinality 0..*) is associated with 'oaam::library::TaskType' (role 'oaam_library_TaskType108', cardinality 0..*).
+'oaam::allocations::SignalAssignment' (role 'oaam_allocations_SignalAssignment', cardinality 0..*) is associated with 'SignalAssignmentSegment' (role 'SignalAssignmentSegment', cardinality 0..*).
+'Capabilities' (role 'Capabilities', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture15', cardinality 0..*).
+'BoolA' (role 'BoolA186', cardinality 0..*) is associated with 'oaam::library::TaskOutputTrigger' (role 'oaam_library_TaskOutputTrigger', cardinality 0..*).
+'Device' (role 'Device379', cardinality 0..*) is associated with 'oaam::hardware::DeviceSymmetry' (role 'oaam_hardware_DeviceSymmetry', cardinality 0..*).
+'Connection' (role 'Connection', cardinality 0..*) is associated with 'oaam::functions::Signal' (role 'oaam_functions_Signal314', cardinality 0..*).
+'oaam::library::Resource' (role 'oaam_library_Resource100', cardinality 0..*) is associated with 'ResourceTypeModifierLevel' (role 'ResourceTypeModifierLevel101', cardinality 0..*).
+'oaam::library::TaskType' (role 'oaam_library_TaskType', cardinality 0..*) is associated with 'OutputDeclaration' (role 'OutputDeclaration', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA74', cardinality 0..*) is associated with 'WireType' (role 'WireType', cardinality 0..*).
+'Schedule' (role 'Schedule655', cardinality 0..*) is associated with 'oaam::allocations::SignalAssignmentSegment' (role 'oaam_allocations_SignalAssignmentSegment654', cardinality 0..*).
+'TaskType' (role 'TaskType264', cardinality 0..*) is associated with 'oaam::functions::Task' (role 'oaam_functions_Task', cardinality 0..*).
+'Hardware' (role 'Hardware', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture11', cardinality 0..*).
+'oaam::common::BoolNot' (role 'oaam_common_BoolNot', cardinality 0..*) is associated with 'BoolA' (role 'BoolA29', cardinality 0..*).
+'BoolOperation' (role 'BoolOperation', cardinality 0..*) is associated with 'oaam::library::FaultPropagation' (role 'oaam_library_FaultPropagation155', cardinality 0..*).
+'SignalOnConnectionOrDeviceCapability' (role 'SignalOnConnectionOrDeviceCapability646', cardinality 0..*) is associated with 'oaam::allocations::SignalAssignmentSegment' (role 'oaam_allocations_SignalAssignmentSegment', cardinality 0..*).
+'Input' (role 'Input280', cardinality 0..*) is associated with 'oaam::functions::ExternalTaskLink' (role 'oaam_functions_ExternalTaskLink279', cardinality 0..*).
+'DeviceType' (role 'DeviceType477', cardinality 0..*) is associated with 'oaam::capabilities::SubdeviceInDeviceCapability' (role 'oaam_capabilities_SubdeviceInDeviceCapability', cardinality 0..*).
+'FailureCondition' (role 'FailureCondition', cardinality 0..*) is associated with 'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA260', cardinality 0..*).
+'Anatomy' (role 'Anatomy', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture13', cardinality 0..*).
+'oaam::functions::Signal' (role 'oaam_functions_Signal311', cardinality 0..*) is associated with 'SignalType' (role 'SignalType312', cardinality 0..*).
+'oaam::allocations::DeviceAssignment' (role 'oaam_allocations_DeviceAssignment662', cardinality 0..*) is associated with 'DeviceInLocationCapability' (role 'DeviceInLocationCapability663', cardinality 0..*).
+'Systems' (role 'Systems', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture7', cardinality 0..*).
+'oaam::functions::Output' (role 'oaam_functions_Output', cardinality 0..*) is associated with 'ProvidedInformationA' (role 'ProvidedInformationA327', cardinality 0..*).
+'AreaRestriction' (role 'AreaRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA520', cardinality 0..*).
+'PowerSourceRestriction' (role 'PowerSourceRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA522', cardinality 0..*).
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' (role 'oaam_capabilities_SignalOnConnectionOrDeviceCapability', cardinality 0..*) is associated with 'SignalType' (role 'SignalType469', cardinality 0..*).
+'TaskSymmetryRestriction' (role 'TaskSymmetryRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA526', cardinality 0..*).
+'oaam::library::ResourceConsumerA' (role 'oaam_library_ResourceConsumerA37', cardinality 0..*) is associated with 'ResourceGroup' (role 'ResourceGroup', cardinality 0..*).
+'oaam::library::DeviceType' (role 'oaam_library_DeviceType117', cardinality 0..*) is associated with 'IoGroup' (role 'IoGroup', cardinality 0..*).
+'oaam::Architecture' (role 'oaam_Architecture9', cardinality 0..*) is associated with 'Functions' (role 'Functions', cardinality 0..*).
+'BoolNot' (role 'BoolNot192', cardinality 0..*) is associated with 'oaam::library::TaskOutputTrigger' (role 'oaam_library_TaskOutputTrigger191', cardinality 0..*).
+'oaam::functions::Output' (role 'oaam_functions_Output329', cardinality 0..*) is associated with 'OutputDeclaration' (role 'OutputDeclaration330', cardinality 0..*).
+'SignalAssignment' (role 'SignalAssignment', cardinality 0..*) is associated with 'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA620', cardinality 0..*).
+'BoolOperation' (role 'BoolOperation189', cardinality 0..*) is associated with 'oaam::library::TaskOutputTrigger' (role 'oaam_library_TaskOutputTrigger188', cardinality 0..*).
+'FaultPropagation' (role 'FaultPropagation', cardinality 0..*) is associated with 'oaam::library::OutputDeclaration' (role 'oaam_library_OutputDeclaration140', cardinality 0..*).
+'ConnectionType' (role 'ConnectionType366', cardinality 0..*) is associated with 'oaam::hardware::Connection' (role 'oaam_hardware_Connection', cardinality 0..*).
+'oaam::functions::Signal' (role 'oaam_functions_Signal', cardinality 0..*) is associated with 'Output' (role 'Output306', cardinality 0..*).
+'Device' (role 'Device715', cardinality 0..*) is associated with 'oaam::allocations::Message' (role 'oaam_allocations_Message714', cardinality 0..*).
+'DuctType' (role 'DuctType', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA78', cardinality 0..*).
+'IoType' (role 'IoType145', cardinality 0..*) is associated with 'oaam::library::IoDeclaration' (role 'oaam_library_IoDeclaration144', cardinality 0..*).
+'oaam::allocations::SignalToMessageAssignment' (role 'oaam_allocations_SignalToMessageAssignment727', cardinality 0..*) is associated with 'Variant' (role 'Variant728', cardinality 0..*).
+'Struct' (role 'Struct', cardinality 0..*) is associated with 'oaam::common::Struct' (role 'oaam_common_Struct34', cardinality 0..*).
+'DeviceType' (role 'DeviceType149', cardinality 0..*) is associated with 'oaam::library::DeviceTypeSymmetry' (role 'oaam_library_DeviceTypeSymmetry', cardinality 0..*).
+'ResourceLink' (role 'ResourceLink', cardinality 0..*) is associated with 'oaam::library::ResourceProviderA' (role 'oaam_library_ResourceProviderA45', cardinality 0..*).
+'oaam::library::IoGroup' (role 'oaam_library_IoGroup', cardinality 0..*) is associated with 'IoDeclaration' (role 'IoDeclaration151', cardinality 0..*).
+'DeviceType' (role 'DeviceType500', cardinality 0..*) is associated with 'oaam::capabilities::MessageOnConnectionOrDeviceCapability' (role 'oaam_capabilities_MessageOnConnectionOrDeviceCapability499', cardinality 0..*).
+'Io' (role 'Io372', cardinality 0..*) is associated with 'oaam::hardware::Connection' (role 'oaam_hardware_Connection371', cardinality 0..*).
+'Library' (role 'Library', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture3', cardinality 0..*).
+'oaam::hardware::Device' (role 'oaam_hardware_Device', cardinality 0..*) is associated with 'DeviceType' (role 'DeviceType350', cardinality 0..*).
+'MessageType' (role 'MessageType508', cardinality 0..*) is associated with 'oaam::capabilities::SubmessageInMessageCapability' (role 'oaam_capabilities_SubmessageInMessageCapability507', cardinality 0..*).
+'DataTypeA' (role 'DataTypeA114', cardinality 0..*) is associated with 'oaam::library::SignalType' (role 'oaam_library_SignalType', cardinality 0..*).
+'oaam::allocations::SignalAssignment' (role 'oaam_allocations_SignalAssignment639', cardinality 0..*) is associated with 'Signal' (role 'Signal640', cardinality 0..*).
+'Task' (role 'Task292', cardinality 0..*) is associated with 'oaam::functions::TaskRedundancy' (role 'oaam_functions_TaskRedundancy', cardinality 0..*).
+'oaam::allocations::TaskAssignment' (role 'oaam_allocations_TaskAssignment633', cardinality 0..*) is associated with 'Device' (role 'Device634', cardinality 0..*).
+'Task' (role 'Task290', cardinality 0..*) is associated with 'oaam::functions::TaskSymmetry' (role 'oaam_functions_TaskSymmetry', cardinality 0..*).
+'TaskParameterDeclaration' (role 'TaskParameterDeclaration337', cardinality 0..*) is associated with 'oaam::functions::TaskParameter' (role 'oaam_functions_TaskParameter', cardinality 0..*).
+'SignalToMessageAssignment' (role 'SignalToMessageAssignment', cardinality 0..*) is associated with 'oaam::allocations::MessageA' (role 'oaam_allocations_MessageA694', cardinality 0..*).
+'oaam::common::Array' (role 'oaam_common_Array', cardinality 0..*) is associated with 'DataTypeA' (role 'DataTypeA', cardinality 0..*).
+'oaam::allocations::SignalAssignmentSegment' (role 'oaam_allocations_SignalAssignmentSegment651', cardinality 0..*) is associated with 'Connection' (role 'Connection652', cardinality 0..*).
+'ExternalOutputLink' (role 'ExternalOutputLink', cardinality 0..*) is associated with 'oaam::functions::Input' (role 'oaam_functions_Input325', cardinality 0..*).
+'oaam::library::ConnectionType' (role 'oaam_library_ConnectionType124', cardinality 0..*) is associated with 'ResourceType' (role 'ResourceType125', cardinality 0..*).
+'Device' (role 'Device', cardinality 0..*) is associated with 'oaam::functions::Task' (role 'oaam_functions_Task273', cardinality 0..*).
+'oaam::library::OutputDeclaration' (role 'oaam_library_OutputDeclaration', cardinality 0..*) is associated with 'TaskOutputTrigger' (role 'TaskOutputTrigger', cardinality 0..*).
+'oaam::functions::SignalGroup' (role 'oaam_functions_SignalGroup', cardinality 0..*) is associated with 'Signal' (role 'Signal316', cardinality 0..*).
+'DeviceRestriction' (role 'DeviceRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA516', cardinality 0..*).
+'oaam::common::AttributeContainment' (role 'oaam_common_AttributeContainment', cardinality 0..*) is associated with 'OaamBaseElementA' (role 'OaamBaseElementA', cardinality 0..*).
+'Io' (role 'Io333', cardinality 0..*) is associated with 'oaam::functions::Output' (role 'oaam_functions_Output332', cardinality 0..*).
+'TaskAtomicRestriction' (role 'TaskAtomicRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA524', cardinality 0..*).
+'oaam::library::ResourceType' (role 'oaam_library_ResourceType94', cardinality 0..*) is associated with 'ResourceTypeModifierReference' (role 'ResourceTypeModifierReference', cardinality 0..*).
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' (role 'oaam_capabilities_SignalOnConnectionOrDeviceCapability474', cardinality 0..*) is associated with 'ConnectionType' (role 'ConnectionType475', cardinality 0..*).
+'oaam::allocations::SubdeviceAssignment' (role 'oaam_allocations_SubdeviceAssignment', cardinality 0..*) is associated with 'SubdeviceInDeviceCapability' (role 'SubdeviceInDeviceCapability673', cardinality 0..*).
+'MessageOnBusCapability' (role 'MessageOnBusCapability709', cardinality 0..*) is associated with 'oaam::allocations::Message' (role 'oaam_allocations_Message', cardinality 0..*).
+'DataTypeA' (role 'DataTypeA734', cardinality 0..*) is associated with 'oaam::allocations::SignalToMessageAssignment' (role 'oaam_allocations_SignalToMessageAssignment733', cardinality 0..*).
+'oaam::allocations::MessageSegment' (role 'oaam_allocations_MessageSegment706', cardinality 0..*) is associated with 'Connection' (role 'Connection707', cardinality 0..*).
+'Message' (role 'Message', cardinality 0..*) is associated with 'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA626', cardinality 0..*).
+'ResourceTypeModifierLevel' (role 'ResourceTypeModifierLevel', cardinality 0..*) is associated with 'oaam::library::ResourceProviderInstanceA' (role 'oaam_library_ResourceProviderInstanceA', cardinality 0..*).
+'SignalGroup' (role 'SignalGroup591', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction590', cardinality 0..*).
+'oaam::functions::FailureCondition' (role 'oaam_functions_FailureCondition296', cardinality 0..*) is associated with 'BoolOperation' (role 'BoolOperation297', cardinality 0..*).
+'oaam::allocations::SignalAssignmentSegment' (role 'oaam_allocations_SignalAssignmentSegment648', cardinality 0..*) is associated with 'Device' (role 'Device649', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA58', cardinality 0..*) is associated with 'ResourceTypeDissimilarity' (role 'ResourceTypeDissimilarity', cardinality 0..*).
+'oaam::functions::Task' (role 'oaam_functions_Task275', cardinality 0..*) is associated with 'TaskParameter' (role 'TaskParameter', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA86', cardinality 0..*) is associated with 'IoType' (role 'IoType', cardinality 0..*).
+'MessageType' (role 'MessageType699', cardinality 0..*) is associated with 'oaam::allocations::MessageA' (role 'oaam_allocations_MessageA698', cardinality 0..*).
+'ScheduledTime' (role 'ScheduledTime', cardinality 0..*) is associated with 'oaam::allocations::Schedule' (role 'oaam_allocations_Schedule', cardinality 0..*).
+'Resource' (role 'Resource487', cardinality 0..*) is associated with 'oaam::capabilities::ResourceConsumption' (role 'oaam_capabilities_ResourceConsumption', cardinality 0..*).
+'TaskInputState' (role 'TaskInputState', cardinality 0..*) is associated with 'oaam::library::FaultPropagation' (role 'oaam_library_FaultPropagation159', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA80', cardinality 0..*) is associated with 'AttributeDefinition' (role 'AttributeDefinition', cardinality 0..*).
+'oaam::functions::ExternalOutputLink' (role 'oaam_functions_ExternalOutputLink', cardinality 0..*) is associated with 'Output' (role 'Output335', cardinality 0..*).
+'ResourceType' (role 'ResourceType490', cardinality 0..*) is associated with 'oaam::capabilities::ResourceConsumption' (role 'oaam_capabilities_ResourceConsumption489', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA', cardinality 0..*) is associated with 'DataTypeA' (role 'DataTypeA48', cardinality 0..*).
+'Resource' (role 'Resource92', cardinality 0..*) is associated with 'oaam::library::ResourceType' (role 'oaam_library_ResourceType', cardinality 0..*).
+'Resource' (role 'Resource', cardinality 0..*) is associated with 'oaam::library::ResourceConsumerA' (role 'oaam_library_ResourceConsumerA', cardinality 0..*).
+'DeviceTypeDissimilarity' (role 'DeviceTypeDissimilarity', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA70', cardinality 0..*).
+'Connection' (role 'Connection644', cardinality 0..*) is associated with 'oaam::allocations::ConnectionAssignment' (role 'oaam_allocations_ConnectionAssignment643', cardinality 0..*).
+'ExternalTaskLink' (role 'ExternalTaskLink', cardinality 0..*) is associated with 'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA248', cardinality 0..*).
+'oaam::allocations::Message' (role 'oaam_allocations_Message711', cardinality 0..*) is associated with 'Bus' (role 'Bus712', cardinality 0..*).
+'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA618', cardinality 0..*) is associated with 'TaskAssignment' (role 'TaskAssignment', cardinality 0..*).
+'DeviceTypeRestriction' (role 'DeviceTypeRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA', cardinality 0..*).
+'oaam::capabilities::SubmessageInMessageCapability' (role 'oaam_capabilities_SubmessageInMessageCapability', cardinality 0..*) is associated with 'MessageType' (role 'MessageType505', cardinality 0..*).
+'Io' (role 'Io375', cardinality 0..*) is associated with 'oaam::hardware::Connection' (role 'oaam_hardware_Connection374', cardinality 0..*).
+'Submessage' (role 'Submessage', cardinality 0..*) is associated with 'oaam::allocations::MessageA' (role 'oaam_allocations_MessageA692', cardinality 0..*).
+'oaam::hardware::Connection' (role 'oaam_hardware_Connection368', cardinality 0..*) is associated with 'Io' (role 'Io369', cardinality 0..*).
+'DuctOpeningDeclaration' (role 'DuctOpeningDeclaration', cardinality 0..*) is associated with 'oaam::library::LocationType' (role 'oaam_library_LocationType', cardinality 0..*).
+'oaam::capabilities::ConnectionInDuctOrLocationCapability' (role 'oaam_capabilities_ConnectionInDuctOrLocationCapability463', cardinality 0..*) is associated with 'LocationType' (role 'LocationType464', cardinality 0..*).
+'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA', cardinality 0..*) is associated with 'DeviceAssignment' (role 'DeviceAssignment', cardinality 0..*).
+'SynchronicityRestriction' (role 'SynchronicityRestriction', cardinality 0..*) is associated with 'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA528', cardinality 0..*).
+'Duct' (role 'Duct671', cardinality 0..*) is associated with 'oaam::allocations::ConnectionAssignmentSegment' (role 'oaam_allocations_ConnectionAssignmentSegment670', cardinality 0..*).
+'Device' (role 'Device687', cardinality 0..*) is associated with 'oaam::allocations::SubconnectionAssignment' (role 'oaam_allocations_SubconnectionAssignment686', cardinality 0..*).
+'oaam::functions::Task' (role 'oaam_functions_Task270', cardinality 0..*) is associated with 'System' (role 'System271', cardinality 0..*).
+'Connection' (role 'Connection344', cardinality 0..*) is associated with 'oaam::hardware::HardwareContainerA' (role 'oaam_hardware_HardwareContainerA343', cardinality 0..*).
+'Connection' (role 'Connection684', cardinality 0..*) is associated with 'oaam::allocations::SubconnectionAssignment' (role 'oaam_allocations_SubconnectionAssignment683', cardinality 0..*).
+'oaam::hardware::Device' (role 'oaam_hardware_Device363', cardinality 0..*) is associated with 'Connection' (role 'Connection364', cardinality 0..*).
+'oaam::library::ResourceTypeModifierReference' (role 'oaam_library_ResourceTypeModifierReference177', cardinality 0..*) is associated with 'ResourceTypeModifierLevel' (role 'ResourceTypeModifierLevel178', cardinality 0..*).
+'BusType' (role 'BusType492', cardinality 0..*) is associated with 'oaam::capabilities::MessageOnBusCapability' (role 'oaam_capabilities_MessageOnBusCapability', cardinality 0..*).
+'oaam::allocations::ConnectionAssignmentSegment' (role 'oaam_allocations_ConnectionAssignmentSegment', cardinality 0..*) is associated with 'ConnectionInDuctOrLocationCapability' (role 'ConnectionInDuctOrLocationCapability665', cardinality 0..*).
+'DataTypeA' (role 'DataTypeA134', cardinality 0..*) is associated with 'oaam::library::InputDeclaration' (role 'oaam_library_InputDeclaration', cardinality 0..*).
+'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA614', cardinality 0..*) is associated with 'SubdeviceAssignment' (role 'SubdeviceAssignment', cardinality 0..*).
+'oaam::library::ConnectionType' (role 'oaam_library_ConnectionType130', cardinality 0..*) is associated with 'MessageType' (role 'MessageType131', cardinality 0..*).
+'oaam::functions::Task' (role 'oaam_functions_Task268', cardinality 0..*) is associated with 'Output' (role 'Output', cardinality 0..*).
+'Input' (role 'Input309', cardinality 0..*) is associated with 'oaam::functions::Signal' (role 'oaam_functions_Signal308', cardinality 0..*).
+'Device' (role 'Device356', cardinality 0..*) is associated with 'oaam::hardware::Device' (role 'oaam_hardware_Device355', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA88', cardinality 0..*) is associated with 'BusType' (role 'BusType', cardinality 0..*).
+'ResourceAlternatives' (role 'ResourceAlternatives', cardinality 0..*) is associated with 'oaam::library::ResourceType' (role 'oaam_library_ResourceType96', cardinality 0..*).
+'Task' (role 'Task', cardinality 0..*) is associated with 'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA', cardinality 0..*).
+'MessageSegment' (role 'MessageSegment', cardinality 0..*) is associated with 'oaam::allocations::MessageA' (role 'oaam_allocations_MessageA696', cardinality 0..*).
+'Allocations' (role 'Allocations', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture19', cardinality 0..*).
+'ResourceType' (role 'ResourceType98', cardinality 0..*) is associated with 'oaam::library::Resource' (role 'oaam_library_Resource', cardinality 0..*).
+'RequiredInformationA' (role 'RequiredInformationA321', cardinality 0..*) is associated with 'oaam::functions::Input' (role 'oaam_functions_Input320', cardinality 0..*).
+'Scenario' (role 'Scenario', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture5', cardinality 0..*).
+'oaam::functions::TaskGroup' (role 'oaam_functions_TaskGroup', cardinality 0..*) is associated with 'Task' (role 'Task288', cardinality 0..*).
+'oaam::library::ResourceAlternatives' (role 'oaam_library_ResourceAlternatives', cardinality 0..*) is associated with 'Resource' (role 'Resource103', cardinality 0..*).
+'oaam::hardware::Io' (role 'oaam_hardware_Io', cardinality 0..*) is associated with 'IoDeclaration' (role 'IoDeclaration377', cardinality 0..*).
+'ResourceTypeModifierLevel' (role 'ResourceTypeModifierLevel173', cardinality 0..*) is associated with 'oaam::library::ResourceTypeModifierLevel' (role 'oaam_library_ResourceTypeModifierLevel172', cardinality 0..*).
+'TaskStateDeclaration' (role 'TaskStateDeclaration', cardinality 0..*) is associated with 'oaam::library::TaskType' (role 'oaam_library_TaskType110', cardinality 0..*).
+'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA518', cardinality 0..*) is associated with 'LocationRestriction' (role 'LocationRestriction', cardinality 0..*).
+'ResourceTypeModifierLevel' (role 'ResourceTypeModifierLevel168', cardinality 0..*) is associated with 'oaam::library::ResourceTypeModifier' (role 'oaam_library_ResourceTypeModifier', cardinality 0..*).
+'oaam::functions::ExternalTaskLink' (role 'oaam_functions_ExternalTaskLink285', cardinality 0..*) is associated with 'Task' (role 'Task286', cardinality 0..*).
+'ConnectionAssignment' (role 'ConnectionAssignment', cardinality 0..*) is associated with 'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA616', cardinality 0..*).
+'oaam::allocations::SignalToMessageAssignment' (role 'oaam_allocations_SignalToMessageAssignment730', cardinality 0..*) is associated with 'OperationModeReference' (role 'OperationModeReference731', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA72', cardinality 0..*) is associated with 'ConnectionType' (role 'ConnectionType', cardinality 0..*).
+'OaamBaseElementA' (role 'OaamBaseElementA23', cardinality 0..*) is associated with 'oaam::common::AttributeReference' (role 'oaam_common_AttributeReference', cardinality 0..*).
+'ConnectionType' (role 'ConnectionType503', cardinality 0..*) is associated with 'oaam::capabilities::MessageOnConnectionOrDeviceCapability' (role 'oaam_capabilities_MessageOnConnectionOrDeviceCapability502', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA82', cardinality 0..*) is associated with 'PowerSource' (role 'PowerSource', cardinality 0..*).
+'Location' (role 'Location660', cardinality 0..*) is associated with 'oaam::allocations::DeviceAssignment' (role 'oaam_allocations_DeviceAssignment659', cardinality 0..*).
+'oaam::library::FaultPropagation' (role 'oaam_library_FaultPropagation', cardinality 0..*) is associated with 'BoolA' (role 'BoolA153', cardinality 0..*).
+'OutputIntegrityState' (role 'OutputIntegrityState', cardinality 0..*) is associated with 'oaam::functions::FailureCondition' (role 'oaam_functions_FailureCondition302', cardinality 0..*).
+'Bus' (role 'Bus', cardinality 0..*) is associated with 'oaam::hardware::HardwareContainerA' (role 'oaam_hardware_HardwareContainerA348', cardinality 0..*).
+'SignalInMessageCapability' (role 'SignalInMessageCapability737', cardinality 0..*) is associated with 'oaam::allocations::SignalToMessageAssignment' (role 'oaam_allocations_SignalToMessageAssignment736', cardinality 0..*).
+'Restrictions' (role 'Restrictions', cardinality 0..*) is associated with 'oaam::Architecture' (role 'oaam_Architecture17', cardinality 0..*).
+'Input' (role 'Input', cardinality 0..*) is associated with 'oaam::functions::Task' (role 'oaam_functions_Task266', cardinality 0..*).
+'ConnectionType' (role 'ConnectionType461', cardinality 0..*) is associated with 'oaam::capabilities::ConnectionInDuctOrLocationCapability' (role 'oaam_capabilities_ConnectionInDuctOrLocationCapability', cardinality 0..*).
+'oaam::library::OutputDeclaration' (role 'oaam_library_OutputDeclaration137', cardinality 0..*) is associated with 'DataTypeA' (role 'DataTypeA138', cardinality 0..*).
+'MessageType' (role 'MessageType510', cardinality 0..*) is associated with 'oaam::capabilities::SignalInMessageCapability' (role 'oaam_capabilities_SignalInMessageCapability', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA90', cardinality 0..*) is associated with 'MessageType' (role 'MessageType', cardinality 0..*).
+'MessageOnConnectionOrDeviceCapability' (role 'MessageOnConnectionOrDeviceCapability701', cardinality 0..*) is associated with 'oaam::allocations::MessageSegment' (role 'oaam_allocations_MessageSegment', cardinality 0..*).
+'oaam::hardware::Device' (role 'oaam_hardware_Device358', cardinality 0..*) is associated with 'Location' (role 'Location', cardinality 0..*).
+'Connection' (role 'Connection606', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction605', cardinality 0..*).
+'TaskParameterDeclaration' (role 'TaskParameterDeclaration', cardinality 0..*) is associated with 'oaam::library::TaskType' (role 'oaam_library_TaskType112', cardinality 0..*).
+'oaam::capabilities::MessageOnBusCapability' (role 'oaam_capabilities_MessageOnBusCapability494', cardinality 0..*) is associated with 'MessageType' (role 'MessageType495', cardinality 0..*).
+'AttributeA' (role 'AttributeA', cardinality 0..*) is associated with 'oaam::common::OaamBaseElementA' (role 'oaam_common_OaamBaseElementA', cardinality 0..*).
+'ResourceTypeModifier' (role 'ResourceTypeModifier', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA56', cardinality 0..*).
+'Suballocations' (role 'Suballocations', cardinality 0..*) is associated with 'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA622', cardinality 0..*).
+'BoolA' (role 'BoolA27', cardinality 0..*) is associated with 'oaam::common::BoolOperation' (role 'oaam_common_BoolOperation26', cardinality 0..*).
+'Device' (role 'Device676', cardinality 0..*) is associated with 'oaam::allocations::SubdeviceAssignment' (role 'oaam_allocations_SubdeviceAssignment675', cardinality 0..*).
+'Resource' (role 'Resource142', cardinality 0..*) is associated with 'oaam::library::IoDeclaration' (role 'oaam_library_IoDeclaration', cardinality 0..*).
+'oaam::functions::FailureCondition' (role 'oaam_functions_FailureCondition299', cardinality 0..*) is associated with 'BoolNot' (role 'BoolNot300', cardinality 0..*).
+'oaam::common::Struct' (role 'oaam_common_Struct', cardinality 0..*) is associated with 'DataTypeA' (role 'DataTypeA32', cardinality 0..*).
+'oaam::allocations::SubdeviceAssignment' (role 'oaam_allocations_SubdeviceAssignment678', cardinality 0..*) is associated with 'Device' (role 'Device679', cardinality 0..*).
+'BoolA' (role 'BoolA', cardinality 0..*) is associated with 'oaam::common::BoolOperation' (role 'oaam_common_BoolOperation', cardinality 0..*).
+'oaam::library::ResourceLink' (role 'oaam_library_ResourceLink', cardinality 0..*) is associated with 'Resource' (role 'Resource163', cardinality 0..*).
+'oaam::capabilities::SignalOnConnectionOrDeviceCapability' (role 'oaam_capabilities_SignalOnConnectionOrDeviceCapability471', cardinality 0..*) is associated with 'DeviceType' (role 'DeviceType472', cardinality 0..*).
+'Resource' (role 'Resource105', cardinality 0..*) is associated with 'oaam::library::ResourceBundle' (role 'oaam_library_ResourceBundle', cardinality 0..*).
+'TaskOnDeviceCapability' (role 'TaskOnDeviceCapability628', cardinality 0..*) is associated with 'oaam::allocations::TaskAssignment' (role 'oaam_allocations_TaskAssignment', cardinality 0..*).
+'Sublibrary' (role 'Sublibrary', cardinality 0..*) is associated with 'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA84', cardinality 0..*).
+'ResourceTypeModifierLevel' (role 'ResourceTypeModifierLevel170', cardinality 0..*) is associated with 'oaam::library::ResourceTypeModifierLevel' (role 'oaam_library_ResourceTypeModifierLevel', cardinality 0..*).
+'Output' (role 'Output304', cardinality 0..*) is associated with 'oaam::functions::OutputIntegrityState' (role 'oaam_functions_OutputIntegrityState', cardinality 0..*).
+'Resource' (role 'Resource147', cardinality 0..*) is associated with 'oaam::library::ResourceGroup' (role 'oaam_library_ResourceGroup', cardinality 0..*).
+'Io' (role 'Io', cardinality 0..*) is associated with 'oaam::functions::Input' (role 'oaam_functions_Input323', cardinality 0..*).
+'TaskType' (role 'TaskType451', cardinality 0..*) is associated with 'oaam::capabilities::TaskOnDeviceCapability' (role 'oaam_capabilities_TaskOnDeviceCapability', cardinality 0..*).
+'oaam::library::ResourceProviderA' (role 'oaam_library_ResourceProviderA', cardinality 0..*) is associated with 'ResourceBundle' (role 'ResourceBundle', cardinality 0..*).
+'oaam::anatomy::AnatomyContainerA' (role 'oaam_anatomy_AnatomyContainerA397', cardinality 0..*) is associated with 'Subanatomy' (role 'Subanatomy', cardinality 0..*).
+'oaam::library::ResourceTypeModifierReference' (role 'oaam_library_ResourceTypeModifierReference', cardinality 0..*) is associated with 'ResourceTypeModifier' (role 'ResourceTypeModifier175', cardinality 0..*).
+'WireType' (role 'WireType119', cardinality 0..*) is associated with 'oaam::library::ConnectionType' (role 'oaam_library_ConnectionType', cardinality 0..*).
+'ConnectionType' (role 'ConnectionType482', cardinality 0..*) is associated with 'oaam::capabilities::SubconnectionInDeviceCapability' (role 'oaam_capabilities_SubconnectionInDeviceCapability', cardinality 0..*).
+'oaam::library::LibraryContainerA' (role 'oaam_library_LibraryContainerA64', cardinality 0..*) is associated with 'SignalType' (role 'SignalType', cardinality 0..*).
+'oaam::allocations::AllocationsContainerA' (role 'oaam_allocations_AllocationsContainerA624', cardinality 0..*) is associated with 'SubconnectionAssignment' (role 'SubconnectionAssignment', cardinality 0..*).
+'oaam::restrictions::LocationRestriction' (role 'oaam_restrictions_LocationRestriction', cardinality 0..*) is associated with 'Location' (role 'Location554', cardinality 0..*).
+'Connection' (role 'Connection384', cardinality 0..*) is associated with 'oaam::hardware::Bus' (role 'oaam_hardware_Bus383', cardinality 0..*).
+'Connection' (role 'Connection566', cardinality 0..*) is associated with 'oaam::restrictions::ConnectionRestriction' (role 'oaam_restrictions_ConnectionRestriction', cardinality 0..*).
+'oaam::anatomy::DuctOpening' (role 'oaam_anatomy_DuctOpening422', cardinality 0..*) is associated with 'DuctOpeningDeclaration' (role 'DuctOpeningDeclaration423', cardinality 0..*).
+'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA256', cardinality 0..*) is associated with 'Signal' (role 'Signal', cardinality 0..*).
+'oaam::restrictions::SignalRestrictionA' (role 'oaam_restrictions_SignalRestrictionA', cardinality 0..*) is associated with 'Signal' (role 'Signal546', cardinality 0..*).
+'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA447', cardinality 0..*) is associated with 'SignalInMessageCapability' (role 'SignalInMessageCapability', cardinality 0..*).
+'oaam::anatomy::Area' (role 'oaam_anatomy_Area409', cardinality 0..*) is associated with 'Duct' (role 'Duct410', cardinality 0..*).
+'Task' (role 'Task544', cardinality 0..*) is associated with 'oaam::restrictions::TaskRestrictionA' (role 'oaam_restrictions_TaskRestrictionA', cardinality 0..*).
+'PowerSource' (role 'PowerSource558', cardinality 0..*) is associated with 'oaam::restrictions::PowerSourceRestriction' (role 'oaam_restrictions_PowerSourceRestriction', cardinality 0..*).
+'oaam::scenario::OperationModeReference' (role 'oaam_scenario_OperationModeReference', cardinality 0..*) is associated with 'OperationMode' (role 'OperationMode225', cardinality 0..*).
+'RequiredInformationA' (role 'RequiredInformationA242', cardinality 0..*) is associated with 'oaam::systems::InputSegregation' (role 'oaam_systems_InputSegregation', cardinality 0..*).
+'oaam::anatomy::AnatomyContainerA' (role 'oaam_anatomy_AnatomyContainerA393', cardinality 0..*) is associated with 'Duct' (role 'Duct', cardinality 0..*).
+'oaam::library::TaskInputTrigger' (role 'oaam_library_TaskInputTrigger', cardinality 0..*) is associated with 'InputDeclaration' (role 'InputDeclaration196', cardinality 0..*).
+'oaam::scenario::ScenarioContainerA' (role 'oaam_scenario_ScenarioContainerA223', cardinality 0..*) is associated with 'Subscenario' (role 'Subscenario', cardinality 0..*).
+'oaam::anatomy::Duct' (role 'oaam_anatomy_Duct', cardinality 0..*) is associated with 'DuctType' (role 'DuctType412', cardinality 0..*).
+'Location' (role 'Location389', cardinality 0..*) is associated with 'oaam::anatomy::AnatomyContainerA' (role 'oaam_anatomy_AnatomyContainerA', cardinality 0..*).
+'TaskGroup' (role 'TaskGroup', cardinality 0..*) is associated with 'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA250', cardinality 0..*).
+'RequiredInformationA' (role 'RequiredInformationA240', cardinality 0..*) is associated with 'oaam::systems::InformationFlow' (role 'oaam_systems_InformationFlow239', cardinality 0..*).
+'LocationSymmetry' (role 'LocationSymmetry', cardinality 0..*) is associated with 'oaam::anatomy::AnatomyContainerA' (role 'oaam_anatomy_AnatomyContainerA391', cardinality 0..*).
+'oaam::library::ResourceTypeDissimilarity' (role 'oaam_library_ResourceTypeDissimilarity', cardinality 0..*) is associated with 'ResourceType' (role 'ResourceType184', cardinality 0..*).
+'oaam::systems::InputSegregation' (role 'oaam_systems_InputSegregation244', cardinality 0..*) is associated with 'RequiredInformationA' (role 'RequiredInformationA245', cardinality 0..*).
+'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA433', cardinality 0..*) is associated with 'DeviceInLocationCapability' (role 'DeviceInLocationCapability', cardinality 0..*).
+'Position3D' (role 'Position3D420', cardinality 0..*) is associated with 'oaam::anatomy::DuctOpening' (role 'oaam_anatomy_DuctOpening', cardinality 0..*).
+'Device' (role 'Device560', cardinality 0..*) is associated with 'oaam::restrictions::DeviceRestriction' (role 'oaam_restrictions_DeviceRestriction', cardinality 0..*).
+'Subcapabilities' (role 'Subcapabilities', cardinality 0..*) is associated with 'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA439', cardinality 0..*).
+'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA534', cardinality 0..*) is associated with 'SegregationRestriction' (role 'SegregationRestriction', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction', cardinality 0..*) is associated with 'Task' (role 'Task568', cardinality 0..*).
+'oaam::anatomy::Area' (role 'oaam_anatomy_Area', cardinality 0..*) is associated with 'Location' (role 'Location407', cardinality 0..*).
+'Subfunctions' (role 'Subfunctions548', cardinality 0..*) is associated with 'oaam::restrictions::SubfunctionRestrictionA' (role 'oaam_restrictions_SubfunctionRestrictionA', cardinality 0..*).
+'oaam::systems::System' (role 'oaam_systems_System', cardinality 0..*) is associated with 'ProvidedInformationA' (role 'ProvidedInformationA', cardinality 0..*).
+'oaam::library::TaskParameterDeclaration' (role 'oaam_library_TaskParameterDeclaration', cardinality 0..*) is associated with 'DataTypeA' (role 'DataTypeA200', cardinality 0..*).
+'Connection' (role 'Connection542', cardinality 0..*) is associated with 'oaam::restrictions::ConnectionRestrinctionA' (role 'oaam_restrictions_ConnectionRestrinctionA', cardinality 0..*).
+'SignalGroup' (role 'SignalGroup552', cardinality 0..*) is associated with 'oaam::restrictions::SignalGroupRestrictionA' (role 'oaam_restrictions_SignalGroupRestrictionA', cardinality 0..*).
+'oaam::scenario::ScenarioContainerA' (role 'oaam_scenario_ScenarioContainerA221', cardinality 0..*) is associated with 'OperationMode' (role 'OperationMode', cardinality 0..*).
+'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA449', cardinality 0..*) is associated with 'MessageOnConnectionOrDeviceCapability' (role 'MessageOnConnectionOrDeviceCapability', cardinality 0..*).
+'SubconnectionInDeviceCapability' (role 'SubconnectionInDeviceCapability', cardinality 0..*) is associated with 'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA441', cardinality 0..*).
+'DeviceType' (role 'DeviceType182', cardinality 0..*) is associated with 'oaam::library::DeviceTypeDissimilarity' (role 'oaam_library_DeviceTypeDissimilarity', cardinality 0..*).
+'MessageType' (role 'MessageType208', cardinality 0..*) is associated with 'oaam::library::BusType' (role 'oaam_library_BusType207', cardinality 0..*).
+'TaskGroup' (role 'TaskGroup585', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction584', cardinality 0..*).
+'OperationModeReference' (role 'OperationModeReference', cardinality 0..*) is associated with 'oaam::scenario::ModeDependentElementA' (role 'oaam_scenario_ModeDependentElementA', cardinality 0..*).
+'oaam::scenario::ScenarioContainerA' (role 'oaam_scenario_ScenarioContainerA', cardinality 0..*) is associated with 'ScenarioParameterA' (role 'ScenarioParameterA', cardinality 0..*).
+'oaam::library::TaskTypeDissimilarity' (role 'oaam_library_TaskTypeDissimilarity', cardinality 0..*) is associated with 'TaskType' (role 'TaskType180', cardinality 0..*).
+'oaam::systems::System' (role 'oaam_systems_System235', cardinality 0..*) is associated with 'RequiredInformationA' (role 'RequiredInformationA', cardinality 0..*).
+'oaam::systems::SystemsContainerA' (role 'oaam_systems_SystemsContainerA228', cardinality 0..*) is associated with 'InformationFlow' (role 'InformationFlow', cardinality 0..*).
+'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA536', cardinality 0..*) is associated with 'Subrestrictions' (role 'Subrestrictions', cardinality 0..*).
+'Signal' (role 'Signal582', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction581', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction593', cardinality 0..*) is associated with 'SignalGroup' (role 'SignalGroup594', cardinality 0..*).
+'TaskInputTrigger' (role 'TaskInputTrigger', cardinality 0..*) is associated with 'oaam::library::TaskOutputTrigger' (role 'oaam_library_TaskOutputTrigger194', cardinality 0..*).
+'Area' (role 'Area427', cardinality 0..*) is associated with 'oaam::anatomy::AreaSymmetry' (role 'oaam_anatomy_AreaSymmetry', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction602', cardinality 0..*) is associated with 'Connection' (role 'Connection603', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction570', cardinality 0..*) is associated with 'Task' (role 'Task571', cardinality 0..*).
+'oaam::capabilities::CapabilityA' (role 'oaam_capabilities_CapabilityA', cardinality 0..*) is associated with 'ResourceConsumption' (role 'ResourceConsumption', cardinality 0..*).
+'DataTypeA' (role 'DataTypeA210', cardinality 0..*) is associated with 'oaam::library::MessageType' (role 'oaam_library_MessageType', cardinality 0..*).
+'TaskOnDeviceCapability' (role 'TaskOnDeviceCapability', cardinality 0..*) is associated with 'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA', cardinality 0..*).
+'oaam::restrictions::TaskGroupRestrictionA' (role 'oaam_restrictions_TaskGroupRestrictionA', cardinality 0..*) is associated with 'TaskGroup' (role 'TaskGroup550', cardinality 0..*).
+'oaam::hardware::Bus' (role 'oaam_hardware_Bus386', cardinality 0..*) is associated with 'Device' (role 'Device387', cardinality 0..*).
+'oaam::anatomy::Duct' (role 'oaam_anatomy_Duct414', cardinality 0..*) is associated with 'DuctOpening' (role 'DuctOpening415', cardinality 0..*).
+'Signal' (role 'Signal579', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction578', cardinality 0..*).
+'oaam::systems::InformationFlow' (role 'oaam_systems_InformationFlow', cardinality 0..*) is associated with 'ProvidedInformationA' (role 'ProvidedInformationA237', cardinality 0..*).
+'oaam::anatomy::Location' (role 'oaam_anatomy_Location405', cardinality 0..*) is associated with 'DuctOpening' (role 'DuctOpening', cardinality 0..*).
+'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA443', cardinality 0..*) is associated with 'MessageOnBusCapability' (role 'MessageOnBusCapability', cardinality 0..*).
+'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA252', cardinality 0..*) is associated with 'TaskSymmetry' (role 'TaskSymmetry', cardinality 0..*).
+'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA532', cardinality 0..*) is associated with 'ConnectionTypeRestriction' (role 'ConnectionTypeRestriction', cardinality 0..*).
+'DeviceType' (role 'DeviceType202', cardinality 0..*) is associated with 'oaam::library::BusType' (role 'oaam_library_BusType', cardinality 0..*).
+'LocationType' (role 'LocationType459', cardinality 0..*) is associated with 'oaam::capabilities::DeviceInLocationCapability' (role 'oaam_capabilities_DeviceInLocationCapability458', cardinality 0..*).
+'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA530', cardinality 0..*) is associated with 'ConnectionRestriction' (role 'ConnectionRestriction', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction596', cardinality 0..*) is associated with 'Device' (role 'Device597', cardinality 0..*).
+'oaam::systems::SystemsContainerA' (role 'oaam_systems_SystemsContainerA', cardinality 0..*) is associated with 'System' (role 'System', cardinality 0..*).
+'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA445', cardinality 0..*) is associated with 'SubmessageInMessageCapability' (role 'SubmessageInMessageCapability', cardinality 0..*).
+'Device' (role 'Device540', cardinality 0..*) is associated with 'oaam::restrictions::DeviceRestrictionA' (role 'oaam_restrictions_DeviceRestrictionA', cardinality 0..*).
+'oaam::anatomy::LocationSymmetry' (role 'oaam_anatomy_LocationSymmetry', cardinality 0..*) is associated with 'Location' (role 'Location425', cardinality 0..*).
+'Area' (role 'Area556', cardinality 0..*) is associated with 'oaam::restrictions::AreaRestriction' (role 'oaam_restrictions_AreaRestriction', cardinality 0..*).
+'oaam::library::BusType' (role 'oaam_library_BusType204', cardinality 0..*) is associated with 'ConnectionType' (role 'ConnectionType205', cardinality 0..*).
+'oaam::anatomy::Location' (role 'oaam_anatomy_Location403', cardinality 0..*) is associated with 'Position3D' (role 'Position3D', cardinality 0..*).
+'oaam::restrictions::RestrictionsContainerA' (role 'oaam_restrictions_RestrictionsContainerA538', cardinality 0..*) is associated with 'TimeDelayRestriction' (role 'TimeDelayRestriction', cardinality 0..*).
+'oaam::functions::FunctionsContainerA' (role 'oaam_functions_FunctionsContainerA254', cardinality 0..*) is associated with 'TaskRedundancy' (role 'TaskRedundancy', cardinality 0..*).
+'oaam::systems::SystemsContainerA' (role 'oaam_systems_SystemsContainerA232', cardinality 0..*) is associated with 'Subsystem' (role 'Subsystem', cardinality 0..*).
+'ConnectionInDuctOrLocationCapability' (role 'ConnectionInDuctOrLocationCapability', cardinality 0..*) is associated with 'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA437', cardinality 0..*).
+'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA435', cardinality 0..*) is associated with 'SubdeviceInDeviceCapability' (role 'SubdeviceInDeviceCapability', cardinality 0..*).
+'SignalOnConnectionOrDeviceCapability' (role 'SignalOnConnectionOrDeviceCapability', cardinality 0..*) is associated with 'oaam::capabilities::CapabilitiesContainerA' (role 'oaam_capabilities_CapabilitiesContainerA431', cardinality 0..*).
+'DeviceType' (role 'DeviceType562', cardinality 0..*) is associated with 'oaam::restrictions::DeviceTypeRestriction' (role 'oaam_restrictions_DeviceTypeRestriction', cardinality 0..*).
+'oaam::restrictions::ConnectionTypeRestriction' (role 'oaam_restrictions_ConnectionTypeRestriction', cardinality 0..*) is associated with 'ConnectionType' (role 'ConnectionType564', cardinality 0..*).
+'oaam::capabilities::DeviceInLocationCapability' (role 'oaam_capabilities_DeviceInLocationCapability', cardinality 0..*) is associated with 'DeviceType' (role 'DeviceType456', cardinality 0..*).
+'Area' (role 'Area', cardinality 0..*) is associated with 'oaam::anatomy::AnatomyContainerA' (role 'oaam_anatomy_AnatomyContainerA395', cardinality 0..*).
+'Device' (role 'Device600', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction599', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction587', cardinality 0..*) is associated with 'TaskGroup' (role 'TaskGroup588', cardinality 0..*).
+'oaam::scenario::VariantDependentElementA' (role 'oaam_scenario_VariantDependentElementA', cardinality 0..*) is associated with 'Variant' (role 'Variant', cardinality 0..*).
+'DataTypeA' (role 'DataTypeA198', cardinality 0..*) is associated with 'oaam::library::TaskStateDeclaration' (role 'oaam_library_TaskStateDeclaration', cardinality 0..*).
+'FunctionsContainerA' (role 'FunctionsContainerA576', cardinality 0..*) is associated with 'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction575', cardinality 0..*).
+'oaam::anatomy::Duct' (role 'oaam_anatomy_Duct417', cardinality 0..*) is associated with 'DuctOpening' (role 'DuctOpening418', cardinality 0..*).
+'DataTypeA' (role 'DataTypeA213', cardinality 0..*) is associated with 'oaam::library::MessageType' (role 'oaam_library_MessageType212', cardinality 0..*).
+'oaam::restrictions::SegregationRestriction' (role 'oaam_restrictions_SegregationRestriction573', cardinality 0..*) is associated with 'FunctionsContainerA' (role 'FunctionsContainerA', cardinality 0..*).
+'oaam::systems::SystemsContainerA' (role 'oaam_systems_SystemsContainerA230', cardinality 0..*) is associated with 'InputSegregation' (role 'InputSegregation', cardinality 0..*).
+'oaam::scenario::ScenarioContainerA' (role 'oaam_scenario_ScenarioContainerA218', cardinality 0..*) is associated with 'Variant' (role 'Variant219', cardinality 0..*).

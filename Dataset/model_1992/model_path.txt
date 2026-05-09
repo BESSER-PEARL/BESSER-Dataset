@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/gmf-tooling/plugins/org.eclipse.gmf.bridge.trace/model/trace.ecore

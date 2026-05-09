@@ -1,0 +1,52 @@
+The model has 25 class(es).
+The class 'TrgTransition' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcStateMachine' has the following attributes: 'name' of type str.
+The class 'jointPackage::HSM2FSM::TrgRegularState' has no attributes.
+The class 'SrcCompositeState' has no attributes.
+The class 'jointPackage::HSM2FSM::TrgTransition' has the following attributes: 'label' of type str.
+The class 'SrcStateMachine' has no attributes.
+The class 'SrcAbstractState' has no attributes.
+The class 'jointPackage::HSM2FSM::TrgCompositeState' has no attributes.
+The class 'TrgAbstractState' has no attributes.
+The class 'TrgRoot' has no attributes.
+The class 'jointPackage::HSM2FSM::JointMM' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcRegularState' has no attributes.
+The class 'jointPackage::HSM2FSM::TrgRoot' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcRoot' has no attributes.
+The class 'SrcRoot' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcTransition' has the following attributes: 'label' of type str.
+The class 'jointPackage::HSM2FSM::TrgAbstractState' has the following attributes: 'name' of type str.
+The class 'jointPackage::HSM2FSM::TrgInitialState' has no attributes.
+The class 'SrcTransition' has no attributes.
+The class 'TrgStateMachine' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcCompositeState' has no attributes.
+The class 'jointPackage::HSM2FSM::TrgStateMachine' has the following attributes: 'name' of type str.
+The class 'TrgCompositeState' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcInitialState' has no attributes.
+The class 'jointPackage::HSM2FSM::SrcAbstractState' has the following attributes: 'name' of type str.
+'jointPackage::HSM2FSM::SrcRegularState' is a specialization of 'SrcAbstractState'.
+'jointPackage::HSM2FSM::SrcCompositeState' is a specialization of 'SrcAbstractState'.
+'jointPackage::HSM2FSM::SrcInitialState' is a specialization of 'SrcAbstractState'.
+'jointPackage::HSM2FSM::TrgInitialState' is a specialization of 'TrgAbstractState'.
+'jointPackage::HSM2FSM::TrgRegularState' is a specialization of 'TrgAbstractState'.
+'jointPackage::HSM2FSM::TrgCompositeState' is a specialization of 'TrgAbstractState'.
+'jointPackage::HSM2FSM::TrgStateMachine' (role 'stateMachine24', cardinality 0..*) is associated with 'TrgAbstractState' (role 'TrgAbstractState', cardinality 0..*).
+'TrgRoot' (role 'TrgRoot', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::JointMM' (role 'jointPackage_HSM2FSM_JointMM2', cardinality 0..*).
+'TrgAbstractState' (role 'TrgAbstractState40', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::TrgCompositeState' (role 'compositeStates39', cardinality 0..*).
+'SrcStateMachine' (role 'SrcStateMachine', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::SrcRoot' (role 'jointPackage_HSM2FSM_SrcRoot', cardinality 0..*).
+'jointPackage::HSM2FSM::JointMM' (role 'jointPackage_HSM2FSM_JointMM', cardinality 0..*) is associated with 'SrcRoot' (role 'SrcRoot', cardinality 0..*).
+'TrgAbstractState' (role 'TrgAbstractState32', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::TrgTransition' (role 'jointPackage_HSM2FSM_TrgTransition31', cardinality 0..*).
+'jointPackage::HSM2FSM::TrgAbstractState' (role 'states37', cardinality 0..*) is associated with 'TrgCompositeState' (role 'TrgCompositeState', cardinality 0..*).
+'jointPackage::HSM2FSM::SrcTransition' (role 'jointPackage_HSM2FSM_SrcTransition12', cardinality 0..*) is associated with 'SrcAbstractState' (role 'SrcAbstractState13', cardinality 0..*).
+'SrcAbstractState' (role 'SrcAbstractState19', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::SrcCompositeState' (role 'compositeStates', cardinality 0..*).
+'SrcAbstractState' (role 'SrcAbstractState10', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::SrcTransition' (role 'jointPackage_HSM2FSM_SrcTransition', cardinality 0..*).
+'SrcStateMachine' (role 'SrcStateMachine8', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::SrcTransition' (role 'transitions', cardinality 0..*).
+'SrcAbstractState' (role 'SrcAbstractState', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::SrcStateMachine' (role 'stateMachine6', cardinality 0..*).
+'TrgTransition' (role 'TrgTransition', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::TrgStateMachine' (role 'stateMachine22', cardinality 0..*).
+'jointPackage::HSM2FSM::SrcStateMachine' (role 'stateMachine', cardinality 0..*) is associated with 'SrcTransition' (role 'SrcTransition', cardinality 0..*).
+'jointPackage::HSM2FSM::TrgTransition' (role 'transitions26', cardinality 0..*) is associated with 'TrgStateMachine' (role 'TrgStateMachine27', cardinality 0..*).
+'SrcStateMachine' (role 'SrcStateMachine15', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::SrcAbstractState' (role 'states', cardinality 0..*).
+'jointPackage::HSM2FSM::SrcAbstractState' (role 'states17', cardinality 0..*) is associated with 'SrcCompositeState' (role 'SrcCompositeState', cardinality 0..*).
+'jointPackage::HSM2FSM::TrgTransition' (role 'jointPackage_HSM2FSM_TrgTransition', cardinality 0..*) is associated with 'TrgAbstractState' (role 'TrgAbstractState29', cardinality 0..*).
+'jointPackage::HSM2FSM::TrgAbstractState' (role 'states34', cardinality 0..*) is associated with 'TrgStateMachine' (role 'TrgStateMachine35', cardinality 0..*).
+'TrgStateMachine' (role 'TrgStateMachine', cardinality 0..*) is associated with 'jointPackage::HSM2FSM::TrgRoot' (role 'jointPackage_HSM2FSM_TrgRoot', cardinality 0..*).

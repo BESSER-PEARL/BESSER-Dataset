@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'statemachine::Resource' has the following attributes: 'name' of type str.
+The class 'statemachine::State' has the following attributes: 'name' of type str.
+The class 'statemachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'statemachine::Transition' has the following attributes: 'Id' of type int.
+'statemachine::State' (role 'statemachine_State6', cardinality 0..*) is associated with 'statemachine::Resource' (role 'statemachine_Resource7', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine2', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State13', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition12', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition9', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State10', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State', cardinality 0..*) is associated with 'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine4', cardinality 0..*) is associated with 'statemachine::Resource' (role 'statemachine_Resource', cardinality 0..*).

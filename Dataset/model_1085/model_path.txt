@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/slebok/zoo/zoo/automata/petri/net/wachsmuth/v2.0/fetched/GWPNV2.ecore

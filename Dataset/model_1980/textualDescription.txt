@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'MRPTrace::NamedElement' has the following attributes: 'name' of type str.
+The class 'MRPTrace::RDMElement' has no attributes.
+The class 'MRPTrace::TraceModel' has no attributes.
+The class 'MRPTrace::TraceEntry' has the following attributes: 'description' of type str.
+The class 'MRPTrace::Trace' has the following attributes: 'granularity' of type str.
+The class 'MRPTrace::Event' has the following attributes: 'time' of type str.
+The class 'NamedElement' has no attributes.
+The enumeration 'TimeUnit' has the following literals: 'MICROSECONDS', 'MINUTES', 'MILLISECONDS', 'NANOSECONDS', 'SECONDS', 'HOURS', 'DAYS'.
+'MRPTrace::Trace' is a specialization of 'NamedElement'.
+'MRPTrace::Event' is a specialization of 'NamedElement'.
+'MRPTrace::Event' (role 'MRPTrace_Event', cardinality 0..*) is associated with 'MRPTrace::TraceEntry' (role 'MRPTrace_TraceEntry9', cardinality 0..*).
+'MRPTrace::Trace' (role 'MRPTrace_Trace', cardinality 0..*) is associated with 'MRPTrace::TraceModel' (role 'MRPTrace_TraceModel', cardinality 0..*).
+'MRPTrace::TraceEntry' (role 'MRPTrace_TraceEntry7', cardinality 0..*) is associated with 'MRPTrace::RDMElement' (role 'MRPTrace_RDMElement', cardinality 0..*).
+'MRPTrace::TraceEntry' (role 'MRPTrace_TraceEntry', cardinality 0..*) is associated with 'MRPTrace::Trace' (role 'MRPTrace_Trace2', cardinality 0..*).
+'MRPTrace::TraceEntry' (role 'MRPTrace_TraceEntry5', cardinality 0..*) is associated with 'MRPTrace::TraceEntry' (role 'MRPTrace_TraceEntry3', cardinality 0..*).

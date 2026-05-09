@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/laforge2001/Test/org.jamp.model.media/metamodel/media.ecore

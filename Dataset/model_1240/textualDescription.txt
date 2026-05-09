@@ -1,0 +1,123 @@
+The model has 46 class(es).
+The class 'imperativeocl::VariableInitExp' has the following attributes: 'withResult' of type str.
+The class 'imperativeocl::BlockExp' has no attributes.
+The class 'imperativeocl::ContinueExp' has no attributes.
+The class 'imperativeocl::SwitchExp' has no attributes.
+The class 'imperativeocl::RaiseExp' has no attributes.
+The class 'imperativeocl::LogExp' has no attributes.
+The class 'imperativeocl::OrderedTupleLiteralPart' has no attributes.
+The class 'imperativeocl::ComputeExp' has no attributes.
+The class 'imperativeocl::AssertExp' has the following attributes: 'severity' of type str.
+The class 'imperativeocl::OclExpression' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'imperativeocl::DictLiteralExp' has no attributes.
+The class 'imperativeocl::ForExp' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'imperativeocl::ImperativeLoopExp' has no attributes.
+The class 'Type' has no attributes.
+The class 'imperativeocl::ReturnExp' has no attributes.
+The class 'Class' has no attributes.
+The class 'imperativeocl::BreakExp' has no attributes.
+The class 'imperativeocl::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'imperativeocl::ListType' has no attributes.
+The class 'imperativeocl::Type' has no attributes.
+The class 'ImperativeExpression' has no attributes.
+The class 'imperativeocl::InstantiationExp' has no attributes.
+The class 'ImperativeLoopExp' has no attributes.
+The class 'imperativeocl::ImperativeExpression' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'imperativeocl::UnlinkExp' has no attributes.
+The class 'imperativeocl::OrderedTupleType' has no attributes.
+The class 'imperativeocl::UnpackExp' has no attributes.
+The class 'imperativeocl::OrderedTupleLiteralExp' has no attributes.
+The class 'Element' has no attributes.
+The class 'imperativeocl::Variable' has no attributes.
+The class 'imperativeocl::WhileExp' has no attributes.
+The class 'imperativeocl::DictLiteralPart' has no attributes.
+The class 'imperativeocl::CatchExp' has no attributes.
+The class 'imperativeocl::AssignExp' has the following attributes: 'isReset' of type str.
+The class 'imperativeocl::TryExp' has no attributes.
+The class 'imperativeocl::Typedef' has no attributes.
+The class 'imperativeocl::DictionaryType' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'imperativeocl::Class' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'imperativeocl::AltExp' has no attributes.
+The class 'imperativeocl::ImperativeIterateExp' has no attributes.
+The enumeration 'SeverityKind' has the following literals: 'warning', 'fatal', 'error'.
+'imperativeocl::AssertExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::TryExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::OrderedTupleLiteralPart' is a specialization of 'Element'.
+'imperativeocl::UnlinkExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::DictionaryType' is a specialization of 'CollectionType'.
+'imperativeocl::BreakExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::OrderedTupleType' is a specialization of 'Class'.
+'imperativeocl::DictLiteralPart' is a specialization of 'Element'.
+'imperativeocl::SwitchExp' is a specialization of 'CallExp'.
+'imperativeocl::VariableInitExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::TemplateParameterType' is a specialization of 'Type'.
+'imperativeocl::ListType' is a specialization of 'CollectionType'.
+'imperativeocl::OrderedTupleLiteralExp' is a specialization of 'LiteralExp'.
+'imperativeocl::SwitchExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+'imperativeocl::AltExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::BlockExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::LogExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::ComputeExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::AssignExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::ReturnExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::UnpackExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::CatchExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::InstantiationExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::Typedef' is a specialization of 'Class'.
+'imperativeocl::RaiseExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::LogExp' is a specialization of 'OperationCallExp'.
+'imperativeocl::WhileExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::ForExp' is a specialization of 'ImperativeLoopExp'.
+'imperativeocl::ImperativeExpression' is a specialization of 'OclExpression'.
+'imperativeocl::ContinueExp' is a specialization of 'ImperativeExpression'.
+'imperativeocl::ImperativeLoopExp' is a specialization of 'LoopExp'.
+'imperativeocl::DictLiteralExp' is a specialization of 'LiteralExp'.
+'imperativeocl::Variable' (role 'imperativeocl_Variable53', cardinality 0..*) is associated with 'imperativeocl::InstantiationExp' (role 'imperativeocl_InstantiationExp52', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression56', cardinality 0..*) is associated with 'imperativeocl::InstantiationExp' (role 'imperativeocl_InstantiationExp55', cardinality 0..*).
+'imperativeocl::CatchExp' (role 'imperativeocl_CatchExp92', cardinality 0..*) is associated with 'imperativeocl::Type' (role 'imperativeocl_Type93', cardinality 0..*).
+'imperativeocl::SwitchExp' (role 'imperativeocl_SwitchExp11', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression12', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression87', cardinality 0..*) is associated with 'imperativeocl::OrderedTupleLiteralPart' (role 'imperativeocl_OrderedTupleLiteralPart86', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression90', cardinality 0..*) is associated with 'imperativeocl::CatchExp' (role 'imperativeocl_CatchExp89', cardinality 0..*).
+'imperativeocl::Typedef' (role 'imperativeocl_Typedef', cardinality 0..*) is associated with 'imperativeocl::Type' (role 'imperativeocl_Type46', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression3', cardinality 0..*) is associated with 'imperativeocl::AssignExp' (role 'imperativeocl_AssignExp2', cardinality 0..*).
+'imperativeocl::AssertExp' (role 'imperativeocl_AssertExp71', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression72', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression31', cardinality 0..*) is associated with 'imperativeocl::UnlinkExp' (role 'imperativeocl_UnlinkExp', cardinality 0..*).
+'imperativeocl::UnpackExp' (role 'imperativeocl_UnpackExp', cardinality 0..*) is associated with 'imperativeocl::Variable' (role 'imperativeocl_Variable78', cardinality 0..*).
+'imperativeocl::DictLiteralPart' (role 'imperativeocl_DictLiteralPart64', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression65', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression36', cardinality 0..*) is associated with 'imperativeocl::ReturnExp' (role 'imperativeocl_ReturnExp', cardinality 0..*).
+'imperativeocl::OrderedTupleType' (role 'imperativeocl_OrderedTupleType', cardinality 0..*) is associated with 'imperativeocl::Type' (role 'imperativeocl_Type83', cardinality 0..*).
+'imperativeocl::InstantiationExp' (role 'imperativeocl_InstantiationExp', cardinality 0..*) is associated with 'imperativeocl::Class' (role 'imperativeocl_Class', cardinality 0..*).
+'imperativeocl::Variable' (role 'imperativeocl_Variable', cardinality 0..*) is associated with 'imperativeocl::VariableInitExp' (role 'imperativeocl_VariableInitExp', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression6', cardinality 0..*) is associated with 'imperativeocl::AssignExp' (role 'imperativeocl_AssignExp5', cardinality 0..*).
+'imperativeocl::AltExp' (role 'imperativeocl_AltExp28', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression29', cardinality 0..*).
+'imperativeocl::BlockExp' (role 'imperativeocl_BlockExp', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression8', cardinality 0..*).
+'imperativeocl::Type' (role 'imperativeocl_Type', cardinality 0..*) is associated with 'imperativeocl::RaiseExp' (role 'imperativeocl_RaiseExp', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression67', cardinality 0..*) is associated with 'imperativeocl::LogExp' (role 'imperativeocl_LogExp', cardinality 0..*).
+'imperativeocl::LogExp' (role 'imperativeocl_LogExp69', cardinality 0..*) is associated with 'imperativeocl::AssertExp' (role 'imperativeocl_AssertExp', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression26', cardinality 0..*) is associated with 'imperativeocl::AltExp' (role 'imperativeocl_AltExp25', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression23', cardinality 0..*) is associated with 'imperativeocl::ComputeExp' (role 'imperativeocl_ComputeExp22', cardinality 0..*).
+'imperativeocl::Type' (role 'imperativeocl_Type58', cardinality 0..*) is associated with 'imperativeocl::DictionaryType' (role 'imperativeocl_DictionaryType', cardinality 0..*).
+'imperativeocl::Variable' (role 'imperativeocl_Variable20', cardinality 0..*) is associated with 'imperativeocl::ComputeExp' (role 'imperativeocl_ComputeExp', cardinality 0..*).
+'imperativeocl::RaiseExp' (role 'imperativeocl_RaiseExp43', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression44', cardinality 0..*).
+'imperativeocl::Variable' (role 'imperativeocl_Variable76', cardinality 0..*) is associated with 'imperativeocl::ImperativeIterateExp' (role 'imperativeocl_ImperativeIterateExp', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression81', cardinality 0..*) is associated with 'imperativeocl::UnpackExp' (role 'imperativeocl_UnpackExp80', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression49', cardinality 0..*) is associated with 'imperativeocl::Typedef' (role 'imperativeocl_Typedef48', cardinality 0..*).
+'imperativeocl::DictLiteralExp' (role 'imperativeocl_DictLiteralExp', cardinality 0..*) is associated with 'imperativeocl::DictLiteralPart' (role 'imperativeocl_DictLiteralPart', cardinality 0..*).
+'imperativeocl::TryExp' (role 'imperativeocl_TryExp40', cardinality 0..*) is associated with 'imperativeocl::CatchExp' (role 'imperativeocl_CatchExp', cardinality 0..*).
+'imperativeocl::ImperativeLoopExp' (role 'imperativeocl_ImperativeLoopExp', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression74', cardinality 0..*).
+'imperativeocl::OrderedTupleLiteralExp' (role 'imperativeocl_OrderedTupleLiteralExp', cardinality 0..*) is associated with 'imperativeocl::OrderedTupleLiteralPart' (role 'imperativeocl_OrderedTupleLiteralPart', cardinality 0..*).
+'imperativeocl::SwitchExp' (role 'imperativeocl_SwitchExp', cardinality 0..*) is associated with 'imperativeocl::AltExp' (role 'imperativeocl_AltExp', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression34', cardinality 0..*) is associated with 'imperativeocl::UnlinkExp' (role 'imperativeocl_UnlinkExp33', cardinality 0..*).
+'imperativeocl::AssignExp' (role 'imperativeocl_AssignExp', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression62', cardinality 0..*) is associated with 'imperativeocl::DictLiteralPart' (role 'imperativeocl_DictLiteralPart61', cardinality 0..*).
+'imperativeocl::WhileExp' (role 'imperativeocl_WhileExp17', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression18', cardinality 0..*).
+'imperativeocl::TryExp' (role 'imperativeocl_TryExp', cardinality 0..*) is associated with 'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression38', cardinality 0..*).
+'imperativeocl::OclExpression' (role 'imperativeocl_OclExpression15', cardinality 0..*) is associated with 'imperativeocl::WhileExp' (role 'imperativeocl_WhileExp', cardinality 0..*).

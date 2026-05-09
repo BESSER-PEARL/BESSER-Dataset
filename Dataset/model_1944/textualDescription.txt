@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'schoollibrary::SchoolLibrary' has the following attributes: 'location' of type str.
+The class 'Book' has no attributes.
+The class 'Asset' has no attributes.
+The class 'Library' has no attributes.
+The class 'schoollibrary::SchoolBook' has no attributes.
+The class 'schoollibrary::Asset' has the following attributes: 'value' of type float.
+'schoollibrary::SchoolBook' is a specialization of 'Asset'.
+'schoollibrary::SchoolBook' is a specialization of 'Book'.
+'schoollibrary::SchoolLibrary' is a specialization of 'Library'.

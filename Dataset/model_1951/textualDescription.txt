@@ -1,0 +1,276 @@
+The model has 122 class(es).
+The class 'model::values::Sphere' has the following attributes: 'radius' of type str.
+The class 'model::values::Cylinder' has the following attributes: 'bottomRadius' of type str; 'height' of type str; 'topRadius' of type str.
+The class 'VisualGroup' has no attributes.
+The class 'model::values::Particles' has no attributes.
+The class 'model::types::ConnectionType' has no attributes.
+The class 'model::GeppettoModel' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'model::values::Dynamics' has no attributes.
+The class 'model::types::SimpleType' has no attributes.
+The class 'Variable' has no attributes.
+The class 'PhysicalQuantity' has no attributes.
+The class 'model::types::ImageType' has no attributes.
+The class 'model::GeppettoLibrary' has no attributes.
+The class 'model::types::CompositeVisualType' has no attributes.
+The class 'Function' has no attributes.
+The class 'Image' has no attributes.
+The class 'Node' has no attributes.
+The class 'model::values::FunctionPlot' has the following attributes: 'finalValue' of type str; 'stepValue' of type str; 'title' of type str; 'xAxisLabel' of type str; 'yAxisLabel' of type str; 'initialValue' of type str.
+The class 'model::values::Value' has no attributes.
+The class 'Type' has no attributes.
+The class 'model::values::Function' has no attributes.
+The class 'model::values::Composite' has no attributes.
+The class 'model::LibraryManager' has no attributes.
+The class 'FunctionPlot' has no attributes.
+The class 'StringToValueMap' has no attributes.
+The class 'model::ExperimentState' has the following attributes: 'projectId' of type str; 'experimentId' of type str.
+The class 'model::values::ArrayElement' has the following attributes: 'index' of type str.
+The class 'Expression' has no attributes.
+The class 'model::VariableValue' has no attributes.
+The class 'model::values::ArrayValue' has no attributes.
+The class 'model::types::HTMLType' has no attributes.
+The class 'Pointer' has no attributes.
+The class 'ArrayElement' has no attributes.
+The class 'HTML' has no attributes.
+The class 'Value' has no attributes.
+The class 'model::values::Image' has the following attributes: 'reference' of type str; 'name' of type str; 'data' of type str; 'format' of type str.
+The class 'model::types::TextType' has no attributes.
+The class 'model::Tag' has the following attributes: 'name' of type str.
+The class 'model::values::SkeletonAnimation' has no attributes.
+The class 'Text' has no attributes.
+The class 'DataSource' has no attributes.
+The class 'SkeletonTransformation' has no attributes.
+The class 'model::types::URLType' has no attributes.
+The class 'Query' has no attributes.
+The class 'model::values::SkeletonTransformation' has the following attributes: 'skeletonTransformation' of type str.
+The class 'URL' has no attributes.
+The class 'model::Node' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'model::values::VisualGroupElement' has the following attributes: 'defaultColor' of type str.
+The class 'ISynchable' has no attributes.
+The class 'ArrayValue' has no attributes.
+The class 'model::types::PointType' has no attributes.
+The class 'model::values::VisualGroup' has the following attributes: 'lowSpectrumColor' of type str; 'type' of type str; 'highSpectrumColor' of type str.
+The class 'VisualType' has no attributes.
+The class 'Point' has no attributes.
+The class 'model::values::Connection' has the following attributes: 'connectivity' of type str.
+The class 'types::model::DomainModel_' has no attributes.
+The class 'model::types::ArrayType' has the following attributes: 'size' of type str.
+The class 'model::datasources::DataSource' has the following attributes: 'dataSourceService' of type str; 'url' of type str.
+The class 'model::types::VisualType' has no attributes.
+The class 'model::values::MetadataValue' has no attributes.
+The class 'DataSourceLibraryConfiguration' has no attributes.
+The class 'VisualValue' has no attributes.
+The class 'model::values::Text' has the following attributes: 'text' of type str.
+The class 'datasources::model::GeppettoLibrary' has no attributes.
+The class 'model::types::ImportType' has the following attributes: 'url' of type str; 'autoresolve' of type str; 'modelInterpreterId' of type str; 'referenceURL' of type str.
+The class 'MetadataValue' has no attributes.
+The class 'model::datasources::DataSourceLibraryConfiguration' has the following attributes: 'format' of type str; 'modelInterpreterId' of type str.
+The class 'model::types::CompositeType' has no attributes.
+The class 'model::values::URL' has the following attributes: 'url' of type str.
+The class 'model::datasources::Query' has the following attributes: 'description' of type str; 'runForCount' of type str.
+The class 'model::DomainModel_' has the following attributes: 'domainModel' of type str.
+The class 'model::values::HTML' has the following attributes: 'html' of type str.
+The class 'QueryMatchingCriteria' has no attributes.
+The class 'model::ModelFormat' has the following attributes: 'modelFormat' of type str.
+The class 'model::values::Pointer' has the following attributes: 'path' of type str.
+The class 'model::values::ImportValue' has the following attributes: 'modelInterpreterId' of type str.
+The class 'model::ExternalDomainModel' has the following attributes: 'fileFormat' of type str.
+The class 'PointerElement' has no attributes.
+The class 'model::variables::Variable' has the following attributes: 'static' of type str.
+The class 'DomainModel_' has no attributes.
+The class 'model::values::PointerElement' has the following attributes: 'index' of type str.
+The class 'TypeToValueMap' has no attributes.
+The class 'model::StringToStringMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'model::values::Point' has the following attributes: 'z' of type str; 'y' of type str; 'x' of type str.
+The class 'model::variables::TypeToValueMap' has no attributes.
+The class 'model::ISynchable' has the following attributes: 'synched' of type str.
+The class 'model::values::StringToValueMap' has the following attributes: 'key' of type str.
+The class 'model::datasources::QueryResults' has the following attributes: 'id' of type str; 'header' of type str.
+The class 'model::types::Type' has the following attributes: 'abstract' of type str.
+The class 'model::values::Quantity' has the following attributes: 'value' of type str; 'scalingFactor' of type str.
+The class 'AQueryResult' has no attributes.
+The class 'model::types::PointerType' has no attributes.
+The class 'model::values::PhysicalQuantity' has no attributes.
+The class 'model::datasources::RunnableQuery' has the following attributes: 'booleanOperator' of type str; 'targetVariablePath' of type str; 'queryPath' of type str.
+The class 'model::types::QuantityType' has no attributes.
+The class 'Unit' has no attributes.
+The class 'model::datasources::AQueryResult' has no attributes.
+The class 'Quantity' has no attributes.
+The class 'model::values::Unit' has the following attributes: 'unit' of type str.
+The class 'model::datasources::QueryResult' has the following attributes: 'values' of type str.
+The class 'model::types::ParameterType' has no attributes.
+The class 'model::datasources::SerializableQueryResult' has the following attributes: 'values' of type str.
+The class 'model::values::TimeSeries' has the following attributes: 'value' of type str; 'scalingFactor' of type str.
+The class 'model::types::StateVariableType' has no attributes.
+The class 'model::datasources::QueryMatchingCriteria' has no attributes.
+The class 'model::values::MDTimeSeries' has no attributes.
+The class 'model::types::DynamicsType' has no attributes.
+The class 'model::datasources::ProcessQuery' has the following attributes: 'queryProcessorId' of type str.
+The class 'model::values::Argument' has the following attributes: 'argument' of type str.
+The class 'Dynamics' has no attributes.
+The class 'datasources::model::StringToStringMap' has no attributes.
+The class 'model::values::Expression' has the following attributes: 'expression' of type str.
+The class 'model::types::ArgumentType' has no attributes.
+The class 'model::datasources::SimpleQuery' has the following attributes: 'query' of type str; 'countQuery' of type str.
+The class 'model::values::VisualValue' has no attributes.
+The class 'Argument' has no attributes.
+The class 'model::datasources::CompoundQuery' has no attributes.
+The class 'VisualGroupElement' has no attributes.
+The class 'model::types::ExpressionType' has no attributes.
+The class 'model::datasources::CompoundRefQuery' has no attributes.
+The class 'model::values::Collada' has the following attributes: 'collada' of type str.
+The class 'Composite' has no attributes.
+The class 'model::values::OBJ' has the following attributes: 'obj' of type str.
+The enumeration 'BooleanOperator' has the following literals: 'AND', 'OR', 'NAND'.
+The enumeration 'ImageFormat' has the following literals: 'GOOGLE_MAP', 'NIFTI', 'TIFF', 'DZI', 'IIP', 'DCM', 'PNG', 'JPEG'.
+The enumeration 'Connectivity' has the following literals: 'DIRECTIONAL', 'BIDIRECTIONAL', 'NON_DIRECTIONAL'.
+The enumeration 'FileFormat' has the following literals: 'HDF5', 'ZIP'.
+'model::variables::Variable' is a specialization of 'Node'.
+'model::values::MDTimeSeries' is a specialization of 'Value'.
+'model::datasources::QueryResult' is a specialization of 'AQueryResult'.
+'model::types::ConnectionType' is a specialization of 'Type'.
+'model::values::Argument' is a specialization of 'Value'.
+'model::datasources::SerializableQueryResult' is a specialization of 'AQueryResult'.
+'model::types::SimpleType' is a specialization of 'Type'.
+'model::values::Expression' is a specialization of 'Value'.
+'model::datasources::ProcessQuery' is a specialization of 'Query'.
+'model::types::ImageType' is a specialization of 'Type'.
+'model::values::VisualValue' is a specialization of 'Value'.
+'model::GeppettoLibrary' is a specialization of 'Node'.
+'model::datasources::SimpleQuery' is a specialization of 'Query'.
+'model::values::Collada' is a specialization of 'VisualValue'.
+'model::values::Value' is a specialization of 'ISynchable'.
+'model::datasources::CompoundQuery' is a specialization of 'Query'.
+'model::values::OBJ' is a specialization of 'VisualValue'.
+'model::values::Composite' is a specialization of 'Value'.
+'model::datasources::CompoundRefQuery' is a specialization of 'Query'.
+'model::values::Sphere' is a specialization of 'VisualValue'.
+'model::Node' is a specialization of 'ISynchable'.
+'model::types::HTMLType' is a specialization of 'Type'.
+'model::values::Cylinder' is a specialization of 'VisualValue'.
+'model::types::VisualType' is a specialization of 'Type'.
+'model::types::TextType' is a specialization of 'Type'.
+'model::values::Particles' is a specialization of 'Value'.
+'model::types::ImportType' is a specialization of 'Type'.
+'model::types::URLType' is a specialization of 'Type'.
+'model::values::Dynamics' is a specialization of 'Value'.
+'model::Tag' is a specialization of 'ISynchable'.
+'model::types::PointType' is a specialization of 'Type'.
+'model::values::Function' is a specialization of 'Value'.
+'model::ExternalDomainModel' is a specialization of 'DomainModel_'.
+'model::types::ArrayType' is a specialization of 'Type'.
+'model::values::ArrayElement' is a specialization of 'Value'.
+'model::values::MetadataValue' is a specialization of 'Value'.
+'model::types::Type' is a specialization of 'Node'.
+'model::values::ArrayValue' is a specialization of 'Value'.
+'model::values::Text' is a specialization of 'MetadataValue'.
+'model::types::PointerType' is a specialization of 'Type'.
+'model::values::Image' is a specialization of 'Value'.
+'model::values::URL' is a specialization of 'MetadataValue'.
+'model::types::QuantityType' is a specialization of 'Type'.
+'model::values::SkeletonAnimation' is a specialization of 'VisualValue'.
+'model::values::HTML' is a specialization of 'MetadataValue'.
+'model::types::ParameterType' is a specialization of 'Type'.
+'model::values::VisualGroupElement' is a specialization of 'Node'.
+'model::values::Pointer' is a specialization of 'Value'.
+'model::types::StateVariableType' is a specialization of 'Type'.
+'model::values::VisualGroup' is a specialization of 'Node'.
+'model::values::Point' is a specialization of 'Value'.
+'model::types::DynamicsType' is a specialization of 'Type'.
+'model::values::Connection' is a specialization of 'Value'.
+'model::values::Quantity' is a specialization of 'Value'.
+'model::types::ArgumentType' is a specialization of 'Type'.
+'model::datasources::DataSource' is a specialization of 'Node'.
+'model::values::PhysicalQuantity' is a specialization of 'Quantity'.
+'model::types::CompositeType' is a specialization of 'Type'.
+'model::datasources::Query' is a specialization of 'Node'.
+'model::values::Unit' is a specialization of 'Value'.
+'model::types::ExpressionType' is a specialization of 'Type'.
+'model::values::ImportValue' is a specialization of 'Value'.
+'model::values::TimeSeries' is a specialization of 'Value'.
+'model::types::CompositeVisualType' is a specialization of 'VisualType'.
+'VisualValue' (role 'VisualValue', cardinality 0..*) is associated with 'model::types::VisualType' (role 'model_types_VisualType', cardinality 0..*).
+'Query' (role 'Query158', cardinality 0..*) is associated with 'model::datasources::CompoundRefQuery' (role 'model_datasources_CompoundRefQuery', cardinality 0..*).
+'model::types::ExpressionType' (role 'model_types_ExpressionType', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'model::values::Cylinder' (role 'model_values_Cylinder', cardinality 0..*) is associated with 'Point' (role 'Point103', cardinality 0..*).
+'Query' (role 'Query139', cardinality 0..*) is associated with 'model::datasources::DataSource' (role 'model_datasources_DataSource138', cardinality 0..*).
+'model::GeppettoLibrary' (role 'model_GeppettoLibrary', cardinality 0..*) is associated with 'model::GeppettoModel' (role 'model_GeppettoModel2', cardinality 0..*).
+'model::Tag' (role 'model_Tag28', cardinality 0..*) is associated with 'model::Tag' (role 'model_Tag26', cardinality 0..*).
+'Point' (role 'Point105', cardinality 0..*) is associated with 'model::values::Particles' (role 'model_values_Particles', cardinality 0..*).
+'model::types::HTMLType' (role 'model_types_HTMLType', cardinality 0..*) is associated with 'HTML' (role 'HTML', cardinality 0..*).
+'model::datasources::DataSource' (role 'model_datasources_DataSource141', cardinality 0..*) is associated with 'datasources::model::GeppettoLibrary' (role 'datasources_model_GeppettoLibrary', cardinality 0..*).
+'model::Tag' (role 'model_Tag10', cardinality 0..*) is associated with 'model::Node' (role 'model_Node', cardinality 0..*).
+'model::ModelFormat' (role 'model_ModelFormat', cardinality 0..*) is associated with 'model::DomainModel_' (role 'model_DomainModel', cardinality 0..*).
+'PhysicalQuantity' (role 'PhysicalQuantity', cardinality 0..*) is associated with 'model::values::Dynamics' (role 'model_values_Dynamics', cardinality 0..*).
+'Text' (role 'Text', cardinality 0..*) is associated with 'model::types::TextType' (role 'model_types_TextType', cardinality 0..*).
+'datasources::model::GeppettoLibrary' (role 'datasources_model_GeppettoLibrary144', cardinality 0..*) is associated with 'model::datasources::DataSource' (role 'model_datasources_DataSource143', cardinality 0..*).
+'model::GeppettoLibrary' (role 'model_GeppettoLibrary12', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'model::types::CompositeType' (role 'model_types_CompositeType42', cardinality 0..*) is associated with 'Composite' (role 'Composite', cardinality 0..*).
+'Function' (role 'Function', cardinality 0..*) is associated with 'model::values::Dynamics' (role 'model_values_Dynamics90', cardinality 0..*).
+'URL' (role 'URL', cardinality 0..*) is associated with 'model::types::URLType' (role 'model_types_URLType', cardinality 0..*).
+'Query' (role 'Query147', cardinality 0..*) is associated with 'model::datasources::DataSource' (role 'model_datasources_DataSource146', cardinality 0..*).
+'Type' (role 'Type15', cardinality 0..*) is associated with 'model::GeppettoLibrary' (role 'model_GeppettoLibrary14', cardinality 0..*).
+'Pointer' (role 'Pointer44', cardinality 0..*) is associated with 'model::types::PointerType' (role 'model_types_PointerType', cardinality 0..*).
+'model::values::Function' (role 'model_values_Function', cardinality 0..*) is associated with 'Argument' (role 'Argument92', cardinality 0..*).
+'Point' (role 'Point', cardinality 0..*) is associated with 'model::types::PointType' (role 'model_types_PointType', cardinality 0..*).
+'model::datasources::DataSourceLibraryConfiguration' (role 'model_datasources_DataSourceLibraryConfiguration', cardinality 0..*) is associated with 'datasources::model::GeppettoLibrary' (role 'datasources_model_GeppettoLibrary149', cardinality 0..*).
+'model::GeppettoLibrary' (role 'model_GeppettoLibrary17', cardinality 0..*) is associated with 'model::LibraryManager' (role 'model_LibraryManager', cardinality 0..*).
+'model::types::QuantityType' (role 'model_types_QuantityType', cardinality 0..*) is associated with 'Quantity' (role 'Quantity', cardinality 0..*).
+'Expression' (role 'Expression95', cardinality 0..*) is associated with 'model::values::Function' (role 'model_values_Function94', cardinality 0..*).
+'model::types::ArrayType' (role 'model_types_ArrayType', cardinality 0..*) is associated with 'Type' (role 'Type58', cardinality 0..*).
+'model::variables::Variable' (role 'model_variables_Variable', cardinality 0..*) is associated with 'Type' (role 'Type123', cardinality 0..*).
+'model::VariableValue' (role 'model_VariableValue', cardinality 0..*) is associated with 'model::ExperimentState' (role 'model_ExperimentState', cardinality 0..*).
+'Quantity' (role 'Quantity47', cardinality 0..*) is associated with 'model::types::ParameterType' (role 'model_types_ParameterType', cardinality 0..*).
+'FunctionPlot' (role 'FunctionPlot', cardinality 0..*) is associated with 'model::values::Function' (role 'model_values_Function97', cardinality 0..*).
+'Value' (role 'Value78', cardinality 0..*) is associated with 'model::values::MDTimeSeries' (role 'model_values_MDTimeSeries', cardinality 0..*).
+'model::variables::Variable' (role 'referencedVariables', cardinality 0..*) is associated with 'Type' (role 'Type125', cardinality 0..*).
+'model::VariableValue' (role 'model_VariableValue21', cardinality 0..*) is associated with 'model::ExperimentState' (role 'model_ExperimentState20', cardinality 0..*).
+'Quantity' (role 'Quantity49', cardinality 0..*) is associated with 'model::types::StateVariableType' (role 'model_types_StateVariableType', cardinality 0..*).
+'model::values::Connection' (role 'model_values_Connection114', cardinality 0..*) is associated with 'Pointer' (role 'Pointer115', cardinality 0..*).
+'PointerElement' (role 'PointerElement', cardinality 0..*) is associated with 'model::values::Pointer' (role 'model_values_Pointer', cardinality 0..*).
+'TypeToValueMap' (role 'TypeToValueMap', cardinality 0..*) is associated with 'model::variables::Variable' (role 'model_variables_Variable127', cardinality 0..*).
+'Pointer' (role 'Pointer', cardinality 0..*) is associated with 'model::VariableValue' (role 'model_VariableValue23', cardinality 0..*).
+'Dynamics' (role 'Dynamics', cardinality 0..*) is associated with 'model::types::DynamicsType' (role 'model_types_DynamicsType', cardinality 0..*).
+'model::values::ArrayElement' (role 'model_values_ArrayElement', cardinality 0..*) is associated with 'Point' (role 'Point117', cardinality 0..*).
+'Point' (role 'Point82', cardinality 0..*) is associated with 'model::values::Pointer' (role 'model_values_Pointer81', cardinality 0..*).
+'Point' (role 'Point130', cardinality 0..*) is associated with 'model::variables::Variable' (role 'model_variables_Variable129', cardinality 0..*).
+'Value' (role 'Value', cardinality 0..*) is associated with 'model::VariableValue' (role 'model_VariableValue25', cardinality 0..*).
+'model::types::ArgumentType' (role 'model_types_ArgumentType', cardinality 0..*) is associated with 'Argument' (role 'Argument', cardinality 0..*).
+'Value' (role 'Value120', cardinality 0..*) is associated with 'model::values::ArrayElement' (role 'model_values_ArrayElement119', cardinality 0..*).
+'model::values::PointerElement' (role 'model_values_PointerElement', cardinality 0..*) is associated with 'Variable' (role 'Variable84', cardinality 0..*).
+'Type' (role 'Type132', cardinality 0..*) is associated with 'model::variables::TypeToValueMap' (role 'model_variables_TypeToValueMap', cardinality 0..*).
+'model::GeppettoModel' (role 'model_GeppettoModel4', cardinality 0..*) is associated with 'model::Tag' (role 'model_Tag', cardinality 0..*).
+'Variable' (role 'Variable40', cardinality 0..*) is associated with 'model::types::CompositeType' (role 'model_types_CompositeType', cardinality 0..*).
+'ArrayElement' (role 'ArrayElement', cardinality 0..*) is associated with 'model::values::ArrayValue' (role 'model_values_ArrayValue', cardinality 0..*).
+'Type' (role 'Type87', cardinality 0..*) is associated with 'model::values::PointerElement' (role 'model_values_PointerElement86', cardinality 0..*).
+'AQueryResult' (role 'AQueryResult', cardinality 0..*) is associated with 'model::datasources::QueryResults' (role 'model_datasources_QueryResults', cardinality 0..*).
+'model::GeppettoModel' (role 'model_GeppettoModel6', cardinality 0..*) is associated with 'DataSource' (role 'DataSource', cardinality 0..*).
+'model::types::ArrayType' (role 'model_types_ArrayType60', cardinality 0..*) is associated with 'ArrayValue' (role 'ArrayValue', cardinality 0..*).
+'SkeletonTransformation' (role 'SkeletonTransformation', cardinality 0..*) is associated with 'model::values::SkeletonAnimation' (role 'model_values_SkeletonAnimation', cardinality 0..*).
+'StringToValueMap' (role 'StringToValueMap', cardinality 0..*) is associated with 'model::values::Composite' (role 'model_values_Composite', cardinality 0..*).
+'Type' (role 'Type161', cardinality 0..*) is associated with 'model::datasources::QueryMatchingCriteria' (role 'model_datasources_QueryMatchingCriteria', cardinality 0..*).
+'Query' (role 'Query', cardinality 0..*) is associated with 'model::GeppettoModel' (role 'model_GeppettoModel8', cardinality 0..*).
+'Variable' (role 'Variable62', cardinality 0..*) is associated with 'model::types::CompositeVisualType' (role 'model_types_CompositeVisualType', cardinality 0..*).
+'model::values::VisualGroupElement' (role 'model_values_VisualGroupElement', cardinality 0..*) is associated with 'Quantity' (role 'Quantity108', cardinality 0..*).
+'Value' (role 'Value73', cardinality 0..*) is associated with 'model::values::StringToValueMap' (role 'model_values_StringToValueMap', cardinality 0..*).
+'QueryMatchingCriteria' (role 'QueryMatchingCriteria', cardinality 0..*) is associated with 'model::datasources::Query' (role 'model_datasources_Query', cardinality 0..*).
+'Type' (role 'Type31', cardinality 0..*) is associated with 'model::types::Type' (role 'model_types_Type', cardinality 0..*).
+'VisualGroup' (role 'VisualGroup', cardinality 0..*) is associated with 'model::types::CompositeVisualType' (role 'model_types_CompositeVisualType64', cardinality 0..*).
+'VisualGroupElement' (role 'VisualGroupElement110', cardinality 0..*) is associated with 'model::values::VisualGroup' (role 'model_values_VisualGroup', cardinality 0..*).
+'model::values::PhysicalQuantity' (role 'model_values_PhysicalQuantity', cardinality 0..*) is associated with 'Unit' (role 'Unit', cardinality 0..*).
+'VisualType' (role 'VisualType', cardinality 0..*) is associated with 'model::types::Type' (role 'model_types_Type33', cardinality 0..*).
+'model::datasources::Query' (role 'model_datasources_Query152', cardinality 0..*) is associated with 'Type' (role 'Type153', cardinality 0..*).
+'Variable' (role 'Variable66', cardinality 0..*) is associated with 'model::types::ConnectionType' (role 'model_types_ConnectionType', cardinality 0..*).
+'Pointer' (role 'Pointer112', cardinality 0..*) is associated with 'model::values::Connection' (role 'model_values_Connection', cardinality 0..*).
+'Unit' (role 'Unit76', cardinality 0..*) is associated with 'model::values::TimeSeries' (role 'model_values_TimeSeries', cardinality 0..*).
+'model::types::Type' (role 'types', cardinality 0..*) is associated with 'Variable' (role 'Variable35', cardinality 0..*).
+'model::datasources::ProcessQuery' (role 'model_datasources_ProcessQuery', cardinality 0..*) is associated with 'datasources::model::StringToStringMap' (role 'datasources_model_StringToStringMap', cardinality 0..*).
+'model::types::ConnectionType' (role 'model_types_ConnectionType68', cardinality 0..*) is associated with 'Composite' (role 'Composite69', cardinality 0..*).
+'Value' (role 'Value135', cardinality 0..*) is associated with 'model::variables::TypeToValueMap' (role 'model_variables_TypeToValueMap134', cardinality 0..*).
+'VisualGroupElement' (role 'VisualGroupElement', cardinality 0..*) is associated with 'model::values::VisualValue' (role 'model_values_VisualValue', cardinality 0..*).
+'types::model::DomainModel_' (role 'types_model_DomainModel', cardinality 0..*) is associated with 'model::types::Type' (role 'model_types_Type37', cardinality 0..*).
+'Query' (role 'Query156', cardinality 0..*) is associated with 'model::datasources::CompoundQuery' (role 'model_datasources_CompoundQuery', cardinality 0..*).
+'Image' (role 'Image', cardinality 0..*) is associated with 'model::types::ImageType' (role 'model_types_ImageType', cardinality 0..*).
+'model::datasources::DataSource' (role 'model_datasources_DataSource', cardinality 0..*) is associated with 'DataSourceLibraryConfiguration' (role 'DataSourceLibraryConfiguration', cardinality 0..*).
+'Point' (role 'Point101', cardinality 0..*) is associated with 'model::values::VisualValue' (role 'model_values_VisualValue100', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'model::GeppettoModel' (role 'model_GeppettoModel', cardinality 0..*).

@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'graph::Graph' has no attributes.
+The class 'graph::Node' has the following attributes: 'name' of type str.
+'graph::Graph' (role 'graph_Graph3', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph1', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Node' has no attributes.
+The class 'model::TypeNode' has the following attributes: 'topicType' of type str.
+The class 'model::Edge' has the following attributes: 'type' of type str.
+The class 'model::BendPoint' has the following attributes: 'posY' of type int; 'posX' of type int.
+The class 'model::AssociationNode' has the following attributes: 'associationTypeConstraint' of type str.
+The class 'model::Diagram' has the following attributes: 'topicMapSchema' of type str.
+The class 'model::Node' has the following attributes: 'posX' of type int; 'posY' of type int.
+The enumeration 'EdgeType' has the following literals: 'AKO_TYPE', 'ROLE_CONSTRAINT_TYPE', 'IS_A_TYPE'.
+'model::AssociationNode' is a specialization of 'Node'.
+'model::TypeNode' is a specialization of 'Node'.
+'model::Diagram' (role 'model_Diagram', cardinality 0..*) is associated with 'model::Node' (role 'model_Node', cardinality 0..*).
+'model::Edge' (role 'model_Edge', cardinality 0..*) is associated with 'model::Diagram' (role 'model_Diagram2', cardinality 0..*).
+'model::Edge' (role 'model_Edge4', cardinality 0..*) is associated with 'model::BendPoint' (role 'model_BendPoint', cardinality 0..*).
+'model::Node' (role 'model_Node10', cardinality 0..*) is associated with 'model::Edge' (role 'model_Edge9', cardinality 0..*).
+'model::Node' (role 'model_Node7', cardinality 0..*) is associated with 'model::Edge' (role 'model_Edge6', cardinality 0..*).

@@ -1,0 +1,31 @@
+The model has 14 class(es).
+The class 'typeslibrary::NativeTypesLibrary' has the following attributes: 'name' of type str.
+The class 'typeslibrary::TypeInstance' has the following attributes: 'precision' of type int; 'literals' of type str; 'length' of type int.
+The class 'Type' has no attributes.
+The class 'typeslibrary::ComplexNamedType' has no attributes.
+The class 'typeslibrary::NativeType' has the following attributes: 'name' of type str; 'spec' of type str.
+The class 'TypesLibrary' has no attributes.
+The class 'typeslibrary::SimpleNamedType' has no attributes.
+The class 'typeslibrary::Type' has no attributes.
+The class 'typeslibrary::UserDefinedType' has the following attributes: 'name' of type str.
+The class 'typeslibrary::TypesLibraryUser' has no attributes.
+The class 'typeslibrary::UserDefinedTypeRef' has no attributes.
+The class 'UserDefinedType' has no attributes.
+The class 'typeslibrary::TypesLibrary' has the following attributes: 'kind' of type str.
+The class 'typeslibrary::UserDefinedTypesLibrary' has the following attributes: 'name' of type str.
+The enumeration 'TypesLibraryKind' has the following literals: 'logicalTypes', 'physicalTypes'.
+The enumeration 'NativeTypeKind' has the following literals: 'LengthAndPrecision', 'Enum', 'Length', 'Simple'.
+'typeslibrary::UserDefinedTypeRef' is a specialization of 'Type'.
+'typeslibrary::ComplexNamedType' is a specialization of 'UserDefinedType'.
+'typeslibrary::UserDefinedTypesLibrary' is a specialization of 'TypesLibrary'.
+'typeslibrary::TypeInstance' is a specialization of 'Type'.
+'typeslibrary::SimpleNamedType' is a specialization of 'UserDefinedType'.
+'typeslibrary::NativeTypesLibrary' is a specialization of 'TypesLibrary'.
+'typeslibrary::NativeType' (role 'typeslibrary_NativeType3', cardinality 0..*) is associated with 'typeslibrary::NativeType' (role 'typeslibrary_NativeType5', cardinality 0..*).
+'typeslibrary::UserDefinedTypeRef' (role 'typeslibrary_UserDefinedTypeRef', cardinality 0..*) is associated with 'typeslibrary::UserDefinedType' (role 'typeslibrary_UserDefinedType10', cardinality 0..*).
+'typeslibrary::UserDefinedTypesLibrary' (role 'typeslibrary_UserDefinedTypesLibrary', cardinality 0..*) is associated with 'typeslibrary::UserDefinedType' (role 'typeslibrary_UserDefinedType12', cardinality 0..*).
+'typeslibrary::TypeInstance' (role 'typeslibrary_TypeInstance8', cardinality 0..*) is associated with 'typeslibrary::SimpleNamedType' (role 'typeslibrary_SimpleNamedType', cardinality 0..*).
+'typeslibrary::TypeInstance' (role 'typeslibrary_TypeInstance', cardinality 0..*) is associated with 'typeslibrary::NativeType' (role 'typeslibrary_NativeType2', cardinality 0..*).
+'typeslibrary::ComplexNamedType' (role 'typeslibrary_ComplexNamedType', cardinality 0..*) is associated with 'typeslibrary::UserDefinedType' (role 'typeslibrary_UserDefinedType', cardinality 0..*).
+'typeslibrary::NativeTypesLibrary' (role 'typeslibrary_NativeTypesLibrary', cardinality 0..*) is associated with 'typeslibrary::NativeType' (role 'typeslibrary_NativeType', cardinality 0..*).
+'typeslibrary::TypesLibrary' (role 'typeslibrary_TypesLibrary', cardinality 0..*) is associated with 'typeslibrary::TypesLibraryUser' (role 'typeslibrary_TypesLibraryUser', cardinality 0..*).

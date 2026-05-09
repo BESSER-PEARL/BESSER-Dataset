@@ -1,0 +1,120 @@
+The model has 41 class(es).
+The class 'ControlPort' has no attributes.
+The class 'sam::Port' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'sam::Automaton' has no attributes.
+The class 'sam::OutControlPort' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'sam::OutDataPort' has no attributes.
+The class 'DataPort' has no attributes.
+The class 'sam::AbstractState' has no attributes.
+The class 'sam::InitialState' has no attributes.
+The class 'IdentifiedItem' has no attributes.
+The class 'sam::DataStore' has no attributes.
+The class 'sam::ControlPort' has no attributes.
+The class 'Port' has no attributes.
+The class 'sam::NamedItem' has the following attributes: 'name' of type str.
+The class 'sam::DataFlow' has the following attributes: 'type' of type str.
+The class 'sam::State' has no attributes.
+The class 'Flow' has no attributes.
+The class 'NamedItem' has no attributes.
+The class 'sam::Composition' has no attributes.
+The class 'sam::InDataPort' has no attributes.
+The class 'InputPort' has no attributes.
+The class 'sam::Flow' has no attributes.
+The class 'sam::DataPort' has no attributes.
+The class 'sam::OutputPort' has no attributes.
+The class 'State' has no attributes.
+The class 'OutputPort' has no attributes.
+The class 'sam::MultiPort' has no attributes.
+The class 'sam::SynchronisationGate' has no attributes.
+The class 'sam::InputPort' has no attributes.
+The class 'sam::MacroState' has no attributes.
+The class 'sam::ControlFlow' has no attributes.
+The class 'sam::System' has no attributes.
+The class 'sam::Model' has no attributes.
+The class 'sam::Decomposition' has no attributes.
+The class 'sam::InControlPort' has no attributes.
+The class 'sam::IdentifiedItem' has the following attributes: 'requirements' of type str; 'comment' of type str.
+The class 'ModelContent' has no attributes.
+The class 'SynchronisationGate' has no attributes.
+The class 'sam::ModelContent' has no attributes.
+The class 'sam::Transition' has the following attributes: 'priority' of type str; 'emission' of type str; 'condition' of type str.
+The enumeration 'DataType' has the following literals: 'Real', 'Float', 'Double', 'Integer', 'Boolean'.
+'sam::Decomposition' is a specialization of 'SynchronisationGate'.
+'sam::System' is a specialization of 'ModelContent'.
+'sam::InControlPort' is a specialization of 'ControlPort'.
+'sam::InControlPort' is a specialization of 'InputPort'.
+'sam::DataPort' is a specialization of 'Port'.
+'sam::OutDataPort' is a specialization of 'OutputPort'.
+'sam::DataStore' is a specialization of 'NamedItem'.
+'sam::Port' is a specialization of 'NamedItem'.
+'sam::Automaton' is a specialization of 'ModelContent'.
+'sam::InitialState' is a specialization of 'State'.
+'sam::MacroState' is a specialization of 'AbstractState'.
+'sam::DataFlow' is a specialization of 'Flow'.
+'sam::NamedItem' is a specialization of 'IdentifiedItem'.
+'sam::ControlPort' is a specialization of 'Port'.
+'sam::State' is a specialization of 'AbstractState'.
+'sam::Flow' is a specialization of 'NamedItem'.
+'sam::SynchronisationGate' is a specialization of 'IdentifiedItem'.
+'sam::AbstractState' is a specialization of 'NamedItem'.
+'sam::MultiPort' is a specialization of 'NamedItem'.
+'sam::InDataPort' is a specialization of 'InputPort'.
+'sam::Composition' is a specialization of 'SynchronisationGate'.
+'sam::OutDataPort' is a specialization of 'DataPort'.
+'sam::OutputPort' is a specialization of 'Port'.
+'sam::OutControlPort' is a specialization of 'ControlPort'.
+'sam::InDataPort' is a specialization of 'DataPort'.
+'sam::InputPort' is a specialization of 'Port'.
+'sam::Transition' is a specialization of 'IdentifiedItem'.
+'sam::OutControlPort' is a specialization of 'OutputPort'.
+'sam::IdentifiedItem' is a specialization of 'EModelElement'.
+'sam::ControlFlow' is a specialization of 'Flow'.
+'sam::ModelContent' is a specialization of 'NamedItem'.
+'sam::Port' (role 'sam_Port37', cardinality 0..*) is associated with 'sam::MultiPort' (role 'sam_MultiPort', cardinality 0..*).
+'sam::Model' (role 'Model', cardinality 0..*) is associated with 'sam::ModelContent' (role 'modelContent', cardinality 0..*).
+'sam::DataStore' (role 'parentDataStore', cardinality 0..*) is associated with 'sam::InDataPort' (role 'InDataPort', cardinality 0..*).
+'sam::Transition' (role 'Transition', cardinality 0..*) is associated with 'sam::AbstractState' (role 'source', cardinality 0..*).
+'sam::OutDataPort' (role 'out', cardinality 0..*) is associated with 'sam::SynchronisationGate' (role 'SynchronisationGate24', cardinality 0..*).
+'sam::MultiPort' (role 'listMultiPort', cardinality 0..*) is associated with 'sam::ModelContent' (role 'ModelContent87', cardinality 0..*).
+'sam::InDataPort' (role 'InDataPort62', cardinality 0..*) is associated with 'sam::SynchronisationGate' (role 'parentSync61', cardinality 0..*).
+'sam::Port' (role 'sam_Port38', cardinality 0..*) is associated with 'sam::Port' (role 'sam_Port40', cardinality 0..*).
+'sam::System' (role 'System81', cardinality 0..*) is associated with 'sam::ModelContent' (role 'listElements', cardinality 0..*).
+'sam::MultiPort' (role 'sam_MultiPort88', cardinality 0..*) is associated with 'sam::MultiPort' (role 'sam_MultiPort90', cardinality 0..*).
+'sam::Port' (role 'sam_Port31', cardinality 0..*) is associated with 'sam::Flow' (role 'sam_Flow32', cardinality 0..*).
+'sam::Port' (role 'Port', cardinality 0..*) is associated with 'sam::Automaton' (role 'parentAutomaton6', cardinality 0..*).
+'sam::System' (role 'parentSystem66', cardinality 0..*) is associated with 'sam::DataStore' (role 'DataStore67', cardinality 0..*).
+'sam::DataPort' (role 'sam_DataPort48', cardinality 0..*) is associated with 'sam::DataFlow' (role 'sam_DataFlow47', cardinality 0..*).
+'sam::Automaton' (role 'sam_Automaton', cardinality 0..*) is associated with 'sam::Automaton' (role 'sam_Automaton9', cardinality 0..*).
+'sam::System' (role 'System', cardinality 0..*) is associated with 'sam::Port' (role 'listPorts', cardinality 0..*).
+'sam::Flow' (role 'Flow', cardinality 0..*) is associated with 'sam::System' (role 'parentSystem72', cardinality 0..*).
+'sam::ControlPort' (role 'sam_ControlPort44', cardinality 0..*) is associated with 'sam::ControlFlow' (role 'sam_ControlFlow43', cardinality 0..*).
+'sam::InDataPort' (role 'in_', cardinality 0..*) is associated with 'sam::SynchronisationGate' (role 'SynchronisationGate', cardinality 0..*).
+'sam::ModelContent' (role 'parent', cardinality 0..*) is associated with 'sam::MultiPort' (role 'MultiPort', cardinality 0..*).
+'sam::System' (role 'System57', cardinality 0..*) is associated with 'sam::SynchronisationGate' (role 'listSynchronisation', cardinality 0..*).
+'sam::System' (role 'parentSystem74', cardinality 0..*) is associated with 'sam::ModelContent' (role 'ModelContent', cardinality 0..*).
+'sam::System' (role 'sam_System75', cardinality 0..*) is associated with 'sam::System' (role 'sam_System', cardinality 0..*).
+'sam::Transition' (role 'outlink', cardinality 0..*) is associated with 'sam::AbstractState' (role 'AbstractState19', cardinality 0..*).
+'sam::Automaton' (role 'parentAutomaton8', cardinality 0..*) is associated with 'sam::AbstractState' (role 'AbstractState', cardinality 0..*).
+'sam::Transition' (role 'listTransitions', cardinality 0..*) is associated with 'sam::Automaton' (role 'Automaton17', cardinality 0..*).
+'sam::AbstractState' (role 'composition', cardinality 0..*) is associated with 'sam::MacroState' (role 'MacroState', cardinality 0..*).
+'sam::Automaton' (role 'parentAutomaton', cardinality 0..*) is associated with 'sam::Transition' (role 'Transition4', cardinality 0..*).
+'sam::System' (role 'parentSystem69', cardinality 0..*) is associated with 'sam::SynchronisationGate' (role 'SynchronisationGate70', cardinality 0..*).
+'sam::Port' (role 'sam_Port85', cardinality 0..*) is associated with 'sam::MultiPort' (role 'sam_MultiPort84', cardinality 0..*).
+'sam::SynchronisationGate' (role 'parentSync', cardinality 0..*) is associated with 'sam::OutDataPort' (role 'OutDataPort59', cardinality 0..*).
+'sam::ControlFlow' (role 'sam_ControlFlow', cardinality 0..*) is associated with 'sam::ControlPort' (role 'sam_ControlPort', cardinality 0..*).
+'sam::ModelContent' (role 'ModelContent78', cardinality 0..*) is associated with 'sam::Model' (role 'parentModel', cardinality 0..*).
+'sam::DataFlow' (role 'sam_DataFlow', cardinality 0..*) is associated with 'sam::DataPort' (role 'sam_DataPort', cardinality 0..*).
+'sam::Port' (role 'listPorts34', cardinality 0..*) is associated with 'sam::Automaton' (role 'Automaton35', cardinality 0..*).
+'sam::Automaton' (role 'Automaton', cardinality 0..*) is associated with 'sam::AbstractState' (role 'listStates', cardinality 0..*).
+'sam::DataStore' (role 'listStores', cardinality 0..*) is associated with 'sam::System' (role 'System50', cardinality 0..*).
+'sam::MacroState' (role 'parentState', cardinality 0..*) is associated with 'sam::AbstractState' (role 'AbstractState12', cardinality 0..*).
+'sam::Port' (role 'Port64', cardinality 0..*) is associated with 'sam::System' (role 'parentSystem', cardinality 0..*).
+'sam::InDataPort' (role 'in_22', cardinality 0..*) is associated with 'sam::DataStore' (role 'DataStore', cardinality 0..*).
+'sam::System' (role 'System55', cardinality 0..*) is associated with 'sam::Flow' (role 'listFlows', cardinality 0..*).
+'sam::OutDataPort' (role 'out26', cardinality 0..*) is associated with 'sam::DataStore' (role 'DataStore27', cardinality 0..*).
+'sam::Transition' (role 'Transition14', cardinality 0..*) is associated with 'sam::State' (role 'dest', cardinality 0..*).
+'sam::DataStore' (role 'parentDataStore53', cardinality 0..*) is associated with 'sam::OutDataPort' (role 'OutDataPort', cardinality 0..*).
+'sam::Port' (role 'sam_Port', cardinality 0..*) is associated with 'sam::Flow' (role 'sam_Flow', cardinality 0..*).
+'sam::Transition' (role 'inlink', cardinality 0..*) is associated with 'sam::State' (role 'State', cardinality 0..*).

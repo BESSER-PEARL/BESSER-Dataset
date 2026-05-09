@@ -1,0 +1,109 @@
+The model has 41 class(es).
+The class 'statemachines::CustomSystem' has no attributes.
+The class 'statemachines::Vertex' has no attributes.
+The class 'statemachines::StringAttribute' has no attributes.
+The class 'EventOccurrence' has no attributes.
+The class 'statemachines::IntegerAttributeValue' has the following attributes: 'value' of type str.
+The class 'statemachines::Trigger' has no attributes.
+The class 'statemachines::SignalEventOccurrence' has no attributes.
+The class 'statemachines::EventOccurrence' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'statemachines::State' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'statemachines::BooleanAttributeValue' has the following attributes: 'value' of type str.
+The class 'Behavior' has no attributes.
+The class 'statemachines::Transition' has the following attributes: 'kind' of type str.
+The class 'statemachines::Attribute' has no attributes.
+The class 'statemachines::SignalEventType' has no attributes.
+The class 'statemachines::EventType' has no attributes.
+The class 'statemachines::StateMachine' has no attributes.
+The class 'statemachines::StringAttributeValue' has the following attributes: 'value' of type str.
+The class 'statemachines::Region' has no attributes.
+The class 'statemachines::Signal' has no attributes.
+The class 'statemachines::StringConstraint' has no attributes.
+The class 'statemachines::BooleanConstraint' has no attributes.
+The class 'statemachines::Behavior' has no attributes.
+The class 'statemachines::IntegerAttribute' has no attributes.
+The class 'EventType' has no attributes.
+The class 'statemachines::IntegerConstraint' has no attributes.
+The class 'statemachines::AttributeValue' has no attributes.
+The class 'statemachines::CompletionEventOccurrence' has no attributes.
+The class 'statemachines::NamedElement' has the following attributes: 'name' of type str.
+The class 'statemachines::CallEventOccurrence' has no attributes.
+The class 'statemachines::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'statemachines::FinalState' has no attributes.
+The class 'statemachines::Operation' has no attributes.
+The class 'AttributeValue' has no attributes.
+The class 'statemachines::OperationBehavior' has no attributes.
+The class 'statemachines::Constraint' has the following attributes: 'value' of type str.
+The class 'NamedElement' has no attributes.
+The class 'State' has no attributes.
+The class 'statemachines::CallEventType' has no attributes.
+The class 'statemachines::BooleanAttribute' has no attributes.
+The enumeration 'PseudostateKind' has the following literals: 'fork', 'exitpoint', 'initial', 'entrypoint', 'join', 'terminate'.
+The enumeration 'TransitionKind' has the following literals: 'external', 'internal', 'local'.
+'statemachines::CallEventOccurrence' is a specialization of 'EventOccurrence'.
+'statemachines::OperationBehavior' is a specialization of 'Behavior'.
+'statemachines::CallEventType' is a specialization of 'EventType'.
+'statemachines::Region' is a specialization of 'NamedElement'.
+'statemachines::Vertex' is a specialization of 'NamedElement'.
+'statemachines::StateMachine' is a specialization of 'NamedElement'.
+'statemachines::BooleanAttributeValue' is a specialization of 'AttributeValue'.
+'statemachines::Transition' is a specialization of 'NamedElement'.
+'statemachines::StringAttributeValue' is a specialization of 'AttributeValue'.
+'statemachines::Operation' is a specialization of 'NamedElement'.
+'statemachines::StringAttribute' is a specialization of 'Attribute'.
+'statemachines::BooleanAttribute' is a specialization of 'Attribute'.
+'statemachines::FinalState' is a specialization of 'State'.
+'statemachines::Pseudostate' is a specialization of 'Vertex'.
+'statemachines::State' is a specialization of 'Vertex'.
+'statemachines::SignalEventType' is a specialization of 'EventType'.
+'statemachines::Signal' is a specialization of 'NamedElement'.
+'statemachines::SignalEventOccurrence' is a specialization of 'EventOccurrence'.
+'statemachines::IntegerAttributeValue' is a specialization of 'AttributeValue'.
+'statemachines::Trigger' is a specialization of 'NamedElement'.
+'statemachines::Attribute' is a specialization of 'NamedElement'.
+'statemachines::IntegerAttribute' is a specialization of 'Attribute'.
+'statemachines::Behavior' is a specialization of 'NamedElement'.
+'statemachines::AttributeValue' (role 'statemachines_AttributeValue79', cardinality 0..*) is associated with 'statemachines::CallEventOccurrence' (role 'statemachines_CallEventOccurrence78', cardinality 0..*).
+'statemachines::AttributeValue' (role 'statemachines_AttributeValue74', cardinality 0..*) is associated with 'statemachines::SignalEventOccurrence' (role 'statemachines_SignalEventOccurrence73', cardinality 0..*).
+'statemachines::State' (role 'statemachines_State39', cardinality 0..*) is associated with 'statemachines::Behavior' (role 'statemachines_Behavior40', cardinality 0..*).
+'statemachines::Vertex' (role 'Vertex49', cardinality 0..*) is associated with 'statemachines::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'statemachines::Signal' (role 'statemachines_Signal71', cardinality 0..*) is associated with 'statemachines::SignalEventOccurrence' (role 'statemachines_SignalEventOccurrence70', cardinality 0..*).
+'statemachines::CallEventOccurrence' (role 'statemachines_CallEventOccurrence84', cardinality 0..*) is associated with 'statemachines::AttributeValue' (role 'statemachines_AttributeValue85', cardinality 0..*).
+'statemachines::Trigger' (role 'statemachines_Trigger', cardinality 0..*) is associated with 'statemachines::State' (role 'statemachines_State45', cardinality 0..*).
+'statemachines::State' (role 'state', cardinality 0..*) is associated with 'statemachines::Region' (role 'Region36', cardinality 0..*).
+'statemachines::CustomSystem' (role 'statemachines_CustomSystem4', cardinality 0..*) is associated with 'statemachines::Operation' (role 'statemachines_Operation', cardinality 0..*).
+'statemachines::Region' (role 'container', cardinality 0..*) is associated with 'statemachines::Vertex' (role 'Vertex', cardinality 0..*).
+'statemachines::BooleanAttributeValue' (role 'statemachines_BooleanAttributeValue', cardinality 0..*) is associated with 'statemachines::BooleanAttribute' (role 'statemachines_BooleanAttribute', cardinality 0..*).
+'statemachines::Operation' (role 'statemachines_Operation8', cardinality 0..*) is associated with 'statemachines::Attribute' (role 'statemachines_Attribute9', cardinality 0..*).
+'statemachines::Behavior' (role 'statemachines_Behavior58', cardinality 0..*) is associated with 'statemachines::Transition' (role 'statemachines_Transition57', cardinality 0..*).
+'statemachines::Attribute' (role 'statemachines_Attribute15', cardinality 0..*) is associated with 'statemachines::Operation' (role 'statemachines_Operation14', cardinality 0..*).
+'statemachines::Region' (role 'regions26', cardinality 0..*) is associated with 'statemachines::State' (role 'State', cardinality 0..*).
+'statemachines::Transition' (role 'Transition30', cardinality 0..*) is associated with 'statemachines::Vertex' (role 'source', cardinality 0..*).
+'statemachines::EventType' (role 'statemachines_EventType', cardinality 0..*) is associated with 'statemachines::Trigger' (role 'statemachines_Trigger60', cardinality 0..*).
+'statemachines::Transition' (role 'statemachines_Transition', cardinality 0..*) is associated with 'statemachines::Trigger' (role 'statemachines_Trigger53', cardinality 0..*).
+'statemachines::IntegerAttribute' (role 'statemachines_IntegerAttribute', cardinality 0..*) is associated with 'statemachines::IntegerAttributeValue' (role 'statemachines_IntegerAttributeValue', cardinality 0..*).
+'statemachines::Vertex' (role 'Vertex51', cardinality 0..*) is associated with 'statemachines::Transition' (role 'incomingTransitions', cardinality 0..*).
+'statemachines::StateMachine' (role 'stateMachine', cardinality 0..*) is associated with 'statemachines::Region' (role 'Region', cardinality 0..*).
+'statemachines::CompletionEventOccurrence' (role 'statemachines_CompletionEventOccurrence', cardinality 0..*) is associated with 'statemachines::State' (role 'statemachines_State68', cardinality 0..*).
+'statemachines::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'statemachines::Region' (role 'regions', cardinality 0..*).
+'statemachines::OperationBehavior' (role 'statemachines_OperationBehavior', cardinality 0..*) is associated with 'statemachines::AttributeValue' (role 'statemachines_AttributeValue', cardinality 0..*).
+'statemachines::Behavior' (role 'statemachines_Behavior43', cardinality 0..*) is associated with 'statemachines::State' (role 'statemachines_State42', cardinality 0..*).
+'statemachines::StateMachine' (role 'statemachines_StateMachine', cardinality 0..*) is associated with 'statemachines::CustomSystem' (role 'statemachines_CustomSystem', cardinality 0..*).
+'statemachines::AttributeValue' (role 'statemachines_AttributeValue82', cardinality 0..*) is associated with 'statemachines::CallEventOccurrence' (role 'statemachines_CallEventOccurrence81', cardinality 0..*).
+'statemachines::Region' (role 'Region28', cardinality 0..*) is associated with 'statemachines::Vertex' (role 'vertice', cardinality 0..*).
+'statemachines::SignalEventOccurrence' (role 'statemachines_SignalEventOccurrence', cardinality 0..*) is associated with 'statemachines::Behavior' (role 'statemachines_Behavior62', cardinality 0..*).
+'statemachines::Transition' (role 'transitions', cardinality 0..*) is associated with 'statemachines::Region' (role 'Region55', cardinality 0..*).
+'statemachines::CallEventOccurrence' (role 'statemachines_CallEventOccurrence', cardinality 0..*) is associated with 'statemachines::Operation' (role 'statemachines_Operation76', cardinality 0..*).
+'statemachines::CustomSystem' (role 'statemachines_CustomSystem2', cardinality 0..*) is associated with 'statemachines::Signal' (role 'statemachines_Signal', cardinality 0..*).
+'statemachines::StringAttribute' (role 'statemachines_StringAttribute', cardinality 0..*) is associated with 'statemachines::StringAttributeValue' (role 'statemachines_StringAttributeValue', cardinality 0..*).
+'statemachines::Attribute' (role 'statemachines_Attribute', cardinality 0..*) is associated with 'statemachines::Signal' (role 'statemachines_Signal6', cardinality 0..*).
+'statemachines::Vertex' (role 'target', cardinality 0..*) is associated with 'statemachines::Transition' (role 'Transition32', cardinality 0..*).
+'statemachines::State' (role 'state47', cardinality 0..*) is associated with 'statemachines::Pseudostate' (role 'Pseudostate', cardinality 0..*).
+'statemachines::State' (role 'statemachines_State', cardinality 0..*) is associated with 'statemachines::Behavior' (role 'statemachines_Behavior', cardinality 0..*).
+'statemachines::Operation' (role 'statemachines_Operation11', cardinality 0..*) is associated with 'statemachines::Attribute' (role 'statemachines_Attribute12', cardinality 0..*).
+'statemachines::Operation' (role 'statemachines_Operation19', cardinality 0..*) is associated with 'statemachines::CallEventType' (role 'statemachines_CallEventType', cardinality 0..*).
+'statemachines::State' (role 'State34', cardinality 0..*) is associated with 'statemachines::Pseudostate' (role 'connectionPoint', cardinality 0..*).
+'statemachines::Region' (role 'container23', cardinality 0..*) is associated with 'statemachines::Transition' (role 'Transition', cardinality 0..*).
+'statemachines::SignalEventType' (role 'statemachines_SignalEventType', cardinality 0..*) is associated with 'statemachines::Signal' (role 'statemachines_Signal17', cardinality 0..*).

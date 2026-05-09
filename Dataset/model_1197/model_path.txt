@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/regressiontesttool/rtt/Examples/DresdenOCL/Example_Ecore/org.dresdenocl.essentialocl/model/essentialocl.ecore

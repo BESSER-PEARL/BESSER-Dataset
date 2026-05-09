@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'FamilyMModel::Family' has the following attributes: 'lastName' of type str.
+The class 'FamilyMModel::Member' has the following attributes: 'relation' of type str; 'firstName' of type str.
+'FamilyMModel::Member' (role 'FamilyMModel_Member', cardinality 0..*) is associated with 'FamilyMModel::Family' (role 'FamilyMModel_Family', cardinality 0..*).

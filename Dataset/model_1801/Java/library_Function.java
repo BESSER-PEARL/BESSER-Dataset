@@ -1,0 +1,53 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class library_Function extends Component {
+
+
+
+
+
+
+    private library_Function library_function;
+
+
+
+
+    private List<library_Function> library_functions;
+
+
+    public library_Function(
+    ) {
+        super(
+        );
+        this.library_functions = new ArrayList<>();
+    }
+
+    public library_Function(
+        ArrayList<library_Function> library_functions    ) {
+        this.library_functions = library_functions;
+    }
+
+
+    public library_Function getLibrary_function() {
+        return library_function;
+    }
+
+    public void setLibrary_function(library_Function library_function) {
+        this.library_function = library_function;
+    }
+    public List<library_Function> getLibrary_functions() {
+        return library_functions;
+    }
+
+    public void addLibrary_function(Library_function library_function) {
+        this.library_functions.add(library_function);
+    }
+
+}

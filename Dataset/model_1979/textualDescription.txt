@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'traces::TraceRecord' has the following attributes: 'name' of type str.
+The class 'traces::TraceElement' has the following attributes: 'traceType' of type str; 'value' of type str; 'typeName' of type str.
+The class 'traces::Trace' has the following attributes: 'ruleName' of type str; 'ruleInfo' of type str; 'timestamp' of type str.
+The class 'traces::EObject' has no attributes.
+The class 'traces::Model' has the following attributes: 'uriModel' of type str.
+The enumeration 'ParameterType' has the following literals: 'target', 'source', 'used'.
+'traces::Trace' (role 'traces_Trace4', cardinality 0..*) is associated with 'traces::TraceElement' (role 'traces_TraceElement', cardinality 0..*).
+'traces::TraceElement' (role 'traces_TraceElement6', cardinality 0..*) is associated with 'traces::EObject' (role 'traces_EObject', cardinality 0..*).
+'traces::Model' (role 'traces_Model8', cardinality 0..*) is associated with 'traces::EObject' (role 'traces_EObject9', cardinality 0..*).
+'traces::Trace' (role 'traces_Trace', cardinality 0..*) is associated with 'traces::TraceRecord' (role 'traces_TraceRecord', cardinality 0..*).
+'traces::TraceRecord' (role 'traces_TraceRecord2', cardinality 0..*) is associated with 'traces::Model' (role 'traces_Model', cardinality 0..*).

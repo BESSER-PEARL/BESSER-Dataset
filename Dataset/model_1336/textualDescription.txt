@@ -1,0 +1,61 @@
+The model has 27 class(es).
+The class 'miniOCL::NameExpCS' has no attributes.
+The class 'miniOCL::CallExpCS' has no attributes.
+The class 'miniOCL::ParameterCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::IntLiteralExpCS' has the following attributes: 'intSymbol' of type int.
+The class 'BooleanLiteralExpCS' has no attributes.
+The class 'miniOCL::PropertyCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::PathElementCS' has the following attributes: 'pathName' of type str.
+The class 'miniOCL::BooleanLiteralExpCS' has no attributes.
+The class 'miniOCL::LiteralExpCS' has no attributes.
+The class 'miniOCL::BooleanExpCS' has the following attributes: 'boolSymbol' of type bool.
+The class 'CallExpCS' has no attributes.
+The class 'miniOCL::ClassCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::RootCS' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'miniOCL::RoundedBracketClauseCS' has no attributes.
+The class 'miniOCL::ConstraintCS' has no attributes.
+The class 'miniOCL::PathNameCS' has no attributes.
+The class 'miniOCL::LogicExpCS' has the following attributes: 'op' of type str.
+The class 'miniOCL::StringLiteralExpCS' has the following attributes: 'stringSymbol' of type str.
+The class 'miniOCL::ExpCS' has no attributes.
+The class 'miniOCL::PackageCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::PrimaryExpCS' has no attributes.
+The class 'PrimaryExpCS' has no attributes.
+The class 'miniOCL::OperationCS' has the following attributes: 'name' of type str.
+The class 'miniOCL::InvariantCS' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'LogicExpCS' has no attributes.
+'miniOCL::NameExpCS' is a specialization of 'PrimaryExpCS'.
+'miniOCL::CallExpCS' is a specialization of 'LogicExpCS'.
+'miniOCL::PrimaryExpCS' is a specialization of 'CallExpCS'.
+'miniOCL::IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'miniOCL::BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'miniOCL::LogicExpCS' is a specialization of 'ExpCS'.
+'miniOCL::StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'miniOCL::BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+'miniOCL::LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'miniOCL::ExpCS' (role 'miniOCL_ExpCS34', cardinality 0..*) is associated with 'miniOCL::InvariantCS' (role 'miniOCL_InvariantCS33', cardinality 0..*).
+'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS50', cardinality 0..*) is associated with 'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS51', cardinality 0..*).
+'miniOCL::OperationCS' (role 'miniOCL_OperationCS', cardinality 0..*) is associated with 'miniOCL::ClassCS' (role 'miniOCL_ClassCS13', cardinality 0..*).
+'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS39', cardinality 0..*) is associated with 'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS41', cardinality 0..*).
+'miniOCL::ClassCS' (role 'miniOCL_ClassCS', cardinality 0..*) is associated with 'miniOCL::PackageCS' (role 'miniOCL_PackageCS7', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS', cardinality 0..*) is associated with 'miniOCL::ClassCS' (role 'miniOCL_ClassCS9', cardinality 0..*).
+'miniOCL::LogicExpCS' (role 'miniOCL_LogicExpCS35', cardinality 0..*) is associated with 'miniOCL::LogicExpCS' (role 'miniOCL_LogicExpCS', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS26', cardinality 0..*) is associated with 'miniOCL::ParameterCS' (role 'miniOCL_ParameterCS25', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS16', cardinality 0..*) is associated with 'miniOCL::PropertyCS' (role 'miniOCL_PropertyCS15', cardinality 0..*).
+'miniOCL::ExpCS' (role 'miniOCL_ExpCS54', cardinality 0..*) is associated with 'miniOCL::RoundedBracketClauseCS' (role 'miniOCL_RoundedBracketClauseCS53', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS46', cardinality 0..*) is associated with 'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS45', cardinality 0..*).
+'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS', cardinality 0..*) is associated with 'miniOCL::LogicExpCS' (role 'miniOCL_LogicExpCS38', cardinality 0..*).
+'miniOCL::InvariantCS' (role 'miniOCL_InvariantCS', cardinality 0..*) is associated with 'miniOCL::ConstraintCS' (role 'miniOCL_ConstraintCS31', cardinality 0..*).
+'miniOCL::ClassCS' (role 'miniOCL_ClassCS11', cardinality 0..*) is associated with 'miniOCL::PropertyCS' (role 'miniOCL_PropertyCS', cardinality 0..*).
+'miniOCL::ParameterCS' (role 'miniOCL_ParameterCS', cardinality 0..*) is associated with 'miniOCL::OperationCS' (role 'miniOCL_OperationCS18', cardinality 0..*).
+'miniOCL::RoundedBracketClauseCS' (role 'miniOCL_RoundedBracketClauseCS', cardinality 0..*) is associated with 'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS48', cardinality 0..*).
+'miniOCL::CallExpCS' (role 'miniOCL_CallExpCS43', cardinality 0..*) is associated with 'miniOCL::NameExpCS' (role 'miniOCL_NameExpCS', cardinality 0..*).
+'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS29', cardinality 0..*) is associated with 'miniOCL::ConstraintCS' (role 'miniOCL_ConstraintCS28', cardinality 0..*).
+'miniOCL::PackageCS' (role 'miniOCL_PackageCS', cardinality 0..*) is associated with 'miniOCL::RootCS' (role 'miniOCL_RootCS', cardinality 0..*).
+'miniOCL::ExpCS' (role 'miniOCL_ExpCS', cardinality 0..*) is associated with 'miniOCL::OperationCS' (role 'miniOCL_OperationCS23', cardinality 0..*).
+'miniOCL::PackageCS' (role 'miniOCL_PackageCS3', cardinality 0..*) is associated with 'miniOCL::PackageCS' (role 'miniOCL_PackageCS5', cardinality 0..*).
+'miniOCL::PathElementCS' (role 'miniOCL_PathElementCS', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS56', cardinality 0..*).
+'miniOCL::OperationCS' (role 'miniOCL_OperationCS20', cardinality 0..*) is associated with 'miniOCL::PathNameCS' (role 'miniOCL_PathNameCS21', cardinality 0..*).
+'miniOCL::RootCS' (role 'miniOCL_RootCS2', cardinality 0..*) is associated with 'miniOCL::ConstraintCS' (role 'miniOCL_ConstraintCS', cardinality 0..*).

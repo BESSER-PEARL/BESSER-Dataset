@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'jsflibraryregistry::ArchiveFile' has the following attributes: 'RelativeDestLocation' of type str; 'SourceLocation' of type str; 'RelativeToWorkspace' of type bool.
+The class 'jsflibraryregistry::JSFLibrary' has the following attributes: 'Implementation' of type bool; 'Deployed' of type bool; 'Name' of type str; 'ID' of type str; 'JSFVersion' of type str.
+The class 'jsflibraryregistry::JSFLibraryRegistry' has the following attributes: 'DefaultImplementationID' of type str.
+The class 'JSFLibrary' has no attributes.
+The class 'jsflibraryregistry::PluginProvidedJSFLibrary' has the following attributes: 'pluginID' of type str; 'Label' of type str.
+The enumeration 'JSFVersion' has the following literals: 'UNKNOWN', 'v1_1', 'v1_2'.
+'jsflibraryregistry::PluginProvidedJSFLibrary' is a specialization of 'JSFLibrary'.
+'jsflibraryregistry::JSFLibrary' (role 'JSFLibrary5', cardinality 0..*) is associated with 'jsflibraryregistry::ArchiveFile' (role 'ArchiveFiles', cardinality 0..*).
+'jsflibraryregistry::JSFLibraryRegistry' (role 'jsflibraryregistry_JSFLibraryRegistry', cardinality 0..*) is associated with 'jsflibraryregistry::JSFLibrary' (role 'jsflibraryregistry_JSFLibrary', cardinality 0..*).
+'jsflibraryregistry::ArchiveFile' (role 'ArchiveFile', cardinality 0..*) is associated with 'jsflibraryregistry::JSFLibrary' (role 'JSFLibrary', cardinality 0..*).
+'jsflibraryregistry::PluginProvidedJSFLibrary' (role 'jsflibraryregistry_PluginProvidedJSFLibrary', cardinality 0..*) is associated with 'jsflibraryregistry::JSFLibraryRegistry' (role 'jsflibraryregistry_JSFLibraryRegistry2', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'library::Library' has no attributes.
+The class 'library::Author' has no attributes.
+The class 'Person' has no attributes.
+The class 'library::Model' has no attributes.
+The class 'library::Person' has no attributes.
+The class 'library::Book' has no attributes.
+'library::Author' is a specialization of 'Person'.
+'library::Model' (role 'library_Model', cardinality 0..*) is associated with 'library::Library' (role 'library_Library6', cardinality 0..*).
+'library::Book' (role 'Book', cardinality 0..*) is associated with 'library::Author' (role 'authors', cardinality 0..*).
+'library::Book' (role 'library_Book', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).
+'library::Model' (role 'library_Model8', cardinality 0..*) is associated with 'library::Person' (role 'library_Person9', cardinality 0..*).
+'library::Person' (role 'library_Person', cardinality 0..*) is associated with 'library::Book' (role 'library_Book4', cardinality 0..*).
+'library::Book' (role 'writtenBooks', cardinality 0..*) is associated with 'library::Author' (role 'Author', cardinality 0..*).

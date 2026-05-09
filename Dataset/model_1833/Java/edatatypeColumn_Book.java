@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class edatatypeColumn_Book  {
+
+    private String pages;
+    private String title;
+    private String weight;
+    private String author;
+
+
+
+    public edatatypeColumn_Book(
+        String pages,        String title,        String weight,        String author    ) {
+        this.pages = pages;
+        this.title = title;
+        this.weight = weight;
+        this.author = author;
+    }
+
+
+    public String getPages() {
+        return pages;
+    }
+
+    public void setPages(String pages) {
+        this.pages = pages;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+
+}

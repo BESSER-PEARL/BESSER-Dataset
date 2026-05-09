@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Paper::Papers' has no attributes.
+The class 'Paper::Paper' has the following attributes: 'title' of type str.
+The class 'Paper::Author' has the following attributes: 'email' of type str; 'name' of type str.
+'Paper::Paper' (role 'Paper_Paper', cardinality 0..*) is associated with 'Paper::Papers' (role 'Paper_Papers', cardinality 0..*).
+'Paper::Paper' (role 'Paper_Paper2', cardinality 0..*) is associated with 'Paper::Author' (role 'Paper_Author', cardinality 0..*).

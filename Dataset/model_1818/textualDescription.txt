@@ -1,0 +1,201 @@
+The model has 63 class(es).
+The class 'ddsMetamodel::DdsDataWriterLifecycleQos' has the following attributes: 'autodispose_unregistered_instances' of type bool.
+The class 'DdsQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsHistoryQos' has the following attributes: 'kind' of type str; 'depth' of type str.
+The class 'ddsMetamodel::DdsTopicDataQos' has the following attributes: 'value' of type str.
+The class 'ddsMetamodel::DdsDomainParticipantStatusCondition' has the following attributes: 'enabled_status' of type str.
+The class 'ddsMetamodel::DdsQosProfile' has the following attributes: 'profileName' of type str.
+The class 'ddsMetamodel::DdsDomainParticipantListener' has the following attributes: 'name' of type str; 'listenedStatus' of type str.
+The class 'ddsMetamodel::DdsDurabilityServiceQos' has the following attributes: 'max_samples' of type str; 'max_samples_per_instances' of type str; 'history_depth' of type str; 'max_instances' of type str; 'history_kind' of type str.
+The class 'ddsMetamodel::DdsTopicQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsTopicStatusCondition' has the following attributes: 'enabled_status' of type str.
+The class 'ddsMetamodel::DdsDataField' has the following attributes: 'fieldType' of type str; 'maxMultiplicity' of type int; 'fieldName' of type str; 'isKey' of type bool.
+The class 'DdsReadCondition' has no attributes.
+The class 'ddsMetamodel::DdsUserDataQos' has the following attributes: 'value' of type str.
+The class 'ddsMetamodel::DdsOwnershipStrengthQos' has the following attributes: 'value' of type str.
+The class 'ddsMetamodel::DdsWaitSet' has the following attributes: 'name' of type str.
+The class 'ddsMetamodel::DdsDataReaderQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsTimeBasedFilterQos' has no attributes.
+The class 'ddsMetamodel::DdsPublisher' has the following attributes: 'publisherName' of type str.
+The class 'ddsMetamodel::DdsDataReaderListener' has the following attributes: 'listenedStatus' of type str; 'name' of type str.
+The class 'ddsMetamodel::QueryCondition' has the following attributes: 'queryParameters' of type str; 'query' of type str.
+The class 'ddsMetamodel::DdsReliabilityQos' has the following attributes: 'kind' of type str.
+The class 'ddsMetamodel::DdsDataReaderLifecycleQos' has the following attributes: 'enable_invalid_samples' of type bool; 'autopurge_dispose_all' of type bool.
+The class 'ddsMetamodel::DdsDurabilityQos' has the following attributes: 'kind' of type str.
+The class 'ddsMetamodel::DdsPublisherQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsTopicListener' has the following attributes: 'listenedStatus' of type str; 'name' of type str.
+The class 'ddsMetamodel::DdsReadCondition' has the following attributes: 'sample_state_mask' of type str; 'view_state_mask' of type str; 'instance_state_mask' of type str.
+The class 'ddsMetamodel::DdsTopic' has the following attributes: 'topicName' of type str.
+The class 'ddsMetamodel::DdsDataWriter' has the following attributes: 'dataWriterName' of type str.
+The class 'ddsMetamodel::DdsDataReaderStatusCondition' has the following attributes: 'enabled_status' of type str.
+The class 'ddsMetamodel::DdsApplication' has the following attributes: 'applicationName' of type str.
+The class 'ddsMetamodel::DdsGroupDataQos' has the following attributes: 'value' of type str.
+The class 'ddsMetamodel::DdsResourceLimits' has the following attributes: 'max_instances' of type str; 'max_samples' of type str; 'max_samples_per_instances' of type str.
+The class 'ddsMetamodel::DdsTransportPriorityQos' has the following attributes: 'value' of type str.
+The class 'ddsMetamodel::DdsHost' has the following attributes: 'hostName' of type str.
+The class 'ddsMetamodel::DdsLivelinessQos' has the following attributes: 'kind' of type str.
+The class 'ddsMetamodel::DdsDestinationOrderQos' has the following attributes: 'kind' of type str.
+The class 'ddsMetamodel::DdsSubscriber' has the following attributes: 'subscriberName' of type str.
+The class 'ddsMetamodel::DdsSystem' has the following attributes: 'systemName' of type str.
+The class 'DdsStatusCondition' has no attributes.
+The class 'ddsMetamodel::DdsStatusCondition' has no attributes.
+The class 'ddsMetamodel::DdsSubscriberListener' has the following attributes: 'name' of type str; 'listenedStatus' of type str.
+The class 'ddsMetamodel::DdsDomainParticipantQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsDataReader' has the following attributes: 'dataReaderName' of type str.
+The class 'ddsMetamodel::DdsPresentationQos' has the following attributes: 'ordered_access' of type bool; 'coherent_access' of type bool; 'access_scope' of type str.
+The class 'ddsMetamodel::DdsPublisherStatusCondition' has the following attributes: 'enabled_status' of type str.
+The class 'ddsMetamodel::DdsSubscriberStatusCondition' has the following attributes: 'enabled_status' of type str.
+The class 'ddsMetamodel::DdsPartitionQos' has the following attributes: 'name' of type str.
+The class 'ddsMetamodel::DdsDataStructure' has the following attributes: 'structureName' of type str.
+The class 'ddsMetamodel::DdsOwnershipQos' has the following attributes: 'kind' of type str.
+The class 'ddsMetamodel::DdsDataWriterStatusCondition' has the following attributes: 'enabled_status' of type str.
+The class 'ddsMetamodel::DdsStructuredField' has the following attributes: 'isKey' of type bool; 'fieldName' of type str; 'maxMultiplicity' of type int.
+The class 'ddsMetamodel::DdsEntityFactoryQos' has the following attributes: 'autoenable_created_entities' of type bool.
+The class 'ddsMetamodel::DdsDuration' has the following attributes: 'sec' of type str; 'nanoSec' of type str.
+The class 'ddsMetamodel::DdsDataModule' has the following attributes: 'moduleName' of type str.
+The class 'ddsMetamodel::DdsDomainParticipant' has the following attributes: 'domainParticipantName' of type str; 'domainId' of type int.
+The class 'ddsMetamodel::DdsPublisherListener' has the following attributes: 'listenedStatus' of type str; 'name' of type str.
+The class 'ddsMetamodel::DdsDataWriterQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsLifespan' has no attributes.
+The class 'ddsMetamodel::DdsSubscriberQosProfile' has no attributes.
+The class 'ddsMetamodel::DdsLatencyBudgetQos' has no attributes.
+The class 'ddsMetamodel::GuardCondition' has the following attributes: 'name' of type str.
+The class 'ddsMetamodel::DdsDataWriterListener' has the following attributes: 'name' of type str; 'listenedStatus' of type str.
+The class 'ddsMetamodel::DdsDeadlineQos' has no attributes.
+The enumeration 'TopicStatus' has the following literals: 'INCONSISTENT_TOPIC_STATUS'.
+The enumeration 'ReliabilityQosPolicyKind' has the following literals: 'BEST_EFFORT_RELIABILITY_QOS', 'RELIABLE_RELIABILITY_QOS'.
+The enumeration 'InstanceStateKind' has the following literals: 'ALIVE_INSTANCE_STATE', 'NOT_ALIVE_DISPOSED_INSTANCE_STATE', 'ANY_INSTANCE_STATE', 'NOT_ALIVE_NO_WRITERS_INSTANCE_STATE'.
+The enumeration 'DomainParticipantStatus' has the following literals: 'PUBLICATION_MATCHED_STATUS', 'LIVELINESS_LOST_STATUS', 'SAMPLE_LOST_STATUS', 'SAMPLE_REJECTED_STATUS', 'REQUESTED_INCOMPATIBLE_QOS_STATUS', 'DATA_ON_READERS_STATUS', 'OFFERED_DEADLINE_MISSED_STATUS', 'DATA_AVAILABLE_STATUS', 'INCONSISTENT_TOPIC_STATUS', 'REQUESTED_DEADLINE_MISSED_STATUS', 'SUBSCRIPTION_MATCHED_STATUS', 'OFFERED_INCOMPATIBLE_QOS_STATUS', 'LIVELINESS_CHANGED_STATUS'.
+The enumeration 'SubscriberStatus' has the following literals: 'SAMPLE_LOST_STATUS', 'SUBSCRIPTION_MATCHED_STATUS', 'LIVELINESS_CHANGED_STATUS', 'REQUESTED_DEADLINE_MISSED_STATUS', 'REQUESTED_INCOMPATIBLE_QOS_STATUS', 'DATA_AVAILABLE_STATUS', 'DATA_ON_READERS_STATUS', 'SAMPLE_REJECTED_STATUS'.
+The enumeration 'DurabilityQosPolicyKind' has the following literals: 'TRANSIENT_LOCAL_DURABILITY_QOS', 'PERSISTENT_DURABILITY_QOS', 'TRANSIENT_DURABILITY_QOS', 'VOLATILE_DURABILITY_QOS'.
+The enumeration 'SampleStateKind' has the following literals: 'ANY_READ_SAMPLE_STATE', 'NOT_READ_SAMPLE_STATE', 'READ_SAMPLE_STATE'.
+The enumeration 'DataWriterStatus' has the following literals: 'OFFERED_DEADLINE_MISSED_STATUS', 'PUBLICATION_MATCHED_STATUS', 'OFFERED_INCOMPATIBLE_QOS_STATUS', 'LIVELINESS_LOST_STATUS'.
+The enumeration 'HistoryQosPolicyKind' has the following literals: 'KEEP_ALL_HISTORY_QOS', 'KEEP_LAST_HISTORY_QOS'.
+The enumeration 'OwnershipQosPolicyKind' has the following literals: 'SHARED_OWNERSHIP_QOS', 'EXCLUSIVE_OWNERSHIP_QOS'.
+The enumeration 'DestinationOrderQosPolicyKind' has the following literals: 'BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS', 'BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS'.
+The enumeration 'PresentationQosPolicyAccessScopeKind' has the following literals: 'GROUP_PRESENTATION_QOS', 'INSTANCE_PRESENTATION_QOS', 'TOPIC_PRESENTATION_QOS'.
+The enumeration 'ViewStateKind' has the following literals: 'NEW_VIEW_STATE', 'NOT_NEW_VIEW_STATE', 'ANY_VIEW_STATE'.
+The enumeration 'DataReaderStatus' has the following literals: 'SUBSCRIPTION_MATCHED_STATUS', 'LIVELINESS_CHANGED_STATUS', 'REQUESTED_INCOMPATIBLE_QOS_STATUS', 'REQUESTED_DEADLINE_MISSED_STATUS', 'SAMPLE_REJECTED_STATUS', 'SAMPLE_LOST_STATUS', 'DATA_AVAILABLE_STATUS'.
+The enumeration 'InvalidSampleVisibilityQosPolicy' has the following literals: 'ALL_INVALID_SAMPLES', 'NO_INVALID_SAMPLES', 'MINIMUM_INVALID_SAMPLES'.
+The enumeration 'LivelinessQosPolicyKind' has the following literals: 'MANUAL_BY_TOPIC_LIVELINESS_QOS', 'MANUAL_LIVELINESS_QOS', 'MANUAL_BY_PARTICIPANT_LIVELINESS_QOS', 'AUTOMATIC_LIVELINESS_QOS'.
+The enumeration 'PublisherStatus' has the following literals: 'LIVELINESS_LOST_STATUS', 'OFFERED_DEADLINE_MISSED_STATUS', 'OFFERED_INCOMPATIBLE_QOS_STATUS', 'PUBLICATION_MATCHED_STATUS'.
+'ddsMetamodel::DdsDomainParticipantQosProfile' is a specialization of 'DdsQosProfile'.
+'ddsMetamodel::DdsTopicQosProfile' is a specialization of 'DdsQosProfile'.
+'ddsMetamodel::DdsSubscriberStatusCondition' is a specialization of 'DdsStatusCondition'.
+'ddsMetamodel::DdsDataWriterQosProfile' is a specialization of 'DdsQosProfile'.
+'ddsMetamodel::DdsPublisherQosProfile' is a specialization of 'DdsQosProfile'.
+'ddsMetamodel::DdsDomainParticipantStatusCondition' is a specialization of 'DdsStatusCondition'.
+'ddsMetamodel::DdsDataWriterStatusCondition' is a specialization of 'DdsStatusCondition'.
+'ddsMetamodel::DdsTopicStatusCondition' is a specialization of 'DdsStatusCondition'.
+'ddsMetamodel::DdsSubscriberQosProfile' is a specialization of 'DdsQosProfile'.
+'ddsMetamodel::DdsPublisherStatusCondition' is a specialization of 'DdsStatusCondition'.
+'ddsMetamodel::QueryCondition' is a specialization of 'DdsReadCondition'.
+'ddsMetamodel::DdsDataReaderStatusCondition' is a specialization of 'DdsStatusCondition'.
+'ddsMetamodel::DdsDataReaderQosProfile' is a specialization of 'DdsQosProfile'.
+'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic15', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataStructure' (role 'ddsMetamodel_DdsDataStructure', cardinality 0..*).
+'ddsMetamodel::DdsDomainParticipantStatusCondition' (role 'ddsMetamodel_DdsDomainParticipantStatusCondition', cardinality 0..*) is associated with 'ddsMetamodel::DdsDomainParticipant' (role 'ddsMetamodel_DdsDomainParticipant224', cardinality 0..*).
+'ddsMetamodel::DdsEntityFactoryQos' (role 'ddsMetamodel_DdsEntityFactoryQos167', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriberQosProfile' (role 'ddsMetamodel_DdsSubscriberQosProfile166', cardinality 0..*).
+'ddsMetamodel::DdsUserDataQos' (role 'ddsMetamodel_DdsUserDataQos176', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile175', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderLifecycleQos' (role 'ddsMetamodel_DdsDataReaderLifecycleQos209', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile208', cardinality 0..*).
+'ddsMetamodel::DdsHost' (role 'ddsMetamodel_DdsHost244', cardinality 0..*) is associated with 'ddsMetamodel::DdsApplication' (role 'ddsMetamodel_DdsApplication245', cardinality 0..*).
+'ddsMetamodel::DdsPublisherQosProfile' (role 'ddsMetamodel_DdsPublisherQosProfile113', cardinality 0..*) is associated with 'ddsMetamodel::DdsGroupDataQos' (role 'ddsMetamodel_DdsGroupDataQos', cardinality 0..*).
+'ddsMetamodel::DdsDataStructure' (role 'dataStructures', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataModule' (role 'DdsDataModule52', cardinality 0..*).
+'ddsMetamodel::DdsPublisher' (role 'ddsMetamodel_DdsPublisher', cardinality 0..*) is associated with 'ddsMetamodel::DdsDomainParticipant' (role 'ddsMetamodel_DdsDomainParticipant6', cardinality 0..*).
+'ddsMetamodel::DdsLifespan' (role 'ddsMetamodel_DdsLifespan100', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration101', cardinality 0..*).
+'ddsMetamodel::DdsReliabilityQos' (role 'ddsMetamodel_DdsReliabilityQos143', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile142', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderListener' (role 'ddsMetamodel_DdsDataReaderListener', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReader' (role 'ddsMetamodel_DdsDataReader24', cardinality 0..*).
+'ddsMetamodel::DdsSubscriber' (role 'ddsMetamodel_DdsSubscriber228', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriberStatusCondition' (role 'ddsMetamodel_DdsSubscriberStatusCondition', cardinality 0..*).
+'ddsMetamodel::DdsSubscriberQosProfile' (role 'ddsMetamodel_DdsSubscriberQosProfile172', cardinality 0..*) is associated with 'ddsMetamodel::DdsPartitionQos' (role 'ddsMetamodel_DdsPartitionQos173', cardinality 0..*).
+'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile62', cardinality 0..*) is associated with 'ddsMetamodel::DdsDurabilityServiceQos' (role 'ddsMetamodel_DdsDurabilityServiceQos', cardinality 0..*).
+'ddsMetamodel::DdsStatusCondition' (role 'DdsStatusCondition', cardinality 0..*) is associated with 'ddsMetamodel::DdsWaitSet' (role 'containingWaitset', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile128', cardinality 0..*) is associated with 'ddsMetamodel::DdsDeadlineQos' (role 'ddsMetamodel_DdsDeadlineQos129', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile190', cardinality 0..*) is associated with 'ddsMetamodel::DdsOwnershipQos' (role 'ddsMetamodel_DdsOwnershipQos191', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile187', cardinality 0..*) is associated with 'ddsMetamodel::DdsLivelinessQos' (role 'ddsMetamodel_DdsLivelinessQos188', cardinality 0..*).
+'ddsMetamodel::DdsDataReader' (role 'ddsMetamodel_DdsDataReader26', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile', cardinality 0..*).
+'ddsMetamodel::DdsOwnershipStrengthQos' (role 'ddsMetamodel_DdsOwnershipStrengthQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile137', cardinality 0..*).
+'ddsMetamodel::DdsWaitSet' (role 'DdsWaitSet', cardinality 0..*) is associated with 'ddsMetamodel::DdsStatusCondition' (role 'statusConditions', cardinality 0..*).
+'ddsMetamodel::DdsEntityFactoryQos' (role 'ddsMetamodel_DdsEntityFactoryQos116', cardinality 0..*) is associated with 'ddsMetamodel::DdsPublisherQosProfile' (role 'ddsMetamodel_DdsPublisherQosProfile115', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile131', cardinality 0..*) is associated with 'ddsMetamodel::DdsLatencyBudgetQos' (role 'ddsMetamodel_DdsLatencyBudgetQos132', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile205', cardinality 0..*) is associated with 'ddsMetamodel::DdsResourceLimits' (role 'ddsMetamodel_DdsResourceLimits206', cardinality 0..*).
+'ddsMetamodel::DdsDurabilityQos' (role 'ddsMetamodel_DdsDurabilityQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile60', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile196', cardinality 0..*) is associated with 'ddsMetamodel::DdsReliabilityQos' (role 'ddsMetamodel_DdsReliabilityQos197', cardinality 0..*).
+'ddsMetamodel::DdsResourceLimits' (role 'ddsMetamodel_DdsResourceLimits158', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile157', cardinality 0..*).
+'ddsMetamodel::DdsDeadlineQos' (role 'ddsMetamodel_DdsDeadlineQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile82', cardinality 0..*).
+'ddsMetamodel::DdsDataReader' (role 'ddsMetamodel_DdsDataReader', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic22', cardinality 0..*).
+'ddsMetamodel::DdsDataModule' (role 'containingModule', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataModule' (role 'DdsDataModule', cardinality 0..*).
+'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration98', cardinality 0..*) is associated with 'ddsMetamodel::DdsReliabilityQos' (role 'ddsMetamodel_DdsReliabilityQos97', cardinality 0..*).
+'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration103', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterLifecycleQos' (role 'ddsMetamodel_DdsDataWriterLifecycleQos', cardinality 0..*).
+'ddsMetamodel::DdsPresentationQos' (role 'ddsMetamodel_DdsPresentationQos170', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriberQosProfile' (role 'ddsMetamodel_DdsSubscriberQosProfile169', cardinality 0..*).
+'ddsMetamodel::DdsDomainParticipant' (role 'ddsMetamodel_DdsDomainParticipant8', cardinality 0..*) is associated with 'ddsMetamodel::DdsDomainParticipantQosProfile' (role 'ddsMetamodel_DdsDomainParticipantQosProfile', cardinality 0..*).
+'ddsMetamodel::DdsDataField' (role 'ddsMetamodel_DdsDataField', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataStructure' (role 'ddsMetamodel_DdsDataStructure49', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile145', cardinality 0..*) is associated with 'ddsMetamodel::DdsTransportPriorityQos' (role 'ddsMetamodel_DdsTransportPriorityQos146', cardinality 0..*).
+'ddsMetamodel::DdsPartitionQos' (role 'ddsMetamodel_DdsPartitionQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsPublisherQosProfile' (role 'ddsMetamodel_DdsPublisherQosProfile120', cardinality 0..*).
+'ddsMetamodel::DdsWaitSet' (role 'ddsMetamodel_DdsWaitSet211', cardinality 0..*) is associated with 'ddsMetamodel::DdsReadCondition' (role 'ddsMetamodel_DdsReadCondition', cardinality 0..*).
+'ddsMetamodel::DdsDataModule' (role 'dataModules', cardinality 0..*) is associated with 'ddsMetamodel::DdsSystem' (role 'DdsSystem', cardinality 0..*).
+'ddsMetamodel::DdsDestinationOrderQos' (role 'ddsMetamodel_DdsDestinationOrderQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile72', cardinality 0..*).
+'ddsMetamodel::DdsDomainParticipant' (role 'ddsMetamodel_DdsDomainParticipant10', cardinality 0..*) is associated with 'ddsMetamodel::DdsDomainParticipantListener' (role 'ddsMetamodel_DdsDomainParticipantListener', cardinality 0..*).
+'ddsMetamodel::DdsPublisherListener' (role 'ddsMetamodel_DdsPublisherListener', cardinality 0..*) is associated with 'ddsMetamodel::DdsPublisher' (role 'ddsMetamodel_DdsPublisher31', cardinality 0..*).
+'ddsMetamodel::DdsApplication' (role 'ddsMetamodel_DdsApplication2', cardinality 0..*) is associated with 'ddsMetamodel::DdsWaitSet' (role 'ddsMetamodel_DdsWaitSet', cardinality 0..*).
+'ddsMetamodel::DdsDeadlineQos' (role 'ddsMetamodel_DdsDeadlineQos182', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile181', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderLifecycleQos' (role 'ddsMetamodel_DdsDataReaderLifecycleQos110', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration111', cardinality 0..*).
+'ddsMetamodel::DdsSubscriberListener' (role 'ddsMetamodel_DdsSubscriberListener', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriber' (role 'ddsMetamodel_DdsSubscriber18', cardinality 0..*).
+'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile80', cardinality 0..*) is associated with 'ddsMetamodel::DdsLifespan' (role 'ddsMetamodel_DdsLifespan', cardinality 0..*).
+'ddsMetamodel::DdsStructuredField' (role 'structuredFields', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataStructure' (role 'DdsDataStructure221', cardinality 0..*).
+'ddsMetamodel::DdsLivelinessQos' (role 'ddsMetamodel_DdsLivelinessQos140', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile139', cardinality 0..*).
+'ddsMetamodel::DdsHistoryQos' (role 'ddsMetamodel_DdsHistoryQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile74', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile184', cardinality 0..*) is associated with 'ddsMetamodel::DdsLatencyBudgetQos' (role 'ddsMetamodel_DdsLatencyBudgetQos185', cardinality 0..*).
+'ddsMetamodel::DdsSystem' (role 'ddsMetamodel_DdsSystem241', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic242', cardinality 0..*).
+'ddsMetamodel::DdsUserDataQos' (role 'ddsMetamodel_DdsUserDataQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsDomainParticipantQosProfile' (role 'ddsMetamodel_DdsDomainParticipantQosProfile54', cardinality 0..*).
+'ddsMetamodel::DdsDestinationOrderQos' (role 'ddsMetamodel_DdsDestinationOrderQos200', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile199', cardinality 0..*).
+'ddsMetamodel::DdsTransportPriorityQos' (role 'ddsMetamodel_DdsTransportPriorityQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile78', cardinality 0..*).
+'ddsMetamodel::DdsDomainParticipant' (role 'ddsMetamodel_DdsDomainParticipant4', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriber' (role 'ddsMetamodel_DdsSubscriber', cardinality 0..*).
+'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic234', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicStatusCondition' (role 'ddsMetamodel_DdsTopicStatusCondition', cardinality 0..*).
+'ddsMetamodel::DdsDataWriter' (role 'ddsMetamodel_DdsDataWriter230', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterStatusCondition' (role 'ddsMetamodel_DdsDataWriterStatusCondition', cardinality 0..*).
+'ddsMetamodel::DdsDomainParticipant' (role 'ddsMetamodel_DdsDomainParticipant', cardinality 0..*) is associated with 'ddsMetamodel::DdsApplication' (role 'ddsMetamodel_DdsApplication', cardinality 0..*).
+'ddsMetamodel::DdsDurabilityServiceQos' (role 'ddsMetamodel_DdsDurabilityServiceQos84', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration', cardinality 0..*).
+'ddsMetamodel::DdsHistoryQos' (role 'ddsMetamodel_DdsHistoryQos155', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile154', cardinality 0..*).
+'ddsMetamodel::DdsHistoryQos' (role 'ddsMetamodel_DdsHistoryQos203', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile202', cardinality 0..*).
+'ddsMetamodel::DdsDataModule' (role 'containerDataModule', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataStructure' (role 'DdsDataStructure', cardinality 0..*).
+'ddsMetamodel::DdsTimeBasedFilterQos' (role 'ddsMetamodel_DdsTimeBasedFilterQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration95', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile122', cardinality 0..*) is associated with 'ddsMetamodel::DdsUserDataQos' (role 'ddsMetamodel_DdsUserDataQos123', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile151', cardinality 0..*) is associated with 'ddsMetamodel::DdsDestinationOrderQos' (role 'ddsMetamodel_DdsDestinationOrderQos152', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile160', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterLifecycleQos' (role 'ddsMetamodel_DdsDataWriterLifecycleQos161', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriter' (role 'ddsMetamodel_DdsDataWriter40', cardinality 0..*).
+'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic36', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriter' (role 'ddsMetamodel_DdsDataWriter35', cardinality 0..*).
+'ddsMetamodel::DdsSystem' (role 'ddsMetamodel_DdsSystem', cardinality 0..*) is associated with 'ddsMetamodel::DdsHost' (role 'ddsMetamodel_DdsHost', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile193', cardinality 0..*) is associated with 'ddsMetamodel::DdsTimeBasedFilterQos' (role 'ddsMetamodel_DdsTimeBasedFilterQos194', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderQosProfile' (role 'ddsMetamodel_DdsDataReaderQosProfile178', cardinality 0..*) is associated with 'ddsMetamodel::DdsDurabilityQos' (role 'ddsMetamodel_DdsDurabilityQos179', cardinality 0..*).
+'ddsMetamodel::DdsDataReaderLifecycleQos' (role 'ddsMetamodel_DdsDataReaderLifecycleQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration108', cardinality 0..*).
+'ddsMetamodel::DdsTopicDataQos' (role 'ddsMetamodel_DdsTopicDataQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile58', cardinality 0..*).
+'ddsMetamodel::DdsDataModule' (role 'innerModules', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataModule' (role 'DdsDataModule47', cardinality 0..*).
+'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile64', cardinality 0..*) is associated with 'ddsMetamodel::DdsLatencyBudgetQos' (role 'ddsMetamodel_DdsLatencyBudgetQos', cardinality 0..*).
+'ddsMetamodel::DdsStructuredField' (role 'ddsMetamodel_DdsStructuredField', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataStructure' (role 'ddsMetamodel_DdsDataStructure219', cardinality 0..*).
+'ddsMetamodel::DdsLatencyBudgetQos' (role 'ddsMetamodel_DdsLatencyBudgetQos89', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration90', cardinality 0..*).
+'ddsMetamodel::DdsLivelinessQos' (role 'ddsMetamodel_DdsLivelinessQos92', cardinality 0..*) is associated with 'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration93', cardinality 0..*).
+'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic13', cardinality 0..*).
+'ddsMetamodel::DdsSubscriberQosProfile' (role 'ddsMetamodel_DdsSubscriberQosProfile', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriber' (role 'ddsMetamodel_DdsSubscriber20', cardinality 0..*).
+'ddsMetamodel::DdsLifespan' (role 'ddsMetamodel_DdsLifespan149', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile148', cardinality 0..*).
+'ddsMetamodel::GuardCondition' (role 'ddsMetamodel_GuardCondition', cardinality 0..*) is associated with 'ddsMetamodel::DdsWaitSet' (role 'ddsMetamodel_DdsWaitSet214', cardinality 0..*).
+'ddsMetamodel::DdsDataWriter' (role 'ddsMetamodel_DdsDataWriter38', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterListener' (role 'ddsMetamodel_DdsDataWriterListener', cardinality 0..*).
+'ddsMetamodel::DdsSubscriber' (role 'DdsSubscriber', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReader' (role 'ddsdatareader', cardinality 0..*).
+'ddsMetamodel::DdsTopic' (role 'ddsMetamodel_DdsTopic', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicListener' (role 'ddsMetamodel_DdsTopicListener', cardinality 0..*).
+'ddsMetamodel::DdsEntityFactoryQos' (role 'ddsMetamodel_DdsEntityFactoryQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsDomainParticipantQosProfile' (role 'ddsMetamodel_DdsDomainParticipantQosProfile56', cardinality 0..*).
+'ddsMetamodel::DdsDataReader' (role 'ddsMetamodel_DdsDataReader232', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataReaderStatusCondition' (role 'ddsMetamodel_DdsDataReaderStatusCondition', cardinality 0..*).
+'ddsMetamodel::DdsPublisherStatusCondition' (role 'ddsMetamodel_DdsPublisherStatusCondition', cardinality 0..*) is associated with 'ddsMetamodel::DdsPublisher' (role 'ddsMetamodel_DdsPublisher226', cardinality 0..*).
+'ddsMetamodel::DdsQosProfile' (role 'ddsMetamodel_DdsQosProfile', cardinality 0..*) is associated with 'ddsMetamodel::DdsSystem' (role 'ddsMetamodel_DdsSystem237', cardinality 0..*).
+'ddsMetamodel::DdsDataReader' (role 'DdsDataReader', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriber' (role 'containingSubscriber', cardinality 0..*).
+'ddsMetamodel::DdsDataReader' (role 'ddsMetamodel_DdsDataReader217', cardinality 0..*) is associated with 'ddsMetamodel::DdsReadCondition' (role 'ddsMetamodel_DdsReadCondition216', cardinality 0..*).
+'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile125', cardinality 0..*) is associated with 'ddsMetamodel::DdsDurabilityQos' (role 'ddsMetamodel_DdsDurabilityQos126', cardinality 0..*).
+'ddsMetamodel::DdsDataWriter' (role 'ddsMetamodel_DdsDataWriter', cardinality 0..*) is associated with 'ddsMetamodel::DdsPublisher' (role 'ddsMetamodel_DdsPublisher29', cardinality 0..*).
+'ddsMetamodel::DdsLivelinessQos' (role 'ddsMetamodel_DdsLivelinessQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile66', cardinality 0..*).
+'ddsMetamodel::DdsSystem' (role 'containingSystem', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataModule' (role 'DdsDataModule239', cardinality 0..*).
+'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration87', cardinality 0..*) is associated with 'ddsMetamodel::DdsDeadlineQos' (role 'ddsMetamodel_DdsDeadlineQos86', cardinality 0..*).
+'ddsMetamodel::DdsPublisherQosProfile' (role 'ddsMetamodel_DdsPublisherQosProfile118', cardinality 0..*) is associated with 'ddsMetamodel::DdsPresentationQos' (role 'ddsMetamodel_DdsPresentationQos', cardinality 0..*).
+'ddsMetamodel::DdsPublisher' (role 'ddsMetamodel_DdsPublisher33', cardinality 0..*) is associated with 'ddsMetamodel::DdsPublisherQosProfile' (role 'ddsMetamodel_DdsPublisherQosProfile', cardinality 0..*).
+'ddsMetamodel::DdsOwnershipQos' (role 'ddsMetamodel_DdsOwnershipQos', cardinality 0..*) is associated with 'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile68', cardinality 0..*).
+'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile70', cardinality 0..*) is associated with 'ddsMetamodel::DdsReliabilityQos' (role 'ddsMetamodel_DdsReliabilityQos', cardinality 0..*).
+'ddsMetamodel::DdsDataStructure' (role 'dataStructure', cardinality 0..*) is associated with 'ddsMetamodel::DdsStructuredField' (role 'DdsStructuredField', cardinality 0..*).
+'ddsMetamodel::DdsTopicQosProfile' (role 'ddsMetamodel_DdsTopicQosProfile76', cardinality 0..*) is associated with 'ddsMetamodel::DdsResourceLimits' (role 'ddsMetamodel_DdsResourceLimits', cardinality 0..*).
+'ddsMetamodel::DdsOwnershipQos' (role 'ddsMetamodel_DdsOwnershipQos135', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterQosProfile' (role 'ddsMetamodel_DdsDataWriterQosProfile134', cardinality 0..*).
+'ddsMetamodel::DdsGroupDataQos' (role 'ddsMetamodel_DdsGroupDataQos164', cardinality 0..*) is associated with 'ddsMetamodel::DdsSubscriberQosProfile' (role 'ddsMetamodel_DdsSubscriberQosProfile163', cardinality 0..*).
+'ddsMetamodel::DdsDuration' (role 'ddsMetamodel_DdsDuration106', cardinality 0..*) is associated with 'ddsMetamodel::DdsDataWriterLifecycleQos' (role 'ddsMetamodel_DdsDataWriterLifecycleQos105', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Library::Book' has the following attributes: 'name' of type str.
+The class 'Library::Library' has no attributes.
+'Library::Library' (role 'Library_Library', cardinality 0..*) is associated with 'Library::Book' (role 'Library_Book', cardinality 0..*).

@@ -1,0 +1,154 @@
+The model has 89 class(es).
+The class 'myDsl::AppAccessFunctions' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactComponents' has no attributes.
+The class 'myDsl::Entities' has no attributes.
+The class 'myDsl::ReactConstructor' has no attributes.
+The class 'myDsl::MultipleFile' has the following attributes: 'name' of type str.
+The class 'myDsl::FrontEnd' has the following attributes: 'name' of type str.
+The class 'myDsl::LayerTarget' has the following attributes: 'layerelations' of type str.
+The class 'myDsl::AlbumManagementFunctions' has the following attributes: 'name' of type str.
+The class 'myDsl::UIContent' has the following attributes: 'name' of type str.
+The class 'myDsl::LogicContent' has the following attributes: 'name' of type str.
+The class 'myDsl::PhotoActions' has no attributes.
+The class 'myDsl::Domain' has the following attributes: 'name' of type str.
+The class 'myDsl::ProfileManagement' has no attributes.
+The class 'myDsl::Album' has the following attributes: 'name' of type str.
+The class 'myDsl::AmazonWebServices' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactInformation' has the following attributes: 'name' of type str.
+The class 'myDsl::Photo' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactDependenciesRules' has the following attributes: 'name' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::LogicStructure' has the following attributes: 'name' of type str.
+The class 'myDsl::PostgreSQL' has the following attributes: 'name' of type str.
+The class 'myDsl::AppAccess' has no attributes.
+The class 'myDsl::BusinessLogicSegments' has the following attributes: 'name' of type str.
+The class 'myDsl::DataPersistenceSegments' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactServicesRelation' has the following attributes: 'name' of type str.
+The class 'myDsl::Functionality' has no attributes.
+The class 'myDsl::ReactCoreFunctions' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactModules' has no attributes.
+The class 'myDsl::ReactFunctions' has the following attributes: 'lifecycleclass' of type str; 'renderclass' of type str.
+The class 'myDsl::LayerSource' has the following attributes: 'layerelations' of type str.
+The class 'myDsl::LandingActions' has no attributes.
+The class 'myDsl::DirectoryContent' has the following attributes: 'name' of type str.
+The class 'myDsl::LandingFunctions' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactActionsContent' has no attributes.
+The class 'myDsl::ComponentsLogic' has the following attributes: 'name' of type str.
+The class 'myDsl::PackageVersion' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactLibrary' has the following attributes: 'name' of type str.
+The class 'myDsl::NTierTarget' has no attributes.
+The class 'myDsl::NTiersRelations' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactSubModules' has no attributes.
+The class 'myDsl::BusinessLogicLayer' has no attributes.
+The class 'myDsl::PresentationContent' has no attributes.
+The class 'myDsl::ComponentsUI' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactDependenciesSubRules' has no attributes.
+The class 'myDsl::EObject' has no attributes.
+The class 'myDsl::SingleFile' has the following attributes: 'name' of type str.
+The class 'myDsl::DataPersistenceContent' has no attributes.
+The class 'myDsl::Technology' has the following attributes: 'name' of type str.
+The class 'myDsl::PresentationLayer' has no attributes.
+The class 'myDsl::DOMConfigurations' has the following attributes: 'elements' of type str; 'name' of type str.
+The class 'myDsl::NTiers' has no attributes.
+The class 'myDsl::SegmentStructure' has no attributes.
+The class 'myDsl::ReactServicesType' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactDependencies' has no attributes.
+The class 'myDsl::ReactInfo' has no attributes.
+The class 'myDsl::SingleDependencies' has no attributes.
+The class 'myDsl::ProfileManagementFunctions' has the following attributes: 'name' of type str.
+The class 'myDsl::PersistenceDataComponent' has the following attributes: 'name' of type str.
+The class 'myDsl::CoreFunctionsDeclaration' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactActions' has no attributes.
+The class 'myDsl::ReactConfiguration' has no attributes.
+The class 'myDsl::ReactLibraries' has no attributes.
+The class 'myDsl::AlbumManagement' has no attributes.
+The class 'myDsl::NTierSource' has no attributes.
+The class 'myDsl::Layer' has no attributes.
+The class 'myDsl::DomainRelations' has the following attributes: 'name' of type str.
+The class 'myDsl::UserDomain' has the following attributes: 'name' of type str.
+The class 'myDsl::Spring' has the following attributes: 'name' of type str.
+The class 'myDsl::DomainConnection' has no attributes.
+The class 'myDsl::LayerRelations' has the following attributes: 'layerelations' of type str; 'name' of type str.
+The class 'myDsl::Technologies' has no attributes.
+The class 'myDsl::PackageName' has the following attributes: 'name' of type str.
+The class 'myDsl::React' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactConfigurations' has the following attributes: 'name' of type str.
+The class 'myDsl::State' has the following attributes: 'componentclass' of type str; 'name' of type str.
+The class 'myDsl::PresentationSegments' has the following attributes: 'name' of type str.
+The class 'myDsl::Props' has the following attributes: 'name' of type str; 'componentclass' of type str.
+The class 'myDsl::ComponentClass' has no attributes.
+The class 'myDsl::SegmentStructureContent' has the following attributes: 'name' of type str.
+The class 'myDsl::Entity' has no attributes.
+The class 'myDsl::PhotoActionsFunctions' has the following attributes: 'name' of type str.
+The class 'myDsl::Directories' has no attributes.
+The class 'myDsl::BusinessLogicContent' has no attributes.
+The class 'myDsl::NTiersConnections' has the following attributes: 'name' of type str; 'ntierconnection' of type str.
+The class 'myDsl::Functionalities' has no attributes.
+The class 'myDsl::Architecture' has no attributes.
+The class 'myDsl::BackEnd' has the following attributes: 'name' of type str.
+The class 'myDsl::ArchitectureComponents' has no attributes.
+The class 'myDsl::DataPersistenceLayer' has no attributes.
+'myDsl::NTiersConnections' (role 'myDsl_NTiersConnections', cardinality 0..*) is associated with 'myDsl::NTierSource' (role 'myDsl_NTierSource', cardinality 0..*).
+'myDsl::ReactDependenciesRules' (role 'myDsl_ReactDependenciesRules', cardinality 0..*) is associated with 'myDsl::ReactDependencies' (role 'myDsl_ReactDependencies81', cardinality 0..*).
+'myDsl::NTiers' (role 'myDsl_NTiers', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject35', cardinality 0..*).
+'myDsl::Directories' (role 'myDsl_Directories', cardinality 0..*) is associated with 'myDsl::MultipleFile' (role 'myDsl_MultipleFile', cardinality 0..*).
+'myDsl::ReactDependencies' (role 'myDsl_ReactDependencies', cardinality 0..*) is associated with 'myDsl::ReactConfiguration' (role 'myDsl_ReactConfiguration', cardinality 0..*).
+'myDsl::SingleDependencies' (role 'myDsl_SingleDependencies', cardinality 0..*) is associated with 'myDsl::ReactDependenciesSubRules' (role 'myDsl_ReactDependenciesSubRules85', cardinality 0..*).
+'myDsl::ComponentClass' (role 'myDsl_ComponentClass106', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject107', cardinality 0..*).
+'myDsl::BusinessLogicLayer' (role 'myDsl_BusinessLogicLayer', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject42', cardinality 0..*).
+'myDsl::ComponentClass' (role 'myDsl_ComponentClass104', cardinality 0..*) is associated with 'myDsl::UIContent' (role 'myDsl_UIContent103', cardinality 0..*).
+'myDsl::NTierSource' (role 'myDsl_NTierSource63', cardinality 0..*) is associated with 'myDsl::NTiersRelations' (role 'myDsl_NTiersRelations', cardinality 0..*).
+'myDsl::Technology' (role 'myDsl_Technology', cardinality 0..*) is associated with 'myDsl::Technologies' (role 'myDsl_Technologies', cardinality 0..*).
+'myDsl::LayerSource' (role 'myDsl_LayerSource', cardinality 0..*) is associated with 'myDsl::LayerRelations' (role 'myDsl_LayerRelations', cardinality 0..*).
+'myDsl::ReactModules' (role 'myDsl_ReactModules', cardinality 0..*) is associated with 'myDsl::React' (role 'myDsl_React', cardinality 0..*).
+'myDsl::ReactComponents' (role 'myDsl_ReactComponents', cardinality 0..*) is associated with 'myDsl::ComponentsLogic' (role 'myDsl_ComponentsLogic', cardinality 0..*).
+'myDsl::ComponentsLogic' (role 'myDsl_ComponentsLogic95', cardinality 0..*) is associated with 'myDsl::LogicContent' (role 'myDsl_LogicContent', cardinality 0..*).
+'myDsl::EObject' (role 'myDsl_EObject70', cardinality 0..*) is associated with 'myDsl::Technologies' (role 'myDsl_Technologies69', cardinality 0..*).
+'myDsl::ReactServicesRelation' (role 'myDsl_ReactServicesRelation116', cardinality 0..*) is associated with 'myDsl::ReactServicesType' (role 'myDsl_ReactServicesType', cardinality 0..*).
+'myDsl::Functionalities' (role 'myDsl_Functionalities11', cardinality 0..*) is associated with 'myDsl::AppAccess' (role 'myDsl_AppAccess', cardinality 0..*).
+'myDsl::ArchitectureComponents' (role 'myDsl_ArchitectureComponents', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject58', cardinality 0..*).
+'myDsl::ReactConstructor' (role 'myDsl_ReactConstructor', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject111', cardinality 0..*).
+'myDsl::Entities' (role 'myDsl_Entities', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*).
+'myDsl::ReactConfigurations' (role 'myDsl_ReactConfigurations', cardinality 0..*) is associated with 'myDsl::ReactConfiguration' (role 'myDsl_ReactConfiguration79', cardinality 0..*).
+'myDsl::SegmentStructureContent' (role 'myDsl_SegmentStructureContent', cardinality 0..*) is associated with 'myDsl::SegmentStructure' (role 'myDsl_SegmentStructure', cardinality 0..*).
+'myDsl::ProfileManagement' (role 'myDsl_ProfileManagement19', cardinality 0..*) is associated with 'myDsl::ProfileManagementFunctions' (role 'myDsl_ProfileManagementFunctions', cardinality 0..*).
+'myDsl::PhotoActionsFunctions' (role 'myDsl_PhotoActionsFunctions', cardinality 0..*) is associated with 'myDsl::PhotoActions' (role 'myDsl_PhotoActions25', cardinality 0..*).
+'myDsl::EObject' (role 'myDsl_EObject109', cardinality 0..*) is associated with 'myDsl::ReactFunctions' (role 'myDsl_ReactFunctions', cardinality 0..*).
+'myDsl::LandingActions' (role 'myDsl_LandingActions', cardinality 0..*) is associated with 'myDsl::Functionalities' (role 'myDsl_Functionalities17', cardinality 0..*).
+'myDsl::DataPersistenceLayer' (role 'myDsl_DataPersistenceLayer', cardinality 0..*) is associated with 'myDsl::DataPersistenceContent' (role 'myDsl_DataPersistenceContent', cardinality 0..*).
+'myDsl::EObject' (role 'myDsl_EObject6', cardinality 0..*) is associated with 'myDsl::Entities' (role 'myDsl_Entities5', cardinality 0..*).
+'myDsl::ReactModules' (role 'myDsl_ReactModules73', cardinality 0..*) is associated with 'myDsl::ReactSubModules' (role 'myDsl_ReactSubModules', cardinality 0..*).
+'myDsl::ReactLibrary' (role 'myDsl_ReactLibrary', cardinality 0..*) is associated with 'myDsl::ReactLibraries' (role 'myDsl_ReactLibraries', cardinality 0..*).
+'myDsl::LogicContent' (role 'myDsl_LogicContent97', cardinality 0..*) is associated with 'myDsl::LogicStructure' (role 'myDsl_LogicStructure', cardinality 0..*).
+'myDsl::SegmentStructureContent' (role 'myDsl_SegmentStructureContent49', cardinality 0..*) is associated with 'myDsl::DirectoryContent' (role 'myDsl_DirectoryContent', cardinality 0..*).
+'myDsl::DataPersistenceSegments' (role 'myDsl_DataPersistenceSegments', cardinality 0..*) is associated with 'myDsl::DataPersistenceContent' (role 'myDsl_DataPersistenceContent46', cardinality 0..*).
+'myDsl::LayerTarget' (role 'myDsl_LayerTarget', cardinality 0..*) is associated with 'myDsl::LayerRelations' (role 'myDsl_LayerRelations56', cardinality 0..*).
+'myDsl::ProfileManagement' (role 'myDsl_ProfileManagement', cardinality 0..*) is associated with 'myDsl::Functionalities' (role 'myDsl_Functionalities9', cardinality 0..*).
+'myDsl::PresentationSegments' (role 'myDsl_PresentationSegments', cardinality 0..*) is associated with 'myDsl::PresentationContent' (role 'myDsl_PresentationContent', cardinality 0..*).
+'myDsl::ReactSubModules' (role 'myDsl_ReactSubModules75', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject76', cardinality 0..*).
+'myDsl::ReactActionsContent' (role 'myDsl_ReactActionsContent', cardinality 0..*) is associated with 'myDsl::ReactActions' (role 'myDsl_ReactActions', cardinality 0..*).
+'myDsl::AppAccessFunctions' (role 'myDsl_AppAccessFunctions', cardinality 0..*) is associated with 'myDsl::AppAccess' (role 'myDsl_AppAccess21', cardinality 0..*).
+'myDsl::PresentationLayer' (role 'myDsl_PresentationLayer', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject39', cardinality 0..*).
+'myDsl::DomainRelations' (role 'myDsl_DomainRelations', cardinality 0..*) is associated with 'myDsl::DomainConnection' (role 'myDsl_DomainConnection', cardinality 0..*).
+'myDsl::DirectoryContent' (role 'myDsl_DirectoryContent51', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject52', cardinality 0..*).
+'myDsl::LandingActions' (role 'myDsl_LandingActions27', cardinality 0..*) is associated with 'myDsl::LandingFunctions' (role 'myDsl_LandingFunctions', cardinality 0..*).
+'myDsl::EObject' (role 'myDsl_EObject2', cardinality 0..*) is associated with 'myDsl::Domain' (role 'myDsl_Domain', cardinality 0..*).
+'myDsl::DOMConfigurations' (role 'myDsl_DOMConfigurations', cardinality 0..*) is associated with 'myDsl::ReactConfigurations' (role 'myDsl_ReactConfigurations90', cardinality 0..*).
+'myDsl::ReactComponents' (role 'myDsl_ReactComponents93', cardinality 0..*) is associated with 'myDsl::ComponentsUI' (role 'myDsl_ComponentsUI', cardinality 0..*).
+'myDsl::ReactInformation' (role 'myDsl_ReactInformation', cardinality 0..*) is associated with 'myDsl::ReactInfo' (role 'myDsl_ReactInfo', cardinality 0..*).
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject', cardinality 0..*).
+'myDsl::BusinessLogicContent' (role 'myDsl_BusinessLogicContent', cardinality 0..*) is associated with 'myDsl::BusinessLogicSegments' (role 'myDsl_BusinessLogicSegments', cardinality 0..*).
+'myDsl::NTierTarget' (role 'myDsl_NTierTarget', cardinality 0..*) is associated with 'myDsl::NTiersConnections' (role 'myDsl_NTiersConnections61', cardinality 0..*).
+'myDsl::AlbumManagement' (role 'myDsl_AlbumManagement', cardinality 0..*) is associated with 'myDsl::Functionalities' (role 'myDsl_Functionalities13', cardinality 0..*).
+'myDsl::SingleDependencies' (role 'myDsl_SingleDependencies87', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject88', cardinality 0..*).
+'myDsl::ComponentsUI' (role 'myDsl_ComponentsUI101', cardinality 0..*) is associated with 'myDsl::UIContent' (role 'myDsl_UIContent', cardinality 0..*).
+'myDsl::DomainRelations' (role 'myDsl_DomainRelations30', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject31', cardinality 0..*).
+'myDsl::PhotoActions' (role 'myDsl_PhotoActions', cardinality 0..*) is associated with 'myDsl::Functionalities' (role 'myDsl_Functionalities15', cardinality 0..*).
+'myDsl::ReactDependenciesSubRules' (role 'myDsl_ReactDependenciesSubRules', cardinality 0..*) is associated with 'myDsl::ReactDependenciesRules' (role 'myDsl_ReactDependenciesRules83', cardinality 0..*).
+'myDsl::Layer' (role 'myDsl_Layer', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject37', cardinality 0..*).
+'myDsl::ReactActionsContent' (role 'myDsl_ReactActionsContent114', cardinality 0..*) is associated with 'myDsl::ReactServicesRelation' (role 'myDsl_ReactServicesRelation', cardinality 0..*).
+'myDsl::NTierTarget' (role 'myDsl_NTierTarget65', cardinality 0..*) is associated with 'myDsl::NTiersRelations' (role 'myDsl_NTiersRelations66', cardinality 0..*).
+'myDsl::Architecture' (role 'myDsl_Architecture', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject33', cardinality 0..*).
+'myDsl::ComponentClass' (role 'myDsl_ComponentClass', cardinality 0..*) is associated with 'myDsl::LogicStructure' (role 'myDsl_LogicStructure99', cardinality 0..*).
+'myDsl::Functionalities' (role 'myDsl_Functionalities', cardinality 0..*) is associated with 'myDsl::Functionality' (role 'myDsl_Functionality', cardinality 0..*).
+'myDsl::AlbumManagement' (role 'myDsl_AlbumManagement23', cardinality 0..*) is associated with 'myDsl::AlbumManagementFunctions' (role 'myDsl_AlbumManagementFunctions', cardinality 0..*).

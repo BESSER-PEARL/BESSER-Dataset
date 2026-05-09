@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diverse-project/k3/k3-sample/benchVM/fr.inria.diverse.k3.benchVM.model/src/main/model/statemachine.ecore

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Library3::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'Library3::EStringToStringMapEntry' has no attributes.
+The class 'Library3::BookInfoType' has the following attributes: 'any' of type str.
+The class 'Library3::LibraryType' has no attributes.
+The class 'Library3::BookType' has the following attributes: 'author' of type str; 'pages' of type str; 'name' of type str; 'title' of type str; 'isbn' of type str.
+The class 'Library3::CustomerType' has the following attributes: 'lastName' of type str; 'firstName' of type str; 'borrowedBookId' of type str.
+'Library3::LibraryType' (role 'Library3_LibraryType', cardinality 0..*) is associated with 'Library3::DocumentRoot' (role 'Library3_DocumentRoot6', cardinality 0..*).
+'Library3::LibraryType' (role 'Library3_LibraryType8', cardinality 0..*) is associated with 'Library3::BookType' (role 'Library3_BookType9', cardinality 0..*).
+'Library3::CustomerType' (role 'Library3_CustomerType', cardinality 0..*) is associated with 'Library3::LibraryType' (role 'Library3_LibraryType11', cardinality 0..*).
+'Library3::DocumentRoot' (role 'Library3_DocumentRoot', cardinality 0..*) is associated with 'Library3::EStringToStringMapEntry' (role 'Library3_EStringToStringMapEntry', cardinality 0..*).
+'Library3::DocumentRoot' (role 'Library3_DocumentRoot3', cardinality 0..*) is associated with 'Library3::EStringToStringMapEntry' (role 'Library3_EStringToStringMapEntry4', cardinality 0..*).
+'Library3::BookInfoType' (role 'Library3_BookInfoType', cardinality 0..*) is associated with 'Library3::BookType' (role 'Library3_BookType', cardinality 0..*).

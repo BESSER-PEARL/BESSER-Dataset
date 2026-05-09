@@ -1,0 +1,66 @@
+The model has 35 class(es).
+The class 'model::AdminController' has no attributes.
+The class 'model::ExpenseExpert' has no attributes.
+The class 'model::Admin' has no attributes.
+The class 'model::DatabaseInterface' has no attributes.
+The class 'model::UserExpert' has no attributes.
+The class 'model::Resident' has the following attributes: 'firstName' of type str; 'surname' of type str; 'id' of type str.
+The class 'BookingController' has no attributes.
+The class 'model::HotelComponent' has no attributes.
+The class 'model::Room' has the following attributes: 'clean' of type str; 'beds' of type str; 'type' of type str; 'number' of type str; 'status' of type str; 'description' of type str.
+The class 'model::BankComponent' has no attributes.
+The class 'model::MSAccessDB' has no attributes.
+The class 'model::ReceptionistController' has no attributes.
+The class 'model::RoomExpert' has no attributes.
+The class 'model::PromotionExpert' has no attributes.
+The class 'model::Customers' has no attributes.
+The class 'model::Payment' has no attributes.
+The class 'DatabaseInterface' has no attributes.
+The class 'ReceptionistInterface' has no attributes.
+The class 'model::Customer' has the following attributes: 'email' of type str; 'surname' of type str; 'ccNumber' of type str; 'expiringYear' of type str; 'adress' of type str; 'ccv' of type str; 'firstName' of type str; 'expiringMonth' of type str.
+The class 'model::BookingExpert' has no attributes.
+The class 'AdminInterface' has no attributes.
+The class 'model::EmailSender' has no attributes.
+The class 'model::User' has the following attributes: 'id' of type str; 'firstName' of type str; 'password' of type str; 'administrator' of type str; 'receptionist' of type str; 'surname' of type str.
+The class 'model::Receipt' has the following attributes: 'id' of type int; 'Date' of type date; 'totalCost' of type float.
+The class 'model::Expense' has the following attributes: 'fixed' of type bool; 'receiptId' of type int; 'name' of type str; 'price' of type float; 'description' of type str; 'date' of type date; 'id' of type int.
+The class 'model::ReceiptExpert' has no attributes.
+The class 'model::Promotion' has the following attributes: 'validFrom' of type date; 'percentage' of type str; 'expirationDate' of type date; 'validTo' of type date; 'roomType' of type str; 'code' of type str; 'description' of type str.
+The class 'model::CustomerInterface' has no attributes.
+The class 'model::Booking' has the following attributes: 'toDate' of type date; 'checkedIn' of type str; 'id' of type int; 'fromDate' of type date; 'promotion' of type str; 'wishes' of type str; 'roomTypes' of type str.
+The class 'model::BookingController' has no attributes.
+The class 'CustomerInterface' has no attributes.
+The class 'model::AdminInterface' has no attributes.
+The class 'model::BankInterface' has no attributes.
+The class 'model::ReceptionistInterface' has no attributes.
+The class 'model::Receptionist' has no attributes.
+'model::ReceptionistController' is a specialization of 'ReceptionistInterface'.
+'model::MSAccessDB' is a specialization of 'DatabaseInterface'.
+'model::BookingController' is a specialization of 'CustomerInterface'.
+'model::ReceptionistController' is a specialization of 'BookingController'.
+'model::AdminController' is a specialization of 'AdminInterface'.
+'model::Receipt' (role 'model_Receipt11', cardinality 0..*) is associated with 'model::Booking' (role 'model_Booking10', cardinality 0..*).
+'model::ExpenseExpert' (role 'model_ExpenseExpert', cardinality 0..*) is associated with 'model::DatabaseInterface' (role 'model_DatabaseInterface17', cardinality 0..*).
+'model::UserExpert' (role 'model_UserExpert58', cardinality 0..*) is associated with 'model::ReceptionistController' (role 'model_ReceptionistController', cardinality 0..*).
+'model::Receipt' (role 'model_Receipt6', cardinality 0..*) is associated with 'model::Expense' (role 'model_Expense7', cardinality 0..*).
+'model::Resident' (role 'model_Resident', cardinality 0..*) is associated with 'model::Room' (role 'model_Room4', cardinality 0..*).
+'model::Room' (role 'model_Room2', cardinality 0..*) is associated with 'model::Receipt' (role 'model_Receipt', cardinality 0..*).
+'model::BookingController' (role 'model_BookingController29', cardinality 0..*) is associated with 'model::BookingExpert' (role 'model_BookingExpert30', cardinality 0..*).
+'model::Booking' (role 'model_Booking13', cardinality 0..*) is associated with 'model::Room' (role 'model_Room14', cardinality 0..*).
+'model::AdminController' (role 'model_AdminController46', cardinality 0..*) is associated with 'model::ExpenseExpert' (role 'model_ExpenseExpert47', cardinality 0..*).
+'model::AdminController' (role 'model_AdminController52', cardinality 0..*) is associated with 'model::DatabaseInterface' (role 'model_DatabaseInterface53', cardinality 0..*).
+'model::UserExpert' (role 'model_UserExpert', cardinality 0..*) is associated with 'model::DatabaseInterface' (role 'model_DatabaseInterface19', cardinality 0..*).
+'model::PromotionExpert' (role 'model_PromotionExpert33', cardinality 0..*) is associated with 'model::BookingController' (role 'model_BookingController32', cardinality 0..*).
+'model::DatabaseInterface' (role 'model_DatabaseInterface25', cardinality 0..*) is associated with 'model::ReceiptExpert' (role 'model_ReceiptExpert', cardinality 0..*).
+'model::BookingExpert' (role 'model_BookingExpert', cardinality 0..*) is associated with 'model::DatabaseInterface' (role 'model_DatabaseInterface23', cardinality 0..*).
+'model::Room' (role 'model_Room', cardinality 0..*) is associated with 'model::Expense' (role 'model_Expense', cardinality 0..*).
+'model::DatabaseInterface' (role 'model_DatabaseInterface', cardinality 0..*) is associated with 'model::RoomExpert' (role 'model_RoomExpert', cardinality 0..*).
+'model::Customer' (role 'model_Customer', cardinality 0..*) is associated with 'model::Booking' (role 'model_Booking', cardinality 0..*).
+'model::AdminController' (role 'model_AdminController', cardinality 0..*) is associated with 'model::UserExpert' (role 'model_UserExpert44', cardinality 0..*).
+'model::BookingController' (role 'model_BookingController41', cardinality 0..*) is associated with 'model::ReceiptExpert' (role 'model_ReceiptExpert42', cardinality 0..*).
+'model::AdminController' (role 'model_AdminController55', cardinality 0..*) is associated with 'model::RoomExpert' (role 'model_RoomExpert56', cardinality 0..*).
+'model::PromotionExpert' (role 'model_PromotionExpert50', cardinality 0..*) is associated with 'model::AdminController' (role 'model_AdminController49', cardinality 0..*).
+'model::BookingController' (role 'model_BookingController35', cardinality 0..*) is associated with 'model::DatabaseInterface' (role 'model_DatabaseInterface36', cardinality 0..*).
+'model::ExpenseExpert' (role 'model_ExpenseExpert39', cardinality 0..*) is associated with 'model::BookingController' (role 'model_BookingController38', cardinality 0..*).
+'model::BookingController' (role 'model_BookingController', cardinality 0..*) is associated with 'model::RoomExpert' (role 'model_RoomExpert27', cardinality 0..*).
+'model::DatabaseInterface' (role 'model_DatabaseInterface21', cardinality 0..*) is associated with 'model::PromotionExpert' (role 'model_PromotionExpert', cardinality 0..*).

@@ -1,0 +1,49 @@
+The model has 21 class(es).
+The class 'MicrocontrollerModeling::Processor' has the following attributes: 'unit' of type str; 'speed' of type int.
+The class 'MicrocontrollerModeling::CLanguage' has the following attributes: 'filesExtension' of type str; 'name' of type str; 'hasMain' of type bool.
+The class 'MicrocontrollerModeling::RAM' has no attributes.
+The class 'MicrocontrollerModeling::EEPROM' has no attributes.
+The class 'MicrocontrollerModeling::Parameter' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'Memory' has no attributes.
+The class 'MicrocontrollerModeling::ROM' has no attributes.
+The class 'ROM' has no attributes.
+The class 'MicrocontrollerModeling::Instruction' has the following attributes: 'value' of type str.
+The class 'MicrocontrollerModeling::Microcontroller' has the following attributes: 'wordMemory' of type str; 'manufacturer' of type str; 'family' of type str; 'name' of type str.
+The class 'MicrocontrollerModeling::Memory' has the following attributes: 'unit' of type str; 'size' of type int.
+The class 'EEPROM' has no attributes.
+The class 'MicrocontrollerModeling::PinMode' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'MicrocontrollerModeling::Function' has the following attributes: 'type' of type str.
+The class 'MicrocontrollerModeling::Flash' has no attributes.
+The class 'MicrocontrollerModeling::Pin' has the following attributes: 'name' of type str; 'nature' of type str; 'number' of type int.
+The class 'MicrocontrollerModeling::Register' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'MicrocontrollerModeling::Library' has the following attributes: 'name' of type str.
+The class 'Function' has no attributes.
+The class 'MicrocontrollerModeling::PinOperation' has the following attributes: 'name' of type str.
+The class 'MicrocontrollerModeling::TimerConfig' has the following attributes: 'name' of type str; 'period' of type int.
+The enumeration 'PinNature' has the following literals: 'Mixed', 'Digital', 'Analog'.
+The enumeration 'RegType' has the following literals: 'PCounter', 'CCR', 'IR', 'ICR', 'Stack', 'accumulator', 'general'.
+The enumeration 'WordSize' has the following literals: 'wd_48bits', 'wd_32bits', 'wd_24bits', 'wd_16bits', 'wd_64bits', 'wd_8bits'.
+The enumeration 'OperationName' has the following literals: 'digitalPinWrite', 'analogPinWrite', 'analogPinRead', 'pinConfigMode', 'digitalPinRead'.
+The enumeration 'SpeedUnit' has the following literals: 'MIPS', 'Mhz', 'Hz', 'GHz'.
+The enumeration 'MemoryUnit' has the following literals: 'Mo', 'Go', 'Ko'.
+The enumeration 'PinModes' has the following literals: 'Output', 'Input'.
+The enumeration 'TimerOp' has the following literals: 'initializeTimer'.
+'MicrocontrollerModeling::Flash' is a specialization of 'EEPROM'.
+'MicrocontrollerModeling::EEPROM' is a specialization of 'ROM'.
+'MicrocontrollerModeling::ROM' is a specialization of 'Memory'.
+'MicrocontrollerModeling::PinOperation' is a specialization of 'Function'.
+'MicrocontrollerModeling::TimerConfig' is a specialization of 'Function'.
+'MicrocontrollerModeling::RAM' is a specialization of 'Memory'.
+'MicrocontrollerModeling::Function' (role 'MicrocontrollerModeling_Function23', cardinality 0..*) is associated with 'MicrocontrollerModeling::Instruction' (role 'MicrocontrollerModeling_Instruction', cardinality 0..*).
+'MicrocontrollerModeling::CLanguage' (role 'MicrocontrollerModeling_CLanguage14', cardinality 0..*) is associated with 'MicrocontrollerModeling::Library' (role 'MicrocontrollerModeling_Library', cardinality 0..*).
+'MicrocontrollerModeling::Pin' (role 'MicrocontrollerModeling_Pin', cardinality 0..*) is associated with 'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller', cardinality 0..*).
+'MicrocontrollerModeling::RAM' (role 'MicrocontrollerModeling_RAM', cardinality 0..*) is associated with 'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller10', cardinality 0..*).
+'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller8', cardinality 0..*) is associated with 'MicrocontrollerModeling::Flash' (role 'MicrocontrollerModeling_Flash', cardinality 0..*).
+'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller12', cardinality 0..*) is associated with 'MicrocontrollerModeling::Register' (role 'MicrocontrollerModeling_Register', cardinality 0..*).
+'MicrocontrollerModeling::Processor' (role 'MicrocontrollerModeling_Processor', cardinality 0..*) is associated with 'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller4', cardinality 0..*).
+'MicrocontrollerModeling::PinOperation' (role 'MicrocontrollerModeling_PinOperation', cardinality 0..*) is associated with 'MicrocontrollerModeling::CLanguage' (role 'MicrocontrollerModeling_CLanguage20', cardinality 0..*).
+'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller2', cardinality 0..*) is associated with 'MicrocontrollerModeling::CLanguage' (role 'MicrocontrollerModeling_CLanguage', cardinality 0..*).
+'MicrocontrollerModeling::CLanguage' (role 'MicrocontrollerModeling_CLanguage18', cardinality 0..*) is associated with 'MicrocontrollerModeling::PinMode' (role 'MicrocontrollerModeling_PinMode', cardinality 0..*).
+'MicrocontrollerModeling::Parameter' (role 'MicrocontrollerModeling_Parameter', cardinality 0..*) is associated with 'MicrocontrollerModeling::Function' (role 'MicrocontrollerModeling_Function', cardinality 0..*).
+'MicrocontrollerModeling::CLanguage' (role 'MicrocontrollerModeling_CLanguage16', cardinality 0..*) is associated with 'MicrocontrollerModeling::TimerConfig' (role 'MicrocontrollerModeling_TimerConfig', cardinality 0..*).
+'MicrocontrollerModeling::ROM' (role 'MicrocontrollerModeling_ROM', cardinality 0..*) is associated with 'MicrocontrollerModeling::Microcontroller' (role 'MicrocontrollerModeling_Microcontroller6', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'petrinets::Transition' has the following attributes: 'name' of type str.
+The class 'petrinets::Net' has no attributes.
+The class 'petrinets::Place' has the following attributes: 'name' of type str.
+'petrinets::Net' (role 'Net9', cardinality 0..*) is associated with 'petrinets::Transition' (role 'transitions', cardinality 0..*).
+'petrinets::Place' (role 'Place12', cardinality 0..*) is associated with 'petrinets::Transition' (role 'dst11', cardinality 0..*).
+'petrinets::Place' (role 'Place15', cardinality 0..*) is associated with 'petrinets::Transition' (role 'src14', cardinality 0..*).
+'petrinets::Net' (role 'Net', cardinality 0..*) is associated with 'petrinets::Place' (role 'places', cardinality 0..*).
+'petrinets::Transition' (role 'Transition7', cardinality 0..*) is associated with 'petrinets::Place' (role 'src', cardinality 0..*).
+'petrinets::Net' (role 'net2', cardinality 0..*) is associated with 'petrinets::Transition' (role 'Transition', cardinality 0..*).
+'petrinets::Place' (role 'Place', cardinality 0..*) is associated with 'petrinets::Net' (role 'net', cardinality 0..*).
+'petrinets::Place' (role 'dst', cardinality 0..*) is associated with 'petrinets::Transition' (role 'Transition5', cardinality 0..*).

@@ -1,0 +1,77 @@
+The model has 28 class(es).
+The class 'docbook::ImageObject' has no attributes.
+The class 'docbook::Author' has the following attributes: 'authorblug' of type str; 'honorific' of type str; 'surname' of type str; 'firstname' of type str.
+The class 'docbook::ProgramListing' has no attributes.
+The class 'docbook::XMLElement' has the following attributes: 'id' of type str.
+The class 'docbook::Emphasis' has no attributes.
+The class 'Para' has no attributes.
+The class 'docbook::Ulink' has no attributes.
+The class 'SectionMixedContent' has no attributes.
+The class 'XMLElement' has no attributes.
+The class 'docbook::Link' has no attributes.
+The class 'docbook::ParaMixedContent' has no attributes.
+The class 'ParaMixedContent' has no attributes.
+The class 'docbook::Title' has no attributes.
+The class 'docbook::Warning' has no attributes.
+The class 'TitledElement' has no attributes.
+The class 'docbook::Tip' has no attributes.
+The class 'docbook::SimpleText' has the following attributes: 'data' of type str.
+The class 'docbook::Section' has no attributes.
+The class 'docbook::Chapter' has no attributes.
+The class 'docbook::Figure' has no attributes.
+The class 'docbook::Bookinfo' has the following attributes: 'pubdate' of type str; 'date' of type str.
+The class 'docbook::MediaObject' has no attributes.
+The class 'docbook::Para' has no attributes.
+The class 'docbook::ImageData' has the following attributes: 'depth' of type str; 'width' of type str; 'fileref' of type str.
+The class 'docbook::SectionMixedContent' has no attributes.
+The class 'docbook::Subtitle' has no attributes.
+The class 'docbook::Book' has no attributes.
+The class 'docbook::TitledElement' has no attributes.
+'docbook::SimpleText' is a specialization of 'ParaMixedContent'.
+'docbook::ParaMixedContent' is a specialization of 'SectionMixedContent'.
+'docbook::ProgramListing' is a specialization of 'Para'.
+'docbook::Figure' is a specialization of 'TitledElement'.
+'docbook::Figure' is a specialization of 'ParaMixedContent'.
+'docbook::Section' is a specialization of 'SectionMixedContent'.
+'docbook::Link' is a specialization of 'ParaMixedContent'.
+'docbook::Book' is a specialization of 'XMLElement'.
+'docbook::Ulink' is a specialization of 'ParaMixedContent'.
+'docbook::Emphasis' is a specialization of 'ParaMixedContent'.
+'docbook::Section' is a specialization of 'TitledElement'.
+'docbook::Warning' is a specialization of 'Para'.
+'docbook::Chapter' is a specialization of 'TitledElement'.
+'docbook::Chapter' is a specialization of 'XMLElement'.
+'docbook::Section' is a specialization of 'XMLElement'.
+'docbook::Bookinfo' is a specialization of 'XMLElement'.
+'docbook::Para' is a specialization of 'SectionMixedContent'.
+'docbook::Tip' is a specialization of 'Para'.
+'docbook::ParaMixedContent' (role 'content29', cardinality 0..*) is associated with 'docbook::Title' (role 'Title30', cardinality 0..*).
+'docbook::Para' (role 'para', cardinality 0..*) is associated with 'docbook::ParaMixedContent' (role 'ParaMixedContent19', cardinality 0..*).
+'docbook::MediaObject' (role 'content45', cardinality 0..*) is associated with 'docbook::Figure' (role 'Figure', cardinality 0..*).
+'docbook::ParaMixedContent' (role 'ParaMixedContent', cardinality 0..*) is associated with 'docbook::Title' (role 'titleElement', cardinality 0..*).
+'docbook::Chapter' (role 'chapter', cardinality 0..*) is associated with 'docbook::Book' (role 'Book13', cardinality 0..*).
+'docbook::Title' (role 'title', cardinality 0..*) is associated with 'docbook::TitledElement' (role 'TitledElement', cardinality 0..*).
+'docbook::SectionMixedContent' (role 'mixedContent', cardinality 0..*) is associated with 'docbook::Chapter' (role 'Chapter23', cardinality 0..*).
+'docbook::MediaObject' (role 'mediaObject', cardinality 0..*) is associated with 'docbook::ImageObject' (role 'ImageObject', cardinality 0..*).
+'docbook::Subtitle' (role 'Subtitle', cardinality 0..*) is associated with 'docbook::Bookinfo' (role 'bookinfo5', cardinality 0..*).
+'docbook::ParaMixedContent' (role 'content34', cardinality 0..*) is associated with 'docbook::Ulink' (role 'Ulink', cardinality 0..*).
+'docbook::TitledElement' (role 'titledElement', cardinality 0..*) is associated with 'docbook::Title' (role 'Title', cardinality 0..*).
+'docbook::Section' (role 'Section', cardinality 0..*) is associated with 'docbook::SectionMixedContent' (role 'content', cardinality 0..*).
+'docbook::Figure' (role 'figure', cardinality 0..*) is associated with 'docbook::MediaObject' (role 'MediaObject', cardinality 0..*).
+'docbook::ParaMixedContent' (role 'content27', cardinality 0..*) is associated with 'docbook::Para' (role 'Para', cardinality 0..*).
+'docbook::Link' (role 'Link', cardinality 0..*) is associated with 'docbook::ParaMixedContent' (role 'content36', cardinality 0..*).
+'docbook::Author' (role 'Author', cardinality 0..*) is associated with 'docbook::Bookinfo' (role 'bookinfo7', cardinality 0..*).
+'docbook::Book' (role 'book', cardinality 0..*) is associated with 'docbook::Bookinfo' (role 'Bookinfo', cardinality 0..*).
+'docbook::Emphasis' (role 'Emphasis', cardinality 0..*) is associated with 'docbook::ParaMixedContent' (role 'content32', cardinality 0..*).
+'docbook::Chapter' (role 'chapter15', cardinality 0..*) is associated with 'docbook::SectionMixedContent' (role 'SectionMixedContent', cardinality 0..*).
+'docbook::ParaMixedContent' (role 'ParaMixedContent39', cardinality 0..*) is associated with 'docbook::Emphasis' (role 'emphasis', cardinality 0..*).
+'docbook::ImageData' (role 'ImageData', cardinality 0..*) is associated with 'docbook::ImageObject' (role 'imageObject', cardinality 0..*).
+'docbook::Subtitle' (role 'subtitle', cardinality 0..*) is associated with 'docbook::Bookinfo' (role 'Bookinfo11', cardinality 0..*).
+'docbook::Bookinfo' (role 'Bookinfo9', cardinality 0..*) is associated with 'docbook::Author' (role 'author', cardinality 0..*).
+'docbook::ParaMixedContent' (role 'ParaMixedContent41', cardinality 0..*) is associated with 'docbook::Link' (role 'link', cardinality 0..*).
+'docbook::Ulink' (role 'ulink', cardinality 0..*) is associated with 'docbook::ParaMixedContent' (role 'ParaMixedContent43', cardinality 0..*).
+'docbook::Bookinfo' (role 'bookinfo', cardinality 0..*) is associated with 'docbook::Book' (role 'Book', cardinality 0..*).
+'docbook::MediaObject' (role 'MediaObject49', cardinality 0..*) is associated with 'docbook::ImageObject' (role 'content48', cardinality 0..*).
+'docbook::Section' (role 'section', cardinality 0..*) is associated with 'docbook::SectionMixedContent' (role 'SectionMixedContent21', cardinality 0..*).
+'docbook::ImageData' (role 'content52', cardinality 0..*) is associated with 'docbook::ImageObject' (role 'ImageObject53', cardinality 0..*).
+'docbook::Chapter' (role 'Chapter', cardinality 0..*) is associated with 'docbook::Book' (role 'book2', cardinality 0..*).

@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class FSMConditions_HALL_Data  {
+
+
+
+
+
+
+    private HALL_FSMConditions_GetData hall_fsmconditions_getdata;
+
+
+    public FSMConditions_HALL_Data(
+    ) {
+    }
+
+
+
+    public HALL_FSMConditions_GetData getHall_fsmconditions_getdata() {
+        return hall_fsmconditions_getdata;
+    }
+
+    public void setHall_fsmconditions_getdata(HALL_FSMConditions_GetData hall_fsmconditions_getdata) {
+        this.hall_fsmconditions_getdata = hall_fsmconditions_getdata;
+    }
+
+}

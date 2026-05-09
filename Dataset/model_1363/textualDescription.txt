@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'statemachine103::Action' has the following attributes: 'actionLabel' of type str; 'actionStatement' of type str.
+The class 'statemachine103::Transition' has the following attributes: 'guardExpression' of type str; 'guardLabel' of type str.
+The class 'State' has no attributes.
+The class 'statemachine103::NormalState' has no attributes.
+The class 'statemachine103::State' has the following attributes: 'id' of type int.
+The class 'statemachine103::FinalState' has no attributes.
+The class 'statemachine103::InitialState' has no attributes.
+The class 'statemachine103::StateMachine' has the following attributes: 'label' of type str.
+The class 'StateMachineObject' has no attributes.
+The class 'statemachine103::StateMachineVariable' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'statemachine103::StateMachineObject' has the following attributes: 'label' of type str.
+'statemachine103::State' is a specialization of 'StateMachineObject'.
+'statemachine103::NormalState' is a specialization of 'State'.
+'statemachine103::Transition' is a specialization of 'StateMachineObject'.
+'statemachine103::FinalState' is a specialization of 'State'.
+'statemachine103::InitialState' is a specialization of 'State'.
+'statemachine103::Action' (role 'statemachine103_Action9', cardinality 0..*) is associated with 'statemachine103::Action' (role 'statemachine103_Action11', cardinality 0..*).
+'statemachine103::StateMachine' (role 'statemachine103_StateMachine2', cardinality 0..*) is associated with 'statemachine103::StateMachineVariable' (role 'statemachine103_StateMachineVariable', cardinality 0..*).
+'statemachine103::NormalState' (role 'statemachine103_NormalState', cardinality 0..*) is associated with 'statemachine103::Action' (role 'statemachine103_Action13', cardinality 0..*).
+'statemachine103::Action' (role 'statemachine103_Action', cardinality 0..*) is associated with 'statemachine103::Transition' (role 'statemachine103_Transition8', cardinality 0..*).
+'statemachine103::Transition' (role 'statemachine103_Transition5', cardinality 0..*) is associated with 'statemachine103::State' (role 'statemachine103_State6', cardinality 0..*).
+'statemachine103::Transition' (role 'statemachine103_Transition', cardinality 0..*) is associated with 'statemachine103::State' (role 'statemachine103_State', cardinality 0..*).
+'statemachine103::StateMachine' (role 'statemachine103_StateMachine', cardinality 0..*) is associated with 'statemachine103::StateMachineObject' (role 'statemachine103_StateMachineObject', cardinality 0..*).

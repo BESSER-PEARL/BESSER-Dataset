@@ -1,0 +1,33 @@
+The model has 14 class(es).
+The class 'Arrow' has no attributes.
+The class 'TargetNode' has no attributes.
+The class 'relationworld::ThingB' has the following attributes: 'step' of type str.
+The class 'relationworld::World' has no attributes.
+The class 'relationworld::Category' has the following attributes: 'nom' of type str.
+The class 'SourceNode' has no attributes.
+The class 'relationworld::RelatedTo' has no attributes.
+The class 'relationworld::Arrow' has no attributes.
+The class 'relationworld::SourceNode' has no attributes.
+The class 'relationworld::TargetNode' has no attributes.
+The class 'relationworld::ThingA' has the following attributes: 'since' of type date.
+The class 'relationworld::NamedElement' has the following attributes: 'name' of type str.
+The class 'Category' has no attributes.
+The class 'NamedElement' has no attributes.
+The enumeration 'Scale' has the following literals: 'two', 'three', 'one', 'four', 'nothing'.
+'relationworld::RelatedTo' is a specialization of 'Arrow'.
+'relationworld::World' is a specialization of 'Category'.
+'relationworld::ThingA' is a specialization of 'NamedElement'.
+'relationworld::ThingB' is a specialization of 'NamedElement'.
+'relationworld::RelatedTo' is a specialization of 'NamedElement'.
+'relationworld::ThingA' is a specialization of 'SourceNode'.
+'relationworld::ThingB' is a specialization of 'TargetNode'.
+'relationworld::Arrow' (role 'relationworld_Arrow18', cardinality 0..*) is associated with 'relationworld::Category' (role 'relationworld_Category17', cardinality 0..*).
+'relationworld::World' (role 'relationworld_World', cardinality 0..*) is associated with 'relationworld::ThingA' (role 'relationworld_ThingA4', cardinality 0..*).
+'relationworld::World' (role 'relationworld_World9', cardinality 0..*) is associated with 'relationworld::RelatedTo' (role 'relationworld_RelatedTo10', cardinality 0..*).
+'relationworld::Category' (role 'relationworld_Category20', cardinality 0..*) is associated with 'relationworld::TargetNode' (role 'relationworld_TargetNode21', cardinality 0..*).
+'relationworld::SourceNode' (role 'relationworld_SourceNode', cardinality 0..*) is associated with 'relationworld::Arrow' (role 'relationworld_Arrow', cardinality 0..*).
+'relationworld::ThingB' (role 'relationworld_ThingB7', cardinality 0..*) is associated with 'relationworld::World' (role 'relationworld_World6', cardinality 0..*).
+'relationworld::ThingA' (role 'relationworld_ThingA', cardinality 0..*) is associated with 'relationworld::RelatedTo' (role 'relationworld_RelatedTo', cardinality 0..*).
+'relationworld::RelatedTo' (role 'relationworld_RelatedTo2', cardinality 0..*) is associated with 'relationworld::ThingB' (role 'relationworld_ThingB', cardinality 0..*).
+'relationworld::Category' (role 'relationworld_Category', cardinality 0..*) is associated with 'relationworld::SourceNode' (role 'relationworld_SourceNode15', cardinality 0..*).
+'relationworld::Arrow' (role 'relationworld_Arrow13', cardinality 0..*) is associated with 'relationworld::TargetNode' (role 'relationworld_TargetNode', cardinality 0..*).

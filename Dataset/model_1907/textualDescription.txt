@@ -1,0 +1,202 @@
+The model has 85 class(es).
+The class 'MAProperty' has no attributes.
+The class 'OclValue' has no attributes.
+The class 'OclRef' has no attributes.
+The class 'umm::OclBooleanLiteral' has no attributes.
+The class 'umm::OclLessOrEqual' has no attributes.
+The class 'ContextRef' has no attributes.
+The class 'umm::OclPathTail' has no attributes.
+The class 'umm::OclIsEmpty' has no attributes.
+The class 'umm::OclValue' has no attributes.
+The class 'umm::CDT' has the following attributes: 'uniqueIdentifier' of type str; 'versionIdentifier' of type str; 'name' of type str; 'definition' of type str; 'dictionary' of type str; 'businessTerm' of type str.
+The class 'umm::OclMoreOrEqual' has no attributes.
+The class 'umm::ACCProperty' has the following attributes: 'versionIdentifier' of type str; 'uniqueIdentifier' of type str; 'sequencingKey' of type str; 'businessTerm' of type str; 'multiplicity' of type str; 'name' of type str; 'dictionary' of type str; 'definition' of type str.
+The class 'umm::OclEnumerationLiteral' has the following attributes: 'value' of type str.
+The class 'umm::OclLess' has no attributes.
+The class 'umm::Constraint' has no attributes.
+The class 'umm::BDTProperty' has the following attributes: 'length' of type int; 'pattern' of type str; 'versionIdentifier' of type str; 'definition' of type str; 'maxLength' of type int; 'dictionary' of type str; 'businessTerm' of type str; 'minLength' of type int; 'uniqueIdentifier' of type str.
+The class 'umm::ASNONE' has no attributes.
+The class 'umm::Primitive' has no attributes.
+The class 'umm::OclPathSelfHead' has no attributes.
+The class 'umm::OclNotEmpty' has no attributes.
+The class 'umm::BDTLibrary' has the following attributes: 'reference' of type str; 'copyright' of type str; 'uniqueIdentifier' of type str; 'baseURN' of type str; 'businessTerm' of type str; 'namespacePrefix' of type str; 'owner' of type str; 'versionIdentifier' of type str.
+The class 'umm::OclAnd' has no attributes.
+The class 'umm::TC::Constraint' has the following attributes: 'responsibleAgency' of type str; 'kind' of type str; 'listIdentifier' of type str.
+The class 'ABIEProperty' has no attributes.
+The class 'umm::CDTProperty' has the following attributes: 'businessTerm' of type str; 'name' of type str; 'uniqueIdentifier' of type str; 'definition' of type str; 'dictionary' of type str; 'versionIdentifier' of type str; 'multiplicity' of type str.
+The class 'umm::OclImplies' has no attributes.
+The class 'umm::ENUMLibrary' has the following attributes: 'copyright' of type str; 'businessTerm' of type str; 'reference' of type str; 'versionIdentifier' of type str; 'baseURN' of type str; 'owner' of type str; 'namespacePrefix' of type str; 'uniqueIdentifier' of type str.
+The class 'umm::PrimitiveLibrary' has no attributes.
+The class 'umm::OclExpression' has no attributes.
+The class 'umm::Original' has no attributes.
+The class 'umm::OclOr' has no attributes.
+The class 'umm::BCC' has the following attributes: 'restriction' of type str; 'fixedValue' of type str.
+The class 'umm::CDTLibrary' has the following attributes: 'baseURN' of type str; 'versionIdentifier' of type str; 'uniqueIdentifier' of type str; 'reference' of type str; 'copyright' of type str; 'businessTerm' of type str; 'owner' of type str; 'namespacePrefix' of type str.
+The class 'umm::Subset' has no attributes.
+The class 'BDTProperty' has no attributes.
+The class 'umm::BDT' has the following attributes: 'dictionary' of type str; 'businessTerm' of type str; 'definition' of type str; 'versionIdentifier' of type str; 'uniqueIdentifier' of type str.
+The class 'umm::OclBooleanFalse' has no attributes.
+The class 'OclLiteral' has no attributes.
+The class 'AssembledBase' has no attributes.
+The class 'umm::BIELibrary' has the following attributes: 'reference' of type str; 'copyright' of type str; 'owner' of type str; 'versionIdentifier' of type str; 'namespacePrefix' of type str; 'uniqueIdentifier' of type str; 'businessTerm' of type str; 'baseURN' of type str.
+The class 'OclBooleanLiteral' has no attributes.
+The class 'umm::OclArrow' has no attributes.
+The class 'umm::CCLibrary' has the following attributes: 'copyright' of type str; 'versionIdentifier' of type str; 'baseURN' of type str; 'businessTerm' of type str; 'namespacePrefix' of type str; 'owner' of type str; 'reference' of type str; 'uniqueIdentifier' of type str.
+The class 'umm::OclLiteral' has no attributes.
+The class 'umm::Content' has the following attributes: 'minInclusive' of type int; 'fractionalDigits' of type int; 'maxInclusive' of type int; 'maxExclusive' of type int; 'minExclusive' of type int; 'totalDigits' of type int.
+The class 'OclFunctionCall' has no attributes.
+The class 'CDTProperty' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'umm::OclIntegerLiteral' has the following attributes: 'value' of type int.
+The class 'umm::OclSize' has no attributes.
+The class 'umm::ASBIE' has no attributes.
+The class 'umm::OclRef' has the following attributes: 'multiplicity' of type str; 'name' of type str.
+The class 'umm::ASMA' has no attributes.
+The class 'umm::OclBooleanTrue' has no attributes.
+The class 'umm::Supplement' has the following attributes: 'restriction' of type str; 'fixedValue' of type str; 'defaultValue' of type str.
+The class 'Library' has no attributes.
+The class 'umm::MAProperty' has no attributes.
+The class 'ACCProperty' has no attributes.
+The class 'umm::OclMore' has no attributes.
+The class 'umm::ENUM' has the following attributes: 'definition' of type str; 'uniqueIdentifier' of type str; 'businessTerm' of type str; 'codeListAgencyIdentifier' of type str; 'name' of type str; 'versionIdentifier' of type str; 'dictionary' of type str; 'codeListName' of type str; 'codeListIdentifier' of type str.
+The class 'umm::Assembled' has no attributes.
+The class 'umm::OclStringLiteral' has the following attributes: 'value' of type str.
+The class 'umm::ABIE' has the following attributes: 'uniqueIdentifier' of type str; 'dictionary' of type str; 'versionIdentifier' of type str; 'businessTerm' of type str; 'definition' of type str.
+The class 'umm::ABIEProperty' has the following attributes: 'definition' of type str; 'dictionary' of type str; 'versionIdentifier' of type str; 'sequencingKey' of type str; 'uniqueIdentifier' of type str; 'businessTerm' of type str.
+The class 'umm::OclEqual' has no attributes.
+The class 'umm::ACC' has the following attributes: 'businessTerm' of type str; 'versionIdentifier' of type str; 'definition' of type str; 'uniqueIdentifier' of type str; 'dictionary' of type str; 'name' of type str.
+The class 'umm::MA' has no attributes.
+The class 'umm::ASCC' has no attributes.
+The class 'umm::Library' has the following attributes: 'name' of type str.
+The class 'umm::OclForAll' has no attributes.
+The class 'umm::InfEnvelope' has the following attributes: 'name' of type str.
+The class 'OclReference' has no attributes.
+The class 'umm::DocLibrary' has the following attributes: 'reference' of type str; 'copyright' of type str; 'namespacePrefix' of type str; 'baseURN' of type str; 'versionIdentifier' of type str; 'businessTerm' of type str; 'owner' of type str; 'uniqueIdentifier' of type str.
+The class 'umm::AssembledBase' has no attributes.
+The class 'umm::BBIE' has the following attributes: 'fixedValue' of type str; 'restriction' of type str.
+The class 'umm::OclInvariant' has no attributes.
+The class 'ENUM' has no attributes.
+The class 'umm::OclFunctionCall' has no attributes.
+The class 'umm::CDT::Content' has no attributes.
+The class 'umm::OclReference' has no attributes.
+The class 'umm::OclXor' has no attributes.
+The class 'umm::CodelistEntry' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'umm::OclPathFeatureHead' has no attributes.
+The class 'umm::CDT::Supplement' has the following attributes: 'fixedValue' of type str; 'defaultValue' of type str; 'restriction' of type str.
+The class 'umm::ContextRef' has the following attributes: 'name' of type str.
+The enumeration 'ConstraintKind' has the following literals: 'payload', 'document', 'abie', 'bdt', 'invariant', 'facet', 'dependency'.
+The enumeration 'MultiplicityKind' has the following literals: 'OneOrMore', 'One', 'ZeroOrMore', 'Optional'.
+'umm::CCLibrary' is a specialization of 'Library'.
+'umm::OclImplies' is a specialization of 'OclExpression'.
+'umm::OclAnd' is a specialization of 'OclExpression'.
+'umm::CDTLibrary' is a specialization of 'Library'.
+'umm::PrimitiveLibrary' is a specialization of 'Library'.
+'umm::OclNotEmpty' is a specialization of 'OclFunctionCall'.
+'umm::OclLess' is a specialization of 'OclExpression'.
+'umm::Supplement' is a specialization of 'BDTProperty'.
+'umm::OclXor' is a specialization of 'OclExpression'.
+'umm::BDT' is a specialization of 'ContextRef'.
+'umm::OclEqual' is a specialization of 'OclExpression'.
+'umm::Primitive' is a specialization of 'AssembledBase'.
+'umm::Subset' is a specialization of 'ENUM'.
+'umm::OclValue' is a specialization of 'OclExpression'.
+'umm::OclOr' is a specialization of 'OclExpression'.
+'umm::OclIsEmpty' is a specialization of 'OclFunctionCall'.
+'umm::OclLiteral' is a specialization of 'OclValue'.
+'umm::ENUMLibrary' is a specialization of 'Library'.
+'umm::OclLessOrEqual' is a specialization of 'OclExpression'.
+'umm::AssembledBase' is a specialization of 'ENUM'.
+'umm::OclPathFeatureHead' is a specialization of 'OclReference'.
+'umm::OclStringLiteral' is a specialization of 'OclLiteral'.
+'umm::MAProperty' is a specialization of 'OclRef'.
+'umm::DocLibrary' is a specialization of 'Library'.
+'umm::ASNONE' is a specialization of 'MAProperty'.
+'umm::Assembled' is a specialization of 'AssembledBase'.
+'umm::ASBIE' is a specialization of 'ABIEProperty'.
+'umm::CDT::Content' is a specialization of 'CDTProperty'.
+'umm::OclIntegerLiteral' is a specialization of 'OclLiteral'.
+'umm::OclArrow' is a specialization of 'OclExpression'.
+'umm::BBIE' is a specialization of 'ABIEProperty'.
+'umm::ASCC' is a specialization of 'ACCProperty'.
+'umm::ABIEProperty' is a specialization of 'OclRef'.
+'umm::OclBooleanTrue' is a specialization of 'OclBooleanLiteral'.
+'umm::ABIE' is a specialization of 'ContextRef'.
+'umm::OclPathSelfHead' is a specialization of 'OclReference'.
+'umm::Original' is a specialization of 'ENUM'.
+'umm::ASMA' is a specialization of 'MAProperty'.
+'umm::BCC' is a specialization of 'ACCProperty'.
+'umm::BDTProperty' is a specialization of 'OclRef'.
+'umm::OclMoreOrEqual' is a specialization of 'OclExpression'.
+'umm::OclBooleanFalse' is a specialization of 'OclBooleanLiteral'.
+'umm::BIELibrary' is a specialization of 'Library'.
+'umm::OclSize' is a specialization of 'OclFunctionCall'.
+'umm::MA' is a specialization of 'ContextRef'.
+'umm::CDT::Supplement' is a specialization of 'CDTProperty'.
+'umm::OclMore' is a specialization of 'OclExpression'.
+'umm::BDTLibrary' is a specialization of 'Library'.
+'umm::OclForAll' is a specialization of 'OclFunctionCall'.
+'umm::Content' is a specialization of 'BDTProperty'.
+'umm::OclBooleanLiteral' is a specialization of 'OclLiteral'.
+'umm::OclEnumerationLiteral' is a specialization of 'OclLiteral'.
+'umm::OclReference' is a specialization of 'OclValue'.
+'umm::ABIE' (role 'umm_ABIE34', cardinality 0..*) is associated with 'umm::ASBIE' (role 'umm_ASBIE', cardinality 0..*).
+'umm::OclPathFeatureHead' (role 'umm_OclPathFeatureHead', cardinality 0..*) is associated with 'umm::OclRef' (role 'umm_OclRef', cardinality 0..*).
+'umm::BIELibrary' (role 'umm_BIELibrary20', cardinality 0..*) is associated with 'umm::BDTLibrary' (role 'umm_BDTLibrary21', cardinality 0..*).
+'umm::ASCC' (role 'umm_ASCC', cardinality 0..*) is associated with 'umm::ACC' (role 'umm_ACC59', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression93', cardinality 0..*) is associated with 'umm::OclAnd' (role 'umm_OclAnd92', cardinality 0..*).
+'umm::ABIE' (role 'umm_ABIE28', cardinality 0..*) is associated with 'umm::Constraint' (role 'umm_Constraint29', cardinality 0..*).
+'umm::OclLessOrEqual' (role 'umm_OclLessOrEqual', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression115', cardinality 0..*).
+'umm::ContextRef' (role 'umm_ContextRef', cardinality 0..*) is associated with 'umm::Constraint' (role 'umm_Constraint14', cardinality 0..*).
+'umm::ACC' (role 'umm_ACC56', cardinality 0..*) is associated with 'umm::Constraint' (role 'umm_Constraint57', cardinality 0..*).
+'umm::ACCProperty' (role 'umm_ACCProperty', cardinality 0..*) is associated with 'umm::ACC' (role 'umm_ACC54', cardinality 0..*).
+'umm::OclLess' (role 'umm_OclLess', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression110', cardinality 0..*).
+'umm::Constraint' (role 'umm_Constraint18', cardinality 0..*) is associated with 'umm::OclInvariant' (role 'umm_OclInvariant', cardinality 0..*).
+'umm::ENUM' (role 'umm_ENUM', cardinality 0..*) is associated with 'umm::ENUMLibrary' (role 'umm_ENUMLibrary', cardinality 0..*).
+'umm::ABIE' (role 'umm_ABIE26', cardinality 0..*) is associated with 'umm::ABIEProperty' (role 'umm_ABIEProperty', cardinality 0..*).
+'umm::Primitive' (role 'umm_Primitive68', cardinality 0..*) is associated with 'umm::PrimitiveLibrary' (role 'umm_PrimitiveLibrary', cardinality 0..*).
+'umm::BDT' (role 'umm_BDT40', cardinality 0..*) is associated with 'umm::BDTProperty' (role 'umm_BDTProperty', cardinality 0..*).
+'umm::CDT' (role 'umm_CDT62', cardinality 0..*) is associated with 'umm::CDTLibrary' (role 'umm_CDTLibrary', cardinality 0..*).
+'umm::ABIEProperty' (role 'umm_ABIEProperty32', cardinality 0..*) is associated with 'umm::ABIEProperty' (role 'umm_ABIEProperty30', cardinality 0..*).
+'umm::CDT' (role 'umm_CDT', cardinality 0..*) is associated with 'umm::BCC' (role 'umm_BCC', cardinality 0..*).
+'umm::MA' (role 'umm_MA10', cardinality 0..*) is associated with 'umm::Constraint' (role 'umm_Constraint', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression', cardinality 0..*) is associated with 'umm::OclInvariant' (role 'umm_OclInvariant70', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression95', cardinality 0..*) is associated with 'umm::OclOr' (role 'umm_OclOr', cardinality 0..*).
+'umm::BIELibrary' (role 'umm_BIELibrary23', cardinality 0..*) is associated with 'umm::ABIE' (role 'umm_ABIE24', cardinality 0..*).
+'umm::Primitive' (role 'umm_Primitive', cardinality 0..*) is associated with 'umm::CDTProperty' (role 'umm_CDTProperty66', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression85', cardinality 0..*) is associated with 'umm::OclImplies' (role 'umm_OclImplies', cardinality 0..*).
+'umm::BDT' (role 'umm_BDT38', cardinality 0..*) is associated with 'umm::BDTLibrary' (role 'umm_BDTLibrary37', cardinality 0..*).
+'umm::AssembledBase' (role 'umm_AssembledBase', cardinality 0..*) is associated with 'umm::BDTProperty' (role 'umm_BDTProperty42', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression120', cardinality 0..*) is associated with 'umm::OclMore' (role 'umm_OclMore', cardinality 0..*).
+'umm::CDTProperty' (role 'umm_CDTProperty', cardinality 0..*) is associated with 'umm::CDT' (role 'umm_CDT64', cardinality 0..*).
+'umm::MA' (role 'umm_MA', cardinality 0..*) is associated with 'umm::InfEnvelope' (role 'umm_InfEnvelope6', cardinality 0..*).
+'umm::BIELibrary' (role 'umm_BIELibrary', cardinality 0..*) is associated with 'umm::DocLibrary' (role 'umm_DocLibrary', cardinality 0..*).
+'umm::OclXor' (role 'umm_OclXor102', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression103', cardinality 0..*).
+'umm::TC::Constraint' (role 'umm_TC_Constraint', cardinality 0..*) is associated with 'umm::Constraint' (role 'umm_Constraint16', cardinality 0..*).
+'umm::DocLibrary' (role 'umm_DocLibrary4', cardinality 0..*) is associated with 'umm::InfEnvelope' (role 'umm_InfEnvelope', cardinality 0..*).
+'umm::BBIE' (role 'umm_BBIE', cardinality 0..*) is associated with 'umm::BDT' (role 'umm_BDT', cardinality 0..*).
+'umm::OclValue' (role 'umm_OclValue', cardinality 0..*) is associated with 'umm::OclArrow' (role 'umm_OclArrow', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression113', cardinality 0..*) is associated with 'umm::OclLess' (role 'umm_OclLess112', cardinality 0..*).
+'umm::MAProperty' (role 'umm_MAProperty', cardinality 0..*) is associated with 'umm::MA' (role 'umm_MA8', cardinality 0..*).
+'umm::OclPathTail' (role 'umm_OclPathTail', cardinality 0..*) is associated with 'umm::OclPathSelfHead' (role 'umm_OclPathSelfHead', cardinality 0..*).
+'umm::OclMoreOrEqual' (role 'umm_OclMoreOrEqual127', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression128', cardinality 0..*).
+'umm::ABIE' (role 'umm_ABIE', cardinality 0..*) is associated with 'umm::MAProperty' (role 'umm_MAProperty12', cardinality 0..*).
+'umm::Subset' (role 'umm_Subset', cardinality 0..*) is associated with 'umm::Assembled' (role 'umm_Assembled46', cardinality 0..*).
+'umm::CCLibrary' (role 'umm_CCLibrary', cardinality 0..*) is associated with 'umm::ACC' (role 'umm_ACC', cardinality 0..*).
+'umm::OclForAll' (role 'umm_OclForAll', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression83', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression108', cardinality 0..*) is associated with 'umm::OclEqual' (role 'umm_OclEqual107', cardinality 0..*).
+'umm::OclMore' (role 'umm_OclMore122', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression123', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression105', cardinality 0..*) is associated with 'umm::OclEqual' (role 'umm_OclEqual', cardinality 0..*).
+'umm::OclPathTail' (role 'umm_OclPathTail75', cardinality 0..*) is associated with 'umm::OclPathFeatureHead' (role 'umm_OclPathFeatureHead74', cardinality 0..*).
+'umm::OclXor' (role 'umm_OclXor', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression100', cardinality 0..*).
+'umm::OclPathTail' (role 'umm_OclPathTail81', cardinality 0..*) is associated with 'umm::OclPathTail' (role 'umm_OclPathTail79', cardinality 0..*).
+'umm::OclExpression' (role 'umm_OclExpression98', cardinality 0..*) is associated with 'umm::OclOr' (role 'umm_OclOr97', cardinality 0..*).
+'umm::DocLibrary' (role 'umm_DocLibrary2', cardinality 0..*) is associated with 'umm::BDTLibrary' (role 'umm_BDTLibrary', cardinality 0..*).
+'umm::Original' (role 'umm_Original', cardinality 0..*) is associated with 'umm::Assembled' (role 'umm_Assembled', cardinality 0..*).
+'umm::Original' (role 'umm_Original48', cardinality 0..*) is associated with 'umm::CodelistEntry' (role 'umm_CodelistEntry', cardinality 0..*).
+'umm::OclAnd' (role 'umm_OclAnd', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression90', cardinality 0..*).
+'umm::OclMoreOrEqual' (role 'umm_OclMoreOrEqual', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression125', cardinality 0..*).
+'umm::OclImplies' (role 'umm_OclImplies87', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression88', cardinality 0..*).
+'umm::OclPathTail' (role 'umm_OclPathTail77', cardinality 0..*) is associated with 'umm::OclRef' (role 'umm_OclRef78', cardinality 0..*).
+'umm::OclFunctionCall' (role 'umm_OclFunctionCall', cardinality 0..*) is associated with 'umm::OclArrow' (role 'umm_OclArrow131', cardinality 0..*).
+'umm::OclLessOrEqual' (role 'umm_OclLessOrEqual117', cardinality 0..*) is associated with 'umm::OclExpression' (role 'umm_OclExpression118', cardinality 0..*).
+'umm::Subset' (role 'umm_Subset50', cardinality 0..*) is associated with 'umm::CodelistEntry' (role 'umm_CodelistEntry51', cardinality 0..*).

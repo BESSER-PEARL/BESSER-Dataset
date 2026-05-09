@@ -1,0 +1,69 @@
+The model has 41 class(es).
+The class 'IHotelStartupProvides' has no attributes.
+The class 'hotelsystem::IHotelStartupProvides' has no attributes.
+The class 'se::hotelsystem::IHotelReceptionistProvides' has no attributes.
+The class 'hotelsystem::Customer' has no attributes.
+The class 'se::hotelsystem::Bill' has the following attributes: 'price' of type float; 'billID' of type int.
+The class 'hotelsystem::IHotelCustomerProvides' has no attributes.
+The class 'se::hotelsystem::IHotelStartupProvides' has no attributes.
+The class 'se::hotelsystem::IRoomHandler' has no attributes.
+The class 'se::hotelsystem::PaymentHandler' has no attributes.
+The class 'hotelsystem::RoomExtra' has no attributes.
+The class 'User' has no attributes.
+The class 'se::actor::Administrator' has no attributes.
+The class 'se::hotelsystem::RoomType' has the following attributes: 'pricePerNight' of type float; 'description' of type str; 'name' of type str; 'numBeds' of type int.
+The class 'se::actor::User' has no attributes.
+The class 'hotelsystem::PaymentHandler' has no attributes.
+The class 'se::hotelsystem::IHotelCustomerProvides' has no attributes.
+The class 'se::bankcomponents::ICustomerProvides' has no attributes.
+The class 'se::hotelsystem::RoomHandler' has no attributes.
+The class 'se::hotelsystem::Booking' has the following attributes: 'startDate' of type str; 'canceled' of type bool; 'bookingId' of type int; 'endDate' of type str; 'confirmed' of type bool.
+The class 'se::hotelsystem::BookingHandler' has the following attributes: 'bookingCurrentlyCheckingOut' of type int; 'nextBookingId' of type int.
+The class 'hotelsystem::RoomType' has no attributes.
+The class 'hotelsystem::Room' has no attributes.
+The class 'hotelsystem::Bill' has no attributes.
+The class 'se::hotelsystem::IHotelAdministratorProvides' has no attributes.
+The class 'se::hotelsystem::RoomExtra' has the following attributes: 'price' of type float; 'description' of type str.
+The class 'se::actor::Receptionist' has no attributes.
+The class 'se::bankcomponents::IAdministratorProvides' has no attributes.
+The class 'hotelsystem::IHotelReceptionistProvides' has no attributes.
+The class 'IAdministratorProvides' has no attributes.
+The class 'bankcomponents::ICustomerProvides' has no attributes.
+The class 'hotelsystem::RoomHandler' has no attributes.
+The class 'hotelsystem::IRoomHandler' has no attributes.
+The class 'se::hotelsystem::HotelInitializer' has no attributes.
+The class 'hotelsystem::RoomReservation' has no attributes.
+The class 'hotelsystem::IHotelAdministratorProvides' has no attributes.
+The class 'se::bankcomponents::BankAdministrator' has no attributes.
+The class 'se::hotelsystem::RoomReservation' has the following attributes: 'checkOuDate' of type str; 'endDate' of type str; 'checkInDate' of type str; 'startDate' of type str.
+The class 'hotelsystem::Booking' has no attributes.
+The class 'se::hotelsystem::Customer' has the following attributes: 'lastName' of type str; 'firstName' of type str.
+The class 'se::hotelsystem::FreeRoomTypesDTO' has the following attributes: 'numFreeRooms' of type int; 'pricePerNight' of type float; 'numBeds' of type int; 'roomTypeDescription' of type str.
+The class 'se::hotelsystem::Room' has the following attributes: 'blocked' of type bool; 'roomNumber' of type int; 'occupied' of type bool.
+'se::actor::Administrator' is a specialization of 'User'.
+'se::bankcomponents::BankAdministrator' is a specialization of 'IAdministratorProvides'.
+'se::hotelsystem::RoomHandler' is a specialization of 'hotelsystem::IRoomHandler'.
+'se::hotelsystem::BookingHandler' is a specialization of 'hotelsystem::IHotelCustomerProvides'.
+'se::actor::Receptionist' is a specialization of 'User'.
+'se::hotelsystem::HotelInitializer' is a specialization of 'IHotelStartupProvides'.
+'se::hotelsystem::RoomHandler' is a specialization of 'hotelsystem::IHotelAdministratorProvides'.
+'se::hotelsystem::BookingHandler' is a specialization of 'hotelsystem::IHotelReceptionistProvides'.
+'hotelsystem::Room' (role 'hotelsystem_Room', cardinality 0..*) is associated with 'se::hotelsystem::RoomReservation' (role 'se_hotelsystem_RoomReservation14', cardinality 0..*).
+'se::hotelsystem::BookingHandler' (role 'se_hotelsystem_BookingHandler4', cardinality 0..*) is associated with 'hotelsystem::IRoomHandler' (role 'hotelsystem_IRoomHandler', cardinality 0..*).
+'hotelsystem::IHotelCustomerProvides' (role 'hotelsystem_IHotelCustomerProvides', cardinality 0..*) is associated with 'se::actor::Receptionist' (role 'se_actor_Receptionist28', cardinality 0..*).
+'se::hotelsystem::RoomHandler' (role 'se_hotelsystem_RoomHandler', cardinality 0..*) is associated with 'hotelsystem::RoomType' (role 'hotelsystem_RoomType21', cardinality 0..*).
+'hotelsystem::PaymentHandler' (role 'hotelsystem_PaymentHandler', cardinality 0..*) is associated with 'se::hotelsystem::BookingHandler' (role 'se_hotelsystem_BookingHandler2', cardinality 0..*).
+'se::hotelsystem::Bill' (role 'se_hotelsystem_Bill', cardinality 0..*) is associated with 'hotelsystem::RoomReservation' (role 'hotelsystem_RoomReservation18', cardinality 0..*).
+'se::hotelsystem::Booking' (role 'se_hotelsystem_Booking9', cardinality 0..*) is associated with 'hotelsystem::Bill' (role 'hotelsystem_Bill', cardinality 0..*).
+'se::hotelsystem::RoomReservation' (role 'se_hotelsystem_RoomReservation12', cardinality 0..*) is associated with 'hotelsystem::RoomExtra' (role 'hotelsystem_RoomExtra', cardinality 0..*).
+'hotelsystem::RoomHandler' (role 'hotelsystem_RoomHandler', cardinality 0..*) is associated with 'se::hotelsystem::HotelInitializer' (role 'se_hotelsystem_HotelInitializer', cardinality 0..*).
+'se::hotelsystem::BookingHandler' (role 'se_hotelsystem_BookingHandler', cardinality 0..*) is associated with 'hotelsystem::Booking' (role 'hotelsystem_Booking', cardinality 0..*).
+'se::actor::Receptionist' (role 'se_actor_Receptionist', cardinality 0..*) is associated with 'hotelsystem::IHotelReceptionistProvides' (role 'hotelsystem_IHotelReceptionistProvides', cardinality 0..*).
+'se::hotelsystem::Booking' (role 'se_hotelsystem_Booking7', cardinality 0..*) is associated with 'hotelsystem::RoomReservation' (role 'hotelsystem_RoomReservation', cardinality 0..*).
+'hotelsystem::Room' (role 'hotelsystem_Room24', cardinality 0..*) is associated with 'se::hotelsystem::RoomHandler' (role 'se_hotelsystem_RoomHandler23', cardinality 0..*).
+'se::actor::Administrator' (role 'se_actor_Administrator31', cardinality 0..*) is associated with 'hotelsystem::IHotelStartupProvides' (role 'hotelsystem_IHotelStartupProvides', cardinality 0..*).
+'se::actor::Administrator' (role 'se_actor_Administrator', cardinality 0..*) is associated with 'hotelsystem::IHotelAdministratorProvides' (role 'hotelsystem_IHotelAdministratorProvides', cardinality 0..*).
+'se::hotelsystem::Room' (role 'se_hotelsystem_Room', cardinality 0..*) is associated with 'hotelsystem::RoomType' (role 'hotelsystem_RoomType16', cardinality 0..*).
+'hotelsystem::Customer' (role 'hotelsystem_Customer', cardinality 0..*) is associated with 'se::hotelsystem::Booking' (role 'se_hotelsystem_Booking', cardinality 0..*).
+'bankcomponents::ICustomerProvides' (role 'bankcomponents_ICustomerProvides', cardinality 0..*) is associated with 'se::hotelsystem::PaymentHandler' (role 'se_hotelsystem_PaymentHandler', cardinality 0..*).
+'hotelsystem::RoomType' (role 'hotelsystem_RoomType', cardinality 0..*) is associated with 'se::hotelsystem::RoomReservation' (role 'se_hotelsystem_RoomReservation', cardinality 0..*).

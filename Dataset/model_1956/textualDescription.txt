@@ -1,0 +1,240 @@
+The model has 114 class(es).
+The class 'MachineLibrary::UnitGeneralParameters' has the following attributes: 'minValue_1' of type int; 'UseWith_1' of type str; 'defaultValue_1' of type int; 'unit_1' of type str; 'seq_X' of type int; 'comment_1' of type str; 'canBeChange_1' of type int; 'maxValue_1' of type int; 'KeyWord_1' of type str; 'paraName_1' of type str; 'visibleType_1' of type int.
+The class 'MachineLibrary::Compac::Link' has the following attributes: 'useNotENQ' of type int; 'splitLongMessage' of type int; 'maxDataLength' of type int; 'retry' of type int; 'bcc' of type int; 'port' of type str; 'checksum' of type int; 'useNotACK_NAK' of type int; 'commConfig' of type str; 'checksumCode' of type int; 'byteCount' of type int; 'params' of type str; 'bytecountcode' of type int; 'timeout' of type int.
+The class 'MachineLibrary::UnitGeneral::AccPyc' has the following attributes: 'minSampleWeight' of type float; 'cupWeight' of type float.
+The class 'MachineLibrary::UnitGeneral::SuperQ' has the following attributes: 'lastPosAnalysing' of type int; 'lastPosInInstrument' of type int.
+The class 'MachineLibrary::StatusBit' has the following attributes: 'bitName' of type str; 'bitNo' of type int.
+The class 'MachineLibrary::TransferFileSection' has the following attributes: 'transferSection' of type str; 'transferFile' of type str; 'transferSeq' of type int.
+The class 'MachineLibrary::RobotWinCCToRobot' has the following attributes: 'robotwincctorobootType_X' of type str; 'robotwincctorobotFrom_X' of type str; 'robotwincctorobootSeq_X' of type int; 'robotwincctorobotTo_X' of type str.
+The class 'MachineLibrary::Commands' has no attributes.
+The class 'MachineLibrary::Command' has the following attributes: 'commandProgParameter' of type int; 'commandName' of type str; 'commandNo' of type str.
+The class 'MachineLibrary::CheckAddSID::PM2PM' has no attributes.
+The class 'MachineLibrary::CheckAskPrepUnit::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::ParamPrint' has the following attributes: 'fontHightData' of type float; 'horzPosLeftBorder' of type float; 'fontHightHeader' of type float; 'dateStamp' of type str; 'vertPosData' of type float; 'horzPosValues' of type float; 'vertPosHeader' of type float; 'vertLineSpace' of type float.
+The class 'MachineLibrary::PLCtoPmMatrix' has the following attributes: 'plcpmmatrixBit13' of type int; 'plcpmmatrixBit1' of type int; 'plcpmmatrixBit14' of type int; 'plcpmmatrixBit0' of type int; 'plcpmmatrixBit3' of type int; 'plcpmmatrixBit10' of type int; 'plcpmmatrixBit15' of type int; 'plcpmmatrixBit8' of type int; 'plcpmmatrixBit2' of type int; 'plcpmmatrixBit7' of type int; 'plcpmmatrixBit9' of type int; 'plcpmmatrixBit11' of type int; 'plcpmmatrixBit4' of type int; 'plcpmmatrixBit5' of type int; 'plcpmmatrixBit6' of type int; 'plcpmmatrixBit12' of type int.
+The class 'MachineLibrary::InsertRemove::Host' has the following attributes: 'report_All' of type int.
+The class 'MachineLibrary::Communication::SuperQXRF' has the following attributes: 'enq_ACK_Protocol' of type int.
+The class 'MachineLibrary::UnitProgParameters' has the following attributes: 'parameterNo' of type int; 'parameter' of type str.
+The class 'MachineLibrary::NodeGeneral::Terminal' has the following attributes: 'stationReady' of type str; 'steelCarrier' of type str; 'name_1' of type str; 'name_3' of type str; 'name_2' of type str; 'name_6' of type str; 'stationAuto' of type str; 'stationType' of type int; 'lenOfPlanID' of type int; 'customTimer1' of type int; 'terminalType' of type int; 'signalCarrierPresent' of type int; 'maxScreens' of type int; 'maxXValue' of type int; 'name_5' of type str; 'displayTime' of type int; 'name_4' of type str; 'customTimer2' of type int; 'keyBoardSignalCarrierPresent' of type int; 'maxYValue' of type int.
+The class 'MachineLibrary::NodeGeneral::PM2PM' has the following attributes: 'type' of type int; 'timeServer' of type int.
+The class 'MachineLibrary::Button' has the following attributes: 'commandNo' of type int; 'buttonText' of type str; 'buttonNo' of type int.
+The class 'MachineLibrary::UnitGeneralSpecial' has no attributes.
+The class 'MachineLibrary::NodeProgram' has the following attributes: 'programNo' of type int; 'programName' of type str; 'programLenPerParam' of type str; 'programSection' of type str; 'programAddress' of type str.
+The class 'MachineLibrary::OES::XRF::Condition' has the following attributes: 'comment' of type str; 'seq_X' of type int; 'paraName' of type str; 'para' of type str.
+The class 'MachineLibrary::Parameter' has the following attributes: 'parameterT2' of type str; 'parameterMin' of type int; 'parameterV' of type str; 'parameterT1' of type str; 'parameterConfig' of type str; 'parameterMax' of type int; 'parameterV1' of type str; 'parameterType' of type str; 'parameterName' of type str; 'parameterV0' of type str; 'parameterParaLen' of type int.
+The class 'MachineLibrary::NodeGeneral::RigakuXRF' has the following attributes: 'timeoutResponce' of type int; 'timeout' of type int; 'bDoNotshiftAtExit' of type int; 'timerToSendStatus' of type int.
+The class 'MachineLibrary::RobotVarToBusycode' has the following attributes: 'robotvartobusycodeVar_X' of type str; 'robotvartobusycodeSeq_X' of type int; 'robotvartobusycodeBit_X' of type int; 'robotvartobusycodeType_X' of type str; 'robotvartobusycodeUnit_X' of type int.
+The class 'MachineLibrary::UnitConfig::SuperQ::XRF' has no attributes.
+The class 'MachineLibrary::File::Sample::ARL::XRF::OES' has the following attributes: 'noSuccess' of type str.
+The class 'MachineLibrary::UnitSpecialConfiguration' has no attributes.
+The class 'MachineLibrary::NodeConfig' has the following attributes: 'nodeNo' of type int; 'simFileName' of type str; 'nodeName' of type str.
+The class 'MachineLibrary::Report::Host' has the following attributes: 'fileName' of type str; 'stateChanged' of type int; 'maxType' of type int; 'timeStamp' of type int; 'sampleInsert' of type int; 'sendErrorWarningsMsgOnly' of type int; 'sendLifeMessages' of type int; 'note' of type str; 'note1' of type str; 'minType' of type int; 'sampleMoved' of type int; 'internal' of type int; 'sampleRemoved' of type int; 'rawData' of type int.
+The class 'MachineLibrary::TestRequest::OBLFOES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::SepByComma::Field::Scanner' has the following attributes: 'fieldNo' of type int; 'fieldName' of type str.
+The class 'MachineLibrary::UnitGeneral::Terminal' has the following attributes: 'station5' of type str; 'thisStation' of type str; 'station4' of type str; 'station2' of type str; 'station3' of type str; 'station1' of type str.
+The class 'MachineLibrary::WinCCLnk' has the following attributes: 'canCreateTags' of type int; 'updateCycle' of type int; 'updateCycle_Help' of type str; 'connectionName' of type str; 'canModifyTag' of type int.
+The class 'MachineLibrary::RobotVarToErrorbit' has the following attributes: 'robotvartoerrorbitBit_X' of type int; 'robotvartoerrorbitSeq_X' of type int; 'robotvartoerrorbitVar_X' of type str; 'robotvartoerrorbitType_X' of type str; 'robotvartoerrorbitInv_X' of type int.
+The class 'MachineLibrary::Parameters' has the following attributes: 'parameterConfigNo' of type str; 'parameterConfigYes' of type str.
+The class 'MachineLibrary::Translate::Terminal' has the following attributes: 'auto_Ready' of type str; 'man_Ready' of type str; 'man_Busy' of type str; 'auto_Busy' of type str.
+The class 'MachineLibrary::ExeAskPrepUnit::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::NodeGeneral::AccuPycMeter' has the following attributes: 'runTimout' of type int; 'expectSampleWeight' of type int; 'polling' of type int; 'sendSampleWeight' of type int.
+The class 'MachineLibrary::DPbase::Link' has the following attributes: 'speed' of type int; 'maxNodes' of type int; 'cp_name' of type str.
+The class 'MachineLibrary::UnitGeneral::HostPC' has the following attributes: 'writeDumyIfNoDataExist' of type int; 'replyOnLink' of type int; 'index' of type int; 'maxIndex' of type int.
+The class 'MachineLibrary::InsertRemove::Entry::Host' has the following attributes: 'entryName' of type str; 'entryNo' of type int.
+The class 'MachineLibrary::NodeGeneral::WinCC2WinCC' has the following attributes: 'prefix' of type str.
+The class 'MachineLibrary::UnitConfig::Terminal' has no attributes.
+The class 'MachineLibrary::UnitGeneral::RigakuXRF' has the following attributes: 'lastPoHAG_SIInstrument' of type int; 'lastPosInInstrument' of type int; 'separator' of type int; 'lastPosAnalyHAG_SIg' of type int.
+The class 'MachineLibrary::PMMachineLibrary' has the following attributes: 'libraryVersion' of type float; 'libraryVersionRemark' of type str.
+The class 'MachineLibrary::UnitPrograms' has no attributes.
+The class 'MachineLibrary::RecalRequest::OBLFOES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::WinCCAddTag' has the following attributes: 'winCCTag' of type str.
+The class 'MachineLibrary::DPbase::Node' has the following attributes: 'isXPS' of type int; 'nodeNo' of type int.
+The class 'MachineLibrary::NodeSpecialConfiguration' has no attributes.
+The class 'MachineLibrary::FileTransfer::Link' has the following attributes: 'writeAfterReading' of type int; 'timeoutwrite' of type str; 'pollTime' of type int; 'delimiter' of type str; 'readPath' of type str; 'sendBuffer' of type int; 'maxDataLength' of type int; 'receiveBuffer' of type int; 'flagWriteAfterReading' of type int; 'flagToWriteWaitForDeleted' of type int; 'toWriteWaitFor' of type str; 'writePath' of type str; 'delimter' of type str; 'flagDelAfterReading' of type int; 'translation' of type int; 'flagToWriteWaitFor' of type int.
+The class 'MachineLibrary::LinkConfig' has no attributes.
+The class 'MachineLibrary::CheckSampleRunTimeParams::SuperQXRF' has the following attributes: 'value' of type int; 'sampleType' of type int.
+The class 'MachineLibrary::RobotVarToErrorbits' has no attributes.
+The class 'MachineLibrary::RobotConfiguration' has the following attributes: 'robotSystemID' of type str; 'robotIPAddress' of type str; 'robotID' of type str; 'robotActivate' of type int.
+The class 'MachineLibrary::RobotToWinccs' has no attributes.
+The class 'MachineLibrary::GeneralParameter::SuperQXRF' has the following attributes: 'listName' of type str; 'switchRemote' of type str; 'startList' of type str.
+The class 'MachineLibrary::UnitConfig::OBLF::OES' has no attributes.
+The class 'MachineLibrary::Positions' has no attributes.
+The class 'MachineLibrary::Units' has the following attributes: 'internalUniNo' of type int; 'unitNo' of type int; 'unitName' of type str.
+The class 'MachineLibrary::Position' has the following attributes: 'posWarningOnDelete' of type int; 'posName' of type str; 'posRemark' of type str; 'posExit' of type int; 'posIndex' of type int; 'posNo' of type int.
+The class 'MachineLibrary::RobotToWinCC' has the following attributes: 'robotToWinccFrom_X' of type str; 'robotToWinccType_X' of type str; 'robotToWinccSeq_X' of type int; 'robotToWinccTo_X' of type str.
+The class 'MachineLibrary::CheckSample::SuperQXRF' has no attributes.
+The class 'MachineLibrary::WS::Update::Host' has the following attributes: 'AllowUnit0' of type int; 'checkUnit' of type int.
+The class 'MachineLibrary::LabMachine' has the following attributes: 'linkParamFile' of type str; 'linkType' of type str; 'createWinCCTags' of type str; 'linkParamSection' of type str; 'machineName' of type str; 'versionRemark' of type str; 'machineVersionNo' of type float; 'driver' of type str.
+The class 'MachineLibrary::PS::Process::Finished::ARL::XRF::OES' has the following attributes: 'noSuccess' of type str.
+The class 'MachineLibrary::ExePrepUnit::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::ExecuteFiling::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::UnitGeneral::Remote' has the following attributes: 'handshakeA' of type str; 'handshakeQ' of type str; 'handshakeT' of type int; 'editWSDB' of type bool.
+The class 'MachineLibrary::LabMachines' has no attributes.
+The class 'MachineLibrary::ControlSamples::SuperQXRF' has the following attributes: 'outOfControl' of type int.
+The class 'MachineLibrary::History::AccuPycMeter' has no attributes.
+The class 'MachineLibrary::Settings::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::SepByComma::Scanner' has the following attributes: 'activ' of type int; 'preDefWS' of type int.
+The class 'MachineLibrary::HistoryConfig::AccuPyc' has the following attributes: 'sampleCupWeight' of type float; 'currentSample' of type str; 'currentSampleID' of type str.
+The class 'MachineLibrary::UnitGeneral' has no attributes.
+The class 'MachineLibrary::OutputRequest::OBLFOES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::GeneralSetting::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::Link2' has the following attributes: 'link2Type' of type str; 'link2ParamFile' of type str; 'link2ParamSection' of type str.
+The class 'MachineLibrary::NodePrograms' has no attributes.
+The class 'MachineLibrary::CheckSampleConfig::SuperQXRF' has the following attributes: 'minutes' of type str; 'samples' of type str; 'sampleID' of type str; 'anaProg' of type str; 'program' of type str; 'seq_X' of type int.
+The class 'MachineLibrary::UnitConfig::Host' has no attributes.
+The class 'MachineLibrary::InsertRemove::Keywords::Host' has the following attributes: 'keywordKey' of type str; 'keywordValue' of type str.
+The class 'MachineLibrary::Moved::Host' has the following attributes: 'pos0' of type int; 'report_ALL' of type int; 'writePositionNameInFile' of type int; 'type0' of type int.
+The class 'MachineLibrary::Transfer' has no attributes.
+The class 'MachineLibrary::InsertRemove::Types::Host' has the following attributes: 'typeNo' of type int; 'typeValue' of type str.
+The class 'MachineLibrary::PlainMoveEntrySend' has the following attributes: 'plainmoveSeq' of type int; 'plainmoveEntry' of type str; 'plainmoveSend' of type str.
+The class 'MachineLibrary::PlainMove' has the following attributes: 'plainmovePreDefWS' of type str; 'plainmoveType' of type int; 'plainmoveSID_REF' of type str.
+The class 'MachineLibrary::TCPIP::Link' has the following attributes: 'port' of type int; 'address_3' of type str; 'termChar' of type int; 'msgDelay' of type int; 'address_1' of type str; 'protocol' of type int; 'address_6' of type str; 'address_4' of type str; 'address_5' of type str; 'maxDataSize' of type int; 'receiveBuffer' of type int; 'sendBuffer' of type int; 'address_2' of type str.
+The class 'MachineLibrary::StausBits' has no attributes.
+The class 'MachineLibrary::CheckFilling::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::UnitConfig::ARL::XRF::OES' has no attributes.
+The class 'MachineLibrary::DisableSCT::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::NodeGeneral' has the following attributes: 'canCreateErrorTag' of type str; 'canCreateStateTag' of type str.
+The class 'MachineLibrary::UnitGeneral::Scanner' has the following attributes: 'addString' of type str; 'start' of type int; 'length' of type int; 'preString' of type str; 'registerSample' of type int; 'forcedSampleType' of type int; 'fillWith' of type str.
+The class 'MachineLibrary::ErrorMessage::OBLFOES' has the following attributes: 'errorMessage' of type str.
+The class 'MachineLibrary::UnitProgram' has the following attributes: 'unitProgName' of type str.
+The class 'MachineLibrary::NodeGeneral::RemotePM' has the following attributes: 'timeServer' of type int; 'system' of type str.
+The class 'MachineLibrary::CommunicationData' has the following attributes: 'comErrorDataLength' of type int; 'comProgressIndDataAddress' of type str; 'comSendDataLength' of type int; 'comErrorDataAddress' of type str; 'comProgressIndDataLength' of type int; 'comSIDDataLength' of type int; 'comSendDataAddress' of type str; 'comRequestDataLength' of type int; 'comSIDDataAddress' of type str; 'comRequestDataAddress' of type str.
+The class 'MachineLibrary::IBMWebsphereMQ' has the following attributes: 'readDynamicQueName' of type str; 'maxDataSize' of type int; 'readQueName' of type str; 'qName' of type str; 'sendBuffer' of type int; 'sendQueName' of type str; 'sendDynamicQueName' of type str; 'receiveBuffer' of type int; 'readQueMgrName' of type str; 'sendQueMgrName' of type str.
+The class 'MachineLibrary::Serial::Link' has the following attributes: 'params' of type str; 'startChar' of type str; 'logging' of type int; 'port' of type str; 'maxCharDelay' of type str; 'bufferLenght' of type str; 'commConfig' of type str; 'endChar' of type str.
+The class 'MachineLibrary::RobotConfSendOrder' has the following attributes: 'robotconfsendorderFrom_X' of type str; 'robotconfsendorderType_X' of type str; 'robotconfsendorderVar_X' of type str; 'robotconfsendorderSeq_X' of type int.
+The class 'MachineLibrary::CheckSampleRunTime::SuperQXRF' has no attributes.
+The class 'MachineLibrary::Buttons' has no attributes.
+The class 'MachineLibrary::RobotConfSendOrders' has no attributes.
+The class 'MachineLibrary::CheckReqPrepUnit::ARL::XRF::OES' has the following attributes: 'name' of type str.
+The class 'MachineLibrary::NodeGeneralSpecial' has no attributes.
+The class 'MachineLibrary::UnitGeneral::PM2PM' has the following attributes: 'processFeedBack' of type str; 'sid_Mask' of type str.
+The class 'MachineLibrary::CheckAddSID::Values::PM2PM' has the following attributes: 'optionNo' of type int; 'optonValue' of type str.
+The class 'MachineLibrary::SepByComma::ID::Scanner' has the following attributes: 'idPrevValue' of type str; 'idCharValue' of type str; 'idSeq_X' of type int; 'idValue' of type int.
+The class 'MachineLibrary::RobotVarToBusyCodes' has no attributes.
+The class 'MachineLibrary::RobotWarningONDelete' has the following attributes: 'robotExtraPos_1' of type str; 'robotExtraUnit_2' of type str; 'robotErrBitWhenConfirmationIsNeededFor_PM' of type int; 'robotErrBitWhenConfirmationIsNeededFor_Robot' of type int.
+The class 'MachineLibrary::RobotWinCCToRobots' has no attributes.
+'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig10', cardinality 0..*) is associated with 'MachineLibrary::WinCCLnk' (role 'MachineLibrary_WinCCLnk', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition189', cardinality 0..*) is associated with 'MachineLibrary::Settings::ARL::XRF::OES' (role 'MachineLibrary_Settings_ARL_XRF_OES188', cardinality 0..*).
+'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig36', cardinality 0..*) is associated with 'MachineLibrary::NodeSpecialConfiguration' (role 'MachineLibrary_NodeSpecialConfiguration', cardinality 0..*).
+'MachineLibrary::UnitConfig::SuperQ::XRF' (role 'MachineLibrary_UnitConfig_SuperQ_XRF120', cardinality 0..*) is associated with 'MachineLibrary::Communication::SuperQXRF' (role 'MachineLibrary_Communication_SuperQXRF', cardinality 0..*).
+'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig28', cardinality 0..*) is associated with 'MachineLibrary::Commands' (role 'MachineLibrary_Commands', cardinality 0..*).
+'MachineLibrary::LabMachines' (role 'MachineLibrary_LabMachines', cardinality 0..*) is associated with 'MachineLibrary::PMMachineLibrary' (role 'MachineLibrary_PMMachineLibrary', cardinality 0..*).
+'MachineLibrary::LabMachine' (role 'MachineLibrary_LabMachine6', cardinality 0..*) is associated with 'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig', cardinality 0..*).
+'MachineLibrary::NodeGeneral' (role 'MachineLibrary_NodeGeneral', cardinality 0..*) is associated with 'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig38', cardinality 0..*).
+'MachineLibrary::RobotToWinCC' (role 'MachineLibrary_RobotToWinCC', cardinality 0..*) is associated with 'MachineLibrary::RobotToWinccs' (role 'MachineLibrary_RobotToWinccs258', cardinality 0..*).
+'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration90', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::Terminal' (role 'MachineLibrary_UnitConfig_Terminal', cardinality 0..*).
+'MachineLibrary::DPbase::Link' (role 'MachineLibrary_DPbase_Link', cardinality 0..*) is associated with 'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig22', cardinality 0..*).
+'MachineLibrary::UnitPrograms' (role 'MachineLibrary_UnitPrograms222', cardinality 0..*) is associated with 'MachineLibrary::UnitProgram' (role 'MachineLibrary_UnitProgram', cardinality 0..*).
+'MachineLibrary::UnitPrograms' (role 'MachineLibrary_UnitPrograms', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units62', cardinality 0..*).
+'MachineLibrary::LabMachine' (role 'MachineLibrary_LabMachine', cardinality 0..*) is associated with 'MachineLibrary::LabMachines' (role 'MachineLibrary_LabMachines2', cardinality 0..*).
+'MachineLibrary::Button' (role 'MachineLibrary_Button', cardinality 0..*) is associated with 'MachineLibrary::Buttons' (role 'MachineLibrary_Buttons212', cardinality 0..*).
+'MachineLibrary::UnitGeneral::RigakuXRF' (role 'MachineLibrary_UnitGeneral_RigakuXRF', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial86', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition165', cardinality 0..*) is associated with 'MachineLibrary::RecalRequest::OBLFOES' (role 'MachineLibrary_RecalRequest_OBLFOES164', cardinality 0..*).
+'MachineLibrary::RobotToWinccs' (role 'MachineLibrary_RobotToWinccs', cardinality 0..*) is associated with 'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration246', cardinality 0..*).
+'MachineLibrary::ErrorMessage::OBLFOES' (role 'MachineLibrary_ErrorMessage_OBLFOES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::OBLF::OES' (role 'MachineLibrary_UnitConfig_OBLF_OES114', cardinality 0..*).
+'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units68', cardinality 0..*).
+'MachineLibrary::RobotVarToErrorbit' (role 'MachineLibrary_RobotVarToErrorbit', cardinality 0..*) is associated with 'MachineLibrary::RobotVarToErrorbits' (role 'MachineLibrary_RobotVarToErrorbits260', cardinality 0..*).
+'MachineLibrary::NodeSpecialConfiguration' (role 'MachineLibrary_NodeSpecialConfiguration228', cardinality 0..*) is associated with 'MachineLibrary::ParamPrint' (role 'MachineLibrary_ParamPrint', cardinality 0..*).
+'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration242', cardinality 0..*) is associated with 'MachineLibrary::RobotConfSendOrders' (role 'MachineLibrary_RobotConfSendOrders', cardinality 0..*).
+'MachineLibrary::UnitGeneral::AccPyc' (role 'MachineLibrary_UnitGeneral_AccPyc', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial82', cardinality 0..*).
+'MachineLibrary::GeneralParameter::SuperQXRF' (role 'MachineLibrary_GeneralParameter_SuperQXRF', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::SuperQ::XRF' (role 'MachineLibrary_UnitConfig_SuperQ_XRF116', cardinality 0..*).
+'MachineLibrary::NodeGeneral::AccuPycMeter' (role 'MachineLibrary_NodeGeneral_AccuPycMeter', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial50', cardinality 0..*).
+'MachineLibrary::InsertRemove::Host' (role 'MachineLibrary_InsertRemove_Host202', cardinality 0..*) is associated with 'MachineLibrary::InsertRemove::Types::Host' (role 'MachineLibrary_InsertRemove_Types_Host', cardinality 0..*).
+'MachineLibrary::UnitConfig::SuperQ::XRF' (role 'MachineLibrary_UnitConfig_SuperQ_XRF', cardinality 0..*) is associated with 'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration94', cardinality 0..*).
+'MachineLibrary::Units' (role 'MachineLibrary_Units60', cardinality 0..*) is associated with 'MachineLibrary::PLCtoPmMatrix' (role 'MachineLibrary_PLCtoPmMatrix', cardinality 0..*).
+'MachineLibrary::UnitConfig::OBLF::OES' (role 'MachineLibrary_UnitConfig_OBLF_OES110', cardinality 0..*) is associated with 'MachineLibrary::TestRequest::OBLFOES' (role 'MachineLibrary_TestRequest_OBLFOES', cardinality 0..*).
+'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig34', cardinality 0..*) is associated with 'MachineLibrary::CommunicationData' (role 'MachineLibrary_CommunicationData', cardinality 0..*).
+'MachineLibrary::Parameters' (role 'MachineLibrary_Parameters', cardinality 0..*) is associated with 'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig32', cardinality 0..*).
+'MachineLibrary::UnitConfig::OBLF::OES' (role 'MachineLibrary_UnitConfig_OBLF_OES112', cardinality 0..*) is associated with 'MachineLibrary::RecalRequest::OBLFOES' (role 'MachineLibrary_RecalRequest_OBLFOES', cardinality 0..*).
+'MachineLibrary::LabMachine' (role 'MachineLibrary_LabMachine4', cardinality 0..*) is associated with 'MachineLibrary::Link2' (role 'MachineLibrary_Link2', cardinality 0..*).
+'MachineLibrary::CheckSampleConfig::SuperQXRF' (role 'MachineLibrary_CheckSampleConfig_SuperQXRF', cardinality 0..*) is associated with 'MachineLibrary::CheckSample::SuperQXRF' (role 'MachineLibrary_CheckSample_SuperQXRF196', cardinality 0..*).
+'MachineLibrary::RobotWinCCToRobots' (role 'MachineLibrary_RobotWinCCToRobots', cardinality 0..*) is associated with 'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration244', cardinality 0..*).
+'MachineLibrary::Position' (role 'MachineLibrary_Position', cardinality 0..*) is associated with 'MachineLibrary::Positions' (role 'MachineLibrary_Positions214', cardinality 0..*).
+'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial52', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneral::RigakuXRF' (role 'MachineLibrary_NodeGeneral_RigakuXRF', cardinality 0..*).
+'MachineLibrary::History::AccuPycMeter' (role 'MachineLibrary_History_AccuPycMeter198', cardinality 0..*) is associated with 'MachineLibrary::HistoryConfig::AccuPyc' (role 'MachineLibrary_HistoryConfig_AccuPyc', cardinality 0..*).
+'MachineLibrary::Settings::ARL::XRF::OES' (role 'MachineLibrary_Settings_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES140', cardinality 0..*).
+'MachineLibrary::Positions' (role 'MachineLibrary_Positions', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units56', cardinality 0..*).
+'MachineLibrary::Report::Host' (role 'MachineLibrary_Report_Host', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::Host' (role 'MachineLibrary_UnitConfig_Host148', cardinality 0..*).
+'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial84', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneral::SuperQ' (role 'MachineLibrary_UnitGeneral_SuperQ', cardinality 0..*).
+'MachineLibrary::NodeSpecialConfiguration' (role 'MachineLibrary_NodeSpecialConfiguration232', cardinality 0..*) is associated with 'MachineLibrary::PlainMove' (role 'MachineLibrary_PlainMove', cardinality 0..*).
+'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial48', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneral::WinCC2WinCC' (role 'MachineLibrary_NodeGeneral_WinCC2WinCC', cardinality 0..*).
+'MachineLibrary::Compac::Link' (role 'MachineLibrary_Compac_Link', cardinality 0..*) is associated with 'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig18', cardinality 0..*).
+'MachineLibrary::RobotVarToBusycode' (role 'MachineLibrary_RobotVarToBusycode', cardinality 0..*) is associated with 'MachineLibrary::RobotVarToBusyCodes' (role 'MachineLibrary_RobotVarToBusyCodes252', cardinality 0..*).
+'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig40', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial', cardinality 0..*).
+'MachineLibrary::ExePrepUnit::ARL::XRF::OES' (role 'MachineLibrary_ExePrepUnit_ARL_XRF_OES176', cardinality 0..*) is associated with 'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition177', cardinality 0..*).
+'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES136', cardinality 0..*) is associated with 'MachineLibrary::ExeAskPrepUnit::ARL::XRF::OES' (role 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES', cardinality 0..*).
+'MachineLibrary::FileTransfer::Link' (role 'MachineLibrary_FileTransfer_Link', cardinality 0..*) is associated with 'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig16', cardinality 0..*).
+'MachineLibrary::StausBits' (role 'MachineLibrary_StausBits', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units58', cardinality 0..*).
+'MachineLibrary::SepByComma::Scanner' (role 'MachineLibrary_SepByComma_Scanner208', cardinality 0..*) is associated with 'MachineLibrary::SepByComma::ID::Scanner' (role 'MachineLibrary_SepByComma_ID_Scanner', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition168', cardinality 0..*) is associated with 'MachineLibrary::CheckFilling::ARL::XRF::OES' (role 'MachineLibrary_CheckFilling_ARL_XRF_OES167', cardinality 0..*).
+'MachineLibrary::NodeGeneral::PM2PM' (role 'MachineLibrary_NodeGeneral_PM2PM', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial44', cardinality 0..*).
+'MachineLibrary::ExePrepUnit::ARL::XRF::OES' (role 'MachineLibrary_ExePrepUnit_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES132', cardinality 0..*).
+'MachineLibrary::File::Sample::ARL::XRF::OES' (role 'MachineLibrary_File_Sample_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES146', cardinality 0..*).
+'MachineLibrary::Transfer' (role 'MachineLibrary_Transfer', cardinality 0..*) is associated with 'MachineLibrary::NodeSpecialConfiguration' (role 'MachineLibrary_NodeSpecialConfiguration230', cardinality 0..*).
+'MachineLibrary::CheckAddSID::Values::PM2PM' (role 'MachineLibrary_CheckAddSID_Values_PM2PM', cardinality 0..*) is associated with 'MachineLibrary::CheckAddSID::PM2PM' (role 'MachineLibrary_CheckAddSID_PM2PM210', cardinality 0..*).
+'MachineLibrary::IBMWebsphereMQ' (role 'MachineLibrary_IBMWebsphereMQ', cardinality 0..*) is associated with 'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig20', cardinality 0..*).
+'MachineLibrary::Buttons' (role 'MachineLibrary_Buttons', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units64', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition183', cardinality 0..*) is associated with 'MachineLibrary::ExeAskPrepUnit::ARL::XRF::OES' (role 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES182', cardinality 0..*).
+'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial42', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneral::Terminal' (role 'MachineLibrary_NodeGeneral_Terminal', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition', cardinality 0..*) is associated with 'MachineLibrary::OutputRequest::OBLFOES' (role 'MachineLibrary_OutputRequest_OBLFOES159', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition171', cardinality 0..*) is associated with 'MachineLibrary::ExecuteFiling::ARL::XRF::OES' (role 'MachineLibrary_ExecuteFiling_ARL_XRF_OES170', cardinality 0..*).
+'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration102', cardinality 0..*) is associated with 'MachineLibrary::SepByComma::Scanner' (role 'MachineLibrary_SepByComma_Scanner', cardinality 0..*).
+'MachineLibrary::Moved::Host' (role 'MachineLibrary_Moved_Host', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::Host' (role 'MachineLibrary_UnitConfig_Host152', cardinality 0..*).
+'MachineLibrary::History::AccuPycMeter' (role 'MachineLibrary_History_AccuPycMeter', cardinality 0..*) is associated with 'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration100', cardinality 0..*).
+'MachineLibrary::CheckSampleRunTimeParams::SuperQXRF' (role 'MachineLibrary_CheckSampleRunTimeParams_SuperQXRF', cardinality 0..*) is associated with 'MachineLibrary::CheckSampleRunTime::SuperQXRF' (role 'MachineLibrary_CheckSampleRunTime_SuperQXRF194', cardinality 0..*).
+'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration96', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES', cardinality 0..*).
+'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig', cardinality 0..*) is associated with 'MachineLibrary::LabMachine' (role 'MachineLibrary_LabMachine8', cardinality 0..*).
+'MachineLibrary::ExecuteFiling::ARL::XRF::OES' (role 'MachineLibrary_ExecuteFiling_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES128', cardinality 0..*).
+'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES138', cardinality 0..*) is associated with 'MachineLibrary::DisableSCT::ARL::XRF::OES' (role 'MachineLibrary_DisableSCT_ARL_XRF_OES', cardinality 0..*).
+'MachineLibrary::TransferFileSection' (role 'MachineLibrary_TransferFileSection', cardinality 0..*) is associated with 'MachineLibrary::Transfer' (role 'MachineLibrary_Transfer236', cardinality 0..*).
+'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration104', cardinality 0..*) is associated with 'MachineLibrary::CheckAddSID::PM2PM' (role 'MachineLibrary_CheckAddSID_PM2PM', cardinality 0..*).
+'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig26', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units', cardinality 0..*).
+'MachineLibrary::UnitProgParameters' (role 'MachineLibrary_UnitProgParameters', cardinality 0..*) is associated with 'MachineLibrary::UnitProgram' (role 'MachineLibrary_UnitProgram224', cardinality 0..*).
+'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration', cardinality 0..*) is associated with 'MachineLibrary::NodeSpecialConfiguration' (role 'MachineLibrary_NodeSpecialConfiguration234', cardinality 0..*).
+'MachineLibrary::Units' (role 'MachineLibrary_Units66', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneral' (role 'MachineLibrary_UnitGeneral', cardinality 0..*).
+'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial80', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneral::PM2PM' (role 'MachineLibrary_UnitGeneral_PM2PM', cardinality 0..*).
+'MachineLibrary::RobotConfSendOrders' (role 'MachineLibrary_RobotConfSendOrders254', cardinality 0..*) is associated with 'MachineLibrary::RobotConfSendOrder' (role 'MachineLibrary_RobotConfSendOrder', cardinality 0..*).
+'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration240', cardinality 0..*) is associated with 'MachineLibrary::RobotVarToBusyCodes' (role 'MachineLibrary_RobotVarToBusyCodes', cardinality 0..*).
+'MachineLibrary::UnitGeneral::HostPC' (role 'MachineLibrary_UnitGeneral_HostPC', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial76', cardinality 0..*).
+'MachineLibrary::OutputRequest::OBLFOES' (role 'MachineLibrary_OutputRequest_OBLFOES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::OBLF::OES' (role 'MachineLibrary_UnitConfig_OBLF_OES108', cardinality 0..*).
+'MachineLibrary::UnitConfig::SuperQ::XRF' (role 'MachineLibrary_UnitConfig_SuperQ_XRF124', cardinality 0..*) is associated with 'MachineLibrary::CheckSample::SuperQXRF' (role 'MachineLibrary_CheckSample_SuperQXRF', cardinality 0..*).
+'MachineLibrary::InsertRemove::Host' (role 'MachineLibrary_InsertRemove_Host157', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::Host' (role 'MachineLibrary_UnitConfig_Host156', cardinality 0..*).
+'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES144', cardinality 0..*) is associated with 'MachineLibrary::PS::Process::Finished::ARL::XRF::OES' (role 'MachineLibrary_PS_Process_Finished_ARL_XRF_OES', cardinality 0..*).
+'MachineLibrary::UnitGeneral::Remote' (role 'MachineLibrary_UnitGeneral_Remote', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial78', cardinality 0..*).
+'MachineLibrary::WS::Update::Host' (role 'MachineLibrary_WS_Update_Host', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::Host' (role 'MachineLibrary_UnitConfig_Host150', cardinality 0..*).
+'MachineLibrary::UnitConfig::OBLF::OES' (role 'MachineLibrary_UnitConfig_OBLF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration92', cardinality 0..*).
+'MachineLibrary::WinCCAddTag' (role 'MachineLibrary_WinCCAddTag', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneral::WinCC2WinCC' (role 'MachineLibrary_NodeGeneral_WinCC2WinCC54', cardinality 0..*).
+'MachineLibrary::Translate::Terminal' (role 'MachineLibrary_Translate_Terminal', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::Terminal' (role 'MachineLibrary_UnitConfig_Terminal106', cardinality 0..*).
+'MachineLibrary::NodeProgram' (role 'MachineLibrary_NodeProgram', cardinality 0..*) is associated with 'MachineLibrary::NodePrograms' (role 'MachineLibrary_NodePrograms220', cardinality 0..*).
+'MachineLibrary::CheckFilling::ARL::XRF::OES' (role 'MachineLibrary_CheckFilling_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES126', cardinality 0..*).
+'MachineLibrary::UnitConfig::Host' (role 'MachineLibrary_UnitConfig_Host154', cardinality 0..*) is associated with 'MachineLibrary::InsertRemove::Host' (role 'MachineLibrary_InsertRemove_Host', cardinality 0..*).
+'MachineLibrary::GeneralSetting::ARL::XRF::OES' (role 'MachineLibrary_GeneralSetting_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES142', cardinality 0..*).
+'MachineLibrary::InsertRemove::Host' (role 'MachineLibrary_InsertRemove_Host204', cardinality 0..*) is associated with 'MachineLibrary::InsertRemove::Keywords::Host' (role 'MachineLibrary_InsertRemove_Keywords_Host', cardinality 0..*).
+'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig14', cardinality 0..*) is associated with 'MachineLibrary::Serial::Link' (role 'MachineLibrary_Serial_Link', cardinality 0..*).
+'MachineLibrary::Command' (role 'MachineLibrary_Command', cardinality 0..*) is associated with 'MachineLibrary::Commands' (role 'MachineLibrary_Commands218', cardinality 0..*).
+'MachineLibrary::CheckAskPrepUnit::ARL::XRF::OES' (role 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES134', cardinality 0..*).
+'MachineLibrary::RobotWarningONDelete' (role 'MachineLibrary_RobotWarningONDelete', cardinality 0..*) is associated with 'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration248', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition162', cardinality 0..*) is associated with 'MachineLibrary::TestRequest::OBLFOES' (role 'MachineLibrary_TestRequest_OBLFOES161', cardinality 0..*).
+'MachineLibrary::DPbase::Node' (role 'MachineLibrary_DPbase_Node', cardinality 0..*) is associated with 'MachineLibrary::DPbase::Link' (role 'MachineLibrary_DPbase_Link24', cardinality 0..*).
+'MachineLibrary::RobotVarToErrorbits' (role 'MachineLibrary_RobotVarToErrorbits', cardinality 0..*) is associated with 'MachineLibrary::RobotConfiguration' (role 'MachineLibrary_RobotConfiguration250', cardinality 0..*).
+'MachineLibrary::CheckAskPrepUnit::ARL::XRF::OES' (role 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES179', cardinality 0..*) is associated with 'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition180', cardinality 0..*).
+'MachineLibrary::UnitConfig::Host' (role 'MachineLibrary_UnitConfig_Host', cardinality 0..*) is associated with 'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration98', cardinality 0..*).
+'MachineLibrary::UnitGeneral' (role 'MachineLibrary_UnitGeneral72', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneralParameters' (role 'MachineLibrary_UnitGeneralParameters', cardinality 0..*).
+'MachineLibrary::StatusBit' (role 'MachineLibrary_StatusBit', cardinality 0..*) is associated with 'MachineLibrary::StausBits' (role 'MachineLibrary_StausBits216', cardinality 0..*).
+'MachineLibrary::GeneralSetting::ARL::XRF::OES' (role 'MachineLibrary_GeneralSetting_ARL_XRF_OES191', cardinality 0..*) is associated with 'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition192', cardinality 0..*).
+'MachineLibrary::RobotWinCCToRobot' (role 'MachineLibrary_RobotWinCCToRobot', cardinality 0..*) is associated with 'MachineLibrary::RobotWinCCToRobots' (role 'MachineLibrary_RobotWinCCToRobots256', cardinality 0..*).
+'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial88', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneral::Scanner' (role 'MachineLibrary_UnitGeneral_Scanner', cardinality 0..*).
+'MachineLibrary::NodeGeneralSpecial' (role 'MachineLibrary_NodeGeneralSpecial46', cardinality 0..*) is associated with 'MachineLibrary::NodeGeneral::RemotePM' (role 'MachineLibrary_NodeGeneral_RemotePM', cardinality 0..*).
+'MachineLibrary::NodePrograms' (role 'MachineLibrary_NodePrograms', cardinality 0..*) is associated with 'MachineLibrary::NodeConfig' (role 'MachineLibrary_NodeConfig30', cardinality 0..*).
+'MachineLibrary::UnitConfig::ARL::XRF::OES' (role 'MachineLibrary_UnitConfig_ARL_XRF_OES130', cardinality 0..*) is associated with 'MachineLibrary::CheckReqPrepUnit::ARL::XRF::OES' (role 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES', cardinality 0..*).
+'MachineLibrary::UnitGeneralSpecial' (role 'MachineLibrary_UnitGeneralSpecial74', cardinality 0..*) is associated with 'MachineLibrary::UnitGeneral::Terminal' (role 'MachineLibrary_UnitGeneral_Terminal', cardinality 0..*).
+'MachineLibrary::Parameters' (role 'MachineLibrary_Parameters226', cardinality 0..*) is associated with 'MachineLibrary::Parameter' (role 'MachineLibrary_Parameter', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition186', cardinality 0..*) is associated with 'MachineLibrary::DisableSCT::ARL::XRF::OES' (role 'MachineLibrary_DisableSCT_ARL_XRF_OES185', cardinality 0..*).
+'MachineLibrary::LinkConfig' (role 'MachineLibrary_LinkConfig12', cardinality 0..*) is associated with 'MachineLibrary::TCPIP::Link' (role 'MachineLibrary_TCPIP_Link', cardinality 0..*).
+'MachineLibrary::OES::XRF::Condition' (role 'MachineLibrary_OES_XRF_Condition174', cardinality 0..*) is associated with 'MachineLibrary::CheckReqPrepUnit::ARL::XRF::OES' (role 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES173', cardinality 0..*).
+'MachineLibrary::UnitSpecialConfiguration' (role 'MachineLibrary_UnitSpecialConfiguration', cardinality 0..*) is associated with 'MachineLibrary::Units' (role 'MachineLibrary_Units70', cardinality 0..*).
+'MachineLibrary::UnitConfig::SuperQ::XRF' (role 'MachineLibrary_UnitConfig_SuperQ_XRF118', cardinality 0..*) is associated with 'MachineLibrary::ControlSamples::SuperQXRF' (role 'MachineLibrary_ControlSamples_SuperQXRF', cardinality 0..*).
+'MachineLibrary::InsertRemove::Entry::Host' (role 'MachineLibrary_InsertRemove_Entry_Host', cardinality 0..*) is associated with 'MachineLibrary::InsertRemove::Host' (role 'MachineLibrary_InsertRemove_Host200', cardinality 0..*).
+'MachineLibrary::CheckSampleRunTime::SuperQXRF' (role 'MachineLibrary_CheckSampleRunTime_SuperQXRF', cardinality 0..*) is associated with 'MachineLibrary::UnitConfig::SuperQ::XRF' (role 'MachineLibrary_UnitConfig_SuperQ_XRF122', cardinality 0..*).
+'MachineLibrary::PlainMove' (role 'MachineLibrary_PlainMove238', cardinality 0..*) is associated with 'MachineLibrary::PlainMoveEntrySend' (role 'MachineLibrary_PlainMoveEntrySend', cardinality 0..*).
+'MachineLibrary::SepByComma::Field::Scanner' (role 'MachineLibrary_SepByComma_Field_Scanner', cardinality 0..*) is associated with 'MachineLibrary::SepByComma::Scanner' (role 'MachineLibrary_SepByComma_Scanner206', cardinality 0..*).

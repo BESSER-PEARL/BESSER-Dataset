@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/pcdavid/org.eclipse.sirius/plugins/org.eclipse.sirius.tests.sample.xtext.statemachine/model/generated/Statemachine.ecore

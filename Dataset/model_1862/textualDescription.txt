@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'timetrack::User' has the following attributes: 'password' of type str; 'name' of type str; 'sap_name' of type str; 'sap_password' of type str.
+The class 'timetrack::TimeEntry' has the following attributes: 'from_' of type date; 'factured' of type bool; 'notes' of type str; 'sync_date' of type date; 'day' of type date; 'duration' of type date; 'till' of type date.
+The class 'timetrack::Library' has no attributes.
+The class 'timetrack::Project' has the following attributes: 'name' of type str; 'number' of type str.
+'timetrack::Library' (role 'timetrack_Library', cardinality 0..*) is associated with 'timetrack::User' (role 'timetrack_User4', cardinality 0..*).
+'timetrack::Library' (role 'timetrack_Library6', cardinality 0..*) is associated with 'timetrack::TimeEntry' (role 'timetrack_TimeEntry7', cardinality 0..*).
+'timetrack::Project' (role 'timetrack_Project', cardinality 0..*) is associated with 'timetrack::TimeEntry' (role 'timetrack_TimeEntry2', cardinality 0..*).
+'timetrack::Library' (role 'timetrack_Library9', cardinality 0..*) is associated with 'timetrack::Project' (role 'timetrack_Project10', cardinality 0..*).
+'timetrack::TimeEntry' (role 'timetrack_TimeEntry', cardinality 0..*) is associated with 'timetrack::User' (role 'timetrack_User', cardinality 0..*).

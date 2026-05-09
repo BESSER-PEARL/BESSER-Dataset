@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'family::Person' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+The class 'family::Family' has the following attributes: 'name' of type str.
+The class 'family::Man' has no attributes.
+The class 'family::Woman' has no attributes.
+'family::Woman' is a specialization of 'Person'.
+'family::Man' is a specialization of 'Person'.
+'family::Family' (role 'family_Family', cardinality 0..*) is associated with 'family::Person' (role 'family_Person', cardinality 0..*).

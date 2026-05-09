@@ -1,0 +1,128 @@
+The model has 60 class(es).
+The class 'fIDL::IntegerType' has no attributes.
+The class 'fIDL::Literal' has no attributes.
+The class 'fIDL::Type' has no attributes.
+The class 'File' has no attributes.
+The class 'fIDL::RequestType' has the following attributes: 'nullable' of type bool.
+The class 'fIDL::StructField' has the following attributes: 'name' of type str.
+The class 'fIDL::UnionDeclaration' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'fIDL::PrimitiveType' has no attributes.
+The class 'fIDL::UnionField' has the following attributes: 'name' of type str.
+The class 'fIDL::BooleanLiteral' has the following attributes: 'isTrue' of type bool.
+The class 'fIDL::Float32Type' has no attributes.
+The class 'fIDL::AttributedDeclaration' has no attributes.
+The class 'fIDL::BooleanType' has no attributes.
+The class 'fIDL::Float64Type' has no attributes.
+The class 'fIDL::Constant' has the following attributes: 'ci' of type str.
+The class 'fIDL::StatusType' has no attributes.
+The class 'fIDL::Int64Type' has no attributes.
+The class 'fIDL::Int16Type' has no attributes.
+The class 'EnumMemberValue' has no attributes.
+The class 'fIDL::InterfaceMethod' has no attributes.
+The class 'fIDL::Uint8Type' has no attributes.
+The class 'fIDL::Declaration' has the following attributes: 'name' of type str.
+The class 'fIDL::ParameterList' has no attributes.
+The class 'fIDL::Int32Type' has no attributes.
+The class 'fIDL::InterfaceParameters' has the following attributes: 'resultName' of type str; 'name' of type str.
+The class 'Constant' has no attributes.
+The class 'fIDL::EnumMemberValue' has the following attributes: 'value' of type str.
+The class 'InterfaceMember' has no attributes.
+The class 'fIDL::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'fIDL::StringType' has the following attributes: 'nullable' of type bool.
+The class 'Literal' has no attributes.
+The class 'fIDL::StructMember' has no attributes.
+The class 'fIDL::EnumDeclaration' has no attributes.
+The class 'fIDL::Expression' has no attributes.
+The class 'fIDL::ArrayType' has no attributes.
+The class 'fIDL::StructDeclaration' has no attributes.
+The class 'fIDL::IdentifierType' has the following attributes: 'nullable' of type bool.
+The class 'UnionMember' has no attributes.
+The class 'fIDL::File' has no attributes.
+The class 'fIDL::VectorType' has the following attributes: 'nullable' of type bool.
+The class 'Type' has no attributes.
+The class 'Expression' has no attributes.
+The class 'fIDL::Using' has the following attributes: 'importedNamespace' of type str; 'name' of type str.
+The class 'fIDL::Parameter' has the following attributes: 'name' of type str.
+The class 'fIDL::NumberLiteral' has no attributes.
+The class 'fIDL::ConstDeclaration' has no attributes.
+The class 'fIDL::HandleType' has the following attributes: 'type' of type str; 'nullable' of type bool.
+The class 'fIDL::UnionMember' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'fIDL::EnumMember' has the following attributes: 'name' of type str.
+The class 'fIDL::LibraryHeader' has the following attributes: 'name' of type str.
+The class 'fIDL::StringLiteral' has no attributes.
+The class 'fIDL::Int8Type' has no attributes.
+The class 'fIDL::Uint32Type' has no attributes.
+The class 'fIDL::Uint16Type' has no attributes.
+The class 'fIDL::InterfaceMember' has no attributes.
+The class 'fIDL::Uint64Type' has no attributes.
+The class 'IntegerType' has no attributes.
+The class 'fIDL::InterfaceDeclaration' has no attributes.
+'fIDL::InterfaceMethod' is a specialization of 'InterfaceMember'.
+'fIDL::StructDeclaration' is a specialization of 'Declaration'.
+'fIDL::Literal' is a specialization of 'Constant'.
+'fIDL::Uint32Type' is a specialization of 'IntegerType'.
+'fIDL::Expression' is a specialization of 'EnumMemberValue'.
+'fIDL::Expression' is a specialization of 'Literal'.
+'fIDL::Int16Type' is a specialization of 'IntegerType'.
+'fIDL::StringLiteral' is a specialization of 'Expression'.
+'fIDL::ConstDeclaration' is a specialization of 'InterfaceMember'.
+'fIDL::UnionDeclaration' is a specialization of 'Declaration'.
+'fIDL::Int8Type' is a specialization of 'IntegerType'.
+'fIDL::Uint16Type' is a specialization of 'IntegerType'.
+'fIDL::HandleType' is a specialization of 'Type'.
+'fIDL::UnionField' is a specialization of 'UnionMember'.
+'fIDL::BooleanType' is a specialization of 'PrimitiveType'.
+'fIDL::LibraryHeader' is a specialization of 'File'.
+'fIDL::ConstDeclaration' is a specialization of 'Declaration'.
+'fIDL::Int64Type' is a specialization of 'IntegerType'.
+'fIDL::Uint8Type' is a specialization of 'IntegerType'.
+'fIDL::EnumDeclaration' is a specialization of 'Declaration'.
+'fIDL::RequestType' is a specialization of 'Type'.
+'fIDL::PrimitiveType' is a specialization of 'Type'.
+'fIDL::NumberLiteral' is a specialization of 'Expression'.
+'fIDL::Float64Type' is a specialization of 'PrimitiveType'.
+'fIDL::IntegerType' is a specialization of 'PrimitiveType'.
+'fIDL::ArrayType' is a specialization of 'Type'.
+'fIDL::Uint64Type' is a specialization of 'IntegerType'.
+'fIDL::BooleanLiteral' is a specialization of 'Expression'.
+'fIDL::Float32Type' is a specialization of 'PrimitiveType'.
+'fIDL::Int32Type' is a specialization of 'IntegerType'.
+'fIDL::InterfaceDeclaration' is a specialization of 'Declaration'.
+'fIDL::VectorType' is a specialization of 'Type'.
+'fIDL::StatusType' is a specialization of 'PrimitiveType'.
+'fIDL::StringType' is a specialization of 'Type'.
+'fIDL::IdentifierType' is a specialization of 'Type'.
+'fIDL::InterfaceParameters' (role 'fIDL_InterfaceParameters23', cardinality 0..*) is associated with 'fIDL::ParameterList' (role 'fIDL_ParameterList', cardinality 0..*).
+'fIDL::ConstDeclaration' (role 'fIDL_ConstDeclaration37', cardinality 0..*) is associated with 'fIDL::StructMember' (role 'fIDL_StructMember36', cardinality 0..*).
+'fIDL::ParameterList' (role 'fIDL_ParameterList28', cardinality 0..*) is associated with 'fIDL::Parameter' (role 'fIDL_Parameter', cardinality 0..*).
+'fIDL::Type' (role 'fIDL_Type53', cardinality 0..*) is associated with 'fIDL::ArrayType' (role 'fIDL_ArrayType', cardinality 0..*).
+'fIDL::InterfaceMethod' (role 'fIDL_InterfaceMethod', cardinality 0..*) is associated with 'fIDL::Expression' (role 'fIDL_Expression', cardinality 0..*).
+'fIDL::Type' (role 'fIDL_Type49', cardinality 0..*) is associated with 'fIDL::UnionField' (role 'fIDL_UnionField', cardinality 0..*).
+'fIDL::InterfaceDeclaration' (role 'fIDL_InterfaceDeclaration18', cardinality 0..*) is associated with 'fIDL::InterfaceMember' (role 'fIDL_InterfaceMember', cardinality 0..*).
+'fIDL::EnumMember' (role 'fIDL_EnumMember', cardinality 0..*) is associated with 'fIDL::EnumDeclaration' (role 'fIDL_EnumDeclaration12', cardinality 0..*).
+'fIDL::IdentifierType' (role 'fIDL_IdentifierType', cardinality 0..*) is associated with 'fIDL::Declaration' (role 'fIDL_Declaration51', cardinality 0..*).
+'fIDL::Type' (role 'fIDL_Type58', cardinality 0..*) is associated with 'fIDL::VectorType' (role 'fIDL_VectorType', cardinality 0..*).
+'fIDL::InterfaceDeclaration' (role 'fIDL_InterfaceDeclaration', cardinality 0..*) is associated with 'fIDL::InterfaceDeclaration' (role 'fIDL_InterfaceDeclaration15', cardinality 0..*).
+'fIDL::Type' (role 'fIDL_Type40', cardinality 0..*) is associated with 'fIDL::StructField' (role 'fIDL_StructField39', cardinality 0..*).
+'fIDL::ConstDeclaration' (role 'fIDL_ConstDeclaration45', cardinality 0..*) is associated with 'fIDL::UnionDeclaration' (role 'fIDL_UnionDeclaration', cardinality 0..*).
+'fIDL::AttributedDeclaration' (role 'fIDL_AttributedDeclaration', cardinality 0..*) is associated with 'fIDL::LibraryHeader' (role 'fIDL_LibraryHeader2', cardinality 0..*).
+'fIDL::IntegerType' (role 'fIDL_IntegerType', cardinality 0..*) is associated with 'fIDL::EnumDeclaration' (role 'fIDL_EnumDeclaration', cardinality 0..*).
+'fIDL::StructField' (role 'fIDL_StructField', cardinality 0..*) is associated with 'fIDL::StructMember' (role 'fIDL_StructMember34', cardinality 0..*).
+'fIDL::Attribute' (role 'fIDL_Attribute', cardinality 0..*) is associated with 'fIDL::AttributedDeclaration' (role 'fIDL_AttributedDeclaration4', cardinality 0..*).
+'fIDL::Constant' (role 'fIDL_Constant61', cardinality 0..*) is associated with 'fIDL::VectorType' (role 'fIDL_VectorType60', cardinality 0..*).
+'fIDL::Type' (role 'fIDL_Type', cardinality 0..*) is associated with 'fIDL::ConstDeclaration' (role 'fIDL_ConstDeclaration', cardinality 0..*).
+'fIDL::StructField' (role 'fIDL_StructField42', cardinality 0..*) is associated with 'fIDL::Constant' (role 'fIDL_Constant43', cardinality 0..*).
+'fIDL::StringType' (role 'fIDL_StringType', cardinality 0..*) is associated with 'fIDL::Constant' (role 'fIDL_Constant63', cardinality 0..*).
+'fIDL::ParameterList' (role 'fIDL_ParameterList26', cardinality 0..*) is associated with 'fIDL::InterfaceParameters' (role 'fIDL_InterfaceParameters25', cardinality 0..*).
+'fIDL::Declaration' (role 'fIDL_Declaration', cardinality 0..*) is associated with 'fIDL::AttributedDeclaration' (role 'fIDL_AttributedDeclaration6', cardinality 0..*).
+'fIDL::Parameter' (role 'fIDL_Parameter30', cardinality 0..*) is associated with 'fIDL::Type' (role 'fIDL_Type31', cardinality 0..*).
+'fIDL::StructMember' (role 'fIDL_StructMember', cardinality 0..*) is associated with 'fIDL::StructDeclaration' (role 'fIDL_StructDeclaration', cardinality 0..*).
+'fIDL::InterfaceMethod' (role 'fIDL_InterfaceMethod21', cardinality 0..*) is associated with 'fIDL::InterfaceParameters' (role 'fIDL_InterfaceParameters', cardinality 0..*).
+'fIDL::RequestType' (role 'fIDL_RequestType', cardinality 0..*) is associated with 'fIDL::Declaration' (role 'fIDL_Declaration65', cardinality 0..*).
+'fIDL::Using' (role 'fIDL_Using', cardinality 0..*) is associated with 'fIDL::LibraryHeader' (role 'fIDL_LibraryHeader', cardinality 0..*).
+'fIDL::Constant' (role 'fIDL_Constant', cardinality 0..*) is associated with 'fIDL::ConstDeclaration' (role 'fIDL_ConstDeclaration9', cardinality 0..*).
+'fIDL::EnumMemberValue' (role 'fIDL_EnumMemberValue', cardinality 0..*) is associated with 'fIDL::EnumMember' (role 'fIDL_EnumMember14', cardinality 0..*).
+'fIDL::UnionDeclaration' (role 'fIDL_UnionDeclaration47', cardinality 0..*) is associated with 'fIDL::UnionMember' (role 'fIDL_UnionMember', cardinality 0..*).
+'fIDL::ArrayType' (role 'fIDL_ArrayType55', cardinality 0..*) is associated with 'fIDL::Constant' (role 'fIDL_Constant56', cardinality 0..*).

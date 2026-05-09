@@ -1,0 +1,81 @@
+The model has 28 class(es).
+The class 'reviews::FileItem' has no attributes.
+The class 'reviews::Review' has no attributes.
+The class 'reviews::Change' has the following attributes: 'id' of type str; 'message' of type str; 'subject' of type str; 'state' of type str; 'key' of type str.
+The class 'reviews::User' has the following attributes: 'displayName' of type str; 'id' of type str; 'email' of type str.
+The class 'reviews::Repository' has the following attributes: 'taskRepositoryUrl' of type str; 'taskConnectorKind' of type str; 'taskRepository' of type str; 'description' of type str.
+The class 'CommentContainer' has no attributes.
+The class 'reviews::LineLocation' has the following attributes: 'rangeMax' of type int; 'rangeMin' of type int.
+The class 'reviews::ReviewerEntry' has no attributes.
+The class 'reviews::UserApprovalsMap' has no attributes.
+The class 'reviews::ApprovalValueMap' has the following attributes: 'value' of type str.
+The class 'reviews::ApprovalType' has the following attributes: 'name' of type str; 'key' of type str.
+The class 'reviews::Indexed' has the following attributes: 'index' of type str.
+The class 'reviews::CommentContainer' has no attributes.
+The class 'Indexed' has no attributes.
+The class 'reviews::Dated' has the following attributes: 'creationDate' of type date; 'modificationDate' of type date.
+The class 'reviews::ReviewRequirementsMap' has no attributes.
+The class 'reviews::Commit' has the following attributes: 'subject' of type str; 'id' of type str.
+The class 'Change' has no attributes.
+The class 'reviews::ReviewItem' has the following attributes: 'id' of type str; 'name' of type str; 'reference' of type str.
+The class 'reviews::Location' has no attributes.
+The class 'reviews::Comment' has the following attributes: 'draft' of type bool; 'mine' of type bool; 'id' of type str; 'title' of type str; 'description' of type str.
+The class 'Location' has no attributes.
+The class 'Dated' has no attributes.
+The class 'reviews::FileVersion' has the following attributes: 'description' of type str; 'path' of type str; 'binaryContent' of type str; 'content' of type str; 'fileRevision' of type str.
+The class 'reviews::ReviewItemSet' has the following attributes: 'revision' of type str; 'inNeedOfRetrieval' of type bool.
+The class 'reviews::RequirementEntry' has the following attributes: 'status' of type str.
+The class 'ReviewItem' has no attributes.
+The class 'reviews::LineRange' has the following attributes: 'start' of type int; 'end' of type int.
+The enumeration 'RequirementStatus' has the following literals: 'Closed', 'NotSatisfied', 'Satisfied', 'Rejected', 'Error', 'Optional', 'Unknown'.
+The enumeration 'ReviewStatus' has the following literals: 'Submitted', 'Merged', 'New', 'Draft', 'Abandoned'.
+'reviews::Comment' is a specialization of 'Indexed'.
+'reviews::ReviewItem' is a specialization of 'CommentContainer'.
+'reviews::Review' is a specialization of 'Change'.
+'reviews::FileItem' is a specialization of 'ReviewItem'.
+'reviews::ReviewItemSet' is a specialization of 'Dated'.
+'reviews::FileVersion' is a specialization of 'ReviewItem'.
+'reviews::Change' is a specialization of 'Dated'.
+'reviews::Comment' is a specialization of 'Dated'.
+'reviews::Location' is a specialization of 'Indexed'.
+'reviews::Review' is a specialization of 'CommentContainer'.
+'reviews::ReviewItemSet' is a specialization of 'ReviewItem'.
+'reviews::LineLocation' is a specialization of 'Location'.
+'reviews::ReviewItem' (role 'reviews_ReviewItem38', cardinality 0..*) is associated with 'reviews::Review' (role 'reviews_Review39', cardinality 0..*).
+'reviews::User' (role 'reviews_User73', cardinality 0..*) is associated with 'reviews::RequirementEntry' (role 'reviews_RequirementEntry', cardinality 0..*).
+'reviews::Comment' (role 'reviews_Comment27', cardinality 0..*) is associated with 'reviews::Location' (role 'reviews_Location', cardinality 0..*).
+'reviews::CommentContainer' (role 'reviews_CommentContainer', cardinality 0..*) is associated with 'reviews::Comment' (role 'reviews_Comment', cardinality 0..*).
+'reviews::Review' (role 'Review', cardinality 0..*) is associated with 'reviews::Repository' (role 'repository', cardinality 0..*).
+'reviews::ReviewItemSet' (role 'sets', cardinality 0..*) is associated with 'reviews::Review' (role 'Review56', cardinality 0..*).
+'reviews::ApprovalType' (role 'reviews_ApprovalType76', cardinality 0..*) is associated with 'reviews::ReviewRequirementsMap' (role 'reviews_ReviewRequirementsMap75', cardinality 0..*).
+'reviews::Repository' (role 'Repository', cardinality 0..*) is associated with 'reviews::Review' (role 'reviews', cardinality 0..*).
+'reviews::FileItem' (role 'reviews_FileItem50', cardinality 0..*) is associated with 'reviews::FileVersion' (role 'reviews_FileVersion51', cardinality 0..*).
+'reviews::Review' (role 'reviews_Review19', cardinality 0..*) is associated with 'reviews::ReviewRequirementsMap' (role 'reviews_ReviewRequirementsMap', cardinality 0..*).
+'reviews::Comment' (role 'reviews_Comment25', cardinality 0..*) is associated with 'reviews::Comment' (role 'reviews_Comment23', cardinality 0..*).
+'reviews::UserApprovalsMap' (role 'reviews_UserApprovalsMap63', cardinality 0..*) is associated with 'reviews::User' (role 'reviews_User64', cardinality 0..*).
+'reviews::RequirementEntry' (role 'reviews_RequirementEntry79', cardinality 0..*) is associated with 'reviews::ReviewRequirementsMap' (role 'reviews_ReviewRequirementsMap78', cardinality 0..*).
+'reviews::Repository' (role 'reviews_Repository46', cardinality 0..*) is associated with 'reviews::User' (role 'reviews_User47', cardinality 0..*).
+'reviews::ApprovalType' (role 'reviews_ApprovalType71', cardinality 0..*) is associated with 'reviews::ApprovalValueMap' (role 'reviews_ApprovalValueMap70', cardinality 0..*).
+'reviews::Comment' (role 'reviews_Comment29', cardinality 0..*) is associated with 'reviews::Review' (role 'reviews_Review30', cardinality 0..*).
+'reviews::ReviewItem' (role 'reviews_ReviewItem', cardinality 0..*) is associated with 'reviews::User' (role 'reviews_User33', cardinality 0..*).
+'reviews::ReviewItemSet' (role 'reviews_ReviewItemSet', cardinality 0..*) is associated with 'reviews::Commit' (role 'reviews_Commit', cardinality 0..*).
+'reviews::Comment' (role 'Comment', cardinality 0..*) is associated with 'reviews::CommentContainer' (role 'item', cardinality 0..*).
+'reviews::Comment' (role 'comments', cardinality 0..*) is associated with 'reviews::CommentContainer' (role 'CommentContainer', cardinality 0..*).
+'reviews::ApprovalValueMap' (role 'reviews_ApprovalValueMap', cardinality 0..*) is associated with 'reviews::ReviewerEntry' (role 'reviews_ReviewerEntry68', cardinality 0..*).
+'reviews::ReviewItemSet' (role 'set', cardinality 0..*) is associated with 'reviews::FileItem' (role 'FileItem', cardinality 0..*).
+'reviews::UserApprovalsMap' (role 'reviews_UserApprovalsMap', cardinality 0..*) is associated with 'reviews::Review' (role 'reviews_Review17', cardinality 0..*).
+'reviews::Review' (role 'reviews_Review', cardinality 0..*) is associated with 'reviews::Change' (role 'reviews_Change12', cardinality 0..*).
+'reviews::ReviewItemSet' (role 'ReviewItemSet53', cardinality 0..*) is associated with 'reviews::FileItem' (role 'items', cardinality 0..*).
+'reviews::Comment' (role 'reviews_Comment4', cardinality 0..*) is associated with 'reviews::CommentContainer' (role 'reviews_CommentContainer3', cardinality 0..*).
+'reviews::Change' (role 'reviews_Change15', cardinality 0..*) is associated with 'reviews::Review' (role 'reviews_Review14', cardinality 0..*).
+'reviews::ReviewItemSet' (role 'ReviewItemSet', cardinality 0..*) is associated with 'reviews::Review' (role 'parentReview', cardinality 0..*).
+'reviews::User' (role 'reviews_User22', cardinality 0..*) is associated with 'reviews::Comment' (role 'reviews_Comment21', cardinality 0..*).
+'reviews::FileItem' (role 'reviews_FileItem61', cardinality 0..*) is associated with 'reviews::FileVersion' (role 'reviews_FileVersion60', cardinality 0..*).
+'reviews::CommentContainer' (role 'reviews_CommentContainer6', cardinality 0..*) is associated with 'reviews::Comment' (role 'reviews_Comment7', cardinality 0..*).
+'reviews::LineRange' (role 'reviews_LineRange', cardinality 0..*) is associated with 'reviews::LineLocation' (role 'reviews_LineLocation', cardinality 0..*).
+'reviews::User' (role 'reviews_User43', cardinality 0..*) is associated with 'reviews::Repository' (role 'reviews_Repository42', cardinality 0..*).
+'reviews::User' (role 'reviews_User36', cardinality 0..*) is associated with 'reviews::ReviewItem' (role 'reviews_ReviewItem35', cardinality 0..*).
+'reviews::ReviewerEntry' (role 'reviews_ReviewerEntry', cardinality 0..*) is associated with 'reviews::UserApprovalsMap' (role 'reviews_UserApprovalsMap66', cardinality 0..*).
+'reviews::Repository' (role 'reviews_Repository', cardinality 0..*) is associated with 'reviews::ApprovalType' (role 'reviews_ApprovalType', cardinality 0..*).
+'reviews::FileVersion' (role 'reviews_FileVersion', cardinality 0..*) is associated with 'reviews::FileItem' (role 'reviews_FileItem', cardinality 0..*).
+'reviews::User' (role 'reviews_User', cardinality 0..*) is associated with 'reviews::Change' (role 'reviews_Change', cardinality 0..*).

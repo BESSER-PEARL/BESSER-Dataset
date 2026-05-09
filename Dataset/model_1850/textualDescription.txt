@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'style::StylePointer' has no attributes.
+The class 'style::StyleSet' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'style::StyleLibrary' has the following attributes: 'uid' of type str; 'name' of type str.
+'style::StylePointer' (role 'style_StylePointer', cardinality 0..*) is associated with 'style::StyleLibrary' (role 'style_StyleLibrary2', cardinality 0..*).
+'style::StyleSet' (role 'style_StyleSet', cardinality 0..*) is associated with 'style::StyleLibrary' (role 'style_StyleLibrary', cardinality 0..*).

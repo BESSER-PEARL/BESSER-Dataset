@@ -1,0 +1,323 @@
+The model has 124 class(es).
+The class 'qvtoperational::cst::LocalPropertyCS' has no attributes.
+The class 'qvtoperational::cst::TransformationHeaderCS' has no attributes.
+The class 'qvtoperational::cst::ImperativeLoopExpCS' has no attributes.
+The class 'qvtoperational::cst::ForExpCS' has no attributes.
+The class 'cst::CSTNode' has no attributes.
+The class 'DirectionKindCS' has no attributes.
+The class 'qvtoperational::cst::ResolveExpCS' has the following attributes: 'isDeferred' of type bool; 'one' of type bool; 'isInverse' of type bool.
+The class 'PrimitiveLiteralExpCS' has no attributes.
+The class 'qvtoperational::cst::MappingMethodCS' has the following attributes: 'blackBox' of type bool.
+The class 'LocalPropertyCS' has no attributes.
+The class 'StatementCS' has no attributes.
+The class 'qvtoperational::cst::ClassifierDefCS' has no attributes.
+The class 'MappingEndCS' has no attributes.
+The class 'LogExpCS' has no attributes.
+The class 'qvtoperational::cst::TypeSpecCS' has no attributes.
+The class 'qvtoperational::cst::StatementCS' has no attributes.
+The class 'qvtoperational::cst::TransformationRefineCS' has no attributes.
+The class 'qvtoperational::cst::CompleteSignatureCS' has no attributes.
+The class 'qvtoperational::cst::InstantiationExpCS' has no attributes.
+The class 'VariableCS' has no attributes.
+The class 'qvtoperational::cst::LogExpCS' has no attributes.
+The class 'OperationCallExpCS' has no attributes.
+The class 'qvtoperational::cst::ModulePropertyCS' has no attributes.
+The class 'qvtoperational::cst::ImperativeOperationCallExpCS' has no attributes.
+The class 'qvtoperational::cst::ConfigPropertyCS' has no attributes.
+The class 'qvtoperational::cst::AssertExpCS' has no attributes.
+The class 'qvtoperational::cst::SwitchExpCS' has no attributes.
+The class 'PathNameCS' has no attributes.
+The class 'ImportCS' has no attributes.
+The class 'CollectionLiteralPartCS' has no attributes.
+The class 'SwitchAltExpCS' has no attributes.
+The class 'qvtoperational::cst::DictionaryTypeCS' has no attributes.
+The class 'qvtoperational::cst::AssignStatementCS' has the following attributes: 'incremental' of type bool.
+The class 'qvtoperational::cst::OppositePropertyCS' has the following attributes: 'isNavigable' of type bool.
+The class 'cst::LoopExpCS' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'MappingMethodCS' has no attributes.
+The class 'qvtoperational::cst::ModuleRefCS' has no attributes.
+The class 'qvtoperational::cst::UnitCS' has no attributes.
+The class 'TagCS' has no attributes.
+The class 'qvtoperational::cst::ResolveInExpCS' has no attributes.
+The class 'MappingSectionsCS' has no attributes.
+The class 'MappingRuleCS' has no attributes.
+The class 'qvtoperational::cst::ReturnExpCS' has no attributes.
+The class 'qvtoperational::cst::MappingExtensionCS' has the following attributes: 'kind' of type str.
+The class 'StringLiteralExpCS' has no attributes.
+The class 'ResolveExpCS' has no attributes.
+The class 'qvtoperational::cst::ModuleUsageCS' has the following attributes: 'importKind' of type str.
+The class 'MappingBodyCS' has no attributes.
+The class 'TransformationRefineCS' has no attributes.
+The class 'qvtoperational::cst::DirectionKindCS' has the following attributes: 'directionKind' of type str.
+The class 'MappingModuleCS' has no attributes.
+The class 'ParameterDeclarationCS' has no attributes.
+The class 'qvtoperational::cst::ResolveOpArgsExpCS' has no attributes.
+The class 'qvtoperational::cst::MappingSectionCS' has no attributes.
+The class 'qvtoperational::cst::TagCS' has no attributes.
+The class 'qvtoperational::cst::ModelTypeCS' has no attributes.
+The class 'OCLExpressionCS' has no attributes.
+The class 'qvtoperational::cst::ModuleKindCS' has the following attributes: 'moduleKind' of type str.
+The class 'MultiplicityDefCS' has no attributes.
+The class 'ModulePropertyCS' has no attributes.
+The class 'qvtoperational::cst::MappingQueryCS' has the following attributes: 'isSimpleDefinition' of type bool.
+The class 'ClassifierPropertyCS' has no attributes.
+The class 'TypeCS' has no attributes.
+The class 'TransformationHeaderCS' has no attributes.
+The class 'qvtoperational::cst::MappingModuleCS' has no attributes.
+The class 'MappingExtensionCS' has no attributes.
+The class 'qvtoperational::cst::BreakExpCS' has no attributes.
+The class 'MappingInitCS' has no attributes.
+The class 'qvtoperational::cst::MappingSectionsCS' has no attributes.
+The class 'qvtoperational::cst::ListLiteralExpCS' has no attributes.
+The class 'cst::StatementCS' has no attributes.
+The class 'ModuleRefCS' has no attributes.
+The class 'TypeSpecCS' has no attributes.
+The class 'RenameCS' has no attributes.
+The class 'CSTNode' has no attributes.
+The class 'qvtoperational::cst::PackageRefCS' has no attributes.
+The class 'qvtoperational::cst::ConstructorCS' has no attributes.
+The class 'qvtoperational::cst::RenameCS' has no attributes.
+The class 'qvtoperational::cst::MultiplicityDefCS' has no attributes.
+The class 'qvtoperational::cst::MappingBodyCS' has the following attributes: 'hasPopulationKeyword' of type bool.
+The class 'cst::InstantiationExpCS' has no attributes.
+The class 'ModuleKindCS' has no attributes.
+The class 'qvtoperational::cst::MappingRuleCS' has no attributes.
+The class 'ImperativeOperationCallExpCS' has no attributes.
+The class 'qvtoperational::cst::MappingEndCS' has no attributes.
+The class 'qvtoperational::cst::ContextualPropertyCS' has no attributes.
+The class 'MappingSectionCS' has no attributes.
+The class 'ImperativeLoopExpCS' has no attributes.
+The class 'qvtoperational::cst::ObjectExpCS' has the following attributes: 'isImplicit' of type bool.
+The class 'qvtoperational::cst::SimpleSignatureCS' has no attributes.
+The class 'OppositePropertyCS' has no attributes.
+The class 'cst::ElementWithBody' has no attributes.
+The class 'qvtoperational::cst::DictLiteralExpCS' has no attributes.
+The class 'qvtoperational::cst::ContinueExpCS' has no attributes.
+The class 'qvtoperational::cst::ImperativeIterateExpCS' has no attributes.
+The class 'SimpleNameCS' has no attributes.
+The class 'qvtoperational::cst::ElementWithBody' has the following attributes: 'bodyEndLocation' of type int; 'bodyStartLocation' of type int.
+The class 'ScopedNameCS' has no attributes.
+The class 'qvtoperational::cst::VariableInitializationCS' has the following attributes: 'withResult' of type bool.
+The class 'qvtoperational::cst::ScopedNameCS' has the following attributes: 'name' of type str.
+The class 'qvtoperational::cst::ClassifierPropertyCS' has the following attributes: 'isOrdered' of type bool.
+The class 'qvtoperational::cst::ComputeExpCS' has no attributes.
+The class 'qvtoperational::cst::ExpressionStatementCS' has no attributes.
+The class 'qvtoperational::cst::BlockExpCS' has no attributes.
+The class 'qvtoperational::cst::ParameterDeclarationCS' has the following attributes: 'directionKind' of type str.
+The class 'qvtoperational::cst::ImportCS' has no attributes.
+The class 'qvtoperational::cst::WhileExpCS' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'MappingDeclarationCS' has no attributes.
+The class 'qvtoperational::cst::MappingCallExpCS' has the following attributes: 'strict' of type bool.
+The class 'qvtoperational::cst::SwitchAltExpCS' has no attributes.
+The class 'ModelTypeCS' has no attributes.
+The class 'qvtoperational::cst::DictLiteralPartCS' has no attributes.
+The class 'PackageRefCS' has no attributes.
+The class 'qvtoperational::cst::ListTypeCS' has no attributes.
+The class 'qvtoperational::cst::LibraryImportCS' has no attributes.
+The class 'qvtoperational::cst::MappingInitCS' has no attributes.
+The class 'SimpleSignatureCS' has no attributes.
+The class 'qvtoperational::cst::MappingDeclarationCS' has the following attributes: 'qualifiers' of type str; 'isQuery' of type bool.
+The class 'ModuleUsageCS' has no attributes.
+The class 'ClassifierDefCS' has no attributes.
+The class 'DictLiteralPartCS' has no attributes.
+The class 'qvtoperational::cst::LibraryCS' has no attributes.
+The enumeration 'QualifierKindCS' has the following literals: 'static', 'blackbox', 'abstract'.
+The enumeration 'ModuleKindEnum' has the following literals: 'transformation', 'library'.
+The enumeration 'DirectionKindEnum' has the following literals: 'in_', 'DEFAULT', 'out', 'inout'.
+The enumeration 'ImportKindEnum' has the following literals: 'extension', 'access'.
+The enumeration 'MappingExtensionKindCS' has the following literals: 'inherits', 'merges', 'disjuncts'.
+'qvtoperational::cst::DictLiteralPartCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::MappingRuleCS' is a specialization of 'MappingMethodCS'.
+'qvtoperational::cst::MappingBodyCS' is a specialization of 'MappingSectionCS'.
+'qvtoperational::cst::MappingCallExpCS' is a specialization of 'ImperativeOperationCallExpCS'.
+'qvtoperational::cst::ModuleRefCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ScopedNameCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::RenameCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::LibraryCS' is a specialization of 'MappingModuleCS'.
+'qvtoperational::cst::ModelTypeCS' is a specialization of 'cst::CSTNode'.
+'qvtoperational::cst::ReturnExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::ObjectExpCS' is a specialization of 'cst::InstantiationExpCS'.
+'qvtoperational::cst::AssertExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::TransformationRefineCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::LibraryImportCS' is a specialization of 'ImportCS'.
+'qvtoperational::cst::MappingMethodCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::AssignStatementCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::LocalPropertyCS' is a specialization of 'ModulePropertyCS'.
+'qvtoperational::cst::MappingExtensionCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ImportCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::MappingSectionsCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::DictLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'qvtoperational::cst::SwitchExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::ModelTypeCS' is a specialization of 'cst::ElementWithBody'.
+'qvtoperational::cst::ImperativeOperationCallExpCS' is a specialization of 'OperationCallExpCS'.
+'qvtoperational::cst::MappingModuleCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::TransformationHeaderCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ContextualPropertyCS' is a specialization of 'ModulePropertyCS'.
+'qvtoperational::cst::ModulePropertyCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ClassifierDefCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ForExpCS' is a specialization of 'ImperativeLoopExpCS'.
+'qvtoperational::cst::SwitchAltExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::DirectionKindCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ResolveExpCS' is a specialization of 'CallExpCS'.
+'qvtoperational::cst::ComputeExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::MappingInitCS' is a specialization of 'MappingSectionCS'.
+'qvtoperational::cst::SimpleSignatureCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::MappingSectionCS' is a specialization of 'cst::ElementWithBody'.
+'qvtoperational::cst::ConfigPropertyCS' is a specialization of 'ModulePropertyCS'.
+'qvtoperational::cst::ContinueExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::UnitCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ExpressionStatementCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::LogExpCS' is a specialization of 'OperationCallExpCS'.
+'qvtoperational::cst::ResolveOpArgsExpCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ImperativeLoopExpCS' is a specialization of 'cst::StatementCS'.
+'qvtoperational::cst::BreakExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::OppositePropertyCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::PackageRefCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::WhileExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::ImperativeLoopExpCS' is a specialization of 'cst::LoopExpCS'.
+'qvtoperational::cst::TagCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ListLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'qvtoperational::cst::ParameterDeclarationCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ResolveInExpCS' is a specialization of 'ResolveExpCS'.
+'qvtoperational::cst::MultiplicityDefCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::MappingQueryCS' is a specialization of 'MappingMethodCS'.
+'qvtoperational::cst::MappingSectionCS' is a specialization of 'cst::CSTNode'.
+'qvtoperational::cst::TypeSpecCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ListTypeCS' is a specialization of 'TypeCS'.
+'qvtoperational::cst::CompleteSignatureCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::VariableInitializationCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::ObjectExpCS' is a specialization of 'cst::ElementWithBody'.
+'qvtoperational::cst::ModuleUsageCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ModuleKindCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::InstantiationExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::ClassifierPropertyCS' is a specialization of 'LocalPropertyCS'.
+'qvtoperational::cst::BlockExpCS' is a specialization of 'StatementCS'.
+'qvtoperational::cst::StatementCS' is a specialization of 'OCLExpressionCS'.
+'qvtoperational::cst::MappingEndCS' is a specialization of 'MappingSectionCS'.
+'qvtoperational::cst::ConstructorCS' is a specialization of 'MappingMethodCS'.
+'qvtoperational::cst::DictionaryTypeCS' is a specialization of 'TypeCS'.
+'qvtoperational::cst::MappingDeclarationCS' is a specialization of 'CSTNode'.
+'qvtoperational::cst::ImperativeIterateExpCS' is a specialization of 'ImperativeLoopExpCS'.
+'qvtoperational::cst::ImperativeIterateExpCS' (role 'qvtoperational_cst_ImperativeIterateExpCS', cardinality 0..*) is associated with 'VariableCS' (role 'VariableCS123', cardinality 0..*).
+'qvtoperational::cst::TransformationHeaderCS' (role 'qvtoperational_cst_TransformationHeaderCS191', cardinality 0..*) is associated with 'TransformationRefineCS' (role 'TransformationRefineCS', cardinality 0..*).
+'qvtoperational::cst::MappingSectionsCS' (role 'qvtoperational_cst_MappingSectionsCS105', cardinality 0..*) is associated with 'MappingEndCS' (role 'MappingEndCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS142', cardinality 0..*) is associated with 'qvtoperational::cst::AssignStatementCS' (role 'qvtoperational_cst_AssignStatementCS', cardinality 0..*).
+'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS4', cardinality 0..*) is associated with 'ModelTypeCS' (role 'ModelTypeCS', cardinality 0..*).
+'qvtoperational::cst::ModuleRefCS' (role 'qvtoperational_cst_ModuleRefCS195', cardinality 0..*) is associated with 'ParameterDeclarationCS' (role 'ParameterDeclarationCS196', cardinality 0..*).
+'qvtoperational::cst::TypeSpecCS' (role 'qvtoperational_cst_TypeSpecCS208', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS209', cardinality 0..*).
+'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS8', cardinality 0..*) is associated with 'ModulePropertyCS' (role 'ModulePropertyCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS152', cardinality 0..*) is associated with 'qvtoperational::cst::ObjectExpCS' (role 'qvtoperational_cst_ObjectExpCS151', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS37', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierDefCS' (role 'qvtoperational_cst_ClassifierDefCS', cardinality 0..*).
+'qvtoperational::cst::DictLiteralPartCS' (role 'qvtoperational_cst_DictLiteralPartCS239', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS240', cardinality 0..*).
+'qvtoperational::cst::TagCS' (role 'qvtoperational_cst_TagCS', cardinality 0..*) is associated with 'StringLiteralExpCS' (role 'StringLiteralExpCS242', cardinality 0..*).
+'qvtoperational::cst::ImportCS' (role 'qvtoperational_cst_ImportCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS', cardinality 0..*).
+'RenameCS' (role 'RenameCS', cardinality 0..*) is associated with 'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS6', cardinality 0..*).
+'MultiplicityDefCS' (role 'MultiplicityDefCS', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierPropertyCS' (role 'qvtoperational_cst_ClassifierPropertyCS52', cardinality 0..*).
+'TypeCS' (role 'TypeCS40', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierDefCS' (role 'qvtoperational_cst_ClassifierDefCS39', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS47', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierPropertyCS' (role 'qvtoperational_cst_ClassifierPropertyCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS211', cardinality 0..*) is associated with 'qvtoperational::cst::LogExpCS' (role 'qvtoperational_cst_LogExpCS', cardinality 0..*).
+'qvtoperational::cst::ObjectExpCS' (role 'qvtoperational_cst_ObjectExpCS', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS149', cardinality 0..*).
+'ImportCS' (role 'ImportCS', cardinality 0..*) is associated with 'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS2', cardinality 0..*).
+'OppositePropertyCS' (role 'OppositePropertyCS', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierPropertyCS' (role 'qvtoperational_cst_ClassifierPropertyCS54', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS', cardinality 0..*) is associated with 'qvtoperational::cst::RenameCS' (role 'qvtoperational_cst_RenameCS18', cardinality 0..*).
+'qvtoperational::cst::InstantiationExpCS' (role 'qvtoperational_cst_InstantiationExpCS226', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS227', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS176', cardinality 0..*) is associated with 'qvtoperational::cst::PackageRefCS' (role 'qvtoperational_cst_PackageRefCS', cardinality 0..*).
+'qvtoperational::cst::PackageRefCS' (role 'qvtoperational_cst_PackageRefCS178', cardinality 0..*) is associated with 'StringLiteralExpCS' (role 'StringLiteralExpCS179', cardinality 0..*).
+'qvtoperational::cst::CompleteSignatureCS' (role 'qvtoperational_cst_CompleteSignatureCS86', cardinality 0..*) is associated with 'ParameterDeclarationCS' (role 'ParameterDeclarationCS87', cardinality 0..*).
+'qvtoperational::cst::MappingSectionsCS' (role 'qvtoperational_cst_MappingSectionsCS103', cardinality 0..*) is associated with 'MappingBodyCS' (role 'MappingBodyCS', cardinality 0..*).
+'qvtoperational::cst::ModuleUsageCS' (role 'qvtoperational_cst_ModuleUsageCS', cardinality 0..*) is associated with 'ModuleKindCS' (role 'ModuleKindCS', cardinality 0..*).
+'qvtoperational::cst::UnitCS' (role 'qvtoperational_cst_UnitCS256', cardinality 0..*) is associated with 'ImportCS' (role 'ImportCS257', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS248', cardinality 0..*) is associated with 'qvtoperational::cst::TagCS' (role 'qvtoperational_cst_TagCS247', cardinality 0..*).
+'qvtoperational::cst::TagCS' (role 'qvtoperational_cst_TagCS244', cardinality 0..*) is associated with 'ScopedNameCS' (role 'ScopedNameCS245', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS94', cardinality 0..*) is associated with 'qvtoperational::cst::MappingQueryCS' (role 'qvtoperational_cst_MappingQueryCS', cardinality 0..*).
+'qvtoperational::cst::DictionaryTypeCS' (role 'qvtoperational_cst_DictionaryTypeCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS232', cardinality 0..*).
+'qvtoperational::cst::ResolveOpArgsExpCS' (role 'qvtoperational_cst_ResolveOpArgsExpCS', cardinality 0..*) is associated with 'VariableCS' (role 'VariableCS259', cardinality 0..*).
+'ModelTypeCS' (role 'ModelTypeCS254', cardinality 0..*) is associated with 'qvtoperational::cst::UnitCS' (role 'qvtoperational_cst_UnitCS253', cardinality 0..*).
+'ClassifierDefCS' (role 'ClassifierDefCS', cardinality 0..*) is associated with 'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS12', cardinality 0..*).
+'qvtoperational::cst::MappingSectionCS' (role 'qvtoperational_cst_MappingSectionCS100', cardinality 0..*) is associated with 'MappingRuleCS' (role 'MappingRuleCS', cardinality 0..*).
+'TypeCS' (role 'TypeCS206', cardinality 0..*) is associated with 'qvtoperational::cst::TypeSpecCS' (role 'qvtoperational_cst_TypeSpecCS', cardinality 0..*).
+'ScopedNameCS' (role 'ScopedNameCS222', cardinality 0..*) is associated with 'qvtoperational::cst::MappingExtensionCS' (role 'qvtoperational_cst_MappingExtensionCS', cardinality 0..*).
+'qvtoperational::cst::LocalPropertyCS' (role 'qvtoperational_cst_LocalPropertyCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS26', cardinality 0..*).
+'ScopedNameCS' (role 'ScopedNameCS', cardinality 0..*) is associated with 'qvtoperational::cst::ContextualPropertyCS' (role 'qvtoperational_cst_ContextualPropertyCS', cardinality 0..*).
+'qvtoperational::cst::TransformationHeaderCS' (role 'qvtoperational_cst_TransformationHeaderCS', cardinality 0..*) is associated with 'StringLiteralExpCS' (role 'StringLiteralExpCS181', cardinality 0..*).
+'qvtoperational::cst::TransformationRefineCS' (role 'qvtoperational_cst_TransformationRefineCS203', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS204', cardinality 0..*).
+'qvtoperational::cst::ReturnExpCS' (role 'qvtoperational_cst_ReturnExpCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS220', cardinality 0..*).
+'qvtoperational::cst::SwitchExpCS' (role 'qvtoperational_cst_SwitchExpCS126', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS127', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS213', cardinality 0..*) is associated with 'qvtoperational::cst::AssertExpCS' (role 'qvtoperational_cst_AssertExpCS', cardinality 0..*).
+'VariableCS' (role 'VariableCS119', cardinality 0..*) is associated with 'qvtoperational::cst::WhileExpCS' (role 'qvtoperational_cst_WhileExpCS118', cardinality 0..*).
+'CollectionLiteralPartCS' (role 'CollectionLiteralPartCS', cardinality 0..*) is associated with 'qvtoperational::cst::ListLiteralExpCS' (role 'qvtoperational_cst_ListLiteralExpCS', cardinality 0..*).
+'qvtoperational::cst::SwitchAltExpCS' (role 'qvtoperational_cst_SwitchAltExpCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS129', cardinality 0..*).
+'qvtoperational::cst::TransformationHeaderCS' (role 'qvtoperational_cst_TransformationHeaderCS183', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS184', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS145', cardinality 0..*) is associated with 'qvtoperational::cst::AssignStatementCS' (role 'qvtoperational_cst_AssignStatementCS144', cardinality 0..*).
+'qvtoperational::cst::ParameterDeclarationCS' (role 'qvtoperational_cst_ParameterDeclarationCS', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS79', cardinality 0..*).
+'TagCS' (role 'TagCS45', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierDefCS' (role 'qvtoperational_cst_ClassifierDefCS44', cardinality 0..*).
+'qvtoperational::cst::ImperativeLoopExpCS' (role 'qvtoperational_cst_ImperativeLoopExpCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS121', cardinality 0..*).
+'qvtoperational::cst::TransformationRefineCS' (role 'qvtoperational_cst_TransformationRefineCS', cardinality 0..*) is associated with 'ModuleRefCS' (role 'ModuleRefCS201', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS166', cardinality 0..*) is associated with 'qvtoperational::cst::ModelTypeCS' (role 'qvtoperational_cst_ModelTypeCS', cardinality 0..*).
+'qvtoperational::cst::MappingSectionCS' (role 'qvtoperational_cst_MappingSectionCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS98', cardinality 0..*).
+'qvtoperational::cst::MultiplicityDefCS' (role 'qvtoperational_cst_MultiplicityDefCS', cardinality 0..*) is associated with 'PrimitiveLiteralExpCS' (role 'PrimitiveLiteralExpCS', cardinality 0..*).
+'TypeCS' (role 'TypeCS229', cardinality 0..*) is associated with 'qvtoperational::cst::ListTypeCS' (role 'qvtoperational_cst_ListTypeCS', cardinality 0..*).
+'TypeCS' (role 'TypeCS140', cardinality 0..*) is associated with 'qvtoperational::cst::VariableInitializationCS' (role 'qvtoperational_cst_VariableInitializationCS139', cardinality 0..*).
+'qvtoperational::cst::OppositePropertyCS' (role 'qvtoperational_cst_OppositePropertyCS', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS56', cardinality 0..*).
+'qvtoperational::cst::ModuleUsageCS' (role 'qvtoperational_cst_ModuleUsageCS199', cardinality 0..*) is associated with 'ModuleRefCS' (role 'ModuleRefCS', cardinality 0..*).
+'qvtoperational::cst::TransformationHeaderCS' (role 'qvtoperational_cst_TransformationHeaderCS189', cardinality 0..*) is associated with 'ModuleUsageCS' (role 'ModuleUsageCS', cardinality 0..*).
+'qvtoperational::cst::MappingDeclarationCS' (role 'qvtoperational_cst_MappingDeclarationCS77', cardinality 0..*) is associated with 'MappingExtensionCS' (role 'MappingExtensionCS', cardinality 0..*).
+'MappingDeclarationCS' (role 'MappingDeclarationCS', cardinality 0..*) is associated with 'qvtoperational::cst::MappingMethodCS' (role 'qvtoperational_cst_MappingMethodCS', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS218', cardinality 0..*) is associated with 'qvtoperational::cst::AssertExpCS' (role 'qvtoperational_cst_AssertExpCS217', cardinality 0..*).
+'qvtoperational::cst::ConstructorCS' (role 'qvtoperational_cst_ConstructorCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS96', cardinality 0..*).
+'qvtoperational::cst::MappingRuleCS' (role 'qvtoperational_cst_MappingRuleCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS90', cardinality 0..*).
+'ParameterDeclarationCS' (role 'ParameterDeclarationCS', cardinality 0..*) is associated with 'qvtoperational::cst::MappingDeclarationCS' (role 'qvtoperational_cst_MappingDeclarationCS70', cardinality 0..*).
+'DictLiteralPartCS' (role 'DictLiteralPartCS', cardinality 0..*) is associated with 'qvtoperational::cst::DictLiteralExpCS' (role 'qvtoperational_cst_DictLiteralExpCS', cardinality 0..*).
+'SimpleSignatureCS' (role 'SimpleSignatureCS', cardinality 0..*) is associated with 'qvtoperational::cst::CompleteSignatureCS' (role 'qvtoperational_cst_CompleteSignatureCS', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS65', cardinality 0..*) is associated with 'qvtoperational::cst::MappingDeclarationCS' (role 'qvtoperational_cst_MappingDeclarationCS', cardinality 0..*).
+'qvtoperational::cst::ImperativeOperationCallExpCS' (role 'qvtoperational_cst_ImperativeOperationCallExpCS', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS154', cardinality 0..*).
+'TypeSpecCS' (role 'TypeSpecCS', cardinality 0..*) is associated with 'qvtoperational::cst::ParameterDeclarationCS' (role 'qvtoperational_cst_ParameterDeclarationCS81', cardinality 0..*).
+'qvtoperational::cst::ResolveInExpCS' (role 'qvtoperational_cst_ResolveInExpCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS161', cardinality 0..*).
+'LiteralExpCS' (role 'LiteralExpCS', cardinality 0..*) is associated with 'qvtoperational::cst::DictLiteralPartCS' (role 'qvtoperational_cst_DictLiteralPartCS', cardinality 0..*).
+'qvtoperational::cst::ResolveOpArgsExpCS' (role 'qvtoperational_cst_ResolveOpArgsExpCS261', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS262', cardinality 0..*).
+'StringLiteralExpCS' (role 'StringLiteralExpCS', cardinality 0..*) is associated with 'qvtoperational::cst::RenameCS' (role 'qvtoperational_cst_RenameCS20', cardinality 0..*).
+'LogExpCS' (role 'LogExpCS', cardinality 0..*) is associated with 'qvtoperational::cst::AssertExpCS' (role 'qvtoperational_cst_AssertExpCS215', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS132', cardinality 0..*) is associated with 'qvtoperational::cst::SwitchAltExpCS' (role 'qvtoperational_cst_SwitchAltExpCS131', cardinality 0..*).
+'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS14', cardinality 0..*) is associated with 'TagCS' (role 'TagCS', cardinality 0..*).
+'qvtoperational::cst::LocalPropertyCS' (role 'qvtoperational_cst_LocalPropertyCS28', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS', cardinality 0..*).
+'qvtoperational::cst::ConfigPropertyCS' (role 'qvtoperational_cst_ConfigPropertyCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS24', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS113', cardinality 0..*) is associated with 'qvtoperational::cst::WhileExpCS' (role 'qvtoperational_cst_WhileExpCS', cardinality 0..*).
+'qvtoperational::cst::ScopedNameCS' (role 'qvtoperational_cst_ScopedNameCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS264', cardinality 0..*).
+'qvtoperational::cst::ResolveExpCS' (role 'qvtoperational_cst_ResolveExpCS158', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS159', cardinality 0..*).
+'ParameterDeclarationCS' (role 'ParameterDeclarationCS83', cardinality 0..*) is associated with 'qvtoperational::cst::SimpleSignatureCS' (role 'qvtoperational_cst_SimpleSignatureCS', cardinality 0..*).
+'qvtoperational::cst::MappingDeclarationCS' (role 'qvtoperational_cst_MappingDeclarationCS72', cardinality 0..*) is associated with 'ParameterDeclarationCS' (role 'ParameterDeclarationCS73', cardinality 0..*).
+'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS10', cardinality 0..*) is associated with 'MappingMethodCS' (role 'MappingMethodCS', cardinality 0..*).
+'qvtoperational::cst::MappingModuleCS' (role 'qvtoperational_cst_MappingModuleCS', cardinality 0..*) is associated with 'TransformationHeaderCS' (role 'TransformationHeaderCS', cardinality 0..*).
+'qvtoperational::cst::MappingRuleCS' (role 'qvtoperational_cst_MappingRuleCS92', cardinality 0..*) is associated with 'MappingSectionsCS' (role 'MappingSectionsCS', cardinality 0..*).
+'qvtoperational::cst::BlockExpCS' (role 'qvtoperational_cst_BlockExpCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS107', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS193', cardinality 0..*) is associated with 'qvtoperational::cst::ModuleRefCS' (role 'qvtoperational_cst_ModuleRefCS', cardinality 0..*).
+'MappingInitCS' (role 'MappingInitCS', cardinality 0..*) is associated with 'qvtoperational::cst::MappingSectionsCS' (role 'qvtoperational_cst_MappingSectionsCS', cardinality 0..*).
+'ClassifierPropertyCS' (role 'ClassifierPropertyCS', cardinality 0..*) is associated with 'qvtoperational::cst::ClassifierDefCS' (role 'qvtoperational_cst_ClassifierDefCS42', cardinality 0..*).
+'qvtoperational::cst::UnitCS' (role 'qvtoperational_cst_UnitCS', cardinality 0..*) is associated with 'CSTNode' (role 'CSTNode', cardinality 0..*).
+'qvtoperational::cst::MappingDeclarationCS' (role 'qvtoperational_cst_MappingDeclarationCS75', cardinality 0..*) is associated with 'DirectionKindCS' (role 'DirectionKindCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS116', cardinality 0..*) is associated with 'qvtoperational::cst::WhileExpCS' (role 'qvtoperational_cst_WhileExpCS115', cardinality 0..*).
+'qvtoperational::cst::ComputeExpCS' (role 'qvtoperational_cst_ComputeExpCS110', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS111', cardinality 0..*).
+'qvtoperational::cst::VariableInitializationCS' (role 'qvtoperational_cst_VariableInitializationCS136', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS137', cardinality 0..*).
+'qvtoperational::cst::DictionaryTypeCS' (role 'qvtoperational_cst_DictionaryTypeCS234', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS235', cardinality 0..*).
+'qvtoperational::cst::InstantiationExpCS' (role 'qvtoperational_cst_InstantiationExpCS', cardinality 0..*) is associated with 'TypeSpecCS' (role 'TypeSpecCS224', cardinality 0..*).
+'StringLiteralExpCS' (role 'StringLiteralExpCS169', cardinality 0..*) is associated with 'qvtoperational::cst::ModelTypeCS' (role 'qvtoperational_cst_ModelTypeCS168', cardinality 0..*).
+'TypeCS' (role 'TypeCS68', cardinality 0..*) is associated with 'qvtoperational::cst::MappingDeclarationCS' (role 'qvtoperational_cst_MappingDeclarationCS67', cardinality 0..*).
+'VariableCS' (role 'VariableCS', cardinality 0..*) is associated with 'qvtoperational::cst::ComputeExpCS' (role 'qvtoperational_cst_ComputeExpCS', cardinality 0..*).
+'qvtoperational::cst::ClassifierPropertyCS' (role 'qvtoperational_cst_ClassifierPropertyCS49', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS50', cardinality 0..*).
+'PackageRefCS' (role 'PackageRefCS', cardinality 0..*) is associated with 'qvtoperational::cst::ModelTypeCS' (role 'qvtoperational_cst_ModelTypeCS171', cardinality 0..*).
+'TypeCS' (role 'TypeCS32', cardinality 0..*) is associated with 'qvtoperational::cst::ContextualPropertyCS' (role 'qvtoperational_cst_ContextualPropertyCS31', cardinality 0..*).
+'qvtoperational::cst::RenameCS' (role 'qvtoperational_cst_RenameCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS', cardinality 0..*).
+'qvtoperational::cst::OppositePropertyCS' (role 'qvtoperational_cst_OppositePropertyCS58', cardinality 0..*) is associated with 'MultiplicityDefCS' (role 'MultiplicityDefCS59', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS22', cardinality 0..*) is associated with 'qvtoperational::cst::ModulePropertyCS' (role 'qvtoperational_cst_ModulePropertyCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS147', cardinality 0..*) is associated with 'qvtoperational::cst::ExpressionStatementCS' (role 'qvtoperational_cst_ExpressionStatementCS', cardinality 0..*).
+'PrimitiveLiteralExpCS' (role 'PrimitiveLiteralExpCS63', cardinality 0..*) is associated with 'qvtoperational::cst::MultiplicityDefCS' (role 'qvtoperational_cst_MultiplicityDefCS62', cardinality 0..*).
+'qvtoperational::cst::UnitCS' (role 'qvtoperational_cst_UnitCS251', cardinality 0..*) is associated with 'MappingModuleCS' (role 'MappingModuleCS', cardinality 0..*).
+'qvtoperational::cst::VariableInitializationCS' (role 'qvtoperational_cst_VariableInitializationCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS134', cardinality 0..*).
+'VariableCS' (role 'VariableCS156', cardinality 0..*) is associated with 'qvtoperational::cst::ResolveExpCS' (role 'qvtoperational_cst_ResolveExpCS', cardinality 0..*).
+'SwitchAltExpCS' (role 'SwitchAltExpCS', cardinality 0..*) is associated with 'qvtoperational::cst::SwitchExpCS' (role 'qvtoperational_cst_SwitchExpCS', cardinality 0..*).
+'qvtoperational::cst::ModelTypeCS' (role 'qvtoperational_cst_ModelTypeCS173', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS174', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS164', cardinality 0..*) is associated with 'qvtoperational::cst::ResolveInExpCS' (role 'qvtoperational_cst_ResolveInExpCS163', cardinality 0..*).
+'qvtoperational::cst::TransformationHeaderCS' (role 'qvtoperational_cst_TransformationHeaderCS186', cardinality 0..*) is associated with 'ParameterDeclarationCS' (role 'ParameterDeclarationCS187', cardinality 0..*).
+'qvtoperational::cst::ContextualPropertyCS' (role 'qvtoperational_cst_ContextualPropertyCS34', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS35', cardinality 0..*).

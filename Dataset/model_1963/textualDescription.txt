@@ -1,0 +1,54 @@
+The model has 28 class(es).
+The class 'bibTeX::Article' has no attributes.
+The class 'bibTeX::NoteField' has the following attributes: 'note' of type str.
+The class 'bibTeX::UnknownField' has no attributes.
+The class 'bibTeX::AuthorField' has no attributes.
+The class 'bibTeX::AddressField' has the following attributes: 'address' of type str.
+The class 'bibTeX::UnknownValue' has the following attributes: 'value' of type str.
+The class 'bibTeX::BibtexEntryTypes' has no attributes.
+The class 'bibTeX::Authors' has no attributes.
+The class 'bibTeX::SeriesField' has the following attributes: 'series' of type str.
+The class 'bibTeX::PagesField' has the following attributes: 'pages' of type str.
+The class 'bibTeX::JournalField' has the following attributes: 'journal' of type str.
+The class 'BibtexEntryTypes' has no attributes.
+The class 'bibTeX::PublisherField' has the following attributes: 'publisher' of type str.
+The class 'bibTeX::Fullname' has the following attributes: 'firstname' of type str; 'lastname' of type str.
+The class 'bibTeX::EditorField' has the following attributes: 'editor' of type str.
+The class 'bibTeX::EObject' has no attributes.
+The class 'bibTeX::Model' has no attributes.
+The class 'AuthorField' has no attributes.
+The class 'bibTeX::NumberField' has the following attributes: 'number' of type str.
+The class 'bibTeX::EditionField' has the following attributes: 'edition' of type str.
+The class 'bibTeX::VolumeField' has the following attributes: 'volume' of type str.
+The class 'bibTeX::MonthField' has the following attributes: 'month' of type str.
+The class 'bibTeX::UnknownType' has the following attributes: 'type' of type str.
+The class 'bibTeX::CiteKey' has the following attributes: 'key' of type str.
+The class 'bibTeX::TitleField' has the following attributes: 'title' of type str.
+The class 'bibTeX::YearField' has the following attributes: 'year' of type str.
+The class 'bibTeX::Book' has no attributes.
+The class 'bibTeX::IsbnField' has the following attributes: 'isbn' of type str.
+'bibTeX::Authors' is a specialization of 'AuthorField'.
+'bibTeX::Article' is a specialization of 'BibtexEntryTypes'.
+'bibTeX::Book' is a specialization of 'BibtexEntryTypes'.
+'bibTeX::CiteKey' (role 'bibTeX_CiteKey', cardinality 0..*) is associated with 'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes2', cardinality 0..*).
+'bibTeX::UnknownValue' (role 'bibTeX_UnknownValue', cardinality 0..*) is associated with 'bibTeX::UnknownField' (role 'bibTeX_UnknownField39', cardinality 0..*).
+'bibTeX::JournalField' (role 'bibTeX_JournalField', cardinality 0..*) is associated with 'bibTeX::Article' (role 'bibTeX_Article15', cardinality 0..*).
+'bibTeX::Fullname' (role 'bibTeX_Fullname', cardinality 0..*) is associated with 'bibTeX::Authors' (role 'bibTeX_Authors', cardinality 0..*).
+'bibTeX::UnknownType' (role 'bibTeX_UnknownType', cardinality 0..*) is associated with 'bibTeX::UnknownField' (role 'bibTeX_UnknownField37', cardinality 0..*).
+'bibTeX::Book' (role 'bibTeX_Book24', cardinality 0..*) is associated with 'bibTeX::PublisherField' (role 'bibTeX_PublisherField', cardinality 0..*).
+'bibTeX::Book' (role 'bibTeX_Book26', cardinality 0..*) is associated with 'bibTeX::EObject' (role 'bibTeX_EObject27', cardinality 0..*).
+'bibTeX::VolumeField' (role 'bibTeX_VolumeField', cardinality 0..*) is associated with 'bibTeX::Article' (role 'bibTeX_Article17', cardinality 0..*).
+'bibTeX::EditionField' (role 'bibTeX_EditionField', cardinality 0..*) is associated with 'bibTeX::Book' (role 'bibTeX_Book33', cardinality 0..*).
+'bibTeX::Book' (role 'bibTeX_Book31', cardinality 0..*) is associated with 'bibTeX::AddressField' (role 'bibTeX_AddressField', cardinality 0..*).
+'bibTeX::TitleField' (role 'bibTeX_TitleField', cardinality 0..*) is associated with 'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes4', cardinality 0..*).
+'bibTeX::Model' (role 'bibTeX_Model', cardinality 0..*) is associated with 'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes', cardinality 0..*).
+'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes8', cardinality 0..*) is associated with 'bibTeX::MonthField' (role 'bibTeX_MonthField', cardinality 0..*).
+'bibTeX::UnknownField' (role 'bibTeX_UnknownField', cardinality 0..*) is associated with 'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes12', cardinality 0..*).
+'bibTeX::NoteField' (role 'bibTeX_NoteField', cardinality 0..*) is associated with 'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes10', cardinality 0..*).
+'bibTeX::SeriesField' (role 'bibTeX_SeriesField', cardinality 0..*) is associated with 'bibTeX::Book' (role 'bibTeX_Book29', cardinality 0..*).
+'bibTeX::Article' (role 'bibTeX_Article', cardinality 0..*) is associated with 'bibTeX::AuthorField' (role 'bibTeX_AuthorField', cardinality 0..*).
+'bibTeX::Article' (role 'bibTeX_Article19', cardinality 0..*) is associated with 'bibTeX::NumberField' (role 'bibTeX_NumberField', cardinality 0..*).
+'bibTeX::IsbnField' (role 'bibTeX_IsbnField', cardinality 0..*) is associated with 'bibTeX::Book' (role 'bibTeX_Book35', cardinality 0..*).
+'bibTeX::PagesField' (role 'bibTeX_PagesField', cardinality 0..*) is associated with 'bibTeX::Article' (role 'bibTeX_Article21', cardinality 0..*).
+'bibTeX::Book' (role 'bibTeX_Book', cardinality 0..*) is associated with 'bibTeX::EObject' (role 'bibTeX_EObject', cardinality 0..*).
+'bibTeX::YearField' (role 'bibTeX_YearField', cardinality 0..*) is associated with 'bibTeX::BibtexEntryTypes' (role 'bibTeX_BibtexEntryTypes6', cardinality 0..*).

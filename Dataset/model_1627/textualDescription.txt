@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'petri::NamedElement' has the following attributes: 'name' of type str.
+The class 'petri::Place' has the following attributes: 'tokens' of type int.
+The class 'petri::Transition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'petri::PetriNet' has no attributes.
+'petri::Transition' is a specialization of 'NamedElement'.
+'petri::Place' is a specialization of 'NamedElement'.
+'petri::Transition' (role 'petri_Transition3', cardinality 0..*) is associated with 'petri::Place' (role 'petri_Place4', cardinality 0..*).
+'petri::NamedElement' (role 'petri_NamedElement', cardinality 0..*) is associated with 'petri::PetriNet' (role 'petri_PetriNet', cardinality 0..*).
+'petri::Place' (role 'petri_Place', cardinality 0..*) is associated with 'petri::Transition' (role 'petri_Transition', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 10 class(es).
+The class 'FiringElement' has no attributes.
+The class 'statemachine::FiringElement' has the following attributes: 'trigger' of type str; 'action' of type str.
+The class 'AbstractState' has no attributes.
+The class 'statemachine::FinalState' has no attributes.
+The class 'statemachine::StateAction' has no attributes.
+The class 'statemachine::AbstractState' has the following attributes: 'name' of type str.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::State' has no attributes.
+The class 'statemachine::InitialState' has no attributes.
+The class 'statemachine::StateMachine' has no attributes.
+'statemachine::StateAction' is a specialization of 'FiringElement'.
+'statemachine::Transition' is a specialization of 'FiringElement'.
+'statemachine::FinalState' is a specialization of 'AbstractState'.
+'statemachine::InitialState' is a specialization of 'AbstractState'.
+'statemachine::State' is a specialization of 'AbstractState'.
+'statemachine::AbstractState' (role 'AbstractState', cardinality 0..*) is associated with 'statemachine::Transition' (role 'transitionsAsSource', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State', cardinality 0..*) is associated with 'statemachine::StateAction' (role 'statemachine_StateAction', cardinality 0..*).
+'statemachine::Transition' (role 'Transition5', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'target', cardinality 0..*).
+'statemachine::AbstractState' (role 'source', cardinality 0..*) is associated with 'statemachine::Transition' (role 'Transition', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine2', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'statemachine_AbstractState', cardinality 0..*).
+'statemachine::AbstractState' (role 'AbstractState9', cardinality 0..*) is associated with 'statemachine::Transition' (role 'transitionsAsTarget', cardinality 0..*).

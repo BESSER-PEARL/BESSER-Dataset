@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'petrinet::PNGraph' has no attributes.
+The class 'petrinet::Node' has no attributes.
+The class 'petrinet::Transition' has the following attributes: 'id' of type str.
+The class 'Node' has no attributes.
+The class 'petrinet::Arc' has the following attributes: 'w' of type str.
+The class 'petrinet::Place' has the following attributes: 'markings' of type str; 'id' of type str.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*) is associated with 'petrinet::PNGraph' (role 'petrinet_PNGraph2', cardinality 0..*).
+'petrinet::Node' (role 'petrinet_Node9', cardinality 0..*) is associated with 'petrinet::Arc' (role 'petrinet_Arc8', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::PNGraph' (role 'petrinet_PNGraph4', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc6', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node', cardinality 0..*).
+'petrinet::Place' (role 'petrinet_Place', cardinality 0..*) is associated with 'petrinet::PNGraph' (role 'petrinet_PNGraph', cardinality 0..*).

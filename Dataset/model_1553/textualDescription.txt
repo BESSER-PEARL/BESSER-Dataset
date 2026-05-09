@@ -1,0 +1,132 @@
+The model has 54 class(es).
+The class 'model::R4EFileContext' has the following attributes: 'type' of type str.
+The class 'R4EUser' has no attributes.
+The class 'model::R4EUser' has the following attributes: 'groupPaths' of type str; 'reviewCompleted' of type bool; 'sequenceIDCounter' of type int; 'reviewCreatedByMe' of type bool; 'reviewCompletedCode' of type int.
+The class 'model::R4EAnomaly' has the following attributes: 'ruleID' of type str; 'fixedByID' of type str; 'isImported' of type bool; 'dueDate' of type date; 'decidedByID' of type str; 'notAcceptedReason' of type str; 'state' of type str; 'followUpByID' of type str; 'rank' of type str.
+The class 'model::R4EFileVersion' has the following attributes: 'name' of type str; 'fileRevision' of type str; 'localVersionID' of type str; 'platformURI' of type str; 'resource' of type str; 'versionID' of type str; 'repositoryPath' of type str.
+The class 'Item' has no attributes.
+The class 'ReviewComponent' has no attributes.
+The class 'model::MapKeyToInfoAttributes' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'TaskReference' has no attributes.
+The class 'model::R4ETextContent' has the following attributes: 'content' of type str.
+The class 'Comment' has no attributes.
+The class 'model::R4EPosition' has no attributes.
+The class 'model::R4EAnomalyTextPosition' has no attributes.
+The class 'R4EComment' has no attributes.
+The class 'model::R4EItem' has the following attributes: 'addedById' of type str; 'description' of type str; 'submitted' of type date; 'authorRep' of type str; 'repositoryRef' of type str; 'ProjectURIs' of type str.
+The class 'model::MapDateToDuration' has the following attributes: 'key' of type date; 'value' of type str.
+The class 'model::R4ETaskReference' has no attributes.
+The class 'model::R4EParticipant' has the following attributes: 'focusArea' of type str; 'isPartOfDecision' of type bool; 'roles' of type str.
+The class 'model::MapIDToComponent' has no attributes.
+The class 'model::R4EFormalReview' has no attributes.
+The class 'model::R4EReviewPhaseInfo' has the following attributes: 'startDate' of type date; 'endDate' of type date; 'type' of type str; 'phaseOwnerID' of type str.
+The class 'ReviewState' has no attributes.
+The class 'model::MapToAnomalyType' has the following attributes: 'key' of type str.
+The class 'R4EReview' has no attributes.
+The class 'model::R4EIDComponent' has no attributes.
+The class 'R4EReviewComponent' has no attributes.
+The class 'R4EPosition' has no attributes.
+The class 'Review' has no attributes.
+The class 'model::R4EUserReviews' has the following attributes: 'name' of type str; 'createdReviews' of type str.
+The class 'Topic' has no attributes.
+The class 'model::R4ECommentType' has the following attributes: 'type' of type str.
+The class 'model::R4EID' has the following attributes: 'sequenceID' of type int; 'userID' of type str.
+The class 'model::R4ETextPosition' has the following attributes: 'startLine' of type int; 'length' of type int; 'startPosition' of type int; 'endLine' of type int.
+The class 'model::R4EReviewDecision' has the following attributes: 'spentTime' of type int; 'value' of type str.
+The class 'R4ETextPosition' has no attributes.
+The class 'model::R4EReviewComponent' has the following attributes: 'assignedTo' of type str.
+The class 'Location' has no attributes.
+The class 'model::R4EMeetingData' has the following attributes: 'receivers' of type str; 'sentCount' of type int; 'subject' of type str; 'body' of type str; 'location' of type str; 'duration' of type int; 'startTime' of type str; 'id' of type str; 'sender' of type str.
+The class 'R4EContent' has no attributes.
+The class 'model::R4EDesignRule' has no attributes.
+The class 'model::R4EAnomalyType' has the following attributes: 'type' of type str.
+The class 'ReviewGroup' has no attributes.
+The class 'User' has no attributes.
+The class 'model::R4EReviewState' has the following attributes: 'state' of type str.
+The class 'model::R4EContent' has the following attributes: 'info' of type str.
+The class 'R4EIDComponent' has no attributes.
+The class 'CommentType' has no attributes.
+The class 'model::R4EDelta' has no attributes.
+The class 'model::MapToUsers' has the following attributes: 'key' of type str.
+The class 'model::R4EComment' has the following attributes: 'createdOn' of type date.
+The class 'model::R4EReview' has the following attributes: 'entryCriteria' of type str; 'type' of type str; 'objectives' of type str; 'components' of type str; 'modifiedDate' of type date; 'endDate' of type date; 'name' of type str; 'dueDate' of type date; 'extraNotes' of type str; 'project' of type str; 'startDate' of type date; 'referenceMaterial' of type str.
+The class 'model::MapUserIDToUserReviews' has the following attributes: 'key' of type str.
+The class 'model::R4EReviewGroup' has the following attributes: 'designRuleLocations' of type str; 'name' of type str; 'folder' of type str; 'availableComponents' of type str; 'defaultEntryCriteria' of type str; 'availableProjects' of type str.
+The class 'model::MapNameToReview' has the following attributes: 'key' of type str.
+The enumeration 'R4EReviewType' has the following literals: 'R4E_REVIEW_TYPE_FORMAL', 'R4E_REVIEW_TYPE_BASIC', 'R4E_REVIEW_TYPE_INFORMAL'.
+The enumeration 'R4EDecision' has the following literals: 'R4E_REVIEW_DECISION_REJECTED', 'R4E_REVIEW_DECISION_NONE', 'R4E_REVIEW_DECISION_ACCEPTED', 'R4E_REVIEW_DECISION_ACCEPTED_FOLLOWUP'.
+The enumeration 'R4EReviewPhase' has the following literals: 'R4E_REVIEW_PHASE_STARTED', 'R4E_REVIEW_PHASE_PREPARATION', 'R4E_REVIEW_PHASE_COMPLETED', 'R4E_REVIEW_PHASE_REWORK', 'R4E_REVIEW_PHASE_DECISION'.
+The enumeration 'R4EContextType' has the following literals: 'R4E_REPLACED', 'R4E_MODIFIED', 'R4E_UNDEFINED', 'R4E_ADDED', 'R4E_DELETED'.
+The enumeration 'R4EAnomalyState' has the following literals: 'R4E_ANOMALY_STATE_CREATED', 'R4E_ANOMALY_STATE_ACCEPTED', 'R4E_ANOMALY_STATE_FIXED', 'R4E_ANOMALY_STATE_DEFERRED', 'R4E_ANOMALY_STATE_REJECTED', 'R4E_ANOMALY_STATE_VERIFIED', 'R4E_ANOMALY_STATE_ASSIGNED', 'R4E_ANOMALY_STATE_DUPLICATED'.
+The enumeration 'R4EUserRole' has the following literals: 'R4E_ROLE_REVIEWER', 'R4E_ROLE_LEAD', 'R4E_ROLE_AUTHOR', 'R4E_ROLE_ORGANIZER'.
+'model::R4EAnomalyTextPosition' is a specialization of 'R4ETextPosition'.
+'model::R4EComment' is a specialization of 'R4EReviewComponent'.
+'model::R4EReviewState' is a specialization of 'ReviewState'.
+'model::R4ETaskReference' is a specialization of 'R4EReviewComponent'.
+'model::R4EFormalReview' is a specialization of 'R4EReview'.
+'model::R4EComment' is a specialization of 'R4EIDComponent'.
+'model::R4EReviewGroup' is a specialization of 'R4EReviewComponent'.
+'model::R4ETaskReference' is a specialization of 'TaskReference'.
+'model::R4EReview' is a specialization of 'R4EReviewComponent'.
+'model::R4ECommentType' is a specialization of 'CommentType'.
+'model::R4EAnomaly' is a specialization of 'R4EReviewComponent'.
+'model::R4EFileContext' is a specialization of 'R4EIDComponent'.
+'model::R4EAnomalyType' is a specialization of 'CommentType'.
+'model::R4EReviewComponent' is a specialization of 'ReviewComponent'.
+'model::R4EAnomaly' is a specialization of 'R4EComment'.
+'model::R4EUser' is a specialization of 'R4EReviewComponent'.
+'model::R4EContent' is a specialization of 'Location'.
+'model::R4ETextContent' is a specialization of 'R4EContent'.
+'model::R4ETextPosition' is a specialization of 'R4EPosition'.
+'model::R4EDelta' is a specialization of 'R4EIDComponent'.
+'model::R4EItem' is a specialization of 'R4EIDComponent'.
+'model::R4EParticipant' is a specialization of 'R4EUser'.
+'model::R4EReview' is a specialization of 'Review'.
+'model::R4EReviewGroup' is a specialization of 'ReviewGroup'.
+'model::R4EUser' is a specialization of 'User'.
+'model::R4EAnomaly' is a specialization of 'Topic'.
+'model::R4EIDComponent' is a specialization of 'R4EReviewComponent'.
+'model::R4EItem' is a specialization of 'Item'.
+'model::R4EComment' is a specialization of 'Comment'.
+'model::R4EAnomalyTextPosition' (role 'model_R4EAnomalyTextPosition', cardinality 0..*) is associated with 'model::R4EFileVersion' (role 'model_R4EFileVersion96', cardinality 0..*).
+'model::R4EAnomalyType' (role 'model_R4EAnomalyType67', cardinality 0..*) is associated with 'model::MapToAnomalyType' (role 'model_MapToAnomalyType66', cardinality 0..*).
+'model::R4EDelta' (role 'model_R4EDelta61', cardinality 0..*) is associated with 'model::R4EContent' (role 'model_R4EContent', cardinality 0..*).
+'model::MapToUsers' (role 'model_MapToUsers77', cardinality 0..*) is associated with 'model::R4EUser' (role 'model_R4EUser78', cardinality 0..*).
+'model::MapIDToComponent' (role 'model_MapIDToComponent90', cardinality 0..*) is associated with 'model::R4EIDComponent' (role 'model_R4EIDComponent91', cardinality 0..*).
+'model::MapUserIDToUserReviews' (role 'model_MapUserIDToUserReviews', cardinality 0..*) is associated with 'model::R4EReviewGroup' (role 'model_R4EReviewGroup6', cardinality 0..*).
+'model::R4EUserReviews' (role 'model_R4EUserReviews82', cardinality 0..*) is associated with 'model::R4EReviewGroup' (role 'model_R4EReviewGroup83', cardinality 0..*).
+'model::R4EID' (role 'model_R4EID85', cardinality 0..*) is associated with 'model::R4EIDComponent' (role 'model_R4EIDComponent', cardinality 0..*).
+'model::MapKeyToInfoAttributes' (role 'model_MapKeyToInfoAttributes48', cardinality 0..*) is associated with 'model::R4EComment' (role 'model_R4EComment47', cardinality 0..*).
+'model::MapUserIDToUserReviews' (role 'model_MapUserIDToUserReviews93', cardinality 0..*) is associated with 'model::R4EUserReviews' (role 'model_R4EUserReviews94', cardinality 0..*).
+'model::R4EUser' (role 'model_R4EUser33', cardinality 0..*) is associated with 'model::R4EReview' (role 'model_R4EReview34', cardinality 0..*).
+'model::MapNameToReview' (role 'model_MapNameToReview', cardinality 0..*) is associated with 'model::R4EReviewGroup' (role 'model_R4EReviewGroup4', cardinality 0..*).
+'model::R4EAnomaly' (role 'model_R4EAnomaly19', cardinality 0..*) is associated with 'model::R4EDesignRule' (role 'model_R4EDesignRule', cardinality 0..*).
+'model::R4EUserReviews' (role 'model_R4EUserReviews', cardinality 0..*) is associated with 'model::MapNameToReview' (role 'model_MapNameToReview80', cardinality 0..*).
+'model::R4EID' (role 'model_R4EID', cardinality 0..*) is associated with 'model::R4EParticipant' (role 'model_R4EParticipant36', cardinality 0..*).
+'model::R4EUser' (role 'model_R4EUser31', cardinality 0..*) is associated with 'model::R4EItem' (role 'model_R4EItem', cardinality 0..*).
+'model::R4EPosition' (role 'model_R4EPosition', cardinality 0..*) is associated with 'model::R4EContent' (role 'model_R4EContent69', cardinality 0..*).
+'model::R4EReview' (role 'model_R4EReview9', cardinality 0..*) is associated with 'model::R4EAnomaly' (role 'model_R4EAnomaly', cardinality 0..*).
+'model::MapKeyToInfoAttributes' (role 'model_MapKeyToInfoAttributes', cardinality 0..*) is associated with 'model::R4EItem' (role 'model_R4EItem42', cardinality 0..*).
+'model::R4EFileVersion' (role 'model_R4EFileVersion56', cardinality 0..*) is associated with 'model::R4EFileContext' (role 'model_R4EFileContext55', cardinality 0..*).
+'model::R4EAnomaly' (role 'model_R4EAnomaly21', cardinality 0..*) is associated with 'model::R4EFileVersion' (role 'model_R4EFileVersion', cardinality 0..*).
+'model::MapToAnomalyType' (role 'model_MapToAnomalyType', cardinality 0..*) is associated with 'model::R4EReviewGroup' (role 'model_R4EReviewGroup2', cardinality 0..*).
+'model::R4EUser' (role 'model_R4EUser', cardinality 0..*) is associated with 'model::R4EReview' (role 'model_R4EReview13', cardinality 0..*).
+'model::R4EMeetingData' (role 'model_R4EMeetingData', cardinality 0..*) is associated with 'model::R4EReview' (role 'model_R4EReview17', cardinality 0..*).
+'model::MapDateToDuration' (role 'model_MapDateToDuration', cardinality 0..*) is associated with 'model::R4EParticipant' (role 'model_R4EParticipant38', cardinality 0..*).
+'model::R4EFormalReview' (role 'model_R4EFormalReview26', cardinality 0..*) is associated with 'model::R4EReviewPhaseInfo' (role 'model_R4EReviewPhaseInfo27', cardinality 0..*).
+'model::R4EReview' (role 'model_R4EReview75', cardinality 0..*) is associated with 'model::MapNameToReview' (role 'model_MapNameToReview74', cardinality 0..*).
+'model::R4EID' (role 'model_R4EID88', cardinality 0..*) is associated with 'model::MapIDToComponent' (role 'model_MapIDToComponent87', cardinality 0..*).
+'model::R4EReview' (role 'model_R4EReview15', cardinality 0..*) is associated with 'model::MapIDToComponent' (role 'model_MapIDToComponent', cardinality 0..*).
+'model::R4EReview' (role 'model_R4EReview', cardinality 0..*) is associated with 'model::R4EReviewDecision' (role 'model_R4EReviewDecision', cardinality 0..*).
+'model::R4EFileVersion' (role 'model_R4EFileVersion71', cardinality 0..*) is associated with 'model::MapKeyToInfoAttributes' (role 'model_MapKeyToInfoAttributes72', cardinality 0..*).
+'model::R4EAnomaly' (role 'model_R4EAnomaly45', cardinality 0..*) is associated with 'model::R4EComment' (role 'model_R4EComment44', cardinality 0..*).
+'model::R4EReview' (role 'model_R4EReview11', cardinality 0..*) is associated with 'model::MapToUsers' (role 'model_MapToUsers', cardinality 0..*).
+'model::R4EReviewPhaseInfo' (role 'model_R4EReviewPhaseInfo', cardinality 0..*) is associated with 'model::R4EFormalReview' (role 'model_R4EFormalReview24', cardinality 0..*).
+'model::R4EFileContext' (role 'model_R4EFileContext', cardinality 0..*) is associated with 'model::R4EItem' (role 'model_R4EItem40', cardinality 0..*).
+'model::R4EFileContext' (role 'model_R4EFileContext52', cardinality 0..*) is associated with 'model::R4EFileVersion' (role 'model_R4EFileVersion53', cardinality 0..*).
+'model::R4EDelta' (role 'model_R4EDelta', cardinality 0..*) is associated with 'model::R4EFileContext' (role 'model_R4EFileContext50', cardinality 0..*).
+'model::R4EComment' (role 'model_R4EComment', cardinality 0..*) is associated with 'model::R4EUser' (role 'model_R4EUser29', cardinality 0..*).
+'model::R4EFileContext' (role 'model_R4EFileContext58', cardinality 0..*) is associated with 'model::MapKeyToInfoAttributes' (role 'model_MapKeyToInfoAttributes59', cardinality 0..*).
+'model::R4EReviewGroup' (role 'model_R4EReviewGroup', cardinality 0..*) is associated with 'model::R4EAnomalyType' (role 'model_R4EAnomalyType', cardinality 0..*).
+'model::R4EFormalReview' (role 'model_R4EFormalReview', cardinality 0..*) is associated with 'model::R4EParticipant' (role 'model_R4EParticipant', cardinality 0..*).
+'model::R4EDelta' (role 'model_R4EDelta63', cardinality 0..*) is associated with 'model::R4EContent' (role 'model_R4EContent64', cardinality 0..*).

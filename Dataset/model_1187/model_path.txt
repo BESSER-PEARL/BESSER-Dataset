@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/martin-fleck/momot/examples/at.ac.tuwien.big.momot.examples.ecore/input/OCL.ecore

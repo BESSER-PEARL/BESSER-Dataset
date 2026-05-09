@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/arnobl/kompren/kompren-examples/fr.inria.diverse.kompren.oclSlicer/src/main/resources/metamodels/OCLEcore.ecore

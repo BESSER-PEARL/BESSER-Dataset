@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Nicopus/yawlnet/dk.dtu.compute.se.mdsu.tutorial1/model/petrinet.ecore

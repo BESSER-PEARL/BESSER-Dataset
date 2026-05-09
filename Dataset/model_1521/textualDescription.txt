@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'sm6::StateMachine' has no attributes.
+The class 'sm6::Transition' has the following attributes: 'event' of type str.
+The class 'sm6::State' has the following attributes: 'isFinal' of type str; 'name' of type str.
+'sm6::Transition' (role 'sm6_Transition', cardinality 0..*) is associated with 'sm6::StateMachine' (role 'sm6_StateMachine3', cardinality 0..*).
+'sm6::State' (role 'tgt', cardinality 0..*) is associated with 'sm6::Transition' (role 'Transition7', cardinality 0..*).
+'sm6::State' (role 'State11', cardinality 0..*) is associated with 'sm6::Transition' (role 'incoming', cardinality 0..*).
+'sm6::Transition' (role 'outgoing', cardinality 0..*) is associated with 'sm6::State' (role 'State9', cardinality 0..*).
+'sm6::State' (role 'State', cardinality 0..*) is associated with 'sm6::StateMachine' (role 'sm', cardinality 0..*).
+'sm6::State' (role 'src', cardinality 0..*) is associated with 'sm6::Transition' (role 'Transition', cardinality 0..*).
+'sm6::State' (role 'states', cardinality 0..*) is associated with 'sm6::StateMachine' (role 'StateMachine', cardinality 0..*).
+'sm6::State' (role 'sm6_State', cardinality 0..*) is associated with 'sm6::StateMachine' (role 'sm6_StateMachine', cardinality 0..*).

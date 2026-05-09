@@ -1,0 +1,75 @@
+The model has 30 class(es).
+The class 'syswbeff1065ok::AssociatedTo' has the following attributes: 'since' of type str.
+The class 'syswbeff1065ok::SequenceNode' has the following attributes: 'name' of type str; 'tMin' of type int; 'tMax' of type int.
+The class 'syswbeff1065ok::Flow' has no attributes.
+The class 'syswbeff1065ok::ProcessNode' has the following attributes: 'label' of type str.
+The class 'syswbeff1065ok::System' has the following attributes: 'id' of type str.
+The class 'syswbeff1065ok::Item' has the following attributes: 'name' of type str.
+The class 'syswbeff1065ok::Final' has no attributes.
+The class 'syswbeff1065ok::InputPort' has no attributes.
+The class 'syswbeff1065ok::LoopExit' has no attributes.
+The class 'syswbeff1065ok::Workbench' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'syswbeff1065ok::Thing' has the following attributes: 'id' of type int.
+The class 'Port' has no attributes.
+The class 'syswbeff1065ok::Start' has no attributes.
+The class 'syswbeff1065ok::Token' has no attributes.
+The class 'syswbeff1065ok::Loop' has no attributes.
+The class 'syswbeff1065ok::Port' has the following attributes: 'id' of type str.
+The class 'syswbeff1065ok::Component' has the following attributes: 'name' of type str.
+The class 'ProcessNode' has no attributes.
+The class 'syswbeff1065ok::Sequence' has no attributes.
+The class 'syswbeff1065ok::And' has no attributes.
+The class 'syswbeff1065ok::Thoughts' has the following attributes: 'id' of type str.
+The class 'syswbeff1065ok::Or' has no attributes.
+The class 'syswbeff1065ok::FunctionProperty' has the following attributes: 'description' of type str.
+The class 'syswbeff1065ok::PatternCatalog' has the following attributes: 'id' of type str.
+The class 'syswbeff1065ok::OutputPort' has no attributes.
+The class 'syswbeff1065ok::Function' has the following attributes: 'domain' of type str.
+The class 'syswbeff1065ok::Iteration' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'syswbeff1065ok::Description' has the following attributes: 'content' of type str.
+The enumeration 'FunctionDomain' has the following literals: 'space', 'time', 'form'.
+'syswbeff1065ok::Final' is a specialization of 'Sequence'.
+'syswbeff1065ok::Loop' is a specialization of 'Sequence'.
+'syswbeff1065ok::Start' is a specialization of 'Sequence'.
+'syswbeff1065ok::InputPort' is a specialization of 'Port'.
+'syswbeff1065ok::LoopExit' is a specialization of 'Sequence'.
+'syswbeff1065ok::Iteration' is a specialization of 'Sequence'.
+'syswbeff1065ok::OutputPort' is a specialization of 'Port'.
+'syswbeff1065ok::And' is a specialization of 'Sequence'.
+'syswbeff1065ok::Or' is a specialization of 'Sequence'.
+'syswbeff1065ok::Flow' is a specialization of 'ProcessNode'.
+'syswbeff1065ok::Function' is a specialization of 'SequenceNode'.
+'syswbeff1065ok::Function' is a specialization of 'ProcessNode'.
+'syswbeff1065ok::Sequence' is a specialization of 'SequenceNode'.
+'syswbeff1065ok::Thing' (role 'syswbeff1065ok_Thing36', cardinality 0..*) is associated with 'syswbeff1065ok::AssociatedTo' (role 'syswbeff1065ok_AssociatedTo37', cardinality 0..*).
+'syswbeff1065ok::FunctionProperty' (role 'syswbeff1065ok_FunctionProperty', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function15', cardinality 0..*).
+'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component45', cardinality 0..*) is associated with 'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component43', cardinality 0..*).
+'syswbeff1065ok::Workbench' (role 'syswbeff1065ok_Workbench', cardinality 0..*) is associated with 'syswbeff1065ok::Thing' (role 'syswbeff1065ok_Thing60', cardinality 0..*).
+'syswbeff1065ok::Flow' (role 'syswbeff1065ok_Flow', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function5', cardinality 0..*).
+'syswbeff1065ok::Item' (role 'syswbeff1065ok_Item', cardinality 0..*) is associated with 'syswbeff1065ok::Flow' (role 'syswbeff1065ok_Flow27', cardinality 0..*).
+'syswbeff1065ok::Thoughts' (role 'syswbeff1065ok_Thoughts63', cardinality 0..*) is associated with 'syswbeff1065ok::Workbench' (role 'syswbeff1065ok_Workbench62', cardinality 0..*).
+'syswbeff1065ok::Flow' (role 'syswbeff1065ok_Flow24', cardinality 0..*) is associated with 'syswbeff1065ok::InputPort' (role 'syswbeff1065ok_InputPort25', cardinality 0..*).
+'syswbeff1065ok::OutputPort' (role 'syswbeff1065ok_OutputPort', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function7', cardinality 0..*).
+'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component50', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function51', cardinality 0..*).
+'syswbeff1065ok::System' (role 'syswbeff1065ok_System', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function53', cardinality 0..*).
+'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function20', cardinality 0..*) is associated with 'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component', cardinality 0..*).
+'syswbeff1065ok::Workbench' (role 'syswbeff1065ok_Workbench71', cardinality 0..*) is associated with 'syswbeff1065ok::PatternCatalog' (role 'syswbeff1065ok_PatternCatalog72', cardinality 0..*).
+'syswbeff1065ok::Workbench' (role 'syswbeff1065ok_Workbench68', cardinality 0..*) is associated with 'syswbeff1065ok::FunctionProperty' (role 'syswbeff1065ok_FunctionProperty69', cardinality 0..*).
+'syswbeff1065ok::Thoughts' (role 'syswbeff1065ok_Thoughts', cardinality 0..*) is associated with 'syswbeff1065ok::Thing' (role 'syswbeff1065ok_Thing39', cardinality 0..*).
+'syswbeff1065ok::Thing' (role 'syswbeff1065ok_Thing34', cardinality 0..*) is associated with 'syswbeff1065ok::AssociatedTo' (role 'syswbeff1065ok_AssociatedTo33', cardinality 0..*).
+'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function58', cardinality 0..*) is associated with 'syswbeff1065ok::PatternCatalog' (role 'syswbeff1065ok_PatternCatalog', cardinality 0..*).
+'syswbeff1065ok::Token' (role 'syswbeff1065ok_Token', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function13', cardinality 0..*).
+'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function18', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function16', cardinality 0..*).
+'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function0', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function', cardinality 0..*).
+'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function11', cardinality 0..*) is associated with 'syswbeff1065ok::Description' (role 'syswbeff1065ok_Description', cardinality 0..*).
+'syswbeff1065ok::FunctionProperty' (role 'syswbeff1065ok_FunctionProperty42', cardinality 0..*) is associated with 'syswbeff1065ok::FunctionProperty' (role 'syswbeff1065ok_FunctionProperty40', cardinality 0..*).
+'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component48', cardinality 0..*) is associated with 'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component46', cardinality 0..*).
+'syswbeff1065ok::System' (role 'syswbeff1065ok_System55', cardinality 0..*) is associated with 'syswbeff1065ok::Component' (role 'syswbeff1065ok_Component56', cardinality 0..*).
+'syswbeff1065ok::SequenceNode' (role 'syswbeff1065ok_SequenceNode', cardinality 0..*) is associated with 'syswbeff1065ok::SequenceNode' (role 'syswbeff1065ok_SequenceNode21', cardinality 0..*).
+'syswbeff1065ok::AssociatedTo' (role 'syswbeff1065ok_AssociatedTo', cardinality 0..*) is associated with 'syswbeff1065ok::Thing' (role 'syswbeff1065ok_Thing', cardinality 0..*).
+'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function3', cardinality 0..*) is associated with 'syswbeff1065ok::Sequence' (role 'syswbeff1065ok_Sequence', cardinality 0..*).
+'syswbeff1065ok::Workbench' (role 'syswbeff1065ok_Workbench65', cardinality 0..*) is associated with 'syswbeff1065ok::System' (role 'syswbeff1065ok_System66', cardinality 0..*).
+'syswbeff1065ok::OutputPort' (role 'syswbeff1065ok_OutputPort29', cardinality 0..*) is associated with 'syswbeff1065ok::Flow' (role 'syswbeff1065ok_Flow30', cardinality 0..*).
+'syswbeff1065ok::InputPort' (role 'syswbeff1065ok_InputPort', cardinality 0..*) is associated with 'syswbeff1065ok::Function' (role 'syswbeff1065ok_Function9', cardinality 0..*).

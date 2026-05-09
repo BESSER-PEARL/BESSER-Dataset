@@ -1,0 +1,26 @@
+The model has 8 class(es).
+The class 'statemachine::mk2::SimpleState' has no attributes.
+The class 'State' has no attributes.
+The class 'statemachine::mk2::StateMachine' has no attributes.
+The class 'statemachine::mk2::Event' has the following attributes: 'description' of type str.
+The class 'statemachine::mk2::State' has the following attributes: 'name' of type str.
+The class 'statemachine::mk2::Composite::state' has no attributes.
+The class 'statemachine::mk2::Transition' has the following attributes: 'name' of type str.
+The class 'statemachine::mk2::Final::state' has no attributes.
+'statemachine::mk2::Composite::state' is a specialization of 'State'.
+'statemachine::mk2::SimpleState' is a specialization of 'State'.
+'statemachine::mk2::Final::state' is a specialization of 'State'.
+'statemachine::mk2::State' (role 'statemachine_mk2_State28', cardinality 0..*) is associated with 'statemachine::mk2::Composite::state' (role 'statemachine_mk2_Composite_state27', cardinality 0..*).
+'statemachine::mk2::Transition' (role 'Transition', cardinality 0..*) is associated with 'statemachine::mk2::State' (role 'source', cardinality 0..*).
+'statemachine::mk2::StateMachine' (role 'statemachine_mk2_StateMachine6', cardinality 0..*) is associated with 'statemachine::mk2::Event' (role 'statemachine_mk2_Event', cardinality 0..*).
+'statemachine::mk2::State' (role 'target', cardinality 0..*) is associated with 'statemachine::mk2::Transition' (role 'Transition13', cardinality 0..*).
+'statemachine::mk2::Composite::state' (role 'statemachine_mk2_Composite_state', cardinality 0..*) is associated with 'statemachine::mk2::StateMachine' (role 'statemachine_mk2_StateMachine10', cardinality 0..*).
+'statemachine::mk2::Transition' (role 'statemachine_mk2_Transition25', cardinality 0..*) is associated with 'statemachine::mk2::Event' (role 'statemachine_mk2_Event24', cardinality 0..*).
+'statemachine::mk2::SimpleState' (role 'statemachine_mk2_SimpleState', cardinality 0..*) is associated with 'statemachine::mk2::StateMachine' (role 'statemachine_mk2_StateMachine', cardinality 0..*).
+'statemachine::mk2::Transition' (role 'incoming', cardinality 0..*) is associated with 'statemachine::mk2::State' (role 'State16', cardinality 0..*).
+'statemachine::mk2::Transition' (role 'statemachine_mk2_Transition18', cardinality 0..*) is associated with 'statemachine::mk2::Event' (role 'statemachine_mk2_Event19', cardinality 0..*).
+'statemachine::mk2::State' (role 'statemachine_mk2_State22', cardinality 0..*) is associated with 'statemachine::mk2::Event' (role 'statemachine_mk2_Event21', cardinality 0..*).
+'statemachine::mk2::Transition' (role 'statemachine_mk2_Transition', cardinality 0..*) is associated with 'statemachine::mk2::StateMachine' (role 'statemachine_mk2_StateMachine4', cardinality 0..*).
+'statemachine::mk2::StateMachine' (role 'statemachine_mk2_StateMachine8', cardinality 0..*) is associated with 'statemachine::mk2::Final::state' (role 'statemachine_mk2_Final_state', cardinality 0..*).
+'statemachine::mk2::StateMachine' (role 'statemachine_mk2_StateMachine2', cardinality 0..*) is associated with 'statemachine::mk2::State' (role 'statemachine_mk2_State', cardinality 0..*).
+'statemachine::mk2::State' (role 'State', cardinality 0..*) is associated with 'statemachine::mk2::Transition' (role 'outgoing', cardinality 0..*).

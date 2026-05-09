@@ -1,0 +1,101 @@
+The model has 41 class(es).
+The class 'StateMachine::ChangeTrainCurrentTrackElement' has no attributes.
+The class 'StateMachine::StateMachineBehavioralModel' has no attributes.
+The class 'State' has no attributes.
+The class 'StateMachine::Guard' has no attributes.
+The class 'StateMachine::RouteElement' has no attributes.
+The class 'StateMachine::Transition' has the following attributes: 'isFireable' of type bool; 'isEnabled' of type bool.
+The class 'StateMachine::SignalCurrentAllowedSpeed' has the following attributes: 'currentAllowedSpeed' of type str.
+The class 'StateMachine::TurnoutDirectionChanged' has the following attributes: 'newTurnoutDirection' of type str.
+The class 'StateMachine::TurnoutCurrentDirection' has the following attributes: 'currentTurnoutDirection' of type str.
+The class 'TriggerExpression' has no attributes.
+The class 'StateMachine::Trigger' has no attributes.
+The class 'StateMachine::NextTrackElementIs' has no attributes.
+The class 'StateMachine::StateMachine' has no attributes.
+The class 'Action' has no attributes.
+The class 'StateMachine::TriggerExpression' has the following attributes: 'expression' of type str.
+The class 'Guard' has no attributes.
+The class 'StateMachine::Signal' has no attributes.
+The class 'StateMachine::Action' has no attributes.
+The class 'StateMachine::TrainTrackElementChanged' has no attributes.
+The class 'StateMachine::CompositeState' has no attributes.
+The class 'GuardExpression' has no attributes.
+The class 'StateMachine::Turnout' has no attributes.
+The class 'StateMachine::SignalAllowedSpeedChanged' has the following attributes: 'newAllowedSpeed' of type str.
+The class 'StateMachine::ChangeTurnoutDirection' has the following attributes: 'newTurnoutDirection' of type str.
+The class 'StateMachine::ChangeSignalAllowedSpeed' has the following attributes: 'newAllowedSpeed' of type str.
+The class 'StateMachine::Train' has no attributes.
+The class 'StateMachine::ActionExpression' has the following attributes: 'expression' of type str.
+The class 'StateMachine::TurnoutHasDesiredDirection' has no attributes.
+The class 'StateMachine::TrainCurrentlyStandsOn' has no attributes.
+The class 'StateMachine::ChangeTrainHeadingSpeed' has the following attributes: 'newHeadingSpeed' of type str.
+The class 'NamedElement' has no attributes.
+The class 'StateMachine::TrainHeadingSpeedChanged' has the following attributes: 'newHeadingSpeed' of type str.
+The class 'StateMachine::NamedElement' has the following attributes: 'name' of type str.
+The class 'StateMachine::RDMElement' has no attributes.
+The class 'StateMachine::TurnoutDesiredDirection' has no attributes.
+The class 'ActionExpression' has no attributes.
+The class 'StateMachine::GuardExpression' has the following attributes: 'expression' of type str.
+The class 'StateMachine::State' has the following attributes: 'isInitial' of type bool; 'isActive' of type bool.
+The class 'StateMachine::TrackElement' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'StateMachine::TrainCurrentHeadingSpeed' has the following attributes: 'currentHeadingSpeed' of type str.
+'StateMachine::StateMachine' is a specialization of 'NamedElement'.
+'StateMachine::TrainCurrentlyStandsOn' is a specialization of 'GuardExpression'.
+'StateMachine::NextTrackElementIs' is a specialization of 'GuardExpression'.
+'StateMachine::ChangeTrainCurrentTrackElement' is a specialization of 'ActionExpression'.
+'StateMachine::ChangeTrainHeadingSpeed' is a specialization of 'ActionExpression'.
+'StateMachine::TrainCurrentHeadingSpeed' is a specialization of 'GuardExpression'.
+'StateMachine::ChangeTurnoutDirection' is a specialization of 'ActionExpression'.
+'StateMachine::GuardExpression' is a specialization of 'Guard'.
+'StateMachine::SignalAllowedSpeedChanged' is a specialization of 'TriggerExpression'.
+'StateMachine::TurnoutCurrentDirection' is a specialization of 'GuardExpression'.
+'StateMachine::TurnoutDirectionChanged' is a specialization of 'TriggerExpression'.
+'StateMachine::Guard' is a specialization of 'NamedElement'.
+'StateMachine::TrainHeadingSpeedChanged' is a specialization of 'TriggerExpression'.
+'StateMachine::CompositeState' is a specialization of 'State'.
+'StateMachine::ActionExpression' is a specialization of 'Action'.
+'StateMachine::Transition' is a specialization of 'NamedElement'.
+'StateMachine::ChangeSignalAllowedSpeed' is a specialization of 'ActionExpression'.
+'StateMachine::TrainTrackElementChanged' is a specialization of 'TriggerExpression'.
+'StateMachine::State' is a specialization of 'NamedElement'.
+'StateMachine::TriggerExpression' is a specialization of 'Trigger'.
+'StateMachine::Trigger' is a specialization of 'NamedElement'.
+'StateMachine::TurnoutHasDesiredDirection' is a specialization of 'GuardExpression'.
+'StateMachine::Action' is a specialization of 'NamedElement'.
+'StateMachine::SignalCurrentAllowedSpeed' is a specialization of 'GuardExpression'.
+'StateMachine::StateMachineBehavioralModel' (role 'StateMachine_StateMachineBehavioralModel', cardinality 0..*) is associated with 'StateMachine::StateMachine' (role 'StateMachine_StateMachine', cardinality 0..*).
+'StateMachine::StateMachine' (role 'StateMachine_StateMachine4', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition', cardinality 0..*).
+'StateMachine::TrackElement' (role 'StateMachine_TrackElement57', cardinality 0..*) is associated with 'StateMachine::TrainTrackElementChanged' (role 'StateMachine_TrainTrackElementChanged56', cardinality 0..*).
+'StateMachine::TurnoutHasDesiredDirection' (role 'StateMachine_TurnoutHasDesiredDirection69', cardinality 0..*) is associated with 'StateMachine::TurnoutDesiredDirection' (role 'StateMachine_TurnoutDesiredDirection', cardinality 0..*).
+'StateMachine::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'StateMachine::State' (role 'State', cardinality 0..*).
+'StateMachine::Guard' (role 'StateMachine_Guard27', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition26', cardinality 0..*).
+'StateMachine::ChangeTurnoutDirection' (role 'StateMachine_ChangeTurnoutDirection', cardinality 0..*) is associated with 'StateMachine::Turnout' (role 'StateMachine_Turnout', cardinality 0..*).
+'StateMachine::TrackElement' (role 'StateMachine_TrackElement46', cardinality 0..*) is associated with 'StateMachine::TrainCurrentlyStandsOn' (role 'StateMachine_TrainCurrentlyStandsOn45', cardinality 0..*).
+'StateMachine::Train' (role 'StateMachine_Train41', cardinality 0..*) is associated with 'StateMachine::TrainCurrentHeadingSpeed' (role 'StateMachine_TrainCurrentHeadingSpeed', cardinality 0..*).
+'StateMachine::Transition' (role 'StateMachine_Transition29', cardinality 0..*) is associated with 'StateMachine::Action' (role 'StateMachine_Action30', cardinality 0..*).
+'StateMachine::TurnoutDirectionChanged' (role 'StateMachine_TurnoutDirectionChanged', cardinality 0..*) is associated with 'StateMachine::Turnout' (role 'StateMachine_Turnout61', cardinality 0..*).
+'StateMachine::Train' (role 'StateMachine_Train', cardinality 0..*) is associated with 'StateMachine::ChangeTrainHeadingSpeed' (role 'StateMachine_ChangeTrainHeadingSpeed', cardinality 0..*).
+'StateMachine::StateMachine' (role 'StateMachine_StateMachine10', cardinality 0..*) is associated with 'StateMachine::Action' (role 'StateMachine_Action', cardinality 0..*).
+'StateMachine::Turnout' (role 'StateMachine_Turnout67', cardinality 0..*) is associated with 'StateMachine::TurnoutHasDesiredDirection' (role 'StateMachine_TurnoutHasDesiredDirection', cardinality 0..*).
+'StateMachine::Train' (role 'StateMachine_Train37', cardinality 0..*) is associated with 'StateMachine::ChangeTrainCurrentTrackElement' (role 'StateMachine_ChangeTrainCurrentTrackElement', cardinality 0..*).
+'StateMachine::SignalAllowedSpeedChanged' (role 'StateMachine_SignalAllowedSpeedChanged', cardinality 0..*) is associated with 'StateMachine::Signal' (role 'StateMachine_Signal59', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State', cardinality 0..*) is associated with 'StateMachine::StateMachine' (role 'StateMachine_StateMachine2', cardinality 0..*).
+'StateMachine::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'StateMachine::State' (role 'State21', cardinality 0..*).
+'StateMachine::Signal' (role 'StateMachine_Signal50', cardinality 0..*) is associated with 'StateMachine::SignalCurrentAllowedSpeed' (role 'StateMachine_SignalCurrentAllowedSpeed', cardinality 0..*).
+'StateMachine::StateMachine' (role 'StateMachine_StateMachine32', cardinality 0..*) is associated with 'StateMachine::CompositeState' (role 'StateMachine_CompositeState', cardinality 0..*).
+'StateMachine::Transition' (role 'Transition', cardinality 0..*) is associated with 'StateMachine::State' (role 'sourceState', cardinality 0..*).
+'StateMachine::State' (role 'targetState', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'Transition18', cardinality 0..*).
+'StateMachine::Transition' (role 'StateMachine_Transition23', cardinality 0..*) is associated with 'StateMachine::Trigger' (role 'StateMachine_Trigger24', cardinality 0..*).
+'StateMachine::ChangeSignalAllowedSpeed' (role 'StateMachine_ChangeSignalAllowedSpeed', cardinality 0..*) is associated with 'StateMachine::Signal' (role 'StateMachine_Signal', cardinality 0..*).
+'StateMachine::TrainHeadingSpeedChanged' (role 'StateMachine_TrainHeadingSpeedChanged', cardinality 0..*) is associated with 'StateMachine::Train' (role 'StateMachine_Train52', cardinality 0..*).
+'StateMachine::Turnout' (role 'StateMachine_Turnout48', cardinality 0..*) is associated with 'StateMachine::TurnoutCurrentDirection' (role 'StateMachine_TurnoutCurrentDirection', cardinality 0..*).
+'StateMachine::StateMachine' (role 'StateMachine_StateMachine8', cardinality 0..*) is associated with 'StateMachine::Guard' (role 'StateMachine_Guard', cardinality 0..*).
+'StateMachine::RouteElement' (role 'StateMachine_RouteElement', cardinality 0..*) is associated with 'StateMachine::NextTrackElementIs' (role 'StateMachine_NextTrackElementIs', cardinality 0..*).
+'StateMachine::RDMElement' (role 'StateMachine_RDMElement', cardinality 0..*) is associated with 'StateMachine::StateMachine' (role 'StateMachine_StateMachine15', cardinality 0..*).
+'StateMachine::TrainTrackElementChanged' (role 'StateMachine_TrainTrackElementChanged', cardinality 0..*) is associated with 'StateMachine::Train' (role 'StateMachine_Train54', cardinality 0..*).
+'StateMachine::Trigger' (role 'StateMachine_Trigger', cardinality 0..*) is associated with 'StateMachine::StateMachine' (role 'StateMachine_StateMachine6', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State13', cardinality 0..*) is associated with 'StateMachine::StateMachine' (role 'StateMachine_StateMachine12', cardinality 0..*).
+'StateMachine::TrainCurrentlyStandsOn' (role 'StateMachine_TrainCurrentlyStandsOn', cardinality 0..*) is associated with 'StateMachine::Train' (role 'StateMachine_Train43', cardinality 0..*).
+'StateMachine::NextTrackElementIs' (role 'StateMachine_NextTrackElementIs64', cardinality 0..*) is associated with 'StateMachine::TrackElement' (role 'StateMachine_TrackElement65', cardinality 0..*).
+'StateMachine::ChangeTrainCurrentTrackElement' (role 'StateMachine_ChangeTrainCurrentTrackElement39', cardinality 0..*) is associated with 'StateMachine::TrackElement' (role 'StateMachine_TrackElement', cardinality 0..*).

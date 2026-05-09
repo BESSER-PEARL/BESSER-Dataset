@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ghillairet/emftriple/tests/org.eclipselabs.emftriple.jena.junit/model/model.ecore

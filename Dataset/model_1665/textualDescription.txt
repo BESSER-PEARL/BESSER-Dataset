@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'NamedElement' has no attributes.
+The class 'rel2rel::NamedElement' has the following attributes: 'name' of type str.
+The class 'rel2rel::RelatedTo' has the following attributes: 'since' of type str.
+The class 'Thing' has no attributes.
+The class 'rel2rel::World' has no attributes.
+The class 'rel2rel::Thing' has the following attributes: 'id' of type int.
+'rel2rel::RelatedTo' is a specialization of 'Thing'.
+'rel2rel::Thing' is a specialization of 'NamedElement'.
+'rel2rel::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'rel2rel::Thing' (role 'fromThing', cardinality 0..*).
+'rel2rel::World' (role 'rel2rel_World', cardinality 0..*) is associated with 'rel2rel::Thing' (role 'rel2rel_Thing', cardinality 0..*).
+'rel2rel::RelatedTo' (role 'rel2rel_RelatedTo', cardinality 0..*) is associated with 'rel2rel::Thing' (role 'rel2rel_Thing4', cardinality 0..*).
+'rel2rel::RelatedTo' (role 'rel2rel_RelatedTo7', cardinality 0..*) is associated with 'rel2rel::RelatedTo' (role 'rel2rel_RelatedTo5', cardinality 0..*).
+'rel2rel::Thing' (role 'Thing', cardinality 0..*) is associated with 'rel2rel::RelatedTo' (role 'relations', cardinality 0..*).

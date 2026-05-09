@@ -1,0 +1,28 @@
+The model has 11 class(es).
+The class 'libraryinteractionmodel::Book' has the following attributes: 'isbn' of type str; 'title' of type str.
+The class 'libraryinteractionmodel::Author' has the following attributes: 'nationality' of type str; 'name' of type str; 'fullBio' of type str.
+The class 'libraryinteractionmodel::Authors' has no attributes.
+The class 'libraryinteractionmodel::Reservations' has no attributes.
+The class 'libraryinteractionmodel::Reservation' has the following attributes: 'to' of type date; 'from_' of type date.
+The class 'libraryinteractionmodel::Books' has no attributes.
+The class 'libraryinteractionmodel::BookShort' has the following attributes: 'isbn' of type str; 'title' of type str.
+The class 'libraryinteractionmodel::Library' has no attributes.
+The class 'libraryinteractionmodel::AuthorShort' has the following attributes: 'name' of type str; 'nationality' of type str.
+The class 'libraryinteractionmodel::Clients' has no attributes.
+The class 'libraryinteractionmodel::Client' has the following attributes: 'email' of type str; 'name' of type str.
+'libraryinteractionmodel::Reservation' (role 'libraryinteractionmodel_Reservation23', cardinality 0..*) is associated with 'libraryinteractionmodel::Client' (role 'libraryinteractionmodel_Client24', cardinality 0..*).
+'libraryinteractionmodel::Book' (role 'libraryinteractionmodel_Book7', cardinality 0..*) is associated with 'libraryinteractionmodel::Reservation' (role 'libraryinteractionmodel_Reservation', cardinality 0..*).
+'libraryinteractionmodel::AuthorShort' (role 'libraryinteractionmodel_AuthorShort', cardinality 0..*) is associated with 'libraryinteractionmodel::Book' (role 'libraryinteractionmodel_Book', cardinality 0..*).
+'libraryinteractionmodel::Reservation' (role 'libraryinteractionmodel_Reservation26', cardinality 0..*) is associated with 'libraryinteractionmodel::Book' (role 'libraryinteractionmodel_Book27', cardinality 0..*).
+'libraryinteractionmodel::AuthorShort' (role 'libraryinteractionmodel_AuthorShort16', cardinality 0..*) is associated with 'libraryinteractionmodel::Author' (role 'libraryinteractionmodel_Author', cardinality 0..*).
+'libraryinteractionmodel::Client' (role 'libraryinteractionmodel_Client17', cardinality 0..*) is associated with 'libraryinteractionmodel::Client' (role 'libraryinteractionmodel_Client', cardinality 0..*).
+'libraryinteractionmodel::BookShort' (role 'libraryinteractionmodel_BookShort32', cardinality 0..*) is associated with 'libraryinteractionmodel::Book' (role 'libraryinteractionmodel_Book33', cardinality 0..*).
+'libraryinteractionmodel::Reservation' (role 'libraryinteractionmodel_Reservation36', cardinality 0..*) is associated with 'libraryinteractionmodel::Reservations' (role 'libraryinteractionmodel_Reservations35', cardinality 0..*).
+'libraryinteractionmodel::Library' (role 'libraryinteractionmodel_Library4', cardinality 0..*) is associated with 'libraryinteractionmodel::Clients' (role 'libraryinteractionmodel_Clients', cardinality 0..*).
+'libraryinteractionmodel::AuthorShort' (role 'libraryinteractionmodel_AuthorShort14', cardinality 0..*) is associated with 'libraryinteractionmodel::Authors' (role 'libraryinteractionmodel_Authors13', cardinality 0..*).
+'libraryinteractionmodel::Library' (role 'libraryinteractionmodel_Library', cardinality 0..*) is associated with 'libraryinteractionmodel::Books' (role 'libraryinteractionmodel_Books', cardinality 0..*).
+'libraryinteractionmodel::BookShort' (role 'libraryinteractionmodel_BookShort', cardinality 0..*) is associated with 'libraryinteractionmodel::Books' (role 'libraryinteractionmodel_Books11', cardinality 0..*).
+'libraryinteractionmodel::Clients' (role 'libraryinteractionmodel_Clients20', cardinality 0..*) is associated with 'libraryinteractionmodel::Client' (role 'libraryinteractionmodel_Client21', cardinality 0..*).
+'libraryinteractionmodel::Authors' (role 'libraryinteractionmodel_Authors', cardinality 0..*) is associated with 'libraryinteractionmodel::Library' (role 'libraryinteractionmodel_Library2', cardinality 0..*).
+'libraryinteractionmodel::BookShort' (role 'libraryinteractionmodel_BookShort30', cardinality 0..*) is associated with 'libraryinteractionmodel::Author' (role 'libraryinteractionmodel_Author29', cardinality 0..*).
+'libraryinteractionmodel::Book' (role 'libraryinteractionmodel_Book9', cardinality 0..*) is associated with 'libraryinteractionmodel::Reservations' (role 'libraryinteractionmodel_Reservations', cardinality 0..*).

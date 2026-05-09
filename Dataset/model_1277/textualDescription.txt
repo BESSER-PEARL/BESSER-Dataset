@@ -1,0 +1,221 @@
+The model has 80 class(es).
+The class 'essentialoclcs::MapTypeCS' has the following attributes: 'name' of type str.
+The class 'essentialoclcs::InvalidLiteralExpCS' has no attributes.
+The class 'essentialoclcs::OperationCallExpCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'essentialoclcs::NestedExpCS' has no attributes.
+The class 'essentialoclcs::AssociationClassCallExpCS' has no attributes.
+The class 'essentialoclcs::NullLiteralExpCS' has no attributes.
+The class 'ShadowExpCS' has no attributes.
+The class 'essentialoclcs::SelfExpCS' has the following attributes: 'name' of type str.
+The class 'essentialoclcs::TypeRefCS' has no attributes.
+The class 'essentialoclcs::RoundBracketedClauseCS' has no attributes.
+The class 'essentialoclcs::MapLiteralExpCS' has no attributes.
+The class 'IterateCallExpCS' has no attributes.
+The class 'essentialoclcs::IterationCallExpCS' has no attributes.
+The class 'essentialoclcs::UnlimitedNaturalLiteralExpCS' has no attributes.
+The class 'TypedRefCS' has no attributes.
+The class 'essentialoclcs::PrefixExpCS' has no attributes.
+The class 'essentialoclcs::LetExpCS' has the following attributes: 'isImplicit' of type bool.
+The class 'essentialoclcs::SquareBracketedClauseCS' has no attributes.
+The class 'essentialoclcs::IterateCallExpCS' has no attributes.
+The class 'essentialoclcs::ExpSpecificationCS' has no attributes.
+The class 'ContextLessElementCS' has no attributes.
+The class 'essentialoclcs::Operation' has no attributes.
+The class 'IterationCallExpCS' has no attributes.
+The class 'essentialoclcs::BooleanLiteralExpCS' has the following attributes: 'symbol' of type str.
+The class 'essentialoclcs::ShadowPartCS' has no attributes.
+The class 'essentialoclcs::CollectionLiteralPartCS' has no attributes.
+The class 'AbstractNameExpCS' has no attributes.
+The class 'essentialoclcs::CollectionTypeCS' has the following attributes: 'name' of type str.
+The class 'essentialoclcs::AssociationClass' has no attributes.
+The class 'essentialoclcs::LetVariableCS' has no attributes.
+The class 'essentialoclcs::InfixExpCS' has no attributes.
+The class 'essentialoclcs::PrimitiveLiteralExpCS' has no attributes.
+The class 'essentialoclcs::VariableExpCS' has no attributes.
+The class 'essentialoclcs::NameExpCS' has no attributes.
+The class 'essentialoclcs::LiteralExpCS' has no attributes.
+The class 'essentialoclcs::TypeLiteralExpCS' has no attributes.
+The class 'essentialoclcs::OperatorExpCS' has no attributes.
+The class 'essentialoclcs::Type' has no attributes.
+The class 'SpecificationCS' has no attributes.
+The class 'essentialoclcs::IfThenExpCS' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'essentialoclcs::AbstractNameExpCS' has the following attributes: 'isPre' of type bool.
+The class 'essentialoclcs::Iteration' has no attributes.
+The class 'essentialoclcs::NavigatingArgCS' has the following attributes: 'prefix' of type str; 'role' of type str.
+The class 'essentialoclcs::PatternExpCS' has the following attributes: 'patternVariableName' of type str.
+The class 'essentialoclcs::NumberLiteralExpCS' has the following attributes: 'symbol' of type str.
+The class 'AssociationClassCallExpCS' has no attributes.
+The class 'essentialoclcs::CollectionLiteralExpCS' has no attributes.
+The class 'essentialoclcs::TupleLiteralPartCS' has no attributes.
+The class 'essentialoclcs::PathNameCS' has no attributes.
+The class 'essentialoclcs::Precedence' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'OperationCallExpCS' has no attributes.
+The class 'essentialoclcs::CurlyBracketedClauseCS' has the following attributes: 'value' of type str.
+The class 'essentialoclcs::ExpCS' has the following attributes: 'hasError' of type bool.
+The class 'essentialoclcs::TypeNameExpCS' has no attributes.
+The class 'essentialoclcs::IfExpCS' has the following attributes: 'isImplicit' of type bool.
+The class 'ModelElementCS' has no attributes.
+The class 'essentialoclcs::Property' has no attributes.
+The class 'VariableExpCS' has no attributes.
+The class 'essentialoclcs::PropertyCallExpCS' has no attributes.
+The class 'essentialoclcs::TypedRefCS' has no attributes.
+The class 'VariableCS' has no attributes.
+The class 'essentialoclcs::LambdaLiteralExpCS' has no attributes.
+The class 'RootCS' has no attributes.
+The class 'essentialoclcs::StringLiteralExpCS' has the following attributes: 'segments' of type str.
+The class 'essentialoclcs::CallExpCS' has no attributes.
+The class 'OperatorExpCS' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'essentialoclcs::CollectionPatternCS' has the following attributes: 'restVariableName' of type str.
+The class 'PropertyCallExpCS' has no attributes.
+The class 'essentialoclcs::TupleLiteralExpCS' has no attributes.
+The class 'essentialoclcs::VariableCS' has no attributes.
+The class 'PrimitiveLiteralExpCS' has no attributes.
+The class 'essentialoclcs::MapLiteralPartCS' has no attributes.
+The class 'essentialoclcs::Variable' has no attributes.
+The class 'essentialoclcs::ShadowExpCS' has the following attributes: 'value' of type str.
+The class 'essentialoclcs::ContextCS' has no attributes.
+The enumeration 'NavigationRole' has the following literals: 'EXPRESSION', 'ITERATOR', 'ACCUMULATOR'.
+'essentialoclcs::PrefixExpCS' is a specialization of 'OperatorExpCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'PropertyCallExpCS'.
+'essentialoclcs::VariableExpCS' is a specialization of 'AbstractNameExpCS'.
+'essentialoclcs::ShadowPartCS' is a specialization of 'Nameable'.
+'essentialoclcs::AssociationClassCallExpCS' is a specialization of 'CallExpCS'.
+'essentialoclcs::NestedExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::NumberLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialoclcs::ContextCS' is a specialization of 'RootCS'.
+'essentialoclcs::CollectionTypeCS' is a specialization of 'Nameable'.
+'essentialoclcs::TypeNameExpCS' is a specialization of 'TypedRefCS'.
+'essentialoclcs::CollectionPatternCS' is a specialization of 'TypedRefCS'.
+'essentialoclcs::LetVariableCS' is a specialization of 'VariableCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'IterateCallExpCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'ShadowExpCS'.
+'essentialoclcs::OperatorExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::ShadowExpCS' is a specialization of 'AbstractNameExpCS'.
+'essentialoclcs::MapLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialoclcs::ExpSpecificationCS' is a specialization of 'SpecificationCS'.
+'essentialoclcs::CurlyBracketedClauseCS' is a specialization of 'ContextLessElementCS'.
+'essentialoclcs::NavigatingArgCS' is a specialization of 'ModelElementCS'.
+'essentialoclcs::InfixExpCS' is a specialization of 'OperatorExpCS'.
+'essentialoclcs::VariableCS' is a specialization of 'NamedElementCS'.
+'essentialoclcs::RoundBracketedClauseCS' is a specialization of 'ContextLessElementCS'.
+'essentialoclcs::ShadowPartCS' is a specialization of 'ModelElementCS'.
+'essentialoclcs::IterateCallExpCS' is a specialization of 'IterationCallExpCS'.
+'essentialoclcs::TupleLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialoclcs::ExpCS' is a specialization of 'ModelElementCS'.
+'essentialoclcs::InvalidLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialoclcs::BooleanLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialoclcs::CollectionTypeCS' is a specialization of 'TypedRefCS'.
+'essentialoclcs::TypeLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialoclcs::MapTypeCS' is a specialization of 'Nameable'.
+'essentialoclcs::CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialoclcs::OperationCallExpCS' is a specialization of 'CallExpCS'.
+'essentialoclcs::CallExpCS' is a specialization of 'AbstractNameExpCS'.
+'essentialoclcs::LetExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::LiteralExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::MapLiteralPartCS' is a specialization of 'ModelElementCS'.
+'essentialoclcs::IfExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::IterationCallExpCS' is a specialization of 'CallExpCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'OperationCallExpCS'.
+'essentialoclcs::LambdaLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialoclcs::ContextCS' is a specialization of 'NamedElementCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'AssociationClassCallExpCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'VariableExpCS'.
+'essentialoclcs::StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialoclcs::PropertyCallExpCS' is a specialization of 'CallExpCS'.
+'essentialoclcs::IfThenExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::NullLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialoclcs::LetVariableCS' is a specialization of 'ExpCS'.
+'essentialoclcs::OperatorExpCS' is a specialization of 'NamedElementCS'.
+'essentialoclcs::PatternExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::AbstractNameExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::SelfExpCS' is a specialization of 'ExpCS'.
+'essentialoclcs::PrimitiveLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialoclcs::CollectionLiteralPartCS' is a specialization of 'ModelElementCS'.
+'essentialoclcs::MapTypeCS' is a specialization of 'TypedRefCS'.
+'essentialoclcs::UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialoclcs::NameExpCS' is a specialization of 'IterationCallExpCS'.
+'essentialoclcs::TupleLiteralPartCS' is a specialization of 'VariableCS'.
+'essentialoclcs::SquareBracketedClauseCS' is a specialization of 'ContextLessElementCS'.
+'essentialoclcs::CollectionLiteralPartCS' (role 'essentialoclcs_CollectionLiteralPartCS', cardinality 0..*) is associated with 'essentialoclcs::CollectionLiteralExpCS' (role 'essentialoclcs_CollectionLiteralExpCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS21', cardinality 0..*) is associated with 'essentialoclcs::CollectionLiteralPartCS' (role 'essentialoclcs_CollectionLiteralPartCS20', cardinality 0..*).
+'essentialoclcs::RoundBracketedClauseCS' (role 'essentialoclcs_RoundBracketedClauseCS', cardinality 0..*) is associated with 'essentialoclcs::LetVariableCS' (role 'essentialoclcs_LetVariableCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS105', cardinality 0..*) is associated with 'essentialoclcs::NavigatingArgCS' (role 'essentialoclcs_NavigatingArgCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS57', cardinality 0..*) is associated with 'essentialoclcs::IfExpCS' (role 'essentialoclcs_IfExpCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS76', cardinality 0..*) is associated with 'essentialoclcs::InfixExpCS' (role 'essentialoclcs_InfixExpCS75', cardinality 0..*).
+'essentialoclcs::ContextCS' (role 'essentialoclcs_ContextCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS35', cardinality 0..*).
+'essentialoclcs::LetVariableCS' (role 'ownedVariables', cardinality 0..*) is associated with 'essentialoclcs::LetExpCS' (role 'LetExpCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS24', cardinality 0..*) is associated with 'essentialoclcs::CollectionLiteralPartCS' (role 'essentialoclcs_CollectionLiteralPartCS23', cardinality 0..*).
+'essentialoclcs::ShadowPartCS' (role 'essentialoclcs_ShadowPartCS133', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS134', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS83', cardinality 0..*) is associated with 'essentialoclcs::LambdaLiteralExpCS' (role 'essentialoclcs_LambdaLiteralExpCS', cardinality 0..*).
+'essentialoclcs::SquareBracketedClauseCS' (role 'essentialoclcs_SquareBracketedClauseCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS141', cardinality 0..*).
+'essentialoclcs::CollectionPatternCS' (role 'essentialoclcs_CollectionPatternCS30', cardinality 0..*) is associated with 'essentialoclcs::CollectionTypeCS' (role 'essentialoclcs_CollectionTypeCS31', cardinality 0..*).
+'essentialoclcs::PathNameCS' (role 'essentialoclcs_PathNameCS157', cardinality 0..*) is associated with 'essentialoclcs::TypeNameExpCS' (role 'essentialoclcs_TypeNameExpCS156', cardinality 0..*).
+'essentialoclcs::CurlyBracketedClauseCS' (role 'ownedCurlyBracketedClause', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'AbstractNameExpCS', cardinality 0..*).
+'essentialoclcs::SquareBracketedClauseCS' (role 'ownedSquareBracketedClauses', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'AbstractNameExpCS143', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS38', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS40', cardinality 0..*).
+'essentialoclcs::IfThenExpCS' (role 'essentialoclcs_IfThenExpCS70', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS71', cardinality 0..*).
+'essentialoclcs::LetVariableCS' (role 'LetVariableCS', cardinality 0..*) is associated with 'essentialoclcs::LetExpCS' (role 'owningLetExpression', cardinality 0..*).
+'essentialoclcs::VariableCS' (role 'essentialoclcs_VariableCS79', cardinality 0..*) is associated with 'essentialoclcs::IterationCallExpCS' (role 'essentialoclcs_IterationCallExpCS', cardinality 0..*).
+'essentialoclcs::IterateCallExpCS' (role 'essentialoclcs_IterateCallExpCS', cardinality 0..*) is associated with 'essentialoclcs::VariableCS' (role 'essentialoclcs_VariableCS', cardinality 0..*).
+'essentialoclcs::MapLiteralPartCS' (role 'essentialoclcs_MapLiteralPartCS', cardinality 0..*) is associated with 'essentialoclcs::MapLiteralExpCS' (role 'essentialoclcs_MapLiteralExpCS', cardinality 0..*).
+'essentialoclcs::ShadowPartCS' (role 'essentialoclcs_ShadowPartCS', cardinality 0..*) is associated with 'essentialoclcs::ShadowExpCS' (role 'essentialoclcs_ShadowExpCS', cardinality 0..*).
+'essentialoclcs::PathNameCS' (role 'essentialoclcs_PathNameCS', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'essentialoclcs_AbstractNameExpCS', cardinality 0..*).
+'essentialoclcs::PatternExpCS' (role 'essentialoclcs_PatternExpCS124', cardinality 0..*) is associated with 'essentialoclcs::TypeRefCS' (role 'essentialoclcs_TypeRefCS', cardinality 0..*).
+'essentialoclcs::TypeLiteralExpCS' (role 'essentialoclcs_TypeLiteralExpCS', cardinality 0..*) is associated with 'essentialoclcs::PathNameCS' (role 'essentialoclcs_PathNameCS146', cardinality 0..*).
+'essentialoclcs::RoundBracketedClauseCS' (role 'RoundBracketedClauseCS113', cardinality 0..*) is associated with 'essentialoclcs::NavigatingArgCS' (role 'ownedArguments', cardinality 0..*).
+'essentialoclcs::TypedRefCS' (role 'essentialoclcs_TypedRefCS111', cardinality 0..*) is associated with 'essentialoclcs::NavigatingArgCS' (role 'essentialoclcs_NavigatingArgCS110', cardinality 0..*).
+'essentialoclcs::AbstractNameExpCS' (role 'essentialoclcs_AbstractNameExpCS9', cardinality 0..*) is associated with 'essentialoclcs::Type' (role 'essentialoclcs_Type10', cardinality 0..*).
+'essentialoclcs::TypedRefCS' (role 'essentialoclcs_TypedRefCS', cardinality 0..*) is associated with 'essentialoclcs::CollectionTypeCS' (role 'essentialoclcs_CollectionTypeCS33', cardinality 0..*).
+'essentialoclcs::Precedence' (role 'essentialoclcs_Precedence', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS53', cardinality 0..*).
+'essentialoclcs::TypeLiteralExpCS' (role 'essentialoclcs_TypeLiteralExpCS148', cardinality 0..*) is associated with 'essentialoclcs::TypedRefCS' (role 'essentialoclcs_TypedRefCS149', cardinality 0..*).
+'essentialoclcs::ExpSpecificationCS' (role 'essentialoclcs_ExpSpecificationCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS55', cardinality 0..*).
+'essentialoclcs::CurlyBracketedClauseCS' (role 'CurlyBracketedClauseCS', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'owningNameExp', cardinality 0..*).
+'essentialoclcs::AssociationClass' (role 'essentialoclcs_AssociationClass', cardinality 0..*) is associated with 'essentialoclcs::AssociationClassCallExpCS' (role 'essentialoclcs_AssociationClassCallExpCS', cardinality 0..*).
+'essentialoclcs::IfExpCS' (role 'essentialoclcs_IfExpCS64', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS65', cardinality 0..*).
+'essentialoclcs::InfixExpCS' (role 'essentialoclcs_InfixExpCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS73', cardinality 0..*).
+'essentialoclcs::IfThenExpCS' (role 'essentialoclcs_IfThenExpCS', cardinality 0..*) is associated with 'essentialoclcs::IfExpCS' (role 'essentialoclcs_IfExpCS62', cardinality 0..*).
+'essentialoclcs::CollectionPatternCS' (role 'essentialoclcs_CollectionPatternCS27', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS28', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS48', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS46', cardinality 0..*).
+'essentialoclcs::ShadowPartCS' (role 'ownedParts', cardinality 0..*) is associated with 'essentialoclcs::CurlyBracketedClauseCS' (role 'CurlyBracketedClauseCS136', cardinality 0..*).
+'essentialoclcs::MapLiteralPartCS' (role 'essentialoclcs_MapLiteralPartCS93', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS94', cardinality 0..*).
+'essentialoclcs::OperatorExpCS' (role 'essentialoclcs_OperatorExpCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS45', cardinality 0..*).
+'essentialoclcs::LetExpCS' (role 'essentialoclcs_LetExpCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS85', cardinality 0..*).
+'essentialoclcs::CurlyBracketedClauseCS' (role 'essentialoclcs_CurlyBracketedClauseCS', cardinality 0..*) is associated with 'essentialoclcs::TypeNameExpCS' (role 'essentialoclcs_TypeNameExpCS154', cardinality 0..*).
+'essentialoclcs::CollectionTypeCS' (role 'essentialoclcs_CollectionTypeCS', cardinality 0..*) is associated with 'essentialoclcs::CollectionLiteralExpCS' (role 'essentialoclcs_CollectionLiteralExpCS18', cardinality 0..*).
+'essentialoclcs::TupleLiteralPartCS' (role 'essentialoclcs_TupleLiteralPartCS', cardinality 0..*) is associated with 'essentialoclcs::TupleLiteralExpCS' (role 'essentialoclcs_TupleLiteralExpCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS68', cardinality 0..*) is associated with 'essentialoclcs::IfThenExpCS' (role 'essentialoclcs_IfThenExpCS67', cardinality 0..*).
+'essentialoclcs::Variable' (role 'essentialoclcs_Variable', cardinality 0..*) is associated with 'essentialoclcs::VariableExpCS' (role 'essentialoclcs_VariableExpCS', cardinality 0..*).
+'essentialoclcs::TypedRefCS' (role 'essentialoclcs_TypedRefCS103', cardinality 0..*) is associated with 'essentialoclcs::MapTypeCS' (role 'essentialoclcs_MapTypeCS102', cardinality 0..*).
+'essentialoclcs::RoundBracketedClauseCS' (role 'RoundBracketedClauseCS', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'owningNameExp3', cardinality 0..*).
+'essentialoclcs::NavigatingArgCS' (role 'essentialoclcs_NavigatingArgCS107', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS108', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS160', cardinality 0..*) is associated with 'essentialoclcs::TypeNameExpCS' (role 'essentialoclcs_TypeNameExpCS159', cardinality 0..*).
+'essentialoclcs::CallExpCS' (role 'essentialoclcs_CallExpCS14', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS15', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS60', cardinality 0..*) is associated with 'essentialoclcs::IfExpCS' (role 'essentialoclcs_IfExpCS59', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS119', cardinality 0..*) is associated with 'essentialoclcs::OperatorExpCS' (role 'essentialoclcs_OperatorExpCS118', cardinality 0..*).
+'essentialoclcs::ShadowPartCS' (role 'ShadowPartCS', cardinality 0..*) is associated with 'essentialoclcs::CurlyBracketedClauseCS' (role 'owningCurlyBracketClause', cardinality 0..*).
+'essentialoclcs::TypeNameExpCS' (role 'essentialoclcs_TypeNameExpCS151', cardinality 0..*) is associated with 'essentialoclcs::Type' (role 'essentialoclcs_Type152', cardinality 0..*).
+'essentialoclcs::MapTypeCS' (role 'essentialoclcs_MapTypeCS99', cardinality 0..*) is associated with 'essentialoclcs::TypedRefCS' (role 'essentialoclcs_TypedRefCS100', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS', cardinality 0..*) is associated with 'essentialoclcs::CallExpCS' (role 'essentialoclcs_CallExpCS', cardinality 0..*).
+'essentialoclcs::PatternExpCS' (role 'essentialoclcs_PatternExpCS', cardinality 0..*) is associated with 'essentialoclcs::CollectionPatternCS' (role 'essentialoclcs_CollectionPatternCS', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS41', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS43', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS163', cardinality 0..*) is associated with 'essentialoclcs::VariableCS' (role 'essentialoclcs_VariableCS162', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS51', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS49', cardinality 0..*).
+'essentialoclcs::TypedRefCS' (role 'essentialoclcs_TypedRefCS166', cardinality 0..*) is associated with 'essentialoclcs::VariableCS' (role 'essentialoclcs_VariableCS165', cardinality 0..*).
+'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS97', cardinality 0..*) is associated with 'essentialoclcs::MapLiteralPartCS' (role 'essentialoclcs_MapLiteralPartCS96', cardinality 0..*).
+'essentialoclcs::NestedExpCS' (role 'essentialoclcs_NestedExpCS', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS115', cardinality 0..*).
+'essentialoclcs::AbstractNameExpCS' (role 'essentialoclcs_AbstractNameExpCS7', cardinality 0..*) is associated with 'essentialoclcs::Type' (role 'essentialoclcs_Type', cardinality 0..*).
+'essentialoclcs::RoundBracketedClauseCS' (role 'ownedRoundBracketedClause', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'AbstractNameExpCS128', cardinality 0..*).
+'essentialoclcs::ShadowPartCS' (role 'essentialoclcs_ShadowPartCS138', cardinality 0..*) is associated with 'essentialoclcs::Property' (role 'essentialoclcs_Property139', cardinality 0..*).
+'essentialoclcs::NavigatingArgCS' (role 'NavigatingArgCS', cardinality 0..*) is associated with 'essentialoclcs::RoundBracketedClauseCS' (role 'owningRoundBracketedClause', cardinality 0..*).
+'essentialoclcs::IterationCallExpCS' (role 'essentialoclcs_IterationCallExpCS81', cardinality 0..*) is associated with 'essentialoclcs::Iteration' (role 'essentialoclcs_Iteration', cardinality 0..*).
+'essentialoclcs::OperatorExpCS' (role 'essentialoclcs_OperatorExpCS121', cardinality 0..*) is associated with 'essentialoclcs::ExpCS' (role 'essentialoclcs_ExpCS122', cardinality 0..*).
+'essentialoclcs::OperationCallExpCS' (role 'essentialoclcs_OperationCallExpCS', cardinality 0..*) is associated with 'essentialoclcs::Operation' (role 'essentialoclcs_Operation', cardinality 0..*).
+'essentialoclcs::SquareBracketedClauseCS' (role 'SquareBracketedClauseCS', cardinality 0..*) is associated with 'essentialoclcs::AbstractNameExpCS' (role 'owningNameExp5', cardinality 0..*).
+'essentialoclcs::MapLiteralExpCS' (role 'essentialoclcs_MapLiteralExpCS91', cardinality 0..*) is associated with 'essentialoclcs::MapTypeCS' (role 'essentialoclcs_MapTypeCS', cardinality 0..*).
+'essentialoclcs::Property' (role 'essentialoclcs_Property', cardinality 0..*) is associated with 'essentialoclcs::PropertyCallExpCS' (role 'essentialoclcs_PropertyCallExpCS', cardinality 0..*).
+'essentialoclcs::ShadowExpCS' (role 'essentialoclcs_ShadowExpCS131', cardinality 0..*) is associated with 'essentialoclcs::TypeNameExpCS' (role 'essentialoclcs_TypeNameExpCS', cardinality 0..*).

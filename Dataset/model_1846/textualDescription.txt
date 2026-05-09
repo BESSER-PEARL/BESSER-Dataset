@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'contacts::AddressBook' has no attributes.
+The class 'contacts::Address' has the following attributes: 'city' of type str; 'street' of type str; 'state' of type str; 'country' of type str; 'zipCode' of type str.
+The class 'contacts::Contact' has the following attributes: 'lastName' of type str; 'jobTitle' of type str; 'image' of type str; 'firstName' of type str; 'title' of type str; 'company' of type str; 'middleName' of type str; 'email' of type str; 'note' of type str; 'webPage' of type str.
+The class 'contacts::UoD' has no attributes.
+The class 'contacts::PhoneNumber' has the following attributes: 'country' of type str; 'number' of type str.
+'contacts::PhoneNumber' (role 'contacts_PhoneNumber', cardinality 0..*) is associated with 'contacts::Contact' (role 'contacts_Contact2', cardinality 0..*).
+'contacts::UoD' (role 'contacts_UoD', cardinality 0..*) is associated with 'contacts::AddressBook' (role 'contacts_AddressBook12', cardinality 0..*).
+'contacts::Contact' (role 'contacts_Contact', cardinality 0..*) is associated with 'contacts::Address' (role 'contacts_Address', cardinality 0..*).
+'contacts::PhoneNumber' (role 'contacts_PhoneNumber5', cardinality 0..*) is associated with 'contacts::Contact' (role 'contacts_Contact4', cardinality 0..*).
+'contacts::AddressBook' (role 'contacts_AddressBook', cardinality 0..*) is associated with 'contacts::Contact' (role 'contacts_Contact10', cardinality 0..*).
+'contacts::Address' (role 'contacts_Address8', cardinality 0..*) is associated with 'contacts::Contact' (role 'contacts_Contact7', cardinality 0..*).

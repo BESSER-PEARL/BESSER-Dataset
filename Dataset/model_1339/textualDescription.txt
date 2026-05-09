@@ -1,0 +1,392 @@
+The model has 170 class(es).
+The class 'mutatorenvironment::Program' has the following attributes: 'exhaustive' of type BooleanType; 'num' of type IntegerType; 'description' of type StringType; 'output' of type StringType.
+The class 'mutatorenvironment::miniOCL::ParameterCS' has the following attributes: 'name' of type StringType.
+The class 'PathNameCS' has no attributes.
+The class 'PathCS' has no attributes.
+The class 'mutatorenvironment::AttributeEvaluation' has no attributes.
+The class 'mutatorenvironment::CatEndStringType' has the following attributes: 'value' of type StringType.
+The class 'StringType' has no attributes.
+The class 'RemoveReferenceMutator' has no attributes.
+The class 'mutatorenvironment::RandomIntegerType' has the following attributes: 'max' of type IntegerType; 'min' of type IntegerType; 'allowsNull' of type BooleanType.
+The class 'mutatorenvironment::OtherSelection' has no attributes.
+The class 'mutatorenvironment::EStructuralFeature' has no attributes.
+The class 'NavigationPathNameCS' has no attributes.
+The class 'PackageCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::RootCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::LoopExpCS' has the following attributes: 'logicOp' of type StringType.
+The class 'mutatorenvironment::Library' has no attributes.
+The class 'mutatorenvironment::miniOCL::ExpCS' has no attributes.
+The class 'mutatorenvironment::LowerStringType' has the following attributes: 'value' of type StringType.
+The class 'mutatorenvironment::Definition' has the following attributes: 'metamodel' of type StringType.
+The class 'mutatorenvironment::miniOCL::PathNameCS' has no attributes.
+The class 'OtherSelection' has no attributes.
+The class 'mutatorenvironment::CatStartStringType' has the following attributes: 'value' of type StringType.
+The class 'IteratorVarCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::RoundedBracketClauseCS' has no attributes.
+The class 'mutatorenvironment::SpecificObjectSelection' has no attributes.
+The class 'mutatorenvironment::miniOCL::ForAllExpCS' has no attributes.
+The class 'mutatorenvironment::AttributeSwap' has no attributes.
+The class 'mutatorenvironment::miniOCL::PrimaryExpCS' has no attributes.
+The class 'mutatorenvironment::Constraint' has the following attributes: 'id' of type StringType; 'rules' of type StringType.
+The class 'mutatorenvironment::SpecificIntegerType' has the following attributes: 'value' of type IntegerType.
+The class 'BooleanLiteralExpCS' has no attributes.
+The class 'mutatorenvironment::SpecificSelection' has no attributes.
+The class 'mutatorenvironment::BinaryOperator' has the following attributes: 'type' of type StringType.
+The class 'LoopExpCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::PropertyCS' has the following attributes: 'name' of type StringType.
+The class 'mutatorenvironment::RemoveCompleteReferenceMutator' has no attributes.
+The class 'mutatorenvironment::RandomStringType' has the following attributes: 'max' of type IntegerType; 'min' of type IntegerType; 'allowsNull' of type BooleanType.
+The class 'mutatorenvironment::miniOCL::PathElementCS' has no attributes.
+The class 'ParameterCS' has no attributes.
+The class 'mutatorenvironment::CompleteSelection' has no attributes.
+The class 'mutatorenvironment::RandomDoubleNumberType' has the following attributes: 'min' of type float.
+The class 'mutatorenvironment::Resource' has the following attributes: 'name' of type StringType.
+The class 'mutatorenvironment::Load' has the following attributes: 'file' of type StringType.
+The class 'ObSelectionStrategy' has no attributes.
+The class 'mutatorenvironment::RandomType' has no attributes.
+The class 'mutatorenvironment::CloneObjectMutator' has the following attributes: 'contents' of type BooleanType.
+The class 'mutatorenvironment::miniOCL::LogicExpCS' has the following attributes: 'op' of type StringType.
+The class 'OperationCS' has no attributes.
+The class 'mutatorenvironment::Expression' has no attributes.
+The class 'mutatorenvironment::Mutator' has the following attributes: 'fixed' of type IntegerType; 'min' of type IntegerType; 'max' of type IntegerType.
+The class 'mutatorenvironment::RetypeObjectMutator' has no attributes.
+The class 'ClassCS' has no attributes.
+The class 'mutatorenvironment::AttributeEvaluationType' has no attributes.
+The class 'mutatorenvironment::miniOCL::PathCS' has no attributes.
+The class 'mutatorenvironment::Block' has the following attributes: 'max' of type IntegerType; 'description' of type StringType; 'min' of type IntegerType; 'repeat' of type StringType; 'name' of type StringType; 'fixed' of type IntegerType.
+The class 'mutatorenvironment::RandomSelection' has no attributes.
+The class 'mutatorenvironment::miniOCL::NameExpCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::BooleanExpCS' has the following attributes: 'boolSymbol' of type BooleanType.
+The class 'NavigationPathCS' has no attributes.
+The class 'mutatorenvironment::SpecificClosureSelection' has no attributes.
+The class 'mutatorenvironment::UpperStringType' has the following attributes: 'value' of type StringType.
+The class 'mutatorenvironment::RemoveRandomReferenceMutator' has no attributes.
+The class 'AttributeEvaluationType' has no attributes.
+The class 'mutatorenvironment::ReferenceInit' has no attributes.
+The class 'mutatorenvironment::miniOCL::PackageCS' has the following attributes: 'name' of type StringType.
+The class 'mutatorenvironment::ObjectEmitter' has the following attributes: 'name' of type StringType.
+The class 'mutatorenvironment::SpecificStringType' has the following attributes: 'value' of type StringType.
+The class 'ExpCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::NavigationPathNameCS' has no attributes.
+The class 'mutatorenvironment::BooleanType' has no attributes.
+The class 'mutatorenvironment::RandomBooleanType' has the following attributes: 'allowsNull' of type BooleanType.
+The class 'mutatorenvironment::miniOCL::NavigationPathVariableCS' has the following attributes: 'varName' of type StringType.
+The class 'mutatorenvironment::AttributeCopy' has no attributes.
+The class 'mutatorenvironment::ReferenceEvaluation' has the following attributes: 'container' of type BooleanType; 'operator' of type StringType.
+The class 'mutatorenvironment::CreateObjectMutator' has no attributes.
+The class 'mutatorenvironment::SelectObjectMutator' has no attributes.
+The class 'mutatorenvironment::ReferenceAtt' has no attributes.
+The class 'mutatorenvironment::ListType' has no attributes.
+The class 'mutatorenvironment::EReference' has no attributes.
+The class 'mutatorenvironment::EObject' has no attributes.
+The class 'NavigationExpCS' has no attributes.
+The class 'mutatorenvironment::RemoveReferenceMutator' has no attributes.
+The class 'CompleteSelection' has no attributes.
+The class 'BooleanType' has no attributes.
+The class 'IntegerType' has no attributes.
+The class 'mutatorenvironment::ReferenceSet' has no attributes.
+The class 'mutatorenvironment::RemoveObjectMutator' has no attributes.
+The class 'mutatorenvironment::AttributeUnset' has no attributes.
+The class 'SpecificSelection' has no attributes.
+The class 'mutatorenvironment::miniOCL::CollectExpCS' has no attributes.
+The class 'mutatorenvironment::ListStringType' has the following attributes: 'value' of type StringType.
+The class 'mutatorenvironment::RandomTypeSelection' has no attributes.
+The class 'mutatorenvironment::miniOCL::InvariantCS' has no attributes.
+The class 'mutatorenvironment::MutatorEnvironment' has no attributes.
+The class 'mutatorenvironment::ModifyInformationMutator' has no attributes.
+The class 'RandomNumberType' has no attributes.
+The class 'mutatorenvironment::EClass' has no attributes.
+The class 'mutatorenvironment::AttributeReverse' has no attributes.
+The class 'mutatorenvironment::miniOCL::ExistsExpCS' has no attributes.
+The class 'mutatorenvironment::CreateReferenceMutator' has no attributes.
+The class 'mutatorenvironment::Source' has the following attributes: 'path' of type StringType.
+The class 'mutatorenvironment::TypedSelection' has no attributes.
+The class 'InvariantCS' has no attributes.
+The class 'mutatorenvironment::DoubleType' has no attributes.
+The class 'RoundedBracketClauseCS' has no attributes.
+The class 'DoubleType' has no attributes.
+The class 'mutatorenvironment::miniOCL::IteratorVarCS' has the following attributes: 'itName' of type StringType.
+The class 'mutatorenvironment::ModifySourceReferenceMutator' has no attributes.
+The class 'Mutator' has no attributes.
+The class 'mutatorenvironment::ReferenceAdd' has no attributes.
+The class 'mutatorenvironment::SpecificDoubleType' has the following attributes: 'value' of type float.
+The class 'ConstraintCS' has no attributes.
+The class 'mutatorenvironment::ReferenceSwap' has no attributes.
+The class 'mutatorenvironment::miniOCL::CallExpCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::NavigationNameExpCS' has no attributes.
+The class 'mutatorenvironment::ReferenceRemove' has no attributes.
+The class 'mutatorenvironment::RandomNumberType' has no attributes.
+The class 'ObjectEmitter' has no attributes.
+The class 'mutatorenvironment::miniOCL::IntLiteralExpCS' has the following attributes: 'intSymbol' of type IntegerType.
+The class 'mutatorenvironment::ModifyTargetReferenceMutator' has no attributes.
+The class 'mutatorenvironment::miniOCL::StringLiteralExpCS' has the following attributes: 'stringSymbol' of type StringType.
+The class 'mutatorenvironment::NumberType' has no attributes.
+The class 'mutatorenvironment::IntegerType' has no attributes.
+The class 'mutatorenvironment::miniOCL::NavigationExpCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::NavigationPathElementCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::IterateExpCS' has no attributes.
+The class 'mutatorenvironment::ObjectAttributeType' has the following attributes: 'operator' of type StringType.
+The class 'mutatorenvironment::AttributeScalar' has no attributes.
+The class 'mutatorenvironment::StringType' has no attributes.
+The class 'NumberType' has no attributes.
+The class 'Definition' has no attributes.
+The class 'mutatorenvironment::miniOCL::ConstraintCS' has no attributes.
+The class 'mutatorenvironment::AttributeType' has the following attributes: 'operator' of type StringType.
+The class 'mutatorenvironment::miniOCL::LiteralExpCS' has no attributes.
+The class 'mutatorenvironment::miniOCL::AccVarCS' has the following attributes: 'accVarName' of type StringType.
+The class 'CallExpCS' has no attributes.
+The class 'mutatorenvironment::SelectSampleMutator' has the following attributes: 'clause' of type StringType.
+The class 'AttributeType' has no attributes.
+The class 'mutatorenvironment::RandomIntegerNumberType' has the following attributes: 'min' of type IntegerType.
+The class 'Evaluation' has no attributes.
+The class 'mutatorenvironment::ObSelectionStrategy' has the following attributes: 'resource' of type StringType.
+The class 'mutatorenvironment::CompleteTypeSelection' has no attributes.
+The class 'mutatorenvironment::OtherTypeSelection' has no attributes.
+The class 'mutatorenvironment::miniOCL::NavigationPathCS' has no attributes.
+The class 'mutatorenvironment::RandomStringNumberType' has the following attributes: 'allowsNull' of type BooleanType; 'min' of type IntegerType; 'max' of type IntegerType.
+The class 'mutatorenvironment::MinValueType' has no attributes.
+The class 'mutatorenvironment::RandomDoubleType' has the following attributes: 'min' of type float; 'max' of type float; 'allowsNull' of type BooleanType.
+The class 'AttributeSet' has no attributes.
+The class 'AccVarCS' has no attributes.
+The class 'mutatorenvironment::RemoveSpecificReferenceMutator' has no attributes.
+The class 'mutatorenvironment::SpecificBooleanType' has the following attributes: 'value' of type BooleanType.
+The class 'ReferenceSet' has no attributes.
+The class 'RandomSelection' has no attributes.
+The class 'mutatorenvironment::miniOCL::OperationCS' has the following attributes: 'name' of type StringType.
+The class 'mutatorenvironment::miniOCL::PathVariableCS' has the following attributes: 'varName' of type StringType.
+The class 'mutatorenvironment::SpecificReferenceSelection' has no attributes.
+The class 'mutatorenvironment::EAttribute' has no attributes.
+The class 'PropertyCS' has no attributes.
+The class 'mutatorenvironment::MaxValueType' has no attributes.
+The class 'mutatorenvironment::CompositeMutator' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'mutatorenvironment::Evaluation' has no attributes.
+The class 'miniOCL::mutatorenvironment::EStructuralFeature' has no attributes.
+The class 'mutatorenvironment::AttributeOperation' has the following attributes: 'operator' of type StringType.
+The class 'PrimaryExpCS' has no attributes.
+The class 'LogicExpCS' has no attributes.
+The class 'mutatorenvironment::AttributeSet' has no attributes.
+The class 'mutatorenvironment::miniOCL::BooleanLiteralExpCS' has no attributes.
+The class 'mutatorenvironment::ReplaceStringType' has the following attributes: 'oldstring' of type StringType; 'newstring' of type StringType.
+The class 'mutatorenvironment::miniOCL::ClassCS' has the following attributes: 'name' of type StringType.
+The enumeration 'ArithmeticOperator' has the following literals: 'module', 'multiply', 'subtract', 'add', 'divide'.
+The enumeration 'LogicOperator' has the following literals: 'and_', 'or_'.
+The enumeration 'Repeat' has the following literals: 'yes', 'no'.
+The enumeration 'SampleClause' has the following literals: 'equals', 'distinct'.
+The enumeration 'Operator' has the following literals: 'in_', 'is_', 'gt', 'lte', 'not_', 'different', 'equals', 'gte', 'lt'.
+'mutatorenvironment::miniOCL::NameExpCS' is a specialization of 'NavigationExpCS'.
+'mutatorenvironment::ObSelectionStrategy' is a specialization of 'ObjectEmitter'.
+'mutatorenvironment::OtherTypeSelection' is a specialization of 'OtherSelection'.
+'mutatorenvironment::CreateObjectMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::miniOCL::PathVariableCS' is a specialization of 'PathCS'.
+'mutatorenvironment::Resource' is a specialization of 'Definition'.
+'mutatorenvironment::SpecificClosureSelection' is a specialization of 'SpecificSelection'.
+'mutatorenvironment::RandomIntegerNumberType' is a specialization of 'RandomNumberType'.
+'mutatorenvironment::SpecificDoubleType' is a specialization of 'DoubleType'.
+'mutatorenvironment::SpecificObjectSelection' is a specialization of 'SpecificSelection'.
+'mutatorenvironment::ListType' is a specialization of 'AttributeType'.
+'mutatorenvironment::miniOCL::LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+'mutatorenvironment::miniOCL::IterateExpCS' is a specialization of 'LoopExpCS'.
+'mutatorenvironment::MaxValueType' is a specialization of 'NumberType'.
+'mutatorenvironment::CreateReferenceMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::miniOCL::PathElementCS' is a specialization of 'PathCS'.
+'mutatorenvironment::BooleanType' is a specialization of 'AttributeType'.
+'mutatorenvironment::ModifySourceReferenceMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::miniOCL::CallExpCS' is a specialization of 'LogicExpCS'.
+'mutatorenvironment::miniOCL::LogicExpCS' is a specialization of 'ExpCS'.
+'mutatorenvironment::miniOCL::BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'mutatorenvironment::ReferenceRemove' is a specialization of 'ReferenceSet'.
+'mutatorenvironment::SelectSampleMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::miniOCL::BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+'mutatorenvironment::CatEndStringType' is a specialization of 'StringType'.
+'mutatorenvironment::LowerStringType' is a specialization of 'StringType'.
+'mutatorenvironment::RetypeObjectMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::RandomNumberType' is a specialization of 'NumberType'.
+'mutatorenvironment::miniOCL::PrimaryExpCS' is a specialization of 'CallExpCS'.
+'mutatorenvironment::CatStartStringType' is a specialization of 'StringType'.
+'mutatorenvironment::RemoveObjectMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::NumberType' is a specialization of 'AttributeType'.
+'mutatorenvironment::ReferenceInit' is a specialization of 'ReferenceSet'.
+'mutatorenvironment::RandomIntegerType' is a specialization of 'IntegerType'.
+'mutatorenvironment::IntegerType' is a specialization of 'NumberType'.
+'mutatorenvironment::MinValueType' is a specialization of 'NumberType'.
+'mutatorenvironment::ReferenceAtt' is a specialization of 'ReferenceSet'.
+'mutatorenvironment::AttributeOperation' is a specialization of 'AttributeSet'.
+'mutatorenvironment::TypedSelection' is a specialization of 'ObSelectionStrategy'.
+'mutatorenvironment::DoubleType' is a specialization of 'NumberType'.
+'mutatorenvironment::Library' is a specialization of 'Definition'.
+'mutatorenvironment::RandomSelection' is a specialization of 'ObSelectionStrategy'.
+'mutatorenvironment::miniOCL::ExistsExpCS' is a specialization of 'LoopExpCS'.
+'mutatorenvironment::SpecificSelection' is a specialization of 'ObSelectionStrategy'.
+'mutatorenvironment::Mutator' is a specialization of 'ObjectEmitter'.
+'mutatorenvironment::RemoveSpecificReferenceMutator' is a specialization of 'RemoveReferenceMutator'.
+'mutatorenvironment::miniOCL::NavigationPathVariableCS' is a specialization of 'NavigationPathCS'.
+'mutatorenvironment::CloneObjectMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::miniOCL::NavigationPathElementCS' is a specialization of 'NavigationPathCS'.
+'mutatorenvironment::RandomType' is a specialization of 'AttributeType'.
+'mutatorenvironment::AttributeScalar' is a specialization of 'AttributeSet'.
+'mutatorenvironment::miniOCL::LoopExpCS' is a specialization of 'NavigationExpCS'.
+'mutatorenvironment::RandomTypeSelection' is a specialization of 'RandomSelection'.
+'mutatorenvironment::RandomDoubleNumberType' is a specialization of 'RandomNumberType'.
+'mutatorenvironment::SpecificBooleanType' is a specialization of 'BooleanType'.
+'mutatorenvironment::UpperStringType' is a specialization of 'StringType'.
+'mutatorenvironment::miniOCL::CollectExpCS' is a specialization of 'LoopExpCS'.
+'mutatorenvironment::SpecificReferenceSelection' is a specialization of 'SpecificSelection'.
+'mutatorenvironment::AttributeReverse' is a specialization of 'AttributeSet'.
+'mutatorenvironment::OtherSelection' is a specialization of 'ObSelectionStrategy'.
+'mutatorenvironment::AttributeEvaluation' is a specialization of 'Evaluation'.
+'mutatorenvironment::AttributeUnset' is a specialization of 'AttributeSet'.
+'mutatorenvironment::AttributeSwap' is a specialization of 'AttributeSet'.
+'mutatorenvironment::CompositeMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::AttributeCopy' is a specialization of 'AttributeSet'.
+'mutatorenvironment::ListStringType' is a specialization of 'AttributeType'.
+'mutatorenvironment::RemoveCompleteReferenceMutator' is a specialization of 'RemoveReferenceMutator'.
+'mutatorenvironment::ObjectAttributeType' is a specialization of 'AttributeEvaluationType'.
+'mutatorenvironment::miniOCL::ForAllExpCS' is a specialization of 'LoopExpCS'.
+'mutatorenvironment::ModifyTargetReferenceMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::ReplaceStringType' is a specialization of 'StringType'.
+'mutatorenvironment::miniOCL::StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'mutatorenvironment::CompleteTypeSelection' is a specialization of 'CompleteSelection'.
+'mutatorenvironment::miniOCL::NavigationNameExpCS' is a specialization of 'NavigationExpCS'.
+'mutatorenvironment::RandomStringType' is a specialization of 'StringType'.
+'mutatorenvironment::CompleteSelection' is a specialization of 'ObSelectionStrategy'.
+'mutatorenvironment::RemoveRandomReferenceMutator' is a specialization of 'RemoveReferenceMutator'.
+'mutatorenvironment::ModifyInformationMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::RemoveReferenceMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::ReferenceEvaluation' is a specialization of 'Evaluation'.
+'mutatorenvironment::StringType' is a specialization of 'AttributeType'.
+'mutatorenvironment::RandomBooleanType' is a specialization of 'BooleanType'.
+'mutatorenvironment::ReferenceAdd' is a specialization of 'ReferenceSet'.
+'mutatorenvironment::AttributeType' is a specialization of 'AttributeEvaluationType'.
+'mutatorenvironment::Program' is a specialization of 'Definition'.
+'mutatorenvironment::RandomStringNumberType' is a specialization of 'StringType'.
+'mutatorenvironment::SelectObjectMutator' is a specialization of 'Mutator'.
+'mutatorenvironment::miniOCL::NavigationExpCS' is a specialization of 'PrimaryExpCS'.
+'mutatorenvironment::ReferenceSwap' is a specialization of 'ReferenceSet'.
+'mutatorenvironment::RandomDoubleType' is a specialization of 'DoubleType'.
+'mutatorenvironment::SpecificIntegerType' is a specialization of 'IntegerType'.
+'mutatorenvironment::SpecificStringType' is a specialization of 'StringType'.
+'mutatorenvironment::miniOCL::IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'mutatorenvironment::CreateObjectMutator' (role 'mutatorenvironment_CreateObjectMutator', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy80', cardinality 0..*) is associated with 'mutatorenvironment::AttributeCopy' (role 'mutatorenvironment_AttributeCopy', cardinality 0..*).
+'AccVarCS' (role 'AccVarCS262', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::ExistsExpCS' (role 'mutatorenvironment_miniOCL_ExistsExpCS', cardinality 0..*).
+'mutatorenvironment::miniOCL::NameExpCS' (role 'mutatorenvironment_miniOCL_NameExpCS243', cardinality 0..*) is associated with 'CallExpCS' (role 'CallExpCS244', cardinality 0..*).
+'mutatorenvironment::Mutator' (role 'mutatorenvironment_Mutator', cardinality 0..*) is associated with 'mutatorenvironment::MutatorEnvironment' (role 'mutatorenvironment_MutatorEnvironment2', cardinality 0..*).
+'mutatorenvironment::SpecificObjectSelection' (role 'mutatorenvironment_SpecificObjectSelection', cardinality 0..*) is associated with 'mutatorenvironment::ObjectEmitter' (role 'mutatorenvironment_ObjectEmitter34', cardinality 0..*).
+'mutatorenvironment::EClass' (role 'mutatorenvironment_EClass', cardinality 0..*) is associated with 'mutatorenvironment::ObjectEmitter' (role 'mutatorenvironment_ObjectEmitter', cardinality 0..*).
+'mutatorenvironment::SpecificReferenceSelection' (role 'mutatorenvironment_SpecificReferenceSelection', cardinality 0..*) is associated with 'mutatorenvironment::ObjectEmitter' (role 'mutatorenvironment_ObjectEmitter45', cardinality 0..*).
+'mutatorenvironment::MinValueType' (role 'mutatorenvironment_MinValueType', cardinality 0..*) is associated with 'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute169', cardinality 0..*).
+'mutatorenvironment::miniOCL::ParameterCS' (role 'mutatorenvironment_miniOCL_ParameterCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS223', cardinality 0..*).
+'mutatorenvironment::EObject' (role 'mutatorenvironment_EObject', cardinality 0..*) is associated with 'mutatorenvironment::ListType' (role 'mutatorenvironment_ListType', cardinality 0..*).
+'RoundedBracketClauseCS' (role 'RoundedBracketClauseCS266', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::NavigationNameExpCS' (role 'mutatorenvironment_miniOCL_NavigationNameExpCS265', cardinality 0..*).
+'mutatorenvironment::ModifyInformationMutator' (role 'mutatorenvironment_ModifyInformationMutator73', cardinality 0..*) is associated with 'mutatorenvironment::ReferenceSet' (role 'mutatorenvironment_ReferenceSet74', cardinality 0..*).
+'mutatorenvironment::ReferenceAtt' (role 'mutatorenvironment_ReferenceAtt108', cardinality 0..*) is associated with 'mutatorenvironment::AttributeType' (role 'mutatorenvironment_AttributeType109', cardinality 0..*).
+'ParameterCS' (role 'ParameterCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::OperationCS' (role 'mutatorenvironment_miniOCL_OperationCS', cardinality 0..*).
+'mutatorenvironment::ObjectAttributeType' (role 'mutatorenvironment_ObjectAttributeType166', cardinality 0..*) is associated with 'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute167', cardinality 0..*).
+'mutatorenvironment::SelectSampleMutator' (role 'mutatorenvironment_SelectSampleMutator184', cardinality 0..*) is associated with 'mutatorenvironment::EStructuralFeature' (role 'mutatorenvironment_EStructuralFeature', cardinality 0..*).
+'mutatorenvironment::miniOCL::CallExpCS' (role 'mutatorenvironment_miniOCL_CallExpCS237', cardinality 0..*) is associated with 'NavigationExpCS' (role 'NavigationExpCS', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy43', cardinality 0..*) is associated with 'mutatorenvironment::ModifySourceReferenceMutator' (role 'mutatorenvironment_ModifySourceReferenceMutator42', cardinality 0..*).
+'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation125', cardinality 0..*) is associated with 'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute126', cardinality 0..*).
+'ExpCS' (role 'ExpCS256', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::AccVarCS' (role 'mutatorenvironment_miniOCL_AccVarCS255', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy186', cardinality 0..*) is associated with 'mutatorenvironment::RetypeObjectMutator' (role 'mutatorenvironment_RetypeObjectMutator', cardinality 0..*).
+'mutatorenvironment::AttributeEvaluation' (role 'mutatorenvironment_AttributeEvaluation', cardinality 0..*) is associated with 'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute96', cardinality 0..*).
+'CallExpCS' (role 'CallExpCS269', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::NavigationNameExpCS' (role 'mutatorenvironment_miniOCL_NavigationNameExpCS268', cardinality 0..*).
+'mutatorenvironment::miniOCL::ClassCS' (role 'mutatorenvironment_miniOCL_ClassCS211', cardinality 0..*) is associated with 'PropertyCS' (role 'PropertyCS', cardinality 0..*).
+'ClassCS' (role 'ClassCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::PackageCS' (role 'mutatorenvironment_miniOCL_PackageCS208', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference37', cardinality 0..*) is associated with 'mutatorenvironment::ModifySourceReferenceMutator' (role 'mutatorenvironment_ModifySourceReferenceMutator', cardinality 0..*).
+'mutatorenvironment::ModifyTargetReferenceMutator' (role 'mutatorenvironment_ModifyTargetReferenceMutator', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference47', cardinality 0..*).
+'miniOCL::mutatorenvironment::EStructuralFeature' (role 'miniOCL_mutatorenvironment_EStructuralFeature', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::PathElementCS' (role 'mutatorenvironment_miniOCL_PathElementCS', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::ClassCS' (role 'mutatorenvironment_miniOCL_ClassCS', cardinality 0..*).
+'mutatorenvironment::miniOCL::NameExpCS' (role 'mutatorenvironment_miniOCL_NameExpCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS239', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS215', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::PropertyCS' (role 'mutatorenvironment_miniOCL_PropertyCS', cardinality 0..*).
+'mutatorenvironment::Constraint' (role 'mutatorenvironment_Constraint144', cardinality 0..*) is associated with 'mutatorenvironment::EClass' (role 'mutatorenvironment_EClass145', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS219', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::OperationCS' (role 'mutatorenvironment_miniOCL_OperationCS218', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy120', cardinality 0..*) is associated with 'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation119', cardinality 0..*).
+'mutatorenvironment::AttributeType' (role 'mutatorenvironment_AttributeType', cardinality 0..*) is associated with 'mutatorenvironment::AttributeScalar' (role 'mutatorenvironment_AttributeScalar', cardinality 0..*).
+'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation116', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference117', cardinality 0..*).
+'mutatorenvironment::Block' (role 'mutatorenvironment_Block138', cardinality 0..*) is associated with 'mutatorenvironment::Mutator' (role 'mutatorenvironment_Mutator139', cardinality 0..*).
+'mutatorenvironment::miniOCL::ForAllExpCS' (role 'mutatorenvironment_miniOCL_ForAllExpCS', cardinality 0..*) is associated with 'AccVarCS' (role 'AccVarCS274', cardinality 0..*).
+'mutatorenvironment::ModifyInformationMutator' (role 'mutatorenvironment_ModifyInformationMutator70', cardinality 0..*) is associated with 'mutatorenvironment::AttributeSet' (role 'mutatorenvironment_AttributeSet71', cardinality 0..*).
+'mutatorenvironment::ReferenceSet' (role 'mutatorenvironment_ReferenceSet100', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference101', cardinality 0..*).
+'mutatorenvironment::miniOCL::InvariantCS' (role 'mutatorenvironment_miniOCL_InvariantCS', cardinality 0..*) is associated with 'ExpCS' (role 'ExpCS230', cardinality 0..*).
+'mutatorenvironment::Expression' (role 'mutatorenvironment_Expression131', cardinality 0..*) is associated with 'mutatorenvironment::Evaluation' (role 'mutatorenvironment_Evaluation', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy94', cardinality 0..*) is associated with 'mutatorenvironment::SelectObjectMutator' (role 'mutatorenvironment_SelectObjectMutator93', cardinality 0..*).
+'mutatorenvironment::miniOCL::ConstraintCS' (role 'mutatorenvironment_miniOCL_ConstraintCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS225', cardinality 0..*).
+'mutatorenvironment::miniOCL::OperationCS' (role 'mutatorenvironment_miniOCL_OperationCS221', cardinality 0..*) is associated with 'ExpCS' (role 'ExpCS', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference89', cardinality 0..*) is associated with 'mutatorenvironment::RemoveCompleteReferenceMutator' (role 'mutatorenvironment_RemoveCompleteReferenceMutator', cardinality 0..*).
+'PathCS' (role 'PathCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::PathNameCS' (role 'mutatorenvironment_miniOCL_PathNameCS', cardinality 0..*).
+'mutatorenvironment::ReferenceSet' (role 'mutatorenvironment_ReferenceSet', cardinality 0..*) is associated with 'mutatorenvironment::CreateObjectMutator' (role 'mutatorenvironment_CreateObjectMutator22', cardinality 0..*).
+'mutatorenvironment::miniOCL::IterateExpCS' (role 'mutatorenvironment_miniOCL_IterateExpCS', cardinality 0..*) is associated with 'AccVarCS' (role 'AccVarCS', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy58', cardinality 0..*) is associated with 'mutatorenvironment::CreateReferenceMutator' (role 'mutatorenvironment_CreateReferenceMutator57', cardinality 0..*).
+'mutatorenvironment::miniOCL::LogicExpCS' (role 'mutatorenvironment_miniOCL_LogicExpCS233', cardinality 0..*) is associated with 'CallExpCS' (role 'CallExpCS', cardinality 0..*).
+'mutatorenvironment::RetypeObjectMutator' (role 'mutatorenvironment_RetypeObjectMutator194', cardinality 0..*) is associated with 'mutatorenvironment::AttributeSet' (role 'mutatorenvironment_AttributeSet195', cardinality 0..*).
+'ExpCS' (role 'ExpCS258', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::RoundedBracketClauseCS' (role 'mutatorenvironment_miniOCL_RoundedBracketClauseCS', cardinality 0..*).
+'mutatorenvironment::MutatorEnvironment' (role 'mutatorenvironment_MutatorEnvironment4', cardinality 0..*) is associated with 'mutatorenvironment::Load' (role 'mutatorenvironment_Load', cardinality 0..*).
+'mutatorenvironment::AttributeOperation' (role 'mutatorenvironment_AttributeOperation', cardinality 0..*) is associated with 'mutatorenvironment::AttributeEvaluationType' (role 'mutatorenvironment_AttributeEvaluationType173', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy175', cardinality 0..*) is associated with 'mutatorenvironment::RandomNumberType' (role 'mutatorenvironment_RandomNumberType', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy91', cardinality 0..*) is associated with 'mutatorenvironment::SelectObjectMutator' (role 'mutatorenvironment_SelectObjectMutator', cardinality 0..*).
+'mutatorenvironment::BinaryOperator' (role 'mutatorenvironment_BinaryOperator', cardinality 0..*) is associated with 'mutatorenvironment::Expression' (role 'mutatorenvironment_Expression133', cardinality 0..*).
+'CallExpCS' (role 'CallExpCS235', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::CallExpCS' (role 'mutatorenvironment_miniOCL_CallExpCS', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy50', cardinality 0..*) is associated with 'mutatorenvironment::ModifyTargetReferenceMutator' (role 'mutatorenvironment_ModifyTargetReferenceMutator49', cardinality 0..*).
+'mutatorenvironment::miniOCL::AccVarCS' (role 'mutatorenvironment_miniOCL_AccVarCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS253', cardinality 0..*).
+'mutatorenvironment::RandomNumberType' (role 'mutatorenvironment_RandomNumberType177', cardinality 0..*) is associated with 'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute178', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference111', cardinality 0..*) is associated with 'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference123', cardinality 0..*) is associated with 'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation122', cardinality 0..*).
+'OperationCS' (role 'OperationCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::ClassCS' (role 'mutatorenvironment_miniOCL_ClassCS213', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy24', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference', cardinality 0..*).
+'mutatorenvironment::ReferenceSet' (role 'mutatorenvironment_ReferenceSet103', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy104', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy152', cardinality 0..*) is associated with 'mutatorenvironment::CloneObjectMutator' (role 'mutatorenvironment_CloneObjectMutator151', cardinality 0..*).
+'mutatorenvironment::CompositeMutator' (role 'mutatorenvironment_CompositeMutator', cardinality 0..*) is associated with 'mutatorenvironment::Mutator' (role 'mutatorenvironment_Mutator17', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference32', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy31', cardinality 0..*).
+'mutatorenvironment::RemoveRandomReferenceMutator' (role 'mutatorenvironment_RemoveRandomReferenceMutator', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference82', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy40', cardinality 0..*) is associated with 'mutatorenvironment::ModifySourceReferenceMutator' (role 'mutatorenvironment_ModifySourceReferenceMutator39', cardinality 0..*).
+'mutatorenvironment::RemoveObjectMutator' (role 'mutatorenvironment_RemoveObjectMutator', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy63', cardinality 0..*).
+'mutatorenvironment::SpecificClosureSelection' (role 'mutatorenvironment_SpecificClosureSelection', cardinality 0..*) is associated with 'mutatorenvironment::ObjectEmitter' (role 'mutatorenvironment_ObjectEmitter180', cardinality 0..*).
+'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation113', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference114', cardinality 0..*).
+'mutatorenvironment::CloneObjectMutator' (role 'mutatorenvironment_CloneObjectMutator154', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference155', cardinality 0..*).
+'mutatorenvironment::Definition' (role 'mutatorenvironment_Definition', cardinality 0..*) is associated with 'mutatorenvironment::MutatorEnvironment' (role 'mutatorenvironment_MutatorEnvironment', cardinality 0..*).
+'mutatorenvironment::Block' (role 'mutatorenvironment_Block142', cardinality 0..*) is associated with 'mutatorenvironment::Block' (role 'mutatorenvironment_Block140', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy55', cardinality 0..*) is associated with 'mutatorenvironment::CreateReferenceMutator' (role 'mutatorenvironment_CreateReferenceMutator', cardinality 0..*).
+'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute171', cardinality 0..*) is associated with 'mutatorenvironment::MaxValueType' (role 'mutatorenvironment_MaxValueType', cardinality 0..*).
+'InvariantCS' (role 'InvariantCS', cardinality 0..*) is associated with 'mutatorenvironment::Constraint' (role 'mutatorenvironment_Constraint147', cardinality 0..*).
+'mutatorenvironment::miniOCL::NavigationPathNameCS' (role 'mutatorenvironment_miniOCL_NavigationPathNameCS', cardinality 0..*) is associated with 'NavigationPathCS' (role 'NavigationPathCS', cardinality 0..*).
+'mutatorenvironment::ModifyInformationMutator' (role 'mutatorenvironment_ModifyInformationMutator', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy68', cardinality 0..*).
+'mutatorenvironment::miniOCL::NameExpCS' (role 'mutatorenvironment_miniOCL_NameExpCS241', cardinality 0..*) is associated with 'RoundedBracketClauseCS' (role 'RoundedBracketClauseCS', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference29', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy28', cardinality 0..*).
+'mutatorenvironment::ReferenceSet' (role 'mutatorenvironment_ReferenceSet198', cardinality 0..*) is associated with 'mutatorenvironment::RetypeObjectMutator' (role 'mutatorenvironment_RetypeObjectMutator197', cardinality 0..*).
+'ExpCS' (role 'ExpCS248', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::LoopExpCS' (role 'mutatorenvironment_miniOCL_LoopExpCS247', cardinality 0..*).
+'mutatorenvironment::miniOCL::LogicExpCS' (role 'mutatorenvironment_miniOCL_LogicExpCS', cardinality 0..*) is associated with 'LogicExpCS' (role 'LogicExpCS', cardinality 0..*).
+'mutatorenvironment::AttributeEvaluation' (role 'mutatorenvironment_AttributeEvaluation98', cardinality 0..*) is associated with 'mutatorenvironment::AttributeEvaluationType' (role 'mutatorenvironment_AttributeEvaluationType', cardinality 0..*).
+'mutatorenvironment::Source' (role 'mutatorenvironment_Source201', cardinality 0..*) is associated with 'mutatorenvironment::Resource' (role 'mutatorenvironment_Resource200', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy182', cardinality 0..*) is associated with 'mutatorenvironment::SelectSampleMutator' (role 'mutatorenvironment_SelectSampleMutator', cardinality 0..*).
+'mutatorenvironment::ObjectEmitter' (role 'mutatorenvironment_ObjectEmitter14', cardinality 0..*) is associated with 'mutatorenvironment::EClass' (role 'mutatorenvironment_EClass15', cardinality 0..*).
+'mutatorenvironment::miniOCL::RootCS' (role 'mutatorenvironment_miniOCL_RootCS', cardinality 0..*) is associated with 'PackageCS' (role 'PackageCS', cardinality 0..*).
+'mutatorenvironment::RemoveSpecificReferenceMutator' (role 'mutatorenvironment_RemoveSpecificReferenceMutator86', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy87', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy149', cardinality 0..*) is associated with 'mutatorenvironment::CloneObjectMutator' (role 'mutatorenvironment_CloneObjectMutator', cardinality 0..*).
+'mutatorenvironment::Block' (role 'mutatorenvironment_Block', cardinality 0..*) is associated with 'mutatorenvironment::MutatorEnvironment' (role 'mutatorenvironment_MutatorEnvironment6', cardinality 0..*).
+'NavigationPathNameCS' (role 'NavigationPathNameCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::NavigationNameExpCS' (role 'mutatorenvironment_miniOCL_NavigationNameExpCS', cardinality 0..*).
+'mutatorenvironment::MutatorEnvironment' (role 'mutatorenvironment_MutatorEnvironment8', cardinality 0..*) is associated with 'mutatorenvironment::Constraint' (role 'mutatorenvironment_Constraint', cardinality 0..*).
+'mutatorenvironment::miniOCL::PackageCS' (role 'mutatorenvironment_miniOCL_PackageCS', cardinality 0..*) is associated with 'PackageCS' (role 'PackageCS206', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy53', cardinality 0..*) is associated with 'mutatorenvironment::ModifyTargetReferenceMutator' (role 'mutatorenvironment_ModifyTargetReferenceMutator52', cardinality 0..*).
+'mutatorenvironment::ObjectEmitter' (role 'mutatorenvironment_ObjectEmitter164', cardinality 0..*) is associated with 'mutatorenvironment::ObjectAttributeType' (role 'mutatorenvironment_ObjectAttributeType', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy189', cardinality 0..*) is associated with 'mutatorenvironment::RetypeObjectMutator' (role 'mutatorenvironment_RetypeObjectMutator188', cardinality 0..*).
+'mutatorenvironment::miniOCL::NavigationPathElementCS' (role 'mutatorenvironment_miniOCL_NavigationPathElementCS', cardinality 0..*) is associated with 'miniOCL::mutatorenvironment::EStructuralFeature' (role 'miniOCL_mutatorenvironment_EStructuralFeature272', cardinality 0..*).
+'mutatorenvironment::ReferenceSet' (role 'mutatorenvironment_ReferenceSet161', cardinality 0..*) is associated with 'mutatorenvironment::CloneObjectMutator' (role 'mutatorenvironment_CloneObjectMutator160', cardinality 0..*).
+'mutatorenvironment::Resource' (role 'mutatorenvironment_Resource', cardinality 0..*) is associated with 'mutatorenvironment::Program' (role 'mutatorenvironment_Program11', cardinality 0..*).
+'mutatorenvironment::AttributeSwap' (role 'mutatorenvironment_AttributeSwap', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy78', cardinality 0..*).
+'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute', cardinality 0..*) is associated with 'mutatorenvironment::AttributeSet' (role 'mutatorenvironment_AttributeSet76', cardinality 0..*).
+'InvariantCS' (role 'InvariantCS228', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::ConstraintCS' (role 'mutatorenvironment_miniOCL_ConstraintCS227', cardinality 0..*).
+'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference192', cardinality 0..*) is associated with 'mutatorenvironment::RetypeObjectMutator' (role 'mutatorenvironment_RetypeObjectMutator191', cardinality 0..*).
+'mutatorenvironment::RemoveSpecificReferenceMutator' (role 'mutatorenvironment_RemoveSpecificReferenceMutator', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference84', cardinality 0..*).
+'mutatorenvironment::Source' (role 'mutatorenvironment_Source', cardinality 0..*) is associated with 'mutatorenvironment::Program' (role 'mutatorenvironment_Program', cardinality 0..*).
+'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy26', cardinality 0..*) is associated with 'mutatorenvironment::Expression' (role 'mutatorenvironment_Expression', cardinality 0..*).
+'mutatorenvironment::ReferenceEvaluation' (role 'mutatorenvironment_ReferenceEvaluation128', cardinality 0..*) is associated with 'mutatorenvironment::AttributeEvaluationType' (role 'mutatorenvironment_AttributeEvaluationType129', cardinality 0..*).
+'mutatorenvironment::CreateReferenceMutator' (role 'mutatorenvironment_CreateReferenceMutator60', cardinality 0..*) is associated with 'mutatorenvironment::EReference' (role 'mutatorenvironment_EReference61', cardinality 0..*).
+'mutatorenvironment::ReferenceAtt' (role 'mutatorenvironment_ReferenceAtt', cardinality 0..*) is associated with 'mutatorenvironment::EAttribute' (role 'mutatorenvironment_EAttribute106', cardinality 0..*).
+'mutatorenvironment::RemoveObjectMutator' (role 'mutatorenvironment_RemoveObjectMutator65', cardinality 0..*) is associated with 'mutatorenvironment::ObSelectionStrategy' (role 'mutatorenvironment_ObSelectionStrategy66', cardinality 0..*).
+'mutatorenvironment::AttributeSet' (role 'mutatorenvironment_AttributeSet', cardinality 0..*) is associated with 'mutatorenvironment::CreateObjectMutator' (role 'mutatorenvironment_CreateObjectMutator20', cardinality 0..*).
+'IteratorVarCS' (role 'IteratorVarCS', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::LoopExpCS' (role 'mutatorenvironment_miniOCL_LoopExpCS', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS250', cardinality 0..*) is associated with 'mutatorenvironment::miniOCL::IteratorVarCS' (role 'mutatorenvironment_miniOCL_IteratorVarCS', cardinality 0..*).
+'mutatorenvironment::AttributeSet' (role 'mutatorenvironment_AttributeSet158', cardinality 0..*) is associated with 'mutatorenvironment::CloneObjectMutator' (role 'mutatorenvironment_CloneObjectMutator157', cardinality 0..*).
+'mutatorenvironment::miniOCL::RootCS' (role 'mutatorenvironment_miniOCL_RootCS204', cardinality 0..*) is associated with 'ConstraintCS' (role 'ConstraintCS', cardinality 0..*).
+'mutatorenvironment::Evaluation' (role 'mutatorenvironment_Evaluation136', cardinality 0..*) is associated with 'mutatorenvironment::Expression' (role 'mutatorenvironment_Expression135', cardinality 0..*).

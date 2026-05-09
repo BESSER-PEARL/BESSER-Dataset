@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/bento/examples/library/bento.trafolib.petrinet2matrix.bindings/metamodels/3_no_arc_petri_net.ecore

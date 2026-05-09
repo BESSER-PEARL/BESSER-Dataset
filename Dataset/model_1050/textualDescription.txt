@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'fsm::Constraint' has the following attributes: 'name' of type str; 'true' of type bool.
+The class 'fsm::Language' has the following attributes: 'name' of type str; 'target' of type str.
+The class 'fsm::State' has the following attributes: 'name' of type str; 'final' of type bool; 'initial' of type bool.
+The class 'fsm::Model' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'event' of type str.
+The class 'fsm::Machine' has no attributes.
+'fsm::Machine' (role 'fsm_Machine', cardinality 0..*) is associated with 'fsm::Model' (role 'fsm_Model4', cardinality 0..*).
+'fsm::Language' (role 'fsm_Language', cardinality 0..*) is associated with 'fsm::Model' (role 'fsm_Model2', cardinality 0..*).
+'fsm::Machine' (role 'fsm_Machine6', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition13', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State14', cardinality 0..*).
+'fsm::Model' (role 'fsm_Model', cardinality 0..*) is associated with 'fsm::Constraint' (role 'fsm_Constraint', cardinality 0..*).
+'fsm::State' (role 'fsm_State11', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition10', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition', cardinality 0..*) is associated with 'fsm::Machine' (role 'fsm_Machine8', cardinality 0..*).

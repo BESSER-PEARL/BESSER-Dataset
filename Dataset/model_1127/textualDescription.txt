@@ -1,0 +1,37 @@
+The model has 11 class(es).
+The class 'robotmodel::Role' has the following attributes: 'name' of type str.
+The class 'robotmodel::Connector' has the following attributes: 'atype' of type str; 'type' of type str; 'name' of type str.
+The class 'robotmodel::System' has the following attributes: 'author_email' of type str; 'depends' of type str; 'name' of type str; 'author' of type str; 'description' of type str.
+The class 'robotmodel::State' has the following attributes: 'name' of type str.
+The class 'robotmodel::Property' has the following attributes: 'type' of type str; 'name' of type str; 'value' of type str.
+The class 'robotmodel::Event' has the following attributes: 'name' of type str.
+The class 'robotmodel::Port' has the following attributes: 'name' of type str.
+The class 'robotmodel::Transition' has the following attributes: 'name' of type str.
+The class 'robotmodel::Property::List' has the following attributes: 'name' of type str.
+The class 'robotmodel::Action' has the following attributes: 'name' of type str.
+The class 'robotmodel::Component' has the following attributes: 'frequency' of type float; 'depends' of type str; 'name' of type str; 'atype' of type str; 'type' of type str.
+The enumeration 'Is_Style' has the following literals: 'non_style', 'style'.
+'robotmodel::Transition' (role 'robotmodel_Transition36', cardinality 0..*) is associated with 'robotmodel::State' (role 'robotmodel_State35', cardinality 0..*).
+'robotmodel::Component' (role 'robotmodel_Component4', cardinality 0..*) is associated with 'robotmodel::Port' (role 'robotmodel_Port', cardinality 0..*).
+'robotmodel::Component' (role 'robotmodel_Component', cardinality 0..*) is associated with 'robotmodel::System' (role 'robotmodel_System', cardinality 0..*).
+'robotmodel::State' (role 'robotmodel_State38', cardinality 0..*) is associated with 'robotmodel::Action' (role 'robotmodel_Action39', cardinality 0..*).
+'robotmodel::Role' (role 'robotmodel_Role', cardinality 0..*) is associated with 'robotmodel::Connector' (role 'robotmodel_Connector22', cardinality 0..*).
+'robotmodel::Transition' (role 'robotmodel_Transition56', cardinality 0..*) is associated with 'robotmodel::State' (role 'robotmodel_State57', cardinality 0..*).
+'robotmodel::Event' (role 'robotmodel_Event', cardinality 0..*) is associated with 'robotmodel::Component' (role 'robotmodel_Component13', cardinality 0..*).
+'robotmodel::Property::List' (role 'robotmodel_Property_List27', cardinality 0..*) is associated with 'robotmodel::Property' (role 'robotmodel_Property', cardinality 0..*).
+'robotmodel::State' (role 'robotmodel_State32', cardinality 0..*) is associated with 'robotmodel::Action' (role 'robotmodel_Action33', cardinality 0..*).
+'robotmodel::Component' (role 'robotmodel_Component15', cardinality 0..*) is associated with 'robotmodel::Transition' (role 'robotmodel_Transition', cardinality 0..*).
+'robotmodel::State' (role 'robotmodel_State44', cardinality 0..*) is associated with 'robotmodel::Event' (role 'robotmodel_Event45', cardinality 0..*).
+'robotmodel::Property::List' (role 'robotmodel_Property_List20', cardinality 0..*) is associated with 'robotmodel::Connector' (role 'robotmodel_Connector19', cardinality 0..*).
+'robotmodel::Port' (role 'robotmodel_Port24', cardinality 0..*) is associated with 'robotmodel::Role' (role 'robotmodel_Role25', cardinality 0..*).
+'robotmodel::Action' (role 'robotmodel_Action', cardinality 0..*) is associated with 'robotmodel::Component' (role 'robotmodel_Component17', cardinality 0..*).
+'robotmodel::State' (role 'robotmodel_State', cardinality 0..*) is associated with 'robotmodel::Component' (role 'robotmodel_Component11', cardinality 0..*).
+'robotmodel::Transition' (role 'robotmodel_Transition50', cardinality 0..*) is associated with 'robotmodel::Action' (role 'robotmodel_Action51', cardinality 0..*).
+'robotmodel::Component' (role 'robotmodel_Component7', cardinality 0..*) is associated with 'robotmodel::Component' (role 'robotmodel_Component9', cardinality 0..*).
+'robotmodel::Transition' (role 'robotmodel_Transition60', cardinality 0..*) is associated with 'robotmodel::Event' (role 'robotmodel_Event59', cardinality 0..*).
+'robotmodel::Property::List' (role 'robotmodel_Property_List', cardinality 0..*) is associated with 'robotmodel::Component' (role 'robotmodel_Component6', cardinality 0..*).
+'robotmodel::Transition' (role 'robotmodel_Transition53', cardinality 0..*) is associated with 'robotmodel::State' (role 'robotmodel_State54', cardinality 0..*).
+'robotmodel::State' (role 'robotmodel_State30', cardinality 0..*) is associated with 'robotmodel::State' (role 'robotmodel_State28', cardinality 0..*).
+'robotmodel::Action' (role 'robotmodel_Action42', cardinality 0..*) is associated with 'robotmodel::State' (role 'robotmodel_State41', cardinality 0..*).
+'robotmodel::System' (role 'robotmodel_System2', cardinality 0..*) is associated with 'robotmodel::Connector' (role 'robotmodel_Connector', cardinality 0..*).
+'robotmodel::Transition' (role 'robotmodel_Transition47', cardinality 0..*) is associated with 'robotmodel::Action' (role 'robotmodel_Action48', cardinality 0..*).

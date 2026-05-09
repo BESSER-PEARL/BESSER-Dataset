@@ -1,0 +1,62 @@
+The model has 18 class(es).
+The class 'FlightObject' has no attributes.
+The class 'Flights::Gate' has the following attributes: 'position' of type int.
+The class 'Flights::Airport' has the following attributes: 'size' of type float.
+The class 'Flights::TimeStamp' has the following attributes: 'time' of type str.
+The class 'Flights::Planes' has no attributes.
+The class 'Flights::Airports' has no attributes.
+The class 'Flights::Route' has the following attributes: 'duration' of type int.
+The class 'Flights::Travel' has no attributes.
+The class 'Flights::Flight' has the following attributes: 'newAttribute' of type str.
+The class 'Flights::Routes' has no attributes.
+The class 'Flights::FlightModel' has no attributes.
+The class 'Flights::Booking' has no attributes.
+The class 'Flights::Person' has the following attributes: 'travelState' of type str.
+The class 'Flights::Plane' has the following attributes: 'capacity' of type int.
+The class 'Flights::Persons' has no attributes.
+The class 'Flights::Bookings' has no attributes.
+The class 'Flights::FlightContainer' has no attributes.
+The class 'Flights::FlightObject' has the following attributes: 'ID' of type str.
+The enumeration 'FlightState' has the following literals: 'completed', 'inFlight', 'planned'.
+The enumeration 'TravelState' has the following literals: 'unknown', 'checkedIn', 'onBoard', 'luggageDroppedOf'.
+'Flights::Plane' is a specialization of 'FlightObject'.
+'Flights::Person' is a specialization of 'FlightObject'.
+'Flights::Travel' is a specialization of 'FlightObject'.
+'Flights::Flight' is a specialization of 'FlightObject'.
+'Flights::Route' is a specialization of 'FlightObject'.
+'Flights::Booking' is a specialization of 'FlightObject'.
+'Flights::Airport' is a specialization of 'FlightObject'.
+'Flights::Gate' is a specialization of 'FlightObject'.
+'Flights::FlightModel' (role 'Flights_FlightModel10', cardinality 0..*) is associated with 'Flights::Planes' (role 'Flights_Planes', cardinality 0..*).
+'Flights::Route' (role 'incomingRoutes', cardinality 0..*) is associated with 'Flights::Airport' (role 'Airport38', cardinality 0..*).
+'Flights::Travel' (role 'Travel', cardinality 0..*) is associated with 'Flights::Flight' (role 'flights', cardinality 0..*).
+'Flights::Person' (role 'Flights_Person', cardinality 0..*) is associated with 'Flights::Persons' (role 'Flights_Persons44', cardinality 0..*).
+'Flights::Flight' (role 'Flight40', cardinality 0..*) is associated with 'Flights::Travel' (role 'travels', cardinality 0..*).
+'Flights::Travel' (role 'Travel46', cardinality 0..*) is associated with 'Flights::Person' (role 'person', cardinality 0..*).
+'Flights::Flight' (role 'flights17', cardinality 0..*) is associated with 'Flights::Route' (role 'Route', cardinality 0..*).
+'Flights::TimeStamp' (role 'Flights_TimeStamp25', cardinality 0..*) is associated with 'Flights::Flight' (role 'Flights_Flight24', cardinality 0..*).
+'Flights::Gate' (role 'Flights_Gate', cardinality 0..*) is associated with 'Flights::Airport' (role 'Flights_Airport50', cardinality 0..*).
+'Flights::Routes' (role 'Flights_Routes34', cardinality 0..*) is associated with 'Flights::Route' (role 'Flights_Route', cardinality 0..*).
+'Flights::Person' (role 'Person', cardinality 0..*) is associated with 'Flights::Travel' (role 'travels42', cardinality 0..*).
+'Flights::Gate' (role 'src60', cardinality 0..*) is associated with 'Flights::Flight' (role 'Flight61', cardinality 0..*).
+'Flights::Persons' (role 'Flights_Persons', cardinality 0..*) is associated with 'Flights::FlightModel' (role 'Flights_FlightModel4', cardinality 0..*).
+'Flights::Route' (role 'route', cardinality 0..*) is associated with 'Flights::Flight' (role 'Flight', cardinality 0..*).
+'Flights::FlightModel' (role 'Flights_FlightModel6', cardinality 0..*) is associated with 'Flights::Routes' (role 'Flights_Routes', cardinality 0..*).
+'Flights::Gate' (role 'trg63', cardinality 0..*) is associated with 'Flights::Flight' (role 'Flight64', cardinality 0..*).
+'Flights::Airport' (role 'Flights_Airport', cardinality 0..*) is associated with 'Flights::Airports' (role 'Flights_Airports48', cardinality 0..*).
+'Flights::Flight' (role 'Flights_Flight27', cardinality 0..*) is associated with 'Flights::TimeStamp' (role 'Flights_TimeStamp28', cardinality 0..*).
+'Flights::FlightModel' (role 'Flights_FlightModel2', cardinality 0..*) is associated with 'Flights::Bookings' (role 'Flights_Bookings', cardinality 0..*).
+'Flights::FlightContainer' (role 'Flights_FlightContainer', cardinality 0..*) is associated with 'Flights::FlightModel' (role 'Flights_FlightModel', cardinality 0..*).
+'Flights::FlightModel' (role 'Flights_FlightModel8', cardinality 0..*) is associated with 'Flights::Airports' (role 'Flights_Airports', cardinality 0..*).
+'Flights::Route' (role 'outgoingRoutes', cardinality 0..*) is associated with 'Flights::Airport' (role 'Airport', cardinality 0..*).
+'Flights::Route' (role 'Route54', cardinality 0..*) is associated with 'Flights::Airport' (role 'trg', cardinality 0..*).
+'Flights::Airport' (role 'src', cardinality 0..*) is associated with 'Flights::Route' (role 'Route52', cardinality 0..*).
+'Flights::Flight' (role 'Flight58', cardinality 0..*) is associated with 'Flights::Plane' (role 'plane', cardinality 0..*).
+'Flights::FlightContainer' (role 'Flights_FlightContainer14', cardinality 0..*) is associated with 'Flights::Flight' (role 'Flights_Flight', cardinality 0..*).
+'Flights::Gate' (role 'Gate20', cardinality 0..*) is associated with 'Flights::Flight' (role 'incomingFlights', cardinality 0..*).
+'Flights::Plane' (role 'Plane', cardinality 0..*) is associated with 'Flights::Flight' (role 'flights22', cardinality 0..*).
+'Flights::Planes' (role 'Flights_Planes56', cardinality 0..*) is associated with 'Flights::Plane' (role 'Flights_Plane', cardinality 0..*).
+'Flights::Flight' (role 'outgoingFlights', cardinality 0..*) is associated with 'Flights::Gate' (role 'Gate', cardinality 0..*).
+'Flights::Booking' (role 'Flights_Booking32', cardinality 0..*) is associated with 'Flights::Travel' (role 'Flights_Travel', cardinality 0..*).
+'Flights::TimeStamp' (role 'Flights_TimeStamp', cardinality 0..*) is associated with 'Flights::FlightModel' (role 'Flights_FlightModel12', cardinality 0..*).
+'Flights::Booking' (role 'Flights_Booking', cardinality 0..*) is associated with 'Flights::Bookings' (role 'Flights_Bookings30', cardinality 0..*).

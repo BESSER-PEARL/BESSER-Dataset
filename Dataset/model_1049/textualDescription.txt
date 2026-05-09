@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'efsm::InitialState' has no attributes.
+The class 'efsm::Param' has the following attributes: 'argType' of type str; 'argName' of type str.
+The class 'efsm::Transition' has the following attributes: 'guard' of type str; 'name' of type str; 'output' of type str; 'action' of type str.
+The class 'AbstractState' has no attributes.
+The class 'efsm::ContextVariable' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'efsm::Event' has the following attributes: 'name' of type str; 'return_' of type str; 'class_' of type str.
+The class 'efsm::EFSM' has the following attributes: 'name' of type str.
+The class 'efsm::State' has no attributes.
+The class 'efsm::Input' has the following attributes: 'name' of type str.
+The class 'efsm::Variable' has the following attributes: 'name' of type str; 'class_' of type str; 'type' of type str.
+The class 'efsm::AbstractState' has the following attributes: 'name' of type str.
+'efsm::State' is a specialization of 'AbstractState'.
+'efsm::InitialState' is a specialization of 'AbstractState'.
+'efsm::AbstractState' (role 'efsm_AbstractState11', cardinality 0..*) is associated with 'efsm::Transition' (role 'efsm_Transition10', cardinality 0..*).
+'efsm::Transition' (role 'efsm_Transition15', cardinality 0..*) is associated with 'efsm::Event' (role 'efsm_Event', cardinality 0..*).
+'efsm::Event' (role 'efsm_Event19', cardinality 0..*) is associated with 'efsm::Param' (role 'efsm_Param', cardinality 0..*).
+'efsm::EFSM' (role 'efsm_EFSM4', cardinality 0..*) is associated with 'efsm::State' (role 'efsm_State', cardinality 0..*).
+'efsm::Transition' (role 'efsm_Transition8', cardinality 0..*) is associated with 'efsm::AbstractState' (role 'efsm_AbstractState', cardinality 0..*).
+'efsm::EFSM' (role 'efsm_EFSM6', cardinality 0..*) is associated with 'efsm::ContextVariable' (role 'efsm_ContextVariable', cardinality 0..*).
+'efsm::Input' (role 'efsm_Input', cardinality 0..*) is associated with 'efsm::Transition' (role 'efsm_Transition13', cardinality 0..*).
+'efsm::Input' (role 'efsm_Input17', cardinality 0..*) is associated with 'efsm::Variable' (role 'efsm_Variable', cardinality 0..*).
+'efsm::InitialState' (role 'efsm_InitialState', cardinality 0..*) is associated with 'efsm::EFSM' (role 'efsm_EFSM2', cardinality 0..*).
+'efsm::Transition' (role 'efsm_Transition', cardinality 0..*) is associated with 'efsm::EFSM' (role 'efsm_EFSM', cardinality 0..*).

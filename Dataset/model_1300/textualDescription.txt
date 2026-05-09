@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'State' has no attributes.
+The class 'StateMachineDiagram::meta::Application' has the following attributes: 'name' of type str.
+The class 'StateMachineDiagram::meta::StateMachine' has the following attributes: 'name' of type str.
+The class 'StateMachineDiagram::meta::Transition' has the following attributes: 'name' of type str; 'trigger' of type str.
+The class 'StateMachineDiagram::meta::State' has the following attributes: 'name' of type str.
+The class 'StateMachineDiagram::meta::Pseudostate' has no attributes.
+The class 'StateMachineDiagram::meta::Event' has no attributes.
+The class 'StateMachineDiagram::meta::Activity' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'StateMachineDiagram::meta::Fragment' has no attributes.
+The class 'StateMachineDiagram::meta::Vertex' has no attributes.
+'StateMachineDiagram::meta::Fragment' is a specialization of 'State'.
+'StateMachineDiagram::meta::Event' is a specialization of 'State'.
+'StateMachineDiagram::meta::Activity' is a specialization of 'State'.
+'StateMachineDiagram::meta::Pseudostate' is a specialization of 'Vertex'.
+'StateMachineDiagram::meta::State' is a specialization of 'Vertex'.
+'StateMachineDiagram::meta::Transition' (role 'incoming', cardinality 0..*) is associated with 'StateMachineDiagram::meta::Vertex' (role 'Vertex10', cardinality 0..*).
+'StateMachineDiagram::meta::Transition' (role 'outgoing', cardinality 0..*) is associated with 'StateMachineDiagram::meta::Vertex' (role 'Vertex', cardinality 0..*).
+'StateMachineDiagram::meta::Vertex' (role 'souce', cardinality 0..*) is associated with 'StateMachineDiagram::meta::Transition' (role 'Transition', cardinality 0..*).
+'StateMachineDiagram::meta::Transition' (role 'Transition7', cardinality 0..*) is associated with 'StateMachineDiagram::meta::Vertex' (role 'target', cardinality 0..*).
+'StateMachineDiagram::meta::StateMachine' (role 'StateMachineDiagram_meta_StateMachine12', cardinality 0..*) is associated with 'StateMachineDiagram::meta::State' (role 'StateMachineDiagram_meta_State', cardinality 0..*).
+'StateMachineDiagram::meta::Vertex' (role 'StateMachineDiagram_meta_Vertex', cardinality 0..*) is associated with 'StateMachineDiagram::meta::StateMachine' (role 'StateMachineDiagram_meta_StateMachine2', cardinality 0..*).
+'StateMachineDiagram::meta::Application' (role 'StateMachineDiagram_meta_Application', cardinality 0..*) is associated with 'StateMachineDiagram::meta::StateMachine' (role 'StateMachineDiagram_meta_StateMachine', cardinality 0..*).
+'StateMachineDiagram::meta::Transition' (role 'StateMachineDiagram_meta_Transition', cardinality 0..*) is associated with 'StateMachineDiagram::meta::StateMachine' (role 'StateMachineDiagram_meta_StateMachine4', cardinality 0..*).

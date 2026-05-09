@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'statemachine::StateMachine' has no attributes.
+The class 'statemachine::NormalState' has no attributes.
+The class 'statemachine::StateMachineVariable' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'statemachine::Declaration' has no attributes.
+The class 'statemachine::InitialState' has no attributes.
+The class 'statemachine::Action' has the following attributes: 'actionStatement' of type str; 'actionLabel' of type str.
+The class 'Declaration' has no attributes.
+The class 'statemachine::Transition' has the following attributes: 'targetLabel' of type str; 'label' of type str; 'actionLabel' of type str; 'actionStatement' of type str; 'guardLabel' of type str; 'guardExpression' of type str; 'sourceLabel' of type str.
+The class 'statemachine::FinalState' has no attributes.
+The class 'State' has no attributes.
+The class 'statemachine::State' has the following attributes: 'id' of type int; 'label' of type str.
+'statemachine::Transition' is a specialization of 'Declaration'.
+'statemachine::FinalState' is a specialization of 'State'.
+'statemachine::InitialState' is a specialization of 'State'.
+'statemachine::NormalState' is a specialization of 'State'.
+'statemachine::State' is a specialization of 'Declaration'.
+'statemachine::Declaration' (role 'statemachine_Declaration', cardinality 0..*) is associated with 'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).
+'statemachine::NormalState' (role 'statemachine_NormalState', cardinality 0..*) is associated with 'statemachine::Action' (role 'statemachine_Action', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State7', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State9', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine2', cardinality 0..*) is associated with 'statemachine::StateMachineVariable' (role 'statemachine_StateMachineVariable', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State14', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition15', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State6', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition5', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State10', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State12', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'helloworldsaved::Alias' has the following attributes: 'id' of type str.
+The class 'NamedElement' has no attributes.
+The class 'helloworldsaved::NamedElement' has the following attributes: 'name' of type str.
+The class 'helloworldsaved::Thing' has the following attributes: 'id' of type int.
+The class 'helloworldsaved::RelatedTo' has the following attributes: 'since' of type str.
+The class 'helloworldsaved::World' has no attributes.
+'helloworldsaved::RelatedTo' is a specialization of 'NamedElement'.
+'helloworldsaved::Thing' is a specialization of 'NamedElement'.
+'helloworldsaved::World' (role 'helloworldsaved_World', cardinality 0..*) is associated with 'helloworldsaved::Thing' (role 'helloworldsaved_Thing', cardinality 0..*).
+'helloworldsaved::NamedElement' (role 'helloworldsaved_NamedElement', cardinality 0..*) is associated with 'helloworldsaved::Alias' (role 'helloworldsaved_Alias', cardinality 0..*).
+'helloworldsaved::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'helloworldsaved::Thing' (role 'Thing', cardinality 0..*).
+'helloworldsaved::RelatedTo' (role 'helloworldsaved_RelatedTo', cardinality 0..*) is associated with 'helloworldsaved::Thing' (role 'helloworldsaved_Thing5', cardinality 0..*).
+'helloworldsaved::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'helloworldsaved::Thing' (role 'fromThing', cardinality 0..*).

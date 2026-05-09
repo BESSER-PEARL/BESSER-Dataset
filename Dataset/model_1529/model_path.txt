@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/manuelleduc/sle18_artifact/examples/minifsm/model/MiniFsm.ecore

@@ -1,0 +1,34 @@
+The model has 11 class(es).
+The class 'devs::ExternalTransition' has no attributes.
+The class 'devs::AtomicModel' has the following attributes: 'name' of type str.
+The class 'devs::Event' has the following attributes: 'name' of type str.
+The class 'Event' has no attributes.
+The class 'devs::OutputFunction' has the following attributes: 'name' of type str.
+The class 'devs::InputEvent' has no attributes.
+The class 'devs::State' has the following attributes: 'lifeTime' of type float; 'name' of type str.
+The class 'Transition' has no attributes.
+The class 'devs::InternalTransition' has no attributes.
+The class 'devs::OutputEvent' has no attributes.
+The class 'devs::Transition' has the following attributes: 'name' of type str.
+'devs::OutputEvent' is a specialization of 'Event'.
+'devs::InternalTransition' is a specialization of 'Transition'.
+'devs::InputEvent' is a specialization of 'Event'.
+'devs::ExternalTransition' is a specialization of 'Transition'.
+'devs::Event' (role 'Event', cardinality 0..*) is associated with 'devs::AtomicModel' (role 'atomicModel2', cardinality 0..*).
+'devs::Event' (role 'event', cardinality 0..*) is associated with 'devs::AtomicModel' (role 'AtomicModel16', cardinality 0..*).
+'devs::State' (role 'source12', cardinality 0..*) is associated with 'devs::OutputFunction' (role 'OutputFunction13', cardinality 0..*).
+'devs::InputEvent' (role 'InputEvent', cardinality 0..*) is associated with 'devs::ExternalTransition' (role 'externalTransition', cardinality 0..*).
+'devs::State' (role 'State21', cardinality 0..*) is associated with 'devs::Transition' (role 'out', cardinality 0..*).
+'devs::OutputEvent' (role 'outputEvent', cardinality 0..*) is associated with 'devs::OutputFunction' (role 'OutputFunction19', cardinality 0..*).
+'devs::AtomicModel' (role 'atomicModel6', cardinality 0..*) is associated with 'devs::OutputFunction' (role 'OutputFunction', cardinality 0..*).
+'devs::Transition' (role 'in_', cardinality 0..*) is associated with 'devs::State' (role 'State23', cardinality 0..*).
+'devs::ExternalTransition' (role 'ExternalTransition', cardinality 0..*) is associated with 'devs::InputEvent' (role 'inputEvent', cardinality 0..*).
+'devs::AtomicModel' (role 'AtomicModel25', cardinality 0..*) is associated with 'devs::Transition' (role 'transition', cardinality 0..*).
+'devs::State' (role 'source', cardinality 0..*) is associated with 'devs::Transition' (role 'Transition10', cardinality 0..*).
+'devs::OutputFunction' (role 'outputFunction', cardinality 0..*) is associated with 'devs::OutputEvent' (role 'OutputEvent', cardinality 0..*).
+'devs::Transition' (role 'Transition', cardinality 0..*) is associated with 'devs::AtomicModel' (role 'atomicModel4', cardinality 0..*).
+'devs::State' (role 'State28', cardinality 0..*) is associated with 'devs::OutputFunction' (role 'outF', cardinality 0..*).
+'devs::State' (role 'state', cardinality 0..*) is associated with 'devs::AtomicModel' (role 'AtomicModel', cardinality 0..*).
+'devs::OutputFunction' (role 'outputFunction31', cardinality 0..*) is associated with 'devs::AtomicModel' (role 'AtomicModel32', cardinality 0..*).
+'devs::State' (role 'State', cardinality 0..*) is associated with 'devs::AtomicModel' (role 'atomicModel', cardinality 0..*).
+'devs::Transition' (role 'Transition8', cardinality 0..*) is associated with 'devs::State' (role 'target', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'statemachine::State' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'statemachine::Final' has no attributes.
+The class 'statemachine::Simple' has no attributes.
+The class 'statemachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'statemachine::Transition' has the following attributes: 'Id' of type int.
+The class 'statemachine::Initial' has no attributes.
+'statemachine::Initial' is a specialization of 'State'.
+'statemachine::Final' is a specialization of 'State'.
+'statemachine::Simple' is a specialization of 'State'.
+'statemachine::Transition' (role 'statemachine_Transition2', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition4', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State5', cardinality 0..*).

@@ -1,0 +1,42 @@
+The model has 14 class(es).
+The class 'Vertex' has no attributes.
+The class 'StateMachine::State' has the following attributes: 'isComposite' of type str; 'isSubmachineState' of type str; 'isSimple' of type str.
+The class 'StateMachine::Vertex' has the following attributes: 'name' of type str.
+The class 'StateMachine::Transition' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'StateMachine::Behavior' has no attributes.
+The class 'StateMachine::FinalState' has no attributes.
+The class 'StateMachine::Constraint' has the following attributes: 'constraint' of type str.
+The class 'StateMachine::Trigger' has the following attributes: 'trigger' of type str.
+The class 'StateMachine::CodeBlock' has the following attributes: 'desc' of type str.
+The class 'StateMachine::Region' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'StateMachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'StateMachine::PseudoState' has the following attributes: 'pseudoStateKind' of type str; 'returnValue' of type str.
+The class 'Behavior' has no attributes.
+The enumeration 'PseudoStateKind' has the following literals: 'exitPoint', 'shallowHistory', 'junction', 'entryPoint', 'deepHistory', 'join', 'fork', 'choice', 'terminate', 'initial'.
+The enumeration 'TransitionKind' has the following literals: 'local', 'external', 'internal'.
+'StateMachine::CodeBlock' is a specialization of 'Behavior'.
+'StateMachine::State' is a specialization of 'Vertex'.
+'StateMachine::FinalState' is a specialization of 'State'.
+'StateMachine::PseudoState' is a specialization of 'Vertex'.
+'StateMachine::StateMachine' is a specialization of 'Behavior'.
+'StateMachine::Constraint' (role 'StateMachine_Constraint', cardinality 0..*) is associated with 'StateMachine::State' (role 'StateMachine_State6', cardinality 0..*).
+'StateMachine::Transition' (role 'Transition21', cardinality 0..*) is associated with 'StateMachine::Vertex' (role 'target', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State4', cardinality 0..*) is associated with 'StateMachine::Trigger' (role 'StateMachine_Trigger', cardinality 0..*).
+'StateMachine::Transition' (role 'StateMachine_Transition', cardinality 0..*) is associated with 'StateMachine::Region' (role 'StateMachine_Region25', cardinality 0..*).
+'StateMachine::Behavior' (role 'StateMachine_Behavior12', cardinality 0..*) is associated with 'StateMachine::State' (role 'StateMachine_State11', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State15', cardinality 0..*) is associated with 'StateMachine::PseudoState' (role 'StateMachine_PseudoState', cardinality 0..*).
+'StateMachine::Constraint' (role 'StateMachine_Constraint40', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition39', cardinality 0..*).
+'StateMachine::Region' (role 'StateMachine_Region27', cardinality 0..*) is associated with 'StateMachine::StateMachine' (role 'StateMachine_StateMachine', cardinality 0..*).
+'StateMachine::Transition' (role 'incoming', cardinality 0..*) is associated with 'StateMachine::Vertex' (role 'Vertex31', cardinality 0..*).
+'StateMachine::Behavior' (role 'StateMachine_Behavior9', cardinality 0..*) is associated with 'StateMachine::State' (role 'StateMachine_State8', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State', cardinality 0..*) is associated with 'StateMachine::Region' (role 'StateMachine_Region', cardinality 0..*).
+'StateMachine::Transition' (role 'outgoing', cardinality 0..*) is associated with 'StateMachine::Vertex' (role 'Vertex', cardinality 0..*).
+'StateMachine::Behavior' (role 'StateMachine_Behavior34', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition33', cardinality 0..*).
+'StateMachine::StateMachine' (role 'submachine', cardinality 0..*) is associated with 'StateMachine::State' (role 'State', cardinality 0..*).
+'StateMachine::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'StateMachine::State' (role 'submachineState', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State2', cardinality 0..*) is associated with 'StateMachine::Behavior' (role 'StateMachine_Behavior', cardinality 0..*).
+'StateMachine::Region' (role 'StateMachine_Region23', cardinality 0..*) is associated with 'StateMachine::Vertex' (role 'StateMachine_Vertex', cardinality 0..*).
+'StateMachine::Transition' (role 'Transition', cardinality 0..*) is associated with 'StateMachine::Vertex' (role 'source', cardinality 0..*).
+'StateMachine::Trigger' (role 'StateMachine_Trigger37', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition36', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State17', cardinality 0..*) is associated with 'StateMachine::PseudoState' (role 'StateMachine_PseudoState18', cardinality 0..*).

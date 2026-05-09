@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'scxml::ScxmlSendType' has the following attributes: 'event' of type str.
+The class 'scxml::ScxmlStateType' has the following attributes: 'id' of type str; 'initial' of type str.
+The class 'scxml::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'scxml::ScxmlTransitionType' has the following attributes: 'target' of type str; 'scxmlExecutablecontent' of type str; 'any' of type str; 'cond' of type str; 'event' of type str.
+The class 'scxml::ScxmlScriptType' has the following attributes: 'any' of type str; 'content' of type str; 'scxmlExtraContent' of type str; 'mixed' of type str; 'src' of type str.
+The class 'scxml::ScxmlOnexecuteType' has the following attributes: 'any' of type str; 'scxmlExecutablecontent' of type str; 'anyAttribute' of type str.
+The class 'scxml::ScxmlParamType' has the following attributes: 'expr' of type str; 'scxmlExtraContent' of type str; 'any' of type str; 'anyAttribute' of type str; 'name' of type str.
+The class 'scxml::EStringToStringMapEntry' has no attributes.
+The class 'scxml::ScxmlScxmlType' has the following attributes: 'initial' of type str; 'id' of type str; 'version' of type str.
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType8', cardinality 0..*) is associated with 'scxml::ScxmlParamType' (role 'scxml_ScxmlParamType', cardinality 0..*).
+'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType5', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType6', cardinality 0..*).
+'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType32', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot31', cardinality 0..*).
+'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType24', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType25', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType22', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType21', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot', cardinality 0..*) is associated with 'scxml::EStringToStringMapEntry' (role 'scxml_EStringToStringMapEntry', cardinality 0..*).
+'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType17', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType19', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType13', cardinality 0..*) is associated with 'scxml::ScxmlOnexecuteType' (role 'scxml_ScxmlOnexecuteType14', cardinality 0..*).
+'scxml::EStringToStringMapEntry' (role 'scxml_EStringToStringMapEntry29', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot28', cardinality 0..*).
+'scxml::ScxmlOnexecuteType' (role 'scxml_ScxmlOnexecuteType11', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType10', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType', cardinality 0..*) is associated with 'scxml::ScxmlOnexecuteType' (role 'scxml_ScxmlOnexecuteType', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType16', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType', cardinality 0..*).
+'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType', cardinality 0..*) is associated with 'scxml::ScxmlOnexecuteType' (role 'scxml_ScxmlOnexecuteType2', cardinality 0..*).

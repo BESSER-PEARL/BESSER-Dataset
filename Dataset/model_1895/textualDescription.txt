@@ -1,0 +1,95 @@
+The model has 41 class(es).
+The class 'PSM::SpringBootApplicationLayer' has no attributes.
+The class 'PSM::JavaInterfaceType' has no attributes.
+The class 'PSM::SpringDomainLayer' has no attributes.
+The class 'PSM::ConfigurationProperty' has the following attributes: 'PropertyValue' of type str; 'FullyQualifiedPropertyName' of type str; 'ConfigurationProfile' of type str.
+The class 'PSM::JavaUserDefinedType' has no attributes.
+The class 'JavaElement' has no attributes.
+The class 'MicroserviceProject' has no attributes.
+The class 'JavaDataField' has no attributes.
+The class 'PSM::SpringComponentLayer' has no attributes.
+The class 'PSM::JavaSpringMVCApplicationProject' has no attributes.
+The class 'PSM::SpringModelPojoLayer' has no attributes.
+The class 'PSM::JavaMethodParameter' has the following attributes: 'ParameterOrder' of type int.
+The class 'PSM::RootPSM' has no attributes.
+The class 'PSM::JavaDataField' has the following attributes: 'FieldValue' of type str.
+The class 'PSM::SpringWebApplicationLayer' has the following attributes: 'LayerName' of type str.
+The class 'PSM::JavaMethod' has the following attributes: 'RootCallingMethod' of type str.
+The class 'ArtifactElement' has no attributes.
+The class 'PSM::ArtifactElement' has the following attributes: 'ArtifactFileName' of type str; 'GeneratingLinesOfCode' of type str; 'ParentProjectName' of type str.
+The class 'PSM::DependencyLibrary' has the following attributes: 'LibraryName' of type str; 'LibraryScope' of type str; 'LibraryGroupName' of type str.
+The class 'PSM::SpringRepositoryLayer' has no attributes.
+The class 'PSM::JavaSpringWebApplicationProject' has no attributes.
+The class 'PSM::JavaSpringWebFluxApplicationProject' has no attributes.
+The class 'PSM::SpringControllerLayer' has no attributes.
+The class 'PSM::SpringFeignClientLayer' has no attributes.
+The class 'PSM::JavaAnnotationParameter' has the following attributes: 'ParameterName' of type str; 'ParameterValue' of type str.
+The class 'PSM::JavaDataType' has the following attributes: 'IsPrimitive' of type bool; 'PackageName' of type str; 'JsonSchema' of type str.
+The class 'PSM::DockerContainerLink' has the following attributes: 'LinksDependsOnField' of type str; 'DependencyOrder' of type int.
+The class 'JavaSpringWebApplicationProject' has no attributes.
+The class 'PSM::SpringServiceLayer' has no attributes.
+The class 'PSM::MicroserviceProject' has the following attributes: 'ProjectArtifactId' of type str.
+The class 'JavaUserDefinedType' has no attributes.
+The class 'PSM::ApplicationProject' has the following attributes: 'ProjectArtifactId' of type str.
+The class 'PSM::DockerContainerDefinition' has the following attributes: 'GeneratesLogs' of type bool; 'BuildField' of type str; 'ImageField' of type str; 'ContainerName' of type str.
+The class 'PSM::DistributedApplicationProject' has the following attributes: 'ProjectPackageURL' of type str; 'ApplicationName' of type str.
+The class 'JavaDataType' has no attributes.
+The class 'PSM::JavaElement' has the following attributes: 'ElementIdentifier' of type str; 'ElementProfile' of type str.
+The class 'SpringWebApplicationLayer' has no attributes.
+The class 'PSM::JavaClassType' has no attributes.
+The class 'PSM::DockerContainerPort' has the following attributes: 'ExposesPortsField' of type str.
+The class 'PSM::JavaAnnotation' has the following attributes: 'AnnotationName' of type str.
+The class 'PSM::SpringConfigurationLayer' has no attributes.
+'PSM::ConfigurationProperty' is a specialization of 'ArtifactElement'.
+'PSM::JavaMethodParameter' is a specialization of 'JavaDataField'.
+'PSM::JavaDataField' is a specialization of 'JavaElement'.
+'PSM::SpringFeignClientLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::DockerContainerPort' is a specialization of 'ArtifactElement'.
+'PSM::JavaMethod' is a specialization of 'JavaElement'.
+'PSM::DockerContainerLink' is a specialization of 'ArtifactElement'.
+'PSM::JavaSpringWebFluxApplicationProject' is a specialization of 'JavaSpringWebApplicationProject'.
+'PSM::SpringServiceLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::SpringConfigurationLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::SpringBootApplicationLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::DockerContainerDefinition' is a specialization of 'ArtifactElement'.
+'PSM::SpringRepositoryLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::DependencyLibrary' is a specialization of 'ArtifactElement'.
+'PSM::JavaClassType' is a specialization of 'JavaUserDefinedType'.
+'PSM::JavaSpringWebApplicationProject' is a specialization of 'MicroserviceProject'.
+'PSM::ApplicationProject' is a specialization of 'ArtifactElement'.
+'PSM::JavaAnnotation' is a specialization of 'ArtifactElement'.
+'PSM::SpringComponentLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::JavaDataType' is a specialization of 'JavaElement'.
+'PSM::SpringDomainLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::JavaUserDefinedType' is a specialization of 'JavaDataType'.
+'PSM::SpringWebApplicationLayer' is a specialization of 'ArtifactElement'.
+'PSM::JavaSpringMVCApplicationProject' is a specialization of 'JavaSpringWebApplicationProject'.
+'PSM::SpringControllerLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::JavaInterfaceType' is a specialization of 'JavaUserDefinedType'.
+'PSM::JavaElement' is a specialization of 'ArtifactElement'.
+'PSM::SpringModelPojoLayer' is a specialization of 'SpringWebApplicationLayer'.
+'PSM::MicroserviceProject' is a specialization of 'ArtifactElement'.
+'PSM::JavaAnnotationParameter' is a specialization of 'ArtifactElement'.
+'PSM::MicroserviceProject' (role 'PSM_MicroserviceProject', cardinality 0..*) is associated with 'PSM::ApplicationProject' (role 'PSM_ApplicationProject10', cardinality 0..*).
+'PSM::JavaMethod' (role 'PSM_JavaMethod39', cardinality 0..*) is associated with 'PSM::JavaMethodParameter' (role 'PSM_JavaMethodParameter', cardinality 0..*).
+'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType28', cardinality 0..*) is associated with 'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType26', cardinality 0..*).
+'PSM::JavaMethod' (role 'PSM_JavaMethod44', cardinality 0..*) is associated with 'PSM::JavaMethod' (role 'PSM_JavaMethod42', cardinality 0..*).
+'PSM::DistributedApplicationProject' (role 'PSM_DistributedApplicationProject4', cardinality 0..*) is associated with 'PSM::ApplicationProject' (role 'PSM_ApplicationProject', cardinality 0..*).
+'PSM::JavaDataType' (role 'PSM_JavaDataType47', cardinality 0..*) is associated with 'PSM::JavaDataField' (role 'PSM_JavaDataField46', cardinality 0..*).
+'PSM::DockerContainerDefinition' (role 'PSM_DockerContainerDefinition', cardinality 0..*) is associated with 'PSM::DistributedApplicationProject' (role 'PSM_DistributedApplicationProject2', cardinality 0..*).
+'PSM::JavaDataField' (role 'PSM_JavaDataField', cardinality 0..*) is associated with 'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType33', cardinality 0..*).
+'PSM::SpringWebApplicationLayer' (role 'PSM_SpringWebApplicationLayer17', cardinality 0..*) is associated with 'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType', cardinality 0..*).
+'PSM::DockerContainerDefinition' (role 'PSM_DockerContainerDefinition8', cardinality 0..*) is associated with 'PSM::DockerContainerPort' (role 'PSM_DockerContainerPort', cardinality 0..*).
+'PSM::JavaSpringWebApplicationProject' (role 'PSM_JavaSpringWebApplicationProject', cardinality 0..*) is associated with 'PSM::ConfigurationProperty' (role 'PSM_ConfigurationProperty', cardinality 0..*).
+'PSM::JavaElement' (role 'PSM_JavaElement', cardinality 0..*) is associated with 'PSM::JavaAnnotation' (role 'PSM_JavaAnnotation', cardinality 0..*).
+'PSM::DistributedApplicationProject' (role 'PSM_DistributedApplicationProject', cardinality 0..*) is associated with 'PSM::RootPSM' (role 'PSM_RootPSM', cardinality 0..*).
+'PSM::SpringWebApplicationLayer' (role 'PSM_SpringWebApplicationLayer', cardinality 0..*) is associated with 'PSM::JavaSpringWebApplicationProject' (role 'PSM_JavaSpringWebApplicationProject15', cardinality 0..*).
+'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType23', cardinality 0..*) is associated with 'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType25', cardinality 0..*).
+'PSM::JavaAnnotation' (role 'PSM_JavaAnnotation20', cardinality 0..*) is associated with 'PSM::JavaAnnotationParameter' (role 'PSM_JavaAnnotationParameter', cardinality 0..*).
+'PSM::JavaInterfaceType' (role 'PSM_JavaInterfaceType', cardinality 0..*) is associated with 'PSM::JavaClassType' (role 'PSM_JavaClassType', cardinality 0..*).
+'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType29', cardinality 0..*) is associated with 'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType31', cardinality 0..*).
+'PSM::DependencyLibrary' (role 'PSM_DependencyLibrary', cardinality 0..*) is associated with 'PSM::MicroserviceProject' (role 'PSM_MicroserviceProject12', cardinality 0..*).
+'PSM::JavaMethod' (role 'PSM_JavaMethod41', cardinality 0..*) is associated with 'PSM::JavaDataType' (role 'PSM_JavaDataType', cardinality 0..*).
+'PSM::DockerContainerLink' (role 'PSM_DockerContainerLink', cardinality 0..*) is associated with 'PSM::DockerContainerDefinition' (role 'PSM_DockerContainerDefinition6', cardinality 0..*).
+'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType37', cardinality 0..*) is associated with 'PSM::JavaMethod' (role 'PSM_JavaMethod36', cardinality 0..*).
+'PSM::JavaMethod' (role 'PSM_JavaMethod', cardinality 0..*) is associated with 'PSM::JavaUserDefinedType' (role 'PSM_JavaUserDefinedType22', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'sm2::StateMachine' has no attributes.
+The class 'sm2::Transition' has the following attributes: 'event' of type str.
+The class 'sm2::State' has the following attributes: 'name' of type str.
+'sm2::Transition' (role 'Transition', cardinality 0..*) is associated with 'sm2::State' (role 'src', cardinality 0..*).
+'sm2::State' (role 'State', cardinality 0..*) is associated with 'sm2::StateMachine' (role 'sm', cardinality 0..*).
+'sm2::Transition' (role 'Transition7', cardinality 0..*) is associated with 'sm2::State' (role 'tgt', cardinality 0..*).
+'sm2::Transition' (role 'outgoing', cardinality 0..*) is associated with 'sm2::State' (role 'State9', cardinality 0..*).
+'sm2::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'sm2::State' (role 'states', cardinality 0..*).
+'sm2::Transition' (role 'incoming', cardinality 0..*) is associated with 'sm2::State' (role 'State11', cardinality 0..*).
+'sm2::StateMachine' (role 'sm2_StateMachine3', cardinality 0..*) is associated with 'sm2::Transition' (role 'sm2_Transition', cardinality 0..*).
+'sm2::StateMachine' (role 'sm2_StateMachine', cardinality 0..*) is associated with 'sm2::State' (role 'sm2_State', cardinality 0..*).

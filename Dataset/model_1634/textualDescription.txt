@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'ptn103::Token' has no attributes.
+The class 'AbstractNode' has no attributes.
+The class 'ptn103::Transition' has no attributes.
+The class 'AbstractTransition' has no attributes.
+The class 'ptn103::Place' has no attributes.
+The class 'ptn103::AbstractTransition' has the following attributes: 'guard' of type str.
+The class 'ptn103::AbstractNode' has the following attributes: 'name' of type str.
+'ptn103::AbstractTransition' is a specialization of 'AbstractNode'.
+'ptn103::Transition' is a specialization of 'AbstractTransition'.
+'ptn103::Place' is a specialization of 'AbstractNode'.
+'ptn103::Place' (role 'ptn103_Place', cardinality 0..*) is associated with 'ptn103::Place' (role 'ptn103_Place0', cardinality 0..*).
+'ptn103::Place' (role 'ptn103_Place3', cardinality 0..*) is associated with 'ptn103::AbstractNode' (role 'ptn103_AbstractNode', cardinality 0..*).
+'ptn103::Place' (role 'ptn103_Place7', cardinality 0..*) is associated with 'ptn103::Token' (role 'ptn103_Token', cardinality 0..*).
+'ptn103::AbstractTransition' (role 'ptn103_AbstractTransition', cardinality 0..*) is associated with 'ptn103::Place' (role 'ptn103_Place5', cardinality 0..*).
+'ptn103::Place' (role 'ptn103_Place10', cardinality 0..*) is associated with 'ptn103::AbstractTransition' (role 'ptn103_AbstractTransition9', cardinality 0..*).

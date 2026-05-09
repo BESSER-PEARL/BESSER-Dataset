@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'bz288963::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'bz288963::Paragraph' has the following attributes: 'number' of type str; 'title' of type str.
+The class 'Paragraph' has no attributes.
+The class 'bz288963::EStringToStringMapEntry' has no attributes.
+The class 'bz288963::Footnote' has no attributes.
+The class 'bz288963::Indentedpara' has the following attributes: 'indentSpace' of type str.
+The class 'bz288963::Book' has the following attributes: 'selfdef' of type str; 'type' of type str; 'id' of type str.
+The enumeration 'Booktype' has the following literals: 'novel', 'science'.
+'bz288963::Indentedpara' is a specialization of 'Paragraph'.
+'bz288963::Footnote' is a specialization of 'Paragraph'.
+'bz288963::Book' (role 'bz288963_Book0', cardinality 0..*) is associated with 'bz288963::Book' (role 'bz288963_Book', cardinality 0..*).
+'bz288963::Footnote' (role 'bz288963_Footnote', cardinality 0..*) is associated with 'bz288963::DocumentRoot' (role 'bz288963_DocumentRoot12', cardinality 0..*).
+'bz288963::DocumentRoot' (role 'bz288963_DocumentRoot6', cardinality 0..*) is associated with 'bz288963::EStringToStringMapEntry' (role 'bz288963_EStringToStringMapEntry7', cardinality 0..*).
+'bz288963::Book' (role 'bz288963_Book3', cardinality 0..*) is associated with 'bz288963::Paragraph' (role 'bz288963_Paragraph', cardinality 0..*).
+'bz288963::EStringToStringMapEntry' (role 'bz288963_EStringToStringMapEntry', cardinality 0..*) is associated with 'bz288963::DocumentRoot' (role 'bz288963_DocumentRoot', cardinality 0..*).
+'bz288963::Indentedpara' (role 'bz288963_Indentedpara', cardinality 0..*) is associated with 'bz288963::DocumentRoot' (role 'bz288963_DocumentRoot14', cardinality 0..*).
+'bz288963::DocumentRoot' (role 'bz288963_DocumentRoot9', cardinality 0..*) is associated with 'bz288963::Book' (role 'bz288963_Book10', cardinality 0..*).
+'bz288963::Paragraph' (role 'bz288963_Paragraph17', cardinality 0..*) is associated with 'bz288963::DocumentRoot' (role 'bz288963_DocumentRoot16', cardinality 0..*).

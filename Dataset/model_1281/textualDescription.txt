@@ -1,0 +1,64 @@
+The model has 54 class(es).
+The class 'uml::ocl::Property' has no attributes.
+The class 'ocl::uml::UnlimitedNaturalLiteralExp' has no attributes.
+The class 'ocl::uml::CollectionLiteralExp' has no attributes.
+The class 'ocl::uml::MessageExp' has no attributes.
+The class 'ocl::uml::ElementType' has no attributes.
+The class 'ocl::uml::IterateExp' has no attributes.
+The class 'ocl::uml::NavigationCallExp' has no attributes.
+The class 'ocl::uml::VariableExp' has no attributes.
+The class 'ocl::uml::InvalidLiteralExp' has no attributes.
+The class 'uml::ocl::Operation' has no attributes.
+The class 'ocl::uml::IteratorExp' has no attributes.
+The class 'ocl::uml::TypeType' has no attributes.
+The class 'ocl::uml::TemplateParameterType' has no attributes.
+The class 'ocl::uml::RealLiteralExp' has no attributes.
+The class 'ocl::uml::CollectionItem' has no attributes.
+The class 'ocl::uml::PrimitiveType' has no attributes.
+The class 'ocl::uml::TypeExp' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'ocl::uml::StateExp' has no attributes.
+The class 'ocl::uml::CollectionType' has no attributes.
+The class 'ocl::uml::AssociationClassCallExp' has no attributes.
+The class 'ocl::uml::IntegerLiteralExp' has no attributes.
+The class 'ocl::uml::OCLExpression' has no attributes.
+The class 'ocl::uml::NumericLiteralExp' has no attributes.
+The class 'ocl::uml::SequenceType' has no attributes.
+The class 'ocl::uml::LoopExp' has no attributes.
+The class 'ocl::uml::CallExp' has no attributes.
+The class 'ocl::uml::CollectionRange' has no attributes.
+The class 'ocl::uml::CollectionLiteralPart' has no attributes.
+The class 'ocl::uml::OperationCallExp' has no attributes.
+The class 'ocl::uml::MessageType' has no attributes.
+The class 'ocl::uml::PropertyCallExp' has no attributes.
+The class 'ocl::uml::OrderedSetType' has no attributes.
+The class 'ocl::uml::StringLiteralExp' has no attributes.
+The class 'ocl::uml::SetType' has no attributes.
+The class 'ocl::uml::BooleanLiteralExp' has no attributes.
+The class 'ocl::uml::TupleType' has no attributes.
+The class 'types::ElementType' has no attributes.
+The class 'ocl::uml::LiteralExp' has no attributes.
+The class 'ocl::uml::InvalidType' has no attributes.
+The class 'ocl::uml::Variable' has no attributes.
+The class 'ocl::uml::TupleLiteralPart' has no attributes.
+The class 'ocl::uml::PrimitiveLiteralExp' has no attributes.
+The class 'ocl::uml::TupleLiteralExp' has no attributes.
+The class 'ocl::uml::ExpressionInOCL' has no attributes.
+The class 'ocl::uml::UnspecifiedValueExp' has no attributes.
+The class 'ocl::uml::LetExp' has no attributes.
+The class 'ocl::uml::VoidType' has no attributes.
+The class 'ocl::uml::FeatureCallExp' has no attributes.
+The class 'ocl::uml::NullLiteralExp' has no attributes.
+The class 'ocl::uml::BagType' has no attributes.
+The class 'ocl::uml::IfExp' has no attributes.
+The class 'ocl::uml::AnyType' has no attributes.
+The class 'ocl::uml::EnumLiteralExp' has no attributes.
+'ocl::uml::ElementType' is a specialization of 'Classifier'.
+'ocl::uml::ElementType' is a specialization of 'types::ElementType'.
+'uml::ocl::Operation' (role 'uml_ocl_Operation2', cardinality 0..*) is associated with 'ocl::uml::VoidType' (role 'ocl_uml_VoidType', cardinality 0..*).
+'ocl::uml::TemplateParameterType' (role 'ocl_uml_TemplateParameterType', cardinality 0..*) is associated with 'uml::ocl::Operation' (role 'uml_ocl_Operation12', cardinality 0..*).
+'uml::ocl::Operation' (role 'uml_ocl_Operation4', cardinality 0..*) is associated with 'ocl::uml::InvalidType' (role 'ocl_uml_InvalidType', cardinality 0..*).
+'uml::ocl::Property' (role 'uml_ocl_Property', cardinality 0..*) is associated with 'ocl::uml::MessageType' (role 'ocl_uml_MessageType10', cardinality 0..*).
+'ocl::uml::AnyType' (role 'ocl_uml_AnyType', cardinality 0..*) is associated with 'uml::ocl::Operation' (role 'uml_ocl_Operation', cardinality 0..*).
+'ocl::uml::TypeType' (role 'ocl_uml_TypeType', cardinality 0..*) is associated with 'uml::ocl::Operation' (role 'uml_ocl_Operation6', cardinality 0..*).
+'uml::ocl::Operation' (role 'uml_ocl_Operation8', cardinality 0..*) is associated with 'ocl::uml::MessageType' (role 'ocl_uml_MessageType', cardinality 0..*).

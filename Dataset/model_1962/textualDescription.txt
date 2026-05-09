@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'sourceanalysator::Article' has the following attributes: 'localFile' of type str; 'title' of type str.
+The class 'sourceanalysator::GeneralSource' has the following attributes: 'name' of type str; 'aliases' of type str; 'dontCount' of type bool.
+The class 'sourceanalysator::Hyperlink' has the following attributes: 'url' of type str.
+The class 'sourceanalysator::Library' has no attributes.
+The class 'sourceanalysator::Source' has no attributes.
+'sourceanalysator::Source' (role 'Source', cardinality 0..*) is associated with 'sourceanalysator::GeneralSource' (role 'generalSource', cardinality 0..*).
+'sourceanalysator::GeneralSource' (role 'sourceanalysator_GeneralSource', cardinality 0..*) is associated with 'sourceanalysator::Library' (role 'sourceanalysator_Library', cardinality 0..*).
+'sourceanalysator::Library' (role 'sourceanalysator_Library10', cardinality 0..*) is associated with 'sourceanalysator::Hyperlink' (role 'sourceanalysator_Hyperlink', cardinality 0..*).
+'sourceanalysator::Source' (role 'sources', cardinality 0..*) is associated with 'sourceanalysator::GeneralSource' (role 'GeneralSource', cardinality 0..*).
+'sourceanalysator::Source' (role 'sources3', cardinality 0..*) is associated with 'sourceanalysator::Article' (role 'Article', cardinality 0..*).
+'sourceanalysator::Library' (role 'sourceanalysator_Library8', cardinality 0..*) is associated with 'sourceanalysator::Article' (role 'sourceanalysator_Article', cardinality 0..*).
+'sourceanalysator::Article' (role 'article', cardinality 0..*) is associated with 'sourceanalysator::Source' (role 'Source12', cardinality 0..*).
+'sourceanalysator::Source' (role 'Source14', cardinality 0..*) is associated with 'sourceanalysator::Hyperlink' (role 'hyperlink', cardinality 0..*).
+'sourceanalysator::Source' (role 'sources5', cardinality 0..*) is associated with 'sourceanalysator::Hyperlink' (role 'Hyperlink', cardinality 0..*).

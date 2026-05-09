@@ -1,0 +1,31 @@
+The model has 14 class(es).
+The class 'Documentation::EmphasisValue' has the following attributes: 'role' of type str.
+The class 'ParagraphValue' has no attributes.
+The class 'Documentation::XRefValue' has no attributes.
+The class 'Documentation::ItemizedListValueItem' has no attributes.
+The class 'Documentation::Paragraph' has no attributes.
+The class 'Documentation::TextualValue' has the following attributes: 'value' of type str.
+The class 'Documentation::Section' has the following attributes: 'title' of type str.
+The class 'Documentation::Book' has the following attributes: 'title' of type str.
+The class 'Documentation::InformalTableValue' has the following attributes: 'cols' of type int.
+The class 'Documentation::ItemizedListValue' has no attributes.
+The class 'Paragraph' has no attributes.
+The class 'Documentation::InformalTableValueRow' has no attributes.
+The class 'TextualValue' has no attributes.
+The class 'Documentation::ParagraphValue' has no attributes.
+'Documentation::EmphasisValue' is a specialization of 'TextualValue'.
+'Documentation::EmphasisValue' is a specialization of 'ParagraphValue'.
+'Documentation::InformalTableValue' is a specialization of 'ParagraphValue'.
+'Documentation::ItemizedListValueItem' is a specialization of 'Paragraph'.
+'Documentation::TextualValue' is a specialization of 'ParagraphValue'.
+'Documentation::ItemizedListValue' is a specialization of 'ParagraphValue'.
+'Documentation::XRefValue' is a specialization of 'ParagraphValue'.
+'Documentation::ParagraphValue' (role 'Documentation_ParagraphValue', cardinality 0..*) is associated with 'Documentation::Paragraph' (role 'Documentation_Paragraph', cardinality 0..*).
+'Documentation::InformalTableValue' (role 'Documentation_InformalTableValue13', cardinality 0..*) is associated with 'Documentation::InformalTableValueRow' (role 'Documentation_InformalTableValueRow14', cardinality 0..*).
+'Documentation::Section' (role 'Documentation_Section2', cardinality 0..*) is associated with 'Documentation::Section' (role 'Documentation_Section4', cardinality 0..*).
+'Documentation::Section' (role 'Documentation_Section6', cardinality 0..*) is associated with 'Documentation::Paragraph' (role 'Documentation_Paragraph7', cardinality 0..*).
+'Documentation::Section' (role 'Documentation_Section10', cardinality 0..*) is associated with 'Documentation::XRefValue' (role 'Documentation_XRefValue', cardinality 0..*).
+'Documentation::InformalTableValue' (role 'Documentation_InformalTableValue', cardinality 0..*) is associated with 'Documentation::InformalTableValueRow' (role 'Documentation_InformalTableValueRow', cardinality 0..*).
+'Documentation::ItemizedListValue' (role 'Documentation_ItemizedListValue', cardinality 0..*) is associated with 'Documentation::ItemizedListValueItem' (role 'Documentation_ItemizedListValueItem', cardinality 0..*).
+'Documentation::TextualValue' (role 'Documentation_TextualValue', cardinality 0..*) is associated with 'Documentation::InformalTableValueRow' (role 'Documentation_InformalTableValueRow16', cardinality 0..*).
+'Documentation::Book' (role 'Documentation_Book', cardinality 0..*) is associated with 'Documentation::Section' (role 'Documentation_Section', cardinality 0..*).

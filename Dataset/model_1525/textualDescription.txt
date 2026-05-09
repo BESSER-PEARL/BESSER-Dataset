@@ -1,0 +1,48 @@
+The model has 14 class(es).
+The class 'cpsml::System' has the following attributes: 'name' of type str; 'ran' of type str; 'sub' of type int; 'y0label' of type int.
+The class 'cpsml::Interval' has the following attributes: 'right' of type float; 'subinterval' of type float; 'name' of type str; 'left' of type float.
+The class 'Transition' has no attributes.
+The class 'cpsml::ProbTransition' has the following attributes: 'probability' of type float.
+The class 'cpsml::Variable' has the following attributes: 'Globalnv' of type float; 'value' of type float.
+The class 'cpsml::Condition' has the following attributes: 'name' of type str.
+The class 'cpsml::Function' has the following attributes: 'name' of type str.
+The class 'cpsml::DeVariable' has the following attributes: 'name' of type str.
+The class 'cpsml::IndeVariable' has the following attributes: 'name' of type str.
+The class 'cpsml::ODE' has the following attributes: 'name' of type str.
+The class 'cpsml::Fright' has the following attributes: 'name' of type str.
+The class 'cpsml::ComTransition' has no attributes.
+The class 'cpsml::Transition' has the following attributes: 'name' of type str; 'action' of type str; 'guard' of type str; 'event' of type str.
+The class 'cpsml::State' has the following attributes: 'name' of type bool.
+'cpsml::ComTransition' is a specialization of 'Transition'.
+'cpsml::ProbTransition' is a specialization of 'Transition'.
+'cpsml::State' (role 'cpsml_State18', cardinality 0..*) is associated with 'cpsml::System' (role 'cpsml_System17', cardinality 0..*).
+'cpsml::State' (role 'cpsml_State43', cardinality 0..*) is associated with 'cpsml::Variable' (role 'cpsml_Variable44', cardinality 0..*).
+'cpsml::System' (role 'cpsml_System14', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State15', cardinality 0..*).
+'cpsml::State' (role 'cpsml_State', cardinality 0..*) is associated with 'cpsml::System' (role 'cpsml_System5', cardinality 0..*).
+'cpsml::State' (role 'cpsml_State35', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State33', cardinality 0..*).
+'cpsml::State' (role 'psrc', cardinality 0..*) is associated with 'cpsml::ProbTransition' (role 'ProbTransition', cardinality 0..*).
+'cpsml::Transition' (role 'cpsml_Transition49', cardinality 0..*) is associated with 'cpsml::Variable' (role 'cpsml_Variable50', cardinality 0..*).
+'cpsml::State' (role 'csrc', cardinality 0..*) is associated with 'cpsml::ComTransition' (role 'ComTransition', cardinality 0..*).
+'cpsml::ProbTransition' (role 'cpsml_ProbTransition', cardinality 0..*) is associated with 'cpsml::System' (role 'cpsml_System20', cardinality 0..*).
+'cpsml::Interval' (role 'cpsml_Interval', cardinality 0..*) is associated with 'cpsml::ODE' (role 'cpsml_ODE63', cardinality 0..*).
+'cpsml::DeVariable' (role 'cpsml_DeVariable', cardinality 0..*) is associated with 'cpsml::Function' (role 'cpsml_Function67', cardinality 0..*).
+'cpsml::ProbTransition' (role 'outgoingProbTransitions', cardinality 0..*) is associated with 'cpsml::State' (role 'State55', cardinality 0..*).
+'cpsml::Fright' (role 'cpsml_Fright', cardinality 0..*) is associated with 'cpsml::Function' (role 'cpsml_Function69', cardinality 0..*).
+'cpsml::Function' (role 'cpsml_Function65', cardinality 0..*) is associated with 'cpsml::IndeVariable' (role 'cpsml_IndeVariable', cardinality 0..*).
+'cpsml::System' (role 'cpsml_System', cardinality 0..*) is associated with 'cpsml::Variable' (role 'cpsml_Variable', cardinality 0..*).
+'cpsml::Transition' (role 'cpsml_Transition', cardinality 0..*) is associated with 'cpsml::System' (role 'cpsml_System7', cardinality 0..*).
+'cpsml::State' (role 'cpsml_State32', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State30', cardinality 0..*).
+'cpsml::System' (role 'cpsml_System12', cardinality 0..*) is associated with 'cpsml::ODE' (role 'cpsml_ODE', cardinality 0..*).
+'cpsml::State' (role 'State', cardinality 0..*) is associated with 'cpsml::ComTransition' (role 'outgoingComTransitions', cardinality 0..*).
+'cpsml::ODE' (role 'cpsml_ODE41', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State40', cardinality 0..*).
+'cpsml::Function' (role 'cpsml_Function', cardinality 0..*) is associated with 'cpsml::ODE' (role 'cpsml_ODE59', cardinality 0..*).
+'cpsml::Transition' (role 'cpsml_Transition38', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State37', cardinality 0..*).
+'cpsml::State' (role 'cpsml_State46', cardinality 0..*) is associated with 'cpsml::Variable' (role 'cpsml_Variable47', cardinality 0..*).
+'cpsml::State' (role 'State53', cardinality 0..*) is associated with 'cpsml::ComTransition' (role 'incomingComTransitions', cardinality 0..*).
+'cpsml::ODE' (role 'cpsml_ODE23', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State22', cardinality 0..*).
+'cpsml::Variable' (role 'cpsml_Variable3', cardinality 0..*) is associated with 'cpsml::System' (role 'cpsml_System2', cardinality 0..*).
+'cpsml::ProbTransition' (role 'ProbTransition29', cardinality 0..*) is associated with 'cpsml::State' (role 'ptgt', cardinality 0..*).
+'cpsml::State' (role 'ctgt', cardinality 0..*) is associated with 'cpsml::ComTransition' (role 'ComTransition26', cardinality 0..*).
+'cpsml::System' (role 'cpsml_System9', cardinality 0..*) is associated with 'cpsml::State' (role 'cpsml_State10', cardinality 0..*).
+'cpsml::ODE' (role 'cpsml_ODE61', cardinality 0..*) is associated with 'cpsml::Condition' (role 'cpsml_Condition', cardinality 0..*).
+'cpsml::ProbTransition' (role 'incomingProbTransitions', cardinality 0..*) is associated with 'cpsml::State' (role 'State57', cardinality 0..*).

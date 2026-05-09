@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'elements::Writer' has no attributes.
+The class 'elements::Book' has the following attributes: 'pages' of type str; 'uuid' of type str; 'title' of type str; 'category' of type str.
+The class 'elements::EObject' has no attributes.
+The class 'Person' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'Biography', 'ScienceFiction', 'Mystery', 'IT'.
+'elements::Writer' is a specialization of 'Person'.
+'elements::EObject' (role 'elements_EObject', cardinality 0..*) is associated with 'elements::Book' (role 'elements_Book', cardinality 0..*).
+'elements::Writer' (role 'elements_Writer', cardinality 0..*) is associated with 'elements::EObject' (role 'elements_EObject2', cardinality 0..*).

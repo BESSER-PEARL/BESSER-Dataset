@@ -1,0 +1,88 @@
+The model has 48 class(es).
+The class 'newClasses::ReceiptCreator' has no attributes.
+The class 'Booker' has no attributes.
+The class 'newClasses::Room' has the following attributes: 'roomNum' of type str; 'status' of type str.
+The class 'newClasses::DB::interface' has no attributes.
+The class 'newClasses::InformationValidator' has no attributes.
+The class 'newClasses::Receipt' has no attributes.
+The class 'newClasses::Manager' has the following attributes: 'userName' of type str; 'password' of type str.
+The class 'newClasses::Service' has the following attributes: 'status' of type str; 'id' of type str.
+The class 'ServiceType' has no attributes.
+The class 'newClasses::ServiceHandlerInterface' has no attributes.
+The class 'newClasses::Customer' has the following attributes: 'firstName' of type str; 'bookingCost' of type str; 'phoneNum' of type str; 'personalNum' of type str; 'bookingNum' of type str; 'lastName' of type str; 'address' of type str; 'zipCode' of type str; 'city' of type str; 'country' of type str; 'email' of type str.
+The class 'newClasses::Validator' has no attributes.
+The class 'newClasses::Billing' has the following attributes: 'isPaid' of type str; 'totalCost' of type str.
+The class 'newClasses::Guest' has the following attributes: 'roomNum' of type str; 'checkedOut' of type str; 'checkedIn' of type str; 'extraDays' of type str; 'checkOutDate' of type str; 'cost' of type str; 'checkInDate' of type str; 'bookingPaid' of type str; 'addedServices' of type str.
+The class 'RoomProvider' has no attributes.
+The class 'ServiceProvider' has no attributes.
+The class 'ServiceHandlerInterface' has no attributes.
+The class 'Biller' has no attributes.
+The class 'newClasses::CustomerProvides' has no attributes.
+The class 'newClasses::RoomHandlerInterface' has no attributes.
+The class 'Receipt' has no attributes.
+The class 'GuestBiller' has no attributes.
+The class 'newClasses::Booking' has the following attributes: 'conformationNum' of type str; 'isPaid' of type str; 'services' of type str; 'roomType' of type str; 'checkOutDate' of type str; 'checkInDate' of type str; 'cost' of type str.
+The class 'newClasses::Database' has no attributes.
+The class 'newClasses::ServiceHandler' has no attributes.
+The class 'newClasses::CreditCard' has the following attributes: 'month' of type str; 'lastName' of type str; 'year' of type str; 'cvc' of type str; 'firstName' of type str; 'creditCardNumber' of type str.
+The class 'DB::interface' has no attributes.
+The class 'newClasses::BankComponent' has no attributes.
+The class 'newClasses::Biller' has no attributes.
+The class 'newClasses::GuestInterface' has no attributes.
+The class 'RoomHandlerInterface' has no attributes.
+The class 'newClasses::AdministratorProvides' has no attributes.
+The class 'newClasses::RoomType' has the following attributes: 'type' of type str; 'price' of type str.
+The class 'newClasses::RoomProvider' has no attributes.
+The class 'AdministratorProvides' has no attributes.
+The class 'CustomerProvides' has no attributes.
+The class 'newClasses::ServiceProvider' has no attributes.
+The class 'Customer' has no attributes.
+The class 'RoomType' has no attributes.
+The class 'newClasses::LoginChecker' has no attributes.
+The class 'newClasses::ManagerInterface' has no attributes.
+The class 'Validator' has no attributes.
+The class 'ManagerInterface' has no attributes.
+The class 'newClasses::Booker' has no attributes.
+The class 'newClasses::RoomHandler' has no attributes.
+The class 'newClasses::GuestBiller' has no attributes.
+The class 'GuestInterface' has no attributes.
+The class 'newClasses::ServiceType' has the following attributes: 'price' of type str; 'type' of type str.
+'newClasses::Guest' is a specialization of 'Customer'.
+'newClasses::RoomHandler' is a specialization of 'RoomProvider'.
+'newClasses::Guest' is a specialization of 'GuestInterface'.
+'newClasses::ReceiptCreator' is a specialization of 'Receipt'.
+'newClasses::ServiceHandler' is a specialization of 'ServiceHandlerInterface'.
+'newClasses::Booking' is a specialization of 'Booker'.
+'newClasses::RoomHandler' is a specialization of 'GuestInterface'.
+'newClasses::BankComponent' is a specialization of 'AdministratorProvides'.
+'newClasses::Manager' is a specialization of 'ManagerInterface'.
+'newClasses::Booking' is a specialization of 'CustomerProvides'.
+'newClasses::ServiceHandler' is a specialization of 'ServiceProvider'.
+'newClasses::InformationValidator' is a specialization of 'Validator'.
+'newClasses::LoginChecker' is a specialization of 'ManagerInterface'.
+'newClasses::Manager' is a specialization of 'RoomHandlerInterface'.
+'newClasses::Room' is a specialization of 'RoomType'.
+'newClasses::Booking' is a specialization of 'RoomProvider'.
+'newClasses::RoomHandler' is a specialization of 'RoomHandlerInterface'.
+'newClasses::Booking' is a specialization of 'ServiceProvider'.
+'newClasses::Billing' is a specialization of 'Biller'.
+'newClasses::Manager' is a specialization of 'ServiceHandlerInterface'.
+'newClasses::Billing' is a specialization of 'CustomerProvides'.
+'newClasses::Billing' is a specialization of 'GuestBiller'.
+'newClasses::Service' is a specialization of 'ServiceType'.
+'newClasses::Database' is a specialization of 'DB::interface'.
+'newClasses::Guest' is a specialization of 'GuestBiller'.
+'newClasses::BankComponent' is a specialization of 'CustomerProvides'.
+'newClasses::Booking' is a specialization of 'Biller'.
+'newClasses::Booking' is a specialization of 'Validator'.
+'newClasses::Customer' is a specialization of 'Booker'.
+'newClasses::Manager' (role 'newClasses_Manager10', cardinality 0..*) is associated with 'newClasses::ServiceHandler' (role 'newClasses_ServiceHandler11', cardinality 0..*).
+'newClasses::RoomHandler' (role 'newClasses_RoomHandler13', cardinality 0..*) is associated with 'newClasses::Room' (role 'newClasses_Room', cardinality 0..*).
+'newClasses::ReceiptCreator' (role 'newClasses_ReceiptCreator', cardinality 0..*) is associated with 'newClasses::Booking' (role 'newClasses_Booking4', cardinality 0..*).
+'newClasses::ServiceHandler' (role 'newClasses_ServiceHandler', cardinality 0..*) is associated with 'newClasses::Service' (role 'newClasses_Service', cardinality 0..*).
+'newClasses::Database' (role 'newClasses_Database', cardinality 0..*) is associated with 'newClasses::Booking' (role 'newClasses_Booking6', cardinality 0..*).
+'newClasses::LoginChecker' (role 'newClasses_LoginChecker', cardinality 0..*) is associated with 'newClasses::Manager' (role 'newClasses_Manager18', cardinality 0..*).
+'newClasses::RoomHandler' (role 'newClasses_RoomHandler15', cardinality 0..*) is associated with 'newClasses::Database' (role 'newClasses_Database16', cardinality 0..*).
+'newClasses::Booking' (role 'newClasses_Booking', cardinality 0..*) is associated with 'newClasses::Customer' (role 'newClasses_Customer', cardinality 0..*).
+'newClasses::Customer' (role 'newClasses_Customer2', cardinality 0..*) is associated with 'newClasses::CreditCard' (role 'newClasses_CreditCard', cardinality 0..*).
+'newClasses::Manager' (role 'newClasses_Manager', cardinality 0..*) is associated with 'newClasses::RoomHandler' (role 'newClasses_RoomHandler', cardinality 0..*).

@@ -1,0 +1,79 @@
+The model has 37 class(es).
+The class 'PropertyCallExp' has no attributes.
+The class 'superimposed::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+The class 'superimposed::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'superimposed::NumericExp' has no attributes.
+The class 'superimposed::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'superimposed::LoopExp' has no attributes.
+The class 'superimposed::OclModelElement' has the following attributes: 'name' of type str.
+The class 'superimposed::NavigationCallExp' has the following attributes: 'name' of type str.
+The class 'superimposed::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'NumericExp' has no attributes.
+The class 'CollectionExp' has no attributes.
+The class 'superimposed::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'superimposed::OperatorCallExp' has the following attributes: 'name' of type str.
+The class 'OperatorCallExp' has no attributes.
+The class 'superimposed::OclModel' has the following attributes: 'name' of type str.
+The class 'superimposed::OclUndefinedExp' has no attributes.
+The class 'superimposed::BinaryOperatorCallExp' has no attributes.
+The class 'superimposed::UnaryOperatorCallExp' has no attributes.
+The class 'superimposed::LetExp' has no attributes.
+The class 'superimposed::OclExpression' has no attributes.
+The class 'superimposed::PropertyCallExp' has no attributes.
+The class 'superimposed::Iterator' has no attributes.
+The class 'superimposed::CollectionExp' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'superimposed::PrimitiveExp' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'superimposed::OclType' has no attributes.
+The class 'OclType' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'superimposed::CollectionOperationCallExp' has no attributes.
+The class 'superimposed::IfExp' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'superimposed::IteratorExp' has the following attributes: 'name' of type str.
+The class 'LoopExp' has no attributes.
+The class 'superimposed::OperationCallExp' has the following attributes: 'name' of type str.
+The class 'superimposed::VariableExp' has no attributes.
+The class 'superimposed::SetExp' has no attributes.
+'superimposed::CollectionExp' is a specialization of 'OclExpression'.
+'superimposed::PropertyCallExp' is a specialization of 'OclExpression'.
+'superimposed::OclUndefinedExp' is a specialization of 'OclExpression'.
+'superimposed::StringExp' is a specialization of 'PrimitiveExp'.
+'superimposed::BooleanExp' is a specialization of 'PrimitiveExp'.
+'superimposed::IntegerExp' is a specialization of 'NumericExp'.
+'superimposed::NumericExp' is a specialization of 'PrimitiveExp'.
+'superimposed::VariableExp' is a specialization of 'OclExpression'.
+'superimposed::IfExp' is a specialization of 'OclExpression'.
+'superimposed::PrimitiveExp' is a specialization of 'OclExpression'.
+'superimposed::OclType' is a specialization of 'OclExpression'.
+'superimposed::NavigationCallExp' is a specialization of 'PropertyCallExp'.
+'superimposed::SetExp' is a specialization of 'CollectionExp'.
+'superimposed::RealExp' is a specialization of 'NumericExp'.
+'superimposed::CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+'superimposed::OclModelElement' is a specialization of 'OclType'.
+'superimposed::OperatorCallExp' is a specialization of 'OclExpression'.
+'superimposed::OperationCallExp' is a specialization of 'PropertyCallExp'.
+'superimposed::IteratorExp' is a specialization of 'LoopExp'.
+'superimposed::LetExp' is a specialization of 'OclExpression'.
+'superimposed::UnaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+'superimposed::BinaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+'superimposed::LoopExp' is a specialization of 'PropertyCallExp'.
+'superimposed::Iterator' is a specialization of 'VariableDeclaration'.
+'superimposed::VariableDeclaration' (role 'superimposed_VariableDeclaration', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression', cardinality 0..*).
+'superimposed::OclExpression' (role 'superimposed_OclExpression16', cardinality 0..*) is associated with 'superimposed::IfExp' (role 'superimposed_IfExp15', cardinality 0..*).
+'superimposed::OclExpression' (role 'superimposed_OclExpression24', cardinality 0..*) is associated with 'superimposed::BinaryOperatorCallExp' (role 'superimposed_BinaryOperatorCallExp23', cardinality 0..*).
+'superimposed::OclExpression' (role 'superimposed_OclExpression30', cardinality 0..*) is associated with 'superimposed::LoopExp' (role 'superimposed_LoopExp', cardinality 0..*).
+'superimposed::VariableExp' (role 'superimposed_VariableExp', cardinality 0..*) is associated with 'superimposed::VariableDeclaration' (role 'superimposed_VariableDeclaration4', cardinality 0..*).
+'superimposed::OclModelElement' (role 'superimposed_OclModelElement', cardinality 0..*) is associated with 'superimposed::OclModel' (role 'superimposed_OclModel', cardinality 0..*).
+'superimposed::IfExp' (role 'superimposed_IfExp', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression13', cardinality 0..*).
+'superimposed::OclExpression' (role 'superimposed_OclExpression11', cardinality 0..*) is associated with 'superimposed::OperationCallExp' (role 'superimposed_OperationCallExp', cardinality 0..*).
+'superimposed::CollectionExp' (role 'superimposed_CollectionExp', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression34', cardinality 0..*).
+'superimposed::IfExp' (role 'superimposed_IfExp18', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression19', cardinality 0..*).
+'superimposed::Iterator' (role 'superimposed_Iterator', cardinality 0..*) is associated with 'superimposed::IteratorExp' (role 'superimposed_IteratorExp', cardinality 0..*).
+'superimposed::BinaryOperatorCallExp' (role 'superimposed_BinaryOperatorCallExp', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression21', cardinality 0..*).
+'superimposed::OclType' (role 'superimposed_OclType', cardinality 0..*) is associated with 'superimposed::VariableDeclaration' (role 'superimposed_VariableDeclaration2', cardinality 0..*).
+'superimposed::VariableDeclaration' (role 'superimposed_VariableDeclaration6', cardinality 0..*) is associated with 'superimposed::LetExp' (role 'superimposed_LetExp', cardinality 0..*).
+'superimposed::OclExpression' (role 'superimposed_OclExpression26', cardinality 0..*) is associated with 'superimposed::UnaryOperatorCallExp' (role 'superimposed_UnaryOperatorCallExp', cardinality 0..*).
+'superimposed::PropertyCallExp' (role 'superimposed_PropertyCallExp', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression28', cardinality 0..*).
+'superimposed::LetExp' (role 'superimposed_LetExp8', cardinality 0..*) is associated with 'superimposed::OclExpression' (role 'superimposed_OclExpression9', cardinality 0..*).

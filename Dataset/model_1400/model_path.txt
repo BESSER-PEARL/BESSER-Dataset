@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/orthogonal-variability/fr.inria.diverse.examples.fsm.core/models/fsmcore.ecore

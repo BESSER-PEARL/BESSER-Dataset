@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'ScaffoldGraph::Graph' has the following attributes: 'name' of type str.
+The class 'ScaffoldGraph::Vertex' has no attributes.
+The class 'ScaffoldGraph::Edge' has the following attributes: 'weight' of type int.
+'ScaffoldGraph::Graph' (role 'ScaffoldGraph_Graph2', cardinality 0..*) is associated with 'ScaffoldGraph::Edge' (role 'ScaffoldGraph_Edge', cardinality 0..*).
+'ScaffoldGraph::Vertex' (role 'EVout', cardinality 0..*) is associated with 'ScaffoldGraph::Edge' (role 'Edge5', cardinality 0..*).
+'ScaffoldGraph::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'ScaffoldGraph::Edge' (role 'VEin', cardinality 0..*).
+'ScaffoldGraph::Vertex' (role 'EVin', cardinality 0..*) is associated with 'ScaffoldGraph::Edge' (role 'Edge', cardinality 0..*).
+'ScaffoldGraph::Vertex' (role 'Vertex8', cardinality 0..*) is associated with 'ScaffoldGraph::Edge' (role 'VEout', cardinality 0..*).
+'ScaffoldGraph::Vertex' (role 'ScaffoldGraph_Vertex', cardinality 0..*) is associated with 'ScaffoldGraph::Graph' (role 'ScaffoldGraph_Graph', cardinality 0..*).

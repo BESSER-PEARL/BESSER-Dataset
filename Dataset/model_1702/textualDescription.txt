@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'library::t::library' has the following attributes: 'text' of type str; 'tagName' of type str.
+The class 'library::t::book' has the following attributes: 'title' of type str; 'text' of type str; 'tagName' of type str; 'pages' of type int.
+The class 'library::t::published' has the following attributes: 'text' of type str; 'tagName' of type str.
+The class 'library::t::author' has the following attributes: 'tagName' of type str; 'text' of type str.
+'library::t::book' (role 'library_t_book5', cardinality 0..*) is associated with 'library::t::author' (role 'library_t_author', cardinality 0..*).
+'library::t::author' (role 'library_t_author9', cardinality 0..*) is associated with 'library::t::book' (role 'library_t_book10', cardinality 0..*).
+'library::t::book' (role 'library_t_book2', cardinality 0..*) is associated with 'library::t::library' (role 'library_t_library3', cardinality 0..*).
+'library::t::library' (role 'library_t_library', cardinality 0..*) is associated with 'library::t::book' (role 'library_t_book', cardinality 0..*).
+'library::t::book' (role 'library_t_book7', cardinality 0..*) is associated with 'library::t::published' (role 'library_t_published', cardinality 0..*).
+'library::t::published' (role 'library_t_published12', cardinality 0..*) is associated with 'library::t::book' (role 'library_t_book13', cardinality 0..*).

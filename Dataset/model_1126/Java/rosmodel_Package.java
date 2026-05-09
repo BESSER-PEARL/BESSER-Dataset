@@ -1,0 +1,67 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class rosmodel_Package  {
+
+    private String author_email;
+    private String name;
+    private String description;
+    private String depends;
+    private String author;
+
+
+
+    public rosmodel_Package(
+        String author_email,        String name,        String description,        String depends,        String author    ) {
+        this.author_email = author_email;
+        this.name = name;
+        this.description = description;
+        this.depends = depends;
+        this.author = author;
+    }
+
+
+    public String getAuthor_email() {
+        return author_email;
+    }
+
+    public void setAuthor_email(String author_email) {
+        this.author_email = author_email;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getDepends() {
+        return depends;
+    }
+
+    public void setDepends(String depends) {
+        this.depends = depends;
+    }
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+
+}

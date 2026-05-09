@@ -1,0 +1,126 @@
+The model has 49 class(es).
+The class 'cpntools::Ml' has the following attributes: 'expression' of type str.
+The class 'cpntools::AuxText' has the following attributes: 'text' of type str.
+The class 'Auxiliary' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'cpntools::AuxBox' has the following attributes: 'width' of type int; 'height' of type int.
+The class 'cpntools::Boolean' has the following attributes: 'with_' of type str.
+The class 'cpntools::Time' has no attributes.
+The class 'cpntools::Annot' has the following attributes: 'text' of type str.
+The class 'cpntools::ColorSet' has the following attributes: 'idname' of type str; 'timed' of type bool; 'declare' of type str; 'colorSetType' of type str.
+The class 'cpntools::Globref' has the following attributes: 'idname' of type str.
+The class 'cpntools::Product' has no attributes.
+The class 'cpntools::Var' has the following attributes: 'idname' of type str.
+The class 'cpntools::SimpleColorSet' has no attributes.
+The class 'cpntools::Port' has the following attributes: 'portType' of type str.
+The class 'cpntools::Trans' has the following attributes: 'explicit' of type bool; 'height' of type int; 'width' of type int; 'text' of type str.
+The class 'cpntools::TransPriority' has the following attributes: 'text' of type str.
+The class 'cpntools::Real' has the following attributes: 'with_' of type str.
+The class 'cpntools::Enumerated' has the following attributes: 'with_' of type str.
+The class 'cpntools::Union' has no attributes.
+The class 'cpntools::Block' has the following attributes: 'idname' of type str.
+The class 'ColorSet' has no attributes.
+The class 'cpntools::Page' has the following attributes: 'name' of type str.
+The class 'cpntools::Subset' has no attributes.
+The class 'cpntools::Auxiliary' has no attributes.
+The class 'cpntools::DiagramElement' has the following attributes: 'fillPattern' of type str; 'fillFilled' of type bool; 'posy' of type int; 'fillColour' of type str; 'lineThick' of type int; 'posx' of type int; 'lineColour' of type str; 'lineType' of type str.
+The class 'cpntools::Binder' has the following attributes: 'posx' of type int; 'posy' of type int; 'height' of type int; 'width' of type int.
+The class 'CompoundColorSet' has no attributes.
+The class 'cpntools::Place' has the following attributes: 'width' of type int; 'text' of type str; 'height' of type int.
+The class 'SimpleColorSet' has no attributes.
+The class 'cpntools::List' has no attributes.
+The class 'cpntools::Group' has the following attributes: 'name' of type str.
+The class 'cpntools::String' has the following attributes: 'and_' of type str; 'with_' of type str.
+The class 'cpntools::Declaration' has no attributes.
+The class 'cpntools::CompoundColorSet' has no attributes.
+The class 'cpntools::Unit' has the following attributes: 'with_' of type str.
+The class 'cpntools::Globbox' has the following attributes: 'name' of type str.
+The class 'cpntools::Integer' has the following attributes: 'with_' of type str.
+The class 'cpntools::Fusion' has the following attributes: 'name' of type str.
+The class 'cpntools::Cpnet' has no attributes.
+The class 'cpntools::Index' has the following attributes: 'with_' of type str.
+The class 'cpntools::TransTime' has the following attributes: 'text' of type str.
+The class 'cpntools::Record' has no attributes.
+The class 'cpntools::TransCond' has the following attributes: 'text' of type str.
+The class 'cpntools::AuxEllipse' has the following attributes: 'width' of type int; 'height' of type int.
+The class 'cpntools::Alias' has no attributes.
+The class 'cpntools::Initmark' has the following attributes: 'expression' of type str.
+The class 'cpntools::LargeInteger' has the following attributes: 'with_' of type str.
+The class 'cpntools::Arc' has the following attributes: 'orientation' of type str; 'order' of type int; 'headsize' of type float; 'currentcyckle' of type str.
+The class 'Declaration' has no attributes.
+The enumeration 'Colour16' has the following literals: 'Lime', 'White', 'Blue', 'Teal', 'Maroon', 'Black', 'Silver', 'Navy', 'Red', 'Fuchsia', 'Olive', 'Purple', 'Aqua', 'Green', 'Yellow', 'Gray'.
+The enumeration 'Orientation' has the following literals: 'TtoP', 'PtoT', 'Inhibitor', 'undefined'.
+'cpntools::AuxText' is a specialization of 'Auxiliary'.
+'cpntools::Port' is a specialization of 'DiagramElement'.
+'cpntools::Index' is a specialization of 'SimpleColorSet'.
+'cpntools::TransCond' is a specialization of 'DiagramElement'.
+'cpntools::TransTime' is a specialization of 'DiagramElement'.
+'cpntools::Integer' is a specialization of 'SimpleColorSet'.
+'cpntools::Initmark' is a specialization of 'DiagramElement'.
+'cpntools::String' is a specialization of 'SimpleColorSet'.
+'cpntools::Arc' is a specialization of 'DiagramElement'.
+'cpntools::TransPriority' is a specialization of 'DiagramElement'.
+'cpntools::List' is a specialization of 'CompoundColorSet'.
+'cpntools::Ml' is a specialization of 'Declaration'.
+'cpntools::Record' is a specialization of 'CompoundColorSet'.
+'cpntools::Time' is a specialization of 'SimpleColorSet'.
+'cpntools::Var' is a specialization of 'Declaration'.
+'cpntools::AuxEllipse' is a specialization of 'Auxiliary'.
+'cpntools::Place' is a specialization of 'DiagramElement'.
+'cpntools::Globref' is a specialization of 'Declaration'.
+'cpntools::Product' is a specialization of 'CompoundColorSet'.
+'cpntools::Unit' is a specialization of 'SimpleColorSet'.
+'cpntools::Annot' is a specialization of 'DiagramElement'.
+'cpntools::Block' is a specialization of 'Declaration'.
+'cpntools::Boolean' is a specialization of 'SimpleColorSet'.
+'cpntools::Auxiliary' is a specialization of 'DiagramElement'.
+'cpntools::Real' is a specialization of 'SimpleColorSet'.
+'cpntools::LargeInteger' is a specialization of 'SimpleColorSet'.
+'cpntools::CompoundColorSet' is a specialization of 'ColorSet'.
+'cpntools::Alias' is a specialization of 'CompoundColorSet'.
+'cpntools::ColorSet' is a specialization of 'Declaration'.
+'cpntools::SimpleColorSet' is a specialization of 'ColorSet'.
+'cpntools::Subset' is a specialization of 'CompoundColorSet'.
+'cpntools::Trans' is a specialization of 'DiagramElement'.
+'cpntools::Enumerated' is a specialization of 'SimpleColorSet'.
+'cpntools::Union' is a specialization of 'CompoundColorSet'.
+'cpntools::AuxBox' is a specialization of 'Auxiliary'.
+'cpntools::Trans' (role 'trans', cardinality 0..*) is associated with 'cpntools::Arc' (role 'Arc63', cardinality 0..*).
+'cpntools::SimpleColorSet' (role 'cpntools_SimpleColorSet', cardinality 0..*) is associated with 'cpntools::CompoundColorSet' (role 'cpntools_CompoundColorSet', cardinality 0..*).
+'cpntools::Place' (role 'places29', cardinality 0..*) is associated with 'cpntools::Page' (role 'Page30', cardinality 0..*).
+'cpntools::Place' (role 'cpntools_Place23', cardinality 0..*) is associated with 'cpntools::Initmark' (role 'cpntools_Initmark', cardinality 0..*).
+'cpntools::Trans' (role 'Trans', cardinality 0..*) is associated with 'cpntools::Page' (role 'page11', cardinality 0..*).
+'cpntools::Trans' (role 'cpntools_Trans', cardinality 0..*) is associated with 'cpntools::TransCond' (role 'cpntools_TransCond', cardinality 0..*).
+'cpntools::Globbox' (role 'Globbox34', cardinality 0..*) is associated with 'cpntools::Declaration' (role 'declarations', cardinality 0..*).
+'cpntools::Port' (role 'cpntools_Port', cardinality 0..*) is associated with 'cpntools::Place' (role 'cpntools_Place25', cardinality 0..*).
+'cpntools::Cpnet' (role 'cpnet', cardinality 0..*) is associated with 'cpntools::Fusion' (role 'Fusion', cardinality 0..*).
+'cpntools::Trans' (role 'Trans54', cardinality 0..*) is associated with 'cpntools::Arc' (role 'arcs53', cardinality 0..*).
+'cpntools::Page' (role 'page13', cardinality 0..*) is associated with 'cpntools::Arc' (role 'Arc', cardinality 0..*).
+'cpntools::Page' (role 'Page61', cardinality 0..*) is associated with 'cpntools::Trans' (role 'transs', cardinality 0..*).
+'cpntools::Declaration' (role 'Declaration49', cardinality 0..*) is associated with 'cpntools::Block' (role 'block', cardinality 0..*).
+'cpntools::DiagramElement' (role 'groupElms', cardinality 0..*) is associated with 'cpntools::Group' (role 'Group20', cardinality 0..*).
+'cpntools::Place' (role 'Place', cardinality 0..*) is associated with 'cpntools::Page' (role 'page7', cardinality 0..*).
+'cpntools::Trans' (role 'cpntools_Trans67', cardinality 0..*) is associated with 'cpntools::TransTime' (role 'cpntools_TransTime', cardinality 0..*).
+'cpntools::Cpnet' (role 'cpnet4', cardinality 0..*) is associated with 'cpntools::Binder' (role 'Binder', cardinality 0..*).
+'cpntools::Cpnet' (role 'Cpnet43', cardinality 0..*) is associated with 'cpntools::Globbox' (role 'globbox', cardinality 0..*).
+'cpntools::Page' (role 'Page58', cardinality 0..*) is associated with 'cpntools::Arc' (role 'arcs57', cardinality 0..*).
+'cpntools::Group' (role 'Group', cardinality 0..*) is associated with 'cpntools::Page' (role 'page', cardinality 0..*).
+'cpntools::Group' (role 'group18', cardinality 0..*) is associated with 'cpntools::Page' (role 'Page', cardinality 0..*).
+'cpntools::Place' (role 'places', cardinality 0..*) is associated with 'cpntools::Fusion' (role 'Fusion27', cardinality 0..*).
+'cpntools::Annot' (role 'cpntools_Annot', cardinality 0..*) is associated with 'cpntools::Arc' (role 'cpntools_Arc', cardinality 0..*).
+'cpntools::Place' (role 'Place51', cardinality 0..*) is associated with 'cpntools::Arc' (role 'arcs', cardinality 0..*).
+'cpntools::Page' (role 'Page41', cardinality 0..*) is associated with 'cpntools::Auxiliary' (role 'auxiliarys', cardinality 0..*).
+'cpntools::Declaration' (role 'declarations36', cardinality 0..*) is associated with 'cpntools::Block' (role 'Block', cardinality 0..*).
+'cpntools::Auxiliary' (role 'Auxiliary', cardinality 0..*) is associated with 'cpntools::Page' (role 'page9', cardinality 0..*).
+'cpntools::Declaration' (role 'Declaration', cardinality 0..*) is associated with 'cpntools::Globbox' (role 'globbox45', cardinality 0..*).
+'cpntools::ColorSet' (role 'cpntools_ColorSet47', cardinality 0..*) is associated with 'cpntools::Var' (role 'cpntools_Var', cardinality 0..*).
+'cpntools::Page' (role 'pages', cardinality 0..*) is associated with 'cpntools::Binder' (role 'Binder15', cardinality 0..*).
+'cpntools::TransPriority' (role 'cpntools_TransPriority', cardinality 0..*) is associated with 'cpntools::Trans' (role 'cpntools_Trans65', cardinality 0..*).
+'cpntools::Arc' (role 'Arc32', cardinality 0..*) is associated with 'cpntools::Place' (role 'place', cardinality 0..*).
+'cpntools::Place' (role 'Place38', cardinality 0..*) is associated with 'cpntools::Fusion' (role 'fusion', cardinality 0..*).
+'cpntools::Cpnet' (role 'Cpnet', cardinality 0..*) is associated with 'cpntools::Fusion' (role 'fusions', cardinality 0..*).
+'cpntools::Cpnet' (role 'Cpnet70', cardinality 0..*) is associated with 'cpntools::Binder' (role 'binder', cardinality 0..*).
+'cpntools::DiagramElement' (role 'DiagramElement', cardinality 0..*) is associated with 'cpntools::Group' (role 'group', cardinality 0..*).
+'cpntools::Place' (role 'cpntools_Place', cardinality 0..*) is associated with 'cpntools::ColorSet' (role 'cpntools_ColorSet', cardinality 0..*).
+'cpntools::Binder' (role 'binder72', cardinality 0..*) is associated with 'cpntools::Page' (role 'Page73', cardinality 0..*).
+'cpntools::Cpnet' (role 'cpnet2', cardinality 0..*) is associated with 'cpntools::Globbox' (role 'Globbox', cardinality 0..*).

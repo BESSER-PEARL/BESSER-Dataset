@@ -1,0 +1,74 @@
+The model has 35 class(es).
+The class 'Entity' has no attributes.
+The class 'dcps::DomainParticipant' has no attributes.
+The class 'dcps::Publisher' has no attributes.
+The class 'DataReaderWriter' has no attributes.
+The class 'dcps::DataReaderWriter' has the following attributes: 'copyFromTopicQos' of type bool.
+The class 'dcps::HistoryQosPolicy' has no attributes.
+The class 'dcps::LivelinessQosPolicy' has no attributes.
+The class 'dcps::PartitionQosPolicy' has no attributes.
+The class 'PublisherSubscriber' has no attributes.
+The class 'dcps::DataWriter' has no attributes.
+The class 'dcps::DataReader' has no attributes.
+The class 'dcps::DurabilityServiceQosPolicy' has no attributes.
+The class 'dcps::ReaderDataLifecycleQosPolicy' has no attributes.
+The class 'dcps::LifespanQosPolicy' has no attributes.
+The class 'dcps::OwnershipStrengthQosPolicy' has no attributes.
+The class 'dcps::DeadlineQosPolicy' has no attributes.
+The class 'dcps::TopicDescription' has no attributes.
+The class 'dcps::Topic' has no attributes.
+The class 'dcps::LatencyBudgetQosPolicy' has no attributes.
+The class 'dcps::DurabilityQosPolicy' has no attributes.
+The class 'DomainEntity' has no attributes.
+The class 'dcps::ResourceLimitsQosPolicy' has no attributes.
+The class 'dcps::TimeBasedFilterQosPolicy' has no attributes.
+The class 'dcps::PublisherSubscriber' has the following attributes: 'transportId' of type int.
+The class 'dcps::WriterDataLifecycleQosPolicy' has no attributes.
+The class 'dcps::Subscriber' has no attributes.
+The class 'dcps::TransportPriorityQosPolicy' has no attributes.
+The class 'dcps::EntityFactoryQosPolicy' has no attributes.
+The class 'dcps::UserDataQosPolicy' has no attributes.
+The class 'dcps::DestinationOrderQosPolicy' has no attributes.
+The class 'dcps::Domain' has the following attributes: 'domainId' of type str.
+The class 'dcps::PresentationQosPolicy' has no attributes.
+The class 'dcps::ReliabilityQosPolicy' has no attributes.
+The class 'dcps::OwnershipQosPolicy' has no attributes.
+The class 'dcps::GroupDataQosPolicy' has no attributes.
+'dcps::Domain' is a specialization of 'Entity'.
+'dcps::DomainParticipant' is a specialization of 'DomainEntity'.
+'dcps::DataReaderWriter' is a specialization of 'DomainEntity'.
+'dcps::PublisherSubscriber' is a specialization of 'DomainEntity'.
+'dcps::Subscriber' is a specialization of 'PublisherSubscriber'.
+'dcps::Publisher' is a specialization of 'PublisherSubscriber'.
+'dcps::DataReader' is a specialization of 'DataReaderWriter'.
+'dcps::DataWriter' is a specialization of 'DataReaderWriter'.
+'dcps::DataReader' (role 'dcps_DataReader', cardinality 0..*) is associated with 'dcps::Subscriber' (role 'dcps_Subscriber18', cardinality 0..*).
+'dcps::DurabilityQosPolicy' (role 'dcps_DurabilityQosPolicy', cardinality 0..*) is associated with 'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter25', cardinality 0..*).
+'dcps::ReaderDataLifecycleQosPolicy' (role 'dcps_ReaderDataLifecycleQosPolicy', cardinality 0..*) is associated with 'dcps::DataReader' (role 'dcps_DataReader42', cardinality 0..*).
+'dcps::Domain' (role 'dcps_Domain', cardinality 0..*) is associated with 'dcps::DomainParticipant' (role 'dcps_DomainParticipant', cardinality 0..*).
+'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter35', cardinality 0..*) is associated with 'dcps::ReliabilityQosPolicy' (role 'dcps_ReliabilityQosPolicy', cardinality 0..*).
+'dcps::TimeBasedFilterQosPolicy' (role 'dcps_TimeBasedFilterQosPolicy', cardinality 0..*) is associated with 'dcps::DataReader' (role 'dcps_DataReader44', cardinality 0..*).
+'dcps::DataReader' (role 'dcps_DataReader46', cardinality 0..*) is associated with 'dcps::TopicDescription' (role 'dcps_TopicDescription', cardinality 0..*).
+'dcps::UserDataQosPolicy' (role 'dcps_UserDataQosPolicy', cardinality 0..*) is associated with 'dcps::DomainParticipant' (role 'dcps_DomainParticipant8', cardinality 0..*).
+'dcps::TransportPriorityQosPolicy' (role 'dcps_TransportPriorityQosPolicy', cardinality 0..*) is associated with 'dcps::DataWriter' (role 'dcps_DataWriter52', cardinality 0..*).
+'dcps::Topic' (role 'dcps_Topic', cardinality 0..*) is associated with 'dcps::DataWriter' (role 'dcps_DataWriter58', cardinality 0..*).
+'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter33', cardinality 0..*) is associated with 'dcps::OwnershipQosPolicy' (role 'dcps_OwnershipQosPolicy', cardinality 0..*).
+'dcps::PublisherSubscriber' (role 'dcps_PublisherSubscriber', cardinality 0..*) is associated with 'dcps::EntityFactoryQosPolicy' (role 'dcps_EntityFactoryQosPolicy10', cardinality 0..*).
+'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter31', cardinality 0..*) is associated with 'dcps::LivelinessQosPolicy' (role 'dcps_LivelinessQosPolicy', cardinality 0..*).
+'dcps::DataWriter' (role 'dcps_DataWriter', cardinality 0..*) is associated with 'dcps::Publisher' (role 'dcps_Publisher20', cardinality 0..*).
+'dcps::Publisher' (role 'dcps_Publisher', cardinality 0..*) is associated with 'dcps::DomainParticipant' (role 'dcps_DomainParticipant2', cardinality 0..*).
+'dcps::WriterDataLifecycleQosPolicy' (role 'dcps_WriterDataLifecycleQosPolicy', cardinality 0..*) is associated with 'dcps::DataWriter' (role 'dcps_DataWriter54', cardinality 0..*).
+'dcps::PresentationQosPolicy' (role 'dcps_PresentationQosPolicy', cardinality 0..*) is associated with 'dcps::PublisherSubscriber' (role 'dcps_PublisherSubscriber14', cardinality 0..*).
+'dcps::PartitionQosPolicy' (role 'dcps_PartitionQosPolicy', cardinality 0..*) is associated with 'dcps::PublisherSubscriber' (role 'dcps_PublisherSubscriber16', cardinality 0..*).
+'dcps::UserDataQosPolicy' (role 'dcps_UserDataQosPolicy40', cardinality 0..*) is associated with 'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter39', cardinality 0..*).
+'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter37', cardinality 0..*) is associated with 'dcps::ResourceLimitsQosPolicy' (role 'dcps_ResourceLimitsQosPolicy', cardinality 0..*).
+'dcps::DeadlineQosPolicy' (role 'dcps_DeadlineQosPolicy', cardinality 0..*) is associated with 'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter', cardinality 0..*).
+'dcps::GroupDataQosPolicy' (role 'dcps_GroupDataQosPolicy', cardinality 0..*) is associated with 'dcps::PublisherSubscriber' (role 'dcps_PublisherSubscriber12', cardinality 0..*).
+'dcps::DomainParticipant' (role 'dcps_DomainParticipant4', cardinality 0..*) is associated with 'dcps::Subscriber' (role 'dcps_Subscriber', cardinality 0..*).
+'dcps::DataWriter' (role 'dcps_DataWriter48', cardinality 0..*) is associated with 'dcps::DurabilityServiceQosPolicy' (role 'dcps_DurabilityServiceQosPolicy', cardinality 0..*).
+'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter23', cardinality 0..*) is associated with 'dcps::DestinationOrderQosPolicy' (role 'dcps_DestinationOrderQosPolicy', cardinality 0..*).
+'dcps::DataWriter' (role 'dcps_DataWriter56', cardinality 0..*) is associated with 'dcps::LifespanQosPolicy' (role 'dcps_LifespanQosPolicy', cardinality 0..*).
+'dcps::EntityFactoryQosPolicy' (role 'dcps_EntityFactoryQosPolicy', cardinality 0..*) is associated with 'dcps::DomainParticipant' (role 'dcps_DomainParticipant6', cardinality 0..*).
+'dcps::HistoryQosPolicy' (role 'dcps_HistoryQosPolicy', cardinality 0..*) is associated with 'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter27', cardinality 0..*).
+'dcps::LatencyBudgetQosPolicy' (role 'dcps_LatencyBudgetQosPolicy', cardinality 0..*) is associated with 'dcps::DataReaderWriter' (role 'dcps_DataReaderWriter29', cardinality 0..*).
+'dcps::OwnershipStrengthQosPolicy' (role 'dcps_OwnershipStrengthQosPolicy', cardinality 0..*) is associated with 'dcps::DataWriter' (role 'dcps_DataWriter50', cardinality 0..*).

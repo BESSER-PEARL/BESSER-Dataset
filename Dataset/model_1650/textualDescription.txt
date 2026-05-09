@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'simpleworld::RelatedTo' has the following attributes: 'since' of type str.
+The class 'simpleworld::Thing' has the following attributes: 'id' of type int.
+The class 'NamedElement' has no attributes.
+The class 'simpleworld::World' has no attributes.
+The class 'simpleworld::NamedElement' has the following attributes: 'name' of type str.
+'simpleworld::Thing' is a specialization of 'NamedElement'.
+'simpleworld::RelatedTo' is a specialization of 'NamedElement'.
+'simpleworld::Thing' (role 'Thing', cardinality 0..*) is associated with 'simpleworld::RelatedTo' (role 'relations', cardinality 0..*).
+'simpleworld::World' (role 'simpleworld_World', cardinality 0..*) is associated with 'simpleworld::Thing' (role 'simpleworld_Thing', cardinality 0..*).
+'simpleworld::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'simpleworld::Thing' (role 'fromThing', cardinality 0..*).
+'simpleworld::RelatedTo' (role 'simpleworld_RelatedTo', cardinality 0..*) is associated with 'simpleworld::Thing' (role 'simpleworld_Thing4', cardinality 0..*).

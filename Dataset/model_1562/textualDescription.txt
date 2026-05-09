@@ -1,0 +1,79 @@
+The model has 31 class(es).
+The class 'graph::SanityChecker' has no attributes.
+The class 'DynamicLabel' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'graph::StaticEdgeLabel' has no attributes.
+The class 'Modifiable' has no attributes.
+The class 'graph::URIToNodeMapEntry' has the following attributes: 'key' of type str.
+The class 'Label' has no attributes.
+The class 'graph::StaticNodeLabel' has no attributes.
+The class 'graph::LabelValue' has no attributes.
+The class 'graph::STEMTime' has no attributes.
+The class 'graph::DynamicNodeLabel' has no attributes.
+The class 'graph::Identifiable' has no attributes.
+The class 'graph::Node' has no attributes.
+The class 'graph::Label' has the following attributes: 'uRIOfIdentifiableToBeLabeled' of type str.
+The class 'NodeLabel' has no attributes.
+The class 'SanityChecker' has no attributes.
+The class 'graph::Edge' has the following attributes: 'nodeAURI' of type str; 'directed' of type bool; 'nodeBURI' of type str.
+The class 'StaticLabel' has no attributes.
+The class 'EdgeLabel' has no attributes.
+The class 'graph::URIToLabelMapEntry' has the following attributes: 'key' of type str.
+The class 'graph::Decorator' has no attributes.
+The class 'graph::URIToEdgeMapEntry' has the following attributes: 'key' of type str.
+The class 'graph::UnresolvedIdentifiable' has the following attributes: 'unresolvedURI' of type str; 'fieldName' of type str.
+The class 'graph::EdgeLabel' has no attributes.
+The class 'graph::URIToNodeLabelMapEntry' has the following attributes: 'key' of type str.
+The class 'graph::DynamicLabel' has the following attributes: 'nextValueValid' of type bool.
+The class 'graph::NodeLabel' has no attributes.
+The class 'graph::Graph' has the following attributes: 'numDynamicLabels' of type int; 'numNodeLabels' of type int; 'numGraphLabels' of type int; 'numEdges' of type int; 'numNodes' of type int.
+The class 'graph::StaticLabel' has no attributes.
+The class 'graph::URIToIdentifiableMapEntry' has the following attributes: 'key' of type str.
+The class 'graph::DynamicEdgeLabel' has no attributes.
+'graph::StaticEdgeLabel' is a specialization of 'StaticLabel'.
+'graph::StaticNodeLabel' is a specialization of 'NodeLabel'.
+'graph::DynamicLabel' is a specialization of 'Label'.
+'graph::Graph' is a specialization of 'Identifiable'.
+'graph::Edge' is a specialization of 'Modifiable'.
+'graph::Label' is a specialization of 'Identifiable'.
+'graph::NodeLabel' is a specialization of 'Label'.
+'graph::StaticLabel' is a specialization of 'Label'.
+'graph::StaticEdgeLabel' is a specialization of 'EdgeLabel'.
+'graph::Node' is a specialization of 'Identifiable'.
+'graph::StaticNodeLabel' is a specialization of 'StaticLabel'.
+'graph::DynamicEdgeLabel' is a specialization of 'EdgeLabel'.
+'graph::LabelValue' is a specialization of 'SanityChecker'.
+'graph::DynamicNodeLabel' is a specialization of 'DynamicLabel'.
+'graph::StaticLabel' is a specialization of 'Modifiable'.
+'graph::EdgeLabel' is a specialization of 'Label'.
+'graph::Edge' is a specialization of 'Identifiable'.
+'graph::DynamicEdgeLabel' is a specialization of 'DynamicLabel'.
+'graph::DynamicNodeLabel' is a specialization of 'NodeLabel'.
+'graph::Decorator' (role 'model.ecoreDecorator20', cardinality 0..*) is associated with 'graph::Graph' (role 'graph', cardinality 0..*).
+'graph::Node' (role 'graph_Node28', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge29', cardinality 0..*).
+'graph::Identifiable' (role 'graph_Identifiable40', cardinality 0..*) is associated with 'graph::UnresolvedIdentifiable' (role 'graph_UnresolvedIdentifiable39', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph9', cardinality 0..*) is associated with 'graph::URIToNodeMapEntry' (role 'graph_URIToNodeMapEntry', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge49', cardinality 0..*) is associated with 'graph::URIToEdgeMapEntry' (role 'graph_URIToEdgeMapEntry48', cardinality 0..*).
+'graph::URIToLabelMapEntry' (role 'graph_URIToLabelMapEntry', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph11', cardinality 0..*).
+'graph::DynamicLabel' (role 'graph_DynamicLabel16', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph15', cardinality 0..*).
+'graph::Label' (role 'graph_Label55', cardinality 0..*) is associated with 'graph::URIToLabelMapEntry' (role 'graph_URIToLabelMapEntry54', cardinality 0..*).
+'graph::LabelValue' (role 'graph_LabelValue', cardinality 0..*) is associated with 'graph::DynamicLabel' (role 'graph_DynamicLabel', cardinality 0..*).
+'graph::Identifiable' (role 'graph_Identifiable', cardinality 0..*) is associated with 'graph::Label' (role 'graph_Label26', cardinality 0..*).
+'graph::EdgeLabel' (role 'EdgeLabel', cardinality 0..*) is associated with 'graph::Edge' (role 'edge', cardinality 0..*).
+'graph::Decorator' (role 'model.ecoreDecorator', cardinality 0..*) is associated with 'graph::DynamicLabel' (role 'labelsToUpdate', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph18', cardinality 0..*) is associated with 'graph::UnresolvedIdentifiable' (role 'graph_UnresolvedIdentifiable', cardinality 0..*).
+'graph::NodeLabel' (role 'NodeLabel', cardinality 0..*) is associated with 'graph::Node' (role 'node', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node', cardinality 0..*).
+'graph::STEMTime' (role 'graph_STEMTime', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph22', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph', cardinality 0..*) is associated with 'graph::URIToEdgeMapEntry' (role 'graph_URIToEdgeMapEntry', cardinality 0..*).
+'graph::UnresolvedIdentifiable' (role 'graph_UnresolvedIdentifiable36', cardinality 0..*) is associated with 'graph::Identifiable' (role 'graph_Identifiable37', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge4', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node5', cardinality 0..*).
+'graph::UnresolvedIdentifiable' (role 'graph_UnresolvedIdentifiable42', cardinality 0..*) is associated with 'graph::Identifiable' (role 'graph_Identifiable43', cardinality 0..*).
+'graph::Node' (role 'Node', cardinality 0..*) is associated with 'graph::NodeLabel' (role 'labels', cardinality 0..*).
+'graph::URIToNodeLabelMapEntry' (role 'graph_URIToNodeLabelMapEntry', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph13', cardinality 0..*).
+'graph::NodeLabel' (role 'graph_NodeLabel', cardinality 0..*) is associated with 'graph::URIToNodeLabelMapEntry' (role 'graph_URIToNodeLabelMapEntry57', cardinality 0..*).
+'graph::Identifiable' (role 'graph_Identifiable45', cardinality 0..*) is associated with 'graph::URIToIdentifiableMapEntry' (role 'graph_URIToIdentifiableMapEntry', cardinality 0..*).
+'graph::Edge' (role 'Edge', cardinality 0..*) is associated with 'graph::EdgeLabel' (role 'label', cardinality 0..*).
+'graph::Identifiable' (role 'graph_Identifiable34', cardinality 0..*) is associated with 'graph::UnresolvedIdentifiable' (role 'graph_UnresolvedIdentifiable33', cardinality 0..*).
+'graph::URIToNodeMapEntry' (role 'graph_URIToNodeMapEntry51', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node52', cardinality 0..*).
+'graph::Label' (role 'graph_Label', cardinality 0..*) is associated with 'graph::LabelValue' (role 'graph_LabelValue24', cardinality 0..*).

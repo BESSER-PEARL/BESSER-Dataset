@@ -1,0 +1,39 @@
+The model has 10 class(es).
+The class 'ctxmngr::ManagerTransition' has no attributes.
+The class 'ctxmngr::CtxState' has the following attributes: 'isStart' of type bool; 'isEnd' of type bool.
+The class 'ctxmngr::CtxTransition' has the following attributes: 'transProb' of type float; 'output' of type str; 'transRate' of type float; 'Event' of type str; 'isRemote' of type bool; 'Action' of type str; 'Condition' of type str; 'input' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ctxmngr::RemoteFiringDependency' has no attributes.
+The class 'ctxmngr::ManagerState' has no attributes.
+The class 'ctxmngr::ContextParameter' has the following attributes: 'isInput' of type bool; 'LitteralUnlimitedNatural' of type float; 'LitteralBoolean' of type bool; 'LitteralString' of type str; 'LitteralInteger' of type int.
+The class 'ctxmngr::Manager' has no attributes.
+The class 'ctxmngr::ContextManager' has no attributes.
+The class 'ctxmngr::OpaqueExpression' has no attributes.
+'ctxmngr::RemoteFiringDependency' is a specialization of 'NamedElement'.
+'ctxmngr::ContextManager' is a specialization of 'NamedElement'.
+'ctxmngr::CtxTransition' is a specialization of 'NamedElement'.
+'ctxmngr::ContextParameter' is a specialization of 'NamedElement'.
+'ctxmngr::CtxState' is a specialization of 'NamedElement'.
+'ctxmngr::RemoteFiringDependency' (role 'remoteFirings', cardinality 0..*) is associated with 'ctxmngr::ContextManager' (role 'ContextManager41', cardinality 0..*).
+'ctxmngr::CtxState' (role 'source', cardinality 0..*) is associated with 'ctxmngr::CtxTransition' (role 'CtxTransition15', cardinality 0..*).
+'ctxmngr::CtxTransition' (role 'ctxmngr_CtxTransition', cardinality 0..*) is associated with 'ctxmngr::ManagerTransition' (role 'ctxmngr_ManagerTransition', cardinality 0..*).
+'ctxmngr::CtxTransition' (role 'incomingTransition', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'CtxState27', cardinality 0..*).
+'ctxmngr::ContextParameter' (role 'contextParameters', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'CtxState30', cardinality 0..*).
+'ctxmngr::ContextManager' (role 'owningManager12', cardinality 0..*) is associated with 'ctxmngr::CtxTransition' (role 'CtxTransition', cardinality 0..*).
+'ctxmngr::CtxTransition' (role 'CtxTransition17', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'target', cardinality 0..*).
+'ctxmngr::ContextManager' (role 'owningManager10', cardinality 0..*) is associated with 'ctxmngr::RemoteFiringDependency' (role 'RemoteFiringDependency', cardinality 0..*).
+'ctxmngr::ContextManager' (role 'ctxmngr_ContextManager', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'ctxmngr_CtxState', cardinality 0..*).
+'ctxmngr::CtxState' (role 'ctxmngr_CtxState4', cardinality 0..*) is associated with 'ctxmngr::ContextManager' (role 'ctxmngr_ContextManager3', cardinality 0..*).
+'ctxmngr::ContextParameter' (role 'contextParameters33', cardinality 0..*) is associated with 'ctxmngr::ContextManager' (role 'ContextManager34', cardinality 0..*).
+'ctxmngr::CtxState' (role 'CtxState25', cardinality 0..*) is associated with 'ctxmngr::CtxTransition' (role 'outgoingTransition', cardinality 0..*).
+'ctxmngr::ContextParameter' (role 'ctxmngr_ContextParameter', cardinality 0..*) is associated with 'ctxmngr::OpaqueExpression' (role 'ctxmngr_OpaqueExpression', cardinality 0..*).
+'ctxmngr::ManagerTransition' (role 'ctxmngr_ManagerTransition36', cardinality 0..*) is associated with 'ctxmngr::RemoteFiringDependency' (role 'ctxmngr_RemoteFiringDependency', cardinality 0..*).
+'ctxmngr::ContextManager' (role 'ctxmngr_ContextManager8', cardinality 0..*) is associated with 'ctxmngr::Manager' (role 'ctxmngr_Manager', cardinality 0..*).
+'ctxmngr::ContextParameter' (role 'ContextParameter', cardinality 0..*) is associated with 'ctxmngr::ContextManager' (role 'owningManager6', cardinality 0..*).
+'ctxmngr::ManagerState' (role 'ctxmngr_ManagerState', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'ctxmngr_CtxState21', cardinality 0..*).
+'ctxmngr::CtxTransition' (role 'ownedTransition', cardinality 0..*) is associated with 'ctxmngr::ContextManager' (role 'ContextManager23', cardinality 0..*).
+'ctxmngr::CtxState' (role 'ownedState', cardinality 0..*) is associated with 'ctxmngr::ContextManager' (role 'ContextManager', cardinality 0..*).
+'ctxmngr::ContextManager' (role 'owningManager', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'CtxState', cardinality 0..*).
+'ctxmngr::ManagerTransition' (role 'ctxmngr_ManagerTransition39', cardinality 0..*) is associated with 'ctxmngr::RemoteFiringDependency' (role 'ctxmngr_RemoteFiringDependency38', cardinality 0..*).
+'ctxmngr::CtxTransition' (role 'ctxmngr_CtxTransition44', cardinality 0..*) is associated with 'ctxmngr::RemoteFiringDependency' (role 'ctxmngr_RemoteFiringDependency43', cardinality 0..*).
+'ctxmngr::ContextParameter' (role 'ContextParameter19', cardinality 0..*) is associated with 'ctxmngr::CtxState' (role 'state', cardinality 0..*).

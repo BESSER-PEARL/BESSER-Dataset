@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'stateMachine::DocumentField' has the following attributes: 'name' of type str.
+The class 'stateMachine::StateMachine' has the following attributes: 'package' of type str; 'name' of type str.
+The class 'stateMachine::State' has the following attributes: 'name' of type str.
+The class 'stateMachine::FieldState' has the following attributes: 'state' of type str.
+The class 'stateMachine::Trans' has no attributes.
+The class 'stateMachine::Role' has the following attributes: 'name' of type str.
+The class 'stateMachine::TransSet' has no attributes.
+The class 'stateMachine::Event' has the following attributes: 'name' of type str.
+The enumeration 'EFieldState' has the following literals: 'READONLY', 'HIDDEN', 'EDITABLE'.
+'stateMachine::State' (role 'stateMachine_State', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine2', cardinality 0..*).
+'stateMachine::Trans' (role 'stateMachine_Trans27', cardinality 0..*) is associated with 'stateMachine::TransSet' (role 'stateMachine_TransSet26', cardinality 0..*).
+'stateMachine::TransSet' (role 'stateMachine_TransSet29', cardinality 0..*) is associated with 'stateMachine::Role' (role 'stateMachine_Role30', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State11', cardinality 0..*) is associated with 'stateMachine::Trans' (role 'stateMachine_Trans', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State5', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine4', cardinality 0..*).
+'stateMachine::Role' (role 'stateMachine_Role', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine9', cardinality 0..*).
+'stateMachine::Trans' (role 'stateMachine_Trans20', cardinality 0..*) is associated with 'stateMachine::State' (role 'stateMachine_State21', cardinality 0..*).
+'stateMachine::Trans' (role 'stateMachine_Trans17', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event18', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State15', cardinality 0..*) is associated with 'stateMachine::TransSet' (role 'stateMachine_TransSet', cardinality 0..*).
+'stateMachine::DocumentField' (role 'stateMachine_DocumentField24', cardinality 0..*) is associated with 'stateMachine::FieldState' (role 'stateMachine_FieldState23', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine7', cardinality 0..*) is associated with 'stateMachine::DocumentField' (role 'stateMachine_DocumentField', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State13', cardinality 0..*) is associated with 'stateMachine::FieldState' (role 'stateMachine_FieldState', cardinality 0..*).

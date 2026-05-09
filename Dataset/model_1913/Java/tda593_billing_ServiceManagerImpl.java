@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class tda593_billing_ServiceManagerImpl extends ServiceManager {
+
+
+
+
+    public tda593_billing_ServiceManagerImpl(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

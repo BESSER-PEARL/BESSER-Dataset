@@ -1,0 +1,49 @@
+The model has 17 class(es).
+The class 'state::Behaviour' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'State' has no attributes.
+The class 'state::Vertex' has no attributes.
+The class 'state::State' has the following attributes: 'isSimple' of type bool; 'isComposite' of type bool.
+The class 'Vertex' has no attributes.
+The class 'state::StateMachine' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'state::StateModel' has no attributes.
+The class 'state::Transition' has the following attributes: 'kind' of type str.
+The class 'state::PseudoState' has the following attributes: 'kind' of type str.
+The class 'state::OpaqueExpression' has the following attributes: 'body' of type str.
+The class 'state::Event' has the following attributes: 'body' of type str.
+The class 'state::Constraint' has no attributes.
+The class 'state::NamedElement' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'state::Trigger' has no attributes.
+The class 'state::Region' has no attributes.
+The class 'state::FinalState' has no attributes.
+The enumeration 'TransitionKind' has the following literals: 'local', 'internal', 'external'.
+The enumeration 'PseudoStateKind' has the following literals: 'fork', 'join', 'choice', 'deep', 'initial', 'terminate', 'shallow', 'none'.
+'state::PseudoState' is a specialization of 'Vertex'.
+'state::Vertex' is a specialization of 'NamedElement'.
+'state::StateMachine' is a specialization of 'NamedElement'.
+'state::Trigger' is a specialization of 'NamedElement'.
+'state::Transition' is a specialization of 'NamedElement'.
+'state::State' is a specialization of 'NamedElement'.
+'state::Region' is a specialization of 'NamedElement'.
+'state::FinalState' is a specialization of 'State'.
+'state::State' is a specialization of 'Vertex'.
+'state::Vertex' (role 'state_Vertex', cardinality 0..*) is associated with 'state::Region' (role 'state_Region15', cardinality 0..*).
+'state::Region' (role 'state_Region12', cardinality 0..*) is associated with 'state::State' (role 'state_State13', cardinality 0..*).
+'state::Transition' (role 'Transition', cardinality 0..*) is associated with 'state::Vertex' (role 'source', cardinality 0..*).
+'state::State' (role 'state_State4', cardinality 0..*) is associated with 'state::Behaviour' (role 'state_Behaviour', cardinality 0..*).
+'state::StateModel' (role 'state_StateModel', cardinality 0..*) is associated with 'state::NamedElement' (role 'state_NamedElement', cardinality 0..*).
+'state::Region' (role 'state_Region17', cardinality 0..*) is associated with 'state::StateMachine' (role 'state_StateMachine', cardinality 0..*).
+'state::Transition' (role 'outgoing', cardinality 0..*) is associated with 'state::Vertex' (role 'Vertex', cardinality 0..*).
+'state::State' (role 'state_State2', cardinality 0..*) is associated with 'state::Trigger' (role 'state_Trigger', cardinality 0..*).
+'state::Behaviour' (role 'state_Behaviour10', cardinality 0..*) is associated with 'state::State' (role 'state_State9', cardinality 0..*).
+'state::Vertex' (role 'Vertex28', cardinality 0..*) is associated with 'state::Transition' (role 'incoming', cardinality 0..*).
+'state::StateMachine' (role 'state_StateMachine21', cardinality 0..*) is associated with 'state::Region' (role 'state_Region22', cardinality 0..*).
+'state::State' (role 'state_State6', cardinality 0..*) is associated with 'state::Behaviour' (role 'state_Behaviour7', cardinality 0..*).
+'state::OpaqueExpression' (role 'state_OpaqueExpression', cardinality 0..*) is associated with 'state::Constraint' (role 'state_Constraint38', cardinality 0..*).
+'state::Event' (role 'state_Event', cardinality 0..*) is associated with 'state::Trigger' (role 'state_Trigger40', cardinality 0..*).
+'state::Transition' (role 'state_Transition30', cardinality 0..*) is associated with 'state::Trigger' (role 'state_Trigger31', cardinality 0..*).
+'state::Transition' (role 'state_Transition33', cardinality 0..*) is associated with 'state::Constraint' (role 'state_Constraint', cardinality 0..*).
+'state::State' (role 'state_State', cardinality 0..*) is associated with 'state::Region' (role 'state_Region', cardinality 0..*).
+'state::Vertex' (role 'target', cardinality 0..*) is associated with 'state::Transition' (role 'Transition25', cardinality 0..*).
+'state::Transition' (role 'state_Transition', cardinality 0..*) is associated with 'state::Region' (role 'state_Region19', cardinality 0..*).
+'state::Behaviour' (role 'state_Behaviour36', cardinality 0..*) is associated with 'state::Transition' (role 'state_Transition35', cardinality 0..*).

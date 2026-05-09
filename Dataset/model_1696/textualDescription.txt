@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'basic2::Thing' has the following attributes: 'id' of type int.
+The class 'basic2::World' has no attributes.
+'basic2::Thing' (role 'basic2_Thing', cardinality 0..*) is associated with 'basic2::World' (role 'basic2_World', cardinality 0..*).
+'basic2::Thing' (role 'basic2_Thing3', cardinality 0..*) is associated with 'basic2::Thing' (role 'basic2_Thing1', cardinality 0..*).

@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'helloworld1::Thing' has the following attributes: 'id' of type int.
+The class 'helloworld1::World' has no attributes.
+'helloworld1::World' (role 'helloworld1_World', cardinality 0..*) is associated with 'helloworld1::Thing' (role 'helloworld1_Thing', cardinality 0..*).
+'helloworld1::Thing' (role 'helloworld1_Thing3', cardinality 0..*) is associated with 'helloworld1::Thing' (role 'helloworld1_Thing1', cardinality 0..*).

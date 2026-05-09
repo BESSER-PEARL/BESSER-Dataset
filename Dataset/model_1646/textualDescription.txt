@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'kwas::Leaf' has the following attributes: 'val' of type int.
+The class 'kwas::Top' has no attributes.
+The class 'kwas::Tree' has the following attributes: 'valsI' of type int; 'labelI' of type str; 'labelS' of type str; 'valsS' of type int.
+The class 'kwas::Bin' has no attributes.
+The class 'Tree' has no attributes.
+'kwas::Leaf' is a specialization of 'Tree'.
+'kwas::Bin' is a specialization of 'Tree'.
+'kwas::Bin' (role 'kwas_Bin', cardinality 0..*) is associated with 'kwas::Tree' (role 'kwas_Tree2', cardinality 0..*).
+'kwas::Tree' (role 'kwas_Tree5', cardinality 0..*) is associated with 'kwas::Bin' (role 'kwas_Bin4', cardinality 0..*).
+'kwas::Tree' (role 'kwas_Tree', cardinality 0..*) is associated with 'kwas::Top' (role 'kwas_Top', cardinality 0..*).

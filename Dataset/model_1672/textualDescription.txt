@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'simple200::State' has the following attributes: 'label' of type str; 'activity' of type str; 'type' of type str.
+The class 'simple200::RelatedTo' has the following attributes: 'since' of type str.
+The class 'simple200::Variable' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'simple200::Transition' has the following attributes: 'expression' of type str.
+The class 'simple200::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'Thing' has no attributes.
+The class 'simple200::Thing' has the following attributes: 'id' of type int.
+'simple200::State' is a specialization of 'NamedElement'.
+'simple200::Variable' is a specialization of 'Thing'.
+'simple200::RelatedTo' is a specialization of 'NamedElement'.
+'simple200::Thing' is a specialization of 'NamedElement'.
+'simple200::Transition' is a specialization of 'NamedElement'.
+'simple200::State' (role 'State', cardinality 0..*) is associated with 'simple200::Transition' (role 'transitions', cardinality 0..*).
+'simple200::Thing' (role 'fromThing', cardinality 0..*) is associated with 'simple200::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'simple200::State' (role 'simple200_State5', cardinality 0..*) is associated with 'simple200::State' (role 'simple200_State7', cardinality 0..*).
+'simple200::State' (role 'source', cardinality 0..*) is associated with 'simple200::Transition' (role 'Transition', cardinality 0..*).
+'simple200::Variable' (role 'simple200_Variable', cardinality 0..*) is associated with 'simple200::State' (role 'simple200_State12', cardinality 0..*).
+'simple200::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'simple200::Thing' (role 'Thing', cardinality 0..*).
+'simple200::Transition' (role 'simple200_Transition', cardinality 0..*) is associated with 'simple200::State' (role 'simple200_State', cardinality 0..*).
+'simple200::State' (role 'simple200_State8', cardinality 0..*) is associated with 'simple200::State' (role 'simple200_State10', cardinality 0..*).
+'simple200::RelatedTo' (role 'simple200_RelatedTo', cardinality 0..*) is associated with 'simple200::Thing' (role 'simple200_Thing', cardinality 0..*).

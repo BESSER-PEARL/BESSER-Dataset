@@ -1,0 +1,23 @@
+The model has 9 class(es).
+The class 'errorstm::InitialState' has no attributes.
+The class 'errorstm::StateMachine' has no attributes.
+The class 'errorstm::Action' has the following attributes: 'kind' of type str.
+The class 'errorstm::AbstractState' has the following attributes: 'name' of type str.
+The class 'errorstm::Transition' has the following attributes: 'guard' of type str; 'event' of type str; 'name' of type str.
+The class 'errorstm::SimpleState' has no attributes.
+The class 'errorstm::FinalState' has no attributes.
+The class 'errorstm::CompositeState' has no attributes.
+The class 'AbstractState' has no attributes.
+The enumeration 'ActionKind' has the following literals: 'EXIT', 'ENTRY'.
+'errorstm::SimpleState' is a specialization of 'AbstractState'.
+'errorstm::CompositeState' is a specialization of 'AbstractState'.
+'errorstm::InitialState' is a specialization of 'AbstractState'.
+'errorstm::FinalState' is a specialization of 'AbstractState'.
+'errorstm::Transition' (role 'errorstm_Transition', cardinality 0..*) is associated with 'errorstm::CompositeState' (role 'errorstm_CompositeState10', cardinality 0..*).
+'errorstm::Transition' (role 'Transition5', cardinality 0..*) is associated with 'errorstm::AbstractState' (role 'from_', cardinality 0..*).
+'errorstm::AbstractState' (role 'AbstractState2', cardinality 0..*) is associated with 'errorstm::Transition' (role 'incoming', cardinality 0..*).
+'errorstm::StateMachine' (role 'errorstm_StateMachine', cardinality 0..*) is associated with 'errorstm::CompositeState' (role 'errorstm_CompositeState12', cardinality 0..*).
+'errorstm::Transition' (role 'outgoing', cardinality 0..*) is associated with 'errorstm::AbstractState' (role 'AbstractState', cardinality 0..*).
+'errorstm::AbstractState' (role 'to', cardinality 0..*) is associated with 'errorstm::Transition' (role 'Transition', cardinality 0..*).
+'errorstm::AbstractState' (role 'errorstm_AbstractState', cardinality 0..*) is associated with 'errorstm::Action' (role 'errorstm_Action', cardinality 0..*).
+'errorstm::AbstractState' (role 'errorstm_AbstractState8', cardinality 0..*) is associated with 'errorstm::CompositeState' (role 'errorstm_CompositeState', cardinality 0..*).

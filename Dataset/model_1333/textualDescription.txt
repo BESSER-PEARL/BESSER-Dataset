@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'classescs::RootCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'classescs::ElementCS' has no attributes.
+The class 'classescs::PathElementCS' has no attributes.
+The class 'classescs::PathNameCS' has no attributes.
+The class 'classescs::ClassCS' has no attributes.
+The class 'classescs::Element' has no attributes.
+The class 'ElementCS' has no attributes.
+The class 'classescs::PackageCS' has no attributes.
+The class 'classescs::NamedElementCS' has the following attributes: 'name' of type str.
+'classescs::ClassCS' is a specialization of 'NamedElementCS'.
+'classescs::PathElementCS' is a specialization of 'NamedElementCS'.
+'classescs::PackageCS' is a specialization of 'NamedElementCS'.
+'classescs::NamedElementCS' is a specialization of 'ElementCS'.
+'classescs::RootCS' is a specialization of 'ElementCS'.
+'classescs::PathNameCS' is a specialization of 'ElementCS'.
+'classescs::PathElementCS' (role 'classescs_PathElementCS', cardinality 0..*) is associated with 'classescs::PathNameCS' (role 'classescs_PathNameCS5', cardinality 0..*).
+'classescs::ElementCS' (role 'classescs_ElementCS', cardinality 0..*) is associated with 'classescs::Element' (role 'classescs_Element', cardinality 0..*).
+'classescs::ClassCS' (role 'classescs_ClassCS3', cardinality 0..*) is associated with 'classescs::PathNameCS' (role 'classescs_PathNameCS', cardinality 0..*).
+'classescs::ClassCS' (role 'classescs_ClassCS', cardinality 0..*) is associated with 'classescs::PackageCS' (role 'classescs_PackageCS', cardinality 0..*).
+'classescs::RootCS' (role 'classescs_RootCS', cardinality 0..*) is associated with 'classescs::PackageCS' (role 'classescs_PackageCS7', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/bento/examples/evaluation/bento.examples.flow_diagrams.petrinets/bindings/apromore2pn/apromore.ecore

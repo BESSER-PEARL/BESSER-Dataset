@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'stuff::Property' has the following attributes: 'intrinsic' of type bool; 'name' of type str.
+The class 'stuff::Thing' has the following attributes: 'name' of type str.
+The class 'stuff::World' has no attributes.
+'stuff::Property' (role 'stuff_Property5', cardinality 0..*) is associated with 'stuff::World' (role 'stuff_World4', cardinality 0..*).
+'stuff::World' (role 'stuff_World', cardinality 0..*) is associated with 'stuff::Thing' (role 'stuff_Thing2', cardinality 0..*).
+'stuff::Thing' (role 'stuff_Thing', cardinality 0..*) is associated with 'stuff::Property' (role 'stuff_Property', cardinality 0..*).

@@ -1,0 +1,298 @@
+The model has 103 class(es).
+The class 'vhdl::ContextItem' has no attributes.
+The class 'vhdl::RangeExpression' has the following attributes: 'direction' of type str; 'operator' of type str.
+The class 'vhdl::BitString' has the following attributes: 'value' of type str.
+The class 'vhdl::Factor' has no attributes.
+The class 'ArchitectureStatement' has no attributes.
+The class 'vhdl::EnumerationTypeDefinition' has the following attributes: 'literal' of type str.
+The class 'vhdl::Type' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'vhdl::ConstantDeclaration' has no attributes.
+The class 'vhdl::Port' has the following attributes: 'kind' of type str; 'mode' of type str.
+The class 'vhdl::IterationScheme' has no attributes.
+The class 'vhdl::ArrayTypeDefinition' has no attributes.
+The class 'vhdl::Entity' has no attributes.
+The class 'vhdl::LibraryUnit' has the following attributes: 'name' of type str.
+The class 'vhdl::UnitValueExpression' has the following attributes: 'unit' of type str.
+The class 'vhdl::CaseAlternative' has no attributes.
+The class 'vhdl::LogicalExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::EntityInstantiationStatement' has the following attributes: 'name' of type str.
+The class 'vhdl::SequentialSignalAssignmentStatement' has the following attributes: 'postponed' of type bool; 'label' of type str; 'guarded' of type bool.
+The class 'vhdl::DesignFile' has no attributes.
+The class 'ArrayTypeDefinition' has no attributes.
+The class 'vhdl::Value' has no attributes.
+The class 'vhdl::IdList' has no attributes.
+The class 'vhdl::AccessTypeDefinition' has no attributes.
+The class 'vhdl::SequentialStatement' has no attributes.
+The class 'vhdl::SubtypeIndication' has the following attributes: 'builtin_type' of type str.
+The class 'vhdl::LoopStatement' has no attributes.
+The class 'vhdl::RecordTypeDefinition' has no attributes.
+The class 'vhdl::Generics' has no attributes.
+The class 'vhdl::IfStatementTest' has no attributes.
+The class 'SequentialStatement' has no attributes.
+The class 'vhdl::ComponentInstantiationStatement' has the following attributes: 'name' of type str.
+The class 'vhdl::Library' has the following attributes: 'builtin_lib' of type str.
+The class 'vhdl::SignalDeclaration' has the following attributes: 'kind' of type str.
+The class 'vhdl::Package' has no attributes.
+The class 'vhdl::AttributeDeclaration' has the following attributes: 'type_keyword' of type str; 'type_id' of type str; 'name' of type str.
+The class 'vhdl::AddingExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::ConstrainedArrayTypeDefinition' has no attributes.
+The class 'vhdl::CaseStatement' has the following attributes: 'label' of type str.
+The class 'vhdl::UseClause' has the following attributes: 'importedNamespace' of type str.
+The class 'vhdl::Open' has the following attributes: 'value' of type str.
+The class 'vhdl::ConditionalSignalAssignmentStatement' has the following attributes: 'guarded' of type bool; 'postponed' of type bool.
+The class 'vhdl::Boolean' has the following attributes: 'value' of type str.
+The class 'vhdl::FileTypeDefinition' has the following attributes: 'type' of type str.
+The class 'vhdl::WaitStatement' has the following attributes: 'label' of type str.
+The class 'CompositeTypeDefinition' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'vhdl::VariableDeclaration' has the following attributes: 'shared' of type bool.
+The class 'vhdl::MultiExpression' has no attributes.
+The class 'vhdl::PortMap' has no attributes.
+The class 'vhdl::ProcessStatement' has the following attributes: 'postponed' of type bool.
+The class 'vhdl::TypeDeclaration' has no attributes.
+The class 'vhdl::UnconstrainedArrayTypeDefinition' has the following attributes: 'index' of type str.
+The class 'vhdl::Others' has the following attributes: 'value' of type str.
+The class 'vhdl::SubtypeDeclaration' has no attributes.
+The class 'vhdl::Member' has no attributes.
+The class 'vhdl::Alias' has no attributes.
+The class 'ContextItem' has no attributes.
+The class 'package::declarative::item' has no attributes.
+The class 'vhdl::BlockDeclarativeItem' has no attributes.
+The class 'vhdl::ForIterationScheme' has the following attributes: 'variable' of type str.
+The class 'vhdl::IfGenerateStatement' has no attributes.
+The class 'vhdl::Ports' has no attributes.
+The class 'ValueExpression' has no attributes.
+The class 'Variable' has no attributes.
+The class 'vhdl::GenericMap' has no attributes.
+The class 'vhdl::TypeDefinition' has no attributes.
+The class 'vhdl::LibraryClause' has the following attributes: 'name' of type str.
+The class 'vhdl::RecordField' has the following attributes: 'name' of type str.
+The class 'vhdl::Signal' has no attributes.
+The class 'vhdl::PortMapAssociation' has the following attributes: 'formal' of type str.
+The class 'vhdl::Component' has the following attributes: 'name' of type str.
+The class 'vhdl::WhileIterationScheme' has no attributes.
+The class 'vhdl::String' has the following attributes: 'value' of type str.
+The class 'vhdl::GenericMapAssociation' has the following attributes: 'formal' of type str.
+The class 'vhdl::SliceExpression' has no attributes.
+The class 'vhdl::Architecture' has no attributes.
+The class 'Type' has no attributes.
+The class 'vhdl::LoopVariable' has no attributes.
+The class 'IterationScheme' has no attributes.
+The class 'vhdl::ForGenerateStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'vhdl::ValueExpression' has the following attributes: 'value' of type str.
+The class 'vhdl::Variable' has the following attributes: 'name' of type str.
+The class 'vhdl::MemberExpression' has no attributes.
+The class 'LibraryUnit' has no attributes.
+The class 'vhdl::Constant' has no attributes.
+The class 'vhdl::Var' has no attributes.
+The class 'vhdl::Char' has the following attributes: 'value' of type str.
+The class 'vhdl::package::declarative::item' has no attributes.
+The class 'vhdl::ChoiceExpression' has no attributes.
+The class 'vhdl::BuiltinFuncs' has the following attributes: 'value' of type str.
+The class 'vhdl::MultiplyingExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::AttributeSpecification' has the following attributes: 'class_' of type str; 'entity' of type str; 'name' of type str.
+The class 'vhdl::ArchitectureStatement' has the following attributes: 'label' of type str.
+The class 'vhdl::Expression' has the following attributes: 'attribute' of type str; 'unary_operator' of type str.
+The class 'vhdl::CompositeTypeDefinition' has no attributes.
+The class 'vhdl::package::declarative::part' has no attributes.
+The class 'vhdl::IfStatement' has the following attributes: 'label' of type str.
+The class 'vhdl::ShiftExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::ConditionalWaveformExpression' has no attributes.
+The class 'vhdl::Generic' has no attributes.
+The class 'BlockDeclarativeItem' has no attributes.
+The enumeration 'RangeDirection' has the following literals: 'TO', 'DOWNTO'.
+The enumeration 'RelationalOperator' has the following literals: 'LOWERTHAN', 'EQ', 'LE', 'ASSOCIATE', 'GE', 'NEQ', 'GREATERTHAN'.
+The enumeration 'MultiplyingOperator' has the following literals: 'REM', 'MUL', 'DIV', 'MOD'.
+The enumeration 'AddingOperator' has the following literals: 'MINUS', 'AMPERSAND', 'PLUS'.
+The enumeration 'EString' has the following literals: 'NATURAL', 'TO_UNSIGNED', 'UNSIGNED', 'STRING', 'FALLING_EDGE', 'STD_LOGIC', 'RISING_EDGE', 'INTEGER', 'STD_LOGIC_VECTOR'.
+The enumeration 'SignalKind' has the following literals: 'BUS', 'REGISTER'.
+The enumeration 'Sign' has the following literals: 'MINUS', 'PLUS'.
+The enumeration 'Purity' has the following literals: 'IMPURE', 'PURE'.
+The enumeration 'Mode' has the following literals: 'IN', 'BUFFER', 'OUT', 'INOUT', 'LINKAGE'.
+The enumeration 'UnaryOperator' has the following literals: 'ABS', 'NOT'.
+The enumeration 'EntityClass' has the following literals: 'PROCEDURE', 'NATURE', 'GROUP', 'CONFIGURATION', 'VARIABLE', 'SUBNATURE', 'ARCHITECTURE', 'TYPE', 'TERMINAL', 'QUANTITY', 'LABEL', 'PACKAGE', 'SIGNAL', 'FUNCTION', 'UNITS', 'COMPONENT', 'CONSTANT', 'FILE', 'SUBTYPE', 'LITERAL', 'ENTITY'.
+The enumeration 'LogicalOperator' has the following literals: 'AND', 'NAND', 'OR', 'XOR', 'NOR', 'XNOR'.
+The enumeration 'BuiltinLibs' has the following literals: 'WORK'.
+The enumeration 'ShiftOperator' has the following literals: 'ROL', 'SRL', 'SRA', 'SLL', 'ROR', 'SLA'.
+'vhdl::TypeDeclaration' is a specialization of 'Type'.
+'vhdl::Alias' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::AttributeSpecification' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::SequentialSignalAssignmentStatement' is a specialization of 'SequentialStatement'.
+'vhdl::Package' is a specialization of 'LibraryUnit'.
+'vhdl::String' is a specialization of 'Expression'.
+'vhdl::Generic' is a specialization of 'Variable'.
+'vhdl::Boolean' is a specialization of 'Expression'.
+'vhdl::SliceExpression' is a specialization of 'Expression'.
+'vhdl::VariableDeclaration' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::AccessTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::UnitValueExpression' is a specialization of 'ValueExpression'.
+'vhdl::Others' is a specialization of 'Expression'.
+'vhdl::RecordTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'vhdl::LoopStatement' is a specialization of 'SequentialStatement'.
+'vhdl::BuiltinFuncs' is a specialization of 'Expression'.
+'vhdl::ProcessStatement' is a specialization of 'ArchitectureStatement'.
+'vhdl::ConstantDeclaration' is a specialization of 'package::declarative::item'.
+'vhdl::BitString' is a specialization of 'Expression'.
+'vhdl::MemberExpression' is a specialization of 'Expression'.
+'vhdl::UseClause' is a specialization of 'ContextItem'.
+'vhdl::EnumerationTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::ConditionalWaveformExpression' is a specialization of 'Expression'.
+'vhdl::IfStatement' is a specialization of 'SequentialStatement'.
+'vhdl::RelationalExpression' is a specialization of 'Expression'.
+'vhdl::VariableDeclaration' is a specialization of 'package::declarative::item'.
+'vhdl::ConstrainedArrayTypeDefinition' is a specialization of 'ArrayTypeDefinition'.
+'vhdl::Signal' is a specialization of 'Variable'.
+'vhdl::FileTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::Component' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::SubtypeDeclaration' is a specialization of 'Type'.
+'vhdl::Component' is a specialization of 'package::declarative::item'.
+'vhdl::IfGenerateStatement' is a specialization of 'ArchitectureStatement'.
+'vhdl::SignalDeclaration' is a specialization of 'package::declarative::item'.
+'vhdl::Variable' is a specialization of 'Expression'.
+'vhdl::Member' is a specialization of 'Expression'.
+'vhdl::Open' is a specialization of 'Expression'.
+'vhdl::LoopVariable' is a specialization of 'Variable'.
+'vhdl::ForIterationScheme' is a specialization of 'IterationScheme'.
+'vhdl::WaitStatement' is a specialization of 'SequentialStatement'.
+'vhdl::ShiftExpression' is a specialization of 'Expression'.
+'vhdl::AddingExpression' is a specialization of 'Expression'.
+'vhdl::MultiExpression' is a specialization of 'Expression'.
+'vhdl::Char' is a specialization of 'Expression'.
+'vhdl::ForGenerateStatement' is a specialization of 'ArchitectureStatement'.
+'vhdl::Type' is a specialization of 'package::declarative::item'.
+'vhdl::CompositeTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::ConditionalSignalAssignmentStatement' is a specialization of 'ArchitectureStatement'.
+'vhdl::Constant' is a specialization of 'Variable'.
+'vhdl::AttributeDeclaration' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::Type' is a specialization of 'Expression'.
+'vhdl::EntityInstantiationStatement' is a specialization of 'ArchitectureStatement'.
+'vhdl::Architecture' is a specialization of 'LibraryUnit'.
+'vhdl::WhileIterationScheme' is a specialization of 'IterationScheme'.
+'vhdl::CaseStatement' is a specialization of 'SequentialStatement'.
+'vhdl::ComponentInstantiationStatement' is a specialization of 'ArchitectureStatement'.
+'vhdl::ChoiceExpression' is a specialization of 'Expression'.
+'vhdl::ArrayTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'vhdl::Type' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::Port' is a specialization of 'Variable'.
+'vhdl::Alias' is a specialization of 'Variable'.
+'vhdl::LogicalExpression' is a specialization of 'Expression'.
+'vhdl::UnconstrainedArrayTypeDefinition' is a specialization of 'ArrayTypeDefinition'.
+'vhdl::SignalDeclaration' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::Var' is a specialization of 'Variable'.
+'vhdl::Entity' is a specialization of 'LibraryUnit'.
+'vhdl::RangeExpression' is a specialization of 'Expression'.
+'vhdl::Factor' is a specialization of 'Expression'.
+'vhdl::Value' is a specialization of 'Expression'.
+'vhdl::ConstantDeclaration' is a specialization of 'BlockDeclarativeItem'.
+'vhdl::MultiplyingExpression' is a specialization of 'Expression'.
+'vhdl::LibraryClause' is a specialization of 'ContextItem'.
+'vhdl::TypeDeclaration' (role 'vhdl_TypeDeclaration', cardinality 0..*) is associated with 'vhdl::TypeDefinition' (role 'vhdl_TypeDefinition', cardinality 0..*).
+'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication47', cardinality 0..*) is associated with 'vhdl::VariableDeclaration' (role 'vhdl_VariableDeclaration46', cardinality 0..*).
+'vhdl::ConditionalSignalAssignmentStatement' (role 'vhdl_ConditionalSignalAssignmentStatement', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression90', cardinality 0..*).
+'vhdl::VariableDeclaration' (role 'vhdl_VariableDeclaration', cardinality 0..*) is associated with 'vhdl::Var' (role 'vhdl_Var', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression218', cardinality 0..*) is associated with 'vhdl::ShiftExpression' (role 'vhdl_ShiftExpression217', cardinality 0..*).
+'vhdl::Ports' (role 'vhdl_Ports64', cardinality 0..*) is associated with 'vhdl::Component' (role 'vhdl_Component63', cardinality 0..*).
+'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication172', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression173', cardinality 0..*).
+'vhdl::IfGenerateStatement' (role 'vhdl_IfGenerateStatement122', cardinality 0..*) is associated with 'vhdl::ArchitectureStatement' (role 'vhdl_ArchitectureStatement123', cardinality 0..*).
+'vhdl::Library' (role 'vhdl_Library72', cardinality 0..*) is associated with 'vhdl::EntityInstantiationStatement' (role 'vhdl_EntityInstantiationStatement', cardinality 0..*).
+'vhdl::GenericMap' (role 'vhdl_GenericMap', cardinality 0..*) is associated with 'vhdl::ComponentInstantiationStatement' (role 'vhdl_ComponentInstantiationStatement', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression156', cardinality 0..*) is associated with 'vhdl::LoopStatement' (role 'vhdl_LoopStatement155', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression203', cardinality 0..*) is associated with 'vhdl::LogicalExpression' (role 'vhdl_LogicalExpression202', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression213', cardinality 0..*) is associated with 'vhdl::ChoiceExpression' (role 'vhdl_ChoiceExpression212', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression93', cardinality 0..*) is associated with 'vhdl::ConditionalSignalAssignmentStatement' (role 'vhdl_ConditionalSignalAssignmentStatement92', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression31', cardinality 0..*) is associated with 'vhdl::Generic' (role 'vhdl_Generic30', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression238', cardinality 0..*) is associated with 'vhdl::MemberExpression' (role 'vhdl_MemberExpression237', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression205', cardinality 0..*) is associated with 'vhdl::RelationalExpression' (role 'vhdl_RelationalExpression', cardinality 0..*).
+'vhdl::ConditionalWaveformExpression' (role 'vhdl_ConditionalWaveformExpression', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression193', cardinality 0..*).
+'vhdl::ForGenerateStatement' (role 'vhdl_ForGenerateStatement108', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression109', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression225', cardinality 0..*) is associated with 'vhdl::MultiplyingExpression' (role 'vhdl_MultiplyingExpression', cardinality 0..*).
+'vhdl::AddingExpression' (role 'vhdl_AddingExpression222', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression223', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression43', cardinality 0..*) is associated with 'vhdl::SignalDeclaration' (role 'vhdl_SignalDeclaration42', cardinality 0..*).
+'vhdl::ProcessStatement' (role 'vhdl_ProcessStatement67', cardinality 0..*) is associated with 'vhdl::SequentialStatement' (role 'vhdl_SequentialStatement', cardinality 0..*).
+'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication178', cardinality 0..*) is associated with 'vhdl::AccessTypeDefinition' (role 'vhdl_AccessTypeDefinition', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression102', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression100', cardinality 0..*).
+'vhdl::LibraryUnit' (role 'vhdl_LibraryUnit', cardinality 0..*) is associated with 'vhdl::DesignFile' (role 'vhdl_DesignFile2', cardinality 0..*).
+'vhdl::IdList' (role 'vhdl_IdList125', cardinality 0..*) is associated with 'vhdl::WaitStatement' (role 'vhdl_WaitStatement', cardinality 0..*).
+'vhdl::PortMapAssociation' (role 'vhdl_PortMapAssociation82', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression83', cardinality 0..*).
+'vhdl::Factor' (role 'vhdl_Factor232', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression233', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression164', cardinality 0..*) is associated with 'vhdl::SequentialSignalAssignmentStatement' (role 'vhdl_SequentialSignalAssignmentStatement163', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression182', cardinality 0..*) is associated with 'vhdl::ConstrainedArrayTypeDefinition' (role 'vhdl_ConstrainedArrayTypeDefinition', cardinality 0..*).
+'vhdl::Architecture' (role 'vhdl_Architecture', cardinality 0..*) is associated with 'vhdl::Entity' (role 'vhdl_Entity', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression245', cardinality 0..*) is associated with 'vhdl::SliceExpression' (role 'vhdl_SliceExpression', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression143', cardinality 0..*) is associated with 'vhdl::CaseStatement' (role 'vhdl_CaseStatement', cardinality 0..*).
+'vhdl::IfGenerateStatement' (role 'vhdl_IfGenerateStatement119', cardinality 0..*) is associated with 'vhdl::BlockDeclarativeItem' (role 'vhdl_BlockDeclarativeItem120', cardinality 0..*).
+'vhdl::AddingExpression' (role 'vhdl_AddingExpression', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression220', cardinality 0..*).
+'vhdl::CaseAlternative' (role 'vhdl_CaseAlternative', cardinality 0..*) is associated with 'vhdl::CaseStatement' (role 'vhdl_CaseStatement145', cardinality 0..*).
+'vhdl::ProcessStatement' (role 'vhdl_ProcessStatement', cardinality 0..*) is associated with 'vhdl::IdList' (role 'vhdl_IdList', cardinality 0..*).
+'vhdl::ConstantDeclaration' (role 'vhdl_ConstantDeclaration53', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication54', cardinality 0..*).
+'vhdl::ArchitectureStatement' (role 'vhdl_ArchitectureStatement115', cardinality 0..*) is associated with 'vhdl::ForGenerateStatement' (role 'vhdl_ForGenerateStatement114', cardinality 0..*).
+'vhdl::RecordTypeDefinition' (role 'vhdl_RecordTypeDefinition185', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication186', cardinality 0..*).
+'vhdl::Package' (role 'vhdl_Package', cardinality 0..*) is associated with 'vhdl::package::declarative::item' (role 'vhdl_package_declarative_item', cardinality 0..*).
+'vhdl::ArchitectureStatement' (role 'vhdl_ArchitectureStatement', cardinality 0..*) is associated with 'vhdl::Architecture' (role 'vhdl_Architecture13', cardinality 0..*).
+'vhdl::UseClause' (role 'vhdl_UseClause', cardinality 0..*) is associated with 'vhdl::Library' (role 'vhdl_Library', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression191', cardinality 0..*) is associated with 'vhdl::IdList' (role 'vhdl_IdList190', cardinality 0..*).
+'vhdl::Architecture' (role 'vhdl_Architecture11', cardinality 0..*) is associated with 'vhdl::BlockDeclarativeItem' (role 'vhdl_BlockDeclarativeItem', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression99', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression97', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression168', cardinality 0..*) is associated with 'vhdl::ForIterationScheme' (role 'vhdl_ForIterationScheme', cardinality 0..*).
+'vhdl::Generic' (role 'vhdl_Generic27', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication28', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression215', cardinality 0..*) is associated with 'vhdl::ShiftExpression' (role 'vhdl_ShiftExpression', cardinality 0..*).
+'vhdl::BlockDeclarativeItem' (role 'vhdl_BlockDeclarativeItem112', cardinality 0..*) is associated with 'vhdl::ForGenerateStatement' (role 'vhdl_ForGenerateStatement111', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression94', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression96', cardinality 0..*).
+'vhdl::SequentialStatement' (role 'vhdl_SequentialStatement159', cardinality 0..*) is associated with 'vhdl::LoopStatement' (role 'vhdl_LoopStatement158', cardinality 0..*).
+'vhdl::SequentialStatement' (role 'vhdl_SequentialStatement151', cardinality 0..*) is associated with 'vhdl::CaseAlternative' (role 'vhdl_CaseAlternative150', cardinality 0..*).
+'vhdl::IfStatementTest' (role 'vhdl_IfStatementTest', cardinality 0..*) is associated with 'vhdl::IfStatement' (role 'vhdl_IfStatement', cardinality 0..*).
+'vhdl::SequentialSignalAssignmentStatement' (role 'vhdl_SequentialSignalAssignmentStatement', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression161', cardinality 0..*).
+'vhdl::ChoiceExpression' (role 'vhdl_ChoiceExpression', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression210', cardinality 0..*).
+'vhdl::WhileIterationScheme' (role 'vhdl_WhileIterationScheme', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression166', cardinality 0..*).
+'vhdl::RecordTypeDefinition' (role 'vhdl_RecordTypeDefinition', cardinality 0..*) is associated with 'vhdl::RecordField' (role 'vhdl_RecordField', cardinality 0..*).
+'vhdl::ForGenerateStatement' (role 'vhdl_ForGenerateStatement', cardinality 0..*) is associated with 'vhdl::LoopVariable' (role 'vhdl_LoopVariable', cardinality 0..*).
+'vhdl::ArrayTypeDefinition' (role 'vhdl_ArrayTypeDefinition', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication180', cardinality 0..*).
+'vhdl::LoopVariable' (role 'vhdl_LoopVariable153', cardinality 0..*) is associated with 'vhdl::LoopStatement' (role 'vhdl_LoopStatement', cardinality 0..*).
+'vhdl::GenericMap' (role 'vhdl_GenericMap85', cardinality 0..*) is associated with 'vhdl::GenericMapAssociation' (role 'vhdl_GenericMapAssociation', cardinality 0..*).
+'vhdl::ConstantDeclaration' (role 'vhdl_ConstantDeclaration', cardinality 0..*) is associated with 'vhdl::Constant' (role 'vhdl_Constant', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression148', cardinality 0..*) is associated with 'vhdl::CaseAlternative' (role 'vhdl_CaseAlternative147', cardinality 0..*).
+'vhdl::Component' (role 'vhdl_Component', cardinality 0..*) is associated with 'vhdl::Generics' (role 'vhdl_Generics61', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression117', cardinality 0..*) is associated with 'vhdl::IfGenerateStatement' (role 'vhdl_IfGenerateStatement', cardinality 0..*).
+'vhdl::ContextItem' (role 'vhdl_ContextItem', cardinality 0..*) is associated with 'vhdl::DesignFile' (role 'vhdl_DesignFile', cardinality 0..*).
+'vhdl::Variable' (role 'vhdl_Variable187', cardinality 0..*) is associated with 'vhdl::Variable' (role 'vhdl_Variable', cardinality 0..*).
+'vhdl::Port' (role 'vhdl_Port', cardinality 0..*) is associated with 'vhdl::Ports' (role 'vhdl_Ports19', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression200', cardinality 0..*) is associated with 'vhdl::LogicalExpression' (role 'vhdl_LogicalExpression', cardinality 0..*).
+'vhdl::Ports' (role 'vhdl_Ports', cardinality 0..*) is associated with 'vhdl::Entity' (role 'vhdl_Entity17', cardinality 0..*).
+'vhdl::PortMap' (role 'vhdl_PortMap', cardinality 0..*) is associated with 'vhdl::ComponentInstantiationStatement' (role 'vhdl_ComponentInstantiationStatement70', cardinality 0..*).
+'vhdl::PortMap' (role 'vhdl_PortMap80', cardinality 0..*) is associated with 'vhdl::PortMapAssociation' (role 'vhdl_PortMapAssociation', cardinality 0..*).
+'vhdl::SubtypeDeclaration' (role 'vhdl_SubtypeDeclaration', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication175', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression50', cardinality 0..*) is associated with 'vhdl::VariableDeclaration' (role 'vhdl_VariableDeclaration49', cardinality 0..*).
+'vhdl::Generic' (role 'vhdl_Generic', cardinality 0..*) is associated with 'vhdl::Generics' (role 'vhdl_Generics25', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression88', cardinality 0..*) is associated with 'vhdl::GenericMapAssociation' (role 'vhdl_GenericMapAssociation87', cardinality 0..*).
+'vhdl::RangeExpression' (role 'vhdl_RangeExpression', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression195', cardinality 0..*).
+'vhdl::package::declarative::part' (role 'vhdl_package_declarative_part', cardinality 0..*) is associated with 'vhdl::package::declarative::item' (role 'vhdl_package_declarative_item8', cardinality 0..*).
+'vhdl::Port' (role 'vhdl_Port21', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication', cardinality 0..*).
+'vhdl::SequentialStatement' (role 'vhdl_SequentialStatement141', cardinality 0..*) is associated with 'vhdl::IfStatementTest' (role 'vhdl_IfStatementTest140', cardinality 0..*).
+'vhdl::RecordField' (role 'vhdl_RecordField240', cardinality 0..*) is associated with 'vhdl::Member' (role 'vhdl_Member', cardinality 0..*).
+'vhdl::WaitStatement' (role 'vhdl_WaitStatement127', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression128', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression131', cardinality 0..*) is associated with 'vhdl::WaitStatement' (role 'vhdl_WaitStatement130', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression', cardinality 0..*) is associated with 'vhdl::Port' (role 'vhdl_Port23', cardinality 0..*).
+'vhdl::LibraryClause' (role 'vhdl_LibraryClause', cardinality 0..*) is associated with 'vhdl::Library' (role 'vhdl_Library5', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression235', cardinality 0..*) is associated with 'vhdl::MemberExpression' (role 'vhdl_MemberExpression', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression138', cardinality 0..*) is associated with 'vhdl::IfStatementTest' (role 'vhdl_IfStatementTest137', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression59', cardinality 0..*) is associated with 'vhdl::AttributeSpecification' (role 'vhdl_AttributeSpecification', cardinality 0..*).
+'vhdl::Signal' (role 'vhdl_Signal', cardinality 0..*) is associated with 'vhdl::SignalDeclaration' (role 'vhdl_SignalDeclaration', cardinality 0..*).
+'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication33', cardinality 0..*) is associated with 'vhdl::Alias' (role 'vhdl_Alias', cardinality 0..*).
+'vhdl::Type' (role 'vhdl_Type', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication170', cardinality 0..*).
+'vhdl::SliceExpression' (role 'vhdl_SliceExpression247', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression248', cardinality 0..*).
+'vhdl::IfStatement' (role 'vhdl_IfStatement134', cardinality 0..*) is associated with 'vhdl::SequentialStatement' (role 'vhdl_SequentialStatement135', cardinality 0..*).
+'vhdl::ValueExpression' (role 'vhdl_ValueExpression', cardinality 0..*) is associated with 'vhdl::Value' (role 'vhdl_Value', cardinality 0..*).
+'vhdl::MultiplyingExpression' (role 'vhdl_MultiplyingExpression227', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression228', cardinality 0..*).
+'vhdl::Member' (role 'vhdl_Member242', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression243', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression198', cardinality 0..*) is associated with 'vhdl::RangeExpression' (role 'vhdl_RangeExpression197', cardinality 0..*).
+'vhdl::GenericMap' (role 'vhdl_GenericMap75', cardinality 0..*) is associated with 'vhdl::EntityInstantiationStatement' (role 'vhdl_EntityInstantiationStatement74', cardinality 0..*).
+'vhdl::EntityInstantiationStatement' (role 'vhdl_EntityInstantiationStatement77', cardinality 0..*) is associated with 'vhdl::PortMap' (role 'vhdl_PortMap78', cardinality 0..*).
+'vhdl::ConstantDeclaration' (role 'vhdl_ConstantDeclaration56', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression57', cardinality 0..*).
+'vhdl::SignalDeclaration' (role 'vhdl_SignalDeclaration39', cardinality 0..*) is associated with 'vhdl::SubtypeIndication' (role 'vhdl_SubtypeIndication40', cardinality 0..*).
+'vhdl::Alias' (role 'vhdl_Alias35', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression36', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression208', cardinality 0..*) is associated with 'vhdl::RelationalExpression' (role 'vhdl_RelationalExpression207', cardinality 0..*).
+'vhdl::Entity' (role 'vhdl_Entity15', cardinality 0..*) is associated with 'vhdl::Generics' (role 'vhdl_Generics', cardinality 0..*).
+'vhdl::Factor' (role 'vhdl_Factor', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression230', cardinality 0..*).
+'vhdl::Expression' (role 'vhdl_Expression103', cardinality 0..*) is associated with 'vhdl::Expression' (role 'vhdl_Expression105', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SEALABQualityGroup/JASA/JTL/metamodels/placeTransition.ecore

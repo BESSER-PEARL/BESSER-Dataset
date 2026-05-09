@@ -1,0 +1,48 @@
+The model has 20 class(es).
+The class 'tfsm::FinalState' has no attributes.
+The class 'tfsm::UpperClockConstraint' has no attributes.
+The class 'tfsm::ClockReset' has no attributes.
+The class 'ClockConstraint' has no attributes.
+The class 'tfsm::Transition' has the following attributes: 'event' of type str.
+The class 'tfsm::OrClockConstraint' has no attributes.
+The class 'tfsm::UpperEqualClockConstraint' has no attributes.
+The class 'tfsm::BinaryClockConstraint' has no attributes.
+The class 'tfsm::InitialState' has no attributes.
+The class 'ClockConstraintOperation' has no attributes.
+The class 'tfsm::FSM' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'tfsm::AndClockConstraint' has no attributes.
+The class 'tfsm::State' has the following attributes: 'name' of type str.
+The class 'tfsm::LowerClockConstraint' has no attributes.
+The class 'BinaryClockConstraint' has no attributes.
+The class 'tfsm::ClockConstraintOperation' has no attributes.
+The class 'tfsm::ClockConstraint' has the following attributes: 'threshold' of type int.
+The class 'tfsm::Clock' has the following attributes: 'name' of type str; 'tick' of type int.
+The class 'tfsm::LowerEqualClockConstraint' has no attributes.
+'tfsm::BinaryClockConstraint' is a specialization of 'ClockConstraintOperation'.
+'tfsm::ClockConstraint' is a specialization of 'ClockConstraintOperation'.
+'tfsm::FinalState' is a specialization of 'State'.
+'tfsm::OrClockConstraint' is a specialization of 'BinaryClockConstraint'.
+'tfsm::UpperClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::InitialState' is a specialization of 'State'.
+'tfsm::UpperEqualClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::LowerClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::LowerEqualClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::AndClockConstraint' is a specialization of 'BinaryClockConstraint'.
+'tfsm::FSM' (role 'tfsm_FSM6', cardinality 0..*) is associated with 'tfsm::InitialState' (role 'tfsm_InitialState', cardinality 0..*).
+'tfsm::FSM' (role 'tfsm_FSM', cardinality 0..*) is associated with 'tfsm::Clock' (role 'tfsm_Clock', cardinality 0..*).
+'tfsm::FSM' (role 'tfsm_FSM8', cardinality 0..*) is associated with 'tfsm::State' (role 'tfsm_State9', cardinality 0..*).
+'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation', cardinality 0..*) is associated with 'tfsm::State' (role 'tfsm_State11', cardinality 0..*).
+'tfsm::ClockReset' (role 'tfsm_ClockReset', cardinality 0..*) is associated with 'tfsm::Transition' (role 'tfsm_Transition19', cardinality 0..*).
+'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation32', cardinality 0..*) is associated with 'tfsm::BinaryClockConstraint' (role 'tfsm_BinaryClockConstraint', cardinality 0..*).
+'tfsm::ClockConstraint' (role 'tfsm_ClockConstraint', cardinality 0..*) is associated with 'tfsm::Clock' (role 'tfsm_Clock27', cardinality 0..*).
+'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation22', cardinality 0..*) is associated with 'tfsm::Transition' (role 'tfsm_Transition21', cardinality 0..*).
+'tfsm::FSM' (role 'tfsm_FSM14', cardinality 0..*) is associated with 'tfsm::State' (role 'tfsm_State13', cardinality 0..*).
+'tfsm::State' (role 'to', cardinality 0..*) is associated with 'tfsm::Transition' (role 'Transition17', cardinality 0..*).
+'tfsm::FSM' (role 'tfsm_FSM2', cardinality 0..*) is associated with 'tfsm::State' (role 'tfsm_State', cardinality 0..*).
+'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation35', cardinality 0..*) is associated with 'tfsm::BinaryClockConstraint' (role 'tfsm_BinaryClockConstraint34', cardinality 0..*).
+'tfsm::Transition' (role 'incommingtransitions', cardinality 0..*) is associated with 'tfsm::State' (role 'State25', cardinality 0..*).
+'tfsm::ClockReset' (role 'tfsm_ClockReset29', cardinality 0..*) is associated with 'tfsm::Clock' (role 'tfsm_Clock30', cardinality 0..*).
+'tfsm::State' (role 'from_', cardinality 0..*) is associated with 'tfsm::Transition' (role 'Transition', cardinality 0..*).
+'tfsm::Transition' (role 'outgoingtransitions', cardinality 0..*) is associated with 'tfsm::State' (role 'State', cardinality 0..*).
+'tfsm::FSM' (role 'tfsm_FSM4', cardinality 0..*) is associated with 'tfsm::Transition' (role 'tfsm_Transition', cardinality 0..*).

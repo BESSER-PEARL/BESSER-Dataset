@@ -1,0 +1,100 @@
+The model has 42 class(es).
+The class 'fsm::Join' has no attributes.
+The class 'fsm::Fork' has no attributes.
+The class 'fsm::VarDecl' has no attributes.
+The class 'fsm::VarRef' has the following attributes: 'varId' of type str.
+The class 'fsm::Conditional' has no attributes.
+The class 'fsm::Trigger' has the following attributes: 'expression' of type str.
+The class 'AbstractState' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'fsm::ArithmeticExpression' has no attributes.
+The class 'fsm::Loop' has no attributes.
+The class 'Expression' has no attributes.
+The class 'fsm::Statement' has no attributes.
+The class 'fsm::RelationalExpression' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'Literal' has no attributes.
+The class 'fsm::Junction' has no attributes.
+The class 'fsm::State' has no attributes.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::Integer' has no attributes.
+The class 'fsm::StateMachine' has no attributes.
+The class 'fsm::Pseudostate' has no attributes.
+The class 'fsm::Region' has no attributes.
+The class 'fsm::DeepHistory' has no attributes.
+The class 'fsm::Real' has no attributes.
+The class 'fsm::Literal' has no attributes.
+The class 'fsm::OrTrigger' has no attributes.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::AndTrigger' has no attributes.
+The class 'fsm::Condition' has no attributes.
+The class 'fsm::AbstractState' has no attributes.
+The class 'fsm::String' has no attributes.
+The class 'fsm::Constraint' has no attributes.
+The class 'fsm::NotTrigger' has no attributes.
+The class 'fsm::Boolean' has no attributes.
+The class 'Statement' has no attributes.
+The class 'fsm::Context' has no attributes.
+The class 'fsm::Expression' has no attributes.
+The class 'State' has no attributes.
+The class 'fsm::ShallowHistory' has no attributes.
+The class 'fsm::Block' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'fsm::Assignation' has no attributes.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::VarRef' is a specialization of 'Literal'.
+'fsm::NotTrigger' is a specialization of 'Trigger'.
+'fsm::Assignation' is a specialization of 'Statement'.
+'fsm::OrTrigger' is a specialization of 'Trigger'.
+'fsm::VarDecl' is a specialization of 'Statement'.
+'fsm::AndTrigger' is a specialization of 'Trigger'.
+'fsm::Conditional' is a specialization of 'Statement'.
+'fsm::State' is a specialization of 'AbstractState'.
+'fsm::Block' is a specialization of 'Statement'.
+'fsm::InitialState' is a specialization of 'Pseudostate'.
+'fsm::Junction' is a specialization of 'Pseudostate'.
+'fsm::ShallowHistory' is a specialization of 'Pseudostate'.
+'fsm::DeepHistory' is a specialization of 'Pseudostate'.
+'fsm::Fork' is a specialization of 'Pseudostate'.
+'fsm::Condition' is a specialization of 'Pseudostate'.
+'fsm::Join' is a specialization of 'Pseudostate'.
+'fsm::Pseudostate' is a specialization of 'AbstractState'.
+'fsm::String' is a specialization of 'Literal'.
+'fsm::Real' is a specialization of 'Literal'.
+'fsm::Boolean' is a specialization of 'Literal'.
+'fsm::Integer' is a specialization of 'Literal'.
+'fsm::Literal' is a specialization of 'Expression'.
+'fsm::Loop' is a specialization of 'Statement'.
+'fsm::ArithmeticExpression' is a specialization of 'Expression'.
+'fsm::RelationalExpression' is a specialization of 'Expression'.
+'fsm::Constraint' (role 'fsm_Constraint', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition21', cardinality 0..*).
+'fsm::Block' (role 'fsm_Block', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::AndTrigger' (role 'fsm_AndTrigger27', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger28', cardinality 0..*).
+'fsm::Block' (role 'fsm_Block44', cardinality 0..*) is associated with 'fsm::Conditional' (role 'fsm_Conditional', cardinality 0..*).
+'fsm::OrTrigger' (role 'fsm_OrTrigger', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger30', cardinality 0..*).
+'fsm::Loop' (role 'fsm_Loop42', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression', cardinality 0..*).
+'fsm::Constraint' (role 'fsm_Constraint35', cardinality 0..*) is associated with 'fsm::Context' (role 'fsm_Context', cardinality 0..*).
+'fsm::Trigger' (role 'fsm_Trigger25', cardinality 0..*) is associated with 'fsm::AndTrigger' (role 'fsm_AndTrigger', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression56', cardinality 0..*) is associated with 'fsm::RelationalExpression' (role 'fsm_RelationalExpression55', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region3', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::Region' (role 'ownedRegions', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::Trigger' (role 'fsm_Trigger23', cardinality 0..*) is associated with 'fsm::NotTrigger' (role 'fsm_NotTrigger', cardinality 0..*).
+'fsm::Region' (role 'Region11', cardinality 0..*) is associated with 'fsm::State' (role 'stateMachine', cardinality 0..*).
+'fsm::Assignation' (role 'fsm_Assignation', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression51', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition13', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger', cardinality 0..*).
+'fsm::RelationalExpression' (role 'fsm_RelationalExpression', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression53', cardinality 0..*).
+'fsm::AbstractState' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression49', cardinality 0..*) is associated with 'fsm::VarDecl' (role 'fsm_VarDecl', cardinality 0..*).
+'fsm::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'AbstractState15', cardinality 0..*).
+'fsm::Transition' (role 'Transition7', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'source', cardinality 0..*).
+'fsm::Region' (role 'region', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'AbstractState', cardinality 0..*).
+'fsm::Conditional' (role 'fsm_Conditional46', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression47', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition19', cardinality 0..*) is associated with 'fsm::Statement' (role 'fsm_Statement', cardinality 0..*).
+'fsm::Transition' (role 'outgoing', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'AbstractState17', cardinality 0..*).
+'fsm::Trigger' (role 'fsm_Trigger33', cardinality 0..*) is associated with 'fsm::OrTrigger' (role 'fsm_OrTrigger32', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression61', cardinality 0..*) is associated with 'fsm::ArithmeticExpression' (role 'fsm_ArithmeticExpression60', cardinality 0..*).
+'fsm::Statement' (role 'fsm_Statement38', cardinality 0..*) is associated with 'fsm::Block' (role 'fsm_Block37', cardinality 0..*).
+'fsm::ArithmeticExpression' (role 'fsm_ArithmeticExpression', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression58', cardinality 0..*).
+'fsm::AbstractState' (role 'subvertex', cardinality 0..*) is associated with 'fsm::Region' (role 'Region', cardinality 0..*).
+'fsm::Loop' (role 'fsm_Loop', cardinality 0..*) is associated with 'fsm::Block' (role 'fsm_Block40', cardinality 0..*).

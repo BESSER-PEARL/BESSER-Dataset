@@ -1,0 +1,47 @@
+The model has 25 class(es).
+The class 'bookingmodel::CustomerEmailToBookingRefEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'bookingmodel::BookingRefToBookingEntry' has the following attributes: 'key' of type str.
+The class 'IBookingProvidesForHost' has no attributes.
+The class 'bookingmodel::RoomIDToRoomTypeEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'bookingmodel::BookingProvides' has no attributes.
+The class 'bookingmodel::Customer' has no attributes.
+The class 'bookingmodel::Person' has the following attributes: 'age' of type str; 'firstName' of type str; 'telephoneNr' of type str; 'lastName' of type str; 'Address' of type str; 'email' of type str.
+The class 'bookingmodel::CustomerInfo' has no attributes.
+The class 'BookingInfo' has no attributes.
+The class 'bookingmodel::BookingHandler' has no attributes.
+The class 'bookingmodel::IBookingProvidesForHost' has no attributes.
+The class 'Person' has no attributes.
+The class 'bookingmodel::RoomToGuestIDEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'bookingmodel::Guest' has the following attributes: 'roomNr' of type str; 'guestTypes' of type str.
+The class 'bookingmodel::IBookingProvidesForCustomer' has no attributes.
+The class 'bookingmodel::Booking' has the following attributes: 'endDate' of type str; 'paymentMethod' of type str; 'isPayed' of type str; 'bookingRef' of type str; 'serviceNotes' of type str; 'nrOfGuests' of type str; 'startDate' of type str.
+The class 'bookingmodel::IBookingProvidesForGuest' has no attributes.
+The class 'IBookingProvidesForCustomer' has no attributes.
+The class 'bookingmodel::BookingInfo' has no attributes.
+The class 'bookingmodel::ExtraToIsPayedEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'bookingmodel::RoomIDToBookingRefEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'CustomerInfo' has no attributes.
+The class 'bookingmodel::GuestEmailToRoomIDEntry' has the following attributes: 'value' of type int; 'key' of type str.
+The class 'bookingmodel::PaymentDetails' has the following attributes: 'expMonth' of type str; 'ccV' of type str; 'ccNr' of type str; 'firstName' of type str; 'expYear' of type str; 'lastName' of type str.
+The class 'IBookingProvidesForGuest' has no attributes.
+The enumeration 'GuestTypes' has the following literals: 'VIP', 'BlackListed', 'Regular'.
+The enumeration 'PaymentMethod' has the following literals: 'bankcard', 'voucher', 'cash'.
+'bookingmodel::Customer' is a specialization of 'Person'.
+'bookingmodel::Guest' is a specialization of 'Person'.
+'bookingmodel::BookingProvides' is a specialization of 'IBookingProvidesForGuest'.
+'bookingmodel::IBookingProvidesForCustomer' is a specialization of 'CustomerInfo'.
+'bookingmodel::IBookingProvidesForCustomer' is a specialization of 'BookingInfo'.
+'bookingmodel::BookingProvides' is a specialization of 'IBookingProvidesForCustomer'.
+'bookingmodel::BookingProvides' is a specialization of 'IBookingProvidesForHost'.
+'bookingmodel::Guest' (role 'bookingmodel_Guest', cardinality 0..*) is associated with 'bookingmodel::Booking' (role 'bookingmodel_Booking4', cardinality 0..*).
+'bookingmodel::Booking' (role 'bookingmodel_Booking2', cardinality 0..*) is associated with 'bookingmodel::Customer' (role 'bookingmodel_Customer', cardinality 0..*).
+'bookingmodel::Booking' (role 'bookingmodel_Booking8', cardinality 0..*) is associated with 'bookingmodel::RoomIDToRoomTypeEntry' (role 'bookingmodel_RoomIDToRoomTypeEntry', cardinality 0..*).
+'bookingmodel::BookingHandler' (role 'bookingmodel_BookingHandler20', cardinality 0..*) is associated with 'bookingmodel::GuestEmailToRoomIDEntry' (role 'bookingmodel_GuestEmailToRoomIDEntry', cardinality 0..*).
+'bookingmodel::Booking' (role 'bookingmodel_Booking6', cardinality 0..*) is associated with 'bookingmodel::RoomToGuestIDEntry' (role 'bookingmodel_RoomToGuestIDEntry', cardinality 0..*).
+'bookingmodel::BookingHandler' (role 'bookingmodel_BookingHandler', cardinality 0..*) is associated with 'bookingmodel::BookingRefToBookingEntry' (role 'bookingmodel_BookingRefToBookingEntry14', cardinality 0..*).
+'bookingmodel::BookingHandler' (role 'bookingmodel_BookingHandler18', cardinality 0..*) is associated with 'bookingmodel::CustomerEmailToBookingRefEntry' (role 'bookingmodel_CustomerEmailToBookingRefEntry', cardinality 0..*).
+'bookingmodel::Booking' (role 'bookingmodel_Booking10', cardinality 0..*) is associated with 'bookingmodel::ExtraToIsPayedEntry' (role 'bookingmodel_ExtraToIsPayedEntry', cardinality 0..*).
+'bookingmodel::Customer' (role 'bookingmodel_Customer12', cardinality 0..*) is associated with 'bookingmodel::PaymentDetails' (role 'bookingmodel_PaymentDetails', cardinality 0..*).
+'bookingmodel::BookingHandler' (role 'bookingmodel_BookingHandler16', cardinality 0..*) is associated with 'bookingmodel::RoomIDToBookingRefEntry' (role 'bookingmodel_RoomIDToBookingRefEntry', cardinality 0..*).
+'bookingmodel::Booking' (role 'bookingmodel_Booking', cardinality 0..*) is associated with 'bookingmodel::BookingRefToBookingEntry' (role 'bookingmodel_BookingRefToBookingEntry', cardinality 0..*).
+'bookingmodel::BookingHandler' (role 'bookingmodel_BookingHandler22', cardinality 0..*) is associated with 'bookingmodel::BookingProvides' (role 'bookingmodel_BookingProvides', cardinality 0..*).

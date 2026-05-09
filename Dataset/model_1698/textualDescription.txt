@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'complworld::World' has no attributes.
+The class 'complworld::Thing' has the following attributes: 'name' of type str.
+The class 'complworld::Mars' has no attributes.
+The class 'complworld::Satellite' has the following attributes: 'name' of type str.
+'complworld::Satellite' (role 'complworld_Satellite', cardinality 0..*) is associated with 'complworld::Mars' (role 'complworld_Mars', cardinality 0..*).
+'complworld::World' (role 'complworld_World', cardinality 0..*) is associated with 'complworld::Thing' (role 'complworld_Thing', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/NicolasBonet/ETLMetrics/Implementacion/src/co/edu/uniandes/badSmellsChecker/models/EOL.ecore

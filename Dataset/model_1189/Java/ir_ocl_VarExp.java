@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ir_ocl_VarExp extends OclExpression {
+
+
+
+
+
+
+    private ocl_ir_VariableDeclaration ocl_ir_variabledeclaration;
+
+
+    public ir_ocl_VarExp(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public ocl_ir_VariableDeclaration getOcl_ir_variabledeclaration() {
+        return ocl_ir_variabledeclaration;
+    }
+
+    public void setOcl_ir_variabledeclaration(ocl_ir_VariableDeclaration ocl_ir_variabledeclaration) {
+        this.ocl_ir_variabledeclaration = ocl_ir_variabledeclaration;
+    }
+
+}

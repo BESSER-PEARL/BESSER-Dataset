@@ -1,0 +1,42 @@
+The model has 22 class(es).
+The class 'libsys::Terminal' has no attributes.
+The class 'libsys::SearchCriterion' has no attributes.
+The class 'libsys::Librarian' has no attributes.
+The class 'libsys::StatusSignal' has no attributes.
+The class 'libsys::IdentificationCard' has the following attributes: 'userNumber' of type int.
+The class 'libsys::Magazine' has the following attributes: 'publisher' of type str; 'articles' of type str.
+The class 'libsys::ExtensionTime' has no attributes.
+The class 'libsys::MediaAdministration' has no attributes.
+The class 'libsys::ReservationEntry' has no attributes.
+The class 'libsys::CD' has the following attributes: 'genres' of type str; 'artists' of type str; 'tracks' of type str.
+The class 'libsys::UnpaidFee' has the following attributes: 'reason' of type str; 'amount' of type int.
+The class 'libsys::Library' has no attributes.
+The class 'libsys::User' has no attributes.
+The class 'libsys::BorrowedEntry' has the following attributes: 'returnDate' of type date.
+The class 'libsys::UserAccount' has the following attributes: 'validUntilDate' of type date; 'userData' of type str; 'unpaidFeeAmount' of type int; 'userName' of type str; 'postallAddress' of type str; 'userNumber' of type int; 'userClassification' of type str; 'lockIndication' of type bool; 'telephoneNumber' of type str; 'emailAddress' of type str.
+The class 'libsys::Video' has the following attributes: 'genres' of type str; 'actors' of type str.
+The class 'Medium' has no attributes.
+The class 'libsys::UserAdministration' has no attributes.
+The class 'libsys::Book' has the following attributes: 'editor' of type str; 'ISBN' of type str; 'publisher' of type str; 'placeOfPublication' of type str.
+The class 'libsys::BarCodeScanner' has no attributes.
+The class 'libsys::Instance' has the following attributes: 'location' of type str; 'components' of type str; 'shelfmark' of type str; 'returnDate' of type date; 'rentalPeriod' of type str; 'comments' of type str; 'status' of type str.
+The class 'libsys::Medium' has the following attributes: 'additionalTitle' of type str; 'title' of type str; 'publicationYear' of type date; 'keywords' of type str; 'partialShelfmark' of type str; 'identificationCode' of type str; 'authors' of type str.
+The enumeration 'InstanceStatus' has the following literals: 'Missing', 'ReadingRoom', 'ReservedAndBorrowed', 'Available', 'AcquisitionProcess', 'Borrowed', 'ReservedAndAvailable', 'Overdue'.
+The enumeration 'MediumCode' has the following literals: 'video', 'magazine', 'book', 'CD'.
+'libsys::Video' is a specialization of 'Medium'.
+'libsys::Book' is a specialization of 'Medium'.
+'libsys::CD' is a specialization of 'Medium'.
+'libsys::Magazine' is a specialization of 'Medium'.
+'libsys::UserAccount' (role 'libsys_UserAccount10', cardinality 0..*) is associated with 'libsys::Instance' (role 'libsys_Instance11', cardinality 0..*).
+'libsys::BorrowedEntry' (role 'libsys_BorrowedEntry', cardinality 0..*) is associated with 'libsys::Instance' (role 'libsys_Instance4', cardinality 0..*).
+'libsys::User' (role 'libsys_User', cardinality 0..*) is associated with 'libsys::UserAccount' (role 'libsys_UserAccount', cardinality 0..*).
+'libsys::Instance' (role 'libsys_Instance2', cardinality 0..*) is associated with 'libsys::ReservationEntry' (role 'libsys_ReservationEntry', cardinality 0..*).
+'libsys::User' (role 'libsys_User28', cardinality 0..*) is associated with 'libsys::ReservationEntry' (role 'libsys_ReservationEntry27', cardinality 0..*).
+'libsys::Medium' (role 'libsys_Medium', cardinality 0..*) is associated with 'libsys::Instance' (role 'libsys_Instance', cardinality 0..*).
+'libsys::UserAdministration' (role 'libsys_UserAdministration', cardinality 0..*) is associated with 'libsys::UserAccount' (role 'libsys_UserAccount13', cardinality 0..*).
+'libsys::Librarian' (role 'libsys_Librarian', cardinality 0..*) is associated with 'libsys::Library' (role 'libsys_Library19', cardinality 0..*).
+'libsys::Library' (role 'libsys_Library21', cardinality 0..*) is associated with 'libsys::User' (role 'libsys_User22', cardinality 0..*).
+'libsys::Medium' (role 'libsys_Medium15', cardinality 0..*) is associated with 'libsys::MediaAdministration' (role 'libsys_MediaAdministration', cardinality 0..*).
+'libsys::BorrowedEntry' (role 'libsys_BorrowedEntry24', cardinality 0..*) is associated with 'libsys::User' (role 'libsys_User25', cardinality 0..*).
+'libsys::Medium' (role 'libsys_Medium17', cardinality 0..*) is associated with 'libsys::Library' (role 'libsys_Library', cardinality 0..*).
+'libsys::UserAccount' (role 'libsys_UserAccount7', cardinality 0..*) is associated with 'libsys::Instance' (role 'libsys_Instance8', cardinality 0..*).

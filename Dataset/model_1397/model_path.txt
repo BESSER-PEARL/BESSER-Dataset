@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/xtext-web/org.eclipse.xtext.web.example.statemachine/model/generated/Statemachine.ecore

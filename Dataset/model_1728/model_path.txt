@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/bmaggi/Ecore2Yuml/com.github.bmaggi.ecore.yuml.tests/resources/extlibraryprofile.ecore

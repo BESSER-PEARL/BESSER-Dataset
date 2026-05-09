@@ -1,0 +1,173 @@
+The model has 64 class(es).
+The class 'myDsl::EntityName' has the following attributes: 'name' of type str.
+The class 'myDsl::Annotation' has the following attributes: 'propertie' of type str.
+The class 'myDsl::Component' has the following attributes: 'name' of type str.
+The class 'AbstractFrontElement' has no attributes.
+The class 'myDsl::Attribute' has the following attributes: 'name' of type str.
+The class 'myDsl::Js' has no attributes.
+The class 'myDsl::File' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'UIComponent' has no attributes.
+The class 'myDsl::Descriptor' has the following attributes: 'path' of type str; 'name' of type str.
+The class 'myDsl::Einterface' has the following attributes: 'name' of type str.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::ActionDispatcher' has the following attributes: 'name' of type str.
+The class 'myDsl::Submodule' has the following attributes: 'name' of type str.
+The class 'myDsl::JsModule' has the following attributes: 'name' of type str.
+The class 'myDsl::AxiosRequest' has the following attributes: 'axiosRestMethod' of type str; 'name' of type str; 'url' of type str.
+The class 'myDsl::Operation' has the following attributes: 'type' of type str.
+The class 'myDsl::Reducer' has the following attributes: 'name' of type str.
+The class 'myDsl::Transaction' has the following attributes: 'type' of type str.
+The class 'myDsl::Md' has no attributes.
+The class 'myDsl::JeeProject' has the following attributes: 'name' of type str.
+The class 'myDsl::Epackage' has the following attributes: 'name' of type str.
+The class 'myDsl::Css' has no attributes.
+The class 'File' has no attributes.
+The class 'myDsl::RelationArch' has the following attributes: 'source' of type str; 'name' of type str; 'target' of type str.
+The class 'myDsl::UIComponent' has no attributes.
+The class 'myDsl::Layer' has the following attributes: 'name' of type str.
+The class 'myDsl::State' has the following attributes: 'name' of type str.
+The class 'myDsl::ServiceFront' has the following attributes: 'name' of type str; 'method' of type str.
+The class 'myDsl::Directory' has the following attributes: 'name' of type str; 'purpose' of type str.
+The class 'myDsl::SublayerSegment' has the following attributes: 'name' of type str.
+The class 'myDsl::MethodBack' has the following attributes: 'name' of type str.
+The class 'Eclass' has no attributes.
+The class 'myDsl::Action' has the following attributes: 'name' of type str.
+The class 'myDsl::ReactApp' has no attributes.
+The class 'myDsl::JsMethod' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'myDsl::GeneralEntity' has no attributes.
+The class 'myDsl::LayerSegment' has the following attributes: 'name' of type str.
+The class 'myDsl::Json' has no attributes.
+The class 'myDsl::Technology' has no attributes.
+The class 'myDsl::Property' has the following attributes: 'name' of type str.
+The class 'myDsl::Container' has the following attributes: 'name' of type str.
+The class 'myDsl::AbstractClass' has no attributes.
+The class 'myDsl::JsMethodArgs' has the following attributes: 'name' of type str.
+The class 'myDsl::RouterComponent' has the following attributes: 'name' of type str.
+The class 'myDsl::Functionality' has the following attributes: 'name' of type str.
+The class 'myDsl::ActionCreator' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'myDsl::RelationDom' has no attributes.
+The class 'myDsl::Module' has the following attributes: 'name' of type str.
+The class 'myDsl::System' has no attributes.
+The class 'myDsl::Visualizer' has the following attributes: 'name' of type str.
+The class 'myDsl::LayerSegmentRelation' has the following attributes: 'layerSegment' of type str.
+The class 'myDsl::Subproject' has the following attributes: 'name' of type str.
+The class 'myDsl::Library' has the following attributes: 'isNative' of type str; 'name' of type str.
+The class 'myDsl::Operateson' has no attributes.
+The class 'myDsl::NativeClass' has no attributes.
+The class 'myDsl::AbstractFrontElement' has no attributes.
+The class 'myDsl::Architecture' has no attributes.
+The class 'myDsl::AbstractMethod' has the following attributes: 'name' of type str.
+The class 'myDsl::Domain' has no attributes.
+The class 'myDsl::GenericClass' has no attributes.
+The class 'myDsl::JavaApp' has no attributes.
+The class 'myDsl::EObject' has no attributes.
+The class 'myDsl::SpecialEntity' has no attributes.
+The class 'myDsl::Eclass' has the following attributes: 'name' of type str.
+'myDsl::Js' is a specialization of 'File'.
+'myDsl::Visualizer' is a specialization of 'AbstractFrontElement'.
+'myDsl::Directory' is a specialization of 'AbstractFrontElement'.
+'myDsl::ServiceFront' is a specialization of 'AbstractFrontElement'.
+'myDsl::Action' is a specialization of 'AbstractFrontElement'.
+'myDsl::NativeClass' is a specialization of 'Eclass'.
+'myDsl::File' is a specialization of 'AbstractFrontElement'.
+'myDsl::RouterComponent' is a specialization of 'UIComponent'.
+'myDsl::ReactApp' is a specialization of 'AbstractFrontElement'.
+'myDsl::Visualizer' is a specialization of 'UIComponent'.
+'myDsl::Container' is a specialization of 'AbstractFrontElement'.
+'myDsl::ActionDispatcher' is a specialization of 'AbstractFrontElement'.
+'myDsl::AbstractClass' is a specialization of 'Eclass'.
+'myDsl::Css' is a specialization of 'File'.
+'myDsl::Annotation' is a specialization of 'Eclass'.
+'myDsl::Functionality' is a specialization of 'AbstractFrontElement'.
+'myDsl::State' is a specialization of 'AbstractFrontElement'.
+'myDsl::AxiosRequest' is a specialization of 'AbstractFrontElement'.
+'myDsl::JsModule' is a specialization of 'AbstractFrontElement'.
+'myDsl::Json' is a specialization of 'File'.
+'myDsl::RouterComponent' is a specialization of 'AbstractFrontElement'.
+'myDsl::GenericClass' is a specialization of 'Eclass'.
+'myDsl::Type' is a specialization of 'AbstractFrontElement'.
+'myDsl::Md' is a specialization of 'File'.
+'myDsl::Reducer' is a specialization of 'AbstractFrontElement'.
+'myDsl::ActionCreator' is a specialization of 'AbstractFrontElement'.
+'myDsl::ActionDispatcher' (role 'myDsl_ActionDispatcher177', cardinality 0..*) is associated with 'myDsl::ActionCreator' (role 'myDsl_ActionCreator178', cardinality 0..*).
+'myDsl::JsMethodArgs' (role 'myDsl_JsMethodArgs189', cardinality 0..*) is associated with 'myDsl::AxiosRequest' (role 'myDsl_AxiosRequest188', cardinality 0..*).
+'myDsl::GeneralEntity' (role 'myDsl_GeneralEntity22', cardinality 0..*) is associated with 'myDsl::Property' (role 'myDsl_Property', cardinality 0..*).
+'myDsl::AbstractClass' (role 'myDsl_AbstractClass87', cardinality 0..*) is associated with 'myDsl::GenericClass' (role 'myDsl_GenericClass86', cardinality 0..*).
+'myDsl::GenericClass' (role 'myDsl_GenericClass83', cardinality 0..*) is associated with 'myDsl::Annotation' (role 'myDsl_Annotation84', cardinality 0..*).
+'myDsl::Directory' (role 'myDsl_Directory161', cardinality 0..*) is associated with 'myDsl::File' (role 'myDsl_File', cardinality 0..*).
+'myDsl::Attribute' (role 'myDsl_Attribute', cardinality 0..*) is associated with 'myDsl::AbstractClass' (role 'myDsl_AbstractClass', cardinality 0..*).
+'myDsl::JsModule' (role 'myDsl_JsModule183', cardinality 0..*) is associated with 'myDsl::Directory' (role 'myDsl_Directory184', cardinality 0..*).
+'myDsl::Eclass' (role 'myDsl_Eclass105', cardinality 0..*) is associated with 'myDsl::Epackage' (role 'myDsl_Epackage104', cardinality 0..*).
+'myDsl::Functionality' (role 'myDsl_Functionality130', cardinality 0..*) is associated with 'myDsl::RouterComponent' (role 'myDsl_RouterComponent', cardinality 0..*).
+'myDsl::AbstractFrontElement' (role 'myDsl_AbstractFrontElement', cardinality 0..*) is associated with 'myDsl::ReactApp' (role 'myDsl_ReactApp122', cardinality 0..*).
+'myDsl::State' (role 'myDsl_State166', cardinality 0..*) is associated with 'myDsl::Action' (role 'myDsl_Action', cardinality 0..*).
+'myDsl::LayerSegment' (role 'myDsl_LayerSegment', cardinality 0..*) is associated with 'myDsl::Layer' (role 'myDsl_Layer51', cardinality 0..*).
+'myDsl::Descriptor' (role 'myDsl_Descriptor', cardinality 0..*) is associated with 'myDsl::Subproject' (role 'myDsl_Subproject69', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type', cardinality 0..*) is associated with 'myDsl::Domain' (role 'myDsl_Domain6', cardinality 0..*).
+'myDsl::Submodule' (role 'myDsl_Submodule16', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject', cardinality 0..*).
+'myDsl::ServiceFront' (role 'myDsl_ServiceFront', cardinality 0..*) is associated with 'myDsl::Functionality' (role 'myDsl_Functionality138', cardinality 0..*).
+'myDsl::Directory' (role 'myDsl_Directory141', cardinality 0..*) is associated with 'myDsl::Functionality' (role 'myDsl_Functionality140', cardinality 0..*).
+'myDsl::EntityName' (role 'myDsl_EntityName37', cardinality 0..*) is associated with 'myDsl::Operateson' (role 'myDsl_Operateson36', cardinality 0..*).
+'myDsl::Layer' (role 'myDsl_Layer', cardinality 0..*) is associated with 'myDsl::Component' (role 'myDsl_Component49', cardinality 0..*).
+'myDsl::Domain' (role 'myDsl_Domain10', cardinality 0..*) is associated with 'myDsl::RelationDom' (role 'myDsl_RelationDom', cardinality 0..*).
+'myDsl::RelationDom' (role 'myDsl_RelationDom39', cardinality 0..*) is associated with 'myDsl::EntityName' (role 'myDsl_EntityName40', cardinality 0..*).
+'myDsl::MethodBack' (role 'myDsl_MethodBack110', cardinality 0..*) is associated with 'myDsl::Eclass' (role 'myDsl_Eclass111', cardinality 0..*).
+'myDsl::JsMethod' (role 'myDsl_JsMethod', cardinality 0..*) is associated with 'myDsl::Visualizer' (role 'myDsl_Visualizer154', cardinality 0..*).
+'myDsl::AbstractMethod' (role 'myDsl_AbstractMethod113', cardinality 0..*) is associated with 'myDsl::Eclass' (role 'myDsl_Eclass114', cardinality 0..*).
+'myDsl::AbstractFrontElement' (role 'myDsl_AbstractFrontElement149', cardinality 0..*) is associated with 'myDsl::Container' (role 'myDsl_Container148', cardinality 0..*).
+'myDsl::Subproject' (role 'myDsl_Subproject65', cardinality 0..*) is associated with 'myDsl::Epackage' (role 'myDsl_Epackage', cardinality 0..*).
+'myDsl::Functionality' (role 'myDsl_Functionality136', cardinality 0..*) is associated with 'myDsl::State' (role 'myDsl_State', cardinality 0..*).
+'myDsl::Domain' (role 'myDsl_Domain', cardinality 0..*) is associated with 'myDsl::System' (role 'myDsl_System', cardinality 0..*).
+'myDsl::AbstractMethod' (role 'myDsl_AbstractMethod95', cardinality 0..*) is associated with 'myDsl::Einterface' (role 'myDsl_Einterface94', cardinality 0..*).
+'myDsl::RelationArch' (role 'myDsl_RelationArch', cardinality 0..*) is associated with 'myDsl::Architecture' (role 'myDsl_Architecture47', cardinality 0..*).
+'myDsl::Library' (role 'myDsl_Library', cardinality 0..*) is associated with 'myDsl::Subproject' (role 'myDsl_Subproject67', cardinality 0..*).
+'myDsl::Library' (role 'myDsl_Library119', cardinality 0..*) is associated with 'myDsl::Annotation' (role 'myDsl_Annotation120', cardinality 0..*).
+'myDsl::EntityName' (role 'myDsl_EntityName', cardinality 0..*) is associated with 'myDsl::Operation' (role 'myDsl_Operation18', cardinality 0..*).
+'myDsl::Module' (role 'myDsl_Module', cardinality 0..*) is associated with 'myDsl::Domain' (role 'myDsl_Domain8', cardinality 0..*).
+'myDsl::Reducer' (role 'myDsl_Reducer180', cardinality 0..*) is associated with 'myDsl::AbstractFrontElement' (role 'myDsl_AbstractFrontElement181', cardinality 0..*).
+'myDsl::Functionality' (role 'myDsl_Functionality134', cardinality 0..*) is associated with 'myDsl::Visualizer' (role 'myDsl_Visualizer', cardinality 0..*).
+'myDsl::Technology' (role 'myDsl_Technology57', cardinality 0..*) is associated with 'myDsl::JavaApp' (role 'myDsl_JavaApp', cardinality 0..*).
+'myDsl::ReactApp' (role 'myDsl_ReactApp128', cardinality 0..*) is associated with 'myDsl::JsModule' (role 'myDsl_JsModule', cardinality 0..*).
+'myDsl::MethodBack' (role 'myDsl_MethodBack', cardinality 0..*) is associated with 'myDsl::AbstractClass' (role 'myDsl_AbstractClass72', cardinality 0..*).
+'myDsl::Attribute' (role 'myDsl_Attribute102', cardinality 0..*) is associated with 'myDsl::Eclass' (role 'myDsl_Eclass', cardinality 0..*).
+'myDsl::MethodBack' (role 'myDsl_MethodBack107', cardinality 0..*) is associated with 'myDsl::Eclass' (role 'myDsl_Eclass108', cardinality 0..*).
+'myDsl::ReactApp' (role 'myDsl_ReactApp126', cardinality 0..*) is associated with 'myDsl::Directory' (role 'myDsl_Directory', cardinality 0..*).
+'myDsl::AbstractMethod' (role 'myDsl_AbstractMethod', cardinality 0..*) is associated with 'myDsl::AbstractClass' (role 'myDsl_AbstractClass76', cardinality 0..*).
+'myDsl::Submodule' (role 'myDsl_Submodule14', cardinality 0..*) is associated with 'myDsl::Operation' (role 'myDsl_Operation', cardinality 0..*).
+'myDsl::Property' (role 'myDsl_Property24', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type25', cardinality 0..*).
+'myDsl::Functionality' (role 'myDsl_Functionality132', cardinality 0..*) is associated with 'myDsl::Container' (role 'myDsl_Container', cardinality 0..*).
+'myDsl::ReactApp' (role 'myDsl_ReactApp124', cardinality 0..*) is associated with 'myDsl::Functionality' (role 'myDsl_Functionality', cardinality 0..*).
+'myDsl::SpecialEntity' (role 'myDsl_SpecialEntity29', cardinality 0..*) is associated with 'myDsl::Property' (role 'myDsl_Property30', cardinality 0..*).
+'myDsl::GenericClass' (role 'myDsl_GenericClass80', cardinality 0..*) is associated with 'myDsl::MethodBack' (role 'myDsl_MethodBack81', cardinality 0..*).
+'myDsl::AbstractClass' (role 'myDsl_AbstractClass74', cardinality 0..*) is associated with 'myDsl::Annotation' (role 'myDsl_Annotation', cardinality 0..*).
+'myDsl::ReactApp' (role 'myDsl_ReactApp', cardinality 0..*) is associated with 'myDsl::Technology' (role 'myDsl_Technology59', cardinality 0..*).
+'myDsl::AbstractFrontElement' (role 'myDsl_AbstractFrontElement144', cardinality 0..*) is associated with 'myDsl::RouterComponent' (role 'myDsl_RouterComponent143', cardinality 0..*).
+'myDsl::ActionDispatcher' (role 'myDsl_ActionDispatcher', cardinality 0..*) is associated with 'myDsl::Action' (role 'myDsl_Action172', cardinality 0..*).
+'myDsl::Einterface' (role 'myDsl_Einterface', cardinality 0..*) is associated with 'myDsl::GenericClass' (role 'myDsl_GenericClass89', cardinality 0..*).
+'myDsl::UIComponent' (role 'myDsl_UIComponent', cardinality 0..*) is associated with 'myDsl::RouterComponent' (role 'myDsl_RouterComponent146', cardinality 0..*).
+'myDsl::JsModule' (role 'myDsl_JsModule157', cardinality 0..*) is associated with 'myDsl::ServiceFront' (role 'myDsl_ServiceFront156', cardinality 0..*).
+'myDsl::AbstractMethod' (role 'myDsl_AbstractMethod116', cardinality 0..*) is associated with 'myDsl::Eclass' (role 'myDsl_Eclass117', cardinality 0..*).
+'myDsl::Directory' (role 'myDsl_Directory162', cardinality 0..*) is associated with 'myDsl::Directory' (role 'myDsl_Directory164', cardinality 0..*).
+'myDsl::EntityName' (role 'myDsl_EntityName27', cardinality 0..*) is associated with 'myDsl::SpecialEntity' (role 'myDsl_SpecialEntity', cardinality 0..*).
+'myDsl::System' (role 'myDsl_System2', cardinality 0..*) is associated with 'myDsl::Architecture' (role 'myDsl_Architecture', cardinality 0..*).
+'myDsl::SublayerSegment' (role 'myDsl_SublayerSegment', cardinality 0..*) is associated with 'myDsl::LayerSegment' (role 'myDsl_LayerSegment55', cardinality 0..*).
+'myDsl::Attribute' (role 'myDsl_Attribute78', cardinality 0..*) is associated with 'myDsl::GenericClass' (role 'myDsl_GenericClass', cardinality 0..*).
+'myDsl::Technology' (role 'myDsl_Technology', cardinality 0..*) is associated with 'myDsl::System' (role 'myDsl_System4', cardinality 0..*).
+'myDsl::Action' (role 'myDsl_Action174', cardinality 0..*) is associated with 'myDsl::Directory' (role 'myDsl_Directory175', cardinality 0..*).
+'myDsl::Operateson' (role 'myDsl_Operateson', cardinality 0..*) is associated with 'myDsl::Transaction' (role 'myDsl_Transaction34', cardinality 0..*).
+'myDsl::Module' (role 'myDsl_Module12', cardinality 0..*) is associated with 'myDsl::Submodule' (role 'myDsl_Submodule', cardinality 0..*).
+'myDsl::JavaApp' (role 'myDsl_JavaApp61', cardinality 0..*) is associated with 'myDsl::JeeProject' (role 'myDsl_JeeProject', cardinality 0..*).
+'myDsl::Subproject' (role 'myDsl_Subproject', cardinality 0..*) is associated with 'myDsl::JeeProject' (role 'myDsl_JeeProject63', cardinality 0..*).
+'myDsl::State' (role 'myDsl_State168', cardinality 0..*) is associated with 'myDsl::Reducer' (role 'myDsl_Reducer', cardinality 0..*).
+'myDsl::JsMethodArgs' (role 'myDsl_JsMethodArgs', cardinality 0..*) is associated with 'myDsl::JsMethod' (role 'myDsl_JsMethod186', cardinality 0..*).
+'myDsl::LayerSegment' (role 'myDsl_LayerSegment53', cardinality 0..*) is associated with 'myDsl::LayerSegmentRelation' (role 'myDsl_LayerSegmentRelation', cardinality 0..*).
+'myDsl::RelationDom' (role 'myDsl_RelationDom42', cardinality 0..*) is associated with 'myDsl::EntityName' (role 'myDsl_EntityName43', cardinality 0..*).
+'myDsl::NativeClass' (role 'myDsl_NativeClass99', cardinality 0..*) is associated with 'myDsl::MethodBack' (role 'myDsl_MethodBack100', cardinality 0..*).
+'myDsl::Architecture' (role 'myDsl_Architecture45', cardinality 0..*) is associated with 'myDsl::Component' (role 'myDsl_Component', cardinality 0..*).
+'myDsl::ServiceFront' (role 'myDsl_ServiceFront159', cardinality 0..*) is associated with 'myDsl::AxiosRequest' (role 'myDsl_AxiosRequest', cardinality 0..*).
+'myDsl::Transaction' (role 'myDsl_Transaction', cardinality 0..*) is associated with 'myDsl::SpecialEntity' (role 'myDsl_SpecialEntity32', cardinality 0..*).
+'myDsl::EntityName' (role 'myDsl_EntityName20', cardinality 0..*) is associated with 'myDsl::GeneralEntity' (role 'myDsl_GeneralEntity', cardinality 0..*).
+'myDsl::AbstractFrontElement' (role 'myDsl_AbstractFrontElement152', cardinality 0..*) is associated with 'myDsl::Visualizer' (role 'myDsl_Visualizer151', cardinality 0..*).
+'myDsl::NativeClass' (role 'myDsl_NativeClass', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute97', cardinality 0..*).
+'myDsl::Attribute' (role 'myDsl_Attribute92', cardinality 0..*) is associated with 'myDsl::Einterface' (role 'myDsl_Einterface91', cardinality 0..*).
+'myDsl::ActionCreator' (role 'myDsl_ActionCreator', cardinality 0..*) is associated with 'myDsl::Action' (role 'myDsl_Action170', cardinality 0..*).

@@ -1,0 +1,114 @@
+The model has 44 class(es).
+The class 'ClassCS' has no attributes.
+The class 'qvtrelationcs::Property' has no attributes.
+The class 'qvtrelationcs::Transformation' has no attributes.
+The class 'qvtrelationcs::ElementTemplateCS' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'qvtrelationcs::RelationCS' has the following attributes: 'isTop' of type bool; 'isDefault' of type bool.
+The class 'qvtrelationcs::TypedModel' has no attributes.
+The class 'qvtrelationcs::QueryCS' has no attributes.
+The class 'TemplateVariableCS' has no attributes.
+The class 'qvtrelationcs::AbstractDomainCS' has no attributes.
+The class 'qvtrelationcs::UnitCS' has no attributes.
+The class 'qvtrelationcs::DomainCS' has the following attributes: 'isReplace' of type bool; 'isCheckonly' of type bool; 'implementedBy' of type str; 'isEnforce' of type bool.
+The class 'qvtrelationcs::KeyDeclCS' has no attributes.
+The class 'qvtrelationcs::ParamDeclarationCS' has no attributes.
+The class 'qvtrelationcs::VarDeclarationIdCS' has no attributes.
+The class 'TemplateCS' has no attributes.
+The class 'RootPackageCS' has no attributes.
+The class 'qvtrelationcs::DefaultValueCS' has no attributes.
+The class 'qvtrelationcs::TemplateCS' has no attributes.
+The class 'qvtrelationcs::PropertyTemplateCS' has no attributes.
+The class 'qvtrelationcs::TemplateVariableCS' has no attributes.
+The class 'qvtrelationcs::PatternCS' has no attributes.
+The class 'qvtrelationcs::DomainPatternCS' has no attributes.
+The class 'ModelElementCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'qvtrelationcs::ExpCS' has no attributes.
+The class 'qvtrelationcs::PathNameCS' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'qvtrelationcs::ModelDeclCS' has no attributes.
+The class 'qvtrelationcs::TypedRefCS' has no attributes.
+The class 'qvtrelationcs::PrimitiveTypeDomainCS' has no attributes.
+The class 'qvtrelationcs::Namespace' has no attributes.
+The class 'AbstractDomainCS' has no attributes.
+The class 'TypedElementCS' has no attributes.
+The class 'qvtrelationcs::Element' has no attributes.
+The class 'qvtrelationcs::Variable' has no attributes.
+The class 'qvtrelationcs::Class' has no attributes.
+The class 'qvtrelationcs::CollectionTemplateCS' has no attributes.
+The class 'qvtrelationcs::TopLevelCS' has no attributes.
+The class 'qvtrelationcs::VarDeclarationCS' has no attributes.
+The class 'qvtrelationcs::TransformationCS' has no attributes.
+The class 'qvtrelationcs::PredicateCS' has no attributes.
+The class 'qvtrelationcs::ObjectTemplateCS' has no attributes.
+The class 'Relation' has no attributes.
+'qvtrelationcs::AbstractDomainCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::QueryCS' is a specialization of 'TypedElementCS'.
+'qvtrelationcs::CollectionTemplateCS' is a specialization of 'TemplateCS'.
+'qvtrelationcs::PatternCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::ObjectTemplateCS' is a specialization of 'TemplateCS'.
+'qvtrelationcs::VarDeclarationIdCS' is a specialization of 'NamedElementCS'.
+'qvtrelationcs::DefaultValueCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::AbstractDomainCS' is a specialization of 'Nameable'.
+'qvtrelationcs::PredicateCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::PropertyTemplateCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::KeyDeclCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::DomainPatternCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::TemplateCS' is a specialization of 'TemplateVariableCS'.
+'qvtrelationcs::PrimitiveTypeDomainCS' is a specialization of 'AbstractDomainCS'.
+'qvtrelationcs::ParamDeclarationCS' is a specialization of 'TypedElementCS'.
+'qvtrelationcs::RelationCS' is a specialization of 'NamedElementCS'.
+'qvtrelationcs::VarDeclarationCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::TemplateCS' is a specialization of 'ExpCS'.
+'qvtrelationcs::TopLevelCS' is a specialization of 'RootPackageCS'.
+'qvtrelationcs::ElementTemplateCS' is a specialization of 'TemplateVariableCS'.
+'qvtrelationcs::PrimitiveTypeDomainCS' is a specialization of 'TemplateVariableCS'.
+'qvtrelationcs::DomainCS' is a specialization of 'AbstractDomainCS'.
+'qvtrelationcs::ModelDeclCS' is a specialization of 'NamedElementCS'.
+'qvtrelationcs::TransformationCS' is a specialization of 'ClassCS'.
+'qvtrelationcs::TemplateVariableCS' is a specialization of 'NamedElementCS'.
+'qvtrelationcs::UnitCS' is a specialization of 'ModelElementCS'.
+'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS81', cardinality 0..*) is associated with 'qvtrelationcs::RelationCS' (role 'qvtrelationcs_RelationCS82', cardinality 0..*).
+'qvtrelationcs::PropertyTemplateCS' (role 'PropertyTemplateCS', cardinality 0..*) is associated with 'qvtrelationcs::ObjectTemplateCS' (role 'owningObjectTemplate', cardinality 0..*).
+'qvtrelationcs::Namespace' (role 'qvtrelationcs_Namespace', cardinality 0..*) is associated with 'qvtrelationcs::ModelDeclCS' (role 'qvtrelationcs_ModelDeclCS', cardinality 0..*).
+'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS', cardinality 0..*) is associated with 'qvtrelationcs::DefaultValueCS' (role 'qvtrelationcs_DefaultValueCS', cardinality 0..*).
+'qvtrelationcs::PropertyTemplateCS' (role 'qvtrelationcs_PropertyTemplateCS', cardinality 0..*) is associated with 'qvtrelationcs::Property' (role 'qvtrelationcs_Property36', cardinality 0..*).
+'qvtrelationcs::PropertyTemplateCS' (role 'ownedPropertyTemplates', cardinality 0..*) is associated with 'qvtrelationcs::ObjectTemplateCS' (role 'ObjectTemplateCS', cardinality 0..*).
+'qvtrelationcs::DomainCS' (role 'qvtrelationcs_DomainCS10', cardinality 0..*) is associated with 'qvtrelationcs::DefaultValueCS' (role 'qvtrelationcs_DefaultValueCS11', cardinality 0..*).
+'qvtrelationcs::RelationCS' (role 'qvtrelationcs_RelationCS49', cardinality 0..*) is associated with 'qvtrelationcs::VarDeclarationCS' (role 'qvtrelationcs_VarDeclarationCS', cardinality 0..*).
+'qvtrelationcs::Class' (role 'qvtrelationcs_Class', cardinality 0..*) is associated with 'qvtrelationcs::KeyDeclCS' (role 'qvtrelationcs_KeyDeclCS27', cardinality 0..*).
+'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS', cardinality 0..*) is associated with 'qvtrelationcs::TopLevelCS' (role 'qvtrelationcs_TopLevelCS65', cardinality 0..*).
+'qvtrelationcs::QueryCS' (role 'qvtrelationcs_QueryCS79', cardinality 0..*) is associated with 'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS78', cardinality 0..*).
+'qvtrelationcs::DomainCS' (role 'qvtrelationcs_DomainCS', cardinality 0..*) is associated with 'qvtrelationcs::TypedModel' (role 'qvtrelationcs_TypedModel', cardinality 0..*).
+'qvtrelationcs::RelationCS' (role 'qvtrelationcs_RelationCS53', cardinality 0..*) is associated with 'qvtrelationcs::PatternCS' (role 'qvtrelationcs_PatternCS54', cardinality 0..*).
+'qvtrelationcs::DomainCS' (role 'qvtrelationcs_DomainCS8', cardinality 0..*) is associated with 'qvtrelationcs::DomainPatternCS' (role 'qvtrelationcs_DomainPatternCS', cardinality 0..*).
+'qvtrelationcs::DefaultValueCS' (role 'qvtrelationcs_DefaultValueCS5', cardinality 0..*) is associated with 'qvtrelationcs::Variable' (role 'qvtrelationcs_Variable', cardinality 0..*).
+'qvtrelationcs::AbstractDomainCS' (role 'qvtrelationcs_AbstractDomainCS', cardinality 0..*) is associated with 'qvtrelationcs::RelationCS' (role 'qvtrelationcs_RelationCS51', cardinality 0..*).
+'qvtrelationcs::RelationCS' (role 'qvtrelationcs_RelationCS56', cardinality 0..*) is associated with 'qvtrelationcs::PatternCS' (role 'qvtrelationcs_PatternCS57', cardinality 0..*).
+'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS14', cardinality 0..*) is associated with 'qvtrelationcs::DomainCS' (role 'qvtrelationcs_DomainCS13', cardinality 0..*).
+'qvtrelationcs::UnitCS' (role 'qvtrelationcs_UnitCS', cardinality 0..*) is associated with 'qvtrelationcs::TopLevelCS' (role 'qvtrelationcs_TopLevelCS', cardinality 0..*).
+'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS67', cardinality 0..*) is associated with 'qvtrelationcs::ModelDeclCS' (role 'qvtrelationcs_ModelDeclCS68', cardinality 0..*).
+'qvtrelationcs::TypedRefCS' (role 'qvtrelationcs_TypedRefCS90', cardinality 0..*) is associated with 'qvtrelationcs::VarDeclarationCS' (role 'qvtrelationcs_VarDeclarationCS89', cardinality 0..*).
+'qvtrelationcs::ParamDeclarationCS' (role 'qvtrelationcs_ParamDeclarationCS', cardinality 0..*) is associated with 'qvtrelationcs::QueryCS' (role 'qvtrelationcs_QueryCS', cardinality 0..*).
+'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS72', cardinality 0..*) is associated with 'qvtrelationcs::KeyDeclCS' (role 'qvtrelationcs_KeyDeclCS73', cardinality 0..*).
+'qvtrelationcs::KeyDeclCS' (role 'qvtrelationcs_KeyDeclCS22', cardinality 0..*) is associated with 'qvtrelationcs::Property' (role 'qvtrelationcs_Property', cardinality 0..*).
+'qvtrelationcs::RelationCS' (role 'qvtrelationcs_RelationCS', cardinality 0..*) is associated with 'Relation' (role 'Relation', cardinality 0..*).
+'qvtrelationcs::KeyDeclCS' (role 'qvtrelationcs_KeyDeclCS24', cardinality 0..*) is associated with 'qvtrelationcs::PathNameCS' (role 'qvtrelationcs_PathNameCS25', cardinality 0..*).
+'qvtrelationcs::QueryCS' (role 'qvtrelationcs_QueryCS45', cardinality 0..*) is associated with 'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS46', cardinality 0..*).
+'qvtrelationcs::PathNameCS' (role 'qvtrelationcs_PathNameCS76', cardinality 0..*) is associated with 'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS75', cardinality 0..*).
+'qvtrelationcs::VarDeclarationCS' (role 'qvtrelationcs_VarDeclarationCS86', cardinality 0..*) is associated with 'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS87', cardinality 0..*).
+'qvtrelationcs::PredicateCS' (role 'qvtrelationcs_PredicateCS', cardinality 0..*) is associated with 'qvtrelationcs::PatternCS' (role 'qvtrelationcs_PatternCS', cardinality 0..*).
+'qvtrelationcs::VarDeclarationIdCS' (role 'qvtrelationcs_VarDeclarationIdCS', cardinality 0..*) is associated with 'qvtrelationcs::VarDeclarationCS' (role 'qvtrelationcs_VarDeclarationCS92', cardinality 0..*).
+'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS33', cardinality 0..*) is associated with 'qvtrelationcs::PredicateCS' (role 'qvtrelationcs_PredicateCS32', cardinality 0..*).
+'qvtrelationcs::Element' (role 'qvtrelationcs_Element', cardinality 0..*) is associated with 'qvtrelationcs::UnitCS' (role 'qvtrelationcs_UnitCS84', cardinality 0..*).
+'qvtrelationcs::TemplateCS' (role 'qvtrelationcs_TemplateCS59', cardinality 0..*) is associated with 'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS60', cardinality 0..*).
+'qvtrelationcs::TypedRefCS' (role 'qvtrelationcs_TypedRefCS', cardinality 0..*) is associated with 'qvtrelationcs::TemplateVariableCS' (role 'qvtrelationcs_TemplateVariableCS62', cardinality 0..*).
+'qvtrelationcs::ExpCS' (role 'qvtrelationcs_ExpCS42', cardinality 0..*) is associated with 'qvtrelationcs::PropertyTemplateCS' (role 'qvtrelationcs_PropertyTemplateCS41', cardinality 0..*).
+'qvtrelationcs::TemplateCS' (role 'qvtrelationcs_TemplateCS', cardinality 0..*) is associated with 'qvtrelationcs::DomainPatternCS' (role 'qvtrelationcs_DomainPatternCS16', cardinality 0..*).
+'qvtrelationcs::TemplateVariableCS' (role 'qvtrelationcs_TemplateVariableCS', cardinality 0..*) is associated with 'qvtrelationcs::CollectionTemplateCS' (role 'qvtrelationcs_CollectionTemplateCS', cardinality 0..*).
+'qvtrelationcs::Variable' (role 'qvtrelationcs_Variable19', cardinality 0..*) is associated with 'qvtrelationcs::ElementTemplateCS' (role 'qvtrelationcs_ElementTemplateCS18', cardinality 0..*).
+'qvtrelationcs::CollectionTemplateCS' (role 'qvtrelationcs_CollectionTemplateCS2', cardinality 0..*) is associated with 'qvtrelationcs::ElementTemplateCS' (role 'qvtrelationcs_ElementTemplateCS', cardinality 0..*).
+'qvtrelationcs::TransformationCS' (role 'qvtrelationcs_TransformationCS70', cardinality 0..*) is associated with 'qvtrelationcs::Transformation' (role 'qvtrelationcs_Transformation', cardinality 0..*).
+'qvtrelationcs::PathNameCS' (role 'qvtrelationcs_PathNameCS39', cardinality 0..*) is associated with 'qvtrelationcs::PropertyTemplateCS' (role 'qvtrelationcs_PropertyTemplateCS38', cardinality 0..*).
+'qvtrelationcs::PathNameCS' (role 'qvtrelationcs_PathNameCS', cardinality 0..*) is associated with 'qvtrelationcs::KeyDeclCS' (role 'qvtrelationcs_KeyDeclCS', cardinality 0..*).

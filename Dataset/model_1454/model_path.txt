@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/xtext-core/org.eclipse.xtext.tests/src/org/eclipse/xtext/resource/mydsl.ecore

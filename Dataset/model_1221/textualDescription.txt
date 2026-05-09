@@ -1,0 +1,71 @@
+The model has 62 class(es).
+The class 'ocl::ecore::ExpressionInOCL' has no attributes.
+The class 'ocl::ecore::CollectionRange' has no attributes.
+The class 'ocl::ecore::LiteralExp' has no attributes.
+The class 'ocl::ecore::PrimitiveType' has no attributes.
+The class 'ocl::ecore::CollectionLiteralPart' has no attributes.
+The class 'ocl::ecore::TupleLiteralPart' has no attributes.
+The class 'ocl::ecore::MessageType' has no attributes.
+The class 'ecore::ocl::EModelElement' has no attributes.
+The class 'ocl::ecore::CollectionLiteralExp' has no attributes.
+The class 'ocl::ecore::AnyType' has no attributes.
+The class 'ocl::ecore::SendSignalAction' has no attributes.
+The class 'ocl::ecore::AssociationClassCallExp' has no attributes.
+The class 'ocl::ecore::OppositePropertyCallExp' has no attributes.
+The class 'ocl::ecore::CollectionType' has no attributes.
+The class 'ocl::ecore::RealLiteralExp' has no attributes.
+The class 'ocl::ecore::FeatureCallExp' has no attributes.
+The class 'ocl::ecore::PropertyCallExp' has no attributes.
+The class 'ocl::ecore::LetExp' has no attributes.
+The class 'EClass' has no attributes.
+The class 'ocl::ecore::TupleLiteralExp' has no attributes.
+The class 'ocl::ecore::InvalidLiteralExp' has no attributes.
+The class 'ocl::ecore::BooleanLiteralExp' has no attributes.
+The class 'ocl::ecore::IteratorExp' has no attributes.
+The class 'ocl::ecore::MessageExp' has no attributes.
+The class 'ocl::ecore::IterateExp' has no attributes.
+The class 'ocl::ecore::NavigationCallExp' has no attributes.
+The class 'ocl::ecore::BagType' has no attributes.
+The class 'ocl::ecore::Variable' has no attributes.
+The class 'types::ElementType' has no attributes.
+The class 'ocl::ecore::TemplateParameterType' has no attributes.
+The class 'NavigationCallExp' has no attributes.
+The class 'ocl::ecore::OperationCallExp' has no attributes.
+The class 'ocl::ecore::CallOperationAction' has no attributes.
+The class 'ocl::ecore::VoidType' has no attributes.
+The class 'ocl::ecore::CollectionItem' has no attributes.
+The class 'ecore::ocl::EClass' has no attributes.
+The class 'ocl::ecore::TupleType' has no attributes.
+The class 'ocl::ecore::NumericLiteralExp' has no attributes.
+The class 'ocl::ecore::SequenceType' has no attributes.
+The class 'ocl::ecore::EnumLiteralExp' has no attributes.
+The class 'ocl::ecore::InvalidType' has no attributes.
+The class 'ocl::ecore::UnlimitedNaturalLiteralExp' has no attributes.
+The class 'ocl::ecore::StringLiteralExp' has no attributes.
+The class 'ocl::ecore::Constraint' has the following attributes: 'stereotype' of type str.
+The class 'ocl::ecore::ElementType' has no attributes.
+The class 'ecore::ocl::EOperation' has no attributes.
+The class 'ocl::ecore::OCLExpression' has no attributes.
+The class 'ocl::ecore::TypeExp' has no attributes.
+The class 'ocl::ecore::UnspecifiedValueExp' has no attributes.
+The class 'ocl::ecore::CallExp' has no attributes.
+The class 'ocl::ecore::VariableExp' has no attributes.
+The class 'ocl::ecore::TypeType' has no attributes.
+The class 'ocl::ecore::StateExp' has no attributes.
+The class 'ocl::ecore::IfExp' has no attributes.
+The class 'ocl::ecore::IntegerLiteralExp' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'ecore::ocl::EReference' has no attributes.
+The class 'ocl::ecore::PrimitiveLiteralExp' has no attributes.
+The class 'ocl::ecore::OrderedSetType' has no attributes.
+The class 'ocl::ecore::SetType' has no attributes.
+The class 'ocl::ecore::NullLiteralExp' has no attributes.
+The class 'ocl::ecore::LoopExp' has no attributes.
+'ocl::ecore::OppositePropertyCallExp' is a specialization of 'NavigationCallExp'.
+'ocl::ecore::ElementType' is a specialization of 'EClass'.
+'ocl::ecore::Constraint' is a specialization of 'ENamedElement'.
+'ocl::ecore::ElementType' is a specialization of 'types::ElementType'.
+'ecore::ocl::EReference' (role 'ecore_ocl_EReference', cardinality 0..*) is associated with 'ocl::ecore::OppositePropertyCallExp' (role 'ocl_ecore_OppositePropertyCallExp', cardinality 0..*).
+'ecore::ocl::EModelElement' (role 'ecore_ocl_EModelElement', cardinality 0..*) is associated with 'ocl::ecore::Constraint' (role 'ocl_ecore_Constraint', cardinality 0..*).
+'ecore::ocl::EOperation' (role 'ecore_ocl_EOperation', cardinality 0..*) is associated with 'ocl::ecore::CallOperationAction' (role 'ocl_ecore_CallOperationAction', cardinality 0..*).
+'ecore::ocl::EClass' (role 'ecore_ocl_EClass', cardinality 0..*) is associated with 'ocl::ecore::SendSignalAction' (role 'ocl_ecore_SendSignalAction', cardinality 0..*).

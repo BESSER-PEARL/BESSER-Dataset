@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'sm3::Transition' has the following attributes: 'event' of type str.
+The class 'sm3::State' has the following attributes: 'name' of type str.
+The class 'sm3::StateMachine' has no attributes.
+'sm3::State' (role 'sm3_State', cardinality 0..*) is associated with 'sm3::StateMachine' (role 'sm3_StateMachine', cardinality 0..*).
+'sm3::State' (role 'State', cardinality 0..*) is associated with 'sm3::StateMachine' (role 'sm', cardinality 0..*).
+'sm3::Transition' (role 'sm3_Transition', cardinality 0..*) is associated with 'sm3::StateMachine' (role 'sm3_StateMachine3', cardinality 0..*).
+'sm3::State' (role 'src', cardinality 0..*) is associated with 'sm3::Transition' (role 'Transition', cardinality 0..*).
+'sm3::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'sm3::State' (role 'states', cardinality 0..*).
+'sm3::Transition' (role 'Transition7', cardinality 0..*) is associated with 'sm3::State' (role 'tgt', cardinality 0..*).
+'sm3::Transition' (role 'incoming', cardinality 0..*) is associated with 'sm3::State' (role 'State11', cardinality 0..*).
+'sm3::Transition' (role 'outgoing', cardinality 0..*) is associated with 'sm3::State' (role 'State9', cardinality 0..*).

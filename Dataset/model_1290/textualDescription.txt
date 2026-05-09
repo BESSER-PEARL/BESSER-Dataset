@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'StateMachineHyperedges::FinalState' has no attributes.
+The class 'StateMachineHyperedges::SimpleState' has no attributes.
+The class 'StateMachineHyperedges::StateVertex' has the following attributes: 'name' of type str.
+The class 'StateMachineHyperedges::StateMachine' has no attributes.
+The class 'StateMachineHyperedges::Event' has no attributes.
+The class 'StateMachineHyperedges::Transition' has the following attributes: 'name' of type str.
+The class 'StateVertex' has no attributes.
+The class 'StateMachineHyperedges::InitialState' has no attributes.
+'StateMachineHyperedges::SimpleState' is a specialization of 'StateVertex'.
+'StateMachineHyperedges::InitialState' is a specialization of 'StateVertex'.
+'StateMachineHyperedges::FinalState' is a specialization of 'StateVertex'.
+'StateMachineHyperedges::StateVertex' (role 'targets', cardinality 0..*) is associated with 'StateMachineHyperedges::Transition' (role 'Transition5', cardinality 0..*).
+'StateMachineHyperedges::StateVertex' (role 'StateVertex10', cardinality 0..*) is associated with 'StateMachineHyperedges::Transition' (role 'incoming', cardinality 0..*).
+'StateMachineHyperedges::StateMachine' (role 'StateMachineHyperedges_StateMachine2', cardinality 0..*) is associated with 'StateMachineHyperedges::Transition' (role 'StateMachineHyperedges_Transition', cardinality 0..*).
+'StateMachineHyperedges::Transition' (role 'StateMachineHyperedges_Transition7', cardinality 0..*) is associated with 'StateMachineHyperedges::Event' (role 'StateMachineHyperedges_Event', cardinality 0..*).
+'StateMachineHyperedges::StateMachine' (role 'StateMachineHyperedges_StateMachine', cardinality 0..*) is associated with 'StateMachineHyperedges::StateVertex' (role 'StateMachineHyperedges_StateVertex', cardinality 0..*).
+'StateMachineHyperedges::Transition' (role 'outgoing', cardinality 0..*) is associated with 'StateMachineHyperedges::StateVertex' (role 'StateVertex', cardinality 0..*).
+'StateMachineHyperedges::StateVertex' (role 'sources', cardinality 0..*) is associated with 'StateMachineHyperedges::Transition' (role 'Transition', cardinality 0..*).

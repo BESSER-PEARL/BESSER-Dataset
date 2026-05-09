@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'trace::Trace' has no attributes.
+The class 'trace::TraceLink' has the following attributes: 'name' of type str; 'requiredSimilarity' of type int; 'sourceValue' of type str; 'targetValue' of type str; 'similarity' of type int; 'rationale' of type str; 'similarityMethod' of type int.
+The class 'trace::EObject' has no attributes.
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::TraceLink' (role 'trace_TraceLink', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject8', cardinality 0..*) is associated with 'trace::TraceLink' (role 'trace_TraceLink7', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace2', cardinality 0..*).
+'trace::TraceLink' (role 'trace_TraceLink10', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject11', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject5', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace4', cardinality 0..*).

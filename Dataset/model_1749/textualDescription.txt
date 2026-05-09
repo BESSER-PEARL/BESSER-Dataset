@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'model::Book' has the following attributes: 'title' of type str.
+The class 'model::Library' has no attributes.
+The class 'model::Author' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+'model::Book' (role 'model_Book', cardinality 0..*) is associated with 'model::Library' (role 'model_Library', cardinality 0..*).
+'model::Author' (role 'model_Author', cardinality 0..*) is associated with 'model::Book' (role 'model_Book2', cardinality 0..*).

@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'lts2::LTSGenerator' has no attributes.
+The class 'lts2::InitialState' has no attributes.
+The class 'TransitionalState' has no attributes.
+The class 'UseCaseStep' has no attributes.
+The class 'State' has no attributes.
+The class 'lts2::Transition' has no attributes.
+The class 'lts2::TransitionalState' has no attributes.
+The class 'lts2::AbortState' has no attributes.
+The class 'lts2::FinalState' has no attributes.
+The class 'lts2::State' has no attributes.
+The class 'lts2::StateMachine' has no attributes.
+'lts2::TransitionalState' is a specialization of 'State'.
+'lts2::InitialState' is a specialization of 'TransitionalState'.
+'lts2::AbortState' is a specialization of 'State'.
+'lts2::FinalState' is a specialization of 'State'.
+'lts2::StateMachine' (role 'lts2_StateMachine13', cardinality 0..*) is associated with 'lts2::LTSGenerator' (role 'lts2_LTSGenerator', cardinality 0..*).
+'lts2::TransitionalState' (role 'lts2_TransitionalState', cardinality 0..*) is associated with 'lts2::StateMachine' (role 'lts2_StateMachine2', cardinality 0..*).
+'lts2::AbortState' (role 'lts2_AbortState', cardinality 0..*) is associated with 'lts2::StateMachine' (role 'lts2_StateMachine6', cardinality 0..*).
+'lts2::StateMachine' (role 'lts2_StateMachine', cardinality 0..*) is associated with 'lts2::InitialState' (role 'lts2_InitialState', cardinality 0..*).
+'lts2::Transition' (role 'lts2_Transition10', cardinality 0..*) is associated with 'UseCaseStep' (role 'UseCaseStep', cardinality 0..*).
+'lts2::FinalState' (role 'lts2_FinalState', cardinality 0..*) is associated with 'lts2::StateMachine' (role 'lts2_StateMachine4', cardinality 0..*).
+'lts2::Transition' (role 'lts2_Transition', cardinality 0..*) is associated with 'lts2::State' (role 'lts2_State', cardinality 0..*).
+'lts2::Transition' (role 'Transition', cardinality 0..*) is associated with 'lts2::TransitionalState' (role 'sourceState', cardinality 0..*).
+'lts2::TransitionalState' (role 'TransitionalState', cardinality 0..*) is associated with 'lts2::Transition' (role 'transitions', cardinality 0..*).

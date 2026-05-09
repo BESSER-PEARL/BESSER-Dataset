@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'stateMachine::AbstractStateElement' has the following attributes: 'name' of type str.
+The class 'stateMachine::StateTransition' has the following attributes: 'visibility' of type str.
+The class 'AbstractStateElement' has no attributes.
+The class 'stateMachine::State' has no attributes.
+The class 'stateMachine::StateMachine' has the following attributes: 'name' of type str.
+The class 'AbstractMachineElement' has no attributes.
+The class 'stateMachine::AbstractMachineElement' has no attributes.
+The enumeration 'VisibilityType' has the following literals: 'PUBLIC', 'PRIVATE'.
+'stateMachine::StateTransition' is a specialization of 'AbstractMachineElement'.
+'stateMachine::State' is a specialization of 'AbstractStateElement'.
+'stateMachine::AbstractStateElement' is a specialization of 'AbstractMachineElement'.
+'stateMachine::AbstractMachineElement' (role 'stateMachine_AbstractMachineElement', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine', cardinality 0..*).
+'stateMachine::StateTransition' (role 'stateMachine_StateTransition2', cardinality 0..*) is associated with 'stateMachine::AbstractStateElement' (role 'stateMachine_AbstractStateElement3', cardinality 0..*).
+'stateMachine::StateTransition' (role 'stateMachine_StateTransition', cardinality 0..*) is associated with 'stateMachine::AbstractStateElement' (role 'stateMachine_AbstractStateElement', cardinality 0..*).

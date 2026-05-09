@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'UmlTrace::EClass0' has no attributes.
+The class 'UmlTrace::Class' has no attributes.
+The class 'UmlTrace::TraceElement' has no attributes.
+'UmlTrace::Class' (role 'UmlTrace_Class3', cardinality 0..*) is associated with 'UmlTrace::TraceElement' (role 'UmlTrace_TraceElement2', cardinality 0..*).
+'UmlTrace::TraceElement' (role 'UmlTrace_TraceElement8', cardinality 0..*) is associated with 'UmlTrace::Class' (role 'UmlTrace_Class9', cardinality 0..*).
+'UmlTrace::Class' (role 'UmlTrace_Class6', cardinality 0..*) is associated with 'UmlTrace::TraceElement' (role 'UmlTrace_TraceElement5', cardinality 0..*).
+'UmlTrace::Class' (role 'UmlTrace_Class', cardinality 0..*) is associated with 'UmlTrace::TraceElement' (role 'UmlTrace_TraceElement', cardinality 0..*).

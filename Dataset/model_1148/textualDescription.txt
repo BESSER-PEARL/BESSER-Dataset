@@ -1,0 +1,165 @@
+The model has 28 class(es).
+The class 'scxml::ScxmlOnexitType' has the following attributes: 'anyAttribute' of type str; 'any' of type str; 'scxmlCoreExecutablecontent' of type str.
+The class 'scxml::ScxmlSendType' has the following attributes: 'id' of type str; 'type' of type str; 'any' of type str; 'delayexpr' of type str; 'targetexpr' of type str; 'delay' of type str; 'anyAttribute' of type str; 'target' of type str; 'event' of type str; 'idlocation' of type str; 'typeexpr' of type str; 'namelist' of type str; 'scxmlSendMix' of type str; 'eventexpr' of type str.
+The class 'scxml::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'scxml::ScxmlFinalType' has the following attributes: 'any' of type str; 'anyAttribute' of type str; 'id' of type str; 'scxmlFinalMix' of type str.
+The class 'scxml::ScxmlIfType' has the following attributes: 'any1' of type str; 'any' of type str; 'anyAttribute' of type str; 'scxmlCoreExecutablecontent1' of type str; 'scxmlCoreExecutablecontent' of type str; 'any2' of type str; 'cond' of type str; 'scxmlCoreExecutablecontent2' of type str.
+The class 'scxml::ScxmlParallelType' has the following attributes: 'anyAttribute' of type str; 'any' of type str; 'scxmlParallelMix' of type str; 'id' of type str.
+The class 'scxml::ScxmlParamType' has the following attributes: 'anyAttribute' of type str; 'expr' of type str; 'scxmlExtraContent' of type str; 'location' of type str; 'name' of type str; 'any' of type str.
+The class 'scxml::ScxmlDonedataType' has the following attributes: 'anyAttribute' of type str.
+The class 'scxml::ScxmlScxmlType' has the following attributes: 'exmode' of type str; 'binding' of type str; 'initial' of type str; 'any' of type str; 'scxmlScxmlMix' of type str; 'version' of type str; 'datamodel1' of type str; 'name' of type str; 'anyAttribute' of type str.
+The class 'scxml::ScxmlOnentryType' has the following attributes: 'scxmlCoreExecutablecontent' of type str; 'anyAttribute' of type str; 'any' of type str.
+The class 'scxml::ScxmlLogType' has the following attributes: 'anyAttribute' of type str; 'label' of type str; 'expr' of type str; 'scxmlExtraContent' of type str; 'any' of type str.
+The class 'scxml::ScxmlInitialType' has the following attributes: 'scxmlExtraContent1' of type str; 'any1' of type str; 'any' of type str; 'anyAttribute' of type str; 'scxmlExtraContent' of type str.
+The class 'scxml::ScxmlContentType' has the following attributes: 'mixed' of type str; 'any' of type str; 'anyAttribute' of type str; 'expr' of type str.
+The class 'scxml::ScxmlHistoryType' has the following attributes: 'scxmlExtraContent' of type str; 'id' of type str; 'scxmlExtraContent1' of type str; 'anyAttribute' of type str; 'any1' of type str; 'any' of type str; 'type' of type str.
+The class 'scxml::ScxmlDatamodelType' has the following attributes: 'anyAttribute' of type str; 'scxmlExtraContent' of type str; 'any' of type str.
+The class 'scxml::ScxmlDataType' has the following attributes: 'id' of type str; 'anyAttribute' of type str; 'mixed' of type str; 'src' of type str; 'any' of type str; 'expr' of type str.
+The class 'scxml::ScxmlAssignType' has the following attributes: 'mixed' of type str; 'any' of type str; 'expr' of type str; 'anyAttribute' of type str; 'attr' of type str; 'location' of type str; 'type' of type str.
+The class 'scxml::ScxmlElseType' has the following attributes: 'anyAttribute' of type str.
+The class 'scxml::ScxmlStateType' has the following attributes: 'any' of type str; 'scxmlStateMix' of type str; 'id' of type str; 'anyAttribute' of type str; 'initial1' of type str.
+The class 'scxml::ScxmlTransitionType' has the following attributes: 'anyAttribute' of type str; 'target' of type str; 'scxmlCoreExecutablecontent' of type str; 'type' of type str; 'cond' of type str; 'any' of type str; 'event' of type str.
+The class 'scxml::ScxmlInvokeType' has the following attributes: 'typeexpr' of type str; 'srcexpr' of type str; 'id' of type str; 'autoforward' of type str; 'scxmlInvokeMix' of type str; 'type' of type str; 'namelist' of type str; 'any' of type str; 'src' of type str; 'anyAttribute' of type str; 'idlocation' of type str.
+The class 'scxml::ScxmlScriptType' has the following attributes: 'anyAttribute' of type str; 'scxmlExtraContent' of type str; 'mixed' of type str; 'src' of type str; 'any' of type str.
+The class 'scxml::ScxmlFinalizeType' has the following attributes: 'any' of type str; 'anyAttribute' of type str; 'scxmlCoreExecutablecontent' of type str.
+The class 'scxml::ScxmlCancelType' has the following attributes: 'any' of type str; 'scxmlExtraContent' of type str; 'sendid' of type str; 'sendidexpr' of type str; 'anyAttribute' of type str.
+The class 'scxml::ScxmlForeachType' has the following attributes: 'scxmlCoreExecutablecontent' of type str; 'anyAttribute' of type str; 'item' of type str; 'any' of type str; 'index' of type str; 'array' of type str.
+The class 'scxml::ScxmlRaiseType' has the following attributes: 'event' of type str; 'anyAttribute' of type str.
+The class 'scxml::ScxmlElseifType' has the following attributes: 'cond' of type str; 'anyAttribute' of type str.
+The class 'scxml::EStringToStringMapEntry' has no attributes.
+The enumeration 'BooleanDatatype' has the following literals: 'true', 'false'.
+The enumeration 'BindingDatatype' has the following literals: 'early', 'late'.
+The enumeration 'AssignTypeDatatype' has the following literals: 'previoussibling', 'nextsibling', 'lastchild', 'replace', 'delete', 'firstchild', 'addattribute', 'replacechildren'.
+The enumeration 'TransitionTypeDatatype' has the following literals: 'internal', 'external'.
+The enumeration 'HistoryTypeDatatype' has the following literals: 'shallow', 'deep'.
+The enumeration 'ExmodeDatatype' has the following literals: 'lax', 'strict'.
+'scxml::ScxmlFinalType' (role 'scxml_ScxmlFinalType90', cardinality 0..*) is associated with 'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType91', cardinality 0..*).
+'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType346', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType345', cardinality 0..*).
+'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType73', cardinality 0..*) is associated with 'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType72', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType180', cardinality 0..*) is associated with 'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType181', cardinality 0..*).
+'scxml::ScxmlInvokeType' (role 'scxml_ScxmlInvokeType210', cardinality 0..*) is associated with 'scxml::ScxmlParamType' (role 'scxml_ScxmlParamType211', cardinality 0..*).
+'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType118', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType117', cardinality 0..*).
+'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType120', cardinality 0..*) is associated with 'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType121', cardinality 0..*).
+'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType361', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType360', cardinality 0..*).
+'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType292', cardinality 0..*) is associated with 'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType291', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType103', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType102', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot25', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType', cardinality 0..*).
+'scxml::ScxmlFinalType' (role 'scxml_ScxmlFinalType295', cardinality 0..*) is associated with 'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType294', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType222', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType223', cardinality 0..*).
+'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType82', cardinality 0..*) is associated with 'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType81', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType312', cardinality 0..*) is associated with 'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType313', cardinality 0..*).
+'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType67', cardinality 0..*) is associated with 'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType66', cardinality 0..*).
+'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType340', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType339', cardinality 0..*).
+'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType88', cardinality 0..*) is associated with 'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType87', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot13', cardinality 0..*) is associated with 'scxml::ScxmlDatamodelType' (role 'scxml_ScxmlDatamodelType', cardinality 0..*).
+'scxml::EStringToStringMapEntry' (role 'scxml_EStringToStringMapEntry3', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot2', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType168', cardinality 0..*) is associated with 'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType169', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType219', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType220', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType310', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType309', cardinality 0..*).
+'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType115', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType114', cardinality 0..*).
+'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType271', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType270', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot47', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType', cardinality 0..*).
+'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType193', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType192', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType268', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType267', cardinality 0..*).
+'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType264', cardinality 0..*) is associated with 'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType265', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType165', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType166', cardinality 0..*).
+'scxml::ScxmlInitialType' (role 'scxml_ScxmlInitialType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot31', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType237', cardinality 0..*) is associated with 'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType238', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType126', cardinality 0..*) is associated with 'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType127', cardinality 0..*).
+'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot23', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType147', cardinality 0..*) is associated with 'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType148', cardinality 0..*).
+'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot7', cardinality 0..*).
+'scxml::ScxmlDonedataType' (role 'scxml_ScxmlDonedataType63', cardinality 0..*) is associated with 'scxml::ScxmlParamType' (role 'scxml_ScxmlParamType64', cardinality 0..*).
+'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType139', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType138', cardinality 0..*).
+'scxml::ScxmlDatamodelType' (role 'scxml_ScxmlDatamodelType334', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType333', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot33', cardinality 0..*) is associated with 'scxml::ScxmlInvokeType' (role 'scxml_ScxmlInvokeType', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType177', cardinality 0..*) is associated with 'scxml::ScxmlElseType' (role 'scxml_ScxmlElseType178', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType249', cardinality 0..*) is associated with 'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType250', cardinality 0..*).
+'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType358', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType357', cardinality 0..*).
+'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType202', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType201', cardinality 0..*).
+'scxml::ScxmlElseifType' (role 'scxml_ScxmlElseifType151', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType150', cardinality 0..*).
+'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType79', cardinality 0..*) is associated with 'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType78', cardinality 0..*).
+'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType172', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType171', cardinality 0..*).
+'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType175', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType174', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot27', cardinality 0..*) is associated with 'scxml::ScxmlHistoryType' (role 'scxml_ScxmlHistoryType', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType162', cardinality 0..*) is associated with 'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType163', cardinality 0..*).
+'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType253', cardinality 0..*) is associated with 'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType252', cardinality 0..*).
+'scxml::ScxmlInvokeType' (role 'scxml_ScxmlInvokeType337', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType336', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot43', cardinality 0..*) is associated with 'scxml::ScxmlParamType' (role 'scxml_ScxmlParamType', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType159', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType160', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType228', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType229', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType132', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType133', cardinality 0..*).
+'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot49', cardinality 0..*).
+'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType154', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType153', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType306', cardinality 0..*) is associated with 'scxml::ScxmlParamType' (role 'scxml_ScxmlParamType307', cardinality 0..*).
+'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType277', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType275', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot', cardinality 0..*) is associated with 'scxml::EStringToStringMapEntry' (role 'scxml_EStringToStringMapEntry', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType246', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType247', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType343', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType342', cardinality 0..*).
+'scxml::ScxmlDatamodelType' (role 'scxml_ScxmlDatamodelType283', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType282', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType315', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType316', cardinality 0..*).
+'scxml::ScxmlFinalType' (role 'scxml_ScxmlFinalType96', cardinality 0..*) is associated with 'scxml::ScxmlDonedataType' (role 'scxml_ScxmlDonedataType97', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot35', cardinality 0..*) is associated with 'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType', cardinality 0..*).
+'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType300', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType301', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType226', cardinality 0..*) is associated with 'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType225', cardinality 0..*).
+'scxml::ScxmlFinalType' (role 'scxml_ScxmlFinalType93', cardinality 0..*) is associated with 'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType94', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType190', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType189', cardinality 0..*).
+'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType75', cardinality 0..*) is associated with 'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType76', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType128', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType130', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType255', cardinality 0..*) is associated with 'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType256', cardinality 0..*).
+'scxml::ScxmlFinalType' (role 'scxml_ScxmlFinalType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot21', cardinality 0..*).
+'scxml::ScxmlElseifType' (role 'scxml_ScxmlElseifType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot19', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType182', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType184', cardinality 0..*).
+'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType84', cardinality 0..*) is associated with 'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType85', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType234', cardinality 0..*) is associated with 'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType235', cardinality 0..*).
+'scxml::ScxmlInitialType' (role 'scxml_ScxmlInitialType319', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType318', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType155', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType157', cardinality 0..*).
+'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType69', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType70', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType136', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType135', cardinality 0..*).
+'scxml::ScxmlFinalizeType' (role 'scxml_ScxmlFinalizeType214', cardinality 0..*) is associated with 'scxml::ScxmlInvokeType' (role 'scxml_ScxmlInvokeType213', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType303', cardinality 0..*) is associated with 'scxml::ScxmlContentType' (role 'scxml_ScxmlContentType304', cardinality 0..*).
+'scxml::ScxmlInitialType' (role 'scxml_ScxmlInitialType204', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType205', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot5', cardinality 0..*) is associated with 'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType240', cardinality 0..*) is associated with 'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType241', cardinality 0..*).
+'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType124', cardinality 0..*) is associated with 'scxml::ScxmlHistoryType' (role 'scxml_ScxmlHistoryType123', cardinality 0..*).
+'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType196', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType195', cardinality 0..*).
+'scxml::ScxmlDatamodelType' (role 'scxml_ScxmlDatamodelType57', cardinality 0..*) is associated with 'scxml::ScxmlDataType' (role 'scxml_ScxmlDataType58', cardinality 0..*).
+'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot45', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot17', cardinality 0..*) is associated with 'scxml::ScxmlElseType' (role 'scxml_ScxmlElseType', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType324', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType325', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot29', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType327', cardinality 0..*) is associated with 'scxml::ScxmlFinalType' (role 'scxml_ScxmlFinalType328', cardinality 0..*).
+'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType100', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType99', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType274', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType273', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType141', cardinality 0..*) is associated with 'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType142', cardinality 0..*).
+'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType355', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType354', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType349', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType348', cardinality 0..*).
+'scxml::ScxmlDonedataType' (role 'scxml_ScxmlDonedataType60', cardinality 0..*) is associated with 'scxml::ScxmlContentType' (role 'scxml_ScxmlContentType61', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType258', cardinality 0..*) is associated with 'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType259', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType243', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType244', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType261', cardinality 0..*) is associated with 'scxml::ScxmlCancelType' (role 'scxml_ScxmlCancelType262', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType330', cardinality 0..*) is associated with 'scxml::ScxmlHistoryType' (role 'scxml_ScxmlHistoryType331', cardinality 0..*).
+'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType320', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType322', cardinality 0..*).
+'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType111', cardinality 0..*) is associated with 'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType112', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot11', cardinality 0..*) is associated with 'scxml::ScxmlDataType' (role 'scxml_ScxmlDataType', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot51', cardinality 0..*) is associated with 'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType', cardinality 0..*).
+'scxml::ScxmlDatamodelType' (role 'scxml_ScxmlDatamodelType298', cardinality 0..*) is associated with 'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType297', cardinality 0..*).
+'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType104', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType106', cardinality 0..*).
+'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType187', cardinality 0..*) is associated with 'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType186', cardinality 0..*).
+'scxml::ScxmlInvokeType' (role 'scxml_ScxmlInvokeType207', cardinality 0..*) is associated with 'scxml::ScxmlContentType' (role 'scxml_ScxmlContentType208', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType231', cardinality 0..*) is associated with 'scxml::ScxmlAssignType' (role 'scxml_ScxmlAssignType232', cardinality 0..*).
+'scxml::ScxmlContentType' (role 'scxml_ScxmlContentType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot9', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType198', cardinality 0..*) is associated with 'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType199', cardinality 0..*).
+'scxml::ScxmlRaiseType' (role 'scxml_ScxmlRaiseType217', cardinality 0..*) is associated with 'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType216', cardinality 0..*).
+'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType279', cardinality 0..*) is associated with 'scxml::ScxmlHistoryType' (role 'scxml_ScxmlHistoryType280', cardinality 0..*).
+'scxml::ScxmlInvokeType' (role 'scxml_ScxmlInvokeType286', cardinality 0..*) is associated with 'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType285', cardinality 0..*).
+'scxml::ScxmlScxmlType' (role 'scxml_ScxmlScxmlType288', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType289', cardinality 0..*).
+'scxml::ScxmlIfType' (role 'scxml_ScxmlIfType144', cardinality 0..*) is associated with 'scxml::ScxmlLogType' (role 'scxml_ScxmlLogType145', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot55', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType', cardinality 0..*).
+'scxml::ScxmlOnentryType' (role 'scxml_ScxmlOnentryType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot37', cardinality 0..*).
+'scxml::ScxmlScriptType' (role 'scxml_ScxmlScriptType352', cardinality 0..*) is associated with 'scxml::ScxmlTransitionType' (role 'scxml_ScxmlTransitionType351', cardinality 0..*).
+'scxml::ScxmlOnexitType' (role 'scxml_ScxmlOnexitType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot39', cardinality 0..*).
+'scxml::ScxmlDonedataType' (role 'scxml_ScxmlDonedataType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot15', cardinality 0..*).
+'scxml::ScxmlSendType' (role 'scxml_ScxmlSendType109', cardinality 0..*) is associated with 'scxml::ScxmlForeachType' (role 'scxml_ScxmlForeachType108', cardinality 0..*).
+'scxml::DocumentRoot' (role 'scxml_DocumentRoot53', cardinality 0..*) is associated with 'scxml::ScxmlStateType' (role 'scxml_ScxmlStateType', cardinality 0..*).
+'scxml::ScxmlParallelType' (role 'scxml_ScxmlParallelType', cardinality 0..*) is associated with 'scxml::DocumentRoot' (role 'scxml_DocumentRoot41', cardinality 0..*).

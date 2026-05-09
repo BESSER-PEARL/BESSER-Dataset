@@ -1,0 +1,94 @@
+The model has 48 class(es).
+The class 'jointPackage::SrcThesisEntry' has the following attributes: 'school' of type str.
+The class 'SrcDatedEntry' has no attributes.
+The class 'jointPackage::SrcInCollection' has no attributes.
+The class 'jointPackage::TrgTitledElement' has the following attributes: 'title' of type str.
+The class 'jointPackage::SrcUnpublished' has the following attributes: 'note' of type str.
+The class 'jointPackage::SrcMasterThesis' has no attributes.
+The class 'jointPackage::TrgDocBook' has no attributes.
+The class 'jointPackage::SrcManual' has no attributes.
+The class 'jointPackage::SrcTitledEntry' has the following attributes: 'title' of type str.
+The class 'SrcAuthor' has no attributes.
+The class 'jointPackage::SrcBibTeXEntry' has the following attributes: 'id' of type str.
+The class 'TrgSect1' has no attributes.
+The class 'SrcTitledEntry' has no attributes.
+The class 'jointPackage::SrcBooklet' has no attributes.
+The class 'jointPackage::SrcInBook' has the following attributes: 'chapter' of type int.
+The class 'jointPackage::SrcProceedings' has no attributes.
+The class 'TrgSection' has no attributes.
+The class 'TrgSect2' has no attributes.
+The class 'jointPackage::TrgSect2' has no attributes.
+The class 'jointPackage::SrcPhDThesis' has no attributes.
+The class 'jointPackage::SrcMisc' has no attributes.
+The class 'TrgTitledElement' has no attributes.
+The class 'TrgBook' has no attributes.
+The class 'jointPackage::SrcAuthoredEntry' has no attributes.
+The class 'SrcMasterThesis' has no attributes.
+The class 'jointPackage::SrcBook' has the following attributes: 'publisher' of type str.
+The class 'jointPackage::TrgSect1' has no attributes.
+The class 'jointPackage::TrgSection' has no attributes.
+The class 'SrcBookTitledEntry' has no attributes.
+The class 'SrcAuthoredEntry' has no attributes.
+The class 'SrcBibTeXEntry' has no attributes.
+The class 'TrgPara' has no attributes.
+The class 'jointPackage::SrcArticle' has the following attributes: 'journal' of type str.
+The class 'TrgArticle' has no attributes.
+The class 'TrgDocBook' has no attributes.
+The class 'jointPackage::TrgBook' has no attributes.
+The class 'jointPackage::TrgArticle' has no attributes.
+The class 'jointPackage::SrcTechReport' has no attributes.
+The class 'SrcProceedings' has no attributes.
+The class 'jointPackage::JointMM' has no attributes.
+The class 'SrcBook' has no attributes.
+The class 'jointPackage::SrcDatedEntry' has the following attributes: 'year' of type str.
+The class 'jointPackage::TrgPara' has the following attributes: 'content' of type str.
+The class 'jointPackage::SrcAuthor' has the following attributes: 'author' of type str.
+The class 'jointPackage::SrcInProceedings' has no attributes.
+The class 'jointPackage::SrcBibTeXFile' has no attributes.
+The class 'SrcThesisEntry' has no attributes.
+The class 'jointPackage::SrcBookTitledEntry' has the following attributes: 'booktitle' of type str.
+'jointPackage::SrcInCollection' is a specialization of 'SrcBook'.
+'jointPackage::SrcArticle' is a specialization of 'SrcDatedEntry'.
+'jointPackage::SrcBooklet' is a specialization of 'SrcDatedEntry'.
+'jointPackage::SrcThesisEntry' is a specialization of 'SrcAuthoredEntry'.
+'jointPackage::SrcThesisEntry' is a specialization of 'SrcTitledEntry'.
+'jointPackage::SrcManual' is a specialization of 'SrcTitledEntry'.
+'jointPackage::SrcPhDThesis' is a specialization of 'SrcThesisEntry'.
+'jointPackage::SrcInProceedings' is a specialization of 'SrcAuthoredEntry'.
+'jointPackage::SrcTitledEntry' is a specialization of 'SrcBibTeXEntry'.
+'jointPackage::SrcBook' is a specialization of 'SrcDatedEntry'.
+'jointPackage::SrcDatedEntry' is a specialization of 'SrcBibTeXEntry'.
+'jointPackage::SrcAuthoredEntry' is a specialization of 'SrcBibTeXEntry'.
+'jointPackage::SrcArticle' is a specialization of 'SrcAuthoredEntry'.
+'jointPackage::SrcBookTitledEntry' is a specialization of 'SrcBibTeXEntry'.
+'jointPackage::SrcTechReport' is a specialization of 'SrcTitledEntry'.
+'jointPackage::SrcUnpublished' is a specialization of 'SrcTitledEntry'.
+'jointPackage::SrcInProceedings' is a specialization of 'SrcBookTitledEntry'.
+'jointPackage::SrcTechReport' is a specialization of 'SrcAuthoredEntry'.
+'jointPackage::TrgSect1' is a specialization of 'TrgSection'.
+'jointPackage::TrgSection' is a specialization of 'TrgTitledElement'.
+'jointPackage::SrcInBook' is a specialization of 'SrcBook'.
+'jointPackage::SrcTechReport' is a specialization of 'SrcDatedEntry'.
+'jointPackage::SrcBook' is a specialization of 'SrcTitledEntry'.
+'jointPackage::SrcThesisEntry' is a specialization of 'SrcDatedEntry'.
+'jointPackage::SrcArticle' is a specialization of 'SrcTitledEntry'.
+'jointPackage::SrcMasterThesis' is a specialization of 'SrcThesisEntry'.
+'jointPackage::SrcInProceedings' is a specialization of 'SrcProceedings'.
+'jointPackage::SrcBook' is a specialization of 'SrcAuthoredEntry'.
+'jointPackage::SrcUnpublished' is a specialization of 'SrcAuthoredEntry'.
+'jointPackage::TrgSect2' is a specialization of 'TrgSection'.
+'jointPackage::SrcMisc' is a specialization of 'SrcBibTeXEntry'.
+'jointPackage::SrcInCollection' is a specialization of 'SrcBookTitledEntry'.
+'jointPackage::TrgArticle' is a specialization of 'TrgTitledElement'.
+'jointPackage::SrcProceedings' is a specialization of 'SrcDatedEntry'.
+'jointPackage::SrcProceedings' is a specialization of 'SrcTitledEntry'.
+'jointPackage::TrgPara' (role 'paras', cardinality 0..*) is associated with 'TrgSection' (role 'TrgSection', cardinality 0..*).
+'jointPackage::TrgBook' (role 'jointPackage_TrgBook', cardinality 0..*) is associated with 'TrgArticle' (role 'TrgArticle', cardinality 0..*).
+'jointPackage::TrgArticle' (role 'jointPackage_TrgArticle', cardinality 0..*) is associated with 'TrgSect1' (role 'TrgSect1', cardinality 0..*).
+'SrcMasterThesis' (role 'SrcMasterThesis', cardinality 0..*) is associated with 'jointPackage::JointMM' (role 'jointPackage_JointMM', cardinality 0..*).
+'jointPackage::SrcBibTeXFile' (role 'jointPackage_SrcBibTeXFile', cardinality 0..*) is associated with 'SrcBibTeXEntry' (role 'SrcBibTeXEntry', cardinality 0..*).
+'jointPackage::TrgSection' (role 'section', cardinality 0..*) is associated with 'TrgPara' (role 'TrgPara', cardinality 0..*).
+'jointPackage::SrcAuthoredEntry' (role 'jointPackage_SrcAuthoredEntry', cardinality 0..*) is associated with 'SrcAuthor' (role 'SrcAuthor', cardinality 0..*).
+'TrgDocBook' (role 'TrgDocBook', cardinality 0..*) is associated with 'jointPackage::JointMM' (role 'jointPackage_JointMM2', cardinality 0..*).
+'jointPackage::TrgSect1' (role 'jointPackage_TrgSect1', cardinality 0..*) is associated with 'TrgSect2' (role 'TrgSect2', cardinality 0..*).
+'TrgBook' (role 'TrgBook', cardinality 0..*) is associated with 'jointPackage::TrgDocBook' (role 'jointPackage_TrgDocBook', cardinality 0..*).

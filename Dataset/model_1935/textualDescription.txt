@@ -1,0 +1,119 @@
+The model has 46 class(es).
+The class 'easyflow::DataProcessingTypeToTask' has no attributes.
+The class 'easyflow::Readgroup' has the following attributes: 'platform' of type str; 'platformUnit' of type str; 'description' of type str; 'name' of type str.
+The class 'easyflow::Chunk' has the following attributes: 'argument' of type str; 'name' of type str; 'tool' of type str.
+The class 'easyflow::Interpreter' has the following attributes: 'options' of type str; 'name' of type str; 'subCmd' of type str; 'exe' of type str.
+The class 'easyflow::ITraversal' has no attributes.
+The class 'easyflow::Record' has the following attributes: 'refData' of type str; 'fileNames' of type str.
+The class 'easyflow::StringToRecordMap' has the following attributes: 'key' of type str.
+The class 'easyflow::ReadEnd' has no attributes.
+The class 'easyflow::Workflow' has the following attributes: 'name' of type str; 'dag' of type str; 'graph' of type str; 'jobDag' of type str.
+The class 'easyflow::EasyFlowMetadataReader' has the following attributes: 'fileName' of type str.
+The class 'easyflow::StringToTaskMap' has the following attributes: 'key' of type str.
+The class 'easyflow::StringToToolMap' has the following attributes: 'key' of type str.
+The class 'easyflow::Sample' has the following attributes: 'name' of type str.
+The class 'EasyFlowMetadata' has no attributes.
+The class 'easyflow::EasyFlowImplementationTemplate' has the following attributes: 'parameterConfigMap' of type str; 'parameterConfigFileName' of type str; 'jsonRootNode' of type str; 'globalOptions' of type str; 'fileName' of type str.
+The class 'easyflow::StringToReadgroupMap' has the following attributes: 'key' of type str.
+The class 'easyflow::IWorkflowUtil' has no attributes.
+The class 'easyflow::Contig' has no attributes.
+The class 'easyflow::TaskToDataProcessingType' has no attributes.
+The class 'easyflow::SplittingEvent' has the following attributes: 'traversalChunks' of type str; 'processedTask' of type str; 'dag' of type str; 'traversalCriterion' of type str; 'traversalImplDir' of type str.
+The class 'easyflow::GroupingEvent' has the following attributes: 'dagOut' of type str; 'dagIn' of type str.
+The class 'easyflow::StringToLibraryMap' has the following attributes: 'key' of type str.
+The class 'easyflow::StringToGroupMap' has the following attributes: 'key' of type str.
+The class 'easyflow::DataProcessingType' has the following attributes: 'dataFormatIn' of type str; 'dataFormatOut' of type str.
+The class 'GroupingCriterion' has no attributes.
+The class 'easyflow::Job' has the following attributes: 'dependencies' of type str; 'source' of type str; 'subCmd' of type str; 'targetPlatformOptions' of type str; 'genericArgs' of type str; 'staticArgs' of type str; 'targetPlatform' of type str; 'exe' of type str; 'inputArgs' of type str; 'interpreterOption' of type str; 'targets' of type str; 'outputArgs' of type str; 'name' of type str.
+The class 'easyflow::StringToGroupingCriterionMap' has the following attributes: 'key' of type str.
+The class 'easyflow::CommandArgument' has the following attributes: 'arg' of type str; 'sep' of type str; 'named' of type bool; 'name' of type str; 'required' of type bool.
+The class 'easyflow::EasyFlowConfiguration' has the following attributes: 'configMap' of type str; 'fileName' of type str.
+The class 'easyflow::Group' has the following attributes: 'name' of type str.
+The class 'easyflow::Tool' has the following attributes: 'refData' of type str; 'category' of type str; 'subCmd' of type str; 'toolName' of type str; 'subCmdPrefix' of type str; 'pattern' of type str; 'type' of type str; 'source' of type str.
+The class 'easyflow::EasyFlowTemplate' has the following attributes: 'fileName' of type str.
+The class 'easyflow::GenericTraversalCriterion' has no attributes.
+The class 'easyflow::EasyFlowMetadata' has the following attributes: 'refData' of type str; 'contrast' of type bool; 'name' of type str.
+The class 'easyflow::StringToChunkMap' has the following attributes: 'key' of type str.
+The class 'easyflow::Locus' has no attributes.
+The class 'easyflow::Task' has the following attributes: 'name' of type str; 'contrast' of type bool; 'cardinalityOut' of type str; 'dataFormatIn' of type str; 'cardinalityIn' of type str; 'depricated' of type bool; 'dataFormatOut' of type str; 'splitCriterion' of type str; 'mergeCriterion' of type str; 'jexlString' of type str; 'skipGroupingCriterion' of type str; 'traversalCriterion' of type str; 'static' of type bool; 'dataCriterion' of type str; 'util' of type bool; 'isMultipleInstancesOfDataCriterion' of type str.
+The class 'easyflow::StringToTraversalCriterionMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'easyflow::DataFormatToTaskList' has the following attributes: 'key' of type str.
+The class 'easyflow::Traversal' has the following attributes: 'tarversalCriterion' of type str.
+The class 'easyflow::Library' has the following attributes: 'insertSize' of type int; 'readLength' of type int; 'name' of type str.
+The class 'easyflow::StringToSampleMap' has the following attributes: 'key' of type str.
+The class 'easyflow::Argument' has the following attributes: 'name' of type str; 'sep' of type str; 'arg' of type str.
+The class 'easyflow::GroupingCriterion' has the following attributes: 'id' of type str.
+The class 'ITraversal' has no attributes.
+The class 'Traversal' has no attributes.
+The enumeration 'DataFormat' has the following literals: 'CSV', 'BAM', 'BCF', 'BWT', 'SAM', 'SAI', 'TXT', 'FAI', 'VCF_IDX', 'FASTA', 'VCF', 'DICT', 'FASTQ', 'BAI', 'IntervalList', 'None_'.
+The enumeration 'DataCriterion' has the following literals: 'None_', 'Readgroup', 'Sample', 'Library'.
+The enumeration 'TraversalCriterion' has the following literals: 'Readgroup', 'IntervalList', 'ReadMappingFlag', 'Read', 'None_', 'Contig', 'Readpair', 'SplitRead', 'Library', 'Locus', 'ReadEnd', 'Sample'.
+'easyflow::Locus' is a specialization of 'Traversal'.
+'easyflow::Contig' is a specialization of 'Traversal'.
+'easyflow::Readgroup' is a specialization of 'GroupingCriterion'.
+'easyflow::Sample' is a specialization of 'GroupingCriterion'.
+'easyflow::Traversal' is a specialization of 'ITraversal'.
+'easyflow::ReadEnd' is a specialization of 'Traversal'.
+'easyflow::Library' is a specialization of 'GroupingCriterion'.
+'easyflow::Group' is a specialization of 'GroupingCriterion'.
+'easyflow::Record' is a specialization of 'GroupingCriterion'.
+'easyflow::GenericTraversalCriterion' is a specialization of 'Traversal'.
+'easyflow::EasyFlowMetadataReader' is a specialization of 'EasyFlowMetadata'.
+'easyflow::Task' (role 'easyflow_Task122', cardinality 0..*) is associated with 'easyflow::SplittingEvent' (role 'easyflow_SplittingEvent', cardinality 0..*).
+'easyflow::TaskToDataProcessingType' (role 'easyflow_TaskToDataProcessingType130', cardinality 0..*) is associated with 'easyflow::DataProcessingType' (role 'easyflow_DataProcessingType131', cardinality 0..*).
+'easyflow::EasyFlowMetadata' (role 'easyflow_EasyFlowMetadata32', cardinality 0..*) is associated with 'easyflow::StringToGroupMap' (role 'easyflow_StringToGroupMap', cardinality 0..*).
+'easyflow::GroupingCriterion' (role 'easyflow_GroupingCriterion115', cardinality 0..*) is associated with 'easyflow::StringToGroupingCriterionMap' (role 'easyflow_StringToGroupingCriterionMap114', cardinality 0..*).
+'easyflow::Library' (role 'easyflow_Library', cardinality 0..*) is associated with 'easyflow::StringToSampleMap' (role 'easyflow_StringToSampleMap77', cardinality 0..*).
+'easyflow::StringToToolMap' (role 'easyflow_StringToToolMap', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task', cardinality 0..*).
+'easyflow::StringToRecordMap' (role 'easyflow_StringToRecordMap', cardinality 0..*) is associated with 'easyflow::Group' (role 'easyflow_Group62', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task26', cardinality 0..*) is associated with 'easyflow::TaskToDataProcessingType' (role 'easyflow_TaskToDataProcessingType27', cardinality 0..*).
+'easyflow::Sample' (role 'easyflow_Sample', cardinality 0..*) is associated with 'easyflow::StringToLibraryMap' (role 'easyflow_StringToLibraryMap64', cardinality 0..*).
+'easyflow::Sample' (role 'easyflow_Sample85', cardinality 0..*) is associated with 'easyflow::Record' (role 'easyflow_Record', cardinality 0..*).
+'easyflow::Record' (role 'easyflow_Record112', cardinality 0..*) is associated with 'easyflow::StringToRecordMap' (role 'easyflow_StringToRecordMap111', cardinality 0..*).
+'easyflow::DataFormatToTaskList' (role 'easyflow_DataFormatToTaskList', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow14', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task21', cardinality 0..*) is associated with 'easyflow::StringToTraversalCriterionMap' (role 'easyflow_StringToTraversalCriterionMap', cardinality 0..*).
+'easyflow::Sample' (role 'easyflow_Sample69', cardinality 0..*) is associated with 'easyflow::StringToReadgroupMap' (role 'easyflow_StringToReadgroupMap70', cardinality 0..*).
+'easyflow::SplittingEvent' (role 'easyflow_SplittingEvent124', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task125', cardinality 0..*).
+'easyflow::Group' (role 'easyflow_Group', cardinality 0..*) is associated with 'easyflow::StringToSampleMap' (role 'easyflow_StringToSampleMap', cardinality 0..*).
+'easyflow::EasyFlowConfiguration' (role 'easyflow_EasyFlowConfiguration', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow2', cardinality 0..*).
+'easyflow::StringToSampleMap' (role 'easyflow_StringToSampleMap96', cardinality 0..*) is associated with 'easyflow::Sample' (role 'easyflow_Sample97', cardinality 0..*).
+'easyflow::StringToReadgroupMap' (role 'easyflow_StringToReadgroupMap99', cardinality 0..*) is associated with 'easyflow::Readgroup' (role 'easyflow_Readgroup100', cardinality 0..*).
+'easyflow::Workflow' (role 'easyflow_Workflow12', cardinality 0..*) is associated with 'easyflow::TaskToDataProcessingType' (role 'easyflow_TaskToDataProcessingType', cardinality 0..*).
+'easyflow::Tool' (role 'easyflow_Tool41', cardinality 0..*) is associated with 'easyflow::CommandArgument' (role 'easyflow_CommandArgument42', cardinality 0..*).
+'easyflow::StringToChunkMap' (role 'easyflow_StringToChunkMap', cardinality 0..*) is associated with 'easyflow::Traversal' (role 'easyflow_Traversal', cardinality 0..*).
+'easyflow::Library' (role 'easyflow_Library82', cardinality 0..*) is associated with 'easyflow::StringToReadgroupMap' (role 'easyflow_StringToReadgroupMap83', cardinality 0..*).
+'easyflow::DataProcessingType' (role 'easyflow_DataProcessingType', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow8', cardinality 0..*).
+'easyflow::Tool' (role 'easyflow_Tool50', cardinality 0..*) is associated with 'easyflow::Interpreter' (role 'easyflow_Interpreter', cardinality 0..*).
+'easyflow::CommandArgument' (role 'easyflow_CommandArgument45', cardinality 0..*) is associated with 'easyflow::Tool' (role 'easyflow_Tool44', cardinality 0..*).
+'easyflow::CommandArgument' (role 'easyflow_CommandArgument48', cardinality 0..*) is associated with 'easyflow::Tool' (role 'easyflow_Tool47', cardinality 0..*).
+'easyflow::DataProcessingType' (role 'easyflow_DataProcessingType35', cardinality 0..*) is associated with 'easyflow::DataProcessingTypeToTask' (role 'easyflow_DataProcessingTypeToTask34', cardinality 0..*).
+'easyflow::StringToTaskMap' (role 'easyflow_StringToTaskMap108', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task109', cardinality 0..*).
+'easyflow::EasyFlowTemplate' (role 'easyflow_EasyFlowTemplate29', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow30', cardinality 0..*).
+'easyflow::Library' (role 'easyflow_Library103', cardinality 0..*) is associated with 'easyflow::StringToLibraryMap' (role 'easyflow_StringToLibraryMap102', cardinality 0..*).
+'easyflow::EasyFlowMetadata' (role 'easyflow_EasyFlowMetadata117', cardinality 0..*) is associated with 'easyflow::Job' (role 'easyflow_Job', cardinality 0..*).
+'easyflow::EasyFlowImplementationTemplate' (role 'easyflow_EasyFlowImplementationTemplate', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow6', cardinality 0..*).
+'easyflow::GroupingCriterion' (role 'easyflow_GroupingCriterion', cardinality 0..*) is associated with 'easyflow::EasyFlowMetadata' (role 'easyflow_EasyFlowMetadata55', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task38', cardinality 0..*) is associated with 'easyflow::DataProcessingTypeToTask' (role 'easyflow_DataProcessingTypeToTask37', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task19', cardinality 0..*) is associated with 'easyflow::StringToGroupingCriterionMap' (role 'easyflow_StringToGroupingCriterionMap', cardinality 0..*).
+'easyflow::DataFormatToTaskList' (role 'easyflow_DataFormatToTaskList136', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task137', cardinality 0..*).
+'easyflow::DataProcessingTypeToTask' (role 'easyflow_DataProcessingTypeToTask', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow10', cardinality 0..*).
+'easyflow::Tool' (role 'easyflow_Tool', cardinality 0..*) is associated with 'easyflow::CommandArgument' (role 'easyflow_CommandArgument', cardinality 0..*).
+'easyflow::StringToRecordMap' (role 'easyflow_StringToRecordMap67', cardinality 0..*) is associated with 'easyflow::Sample' (role 'easyflow_Sample66', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task134', cardinality 0..*) is associated with 'easyflow::TaskToDataProcessingType' (role 'easyflow_TaskToDataProcessingType133', cardinality 0..*).
+'easyflow::Workflow' (role 'easyflow_Workflow', cardinality 0..*) is associated with 'easyflow::EasyFlowTemplate' (role 'easyflow_EasyFlowTemplate', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task17', cardinality 0..*) is associated with 'easyflow::StringToTaskMap' (role 'easyflow_StringToTaskMap', cardinality 0..*).
+'easyflow::Readgroup' (role 'easyflow_Readgroup88', cardinality 0..*) is associated with 'easyflow::Record' (role 'easyflow_Record87', cardinality 0..*).
+'easyflow::StringToLibraryMap' (role 'easyflow_StringToLibraryMap', cardinality 0..*) is associated with 'easyflow::Group' (role 'easyflow_Group60', cardinality 0..*).
+'easyflow::StringToToolMap' (role 'easyflow_StringToToolMap105', cardinality 0..*) is associated with 'easyflow::Tool' (role 'easyflow_Tool106', cardinality 0..*).
+'easyflow::Readgroup' (role 'easyflow_Readgroup74', cardinality 0..*) is associated with 'easyflow::StringToLibraryMap' (role 'easyflow_StringToLibraryMap75', cardinality 0..*).
+'easyflow::StringToChunkMap' (role 'easyflow_StringToChunkMap139', cardinality 0..*) is associated with 'easyflow::Chunk' (role 'easyflow_Chunk', cardinality 0..*).
+'easyflow::EasyFlowMetadata' (role 'easyflow_EasyFlowMetadata', cardinality 0..*) is associated with 'easyflow::Workflow' (role 'easyflow_Workflow4', cardinality 0..*).
+'easyflow::Group' (role 'easyflow_Group94', cardinality 0..*) is associated with 'easyflow::StringToGroupMap' (role 'easyflow_StringToGroupMap93', cardinality 0..*).
+'easyflow::Library' (role 'easyflow_Library91', cardinality 0..*) is associated with 'easyflow::Record' (role 'easyflow_Record90', cardinality 0..*).
+'easyflow::Library' (role 'easyflow_Library79', cardinality 0..*) is associated with 'easyflow::StringToRecordMap' (role 'easyflow_StringToRecordMap80', cardinality 0..*).
+'easyflow::ITraversal' (role 'easyflow_ITraversal', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task119', cardinality 0..*).
+'easyflow::StringToSampleMap' (role 'easyflow_StringToSampleMap72', cardinality 0..*) is associated with 'easyflow::Readgroup' (role 'easyflow_Readgroup', cardinality 0..*).
+'easyflow::Tool' (role 'easyflow_Tool52', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task53', cardinality 0..*).
+'easyflow::Group' (role 'easyflow_Group58', cardinality 0..*) is associated with 'easyflow::StringToReadgroupMap' (role 'easyflow_StringToReadgroupMap', cardinality 0..*).
+'easyflow::StringToTraversalCriterionMap' (role 'easyflow_StringToTraversalCriterionMap24', cardinality 0..*) is associated with 'easyflow::Task' (role 'easyflow_Task23', cardinality 0..*).
+'easyflow::Task' (role 'easyflow_Task128', cardinality 0..*) is associated with 'easyflow::SplittingEvent' (role 'easyflow_SplittingEvent127', cardinality 0..*).

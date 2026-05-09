@@ -1,0 +1,139 @@
+The model has 53 class(es).
+The class 'docl::MapType' has the following attributes: 'name' of type str.
+The class 'docl::IteratorExp' has no attributes.
+The class 'docl::NavigationOrAttributeCall' has the following attributes: 'feature' of type str.
+The class 'docl::TupleType' has no attributes.
+The class 'docl::NullLiteralExp' has no attributes.
+The class 'docl::Query' has the following attributes: 'name' of type str.
+The class 'docl::StringType' has the following attributes: 'name' of type str.
+The class 'docl::LambdaType' has the following attributes: 'name' of type str.
+The class 'docl::Iterator' has the following attributes: 'name' of type str.
+The class 'docl::OclAnyType' has the following attributes: 'name' of type str.
+The class 'docl::InvalidLiteralExp' has no attributes.
+The class 'docl::SetType' has the following attributes: 'name' of type str.
+The class 'docl::BooleanType' has the following attributes: 'name' of type str.
+The class 'docl::OperationCall' has no attributes.
+The class 'docl::OclModel' has the following attributes: 'name' of type str.
+The class 'docl::OclType' has no attributes.
+The class 'docl::IntegerType' has the following attributes: 'name' of type str.
+The class 'docl::RealType' has the following attributes: 'name' of type str.
+The class 'docl::ModuleElement' has no attributes.
+The class 'docl::Import' has the following attributes: 'name' of type str.
+The class 'docl::BooleanLiteralExp' has the following attributes: 'symbol' of type str.
+The class 'docl::TupleExp' has no attributes.
+The class 'docl::CollectionOpCallExp' has no attributes.
+The class 'docl::TuplePart' has the following attributes: 'name' of type str.
+The class 'docl::EqOpCallExp' has no attributes.
+The class 'docl::MulOpCallExp' has no attributes.
+The class 'docl::Module' has the following attributes: 'name' of type str.
+The class 'docl::UnlimitedNaturalLiteralExp' has no attributes.
+The class 'docl::SequenceType' has the following attributes: 'name' of type str.
+The class 'docl::NumberLiteralExp' has the following attributes: 'symbol' of type int.
+The class 'docl::SelfExp' has no attributes.
+The class 'docl::NestedExp' has no attributes.
+The class 'docl::AddOpCallExp' has no attributes.
+The class 'docl::ElseIfThenExp' has no attributes.
+The class 'docl::PrimitiveExp' has no attributes.
+The class 'docl::NavigationExp' has no attributes.
+The class 'ModuleElement' has no attributes.
+The class 'docl::OclExpression' has the following attributes: 'elements' of type str; 'name' of type str.
+The class 'docl::EnvType' has the following attributes: 'name' of type str.
+The class 'docl::IfExp' has no attributes.
+The class 'docl::OrderedSetType' has the following attributes: 'name' of type str.
+The class 'docl::BagType' has the following attributes: 'name' of type str.
+The class 'docl::StringLiteralExp' has the following attributes: 'segments' of type str.
+The class 'docl::BoolOpCallExp' has no attributes.
+The class 'docl::LocalVariable' has the following attributes: 'name' of type str.
+The class 'PrimitiveExp' has no attributes.
+The class 'docl::OclModelElementExp' has the following attributes: 'name' of type str.
+The class 'docl::LambdaExp' has no attributes.
+The class 'OclType' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'docl::URI::' has the following attributes: 'fragment_' of type str; 'authority' of type str; 'scheme' of type str.
+The class 'docl::ComOpCallExp' has no attributes.
+The class 'docl::IterateExp' has no attributes.
+'docl::StringType' is a specialization of 'OclType'.
+'docl::PrimitiveExp' is a specialization of 'OclExpression'.
+'docl::CollectionOpCallExp' is a specialization of 'OclExpression'.
+'docl::ComOpCallExp' is a specialization of 'OclExpression'.
+'docl::TupleExp' is a specialization of 'OclExpression'.
+'docl::BooleanType' is a specialization of 'OclType'.
+'docl::LambdaExp' is a specialization of 'OclExpression'.
+'docl::InvalidLiteralExp' is a specialization of 'PrimitiveExp'.
+'docl::NullLiteralExp' is a specialization of 'PrimitiveExp'.
+'docl::OclModelElementExp' is a specialization of 'OclType'.
+'docl::TupleType' is a specialization of 'OclType'.
+'docl::NestedExp' is a specialization of 'OclExpression'.
+'docl::IfExp' is a specialization of 'OclExpression'.
+'docl::EnvType' is a specialization of 'OclType'.
+'docl::NumberLiteralExp' is a specialization of 'PrimitiveExp'.
+'docl::SelfExp' is a specialization of 'OclExpression'.
+'docl::BooleanLiteralExp' is a specialization of 'PrimitiveExp'.
+'docl::EqOpCallExp' is a specialization of 'OclExpression'.
+'docl::NavigationOrAttributeCall' is a specialization of 'OclExpression'.
+'docl::IteratorExp' is a specialization of 'OclExpression'.
+'docl::StringLiteralExp' is a specialization of 'PrimitiveExp'.
+'docl::MulOpCallExp' is a specialization of 'OclExpression'.
+'docl::IterateExp' is a specialization of 'OclExpression'.
+'docl::OperationCall' is a specialization of 'OclExpression'.
+'docl::NavigationExp' is a specialization of 'OclExpression'.
+'docl::RealType' is a specialization of 'OclType'.
+'docl::Query' is a specialization of 'ModuleElement'.
+'docl::AddOpCallExp' is a specialization of 'OclExpression'.
+'docl::SetType' is a specialization of 'OclType'.
+'docl::MapType' is a specialization of 'OclType'.
+'docl::BagType' is a specialization of 'OclType'.
+'docl::UnlimitedNaturalLiteralExp' is a specialization of 'PrimitiveExp'.
+'docl::ElseIfThenExp' is a specialization of 'OclExpression'.
+'docl::OrderedSetType' is a specialization of 'OclType'.
+'docl::LambdaType' is a specialization of 'OclType'.
+'docl::BoolOpCallExp' is a specialization of 'OclExpression'.
+'docl::IntegerType' is a specialization of 'OclType'.
+'docl::OclAnyType' is a specialization of 'OclType'.
+'docl::SequenceType' is a specialization of 'OclType'.
+'docl::OclExpression' (role 'docl_OclExpression102', cardinality 0..*) is associated with 'docl::ElseIfThenExp' (role 'docl_ElseIfThenExp101', cardinality 0..*).
+'docl::OclModelElementExp' (role 'docl_OclModelElementExp', cardinality 0..*) is associated with 'docl::OclModel' (role 'docl_OclModel46', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression35', cardinality 0..*) is associated with 'docl::IfExp' (role 'docl_IfExp', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression44', cardinality 0..*) is associated with 'docl::IfExp' (role 'docl_IfExp43', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression38', cardinality 0..*) is associated with 'docl::IfExp' (role 'docl_IfExp37', cardinality 0..*).
+'docl::LocalVariable' (role 'docl_LocalVariable27', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression28', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression86', cardinality 0..*) is associated with 'docl::IterateExp' (role 'docl_IterateExp85', cardinality 0..*).
+'docl::TuplePart' (role 'docl_TuplePart32', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression33', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression74', cardinality 0..*) is associated with 'docl::MulOpCallExp' (role 'docl_MulOpCallExp', cardinality 0..*).
+'docl::OclModel' (role 'docl_OclModel9', cardinality 0..*) is associated with 'docl::URI::' (role 'docl_URI_', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression', cardinality 0..*) is associated with 'docl::Query' (role 'docl_Query', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression20', cardinality 0..*) is associated with 'docl::OclModel' (role 'docl_OclModel21', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression12', cardinality 0..*) is associated with 'docl::LocalVariable' (role 'docl_LocalVariable', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression72', cardinality 0..*) is associated with 'docl::AddOpCallExp' (role 'docl_AddOpCallExp', cardinality 0..*).
+'docl::OclType' (role 'docl_OclType62', cardinality 0..*) is associated with 'docl::OrderedSetType' (role 'docl_OrderedSetType', cardinality 0..*).
+'docl::IteratorExp' (role 'docl_IteratorExp', cardinality 0..*) is associated with 'docl::Iterator' (role 'docl_Iterator88', cardinality 0..*).
+'docl::ModuleElement' (role 'docl_ModuleElement', cardinality 0..*) is associated with 'docl::Module' (role 'docl_Module7', cardinality 0..*).
+'docl::LambdaType' (role 'docl_LambdaType50', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType51', cardinality 0..*).
+'docl::LambdaType' (role 'docl_LambdaType', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType48', cardinality 0..*).
+'docl::LambdaExp' (role 'docl_LambdaExp', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression95', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression15', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression13', cardinality 0..*).
+'docl::BoolOpCallExp' (role 'docl_BoolOpCallExp', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression66', cardinality 0..*).
+'docl::MapType' (role 'docl_MapType', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType53', cardinality 0..*).
+'docl::Iterator' (role 'docl_Iterator80', cardinality 0..*) is associated with 'docl::IterateExp' (role 'docl_IterateExp', cardinality 0..*).
+'docl::BagType' (role 'docl_BagType', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType64', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression68', cardinality 0..*) is associated with 'docl::EqOpCallExp' (role 'docl_EqOpCallExp', cardinality 0..*).
+'docl::OclType' (role 'docl_OclType60', cardinality 0..*) is associated with 'docl::SequenceType' (role 'docl_SequenceType', cardinality 0..*).
+'docl::Import' (role 'docl_Import', cardinality 0..*) is associated with 'docl::Module' (role 'docl_Module5', cardinality 0..*).
+'docl::IteratorExp' (role 'docl_IteratorExp90', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression91', cardinality 0..*).
+'docl::Module' (role 'docl_Module', cardinality 0..*) is associated with 'docl::OclModel' (role 'docl_OclModel', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression16', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression18', cardinality 0..*).
+'docl::IterateExp' (role 'docl_IterateExp82', cardinality 0..*) is associated with 'docl::LocalVariable' (role 'docl_LocalVariable83', cardinality 0..*).
+'docl::OclType' (role 'docl_OclType30', cardinality 0..*) is associated with 'docl::TuplePart' (role 'docl_TuplePart', cardinality 0..*).
+'docl::OclModel' (role 'docl_OclModel3', cardinality 0..*) is associated with 'docl::Module' (role 'docl_Module2', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression70', cardinality 0..*) is associated with 'docl::ComOpCallExp' (role 'docl_ComOpCallExp', cardinality 0..*).
+'docl::CollectionOpCallExp' (role 'docl_CollectionOpCallExp', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression78', cardinality 0..*).
+'docl::SetType' (role 'docl_SetType', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType58', cardinality 0..*).
+'docl::OperationCall' (role 'docl_OperationCall', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression93', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression76', cardinality 0..*) is associated with 'docl::NavigationExp' (role 'docl_NavigationExp', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression99', cardinality 0..*) is associated with 'docl::ElseIfThenExp' (role 'docl_ElseIfThenExp', cardinality 0..*).
+'docl::LocalVariable' (role 'docl_LocalVariable24', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType25', cardinality 0..*).
+'docl::OclExpression' (role 'docl_OclExpression41', cardinality 0..*) is associated with 'docl::IfExp' (role 'docl_IfExp40', cardinality 0..*).
+'docl::NestedExp' (role 'docl_NestedExp', cardinality 0..*) is associated with 'docl::OclExpression' (role 'docl_OclExpression104', cardinality 0..*).
+'docl::Iterator' (role 'docl_Iterator', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType', cardinality 0..*).
+'docl::MapType' (role 'docl_MapType55', cardinality 0..*) is associated with 'docl::OclType' (role 'docl_OclType56', cardinality 0..*).
+'docl::TupleExp' (role 'docl_TupleExp', cardinality 0..*) is associated with 'docl::TuplePart' (role 'docl_TuplePart97', cardinality 0..*).

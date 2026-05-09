@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/code4ash/QVTo-Book2Publication/metamodel/Book.ecore

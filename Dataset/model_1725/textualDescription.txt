@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'mapkey::Book' has the following attributes: 'title' of type str.
+The class 'mapkey::StringToWriterMapEntry' has the following attributes: 'key' of type str.
+The class 'mapkey::Writer' has the following attributes: 'name' of type str.
+'mapkey::Book' (role 'mapkey_Book', cardinality 0..*) is associated with 'mapkey::StringToWriterMapEntry' (role 'mapkey_StringToWriterMapEntry', cardinality 0..*).
+'mapkey::StringToWriterMapEntry' (role 'mapkey_StringToWriterMapEntry2', cardinality 0..*) is associated with 'mapkey::Writer' (role 'mapkey_Writer', cardinality 0..*).

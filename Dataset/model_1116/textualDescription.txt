@@ -1,0 +1,502 @@
+The model has 226 class(es).
+The class 'analysis::map::ActionToDoubleMap' has the following attributes: 'value' of type str.
+The class 'analysis::partitioning::BalancedPipelinePartitioningReport' has no attributes.
+The class 'IntraActorCommunicationData' has no attributes.
+The class 'profiler::analysis::Procedure' has no attributes.
+The class 'ActionMemoryProfilingData' has no attributes.
+The class 'ActionVariablePipeliningData' has no attributes.
+The class 'analysis::scheduling::FSM' has the following attributes: 'terminalState' of type str; 'startState' of type str.
+The class 'analysis::trace::ComparedTrace' has the following attributes: 'equal' of type bool; 'dSteps' of type str; 'dDependencies' of type str.
+The class 'analysis::partitioning::ComCostPartition' has the following attributes: 'internalCost' of type str; 'externalCost' of type str.
+The class 'StringToStringMap' has no attributes.
+The class 'analysis::bottlenecks::DoubleToBottlenecksWithSchedulingReportMap' has the following attributes: 'key' of type str.
+The class 'analysis::profiler::StateVariableAccessData' has the following attributes: 'name' of type str.
+The class 'map::analysis::StatisticalData' has no attributes.
+The class 'ComplexDynamicData' has no attributes.
+The class 'analysis::map::ActionToLongMap' has the following attributes: 'value' of type str.
+The class 'analysis::bottlenecks::ImpactAnalysisReport' has the following attributes: 'classLevel' of type bool.
+The class 'DoubleToDoubleMap' has no attributes.
+The class 'map::analysis::Actor' has no attributes.
+The class 'postprocessing::analysis::Actor' has no attributes.
+The class 'scheduling::analysis::Actor' has no attributes.
+The class 'analysis::partitioning::WorkloadBalancePartitioningReport' has no attributes.
+The class 'ActionToLongMap' has no attributes.
+The class 'trace::analysis::Network' has no attributes.
+The class 'analysis::trace::MarkowModelTraceReport' has no attributes.
+The class 'postprocessing::analysis::Network' has no attributes.
+The class 'scheduling::analysis::Network' has no attributes.
+The class 'StringToAccessDataMap' has no attributes.
+The class 'SchedulerChecksPartition' has no attributes.
+The class 'analysis::scheduling::PartitionedActorFire' has no attributes.
+The class 'ComparedAction' has no attributes.
+The class 'ActionToStatisticalDataMap' has no attributes.
+The class 'analysis::map::ActorToLongMap' has the following attributes: 'value' of type str.
+The class 'analysis::map::PartitionToActorSelectionScheduleMap' has the following attributes: 'key' of type str.
+The class 'analysis::map::PortToLongMap' has the following attributes: 'value' of type str.
+The class 'BufferDynamicData' has no attributes.
+The class 'analysis::map::EOperatorToStatisticalDataMap' has the following attributes: 'key' of type str.
+The class 'ActionBottlenecksWithSchedulingData' has no attributes.
+The class 'analysis::profiler::ProcedureToComplexDynamicDataMap' has no attributes.
+The class 'analysis::map::BufferToIntegerMap' has the following attributes: 'value' of type str.
+The class 'analysis::profiler::DynamicProfilingReport' has no attributes.
+The class 'analysis::profiler::ActionMemoryProfilingData' has the following attributes: 'actor' of type str; 'action' of type str.
+The class 'analysis::pipelining::ActionsVariablePipeliningReport' has no attributes.
+The class 'analysis::trace::CompressedTraceReport' has the following attributes: 'traceFile' of type str.
+The class 'analysis::scheduling::FSMCombination' has the following attributes: 'combinator' of type str.
+The class 'profiler::analysis::Actor' has no attributes.
+The class 'analysis::scheduling::Sequence' has no attributes.
+The class 'analysis::map::DoubleToDoubleMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'ActionBottlenecksData' has no attributes.
+The class 'ProfilingStatsActorData' has no attributes.
+The class 'ActorToStatisticalDataMap' has no attributes.
+The class 'analysis::profiling::IntraActionCommunicationReport' has no attributes.
+The class 'analysis::profiling::IntraActorCommunicationData' has no attributes.
+The class 'PostProcessingData' has no attributes.
+The class 'ProcedureToStatisticalDataMap' has no attributes.
+The class 'analysis::trace::CompressedTokensDependency' has no attributes.
+The class 'analysis::scheduling::ActorSelectionSchedule' has no attributes.
+The class 'ComplexCodeData' has no attributes.
+The class 'pipelining::analysis::ActorClass' has no attributes.
+The class 'profiling::analysis::Network' has no attributes.
+The class 'ActorToLongMap' has no attributes.
+The class 'analysis::bottlenecks::ScheduledImpactAnalysisReport' has the following attributes: 'classLevel' of type bool.
+The class 'MarkovSchedulingState' has no attributes.
+The class 'ActionToDoubleMap' has no attributes.
+The class 'profiling::analysis::Actor' has no attributes.
+The class 'analysis::map::ActorClassToStatisticalDataMap' has no attributes.
+The class 'analysis::scheduling::MarkovPartitionScheduler' has the following attributes: 'partitionId' of type str.
+The class 'analysis::caseoptimal::CaseOptimalScheduleReport' has the following attributes: 'traceFile' of type str; 'partitionFilePath' of type str; 'pipeline' of type str.
+The class 'analysis::scheduling::FSMOperation' has the following attributes: 'var' of type str; 'val' of type str; 'op' of type str.
+The class 'analysis::bottlenecks::DoubleToBottlenecksReportMap' has the following attributes: 'key' of type str.
+The class 'postprocessing::PostProcessingData' has no attributes.
+The class 'PartitionToActorSelectionScheduleMap' has no attributes.
+The class 'analysis::profiler::BufferDynamicData' has the following attributes: 'unconsumedTokens' of type int.
+The class 'CodeData' has no attributes.
+The class 'analysis::map::VariableToLongMap' has the following attributes: 'value' of type str.
+The class 'CompressedTraceReport' has no attributes.
+The class 'analysis::profiler::ComplexCodeData' has no attributes.
+The class 'StatisticalActorPartition' has no attributes.
+The class 'FSMCondition' has no attributes.
+The class 'analysis::map::BufferToDoubleMap' has the following attributes: 'value' of type str.
+The class 'pipelining::analysis::Action' has no attributes.
+The class 'map::analysis::Action' has no attributes.
+The class 'analysis::postprocessing::PostProcessingReport' has the following attributes: 'deadlock' of type bool; 'time' of type float.
+The class 'map::analysis::Port' has no attributes.
+The class 'FSMCombination' has no attributes.
+The class 'pipelining::analysis::StatisticalData' has no attributes.
+The class 'ActorDynamicData' has no attributes.
+The class 'partitioning::analysis::Network' has no attributes.
+The class 'analysis::profiler::MemoryProfilingReport' has the following attributes: 'networkName' of type str.
+The class 'analysis::trace::TraceComparatorReport' has no attributes.
+The class 'analysis::buffers::BoundedBufferData' has the following attributes: 'tokenSize' of type int; 'bitSize' of type int.
+The class 'FSMTransition' has no attributes.
+The class 'analysis::profiler::ActorDynamicData' has no attributes.
+The class 'analysis::scheduling::FSMTransitionWithState' has no attributes.
+The class 'CompressedStep' has no attributes.
+The class 'analysis::scheduling::FSMState' has the following attributes: 'enumName' of type str.
+The class 'bottlenecks::analysis::Network' has no attributes.
+The class 'BufferToLongMap' has no attributes.
+The class 'ComCostPartition' has no attributes.
+The class 'ActionDynamicData' has no attributes.
+The class 'OptimalBufferData' has no attributes.
+The class 'ScheduledImpactAnalysisData' has no attributes.
+The class 'analysis::scheduling::MarkovSimpleSchedulerReport' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'buffers::analysis::Network' has no attributes.
+The class 'analysis::scheduling::MarkovSchedulingTransition' has the following attributes: 'name' of type str; 'firings' of type str.
+The class 'analysis::bottlenecks::BottlenecksWithSchedulingReport' has the following attributes: 'executionTime' of type float; 'cpWeight' of type float; 'totalFirings' of type str; 'cpBlockingTime' of type float; 'cpFirings' of type str; 'totalWeight' of type float.
+The class 'analysis::bottlenecks::BottlenecksReport' has the following attributes: 'totalWeight' of type float; 'cpWeight' of type float; 'totalVariance' of type float; 'cpFirings' of type str; 'totalFirings' of type str; 'cpVariance' of type float.
+The class 'analysis::profiler::CodeData' has the following attributes: 'nol' of type str; 'blockName' of type str.
+The class 'StringToDoubleMap' has no attributes.
+The class 'analysis::buffers::BoundedBuffersReport' has the following attributes: 'bitSize' of type int; 'pow2' of type bool; 'bitAccurate' of type bool; 'tokenSize' of type int.
+The class 'pipelining::analysis::Network' has no attributes.
+The class 'analysis::trace::CompressedGuardDependency' has no attributes.
+The class 'DoubleToBottlenecksReportMap' has no attributes.
+The class 'analysis::partitioning::ComCostPartitioningReport' has the following attributes: 'bitAccurate' of type bool.
+The class 'analysis::bottlenecks::ActionBottlenecksWithSchedulingData' has the following attributes: 'totalFirings' of type str; 'cpWeight' of type float; 'cpFirings' of type str; 'totalWeight' of type float.
+The class 'analysis::map::VariableToStatisticalDataMap' has no attributes.
+The class 'analysis::trace::ComparedAction' has the following attributes: 'found' of type bool; 'dSteps' of type str; 'dIncomings' of type str; 'dOutgoings' of type str.
+The class 'ComparedTrace' has no attributes.
+The class 'analysis::pipelining::ImpactAnalysisData' has the following attributes: 'cpReduction' of type float.
+The class 'MarkovSchedulingTransition' has no attributes.
+The class 'analysis::trace::CompressedStep' has the following attributes: 'count' of type str.
+The class 'BoundedBuffersReport' has no attributes.
+The class 'VariableToLongMap' has no attributes.
+The class 'bottlenecks::analysis::Action' has no attributes.
+The class 'map::analysis::Variable' has no attributes.
+The class 'analysis::map::ActionToStatisticalDataMap' has no attributes.
+The class 'analysis::profiler::StringToAccessDataMap' has the following attributes: 'key' of type str.
+The class 'analysis::postprocessing::BufferBlockingReport' has no attributes.
+The class 'EOperatorToStatisticalDataMap' has no attributes.
+The class 'GuardToLongMap' has no attributes.
+The class 'analysis::map::StringToDoubleMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'MarkovModelActionData' has no attributes.
+The class 'analysis::pipelining::ImpactAnalysisReport' has no attributes.
+The class 'analysis::caseoptimal::CaseOptimalActorSelectionSchedule' has no attributes.
+The class 'analysis::partitioning::WorkloadBalancePartition' has the following attributes: 'workload' of type float.
+The class 'ProcedureToComplexDynamicDataMap' has no attributes.
+The class 'analysis::trace::CompressedFsmDependency' has no attributes.
+The class 'analysis::bottlenecks::ScheduledImpactAnalysisData' has no attributes.
+The class 'analysis::postprocessing::SchedulerChecksPartition' has no attributes.
+The class 'analysis::profiling::ProfilingStatsActorData' has the following attributes: 'actorName' of type str; 'actionsWeightPercent' of type float; 'schedulerWeight' of type float; 'schedulerWeightPercent' of type float; 'actionsWeight' of type float.
+The class 'postprocessing::analysis::StatisticalData' has no attributes.
+The class 'analysis::profiler::AccessData' has the following attributes: 'accesses' of type float; 'average' of type float; 'total' of type float; 'min' of type float; 'max' of type float.
+The class 'map::analysis::ActorClass' has no attributes.
+The class 'BottlenecksReport' has no attributes.
+The class 'analysis::scheduling::FSMCondition' has the following attributes: 'compval' of type str; 'valName' of type str; 'comp' of type str.
+The class 'analysis::postprocessing::StatisticalActorPartition' has the following attributes: 'actors' of type str; 'schedulingPolicy' of type str; 'occupancy' of type float.
+The class 'analysis::scheduling::ActorFire' has the following attributes: 'Actor' of type str; 'partition' of type str; 'dependencyPartitions' of type str; 'Times' of type int.
+The class 'map::analysis::Procedure' has no attributes.
+The class 'profiler::analysis::Network' has no attributes.
+The class 'BufferToDoubleMap' has no attributes.
+The class 'analysis::map::StringToIntegerMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'FSMState' has no attributes.
+The class 'FSMVar' has no attributes.
+The class 'analysis::map::ProcedureToStatisticalDataMap' has no attributes.
+The class 'buffers::analysis::Buffer' has no attributes.
+The class 'TableRow' has no attributes.
+The class 'ActorFire' has no attributes.
+The class 'FSMVarUpdate' has no attributes.
+The class 'analysis::profiler::ComplexDynamicData' has no attributes.
+The class 'StringToIntegerMap' has no attributes.
+The class 'partitioning::analysis::Actor' has no attributes.
+The class 'analysis::scheduling::FSMVar' has the following attributes: 'initialVal' of type str; 'type' of type str; 'name' of type str.
+The class 'ActionsVariablePipeliningReport' has no attributes.
+The class 'analysis::profiler::SharedVariableAccessData' has the following attributes: 'name' of type str.
+The class 'PortToLongMap' has no attributes.
+The class 'map::analysis::Buffer' has no attributes.
+The class 'profiling::analysis::StatisticalData' has no attributes.
+The class 'analysis::pipelining::ActionVariablePipeliningData' has the following attributes: 'pipelinable' of type bool.
+The class 'analysis::map::BufferToStatisticalDataMap' has no attributes.
+The class 'analysis::scheduling::MarkovSchedulingState' has the following attributes: 'name' of type str; 'firings' of type str.
+The class 'analysis::AnalysisReport' has the following attributes: 'date' of type date; 'algorithm' of type str.
+The class 'analysis::scheduling::FSMTransition' has the following attributes: 'targetStateEnumName' of type str; 'sourceStateEnumName' of type str.
+The class 'VariableToStatisticalDataMap' has no attributes.
+The class 'analysis::map::BufferToLongMap' has the following attributes: 'value' of type str.
+The class 'MarkovPartitionScheduler' has no attributes.
+The class 'profiling::analysis::Action' has no attributes.
+The class 'BufferToIntegerMap' has no attributes.
+The class 'analysis::profiler::MemoryAccessData' has no attributes.
+The class 'analysis::map::StringToLongMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'AccessData' has no attributes.
+The class 'FSMOperation' has no attributes.
+The class 'analysis::map::GuardToLongMap' has the following attributes: 'value' of type str.
+The class 'map::analysis::Guard' has no attributes.
+The class 'analysis::profiler::CodeProfilingReport' has no attributes.
+The class 'IntraActionCommunicationData' has no attributes.
+The class 'MemoryAccessData' has no attributes.
+The class 'analysis::trace::CompressedDependency' has the following attributes: 'count' of type str.
+The class 'analysis::profiler::LocalVariableAccessData' has the following attributes: 'name' of type str.
+The class 'analysis::profiler::BufferAccessData' has the following attributes: 'sourceActor' of type str; 'targetActor' of type str; 'targetPort' of type str; 'sourcePort' of type str.
+The class 'BottlenecksWithSchedulingReport' has no attributes.
+The class 'analysis::map::StringToStringMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'BufferToStatisticalDataMap' has no attributes.
+The class 'analysis::bottlenecks::ImpactAnalysisData' has no attributes.
+The class 'analysis::postprocessing::ActionStatisticsReport' has no attributes.
+The class 'profiler::analysis::Buffer' has no attributes.
+The class 'CompressedDependency' has no attributes.
+The class 'WorkloadBalancePartition' has no attributes.
+The class 'analysis::profiling::IntraActionCommunicationData' has no attributes.
+The class 'analysis::profiler::BenchmarkReport' has the following attributes: 'column_names' of type str.
+The class 'trace::analysis::Action' has no attributes.
+The class 'BoundedBufferData' has no attributes.
+The class 'analysis::buffers::OptimalBufferData' has no attributes.
+The class 'analysis::profiling::ProfilingStatsReport' has the following attributes: 'networkName' of type str.
+The class 'StringToLongMap' has no attributes.
+The class 'analysis::partitioning::BalancedPipelinePartition' has the following attributes: 'commonPredAvg' of type float; 'workload' of type float; 'preWorkload' of type float.
+The class 'BalancedPipelinePartition' has no attributes.
+The class 'analysis::buffers::OptimalBuffersReport' has the following attributes: 'bitAccurate' of type bool; 'pow2' of type bool.
+The class 'analysis::trace::CompressedPortDependency' has no attributes.
+The class 'analysis::trace::MarkovModelActionData' has the following attributes: 'successors' of type str; 'first' of type bool.
+The class 'analysis::profiler::TableRow' has no attributes.
+The class 'analysis::postprocessing::PostProcessingData' has no attributes.
+The class 'analysis::scheduling::FSMVarUpdate' has no attributes.
+The class 'analysis::profiler::ActionDynamicData' has no attributes.
+The class 'analysis::map::ActorToStatisticalDataMap' has no attributes.
+The class 'profiler::analysis::Action' has no attributes.
+The class 'analysis::trace::CompressedVariableDependency' has no attributes.
+The class 'analysis::postprocessing::ActorStatisticsReport' has the following attributes: 'averageOccupancy' of type float; 'occupancyDeviation' of type float; 'executionTime' of type float.
+The class 'analysis::bottlenecks::ActionBottlenecksData' has the following attributes: 'totalWeight' of type float; 'slackMin' of type float; 'slackMax' of type float; 'totalVariance' of type float; 'totalFirings' of type str; 'cpVariance' of type float; 'cpFirings' of type str; 'cpWeight' of type float.
+The class 'DoubleToBottlenecksWithSchedulingReportMap' has no attributes.
+The class 'bottlenecks::analysis::ActorClass' has no attributes.
+The class 'ActorSelectionSchedule' has no attributes.
+The class 'ImpactAnalysisData' has no attributes.
+The class 'analysis::trace::TraceSizeReport' has the following attributes: 'dependencies' of type str; 'firings' of type str.
+The class 'analysis::postprocessing::SchedulerChecksReport' has no attributes.
+The class 'AnalysisReport' has no attributes.
+The class 'profiler::analysis::StatisticalData' has no attributes.
+The enumeration 'FSMOp' has the following literals: 'ADD', 'SET'.
+The enumeration 'FSMCombinator' has the following literals: 'NAND', 'NOT', 'AND', 'OR', 'NOR'.
+The enumeration 'Optimizer' has the following literals: 'RLE', 'KTAIL'.
+The enumeration 'FSMComparator' has the following literals: 'NEQ', 'GREQ', 'SMALLER', 'EQ', 'SMEQ', 'GREATER'.
+'analysis::trace::CompressedGuardDependency' is a specialization of 'CompressedDependency'.
+'analysis::bottlenecks::BottlenecksWithSchedulingReport' is a specialization of 'postprocessing::PostProcessingData'.
+'analysis::scheduling::Sequence' is a specialization of 'ActorSelectionSchedule'.
+'analysis::scheduling::MarkovSimpleSchedulerReport' is a specialization of 'postprocessing::PostProcessingData'.
+'analysis::profiler::MemoryProfilingReport' is a specialization of 'AnalysisReport'.
+'analysis::bottlenecks::BottlenecksWithSchedulingReport' is a specialization of 'AnalysisReport'.
+'analysis::caseoptimal::CaseOptimalActorSelectionSchedule' is a specialization of 'ActorSelectionSchedule'.
+'analysis::profiler::ComplexCodeData' is a specialization of 'CodeData'.
+'analysis::profiler::CodeProfilingReport' is a specialization of 'AnalysisReport'.
+'analysis::bottlenecks::BottlenecksReport' is a specialization of 'AnalysisReport'.
+'analysis::profiler::DynamicProfilingReport' is a specialization of 'AnalysisReport'.
+'analysis::scheduling::PartitionedActorFire' is a specialization of 'ActorFire'.
+'analysis::postprocessing::SchedulerChecksReport' is a specialization of 'PostProcessingData'.
+'analysis::postprocessing::PostProcessingReport' is a specialization of 'AnalysisReport'.
+'analysis::scheduling::MarkovSimpleSchedulerReport' is a specialization of 'AnalysisReport'.
+'analysis::trace::TraceComparatorReport' is a specialization of 'AnalysisReport'.
+'analysis::scheduling::FSM' is a specialization of 'ActorSelectionSchedule'.
+'analysis::profiler::ActorDynamicData' is a specialization of 'ComplexDynamicData'.
+'analysis::profiler::ActionDynamicData' is a specialization of 'ComplexDynamicData'.
+'analysis::trace::CompressedVariableDependency' is a specialization of 'CompressedDependency'.
+'analysis::profiler::SharedVariableAccessData' is a specialization of 'MemoryAccessData'.
+'analysis::buffers::BoundedBuffersReport' is a specialization of 'AnalysisReport'.
+'analysis::trace::CompressedTokensDependency' is a specialization of 'CompressedDependency'.
+'analysis::buffers::OptimalBuffersReport' is a specialization of 'AnalysisReport'.
+'analysis::partitioning::ComCostPartitioningReport' is a specialization of 'AnalysisReport'.
+'analysis::caseoptimal::CaseOptimalScheduleReport' is a specialization of 'AnalysisReport'.
+'analysis::profiler::LocalVariableAccessData' is a specialization of 'MemoryAccessData'.
+'analysis::pipelining::ImpactAnalysisReport' is a specialization of 'AnalysisReport'.
+'analysis::postprocessing::ActorStatisticsReport' is a specialization of 'PostProcessingData'.
+'analysis::bottlenecks::ImpactAnalysisReport' is a specialization of 'AnalysisReport'.
+'analysis::trace::CompressedPortDependency' is a specialization of 'CompressedDependency'.
+'analysis::trace::CompressedFsmDependency' is a specialization of 'CompressedDependency'.
+'analysis::trace::CompressedTraceReport' is a specialization of 'AnalysisReport'.
+'analysis::pipelining::ActionsVariablePipeliningReport' is a specialization of 'AnalysisReport'.
+'analysis::scheduling::FSMTransitionWithState' is a specialization of 'FSMTransition'.
+'analysis::partitioning::WorkloadBalancePartitioningReport' is a specialization of 'AnalysisReport'.
+'analysis::postprocessing::BufferBlockingReport' is a specialization of 'PostProcessingData'.
+'analysis::profiling::ProfilingStatsReport' is a specialization of 'AnalysisReport'.
+'analysis::profiler::BufferAccessData' is a specialization of 'MemoryAccessData'.
+'analysis::scheduling::ActorFire' is a specialization of 'ActorSelectionSchedule'.
+'analysis::profiling::IntraActionCommunicationReport' is a specialization of 'AnalysisReport'.
+'analysis::trace::MarkowModelTraceReport' is a specialization of 'AnalysisReport'.
+'analysis::partitioning::BalancedPipelinePartitioningReport' is a specialization of 'AnalysisReport'.
+'analysis::profiler::BenchmarkReport' is a specialization of 'AnalysisReport'.
+'analysis::trace::TraceSizeReport' is a specialization of 'AnalysisReport'.
+'analysis::postprocessing::ActionStatisticsReport' is a specialization of 'PostProcessingData'.
+'analysis::bottlenecks::ScheduledImpactAnalysisReport' is a specialization of 'AnalysisReport'.
+'analysis::profiler::StateVariableAccessData' is a specialization of 'MemoryAccessData'.
+'analysis::scheduling::FSMTransition' (role 'analysis_scheduling_FSMTransition', cardinality 0..*) is associated with 'FSMCondition' (role 'FSMCondition', cardinality 0..*).
+'VariableToLongMap' (role 'VariableToLongMap', cardinality 0..*) is associated with 'analysis::trace::CompressedVariableDependency' (role 'analysis_trace_CompressedVariableDependency', cardinality 0..*).
+'BottlenecksReport' (role 'BottlenecksReport', cardinality 0..*) is associated with 'analysis::bottlenecks::ImpactAnalysisReport' (role 'analysis_bottlenecks_ImpactAnalysisReport211', cardinality 0..*).
+'analysis::trace::ComparedTrace' (role 'analysis_trace_ComparedTrace190', cardinality 0..*) is associated with 'ComparedAction' (role 'ComparedAction', cardinality 0..*).
+'analysis::map::ActorToStatisticalDataMap' (role 'analysis_map_ActorToStatisticalDataMap75', cardinality 0..*) is associated with 'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData', cardinality 0..*).
+'CompressedStep' (role 'CompressedStep151', cardinality 0..*) is associated with 'analysis::trace::CompressedStep' (role 'analysis_trace_CompressedStep150', cardinality 0..*).
+'ActionToDoubleMap' (role 'ActionToDoubleMap363', cardinality 0..*) is associated with 'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport362', cardinality 0..*).
+'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport359', cardinality 0..*) is associated with 'ActionToDoubleMap' (role 'ActionToDoubleMap360', cardinality 0..*).
+'analysis::profiler::ComplexCodeData' (role 'analysis_profiler_ComplexCodeData12', cardinality 0..*) is associated with 'CodeData' (role 'CodeData13', cardinality 0..*).
+'analysis::profiler::ActorDynamicData' (role 'analysis_profiler_ActorDynamicData22', cardinality 0..*) is associated with 'ActionDynamicData' (role 'ActionDynamicData', cardinality 0..*).
+'CompressedStep' (role 'CompressedStep156', cardinality 0..*) is associated with 'analysis::trace::CompressedDependency' (role 'outgoings', cardinality 0..*).
+'analysis::trace::MarkovModelActionData' (role 'analysis_trace_MarkovModelActionData200', cardinality 0..*) is associated with 'ActionToLongMap' (role 'ActionToLongMap201', cardinality 0..*).
+'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData87', cardinality 0..*) is associated with 'analysis::map::ProcedureToStatisticalDataMap' (role 'analysis_map_ProcedureToStatisticalDataMap86', cardinality 0..*).
+'ProcedureToComplexDynamicDataMap' (role 'ProcedureToComplexDynamicDataMap', cardinality 0..*) is associated with 'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData55', cardinality 0..*).
+'analysis::profiler::DynamicProfilingReport' (role 'analysis_profiler_DynamicProfilingReport', cardinality 0..*) is associated with 'profiler::analysis::Network' (role 'profiler_analysis_Network15', cardinality 0..*).
+'analysis::pipelining::ImpactAnalysisReport' (role 'analysis_pipelining_ImpactAnalysisReport310', cardinality 0..*) is associated with 'BottlenecksReport' (role 'BottlenecksReport311', cardinality 0..*).
+'analysis::profiling::IntraActionCommunicationData' (role 'analysis_profiling_IntraActionCommunicationData419', cardinality 0..*) is associated with 'ActionToStatisticalDataMap' (role 'ActionToStatisticalDataMap420', cardinality 0..*).
+'trace::analysis::Action' (role 'trace_analysis_Action188', cardinality 0..*) is associated with 'analysis::trace::ComparedTrace' (role 'analysis_trace_ComparedTrace187', cardinality 0..*).
+'IntraActorCommunicationData' (role 'IntraActorCommunicationData', cardinality 0..*) is associated with 'analysis::profiling::IntraActionCommunicationReport' (role 'analysis_profiling_IntraActionCommunicationReport', cardinality 0..*).
+'map::analysis::Actor' (role 'map_analysis_Actor101', cardinality 0..*) is associated with 'analysis::map::ActorToLongMap' (role 'analysis_map_ActorToLongMap', cardinality 0..*).
+'BoundedBuffersReport' (role 'BoundedBuffersReport', cardinality 0..*) is associated with 'analysis::buffers::OptimalBuffersReport' (role 'analysis_buffers_OptimalBuffersReport267', cardinality 0..*).
+'analysis::bottlenecks::ImpactAnalysisData' (role 'analysis_bottlenecks_ImpactAnalysisData', cardinality 0..*) is associated with 'bottlenecks::analysis::Action' (role 'bottlenecks_analysis_Action213', cardinality 0..*).
+'analysis::map::ActionToLongMap' (role 'analysis_map_ActionToLongMap', cardinality 0..*) is associated with 'map::analysis::Action' (role 'map_analysis_Action99', cardinality 0..*).
+'analysis::scheduling::MarkovPartitionScheduler' (role 'analysis_scheduling_MarkovPartitionScheduler', cardinality 0..*) is associated with 'scheduling::analysis::Actor' (role 'scheduling_analysis_Actor', cardinality 0..*).
+'analysis::partitioning::BalancedPipelinePartition' (role 'analysis_partitioning_BalancedPipelinePartition', cardinality 0..*) is associated with 'partitioning::analysis::Actor' (role 'partitioning_analysis_Actor293', cardinality 0..*).
+'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport353', cardinality 0..*) is associated with 'ActionToDoubleMap' (role 'ActionToDoubleMap354', cardinality 0..*).
+'analysis::bottlenecks::ActionBottlenecksWithSchedulingData' (role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData231', cardinality 0..*) is associated with 'BufferToIntegerMap' (role 'BufferToIntegerMap', cardinality 0..*).
+'analysis::trace::CompressedPortDependency' (role 'analysis_trace_CompressedPortDependency175', cardinality 0..*) is associated with 'PortToLongMap' (role 'PortToLongMap176', cardinality 0..*).
+'map::analysis::Action' (role 'map_analysis_Action109', cardinality 0..*) is associated with 'analysis::map::ActionToDoubleMap' (role 'analysis_map_ActionToDoubleMap', cardinality 0..*).
+'ActionToStatisticalDataMap' (role 'ActionToStatisticalDataMap37', cardinality 0..*) is associated with 'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData36', cardinality 0..*).
+'analysis::scheduling::FSMCondition' (role 'analysis_scheduling_FSMCondition', cardinality 0..*) is associated with 'FSMCombination' (role 'FSMCombination', cardinality 0..*).
+'ActorToLongMap' (role 'ActorToLongMap130', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport129', cardinality 0..*).
+'map::analysis::ActorClass' (role 'map_analysis_ActorClass', cardinality 0..*) is associated with 'analysis::map::ActorClassToStatisticalDataMap' (role 'analysis_map_ActorClassToStatisticalDataMap', cardinality 0..*).
+'analysis::trace::TraceComparatorReport' (role 'analysis_trace_TraceComparatorReport183', cardinality 0..*) is associated with 'ComparedTrace' (role 'ComparedTrace', cardinality 0..*).
+'bottlenecks::analysis::Network' (role 'bottlenecks_analysis_Network252', cardinality 0..*) is associated with 'analysis::bottlenecks::ScheduledImpactAnalysisReport' (role 'analysis_bottlenecks_ScheduledImpactAnalysisReport', cardinality 0..*).
+'analysis::caseoptimal::CaseOptimalScheduleReport' (role 'analysis_caseoptimal_CaseOptimalScheduleReport', cardinality 0..*) is associated with 'PartitionToActorSelectionScheduleMap' (role 'PartitionToActorSelectionScheduleMap', cardinality 0..*).
+'BalancedPipelinePartition' (role 'BalancedPipelinePartition', cardinality 0..*) is associated with 'analysis::partitioning::BalancedPipelinePartitioningReport' (role 'analysis_partitioning_BalancedPipelinePartitioningReport', cardinality 0..*).
+'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport345', cardinality 0..*) is associated with 'ActionToDoubleMap' (role 'ActionToDoubleMap', cardinality 0..*).
+'analysis::scheduling::FSM' (role 'analysis_scheduling_FSM424', cardinality 0..*) is associated with 'FSMVar' (role 'FSMVar', cardinality 0..*).
+'analysis::trace::CompressedStep' (role 'analysis_trace_CompressedStep147', cardinality 0..*) is associated with 'CompressedStep' (role 'CompressedStep148', cardinality 0..*).
+'buffers::analysis::Network' (role 'buffers_analysis_Network263', cardinality 0..*) is associated with 'analysis::buffers::OptimalBuffersReport' (role 'analysis_buffers_OptimalBuffersReport', cardinality 0..*).
+'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport374', cardinality 0..*) is associated with 'ActionToLongMap' (role 'ActionToLongMap375', cardinality 0..*).
+'analysis::map::VariableToStatisticalDataMap' (role 'analysis_map_VariableToStatisticalDataMap', cardinality 0..*) is associated with 'map::analysis::Variable' (role 'map_analysis_Variable', cardinality 0..*).
+'analysis::profiler::ActionMemoryProfilingData' (role 'analysis_profiler_ActionMemoryProfilingData', cardinality 0..*) is associated with 'MemoryAccessData' (role 'MemoryAccessData', cardinality 0..*).
+'analysis::map::EOperatorToStatisticalDataMap' (role 'analysis_map_EOperatorToStatisticalDataMap', cardinality 0..*) is associated with 'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData97', cardinality 0..*).
+'postprocessing::analysis::Network' (role 'postprocessing_analysis_Network328', cardinality 0..*) is associated with 'analysis::postprocessing::ActorStatisticsReport' (role 'analysis_postprocessing_ActorStatisticsReport', cardinality 0..*).
+'ActorToLongMap' (role 'ActorToLongMap', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport124', cardinality 0..*).
+'analysis::profiling::IntraActionCommunicationReport' (role 'analysis_profiling_IntraActionCommunicationReport399', cardinality 0..*) is associated with 'profiling::analysis::Network' (role 'profiling_analysis_Network', cardinality 0..*).
+'CompressedDependency' (role 'CompressedDependency145', cardinality 0..*) is associated with 'analysis::trace::CompressedStep' (role 'source', cardinality 0..*).
+'ActorToLongMap' (role 'ActorToLongMap285', cardinality 0..*) is associated with 'analysis::partitioning::ComCostPartition' (role 'analysis_partitioning_ComCostPartition284', cardinality 0..*).
+'analysis::bottlenecks::ScheduledImpactAnalysisData' (role 'analysis_bottlenecks_ScheduledImpactAnalysisData246', cardinality 0..*) is associated with 'DoubleToDoubleMap' (role 'DoubleToDoubleMap247', cardinality 0..*).
+'analysis::profiling::IntraActorCommunicationData' (role 'analysis_profiling_IntraActorCommunicationData', cardinality 0..*) is associated with 'profiling::analysis::Actor' (role 'profiling_analysis_Actor', cardinality 0..*).
+'analysis::postprocessing::PostProcessingReport' (role 'analysis_postprocessing_PostProcessingReport326', cardinality 0..*) is associated with 'PostProcessingData' (role 'PostProcessingData', cardinality 0..*).
+'partitioning::analysis::Network' (role 'partitioning_analysis_Network289', cardinality 0..*) is associated with 'analysis::partitioning::WorkloadBalancePartitioningReport' (role 'analysis_partitioning_WorkloadBalancePartitioningReport', cardinality 0..*).
+'AccessData' (role 'AccessData', cardinality 0..*) is associated with 'analysis::profiler::StringToAccessDataMap' (role 'analysis_profiler_StringToAccessDataMap', cardinality 0..*).
+'ActionBottlenecksWithSchedulingData' (role 'ActionBottlenecksWithSchedulingData', cardinality 0..*) is associated with 'analysis::bottlenecks::BottlenecksWithSchedulingReport' (role 'analysis_bottlenecks_BottlenecksWithSchedulingReport225', cardinality 0..*).
+'analysis::profiling::IntraActionCommunicationData' (role 'analysis_profiling_IntraActionCommunicationData', cardinality 0..*) is associated with 'profiling::analysis::Action' (role 'profiling_analysis_Action', cardinality 0..*).
+'analysis::scheduling::FSMVarUpdate' (role 'analysis_scheduling_FSMVarUpdate434', cardinality 0..*) is associated with 'FSMCondition' (role 'FSMCondition435', cardinality 0..*).
+'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData26', cardinality 0..*) is associated with 'profiler::analysis::StatisticalData' (role 'profiler_analysis_StatisticalData', cardinality 0..*).
+'analysis::trace::MarkowModelTraceReport' (role 'analysis_trace_MarkowModelTraceReport', cardinality 0..*) is associated with 'trace::analysis::Network' (role 'trace_analysis_Network194', cardinality 0..*).
+'analysis::postprocessing::ActorStatisticsReport' (role 'analysis_postprocessing_ActorStatisticsReport330', cardinality 0..*) is associated with 'StatisticalActorPartition' (role 'StatisticalActorPartition', cardinality 0..*).
+'analysis::bottlenecks::DoubleToBottlenecksReportMap' (role 'analysis_bottlenecks_DoubleToBottlenecksReportMap', cardinality 0..*) is associated with 'BottlenecksReport' (role 'BottlenecksReport221', cardinality 0..*).
+'analysis::postprocessing::BufferBlockingReport' (role 'analysis_postprocessing_BufferBlockingReport', cardinality 0..*) is associated with 'postprocessing::analysis::Network' (role 'postprocessing_analysis_Network387', cardinality 0..*).
+'analysis::scheduling::MarkovSimpleSchedulerReport' (role 'analysis_scheduling_MarkovSimpleSchedulerReport', cardinality 0..*) is associated with 'MarkovPartitionScheduler' (role 'MarkovPartitionScheduler', cardinality 0..*).
+'ActionToDoubleMap' (role 'ActionToDoubleMap357', cardinality 0..*) is associated with 'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport356', cardinality 0..*).
+'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData', cardinality 0..*) is associated with 'EOperatorToStatisticalDataMap' (role 'EOperatorToStatisticalDataMap', cardinality 0..*).
+'analysis::map::PartitionToActorSelectionScheduleMap' (role 'analysis_map_PartitionToActorSelectionScheduleMap', cardinality 0..*) is associated with 'ActorSelectionSchedule' (role 'ActorSelectionSchedule', cardinality 0..*).
+'analysis::partitioning::BalancedPipelinePartitioningReport' (role 'analysis_partitioning_BalancedPipelinePartitioningReport296', cardinality 0..*) is associated with 'partitioning::analysis::Network' (role 'partitioning_analysis_Network297', cardinality 0..*).
+'bottlenecks::analysis::Action' (role 'bottlenecks_analysis_Action229', cardinality 0..*) is associated with 'analysis::bottlenecks::ActionBottlenecksWithSchedulingData' (role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData', cardinality 0..*).
+'ActorToStatisticalDataMap' (role 'ActorToStatisticalDataMap', cardinality 0..*) is associated with 'analysis::postprocessing::SchedulerChecksPartition' (role 'analysis_postprocessing_SchedulerChecksPartition382', cardinality 0..*).
+'analysis::scheduling::FSMCombination' (role 'analysis_scheduling_FSMCombination', cardinality 0..*) is associated with 'FSMCondition' (role 'FSMCondition437', cardinality 0..*).
+'analysis::map::BufferToStatisticalDataMap' (role 'analysis_map_BufferToStatisticalDataMap', cardinality 0..*) is associated with 'map::analysis::Buffer' (role 'map_analysis_Buffer', cardinality 0..*).
+'buffers::analysis::Buffer' (role 'buffers_analysis_Buffer', cardinality 0..*) is associated with 'analysis::buffers::BoundedBufferData' (role 'analysis_buffers_BoundedBufferData', cardinality 0..*).
+'analysis::scheduling::MarkovSchedulingState' (role 'target455', cardinality 0..*) is associated with 'MarkovSchedulingTransition' (role 'MarkovSchedulingTransition456', cardinality 0..*).
+'analysis::buffers::OptimalBufferData' (role 'analysis_buffers_OptimalBufferData', cardinality 0..*) is associated with 'BoundedBuffersReport' (role 'BoundedBuffersReport272', cardinality 0..*).
+'analysis::bottlenecks::ActionBottlenecksWithSchedulingData' (role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData233', cardinality 0..*) is associated with 'BufferToDoubleMap' (role 'BufferToDoubleMap', cardinality 0..*).
+'ComplexCodeData' (role 'ComplexCodeData', cardinality 0..*) is associated with 'analysis::profiler::CodeProfilingReport' (role 'analysis_profiler_CodeProfilingReport2', cardinality 0..*).
+'analysis::map::VariableToLongMap' (role 'analysis_map_VariableToLongMap', cardinality 0..*) is associated with 'map::analysis::Variable' (role 'map_analysis_Variable105', cardinality 0..*).
+'map::analysis::Procedure' (role 'map_analysis_Procedure', cardinality 0..*) is associated with 'analysis::map::ProcedureToStatisticalDataMap' (role 'analysis_map_ProcedureToStatisticalDataMap', cardinality 0..*).
+'analysis::trace::CompressedPortDependency' (role 'analysis_trace_CompressedPortDependency', cardinality 0..*) is associated with 'PortToLongMap' (role 'PortToLongMap', cardinality 0..*).
+'ActionBottlenecksData' (role 'ActionBottlenecksData', cardinality 0..*) is associated with 'analysis::bottlenecks::BottlenecksReport' (role 'analysis_bottlenecks_BottlenecksReport204', cardinality 0..*).
+'DoubleToDoubleMap' (role 'DoubleToDoubleMap', cardinality 0..*) is associated with 'analysis::bottlenecks::ImpactAnalysisData' (role 'analysis_bottlenecks_ImpactAnalysisData217', cardinality 0..*).
+'analysis::bottlenecks::ScheduledImpactAnalysisReport' (role 'analysis_bottlenecks_ScheduledImpactAnalysisReport254', cardinality 0..*) is associated with 'ScheduledImpactAnalysisData' (role 'ScheduledImpactAnalysisData', cardinality 0..*).
+'DoubleToBottlenecksWithSchedulingReportMap' (role 'DoubleToBottlenecksWithSchedulingReportMap', cardinality 0..*) is associated with 'analysis::bottlenecks::ScheduledImpactAnalysisData' (role 'analysis_bottlenecks_ScheduledImpactAnalysisData249', cardinality 0..*).
+'bottlenecks::analysis::Action' (role 'bottlenecks_analysis_Action238', cardinality 0..*) is associated with 'analysis::bottlenecks::ScheduledImpactAnalysisData' (role 'analysis_bottlenecks_ScheduledImpactAnalysisData', cardinality 0..*).
+'analysis::postprocessing::PostProcessingReport' (role 'analysis_postprocessing_PostProcessingReport', cardinality 0..*) is associated with 'postprocessing::analysis::Network' (role 'postprocessing_analysis_Network', cardinality 0..*).
+'profiling::analysis::StatisticalData' (role 'profiling_analysis_StatisticalData405', cardinality 0..*) is associated with 'analysis::profiling::IntraActorCommunicationData' (role 'analysis_profiling_IntraActorCommunicationData404', cardinality 0..*).
+'ActionToDoubleMap' (role 'ActionToDoubleMap372', cardinality 0..*) is associated with 'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport371', cardinality 0..*).
+'MarkovSchedulingTransition' (role 'MarkovSchedulingTransition', cardinality 0..*) is associated with 'analysis::scheduling::MarkovPartitionScheduler' (role 'analysis_scheduling_MarkovPartitionScheduler448', cardinality 0..*).
+'analysis::bottlenecks::DoubleToBottlenecksWithSchedulingReportMap' (role 'analysis_bottlenecks_DoubleToBottlenecksWithSchedulingReportMap', cardinality 0..*) is associated with 'BottlenecksWithSchedulingReport' (role 'BottlenecksWithSchedulingReport', cardinality 0..*).
+'BufferToStatisticalDataMap' (role 'BufferToStatisticalDataMap60', cardinality 0..*) is associated with 'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData59', cardinality 0..*).
+'analysis::postprocessing::ActorStatisticsReport' (role 'analysis_postprocessing_ActorStatisticsReport335', cardinality 0..*) is associated with 'StringToDoubleMap' (role 'StringToDoubleMap336', cardinality 0..*).
+'analysis::map::BufferToStatisticalDataMap' (role 'analysis_map_BufferToStatisticalDataMap82', cardinality 0..*) is associated with 'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData83', cardinality 0..*).
+'analysis::partitioning::WorkloadBalancePartition' (role 'analysis_partitioning_WorkloadBalancePartition', cardinality 0..*) is associated with 'partitioning::analysis::Actor' (role 'partitioning_analysis_Actor287', cardinality 0..*).
+'analysis::postprocessing::SchedulerChecksReport' (role 'analysis_postprocessing_SchedulerChecksReport', cardinality 0..*) is associated with 'SchedulerChecksPartition' (role 'SchedulerChecksPartition', cardinality 0..*).
+'analysis::scheduling::FSMState' (role 'analysis_scheduling_FSMState', cardinality 0..*) is associated with 'FSMVarUpdate' (role 'FSMVarUpdate', cardinality 0..*).
+'ActionToDoubleMap' (role 'ActionToDoubleMap369', cardinality 0..*) is associated with 'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport368', cardinality 0..*).
+'analysis::map::BufferToIntegerMap' (role 'analysis_map_BufferToIntegerMap', cardinality 0..*) is associated with 'map::analysis::Buffer' (role 'map_analysis_Buffer111', cardinality 0..*).
+'bottlenecks::analysis::Network' (role 'bottlenecks_analysis_Network223', cardinality 0..*) is associated with 'analysis::bottlenecks::BottlenecksWithSchedulingReport' (role 'analysis_bottlenecks_BottlenecksWithSchedulingReport', cardinality 0..*).
+'analysis::profiling::IntraActionCommunicationData' (role 'analysis_profiling_IntraActionCommunicationData413', cardinality 0..*) is associated with 'profiling::analysis::StatisticalData' (role 'profiling_analysis_StatisticalData414', cardinality 0..*).
+'analysis::profiler::DynamicProfilingReport' (role 'analysis_profiler_DynamicProfilingReport17', cardinality 0..*) is associated with 'ActorDynamicData' (role 'ActorDynamicData', cardinality 0..*).
+'analysis::scheduling::MarkovSchedulingTransition' (role 'incomings461', cardinality 0..*) is associated with 'MarkovSchedulingState' (role 'MarkovSchedulingState462', cardinality 0..*).
+'VariableToStatisticalDataMap' (role 'VariableToStatisticalDataMap53', cardinality 0..*) is associated with 'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData52', cardinality 0..*).
+'analysis::profiling::ProfilingStatsReport' (role 'analysis_profiling_ProfilingStatsReport', cardinality 0..*) is associated with 'ProfilingStatsActorData' (role 'ProfilingStatsActorData', cardinality 0..*).
+'analysis::trace::MarkovModelActionData' (role 'analysis_trace_MarkovModelActionData', cardinality 0..*) is associated with 'trace::analysis::Action' (role 'trace_analysis_Action198', cardinality 0..*).
+'analysis::postprocessing::ActorStatisticsReport' (role 'analysis_postprocessing_ActorStatisticsReport341', cardinality 0..*) is associated with 'StringToDoubleMap' (role 'StringToDoubleMap342', cardinality 0..*).
+'BufferToStatisticalDataMap' (role 'BufferToStatisticalDataMap', cardinality 0..*) is associated with 'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData57', cardinality 0..*).
+'DoubleToDoubleMap' (role 'DoubleToDoubleMap244', cardinality 0..*) is associated with 'analysis::bottlenecks::ScheduledImpactAnalysisData' (role 'analysis_bottlenecks_ScheduledImpactAnalysisData243', cardinality 0..*).
+'analysis::scheduling::MarkovPartitionScheduler' (role 'analysis_scheduling_MarkovPartitionScheduler446', cardinality 0..*) is associated with 'MarkovSchedulingState' (role 'MarkovSchedulingState', cardinality 0..*).
+'bottlenecks::analysis::Action' (role 'bottlenecks_analysis_Action', cardinality 0..*) is associated with 'analysis::bottlenecks::ActionBottlenecksData' (role 'analysis_bottlenecks_ActionBottlenecksData', cardinality 0..*).
+'analysis::map::VariableToStatisticalDataMap' (role 'analysis_map_VariableToStatisticalDataMap90', cardinality 0..*) is associated with 'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData91', cardinality 0..*).
+'ComCostPartition' (role 'ComCostPartition', cardinality 0..*) is associated with 'analysis::partitioning::ComCostPartitioningReport' (role 'analysis_partitioning_ComCostPartitioningReport278', cardinality 0..*).
+'analysis::profiler::CodeProfilingReport' (role 'analysis_profiler_CodeProfilingReport4', cardinality 0..*) is associated with 'ComplexCodeData' (role 'ComplexCodeData5', cardinality 0..*).
+'analysis::profiling::IntraActorCommunicationData' (role 'analysis_profiling_IntraActorCommunicationData407', cardinality 0..*) is associated with 'ActorToStatisticalDataMap' (role 'ActorToStatisticalDataMap408', cardinality 0..*).
+'analysis::profiler::ProcedureToComplexDynamicDataMap' (role 'analysis_profiler_ProcedureToComplexDynamicDataMap', cardinality 0..*) is associated with 'profiler::analysis::Procedure' (role 'profiler_analysis_Procedure', cardinality 0..*).
+'analysis::bottlenecks::ScheduledImpactAnalysisData' (role 'analysis_bottlenecks_ScheduledImpactAnalysisData240', cardinality 0..*) is associated with 'bottlenecks::analysis::ActorClass' (role 'bottlenecks_analysis_ActorClass241', cardinality 0..*).
+'analysis::trace::CompressedStep' (role 'analysis_trace_CompressedStep153', cardinality 0..*) is associated with 'CompressedStep' (role 'CompressedStep154', cardinality 0..*).
+'analysis::bottlenecks::BottlenecksWithSchedulingReport' (role 'analysis_bottlenecks_BottlenecksWithSchedulingReport227', cardinality 0..*) is associated with 'StringToDoubleMap' (role 'StringToDoubleMap', cardinality 0..*).
+'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport347', cardinality 0..*) is associated with 'ActionToDoubleMap' (role 'ActionToDoubleMap348', cardinality 0..*).
+'analysis::map::PortToLongMap' (role 'analysis_map_PortToLongMap', cardinality 0..*) is associated with 'map::analysis::Port' (role 'map_analysis_Port', cardinality 0..*).
+'analysis::scheduling::FSMVarUpdate' (role 'analysis_scheduling_FSMVarUpdate', cardinality 0..*) is associated with 'FSMOperation' (role 'FSMOperation', cardinality 0..*).
+'analysis::profiler::MemoryProfilingReport' (role 'analysis_profiler_MemoryProfilingReport', cardinality 0..*) is associated with 'ActionMemoryProfilingData' (role 'ActionMemoryProfilingData', cardinality 0..*).
+'analysis::partitioning::WorkloadBalancePartitioningReport' (role 'analysis_partitioning_WorkloadBalancePartitioningReport291', cardinality 0..*) is associated with 'WorkloadBalancePartition' (role 'WorkloadBalancePartition', cardinality 0..*).
+'StringToDoubleMap' (role 'StringToDoubleMap339', cardinality 0..*) is associated with 'analysis::postprocessing::ActorStatisticsReport' (role 'analysis_postprocessing_ActorStatisticsReport338', cardinality 0..*).
+'profiler::analysis::Network' (role 'profiler_analysis_Network', cardinality 0..*) is associated with 'analysis::profiler::CodeProfilingReport' (role 'analysis_profiler_CodeProfilingReport', cardinality 0..*).
+'profiler::analysis::Buffer' (role 'profiler_analysis_Buffer', cardinality 0..*) is associated with 'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData', cardinality 0..*).
+'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData50', cardinality 0..*) is associated with 'VariableToStatisticalDataMap' (role 'VariableToStatisticalDataMap', cardinality 0..*).
+'BottlenecksWithSchedulingReport' (role 'BottlenecksWithSchedulingReport270', cardinality 0..*) is associated with 'analysis::buffers::OptimalBuffersReport' (role 'analysis_buffers_OptimalBuffersReport269', cardinality 0..*).
+'analysis::partitioning::ComCostPartition' (role 'analysis_partitioning_ComCostPartition281', cardinality 0..*) is associated with 'ActorToLongMap' (role 'ActorToLongMap282', cardinality 0..*).
+'analysis::scheduling::FSM' (role 'analysis_scheduling_FSM', cardinality 0..*) is associated with 'FSMState' (role 'FSMState', cardinality 0..*).
+'StringToLongMap' (role 'StringToLongMap', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport132', cardinality 0..*).
+'analysis::trace::CompressedGuardDependency' (role 'analysis_trace_CompressedGuardDependency', cardinality 0..*) is associated with 'GuardToLongMap' (role 'GuardToLongMap', cardinality 0..*).
+'analysis::partitioning::ComCostPartition' (role 'analysis_partitioning_ComCostPartition', cardinality 0..*) is associated with 'partitioning::analysis::Actor' (role 'partitioning_analysis_Actor', cardinality 0..*).
+'analysis::bottlenecks::ActionBottlenecksWithSchedulingData' (role 'analysis_bottlenecks_ActionBottlenecksWithSchedulingData235', cardinality 0..*) is associated with 'BufferToIntegerMap' (role 'BufferToIntegerMap236', cardinality 0..*).
+'analysis::map::ActionToStatisticalDataMap' (role 'analysis_map_ActionToStatisticalDataMap', cardinality 0..*) is associated with 'map::analysis::Action' (role 'map_analysis_Action', cardinality 0..*).
+'analysis::map::BufferToLongMap' (role 'analysis_map_BufferToLongMap', cardinality 0..*) is associated with 'map::analysis::Buffer' (role 'map_analysis_Buffer103', cardinality 0..*).
+'postprocessing::analysis::StatisticalData' (role 'postprocessing_analysis_StatisticalData', cardinality 0..*) is associated with 'analysis::postprocessing::SchedulerChecksPartition' (role 'analysis_postprocessing_SchedulerChecksPartition', cardinality 0..*).
+'analysis::scheduling::MarkovSchedulingState' (role 'analysis_scheduling_MarkovSchedulingState', cardinality 0..*) is associated with 'scheduling::analysis::Actor' (role 'scheduling_analysis_Actor450', cardinality 0..*).
+'MarkovModelActionData' (role 'MarkovModelActionData', cardinality 0..*) is associated with 'analysis::trace::MarkowModelTraceReport' (role 'analysis_trace_MarkowModelTraceReport196', cardinality 0..*).
+'analysis::profiler::ProcedureToComplexDynamicDataMap' (role 'analysis_profiler_ProcedureToComplexDynamicDataMap63', cardinality 0..*) is associated with 'ComplexDynamicData' (role 'ComplexDynamicData', cardinality 0..*).
+'analysis::postprocessing::BufferBlockingReport' (role 'analysis_postprocessing_BufferBlockingReport395', cardinality 0..*) is associated with 'BufferToIntegerMap' (role 'BufferToIntegerMap396', cardinality 0..*).
+'analysis::profiling::IntraActorCommunicationData' (role 'analysis_profiling_IntraActorCommunicationData402', cardinality 0..*) is associated with 'profiling::analysis::StatisticalData' (role 'profiling_analysis_StatisticalData', cardinality 0..*).
+'StringToIntegerMap' (role 'StringToIntegerMap9', cardinality 0..*) is associated with 'analysis::profiler::CodeData' (role 'analysis_profiler_CodeData8', cardinality 0..*).
+'analysis::trace::ComparedAction' (role 'analysis_trace_ComparedAction', cardinality 0..*) is associated with 'trace::analysis::Action' (role 'trace_analysis_Action192', cardinality 0..*).
+'ImpactAnalysisData' (role 'ImpactAnalysisData316', cardinality 0..*) is associated with 'analysis::pipelining::ImpactAnalysisReport' (role 'analysis_pipelining_ImpactAnalysisReport315', cardinality 0..*).
+'analysis::profiler::TableRow' (role 'analysis_profiler_TableRow', cardinality 0..*) is associated with 'StringToStringMap' (role 'StringToStringMap', cardinality 0..*).
+'analysis::trace::ComparedTrace' (role 'analysis_trace_ComparedTrace', cardinality 0..*) is associated with 'CompressedTraceReport' (role 'CompressedTraceReport185', cardinality 0..*).
+'analysis::trace::CompressedVariableDependency' (role 'analysis_trace_CompressedVariableDependency165', cardinality 0..*) is associated with 'VariableToLongMap' (role 'VariableToLongMap166', cardinality 0..*).
+'profiler::analysis::Actor' (role 'profiler_analysis_Actor', cardinality 0..*) is associated with 'analysis::profiler::ActorDynamicData' (role 'analysis_profiler_ActorDynamicData', cardinality 0..*).
+'FSMTransition' (role 'FSMTransition', cardinality 0..*) is associated with 'analysis::scheduling::FSMState' (role 'analysis_scheduling_FSMState431', cardinality 0..*).
+'ActionToLongMap' (role 'ActionToLongMap', cardinality 0..*) is associated with 'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData39', cardinality 0..*).
+'ActionToLongMap' (role 'ActionToLongMap119', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport118', cardinality 0..*).
+'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData28', cardinality 0..*) is associated with 'profiler::analysis::StatisticalData' (role 'profiler_analysis_StatisticalData29', cardinality 0..*).
+'analysis::profiler::ComplexCodeData' (role 'analysis_profiler_ComplexCodeData', cardinality 0..*) is associated with 'CodeData' (role 'CodeData', cardinality 0..*).
+'partitioning::analysis::Network' (role 'partitioning_analysis_Network', cardinality 0..*) is associated with 'analysis::partitioning::ComCostPartitioningReport' (role 'analysis_partitioning_ComCostPartitioningReport', cardinality 0..*).
+'BufferToDoubleMap' (role 'BufferToDoubleMap393', cardinality 0..*) is associated with 'analysis::postprocessing::BufferBlockingReport' (role 'analysis_postprocessing_BufferBlockingReport392', cardinality 0..*).
+'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData41', cardinality 0..*) is associated with 'ActionToLongMap' (role 'ActionToLongMap42', cardinality 0..*).
+'bottlenecks::analysis::Network' (role 'bottlenecks_analysis_Network', cardinality 0..*) is associated with 'analysis::bottlenecks::BottlenecksReport' (role 'analysis_bottlenecks_BottlenecksReport', cardinality 0..*).
+'ImpactAnalysisData' (role 'ImpactAnalysisData', cardinality 0..*) is associated with 'analysis::bottlenecks::ImpactAnalysisReport' (role 'analysis_bottlenecks_ImpactAnalysisReport209', cardinality 0..*).
+'analysis::trace::CompressedGuardDependency' (role 'analysis_trace_CompressedGuardDependency161', cardinality 0..*) is associated with 'GuardToLongMap' (role 'GuardToLongMap162', cardinality 0..*).
+'ProcedureToStatisticalDataMap' (role 'ProcedureToStatisticalDataMap', cardinality 0..*) is associated with 'analysis::profiler::ComplexDynamicData' (role 'analysis_profiler_ComplexDynamicData48', cardinality 0..*).
+'ActionsVariablePipeliningReport' (role 'ActionsVariablePipeliningReport', cardinality 0..*) is associated with 'analysis::pipelining::ImpactAnalysisReport' (role 'analysis_pipelining_ImpactAnalysisReport313', cardinality 0..*).
+'MarkovSchedulingTransition' (role 'MarkovSchedulingTransition453', cardinality 0..*) is associated with 'analysis::scheduling::MarkovSchedulingState' (role 'source452', cardinality 0..*).
+'MarkovSchedulingState' (role 'MarkovSchedulingState459', cardinality 0..*) is associated with 'analysis::scheduling::MarkovSchedulingTransition' (role 'outgoings458', cardinality 0..*).
+'ActionToStatisticalDataMap' (role 'ActionToStatisticalDataMap', cardinality 0..*) is associated with 'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData34', cardinality 0..*).
+'analysis::bottlenecks::ScheduledImpactAnalysisReport' (role 'analysis_bottlenecks_ScheduledImpactAnalysisReport256', cardinality 0..*) is associated with 'BottlenecksWithSchedulingReport' (role 'BottlenecksWithSchedulingReport257', cardinality 0..*).
+'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport365', cardinality 0..*) is associated with 'ActionToDoubleMap' (role 'ActionToDoubleMap366', cardinality 0..*).
+'analysis::trace::CompressedVariableDependency' (role 'analysis_trace_CompressedVariableDependency168', cardinality 0..*) is associated with 'VariableToLongMap' (role 'VariableToLongMap169', cardinality 0..*).
+'analysis::profiling::IntraActorCommunicationData' (role 'analysis_profiling_IntraActorCommunicationData410', cardinality 0..*) is associated with 'IntraActionCommunicationData' (role 'IntraActionCommunicationData', cardinality 0..*).
+'analysis::buffers::OptimalBuffersReport' (role 'analysis_buffers_OptimalBuffersReport265', cardinality 0..*) is associated with 'OptimalBufferData' (role 'OptimalBufferData', cardinality 0..*).
+'analysis::pipelining::ActionVariablePipeliningData' (role 'analysis_pipelining_ActionVariablePipeliningData', cardinality 0..*) is associated with 'pipelining::analysis::Action' (role 'pipelining_analysis_Action', cardinality 0..*).
+'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport134', cardinality 0..*) is associated with 'trace::analysis::Network' (role 'trace_analysis_Network', cardinality 0..*).
+'DoubleToBottlenecksReportMap' (role 'DoubleToBottlenecksReportMap', cardinality 0..*) is associated with 'analysis::bottlenecks::ImpactAnalysisData' (role 'analysis_bottlenecks_ImpactAnalysisData219', cardinality 0..*).
+'analysis::scheduling::Sequence' (role 'analysis_scheduling_Sequence', cardinality 0..*) is associated with 'ActorFire' (role 'ActorFire', cardinality 0..*).
+'StringToIntegerMap' (role 'StringToIntegerMap440', cardinality 0..*) is associated with 'analysis::scheduling::FSMTransitionWithState' (role 'analysis_scheduling_FSMTransitionWithState', cardinality 0..*).
+'analysis::profiler::BenchmarkReport' (role 'analysis_profiler_BenchmarkReport', cardinality 0..*) is associated with 'TableRow' (role 'TableRow', cardinality 0..*).
+'trace::analysis::Action' (role 'trace_analysis_Action', cardinality 0..*) is associated with 'analysis::trace::CompressedStep' (role 'analysis_trace_CompressedStep', cardinality 0..*).
+'pipelining::analysis::StatisticalData' (role 'pipelining_analysis_StatisticalData', cardinality 0..*) is associated with 'analysis::pipelining::ActionVariablePipeliningData' (role 'analysis_pipelining_ActionVariablePipeliningData303', cardinality 0..*).
+'profiling::analysis::StatisticalData' (role 'profiling_analysis_StatisticalData417', cardinality 0..*) is associated with 'analysis::profiling::IntraActionCommunicationData' (role 'analysis_profiling_IntraActionCommunicationData416', cardinality 0..*).
+'BufferDynamicData' (role 'BufferDynamicData', cardinality 0..*) is associated with 'analysis::profiler::DynamicProfilingReport' (role 'analysis_profiler_DynamicProfilingReport19', cardinality 0..*).
+'buffers::analysis::Network' (role 'buffers_analysis_Network', cardinality 0..*) is associated with 'analysis::buffers::BoundedBuffersReport' (role 'analysis_buffers_BoundedBuffersReport', cardinality 0..*).
+'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData95', cardinality 0..*) is associated with 'analysis::map::ActorClassToStatisticalDataMap' (role 'analysis_map_ActorClassToStatisticalDataMap94', cardinality 0..*).
+'pipelining::analysis::Network' (role 'pipelining_analysis_Network', cardinality 0..*) is associated with 'analysis::pipelining::ActionsVariablePipeliningReport' (role 'analysis_pipelining_ActionsVariablePipeliningReport', cardinality 0..*).
+'StringToIntegerMap' (role 'StringToIntegerMap', cardinality 0..*) is associated with 'analysis::profiler::CodeData' (role 'analysis_profiler_CodeData', cardinality 0..*).
+'analysis::trace::CompressedDependency' (role 'incomings', cardinality 0..*) is associated with 'CompressedStep' (role 'CompressedStep158', cardinality 0..*).
+'analysis::pipelining::ImpactAnalysisData' (role 'analysis_pipelining_ImpactAnalysisData320', cardinality 0..*) is associated with 'pipelining::analysis::Action' (role 'pipelining_analysis_Action321', cardinality 0..*).
+'CompressedDependency' (role 'CompressedDependency143', cardinality 0..*) is associated with 'analysis::trace::CompressedStep' (role 'target', cardinality 0..*).
+'CompressedStep' (role 'CompressedStep', cardinality 0..*) is associated with 'analysis::trace::CompressedTraceReport' (role 'analysis_trace_CompressedTraceReport138', cardinality 0..*).
+'analysis::buffers::BoundedBuffersReport' (role 'analysis_buffers_BoundedBuffersReport260', cardinality 0..*) is associated with 'BoundedBufferData' (role 'BoundedBufferData', cardinality 0..*).
+'scheduling::analysis::Network' (role 'scheduling_analysis_Network', cardinality 0..*) is associated with 'analysis::scheduling::MarkovSimpleSchedulerReport' (role 'analysis_scheduling_MarkovSimpleSchedulerReport443', cardinality 0..*).
+'MemoryAccessData' (role 'MemoryAccessData68', cardinality 0..*) is associated with 'analysis::profiler::ActionMemoryProfilingData' (role 'analysis_profiler_ActionMemoryProfilingData67', cardinality 0..*).
+'BufferToLongMap' (role 'BufferToLongMap', cardinality 0..*) is associated with 'analysis::trace::CompressedTokensDependency' (role 'analysis_trace_CompressedTokensDependency', cardinality 0..*).
+'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData31', cardinality 0..*) is associated with 'profiler::analysis::StatisticalData' (role 'profiler_analysis_StatisticalData32', cardinality 0..*).
+'analysis::pipelining::ImpactAnalysisData' (role 'analysis_pipelining_ImpactAnalysisData323', cardinality 0..*) is associated with 'pipelining::analysis::ActorClass' (role 'pipelining_analysis_ActorClass', cardinality 0..*).
+'analysis::pipelining::ImpactAnalysisData' (role 'analysis_pipelining_ImpactAnalysisData', cardinality 0..*) is associated with 'BottlenecksReport' (role 'BottlenecksReport318', cardinality 0..*).
+'ActionToDoubleMap' (role 'ActionToDoubleMap351', cardinality 0..*) is associated with 'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport350', cardinality 0..*).
+'analysis::scheduling::FSMTransition' (role 'analysis_scheduling_FSMTransition428', cardinality 0..*) is associated with 'Sequence' (role 'Sequence', cardinality 0..*).
+'analysis::profiler::ActionDynamicData' (role 'analysis_profiler_ActionDynamicData', cardinality 0..*) is associated with 'profiler::analysis::Action' (role 'profiler_analysis_Action', cardinality 0..*).
+'map::analysis::Guard' (role 'map_analysis_Guard', cardinality 0..*) is associated with 'analysis::map::GuardToLongMap' (role 'analysis_map_GuardToLongMap', cardinality 0..*).
+'analysis::trace::CompressedVariableDependency' (role 'analysis_trace_CompressedVariableDependency171', cardinality 0..*) is associated with 'VariableToLongMap' (role 'VariableToLongMap172', cardinality 0..*).
+'analysis::trace::TraceComparatorReport' (role 'analysis_trace_TraceComparatorReport', cardinality 0..*) is associated with 'CompressedTraceReport' (role 'CompressedTraceReport', cardinality 0..*).
+'analysis::map::ActorToStatisticalDataMap' (role 'analysis_map_ActorToStatisticalDataMap', cardinality 0..*) is associated with 'map::analysis::Actor' (role 'map_analysis_Actor', cardinality 0..*).
+'BufferToStatisticalDataMap' (role 'BufferToStatisticalDataMap180', cardinality 0..*) is associated with 'analysis::trace::CompressedTokensDependency' (role 'analysis_trace_CompressedTokensDependency179', cardinality 0..*).
+'analysis::postprocessing::ActorStatisticsReport' (role 'analysis_postprocessing_ActorStatisticsReport332', cardinality 0..*) is associated with 'StringToDoubleMap' (role 'StringToDoubleMap333', cardinality 0..*).
+'ActionVariablePipeliningData' (role 'ActionVariablePipeliningData', cardinality 0..*) is associated with 'analysis::pipelining::ActionsVariablePipeliningReport' (role 'analysis_pipelining_ActionsVariablePipeliningReport300', cardinality 0..*).
+'ActorToStatisticalDataMap' (role 'ActorToStatisticalDataMap385', cardinality 0..*) is associated with 'analysis::postprocessing::SchedulerChecksPartition' (role 'analysis_postprocessing_SchedulerChecksPartition384', cardinality 0..*).
+'CompressedDependency' (role 'CompressedDependency', cardinality 0..*) is associated with 'analysis::trace::CompressedTraceReport' (role 'analysis_trace_CompressedTraceReport140', cardinality 0..*).
+'analysis::map::BufferToDoubleMap' (role 'analysis_map_BufferToDoubleMap', cardinality 0..*) is associated with 'map::analysis::Buffer' (role 'map_analysis_Buffer113', cardinality 0..*).
+'analysis::buffers::OptimalBufferData' (role 'analysis_buffers_OptimalBufferData274', cardinality 0..*) is associated with 'BottlenecksWithSchedulingReport' (role 'BottlenecksWithSchedulingReport275', cardinality 0..*).
+'ActionToLongMap' (role 'ActionToLongMap122', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport121', cardinality 0..*).
+'analysis::bottlenecks::ImpactAnalysisReport' (role 'analysis_bottlenecks_ImpactAnalysisReport', cardinality 0..*) is associated with 'bottlenecks::analysis::Network' (role 'bottlenecks_analysis_Network207', cardinality 0..*).
+'analysis::pipelining::ImpactAnalysisReport' (role 'analysis_pipelining_ImpactAnalysisReport', cardinality 0..*) is associated with 'pipelining::analysis::Network' (role 'pipelining_analysis_Network308', cardinality 0..*).
+'BufferToIntegerMap' (role 'BufferToIntegerMap390', cardinality 0..*) is associated with 'analysis::postprocessing::BufferBlockingReport' (role 'analysis_postprocessing_BufferBlockingReport389', cardinality 0..*).
+'analysis::map::ActionToStatisticalDataMap' (role 'analysis_map_ActionToStatisticalDataMap78', cardinality 0..*) is associated with 'map::analysis::StatisticalData' (role 'map_analysis_StatisticalData79', cardinality 0..*).
+'analysis::bottlenecks::ImpactAnalysisData' (role 'analysis_bottlenecks_ImpactAnalysisData215', cardinality 0..*) is associated with 'bottlenecks::analysis::ActorClass' (role 'bottlenecks_analysis_ActorClass', cardinality 0..*).
+'pipelining::analysis::StatisticalData' (role 'pipelining_analysis_StatisticalData306', cardinality 0..*) is associated with 'analysis::pipelining::ActionVariablePipeliningData' (role 'analysis_pipelining_ActionVariablePipeliningData305', cardinality 0..*).
+'analysis::profiler::MemoryAccessData' (role 'analysis_profiler_MemoryAccessData', cardinality 0..*) is associated with 'StringToAccessDataMap' (role 'StringToAccessDataMap', cardinality 0..*).
+'ActionToLongMap' (role 'ActionToLongMap116', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport', cardinality 0..*).
+'ActionToLongMap' (role 'ActionToLongMap45', cardinality 0..*) is associated with 'analysis::profiler::BufferDynamicData' (role 'analysis_profiler_BufferDynamicData44', cardinality 0..*).
+'postprocessing::analysis::Actor' (role 'postprocessing_analysis_Actor', cardinality 0..*) is associated with 'analysis::postprocessing::ActionStatisticsReport' (role 'analysis_postprocessing_ActionStatisticsReport', cardinality 0..*).
+'trace::analysis::Network' (role 'trace_analysis_Network136', cardinality 0..*) is associated with 'analysis::trace::CompressedTraceReport' (role 'analysis_trace_CompressedTraceReport', cardinality 0..*).
+'postprocessing::analysis::StatisticalData' (role 'postprocessing_analysis_StatisticalData380', cardinality 0..*) is associated with 'analysis::postprocessing::SchedulerChecksPartition' (role 'analysis_postprocessing_SchedulerChecksPartition379', cardinality 0..*).
+'ActorToLongMap' (role 'ActorToLongMap127', cardinality 0..*) is associated with 'analysis::trace::TraceSizeReport' (role 'analysis_trace_TraceSizeReport126', cardinality 0..*).

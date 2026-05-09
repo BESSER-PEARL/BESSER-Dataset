@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/KuehneThomas/model-to-model-transformation-generator/src/MetaModels.ComplexStateMachine/complexStateMachineMetaModel.ecore

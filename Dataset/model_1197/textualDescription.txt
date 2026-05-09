@@ -1,0 +1,171 @@
+The model has 74 class(es).
+The class 'essentialocl::expressions::RealLiteralExp' has the following attributes: 'realSymbol' of type str.
+The class 'Type' has no attributes.
+The class 'expressions::essentialocl::EnumerationLiteral' has no attributes.
+The class 'SetType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'essentialocl::types::SetType' has no attributes.
+The class 'essentialocl::expressions::NumericLiteralExp' has no attributes.
+The class 'essentialocl::expressions::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'expressions::essentialocl::Type' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'essentialocl::types::TupleType' has no attributes.
+The class 'Variable' has no attributes.
+The class 'essentialocl::expressions::Variable' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'essentialocl::expressions::EnumLiteralExp' has no attributes.
+The class 'Expression' has no attributes.
+The class 'AnyType' has no attributes.
+The class 'expressions::essentialocl::Property' has no attributes.
+The class 'essentialocl::expressions::VariableExp' has no attributes.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'TupleType' has no attributes.
+The class 'types::essentialocl::Type' has no attributes.
+The class 'essentialocl::expressions::LiteralExp' has no attributes.
+The class 'SequenceType' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'essentialocl::expressions::OperationCallExp' has no attributes.
+The class 'essentialocl::expressions::InvalidLiteralExp' has no attributes.
+The class 'essentialocl::expressions::IfExp' has no attributes.
+The class 'essentialocl::expressions::IteratorExp' has no attributes.
+The class 'essentialocl::expressions::IterateExp' has no attributes.
+The class 'essentialocl::expressions::LetExp' has no attributes.
+The class 'InvalidType' has no attributes.
+The class 'essentialocl::expressions::UnlimitedNaturalExp' has the following attributes: 'symbol' of type str.
+The class 'essentialocl::expressions::ExpressionInOcl' has no attributes.
+The class 'essentialocl::types::OclLibrary' has no attributes.
+The class 'OclLibrary' has no attributes.
+The class 'essentialocl::expressions::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type str.
+The class 'expressions::essentialocl::Operation' has no attributes.
+The class 'essentialocl::expressions::PrimitiveLiteralExp' has no attributes.
+The class 'essentialocl::types::VoidType' has no attributes.
+The class 'OrderedSetType' has no attributes.
+The class 'essentialocl::types::AnyType' has no attributes.
+The class 'essentialocl::expressions::LoopExp' has no attributes.
+The class 'essentialocl::expressions::UndefinedLiteralExp' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'TupleLiteralPart' has no attributes.
+The class 'essentialocl::types::SequenceType' has no attributes.
+The class 'essentialocl::types::InvalidType' has no attributes.
+The class 'essentialocl::expressions::PropertyCallExp' has no attributes.
+The class 'essentialocl::expressions::OclExpression' has no attributes.
+The class 'essentialocl::types::BagType' has no attributes.
+The class 'essentialocl::expressions::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'essentialocl::types::OrderedSetType' has no attributes.
+The class 'BagType' has no attributes.
+The class 'essentialocl::expressions::CallExp' has no attributes.
+The class 'essentialocl::expressions::TupleLiteralPart' has no attributes.
+The class 'essentialocl::expressions::TupleLiteralExp' has no attributes.
+The class 'essentialocl::expressions::CollectionLiteralPart' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'expressions::essentialocl::Parameter' has no attributes.
+The class 'essentialocl::types::CollectionType' has the following attributes: 'kind' of type str.
+The class 'essentialocl::expressions::CollectionRange' has no attributes.
+The class 'essentialocl::expressions::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'essentialocl::types::TypeType' has no attributes.
+The class 'essentialocl::expressions::TypeLiteralExp' has no attributes.
+The class 'TypeType' has no attributes.
+The class 'types::essentialocl::PrimitiveType' has no attributes.
+The class 'FeatureCallExp' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'essentialocl::expressions::CollectionItem' has no attributes.
+The class 'essentialocl::expressions::FeatureCallExp' has no attributes.
+The class 'VoidType' has no attributes.
+The enumeration 'CollectionKind' has the following literals: 'OrderedSet', 'Set', 'Sequence', 'Bag', 'Collection'.
+'essentialocl::types::OrderedSetType' is a specialization of 'CollectionType'.
+'essentialocl::expressions::PropertyCallExp' is a specialization of 'FeatureCallExp'.
+'essentialocl::expressions::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'essentialocl::expressions::IfExp' is a specialization of 'OclExpression'.
+'essentialocl::expressions::ExpressionInOcl' is a specialization of 'Expression'.
+'essentialocl::expressions::CallExp' is a specialization of 'OclExpression'.
+'essentialocl::expressions::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'essentialocl::expressions::LoopExp' is a specialization of 'CallExp'.
+'essentialocl::expressions::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'essentialocl::expressions::LiteralExp' is a specialization of 'OclExpression'.
+'essentialocl::types::SequenceType' is a specialization of 'CollectionType'.
+'essentialocl::expressions::TypeLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::types::BagType' is a specialization of 'CollectionType'.
+'essentialocl::expressions::OperationCallExp' is a specialization of 'FeatureCallExp'.
+'essentialocl::expressions::OclExpression' is a specialization of 'NamedElement'.
+'essentialocl::expressions::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::expressions::UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+'essentialocl::expressions::IteratorExp' is a specialization of 'LoopExp'.
+'essentialocl::expressions::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'essentialocl::expressions::TupleLiteralPart' is a specialization of 'TypedElement'.
+'essentialocl::expressions::IterateExp' is a specialization of 'LoopExp'.
+'essentialocl::expressions::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::types::TypeType' is a specialization of 'Type'.
+'essentialocl::types::CollectionType' is a specialization of 'Type'.
+'essentialocl::expressions::VariableExp' is a specialization of 'OclExpression'.
+'essentialocl::expressions::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::types::AnyType' is a specialization of 'Type'.
+'essentialocl::types::VoidType' is a specialization of 'Type'.
+'essentialocl::types::TupleType' is a specialization of 'Type'.
+'essentialocl::types::SetType' is a specialization of 'CollectionType'.
+'essentialocl::expressions::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'essentialocl::expressions::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'essentialocl::expressions::Variable' is a specialization of 'NamedElement'.
+'essentialocl::expressions::LetExp' is a specialization of 'OclExpression'.
+'essentialocl::types::InvalidType' is a specialization of 'Type'.
+'essentialocl::expressions::FeatureCallExp' is a specialization of 'CallExp'.
+'essentialocl::expressions::OclExpression' is a specialization of 'TypedElement'.
+'essentialocl::expressions::CollectionLiteralPart' is a specialization of 'TypedElement'.
+'essentialocl::expressions::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::expressions::UndefinedLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::expressions::Variable' is a specialization of 'TypedElement'.
+'essentialocl::expressions::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'essentialocl::expressions::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'essentialocl::expressions::CollectionItem' (role 'essentialocl_expressions_CollectionItem', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression86', cardinality 0..*).
+'essentialocl::expressions::CollectionRange' (role 'essentialocl_expressions_CollectionRange94', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression95', cardinality 0..*).
+'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary29', cardinality 0..*) is associated with 'CollectionType' (role 'CollectionType', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'essentialocl::expressions::VariableExp' (role 'essentialocl_expressions_VariableExp', cardinality 0..*).
+'essentialocl::expressions::TypeLiteralExp' (role 'essentialocl_expressions_TypeLiteralExp', cardinality 0..*) is associated with 'expressions::essentialocl::Type' (role 'expressions_essentialocl_Type', cardinality 0..*).
+'essentialocl::expressions::PropertyCallExp' (role 'essentialocl_expressions_PropertyCallExp53', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression54', cardinality 0..*).
+'types::essentialocl::Type' (role 'types_essentialocl_Type', cardinality 0..*) is associated with 'essentialocl::types::CollectionType' (role 'essentialocl_types_CollectionType', cardinality 0..*).
+'OclExpression' (role 'OclExpression', cardinality 0..*) is associated with 'essentialocl::expressions::Variable' (role 'essentialocl_expressions_Variable43', cardinality 0..*).
+'OclExpression' (role 'OclExpression62', cardinality 0..*) is associated with 'essentialocl::expressions::LoopExp' (role 'essentialocl_expressions_LoopExp', cardinality 0..*).
+'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary27', cardinality 0..*) is associated with 'TypeType' (role 'TypeType', cardinality 0..*).
+'essentialocl::types::OclLibrary' (role 'oclLibrary', cardinality 0..*) is associated with 'VoidType' (role 'VoidType', cardinality 0..*).
+'TupleType' (role 'TupleType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary39', cardinality 0..*).
+'types::essentialocl::PrimitiveType' (role 'types_essentialocl_PrimitiveType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary', cardinality 0..*).
+'essentialocl::expressions::TupleLiteralPart' (role 'essentialocl_expressions_TupleLiteralPart47', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression48', cardinality 0..*).
+'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary19', cardinality 0..*) is associated with 'types::essentialocl::PrimitiveType' (role 'types_essentialocl_PrimitiveType20', cardinality 0..*).
+'OrderedSetType' (role 'OrderedSetType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary37', cardinality 0..*).
+'OclExpression' (role 'OclExpression56', cardinality 0..*) is associated with 'essentialocl::expressions::OperationCallExp' (role 'essentialocl_expressions_OperationCallExp', cardinality 0..*).
+'essentialocl::expressions::OclExpression' (role 'essentialocl_expressions_OclExpression', cardinality 0..*) is associated with 'OclLibrary' (role 'OclLibrary60', cardinality 0..*).
+'essentialocl::expressions::TupleLiteralExp' (role 'essentialocl_expressions_TupleLiteralExp', cardinality 0..*) is associated with 'TupleLiteralPart' (role 'TupleLiteralPart', cardinality 0..*).
+'essentialocl::expressions::ExpressionInOcl' (role 'essentialocl_expressions_ExpressionInOcl106', cardinality 0..*) is associated with 'Variable' (role 'Variable107', cardinality 0..*).
+'essentialocl::expressions::IfExp' (role 'essentialocl_expressions_IfExp79', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression80', cardinality 0..*).
+'essentialocl::types::InvalidType' (role 'oclInvalid', cardinality 0..*) is associated with 'OclLibrary' (role 'OclLibrary6', cardinality 0..*).
+'essentialocl::expressions::CollectionLiteralExp' (role 'essentialocl_expressions_CollectionLiteralExp', cardinality 0..*) is associated with 'CollectionLiteralPart' (role 'CollectionLiteralPart', cardinality 0..*).
+'types::essentialocl::PrimitiveType' (role 'types_essentialocl_PrimitiveType14', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary13', cardinality 0..*).
+'SequenceType' (role 'SequenceType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary31', cardinality 0..*).
+'types::essentialocl::Type' (role 'types_essentialocl_Type10', cardinality 0..*) is associated with 'essentialocl::types::TypeType' (role 'essentialocl_types_TypeType', cardinality 0..*).
+'expressions::essentialocl::Operation' (role 'expressions_essentialocl_Operation', cardinality 0..*) is associated with 'essentialocl::expressions::OperationCallExp' (role 'essentialocl_expressions_OperationCallExp58', cardinality 0..*).
+'Variable' (role 'Variable70', cardinality 0..*) is associated with 'essentialocl::expressions::LetExp' (role 'essentialocl_expressions_LetExp69', cardinality 0..*).
+'OclExpression' (role 'OclExpression77', cardinality 0..*) is associated with 'essentialocl::expressions::IfExp' (role 'essentialocl_expressions_IfExp76', cardinality 0..*).
+'essentialocl::expressions::CollectionRange' (role 'essentialocl_expressions_CollectionRange', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression92', cardinality 0..*).
+'SetType' (role 'SetType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary35', cardinality 0..*).
+'Variable' (role 'Variable72', cardinality 0..*) is associated with 'essentialocl::expressions::IterateExp' (role 'essentialocl_expressions_IterateExp', cardinality 0..*).
+'essentialocl::expressions::LoopExp' (role 'essentialocl_expressions_LoopExp64', cardinality 0..*) is associated with 'Variable' (role 'Variable65', cardinality 0..*).
+'InvalidType' (role 'InvalidType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'oclLibrary25', cardinality 0..*).
+'essentialocl::expressions::TupleLiteralPart' (role 'essentialocl_expressions_TupleLiteralPart', cardinality 0..*) is associated with 'expressions::essentialocl::Property' (role 'expressions_essentialocl_Property', cardinality 0..*).
+'AnyType' (role 'AnyType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary22', cardinality 0..*).
+'essentialocl::expressions::CallExp' (role 'essentialocl_expressions_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression84', cardinality 0..*).
+'essentialocl::expressions::ExpressionInOcl' (role 'essentialocl_expressions_ExpressionInOcl', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression98', cardinality 0..*).
+'Variable' (role 'Variable104', cardinality 0..*) is associated with 'essentialocl::expressions::ExpressionInOcl' (role 'essentialocl_expressions_ExpressionInOcl103', cardinality 0..*).
+'types::essentialocl::PrimitiveType' (role 'types_essentialocl_PrimitiveType17', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary16', cardinality 0..*).
+'expressions::essentialocl::Parameter' (role 'expressions_essentialocl_Parameter', cardinality 0..*) is associated with 'essentialocl::expressions::Variable' (role 'essentialocl_expressions_Variable', cardinality 0..*).
+'expressions::essentialocl::EnumerationLiteral' (role 'expressions_essentialocl_EnumerationLiteral', cardinality 0..*) is associated with 'essentialocl::expressions::EnumLiteralExp' (role 'essentialocl_expressions_EnumLiteralExp', cardinality 0..*).
+'OclLibrary' (role 'OclLibrary', cardinality 0..*) is associated with 'essentialocl::types::TupleType' (role 'essentialocl_types_TupleType', cardinality 0..*).
+'OclLibrary' (role 'OclLibrary4', cardinality 0..*) is associated with 'essentialocl::types::CollectionType' (role 'essentialocl_types_CollectionType3', cardinality 0..*).
+'expressions::essentialocl::Property' (role 'expressions_essentialocl_Property51', cardinality 0..*) is associated with 'essentialocl::expressions::PropertyCallExp' (role 'essentialocl_expressions_PropertyCallExp', cardinality 0..*).
+'Variable' (role 'Variable101', cardinality 0..*) is associated with 'essentialocl::expressions::ExpressionInOcl' (role 'essentialocl_expressions_ExpressionInOcl100', cardinality 0..*).
+'essentialocl::expressions::FeatureCallExp' (role 'essentialocl_expressions_FeatureCallExp', cardinality 0..*) is associated with 'expressions::essentialocl::Type' (role 'expressions_essentialocl_Type82', cardinality 0..*).
+'essentialocl::expressions::CollectionLiteralExp' (role 'essentialocl_expressions_CollectionLiteralExp89', cardinality 0..*) is associated with 'expressions::essentialocl::Type' (role 'expressions_essentialocl_Type90', cardinality 0..*).
+'BagType' (role 'BagType', cardinality 0..*) is associated with 'essentialocl::types::OclLibrary' (role 'essentialocl_types_OclLibrary33', cardinality 0..*).
+'OclExpression' (role 'OclExpression67', cardinality 0..*) is associated with 'essentialocl::expressions::LetExp' (role 'essentialocl_expressions_LetExp', cardinality 0..*).
+'essentialocl::expressions::IfExp' (role 'essentialocl_expressions_IfExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression74', cardinality 0..*).
+'essentialocl::types::VoidType' (role 'oclVoid', cardinality 0..*) is associated with 'OclLibrary' (role 'OclLibrary8', cardinality 0..*).

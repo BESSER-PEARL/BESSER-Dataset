@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'NamedElement' has no attributes.
+The class 'hfsmReq::AbstractState' has no attributes.
+The class 'hfsmReq::State' has no attributes.
+The class 'hfsmReq::Transition' has no attributes.
+The class 'hfsmReq::NamedElement' has the following attributes: 'name' of type str.
+The class 'AbstractState' has no attributes.
+The class 'hfsmReq::Region' has no attributes.
+'hfsmReq::AbstractState' is a specialization of 'NamedElement'.
+'hfsmReq::Region' is a specialization of 'NamedElement'.
+'hfsmReq::Transition' is a specialization of 'NamedElement'.
+'hfsmReq::State' is a specialization of 'AbstractState'.
+'hfsmReq::AbstractState' (role 'hfsmReq_AbstractState12', cardinality 0..*) is associated with 'hfsmReq::Region' (role 'hfsmReq_Region13', cardinality 0..*).
+'hfsmReq::State' (role 'hfsmReq_State3', cardinality 0..*) is associated with 'hfsmReq::Region' (role 'hfsmReq_Region2', cardinality 0..*).
+'hfsmReq::AbstractState' (role 'hfsmReq_AbstractState7', cardinality 0..*) is associated with 'hfsmReq::Transition' (role 'hfsmReq_Transition', cardinality 0..*).
+'hfsmReq::AbstractState' (role 'hfsmReq_AbstractState', cardinality 0..*) is associated with 'hfsmReq::Region' (role 'hfsmReq_Region5', cardinality 0..*).
+'hfsmReq::Region' (role 'hfsmReq_Region', cardinality 0..*) is associated with 'hfsmReq::State' (role 'hfsmReq_State', cardinality 0..*).
+'hfsmReq::AbstractState' (role 'hfsmReq_AbstractState9', cardinality 0..*) is associated with 'hfsmReq::Transition' (role 'hfsmReq_Transition10', cardinality 0..*).
+'hfsmReq::Transition' (role 'hfsmReq_Transition15', cardinality 0..*) is associated with 'hfsmReq::AbstractState' (role 'hfsmReq_AbstractState16', cardinality 0..*).
+'hfsmReq::AbstractState' (role 'hfsmReq_AbstractState19', cardinality 0..*) is associated with 'hfsmReq::Transition' (role 'hfsmReq_Transition18', cardinality 0..*).

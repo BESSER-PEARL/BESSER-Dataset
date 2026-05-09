@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'petrinet::Place' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'petrinet::Net' has no attributes.
+The class 'petrinet::NamedElement' has the following attributes: 'name' of type str.
+'petrinet::Place' is a specialization of 'NamedElement'.
+'petrinet::Transition' is a specialization of 'NamedElement'.
+'petrinet::Net' (role 'cnet2', cardinality 0..*) is associated with 'petrinet::Transition' (role 'Transition', cardinality 0..*).
+'petrinet::Place' (role 'places', cardinality 0..*) is associated with 'petrinet::Net' (role 'Net', cardinality 0..*).
+'petrinet::Place' (role 'Place', cardinality 0..*) is associated with 'petrinet::Net' (role 'cnet', cardinality 0..*).
+'petrinet::Transition' (role 'Transition6', cardinality 0..*) is associated with 'petrinet::Place' (role 'postp', cardinality 0..*).
+'petrinet::Place' (role 'Place11', cardinality 0..*) is associated with 'petrinet::Transition' (role 'pret', cardinality 0..*).
+'petrinet::Net' (role 'Net13', cardinality 0..*) is associated with 'petrinet::Transition' (role 'transitions', cardinality 0..*).
+'petrinet::Transition' (role 'Transition4', cardinality 0..*) is associated with 'petrinet::Place' (role 'prep', cardinality 0..*).
+'petrinet::Place' (role 'Place9', cardinality 0..*) is associated with 'petrinet::Transition' (role 'postt', cardinality 0..*).

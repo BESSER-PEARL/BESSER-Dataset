@@ -1,0 +1,25 @@
+The model has 15 class(es).
+The class 'DocBook::Book' has no attributes.
+The class 'DocBook::Sect2' has no attributes.
+The class 'DocBook::Para' has the following attributes: 'content' of type str.
+The class 'DocBook::Article' has no attributes.
+The class 'DocBook::DocBook' has no attributes.
+The class 'DocBook::Section' has no attributes.
+The class 'Para' has no attributes.
+The class 'Section' has no attributes.
+The class 'Sect2' has no attributes.
+The class 'TitledElement' has no attributes.
+The class 'DocBook::TitledElement' has the following attributes: 'title' of type str.
+The class 'Article' has no attributes.
+The class 'Book' has no attributes.
+The class 'Sect1' has no attributes.
+The class 'DocBook::Sect1' has no attributes.
+'DocBook::Section' is a specialization of 'TitledElement'.
+'DocBook::Sect1' is a specialization of 'Section'.
+'DocBook::Sect2' is a specialization of 'Section'.
+'DocBook::Article' is a specialization of 'TitledElement'.
+'DocBook::Book' (role 'DocBook_Book', cardinality 0..*) is associated with 'Article' (role 'Article', cardinality 0..*).
+'Para' (role 'Para', cardinality 0..*) is associated with 'DocBook::Section' (role 'DocBook_Section', cardinality 0..*).
+'Sect2' (role 'Sect2', cardinality 0..*) is associated with 'DocBook::Sect1' (role 'DocBook_Sect1', cardinality 0..*).
+'Book' (role 'Book', cardinality 0..*) is associated with 'DocBook::DocBook' (role 'DocBook_DocBook', cardinality 0..*).
+'Sect1' (role 'Sect1', cardinality 0..*) is associated with 'DocBook::Article' (role 'DocBook_Article', cardinality 0..*).

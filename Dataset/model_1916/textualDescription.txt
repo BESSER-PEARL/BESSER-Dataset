@@ -1,0 +1,244 @@
+The model has 63 class(es).
+The class 'mancoosimm::PackageSetting' has no attributes.
+The class 'mancoosimm::ModuleCache' has the following attributes: 'version' of type str.
+The class 'mancoosimm::FileSystem' has no attributes.
+The class 'mancoosimm::ApplicationMenuCatalog' has no attributes.
+The class 'mancoosimm::InstalledPackage' has the following attributes: 'uploaders' of type str; 'checkSum' of type str; 'description' of type str; 'fileSize' of type int; 'maintainer' of type str; 'section' of type str; 'installedSize' of type int; 'tag' of type str; 'priority' of type str.
+The class 'mancoosimm::SrcPackage' has no attributes.
+The class 'mancoosimm::Service' has no attributes.
+The class 'mancoosimm::LibraryCache' has no attributes.
+The class 'mancoosimm::SingleDep' has the following attributes: 'value' of type str; 'version' of type str.
+The class 'mancoosimm::DocumentationFile' has no attributes.
+The class 'mancoosimm::Invariant' has no attributes.
+The class 'mancoosimm::SharedLibrary' has the following attributes: 'version' of type str; 'name' of type str.
+The class 'mancoosimm::Atom' has no attributes.
+The class 'mancoosimm::Package' has the following attributes: 'architecture' of type str; 'version' of type str.
+The class 'mancoosimm::Dependence' has no attributes.
+The class 'mancoosimm::XFontCache' has the following attributes: 'location' of type str.
+The class 'mancoosimm::NotInstalledPackage' has no attributes.
+The class 'mancoosimm::DesktopDB' has no attributes.
+The class 'mancoosimm::UnpackedPackage' has the following attributes: 'priority' of type str; 'section' of type str; 'checkSum' of type str; 'maintainer' of type str; 'tag' of type str; 'uploaders' of type str; 'description' of type str.
+The class 'mancoosimm::XFont' has no attributes.
+The class 'mancoosimm::SGMLDocument' has no attributes.
+The class 'Package' has no attributes.
+The class 'mancoosimm::BinPackage' has no attributes.
+The class 'mancoosimm::MenuEntry' has no attributes.
+The class 'Dependence' has no attributes.
+The class 'mancoosimm::OrDep' has no attributes.
+The class 'mancoosimm::Environment' has no attributes.
+The class 'mancoosimm::AndConflict' has no attributes.
+The class 'UnpackedPackage' has no attributes.
+The class 'mancoosimm::MimeTypeHandler' has no attributes.
+The class 'File' has no attributes.
+The class 'mancoosimm::GConf' has no attributes.
+The class 'mancoosimm::Boot' has no attributes.
+The class 'mancoosimm::IconCache' has the following attributes: 'mtime' of type str.
+The class 'mancoosimm::MimeType' has the following attributes: 'name' of type str; 'extension' of type str.
+The class 'mancoosimm::ConfigFilesPackage' has the following attributes: 'section' of type str; 'priority' of type str; 'uploaders' of type str; 'description' of type str; 'checkSum' of type str; 'maintainer' of type str; 'tag' of type str.
+The class 'mancoosimm::Menu' has no attributes.
+The class 'mancoosimm::OrConflict' has no attributes.
+The class 'mancoosimm::SkeeperCatalog' has no attributes.
+The class 'mancoosimm::SGMLCatalog' has no attributes.
+The class 'mancoosimm::File' has the following attributes: 'extension' of type str; 'location' of type str; 'guid' of type bool; 'size' of type int; 'isDirectory' of type bool; 'checkSum' of type str; 'suid' of type bool; 'permission' of type str; 'isMissing' of type bool; 'description' of type str.
+The class 'Conflict' has no attributes.
+The class 'mancoosimm::VirtualPackage' has no attributes.
+The class 'mancoosimm::AndInv' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'mancoosimm::NamedElement' has the following attributes: 'name' of type str.
+The class 'mancoosimm::AndDep' has no attributes.
+The class 'mancoosimm::HalfInstalledPackage' has the following attributes: 'maintainer' of type str; 'description' of type str; 'checkSum' of type str; 'uploaders' of type str; 'tag' of type str; 'priority' of type str; 'section' of type str.
+The class 'mancoosimm::Alternative' has no attributes.
+The class 'mancoosimm::Configuration' has the following attributes: 'creationTime' of type str; 'systemType' of type str.
+The class 'mancoosimm::Group' has no attributes.
+The class 'mancoosimm::User' has no attributes.
+The class 'mancoosimm::InformationFile' has no attributes.
+The class 'mancoosimm::EmacsPackage' has no attributes.
+The class 'mancoosimm::Conflict' has no attributes.
+The class 'mancoosimm::MimeTypeHandlerCache' has no attributes.
+The class 'mancoosimm::NotInv' has no attributes.
+The class 'mancoosimm::OrInv' has no attributes.
+The class 'mancoosimm::SingleConflict' has the following attributes: 'version' of type str; 'value' of type str.
+The class 'mancoosimm::HalfConfiguredPackage' has no attributes.
+The class 'mancoosimm::Module' has no attributes.
+The class 'InstalledPackage' has no attributes.
+The class 'mancoosimm::SkeeperDocument' has no attributes.
+The enumeration 'StatusType' has the following literals: 'installed', 'not_installed', 'half_configured', 'half_installed', 'unpacked', 'config_files'.
+The enumeration 'VersionType' has the following literals: 'eq', 'ge', 'gt', 'ggt', 'lt', 'le', 'llt'.
+The enumeration 'PriorityType' has the following literals: 'standard', 'optional', 'required', 'extra', 'important'.
+'mancoosimm::Environment' is a specialization of 'NamedElement'.
+'mancoosimm::SingleDep' is a specialization of 'Dependence'.
+'mancoosimm::Invariant' is a specialization of 'NamedElement'.
+'mancoosimm::SingleConflict' is a specialization of 'Conflict'.
+'mancoosimm::SGMLDocument' is a specialization of 'NamedElement'.
+'mancoosimm::PackageSetting' is a specialization of 'NamedElement'.
+'mancoosimm::SGMLCatalog' is a specialization of 'NamedElement'.
+'mancoosimm::UnpackedPackage' is a specialization of 'Package'.
+'mancoosimm::InstalledPackage' is a specialization of 'Package'.
+'mancoosimm::OrConflict' is a specialization of 'Conflict'.
+'mancoosimm::Package' is a specialization of 'NamedElement'.
+'mancoosimm::BinPackage' is a specialization of 'InstalledPackage'.
+'mancoosimm::ConfigFilesPackage' is a specialization of 'Package'.
+'mancoosimm::MenuEntry' is a specialization of 'NamedElement'.
+'mancoosimm::HalfConfiguredPackage' is a specialization of 'UnpackedPackage'.
+'mancoosimm::Service' is a specialization of 'NamedElement'.
+'mancoosimm::InformationFile' is a specialization of 'File'.
+'mancoosimm::Configuration' is a specialization of 'NamedElement'.
+'mancoosimm::AndDep' is a specialization of 'Dependence'.
+'mancoosimm::ApplicationMenuCatalog' is a specialization of 'NamedElement'.
+'mancoosimm::Alternative' is a specialization of 'NamedElement'.
+'mancoosimm::Atom' is a specialization of 'NamedElement'.
+'mancoosimm::FileSystem' is a specialization of 'NamedElement'.
+'mancoosimm::File' is a specialization of 'NamedElement'.
+'mancoosimm::HalfInstalledPackage' is a specialization of 'Package'.
+'mancoosimm::OrDep' is a specialization of 'Dependence'.
+'mancoosimm::NotInstalledPackage' is a specialization of 'Package'.
+'mancoosimm::SkeeperCatalog' is a specialization of 'NamedElement'.
+'mancoosimm::SkeeperDocument' is a specialization of 'NamedElement'.
+'mancoosimm::Group' is a specialization of 'NamedElement'.
+'mancoosimm::EmacsPackage' is a specialization of 'NamedElement'.
+'mancoosimm::XFont' is a specialization of 'NamedElement'.
+'mancoosimm::SrcPackage' is a specialization of 'InstalledPackage'.
+'mancoosimm::Module' is a specialization of 'NamedElement'.
+'mancoosimm::User' is a specialization of 'NamedElement'.
+'mancoosimm::AndConflict' is a specialization of 'Conflict'.
+'mancoosimm::VirtualPackage' is a specialization of 'InstalledPackage'.
+'mancoosimm::DocumentationFile' is a specialization of 'File'.
+'mancoosimm::Group' (role 'groups271', cardinality 0..*) is associated with 'mancoosimm::User' (role 'User272', cardinality 0..*).
+'mancoosimm::AndConflict' (role 'andConflict', cardinality 0..*) is associated with 'mancoosimm::Conflict' (role 'Conflict285', cardinality 0..*).
+'mancoosimm::Configuration' (role 'Configuration', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'environment', cardinality 0..*).
+'mancoosimm::MenuEntry' (role 'mancoosimm_MenuEntry151', cardinality 0..*) is associated with 'mancoosimm::MenuEntry' (role 'mancoosimm_MenuEntry153', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage', cardinality 0..*) is associated with 'mancoosimm::Configuration' (role 'mancoosimm_Configuration', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment259', cardinality 0..*) is associated with 'mancoosimm::EmacsPackage' (role 'emacspkg', cardinality 0..*).
+'mancoosimm::PackageSetting' (role 'mancoosimm_PackageSetting', cardinality 0..*) is associated with 'mancoosimm::Service' (role 'mancoosimm_Service183', cardinality 0..*).
+'mancoosimm::Conflict' (role 'mancoosimm_Conflict287', cardinality 0..*) is associated with 'mancoosimm::OrConflict' (role 'mancoosimm_OrConflict', cardinality 0..*).
+'mancoosimm::MimeTypeHandler' (role 'mancoosimm_MimeTypeHandler', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File204', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File150', cardinality 0..*) is associated with 'mancoosimm::MenuEntry' (role 'mancoosimm_MenuEntry', cardinality 0..*).
+'mancoosimm::Module' (role 'modules', cardinality 0..*) is associated with 'mancoosimm::ModuleCache' (role 'ModuleCache237', cardinality 0..*).
+'mancoosimm::IconCache' (role 'IconCache', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env107', cardinality 0..*).
+'mancoosimm::ModuleCache' (role 'moduleCache232', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment233', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'InstalledPackage', cardinality 0..*) is associated with 'mancoosimm::DocumentationFile' (role 'documentationFiles', cardinality 0..*).
+'mancoosimm::Dependence' (role 'dependence60', cardinality 0..*) is associated with 'mancoosimm::OrDep' (role 'OrDep', cardinality 0..*).
+'mancoosimm::Configuration' (role 'Configuration129', cardinality 0..*) is associated with 'mancoosimm::FileSystem' (role 'fileSystem', cardinality 0..*).
+'mancoosimm::Conflict' (role 'Conflict', cardinality 0..*) is associated with 'mancoosimm::SingleConflict' (role 'singleConflict', cardinality 0..*).
+'mancoosimm::Dependence' (role 'Dependence', cardinality 0..*) is associated with 'mancoosimm::AndDep' (role 'andDep', cardinality 0..*).
+'mancoosimm::SrcPackage' (role 'mancoosimm_SrcPackage50', cardinality 0..*) is associated with 'mancoosimm::BinPackage' (role 'mancoosimm_BinPackage51', cardinality 0..*).
+'mancoosimm::User' (role 'User', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env101', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage30', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage32', cardinality 0..*).
+'mancoosimm::Module' (role 'Module', cardinality 0..*) is associated with 'mancoosimm::ModuleCache' (role 'moduleCache', cardinality 0..*).
+'mancoosimm::Group' (role 'Group264', cardinality 0..*) is associated with 'mancoosimm::User' (role 'users263', cardinality 0..*).
+'mancoosimm::IconCache' (role 'mancoosimm_IconCache', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File193', cardinality 0..*).
+'mancoosimm::OrInv' (role 'mancoosimm_OrInv', cardinality 0..*) is associated with 'mancoosimm::Invariant' (role 'mancoosimm_Invariant79', cardinality 0..*).
+'mancoosimm::User' (role 'mancoosimm_User', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File169', cardinality 0..*).
+'mancoosimm::Atom' (role 'mancoosimm_Atom', cardinality 0..*) is associated with 'mancoosimm::Invariant' (role 'mancoosimm_Invariant', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment199', cardinality 0..*) is associated with 'mancoosimm::MimeTypeHandlerCache' (role 'mimeTypeHandlerCache', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment248', cardinality 0..*) is associated with 'mancoosimm::SkeeperCatalog' (role 'skeeperCatalog', cardinality 0..*).
+'mancoosimm::HalfInstalledPackage' (role 'mancoosimm_HalfInstalledPackage', cardinality 0..*) is associated with 'mancoosimm::Configuration' (role 'mancoosimm_Configuration13', cardinality 0..*).
+'mancoosimm::Conflict' (role 'conflict', cardinality 0..*) is associated with 'mancoosimm::AndConflict' (role 'AndConflict', cardinality 0..*).
+'mancoosimm::MimeTypeHandlerCache' (role 'MimeTypeHandlerCache', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env111', cardinality 0..*).
+'mancoosimm::DesktopDB' (role 'mancoosimm_DesktopDB', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File197', cardinality 0..*).
+'mancoosimm::FileSystem' (role 'FileSystem161', cardinality 0..*) is associated with 'mancoosimm::File' (role 'root', cardinality 0..*).
+'mancoosimm::PackageSetting' (role 'mancoosimm_PackageSetting189', cardinality 0..*) is associated with 'mancoosimm::PackageSetting' (role 'mancoosimm_PackageSetting187', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File219', cardinality 0..*) is associated with 'mancoosimm::XFont' (role 'mancoosimm_XFont', cardinality 0..*).
+'mancoosimm::PackageSetting' (role 'packageSettings', cardinality 0..*) is associated with 'mancoosimm::Package' (role 'Package', cardinality 0..*).
+'mancoosimm::FileSystem' (role 'FileSystem', cardinality 0..*) is associated with 'mancoosimm::Configuration' (role 'configuration', cardinality 0..*).
+'mancoosimm::Environment' (role 'env122', cardinality 0..*) is associated with 'mancoosimm::XFontCache' (role 'XFontCache', cardinality 0..*).
+'mancoosimm::Environment' (role 'env124', cardinality 0..*) is associated with 'mancoosimm::GConf' (role 'GConf', cardinality 0..*).
+'mancoosimm::User' (role 'mancoosimm_User266', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File267', cardinality 0..*).
+'mancoosimm::AndConflict' (role 'mancoosimm_AndConflict', cardinality 0..*) is associated with 'mancoosimm::Conflict' (role 'mancoosimm_Conflict283', cardinality 0..*).
+'mancoosimm::Invariant' (role 'mancoosimm_Invariant90', cardinality 0..*) is associated with 'mancoosimm::OrInv' (role 'mancoosimm_OrInv89', cardinality 0..*).
+'mancoosimm::Invariant' (role 'mancoosimm_Invariant77', cardinality 0..*) is associated with 'mancoosimm::AndInv' (role 'mancoosimm_AndInv', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment225', cardinality 0..*) is associated with 'mancoosimm::LibraryCache' (role 'libraryCache224', cardinality 0..*).
+'mancoosimm::Dependence' (role 'mancoosimm_Dependence67', cardinality 0..*) is associated with 'mancoosimm::AndDep' (role 'mancoosimm_AndDep', cardinality 0..*).
+'mancoosimm::VirtualPackage' (role 'mancoosimm_VirtualPackage', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage34', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'pkg41', cardinality 0..*) is associated with 'mancoosimm::DocumentationFile' (role 'DocumentationFile', cardinality 0..*).
+'mancoosimm::EmacsPackage' (role 'EmacsPackage', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env105', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File255', cardinality 0..*) is associated with 'mancoosimm::SkeeperDocument' (role 'mancoosimm_SkeeperDocument254', cardinality 0..*).
+'mancoosimm::NotInv' (role 'mancoosimm_NotInv95', cardinality 0..*) is associated with 'mancoosimm::Invariant' (role 'mancoosimm_Invariant96', cardinality 0..*).
+'mancoosimm::Service' (role 'runningServices', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment159', cardinality 0..*).
+'mancoosimm::GConf' (role 'mancoosimm_GConf135', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File136', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment181', cardinality 0..*) is associated with 'mancoosimm::Alternative' (role 'alternatives', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage39', cardinality 0..*).
+'mancoosimm::Configuration' (role 'mancoosimm_Configuration11', cardinality 0..*) is associated with 'mancoosimm::HalfConfiguredPackage' (role 'mancoosimm_HalfConfiguredPackage', cardinality 0..*).
+'mancoosimm::Module' (role 'mancoosimm_Module', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File235', cardinality 0..*).
+'mancoosimm::Dependence' (role 'Dependence74', cardinality 0..*) is associated with 'mancoosimm::SingleDep' (role 'singleDep', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File171', cardinality 0..*) is associated with 'mancoosimm::Group' (role 'mancoosimm_Group', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File243', cardinality 0..*) is associated with 'mancoosimm::SGMLDocument' (role 'mancoosimm_SGMLDocument242', cardinality 0..*).
+'mancoosimm::NotInstalledPackage' (role 'mancoosimm_NotInstalledPackage', cardinality 0..*) is associated with 'mancoosimm::Configuration' (role 'mancoosimm_Configuration5', cardinality 0..*).
+'mancoosimm::OrInv' (role 'mancoosimm_OrInv92', cardinality 0..*) is associated with 'mancoosimm::Invariant' (role 'mancoosimm_Invariant93', cardinality 0..*).
+'mancoosimm::Group' (role 'Group', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env103', cardinality 0..*).
+'mancoosimm::MimeTypeHandler' (role 'MimeTypeHandler210', cardinality 0..*) is associated with 'mancoosimm::MimeType' (role 'type', cardinality 0..*).
+'mancoosimm::XFontCache' (role 'XFontCache217', cardinality 0..*) is associated with 'mancoosimm::XFont' (role 'xfonts', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File179', cardinality 0..*) is associated with 'mancoosimm::Alternative' (role 'mancoosimm_Alternative178', cardinality 0..*).
+'mancoosimm::SharedLibrary' (role 'mancoosimm_SharedLibrary', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File227', cardinality 0..*).
+'mancoosimm::AndDep' (role 'AndDep', cardinality 0..*) is associated with 'mancoosimm::Dependence' (role 'dependence', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File157', cardinality 0..*) is associated with 'mancoosimm::Service' (role 'mancoosimm_Service156', cardinality 0..*).
+'mancoosimm::AndInv' (role 'mancoosimm_AndInv83', cardinality 0..*) is associated with 'mancoosimm::Invariant' (role 'mancoosimm_Invariant84', cardinality 0..*).
+'mancoosimm::DesktopDB' (role 'desktopDb', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment195', cardinality 0..*).
+'mancoosimm::MimeTypeHandlerCache' (role 'MimeTypeHandlerCache208', cardinality 0..*) is associated with 'mancoosimm::MimeTypeHandler' (role 'handlers', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File252', cardinality 0..*) is associated with 'mancoosimm::SkeeperDocument' (role 'mancoosimm_SkeeperDocument251', cardinality 0..*).
+'mancoosimm::MimeTypeHandlerCache' (role 'cache202', cardinality 0..*) is associated with 'mancoosimm::MimeType' (role 'MimeType', cardinality 0..*).
+'mancoosimm::Menu' (role 'Menu140', cardinality 0..*) is associated with 'mancoosimm::ApplicationMenuCatalog' (role 'catalog', cardinality 0..*).
+'mancoosimm::Conflict' (role 'Conflict289', cardinality 0..*) is associated with 'mancoosimm::OrConflict' (role 'orConflict', cardinality 0..*).
+'mancoosimm::XFont' (role 'XFont', cardinality 0..*) is associated with 'mancoosimm::XFontCache' (role 'xfontCache', cardinality 0..*).
+'mancoosimm::File' (role 'File', cardinality 0..*) is associated with 'mancoosimm::FileSystem' (role 'fs', cardinality 0..*).
+'mancoosimm::BinPackage' (role 'mancoosimm_BinPackage53', cardinality 0..*) is associated with 'mancoosimm::SrcPackage' (role 'mancoosimm_SrcPackage54', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment138', cardinality 0..*) is associated with 'mancoosimm::GConf' (role 'gconf', cardinality 0..*).
+'mancoosimm::SkeeperCatalog' (role 'mancoosimm_SkeeperCatalog', cardinality 0..*) is associated with 'mancoosimm::SkeeperDocument' (role 'mancoosimm_SkeeperDocument', cardinality 0..*).
+'mancoosimm::Menu' (role 'menu143', cardinality 0..*) is associated with 'mancoosimm::ApplicationMenuCatalog' (role 'ApplicationMenuCatalog', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage27', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage29', cardinality 0..*).
+'mancoosimm::Package' (role 'mancoosimm_Package281', cardinality 0..*) is associated with 'mancoosimm::Conflict' (role 'mancoosimm_Conflict280', cardinality 0..*).
+'mancoosimm::ConfigFilesPackage' (role 'mancoosimm_ConfigFilesPackage', cardinality 0..*) is associated with 'mancoosimm::Configuration' (role 'mancoosimm_Configuration7', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage23', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage21', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment191', cardinality 0..*) is associated with 'mancoosimm::IconCache' (role 'iconCache', cardinality 0..*).
+'mancoosimm::Configuration' (role 'configuration2', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment', cardinality 0..*).
+'mancoosimm::Group' (role 'groups', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment269', cardinality 0..*).
+'mancoosimm::SingleDep' (role 'SingleDep', cardinality 0..*) is associated with 'mancoosimm::Dependence' (role 'dependence62', cardinality 0..*).
+'mancoosimm::File' (role 'childs', cardinality 0..*) is associated with 'mancoosimm::File' (role 'File167', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File246', cardinality 0..*) is associated with 'mancoosimm::SGMLDocument' (role 'mancoosimm_SGMLDocument245', cardinality 0..*).
+'mancoosimm::Dependence' (role 'mancoosimm_Dependence64', cardinality 0..*) is associated with 'mancoosimm::Package' (role 'mancoosimm_Package65', cardinality 0..*).
+'mancoosimm::Dependence' (role 'Dependence72', cardinality 0..*) is associated with 'mancoosimm::OrDep' (role 'orDep', cardinality 0..*).
+'mancoosimm::Menu' (role 'Menu', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env126', cardinality 0..*).
+'mancoosimm::LibraryCache' (role 'LibraryCache229', cardinality 0..*) is associated with 'mancoosimm::SharedLibrary' (role 'sharedLibraries', cardinality 0..*).
+'mancoosimm::Invariant' (role 'mancoosimm_Invariant87', cardinality 0..*) is associated with 'mancoosimm::AndInv' (role 'mancoosimm_AndInv86', cardinality 0..*).
+'mancoosimm::Alternative' (role 'Alternative', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env99', cardinality 0..*).
+'mancoosimm::File' (role 'parent', cardinality 0..*) is associated with 'mancoosimm::File' (role 'File164', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File133', cardinality 0..*) is associated with 'mancoosimm::GConf' (role 'mancoosimm_GConf', cardinality 0..*).
+'mancoosimm::Environment' (role 'env113', cardinality 0..*) is associated with 'mancoosimm::LibraryCache' (role 'LibraryCache', cardinality 0..*).
+'mancoosimm::File' (role 'files', cardinality 0..*) is associated with 'mancoosimm::PackageSetting' (role 'PackageSetting173', cardinality 0..*).
+'mancoosimm::Package' (role 'pkg', cardinality 0..*) is associated with 'mancoosimm::PackageSetting' (role 'PackageSetting', cardinality 0..*).
+'mancoosimm::Environment' (role 'env117', cardinality 0..*) is associated with 'mancoosimm::SGMLCatalog' (role 'SGMLCatalog', cardinality 0..*).
+'mancoosimm::Menu' (role 'menu145', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment146', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File46', cardinality 0..*) is associated with 'mancoosimm::UnpackedPackage' (role 'mancoosimm_UnpackedPackage45', cardinality 0..*).
+'mancoosimm::ModuleCache' (role 'ModuleCache', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env120', cardinality 0..*).
+'mancoosimm::MimeTypeHandler' (role 'MimeTypeHandler', cardinality 0..*) is associated with 'mancoosimm::MimeTypeHandlerCache' (role 'cache', cardinality 0..*).
+'mancoosimm::SingleConflict' (role 'SingleConflict', cardinality 0..*) is associated with 'mancoosimm::Conflict' (role 'conflict278', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage35', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage37', cardinality 0..*).
+'mancoosimm::Dependence' (role 'mancoosimm_Dependence70', cardinality 0..*) is associated with 'mancoosimm::OrDep' (role 'mancoosimm_OrDep', cardinality 0..*).
+'mancoosimm::LibraryCache' (role 'libraryCache', cardinality 0..*) is associated with 'mancoosimm::SharedLibrary' (role 'SharedLibrary', cardinality 0..*).
+'mancoosimm::User' (role 'users', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'Environment261', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment239', cardinality 0..*) is associated with 'mancoosimm::SGMLCatalog' (role 'sgmlCatalog', cardinality 0..*).
+'mancoosimm::Environment' (role 'env115', cardinality 0..*) is associated with 'mancoosimm::SkeeperCatalog' (role 'SkeeperCatalog', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage18', cardinality 0..*) is associated with 'mancoosimm::SrcPackage' (role 'mancoosimm_SrcPackage', cardinality 0..*).
+'mancoosimm::SrcPackage' (role 'mancoosimm_SrcPackage48', cardinality 0..*) is associated with 'mancoosimm::BinPackage' (role 'mancoosimm_BinPackage', cardinality 0..*).
+'mancoosimm::MimeType' (role 'MimeType206', cardinality 0..*) is associated with 'mancoosimm::MimeTypeHandler' (role 'mimeTypeHandlers', cardinality 0..*).
+'mancoosimm::Menu' (role 'menu', cardinality 0..*) is associated with 'mancoosimm::MenuEntry' (role 'MenuEntry', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File257', cardinality 0..*) is associated with 'mancoosimm::EmacsPackage' (role 'mancoosimm_EmacsPackage', cardinality 0..*).
+'mancoosimm::Environment' (role 'env', cardinality 0..*) is associated with 'mancoosimm::Service' (role 'Service', cardinality 0..*).
+'mancoosimm::PackageSetting' (role 'pkgSettings', cardinality 0..*) is associated with 'mancoosimm::File' (role 'File185', cardinality 0..*).
+'mancoosimm::LibraryCache' (role 'mancoosimm_LibraryCache', cardinality 0..*) is associated with 'mancoosimm::File' (role 'mancoosimm_File221', cardinality 0..*).
+'mancoosimm::DesktopDB' (role 'DesktopDB', cardinality 0..*) is associated with 'mancoosimm::Environment' (role 'env109', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File131', cardinality 0..*) is associated with 'mancoosimm::FileSystem' (role 'mancoosimm_FileSystem', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage43', cardinality 0..*) is associated with 'mancoosimm::Conflict' (role 'mancoosimm_Conflict', cardinality 0..*).
+'mancoosimm::NotInv' (role 'mancoosimm_NotInv', cardinality 0..*) is associated with 'mancoosimm::Invariant' (role 'mancoosimm_Invariant81', cardinality 0..*).
+'mancoosimm::Configuration' (role 'mancoosimm_Configuration15', cardinality 0..*) is associated with 'mancoosimm::Package' (role 'mancoosimm_Package', cardinality 0..*).
+'mancoosimm::Conflict' (role 'conflict276', cardinality 0..*) is associated with 'mancoosimm::OrConflict' (role 'OrConflict', cardinality 0..*).
+'mancoosimm::MimeType' (role 'mimeTypes', cardinality 0..*) is associated with 'mancoosimm::MimeTypeHandlerCache' (role 'MimeTypeHandlerCache212', cardinality 0..*).
+'mancoosimm::Environment' (role 'Environment215', cardinality 0..*) is associated with 'mancoosimm::XFontCache' (role 'xfontCaches', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage57', cardinality 0..*) is associated with 'mancoosimm::VirtualPackage' (role 'mancoosimm_VirtualPackage56', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage26', cardinality 0..*) is associated with 'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage24', cardinality 0..*).
+'mancoosimm::File' (role 'mancoosimm_File176', cardinality 0..*) is associated with 'mancoosimm::Alternative' (role 'mancoosimm_Alternative', cardinality 0..*).
+'mancoosimm::MenuEntry' (role 'entries', cardinality 0..*) is associated with 'mancoosimm::Menu' (role 'Menu148', cardinality 0..*).
+'mancoosimm::Boot' (role 'mancoosimm_Boot', cardinality 0..*) is associated with 'mancoosimm::Service' (role 'mancoosimm_Service', cardinality 0..*).
+'mancoosimm::InstalledPackage' (role 'mancoosimm_InstalledPackage20', cardinality 0..*) is associated with 'mancoosimm::Dependence' (role 'mancoosimm_Dependence', cardinality 0..*).
+'mancoosimm::SGMLDocument' (role 'mancoosimm_SGMLDocument', cardinality 0..*) is associated with 'mancoosimm::SGMLCatalog' (role 'mancoosimm_SGMLCatalog', cardinality 0..*).
+'mancoosimm::UnpackedPackage' (role 'mancoosimm_UnpackedPackage', cardinality 0..*) is associated with 'mancoosimm::Configuration' (role 'mancoosimm_Configuration9', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'AbstractState' has no attributes.
+The class 'statemachine::Initial' has no attributes.
+The class 'statemachine::State' has no attributes.
+The class 'statemachine::AbstractState' has no attributes.
+The class 'Named' has no attributes.
+The class 'statemachine::StateMachine' has no attributes.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::Named' has the following attributes: 'name' of type str.
+'statemachine::State' is a specialization of 'AbstractState'.
+'statemachine::AbstractState' is a specialization of 'Named'.
+'statemachine::Transition' is a specialization of 'Named'.
+'statemachine::Initial' is a specialization of 'AbstractState'.
+'statemachine::Transition' (role 'statemachine_Transition4', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'statemachine_AbstractState5', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition7', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'statemachine_AbstractState8', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine2', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*) is associated with 'statemachine::AbstractState' (role 'statemachine_AbstractState', cardinality 0..*).

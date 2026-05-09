@@ -1,0 +1,90 @@
+The model has 30 class(es).
+The class 'jbatch::PartitionReducer' has the following attributes: 'ref' of type str.
+The class 'jbatch::Stop' has the following attributes: 'restart' of type str; 'exitStatus' of type str; 'on' of type str.
+The class 'jbatch::Decision' has the following attributes: 'id' of type str; 'transitionElements' of type str; 'ref' of type str.
+The class 'jbatch::ItemReader' has the following attributes: 'ref' of type str.
+The class 'jbatch::IncludeType' has the following attributes: 'class_' of type str.
+The class 'jbatch::Job' has the following attributes: 'version' of type str; 'group' of type str; 'restartable' of type str; 'id' of type str.
+The class 'jbatch::PartitionPlan' has the following attributes: 'partitions' of type str; 'threads' of type str.
+The class 'jbatch::End' has the following attributes: 'exitStatus' of type str; 'on' of type str.
+The class 'jbatch::ExcludeType' has the following attributes: 'class_' of type str.
+The class 'jbatch::Step' has the following attributes: 'allowStartIfComplete' of type str; 'id' of type str; 'next1' of type str; 'transitionElements' of type str; 'startLimit' of type str.
+The class 'jbatch::Properties' has the following attributes: 'partition' of type str.
+The class 'jbatch::Fail' has the following attributes: 'on' of type str; 'exitStatus' of type str.
+The class 'jbatch::Chunk' has the following attributes: 'checkpointPolicy' of type str; 'retryLimit' of type str; 'timeLimit' of type str; 'itemCount' of type str; 'skipLimit' of type str.
+The class 'jbatch::ItemProcessor' has the following attributes: 'ref' of type str.
+The class 'jbatch::Property' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'jbatch::Split' has the following attributes: 'id' of type str; 'next' of type str.
+The class 'jbatch::Flow' has the following attributes: 'transitionElements' of type str; 'id' of type str; 'next1' of type str; 'group' of type str.
+The class 'jbatch::Analyzer' has the following attributes: 'ref' of type str.
+The class 'jbatch::Next' has the following attributes: 'to' of type str; 'on' of type str.
+The class 'jbatch::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'jbatch::Partition' has no attributes.
+The class 'jbatch::Listeners' has no attributes.
+The class 'jbatch::Listener' has the following attributes: 'ref' of type str.
+The class 'jbatch::ItemWriter' has the following attributes: 'ref' of type str.
+The class 'jbatch::ExceptionClassFilter' has no attributes.
+The class 'jbatch::PartitionMapper' has the following attributes: 'ref' of type str.
+The class 'jbatch::EStringToStringMapEntry' has no attributes.
+The class 'jbatch::Collector' has the following attributes: 'ref' of type str.
+The class 'jbatch::Batchlet' has the following attributes: 'ref' of type str.
+The class 'jbatch::CheckpointAlgorithm' has the following attributes: 'ref' of type str.
+'jbatch::ExceptionClassFilter' (role 'jbatch_ExceptionClassFilter42', cardinality 0..*) is associated with 'jbatch::ExcludeType' (role 'jbatch_ExcludeType', cardinality 0..*).
+'jbatch::Flow' (role 'jbatch_Flow62', cardinality 0..*) is associated with 'jbatch::Stop' (role 'jbatch_Stop63', cardinality 0..*).
+'jbatch::Decision' (role 'jbatch_Decision80', cardinality 0..*) is associated with 'jbatch::Job' (role 'jbatch_Job79', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties111', cardinality 0..*) is associated with 'jbatch::PartitionPlan' (role 'jbatch_PartitionPlan110', cardinality 0..*).
+'jbatch::EStringToStringMapEntry' (role 'jbatch_EStringToStringMapEntry', cardinality 0..*) is associated with 'jbatch::DocumentRoot' (role 'jbatch_DocumentRoot', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties114', cardinality 0..*) is associated with 'jbatch::PartitionReducer' (role 'jbatch_PartitionReducer113', cardinality 0..*).
+'jbatch::Step' (role 'jbatch_Step124', cardinality 0..*) is associated with 'jbatch::Listeners' (role 'jbatch_Listeners125', cardinality 0..*).
+'jbatch::Stop' (role 'jbatch_Stop', cardinality 0..*) is associated with 'jbatch::Decision' (role 'jbatch_Decision32', cardinality 0..*).
+'jbatch::Chunk' (role 'jbatch_Chunk19', cardinality 0..*) is associated with 'jbatch::ExceptionClassFilter' (role 'jbatch_ExceptionClassFilter20', cardinality 0..*).
+'jbatch::Split' (role 'jbatch_Split118', cardinality 0..*) is associated with 'jbatch::Flow' (role 'jbatch_Flow119', cardinality 0..*).
+'jbatch::Fail' (role 'jbatch_Fail', cardinality 0..*) is associated with 'jbatch::Decision' (role 'jbatch_Decision28', cardinality 0..*).
+'jbatch::Next' (role 'jbatch_Next143', cardinality 0..*) is associated with 'jbatch::Step' (role 'jbatch_Step142', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties', cardinality 0..*) is associated with 'jbatch::Analyzer' (role 'jbatch_Analyzer', cardinality 0..*).
+'jbatch::Chunk' (role 'jbatch_Chunk16', cardinality 0..*) is associated with 'jbatch::ExceptionClassFilter' (role 'jbatch_ExceptionClassFilter17', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties22', cardinality 0..*) is associated with 'jbatch::Collector' (role 'jbatch_Collector', cardinality 0..*).
+'jbatch::Flow' (role 'jbatch_Flow83', cardinality 0..*) is associated with 'jbatch::Job' (role 'jbatch_Job82', cardinality 0..*).
+'jbatch::Listener' (role 'jbatch_Listener', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties91', cardinality 0..*).
+'jbatch::Partition' (role 'jbatch_Partition105', cardinality 0..*) is associated with 'jbatch::PartitionReducer' (role 'jbatch_PartitionReducer', cardinality 0..*).
+'jbatch::Job' (role 'jbatch_Job88', cardinality 0..*) is associated with 'jbatch::Step' (role 'jbatch_Step89', cardinality 0..*).
+'jbatch::CheckpointAlgorithm' (role 'jbatch_CheckpointAlgorithm', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties4', cardinality 0..*).
+'jbatch::Partition' (role 'jbatch_Partition97', cardinality 0..*) is associated with 'jbatch::PartitionPlan' (role 'jbatch_PartitionPlan', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties72', cardinality 0..*) is associated with 'jbatch::ItemWriter' (role 'jbatch_ItemWriter71', cardinality 0..*).
+'jbatch::Listener' (role 'jbatch_Listener94', cardinality 0..*) is associated with 'jbatch::Listeners' (role 'jbatch_Listeners93', cardinality 0..*).
+'jbatch::Step' (role 'jbatch_Step133', cardinality 0..*) is associated with 'jbatch::Partition' (role 'jbatch_Partition134', cardinality 0..*).
+'jbatch::ItemReader' (role 'jbatch_ItemReader68', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties69', cardinality 0..*).
+'jbatch::Collector' (role 'jbatch_Collector100', cardinality 0..*) is associated with 'jbatch::Partition' (role 'jbatch_Partition99', cardinality 0..*).
+'jbatch::Chunk' (role 'jbatch_Chunk131', cardinality 0..*) is associated with 'jbatch::Step' (role 'jbatch_Step130', cardinality 0..*).
+'jbatch::CheckpointAlgorithm' (role 'jbatch_CheckpointAlgorithm12', cardinality 0..*) is associated with 'jbatch::Chunk' (role 'jbatch_Chunk11', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties24', cardinality 0..*) is associated with 'jbatch::Decision' (role 'jbatch_Decision', cardinality 0..*).
+'jbatch::Step' (role 'jbatch_Step139', cardinality 0..*) is associated with 'jbatch::Fail' (role 'jbatch_Fail140', cardinality 0..*).
+'jbatch::Batchlet' (role 'jbatch_Batchlet128', cardinality 0..*) is associated with 'jbatch::Step' (role 'jbatch_Step127', cardinality 0..*).
+'jbatch::ItemProcessor' (role 'jbatch_ItemProcessor', cardinality 0..*) is associated with 'jbatch::Chunk' (role 'jbatch_Chunk7', cardinality 0..*).
+'jbatch::ExceptionClassFilter' (role 'jbatch_ExceptionClassFilter40', cardinality 0..*) is associated with 'jbatch::IncludeType' (role 'jbatch_IncludeType', cardinality 0..*).
+'jbatch::Flow' (role 'jbatch_Flow59', cardinality 0..*) is associated with 'jbatch::Next' (role 'jbatch_Next60', cardinality 0..*).
+'jbatch::Job' (role 'jbatch_Job77', cardinality 0..*) is associated with 'jbatch::Listeners' (role 'jbatch_Listeners', cardinality 0..*).
+'jbatch::Step' (role 'jbatch_Step145', cardinality 0..*) is associated with 'jbatch::Stop' (role 'jbatch_Stop146', cardinality 0..*).
+'jbatch::End' (role 'jbatch_End', cardinality 0..*) is associated with 'jbatch::Decision' (role 'jbatch_Decision26', cardinality 0..*).
+'jbatch::Next' (role 'jbatch_Next', cardinality 0..*) is associated with 'jbatch::Decision' (role 'jbatch_Decision30', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties75', cardinality 0..*) is associated with 'jbatch::Job' (role 'jbatch_Job74', cardinality 0..*).
+'jbatch::Analyzer' (role 'jbatch_Analyzer103', cardinality 0..*) is associated with 'jbatch::Partition' (role 'jbatch_Partition102', cardinality 0..*).
+'jbatch::ItemProcessor' (role 'jbatch_ItemProcessor65', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties66', cardinality 0..*).
+'jbatch::ItemWriter' (role 'jbatch_ItemWriter', cardinality 0..*) is associated with 'jbatch::Chunk' (role 'jbatch_Chunk9', cardinality 0..*).
+'jbatch::Chunk' (role 'jbatch_Chunk14', cardinality 0..*) is associated with 'jbatch::ExceptionClassFilter' (role 'jbatch_ExceptionClassFilter', cardinality 0..*).
+'jbatch::Split' (role 'jbatch_Split', cardinality 0..*) is associated with 'jbatch::Flow' (role 'jbatch_Flow49', cardinality 0..*).
+'jbatch::Batchlet' (role 'jbatch_Batchlet', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties2', cardinality 0..*).
+'jbatch::DocumentRoot' (role 'jbatch_DocumentRoot35', cardinality 0..*) is associated with 'jbatch::EStringToStringMapEntry' (role 'jbatch_EStringToStringMapEntry36', cardinality 0..*).
+'jbatch::Partition' (role 'jbatch_Partition', cardinality 0..*) is associated with 'jbatch::PartitionMapper' (role 'jbatch_PartitionMapper', cardinality 0..*).
+'jbatch::Decision' (role 'jbatch_Decision44', cardinality 0..*) is associated with 'jbatch::Flow' (role 'jbatch_Flow', cardinality 0..*).
+'jbatch::PartitionMapper' (role 'jbatch_PartitionMapper107', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties108', cardinality 0..*).
+'jbatch::Flow' (role 'jbatch_Flow51', cardinality 0..*) is associated with 'jbatch::Step' (role 'jbatch_Step', cardinality 0..*).
+'jbatch::Flow' (role 'jbatch_Flow47', cardinality 0..*) is associated with 'jbatch::Flow' (role 'jbatch_Flow45', cardinality 0..*).
+'jbatch::Chunk' (role 'jbatch_Chunk', cardinality 0..*) is associated with 'jbatch::ItemReader' (role 'jbatch_ItemReader', cardinality 0..*).
+'jbatch::Split' (role 'jbatch_Split86', cardinality 0..*) is associated with 'jbatch::Job' (role 'jbatch_Job85', cardinality 0..*).
+'jbatch::Fail' (role 'jbatch_Fail57', cardinality 0..*) is associated with 'jbatch::Flow' (role 'jbatch_Flow56', cardinality 0..*).
+'jbatch::End' (role 'jbatch_End137', cardinality 0..*) is associated with 'jbatch::Step' (role 'jbatch_Step136', cardinality 0..*).
+'jbatch::Properties' (role 'jbatch_Properties116', cardinality 0..*) is associated with 'jbatch::Property' (role 'jbatch_Property', cardinality 0..*).
+'jbatch::Flow' (role 'jbatch_Flow53', cardinality 0..*) is associated with 'jbatch::End' (role 'jbatch_End54', cardinality 0..*).
+'jbatch::Job' (role 'jbatch_Job', cardinality 0..*) is associated with 'jbatch::DocumentRoot' (role 'jbatch_DocumentRoot38', cardinality 0..*).
+'jbatch::Step' (role 'jbatch_Step121', cardinality 0..*) is associated with 'jbatch::Properties' (role 'jbatch_Properties122', cardinality 0..*).

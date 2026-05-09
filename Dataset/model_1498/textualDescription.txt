@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'PetriNet::PetriElement' has the following attributes: 'nom' of type str.
+The class 'PetriNet::PetriNet' has the following attributes: 'name' of type str.
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::Place' has the following attributes: 'nbJetons' of type int.
+The class 'PetriElement' has no attributes.
+The class 'PetriNet::Arc' has the following attributes: 'poids' of type int; 'arcType' of type str.
+The enumeration 'ArcType' has the following literals: 'Arc', 'ReadArc'.
+'PetriNet::Transition' is a specialization of 'PetriElement'.
+'PetriNet::Place' is a specialization of 'PetriElement'.
+'PetriNet::Arc' (role 'PetriNet_Arc', cardinality 0..*) is associated with 'PetriNet::PetriElement' (role 'PetriNet_PetriElement', cardinality 0..*).
+'PetriNet::Arc' (role 'PetriNet_Arc5', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet', cardinality 0..*).
+'PetriNet::PetriElement' (role 'PetriNet_PetriElement8', cardinality 0..*) is associated with 'PetriNet::PetriNet' (role 'PetriNet_PetriNet7', cardinality 0..*).
+'PetriNet::Arc' (role 'PetriNet_Arc2', cardinality 0..*) is associated with 'PetriNet::PetriElement' (role 'PetriNet_PetriElement3', cardinality 0..*).

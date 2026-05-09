@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'hello121::Alias' has the following attributes: 'id' of type str.
+The class 'hello121::Base' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'hello121::NamedElement' has the following attributes: 'name' of type str.
+The class 'hello121::Classoc' has the following attributes: 'id' of type str.
+The class 'hello121::Thing' has the following attributes: 'id' of type int.
+The class 'hello121::RelatedTo' has the following attributes: 'since' of type str.
+The class 'hello121::Third' has the following attributes: 'id' of type str.
+'hello121::RelatedTo' is a specialization of 'NamedElement'.
+'hello121::Thing' is a specialization of 'NamedElement'.
+'hello121::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'hello121::Thing' (role 'fromThing', cardinality 0..*).
+'hello121::Thing' (role 'hello121_Thing', cardinality 0..*) is associated with 'hello121::Base' (role 'hello121_Base', cardinality 0..*).
+'hello121::Base' (role 'hello121_Base18', cardinality 0..*) is associated with 'hello121::Classoc' (role 'hello121_Classoc17', cardinality 0..*).
+'hello121::Classoc' (role 'hello121_Classoc8', cardinality 0..*) is associated with 'hello121::Thing' (role 'hello121_Thing7', cardinality 0..*).
+'hello121::NamedElement' (role 'hello121_NamedElement', cardinality 0..*) is associated with 'hello121::Alias' (role 'hello121_Alias', cardinality 0..*).
+'hello121::Third' (role 'hello121_Third', cardinality 0..*) is associated with 'hello121::Thing' (role 'hello121_Thing5', cardinality 0..*).
+'hello121::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'hello121::Thing' (role 'Thing', cardinality 0..*).
+'hello121::Thing' (role 'hello121_Thing12', cardinality 0..*) is associated with 'hello121::RelatedTo' (role 'hello121_RelatedTo', cardinality 0..*).
+'hello121::Third' (role 'hello121_Third15', cardinality 0..*) is associated with 'hello121::Classoc' (role 'hello121_Classoc14', cardinality 0..*).
+'hello121::Base' (role 'hello121_Base2', cardinality 0..*) is associated with 'hello121::Classoc' (role 'hello121_Classoc', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'NamedElement' has no attributes.
+The class 'fsmcore::State' has no attributes.
+The class 'fsmcore::StateMachine' has no attributes.
+The class 'fsmcore::Constraint' has no attributes.
+The class 'fsmcore::Transition' has no attributes.
+The class 'fsmcore::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsmcore::Trigger' has the following attributes: 'expression' of type str.
+The class 'fsmcore::Program' has no attributes.
+'fsmcore::State' is a specialization of 'NamedElement'.
+'fsmcore::Transition' is a specialization of 'NamedElement'.
+'fsmcore::StateMachine' is a specialization of 'NamedElement'.
+'fsmcore::Program' (role 'fsmcore_Program', cardinality 0..*) is associated with 'fsmcore::State' (role 'fsmcore_State4', cardinality 0..*).
+'fsmcore::Transition' (role 'fsmcore_Transition11', cardinality 0..*) is associated with 'fsmcore::Trigger' (role 'fsmcore_Trigger', cardinality 0..*).
+'fsmcore::State' (role 'source', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'Transition7', cardinality 0..*).
+'fsmcore::State' (role 'target', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'Transition', cardinality 0..*).
+'fsmcore::Constraint' (role 'fsmcore_Constraint', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'fsmcore_Transition9', cardinality 0..*).
+'fsmcore::StateMachine' (role 'fsmcore_StateMachine2', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'fsmcore_Transition', cardinality 0..*).
+'fsmcore::Transition' (role 'outgoing', cardinality 0..*) is associated with 'fsmcore::State' (role 'State14', cardinality 0..*).
+'fsmcore::State' (role 'fsmcore_State', cardinality 0..*) is associated with 'fsmcore::StateMachine' (role 'fsmcore_StateMachine', cardinality 0..*).
+'fsmcore::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsmcore::State' (role 'State', cardinality 0..*).

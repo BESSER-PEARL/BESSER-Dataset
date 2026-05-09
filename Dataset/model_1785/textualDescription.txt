@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Book::Chapter' has the following attributes: 'title' of type str; 'nbPages' of type int.
+The class 'Book::Book' has the following attributes: 'title' of type str; 'authorName' of type str.
+'Book::Book' (role 'Book_Book', cardinality 0..*) is associated with 'Book::Chapter' (role 'Book_Chapter', cardinality 0..*).

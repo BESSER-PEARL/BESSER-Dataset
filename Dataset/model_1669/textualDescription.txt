@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'yyb::Thing' has the following attributes: 'id' of type int.
+The class 'NamedElement' has no attributes.
+The class 'yyb::NamedElement' has the following attributes: 'name' of type str.
+The class 'yyb::RelatedTo' has the following attributes: 'since' of type str.
+The class 'yyb::Alias' has the following attributes: 'id' of type str.
+'yyb::RelatedTo' is a specialization of 'NamedElement'.
+'yyb::Thing' is a specialization of 'NamedElement'.
+'yyb::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'yyb::Thing' (role 'fromThing', cardinality 0..*).
+'yyb::Thing' (role 'Thing', cardinality 0..*) is associated with 'yyb::RelatedTo' (role 'relations', cardinality 0..*).
+'yyb::RelatedTo' (role 'yyb_RelatedTo', cardinality 0..*) is associated with 'yyb::Alias' (role 'yyb_Alias', cardinality 0..*).

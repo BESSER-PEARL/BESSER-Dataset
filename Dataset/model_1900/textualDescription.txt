@@ -1,0 +1,165 @@
+The model has 61 class(es).
+The class 'dsl::ServiceFront' has the following attributes: 'name' of type str; 'method' of type str.
+The class 'dsl::NativeClass' has no attributes.
+The class 'dsl::Technology' has no attributes.
+The class 'dsl::Descriptor' has the following attributes: 'name' of type str.
+The class 'dsl::JsModule' has the following attributes: 'name' of type str.
+The class 'dsl::Directory' has the following attributes: 'name' of type str; 'purpose' of type str.
+The class 'dsl::Architecture' has no attributes.
+The class 'dsl::Annotation' has the following attributes: 'propertie' of type str.
+The class 'Eclass' has no attributes.
+The class 'dsl::LayerSegmentRelation' has the following attributes: 'layerSegment' of type str.
+The class 'dsl::AbstractClass' has no attributes.
+The class 'dsl::EntityName' has the following attributes: 'name' of type str.
+The class 'dsl::State' has the following attributes: 'name' of type str.
+The class 'dsl::ActionCreator' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'dsl::Type' has the following attributes: 'name' of type str.
+The class 'dsl::RouterComponent' has the following attributes: 'name' of type str.
+The class 'dsl::Submodule' has the following attributes: 'name' of type str.
+The class 'dsl::GeneralEntity' has no attributes.
+The class 'dsl::SpecialEntity' has no attributes.
+The class 'dsl::ReactApp' has no attributes.
+The class 'dsl::Operation' has the following attributes: 'type' of type str.
+The class 'dsl::AbstractFrontElement' has no attributes.
+The class 'dsl::SublayerSegment' has the following attributes: 'name' of type str.
+The class 'dsl::RelationArch' has the following attributes: 'name' of type str; 'source' of type str.
+The class 'dsl::RelationDom' has no attributes.
+The class 'AbstractFrontElement' has no attributes.
+The class 'dsl::JavaApp' has no attributes.
+The class 'dsl::Subproject' has the following attributes: 'name' of type str.
+The class 'dsl::MethodBack' has the following attributes: 'name' of type str.
+The class 'dsl::Domain' has no attributes.
+The class 'dsl::File' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'dsl::Visualizer' has the following attributes: 'name' of type str.
+The class 'dsl::System' has no attributes.
+The class 'dsl::Reducer' has the following attributes: 'name' of type str.
+The class 'dsl::Container' has the following attributes: 'name' of type str.
+The class 'dsl::LayerSegment' has the following attributes: 'name' of type str.
+The class 'dsl::Transaction' has the following attributes: 'type' of type str.
+The class 'dsl::Eclass' has the following attributes: 'name' of type str.
+The class 'File' has no attributes.
+The class 'dsl::JeeProject' has the following attributes: 'name' of type str.
+The class 'dsl::UIComponent' has no attributes.
+The class 'dsl::Library' has the following attributes: 'isNative' of type str; 'name' of type str.
+The class 'dsl::Operateson' has no attributes.
+The class 'dsl::Css' has no attributes.
+The class 'UIComponent' has no attributes.
+The class 'dsl::EObject' has no attributes.
+The class 'dsl::Action' has the following attributes: 'name' of type str.
+The class 'dsl::Layer' has the following attributes: 'name' of type str.
+The class 'dsl::Epackage' has the following attributes: 'name' of type str.
+The class 'dsl::GenericClass' has no attributes.
+The class 'dsl::AbstractMethod' has the following attributes: 'name' of type str.
+The class 'dsl::Property' has the following attributes: 'name' of type str.
+The class 'dsl::Component' has the following attributes: 'name' of type str.
+The class 'dsl::Functionality' has the following attributes: 'name' of type str.
+The class 'dsl::Md' has no attributes.
+The class 'dsl::Einterface' has the following attributes: 'name' of type str.
+The class 'dsl::Json' has no attributes.
+The class 'dsl::ActionDispatcher' has the following attributes: 'name' of type str.
+The class 'dsl::Module' has the following attributes: 'name' of type str.
+The class 'dsl::Js' has no attributes.
+The class 'dsl::Attribute' has the following attributes: 'name' of type str.
+'dsl::ReactApp' is a specialization of 'AbstractFrontElement'.
+'dsl::RouterComponent' is a specialization of 'UIComponent'.
+'dsl::Directory' is a specialization of 'AbstractFrontElement'.
+'dsl::ActionDispatcher' is a specialization of 'AbstractFrontElement'.
+'dsl::AbstractClass' is a specialization of 'Eclass'.
+'dsl::Md' is a specialization of 'File'.
+'dsl::Reducer' is a specialization of 'AbstractFrontElement'.
+'dsl::ActionCreator' is a specialization of 'AbstractFrontElement'.
+'dsl::Visualizer' is a specialization of 'UIComponent'.
+'dsl::Json' is a specialization of 'File'.
+'dsl::NativeClass' is a specialization of 'Eclass'.
+'dsl::ServiceFront' is a specialization of 'AbstractFrontElement'.
+'dsl::State' is a specialization of 'AbstractFrontElement'.
+'dsl::Action' is a specialization of 'AbstractFrontElement'.
+'dsl::RouterComponent' is a specialization of 'AbstractFrontElement'.
+'dsl::Functionality' is a specialization of 'AbstractFrontElement'.
+'dsl::Type' is a specialization of 'AbstractFrontElement'.
+'dsl::Container' is a specialization of 'AbstractFrontElement'.
+'dsl::GenericClass' is a specialization of 'Eclass'.
+'dsl::Annotation' is a specialization of 'Eclass'.
+'dsl::File' is a specialization of 'AbstractFrontElement'.
+'dsl::Visualizer' is a specialization of 'AbstractFrontElement'.
+'dsl::Js' is a specialization of 'File'.
+'dsl::Css' is a specialization of 'File'.
+'dsl::JsModule' is a specialization of 'AbstractFrontElement'.
+'dsl::Transaction' (role 'dsl_Transaction34', cardinality 0..*) is associated with 'dsl::Operateson' (role 'dsl_Operateson', cardinality 0..*).
+'dsl::MethodBack' (role 'dsl_MethodBack107', cardinality 0..*) is associated with 'dsl::Eclass' (role 'dsl_Eclass108', cardinality 0..*).
+'dsl::Container' (role 'dsl_Container', cardinality 0..*) is associated with 'dsl::Functionality' (role 'dsl_Functionality132', cardinality 0..*).
+'dsl::ReactApp' (role 'dsl_ReactApp126', cardinality 0..*) is associated with 'dsl::Directory' (role 'dsl_Directory', cardinality 0..*).
+'dsl::Technology' (role 'dsl_Technology', cardinality 0..*) is associated with 'dsl::System' (role 'dsl_System4', cardinality 0..*).
+'dsl::AbstractFrontElement' (role 'dsl_AbstractFrontElement177', cardinality 0..*) is associated with 'dsl::Reducer' (role 'dsl_Reducer176', cardinality 0..*).
+'dsl::Library' (role 'dsl_Library', cardinality 0..*) is associated with 'dsl::Subproject' (role 'dsl_Subproject67', cardinality 0..*).
+'dsl::Architecture' (role 'dsl_Architecture45', cardinality 0..*) is associated with 'dsl::Component' (role 'dsl_Component', cardinality 0..*).
+'dsl::Property' (role 'dsl_Property30', cardinality 0..*) is associated with 'dsl::SpecialEntity' (role 'dsl_SpecialEntity29', cardinality 0..*).
+'dsl::Technology' (role 'dsl_Technology59', cardinality 0..*) is associated with 'dsl::ReactApp' (role 'dsl_ReactApp', cardinality 0..*).
+'dsl::Reducer' (role 'dsl_Reducer', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State164', cardinality 0..*).
+'dsl::Domain' (role 'dsl_Domain10', cardinality 0..*) is associated with 'dsl::RelationDom' (role 'dsl_RelationDom', cardinality 0..*).
+'dsl::Annotation' (role 'dsl_Annotation', cardinality 0..*) is associated with 'dsl::AbstractClass' (role 'dsl_AbstractClass74', cardinality 0..*).
+'dsl::Domain' (role 'dsl_Domain6', cardinality 0..*) is associated with 'dsl::Type' (role 'dsl_Type', cardinality 0..*).
+'dsl::State' (role 'dsl_State', cardinality 0..*) is associated with 'dsl::Functionality' (role 'dsl_Functionality136', cardinality 0..*).
+'dsl::AbstractFrontElement' (role 'dsl_AbstractFrontElement', cardinality 0..*) is associated with 'dsl::ReactApp' (role 'dsl_ReactApp122', cardinality 0..*).
+'dsl::Directory' (role 'dsl_Directory180', cardinality 0..*) is associated with 'dsl::JsModule' (role 'dsl_JsModule179', cardinality 0..*).
+'dsl::Functionality' (role 'dsl_Functionality130', cardinality 0..*) is associated with 'dsl::RouterComponent' (role 'dsl_RouterComponent', cardinality 0..*).
+'dsl::Einterface' (role 'dsl_Einterface91', cardinality 0..*) is associated with 'dsl::Attribute' (role 'dsl_Attribute92', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State162', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action170', cardinality 0..*) is associated with 'dsl::Directory' (role 'dsl_Directory171', cardinality 0..*).
+'dsl::EObject' (role 'dsl_EObject', cardinality 0..*) is associated with 'dsl::Submodule' (role 'dsl_Submodule16', cardinality 0..*).
+'dsl::Annotation' (role 'dsl_Annotation120', cardinality 0..*) is associated with 'dsl::Library' (role 'dsl_Library119', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action168', cardinality 0..*) is associated with 'dsl::ActionDispatcher' (role 'dsl_ActionDispatcher', cardinality 0..*).
+'dsl::ServiceFront' (role 'dsl_ServiceFront154', cardinality 0..*) is associated with 'dsl::JsModule' (role 'dsl_JsModule155', cardinality 0..*).
+'dsl::GenericClass' (role 'dsl_GenericClass83', cardinality 0..*) is associated with 'dsl::Annotation' (role 'dsl_Annotation84', cardinality 0..*).
+'dsl::GeneralEntity' (role 'dsl_GeneralEntity', cardinality 0..*) is associated with 'dsl::EntityName' (role 'dsl_EntityName20', cardinality 0..*).
+'dsl::AbstractFrontElement' (role 'dsl_AbstractFrontElement152', cardinality 0..*) is associated with 'dsl::Visualizer' (role 'dsl_Visualizer151', cardinality 0..*).
+'dsl::RelationDom' (role 'dsl_RelationDom39', cardinality 0..*) is associated with 'dsl::EntityName' (role 'dsl_EntityName40', cardinality 0..*).
+'dsl::ServiceFront' (role 'dsl_ServiceFront', cardinality 0..*) is associated with 'dsl::Functionality' (role 'dsl_Functionality138', cardinality 0..*).
+'dsl::Operation' (role 'dsl_Operation', cardinality 0..*) is associated with 'dsl::Submodule' (role 'dsl_Submodule14', cardinality 0..*).
+'dsl::Module' (role 'dsl_Module12', cardinality 0..*) is associated with 'dsl::Submodule' (role 'dsl_Submodule', cardinality 0..*).
+'dsl::GenericClass' (role 'dsl_GenericClass', cardinality 0..*) is associated with 'dsl::Attribute' (role 'dsl_Attribute78', cardinality 0..*).
+'dsl::Operation' (role 'dsl_Operation18', cardinality 0..*) is associated with 'dsl::EntityName' (role 'dsl_EntityName', cardinality 0..*).
+'dsl::SpecialEntity' (role 'dsl_SpecialEntity', cardinality 0..*) is associated with 'dsl::EntityName' (role 'dsl_EntityName27', cardinality 0..*).
+'dsl::ActionCreator' (role 'dsl_ActionCreator174', cardinality 0..*) is associated with 'dsl::ActionDispatcher' (role 'dsl_ActionDispatcher173', cardinality 0..*).
+'dsl::Component' (role 'dsl_Component49', cardinality 0..*) is associated with 'dsl::Layer' (role 'dsl_Layer', cardinality 0..*).
+'dsl::Epackage' (role 'dsl_Epackage', cardinality 0..*) is associated with 'dsl::Subproject' (role 'dsl_Subproject65', cardinality 0..*).
+'dsl::Architecture' (role 'dsl_Architecture', cardinality 0..*) is associated with 'dsl::System' (role 'dsl_System2', cardinality 0..*).
+'dsl::GenericClass' (role 'dsl_GenericClass86', cardinality 0..*) is associated with 'dsl::AbstractClass' (role 'dsl_AbstractClass87', cardinality 0..*).
+'dsl::JeeProject' (role 'dsl_JeeProject63', cardinality 0..*) is associated with 'dsl::Subproject' (role 'dsl_Subproject', cardinality 0..*).
+'dsl::Architecture' (role 'dsl_Architecture47', cardinality 0..*) is associated with 'dsl::RelationArch' (role 'dsl_RelationArch', cardinality 0..*).
+'dsl::Subproject' (role 'dsl_Subproject69', cardinality 0..*) is associated with 'dsl::Descriptor' (role 'dsl_Descriptor', cardinality 0..*).
+'dsl::AbstractMethod' (role 'dsl_AbstractMethod116', cardinality 0..*) is associated with 'dsl::Eclass' (role 'dsl_Eclass117', cardinality 0..*).
+'dsl::AbstractMethod' (role 'dsl_AbstractMethod113', cardinality 0..*) is associated with 'dsl::Eclass' (role 'dsl_Eclass114', cardinality 0..*).
+'dsl::System' (role 'dsl_System', cardinality 0..*) is associated with 'dsl::Domain' (role 'dsl_Domain', cardinality 0..*).
+'dsl::File' (role 'dsl_File', cardinality 0..*) is associated with 'dsl::Directory' (role 'dsl_Directory157', cardinality 0..*).
+'dsl::Technology' (role 'dsl_Technology57', cardinality 0..*) is associated with 'dsl::JavaApp' (role 'dsl_JavaApp', cardinality 0..*).
+'dsl::MethodBack' (role 'dsl_MethodBack110', cardinality 0..*) is associated with 'dsl::Eclass' (role 'dsl_Eclass111', cardinality 0..*).
+'dsl::AbstractMethod' (role 'dsl_AbstractMethod', cardinality 0..*) is associated with 'dsl::AbstractClass' (role 'dsl_AbstractClass76', cardinality 0..*).
+'dsl::GeneralEntity' (role 'dsl_GeneralEntity22', cardinality 0..*) is associated with 'dsl::Property' (role 'dsl_Property', cardinality 0..*).
+'dsl::Functionality' (role 'dsl_Functionality134', cardinality 0..*) is associated with 'dsl::Visualizer' (role 'dsl_Visualizer', cardinality 0..*).
+'dsl::Epackage' (role 'dsl_Epackage104', cardinality 0..*) is associated with 'dsl::Eclass' (role 'dsl_Eclass105', cardinality 0..*).
+'dsl::Einterface' (role 'dsl_Einterface', cardinality 0..*) is associated with 'dsl::GenericClass' (role 'dsl_GenericClass89', cardinality 0..*).
+'dsl::AbstractClass' (role 'dsl_AbstractClass', cardinality 0..*) is associated with 'dsl::Attribute' (role 'dsl_Attribute', cardinality 0..*).
+'dsl::Directory' (role 'dsl_Directory160', cardinality 0..*) is associated with 'dsl::Directory' (role 'dsl_Directory158', cardinality 0..*).
+'dsl::JsModule' (role 'dsl_JsModule', cardinality 0..*) is associated with 'dsl::ReactApp' (role 'dsl_ReactApp128', cardinality 0..*).
+'dsl::RouterComponent' (role 'dsl_RouterComponent143', cardinality 0..*) is associated with 'dsl::AbstractFrontElement' (role 'dsl_AbstractFrontElement144', cardinality 0..*).
+'dsl::LayerSegmentRelation' (role 'dsl_LayerSegmentRelation', cardinality 0..*) is associated with 'dsl::LayerSegment' (role 'dsl_LayerSegment53', cardinality 0..*).
+'dsl::GenericClass' (role 'dsl_GenericClass80', cardinality 0..*) is associated with 'dsl::MethodBack' (role 'dsl_MethodBack81', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action166', cardinality 0..*) is associated with 'dsl::ActionCreator' (role 'dsl_ActionCreator', cardinality 0..*).
+'dsl::EntityName' (role 'dsl_EntityName43', cardinality 0..*) is associated with 'dsl::RelationDom' (role 'dsl_RelationDom42', cardinality 0..*).
+'dsl::Domain' (role 'dsl_Domain8', cardinality 0..*) is associated with 'dsl::Module' (role 'dsl_Module', cardinality 0..*).
+'dsl::NativeClass' (role 'dsl_NativeClass99', cardinality 0..*) is associated with 'dsl::MethodBack' (role 'dsl_MethodBack100', cardinality 0..*).
+'dsl::Operateson' (role 'dsl_Operateson36', cardinality 0..*) is associated with 'dsl::EntityName' (role 'dsl_EntityName37', cardinality 0..*).
+'dsl::MethodBack' (role 'dsl_MethodBack', cardinality 0..*) is associated with 'dsl::AbstractClass' (role 'dsl_AbstractClass72', cardinality 0..*).
+'dsl::Layer' (role 'dsl_Layer51', cardinality 0..*) is associated with 'dsl::LayerSegment' (role 'dsl_LayerSegment', cardinality 0..*).
+'dsl::Type' (role 'dsl_Type25', cardinality 0..*) is associated with 'dsl::Property' (role 'dsl_Property24', cardinality 0..*).
+'dsl::ReactApp' (role 'dsl_ReactApp124', cardinality 0..*) is associated with 'dsl::Functionality' (role 'dsl_Functionality', cardinality 0..*).
+'dsl::Attribute' (role 'dsl_Attribute102', cardinality 0..*) is associated with 'dsl::Eclass' (role 'dsl_Eclass', cardinality 0..*).
+'dsl::RouterComponent' (role 'dsl_RouterComponent146', cardinality 0..*) is associated with 'dsl::UIComponent' (role 'dsl_UIComponent', cardinality 0..*).
+'dsl::JeeProject' (role 'dsl_JeeProject', cardinality 0..*) is associated with 'dsl::JavaApp' (role 'dsl_JavaApp61', cardinality 0..*).
+'dsl::Einterface' (role 'dsl_Einterface94', cardinality 0..*) is associated with 'dsl::AbstractMethod' (role 'dsl_AbstractMethod95', cardinality 0..*).
+'dsl::SpecialEntity' (role 'dsl_SpecialEntity32', cardinality 0..*) is associated with 'dsl::Transaction' (role 'dsl_Transaction', cardinality 0..*).
+'dsl::AbstractFrontElement' (role 'dsl_AbstractFrontElement149', cardinality 0..*) is associated with 'dsl::Container' (role 'dsl_Container148', cardinality 0..*).
+'dsl::SublayerSegment' (role 'dsl_SublayerSegment', cardinality 0..*) is associated with 'dsl::LayerSegment' (role 'dsl_LayerSegment55', cardinality 0..*).
+'dsl::Functionality' (role 'dsl_Functionality140', cardinality 0..*) is associated with 'dsl::Directory' (role 'dsl_Directory141', cardinality 0..*).
+'dsl::NativeClass' (role 'dsl_NativeClass', cardinality 0..*) is associated with 'dsl::Attribute' (role 'dsl_Attribute97', cardinality 0..*).

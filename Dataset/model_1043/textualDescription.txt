@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'MetaModel::EvolutionStyle' has the following attributes: 'name' of type str.
+The class 'MetaModel::IntermidiateState' has no attributes.
+The class 'State' has no attributes.
+The class 'MetaModel::InitialState' has no attributes.
+The class 'MetaModel::Transition' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'MetaModel::FinalState' has no attributes.
+The class 'MetaModel::State' has the following attributes: 'name' of type str.
+The class 'MetaModel::Operation' has the following attributes: 'time' of type str; 'name' of type str; 'cost' of type str.
+'MetaModel::FinalState' is a specialization of 'State'.
+'MetaModel::InitialState' is a specialization of 'State'.
+'MetaModel::IntermidiateState' is a specialization of 'State'.
+'MetaModel::EvolutionStyle' (role 'MetaModel_EvolutionStyle4', cardinality 0..*) is associated with 'MetaModel::IntermidiateState' (role 'MetaModel_IntermidiateState', cardinality 0..*).
+'MetaModel::State' (role 'MetaModel_State16', cardinality 0..*) is associated with 'MetaModel::InitialState' (role 'MetaModel_InitialState15', cardinality 0..*).
+'MetaModel::State' (role 'MetaModel_State19', cardinality 0..*) is associated with 'MetaModel::IntermidiateState' (role 'MetaModel_IntermidiateState18', cardinality 0..*).
+'MetaModel::EvolutionStyle' (role 'MetaModel_EvolutionStyle', cardinality 0..*) is associated with 'MetaModel::Transition' (role 'MetaModel_Transition', cardinality 0..*).
+'MetaModel::FinalState' (role 'MetaModel_FinalState24', cardinality 0..*) is associated with 'MetaModel::State' (role 'MetaModel_State25', cardinality 0..*).
+'MetaModel::Operation' (role 'MetaModel_Operation', cardinality 0..*) is associated with 'MetaModel::Transition' (role 'MetaModel_Transition8', cardinality 0..*).
+'MetaModel::State' (role 'MetaModel_State22', cardinality 0..*) is associated with 'MetaModel::IntermidiateState' (role 'MetaModel_IntermidiateState21', cardinality 0..*).
+'MetaModel::State' (role 'MetaModel_State13', cardinality 0..*) is associated with 'MetaModel::Transition' (role 'MetaModel_Transition12', cardinality 0..*).
+'MetaModel::Transition' (role 'MetaModel_Transition10', cardinality 0..*) is associated with 'MetaModel::State' (role 'MetaModel_State', cardinality 0..*).
+'MetaModel::FinalState' (role 'MetaModel_FinalState', cardinality 0..*) is associated with 'MetaModel::EvolutionStyle' (role 'MetaModel_EvolutionStyle6', cardinality 0..*).
+'MetaModel::EvolutionStyle' (role 'MetaModel_EvolutionStyle2', cardinality 0..*) is associated with 'MetaModel::InitialState' (role 'MetaModel_InitialState', cardinality 0..*).

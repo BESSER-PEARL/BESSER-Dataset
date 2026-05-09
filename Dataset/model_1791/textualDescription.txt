@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'column::TestSchema' has the following attributes: 'name' of type str.
+The class 'column::Book' has the following attributes: 'pages' of type str; 'title' of type str; 'author' of type str; 'weight' of type str.

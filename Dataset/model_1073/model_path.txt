@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Vectovox/DAT240-2014-Group3/petrinet/se.chalmers.cse.mde2014.petrinet.graphicalEditor/model/petrinet.ecore

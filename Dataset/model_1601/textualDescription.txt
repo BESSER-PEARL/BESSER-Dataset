@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'stochasticpetrinet::Node' has no attributes.
+The class 'Transition' has no attributes.
+The class 'stochasticpetrinet::TimedTransition' has no attributes.
+The class 'Node' has no attributes.
+The class 'stochasticpetrinet::Arc' has the following attributes: 'kind' of type str.
+The class 'stochasticpetrinet::Place' has the following attributes: 'tokens' of type int.
+The class 'stochasticpetrinet::ImmediateTransition' has no attributes.
+The class 'stochasticpetrinet::Transition' has no attributes.
+The class 'stochasticpetrinet::PetriNet' has no attributes.
+The enumeration 'ArcKind' has the following literals: 'INPUT', 'OUTPUT'.
+'stochasticpetrinet::TimedTransition' is a specialization of 'Transition'.
+'stochasticpetrinet::ImmediateTransition' is a specialization of 'Transition'.
+'stochasticpetrinet::Place' is a specialization of 'Node'.
+'stochasticpetrinet::Transition' is a specialization of 'Node'.
+'stochasticpetrinet::Transition' (role 'Transition', cardinality 0..*) is associated with 'stochasticpetrinet::Arc' (role 'arcs', cardinality 0..*).
+'stochasticpetrinet::Arc' (role 'Arc', cardinality 0..*) is associated with 'stochasticpetrinet::Transition' (role 'transition', cardinality 0..*).
+'stochasticpetrinet::Place' (role 'stochasticpetrinet_Place', cardinality 0..*) is associated with 'stochasticpetrinet::Arc' (role 'stochasticpetrinet_Arc', cardinality 0..*).
+'stochasticpetrinet::Node' (role 'nodes', cardinality 0..*) is associated with 'stochasticpetrinet::PetriNet' (role 'PetriNet', cardinality 0..*).
+'stochasticpetrinet::Node' (role 'Node', cardinality 0..*) is associated with 'stochasticpetrinet::PetriNet' (role 'petriNet', cardinality 0..*).

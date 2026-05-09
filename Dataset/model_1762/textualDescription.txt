@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Book::Author' has the following attributes: 'name' of type str.
+The class 'Book::Library' has no attributes.
+The class 'Book::Section' has the following attributes: 'title' of type str.
+The class 'Book::Chapter' has no attributes.
+The class 'Book::Paragraph' has the following attributes: 'title' of type str.
+The class 'Book::Book' has the following attributes: 'nbpages' of type int; 'name' of type str; 'isbn' of type str.
+The class 'Chapter' has no attributes.
+'Book::Paragraph' is a specialization of 'Chapter'.
+'Book::Section' is a specialization of 'Chapter'.
+'Book::Author' (role 'Book_Author', cardinality 0..*) is associated with 'Book::Library' (role 'Book_Library2', cardinality 0..*).
+'Book::Book' (role 'Book_Book4', cardinality 0..*) is associated with 'Book::Author' (role 'Book_Author5', cardinality 0..*).
+'Book::Chapter' (role 'Book_Chapter', cardinality 0..*) is associated with 'Book::Book' (role 'Book_Book7', cardinality 0..*).
+'Book::Library' (role 'Book_Library', cardinality 0..*) is associated with 'Book::Book' (role 'Book_Book', cardinality 0..*).

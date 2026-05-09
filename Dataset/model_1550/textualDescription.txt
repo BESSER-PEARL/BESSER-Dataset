@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'tp5::Researcher' has the following attributes: 'forName' of type str; 'name' of type str.
+The class 'tp5::PublicationStructure' has no attributes.
+The class 'tp5::Collaboration' has the following attributes: 'ratio' of type int.
+The class 'tp5::Paper' has the following attributes: 'name' of type str.
+The class 'tp5::Paragraph' has the following attributes: 'content' of type str; 'name' of type str; 'id' of type int.
+The class 'tp5::Position' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'tp5::Skill' has the following attributes: 'description' of type str.
+'tp5::Paper' (role 'Paper', cardinality 0..*) is associated with 'tp5::Researcher' (role 'authors', cardinality 0..*).
+'tp5::Paragraph' (role 'tp5_Paragraph', cardinality 0..*) is associated with 'tp5::Paper' (role 'tp5_Paper', cardinality 0..*).
+'tp5::Paper' (role 'tp5_Paper8', cardinality 0..*) is associated with 'tp5::Paper' (role 'tp5_Paper10', cardinality 0..*).
+'tp5::Collaboration' (role 'tp5_Collaboration23', cardinality 0..*) is associated with 'tp5::Paper' (role 'tp5_Paper24', cardinality 0..*).
+'tp5::Collaboration' (role 'tp5_Collaboration', cardinality 0..*) is associated with 'tp5::Researcher' (role 'tp5_Researcher5', cardinality 0..*).
+'tp5::Position' (role 'tp5_Position', cardinality 0..*) is associated with 'tp5::Researcher' (role 'tp5_Researcher3', cardinality 0..*).
+'tp5::Researcher' (role 'Researcher', cardinality 0..*) is associated with 'tp5::Paper' (role 'res_papers', cardinality 0..*).
+'tp5::Position' (role 'tp5_Position18', cardinality 0..*) is associated with 'tp5::PublicationStructure' (role 'tp5_PublicationStructure17', cardinality 0..*).
+'tp5::Position' (role 'tp5_Position21', cardinality 0..*) is associated with 'tp5::Position' (role 'tp5_Position19', cardinality 0..*).
+'tp5::PublicationStructure' (role 'tp5_PublicationStructure14', cardinality 0..*) is associated with 'tp5::Paper' (role 'tp5_Paper15', cardinality 0..*).
+'tp5::Skill' (role 'tp5_Skill', cardinality 0..*) is associated with 'tp5::Researcher' (role 'tp5_Researcher', cardinality 0..*).
+'tp5::Researcher' (role 'tp5_Researcher12', cardinality 0..*) is associated with 'tp5::PublicationStructure' (role 'tp5_PublicationStructure', cardinality 0..*).

@@ -1,0 +1,29 @@
+The model has 15 class(es).
+The class 'State' has no attributes.
+The class 'Transition' has no attributes.
+The class 'OutputState' has no attributes.
+The class 'ex::stateMachine::InputState' has no attributes.
+The class 'ex::stateMachine::State' has the following attributes: 'name' of type str.
+The class 'stateMachine::OutputState' has no attributes.
+The class 'ex::stateMachine::StandardState' has no attributes.
+The class 'InputState' has no attributes.
+The class 'ex::stateMachine::Transition' has no attributes.
+The class 'ex::stateMachine::TerminalState' has no attributes.
+The class 'InitState' has no attributes.
+The class 'ex::stateMachine::StateMachine' has no attributes.
+The class 'ex::stateMachine::InitState' has no attributes.
+The class 'stateMachine::InputState' has no attributes.
+The class 'ex::stateMachine::OutputState' has no attributes.
+'ex::stateMachine::StandardState' is a specialization of 'stateMachine::OutputState'.
+'ex::stateMachine::StandardState' is a specialization of 'stateMachine::InputState'.
+'ex::stateMachine::InitState' is a specialization of 'OutputState'.
+'ex::stateMachine::OutputState' is a specialization of 'State'.
+'ex::stateMachine::TerminalState' is a specialization of 'InputState'.
+'ex::stateMachine::InputState' is a specialization of 'State'.
+'ex::stateMachine::Transition' (role 'ex_stateMachine_Transition', cardinality 0..*) is associated with 'OutputState' (role 'OutputState', cardinality 0..*).
+'Transition' (role 'Transition9', cardinality 0..*) is associated with 'ex::stateMachine::InputState' (role 'ex_stateMachine_InputState', cardinality 0..*).
+'ex::stateMachine::StateMachine' (role 'ex_stateMachine_StateMachine', cardinality 0..*) is associated with 'InitState' (role 'InitState', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'ex::stateMachine::StateMachine' (role 'ex_stateMachine_StateMachine2', cardinality 0..*).
+'ex::stateMachine::Transition' (role 'ex_stateMachine_Transition7', cardinality 0..*) is associated with 'InputState' (role 'InputState', cardinality 0..*).
+'ex::stateMachine::StateMachine' (role 'ex_stateMachine_StateMachine4', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'Transition' (role 'Transition11', cardinality 0..*) is associated with 'ex::stateMachine::OutputState' (role 'ex_stateMachine_OutputState', cardinality 0..*).

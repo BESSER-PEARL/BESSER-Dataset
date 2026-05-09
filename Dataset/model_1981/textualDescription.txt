@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'TraceMetamodel::EObject' has no attributes.
+The class 'TraceMetamodel::TraceModel' has the following attributes: 'name' of type str.
+The class 'TraceMetamodel::TraceLink' has the following attributes: 'id' of type str; 'isPartial' of type bool; 'trule' of type str; 'name' of type str; 'isNonInjective' of type bool.
+The class 'TraceMetamodel::TraceLinkEnd' has the following attributes: 'type' of type str; 'name' of type str.
+'TraceMetamodel::TraceLink' (role 'TraceMetamodel_TraceLink', cardinality 0..*) is associated with 'TraceMetamodel::TraceModel' (role 'TraceMetamodel_TraceModel', cardinality 0..*).
+'TraceMetamodel::TraceLink' (role 'TraceMetamodel_TraceLink4', cardinality 0..*) is associated with 'TraceMetamodel::TraceLinkEnd' (role 'TraceMetamodel_TraceLinkEnd5', cardinality 0..*).
+'TraceMetamodel::TraceLinkEnd' (role 'TraceMetamodel_TraceLinkEnd', cardinality 0..*) is associated with 'TraceMetamodel::TraceLink' (role 'TraceMetamodel_TraceLink2', cardinality 0..*).
+'TraceMetamodel::EObject' (role 'TraceMetamodel_EObject', cardinality 0..*) is associated with 'TraceMetamodel::TraceLinkEnd' (role 'TraceMetamodel_TraceLinkEnd7', cardinality 0..*).

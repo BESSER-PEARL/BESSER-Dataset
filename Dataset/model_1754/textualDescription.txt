@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'simpleany::BookType' has the following attributes: 'author' of type str; 'title' of type str; 'name' of type str.
+The class 'simpleany::EStringToStringMapEntry' has no attributes.
+The class 'simpleany::LibraryType' has no attributes.
+The class 'simpleany::Description' has the following attributes: 'keyword' of type str; 'mixed' of type str.
+The class 'simpleany::DocumentRoot' has the following attributes: 'mixed' of type str.
+'simpleany::Description' (role 'simpleany_Description', cardinality 0..*) is associated with 'simpleany::BookType' (role 'simpleany_BookType', cardinality 0..*).
+'simpleany::EStringToStringMapEntry' (role 'simpleany_EStringToStringMapEntry', cardinality 0..*) is associated with 'simpleany::DocumentRoot' (role 'simpleany_DocumentRoot', cardinality 0..*).
+'simpleany::EStringToStringMapEntry' (role 'simpleany_EStringToStringMapEntry7', cardinality 0..*) is associated with 'simpleany::DocumentRoot' (role 'simpleany_DocumentRoot6', cardinality 0..*).
+'simpleany::Description' (role 'simpleany_Description3', cardinality 0..*) is associated with 'simpleany::Description' (role 'simpleany_Description1', cardinality 0..*).
+'simpleany::LibraryType' (role 'simpleany_LibraryType11', cardinality 0..*) is associated with 'simpleany::BookType' (role 'simpleany_BookType12', cardinality 0..*).
+'simpleany::LibraryType' (role 'simpleany_LibraryType', cardinality 0..*) is associated with 'simpleany::DocumentRoot' (role 'simpleany_DocumentRoot9', cardinality 0..*).

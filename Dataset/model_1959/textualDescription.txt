@@ -1,0 +1,227 @@
+The model has 105 class(es).
+The class 'Legalitaet' has no attributes.
+The class 'shadowrun::PersonaGruppe' has no attributes.
+The class 'shadowrun::Cyberware' has no attributes.
+The class 'shadowrun::Spezies' has the following attributes: 'WillenskraftMax' of type int; 'InteligenzMax' of type int; 'CharismaMax' of type int; 'StaerkeMax' of type int; 'KonsitutionMax' of type int; 'SchnelligkeitMax' of type int.
+The class 'shadowrun::Persona' has no attributes.
+The class 'shadowrun::Reichweite' has the following attributes: 'reichweiteKurz' of type int; 'reichweiteExtrem1' of type int; 'reichweiteMittel1' of type int; 'reichweiteExtrem' of type int; 'reichweiteWeit1' of type int; 'reichweiteWeit' of type int; 'reichweiteKurz1' of type int; 'reichweiteMittel' of type int.
+The class 'shadowrun::AbstaktGegenstand' has the following attributes: 'verbraucht' of type bool; 'raumKapazitaet' of type int; 'tragbar' of type str; 'inBenutzung' of type bool; 'gewicht' of type float.
+The class 'NahkampfReichweite' has no attributes.
+The class 'AbstraktFertigkeit' has no attributes.
+The class 'shadowrun::Shamane' has no attributes.
+The class 'shadowrun::AbstraktNahkampfwaffe' has no attributes.
+The class 'GeistigeAttribute' has no attributes.
+The class 'shadowrun::BaseMagischePersona' has the following attributes: 'magie' of type int.
+The class 'shadowrun::FertigkeitsGruppe' has no attributes.
+The class 'shadowrun::GeistigeAttribute' has the following attributes: 'Inteligenz' of type int; 'Charisma' of type int; 'Willenskraft' of type int.
+The class 'shadowrun::AttributModifikatorWert' has the following attributes: 'wert' of type int.
+The class 'shadowrun::Kleidung' has no attributes.
+The class 'shadowrun::Feuerwaffe' has the following attributes: 'kapazitaet' of type int; 'modie' of type str; 'munitionstyp' of type str.
+The class 'shadowrun::Fertigkeit' has no attributes.
+The class 'shadowrun::Gegenstand' has no attributes.
+The class 'AbstraktKleidung' has no attributes.
+The class 'shadowrun::GeldWert' has the following attributes: 'verfuegbarkeit' of type str; 'wert' of type str; 'strassenIndex' of type float.
+The class 'shadowrun::BioWare' has no attributes.
+The class 'BodyIndex' has no attributes.
+The class 'shadowrun::PersonaZauber' has the following attributes: 'stufe' of type int.
+The class 'koerpermods' has no attributes.
+The class 'shadowrun::MagiePersona' has no attributes.
+The class 'MagiePersona' has no attributes.
+The class 'Schadenswiederstand' has no attributes.
+The class 'Bemerkbar' has no attributes.
+The class 'shadowrun::AbstraktModifikatoren' has no attributes.
+The class 'shadowrun::AbstraktFertigkeit' has no attributes.
+The class 'AbstraktNahkampfwaffe' has no attributes.
+The class 'shadowrun::KiAdept' has no attributes.
+The class 'shadowrun::Behaelter' has the following attributes: 'kapazitaet' of type int.
+The class 'shadowrun::AbstaktPersona' has the following attributes: 'WillenskraftBase' of type int; 'StaerkeBase' of type int; 'ReaktionBase' of type int; 'SchnelligkeitBase' of type int; 'EssenzBase' of type int; 'eigenGewicht' of type int; 'CharismaBase' of type int; 'KonsitutionBase' of type int; 'KampfpoolBase' of type int; 'ReaktionWBase' of type int; 'modsetter' of type str; 'InteligenzBase' of type int.
+The class 'shadowrun::Projektilwaffe' has no attributes.
+The class 'AbstaktFernKampfwaffe' has no attributes.
+The class 'shadowrun::Sichtverhaeltnisse' has the following attributes: 'Infrarot' of type str; 'Ultrasound' of type str; 'Restlichtverstaerkung' of type str.
+The class 'shadowrun::Granate' has the following attributes: 'type' of type str; 'daempfung' of type str.
+The class 'shadowrun::Placement' has no attributes.
+The class 'shadowrun::AbstrakteRuestung' has the following attributes: 'ruestungsSchutzBalistisch' of type int; 'ruestungsSchutzStoss' of type int.
+The class 'AbstaktGegenstand' has no attributes.
+The class 'shadowrun::ModifikatorList' has the following attributes: 'name' of type str.
+The class 'shadowrun::EObject' has no attributes.
+The class 'AbstaktPersona' has no attributes.
+The class 'shadowrun::MagischeMods' has no attributes.
+The class 'shadowrun::Quelle' has the following attributes: 'page' of type str.
+The class 'shadowrun::Ruestung' has no attributes.
+The class 'AbstraktModifikatoren' has no attributes.
+The class 'FK' has no attributes.
+The class 'shadowrun::Reichweiten' has no attributes.
+The class 'shadowrun::AbstractMagier' has the following attributes: 'InitationsGrad' of type int; 'MagiePool' of type int; 'Astralpool' of type int.
+The class 'shadowrun::PersonaFertigkeit' has the following attributes: 'stufe' of type int.
+The class 'shadowrun::AbstaktWaffe' has the following attributes: 'schadenscode' of type str.
+The class 'Essenz' has no attributes.
+The class 'shadowrun::RaumKoordinate' has no attributes.
+The class 'shadowrun::KiKraft' has no attributes.
+The class 'shadowrun::BodyIndex' has the following attributes: 'bodyIndex' of type int.
+The class 'BaseMagischePersona' has no attributes.
+The class 'shadowrun::AbstraktKleidung' has the following attributes: 'koeperTeil' of type str.
+The class 'shadowrun::WarenListe' has the following attributes: 'listenWert' of type str; 'strassenWert' of type str.
+The class 'shadowrun::Spezialisierung' has no attributes.
+The class 'shadowrun::AbstrakRaumKoerper' has no attributes.
+The class 'BerechneteAttribute' has no attributes.
+The class 'AbstractMagier' has no attributes.
+The class 'shadowrun::PersonaKoerper' has the following attributes: 'gesamtZustand' of type int.
+The class 'shadowrun::AbstractMagischePaersona' has the following attributes: 'magieBase' of type int.
+The class 'shadowrun::Nahkampfwaffe' has no attributes.
+The class 'shadowrun::KoerperlicheAtribute' has the following attributes: 'Staerke' of type int; 'Schnelligkeit' of type int; 'Konsitution' of type int.
+The class 'shadowrun::AbstaktFernKampfwaffe' has no attributes.
+The class 'KoerperlicheAtribute' has no attributes.
+The class 'shadowrun::GengenstandListe' has no attributes.
+The class 'Gegenstand' has no attributes.
+The class 'shadowrun::Beschreibbar' has the following attributes: 'beschreibung' of type str; 'image' of type str; 'name' of type str.
+The class 'shadowrun::ShrList' has no attributes.
+The class 'shadowrun::Munition' has the following attributes: 'power' of type int; 'schadensTyp' of type str; 'niveau' of type int.
+The class 'shadowrun::Schadenswiederstand' has the following attributes: 'ruestungsSchutzBalistisch' of type int; 'ruestungsSchutzStoss' of type int.
+The class 'AbstrakteRuestung' has no attributes.
+The class 'shadowrun::Bemerkbar' has the following attributes: 'tarnstufe' of type int.
+The class 'shadowrun::Essenz' has the following attributes: 'Essenz' of type int.
+The class 'shadowrun::FK' has no attributes.
+The class 'GeldWert' has no attributes.
+The class 'shadowrun::Wurfwaffe' has no attributes.
+The class 'shadowrun::BasicList' has no attributes.
+The class 'shadowrun::Konzentration' has no attributes.
+The class 'MagischeMods' has no attributes.
+The class 'AbstaktWaffe' has no attributes.
+The class 'shadowrun::EAttribute' has no attributes.
+The class 'shadowrun::koerpermods' has no attributes.
+The class 'shadowrun::MunitionsBehealter' has no attributes.
+The class 'shadowrun::SourceBook' has the following attributes: 'endShrTime' of type str; 'startShrTime' of type str.
+The class 'AbstractMagischePaersona' has no attributes.
+The class 'shadowrun::FernkampfwaffenModifikatoren' has the following attributes: 'Schalldaempfer' of type bool; 'lasterPointer' of type bool; 'Smartgun' of type str; 'Rueckstoss' of type int; 'Vergroesserung' of type int.
+The class 'shadowrun::Legalitaet' has the following attributes: 'legalitaet' of type str.
+The class 'shadowrun::NahkampfReichweite' has the following attributes: 'reichweite' of type int.
+The class 'shadowrun::GegenstandStufen' has the following attributes: 'Elektronik' of type int; 'Tracing' of type int; 'AntiTracing' of type int; 'AntiProtection' of type int; 'Protection' of type int; 'Computer' of type int.
+The class 'shadowrun::Modifizierbar' has no attributes.
+The class 'Quelle' has no attributes.
+The class 'shadowrun::Script' has no attributes.
+The class 'Modifizierbar' has no attributes.
+The class 'shadowrun::Totem' has no attributes.
+The class 'shadowrun::BerechneteAttribute' has the following attributes: 'ReaktionW' of type int; 'Kampfpool' of type int; 'Reaktion' of type int.
+The class 'Beschreibbar' has no attributes.
+The class 'shadowrun::Zauber' has the following attributes: 'art' of type str; 'reichweite' of type str; 'Mindestwurf' of type str; 'Dauer' of type str; 'Enzug' of type str; 'Schaden' of type str.
+The enumeration 'Koerperteil' has the following literals: 'Beine', 'Rumpf', 'Arme', 'Kopf'.
+The enumeration 'FeuerModus' has the following literals: 'SM', 'AM', 'EM', 'HM'.
+The enumeration 'ZauberReichweite' has the following literals: 'Begrenzt', 'Selbst', 'Beruehrung', 'Blickfeld'.
+The enumeration 'MagazinTyp' has the following literals: 'Streifen', 'Gurt', 'Trommel', 'Clip'.
+The enumeration 'SmartgunType' has the following literals: 'SmartGun', 'SmatgunII', 'SmartBrille'.
+The enumeration 'ZauberArt' has the following literals: 'Mana', 'Physisch'.
+The enumeration 'Tragbar' has the following literals: 'zweihaendig', 'einhaendig'.
+The enumeration 'ZauberDauer' has the following literals: 'Aufrechterhalten', 'Permanent', 'Sofort'.
+The enumeration 'SchadensTyp' has the following literals: 'speziell', 'koerperlich', 'geistig'.
+The enumeration 'ModifikatorType' has the following literals: 'Bio', 'Cyber', 'Natural'.
+'shadowrun::BioWare' is a specialization of 'GeldWert'.
+'shadowrun::Feuerwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+'shadowrun::Cyberware' is a specialization of 'koerpermods'.
+'shadowrun::KiAdept' is a specialization of 'AbstractMagischePaersona'.
+'shadowrun::Spezies' is a specialization of 'Modifizierbar'.
+'shadowrun::Munition' is a specialization of 'AbstaktGegenstand'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'Bemerkbar'.
+'shadowrun::AbstaktPersona' is a specialization of 'BodyIndex'.
+'shadowrun::Gegenstand' is a specialization of 'AbstaktGegenstand'.
+'shadowrun::AbstrakteRuestung' is a specialization of 'AbstraktKleidung'.
+'shadowrun::Shamane' is a specialization of 'MagiePersona'.
+'shadowrun::Cyberware' is a specialization of 'GeldWert'.
+'shadowrun::Zauber' is a specialization of 'Beschreibbar'.
+'shadowrun::ShrList' is a specialization of 'Beschreibbar'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'Modifizierbar'.
+'shadowrun::AbstractMagischePaersona' is a specialization of 'BaseMagischePersona'.
+'shadowrun::AbstraktModifikatoren' is a specialization of 'Quelle'.
+'shadowrun::SourceBook' is a specialization of 'Beschreibbar'.
+'shadowrun::AbstaktWaffe' is a specialization of 'AbstaktGegenstand'.
+'shadowrun::KoerperlicheAtribute' is a specialization of 'Schadenswiederstand'.
+'shadowrun::AbstraktFertigkeit' is a specialization of 'FK'.
+'shadowrun::MagiePersona' is a specialization of 'AbstractMagier'.
+'shadowrun::Nahkampfwaffe' is a specialization of 'AbstraktNahkampfwaffe'.
+'shadowrun::Persona' is a specialization of 'AbstaktPersona'.
+'shadowrun::Projektilwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'Legalitaet'.
+'shadowrun::PersonaGruppe' is a specialization of 'Beschreibbar'.
+'shadowrun::FertigkeitsGruppe' is a specialization of 'FK'.
+'shadowrun::FertigkeitsGruppe' is a specialization of 'Beschreibbar'.
+'shadowrun::Spezies' is a specialization of 'Beschreibbar'.
+'shadowrun::Reichweite' is a specialization of 'Beschreibbar'.
+'shadowrun::AbstraktNahkampfwaffe' is a specialization of 'NahkampfReichweite'.
+'shadowrun::BioWare' is a specialization of 'koerpermods'.
+'shadowrun::AbstraktFertigkeit' is a specialization of 'Beschreibbar'.
+'shadowrun::MagischeMods' is a specialization of 'AbstraktModifikatoren'.
+'shadowrun::AbstraktKleidung' is a specialization of 'AbstaktGegenstand'.
+'shadowrun::AbstaktPersona' is a specialization of 'Beschreibbar'.
+'shadowrun::AbstractMagier' is a specialization of 'BaseMagischePersona'.
+'shadowrun::MagiePersona' is a specialization of 'AbstractMagischePaersona'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'Beschreibbar'.
+'shadowrun::AbstaktPersona' is a specialization of 'GeistigeAttribute'.
+'shadowrun::AbstaktPersona' is a specialization of 'Essenz'.
+'shadowrun::AbstaktPersona' is a specialization of 'KoerperlicheAtribute'.
+'shadowrun::Spezialisierung' is a specialization of 'AbstraktFertigkeit'.
+'shadowrun::Totem' is a specialization of 'Beschreibbar'.
+'shadowrun::koerpermods' is a specialization of 'AbstraktModifikatoren'.
+'shadowrun::KiKraft' is a specialization of 'MagischeMods'.
+'shadowrun::AbstraktModifikatoren' is a specialization of 'Beschreibbar'.
+'shadowrun::Konzentration' is a specialization of 'AbstraktFertigkeit'.
+'shadowrun::Behaelter' is a specialization of 'Gegenstand'.
+'shadowrun::Script' is a specialization of 'Beschreibbar'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'Quelle'.
+'shadowrun::Fertigkeit' is a specialization of 'AbstraktFertigkeit'.
+'shadowrun::Ruestung' is a specialization of 'AbstrakteRuestung'.
+'shadowrun::AbstraktModifikatoren' is a specialization of 'Modifizierbar'.
+'shadowrun::AbstaktFernKampfwaffe' is a specialization of 'AbstaktWaffe'.
+'shadowrun::MunitionsBehealter' is a specialization of 'Gegenstand'.
+'shadowrun::AbstaktPersona' is a specialization of 'BerechneteAttribute'.
+'shadowrun::Wurfwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+'shadowrun::AbstraktNahkampfwaffe' is a specialization of 'AbstaktWaffe'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'FK'.
+'shadowrun::Granate' is a specialization of 'AbstaktWaffe'.
+'shadowrun::Kleidung' is a specialization of 'AbstraktKleidung'.
+'shadowrun::AbstaktGegenstand' is a specialization of 'GeldWert'.
+'shadowrun::AbstractMagischePaersona' is a specialization of 'AbstaktPersona'.
+'shadowrun::Placement' is a specialization of 'Beschreibbar'.
+'shadowrun::Cyberware' (role 'cyberware', cardinality 0..*) is associated with 'shadowrun::AbstaktPersona' (role 'AbstaktPersona', cardinality 0..*).
+'shadowrun::AbstraktFertigkeit' (role 'shadowrun_AbstraktFertigkeit', cardinality 0..*) is associated with 'shadowrun::PersonaFertigkeit' (role 'shadowrun_PersonaFertigkeit50', cardinality 0..*).
+'shadowrun::Placement' (role 'shadowrun_Placement', cardinality 0..*) is associated with 'shadowrun::PersonaGruppe' (role 'shadowrun_PersonaGruppe32', cardinality 0..*).
+'shadowrun::AttributModifikatorWert' (role 'mods', cardinality 0..*) is associated with 'shadowrun::Modifizierbar' (role 'Modifizierbar', cardinality 0..*).
+'shadowrun::Munition' (role 'shadowrun_Munition', cardinality 0..*) is associated with 'shadowrun::Reichweite' (role 'shadowrun_Reichweite72', cardinality 0..*).
+'shadowrun::AbstaktWaffe' (role 'shadowrun_AbstaktWaffe', cardinality 0..*) is associated with 'shadowrun::Fertigkeit' (role 'shadowrun_Fertigkeit', cardinality 0..*).
+'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona8', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand9', cardinality 0..*).
+'shadowrun::BioWare' (role 'BioWare', cardinality 0..*) is associated with 'shadowrun::AbstaktPersona' (role 'persona4', cardinality 0..*).
+'shadowrun::AttributModifikatorWert' (role 'AttributModifikatorWert', cardinality 0..*) is associated with 'shadowrun::Modifizierbar' (role 'modifiziertes', cardinality 0..*).
+'shadowrun::Konzentration' (role 'shadowrun_Konzentration', cardinality 0..*) is associated with 'shadowrun::AbstaktWaffe' (role 'shadowrun_AbstaktWaffe22', cardinality 0..*).
+'shadowrun::Konzentration' (role 'Konzentration48', cardinality 0..*) is associated with 'shadowrun::Spezialisierung' (role 'spezialisierungen', cardinality 0..*).
+'shadowrun::Zauber' (role 'shadowrun_Zauber', cardinality 0..*) is associated with 'shadowrun::PersonaZauber' (role 'shadowrun_PersonaZauber62', cardinality 0..*).
+'shadowrun::Konzentration' (role 'konzentration', cardinality 0..*) is associated with 'shadowrun::Spezialisierung' (role 'Spezialisierung', cardinality 0..*).
+'shadowrun::Konzentration' (role 'konzentrationen', cardinality 0..*) is associated with 'shadowrun::Fertigkeit' (role 'Fertigkeit', cardinality 0..*).
+'shadowrun::Reichweite' (role 'shadowrun_Reichweite59', cardinality 0..*) is associated with 'shadowrun::Reichweiten' (role 'shadowrun_Reichweiten', cardinality 0..*).
+'shadowrun::GengenstandListe' (role 'shadowrun_GengenstandListe', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand57', cardinality 0..*).
+'shadowrun::KiKraft' (role 'kikraft', cardinality 0..*) is associated with 'shadowrun::KiAdept' (role 'KiAdept', cardinality 0..*).
+'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona16', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand17', cardinality 0..*).
+'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona6', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand', cardinality 0..*).
+'shadowrun::BasicList' (role 'shadowrun_BasicList', cardinality 0..*) is associated with 'shadowrun::FK' (role 'shadowrun_FK', cardinality 0..*).
+'shadowrun::PersonaZauber' (role 'shadowrun_PersonaZauber', cardinality 0..*) is associated with 'shadowrun::MagiePersona' (role 'shadowrun_MagiePersona', cardinality 0..*).
+'shadowrun::EAttribute' (role 'shadowrun_EAttribute', cardinality 0..*) is associated with 'shadowrun::AttributModifikatorWert' (role 'shadowrun_AttributModifikatorWert', cardinality 0..*).
+'shadowrun::Reichweite' (role 'shadowrun_Reichweite', cardinality 0..*) is associated with 'shadowrun::AbstaktFernKampfwaffe' (role 'shadowrun_AbstaktFernKampfwaffe', cardinality 0..*).
+'shadowrun::WarenListe' (role 'shadowrun_WarenListe', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand67', cardinality 0..*).
+'shadowrun::PersonaFertigkeit' (role 'shadowrun_PersonaFertigkeit', cardinality 0..*) is associated with 'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona', cardinality 0..*).
+'shadowrun::PersonaGruppe' (role 'shadowrun_PersonaGruppe37', cardinality 0..*) is associated with 'shadowrun::Script' (role 'shadowrun_Script36', cardinality 0..*).
+'shadowrun::Script' (role 'shadowrun_Script', cardinality 0..*) is associated with 'shadowrun::Placement' (role 'shadowrun_Placement34', cardinality 0..*).
+'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona19', cardinality 0..*) is associated with 'shadowrun::Spezies' (role 'shadowrun_Spezies', cardinality 0..*).
+'shadowrun::Fertigkeit' (role 'fertigkeiten', cardinality 0..*) is associated with 'shadowrun::FertigkeitsGruppe' (role 'FertigkeitsGruppe', cardinality 0..*).
+'shadowrun::Fertigkeit' (role 'fertigkeit', cardinality 0..*) is associated with 'shadowrun::Konzentration' (role 'Konzentration', cardinality 0..*).
+'shadowrun::MunitionsBehealter' (role 'shadowrun_MunitionsBehealter', cardinality 0..*) is associated with 'shadowrun::Feuerwaffe' (role 'shadowrun_Feuerwaffe', cardinality 0..*).
+'shadowrun::AbstaktPersona' (role 'AbstaktPersona52', cardinality 0..*) is associated with 'shadowrun::BioWare' (role 'bioware', cardinality 0..*).
+'shadowrun::AbstrakRaumKoerper' (role 'shadowrun_AbstrakRaumKoerper', cardinality 0..*) is associated with 'shadowrun::RaumKoordinate' (role 'shadowrun_RaumKoordinate', cardinality 0..*).
+'shadowrun::EObject' (role 'shadowrun_EObject', cardinality 0..*) is associated with 'shadowrun::ShrList' (role 'shadowrun_ShrList', cardinality 0..*).
+'shadowrun::AbstaktWaffe' (role 'shadowrun_AbstaktWaffe24', cardinality 0..*) is associated with 'shadowrun::Spezialisierung' (role 'shadowrun_Spezialisierung', cardinality 0..*).
+'shadowrun::KiAdept' (role 'persona55', cardinality 0..*) is associated with 'shadowrun::KiKraft' (role 'KiKraft', cardinality 0..*).
+'shadowrun::Totem' (role 'shadowrun_Totem', cardinality 0..*) is associated with 'shadowrun::Shamane' (role 'shadowrun_Shamane', cardinality 0..*).
+'shadowrun::AbstraktModifikatoren' (role 'shadowrun_AbstraktModifikatoren', cardinality 0..*) is associated with 'shadowrun::ModifikatorList' (role 'shadowrun_ModifikatorList', cardinality 0..*).
+'shadowrun::PersonaGruppe' (role 'shadowrun_PersonaGruppe', cardinality 0..*) is associated with 'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona30', cardinality 0..*).
+'shadowrun::FertigkeitsGruppe' (role 'gruppe', cardinality 0..*) is associated with 'shadowrun::Fertigkeit' (role 'Fertigkeit64', cardinality 0..*).
+'shadowrun::Quelle' (role 'shadowrun_Quelle', cardinality 0..*) is associated with 'shadowrun::SourceBook' (role 'shadowrun_SourceBook', cardinality 0..*).
+'shadowrun::AbstraktKleidung' (role 'shadowrun_AbstraktKleidung', cardinality 0..*) is associated with 'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona14', cardinality 0..*).
+'shadowrun::AbstaktPersona' (role 'shadowrun_AbstaktPersona11', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand12', cardinality 0..*).
+'shadowrun::Behaelter' (role 'shadowrun_Behaelter', cardinality 0..*) is associated with 'shadowrun::AbstaktGegenstand' (role 'shadowrun_AbstaktGegenstand27', cardinality 0..*).
+'shadowrun::Cyberware' (role 'Cyberware', cardinality 0..*) is associated with 'shadowrun::AbstaktPersona' (role 'persona', cardinality 0..*).

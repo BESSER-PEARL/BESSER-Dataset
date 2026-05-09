@@ -1,0 +1,42 @@
+The model has 20 class(es).
+The class 'ea::extensions::ExtensionElement' has no attributes.
+The class 'ExtensionElement' has no attributes.
+The class 'Automaton' has no attributes.
+The class 'Transition' has no attributes.
+The class 'ea::extensions::IExtendible' has no attributes.
+The class 'ea::automata::Module' has no attributes.
+The class 'Module' has no attributes.
+The class 'ea::extensions::ExtendibleElement' has no attributes.
+The class 'ea::automata::Automaton' has the following attributes: 'id' of type str; 'usedExtensionIds' of type str; 'name' of type str.
+The class 'ea::extensions::StringExtension' has the following attributes: 'value' of type str.
+The class 'State' has no attributes.
+The class 'IExtendible' has no attributes.
+The class 'ea::automata::Transition' has the following attributes: 'id' of type str.
+The class 'ExtendibleElement' has no attributes.
+The class 'ea::extensions::IExtension' has the following attributes: 'id' of type str.
+The class 'ea::automata::State' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'ea::extensions::StringListExtension' has the following attributes: 'values' of type str.
+The class 'IExtension' has no attributes.
+The class 'ea::extensions::IntegerExtension' has the following attributes: 'value' of type int.
+The class 'ea::extensions::BooleanExtension' has the following attributes: 'value' of type bool.
+'ea::extensions::StringListExtension' is a specialization of 'ExtensionElement'.
+'ea::automata::State' is a specialization of 'ExtendibleElement'.
+'ea::extensions::BooleanExtension' is a specialization of 'ExtensionElement'.
+'ea::automata::Transition' is a specialization of 'ExtendibleElement'.
+'ea::automata::Automaton' is a specialization of 'ExtendibleElement'.
+'ea::extensions::IntegerExtension' is a specialization of 'ExtensionElement'.
+'ea::extensions::StringExtension' is a specialization of 'ExtensionElement'.
+'ea::extensions::ExtendibleElement' is a specialization of 'IExtendible'.
+'ea::extensions::ExtensionElement' is a specialization of 'IExtension'.
+'ea::extensions::IExtendible' (role 'owner', cardinality 0..*) is associated with 'IExtension' (role 'IExtension', cardinality 0..*).
+'ea::automata::Transition' (role 'incoming', cardinality 0..*) is associated with 'State' (role 'State14', cardinality 0..*).
+'Automaton' (role 'Automaton', cardinality 0..*) is associated with 'ea::automata::State' (role 'states', cardinality 0..*).
+'Module' (role 'Module', cardinality 0..*) is associated with 'ea::automata::Automaton' (role 'automata', cardinality 0..*).
+'ea::automata::Transition' (role 'transitions', cardinality 0..*) is associated with 'Automaton' (role 'Automaton10', cardinality 0..*).
+'ea::automata::State' (role 'source', cardinality 0..*) is associated with 'Transition' (role 'Transition8', cardinality 0..*).
+'ea::automata::Transition' (role 'outgoing', cardinality 0..*) is associated with 'State' (role 'State12', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'ea::automata::Automaton' (role 'automaton2', cardinality 0..*).
+'ea::automata::Automaton' (role 'automaton', cardinality 0..*) is associated with 'State' (role 'State', cardinality 0..*).
+'ea::automata::State' (role 'target', cardinality 0..*) is associated with 'Transition' (role 'Transition6', cardinality 0..*).
+'ea::automata::Module' (role 'module', cardinality 0..*) is associated with 'Automaton' (role 'Automaton16', cardinality 0..*).
+'ea::extensions::IExtension' (role 'extensions', cardinality 0..*) is associated with 'IExtendible' (role 'IExtendible', cardinality 0..*).

@@ -1,0 +1,82 @@
+The model has 36 class(es).
+The class 'Parameter' has no attributes.
+The class 'Event' has no attributes.
+The class 'statesml::ChangeExpression' has the following attributes: 'fulfilled' of type bool.
+The class 'statesml::Event' has the following attributes: 'name' of type str.
+The class 'statesml::SystemUnitLibrary' has the following attributes: 'name' of type str.
+The class 'statesml::ParameterValue' has no attributes.
+The class 'statesml::SystemUnitModel' has the following attributes: 'name' of type str.
+The class 'statesml::SystemUnit' has the following attributes: 'name' of type str.
+The class 'statesml::SelectionConvergence' has no attributes.
+The class 'statesml::StatesModel' has no attributes.
+The class 'statesml::String' has no attributes.
+The class 'statesml::DataTypeLibrary' has the following attributes: 'name' of type str.
+The class 'statesml::Boolean' has no attributes.
+The class 'statesml::IncomingParameter' has no attributes.
+The class 'statesml::FunctionCall' has no attributes.
+The class 'statesml::Integer' has no attributes.
+The class 'statesml::Attribute' has the following attributes: 'name' of type str.
+The class 'statesml::ChangeEvent' has no attributes.
+The class 'statesml::Node' has the following attributes: 'name' of type str.
+The class 'statesml::MiddleState' has no attributes.
+The class 'statesml::Function' has the following attributes: 'name' of type str.
+The class 'statesml::StateSystem' has no attributes.
+The class 'statesml::Transition' has no attributes.
+The class 'statesml::DataType' has the following attributes: 'name' of type str.
+The class 'statesml::Trigger' has no attributes.
+The class 'DataType' has no attributes.
+The class 'State' has no attributes.
+The class 'statesml::Parameter' has the following attributes: 'name' of type str.
+The class 'statesml::TerminalState' has no attributes.
+The class 'statesml::SelectionDivergence' has no attributes.
+The class 'statesml::State' has no attributes.
+The class 'statesml::StateSystemModel' has the following attributes: 'name' of type str.
+The class 'statesml::ReturnParameter' has no attributes.
+The class 'Node' has no attributes.
+The class 'statesml::InitialState' has no attributes.
+The class 'statesml::Edge' has the following attributes: 'name' of type str.
+'statesml::MiddleState' is a specialization of 'State'.
+'statesml::State' is a specialization of 'Node'.
+'statesml::Transition' is a specialization of 'Node'.
+'statesml::IncomingParameter' is a specialization of 'Parameter'.
+'statesml::Boolean' is a specialization of 'DataType'.
+'statesml::ReturnParameter' is a specialization of 'Parameter'.
+'statesml::InitialState' is a specialization of 'State'.
+'statesml::SelectionConvergence' is a specialization of 'Node'.
+'statesml::SelectionDivergence' is a specialization of 'Node'.
+'statesml::TerminalState' is a specialization of 'State'.
+'statesml::ChangeEvent' is a specialization of 'Event'.
+'statesml::String' is a specialization of 'DataType'.
+'statesml::Integer' is a specialization of 'DataType'.
+'statesml::SystemUnit' (role 'statesml_SystemUnit', cardinality 0..*) is associated with 'statesml::SystemUnitLibrary' (role 'statesml_SystemUnitLibrary9', cardinality 0..*).
+'statesml::IncomingParameter' (role 'statesml_IncomingParameter50', cardinality 0..*) is associated with 'statesml::Attribute' (role 'statesml_Attribute51', cardinality 0..*).
+'statesml::SystemUnit' (role 'statesml_SystemUnit13', cardinality 0..*) is associated with 'statesml::Attribute' (role 'statesml_Attribute14', cardinality 0..*).
+'statesml::IncomingParameter' (role 'statesml_IncomingParameter66', cardinality 0..*) is associated with 'statesml::ParameterValue' (role 'statesml_ParameterValue65', cardinality 0..*).
+'statesml::Edge' (role 'Edge', cardinality 0..*) is associated with 'statesml::Node' (role 'source', cardinality 0..*).
+'statesml::Attribute' (role 'statesml_Attribute', cardinality 0..*) is associated with 'statesml::DataType' (role 'statesml_DataType', cardinality 0..*).
+'statesml::SystemUnitModel' (role 'statesml_SystemUnitModel', cardinality 0..*) is associated with 'statesml::StatesModel' (role 'statesml_StatesModel', cardinality 0..*).
+'statesml::DataType' (role 'statesml_DataType26', cardinality 0..*) is associated with 'statesml::Parameter' (role 'statesml_Parameter', cardinality 0..*).
+'statesml::State' (role 'statesml_State', cardinality 0..*) is associated with 'statesml::FunctionCall' (role 'statesml_FunctionCall', cardinality 0..*).
+'statesml::DataType' (role 'statesml_DataType7', cardinality 0..*) is associated with 'statesml::Function' (role 'statesml_Function', cardinality 0..*).
+'statesml::Trigger' (role 'statesml_Trigger47', cardinality 0..*) is associated with 'statesml::Event' (role 'statesml_Event48', cardinality 0..*).
+'statesml::Edge' (role 'outgoing', cardinality 0..*) is associated with 'statesml::Node' (role 'Node', cardinality 0..*).
+'statesml::Edge' (role 'Edge40', cardinality 0..*) is associated with 'statesml::Node' (role 'target', cardinality 0..*).
+'statesml::Edge' (role 'statesml_Edge', cardinality 0..*) is associated with 'statesml::StateSystem' (role 'statesml_StateSystem32', cardinality 0..*).
+'statesml::DataTypeLibrary' (role 'statesml_DataTypeLibrary19', cardinality 0..*) is associated with 'statesml::DataType' (role 'statesml_DataType20', cardinality 0..*).
+'statesml::ParameterValue' (role 'statesml_ParameterValue', cardinality 0..*) is associated with 'statesml::FunctionCall' (role 'statesml_FunctionCall56', cardinality 0..*).
+'statesml::SystemUnitModel' (role 'statesml_SystemUnitModel3', cardinality 0..*) is associated with 'statesml::DataTypeLibrary' (role 'statesml_DataTypeLibrary', cardinality 0..*).
+'statesml::Node' (role 'Node43', cardinality 0..*) is associated with 'statesml::Edge' (role 'incoming', cardinality 0..*).
+'statesml::StateSystem' (role 'statesml_StateSystem', cardinality 0..*) is associated with 'statesml::StateSystemModel' (role 'statesml_StateSystemModel28', cardinality 0..*).
+'statesml::StateSystem' (role 'statesml_StateSystem37', cardinality 0..*) is associated with 'statesml::Event' (role 'statesml_Event', cardinality 0..*).
+'statesml::StateSystem' (role 'statesml_StateSystem34', cardinality 0..*) is associated with 'statesml::Attribute' (role 'statesml_Attribute35', cardinality 0..*).
+'statesml::Trigger' (role 'statesml_Trigger', cardinality 0..*) is associated with 'statesml::Transition' (role 'statesml_Transition', cardinality 0..*).
+'statesml::StateSystem' (role 'statesml_StateSystem30', cardinality 0..*) is associated with 'statesml::Node' (role 'statesml_Node', cardinality 0..*).
+'statesml::IncomingParameter' (role 'statesml_IncomingParameter', cardinality 0..*) is associated with 'statesml::Function' (role 'statesml_Function24', cardinality 0..*).
+'statesml::Function' (role 'statesml_Function17', cardinality 0..*) is associated with 'statesml::SystemUnit' (role 'statesml_SystemUnit16', cardinality 0..*).
+'statesml::SystemUnit' (role 'statesml_SystemUnit11', cardinality 0..*) is associated with 'statesml::StateSystemModel' (role 'statesml_StateSystemModel', cardinality 0..*).
+'statesml::ReturnParameter' (role 'statesml_ReturnParameter', cardinality 0..*) is associated with 'statesml::Function' (role 'statesml_Function22', cardinality 0..*).
+'statesml::ChangeExpression' (role 'statesml_ChangeExpression59', cardinality 0..*) is associated with 'statesml::Function' (role 'statesml_Function60', cardinality 0..*).
+'statesml::ChangeEvent' (role 'statesml_ChangeEvent', cardinality 0..*) is associated with 'statesml::ChangeExpression' (role 'statesml_ChangeExpression', cardinality 0..*).
+'statesml::ChangeExpression' (role 'statesml_ChangeExpression62', cardinality 0..*) is associated with 'statesml::IncomingParameter' (role 'statesml_IncomingParameter63', cardinality 0..*).
+'statesml::SystemUnitLibrary' (role 'statesml_SystemUnitLibrary', cardinality 0..*) is associated with 'statesml::SystemUnitModel' (role 'statesml_SystemUnitModel5', cardinality 0..*).
+'statesml::Function' (role 'statesml_Function54', cardinality 0..*) is associated with 'statesml::FunctionCall' (role 'statesml_FunctionCall53', cardinality 0..*).

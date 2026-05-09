@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'simpleanySimplified::Library' has no attributes.
+The class 'simpleanySimplified::Description' has the following attributes: 'keywords' of type str.
+The class 'simpleanySimplified::Book' has the following attributes: 'title' of type str; 'author' of type str; 'name' of type str.
+The class 'simpleanySimplified::MixedText' has no attributes.
+The class 'simpleanySimplified::MixedBaseClass' has no attributes.
+The class 'simpleanySimplified::MixedFeature' has no attributes.
+The class 'MixedData' has no attributes.
+The class 'simpleanySimplified::MixedData' has the following attributes: 'value' of type str.
+The class 'MixedBaseClass' has no attributes.
+'simpleanySimplified::MixedFeature' is a specialization of 'MixedData'.
+'simpleanySimplified::MixedText' is a specialization of 'MixedData'.
+'simpleanySimplified::Description' is a specialization of 'MixedBaseClass'.
+'simpleanySimplified::Description' (role 'simpleanySimplified_Description3', cardinality 0..*) is associated with 'simpleanySimplified::Description' (role 'simpleanySimplified_Description1', cardinality 0..*).
+'simpleanySimplified::MixedData' (role 'simpleanySimplified_MixedData', cardinality 0..*) is associated with 'simpleanySimplified::MixedBaseClass' (role 'simpleanySimplified_MixedBaseClass', cardinality 0..*).
+'simpleanySimplified::Description' (role 'simpleanySimplified_Description', cardinality 0..*) is associated with 'simpleanySimplified::Book' (role 'simpleanySimplified_Book', cardinality 0..*).
+'simpleanySimplified::Library' (role 'simpleanySimplified_Library', cardinality 0..*) is associated with 'simpleanySimplified::Book' (role 'simpleanySimplified_Book5', cardinality 0..*).

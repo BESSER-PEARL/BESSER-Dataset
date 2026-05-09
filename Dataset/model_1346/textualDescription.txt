@@ -1,0 +1,97 @@
+The model has 37 class(es).
+The class 'essentialOCLCST::VariableCS' has no attributes.
+The class 'essentialOCLCST::PathNameCS' has no attributes.
+The class 'essentialOCLCST::UnlimitedNaturalLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::TypeCS' has no attributes.
+The class 'essentialOCLCST::BooleanLiteralExpCS' has the following attributes: 'value' of type str.
+The class 'essentialOCLCST::CollectionLiteralPartCS' has no attributes.
+The class 'CollectionLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::SimpleNameCS' has the following attributes: 'value' of type str.
+The class 'essentialOCLCST::StringLiteralExpCS' has the following attributes: 'stringSymbol' of type str.
+The class 'essentialOCLCST::TupleLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::CollectionTypeCS' has no attributes.
+The class 'essentialOCLCST::CollectionLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::PrimitiveLiteralExpCS' has no attributes.
+The class 'VariableExpCS' has no attributes.
+The class 'essentialOCLCST::IfExpCS' has no attributes.
+The class 'essentialOCLCST::NullLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::DotIndexArgumentsCS' has the following attributes: 'isPre' of type bool.
+The class 'essentialOCLCST::CallArgumentsCS' has no attributes.
+The class 'essentialOCLCST::UnaryExpressionCS' has the following attributes: 'op' of type str.
+The class 'essentialOCLCST::OclExpressionCS' has no attributes.
+The class 'CallArgumentsCS' has no attributes.
+The class 'essentialOCLCST::LiteralExpCS' has no attributes.
+The class 'PrimitiveLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::CallExpCS' has no attributes.
+The class 'OclExpressionCS' has no attributes.
+The class 'essentialOCLCST::RealLiteralExpCS' has the following attributes: 'realSymbol' of type str.
+The class 'essentialOCLCST::ArrowCallArgumentsCS' has no attributes.
+The class 'essentialOCLCST::TypeLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::VariableExpCS' has no attributes.
+The class 'essentialOCLCST::BinaryExpressionCS' has the following attributes: 'op' of type str.
+The class 'LiteralExpCS' has no attributes.
+The class 'essentialOCLCST::IntegerLiteralExpCS' has the following attributes: 'integerSymbol' of type str.
+The class 'essentialOCLCST::LetExpCS' has no attributes.
+The class 'TypeCS' has no attributes.
+The class 'TypeLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::InvalidLiteralExpCS' has no attributes.
+The class 'essentialOCLCST::TupleTypeCS' has the following attributes: 'value' of type str.
+'essentialOCLCST::DotIndexArgumentsCS' is a specialization of 'CallArgumentsCS'.
+'essentialOCLCST::TupleLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialOCLCST::CallExpCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::CollectionTypeCS' is a specialization of 'TypeCS'.
+'essentialOCLCST::BooleanLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::LiteralExpCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::LetExpCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::PrimitiveLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialOCLCST::IfExpCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::TupleTypeCS' is a specialization of 'TypeLiteralExpCS'.
+'essentialOCLCST::ArrowCallArgumentsCS' is a specialization of 'CallArgumentsCS'.
+'essentialOCLCST::IntegerLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::SimpleNameCS' is a specialization of 'TypeLiteralExpCS'.
+'essentialOCLCST::CollectionTypeCS' is a specialization of 'CollectionLiteralExpCS'.
+'essentialOCLCST::UnaryExpressionCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::PathNameCS' is a specialization of 'TypeLiteralExpCS'.
+'essentialOCLCST::NullLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::TypeLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialOCLCST::SimpleNameCS' is a specialization of 'TypeCS'.
+'essentialOCLCST::BinaryExpressionCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::PathNameCS' is a specialization of 'TypeCS'.
+'essentialOCLCST::CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'essentialOCLCST::StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::VariableExpCS' is a specialization of 'OclExpressionCS'.
+'essentialOCLCST::InvalidLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::RealLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'essentialOCLCST::SimpleNameCS' is a specialization of 'VariableExpCS'.
+'essentialOCLCST::TupleTypeCS' is a specialization of 'TypeCS'.
+'essentialOCLCST::SimpleNameCS' is a specialization of 'CollectionLiteralExpCS'.
+'essentialOCLCST::CollectionTypeCS' is a specialization of 'TypeLiteralExpCS'.
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS37', cardinality 0..*) is associated with 'essentialOCLCST::IfExpCS' (role 'essentialOCLCST_IfExpCS36', cardinality 0..*).
+'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS55', cardinality 0..*) is associated with 'essentialOCLCST::TupleTypeCS' (role 'essentialOCLCST_TupleTypeCS', cardinality 0..*).
+'essentialOCLCST::CollectionTypeCS' (role 'essentialOCLCST_CollectionTypeCS27', cardinality 0..*) is associated with 'essentialOCLCST::TypeCS' (role 'essentialOCLCST_TypeCS', cardinality 0..*).
+'essentialOCLCST::CallExpCS' (role 'essentialOCLCST_CallExpCS', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS16', cardinality 0..*).
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS45', cardinality 0..*) is associated with 'essentialOCLCST::LetExpCS' (role 'essentialOCLCST_LetExpCS44', cardinality 0..*).
+'essentialOCLCST::BinaryExpressionCS' (role 'essentialOCLCST_BinaryExpressionCS9', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS10', cardinality 0..*).
+'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS3', cardinality 0..*) is associated with 'essentialOCLCST::ArrowCallArgumentsCS' (role 'essentialOCLCST_ArrowCallArgumentsCS2', cardinality 0..*).
+'essentialOCLCST::TypeCS' (role 'essentialOCLCST_TypeCS63', cardinality 0..*) is associated with 'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS62', cardinality 0..*).
+'essentialOCLCST::CallArgumentsCS' (role 'essentialOCLCST_CallArgumentsCS', cardinality 0..*) is associated with 'essentialOCLCST::PathNameCS' (role 'essentialOCLCST_PathNameCS', cardinality 0..*).
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS24', cardinality 0..*) is associated with 'essentialOCLCST::CollectionLiteralPartCS' (role 'essentialOCLCST_CollectionLiteralPartCS23', cardinality 0..*).
+'essentialOCLCST::CallArgumentsCS' (role 'essentialOCLCST_CallArgumentsCS13', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS14', cardinality 0..*).
+'essentialOCLCST::CollectionTypeCS' (role 'essentialOCLCST_CollectionTypeCS29', cardinality 0..*) is associated with 'essentialOCLCST::CollectionLiteralPartCS' (role 'essentialOCLCST_CollectionLiteralPartCS30', cardinality 0..*).
+'essentialOCLCST::BinaryExpressionCS' (role 'essentialOCLCST_BinaryExpressionCS', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS7', cardinality 0..*).
+'essentialOCLCST::SimpleNameCS' (role 'essentialOCLCST_SimpleNameCS48', cardinality 0..*) is associated with 'essentialOCLCST::PathNameCS' (role 'essentialOCLCST_PathNameCS47', cardinality 0..*).
+'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS53', cardinality 0..*) is associated with 'essentialOCLCST::TupleLiteralExpCS' (role 'essentialOCLCST_TupleLiteralExpCS', cardinality 0..*).
+'essentialOCLCST::DotIndexArgumentsCS' (role 'essentialOCLCST_DotIndexArgumentsCS', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS32', cardinality 0..*).
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS66', cardinality 0..*) is associated with 'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS65', cardinality 0..*).
+'essentialOCLCST::CallExpCS' (role 'essentialOCLCST_CallExpCS18', cardinality 0..*) is associated with 'essentialOCLCST::CallArgumentsCS' (role 'essentialOCLCST_CallArgumentsCS19', cardinality 0..*).
+'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS', cardinality 0..*) is associated with 'essentialOCLCST::ArrowCallArgumentsCS' (role 'essentialOCLCST_ArrowCallArgumentsCS', cardinality 0..*).
+'essentialOCLCST::SimpleNameCS' (role 'essentialOCLCST_SimpleNameCS50', cardinality 0..*) is associated with 'essentialOCLCST::CollectionLiteralPartCS' (role 'essentialOCLCST_CollectionLiteralPartCS51', cardinality 0..*).
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS', cardinality 0..*) is associated with 'essentialOCLCST::ArrowCallArgumentsCS' (role 'essentialOCLCST_ArrowCallArgumentsCS5', cardinality 0..*).
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS34', cardinality 0..*) is associated with 'essentialOCLCST::IfExpCS' (role 'essentialOCLCST_IfExpCS', cardinality 0..*).
+'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS59', cardinality 0..*) is associated with 'essentialOCLCST::SimpleNameCS' (role 'essentialOCLCST_SimpleNameCS60', cardinality 0..*).
+'essentialOCLCST::SimpleNameCS' (role 'essentialOCLCST_SimpleNameCS', cardinality 0..*) is associated with 'essentialOCLCST::CollectionTypeCS' (role 'essentialOCLCST_CollectionTypeCS', cardinality 0..*).
+'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS40', cardinality 0..*) is associated with 'essentialOCLCST::IfExpCS' (role 'essentialOCLCST_IfExpCS39', cardinality 0..*).
+'essentialOCLCST::CollectionLiteralPartCS' (role 'essentialOCLCST_CollectionLiteralPartCS', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS21', cardinality 0..*).
+'essentialOCLCST::VariableCS' (role 'essentialOCLCST_VariableCS42', cardinality 0..*) is associated with 'essentialOCLCST::LetExpCS' (role 'essentialOCLCST_LetExpCS', cardinality 0..*).
+'essentialOCLCST::UnaryExpressionCS' (role 'essentialOCLCST_UnaryExpressionCS', cardinality 0..*) is associated with 'essentialOCLCST::OclExpressionCS' (role 'essentialOCLCST_OclExpressionCS57', cardinality 0..*).

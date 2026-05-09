@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'addressbook::Relationship' has the following attributes: 'Type' of type str.
+The class 'addressbook::Company' has the following attributes: 'Industry' of type str.
+The class 'addressbook::Person' has the following attributes: 'Title' of type str.
+The class 'addressbook::Note' has the following attributes: 'Type' of type str; 'Author' of type str; 'Time' of type date; 'Comment' of type str.
+The class 'Contact' has no attributes.
+The class 'addressbook::AddressBook' has no attributes.
+The class 'addressbook::Contact' has the following attributes: 'Phone' of type str; 'Name' of type str; 'Website' of type str; 'EMail' of type str.
+The class 'addressbook::Address' has the following attributes: 'City' of type str; 'HouseNr' of type str; 'Street' of type str.
+The enumeration 'NoteType' has the following literals: 'EMAIL', 'CALL', 'MEETING'.
+The enumeration 'RelationshipType' has the following literals: 'Employee', 'CoWorker', 'Boss', 'Subdivision'.
+'addressbook::Company' is a specialization of 'Contact'.
+'addressbook::Person' is a specialization of 'Contact'.
+'addressbook::Contact' (role 'addressbook_Contact3', cardinality 0..*) is associated with 'addressbook::Contact' (role 'addressbook_Contact1', cardinality 0..*).
+'addressbook::Contact' (role 'addressbook_Contact8', cardinality 0..*) is associated with 'addressbook::Note' (role 'addressbook_Note', cardinality 0..*).
+'addressbook::Contact' (role 'addressbook_Contact10', cardinality 0..*) is associated with 'addressbook::AddressBook' (role 'addressbook_AddressBook', cardinality 0..*).
+'addressbook::Relationship' (role 'isRelated', cardinality 0..*) is associated with 'addressbook::Contact' (role 'Contact', cardinality 0..*).
+'addressbook::Contact' (role 'source', cardinality 0..*) is associated with 'addressbook::Relationship' (role 'Relationship', cardinality 0..*).
+'addressbook::Contact' (role 'target', cardinality 0..*) is associated with 'addressbook::Relationship' (role 'Relationship6', cardinality 0..*).
+'addressbook::Contact' (role 'addressbook_Contact', cardinality 0..*) is associated with 'addressbook::Address' (role 'addressbook_Address', cardinality 0..*).
+'addressbook::Relationship' (role 'relates', cardinality 0..*) is associated with 'addressbook::Contact' (role 'Contact13', cardinality 0..*).

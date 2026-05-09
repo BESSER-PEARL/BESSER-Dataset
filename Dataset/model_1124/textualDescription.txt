@@ -1,0 +1,176 @@
+The model has 69 class(es).
+The class 'Action' has no attributes.
+The class 'simulink::stateflow::Event' has the following attributes: 'name' of type str.
+The class 'simulink::buffer::SharedDequeue' has no attributes.
+The class 'simulink::SubSystem' has no attributes.
+The class 'BufferFunction' has no attributes.
+The class 'Data' has no attributes.
+The class 'simulink::stateflow::State' has the following attributes: 'priority' of type int; 'initial' of type bool; 'subStateType' of type str; 'name' of type str.
+The class 'simulink::BusSelector' has no attributes.
+The class 'simulink::buffer::CheckQueue' has no attributes.
+The class 'simulink::Bus' has the following attributes: 'name' of type str.
+The class 'simulink::EmbeddedMatlabFunction' has the following attributes: 'code' of type str.
+The class 'simulink::BusCreator' has no attributes.
+The class 'Node' has no attributes.
+The class 'simulink::stateflow::Node' has no attributes.
+The class 'simulink::DigitalClock' has the following attributes: 'sampleTime' of type float.
+The class 'simulink::reconfiguration::MultiTargetControl' has no attributes.
+The class 'simulink::stateflow::EmbeddedFunction' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'simulink::InPortBlock' has no attributes.
+The class 'simulink::ZeroOrderHold' has the following attributes: 'sampleTime' of type str.
+The class 'SimulinkFile' has no attributes.
+The class 'simulink::reconfiguration::FadingComponent' has the following attributes: 'time' of type int.
+The class 'stateflow::simulink::ChartBlock' has no attributes.
+The class 'simulink::stateflow::StateflowMachine' has no attributes.
+The class 'simulink::SimulinkContainer' has no attributes.
+The class 'simulink::buffer::BufferFunction' has the following attributes: 'bufferSize' of type int.
+The class 'simulink::reconfiguration::MultiSourceControl' has no attributes.
+The class 'SubSystem' has no attributes.
+The class 'PortBlock' has no attributes.
+The class 'simulink::ChartBlock' has no attributes.
+The class 'simulink::TriggerPort' has the following attributes: 'triggerInput' of type str.
+The class 'simulink::buffer::Enqueue' has no attributes.
+The class 'simulink::Constant' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'simulink::UnitDelay' has no attributes.
+The class 'Chart' has no attributes.
+The class 'simulink::buffer::Dequeue' has no attributes.
+The class 'simulink::Element' has the following attributes: 'id' of type str.
+The class 'simulink::BusElement' has the following attributes: 'dimensions' of type str; 'name' of type str; 'type' of type str.
+The class 'simulink::Line' has no attributes.
+The class 'stateflow::simulink::SimulinkFile' has no attributes.
+The class 'EmbeddedFunction' has no attributes.
+The class 'simulink::stateflow::Chart' has no attributes.
+The class 'Event' has no attributes.
+The class 'Block' has no attributes.
+The class 'simulink::Parameter' has the following attributes: 'value' of type str; 'type' of type str; 'name' of type str.
+The class 'simulink::stateflow::Data' has the following attributes: 'type' of type str; 'value' of type str; 'name' of type str; 'size' of type str.
+The class 'simulink::msglib::CommunicationSwitch' has the following attributes: 'debug' of type int.
+The class 'simulink::buffer::SharedEnqueue' has no attributes.
+The class 'simulink::stateflow::History' has no attributes.
+The class 'simulink::stateflow::Transition' has the following attributes: 'priority' of type int.
+The class 'State' has no attributes.
+The class 'simulink::stateflow::Junction' has no attributes.
+The class 'Transition' has no attributes.
+The class 'Element' has no attributes.
+The class 'simulink::buffer::SharedCheckQueue' has no attributes.
+The class 'simulink::stateflow::StateflowElement' has no attributes.
+The class 'simulink::msglib::LinkLayer' has the following attributes: 'delayMin' of type str; 'delayMax' of type str; 'messageRetransmission' of type bool; 'bufferOverflowPossible' of type bool; 'messageLossProbability' of type int; 'messageMapping' of type str; 'bufferSize' of type int; 'sourceBufferSize' of type int.
+The class 'StateflowMachine' has no attributes.
+The class 'simulink::SimulinkModel' has no attributes.
+The class 'simulink::Block' has the following attributes: 'name' of type str.
+The class 'InPortBlock' has no attributes.
+The class 'simulink::PortBlock' has the following attributes: 'initialCondition' of type str; 'type' of type str; 'dimensions' of type str.
+The class 'simulink::stateflow::Action' has the following attributes: 'expression' of type str.
+The class 'simulink::SimulinkFile' has no attributes.
+The class 'StateflowElement' has no attributes.
+The class 'simulink::MiscBlock' has the following attributes: 'type' of type str.
+The class 'simulink::EnablePort' has no attributes.
+The class 'simulink::LibraryReference' has no attributes.
+The class 'simulink::OutPortBlock' has no attributes.
+The class 'simulink::SimulinkLibrary' has no attributes.
+The enumeration 'SubStateType' has the following literals: 'PARALLEL', 'EXCLUSIVE'.
+The enumeration 'DataType' has the following literals: 'UINT32', 'DOUBLE', 'UINT16', 'INT32', 'BUS', 'BOOLEAN', 'SINGLE', 'INHERIT', 'INT8', 'INT16', 'UINT8'.
+The enumeration 'TriggerEvent' has the following literals: 'Rising', 'Either', 'Falling'.
+'simulink::stateflow::Junction' is a specialization of 'Node'.
+'simulink::TriggerPort' is a specialization of 'InPortBlock'.
+'simulink::ChartBlock' is a specialization of 'Block'.
+'simulink::reconfiguration::FadingComponent' is a specialization of 'Block'.
+'simulink::MiscBlock' is a specialization of 'Block'.
+'simulink::BusSelector' is a specialization of 'Block'.
+'simulink::OutPortBlock' is a specialization of 'PortBlock'.
+'simulink::msglib::LinkLayer' is a specialization of 'Block'.
+'simulink::reconfiguration::MultiTargetControl' is a specialization of 'Block'.
+'simulink::EnablePort' is a specialization of 'InPortBlock'.
+'simulink::stateflow::Chart' is a specialization of 'State'.
+'simulink::SimulinkFile' is a specialization of 'SubSystem'.
+'simulink::stateflow::StateflowMachine' is a specialization of 'StateflowElement'.
+'simulink::stateflow::Event' is a specialization of 'StateflowElement'.
+'simulink::LibraryReference' is a specialization of 'Block'.
+'simulink::SimulinkContainer' is a specialization of 'Element'.
+'simulink::SimulinkLibrary' is a specialization of 'SimulinkFile'.
+'simulink::stateflow::History' is a specialization of 'Node'.
+'simulink::ZeroOrderHold' is a specialization of 'Block'.
+'simulink::stateflow::State' is a specialization of 'Node'.
+'simulink::SimulinkModel' is a specialization of 'SimulinkFile'.
+'simulink::PortBlock' is a specialization of 'Block'.
+'simulink::BusCreator' is a specialization of 'Block'.
+'simulink::Block' is a specialization of 'Element'.
+'simulink::UnitDelay' is a specialization of 'Block'.
+'simulink::Bus' is a specialization of 'Element'.
+'simulink::buffer::Dequeue' is a specialization of 'BufferFunction'.
+'simulink::buffer::SharedEnqueue' is a specialization of 'BufferFunction'.
+'simulink::DigitalClock' is a specialization of 'Block'.
+'simulink::EmbeddedMatlabFunction' is a specialization of 'Block'.
+'simulink::reconfiguration::MultiSourceControl' is a specialization of 'Block'.
+'simulink::buffer::Enqueue' is a specialization of 'BufferFunction'.
+'simulink::stateflow::StateflowElement' is a specialization of 'Element'.
+'simulink::stateflow::EmbeddedFunction' is a specialization of 'StateflowElement'.
+'simulink::stateflow::Transition' is a specialization of 'StateflowElement'.
+'simulink::buffer::CheckQueue' is a specialization of 'BufferFunction'.
+'simulink::stateflow::Data' is a specialization of 'StateflowElement'.
+'simulink::InPortBlock' is a specialization of 'PortBlock'.
+'simulink::stateflow::Node' is a specialization of 'StateflowElement'.
+'simulink::buffer::BufferFunction' is a specialization of 'EmbeddedFunction'.
+'simulink::msglib::CommunicationSwitch' is a specialization of 'Block'.
+'simulink::Constant' is a specialization of 'Block'.
+'simulink::stateflow::Action' is a specialization of 'StateflowElement'.
+'simulink::buffer::SharedDequeue' is a specialization of 'BufferFunction'.
+'simulink::Line' is a specialization of 'Element'.
+'simulink::SubSystem' is a specialization of 'Block'.
+'simulink::buffer::SharedCheckQueue' is a specialization of 'BufferFunction'.
+'simulink::Line' (role 'simulink_Line', cardinality 0..*) is associated with 'simulink::OutPortBlock' (role 'simulink_OutPortBlock', cardinality 0..*).
+'simulink::stateflow::Chart' (role 'simulink_stateflow_Chart', cardinality 0..*) is associated with 'Data' (role 'Data', cardinality 0..*).
+'simulink::InPortBlock' (role 'InPortBlock', cardinality 0..*) is associated with 'simulink::Block' (role 'block3', cardinality 0..*).
+'simulink::Bus' (role 'simulink_Bus42', cardinality 0..*) is associated with 'simulink::BusCreator' (role 'simulink_BusCreator', cardinality 0..*).
+'simulink::ChartBlock' (role 'block38', cardinality 0..*) is associated with 'Chart' (role 'Chart', cardinality 0..*).
+'simulink::Bus' (role 'simulink_Bus', cardinality 0..*) is associated with 'simulink::Line' (role 'simulink_Line16', cardinality 0..*).
+'simulink::stateflow::StateflowMachine' (role 'machine', cardinality 0..*) is associated with 'Chart' (role 'Chart49', cardinality 0..*).
+'simulink::Line' (role 'Line6', cardinality 0..*) is associated with 'simulink::Block' (role 'sourceBlock', cardinality 0..*).
+'simulink::stateflow::Transition' (role 'simulink_stateflow_Transition89', cardinality 0..*) is associated with 'Action' (role 'Action90', cardinality 0..*).
+'simulink::stateflow::State' (role 'simulink_stateflow_State', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'Transition' (role 'Transition98', cardinality 0..*) is associated with 'simulink::stateflow::Node' (role 'source', cardinality 0..*).
+'simulink::Block' (role 'block', cardinality 0..*) is associated with 'simulink::OutPortBlock' (role 'OutPortBlock', cardinality 0..*).
+'Transition' (role 'Transition96', cardinality 0..*) is associated with 'simulink::stateflow::Node' (role 'target', cardinality 0..*).
+'simulink::stateflow::Chart' (role 'simulink_stateflow_Chart55', cardinality 0..*) is associated with 'Data' (role 'Data56', cardinality 0..*).
+'simulink::Block' (role 'simulink_Block', cardinality 0..*) is associated with 'simulink::SubSystem' (role 'simulink_SubSystem25', cardinality 0..*).
+'simulink::stateflow::State' (role 'simulink_stateflow_State71', cardinality 0..*) is associated with 'Action' (role 'Action72', cardinality 0..*).
+'simulink::Bus' (role 'simulink_Bus34', cardinality 0..*) is associated with 'simulink::SimulinkFile' (role 'simulink_SimulinkFile', cardinality 0..*).
+'simulink::SimulinkModel' (role 'models', cardinality 0..*) is associated with 'simulink::SimulinkContainer' (role 'SimulinkContainer', cardinality 0..*).
+'simulink::Block' (role 'Block14', cardinality 0..*) is associated with 'simulink::Line' (role 'incomingLines', cardinality 0..*).
+'simulink::stateflow::EmbeddedFunction' (role 'simulink_stateflow_EmbeddedFunction', cardinality 0..*) is associated with 'Data' (role 'Data100', cardinality 0..*).
+'simulink::stateflow::EmbeddedFunction' (role 'simulink_stateflow_EmbeddedFunction108', cardinality 0..*) is associated with 'Data' (role 'Data109', cardinality 0..*).
+'Action' (role 'Action69', cardinality 0..*) is associated with 'simulink::stateflow::State' (role 'simulink_stateflow_State68', cardinality 0..*).
+'Action' (role 'Action93', cardinality 0..*) is associated with 'simulink::stateflow::Transition' (role 'simulink_stateflow_Transition92', cardinality 0..*).
+'simulink::InPortBlock' (role 'inPorts', cardinality 0..*) is associated with 'simulink::Block' (role 'Block27', cardinality 0..*).
+'simulink::SimulinkContainer' (role 'simulink_SimulinkContainer', cardinality 0..*) is associated with 'simulink::SimulinkLibrary' (role 'simulink_SimulinkLibrary', cardinality 0..*).
+'StateflowMachine' (role 'StateflowMachine', cardinality 0..*) is associated with 'simulink::SimulinkFile' (role 'model', cardinality 0..*).
+'Data' (role 'Data106', cardinality 0..*) is associated with 'simulink::stateflow::EmbeddedFunction' (role 'simulink_stateflow_EmbeddedFunction105', cardinality 0..*).
+'simulink::stateflow::Chart' (role 'charts', cardinality 0..*) is associated with 'StateflowMachine' (role 'StateflowMachine52', cardinality 0..*).
+'simulink::Line' (role 'simulink_Line11', cardinality 0..*) is associated with 'simulink::InPortBlock' (role 'simulink_InPortBlock', cardinality 0..*).
+'simulink::stateflow::Transition' (role 'incoming', cardinality 0..*) is associated with 'Node' (role 'Node85', cardinality 0..*).
+'simulink::stateflow::Chart' (role 'chart', cardinality 0..*) is associated with 'stateflow::simulink::ChartBlock' (role 'ChartBlock', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'simulink::stateflow::Node' (role 'nodes', cardinality 0..*).
+'simulink::SubSystem' (role 'simulink_SubSystem23', cardinality 0..*) is associated with 'simulink::SubSystem' (role 'simulink_SubSystem21', cardinality 0..*).
+'simulink::SubSystem' (role 'simulink_SubSystem', cardinality 0..*) is associated with 'simulink::Line' (role 'simulink_Line18', cardinality 0..*).
+'simulink::stateflow::EmbeddedFunction' (role 'simulink_stateflow_EmbeddedFunction102', cardinality 0..*) is associated with 'Data' (role 'Data103', cardinality 0..*).
+'simulink::SubSystem' (role 'SubSystem', cardinality 0..*) is associated with 'simulink::Block' (role 'blocks', cardinality 0..*).
+'simulink::Element' (role 'simulink_Element', cardinality 0..*) is associated with 'simulink::Parameter' (role 'simulink_Parameter', cardinality 0..*).
+'simulink::stateflow::Transition' (role 'simulink_stateflow_Transition', cardinality 0..*) is associated with 'Event' (role 'Event87', cardinality 0..*).
+'simulink::stateflow::State' (role 'simulink_stateflow_State62', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'simulink::LibraryReference' (role 'simulink_LibraryReference', cardinality 0..*) is associated with 'simulink::Block' (role 'simulink_Block31', cardinality 0..*).
+'simulink::stateflow::State' (role 'simulink_stateflow_State74', cardinality 0..*) is associated with 'Data' (role 'Data75', cardinality 0..*).
+'EmbeddedFunction' (role 'EmbeddedFunction', cardinality 0..*) is associated with 'simulink::stateflow::State' (role 'simulink_stateflow_State64', cardinality 0..*).
+'stateflow::simulink::SimulinkFile' (role 'SimulinkFile', cardinality 0..*) is associated with 'simulink::stateflow::StateflowMachine' (role 'stateflowMachine', cardinality 0..*).
+'simulink::SubSystem' (role 'parent', cardinality 0..*) is associated with 'simulink::Block' (role 'Block20', cardinality 0..*).
+'simulink::Block' (role 'targetBlock', cardinality 0..*) is associated with 'simulink::Line' (role 'Line', cardinality 0..*).
+'simulink::BusSelector' (role 'simulink_BusSelector', cardinality 0..*) is associated with 'simulink::Bus' (role 'simulink_Bus44', cardinality 0..*).
+'Data' (role 'Data78', cardinality 0..*) is associated with 'simulink::stateflow::State' (role 'simulink_stateflow_State77', cardinality 0..*).
+'simulink::stateflow::State' (role 'parent59', cardinality 0..*) is associated with 'Node' (role 'Node', cardinality 0..*).
+'simulink::Line' (role 'outgoingLines', cardinality 0..*) is associated with 'simulink::Block' (role 'Block', cardinality 0..*).
+'Action' (role 'Action81', cardinality 0..*) is associated with 'simulink::stateflow::State' (role 'simulink_stateflow_State80', cardinality 0..*).
+'simulink::SimulinkModel' (role 'SimulinkModel', cardinality 0..*) is associated with 'simulink::SimulinkContainer' (role 'root', cardinality 0..*).
+'simulink::BusElement' (role 'simulink_BusElement46', cardinality 0..*) is associated with 'simulink::Bus' (role 'simulink_Bus47', cardinality 0..*).
+'simulink::OutPortBlock' (role 'outPorts', cardinality 0..*) is associated with 'simulink::Block' (role 'Block36', cardinality 0..*).
+'Node' (role 'Node83', cardinality 0..*) is associated with 'simulink::stateflow::Transition' (role 'outgoing', cardinality 0..*).
+'simulink::Bus' (role 'simulink_Bus40', cardinality 0..*) is associated with 'simulink::BusElement' (role 'simulink_BusElement', cardinality 0..*).
+'simulink::stateflow::State' (role 'simulink_stateflow_State66', cardinality 0..*) is associated with 'Action' (role 'Action', cardinality 0..*).

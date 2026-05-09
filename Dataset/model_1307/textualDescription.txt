@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'SimplStateMachineDC::InitialState' has no attributes.
+The class 'PseudoState' has no attributes.
+The class 'SimplStateMachineDC::PseudoState' has no attributes.
+The class 'SimplStateMachineDC::StateMachine' has no attributes.
+The class 'State' has no attributes.
+The class 'SimplStateMachineDC::Transition' has the following attributes: 'event' of type str.
+The class 'SimplStateMachineDC::State' has the following attributes: 'Inh' of type str; 'OrdIf' of type str; 'isActive' of type bool; 'InhIf' of type str; 'name' of type str; 'Ord' of type str.
+The class 'SimplStateMachineDC::CompositeState' has no attributes.
+'SimplStateMachineDC::CompositeState' is a specialization of 'State'.
+'SimplStateMachineDC::PseudoState' is a specialization of 'State'.
+'SimplStateMachineDC::InitialState' is a specialization of 'PseudoState'.
+'SimplStateMachineDC::Transition' (role 'SimplStateMachineDC_Transition12', cardinality 0..*) is associated with 'SimplStateMachineDC::State' (role 'SimplStateMachineDC_State13', cardinality 0..*).
+'SimplStateMachineDC::CompositeState' (role 'container', cardinality 0..*) is associated with 'SimplStateMachineDC::State' (role 'State', cardinality 0..*).
+'SimplStateMachineDC::CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'SimplStateMachineDC::State' (role 'states', cardinality 0..*).
+'SimplStateMachineDC::PseudoState' (role 'SimplStateMachineDC_PseudoState', cardinality 0..*) is associated with 'SimplStateMachineDC::State' (role 'SimplStateMachineDC_State7', cardinality 0..*).
+'SimplStateMachineDC::State' (role 'SimplStateMachineDC_State', cardinality 0..*) is associated with 'SimplStateMachineDC::StateMachine' (role 'SimplStateMachineDC_StateMachine2', cardinality 0..*).
+'SimplStateMachineDC::InitialState' (role 'SimplStateMachineDC_InitialState', cardinality 0..*) is associated with 'SimplStateMachineDC::CompositeState' (role 'SimplStateMachineDC_CompositeState', cardinality 0..*).
+'SimplStateMachineDC::StateMachine' (role 'SimplStateMachineDC_StateMachine', cardinality 0..*) is associated with 'SimplStateMachineDC::Transition' (role 'SimplStateMachineDC_Transition', cardinality 0..*).
+'SimplStateMachineDC::State' (role 'SimplStateMachineDC_State10', cardinality 0..*) is associated with 'SimplStateMachineDC::Transition' (role 'SimplStateMachineDC_Transition9', cardinality 0..*).

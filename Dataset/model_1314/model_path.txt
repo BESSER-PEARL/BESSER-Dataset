@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lich320/Model-Transformation-Code/State2Coq/metamodel/state.ecore

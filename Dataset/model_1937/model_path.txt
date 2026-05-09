@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/opcoach/restaurant/com.opcoach.restaurant/model/restaurant.ecore

@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'yye::Foo' has the following attributes: 'id' of type str.
+The class 'yye::NamedElement' has the following attributes: 'name' of type str.
+The class 'yye::Relation' has the following attributes: 'since' of type str.
+The class 'NamedElement' has no attributes.
+The class 'yye::Base' has the following attributes: 'id' of type int.
+The class 'yye::Alias' has the following attributes: 'id' of type str.
+'yye::Base' is a specialization of 'NamedElement'.
+'yye::Relation' is a specialization of 'NamedElement'.
+'yye::Relation' (role 'yye_Relation6', cardinality 0..*) is associated with 'yye::Relation' (role 'yye_Relation8', cardinality 0..*).
+'yye::Relation' (role 'relations', cardinality 0..*) is associated with 'yye::Base' (role 'Base', cardinality 0..*).
+'yye::Alias' (role 'yye_Alias', cardinality 0..*) is associated with 'yye::NamedElement' (role 'yye_NamedElement', cardinality 0..*).
+'yye::Base' (role 'yye_Base', cardinality 0..*) is associated with 'yye::Foo' (role 'yye_Foo', cardinality 0..*).
+'yye::Base' (role 'fromThing', cardinality 0..*) is associated with 'yye::Relation' (role 'Relation', cardinality 0..*).
+'yye::Base' (role 'yye_Base5', cardinality 0..*) is associated with 'yye::Relation' (role 'yye_Relation', cardinality 0..*).

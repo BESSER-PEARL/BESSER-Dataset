@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'martinfowlerdsl::State' has the following attributes: 'name' of type str.
+The class 'martinfowlerdsl::StateMachine' has no attributes.
+The class 'martinfowlerdsl::AbstractEvent' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'AbstractEvent' has no attributes.
+The class 'martinfowlerdsl::Transition' has no attributes.
+The class 'martinfowlerdsl::Event' has the following attributes: 'resetting' of type bool.
+The class 'martinfowlerdsl::Command' has no attributes.
+'martinfowlerdsl::Command' is a specialization of 'AbstractEvent'.
+'martinfowlerdsl::Event' is a specialization of 'AbstractEvent'.
+'martinfowlerdsl::Event' (role 'martinfowlerdsl_Event', cardinality 0..*) is associated with 'martinfowlerdsl::Transition' (role 'martinfowlerdsl_Transition13', cardinality 0..*).
+'martinfowlerdsl::StateMachine' (role 'martinfowlerdsl_StateMachine2', cardinality 0..*) is associated with 'martinfowlerdsl::State' (role 'martinfowlerdsl_State3', cardinality 0..*).
+'martinfowlerdsl::Transition' (role 'Transition', cardinality 0..*) is associated with 'martinfowlerdsl::State' (role 'source', cardinality 0..*).
+'martinfowlerdsl::AbstractEvent' (role 'martinfowlerdsl_AbstractEvent', cardinality 0..*) is associated with 'martinfowlerdsl::StateMachine' (role 'martinfowlerdsl_StateMachine5', cardinality 0..*).
+'martinfowlerdsl::StateMachine' (role 'martinfowlerdsl_StateMachine', cardinality 0..*) is associated with 'martinfowlerdsl::State' (role 'martinfowlerdsl_State', cardinality 0..*).
+'martinfowlerdsl::State' (role 'State', cardinality 0..*) is associated with 'martinfowlerdsl::Transition' (role 'transitions', cardinality 0..*).
+'martinfowlerdsl::State' (role 'martinfowlerdsl_State7', cardinality 0..*) is associated with 'martinfowlerdsl::Command' (role 'martinfowlerdsl_Command', cardinality 0..*).
+'martinfowlerdsl::State' (role 'martinfowlerdsl_State11', cardinality 0..*) is associated with 'martinfowlerdsl::Transition' (role 'martinfowlerdsl_Transition', cardinality 0..*).

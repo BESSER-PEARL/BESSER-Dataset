@@ -1,0 +1,58 @@
+The model has 34 class(es).
+The class 'IBooking' has no attributes.
+The class 'se::roomManager::Room' has the following attributes: 'blocked' of type bool; 'occupied' of type bool; 'roomNumber' of type int; 'extraCostPrice' of type float; 'extraCostDescriptions' of type str.
+The class 'se::roomManager::IRoom' has no attributes.
+The class 'se::bookingSystem::CheckInEvent' has no attributes.
+The class 'IRoom' has no attributes.
+The class 'IHotelCustomerProvides' has no attributes.
+The class 'se::bookingSystem::FreeRoomTypesDTO' has the following attributes: 'numBeds' of type int; 'numFreeRooms' of type int; 'pricePerNight' of type float; 'roomTypeDescription' of type str.
+The class 'se::roomManager::IHotelStartupProvies' has no attributes.
+The class 'se::bookingSystem::IHotelCustomerProvides' has no attributes.
+The class 'IHotelRoomProvider' has no attributes.
+The class 'roomManager::IHotelRoomManager' has no attributes.
+The class 'se::bookingSystem::Booking' has the following attributes: 'id' of type int; 'lastName' of type str; 'firstName' of type str; 'startDate' of type str; 'endDate' of type str.
+The class 'se::roomManager::RoomType' has the following attributes: 'description' of type str; 'numberOfBeds' of type int; 'price' of type float; 'name' of type str.
+The class 'roomManager::IHotelStartupProvies' has no attributes.
+The class 'se::bookingSystem::IEvent' has no attributes.
+The class 'se::bookingSystem::IBooking' has no attributes.
+The class 'se::bookingSystem::BookingSystem' has the following attributes: 'bookingId' of type int.
+The class 'IRoomType' has no attributes.
+The class 'bookingSystem::IEvent' has no attributes.
+The class 'bookingSystem::IBooking' has no attributes.
+The class 'se::roomManager::RoomManager' has no attributes.
+The class 'se::roomManager::IRoomType' has no attributes.
+The class 'bookingSystem::IHotelBookingManager' has no attributes.
+The class 'roomManager::IRoom' has no attributes.
+The class 'se::bookingSystem::IHotelBookingManager' has no attributes.
+The class 'se::bookingSystem::AbstractEvent' has the following attributes: 'timestamp' of type str; 'bookingID' of type int; 'eventType' of type str.
+The class 'bookingSystem::IHotelCustomerProvides' has no attributes.
+The class 'roomManager::IHotelRoomProvider' has no attributes.
+The class 'se::roomManager::IHotelRoomManager' has no attributes.
+The class 'IEvent' has no attributes.
+The class 'AbstractEvent' has no attributes.
+The class 'roomManager::IRoomType' has no attributes.
+The class 'se::roomManager::IHotelRoomProvider' has no attributes.
+The class 'se::bookingSystem::CheckOutEvent' has no attributes.
+The enumeration 'EventType' has the following literals: 'CHECK_IN', 'CHECK_OUT'.
+'se::roomManager::RoomManager' is a specialization of 'roomManager::IHotelRoomProvider'.
+'se::bookingSystem::AbstractEvent' is a specialization of 'IEvent'.
+'se::bookingSystem::BookingSystem' is a specialization of 'bookingSystem::IHotelBookingManager'.
+'se::roomManager::RoomManager' is a specialization of 'roomManager::IHotelStartupProvies'.
+'se::bookingSystem::CheckInEvent' is a specialization of 'AbstractEvent'.
+'se::bookingSystem::Booking' is a specialization of 'IBooking'.
+'se::bookingSystem::IHotelBookingManager' is a specialization of 'IHotelCustomerProvides'.
+'se::roomManager::IHotelRoomManager' is a specialization of 'IHotelRoomProvider'.
+'se::roomManager::Room' is a specialization of 'IRoom'.
+'se::bookingSystem::CheckOutEvent' is a specialization of 'AbstractEvent'.
+'se::roomManager::RoomType' is a specialization of 'IRoomType'.
+'se::bookingSystem::BookingSystem' is a specialization of 'bookingSystem::IHotelCustomerProvides'.
+'se::roomManager::RoomManager' is a specialization of 'roomManager::IHotelRoomManager'.
+'roomManager::IRoom' (role 'roomManager_IRoom', cardinality 0..*) is associated with 'se::bookingSystem::BookingSystem' (role 'se_bookingSystem_BookingSystem6', cardinality 0..*).
+'roomManager::IRoomType' (role 'roomManager_IRoomType17', cardinality 0..*) is associated with 'se::roomManager::Room' (role 'se_roomManager_Room', cardinality 0..*).
+'roomManager::IRoom' (role 'roomManager_IRoom11', cardinality 0..*) is associated with 'se::bookingSystem::Booking' (role 'se_bookingSystem_Booking10', cardinality 0..*).
+'se::bookingSystem::Booking' (role 'se_bookingSystem_Booking', cardinality 0..*) is associated with 'roomManager::IRoom' (role 'roomManager_IRoom8', cardinality 0..*).
+'se::bookingSystem::BookingSystem' (role 'se_bookingSystem_BookingSystem2', cardinality 0..*) is associated with 'bookingSystem::IBooking' (role 'bookingSystem_IBooking', cardinality 0..*).
+'se::bookingSystem::BookingSystem' (role 'se_bookingSystem_BookingSystem4', cardinality 0..*) is associated with 'roomManager::IHotelRoomProvider' (role 'roomManager_IHotelRoomProvider', cardinality 0..*).
+'roomManager::IRoom' (role 'roomManager_IRoom15', cardinality 0..*) is associated with 'se::roomManager::RoomManager' (role 'se_roomManager_RoomManager14', cardinality 0..*).
+'bookingSystem::IEvent' (role 'bookingSystem_IEvent', cardinality 0..*) is associated with 'se::bookingSystem::BookingSystem' (role 'se_bookingSystem_BookingSystem', cardinality 0..*).
+'roomManager::IRoomType' (role 'roomManager_IRoomType', cardinality 0..*) is associated with 'se::roomManager::RoomManager' (role 'se_roomManager_RoomManager', cardinality 0..*).

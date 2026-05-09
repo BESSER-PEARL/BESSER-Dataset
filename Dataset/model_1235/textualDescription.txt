@@ -1,0 +1,189 @@
+The model has 74 class(es).
+The class 'ocl::cst::VariableCS' has the following attributes: 'name' of type str.
+The class 'ocl::cst::CollectionTypeCS' has the following attributes: 'collectionTypeIdentifier' of type str.
+The class 'ocl::cst::IntegerLiteralExpCS' has the following attributes: 'integerSymbol' of type str.
+The class 'ocl::cst::FeatureCallExpCS' has no attributes.
+The class 'ocl::cst::LetExpCS' has no attributes.
+The class 'LiteralExpCS' has no attributes.
+The class 'ocl::cst::UnlimitedNaturalLiteralExpCS' has the following attributes: 'integerSymbol' of type str.
+The class 'VariableCS' has no attributes.
+The class 'ocl::cst::OperationCallExpCS' has the following attributes: 'isAtomic' of type str.
+The class 'ocl::cst::IfExpCS' has no attributes.
+The class 'ocl::cst::CallExpCS' has the following attributes: 'accessor' of type str.
+The class 'ocl::cst::IterateExpCS' has no attributes.
+The class 'cst::TypeCS' has no attributes.
+The class 'PrePostOrBodyDeclCS' has no attributes.
+The class 'ocl::cst::BooleanLiteralExpCS' has the following attributes: 'booleanSymbol' of type str.
+The class 'OCLExpressionCS' has no attributes.
+The class 'ocl::cst::RealLiteralExpCS' has the following attributes: 'realSymbol' of type str.
+The class 'ocl::cst::DefCS' has the following attributes: 'static' of type bool.
+The class 'cst::SimpleNameCS' has no attributes.
+The class 'ocl::cst::SimpleNameCS' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'InvOrDefCS' has no attributes.
+The class 'ContextDeclCS' has no attributes.
+The class 'LoopExpCS' has no attributes.
+The class 'ocl::cst::InvCS' has no attributes.
+The class 'ocl::cst::CollectionLiteralPartCS' has no attributes.
+The class 'cst::PrimitiveLiteralExpCS' has no attributes.
+The class 'CollectionLiteralPartCS' has no attributes.
+The class 'ocl::cst::PropertyContextCS' has no attributes.
+The class 'ocl::cst::CollectionRangeCS' has no attributes.
+The class 'ocl::cst::DefExpressionCS' has no attributes.
+The class 'IsMarkedPreCS' has no attributes.
+The class 'ocl::cst::CollectionLiteralExpCS' has the following attributes: 'collectionType' of type str.
+The class 'ocl::cst::IsMarkedPreCS' has no attributes.
+The class 'ocl::cst::InitValueCS' has no attributes.
+The class 'ocl::cst::PrimitiveLiteralExpCS' has the following attributes: 'symbol' of type str.
+The class 'PrimitiveLiteralExpCS' has no attributes.
+The class 'ocl::cst::PrimitiveTypeCS' has no attributes.
+The class 'cst::LiteralExpCS' has no attributes.
+The class 'InitOrDerValueCS' has no attributes.
+The class 'SimpleNameCS' has no attributes.
+The class 'PathNameCS' has no attributes.
+The class 'ocl::cst::StringLiteralExpCS' has the following attributes: 'unescapedStringSymbol' of type str; 'stringSymbol' of type str.
+The class 'ocl::cst::TupleTypeCS' has no attributes.
+The class 'ocl::cst::ContextDeclCS' has no attributes.
+The class 'ocl::cst::PrePostOrBodyDeclCS' has the following attributes: 'kind' of type str.
+The class 'ocl::cst::IteratorExpCS' has no attributes.
+The class 'FeatureCallExpCS' has no attributes.
+The class 'ocl::cst::LiteralExpCS' has no attributes.
+The class 'ocl::cst::CSTNode' has the following attributes: 'endOffset' of type int; 'startToken' of type str; 'endToken' of type str; 'startOffset' of type int; 'ast' of type str.
+The class 'ocl::cst::LoopExpCS' has no attributes.
+The class 'ocl::cst::OperationCS' has no attributes.
+The class 'DefExpressionCS' has no attributes.
+The class 'ocl::cst::MessageExpCS' has the following attributes: 'kind' of type str.
+The class 'ocl::cst::PathNameCS' has no attributes.
+The class 'CallExpCS' has no attributes.
+The class 'ocl::cst::TupleLiteralExpCS' has no attributes.
+The class 'PackageDeclarationCS' has no attributes.
+The class 'ocl::cst::OCLDocumentCS' has no attributes.
+The class 'ocl::cst::PackageDeclarationCS' has no attributes.
+The class 'OCLMessageArgCS' has no attributes.
+The class 'CSTNode' has no attributes.
+The class 'ocl::cst::NullLiteralExpCS' has no attributes.
+The class 'ocl::cst::OCLExpressionCS' has no attributes.
+The class 'ocl::cst::InvOrDefCS' has no attributes.
+The class 'ocl::cst::InvalidLiteralExpCS' has no attributes.
+The class 'ocl::cst::TypeCS' has no attributes.
+The class 'OperationCS' has no attributes.
+The class 'ocl::cst::ClassifierContextDeclCS' has no attributes.
+The class 'ocl::cst::OperationContextDeclCS' has no attributes.
+The class 'ocl::cst::VariableExpCS' has no attributes.
+The class 'TypeCS' has no attributes.
+The class 'ocl::cst::DerValueCS' has no attributes.
+The class 'ocl::cst::InitOrDerValueCS' has no attributes.
+The class 'ocl::cst::OCLMessageArgCS' has no attributes.
+The enumeration 'DotOrArrowEnum' has the following literals: 'none', 'dot', 'arrow'.
+The enumeration 'PrePostOrBodyEnum' has the following literals: 'body', 'post', 'pre'.
+The enumeration 'CollectionTypeIdentifierEnum' has the following literals: 'OrderedSet', 'Bag', 'Collection', 'Set', 'Sequence'.
+The enumeration 'MessageExpKind' has the following literals: 'hasSent', 'sent'.
+The enumeration 'SimpleTypeEnum' has the following literals: 'identifier', 'Boolean', 'keyword', 'UnlimitedNatural', 'Integer', 'Real', 'OclAny', 'OclMessage', 'self', 'OclInvalid', 'String', 'OclVoid'.
+'ocl::cst::RealLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'ocl::cst::VariableCS' is a specialization of 'CSTNode'.
+'ocl::cst::CollectionLiteralPartCS' is a specialization of 'CSTNode'.
+'ocl::cst::PrePostOrBodyDeclCS' is a specialization of 'CSTNode'.
+'ocl::cst::IteratorExpCS' is a specialization of 'LoopExpCS'.
+'ocl::cst::IterateExpCS' is a specialization of 'LoopExpCS'.
+'ocl::cst::ContextDeclCS' is a specialization of 'CSTNode'.
+'ocl::cst::CollectionTypeCS' is a specialization of 'cst::TypeCS'.
+'ocl::cst::CallExpCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::MessageExpCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::LoopExpCS' is a specialization of 'CallExpCS'.
+'ocl::cst::IfExpCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::InitValueCS' is a specialization of 'InitOrDerValueCS'.
+'ocl::cst::CollectionTypeCS' is a specialization of 'cst::SimpleNameCS'.
+'ocl::cst::PackageDeclarationCS' is a specialization of 'CSTNode'.
+'ocl::cst::InvCS' is a specialization of 'InvOrDefCS'.
+'ocl::cst::PathNameCS' is a specialization of 'TypeCS'.
+'ocl::cst::OCLExpressionCS' is a specialization of 'CSTNode'.
+'ocl::cst::DerValueCS' is a specialization of 'InitOrDerValueCS'.
+'ocl::cst::BooleanLiteralExpCS' is a specialization of 'cst::PrimitiveLiteralExpCS'.
+'ocl::cst::NullLiteralExpCS' is a specialization of 'cst::LiteralExpCS'.
+'ocl::cst::TupleLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'ocl::cst::DefCS' is a specialization of 'InvOrDefCS'.
+'ocl::cst::PrimitiveTypeCS' is a specialization of 'cst::SimpleNameCS'.
+'ocl::cst::VariableExpCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'ocl::cst::InvalidLiteralExpCS' is a specialization of 'cst::SimpleNameCS'.
+'ocl::cst::LetExpCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::PrimitiveTypeCS' is a specialization of 'cst::TypeCS'.
+'ocl::cst::CollectionRangeCS' is a specialization of 'CollectionLiteralPartCS'.
+'ocl::cst::OCLMessageArgCS' is a specialization of 'CSTNode'.
+'ocl::cst::SimpleNameCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::InvalidLiteralExpCS' is a specialization of 'cst::LiteralExpCS'.
+'ocl::cst::InvOrDefCS' is a specialization of 'CSTNode'.
+'ocl::cst::ClassifierContextDeclCS' is a specialization of 'ContextDeclCS'.
+'ocl::cst::OperationCS' is a specialization of 'CSTNode'.
+'ocl::cst::IsMarkedPreCS' is a specialization of 'CSTNode'.
+'ocl::cst::NullLiteralExpCS' is a specialization of 'cst::SimpleNameCS'.
+'ocl::cst::FeatureCallExpCS' is a specialization of 'CallExpCS'.
+'ocl::cst::OCLDocumentCS' is a specialization of 'CSTNode'.
+'ocl::cst::TypeCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::IntegerLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'ocl::cst::TupleTypeCS' is a specialization of 'TypeCS'.
+'ocl::cst::BooleanLiteralExpCS' is a specialization of 'cst::SimpleNameCS'.
+'ocl::cst::CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'ocl::cst::DefExpressionCS' is a specialization of 'CSTNode'.
+'ocl::cst::PropertyContextCS' is a specialization of 'ContextDeclCS'.
+'ocl::cst::OperationContextDeclCS' is a specialization of 'ContextDeclCS'.
+'ocl::cst::OperationCallExpCS' is a specialization of 'FeatureCallExpCS'.
+'ocl::cst::PrimitiveLiteralExpCS' is a specialization of 'LiteralExpCS'.
+'ocl::cst::StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+'ocl::cst::LiteralExpCS' is a specialization of 'OCLExpressionCS'.
+'ocl::cst::InitOrDerValueCS' is a specialization of 'CSTNode'.
+'PathNameCS' (role 'PathNameCS7', cardinality 0..*) is associated with 'ocl::cst::PropertyContextCS' (role 'ocl_cst_PropertyContextCS', cardinality 0..*).
+'ocl::cst::OperationContextDeclCS' (role 'ocl_cst_OperationContextDeclCS27', cardinality 0..*) is associated with 'PrePostOrBodyDeclCS' (role 'PrePostOrBodyDeclCS', cardinality 0..*).
+'ocl::cst::IfExpCS' (role 'ocl_cst_IfExpCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS76', cardinality 0..*).
+'ocl::cst::OCLMessageArgCS' (role 'ocl_cst_OCLMessageArgCS93', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS94', cardinality 0..*).
+'VariableCS' (role 'VariableCS', cardinality 0..*) is associated with 'ocl::cst::OperationCS' (role 'ocl_cst_OperationCS34', cardinality 0..*).
+'ocl::cst::OperationCS' (role 'ocl_cst_OperationCS31', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS32', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS24', cardinality 0..*) is associated with 'ocl::cst::InvOrDefCS' (role 'ocl_cst_InvOrDefCS', cardinality 0..*).
+'OCLMessageArgCS' (role 'OCLMessageArgCS', cardinality 0..*) is associated with 'ocl::cst::MessageExpCS' (role 'ocl_cst_MessageExpCS89', cardinality 0..*).
+'ocl::cst::ClassifierContextDeclCS' (role 'ocl_cst_ClassifierContextDeclCS21', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS22', cardinality 0..*).
+'ocl::cst::CollectionTypeCS' (role 'ocl_cst_CollectionTypeCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS69', cardinality 0..*).
+'TypeCS' (role 'TypeCS39', cardinality 0..*) is associated with 'ocl::cst::VariableCS' (role 'ocl_cst_VariableCS', cardinality 0..*).
+'ocl::cst::CallExpCS' (role 'ocl_cst_CallExpCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS103', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS74', cardinality 0..*) is associated with 'ocl::cst::LetExpCS' (role 'ocl_cst_LetExpCS73', cardinality 0..*).
+'DefExpressionCS' (role 'DefExpressionCS', cardinality 0..*) is associated with 'ocl::cst::DefCS' (role 'ocl_cst_DefCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS42', cardinality 0..*) is associated with 'ocl::cst::VariableCS' (role 'ocl_cst_VariableCS41', cardinality 0..*).
+'ocl::cst::PackageDeclarationCS' (role 'ocl_cst_PackageDeclarationCS4', cardinality 0..*) is associated with 'PackageDeclarationCS' (role 'PackageDeclarationCS', cardinality 0..*).
+'ocl::cst::DefExpressionCS' (role 'ocl_cst_DefExpressionCS', cardinality 0..*) is associated with 'OperationCS' (role 'OperationCS52', cardinality 0..*).
+'ocl::cst::LoopExpCS' (role 'ocl_cst_LoopExpCS110', cardinality 0..*) is associated with 'VariableCS' (role 'VariableCS111', cardinality 0..*).
+'ocl::cst::FeatureCallExpCS' (role 'ocl_cst_FeatureCallExpCS121', cardinality 0..*) is associated with 'IsMarkedPreCS' (role 'IsMarkedPreCS122', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS47', cardinality 0..*) is associated with 'ocl::cst::PrePostOrBodyDeclCS' (role 'ocl_cst_PrePostOrBodyDeclCS46', cardinality 0..*).
+'ocl::cst::DefExpressionCS' (role 'ocl_cst_DefExpressionCS57', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS58', cardinality 0..*).
+'ocl::cst::InvCS' (role 'ocl_cst_InvCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS49', cardinality 0..*).
+'ocl::cst::ClassifierContextDeclCS' (role 'ocl_cst_ClassifierContextDeclCS19', cardinality 0..*) is associated with 'InvOrDefCS' (role 'InvOrDefCS', cardinality 0..*).
+'VariableCS' (role 'VariableCS108', cardinality 0..*) is associated with 'ocl::cst::LoopExpCS' (role 'ocl_cst_LoopExpCS', cardinality 0..*).
+'ocl::cst::PropertyContextCS' (role 'ocl_cst_PropertyContextCS12', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS', cardinality 0..*).
+'ocl::cst::CollectionRangeCS' (role 'ocl_cst_CollectionRangeCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS101', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS63', cardinality 0..*) is associated with 'ocl::cst::VariableExpCS' (role 'ocl_cst_VariableExpCS62', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS97', cardinality 0..*) is associated with 'ocl::cst::CollectionLiteralPartCS' (role 'ocl_cst_CollectionLiteralPartCS', cardinality 0..*).
+'ocl::cst::PathNameCS' (role 'ocl_cst_PathNameCS', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS', cardinality 0..*) is associated with 'ocl::cst::PackageDeclarationCS' (role 'ocl_cst_PackageDeclarationCS', cardinality 0..*).
+'ContextDeclCS' (role 'ContextDeclCS', cardinality 0..*) is associated with 'ocl::cst::PackageDeclarationCS' (role 'ocl_cst_PackageDeclarationCS2', cardinality 0..*).
+'TypeCS' (role 'TypeCS37', cardinality 0..*) is associated with 'ocl::cst::OperationCS' (role 'ocl_cst_OperationCS36', cardinality 0..*).
+'IsMarkedPreCS' (role 'IsMarkedPreCS', cardinality 0..*) is associated with 'ocl::cst::VariableExpCS' (role 'ocl_cst_VariableExpCS65', cardinality 0..*).
+'InitOrDerValueCS' (role 'InitOrDerValueCS', cardinality 0..*) is associated with 'ocl::cst::PropertyContextCS' (role 'ocl_cst_PropertyContextCS14', cardinality 0..*).
+'ocl::cst::CallExpCS' (role 'ocl_cst_CallExpCS105', cardinality 0..*) is associated with 'SimpleNameCS' (role 'SimpleNameCS106', cardinality 0..*).
+'OperationCS' (role 'OperationCS', cardinality 0..*) is associated with 'ocl::cst::OperationContextDeclCS' (role 'ocl_cst_OperationContextDeclCS', cardinality 0..*).
+'ocl::cst::TupleTypeCS' (role 'ocl_cst_TupleTypeCS', cardinality 0..*) is associated with 'VariableCS' (role 'VariableCS67', cardinality 0..*).
+'ocl::cst::FeatureCallExpCS' (role 'ocl_cst_FeatureCallExpCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS116', cardinality 0..*).
+'ocl::cst::TupleLiteralExpCS' (role 'ocl_cst_TupleLiteralExpCS', cardinality 0..*) is associated with 'VariableCS' (role 'VariableCS99', cardinality 0..*).
+'ocl::cst::InitOrDerValueCS' (role 'ocl_cst_InitOrDerValueCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS', cardinality 0..*).
+'ocl::cst::LoopExpCS' (role 'ocl_cst_LoopExpCS113', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS114', cardinality 0..*).
+'PackageDeclarationCS' (role 'PackageDeclarationCS124', cardinality 0..*) is associated with 'ocl::cst::OCLDocumentCS' (role 'ocl_cst_OCLDocumentCS', cardinality 0..*).
+'VariableCS' (role 'VariableCS55', cardinality 0..*) is associated with 'ocl::cst::DefExpressionCS' (role 'ocl_cst_DefExpressionCS54', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS10', cardinality 0..*) is associated with 'ocl::cst::PropertyContextCS' (role 'ocl_cst_PropertyContextCS9', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS84', cardinality 0..*) is associated with 'ocl::cst::MessageExpCS' (role 'ocl_cst_MessageExpCS', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS29', cardinality 0..*) is associated with 'ocl::cst::OperationCS' (role 'ocl_cst_OperationCS', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS44', cardinality 0..*) is associated with 'ocl::cst::PrePostOrBodyDeclCS' (role 'ocl_cst_PrePostOrBodyDeclCS', cardinality 0..*).
+'ocl::cst::FeatureCallExpCS' (role 'ocl_cst_FeatureCallExpCS118', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS119', cardinality 0..*).
+'ocl::cst::ClassifierContextDeclCS' (role 'ocl_cst_ClassifierContextDeclCS', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS17', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS79', cardinality 0..*) is associated with 'ocl::cst::IfExpCS' (role 'ocl_cst_IfExpCS78', cardinality 0..*).
+'ocl::cst::OCLMessageArgCS' (role 'ocl_cst_OCLMessageArgCS', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS91', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS82', cardinality 0..*) is associated with 'ocl::cst::IfExpCS' (role 'ocl_cst_IfExpCS81', cardinality 0..*).
+'ocl::cst::CollectionLiteralExpCS' (role 'ocl_cst_CollectionLiteralExpCS', cardinality 0..*) is associated with 'CollectionLiteralPartCS' (role 'CollectionLiteralPartCS', cardinality 0..*).
+'ocl::cst::LetExpCS' (role 'ocl_cst_LetExpCS', cardinality 0..*) is associated with 'VariableCS' (role 'VariableCS71', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS60', cardinality 0..*) is associated with 'ocl::cst::VariableExpCS' (role 'ocl_cst_VariableExpCS', cardinality 0..*).
+'SimpleNameCS' (role 'SimpleNameCS87', cardinality 0..*) is associated with 'ocl::cst::MessageExpCS' (role 'ocl_cst_MessageExpCS86', cardinality 0..*).

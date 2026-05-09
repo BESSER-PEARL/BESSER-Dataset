@@ -1,0 +1,56 @@
+The model has 27 class(es).
+The class 'statemachine::Value' has no attributes.
+The class 'Named' has no attributes.
+The class 'ConstantValue' has no attributes.
+The class 'statemachine::GAbstractState' has no attributes.
+The class 'statemachine::StringValue' has no attributes.
+The class 'statemachine::NumberValue' has no attributes.
+The class 'statemachine::LongValue' has no attributes.
+The class 'statemachine::GStatemachine' has the following attributes: 'package' of type str.
+The class 'statemachine::GetParameter' has no attributes.
+The class 'GCompositeState' has no attributes.
+The class 'Value' has no attributes.
+The class 'statemachine::Call' has the following attributes: 'actionId' of type str.
+The class 'NumberValue' has no attributes.
+The class 'statemachine::Transition' has the following attributes: 'preserveTimers' of type bool.
+The class 'statemachine::GAbstractAction' has the following attributes: 'kind' of type str.
+The class 'GAbstractAction' has no attributes.
+The class 'statemachine::Parameter' has no attributes.
+The class 'statemachine::BooleanValue' has no attributes.
+The class 'statemachine::GState' has no attributes.
+The class 'statemachine::ConstantValue' has the following attributes: 'value' of type str.
+The class 'statemachine::Named' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'GState' has no attributes.
+The class 'statemachine::CallAction' has no attributes.
+The class 'statemachine::GStartState' has no attributes.
+The class 'statemachine::GCompositeState' has no attributes.
+The class 'statemachine::GStopState' has no attributes.
+The class 'GAbstractState' has no attributes.
+The enumeration 'ActionKind' has the following literals: 'EXIT', 'ENTRY'.
+'statemachine::Parameter' is a specialization of 'Named'.
+'statemachine::GStatemachine' is a specialization of 'GCompositeState'.
+'statemachine::GCompositeState' is a specialization of 'GState'.
+'statemachine::GState' is a specialization of 'GAbstractState'.
+'statemachine::Call' is a specialization of 'Value'.
+'statemachine::NumberValue' is a specialization of 'ConstantValue'.
+'statemachine::StringValue' is a specialization of 'ConstantValue'.
+'statemachine::GStopState' is a specialization of 'GAbstractState'.
+'statemachine::GStartState' is a specialization of 'GAbstractState'.
+'statemachine::ConstantValue' is a specialization of 'Value'.
+'statemachine::LongValue' is a specialization of 'NumberValue'.
+'statemachine::Transition' is a specialization of 'Named'.
+'statemachine::GetParameter' is a specialization of 'Value'.
+'statemachine::GState' is a specialization of 'Named'.
+'statemachine::BooleanValue' is a specialization of 'ConstantValue'.
+'statemachine::CallAction' is a specialization of 'GAbstractAction'.
+'statemachine::CallAction' (role 'statemachine_CallAction', cardinality 0..*) is associated with 'statemachine::Call' (role 'statemachine_Call', cardinality 0..*).
+'statemachine::GCompositeState' (role 'statemachine_GCompositeState17', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition18', cardinality 0..*).
+'statemachine::Parameter' (role 'statemachine_Parameter', cardinality 0..*) is associated with 'statemachine::GStatemachine' (role 'statemachine_GStatemachine', cardinality 0..*).
+'statemachine::GAbstractState' (role 'statemachine_GAbstractState2', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition7', cardinality 0..*) is associated with 'statemachine::Value' (role 'statemachine_Value', cardinality 0..*).
+'statemachine::GAbstractState' (role 'statemachine_GAbstractState5', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition4', cardinality 0..*).
+'statemachine::Value' (role 'statemachine_Value10', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition9', cardinality 0..*).
+'statemachine::Parameter' (role 'statemachine_Parameter22', cardinality 0..*) is associated with 'statemachine::GetParameter' (role 'statemachine_GetParameter', cardinality 0..*).
+'statemachine::GAbstractState' (role 'statemachine_GAbstractState', cardinality 0..*) is associated with 'statemachine::GAbstractAction' (role 'statemachine_GAbstractAction', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition12', cardinality 0..*) is associated with 'statemachine::Value' (role 'statemachine_Value13', cardinality 0..*).
+'statemachine::GAbstractState' (role 'statemachine_GAbstractState15', cardinality 0..*) is associated with 'statemachine::GCompositeState' (role 'statemachine_GCompositeState', cardinality 0..*).

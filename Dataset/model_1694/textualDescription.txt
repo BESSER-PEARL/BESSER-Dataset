@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'helloworld::Thing' has the following attributes: 'name' of type str.
+The class 'helloworld::World' has no attributes.
+'helloworld::Thing' (role 'helloworld_Thing3', cardinality 0..*) is associated with 'helloworld::Thing' (role 'helloworld_Thing1', cardinality 0..*).
+'helloworld::World' (role 'helloworld_World', cardinality 0..*) is associated with 'helloworld::Thing' (role 'helloworld_Thing', cardinality 0..*).
+'helloworld::Thing' (role 'helloworld_Thing6', cardinality 0..*) is associated with 'helloworld::Thing' (role 'helloworld_Thing4', cardinality 0..*).

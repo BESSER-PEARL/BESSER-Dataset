@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jck1307/SIDE-Labs/S-IDE/MetaModel/Requirements/legacy/com.bluexml.side.Requirements.interpretation/src/documentation/documentation.ecore

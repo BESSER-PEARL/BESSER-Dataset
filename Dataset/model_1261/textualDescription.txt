@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'family::Family' has the following attributes: 'favoriteHolidayDestinations' of type str; 'hasASwimmingPool' of type bool; 'numberOfPets' of type int; 'surname' of type str.
+The class 'family::Person' has the following attributes: 'firstName' of type str; 'sexe' of type str.
+The class 'family::Car' has the following attributes: 'numberOfSeats' of type str.
+The class 'family::WealthyFamily' has the following attributes: 'forbesRanking' of type int.
+The class 'family::Address' has the following attributes: 'street' of type str.
+The class 'Family' has no attributes.
+The enumeration 'Sexe' has the following literals: 'FEMALE', 'MALE'.
+'family::WealthyFamily' is a specialization of 'Family'.
+'family::Car' (role 'family_Car', cardinality 0..*) is associated with 'family::Person' (role 'family_Person4', cardinality 0..*).
+'family::Address' (role 'family_Address', cardinality 0..*) is associated with 'family::Family' (role 'family_Family2', cardinality 0..*).
+'family::Person' (role 'family_Person', cardinality 0..*) is associated with 'family::Family' (role 'family_Family', cardinality 0..*).

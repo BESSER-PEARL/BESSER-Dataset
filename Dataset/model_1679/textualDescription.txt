@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'basic::World' has no attributes.
+The class 'basic::Thing' has the following attributes: 'id' of type int.
+The class 'basic::RelatedTo' has the following attributes: 'since' of type str.
+'basic::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'basic::Thing' (role 'fromThing', cardinality 0..*).
+'basic::Thing' (role 'Thing', cardinality 0..*) is associated with 'basic::RelatedTo' (role 'relations', cardinality 0..*).
+'basic::World' (role 'basic_World', cardinality 0..*) is associated with 'basic::Thing' (role 'basic_Thing', cardinality 0..*).
+'basic::RelatedTo' (role 'basic_RelatedTo', cardinality 0..*) is associated with 'basic::Thing' (role 'basic_Thing4', cardinality 0..*).

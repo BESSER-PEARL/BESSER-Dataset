@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'DictionaryLanguage::Author' has the following attributes: 'email' of type str.
+The class 'DictionaryLanguage::Library' has the following attributes: 'name' of type str.
+The class 'DictionaryLanguage::Dictionary' has the following attributes: 'title' of type str.
+The class 'DictionaryLanguage::Shelf' has the following attributes: 'description' of type str.
+The class 'DictionaryLanguage::Entry' has the following attributes: 'level' of type str; 'content' of type str.
+'DictionaryLanguage::Author' (role 'Author9', cardinality 0..*) is associated with 'DictionaryLanguage::Library' (role 'library', cardinality 0..*).
+'DictionaryLanguage::Shelf' (role 'Shelf', cardinality 0..*) is associated with 'DictionaryLanguage::Dictionary' (role 'dictionary', cardinality 0..*).
+'DictionaryLanguage::Dictionary' (role 'DictionaryLanguage_Dictionary', cardinality 0..*) is associated with 'DictionaryLanguage::Entry' (role 'DictionaryLanguage_Entry', cardinality 0..*).
+'DictionaryLanguage::Library' (role 'Library', cardinality 0..*) is associated with 'DictionaryLanguage::Author' (role 'author', cardinality 0..*).
+'DictionaryLanguage::Author' (role 'Author', cardinality 0..*) is associated with 'DictionaryLanguage::Dictionary' (role 'dictionary5', cardinality 0..*).
+'DictionaryLanguage::Shelf' (role 'DictionaryLanguage_Shelf', cardinality 0..*) is associated with 'DictionaryLanguage::Library' (role 'DictionaryLanguage_Library', cardinality 0..*).
+'DictionaryLanguage::Dictionary' (role 'Dictionary11', cardinality 0..*) is associated with 'DictionaryLanguage::Shelf' (role 'shelf', cardinality 0..*).
+'DictionaryLanguage::Dictionary' (role 'Dictionary', cardinality 0..*) is associated with 'DictionaryLanguage::Author' (role 'author2', cardinality 0..*).

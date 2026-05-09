@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'PN::Transition' has the following attributes: 'input' of type str.
+The class 'PN::Net' has the following attributes: 'name' of type str.
+The class 'PN::Place' has the following attributes: 'name' of type str.
+'PN::Transition' (role 'incoming', cardinality 0..*) is associated with 'PN::Place' (role 'Place8', cardinality 0..*).
+'PN::Place' (role 'PN_Place', cardinality 0..*) is associated with 'PN::Net' (role 'PN_Net', cardinality 0..*).
+'PN::Transition' (role 'PN_Transition', cardinality 0..*) is associated with 'PN::Net' (role 'PN_Net2', cardinality 0..*).
+'PN::Place' (role 'to', cardinality 0..*) is associated with 'PN::Transition' (role 'Transition', cardinality 0..*).
+'PN::Transition' (role 'outgoing', cardinality 0..*) is associated with 'PN::Place' (role 'Place', cardinality 0..*).
+'PN::Place' (role 'from_', cardinality 0..*) is associated with 'PN::Transition' (role 'Transition5', cardinality 0..*).

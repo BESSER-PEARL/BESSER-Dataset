@@ -1,0 +1,21 @@
+The model has 6 class(es).
+The class 'stateMachine::Event' has no attributes.
+The class 'stateMachine::State' has the following attributes: 'kind' of type str.
+The class 'IDElement' has no attributes.
+The class 'stateMachine::StateMachine' has no attributes.
+The class 'stateMachine::Transition' has no attributes.
+The class 'stateMachine::IDElement' has the following attributes: 'id' of type str.
+The enumeration 'StateKind' has the following literals: 'DEFAULT', 'INITIAL', 'FINAL'.
+'stateMachine::Transition' is a specialization of 'IDElement'.
+'stateMachine::Event' is a specialization of 'IDElement'.
+'stateMachine::StateMachine' is a specialization of 'IDElement'.
+'stateMachine::State' is a specialization of 'IDElement'.
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine4', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event', cardinality 0..*).
+'stateMachine::State' (role 'stateMachine_State', cardinality 0..*) is associated with 'stateMachine::StateMachine' (role 'stateMachine_StateMachine', cardinality 0..*).
+'stateMachine::Transition' (role 'Transition', cardinality 0..*) is associated with 'stateMachine::State' (role 'source', cardinality 0..*).
+'stateMachine::Transition' (role 'stateMachine_Transition15', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event16', cardinality 0..*).
+'stateMachine::State' (role 'target', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'Transition7', cardinality 0..*).
+'stateMachine::StateMachine' (role 'stateMachine_StateMachine2', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'stateMachine_Transition', cardinality 0..*).
+'stateMachine::Transition' (role 'stateMachine_Transition12', cardinality 0..*) is associated with 'stateMachine::Event' (role 'stateMachine_Event13', cardinality 0..*).
+'stateMachine::State' (role 'State', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'outgoing', cardinality 0..*).
+'stateMachine::State' (role 'State10', cardinality 0..*) is associated with 'stateMachine::Transition' (role 'incoming', cardinality 0..*).

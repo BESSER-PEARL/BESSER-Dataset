@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'model::FiniteStateMachine' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'model::Transition' has the following attributes: 'trigger' of type str; 'name' of type str.
+The class 'model::State' has no attributes.
+The class 'model::AbstractState' has the following attributes: 'name' of type str.
+'model::FiniteStateMachine' is a specialization of 'AbstractState'.
+'model::State' is a specialization of 'AbstractState'.
+'model::AbstractState' (role 'source', cardinality 0..*) is associated with 'model::Transition' (role 'Transition', cardinality 0..*).
+'model::FiniteStateMachine' (role 'FiniteStateMachine', cardinality 0..*) is associated with 'model::AbstractState' (role 'states', cardinality 0..*).
+'model::FiniteStateMachine' (role 'parent', cardinality 0..*) is associated with 'model::AbstractState' (role 'AbstractState', cardinality 0..*).
+'model::AbstractState' (role 'AbstractState5', cardinality 0..*) is associated with 'model::Transition' (role 'outgoings', cardinality 0..*).
+'model::AbstractState' (role 'model_AbstractState7', cardinality 0..*) is associated with 'model::Transition' (role 'model_Transition', cardinality 0..*).
+'model::FiniteStateMachine' (role 'model_FiniteStateMachine', cardinality 0..*) is associated with 'model::AbstractState' (role 'model_AbstractState', cardinality 0..*).

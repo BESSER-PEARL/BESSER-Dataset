@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'trialStatemachine::Region' has the following attributes: 'history' of type str.
+The class 'trialStatemachine::Statemachine' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'trialStatemachine::State' has the following attributes: 'name' of type str.
+The class 'trialStatemachine::LabeledTransition' has the following attributes: 'id' of type str.
+The class 'Region' has no attributes.
+The class 'trialStatemachine::ComplexState' has no attributes.
+The class 'trialStatemachine::Action' has the following attributes: 'name' of type str.
+'trialStatemachine::ComplexState' is a specialization of 'State'.
+'trialStatemachine::Statemachine' is a specialization of 'Region'.
+'trialStatemachine::Region' (role 'trialStatemachine_Region', cardinality 0..*) is associated with 'trialStatemachine::ComplexState' (role 'trialStatemachine_ComplexState', cardinality 0..*).
+'trialStatemachine::LabeledTransition' (role 'trialStatemachine_LabeledTransition16', cardinality 0..*) is associated with 'trialStatemachine::Action' (role 'trialStatemachine_Action17', cardinality 0..*).
+'trialStatemachine::Region' (role 'trialStatemachine_Region7', cardinality 0..*) is associated with 'trialStatemachine::State' (role 'trialStatemachine_State8', cardinality 0..*).
+'trialStatemachine::State' (role 'trialStatemachine_State5', cardinality 0..*) is associated with 'trialStatemachine::Region' (role 'trialStatemachine_Region4', cardinality 0..*).
+'trialStatemachine::Action' (role 'trialStatemachine_Action', cardinality 0..*) is associated with 'trialStatemachine::Statemachine' (role 'trialStatemachine_Statemachine', cardinality 0..*).
+'trialStatemachine::State' (role 'trialStatemachine_State', cardinality 0..*) is associated with 'trialStatemachine::LabeledTransition' (role 'trialStatemachine_LabeledTransition', cardinality 0..*).
+'trialStatemachine::State' (role 'trialStatemachine_State14', cardinality 0..*) is associated with 'trialStatemachine::LabeledTransition' (role 'trialStatemachine_LabeledTransition13', cardinality 0..*).
+'trialStatemachine::State' (role 'trialStatemachine_State11', cardinality 0..*) is associated with 'trialStatemachine::Region' (role 'trialStatemachine_Region10', cardinality 0..*).

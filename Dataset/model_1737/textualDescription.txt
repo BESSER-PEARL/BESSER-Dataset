@@ -1,0 +1,24 @@
+The model has 8 class(es).
+The class 'bookstore::Ent' has the following attributes: 'name' of type str.
+The class 'Ent' has no attributes.
+The class 'bookstore::Person' has the following attributes: 'achternaam' of type str; 'voornaam' of type str.
+The class 'bookstore::Dvd' has the following attributes: 'title' of type str.
+The class 'bookstore::Magazine' has the following attributes: 'pages' of type int; 'version' of type str; 'title' of type str.
+The class 'bookstore::Cd' has the following attributes: 'albumName' of type str; 'bandArtist' of type str.
+The class 'bookstore::Model' has no attributes.
+The class 'bookstore::Book' has the following attributes: 'title' of type str; 'pages' of type int.
+'bookstore::Magazine' is a specialization of 'Ent'.
+'bookstore::Cd' is a specialization of 'Ent'.
+'bookstore::Person' is a specialization of 'Ent'.
+'bookstore::Dvd' is a specialization of 'Ent'.
+'bookstore::Book' is a specialization of 'Ent'.
+'bookstore::Person' (role 'bookstore_Person22', cardinality 0..*) is associated with 'bookstore::Cd' (role 'bookstore_Cd', cardinality 0..*).
+'bookstore::Book' (role 'bookstore_Book', cardinality 0..*) is associated with 'bookstore::Book' (role 'bookstore_Book3', cardinality 0..*).
+'bookstore::Magazine' (role 'bookstore_Magazine', cardinality 0..*) is associated with 'bookstore::Person' (role 'bookstore_Person9', cardinality 0..*).
+'bookstore::Model' (role 'bookstore_Model', cardinality 0..*) is associated with 'bookstore::Ent' (role 'bookstore_Ent', cardinality 0..*).
+'bookstore::Person' (role 'bookstore_Person7', cardinality 0..*) is associated with 'bookstore::Book' (role 'bookstore_Book6', cardinality 0..*).
+'bookstore::Person' (role 'bookstore_Person11', cardinality 0..*) is associated with 'bookstore::Dvd' (role 'bookstore_Dvd', cardinality 0..*).
+'bookstore::Dvd' (role 'bookstore_Dvd18', cardinality 0..*) is associated with 'bookstore::Dvd' (role 'bookstore_Dvd20', cardinality 0..*).
+'bookstore::Dvd' (role 'bookstore_Dvd16', cardinality 0..*) is associated with 'bookstore::Person' (role 'bookstore_Person17', cardinality 0..*).
+'bookstore::Person' (role 'bookstore_Person1', cardinality 0..*) is associated with 'bookstore::Person' (role 'bookstore_Person', cardinality 0..*).
+'bookstore::Book' (role 'bookstore_Book14', cardinality 0..*) is associated with 'bookstore::Dvd' (role 'bookstore_Dvd13', cardinality 0..*).

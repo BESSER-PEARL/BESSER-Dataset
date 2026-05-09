@@ -1,0 +1,18 @@
+The model has 5 class(es).
+The class 'imdb::Person' has the following attributes: 'name' of type str.
+The class 'imdb::User' has the following attributes: 'watchlist' of type str; 'username' of type str.
+The class 'imdb::Movie' has the following attributes: 'metacriticReviews' of type int; 'title' of type str; 'genres' of type str; 'runtime' of type int; 'poster' of type str; 'age' of type int; 'metaScore' of type int; 'rating' of type float; 'userReviews' of type int; 'releaseDate' of type date; 'criticReviews' of type int; 'synopsis' of type str; 'userRatings' of type int.
+The class 'imdb::StaffList' has the following attributes: 'coverPhoto' of type str; 'elements' of type str; 'createdDate' of type date; 'name' of type str; 'elementType' of type str.
+The class 'imdb::db' has the following attributes: 'bestOf2014' of type str.
+The enumeration 'StaffListType' has the following literals: 'titles', 'characters'.
+The enumeration 'Genre' has the following literals: 'SciFi', 'Adventure'.
+'imdb::Person' (role 'imdb_Person11', cardinality 0..*) is associated with 'imdb::db' (role 'imdb_db10', cardinality 0..*).
+'imdb::Person' (role 'imdb_Person14', cardinality 0..*) is associated with 'imdb::db' (role 'imdb_db13', cardinality 0..*).
+'imdb::Movie' (role 'imdb_Movie', cardinality 0..*) is associated with 'imdb::Person' (role 'imdb_Person', cardinality 0..*).
+'imdb::db' (role 'imdb_db', cardinality 0..*) is associated with 'imdb::Person' (role 'imdb_Person8', cardinality 0..*).
+'imdb::StaffList' (role 'imdb_StaffList23', cardinality 0..*) is associated with 'imdb::User' (role 'imdb_User24', cardinality 0..*).
+'imdb::Person' (role 'imdb_Person3', cardinality 0..*) is associated with 'imdb::Movie' (role 'imdb_Movie2', cardinality 0..*).
+'imdb::User' (role 'imdb_User', cardinality 0..*) is associated with 'imdb::db' (role 'imdb_db21', cardinality 0..*).
+'imdb::StaffList' (role 'imdb_StaffList', cardinality 0..*) is associated with 'imdb::db' (role 'imdb_db19', cardinality 0..*).
+'imdb::Person' (role 'imdb_Person6', cardinality 0..*) is associated with 'imdb::Movie' (role 'imdb_Movie5', cardinality 0..*).
+'imdb::Movie' (role 'imdb_Movie17', cardinality 0..*) is associated with 'imdb::db' (role 'imdb_db16', cardinality 0..*).

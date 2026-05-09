@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/StefanHennig/EMFStoreAddressBook/org.eclipse.emfstore.addressbook/model/addressbook.ecore

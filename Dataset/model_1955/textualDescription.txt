@@ -1,0 +1,561 @@
+The model has 220 class(es).
+The class 'shr5::KiKraft' has the following attributes: 'kraftpunkte' of type int.
+The class 'KiAdept' has no attributes.
+The class 'shr5::AbstaktFernKampfwaffe' has no attributes.
+The class 'Capacity' has no attributes.
+The class 'shr5::Panzerung' has the following attributes: 'panzer' of type int.
+The class 'shr5::GeistigeAttribute' has the following attributes: 'willenskraft' of type int; 'charisma' of type int; 'logik' of type int; 'intuition' of type int.
+The class 'Fertigkeit' has no attributes.
+The class 'Modifizierbar' has no attributes.
+The class 'shr5::Spezies' has the following attributes: 'edgeMin' of type int; 'essenzMax' of type int; 'logikMin' of type int; 'reaktionMax' of type int; 'konstitutionMax' of type int; 'konstitutionMin' of type int; 'essenzMin' of type int; 'resonanzMax' of type int; 'logikMax' of type int; 'resonanzMin' of type int; 'sprinten' of type int; 'rennen' of type int; 'magieMax' of type int; 'charismaMax' of type int; 'willenskraftMin' of type int; 'intuitionMin' of type int; 'willenskraftMax' of type int; 'staerkeMin' of type int; 'geschicklichkeitMin' of type int; 'geschicklichkeitMax' of type int; 'staerkeMax' of type int; 'laufen' of type int; 'reaktionMin' of type int; 'intuitionMax' of type int; 'charismaMin' of type int; 'magieMin' of type int; 'edgeMax' of type int.
+The class 'CyberwareEnhancement' has no attributes.
+The class 'AbstraktFokus' has no attributes.
+The class 'shr5::PersonalAreaNetwork' has the following attributes: 'slaveMax' of type int.
+The class 'shr5::PersonaEigenschaft' has the following attributes: 'karmaKosten' of type int.
+The class 'MagischeStufe' has no attributes.
+The class 'shr5::Wurfwaffe' has no attributes.
+The class 'Koerpermods' has no attributes.
+The class 'shr5::BaseMagischePersona' has the following attributes: 'magie' of type int; 'magieBasis' of type int.
+The class 'shr5::AbtraktGranate' has the following attributes: 'blast' of type str.
+The class 'shr5::Erlernbar' has no attributes.
+The class 'Wissensfertigkeit' has no attributes.
+The class 'shr5::LifestyleOption' has no attributes.
+The class 'MatrixDevice' has no attributes.
+The class 'shr5::ConsumerSoft' has the following attributes: 'type' of type str.
+The class 'shr5::Lizenz' has the following attributes: 'lizenGegenstand' of type str.
+The class 'shr5::Capacity' has the following attributes: 'capacity' of type int; 'capacityRemains' of type int.
+The class 'shr5::Beschreibbar' has the following attributes: 'beschreibung' of type str; 'image' of type str; 'name' of type str.
+The class 'shr5::Sprachfertigkeit' has no attributes.
+The class 'KoerperlicheAttribute' has no attributes.
+The class 'shr5::Koerpermods' has no attributes.
+The class 'IntervallVertrag' has no attributes.
+The class 'Quelle' has no attributes.
+The class 'shr5::Magier' has no attributes.
+The class 'StufenPersona' has no attributes.
+The class 'GeldWert' has no attributes.
+The class 'shr5::Technomancer' has no attributes.
+The class 'shr5::Toxin' has the following attributes: 'power' of type int; 'effect' of type str; 'penetration' of type int.
+The class 'Beschreibbar' has no attributes.
+The class 'shr5::RiggerProgram' has no attributes.
+The class 'shr5::CyberImplantWeapon' has no attributes.
+The class 'shr5::GebundenerGeist' has the following attributes: 'dienste' of type int.
+The class 'shr5::Geist' has the following attributes: 'reaktionBasis' of type int; 'staerkeBasis' of type int; 'charismaBasis' of type int; 'logikBasis' of type int; 'willenskraftBasis' of type int; 'konstitutionBasis' of type int; 'geschicklichkeitBasis' of type int; 'intuitionBasis' of type int.
+The class 'MatrixAttributes' has no attributes.
+The class 'shr5::Substance' has the following attributes: 'speed' of type str; 'vector' of type str.
+The class 'shr5::PersonaKomplexForm' has the following attributes: 'stufe' of type int.
+The class 'shr5::Sensor' has the following attributes: 'rating' of type int; 'capacityValue' of type int.
+The class 'shr5::Magazin' has no attributes.
+The class 'Munition' has no attributes.
+The class 'shr5::MagischeTradition' has the following attributes: 'enzug' of type str.
+The class 'shr5::AstraleProjektion' has the following attributes: 'astraleGeschicklichkeit' of type int; 'astraleInitative' of type int; 'astralesLimit' of type int; 'astralePanzerung' of type int; 'astraleInitativWuerfel' of type int; 'astraleStaerke' of type int; 'astraleReaktion' of type int; 'astraleKonstitution' of type int.
+The class 'shr5::Bodenfahrzeug' has the following attributes: 'geschwindigkeitGelaende' of type int; 'handlingGelaende' of type int.
+The class 'shr5::MartialartTechnique' has no attributes.
+The class 'Steigerbar' has no attributes.
+The class 'shr5::MysticAdept' has no attributes.
+The class 'shr5::CyberwareEnhancement' has the following attributes: 'type' of type str; 'capacityUse' of type int.
+The class 'shr5::Steigerbar' has the following attributes: 'stufe' of type int.
+The class 'shr5::FahrzeugZustand' has the following attributes: 'zustandMax' of type int.
+The class 'Zauberer' has no attributes.
+The class 'MagischeMods' has no attributes.
+The class 'shr5::ActiveMatixDevice' has the following attributes: 'angriff' of type int; 'schleicher' of type int.
+The class 'shr5::Datasoft' has no attributes.
+The class 'Panzerung' has no attributes.
+The class 'shr5::BerechneteAttribute' has the following attributes: 'selbstbeherrschung' of type int; 'menschenkenntnis' of type int; 'errinerungsvermoegen' of type int.
+The class 'shr5::PersonaMartialartTechnique' has no attributes.
+The class 'shr5::CommonProgram' has the following attributes: 'programType' of type str.
+The class 'Spezies' has no attributes.
+The class 'shr5::Zauber' has the following attributes: 'entzug' of type str; 'dauer' of type str; 'reichweite' of type str; 'kategorie' of type str; 'art' of type str; 'merkmale' of type str; 'schaden' of type str.
+The class 'shr5::Drohne' has the following attributes: 'programSlotCount' of type int.
+The class 'shr5::Menge' has the following attributes: 'proAnzahl' of type int; 'anzahl' of type int.
+The class 'shr5::Zauberer' has the following attributes: 'enzug' of type int.
+The class 'shr5::SensorFunction' has the following attributes: 'maxRange' of type int.
+The class 'RiggerProgram' has no attributes.
+The class 'shr5::ShrList' has no attributes.
+The class 'BaseMagischePersona' has no attributes.
+The class 'shr5::SourceLink' has no attributes.
+The class 'AbstraktModifikatoren' has no attributes.
+The class 'SpezielleAttribute' has no attributes.
+The class 'Wurfwaffe' has no attributes.
+The class 'AbstractMatrixDevice' has no attributes.
+The class 'AbstaktFernKampfwaffe' has no attributes.
+The class 'shr5::ProbenModifikatoren' has the following attributes: 'heilung' of type int; 'schadenswiederstand' of type int.
+The class 'Modifyable' has no attributes.
+The class 'shr5::SourceBook' has the following attributes: 'endShrTime' of type str; 'startShrTime' of type str; 'code' of type str.
+The class 'shr5::MetaMagie' has no attributes.
+The class 'ActiveMatixDevice' has no attributes.
+The class 'shr5::Quelle' has the following attributes: 'page' of type str.
+The class 'shr5::Identifiable' has the following attributes: 'parentId' of type str.
+The class 'shr5::ShoppingTransaction' has the following attributes: 'caculatedCosts' of type str; 'fee' of type float.
+The class 'AbstraktPersona' has no attributes.
+The class 'shr5::AbstractMatrixDevice' has the following attributes: 'deviceRating' of type int.
+The class 'Software' has no attributes.
+The class 'shr5::Modifizierbar' has no attributes.
+The class 'BerechneteAttribute' has no attributes.
+The class 'shr5::PersonaZustand' has the following attributes: 'zustandGeistigMax' of type int; 'zustandKoerperlichMax' of type int; 'zustandGrenze' of type int.
+The class 'Menge' has no attributes.
+The class 'shr5::Sprite' has the following attributes: 'firewallMod' of type int; 'schleicherMod' of type int; 'stufe' of type int; 'angriffMod' of type int; 'initativeMod' of type int; 'datenverarbeitungMod' of type int.
+The class 'shr5::FokusBinding' has the following attributes: 'active' of type bool.
+The class 'shr5::Modifyable' has no attributes.
+The class 'shr5::FahrzeugErweiterung' has no attributes.
+The class 'AbstraktGegenstand' has no attributes.
+The class 'MatixConditionMonitor' has no attributes.
+The class 'AbtraktGranate' has no attributes.
+The class 'Fakeable' has no attributes.
+The class 'shr5::AbstraktFokus' has no attributes.
+The class 'shr5::MagischePersona' has no attributes.
+The class 'shr5::MagieFokus' has the following attributes: 'bindungsFaktor' of type int.
+The class 'Nahkampfwaffe' has no attributes.
+The class 'PassagierFahrzeug' has no attributes.
+The class 'Vertrag' has no attributes.
+The class 'shr5::FernkampfwaffenModifikatoren' has the following attributes: 'rueckstoss' of type int; 'smartgun' of type str; 'lasterPointer' of type bool; 'sichtverbesserung' of type int; 'vergroesserung' of type int; 'schalldaempfer' of type bool.
+The class 'shr5::KoerperPersona' has the following attributes: 'zustandKoerperlich' of type int; 'zustandGeistig' of type int.
+The class 'shr5::MatrixAttributes' has the following attributes: 'geraetestufe' of type int; 'datenverarbeitung' of type int; 'currentModus' of type str; 'firewall' of type int.
+The class 'shr5::Schutzgeist' has the following attributes: 'vorteile' of type str; 'nachteile' of type str.
+The class 'shr5::StufenPersona' has the following attributes: 'stufe' of type int.
+The class 'shr5::PercentLifestyleOption' has no attributes.
+The class 'shr5::Granate' has no attributes.
+The class 'shr5::Commlink' has no attributes.
+The class 'shr5::Cyberdeck' has the following attributes: 'attribute4' of type int; 'attribute2' of type int; 'modManager' of type str; 'programSlots' of type int; 'attribute3' of type int; 'attribute1' of type int.
+The class 'shr5::FahrzeugModifikation' has the following attributes: 'capacityUsed' of type int.
+The class 'shr5::MiniGrenate' has no attributes.
+The class 'MatrixProgram' has no attributes.
+The class 'BasicProgram' has no attributes.
+The class 'PersonaZustand' has no attributes.
+The class 'KoerperPersona' has no attributes.
+The class 'shr5::RiggerCommandConsole' has the following attributes: 'firewallBasis' of type int; 'datenverarbeitungBasis' of type int; 'zugriff' of type int; 'rauschunterdrueckung' of type int; 'zugriffBasis' of type int.
+The class 'shr5::SpezielleAttribute' has the following attributes: 'initativWuerfel' of type int; 'edge' of type int; 'ausweichen' of type int; 'edgeBasis' of type int; 'initative' of type int; 'essenz' of type int.
+The class 'shr5::Reichweite' has the following attributes: 'extrem' of type int; 'kurz' of type int; 'weit' of type int; 'mittel' of type int; 'min' of type int.
+The class 'shr5::Localization' has the following attributes: 'page' of type int; 'local' of type str; 'name' of type str.
+The class 'ModifikatorAttribute' has no attributes.
+The class 'shr5::AspektMagier' has no attributes.
+The class 'Fahrzeug' has no attributes.
+The class 'shr5::PersonaMartialartStyle' has no attributes.
+The class 'shr5::Fahrzeug' has the following attributes: 'beschleunigung' of type int; 'panzer' of type int; 'sensor' of type int; 'weaponMounts' of type int; 'pilot' of type int; 'rumpf' of type int; 'geschwindigkeit' of type int; 'handling' of type int; 'fahrzeugTyp' of type str.
+The class 'shr5::BioWare' has no attributes.
+The class 'shr5::Nahkampfwaffe' has the following attributes: 'reichweite' of type int.
+The class 'shr5::Feuerwaffe' has the following attributes: 'kapazitaet' of type int; 'modie' of type str; 'erweiterung' of type str; 'munitionstyp' of type str; 'rueckstoss' of type int.
+The class 'shr5::ResonanzPersona' has the following attributes: 'resonanzBasis' of type int; 'resonanz' of type int.
+The class 'shr5::SensorArray' has no attributes.
+The class 'shr5::Fokus' has the following attributes: 'bindungskosten' of type int.
+The class 'shr5::PersonaFertigkeitsGruppe' has no attributes.
+The class 'shr5::PersonaFertigkeit' has no attributes.
+The class 'shr5::IntervallVertrag' has the following attributes: 'faelligkeitsIntervall' of type int; 'unit' of type str; 'begin' of type str.
+The class 'shr5::KiAdept' has no attributes.
+The class 'shr5::Sin' has no attributes.
+The class 'shr5::EReference' has no attributes.
+The class 'shr5::ModifikatorAttribute' has no attributes.
+The class 'shr5::MatixConditionMonitor' has the following attributes: 'matrixZustandMax' of type int.
+The class 'shr5::DefaultWifi' has no attributes.
+The class 'shr5::FertigkeitsGruppe' has no attributes.
+The class 'shr5::BasicProgram' has no attributes.
+The class 'shr5::AbstaktWaffe' has the following attributes: 'schadesTyp' of type str; 'schadenscode' of type str; 'durchschlagsKraft' of type int; 'praezision' of type int.
+The class 'shr5::Drug' has the following attributes: 'addictionType' of type str; 'duration' of type str.
+The class 'shr5::EAttribute' has no attributes.
+The class 'shr5::KleindungsModifikator' has the following attributes: 'capacity' of type int; 'type' of type str; 'rating' of type int.
+The class 'shr5::Anwendbar' has no attributes.
+The class 'shr5::MartialartStyle' has no attributes.
+The class 'shr5::SoftwareAgent' has the following attributes: 'rating' of type int.
+The class 'shr5::ChrakterLimits' has the following attributes: 'sozial' of type int; 'geistig' of type int; 'koerperlich' of type int.
+The class 'LifestyleOption' has no attributes.
+The class 'shr5::AbstraktPersona' has the following attributes: 'modManager' of type str; 'willenskraftBasis' of type int; 'reaktionBasis' of type int; 'staerkeBasis' of type int; 'geschicklichkeitBasis' of type int; 'logikBasis' of type int; 'intuitionBasis' of type int; 'konstitutionBasis' of type int; 'charismaBasis' of type int.
+The class 'shr5::Gegenstand' has the following attributes: 'kategorie' of type str; 'stufe' of type int.
+The class 'shr5::AbstraktGegenstand' has no attributes.
+The class 'shr5::Credstick' has the following attributes: 'maxValue' of type int; 'currentValue' of type str.
+The class 'shr5::AttributModifikatorWert' has the following attributes: 'wert' of type int.
+The class 'Spezialisierung' has no attributes.
+The class 'shr5::Initation' has no attributes.
+The class 'shr5::GeldWert' has the following attributes: 'wert' of type str; 'wertValue' of type str; 'verfuegbarkeit' of type str.
+The class 'shr5::Fertigkeit' has the following attributes: 'kategorie' of type str; 'ausweichen' of type bool.
+The class 'shr5::Echo' has no attributes.
+The class 'Fokus' has no attributes.
+The class 'shr5::MudanPersona' has no attributes.
+The class 'shr5::AutoSoft' has the following attributes: 'rating' of type int.
+The class 'shr5::Tutorsoft' has the following attributes: 'rating' of type int.
+The class 'shr5::SkillSoft' has the following attributes: 'rating' of type int.
+The class 'shr5::Spezialisierung' has no attributes.
+The class 'shr5::Wissensfertigkeit' has no attributes.
+The class 'shr5::TransferAmount' has the following attributes: 'amountToTransfer' of type str.
+The class 'shr5::KoerperlicheAttribute' has the following attributes: 'staerke' of type int; 'geschicklichkeit' of type int; 'konstitution' of type int; 'reaktion' of type int.
+The class 'shr5::PersonaZauber' has the following attributes: 'stufe' of type int.
+The class 'shr5::Critter' has no attributes.
+The class 'shr5::QiFokus' has no attributes.
+The class 'shr5::MatrixProgram' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'shr5::Fakeable' has the following attributes: 'gefaelscht' of type bool; 'stufe' of type int.
+The class 'AbstaktWaffe' has no attributes.
+The class 'FahrzeugZustand' has no attributes.
+The class 'shr5::Munition' has the following attributes: 'armorMod' of type int; 'damageMod' of type int; 'damageType' of type str.
+The class 'shr5::Host' has the following attributes: 'baseFirewall' of type int; 'baseAngriff' of type int; 'hostRating' of type int; 'baseDatenverarbeitung' of type int; 'baseSchleicher' of type int.
+The class 'shr5::FernkampfwaffeModifikator' has the following attributes: 'ep' of type str.
+The class 'shr5::MagischeMods' has no attributes.
+The class 'shr5::MagischeStufe' has the following attributes: 'stufe' of type int.
+The class 'shr5::Software' has no attributes.
+The class 'shr5::GegenstandStufen' has the following attributes: 'elektronik' of type int; 'tracing' of type int; 'computer' of type int; 'antiProtection' of type int; 'antiTracing' of type int; 'protection' of type int.
+The class 'FahrzeugModifikation' has no attributes.
+The class 'shr5::MatrixDevice' has no attributes.
+The class 'shr5::AbstraktModifikatoren' has no attributes.
+The class 'shr5::Vertrag' has no attributes.
+The class 'Anwendbar' has no attributes.
+The class 'shr5::Kleidung' has the following attributes: 'ruestung' of type int.
+The class 'shr5::CredstickTransaction' has the following attributes: 'description' of type str; 'date' of type str; 'amount' of type str.
+The class 'shr5::CritterKraft' has the following attributes: 'reichweite' of type str; 'dauer' of type str; 'art' of type str; 'handlung' of type str.
+The class 'shr5::Projektilwaffe' has no attributes.
+The class 'Erlernbar' has no attributes.
+The class 'shr5::CyberwareModifikatioren' has the following attributes: 'universalDataConnector' of type bool; 'riggerInterface' of type bool; 'simRig' of type int; 'controlRig' of type int; 'directNeuralInterface' of type bool.
+The class 'shr5::Sichtverhaeltnisse' has the following attributes: 'infrarot' of type str; 'ultrasound' of type str; 'restlichtverstaerkung' of type str.
+The class 'ResonanzPersona' has no attributes.
+The class 'CredstickTransaction' has no attributes.
+The class 'shr5::Lifestyle' has the following attributes: 'owned' of type bool.
+The class 'shr5::PassagierFahrzeug' has the following attributes: 'sitze' of type int.
+The class 'shr5::WaffenFokus' has no attributes.
+The class 'AstraleProjektion' has no attributes.
+The class 'shr5::WeaponMount' has no attributes.
+The class 'shr5::EObject' has no attributes.
+The class 'shr5::SubstanceContainer' has no attributes.
+The class 'shr5::KomplexeForm' has the following attributes: 'dauer' of type str; 'ziel' of type str; 'schwund' of type str.
+The class 'ChrakterLimits' has no attributes.
+The class 'shr5::Cyberware' has the following attributes: 'cyberwareCapacity' of type int; 'type' of type str.
+The class 'Identifiable' has no attributes.
+The class 'GeistigeAttribute' has no attributes.
+The class 'MagischePersona' has no attributes.
+The class 'Substance' has no attributes.
+The enumeration 'ZauberReichweite' has the following literals: 'Beruehrung', 'Blickfeld', 'Selbst', 'Begrenzt'.
+The enumeration 'ModifikatorType' has the following literals: 'Cyber', 'Natural', 'Bio'.
+The enumeration 'SmartgunType' has the following literals: 'SmartBrille', 'SmartGun', 'SmatgunII'.
+The enumeration 'InterfaceModus' has the following literals: 'hotSim', 'augmentedReality', 'coldSim'.
+The enumeration 'TimeUnits' has the following literals: 'hour', 'min', 'sec', 'day', 'week', 'month', 'year'.
+The enumeration 'ZauberDauer' has the following literals: 'Permanent', 'Aufrechterhalten', 'Sofort'.
+The enumeration 'AddictionType' has the following literals: 'both', 'physiological', 'psychological'.
+The enumeration 'MagazinTyp' has the following literals: 'Trommel', 'Streifen', 'Gurt', 'Clip'.
+The enumeration 'ProgramType' has the following literals: 'defaultSoft', 'shopSoft', 'dataSoft'.
+The enumeration 'FeuerModus' has the following literals: 'AM', 'EM', 'HM', 'SM'.
+The enumeration 'SubstanceEffect' has the following literals: 'stunDamage', 'nausea', 'paralysis', 'disorientation'.
+The enumeration 'CyberwareType' has the following literals: 'earware', 'bodyware', 'headware', 'cyberlimb', 'eyeware'.
+The enumeration 'CritterHandlung' has the following literals: 'auto', 'komplex'.
+The enumeration 'SchadensTyp' has the following literals: 'speziell', 'koerperlich', 'geistig'.
+The enumeration 'CritterReichweite' has the following literals: 'blickfeld', 'beruehrung', 'speziell', 'selbst'.
+The enumeration 'MatrixProgramType' has the following literals: 'hackingProgram', 'defaultProgram'.
+The enumeration 'ZauberArt' has the following literals: 'Physisch', 'Mana'.
+The enumeration 'ResonanzZiel' has the following literals: 'persona', 'geraet', 'sprite', 'selbst', 'datei'.
+The enumeration 'SubstanceVector' has the following literals: 'contact', 'inhalation', 'ingestion', 'injection'.
+The enumeration 'Enzug' has the following literals: 'wil_int', 'wil_cha', 'wil_log'.
+The enumeration 'FeuwerwaffenErweiterung' has the following literals: 'Oben', 'Unten', 'Lauf'.
+The enumeration 'armorModificationType' has the following literals: 'ThermalDamping', 'Insulation', 'ChemicalProtection', 'ShockFrills', 'FireResistance', 'Nonconductivity', 'ChemicalSeal'.
+The enumeration 'CritterDauer' has the following literals: 'aufrechterhalten', 'permanent', 'sofort', 'speziell', 'immer'.
+'shr5::WaffenFokus' is a specialization of 'Fokus'.
+'shr5::KoerperPersona' is a specialization of 'BerechneteAttribute'.
+'shr5::Sensor' is a specialization of 'Quelle'.
+'shr5::Echo' is a specialization of 'AbstraktModifikatoren'.
+'shr5::PersonaMartialartTechnique' is a specialization of 'Erlernbar'.
+'shr5::Cyberdeck' is a specialization of 'Capacity'.
+'shr5::Reichweite' is a specialization of 'Beschreibbar'.
+'shr5::AbstraktGegenstand' is a specialization of 'GeldWert'.
+'shr5::SensorFunction' is a specialization of 'Beschreibbar'.
+'shr5::Spezies' is a specialization of 'Quelle'.
+'shr5::Cyberware' is a specialization of 'Koerpermods'.
+'shr5::Sensor' is a specialization of 'Capacity'.
+'shr5::Fertigkeit' is a specialization of 'Beschreibbar'.
+'shr5::MetaMagie' is a specialization of 'Quelle'.
+'shr5::MagischePersona' is a specialization of 'KoerperPersona'.
+'shr5::SourceBook' is a specialization of 'Identifiable'.
+'shr5::GeistigeAttribute' is a specialization of 'ModifikatorAttribute'.
+'shr5::SourceLink' is a specialization of 'Beschreibbar'.
+'shr5::AbstraktGegenstand' is a specialization of 'Quelle'.
+'shr5::Datasoft' is a specialization of 'BasicProgram'.
+'shr5::Fahrzeug' is a specialization of 'Beschreibbar'.
+'shr5::SensorArray' is a specialization of 'Sensor'.
+'shr5::AbstraktGegenstand' is a specialization of 'Anwendbar'.
+'shr5::Credstick' is a specialization of 'AbstraktGegenstand'.
+'shr5::BasicProgram' is a specialization of 'Software'.
+'shr5::Lizenz' is a specialization of 'Fakeable'.
+'shr5::Bodenfahrzeug' is a specialization of 'PassagierFahrzeug'.
+'shr5::MudanPersona' is a specialization of 'KoerperPersona'.
+'shr5::Lifestyle' is a specialization of 'IntervallVertrag'.
+'shr5::Munition' is a specialization of 'Menge'.
+'shr5::MartialartTechnique' is a specialization of 'Quelle'.
+'shr5::CommonProgram' is a specialization of 'MatrixProgram'.
+'shr5::LifestyleOption' is a specialization of 'Beschreibbar'.
+'shr5::Substance' is a specialization of 'Menge'.
+'shr5::Wurfwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+'shr5::KoerperPersona' is a specialization of 'PersonaZustand'.
+'shr5::Zauber' is a specialization of 'Beschreibbar'.
+'shr5::FernkampfwaffenModifikatoren' is a specialization of 'ModifikatorAttribute'.
+'shr5::AbstraktPersona' is a specialization of 'KoerperlicheAttribute'.
+'shr5::Fahrzeug' is a specialization of 'FahrzeugZustand'.
+'shr5::CommonProgram' is a specialization of 'RiggerProgram'.
+'shr5::Technomancer' is a specialization of 'ResonanzPersona'.
+'shr5::Sichtverhaeltnisse' is a specialization of 'ModifikatorAttribute'.
+'shr5::Drohne' is a specialization of 'Fahrzeug'.
+'shr5::GegenstandStufen' is a specialization of 'ModifikatorAttribute'.
+'shr5::Sensor' is a specialization of 'GeldWert'.
+'shr5::AbstaktWaffe' is a specialization of 'AbstraktGegenstand'.
+'shr5::Spezies' is a specialization of 'Beschreibbar'.
+'shr5::KiKraft' is a specialization of 'Erlernbar'.
+'shr5::WaffenFokus' is a specialization of 'Nahkampfwaffe'.
+'shr5::AbstraktPersona' is a specialization of 'SpezielleAttribute'.
+'shr5::Software' is a specialization of 'GeldWert'.
+'shr5::AbstraktPersona' is a specialization of 'Beschreibbar'.
+'shr5::KiKraft' is a specialization of 'MagischeMods'.
+'shr5::Software' is a specialization of 'Quelle'.
+'shr5::KoerperPersona' is a specialization of 'AbstraktPersona'.
+'shr5::ShrList' is a specialization of 'Beschreibbar'.
+'shr5::Fahrzeug' is a specialization of 'Capacity'.
+'shr5::PersonaEigenschaft' is a specialization of 'Erlernbar'.
+'shr5::MagischeTradition' is a specialization of 'Quelle'.
+'shr5::Gegenstand' is a specialization of 'AbstraktGegenstand'.
+'shr5::StufenPersona' is a specialization of 'Beschreibbar'.
+'shr5::StufenPersona' is a specialization of 'SpezielleAttribute'.
+'shr5::MysticAdept' is a specialization of 'KiAdept'.
+'shr5::MysticAdept' is a specialization of 'Zauberer'.
+'shr5::BioWare' is a specialization of 'GeldWert'.
+'shr5::Tutorsoft' is a specialization of 'BasicProgram'.
+'shr5::Drug' is a specialization of 'Modifizierbar'.
+'shr5::MagischeMods' is a specialization of 'AbstraktModifikatoren'.
+'shr5::Steigerbar' is a specialization of 'Erlernbar'.
+'shr5::Spezialisierung' is a specialization of 'Erlernbar'.
+'shr5::Magazin' is a specialization of 'Capacity'.
+'shr5::CyberwareModifikatioren' is a specialization of 'ModifikatorAttribute'.
+'shr5::FertigkeitsGruppe' is a specialization of 'Quelle'.
+'shr5::AbstraktPersona' is a specialization of 'ChrakterLimits'.
+'shr5::Cyberdeck' is a specialization of 'AbstractMatrixDevice'.
+'shr5::KleindungsModifikator' is a specialization of 'GeldWert'.
+'shr5::Fertigkeit' is a specialization of 'Modifyable'.
+'shr5::Magier' is a specialization of 'AstraleProjektion'.
+'shr5::CyberwareEnhancement' is a specialization of 'GeldWert'.
+'shr5::Cyberware' is a specialization of 'GeldWert'.
+'shr5::Sprite' is a specialization of 'Beschreibbar'.
+'shr5::MatrixProgram' is a specialization of 'Modifizierbar'.
+'shr5::Substance' is a specialization of 'Beschreibbar'.
+'shr5::Spezialisierung' is a specialization of 'Modifyable'.
+'shr5::CyberImplantWeapon' is a specialization of 'CyberwareEnhancement'.
+'shr5::AbstaktFernKampfwaffe' is a specialization of 'AbstaktWaffe'.
+'shr5::Host' is a specialization of 'MatrixDevice'.
+'shr5::PersonaZauber' is a specialization of 'Erlernbar'.
+'shr5::Host' is a specialization of 'Beschreibbar'.
+'shr5::StufenPersona' is a specialization of 'Panzerung'.
+'shr5::Feuerwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+'shr5::KiAdept' is a specialization of 'MagischePersona'.
+'shr5::Fahrzeug' is a specialization of 'GeldWert'.
+'shr5::MagischeTradition' is a specialization of 'Beschreibbar'.
+'shr5::FernkampfwaffeModifikator' is a specialization of 'AbstraktModifikatoren'.
+'shr5::Fertigkeit' is a specialization of 'Quelle'.
+'shr5::CritterKraft' is a specialization of 'MagischeMods'.
+'shr5::Magier' is a specialization of 'MagischePersona'.
+'shr5::Geist' is a specialization of 'StufenPersona'.
+'shr5::Cyberdeck' is a specialization of 'ActiveMatixDevice'.
+'shr5::AbstraktGegenstand' is a specialization of 'Modifizierbar'.
+'shr5::TransferAmount' is a specialization of 'CredstickTransaction'.
+'shr5::PersonaEigenschaft' is a specialization of 'AbstraktModifikatoren'.
+'shr5::IntervallVertrag' is a specialization of 'Vertrag'.
+'shr5::Nahkampfwaffe' is a specialization of 'AbstaktWaffe'.
+'shr5::CyberwareEnhancement' is a specialization of 'AbstraktModifikatoren'.
+'shr5::Schutzgeist' is a specialization of 'MagischeMods'.
+'shr5::KleindungsModifikator' is a specialization of 'Quelle'.
+'shr5::ResonanzPersona' is a specialization of 'ActiveMatixDevice'.
+'shr5::AbstractMatrixDevice' is a specialization of 'AbstraktGegenstand'.
+'shr5::PersonaKomplexForm' is a specialization of 'Erlernbar'.
+'shr5::MatrixProgram' is a specialization of 'Software'.
+'shr5::Sprachfertigkeit' is a specialization of 'Wissensfertigkeit'.
+'shr5::MagieFokus' is a specialization of 'AbstraktFokus'.
+'shr5::AbstraktModifikatoren' is a specialization of 'Modifizierbar'.
+'shr5::Magazin' is a specialization of 'AbstraktGegenstand'.
+'shr5::StufenPersona' is a specialization of 'GeistigeAttribute'.
+'shr5::AspektMagier' is a specialization of 'Zauberer'.
+'shr5::PercentLifestyleOption' is a specialization of 'LifestyleOption'.
+'shr5::Wissensfertigkeit' is a specialization of 'Fertigkeit'.
+'shr5::Toxin' is a specialization of 'Substance'.
+'shr5::MartialartStyle' is a specialization of 'Quelle'.
+'shr5::Projektilwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+'shr5::LifestyleOption' is a specialization of 'Quelle'.
+'shr5::Granate' is a specialization of 'AbtraktGranate'.
+'shr5::FernkampfwaffeModifikator' is a specialization of 'GeldWert'.
+'shr5::AbstractMatrixDevice' is a specialization of 'MatrixDevice'.
+'shr5::AbstraktFokus' is a specialization of 'Fokus'.
+'shr5::MagischePersona' is a specialization of 'BaseMagischePersona'.
+'shr5::Munition' is a specialization of 'AbstraktGegenstand'.
+'shr5::Drohne' is a specialization of 'MatrixAttributes'.
+'shr5::FertigkeitsGruppe' is a specialization of 'Modifyable'.
+'shr5::AbstraktFokus' is a specialization of 'AbstraktGegenstand'.
+'shr5::Initation' is a specialization of 'Steigerbar'.
+'shr5::Vertrag' is a specialization of 'GeldWert'.
+'shr5::AbstraktModifikatoren' is a specialization of 'Quelle'.
+'shr5::Host' is a specialization of 'ActiveMatixDevice'.
+'shr5::KomplexeForm' is a specialization of 'Quelle'.
+'shr5::Vertrag' is a specialization of 'Beschreibbar'.
+'shr5::PersonaFertigkeit' is a specialization of 'Steigerbar'.
+'shr5::Substance' is a specialization of 'GeldWert'.
+'shr5::Drug' is a specialization of 'Substance'.
+'shr5::SourceBook' is a specialization of 'Beschreibbar'.
+'shr5::SkillSoft' is a specialization of 'Software'.
+'shr5::LifestyleOption' is a specialization of 'GeldWert'.
+'shr5::Cyberware' is a specialization of 'Capacity'.
+'shr5::ConsumerSoft' is a specialization of 'BasicProgram'.
+'shr5::MartialartStyle' is a specialization of 'Beschreibbar'.
+'shr5::QiFokus' is a specialization of 'AbstraktFokus'.
+'shr5::AutoSoft' is a specialization of 'RiggerProgram'.
+'shr5::Vertrag' is a specialization of 'Quelle'.
+'shr5::FahrzeugErweiterung' is a specialization of 'FahrzeugModifikation'.
+'shr5::Substance' is a specialization of 'Quelle'.
+'shr5::BioWare' is a specialization of 'Koerpermods'.
+'shr5::FahrzeugModifikation' is a specialization of 'GeldWert'.
+'shr5::Fahrzeug' is a specialization of 'Anwendbar'.
+'shr5::Fokus' is a specialization of 'MagischeStufe'.
+'shr5::AbstraktPersona' is a specialization of 'GeistigeAttribute'.
+'shr5::PersonaMartialartStyle' is a specialization of 'Spezialisierung'.
+'shr5::SubstanceContainer' is a specialization of 'AbstraktGegenstand'.
+'shr5::FahrzeugModifikation' is a specialization of 'Quelle'.
+'shr5::SpezielleAttribute' is a specialization of 'ModifikatorAttribute'.
+'shr5::Sensor' is a specialization of 'Beschreibbar'.
+'shr5::SoftwareAgent' is a specialization of 'MatrixProgram'.
+'shr5::MiniGrenate' is a specialization of 'AbtraktGranate'.
+'shr5::ActiveMatixDevice' is a specialization of 'MatrixAttributes'.
+'shr5::Sprite' is a specialization of 'ResonanzPersona'.
+'shr5::PassagierFahrzeug' is a specialization of 'Fahrzeug'.
+'shr5::Sin' is a specialization of 'Fakeable'.
+'shr5::Wurfwaffe' is a specialization of 'Menge'.
+'shr5::StufenPersona' is a specialization of 'ChrakterLimits'.
+'shr5::KomplexeForm' is a specialization of 'Beschreibbar'.
+'shr5::MetaMagie' is a specialization of 'Beschreibbar'.
+'shr5::KoerperPersona' is a specialization of 'Panzerung'.
+'shr5::Cyberdeck' is a specialization of 'MatrixDevice'.
+'shr5::StufenPersona' is a specialization of 'Quelle'.
+'shr5::DefaultWifi' is a specialization of 'AbstractMatrixDevice'.
+'shr5::Reichweite' is a specialization of 'Identifiable'.
+'shr5::KleindungsModifikator' is a specialization of 'Beschreibbar'.
+'shr5::PersonaFertigkeitsGruppe' is a specialization of 'Steigerbar'.
+'shr5::ShoppingTransaction' is a specialization of 'CredstickTransaction'.
+'shr5::StufenPersona' is a specialization of 'KoerperlicheAttribute'.
+'shr5::Magier' is a specialization of 'Zauberer'.
+'shr5::ProbenModifikatoren' is a specialization of 'ModifikatorAttribute'.
+'shr5::FertigkeitsGruppe' is a specialization of 'Beschreibbar'.
+'shr5::MiniGrenate' is a specialization of 'Munition'.
+'shr5::Koerpermods' is a specialization of 'AbstraktModifikatoren'.
+'shr5::KoerperlicheAttribute' is a specialization of 'ModifikatorAttribute'.
+'shr5::Granate' is a specialization of 'Wurfwaffe'.
+'shr5::SourceLink' is a specialization of 'Quelle'.
+'shr5::Technomancer' is a specialization of 'KoerperPersona'.
+'shr5::Fahrzeug' is a specialization of 'Quelle'.
+'shr5::Sprite' is a specialization of 'Quelle'.
+'shr5::AspektMagier' is a specialization of 'MagischePersona'.
+'shr5::Fahrzeug' is a specialization of 'Modifizierbar'.
+'shr5::Fakeable' is a specialization of 'Vertrag'.
+'shr5::Critter' is a specialization of 'Spezies'.
+'shr5::Kleidung' is a specialization of 'AbstraktGegenstand'.
+'shr5::MartialartTechnique' is a specialization of 'Beschreibbar'.
+'shr5::Spezialisierung' is a specialization of 'Quelle'.
+'shr5::WeaponMount' is a specialization of 'FahrzeugModifikation'.
+'shr5::Zauber' is a specialization of 'Quelle'.
+'shr5::Quelle' is a specialization of 'Identifiable'.
+'shr5::Spezies' is a specialization of 'Modifizierbar'.
+'shr5::MatrixAttributes' is a specialization of 'MatixConditionMonitor'.
+'shr5::Fokus' is a specialization of 'Erlernbar'.
+'shr5::ShrList' is a specialization of 'Identifiable'.
+'shr5::Software' is a specialization of 'Beschreibbar'.
+'shr5::RiggerCommandConsole' is a specialization of 'AbstractMatrixDevice'.
+'shr5::Geist' is a specialization of 'AstraleProjektion'.
+'shr5::SensorFunction' is a specialization of 'Quelle'.
+'shr5::Commlink' is a specialization of 'AbstractMatrixDevice'.
+'shr5::MatrixDevice' is a specialization of 'MatrixAttributes'.
+'shr5::FahrzeugModifikation' is a specialization of 'Beschreibbar'.
+'shr5::Kleidung' is a specialization of 'Capacity'.
+'shr5::RiggerProgram' is a specialization of 'Software'.
+'shr5::Spezialisierung' is a specialization of 'Beschreibbar'.
+'shr5::AbstraktGegenstand' is a specialization of 'Beschreibbar'.
+'shr5::AbstraktModifikatoren' is a specialization of 'Beschreibbar'.
+'shr5::Zauberer' (role 'shr5_Zauberer', cardinality 0..*) is associated with 'shr5::PersonaZauber' (role 'shr5_PersonaZauber', cardinality 0..*).
+'shr5::CritterKraft' (role 'shr5_CritterKraft101', cardinality 0..*) is associated with 'shr5::Geist' (role 'shr5_Geist100', cardinality 0..*).
+'shr5::ShoppingTransaction' (role 'shr5_ShoppingTransaction', cardinality 0..*) is associated with 'shr5::GeldWert' (role 'shr5_GeldWert', cardinality 0..*).
+'shr5::Lizenz' (role 'licences', cardinality 0..*) is associated with 'shr5::Sin' (role 'Sin', cardinality 0..*).
+'shr5::KiKraft' (role 'shr5_KiKraft138', cardinality 0..*) is associated with 'shr5::QiFokus' (role 'shr5_QiFokus', cardinality 0..*).
+'shr5::AutoSoft' (role 'shr5_AutoSoft124', cardinality 0..*) is associated with 'shr5::Drohne' (role 'shr5_Drohne125', cardinality 0..*).
+'shr5::KomplexeForm' (role 'shr5_KomplexeForm', cardinality 0..*) is associated with 'shr5::PersonaKomplexForm' (role 'shr5_PersonaKomplexForm81', cardinality 0..*).
+'shr5::AbstraktPersona' (role 'shr5_AbstraktPersona', cardinality 0..*) is associated with 'shr5::PersonaFertigkeit' (role 'shr5_PersonaFertigkeit', cardinality 0..*).
+'shr5::Spezies' (role 'shr5_Spezies48', cardinality 0..*) is associated with 'shr5::Nahkampfwaffe' (role 'shr5_Nahkampfwaffe', cardinality 0..*).
+'shr5::AspektMagier' (role 'shr5_AspektMagier', cardinality 0..*) is associated with 'shr5::FertigkeitsGruppe' (role 'shr5_FertigkeitsGruppe67', cardinality 0..*).
+'shr5::MartialartStyle' (role 'shr5_MartialartStyle167', cardinality 0..*) is associated with 'shr5::PersonaMartialartStyle' (role 'shr5_PersonaMartialartStyle166', cardinality 0..*).
+'shr5::SensorArray' (role 'shr5_SensorArray', cardinality 0..*) is associated with 'shr5::Fahrzeug' (role 'shr5_Fahrzeug72', cardinality 0..*).
+'shr5::Tutorsoft' (role 'shr5_Tutorsoft', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit127', cardinality 0..*).
+'shr5::MartialartTechnique' (role 'shr5_MartialartTechnique172', cardinality 0..*) is associated with 'shr5::PersonaMartialartTechnique' (role 'shr5_PersonaMartialartTechnique171', cardinality 0..*).
+'shr5::Geist' (role 'shr5_Geist97', cardinality 0..*) is associated with 'shr5::CritterKraft' (role 'shr5_CritterKraft98', cardinality 0..*).
+'shr5::AbstaktFernKampfwaffe' (role 'shr5_AbstaktFernKampfwaffe', cardinality 0..*) is associated with 'shr5::Reichweite' (role 'shr5_Reichweite', cardinality 0..*).
+'shr5::RiggerCommandConsole' (role 'shr5_RiggerCommandConsole117', cardinality 0..*) is associated with 'shr5::RiggerProgram' (role 'shr5_RiggerProgram118', cardinality 0..*).
+'shr5::PersonaFertigkeit' (role 'shr5_PersonaFertigkeit28', cardinality 0..*) is associated with 'shr5::Spezialisierung' (role 'shr5_Spezialisierung', cardinality 0..*).
+'shr5::Anwendbar' (role 'shr5_Anwendbar54', cardinality 0..*) is associated with 'shr5::Spezialisierung' (role 'shr5_Spezialisierung55', cardinality 0..*).
+'shr5::Munition' (role 'shr5_Munition', cardinality 0..*) is associated with 'shr5::Reichweite' (role 'shr5_Reichweite88', cardinality 0..*).
+'shr5::RiggerProgram' (role 'shr5_RiggerProgram115', cardinality 0..*) is associated with 'shr5::RiggerCommandConsole' (role 'shr5_RiggerCommandConsole', cardinality 0..*).
+'shr5::PersonaMartialartTechnique' (role 'shr5_PersonaMartialartTechnique', cardinality 0..*) is associated with 'shr5::PersonaMartialartStyle' (role 'shr5_PersonaMartialartStyle169', cardinality 0..*).
+'shr5::MartialartStyle' (role 'shr5_MartialartStyle163', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit164', cardinality 0..*).
+'shr5::AbstraktPersona' (role 'shr5_AbstraktPersona7', cardinality 0..*) is associated with 'shr5::PersonaMartialartStyle' (role 'shr5_PersonaMartialartStyle', cardinality 0..*).
+'shr5::Zauber' (role 'shr5_Zauber', cardinality 0..*) is associated with 'shr5::PersonaZauber' (role 'shr5_PersonaZauber65', cardinality 0..*).
+'shr5::MatrixDevice' (role 'shr5_MatrixDevice131', cardinality 0..*) is associated with 'shr5::PersonalAreaNetwork' (role 'shr5_PersonalAreaNetwork', cardinality 0..*).
+'shr5::Magazin' (role 'shr5_Magazin142', cardinality 0..*) is associated with 'shr5::Feuerwaffe' (role 'shr5_Feuerwaffe143', cardinality 0..*).
+'shr5::Fokus' (role 'shr5_Fokus', cardinality 0..*) is associated with 'shr5::FokusBinding' (role 'shr5_FokusBinding140', cardinality 0..*).
+'shr5::BioWare' (role 'shr5_BioWare', cardinality 0..*) is associated with 'shr5::AbstraktPersona' (role 'shr5_AbstraktPersona39', cardinality 0..*).
+'shr5::KiKraft' (role 'shr5_KiKraft', cardinality 0..*) is associated with 'shr5::KiAdept' (role 'shr5_KiAdept', cardinality 0..*).
+'shr5::AttributModifikatorWert' (role 'mods', cardinality 0..*) is associated with 'shr5::Modifizierbar' (role 'Modifizierbar', cardinality 0..*).
+'shr5::Spezies' (role 'shr5_Spezies', cardinality 0..*) is associated with 'shr5::AbstraktPersona' (role 'shr5_AbstraktPersona5', cardinality 0..*).
+'shr5::Critter' (role 'shr5_Critter', cardinality 0..*) is associated with 'shr5::CritterKraft' (role 'shr5_CritterKraft', cardinality 0..*).
+'shr5::Fertigkeit' (role 'shr5_Fertigkeit21', cardinality 0..*) is associated with 'shr5::EAttribute' (role 'shr5_EAttribute22', cardinality 0..*).
+'shr5::AbstaktWaffe' (role 'shr5_AbstaktWaffe136', cardinality 0..*) is associated with 'shr5::WeaponMount' (role 'shr5_WeaponMount', cardinality 0..*).
+'shr5::CyberwareEnhancement' (role 'shr5_CyberwareEnhancement', cardinality 0..*) is associated with 'shr5::Cyberware' (role 'shr5_Cyberware35', cardinality 0..*).
+'shr5::AbstraktPersona' (role 'shr5_AbstraktPersona33', cardinality 0..*) is associated with 'shr5::Cyberware' (role 'shr5_Cyberware', cardinality 0..*).
+'shr5::GebundenerGeist' (role 'shr5_GebundenerGeist', cardinality 0..*) is associated with 'shr5::Zauberer' (role 'shr5_Zauberer58', cardinality 0..*).
+'shr5::SourceLink' (role 'shr5_SourceLink175', cardinality 0..*) is associated with 'shr5::SourceLink' (role 'shr5_SourceLink', cardinality 0..*).
+'shr5::Wissensfertigkeit' (role 'shr5_Wissensfertigkeit', cardinality 0..*) is associated with 'shr5::Datasoft' (role 'shr5_Datasoft', cardinality 0..*).
+'shr5::Zauberer' (role 'shr5_Zauberer60', cardinality 0..*) is associated with 'shr5::GebundenerGeist' (role 'shr5_GebundenerGeist61', cardinality 0..*).
+'shr5::PersonaFertigkeit' (role 'shr5_PersonaFertigkeit25', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit26', cardinality 0..*).
+'shr5::TransferAmount' (role 'shr5_TransferAmount158', cardinality 0..*) is associated with 'shr5::Credstick' (role 'shr5_Credstick159', cardinality 0..*).
+'shr5::Commlink' (role 'shr5_Commlink106', cardinality 0..*) is associated with 'shr5::Sin' (role 'shr5_Sin', cardinality 0..*).
+'shr5::Echo' (role 'shr5_Echo', cardinality 0..*) is associated with 'shr5::Technomancer' (role 'shr5_Technomancer79', cardinality 0..*).
+'shr5::MatrixProgram' (role 'shr5_MatrixProgram113', cardinality 0..*) is associated with 'shr5::Cyberdeck' (role 'shr5_Cyberdeck112', cardinality 0..*).
+'shr5::Substance' (role 'shr5_Substance174', cardinality 0..*) is associated with 'shr5::AbtraktGranate' (role 'shr5_AbtraktGranate', cardinality 0..*).
+'shr5::Sensor' (role 'shr5_Sensor', cardinality 0..*) is associated with 'shr5::SensorFunction' (role 'shr5_SensorFunction', cardinality 0..*).
+'shr5::Modifizierbar' (role 'modifiziertes', cardinality 0..*) is associated with 'shr5::AttributModifikatorWert' (role 'AttributModifikatorWert', cardinality 0..*).
+'shr5::MetaMagie' (role 'shr5_MetaMagie', cardinality 0..*) is associated with 'shr5::Initation' (role 'shr5_Initation69', cardinality 0..*).
+'shr5::PersonalAreaNetwork' (role 'pan', cardinality 0..*) is associated with 'shr5::MatrixDevice' (role 'MatrixDevice', cardinality 0..*).
+'shr5::Anwendbar' (role 'shr5_Anwendbar', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit52', cardinality 0..*).
+'shr5::PersonaEigenschaft' (role 'shr5_PersonaEigenschaft', cardinality 0..*) is associated with 'shr5::KoerperPersona' (role 'shr5_KoerperPersona42', cardinality 0..*).
+'shr5::FokusBinding' (role 'shr5_FokusBinding', cardinality 0..*) is associated with 'shr5::BaseMagischePersona' (role 'shr5_BaseMagischePersona46', cardinality 0..*).
+'shr5::StufenPersona' (role 'shr5_StufenPersona94', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit95', cardinality 0..*).
+'shr5::Kleidung' (role 'shr5_Kleidung', cardinality 0..*) is associated with 'shr5::KleindungsModifikator' (role 'shr5_KleindungsModifikator', cardinality 0..*).
+'shr5::FertigkeitsGruppe' (role 'shr5_FertigkeitsGruppe', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit', cardinality 0..*).
+'shr5::RiggerProgram' (role 'shr5_RiggerProgram', cardinality 0..*) is associated with 'shr5::Drohne' (role 'shr5_Drohne', cardinality 0..*).
+'shr5::AutoSoft' (role 'shr5_AutoSoft', cardinality 0..*) is associated with 'shr5::Fertigkeit' (role 'shr5_Fertigkeit120', cardinality 0..*).
+'shr5::Sin' (role 'lizenzTraeger', cardinality 0..*) is associated with 'shr5::Lizenz' (role 'Lizenz', cardinality 0..*).
+'shr5::Cyberdeck' (role 'shr5_Cyberdeck', cardinality 0..*) is associated with 'shr5::EAttribute' (role 'shr5_EAttribute108', cardinality 0..*).
+'shr5::Feuerwaffe' (role 'shr5_Feuerwaffe', cardinality 0..*) is associated with 'shr5::FernkampfwaffeModifikator' (role 'shr5_FernkampfwaffeModifikator', cardinality 0..*).
+'shr5::Fertigkeit' (role 'Fertigkeit', cardinality 0..*) is associated with 'shr5::Spezialisierung' (role 'spezialisierungen', cardinality 0..*).
+'shr5::MartialartTechnique' (role 'shr5_MartialartTechnique', cardinality 0..*) is associated with 'shr5::MartialartStyle' (role 'shr5_MartialartStyle', cardinality 0..*).
+'shr5::PersonaKomplexForm' (role 'shr5_PersonaKomplexForm', cardinality 0..*) is associated with 'shr5::Technomancer' (role 'shr5_Technomancer', cardinality 0..*).
+'shr5::Fertigkeit' (role 'shr5_Fertigkeit129', cardinality 0..*) is associated with 'shr5::SkillSoft' (role 'shr5_SkillSoft', cardinality 0..*).
+'shr5::Fertigkeit' (role 'fertigkeit', cardinality 0..*) is associated with 'shr5::Spezialisierung' (role 'Spezialisierung', cardinality 0..*).
+'shr5::Geist' (role 'shr5_Geist153', cardinality 0..*) is associated with 'shr5::MagischeTradition' (role 'shr5_MagischeTradition152', cardinality 0..*).
+'shr5::Schutzgeist' (role 'shr5_Schutzgeist', cardinality 0..*) is associated with 'shr5::MagischePersona' (role 'shr5_MagischePersona', cardinality 0..*).
+'shr5::AutoSoft' (role 'shr5_AutoSoft122', cardinality 0..*) is associated with 'shr5::AbstaktWaffe' (role 'shr5_AbstaktWaffe', cardinality 0..*).
+'shr5::MatrixDevice' (role 'master', cardinality 0..*) is associated with 'shr5::PersonalAreaNetwork' (role 'PersonalAreaNetwork', cardinality 0..*).
+'shr5::Fahrzeug' (role 'shr5_Fahrzeug', cardinality 0..*) is associated with 'shr5::FahrzeugModifikation' (role 'shr5_FahrzeugModifikation', cardinality 0..*).
+'shr5::BaseMagischePersona' (role 'shr5_BaseMagischePersona', cardinality 0..*) is associated with 'shr5::Initation' (role 'shr5_Initation', cardinality 0..*).
+'shr5::EAttribute' (role 'shr5_EAttribute', cardinality 0..*) is associated with 'shr5::AttributModifikatorWert' (role 'shr5_AttributModifikatorWert', cardinality 0..*).
+'shr5::SourceBook' (role 'shr5_SourceBook', cardinality 0..*) is associated with 'shr5::Quelle' (role 'shr5_Quelle', cardinality 0..*).
+'shr5::Substance' (role 'shr5_Substance', cardinality 0..*) is associated with 'shr5::SubstanceContainer' (role 'shr5_SubstanceContainer', cardinality 0..*).
+'shr5::DefaultWifi' (role 'shr5_DefaultWifi', cardinality 0..*) is associated with 'shr5::Cyberware' (role 'shr5_Cyberware37', cardinality 0..*).
+'shr5::FertigkeitsGruppe' (role 'shr5_FertigkeitsGruppe92', cardinality 0..*) is associated with 'shr5::StufenPersona' (role 'shr5_StufenPersona', cardinality 0..*).
+'shr5::Munition' (role 'shr5_Munition146', cardinality 0..*) is associated with 'shr5::Magazin' (role 'shr5_Magazin145', cardinality 0..*).
+'shr5::Credstick' (role 'shr5_Credstick', cardinality 0..*) is associated with 'shr5::CredstickTransaction' (role 'shr5_CredstickTransaction', cardinality 0..*).
+'shr5::TransferAmount' (role 'shr5_TransferAmount', cardinality 0..*) is associated with 'shr5::Credstick' (role 'shr5_Credstick156', cardinality 0..*).
+'shr5::BasicProgram' (role 'shr5_BasicProgram', cardinality 0..*) is associated with 'shr5::Commlink' (role 'shr5_Commlink', cardinality 0..*).
+'shr5::Zauberer' (role 'shr5_Zauberer63', cardinality 0..*) is associated with 'shr5::MagischeTradition' (role 'shr5_MagischeTradition', cardinality 0..*).
+'shr5::PersonaFertigkeitsGruppe' (role 'shr5_PersonaFertigkeitsGruppe30', cardinality 0..*) is associated with 'shr5::FertigkeitsGruppe' (role 'shr5_FertigkeitsGruppe31', cardinality 0..*).
+'shr5::AbstraktPersona' (role 'shr5_AbstraktPersona3', cardinality 0..*) is associated with 'shr5::PersonaFertigkeitsGruppe' (role 'shr5_PersonaFertigkeitsGruppe', cardinality 0..*).
+'shr5::ShrList' (role 'shr5_ShrList', cardinality 0..*) is associated with 'shr5::EObject' (role 'shr5_EObject', cardinality 0..*).
+'shr5::Lifestyle' (role 'shr5_Lifestyle', cardinality 0..*) is associated with 'shr5::LifestyleOption' (role 'shr5_LifestyleOption', cardinality 0..*).
+'shr5::AbstaktWaffe' (role 'shr5_AbstaktWaffe150', cardinality 0..*) is associated with 'shr5::CyberImplantWeapon' (role 'shr5_CyberImplantWeapon', cardinality 0..*).
+'shr5::Capacity' (role 'shr5_Capacity', cardinality 0..*) is associated with 'shr5::EReference' (role 'shr5_EReference', cardinality 0..*).
+'shr5::KoerperPersona' (role 'shr5_KoerperPersona', cardinality 0..*) is associated with 'shr5::Koerpermods' (role 'shr5_Koerpermods', cardinality 0..*).
+'shr5::MatrixProgram' (role 'shr5_MatrixProgram', cardinality 0..*) is associated with 'shr5::Cyberdeck' (role 'shr5_Cyberdeck110', cardinality 0..*).
+'shr5::RiggerProgram' (role 'shr5_RiggerProgram76', cardinality 0..*) is associated with 'shr5::Drohne' (role 'shr5_Drohne75', cardinality 0..*).
+'shr5::AbstraktGegenstand' (role 'shr5_AbstraktGegenstand', cardinality 0..*) is associated with 'shr5::MatrixDevice' (role 'shr5_MatrixDevice', cardinality 0..*).
+'shr5::AttributModifikatorWert' (role 'shr5_AttributModifikatorWert11', cardinality 0..*) is associated with 'shr5::Modifyable' (role 'shr5_Modifyable', cardinality 0..*).
+'shr5::Magazin' (role 'shr5_Magazin', cardinality 0..*) is associated with 'shr5::Feuerwaffe' (role 'shr5_Feuerwaffe17', cardinality 0..*).
+'shr5::GebundenerGeist' (role 'shr5_GebundenerGeist90', cardinality 0..*) is associated with 'shr5::Geist' (role 'shr5_Geist', cardinality 0..*).
+'shr5::Identifiable' (role 'shr5_Identifiable', cardinality 0..*) is associated with 'shr5::Localization' (role 'shr5_Localization', cardinality 0..*).

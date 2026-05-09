@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'yyc::Alias' has the following attributes: 'id' of type str.
+The class 'yyc::Blias' has the following attributes: 'id' of type str.
+The class 'yyc::Thing' has the following attributes: 'id' of type int.
+The class 'yyc::RelatedTo' has the following attributes: 'since' of type str.
+'yyc::RelatedTo' (role 'yyc_RelatedTo4', cardinality 0..*) is associated with 'yyc::Blias' (role 'yyc_Blias', cardinality 0..*).
+'yyc::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'yyc::Thing' (role 'Thing', cardinality 0..*).
+'yyc::Thing' (role 'fromThing', cardinality 0..*) is associated with 'yyc::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'yyc::Alias' (role 'yyc_Alias', cardinality 0..*) is associated with 'yyc::RelatedTo' (role 'yyc_RelatedTo', cardinality 0..*).

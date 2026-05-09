@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'sgen::FeatureParameterValue' has no attributes.
+The class 'sgen::Literal' has no attributes.
+The class 'sgen::IntLiteral' has the following attributes: 'value' of type int.
+The class 'NamedElement' has no attributes.
+The class 'sgen::GeneratorModel' has the following attributes: 'generatorId' of type str.
+The class 'sgen::DeprecatableElement' has the following attributes: 'comment' of type str; 'deprecated' of type bool.
+The class 'sgen::FeatureConfiguration' has no attributes.
+The class 'sgen::RealLiteral' has the following attributes: 'value' of type float.
+The class 'sgen::FeatureParameter' has the following attributes: 'parameterType' of type str; 'optional' of type bool.
+The class 'sgen::StringLiteral' has the following attributes: 'value' of type str.
+The class 'sgen::GeneratorConfiguration' has no attributes.
+The class 'Literal' has no attributes.
+The class 'sgen::FeatureType' has the following attributes: 'optional' of type bool.
+The class 'sgen::BoolLiteral' has the following attributes: 'value' of type bool.
+The class 'DeprecatableElement' has no attributes.
+The class 'sgen::EObject' has no attributes.
+The class 'sgen::GeneratorEntry' has the following attributes: 'contentType' of type str.
+The class 'sgen::FeatureTypeLibrary' has the following attributes: 'name' of type str.
+The enumeration 'ParameterTypes' has the following literals: 'FLOAT', 'BOOLEAN', 'STRING', 'INTEGER'.
+'sgen::FeatureParameter' is a specialization of 'NamedElement'.
+'sgen::FeatureType' is a specialization of 'NamedElement'.
+'sgen::BoolLiteral' is a specialization of 'Literal'.
+'sgen::IntLiteral' is a specialization of 'Literal'.
+'sgen::StringLiteral' is a specialization of 'Literal'.
+'sgen::RealLiteral' is a specialization of 'Literal'.
+'sgen::FeatureParameter' is a specialization of 'DeprecatableElement'.
+'sgen::FeatureType' is a specialization of 'DeprecatableElement'.
+'sgen::FeatureTypeLibrary' (role 'sgen_FeatureTypeLibrary19', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'sgen_FeatureType20', cardinality 0..*).
+'sgen::GeneratorConfiguration' (role 'sgen_GeneratorConfiguration', cardinality 0..*) is associated with 'sgen::FeatureConfiguration' (role 'sgen_FeatureConfiguration', cardinality 0..*).
+'sgen::FeatureConfiguration' (role 'sgen_FeatureConfiguration13', cardinality 0..*) is associated with 'sgen::GeneratorEntry' (role 'sgen_GeneratorEntry12', cardinality 0..*).
+'sgen::FeatureType' (role 'sgen_FeatureType7', cardinality 0..*) is associated with 'sgen::FeatureConfiguration' (role 'sgen_FeatureConfiguration6', cardinality 0..*).
+'sgen::FeatureParameterValue' (role 'parameterValues', cardinality 0..*) is associated with 'sgen::FeatureConfiguration' (role 'FeatureConfiguration', cardinality 0..*).
+'sgen::FeatureTypeLibrary' (role 'sgen_FeatureTypeLibrary', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'sgen_FeatureType', cardinality 0..*).
+'sgen::FeatureConfiguration' (role 'featureConfiguration', cardinality 0..*) is associated with 'sgen::FeatureParameterValue' (role 'FeatureParameterValue', cardinality 0..*).
+'sgen::FeatureParameter' (role 'FeatureParameter', cardinality 0..*) is associated with 'sgen::FeatureType' (role 'featureType', cardinality 0..*).
+'sgen::EObject' (role 'sgen_EObject', cardinality 0..*) is associated with 'sgen::GeneratorEntry' (role 'sgen_GeneratorEntry10', cardinality 0..*).
+'sgen::FeatureParameterValue' (role 'sgen_FeatureParameterValue17', cardinality 0..*) is associated with 'sgen::Literal' (role 'sgen_Literal', cardinality 0..*).
+'sgen::FeatureType' (role 'FeatureType', cardinality 0..*) is associated with 'sgen::FeatureParameter' (role 'parameters', cardinality 0..*).
+'sgen::GeneratorModel' (role 'sgen_GeneratorModel', cardinality 0..*) is associated with 'sgen::GeneratorEntry' (role 'sgen_GeneratorEntry', cardinality 0..*).
+'sgen::FeatureParameter' (role 'sgen_FeatureParameter', cardinality 0..*) is associated with 'sgen::FeatureParameterValue' (role 'sgen_FeatureParameterValue', cardinality 0..*).

@@ -1,0 +1,105 @@
+The model has 35 class(es).
+The class 'gpfl::CmdSub' has no attributes.
+The class 'gpfl::CmdLECompare' has no attributes.
+The class 'gpfl::AutomataDef' has the following attributes: 'name' of type str.
+The class 'gpfl::Program' has the following attributes: 'name' of type str.
+The class 'gpfl::SendCmd' has no attributes.
+The class 'gpfl::StpCmd' has no attributes.
+The class 'gpfl::CmdLCompare' has no attributes.
+The class 'gpfl::GExpression' has no attributes.
+The class 'gpfl::GBoolTrue' has no attributes.
+The class 'gpfl::InterruptStmt' has the following attributes: 'timeout' of type int.
+The class 'gpfl::Transition' has the following attributes: 'event' of type str.
+The class 'gpfl::Field' has the following attributes: 'name' of type str.
+The class 'GExpression' has no attributes.
+The class 'gpfl::AcceptCmd' has no attributes.
+The class 'gpfl::DropCmd' has no attributes.
+The class 'gpfl::PortLit' has the following attributes: 'inSide' of type bool.
+The class 'gpfl::IntLitCmd' has the following attributes: 'value' of type int.
+The class 'gpfl::GBoolFalse' has no attributes.
+The class 'gpfl::CmdNEq' has no attributes.
+The class 'gpfl::CmdAnd' has no attributes.
+The class 'gpfl::CondStmt' has no attributes.
+The class 'gpfl::NopCmd' has no attributes.
+The class 'gpfl::CmdEq' has no attributes.
+The class 'gpfl::CmdGECompare' has no attributes.
+The class 'gpfl::AlarmCmd' has no attributes.
+The class 'gpfl::CmdGCompare' has no attributes.
+The class 'gpfl::Variable' has the following attributes: 'value' of type str.
+The class 'gpfl::StringLit' has the following attributes: 'value' of type str.
+The class 'gpfl::IterStmt' has no attributes.
+The class 'gpfl::State' has the following attributes: 'name' of type str.
+The class 'gpfl::InPort' has no attributes.
+The class 'gpfl::SetCmd' has the following attributes: 'name' of type str.
+The class 'gpfl::CmdAdd' has no attributes.
+The class 'gpfl::OutPort' has no attributes.
+The class 'gpfl::AutomatonCmd' has the following attributes: 'name' of type str.
+'gpfl::InterruptStmt' is a specialization of 'GExpression'.
+'gpfl::CmdLCompare' is a specialization of 'GExpression'.
+'gpfl::CmdNEq' is a specialization of 'GExpression'.
+'gpfl::NopCmd' is a specialization of 'GExpression'.
+'gpfl::DropCmd' is a specialization of 'GExpression'.
+'gpfl::GBoolTrue' is a specialization of 'GExpression'.
+'gpfl::CmdGCompare' is a specialization of 'GExpression'.
+'gpfl::AcceptCmd' is a specialization of 'GExpression'.
+'gpfl::StringLit' is a specialization of 'GExpression'.
+'gpfl::StpCmd' is a specialization of 'GExpression'.
+'gpfl::IntLitCmd' is a specialization of 'GExpression'.
+'gpfl::SetCmd' is a specialization of 'GExpression'.
+'gpfl::OutPort' is a specialization of 'GExpression'.
+'gpfl::InPort' is a specialization of 'GExpression'.
+'gpfl::CmdAdd' is a specialization of 'GExpression'.
+'gpfl::Variable' is a specialization of 'GExpression'.
+'gpfl::GBoolFalse' is a specialization of 'GExpression'.
+'gpfl::CmdLECompare' is a specialization of 'GExpression'.
+'gpfl::AlarmCmd' is a specialization of 'GExpression'.
+'gpfl::CondStmt' is a specialization of 'GExpression'.
+'gpfl::CmdEq' is a specialization of 'GExpression'.
+'gpfl::SendCmd' is a specialization of 'GExpression'.
+'gpfl::IterStmt' is a specialization of 'GExpression'.
+'gpfl::AutomatonCmd' is a specialization of 'GExpression'.
+'gpfl::CmdGECompare' is a specialization of 'GExpression'.
+'gpfl::PortLit' is a specialization of 'GExpression'.
+'gpfl::CmdAnd' is a specialization of 'GExpression'.
+'gpfl::CmdSub' is a specialization of 'GExpression'.
+'gpfl::SendCmd' (role 'gpfl_SendCmd', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression37', cardinality 0..*).
+'gpfl::CmdLECompare' (role 'gpfl_CmdLECompare', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression76', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression79', cardinality 0..*) is associated with 'gpfl::CmdLECompare' (role 'gpfl_CmdLECompare78', cardinality 0..*).
+'gpfl::StpCmd' (role 'gpfl_StpCmd53', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression54', cardinality 0..*).
+'gpfl::Transition' (role 'gpfl_Transition', cardinality 0..*) is associated with 'gpfl::State' (role 'gpfl_State17', cardinality 0..*).
+'gpfl::CmdAdd' (role 'gpfl_CmdAdd', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression91', cardinality 0..*).
+'gpfl::CmdGCompare' (role 'gpfl_CmdGCompare83', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression84', cardinality 0..*).
+'gpfl::AutomatonCmd' (role 'gpfl_AutomatonCmd48', cardinality 0..*) is associated with 'gpfl::StpCmd' (role 'gpfl_StpCmd', cardinality 0..*).
+'gpfl::Field' (role 'gpfl_Field', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression10', cardinality 0..*).
+'gpfl::CmdAnd' (role 'gpfl_CmdAnd58', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression59', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression74', cardinality 0..*) is associated with 'gpfl::CmdGECompare' (role 'gpfl_CmdGECompare73', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression66', cardinality 0..*) is associated with 'gpfl::CmdNEq' (role 'gpfl_CmdNEq', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression8', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression6', cardinality 0..*).
+'gpfl::Field' (role 'gpfl_Field40', cardinality 0..*) is associated with 'gpfl::SendCmd' (role 'gpfl_SendCmd39', cardinality 0..*).
+'gpfl::CondStmt' (role 'gpfl_CondStmt24', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression25', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression94', cardinality 0..*) is associated with 'gpfl::CmdAdd' (role 'gpfl_CmdAdd93', cardinality 0..*).
+'gpfl::CmdLCompare' (role 'gpfl_CmdLCompare', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression86', cardinality 0..*).
+'gpfl::CmdNEq' (role 'gpfl_CmdNEq68', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression69', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression42', cardinality 0..*) is associated with 'gpfl::AlarmCmd' (role 'gpfl_AlarmCmd', cardinality 0..*).
+'gpfl::AutomataDef' (role 'gpfl_AutomataDef', cardinality 0..*) is associated with 'gpfl::Program' (role 'gpfl_Program', cardinality 0..*).
+'gpfl::AutomataDef' (role 'gpfl_AutomataDef46', cardinality 0..*) is associated with 'gpfl::AutomatonCmd' (role 'gpfl_AutomatonCmd', cardinality 0..*).
+'gpfl::CmdGCompare' (role 'gpfl_CmdGCompare', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression81', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression', cardinality 0..*) is associated with 'gpfl::Program' (role 'gpfl_Program2', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression44', cardinality 0..*) is associated with 'gpfl::SetCmd' (role 'gpfl_SetCmd', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression30', cardinality 0..*) is associated with 'gpfl::IterStmt' (role 'gpfl_IterStmt29', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression99', cardinality 0..*) is associated with 'gpfl::CmdSub' (role 'gpfl_CmdSub98', cardinality 0..*).
+'gpfl::AutomataDef' (role 'gpfl_AutomataDef12', cardinality 0..*) is associated with 'gpfl::State' (role 'gpfl_State', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression51', cardinality 0..*) is associated with 'gpfl::StpCmd' (role 'gpfl_StpCmd50', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression71', cardinality 0..*) is associated with 'gpfl::CmdGECompare' (role 'gpfl_CmdGECompare', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression27', cardinality 0..*) is associated with 'gpfl::IterStmt' (role 'gpfl_IterStmt', cardinality 0..*).
+'gpfl::Program' (role 'gpfl_Program4', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression5', cardinality 0..*).
+'gpfl::Transition' (role 'gpfl_Transition19', cardinality 0..*) is associated with 'gpfl::State' (role 'gpfl_State20', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression35', cardinality 0..*) is associated with 'gpfl::InterruptStmt' (role 'gpfl_InterruptStmt34', cardinality 0..*).
+'gpfl::CmdAnd' (role 'gpfl_CmdAnd', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression56', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression61', cardinality 0..*) is associated with 'gpfl::CmdEq' (role 'gpfl_CmdEq', cardinality 0..*).
+'gpfl::CmdSub' (role 'gpfl_CmdSub', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression96', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression64', cardinality 0..*) is associated with 'gpfl::CmdEq' (role 'gpfl_CmdEq63', cardinality 0..*).
+'gpfl::GExpression' (role 'gpfl_GExpression89', cardinality 0..*) is associated with 'gpfl::CmdLCompare' (role 'gpfl_CmdLCompare88', cardinality 0..*).
+'gpfl::State' (role 'gpfl_State15', cardinality 0..*) is associated with 'gpfl::AutomataDef' (role 'gpfl_AutomataDef14', cardinality 0..*).
+'gpfl::CondStmt' (role 'gpfl_CondStmt', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression22', cardinality 0..*).
+'gpfl::InterruptStmt' (role 'gpfl_InterruptStmt', cardinality 0..*) is associated with 'gpfl::GExpression' (role 'gpfl_GExpression32', cardinality 0..*).

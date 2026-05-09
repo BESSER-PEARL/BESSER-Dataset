@@ -1,0 +1,84 @@
+The model has 34 class(es).
+The class 'fsm::Wait' has the following attributes: 'miliseconds' of type str.
+The class 'fsm::AbstractState' has the following attributes: 'name' of type str.
+The class 'fsm::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'State' has no attributes.
+The class 'fsm::Println' has no attributes.
+The class 'fsm::Expression' has no attributes.
+The class 'fsm::IntegerLit' has the following attributes: 'value' of type int.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::RelationalConstraint' has no attributes.
+The class 'fsm::StringLit' has the following attributes: 'value' of type str.
+The class 'fsm::Constraint' has no attributes.
+The class 'fsm::ConsoleOutput' has the following attributes: 'input' of type str.
+The class 'fsm::Trigger' has the following attributes: 'expression' of type str.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::BoolLit' has the following attributes: 'value' of type bool.
+The class 'fsm::StateMachine' has the following attributes: 'name' of type str.
+The class 'fsm::Statement' has no attributes.
+The class 'fsm::Print' has no attributes.
+The class 'Literal' has no attributes.
+The class 'fsm::State' has no attributes.
+The class 'fsm::Loop' has no attributes.
+The class 'fsm::Program' has no attributes.
+The class 'Statement' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'fsm::VarDecl' has the following attributes: 'key' of type str.
+The class 'ConsoleOutput' has no attributes.
+The class 'Expression' has no attributes.
+The class 'fsm::Assignation' has no attributes.
+The class 'fsm::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'fsm::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'fsm::Literal' has no attributes.
+The class 'fsm::Conditional' has no attributes.
+The class 'fsm::VarReference' has the following attributes: 'key' of type str.
+The class 'Constraint' has no attributes.
+The enumeration 'PseudostateKind' has the following literals: 'initial'.
+The enumeration 'RelationalOperator' has the following literals: 'notEqual', 'greaterThan', 'equals', 'lessThan', 'lessThanOrEqualTo', 'greaterThanOrEqualTo'.
+The enumeration 'ArithmeticOperator' has the following literals: 'mult', 'minus', 'div', 'plus'.
+'fsm::Assignation' is a specialization of 'Statement'.
+'fsm::RelationalExpression' is a specialization of 'Expression'.
+'fsm::Conditional' is a specialization of 'Statement'.
+'fsm::ConsoleOutput' is a specialization of 'Statement'.
+'fsm::Program' is a specialization of 'Statement'.
+'fsm::VarReference' is a specialization of 'Expression'.
+'fsm::VarDecl' is a specialization of 'Statement'.
+'fsm::Pseudostate' is a specialization of 'AbstractState'.
+'fsm::Wait' is a specialization of 'Statement'.
+'fsm::Println' is a specialization of 'ConsoleOutput'.
+'fsm::ArithmeticExpression' is a specialization of 'Expression'.
+'fsm::Literal' is a specialization of 'Expression'.
+'fsm::Loop' is a specialization of 'Statement'.
+'fsm::StringLit' is a specialization of 'Literal'.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::RelationalConstraint' is a specialization of 'Constraint'.
+'fsm::State' is a specialization of 'AbstractState'.
+'fsm::Print' is a specialization of 'ConsoleOutput'.
+'fsm::BoolLit' is a specialization of 'Literal'.
+'fsm::IntegerLit' is a specialization of 'Literal'.
+'fsm::Transition' (role 'fsm_Transition14', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger', cardinality 0..*).
+'fsm::Conditional' (role 'fsm_Conditional', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression27', cardinality 0..*).
+'fsm::AbstractState' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::Program' (role 'fsm_Program38', cardinality 0..*) is associated with 'fsm::Loop' (role 'fsm_Loop37', cardinality 0..*).
+'fsm::Constraint' (role 'fsm_Constraint', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition21', cardinality 0..*).
+'fsm::Assignation' (role 'fsm_Assignation', cardinality 0..*) is associated with 'fsm::VarDecl' (role 'fsm_VarDecl52', cardinality 0..*).
+'fsm::Transition' (role 'outgoing', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'AbstractState17', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine2', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::RelationalConstraint' (role 'fsm_RelationalConstraint', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression', cardinality 0..*).
+'fsm::Assignation' (role 'fsm_Assignation54', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression55', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression42', cardinality 0..*) is associated with 'fsm::ArithmeticExpression' (role 'fsm_ArithmeticExpression', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition19', cardinality 0..*) is associated with 'fsm::Statement' (role 'fsm_Statement', cardinality 0..*).
+'fsm::Transition' (role 'Transition5', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'source', cardinality 0..*).
+'fsm::Conditional' (role 'fsm_Conditional32', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program33', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'fsm_AbstractState', cardinality 0..*).
+'fsm::ArithmeticExpression' (role 'fsm_ArithmeticExpression44', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression45', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression40', cardinality 0..*) is associated with 'fsm::VarDecl' (role 'fsm_VarDecl', cardinality 0..*).
+'fsm::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsm::AbstractState' (role 'AbstractState', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression35', cardinality 0..*) is associated with 'fsm::Loop' (role 'fsm_Loop', cardinality 0..*).
+'fsm::Program' (role 'fsm_Program24', cardinality 0..*) is associated with 'fsm::Statement' (role 'fsm_Statement25', cardinality 0..*).
+'fsm::State' (role 'fsm_State11', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program12', cardinality 0..*).
+'fsm::Conditional' (role 'fsm_Conditional29', cardinality 0..*) is associated with 'fsm::Program' (role 'fsm_Program30', cardinality 0..*).
+'fsm::RelationalExpression' (role 'fsm_RelationalExpression', cardinality 0..*) is associated with 'fsm::Expression' (role 'fsm_Expression47', cardinality 0..*).
+'fsm::Program' (role 'fsm_Program9', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State8', cardinality 0..*).
+'fsm::Expression' (role 'fsm_Expression50', cardinality 0..*) is associated with 'fsm::RelationalExpression' (role 'fsm_RelationalExpression49', cardinality 0..*).

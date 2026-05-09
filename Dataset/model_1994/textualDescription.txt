@@ -1,0 +1,37 @@
+The model has 14 class(es).
+The class 'trace::EObject' has no attributes.
+The class 'trace::ObjectToTraceRecordMapEntry' has the following attributes: 'key' of type str.
+The class 'EValue' has no attributes.
+The class 'trace::EMappingResults' has no attributes.
+The class 'MappingOperation' has no attributes.
+The class 'trace::EMappingParameters' has no attributes.
+The class 'trace::MappingOperationToTraceRecordMapEntry' has no attributes.
+The class 'trace::EMappingContext' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::TraceRecord' has no attributes.
+The class 'trace::EMappingOperation' has the following attributes: 'name' of type str; 'module' of type str; 'package' of type str.
+The class 'trace::EValue' has the following attributes: 'oclObject' of type str; 'collectionType' of type str; 'primitiveValue' of type str.
+The class 'trace::VarParameterValue' has the following attributes: 'name' of type str; 'type' of type str; 'kind' of type str.
+The class 'trace::ETuplePartValue' has the following attributes: 'name' of type str.
+The enumeration 'EDirectionKind' has the following literals: 'INOUT', 'IN', 'OUT'.
+'trace::ETuplePartValue' is a specialization of 'EValue'.
+'trace::EMappingParameters' (role 'trace_EMappingParameters', cardinality 0..*) is associated with 'trace::TraceRecord' (role 'trace_TraceRecord13', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace6', cardinality 0..*) is associated with 'trace::ObjectToTraceRecordMapEntry' (role 'trace_ObjectToTraceRecordMapEntry7', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation', cardinality 0..*) is associated with 'trace::MappingOperationToTraceRecordMapEntry' (role 'trace_MappingOperationToTraceRecordMapEntry21', cardinality 0..*).
+'trace::ObjectToTraceRecordMapEntry' (role 'trace_ObjectToTraceRecordMapEntry45', cardinality 0..*) is associated with 'trace::TraceRecord' (role 'trace_TraceRecord46', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject29', cardinality 0..*) is associated with 'trace::EValue' (role 'trace_EValue28', cardinality 0..*).
+'trace::EMappingContext' (role 'trace_EMappingContext', cardinality 0..*) is associated with 'trace::TraceRecord' (role 'trace_TraceRecord11', cardinality 0..*).
+'trace::EValue' (role 'trace_EValue30', cardinality 0..*) is associated with 'trace::EValue' (role 'trace_EValue32', cardinality 0..*).
+'trace::EValue' (role 'trace_EValue34', cardinality 0..*) is associated with 'trace::ETuplePartValue' (role 'trace_ETuplePartValue', cardinality 0..*).
+'trace::EMappingOperation' (role 'trace_EMappingOperation', cardinality 0..*) is associated with 'trace::TraceRecord' (role 'trace_TraceRecord9', cardinality 0..*).
+'trace::TraceRecord' (role 'trace_TraceRecord19', cardinality 0..*) is associated with 'trace::MappingOperationToTraceRecordMapEntry' (role 'trace_MappingOperationToTraceRecordMapEntry18', cardinality 0..*).
+'trace::VarParameterValue' (role 'trace_VarParameterValue', cardinality 0..*) is associated with 'trace::EValue' (role 'trace_EValue', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject', cardinality 0..*) is associated with 'trace::EValue' (role 'trace_EValue26', cardinality 0..*).
+'trace::VarParameterValue' (role 'trace_VarParameterValue40', cardinality 0..*) is associated with 'trace::EMappingParameters' (role 'trace_EMappingParameters39', cardinality 0..*).
+'trace::TraceRecord' (role 'trace_TraceRecord15', cardinality 0..*) is associated with 'trace::EMappingResults' (role 'trace_EMappingResults', cardinality 0..*).
+'trace::EMappingResults' (role 'trace_EMappingResults42', cardinality 0..*) is associated with 'trace::VarParameterValue' (role 'trace_VarParameterValue43', cardinality 0..*).
+'trace::ObjectToTraceRecordMapEntry' (role 'trace_ObjectToTraceRecordMapEntry', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace4', cardinality 0..*).
+'trace::EMappingOperation' (role 'trace_EMappingOperation23', cardinality 0..*) is associated with 'MappingOperation' (role 'MappingOperation24', cardinality 0..*).
+'trace::TraceRecord' (role 'trace_TraceRecord', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).
+'trace::VarParameterValue' (role 'trace_VarParameterValue37', cardinality 0..*) is associated with 'trace::EMappingContext' (role 'trace_EMappingContext36', cardinality 0..*).
+'trace::MappingOperationToTraceRecordMapEntry' (role 'trace_MappingOperationToTraceRecordMapEntry', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace2', cardinality 0..*).

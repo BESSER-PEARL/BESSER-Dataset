@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'GraphElement' has no attributes.
+The class 'Graph::Graph' has no attributes.
+The class 'Graph::DirectedArc' has the following attributes: 'weight' of type int.
+The class 'NamedElement' has no attributes.
+The class 'Graph::GraphElement' has the following attributes: 'color' of type str; 'label' of type str.
+The class 'Graph::Node' has the following attributes: 'shape' of type str; 'style' of type str.
+The class 'Graph::NamedElement' has the following attributes: 'name' of type str.
+'Graph::Graph' is a specialization of 'NamedElement'.
+'Graph::Node' is a specialization of 'GraphElement'.
+'Graph::DirectedArc' is a specialization of 'GraphElement'.
+'Graph::GraphElement' is a specialization of 'NamedElement'.
+'Graph::GraphElement' (role 'GraphElement', cardinality 0..*) is associated with 'Graph::Graph' (role 'graph', cardinality 0..*).
+'Graph::GraphElement' (role 'contents', cardinality 0..*) is associated with 'Graph::Graph' (role 'Graph', cardinality 0..*).
+'Graph::DirectedArc' (role 'Graph_DirectedArc', cardinality 0..*) is associated with 'Graph::Node' (role 'Graph_Node', cardinality 0..*).
+'Graph::Node' (role 'Graph_Node5', cardinality 0..*) is associated with 'Graph::DirectedArc' (role 'Graph_DirectedArc4', cardinality 0..*).

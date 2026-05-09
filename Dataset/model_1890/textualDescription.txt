@@ -1,0 +1,63 @@
+The model has 42 class(es).
+The class 'Classes::mdsdBooking::BookingController' has no attributes.
+The class 'Classes::mdsdBooking::Booking' has the following attributes: 'isCheckedOut' of type bool; 'bookingId' of type str; 'dateFrom' of type date; 'roomNumber' of type int; 'customerName' of type str; 'petName' of type str; 'isCheckedIn' of type bool; 'bill_Id' of type str; 'customerEmail' of type str; 'dateTo' of type date.
+The class 'Classes::mdsdAdmin::Staff' has no attributes.
+The class 'Classes::mdsdBooking::StaffBooking' has no attributes.
+The class 'Service' has no attributes.
+The class 'mdsdBooking::UserBooking' has no attributes.
+The class 'HotelStaff' has no attributes.
+The class 'Bill' has no attributes.
+The class 'Classes::mdsdAdmin::HotelStaff' has the following attributes: 'rank' of type int; 'password' of type str; 'Name' of type str; 'SSN' of type str; 'isLoggedIn' of type bool.
+The class 'Meal' has no attributes.
+The class 'Classes::mdsdAccount::BookingToAccount' has no attributes.
+The class 'Classes::mdsdAccount::CustomerAccount' has no attributes.
+The class 'Classes::mdsdAccount::Pet' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Classes::mdsdBilling::BookingToBill' has no attributes.
+The class 'mdsdAdmin::BookingToAdmin' has no attributes.
+The class 'mdsdAdmin::Admin' has no attributes.
+The class 'Classes::mdsdAdmin::Admin' has no attributes.
+The class 'Classes::mdsdAdmin::BookingToAdmin' has no attributes.
+The class 'mdsdBilling::BookingToBill' has no attributes.
+The class 'Classes::mdsdAccount::AccountController' has no attributes.
+The class 'Classes::mdsdBilling::Bill' has the following attributes: 'isPaid' of type bool; 'ID' of type str.
+The class 'Account' has no attributes.
+The class 'mdsdBilling::CustomerBilling' has no attributes.
+The class 'Classes::mdsdBooking::Service' has the following attributes: 'price' of type float; 'description' of type str.
+The class 'Transaction' has no attributes.
+The class 'Classes::mdsdBooking::Meal' has the following attributes: 'schedule' of type str; 'amountOfFood' of type float; 'foodType' of type str; 'price' of type float.
+The class 'mdsdAdmin::Staff' has no attributes.
+The class 'Pet' has no attributes.
+The class 'mdsdAccount::CustomerAccount' has no attributes.
+The class 'Classes::mdsdBooking::UserBooking' has no attributes.
+The class 'Classes::mdsdBilling::BillingController' has no attributes.
+The class 'mdsdBilling::StaffBilling' has no attributes.
+The class 'Room' has no attributes.
+The class 'Booking' has no attributes.
+The class 'Classes::mdsdAdmin::Room' has the following attributes: 'status' of type str; 'number' of type int; 'type' of type str.
+The class 'mdsdAccount::BookingToAccount' has no attributes.
+The class 'mdsdBooking::StaffBooking' has no attributes.
+The class 'Classes::mdsdAdmin::AdminController' has no attributes.
+The class 'Classes::mdsdBilling::Transaction' has the following attributes: 'price' of type float; 'description' of type str.
+The class 'Classes::mdsdBilling::CustomerBilling' has no attributes.
+The class 'Classes::mdsdBilling::StaffBilling' has no attributes.
+The class 'Classes::mdsdAccount::Account' has the following attributes: 'accountID' of type str; 'isLoggedIn' of type bool; 'email' of type str; 'password' of type str; 'name' of type str.
+'Classes::mdsdAdmin::AdminController' is a specialization of 'mdsdAdmin::Admin'.
+'Classes::mdsdBilling::BillingController' is a specialization of 'mdsdBilling::CustomerBilling'.
+'Classes::mdsdAdmin::AdminController' is a specialization of 'mdsdAdmin::BookingToAdmin'.
+'Classes::mdsdAdmin::AdminController' is a specialization of 'mdsdAdmin::Staff'.
+'Classes::mdsdBilling::BillingController' is a specialization of 'mdsdBilling::StaffBilling'.
+'Classes::mdsdAccount::AccountController' is a specialization of 'mdsdAccount::CustomerAccount'.
+'Classes::mdsdBooking::BookingController' is a specialization of 'mdsdBooking::StaffBooking'.
+'Classes::mdsdBilling::BillingController' is a specialization of 'mdsdBilling::BookingToBill'.
+'Classes::mdsdAccount::AccountController' is a specialization of 'mdsdAccount::BookingToAccount'.
+'Classes::mdsdBooking::BookingController' is a specialization of 'mdsdBooking::UserBooking'.
+'Service' (role 'Service6', cardinality 0..*) is associated with 'Classes::mdsdBooking::Booking' (role 'Classes_mdsdBooking_Booking', cardinality 0..*).
+'HotelStaff' (role 'HotelStaff', cardinality 0..*) is associated with 'Classes::mdsdAdmin::AdminController' (role 'Classes_mdsdAdmin_AdminController11', cardinality 0..*).
+'Classes::mdsdBilling::BillingController' (role 'Classes_mdsdBilling_BillingController', cardinality 0..*) is associated with 'Bill' (role 'Bill', cardinality 0..*).
+'Service' (role 'Service', cardinality 0..*) is associated with 'Classes::mdsdBooking::BookingController' (role 'Classes_mdsdBooking_BookingController4', cardinality 0..*).
+'Booking' (role 'Booking', cardinality 0..*) is associated with 'Classes::mdsdBooking::BookingController' (role 'Classes_mdsdBooking_BookingController', cardinality 0..*).
+'Classes::mdsdBilling::Bill' (role 'Classes_mdsdBilling_Bill', cardinality 0..*) is associated with 'Transaction' (role 'Transaction', cardinality 0..*).
+'Classes::mdsdAdmin::AdminController' (role 'Classes_mdsdAdmin_AdminController', cardinality 0..*) is associated with 'Room' (role 'Room', cardinality 0..*).
+'Account' (role 'Account', cardinality 0..*) is associated with 'Classes::mdsdAccount::AccountController' (role 'Classes_mdsdAccount_AccountController', cardinality 0..*).
+'Classes::mdsdBooking::Booking' (role 'Classes_mdsdBooking_Booking8', cardinality 0..*) is associated with 'Meal' (role 'Meal', cardinality 0..*).
+'Pet' (role 'Pet', cardinality 0..*) is associated with 'Classes::mdsdAccount::Account' (role 'Classes_mdsdAccount_Account', cardinality 0..*).

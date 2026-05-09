@@ -1,0 +1,86 @@
+The model has 39 class(es).
+The class 'IdentifiedCS' has no attributes.
+The class 'PathNameCS' has no attributes.
+The class 'qvtcore::cst::MappingCS' has no attributes.
+The class 'PatternCS' has no attributes.
+The class 'qvtcore::cst::GuardPatternCS' has no attributes.
+The class 'qvtcore::cst::TopLevelCS' has no attributes.
+The class 'DomainCS' has no attributes.
+The class 'OperationCallExpCS' has no attributes.
+The class 'RealizeableVariableCS' has no attributes.
+The class 'BottomPatternCS' has no attributes.
+The class 'qvtcore::cst::DirectionCS' has no attributes.
+The class 'RealizedVariableCS' has no attributes.
+The class 'qvtcore::cst::RealizedVariableCS' has no attributes.
+The class 'QueryCS' has no attributes.
+The class 'AreaCS' has no attributes.
+The class 'TypeCS' has no attributes.
+The class 'qvtcore::cst::AreaCS' has no attributes.
+The class 'cst::IHasName' has no attributes.
+The class 'qvtcore::cst::AssignmentCS' has the following attributes: 'default' of type bool.
+The class 'OCLExpressionCS' has no attributes.
+The class 'ParamDeclarationCS' has no attributes.
+The class 'qvtcore::cst::PatternCS' has no attributes.
+The class 'DirectionCS' has no attributes.
+The class 'UnrealizedVariableCS' has no attributes.
+The class 'IdentifierCS' has no attributes.
+The class 'EnforcementOperationCS' has no attributes.
+The class 'qvtcore::cst::TransformationCS' has no attributes.
+The class 'qvtcore::cst::DomainCS' has the following attributes: 'enforce' of type bool; 'check' of type bool.
+The class 'TransformationCS' has no attributes.
+The class 'CSTNode' has no attributes.
+The class 'qvtcore::cst::UnrealizedVariableCS' has no attributes.
+The class 'qvtcore::cst::QueryCS' has no attributes.
+The class 'qvtcore::cst::RealizeableVariableCS' has no attributes.
+The class 'qvtcore::cst::BottomPatternCS' has no attributes.
+The class 'qvtcore::cst::EnforcementOperationCS' has the following attributes: 'deletion' of type bool.
+The class 'MappingCS' has no attributes.
+The class 'GuardPatternCS' has no attributes.
+The class 'cst::CSTNode' has no attributes.
+The class 'qvtcore::cst::ParamDeclarationCS' has no attributes.
+'qvtcore::cst::PatternCS' is a specialization of 'CSTNode'.
+'qvtcore::cst::TransformationCS' is a specialization of 'cst::CSTNode'.
+'qvtcore::cst::TopLevelCS' is a specialization of 'CSTNode'.
+'qvtcore::cst::TransformationCS' is a specialization of 'cst::IHasName'.
+'qvtcore::cst::AreaCS' is a specialization of 'IdentifiedCS'.
+'qvtcore::cst::RealizedVariableCS' is a specialization of 'RealizeableVariableCS'.
+'qvtcore::cst::MappingCS' is a specialization of 'IdentifiedCS'.
+'qvtcore::cst::DirectionCS' is a specialization of 'IdentifiedCS'.
+'qvtcore::cst::AssignmentCS' is a specialization of 'OCLExpressionCS'.
+'qvtcore::cst::EnforcementOperationCS' is a specialization of 'CSTNode'.
+'qvtcore::cst::GuardPatternCS' is a specialization of 'PatternCS'.
+'qvtcore::cst::QueryCS' is a specialization of 'cst::CSTNode'.
+'qvtcore::cst::QueryCS' is a specialization of 'cst::IHasName'.
+'qvtcore::cst::RealizeableVariableCS' is a specialization of 'IdentifiedCS'.
+'qvtcore::cst::UnrealizedVariableCS' is a specialization of 'RealizeableVariableCS'.
+'qvtcore::cst::DomainCS' is a specialization of 'AreaCS'.
+'qvtcore::cst::ParamDeclarationCS' is a specialization of 'CSTNode'.
+'qvtcore::cst::BottomPatternCS' is a specialization of 'PatternCS'.
+'PathNameCS' (role 'PathNameCS', cardinality 0..*) is associated with 'qvtcore::cst::DirectionCS' (role 'qvtcore_cst_DirectionCS', cardinality 0..*).
+'qvtcore::cst::MappingCS' (role 'qvtcore_cst_MappingCS18', cardinality 0..*) is associated with 'PathNameCS' (role 'PathNameCS19', cardinality 0..*).
+'qvtcore::cst::AreaCS' (role 'qvtcore_cst_AreaCS2', cardinality 0..*) is associated with 'BottomPatternCS' (role 'BottomPatternCS', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS25', cardinality 0..*) is associated with 'qvtcore::cst::MappingCS' (role 'qvtcore_cst_MappingCS24', cardinality 0..*).
+'qvtcore::cst::QueryCS' (role 'qvtcore_cst_QueryCS36', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS37', cardinality 0..*).
+'MappingCS' (role 'MappingCS', cardinality 0..*) is associated with 'qvtcore::cst::MappingCS' (role 'qvtcore_cst_MappingCS', cardinality 0..*).
+'UnrealizedVariableCS' (role 'UnrealizedVariableCS', cardinality 0..*) is associated with 'qvtcore::cst::PatternCS' (role 'qvtcore_cst_PatternCS33', cardinality 0..*).
+'IdentifierCS' (role 'IdentifierCS27', cardinality 0..*) is associated with 'qvtcore::cst::ParamDeclarationCS' (role 'qvtcore_cst_ParamDeclarationCS', cardinality 0..*).
+'OperationCallExpCS' (role 'OperationCallExpCS', cardinality 0..*) is associated with 'qvtcore::cst::EnforcementOperationCS' (role 'qvtcore_cst_EnforcementOperationCS', cardinality 0..*).
+'qvtcore::cst::QueryCS' (role 'qvtcore_cst_QueryCS42', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS43', cardinality 0..*).
+'qvtcore::cst::PatternCS' (role 'qvtcore_cst_PatternCS', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS31', cardinality 0..*).
+'MappingCS' (role 'MappingCS51', cardinality 0..*) is associated with 'qvtcore::cst::TopLevelCS' (role 'qvtcore_cst_TopLevelCS50', cardinality 0..*).
+'qvtcore::cst::ParamDeclarationCS' (role 'qvtcore_cst_ParamDeclarationCS29', cardinality 0..*) is associated with 'TypeCS' (role 'TypeCS', cardinality 0..*).
+'qvtcore::cst::AssignmentCS' (role 'qvtcore_cst_AssignmentCS5', cardinality 0..*) is associated with 'OCLExpressionCS' (role 'OCLExpressionCS6', cardinality 0..*).
+'qvtcore::cst::MappingCS' (role 'qvtcore_cst_MappingCS21', cardinality 0..*) is associated with 'DomainCS' (role 'DomainCS22', cardinality 0..*).
+'qvtcore::cst::DirectionCS' (role 'qvtcore_cst_DirectionCS12', cardinality 0..*) is associated with 'IdentifierCS' (role 'IdentifierCS', cardinality 0..*).
+'OCLExpressionCS' (role 'OCLExpressionCS', cardinality 0..*) is associated with 'qvtcore::cst::AssignmentCS' (role 'qvtcore_cst_AssignmentCS', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS40', cardinality 0..*) is associated with 'qvtcore::cst::QueryCS' (role 'qvtcore_cst_QueryCS39', cardinality 0..*).
+'qvtcore::cst::QueryCS' (role 'qvtcore_cst_QueryCS', cardinality 0..*) is associated with 'ParamDeclarationCS' (role 'ParamDeclarationCS', cardinality 0..*).
+'qvtcore::cst::TransformationCS' (role 'qvtcore_cst_TransformationCS', cardinality 0..*) is associated with 'DirectionCS' (role 'DirectionCS', cardinality 0..*).
+'TypeCS' (role 'TypeCS45', cardinality 0..*) is associated with 'qvtcore::cst::RealizeableVariableCS' (role 'qvtcore_cst_RealizeableVariableCS', cardinality 0..*).
+'GuardPatternCS' (role 'GuardPatternCS', cardinality 0..*) is associated with 'qvtcore::cst::AreaCS' (role 'qvtcore_cst_AreaCS', cardinality 0..*).
+'qvtcore::cst::TopLevelCS' (role 'qvtcore_cst_TopLevelCS', cardinality 0..*) is associated with 'TransformationCS' (role 'TransformationCS', cardinality 0..*).
+'qvtcore::cst::BottomPatternCS' (role 'qvtcore_cst_BottomPatternCS9', cardinality 0..*) is associated with 'RealizedVariableCS' (role 'RealizedVariableCS', cardinality 0..*).
+'qvtcore::cst::BottomPatternCS' (role 'qvtcore_cst_BottomPatternCS', cardinality 0..*) is associated with 'EnforcementOperationCS' (role 'EnforcementOperationCS', cardinality 0..*).
+'qvtcore::cst::TopLevelCS' (role 'qvtcore_cst_TopLevelCS48', cardinality 0..*) is associated with 'QueryCS' (role 'QueryCS', cardinality 0..*).
+'PathNameCS' (role 'PathNameCS55', cardinality 0..*) is associated with 'qvtcore::cst::TransformationCS' (role 'qvtcore_cst_TransformationCS54', cardinality 0..*).
+'qvtcore::cst::MappingCS' (role 'qvtcore_cst_MappingCS16', cardinality 0..*) is associated with 'DomainCS' (role 'DomainCS', cardinality 0..*).

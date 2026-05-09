@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/BastienDidier/DSL_TP/workspace/fr.ut2j.m1ice.fsm/model/fsm.ecore

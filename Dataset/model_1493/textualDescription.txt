@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'petriNet::Transition' has no attributes.
+The class 'petriNet::PetriNetwork' has the following attributes: 'name' of type str.
+The class 'PetriElement' has no attributes.
+The class 'petriNet::Place' has the following attributes: 'nbJetons' of type int.
+The class 'petriNet::Arc' has the following attributes: 'jetonsTransferes' of type int; 'Direction' of type str.
+The class 'petriNet::PetriElement' has the following attributes: 'name' of type str.
+The enumeration 'ArcDirection' has the following literals: 'T2P', 'P2T'.
+'petriNet::Place' is a specialization of 'PetriElement'.
+'petriNet::Transition' is a specialization of 'PetriElement'.
+'petriNet::Arc' is a specialization of 'PetriElement'.
+'petriNet::Transition' (role 'petriNet_Transition', cardinality 0..*) is associated with 'petriNet::Arc' (role 'petriNet_Arc', cardinality 0..*).
+'petriNet::PetriNetwork' (role 'petriNet_PetriNetwork', cardinality 0..*) is associated with 'petriNet::PetriElement' (role 'petriNet_PetriElement', cardinality 0..*).
+'petriNet::Arc' (role 'petriNet_Arc5', cardinality 0..*) is associated with 'petriNet::Place' (role 'petriNet_Place', cardinality 0..*).
+'petriNet::Arc' (role 'petriNet_Arc3', cardinality 0..*) is associated with 'petriNet::Transition' (role 'petriNet_Transition2', cardinality 0..*).
+'petriNet::Arc' (role 'petriNet_Arc10', cardinality 0..*) is associated with 'petriNet::Transition' (role 'petriNet_Transition11', cardinality 0..*).
+'petriNet::Arc' (role 'petriNet_Arc13', cardinality 0..*) is associated with 'petriNet::Place' (role 'petriNet_Place14', cardinality 0..*).
+'petriNet::Place' (role 'petriNet_Place7', cardinality 0..*) is associated with 'petriNet::Arc' (role 'petriNet_Arc8', cardinality 0..*).

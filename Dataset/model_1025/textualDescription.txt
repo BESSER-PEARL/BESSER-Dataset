@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'nicoLang::InitState' has no attributes.
+The class 'nicoLang::Transition' has the following attributes: 'name' of type str; 'trigger' of type str.
+The class 'nicoLang::State' has the following attributes: 'name' of type str.
+The class 'nicoLang::FSM' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'nicoLang::FinalState' has no attributes.
+'nicoLang::FinalState' is a specialization of 'State'.
+'nicoLang::InitState' is a specialization of 'State'.
+'nicoLang::Transition' (role 'nicoLang_Transition4', cardinality 0..*) is associated with 'nicoLang::State' (role 'nicoLang_State5', cardinality 0..*).
+'nicoLang::State' (role 'nicoLang_State', cardinality 0..*) is associated with 'nicoLang::FSM' (role 'nicoLang_FSM2', cardinality 0..*).
+'nicoLang::FSM' (role 'nicoLang_FSM', cardinality 0..*) is associated with 'nicoLang::Transition' (role 'nicoLang_Transition', cardinality 0..*).
+'nicoLang::Transition' (role 'nicoLang_Transition7', cardinality 0..*) is associated with 'nicoLang::State' (role 'nicoLang_State8', cardinality 0..*).

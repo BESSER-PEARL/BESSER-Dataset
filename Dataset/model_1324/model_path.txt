@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Servicerobotics-Ulm/SmartMDSD-Toolchain/org.ecore.metamodels/org.ecore.base/org.ecore.base.stateMachine/model/stateMachine.ecore

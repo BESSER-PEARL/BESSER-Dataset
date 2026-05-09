@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'yyd::Thing' has the following attributes: 'id' of type int.
+The class 'yyd::Blias' has the following attributes: 'id' of type str.
+The class 'Foo' has no attributes.
+The class 'yyd::RelatedTo' has the following attributes: 'since' of type str.
+The class 'yyd::Alias' has the following attributes: 'id' of type str.
+The class 'yyd::Foo' has no attributes.
+'yyd::Blias' is a specialization of 'Foo'.
+'yyd::Alias' is a specialization of 'Foo'.
+'yyd::RelatedTo' (role 'yyd_RelatedTo', cardinality 0..*) is associated with 'yyd::Foo' (role 'yyd_Foo', cardinality 0..*).
+'yyd::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'yyd::Thing' (role 'fromThing', cardinality 0..*).
+'yyd::Thing' (role 'Thing', cardinality 0..*) is associated with 'yyd::RelatedTo' (role 'relations', cardinality 0..*).

@@ -1,0 +1,56 @@
+The model has 27 class(es).
+The class 'HotelManagementClassDiagram::Interaction5' has no attributes.
+The class 'HotelManagementClassDiagram::Customer' has the following attributes: 'bonusPoints' of type int; 'miscInfo' of type str; 'customerID' of type int.
+The class 'HotelManagementClassDiagram::FakeDBContext' has no attributes.
+The class 'HotelManagementClassDiagram::Costable' has the following attributes: 'price' of type float.
+The class 'HotelManagementClassDiagram::Employee' has the following attributes: 'salary' of type float; 'password' of type str; 'workRate' of type float; 'employeeID' of type int.
+The class 'HotelManagementClassDiagram::Person' has the following attributes: 'phoneNumber' of type str; 'gender' of type str; 'country' of type str; 'name' of type str; 'postalCode' of type str; 'city' of type str; 'title' of type str; 'street' of type str; 'SSNumber' of type str.
+The class 'HotelManagementClassDiagram::BookingController' has no attributes.
+The class 'HotelManagementClassDiagram::Addon' has no attributes.
+The class 'HotelManagementClassDiagram::Bill' has the following attributes: 'final' of type bool; 'totalPrice' of type float; 'paid' of type bool.
+The class 'HotelManagementClassDiagram::Interaction3' has no attributes.
+The class 'HotelManagementClassDiagram::EmployeeType' has the following attributes: 'acessLevel' of type int; 'type' of type str.
+The class 'Extra' has no attributes.
+The class 'Costable' has no attributes.
+The class 'HotelManagementClassDiagram::Creditcard' has the following attributes: 'owner' of type str; 'number' of type str; 'expirationMonth' of type int; 'expirationYear' of type int; 'cvc' of type int.
+The class 'HotelManagementClassDiagram::Booking' has the following attributes: 'internalComments' of type str; 'roomTypes' of type str; 'created' of type date; 'checkedOut' of type bool; 'startDate' of type date; 'endDate' of type date; 'checkedIn' of type bool; 'bookingId' of type int; 'externalComments' of type str.
+The class 'HotelManagementClassDiagram::Interaction2' has no attributes.
+The class 'HotelManagementClassDiagram::Room' has the following attributes: 'internalComment' of type str; 'roomNumber' of type int; 'underCleaning' of type bool; 'underRepair' of type bool; 'type' of type str; 'maxNbrPeople' of type int; 'size' of type float.
+The class 'HotelManagementClassDiagram::DBInterface' has no attributes.
+The class 'HotelManagementClassDiagram::MaintenanceController' has no attributes.
+The class 'HotelManagementClassDiagram::Interaction1' has no attributes.
+The class 'HotelManagementClassDiagram::Interaction4' has no attributes.
+The class 'HotelManagementClassDiagram::ManagementController' has no attributes.
+The class 'DBInterface' has no attributes.
+The class 'HotelManagementClassDiagram::Extra' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Person' has no attributes.
+The class 'HotelManagementClassDiagram::Hotel' has the following attributes: 'rank' of type float; 'address' of type str; 'name' of type str.
+The class 'HotelManagementClassDiagram::Discount' has the following attributes: 'isPercentage' of type str; 'amount' of type float; 'name' of type str.
+The enumeration 'RoomType' has the following literals: 'Double', 'Suite', 'Family', 'Single'.
+The enumeration 'EType' has the following literals: 'Receptionist', 'Manager', 'Cleaner'.
+'HotelManagementClassDiagram::Addon' is a specialization of 'Costable'.
+'HotelManagementClassDiagram::Room' is a specialization of 'Costable'.
+'HotelManagementClassDiagram::FakeDBContext' is a specialization of 'DBInterface'.
+'HotelManagementClassDiagram::Customer' is a specialization of 'Person'.
+'HotelManagementClassDiagram::Employee' is a specialization of 'Person'.
+'HotelManagementClassDiagram::Addon' is a specialization of 'Extra'.
+'HotelManagementClassDiagram::Interaction4' (role 'HotelManagementClassDiagram_Interaction4', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Employee' (role 'HotelManagementClassDiagram_Employee38', cardinality 0..*).
+'HotelManagementClassDiagram::Interaction2' (role 'HotelManagementClassDiagram_Interaction2', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Employee' (role 'HotelManagementClassDiagram_Employee34', cardinality 0..*).
+'HotelManagementClassDiagram::Interaction1' (role 'HotelManagementClassDiagram_Interaction1', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Employee' (role 'HotelManagementClassDiagram_Employee32', cardinality 0..*).
+'HotelManagementClassDiagram::Room' (role 'HotelManagementClassDiagram_Room', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking5', cardinality 0..*).
+'HotelManagementClassDiagram::Hotel' (role 'HotelManagementClassDiagram_Hotel', cardinality 0..*) is associated with 'HotelManagementClassDiagram::BookingController' (role 'HotelManagementClassDiagram_BookingController', cardinality 0..*).
+'HotelManagementClassDiagram::Customer' (role 'HotelManagementClassDiagram_Customer19', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Bill' (role 'HotelManagementClassDiagram_Bill18', cardinality 0..*).
+'HotelManagementClassDiagram::Employee' (role 'HotelManagementClassDiagram_Employee', cardinality 0..*) is associated with 'HotelManagementClassDiagram::EmployeeType' (role 'HotelManagementClassDiagram_EmployeeType', cardinality 0..*).
+'HotelManagementClassDiagram::Customer' (role 'HotelManagementClassDiagram_Customer', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking7', cardinality 0..*).
+'HotelManagementClassDiagram::Discount' (role 'HotelManagementClassDiagram_Discount', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking9', cardinality 0..*).
+'HotelManagementClassDiagram::Interaction5' (role 'HotelManagementClassDiagram_Interaction5', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking40', cardinality 0..*).
+'HotelManagementClassDiagram::Creditcard' (role 'HotelManagementClassDiagram_Creditcard', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking', cardinality 0..*).
+'HotelManagementClassDiagram::Costable' (role 'HotelManagementClassDiagram_Costable', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Discount' (role 'HotelManagementClassDiagram_Discount13', cardinality 0..*).
+'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking11', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Bill' (role 'HotelManagementClassDiagram_Bill', cardinality 0..*).
+'HotelManagementClassDiagram::Hotel' (role 'HotelManagementClassDiagram_Hotel24', cardinality 0..*) is associated with 'HotelManagementClassDiagram::MaintenanceController' (role 'HotelManagementClassDiagram_MaintenanceController25', cardinality 0..*).
+'HotelManagementClassDiagram::ManagementController' (role 'HotelManagementClassDiagram_ManagementController', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Hotel' (role 'HotelManagementClassDiagram_Hotel27', cardinality 0..*).
+'HotelManagementClassDiagram::Addon' (role 'HotelManagementClassDiagram_Addon', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Booking' (role 'HotelManagementClassDiagram_Booking3', cardinality 0..*).
+'HotelManagementClassDiagram::Room' (role 'HotelManagementClassDiagram_Room21', cardinality 0..*) is associated with 'HotelManagementClassDiagram::MaintenanceController' (role 'HotelManagementClassDiagram_MaintenanceController', cardinality 0..*).
+'HotelManagementClassDiagram::MaintenanceController' (role 'HotelManagementClassDiagram_MaintenanceController36', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Interaction3' (role 'HotelManagementClassDiagram_Interaction3', cardinality 0..*).
+'HotelManagementClassDiagram::Costable' (role 'HotelManagementClassDiagram_Costable16', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Bill' (role 'HotelManagementClassDiagram_Bill15', cardinality 0..*).
+'HotelManagementClassDiagram::Hotel' (role 'HotelManagementClassDiagram_Hotel29', cardinality 0..*) is associated with 'HotelManagementClassDiagram::Employee' (role 'HotelManagementClassDiagram_Employee30', cardinality 0..*).

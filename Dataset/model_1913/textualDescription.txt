@@ -1,0 +1,166 @@
+The model has 104 class(es).
+The class 'booking::RoomStay' has no attributes.
+The class 'tda593::facilities::GuestRoom' has the following attributes: 'numberOfExtrabeds' of type int; 'numberOfBeds' of type int.
+The class 'ServiceManager' has no attributes.
+The class 'facilities::Room' has no attributes.
+The class 'billing::Discount' has no attributes.
+The class 'tda593::billing::ServiceDataService' has no attributes.
+The class 'facilities::RoomManager' has no attributes.
+The class 'facilities::AdminRoomManager' has no attributes.
+The class 'tda593::billing::Purchase' has the following attributes: 'price' of type float; 'id' of type int; 'quantity' of type int.
+The class 'DiscountManager' has no attributes.
+The class 'tda593::facilities::RoomManagerImpl' has no attributes.
+The class 'billing::CreditCardInformationDataService' has no attributes.
+The class 'tda593::billing::BillDataService' has no attributes.
+The class 'facilities::RoomManagerImpl' has no attributes.
+The class 'billing::ServiceManagerImpl' has no attributes.
+The class 'tda593::billing::ServiceManagerImpl' has no attributes.
+The class 'tda593::billing::CreditCardInformationDataService' has no attributes.
+The class 'booking::TravelInformation' has no attributes.
+The class 'facilities::AdminKeyCardManager' has no attributes.
+The class 'tda593::billing::AdminDiscountManagerImpl' has no attributes.
+The class 'tda593::facilities::AdminKeyCardManager' has no attributes.
+The class 'tda593::billing::CreditCardInformation' has the following attributes: 'expirationDate' of type date; 'ccv' of type str; 'firstName' of type str; 'cardNumber' of type str; 'lastName' of type str.
+The class 'tda593::billing::DiscountManager' has no attributes.
+The class 'booking::Person' has no attributes.
+The class 'Room' has no attributes.
+The class 'tda593::facilities::KeyCard' has the following attributes: 'id' of type str.
+The class 'facilities::RoomDataService' has no attributes.
+The class 'billing::BillDataService' has no attributes.
+The class 'booking::BookingManager' has no attributes.
+The class 'tda593::facilities::KeyCardManager' has no attributes.
+The class 'tda593::facilities::KeyCardDataService' has no attributes.
+The class 'tda593::billing::CreditCardManager' has no attributes.
+The class 'booking::StayRequest' has no attributes.
+The class 'tda593::facilities::AdminKeyCardManagerImpl' has no attributes.
+The class 'facilities::KeyCardDataService' has no attributes.
+The class 'tda593::booking::Organization' has the following attributes: 'organizationNumber' of type str; 'name' of type str.
+The class 'billing::AdminServiceManager' has no attributes.
+The class 'tda593::billing::DiscountManagerImpl' has no attributes.
+The class 'billing::DiscountDataService' has no attributes.
+The class 'tda593::facilities::KeyCardManagerImpl' has no attributes.
+The class 'billing::Bill' has no attributes.
+The class 'tda593::billing::BillManagerImpl' has no attributes.
+The class 'BankingManager' has no attributes.
+The class 'billing::AdminDiscountManager' has no attributes.
+The class 'tda593::billing::DiscountDataService' has no attributes.
+The class 'tda593::facilities::RoomDataService' has no attributes.
+The class 'tda593::booking::LegalEntity' has the following attributes: 'id' of type int; 'email' of type str; 'phone' of type str.
+The class 'tda593::billing::AdminServiceManager' has no attributes.
+The class 'booking::BookingDataService' has no attributes.
+The class 'LegalEntity' has no attributes.
+The class 'tda593::billing::BookingBill' has no attributes.
+The class 'tda593::billing::Bill' has the following attributes: 'isPaid' of type bool; 'id' of type int; 'isPublished' of type bool; 'date' of type date.
+The class 'tda593::booking::LegalEntityDataService' has no attributes.
+The class 'facilities::KeyCardManagerImpl' has no attributes.
+The class 'Bill' has no attributes.
+The class 'tda593::billing::AdminServiceManagerImpl' has no attributes.
+The class 'facilities::KeyCardManager' has no attributes.
+The class 'tda593::billing::BillManager' has no attributes.
+The class 'billing::Service' has no attributes.
+The class 'tda593::facilities::RoomManager' has no attributes.
+The class 'tda593::facilities::RoomTypeDataService' has no attributes.
+The class 'tda593::billing::CreditCardManagerImpl' has no attributes.
+The class 'tda593::billing::ServiceManager' has no attributes.
+The class 'tda593::booking::Person' has the following attributes: 'lastname' of type str; 'firstname' of type str; 'socialSecurityNumber' of type str.
+The class 'tda593::billing::PercentageDiscount' has the following attributes: 'percentage' of type float.
+The class 'billing::Purchase' has no attributes.
+The class 'tda593::billing::Discount' has the following attributes: 'name' of type str; 'code' of type str.
+The class 'KeyCardManager' has no attributes.
+The class 'tda593::billing::SumDiscount' has the following attributes: 'discountSum' of type float.
+The class 'LegalEntityManager' has no attributes.
+The class 'tda593::billing::DiscountLimit' has the following attributes: 'endDate' of type date; 'id' of type int; 'startDate' of type date; 'timesLeftToUse' of type int.
+The class 'tda593::california::DataService' has no attributes.
+The class 'tda593::facilities::ConferenceRoom' has the following attributes: 'numberOfSeats' of type int; 'equipment' of type str.
+The class 'BillManager' has no attributes.
+The class 'tda593::billing::AdminDiscountManager' has no attributes.
+The class 'tda593::booking::StayRequest' has the following attributes: 'id' of type int; 'text' of type str; 'timeStamp' of type date.
+The class 'booking::LegalEntityDataService' has no attributes.
+The class 'billing::DiscountManagerImpl' has no attributes.
+The class 'tda593::booking::BookingManagerImpl' has no attributes.
+The class 'tda593::billing::BankingManager' has no attributes.
+The class 'tda593::facilities::RoomType' has the following attributes: 'description' of type str; 'name' of type str; 'roomApprovals' of type str; 'price' of type float.
+The class 'booking::Booking' has no attributes.
+The class 'facilities::RoomTypeDataService' has no attributes.
+The class 'tda593::facilities::AdminRoomManagerImpl' has no attributes.
+The class 'tda593::facilities::AdminRoomManager' has no attributes.
+The class 'tda593::facilities::Room' has the following attributes: 'isBeingCleaned' of type bool; 'disabilityApprovals' of type str; 'floor' of type int; 'isOperational' of type bool; 'description' of type str; 'roomNumber' of type str; 'photos' of type str.
+The class 'tda593::booking::TravelInformation' has the following attributes: 'comment' of type str; 'id' of type int; 'trackingId' of type str.
+The class 'booking::LegalEntity' has no attributes.
+The class 'Discount' has no attributes.
+The class 'tda593::booking::Booking' has the following attributes: 'isCanceled' of type bool; 'price' of type float; 'endDate' of type date; 'id' of type int; 'startDate' of type date; 'specialRequest' of type str.
+The class 'tda593::booking::BookingManager' has no attributes.
+The class 'facilities::KeyCard' has no attributes.
+The class 'BookingManager' has no attributes.
+The class 'tda593::billing::Service' has the following attributes: 'price' of type float; 'id' of type int; 'name' of type str.
+The class 'facilities::RoomType' has no attributes.
+The class 'billing::DiscountLimit' has no attributes.
+The class 'billing::ServiceDataService' has no attributes.
+The class 'tda593::booking::LegalEntityManagerImpl' has no attributes.
+The class 'tda593::billing::BankingManagerImpl' has no attributes.
+The class 'RoomManager' has no attributes.
+The class 'CreditCardManager' has no attributes.
+The class 'tda593::booking::RoomStay' has the following attributes: 'active' of type bool; 'id' of type int.
+The class 'tda593::booking::BookingDataService' has no attributes.
+The class 'tda593::booking::LegalEntityManager' has no attributes.
+The enumeration 'DisabilityApproval' does not specify any literals.
+The enumeration 'RoomApproval' does not specify any literals.
+'tda593::booking::BookingManagerImpl' is a specialization of 'BookingManager'.
+'tda593::facilities::AdminRoomManagerImpl' is a specialization of 'facilities::AdminRoomManager'.
+'tda593::booking::Person' is a specialization of 'LegalEntity'.
+'tda593::billing::BankingManagerImpl' is a specialization of 'BankingManager'.
+'tda593::facilities::AdminRoomManagerImpl' is a specialization of 'facilities::RoomManagerImpl'.
+'tda593::billing::AdminDiscountManagerImpl' is a specialization of 'billing::DiscountManagerImpl'.
+'tda593::booking::LegalEntityManagerImpl' is a specialization of 'LegalEntityManager'.
+'tda593::billing::DiscountManagerImpl' is a specialization of 'DiscountManager'.
+'tda593::billing::AdminServiceManagerImpl' is a specialization of 'billing::ServiceManagerImpl'.
+'tda593::billing::AdminServiceManagerImpl' is a specialization of 'billing::AdminServiceManager'.
+'tda593::booking::Organization' is a specialization of 'LegalEntity'.
+'tda593::facilities::AdminKeyCardManagerImpl' is a specialization of 'facilities::AdminKeyCardManager'.
+'tda593::billing::CreditCardManagerImpl' is a specialization of 'CreditCardManager'.
+'tda593::billing::ServiceManagerImpl' is a specialization of 'ServiceManager'.
+'tda593::facilities::KeyCardManagerImpl' is a specialization of 'KeyCardManager'.
+'tda593::billing::AdminServiceManager' is a specialization of 'ServiceManager'.
+'tda593::facilities::ConferenceRoom' is a specialization of 'Room'.
+'tda593::billing::BillManagerImpl' is a specialization of 'BillManager'.
+'tda593::facilities::AdminRoomManager' is a specialization of 'RoomManager'.
+'tda593::billing::SumDiscount' is a specialization of 'Discount'.
+'tda593::billing::AdminDiscountManagerImpl' is a specialization of 'billing::AdminDiscountManager'.
+'tda593::facilities::GuestRoom' is a specialization of 'Room'.
+'tda593::facilities::AdminKeyCardManagerImpl' is a specialization of 'facilities::KeyCardManagerImpl'.
+'tda593::facilities::RoomManagerImpl' is a specialization of 'RoomManager'.
+'tda593::facilities::AdminKeyCardManager' is a specialization of 'KeyCardManager'.
+'tda593::billing::BookingBill' is a specialization of 'Bill'.
+'tda593::billing::PercentageDiscount' is a specialization of 'Discount'.
+'tda593::billing::AdminDiscountManager' is a specialization of 'DiscountManager'.
+'booking::LegalEntity' (role 'booking_LegalEntity35', cardinality 0..*) is associated with 'tda593::booking::Booking' (role 'tda593_booking_Booking34', cardinality 0..*).
+'booking::Person' (role 'booking_Person', cardinality 0..*) is associated with 'tda593::booking::RoomStay' (role 'tda593_booking_RoomStay42', cardinality 0..*).
+'tda593::booking::RoomStay' (role 'tda593_booking_RoomStay', cardinality 0..*) is associated with 'booking::StayRequest' (role 'booking_StayRequest', cardinality 0..*).
+'tda593::booking::RoomStay' (role 'tda593_booking_RoomStay44', cardinality 0..*) is associated with 'facilities::Room' (role 'facilities_Room', cardinality 0..*).
+'tda593::billing::Bill' (role 'tda593_billing_Bill16', cardinality 0..*) is associated with 'booking::LegalEntity' (role 'booking_LegalEntity17', cardinality 0..*).
+'billing::ServiceDataService' (role 'billing_ServiceDataService', cardinality 0..*) is associated with 'tda593::billing::ServiceManagerImpl' (role 'tda593_billing_ServiceManagerImpl', cardinality 0..*).
+'billing::DiscountDataService' (role 'billing_DiscountDataService', cardinality 0..*) is associated with 'tda593::billing::DiscountManagerImpl' (role 'tda593_billing_DiscountManagerImpl', cardinality 0..*).
+'tda593::booking::Booking' (role 'tda593_booking_Booking32', cardinality 0..*) is associated with 'booking::TravelInformation' (role 'booking_TravelInformation', cardinality 0..*).
+'tda593::booking::Booking' (role 'tda593_booking_Booking', cardinality 0..*) is associated with 'facilities::RoomType' (role 'facilities_RoomType30', cardinality 0..*).
+'billing::DiscountLimit' (role 'billing_DiscountLimit', cardinality 0..*) is associated with 'tda593::billing::Discount' (role 'tda593_billing_Discount', cardinality 0..*).
+'tda593::facilities::RoomManagerImpl' (role 'tda593_facilities_RoomManagerImpl7', cardinality 0..*) is associated with 'facilities::KeyCardManager' (role 'facilities_KeyCardManager', cardinality 0..*).
+'tda593::facilities::KeyCardManagerImpl' (role 'tda593_facilities_KeyCardManagerImpl', cardinality 0..*) is associated with 'facilities::KeyCardDataService' (role 'facilities_KeyCardDataService', cardinality 0..*).
+'tda593::booking::BookingManagerImpl' (role 'tda593_booking_BookingManagerImpl47', cardinality 0..*) is associated with 'facilities::RoomManager' (role 'facilities_RoomManager', cardinality 0..*).
+'tda593::booking::TravelInformation' (role 'tda593_booking_TravelInformation', cardinality 0..*) is associated with 'booking::TravelInformation' (role 'booking_TravelInformation39', cardinality 0..*).
+'booking::LegalEntity' (role 'booking_LegalEntity', cardinality 0..*) is associated with 'tda593::billing::DiscountLimit' (role 'tda593_billing_DiscountLimit', cardinality 0..*).
+'tda593::booking::BookingManagerImpl' (role 'tda593_booking_BookingManagerImpl', cardinality 0..*) is associated with 'booking::BookingDataService' (role 'booking_BookingDataService', cardinality 0..*).
+'booking::BookingManager' (role 'booking_BookingManager', cardinality 0..*) is associated with 'tda593::billing::BillManagerImpl' (role 'tda593_billing_BillManagerImpl26', cardinality 0..*).
+'tda593::billing::Purchase' (role 'tda593_billing_Purchase', cardinality 0..*) is associated with 'billing::Service' (role 'billing_Service', cardinality 0..*).
+'tda593::billing::BillManagerImpl' (role 'tda593_billing_BillManagerImpl', cardinality 0..*) is associated with 'billing::BillDataService' (role 'billing_BillDataService', cardinality 0..*).
+'billing::Purchase' (role 'billing_Purchase', cardinality 0..*) is associated with 'tda593::billing::Bill' (role 'tda593_billing_Bill', cardinality 0..*).
+'booking::LegalEntityDataService' (role 'booking_LegalEntityDataService', cardinality 0..*) is associated with 'tda593::booking::LegalEntityManagerImpl' (role 'tda593_booking_LegalEntityManagerImpl', cardinality 0..*).
+'facilities::KeyCard' (role 'facilities_KeyCard', cardinality 0..*) is associated with 'tda593::facilities::Room' (role 'tda593_facilities_Room', cardinality 0..*).
+'booking::Booking' (role 'booking_Booking', cardinality 0..*) is associated with 'tda593::billing::BookingBill' (role 'tda593_billing_BookingBill', cardinality 0..*).
+'tda593::facilities::RoomManagerImpl' (role 'tda593_facilities_RoomManagerImpl5', cardinality 0..*) is associated with 'facilities::RoomTypeDataService' (role 'facilities_RoomTypeDataService', cardinality 0..*).
+'billing::Bill' (role 'billing_Bill', cardinality 0..*) is associated with 'tda593::billing::Bill' (role 'tda593_billing_Bill19', cardinality 0..*).
+'booking::LegalEntity' (role 'booking_LegalEntity23', cardinality 0..*) is associated with 'tda593::billing::CreditCardInformation' (role 'tda593_billing_CreditCardInformation', cardinality 0..*).
+'facilities::RoomType' (role 'facilities_RoomType', cardinality 0..*) is associated with 'tda593::facilities::Room' (role 'tda593_facilities_Room2', cardinality 0..*).
+'tda593::billing::CreditCardManagerImpl' (role 'tda593_billing_CreditCardManagerImpl', cardinality 0..*) is associated with 'billing::CreditCardInformationDataService' (role 'billing_CreditCardInformationDataService', cardinality 0..*).
+'tda593::booking::Booking' (role 'tda593_booking_Booking37', cardinality 0..*) is associated with 'booking::RoomStay' (role 'booking_RoomStay', cardinality 0..*).
+'billing::Discount' (role 'billing_Discount', cardinality 0..*) is associated with 'tda593::billing::Bill' (role 'tda593_billing_Bill14', cardinality 0..*).
+'facilities::RoomDataService' (role 'facilities_RoomDataService', cardinality 0..*) is associated with 'tda593::facilities::RoomManagerImpl' (role 'tda593_facilities_RoomManagerImpl', cardinality 0..*).

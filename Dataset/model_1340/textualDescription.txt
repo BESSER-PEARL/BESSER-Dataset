@@ -1,0 +1,215 @@
+The model has 81 class(es).
+The class 'TypedRefCS' has no attributes.
+The class 'basecs::PathElementCS' has no attributes.
+The class 'basecs::TypedTypeRefCS' has no attributes.
+The class 'basecs::EnumerationLiteralCS' has the following attributes: 'value' of type int.
+The class 'basecs::RootPackageCS' has no attributes.
+The class 'basecs::ClassifierCS' has the following attributes: 'qualifier' of type str; 'instanceClassName' of type str.
+The class 'TypeRefCS' has no attributes.
+The class 'basecs::TemplateableElementCS' has no attributes.
+The class 'basecs::AnnotationCS' has no attributes.
+The class 'ModelElementCS' has no attributes.
+The class 'Pivotable' has no attributes.
+The class 'basecs::TemplateSignatureCS' has no attributes.
+The class 'basecs::TypedElementCS' has the following attributes: 'qualifier' of type str; 'optional' of type bool.
+The class 'basecs::DataTypeCS' has no attributes.
+The class 'basecs::Property' has no attributes.
+The class 'basecs::ClassCS' has no attributes.
+The class 'RootCS' has no attributes.
+The class 'basecs::DetailCS' has the following attributes: 'value' of type str.
+The class 'TypedElementCS' has no attributes.
+The class 'basecs::ElementRefCS' has no attributes.
+The class 'basecs::PrimitiveTypeRefCS' has the following attributes: 'name' of type str.
+The class 'StructuralFeatureCS' has no attributes.
+The class 'basecs::LibraryCS' has no attributes.
+The class 'basecs::PathElementWithURICS' has the following attributes: 'uri' of type str.
+The class 'basecs::Element' has no attributes.
+The class 'basecs::MultiplicityStringCS' has the following attributes: 'stringBounds' of type str.
+The class 'basecs::PackageOwnerCS' has no attributes.
+The class 'PivotableElementCS' has no attributes.
+The class 'basecs::NamedElementCS' has the following attributes: 'name' of type str.
+The class 'VisitableCS' has no attributes.
+The class 'basecs::RootCS' has no attributes.
+The class 'basecs::StructuralFeatureCS' has the following attributes: 'default' of type str.
+The class 'basecs::Type' has no attributes.
+The class 'ClassifierCS' has no attributes.
+The class 'PackageOwnerCS' has no attributes.
+The class 'basecs::PackageCS' has the following attributes: 'nsPrefix' of type str; 'nsURI' of type str.
+The class 'basecs::AnnotationElementCS' has no attributes.
+The class 'basecs::EnumerationCS' has no attributes.
+The class 'FeatureCS' has no attributes.
+The class 'basecs::NamespaceCS' has no attributes.
+The class 'basecs::AttributeCS' has no attributes.
+The class 'TypeCS' has no attributes.
+The class 'basecs::MultiplicityBoundsCS' has the following attributes: 'upperBound' of type str; 'lowerBound' of type int.
+The class 'basecs::MultiplicityCS' has no attributes.
+The class 'basecs::ReferenceCS' has no attributes.
+The class 'basecs::EClassifier' has no attributes.
+The class 'basecs::FeatureCS' has no attributes.
+The class 'basecs::TuplePartCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'basecs::SpecificationCS' has the following attributes: 'exprString' of type str.
+The class 'basecs::ElementCS' has no attributes.
+The class 'ElementCS' has no attributes.
+The class 'basecs::LambdaTypeCS' has the following attributes: 'name' of type str.
+The class 'basecs::ImportCS' has the following attributes: 'all' of type bool.
+The class 'basecs::WildcardTypeRefCS' has no attributes.
+The class 'basecs::TemplateBindingCS' has no attributes.
+The class 'basecs::DocumentationCS' has the following attributes: 'value' of type str.
+The class 'basecs::OperationCS' has no attributes.
+The class 'basecs::TypedRefCS' has no attributes.
+The class 'basecs::TypeRefCS' has no attributes.
+The class 'basecs::PivotableElementCS' has no attributes.
+The class 'MultiplicityCS' has no attributes.
+The class 'basecs::ModelElementRefCS' has no attributes.
+The class 'PathElementCS' has no attributes.
+The class 'basecs::TypeCS' has no attributes.
+The class 'basecs::ConstraintCS' has the following attributes: 'stereotype' of type str.
+The class 'basecs::ParameterCS' has no attributes.
+The class 'basecs::TypeParameterCS' has no attributes.
+The class 'basecs::TupleTypeCS' has the following attributes: 'name' of type str.
+The class 'TemplateableElementCS' has no attributes.
+The class 'AnnotationElementCS' has no attributes.
+The class 'basecs::ModelElementCS' has the following attributes: 'originalXmiId' of type str; 'csi' of type str.
+The class 'basecs::VisitableCS' has no attributes.
+The class 'basecs::PathNameCS' has the following attributes: 'scopeFilter' of type str.
+The class 'NamespaceCS' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'basecs::TemplateParameterCS' has no attributes.
+The class 'basecs::TemplateParameterSubstitutionCS' has no attributes.
+The class 'basecs::Namespace' has no attributes.
+The class 'TemplateParameterCS' has no attributes.
+The class 'ElementRefCS' has no attributes.
+The enumeration 'IteratorKind' has the following literals: 'Accumulator', 'Parameter', 'Iterator'.
+'basecs::AnnotationCS' is a specialization of 'AnnotationElementCS'.
+'basecs::MultiplicityBoundsCS' is a specialization of 'MultiplicityCS'.
+'basecs::OperationCS' is a specialization of 'FeatureCS'.
+'basecs::ClassifierCS' is a specialization of 'NamedElementCS'.
+'basecs::ElementRefCS' is a specialization of 'PivotableElementCS'.
+'basecs::PivotableElementCS' is a specialization of 'Pivotable'.
+'basecs::EnumerationCS' is a specialization of 'NamespaceCS'.
+'basecs::PathNameCS' is a specialization of 'ElementCS'.
+'basecs::TypeRefCS' is a specialization of 'ElementRefCS'.
+'basecs::TypeParameterCS' is a specialization of 'TypeCS'.
+'basecs::EnumerationLiteralCS' is a specialization of 'NamedElementCS'.
+'basecs::TuplePartCS' is a specialization of 'TypedElementCS'.
+'basecs::FeatureCS' is a specialization of 'TypedElementCS'.
+'basecs::LambdaTypeCS' is a specialization of 'TypedRefCS'.
+'basecs::NamedElementCS' is a specialization of 'Nameable'.
+'basecs::ReferenceCS' is a specialization of 'StructuralFeatureCS'.
+'basecs::TemplateSignatureCS' is a specialization of 'ModelElementCS'.
+'basecs::PathNameCS' is a specialization of 'Pivotable'.
+'basecs::PivotableElementCS' is a specialization of 'ElementCS'.
+'basecs::PackageOwnerCS' is a specialization of 'ModelElementCS'.
+'basecs::TupleTypeCS' is a specialization of 'Nameable'.
+'basecs::PathElementCS' is a specialization of 'ElementCS'.
+'basecs::RootPackageCS' is a specialization of 'RootCS'.
+'basecs::DataTypeCS' is a specialization of 'NamespaceCS'.
+'basecs::OperationCS' is a specialization of 'TemplateableElementCS'.
+'basecs::TemplateParameterCS' is a specialization of 'NamedElementCS'.
+'basecs::TypedElementCS' is a specialization of 'NamedElementCS'.
+'basecs::NamespaceCS' is a specialization of 'NamedElementCS'.
+'basecs::RootCS' is a specialization of 'ModelElementCS'.
+'basecs::ElementCS' is a specialization of 'VisitableCS'.
+'basecs::LambdaTypeCS' is a specialization of 'TemplateableElementCS'.
+'basecs::PrimitiveTypeRefCS' is a specialization of 'TypedRefCS'.
+'basecs::TypeParameterCS' is a specialization of 'TemplateParameterCS'.
+'basecs::LibraryCS' is a specialization of 'NamespaceCS'.
+'basecs::SpecificationCS' is a specialization of 'ModelElementCS'.
+'basecs::PrimitiveTypeRefCS' is a specialization of 'Nameable'.
+'basecs::TemplateBindingCS' is a specialization of 'ElementRefCS'.
+'basecs::PathElementCS' is a specialization of 'Pivotable'.
+'basecs::AttributeCS' is a specialization of 'StructuralFeatureCS'.
+'basecs::TupleTypeCS' is a specialization of 'TypedRefCS'.
+'basecs::AnnotationElementCS' is a specialization of 'NamedElementCS'.
+'basecs::MultiplicityCS' is a specialization of 'ElementCS'.
+'basecs::TemplateParameterSubstitutionCS' is a specialization of 'ModelElementCS'.
+'basecs::ModelElementCS' is a specialization of 'PivotableElementCS'.
+'basecs::ClassifierCS' is a specialization of 'TypeCS'.
+'basecs::DataTypeCS' is a specialization of 'ClassifierCS'.
+'basecs::TemplateableElementCS' is a specialization of 'ElementCS'.
+'basecs::TypeCS' is a specialization of 'ModelElementCS'.
+'basecs::PackageCS' is a specialization of 'PackageOwnerCS'.
+'basecs::TypedRefCS' is a specialization of 'TypeRefCS'.
+'basecs::TypedTypeRefCS' is a specialization of 'TypedRefCS'.
+'basecs::LambdaTypeCS' is a specialization of 'Nameable'.
+'basecs::ModelElementRefCS' is a specialization of 'ElementRefCS'.
+'basecs::NamedElementCS' is a specialization of 'ModelElementCS'.
+'basecs::ImportCS' is a specialization of 'NamespaceCS'.
+'basecs::MultiplicityStringCS' is a specialization of 'MultiplicityCS'.
+'basecs::PackageCS' is a specialization of 'NamespaceCS'.
+'basecs::ParameterCS' is a specialization of 'TypedElementCS'.
+'basecs::ClassCS' is a specialization of 'NamespaceCS'.
+'basecs::EnumerationCS' is a specialization of 'ClassifierCS'.
+'basecs::ClassifierCS' is a specialization of 'TemplateableElementCS'.
+'basecs::ClassCS' is a specialization of 'ClassifierCS'.
+'basecs::ConstraintCS' is a specialization of 'NamedElementCS'.
+'basecs::RootPackageCS' is a specialization of 'PackageOwnerCS'.
+'basecs::DetailCS' is a specialization of 'NamedElementCS'.
+'basecs::StructuralFeatureCS' is a specialization of 'FeatureCS'.
+'basecs::PathElementWithURICS' is a specialization of 'PathElementCS'.
+'basecs::WildcardTypeRefCS' is a specialization of 'TypeRefCS'.
+'basecs::DocumentationCS' is a specialization of 'AnnotationElementCS'.
+'basecs::PathNameCS' (role 'basecs_PathNameCS69', cardinality 0..*) is associated with 'basecs::Element' (role 'basecs_Element70', cardinality 0..*).
+'basecs::TemplateableElementCS' (role 'owningTemplateElement', cardinality 0..*) is associated with 'basecs::TemplateSignatureCS' (role 'TemplateSignatureCS97', cardinality 0..*).
+'basecs::TemplateBindingCS' (role 'TemplateBindingCS113', cardinality 0..*) is associated with 'basecs::TypedTypeRefCS' (role 'owningTemplateBindableElement', cardinality 0..*).
+'basecs::PathNameCS' (role 'PathNameCS', cardinality 0..*) is associated with 'basecs::PathElementCS' (role 'path', cardinality 0..*).
+'basecs::ConstraintCS' (role 'basecs_ConstraintCS50', cardinality 0..*) is associated with 'basecs::OperationCS' (role 'basecs_OperationCS49', cardinality 0..*).
+'basecs::AnnotationCS' (role 'basecs_AnnotationCS', cardinality 0..*) is associated with 'basecs::ModelElementCS' (role 'basecs_ModelElementCS', cardinality 0..*).
+'basecs::OperationCS' (role 'OperationCS61', cardinality 0..*) is associated with 'basecs::ParameterCS' (role 'ownedParameter', cardinality 0..*).
+'basecs::PathNameCS' (role 'basecs_PathNameCS72', cardinality 0..*) is associated with 'basecs::ElementCS' (role 'basecs_ElementCS73', cardinality 0..*).
+'basecs::TypedTypeRefCS' (role 'TypedTypeRefCS', cardinality 0..*) is associated with 'basecs::TemplateBindingCS' (role 'ownedTemplateBinding', cardinality 0..*).
+'basecs::LambdaTypeCS' (role 'basecs_LambdaTypeCS', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS26', cardinality 0..*).
+'basecs::ImportCS' (role 'basecs_ImportCS', cardinality 0..*) is associated with 'basecs::PathNameCS' (role 'basecs_PathNameCS', cardinality 0..*).
+'basecs::TemplateParameterSubstitutionCS' (role 'basecs_TemplateParameterSubstitutionCS', cardinality 0..*) is associated with 'basecs::TypeRefCS' (role 'basecs_TypeRefCS', cardinality 0..*).
+'basecs::WildcardTypeRefCS' (role 'basecs_WildcardTypeRefCS', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS115', cardinality 0..*).
+'basecs::ConstraintCS' (role 'basecs_ConstraintCS53', cardinality 0..*) is associated with 'basecs::OperationCS' (role 'basecs_OperationCS52', cardinality 0..*).
+'basecs::SpecificationCS' (role 'basecs_SpecificationCS88', cardinality 0..*) is associated with 'basecs::StructuralFeatureCS' (role 'basecs_StructuralFeatureCS', cardinality 0..*).
+'basecs::AnnotationElementCS' (role 'basecs_AnnotationElementCS37', cardinality 0..*) is associated with 'basecs::ModelElementCS' (role 'basecs_ModelElementCS36', cardinality 0..*).
+'basecs::TypedRefCS' (role 'basecs_TypedRefCS32', cardinality 0..*) is associated with 'basecs::LambdaTypeCS' (role 'basecs_LambdaTypeCS31', cardinality 0..*).
+'basecs::PivotableElementCS' (role 'basecs_PivotableElementCS', cardinality 0..*) is associated with 'basecs::Element' (role 'basecs_Element75', cardinality 0..*).
+'basecs::ReferenceCS' (role 'basecs_ReferenceCS78', cardinality 0..*) is associated with 'basecs::Property' (role 'basecs_Property79', cardinality 0..*).
+'basecs::ElementCS' (role 'basecs_ElementCS18', cardinality 0..*) is associated with 'basecs::ElementCS' (role 'basecs_ElementCS', cardinality 0..*).
+'basecs::StructuralFeatureCS' (role 'StructuralFeatureCS', cardinality 0..*) is associated with 'basecs::ClassCS' (role 'owner', cardinality 0..*).
+'basecs::Property' (role 'basecs_Property', cardinality 0..*) is associated with 'basecs::ReferenceCS' (role 'basecs_ReferenceCS', cardinality 0..*).
+'basecs::LibraryCS' (role 'basecs_LibraryCS84', cardinality 0..*) is associated with 'basecs::RootCS' (role 'basecs_RootCS83', cardinality 0..*).
+'basecs::TypeParameterCS' (role 'basecs_TypeParameterCS102', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS103', cardinality 0..*).
+'basecs::TypedTypeRefCS' (role 'basecs_TypedTypeRefCS111', cardinality 0..*) is associated with 'basecs::Type' (role 'basecs_Type', cardinality 0..*).
+'basecs::TemplateSignatureCS' (role 'TemplateSignatureCS', cardinality 0..*) is associated with 'basecs::TemplateParameterCS' (role 'ownedTemplateParameter', cardinality 0..*).
+'basecs::LambdaTypeCS' (role 'basecs_LambdaTypeCS28', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS29', cardinality 0..*).
+'basecs::SpecificationCS' (role 'basecs_SpecificationCS', cardinality 0..*) is associated with 'basecs::ConstraintCS' (role 'basecs_ConstraintCS13', cardinality 0..*).
+'basecs::TypedRefCS' (role 'basecs_TypedRefCS47', cardinality 0..*) is associated with 'basecs::OperationCS' (role 'basecs_OperationCS', cardinality 0..*).
+'basecs::AnnotationCS' (role 'basecs_AnnotationCS2', cardinality 0..*) is associated with 'basecs::ModelElementRefCS' (role 'basecs_ModelElementRefCS', cardinality 0..*).
+'basecs::PathNameCS' (role 'basecs_PathNameCS40', cardinality 0..*) is associated with 'basecs::ModelElementRefCS' (role 'basecs_ModelElementRefCS39', cardinality 0..*).
+'basecs::EnumerationLiteralCS' (role 'basecs_EnumerationLiteralCS21', cardinality 0..*) is associated with 'basecs::EnumerationCS' (role 'basecs_EnumerationCS', cardinality 0..*).
+'basecs::ClassifierCS' (role 'ownedType', cardinality 0..*) is associated with 'basecs::PackageCS' (role 'PackageCS', cardinality 0..*).
+'basecs::ClassifierCS' (role 'basecs_ClassifierCS', cardinality 0..*) is associated with 'basecs::ConstraintCS' (role 'basecs_ConstraintCS', cardinality 0..*).
+'basecs::RootCS' (role 'basecs_RootCS', cardinality 0..*) is associated with 'basecs::ImportCS' (role 'basecs_ImportCS81', cardinality 0..*).
+'basecs::TemplateParameterCS' (role 'TemplateParameterCS', cardinality 0..*) is associated with 'basecs::TemplateSignatureCS' (role 'owningTemplateSignature', cardinality 0..*).
+'basecs::PathElementCS' (role 'basecs_PathElementCS66', cardinality 0..*) is associated with 'basecs::EClassifier' (role 'basecs_EClassifier', cardinality 0..*).
+'basecs::TemplateSignatureCS' (role 'ownedTemplateSignature', cardinality 0..*) is associated with 'basecs::TemplateableElementCS' (role 'TemplateableElementCS', cardinality 0..*).
+'basecs::TypedRefCS' (role 'basecs_TypedRefCS118', cardinality 0..*) is associated with 'basecs::WildcardTypeRefCS' (role 'basecs_WildcardTypeRefCS117', cardinality 0..*).
+'basecs::TypedTypeRefCS' (role 'basecs_TypedTypeRefCS', cardinality 0..*) is associated with 'basecs::PathNameCS' (role 'basecs_PathNameCS109', cardinality 0..*).
+'basecs::PackageCS' (role 'owner58', cardinality 0..*) is associated with 'basecs::ClassifierCS' (role 'ClassifierCS', cardinality 0..*).
+'basecs::DetailCS' (role 'basecs_DetailCS', cardinality 0..*) is associated with 'basecs::AnnotationElementCS' (role 'basecs_AnnotationElementCS', cardinality 0..*).
+'basecs::ConstraintCS' (role 'basecs_ConstraintCS15', cardinality 0..*) is associated with 'basecs::SpecificationCS' (role 'basecs_SpecificationCS16', cardinality 0..*).
+'basecs::PackageOwnerCS' (role 'basecs_PackageOwnerCS', cardinality 0..*) is associated with 'basecs::PackageCS' (role 'basecs_PackageCS', cardinality 0..*).
+'basecs::DataTypeCS' (role 'basecs_DataTypeCS', cardinality 0..*) is associated with 'basecs::EnumerationLiteralCS' (role 'basecs_EnumerationLiteralCS', cardinality 0..*).
+'basecs::Namespace' (role 'basecs_Namespace34', cardinality 0..*) is associated with 'basecs::LibraryCS' (role 'basecs_LibraryCS', cardinality 0..*).
+'basecs::OperationCS' (role 'ownedOperation', cardinality 0..*) is associated with 'basecs::ClassCS' (role 'ClassCS', cardinality 0..*).
+'basecs::TemplateParameterSubstitutionCS' (role 'TemplateParameterSubstitutionCS', cardinality 0..*) is associated with 'basecs::TemplateBindingCS' (role 'owningTemplateBinding', cardinality 0..*).
+'basecs::Element' (role 'basecs_Element64', cardinality 0..*) is associated with 'basecs::PathElementCS' (role 'basecs_PathElementCS', cardinality 0..*).
+'basecs::OperationCS' (role 'basecs_OperationCS55', cardinality 0..*) is associated with 'basecs::SpecificationCS' (role 'basecs_SpecificationCS56', cardinality 0..*).
+'basecs::MultiplicityCS' (role 'basecs_MultiplicityCS', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS107', cardinality 0..*).
+'basecs::ClassCS' (role 'basecs_ClassCS', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS', cardinality 0..*).
+'basecs::ClassCS' (role 'basecs_ClassCS8', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS9', cardinality 0..*).
+'basecs::TemplateBindingCS' (role 'TemplateBindingCS', cardinality 0..*) is associated with 'basecs::TemplateParameterSubstitutionCS' (role 'ownedParameterSubstitution', cardinality 0..*).
+'basecs::Element' (role 'basecs_Element', cardinality 0..*) is associated with 'basecs::ModelElementRefCS' (role 'basecs_ModelElementRefCS42', cardinality 0..*).
+'basecs::ClassCS' (role 'owningClass', cardinality 0..*) is associated with 'basecs::OperationCS' (role 'OperationCS', cardinality 0..*).
+'basecs::TypeParameterCS' (role 'basecs_TypeParameterCS', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS100', cardinality 0..*).
+'basecs::StructuralFeatureCS' (role 'ownedProperty', cardinality 0..*) is associated with 'basecs::ClassCS' (role 'ClassCS86', cardinality 0..*).
+'basecs::Namespace' (role 'basecs_Namespace', cardinality 0..*) is associated with 'basecs::ImportCS' (role 'basecs_ImportCS24', cardinality 0..*).
+'basecs::PathElementCS' (role 'PathElementCS', cardinality 0..*) is associated with 'basecs::PathNameCS' (role 'pathName', cardinality 0..*).
+'basecs::TypedElementCS' (role 'basecs_TypedElementCS', cardinality 0..*) is associated with 'basecs::TypedRefCS' (role 'basecs_TypedRefCS105', cardinality 0..*).
+'basecs::ParameterCS' (role 'ParameterCS', cardinality 0..*) is associated with 'basecs::OperationCS' (role 'owner45', cardinality 0..*).
+'basecs::TupleTypeCS' (role 'basecs_TupleTypeCS', cardinality 0..*) is associated with 'basecs::TuplePartCS' (role 'basecs_TuplePartCS', cardinality 0..*).

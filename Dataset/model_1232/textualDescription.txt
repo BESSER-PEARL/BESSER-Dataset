@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'IdentifierCS' has no attributes.
+The class 'qvt::cst::IdentifiedCS' has no attributes.
+The class 'qvt::cst::ErrorNode' has the following attributes: 'message' of type str.
+The class 'cst::qvt::EObject' has no attributes.
+The class 'qvt::cst::IHasName' has no attributes.
+The class 'cst::CSTNode' has no attributes.
+The class 'cst::IHasName' has no attributes.
+The class 'qvt::cst::IdentifierCS' has the following attributes: 'value' of type str.
+'qvt::cst::IdentifierCS' is a specialization of 'cst::IHasName'.
+'qvt::cst::IdentifierCS' is a specialization of 'cst::CSTNode'.
+'qvt::cst::IdentifiedCS' is a specialization of 'cst::CSTNode'.
+'qvt::cst::IdentifiedCS' is a specialization of 'cst::IHasName'.
+'IdentifierCS' (role 'IdentifierCS', cardinality 0..*) is associated with 'qvt::cst::IdentifiedCS' (role 'qvt_cst_IdentifiedCS', cardinality 0..*).
+'cst::qvt::EObject' (role 'cst_qvt_EObject4', cardinality 0..*) is associated with 'qvt::cst::IdentifierCS' (role 'qvt_cst_IdentifierCS', cardinality 0..*).
+'qvt::cst::IdentifiedCS' (role 'qvt_cst_IdentifiedCS2', cardinality 0..*) is associated with 'cst::qvt::EObject' (role 'cst_qvt_EObject', cardinality 0..*).

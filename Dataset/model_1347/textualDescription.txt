@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'source::EObject' has no attributes.
+The class 'source::X' has the following attributes: 'isA1' of type bool; 'name' of type str; 'isA2' of type bool.
+The class 'source::SRoot' has no attributes.
+The class 'source::Y' has the following attributes: 'name' of type str.
+The class 'source::Y2' has no attributes.
+The class 'Y' has no attributes.
+The class 'source::SElement' has no attributes.
+The class 'source::Z' has no attributes.
+The class 'source::Y1' has no attributes.
+The class 'source::PathElementCS' has the following attributes: 'name' of type str.
+The class 'SElement' has no attributes.
+The class 'source::PathNameCS' has no attributes.
+'source::Y2' is a specialization of 'Y'.
+'source::PathElementCS' is a specialization of 'SElement'.
+'source::X' is a specialization of 'SElement'.
+'source::Y' is a specialization of 'SElement'.
+'source::Y1' is a specialization of 'Y'.
+'source::PathNameCS' is a specialization of 'SElement'.
+'source::Z' is a specialization of 'SElement'.
+'source::SRoot' is a specialization of 'SElement'.
+'source::Y' (role 'Y4', cardinality 0..*) is associated with 'source::Z' (role 'ownsZ', cardinality 0..*).
+'source::X' (role 'source_X', cardinality 0..*) is associated with 'source::SRoot' (role 'source_SRoot', cardinality 0..*).
+'source::PathNameCS' (role 'source_PathNameCS9', cardinality 0..*) is associated with 'source::PathElementCS' (role 'source_PathElementCS', cardinality 0..*).
+'source::Y' (role 'toY', cardinality 0..*) is associated with 'source::Z' (role 'Z', cardinality 0..*).
+'source::SElement' (role 'source_SElement', cardinality 0..*) is associated with 'source::EObject' (role 'source_EObject', cardinality 0..*).
+'source::Y' (role 'ownsY', cardinality 0..*) is associated with 'source::X' (role 'X', cardinality 0..*).
+'source::PathNameCS' (role 'source_PathNameCS', cardinality 0..*) is associated with 'source::Z' (role 'source_Z', cardinality 0..*).
+'source::X' (role 'toX', cardinality 0..*) is associated with 'source::Y' (role 'Y', cardinality 0..*).

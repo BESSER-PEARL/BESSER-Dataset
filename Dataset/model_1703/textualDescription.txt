@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'emapsample::BookStore' has the following attributes: 'name' of type str.
+The class 'emapsample::Writer' has the following attributes: 'name' of type str.
+The class 'emapsample::WriterToBookMapEntry' has no attributes.
+The class 'emapsample::Book' has the following attributes: 'title' of type str.
+The class 'emapsample::WriterToNameMapEntry' has the following attributes: 'value' of type str.
+The class 'emapsample::EStringToStringMapEntry' has no attributes.
+The class 'emapsample::StringToWriterMapEntry' has the following attributes: 'key' of type str.
+The class 'Identifiable' has no attributes.
+'emapsample::BookStore' is a specialization of 'Identifiable'.
+'emapsample::Writer' is a specialization of 'Identifiable'.
+'emapsample::EStringToStringMapEntry' (role 'emapsample_EStringToStringMapEntry', cardinality 0..*) is associated with 'emapsample::BookStore' (role 'emapsample_BookStore3', cardinality 0..*).
+'emapsample::StringToWriterMapEntry' (role 'emapsample_StringToWriterMapEntry', cardinality 0..*) is associated with 'emapsample::Book' (role 'emapsample_Book', cardinality 0..*).
+'emapsample::Writer' (role 'emapsample_Writer', cardinality 0..*) is associated with 'emapsample::StringToWriterMapEntry' (role 'emapsample_StringToWriterMapEntry7', cardinality 0..*).
+'emapsample::WriterToBookMapEntry' (role 'emapsample_WriterToBookMapEntry12', cardinality 0..*) is associated with 'emapsample::Book' (role 'emapsample_Book13', cardinality 0..*).
+'emapsample::BookStore' (role 'emapsample_BookStore', cardinality 0..*) is associated with 'emapsample::WriterToBookMapEntry' (role 'emapsample_WriterToBookMapEntry', cardinality 0..*).
+'emapsample::Writer' (role 'emapsample_Writer10', cardinality 0..*) is associated with 'emapsample::WriterToBookMapEntry' (role 'emapsample_WriterToBookMapEntry9', cardinality 0..*).
+'emapsample::WriterToNameMapEntry' (role 'emapsample_WriterToNameMapEntry', cardinality 0..*) is associated with 'emapsample::BookStore' (role 'emapsample_BookStore5', cardinality 0..*).
+'emapsample::Writer' (role 'emapsample_Writer16', cardinality 0..*) is associated with 'emapsample::WriterToNameMapEntry' (role 'emapsample_WriterToNameMapEntry15', cardinality 0..*).

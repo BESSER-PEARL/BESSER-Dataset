@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'hierarchy::NonFiction' has the following attributes: 'Name' of type str.
+The class 'hierarchy::Book' has the following attributes: 'genre' of type str; 'Name' of type str.
+The class 'hierarchy::Fiction' has the following attributes: 'Name' of type str.
+The class 'hierarchy::HierLibrary' has the following attributes: 'Name' of type str.
+'hierarchy::Fiction' (role 'hierarchy_Fiction', cardinality 0..*) is associated with 'hierarchy::HierLibrary' (role 'hierarchy_HierLibrary', cardinality 0..*).
+'hierarchy::Book' (role 'hierarchy_Book7', cardinality 0..*) is associated with 'hierarchy::NonFiction' (role 'hierarchy_NonFiction6', cardinality 0..*).
+'hierarchy::NonFiction' (role 'hierarchy_NonFiction', cardinality 0..*) is associated with 'hierarchy::HierLibrary' (role 'hierarchy_HierLibrary2', cardinality 0..*).
+'hierarchy::Fiction' (role 'hierarchy_Fiction4', cardinality 0..*) is associated with 'hierarchy::Book' (role 'hierarchy_Book', cardinality 0..*).

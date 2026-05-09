@@ -1,0 +1,212 @@
+The model has 80 class(es).
+The class 'FeatureCS' has no attributes.
+The class 'NamespaceCS' has no attributes.
+The class 'RootCS' has no attributes.
+The class 'baseCST::DetailCS' has the following attributes: 'value' of type str.
+The class 'baseCST::PrimitiveTypeRefCS' has the following attributes: 'name' of type str.
+The class 'baseCST::AnnotationCS' has no attributes.
+The class 'baseCST::Namespace' has no attributes.
+The class 'baseCST::SpecificationCS' has the following attributes: 'exprString' of type str.
+The class 'baseCST::PathElementCS' has no attributes.
+The class 'baseCST::MultiplicityStringCS' has the following attributes: 'stringBounds' of type str.
+The class 'baseCST::AnnotationElementCS' has no attributes.
+The class 'PathElementCS' has no attributes.
+The class 'baseCST::TypeRefCS' has no attributes.
+The class 'TypeCS' has no attributes.
+The class 'baseCST::ReferenceCS' has no attributes.
+The class 'TypedElementCS' has no attributes.
+The class 'baseCST::MultiplicityBoundsCS' has the following attributes: 'lowerBound' of type int; 'upperBound' of type str.
+The class 'baseCST::TypedElementCS' has the following attributes: 'optional' of type bool; 'qualifier' of type str.
+The class 'baseCST::TypeParameterCS' has no attributes.
+The class 'baseCST::RootPackageCS' has no attributes.
+The class 'baseCST::ClassifierCS' has the following attributes: 'qualifier' of type str; 'instanceClassName' of type str.
+The class 'baseCST::TypedRefCS' has no attributes.
+The class 'baseCST::TupleTypeCS' has the following attributes: 'name' of type str.
+The class 'TemplateableElementCS' has no attributes.
+The class 'baseCST::ConstraintCS' has the following attributes: 'stereotype' of type str.
+The class 'baseCST::StructuralFeatureCS' has the following attributes: 'default' of type str.
+The class 'baseCST::OperationCS' has no attributes.
+The class 'baseCST::EnumerationLiteralCS' has the following attributes: 'value' of type int.
+The class 'baseCST::DataTypeCS' has no attributes.
+The class 'baseCST::Property' has no attributes.
+The class 'baseCST::FeatureCS' has no attributes.
+The class 'baseCST::EClassifier' has no attributes.
+The class 'baseCST::ElementCS' has no attributes.
+The class 'baseCST::LambdaTypeCS' has the following attributes: 'name' of type str.
+The class 'baseCST::TemplateParameterSubstitutionCS' has no attributes.
+The class 'PackageCS' has no attributes.
+The class 'baseCST::PackageCS' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'TypedRefCS' has no attributes.
+The class 'baseCST::NamespaceCS' has no attributes.
+The class 'baseCST::MultiplicityCS' has no attributes.
+The class 'baseCST::PivotableElementCS' has no attributes.
+The class 'ClassifierCS' has no attributes.
+The class 'baseCST::DocumentationCS' has the following attributes: 'value' of type str.
+The class 'AnnotationElementCS' has no attributes.
+The class 'baseCST::ModelElementRefCS' has no attributes.
+The class 'baseCST::EnumerationCS' has no attributes.
+The class 'baseCST::VisitableCS' has no attributes.
+The class 'TemplateParameterCS' has no attributes.
+The class 'PivotableElementCS' has no attributes.
+The class 'baseCST::TemplateParameterCS' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'ModelElementCS' has no attributes.
+The class 'baseCST::TemplateBindingCS' has no attributes.
+The class 'baseCST::ModelElementCS' has the following attributes: 'csi' of type str; 'originalXmiId' of type str.
+The class 'baseCST::TypeCS' has no attributes.
+The class 'TypeRefCS' has no attributes.
+The class 'baseCST::PathNameCS' has the following attributes: 'scopeFilter' of type str.
+The class 'MultiplicityCS' has no attributes.
+The class 'baseCST::Type' has no attributes.
+The class 'ElementCS' has no attributes.
+The class 'baseCST::LibraryCS' has no attributes.
+The class 'baseCST::WildcardTypeRefCS' has no attributes.
+The class 'NamedElementCS' has no attributes.
+The class 'baseCST::ClassCS' has no attributes.
+The class 'StructuralFeatureCS' has no attributes.
+The class 'baseCST::AttributeCS' has no attributes.
+The class 'baseCST::Element' has no attributes.
+The class 'Pivotable' has no attributes.
+The class 'baseCST::TuplePartCS' has no attributes.
+The class 'VisitableCS' has no attributes.
+The class 'baseCST::TemplateSignatureCS' has no attributes.
+The class 'baseCST::TypedTypeRefCS' has no attributes.
+The class 'baseCST::NamedElementCS' has the following attributes: 'name' of type str.
+The class 'baseCST::ElementRefCS' has no attributes.
+The class 'baseCST::PathElementWithURICS' has the following attributes: 'uri' of type str.
+The class 'ElementRefCS' has no attributes.
+The class 'baseCST::TemplateableElementCS' has no attributes.
+The class 'baseCST::RootCS' has no attributes.
+The class 'baseCST::ParameterCS' has no attributes.
+The class 'baseCST::ImportCS' has the following attributes: 'all' of type bool.
+The enumeration 'IteratorKind' has the following literals: 'Parameter', 'Accumulator', 'Iterator'.
+'baseCST::LambdaTypeCS' is a specialization of 'Nameable'.
+'baseCST::TemplateSignatureCS' is a specialization of 'ModelElementCS'.
+'baseCST::TypeParameterCS' is a specialization of 'TypeCS'.
+'baseCST::NamedElementCS' is a specialization of 'ModelElementCS'.
+'baseCST::TypedTypeRefCS' is a specialization of 'TypedRefCS'.
+'baseCST::OperationCS' is a specialization of 'FeatureCS'.
+'baseCST::PivotableElementCS' is a specialization of 'ElementCS'.
+'baseCST::ClassifierCS' is a specialization of 'TemplateableElementCS'.
+'baseCST::MultiplicityBoundsCS' is a specialization of 'MultiplicityCS'.
+'baseCST::PrimitiveTypeRefCS' is a specialization of 'Nameable'.
+'baseCST::PathElementCS' is a specialization of 'ElementCS'.
+'baseCST::TemplateableElementCS' is a specialization of 'ElementCS'.
+'baseCST::FeatureCS' is a specialization of 'TypedElementCS'.
+'baseCST::DetailCS' is a specialization of 'NamedElementCS'.
+'baseCST::NamespaceCS' is a specialization of 'NamedElementCS'.
+'baseCST::ReferenceCS' is a specialization of 'StructuralFeatureCS'.
+'baseCST::TypedElementCS' is a specialization of 'NamedElementCS'.
+'baseCST::DocumentationCS' is a specialization of 'AnnotationElementCS'.
+'baseCST::AnnotationCS' is a specialization of 'AnnotationElementCS'.
+'baseCST::TuplePartCS' is a specialization of 'TypedElementCS'.
+'baseCST::AnnotationElementCS' is a specialization of 'NamedElementCS'.
+'baseCST::TypeCS' is a specialization of 'ModelElementCS'.
+'baseCST::TupleTypeCS' is a specialization of 'TypedRefCS'.
+'baseCST::TypeParameterCS' is a specialization of 'TemplateParameterCS'.
+'baseCST::TupleTypeCS' is a specialization of 'Nameable'.
+'baseCST::LibraryCS' is a specialization of 'NamespaceCS'.
+'baseCST::TemplateParameterSubstitutionCS' is a specialization of 'ModelElementCS'.
+'baseCST::MultiplicityStringCS' is a specialization of 'MultiplicityCS'.
+'baseCST::DataTypeCS' is a specialization of 'ClassifierCS'.
+'baseCST::TemplateParameterCS' is a specialization of 'NamedElementCS'.
+'baseCST::ElementCS' is a specialization of 'VisitableCS'.
+'baseCST::ClassCS' is a specialization of 'ClassifierCS'.
+'baseCST::ModelElementRefCS' is a specialization of 'ElementRefCS'.
+'baseCST::EnumerationLiteralCS' is a specialization of 'NamedElementCS'.
+'baseCST::ClassifierCS' is a specialization of 'NamedElementCS'.
+'baseCST::PathNameCS' is a specialization of 'ElementCS'.
+'baseCST::RootPackageCS' is a specialization of 'PackageCS'.
+'baseCST::ClassifierCS' is a specialization of 'TypeCS'.
+'baseCST::ElementRefCS' is a specialization of 'PivotableElementCS'.
+'baseCST::ModelElementCS' is a specialization of 'PivotableElementCS'.
+'baseCST::SpecificationCS' is a specialization of 'ModelElementCS'.
+'baseCST::RootCS' is a specialization of 'ModelElementCS'.
+'baseCST::PathNameCS' is a specialization of 'Pivotable'.
+'baseCST::ImportCS' is a specialization of 'NamespaceCS'.
+'baseCST::EnumerationCS' is a specialization of 'ClassifierCS'.
+'baseCST::StructuralFeatureCS' is a specialization of 'FeatureCS'.
+'baseCST::ConstraintCS' is a specialization of 'NamedElementCS'.
+'baseCST::NamedElementCS' is a specialization of 'Nameable'.
+'baseCST::MultiplicityCS' is a specialization of 'ElementCS'.
+'baseCST::TemplateBindingCS' is a specialization of 'ElementRefCS'.
+'baseCST::WildcardTypeRefCS' is a specialization of 'TypeRefCS'.
+'baseCST::LambdaTypeCS' is a specialization of 'TemplateableElementCS'.
+'baseCST::PackageCS' is a specialization of 'NamespaceCS'.
+'baseCST::ParameterCS' is a specialization of 'TypedElementCS'.
+'baseCST::TypeRefCS' is a specialization of 'ElementRefCS'.
+'baseCST::OperationCS' is a specialization of 'TemplateableElementCS'.
+'baseCST::AttributeCS' is a specialization of 'StructuralFeatureCS'.
+'baseCST::PathElementWithURICS' is a specialization of 'PathElementCS'.
+'baseCST::EnumerationCS' is a specialization of 'NamespaceCS'.
+'baseCST::DataTypeCS' is a specialization of 'NamespaceCS'.
+'baseCST::ClassCS' is a specialization of 'NamespaceCS'.
+'baseCST::PrimitiveTypeRefCS' is a specialization of 'TypedRefCS'.
+'baseCST::RootPackageCS' is a specialization of 'RootCS'.
+'baseCST::TypedRefCS' is a specialization of 'TypeRefCS'.
+'baseCST::PivotableElementCS' is a specialization of 'Pivotable'.
+'baseCST::PathElementCS' is a specialization of 'Pivotable'.
+'baseCST::LambdaTypeCS' is a specialization of 'TypedRefCS'.
+'baseCST::OperationCS' (role 'baseCST_OperationCS55', cardinality 0..*) is associated with 'baseCST::SpecificationCS' (role 'baseCST_SpecificationCS56', cardinality 0..*).
+'baseCST::ImportCS' (role 'baseCST_ImportCS82', cardinality 0..*) is associated with 'baseCST::RootCS' (role 'baseCST_RootCS', cardinality 0..*).
+'baseCST::TypeParameterCS' (role 'baseCST_TypeParameterCS', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS101', cardinality 0..*).
+'baseCST::ElementCS' (role 'baseCST_ElementCS74', cardinality 0..*) is associated with 'baseCST::PathNameCS' (role 'baseCST_PathNameCS73', cardinality 0..*).
+'baseCST::StructuralFeatureCS' (role 'baseCST_StructuralFeatureCS', cardinality 0..*) is associated with 'baseCST::SpecificationCS' (role 'baseCST_SpecificationCS89', cardinality 0..*).
+'baseCST::PathElementCS' (role 'baseCST_PathElementCS', cardinality 0..*) is associated with 'baseCST::Element' (role 'baseCST_Element65', cardinality 0..*).
+'baseCST::TemplateBindingCS' (role 'TemplateBindingCS', cardinality 0..*) is associated with 'baseCST::TemplateParameterSubstitutionCS' (role 'ownedParameterSubstitution', cardinality 0..*).
+'baseCST::TupleTypeCS' (role 'baseCST_TupleTypeCS', cardinality 0..*) is associated with 'baseCST::TuplePartCS' (role 'baseCST_TuplePartCS', cardinality 0..*).
+'baseCST::OperationCS' (role 'ownedOperation', cardinality 0..*) is associated with 'baseCST::ClassCS' (role 'ClassCS', cardinality 0..*).
+'baseCST::EnumerationCS' (role 'baseCST_EnumerationCS', cardinality 0..*) is associated with 'baseCST::EnumerationLiteralCS' (role 'baseCST_EnumerationLiteralCS21', cardinality 0..*).
+'baseCST::LambdaTypeCS' (role 'baseCST_LambdaTypeCS31', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS32', cardinality 0..*).
+'baseCST::Namespace' (role 'baseCST_Namespace34', cardinality 0..*) is associated with 'baseCST::LibraryCS' (role 'baseCST_LibraryCS', cardinality 0..*).
+'baseCST::StructuralFeatureCS' (role 'ownedProperty', cardinality 0..*) is associated with 'baseCST::ClassCS' (role 'ClassCS87', cardinality 0..*).
+'baseCST::ParameterCS' (role 'ParameterCS', cardinality 0..*) is associated with 'baseCST::OperationCS' (role 'owner45', cardinality 0..*).
+'baseCST::TypedTypeRefCS' (role 'baseCST_TypedTypeRefCS112', cardinality 0..*) is associated with 'baseCST::Type' (role 'baseCST_Type', cardinality 0..*).
+'baseCST::ElementCS' (role 'baseCST_ElementCS18', cardinality 0..*) is associated with 'baseCST::ElementCS' (role 'baseCST_ElementCS', cardinality 0..*).
+'baseCST::ClassCS' (role 'baseCST_ClassCS', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS', cardinality 0..*).
+'baseCST::TemplateSignatureCS' (role 'TemplateSignatureCS', cardinality 0..*) is associated with 'baseCST::TemplateParameterCS' (role 'ownedTemplateParameter', cardinality 0..*).
+'baseCST::TemplateableElementCS' (role 'TemplateableElementCS', cardinality 0..*) is associated with 'baseCST::TemplateSignatureCS' (role 'ownedTemplateSignature', cardinality 0..*).
+'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS106', cardinality 0..*) is associated with 'baseCST::TypedElementCS' (role 'baseCST_TypedElementCS', cardinality 0..*).
+'baseCST::ModelElementCS' (role 'baseCST_ModelElementCS36', cardinality 0..*) is associated with 'baseCST::AnnotationElementCS' (role 'baseCST_AnnotationElementCS37', cardinality 0..*).
+'baseCST::PathNameCS' (role 'baseCST_PathNameCS', cardinality 0..*) is associated with 'baseCST::ImportCS' (role 'baseCST_ImportCS', cardinality 0..*).
+'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS104', cardinality 0..*) is associated with 'baseCST::TypeParameterCS' (role 'baseCST_TypeParameterCS103', cardinality 0..*).
+'baseCST::LambdaTypeCS' (role 'baseCST_LambdaTypeCS28', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS29', cardinality 0..*).
+'baseCST::TemplateBindingCS' (role 'TemplateBindingCS114', cardinality 0..*) is associated with 'baseCST::TypedTypeRefCS' (role 'owningTemplateBindableElement', cardinality 0..*).
+'baseCST::ConstraintCS' (role 'baseCST_ConstraintCS50', cardinality 0..*) is associated with 'baseCST::OperationCS' (role 'baseCST_OperationCS49', cardinality 0..*).
+'baseCST::LibraryCS' (role 'baseCST_LibraryCS85', cardinality 0..*) is associated with 'baseCST::RootCS' (role 'baseCST_RootCS84', cardinality 0..*).
+'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS26', cardinality 0..*) is associated with 'baseCST::LambdaTypeCS' (role 'baseCST_LambdaTypeCS', cardinality 0..*).
+'baseCST::TemplateParameterSubstitutionCS' (role 'baseCST_TemplateParameterSubstitutionCS', cardinality 0..*) is associated with 'baseCST::TypeRefCS' (role 'baseCST_TypeRefCS', cardinality 0..*).
+'baseCST::DataTypeCS' (role 'baseCST_DataTypeCS', cardinality 0..*) is associated with 'baseCST::EnumerationLiteralCS' (role 'baseCST_EnumerationLiteralCS', cardinality 0..*).
+'baseCST::OperationCS' (role 'baseCST_OperationCS52', cardinality 0..*) is associated with 'baseCST::ConstraintCS' (role 'baseCST_ConstraintCS53', cardinality 0..*).
+'baseCST::Namespace' (role 'baseCST_Namespace', cardinality 0..*) is associated with 'baseCST::ImportCS' (role 'baseCST_ImportCS24', cardinality 0..*).
+'baseCST::SpecificationCS' (role 'baseCST_SpecificationCS16', cardinality 0..*) is associated with 'baseCST::ConstraintCS' (role 'baseCST_ConstraintCS15', cardinality 0..*).
+'baseCST::PathNameCS' (role 'baseCST_PathNameCS40', cardinality 0..*) is associated with 'baseCST::ModelElementRefCS' (role 'baseCST_ModelElementRefCS39', cardinality 0..*).
+'baseCST::TemplateSignatureCS' (role 'owningTemplateSignature', cardinality 0..*) is associated with 'baseCST::TemplateParameterCS' (role 'TemplateParameterCS', cardinality 0..*).
+'baseCST::PathElementCS' (role 'path', cardinality 0..*) is associated with 'baseCST::PathNameCS' (role 'PathNameCS', cardinality 0..*).
+'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS108', cardinality 0..*) is associated with 'baseCST::MultiplicityCS' (role 'baseCST_MultiplicityCS', cardinality 0..*).
+'baseCST::Property' (role 'baseCST_Property', cardinality 0..*) is associated with 'baseCST::ReferenceCS' (role 'baseCST_ReferenceCS', cardinality 0..*).
+'baseCST::TemplateSignatureCS' (role 'TemplateSignatureCS98', cardinality 0..*) is associated with 'baseCST::TemplateableElementCS' (role 'owningTemplateElement', cardinality 0..*).
+'baseCST::ClassifierCS' (role 'baseCST_ClassifierCS', cardinality 0..*) is associated with 'baseCST::ConstraintCS' (role 'baseCST_ConstraintCS', cardinality 0..*).
+'baseCST::EClassifier' (role 'baseCST_EClassifier', cardinality 0..*) is associated with 'baseCST::PathElementCS' (role 'baseCST_PathElementCS67', cardinality 0..*).
+'baseCST::PathElementCS' (role 'PathElementCS', cardinality 0..*) is associated with 'baseCST::PathNameCS' (role 'pathName', cardinality 0..*).
+'baseCST::TemplateBindingCS' (role 'ownedTemplateBinding', cardinality 0..*) is associated with 'baseCST::TypedTypeRefCS' (role 'TypedTypeRefCS', cardinality 0..*).
+'baseCST::StructuralFeatureCS' (role 'StructuralFeatureCS', cardinality 0..*) is associated with 'baseCST::ClassCS' (role 'owner', cardinality 0..*).
+'baseCST::PathNameCS' (role 'baseCST_PathNameCS110', cardinality 0..*) is associated with 'baseCST::TypedTypeRefCS' (role 'baseCST_TypedTypeRefCS', cardinality 0..*).
+'baseCST::PackageCS' (role 'baseCST_PackageCS59', cardinality 0..*) is associated with 'baseCST::PackageCS' (role 'baseCST_PackageCS', cardinality 0..*).
+'baseCST::ParameterCS' (role 'ownedParameter', cardinality 0..*) is associated with 'baseCST::OperationCS' (role 'OperationCS62', cardinality 0..*).
+'baseCST::OperationCS' (role 'baseCST_OperationCS', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS47', cardinality 0..*).
+'baseCST::PackageCS' (role 'owner58', cardinality 0..*) is associated with 'baseCST::ClassifierCS' (role 'ClassifierCS', cardinality 0..*).
+'baseCST::SpecificationCS' (role 'baseCST_SpecificationCS', cardinality 0..*) is associated with 'baseCST::ConstraintCS' (role 'baseCST_ConstraintCS13', cardinality 0..*).
+'baseCST::PackageCS' (role 'PackageCS', cardinality 0..*) is associated with 'baseCST::ClassifierCS' (role 'ownedType', cardinality 0..*).
+'baseCST::PathNameCS' (role 'baseCST_PathNameCS70', cardinality 0..*) is associated with 'baseCST::Element' (role 'baseCST_Element71', cardinality 0..*).
+'baseCST::WildcardTypeRefCS' (role 'baseCST_WildcardTypeRefCS', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS116', cardinality 0..*).
+'baseCST::WildcardTypeRefCS' (role 'baseCST_WildcardTypeRefCS118', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS119', cardinality 0..*).
+'baseCST::AnnotationCS' (role 'baseCST_AnnotationCS', cardinality 0..*) is associated with 'baseCST::ModelElementCS' (role 'baseCST_ModelElementCS', cardinality 0..*).
+'baseCST::TemplateParameterSubstitutionCS' (role 'TemplateParameterSubstitutionCS', cardinality 0..*) is associated with 'baseCST::TemplateBindingCS' (role 'owningTemplateBinding', cardinality 0..*).
+'baseCST::Element' (role 'baseCST_Element', cardinality 0..*) is associated with 'baseCST::ModelElementRefCS' (role 'baseCST_ModelElementRefCS42', cardinality 0..*).
+'baseCST::PivotableElementCS' (role 'baseCST_PivotableElementCS', cardinality 0..*) is associated with 'baseCST::Element' (role 'baseCST_Element76', cardinality 0..*).
+'baseCST::OperationCS' (role 'OperationCS', cardinality 0..*) is associated with 'baseCST::ClassCS' (role 'owningClass', cardinality 0..*).
+'baseCST::ModelElementRefCS' (role 'baseCST_ModelElementRefCS', cardinality 0..*) is associated with 'baseCST::AnnotationCS' (role 'baseCST_AnnotationCS2', cardinality 0..*).
+'baseCST::ClassCS' (role 'baseCST_ClassCS8', cardinality 0..*) is associated with 'baseCST::TypedRefCS' (role 'baseCST_TypedRefCS9', cardinality 0..*).
+'baseCST::Property' (role 'baseCST_Property80', cardinality 0..*) is associated with 'baseCST::ReferenceCS' (role 'baseCST_ReferenceCS79', cardinality 0..*).
+'baseCST::DetailCS' (role 'baseCST_DetailCS', cardinality 0..*) is associated with 'baseCST::AnnotationElementCS' (role 'baseCST_AnnotationElementCS', cardinality 0..*).

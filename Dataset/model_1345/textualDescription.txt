@@ -1,0 +1,50 @@
+The model has 23 class(es).
+The class 'MappingStatementCS' has no attributes.
+The class 'qvtimperativecs::MappingCS' has no attributes.
+The class 'qvtimperativecs::Mapping' has no attributes.
+The class 'AbstractMappingCS' has no attributes.
+The class 'qvtimperativecs::MappingCallCS' has the following attributes: 'isInfinite' of type bool.
+The class 'qvtimperativecs::ImperativeDomainCS' has no attributes.
+The class 'qvtimperativecs::MappingSequenceCS' has no attributes.
+The class 'qvtimperativecs::Variable' has no attributes.
+The class 'qvtimperativecs::MappingStatementCS' has no attributes.
+The class 'qvtimperativecs::VariableCS' has no attributes.
+The class 'qvtimperativecs::ImperativePredicateOrAssignmentCS' has the following attributes: 'isAccumulate' of type bool.
+The class 'qvtimperativecs::QueryCS' has no attributes.
+The class 'qvtimperativecs::TransformationCS' has no attributes.
+The class 'ModelElementCS' has no attributes.
+The class 'qvtimperativecs::TopLevelCS' has no attributes.
+The class 'qvtimperativecs::ExpCS' has no attributes.
+The class 'qvtimperativecs::PathNameCS' has no attributes.
+The class 'PredicateOrAssignmentCS' has no attributes.
+The class 'ExpCS' has no attributes.
+The class 'DomainCS' has no attributes.
+The class 'RootPackageCS' has no attributes.
+The class 'qvtimperativecs::MappingLoopCS' has no attributes.
+The class 'qvtimperativecs::MappingCallBindingCS' has the following attributes: 'isPolled' of type bool.
+'qvtimperativecs::MappingCallCS' is a specialization of 'MappingStatementCS'.
+'qvtimperativecs::MappingSequenceCS' is a specialization of 'MappingStatementCS'.
+'qvtimperativecs::MappingCS' is a specialization of 'AbstractMappingCS'.
+'qvtimperativecs::TopLevelCS' is a specialization of 'RootPackageCS'.
+'qvtimperativecs::MappingCallBindingCS' is a specialization of 'ExpCS'.
+'qvtimperativecs::ImperativeDomainCS' is a specialization of 'DomainCS'.
+'qvtimperativecs::MappingStatementCS' is a specialization of 'ModelElementCS'.
+'qvtimperativecs::ImperativePredicateOrAssignmentCS' is a specialization of 'PredicateOrAssignmentCS'.
+'qvtimperativecs::MappingLoopCS' is a specialization of 'MappingStatementCS'.
+'qvtimperativecs::TopLevelCS' (role 'qvtimperativecs_TopLevelCS', cardinality 0..*) is associated with 'qvtimperativecs::TransformationCS' (role 'qvtimperativecs_TransformationCS', cardinality 0..*).
+'qvtimperativecs::MappingCS' (role 'qvtimperativecs_MappingCS31', cardinality 0..*) is associated with 'qvtimperativecs::TopLevelCS' (role 'qvtimperativecs_TopLevelCS30', cardinality 0..*).
+'qvtimperativecs::Variable' (role 'qvtimperativecs_Variable', cardinality 0..*) is associated with 'qvtimperativecs::MappingCallBindingCS' (role 'qvtimperativecs_MappingCallBindingCS11', cardinality 0..*).
+'qvtimperativecs::MappingLoopCS' (role 'qvtimperativecs_MappingLoopCS22', cardinality 0..*) is associated with 'qvtimperativecs::MappingSequenceCS' (role 'qvtimperativecs_MappingSequenceCS23', cardinality 0..*).
+'qvtimperativecs::ExpCS' (role 'qvtimperativecs_ExpCS20', cardinality 0..*) is associated with 'qvtimperativecs::MappingLoopCS' (role 'qvtimperativecs_MappingLoopCS19', cardinality 0..*).
+'qvtimperativecs::MappingCS' (role 'qvtimperativecs_MappingCS', cardinality 0..*) is associated with 'qvtimperativecs::MappingSequenceCS' (role 'qvtimperativecs_MappingSequenceCS', cardinality 0..*).
+'qvtimperativecs::PathNameCS' (role 'qvtimperativecs_PathNameCS3', cardinality 0..*) is associated with 'qvtimperativecs::ImperativeDomainCS' (role 'qvtimperativecs_ImperativeDomainCS2', cardinality 0..*).
+'qvtimperativecs::VariableCS' (role 'qvtimperativecs_VariableCS', cardinality 0..*) is associated with 'qvtimperativecs::MappingLoopCS' (role 'qvtimperativecs_MappingLoopCS', cardinality 0..*).
+'qvtimperativecs::QueryCS' (role 'qvtimperativecs_QueryCS', cardinality 0..*) is associated with 'qvtimperativecs::TopLevelCS' (role 'qvtimperativecs_TopLevelCS28', cardinality 0..*).
+'qvtimperativecs::PathNameCS' (role 'qvtimperativecs_PathNameCS7', cardinality 0..*) is associated with 'qvtimperativecs::MappingCS' (role 'qvtimperativecs_MappingCS6', cardinality 0..*).
+'qvtimperativecs::MappingCallCS' (role 'qvtimperativecs_MappingCallCS', cardinality 0..*) is associated with 'qvtimperativecs::PathNameCS' (role 'qvtimperativecs_PathNameCS14', cardinality 0..*).
+'qvtimperativecs::MappingCallCS' (role 'qvtimperativecs_MappingCallCS16', cardinality 0..*) is associated with 'qvtimperativecs::Mapping' (role 'qvtimperativecs_Mapping', cardinality 0..*).
+'qvtimperativecs::PathNameCS' (role 'qvtimperativecs_PathNameCS', cardinality 0..*) is associated with 'qvtimperativecs::ImperativeDomainCS' (role 'qvtimperativecs_ImperativeDomainCS', cardinality 0..*).
+'qvtimperativecs::MappingSequenceCS' (role 'qvtimperativecs_MappingSequenceCS25', cardinality 0..*) is associated with 'qvtimperativecs::MappingStatementCS' (role 'qvtimperativecs_MappingStatementCS', cardinality 0..*).
+'qvtimperativecs::MappingCallCS' (role 'owningMappingCall', cardinality 0..*) is associated with 'qvtimperativecs::MappingCallBindingCS' (role 'MappingCallBindingCS', cardinality 0..*).
+'qvtimperativecs::ExpCS' (role 'qvtimperativecs_ExpCS', cardinality 0..*) is associated with 'qvtimperativecs::MappingCallBindingCS' (role 'qvtimperativecs_MappingCallBindingCS', cardinality 0..*).
+'qvtimperativecs::MappingCallCS' (role 'MappingCallCS', cardinality 0..*) is associated with 'qvtimperativecs::MappingCallBindingCS' (role 'ownedBindings', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'comicBookCollection2::Series' has the following attributes: 'seriesName' of type str.
+The class 'comicBookCollection2::Editor' has the following attributes: 'name' of type str.
+The class 'comicBookCollection2::Artist' has the following attributes: 'name' of type str.
+The class 'comicBookCollection2::ComicBookCollection' has no attributes.
+The class 'comicBookCollection2::Publisher' has the following attributes: 'publishersName' of type str.
+The class 'comicBookCollection2::Writer' has the following attributes: 'name' of type str.
+The class 'comicBookCollection2::Book' has the following attributes: 'publicationDate' of type str; 'name' of type str.
+'comicBookCollection2::Book' (role 'booksCoverArtistFor', cardinality 0..*) is associated with 'comicBookCollection2::Artist' (role 'Artist18', cardinality 0..*).
+'comicBookCollection2::Series' (role 'Series', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'booksInSeries', cardinality 0..*).
+'comicBookCollection2::ComicBookCollection' (role 'comicBookCollection2_ComicBookCollection10', cardinality 0..*) is associated with 'comicBookCollection2::Series' (role 'comicBookCollection2_Series', cardinality 0..*).
+'comicBookCollection2::ComicBookCollection' (role 'comicBookCollection2_ComicBookCollection2', cardinality 0..*) is associated with 'comicBookCollection2::Artist' (role 'comicBookCollection2_Artist', cardinality 0..*).
+'comicBookCollection2::ComicBookCollection' (role 'comicBookCollection2_ComicBookCollection4', cardinality 0..*) is associated with 'comicBookCollection2::Editor' (role 'comicBookCollection2_Editor', cardinality 0..*).
+'comicBookCollection2::ComicBookCollection' (role 'comicBookCollection2_ComicBookCollection8', cardinality 0..*) is associated with 'comicBookCollection2::Publisher' (role 'comicBookCollection2_Publisher', cardinality 0..*).
+'comicBookCollection2::Artist' (role 'coverArtist', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'Book24', cardinality 0..*).
+'comicBookCollection2::Editor' (role 'editors', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'Book26', cardinality 0..*).
+'comicBookCollection2::Book' (role 'booksWriterFor', cardinality 0..*) is associated with 'comicBookCollection2::Writer' (role 'Writer', cardinality 0..*).
+'comicBookCollection2::Series' (role 'seriesPartOf', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'Book13', cardinality 0..*).
+'comicBookCollection2::Book' (role 'booksArtistFor', cardinality 0..*) is associated with 'comicBookCollection2::Artist' (role 'Artist', cardinality 0..*).
+'comicBookCollection2::Writer' (role 'comicBookCollection2_Writer', cardinality 0..*) is associated with 'comicBookCollection2::ComicBookCollection' (role 'comicBookCollection2_ComicBookCollection6', cardinality 0..*).
+'comicBookCollection2::Book' (role 'comicBookCollection2_Book', cardinality 0..*) is associated with 'comicBookCollection2::ComicBookCollection' (role 'comicBookCollection2_ComicBookCollection', cardinality 0..*).
+'comicBookCollection2::Editor' (role 'Editor', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'booksEditorFor', cardinality 0..*).
+'comicBookCollection2::Publisher' (role 'Publisher', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'booksPublished', cardinality 0..*).
+'comicBookCollection2::Writer' (role 'writers', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'Book28', cardinality 0..*).
+'comicBookCollection2::Publisher' (role 'publisher', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'Book', cardinality 0..*).
+'comicBookCollection2::Artist' (role 'artists', cardinality 0..*) is associated with 'comicBookCollection2::Book' (role 'Book22', cardinality 0..*).

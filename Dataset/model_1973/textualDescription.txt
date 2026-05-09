@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'traces::TraceSet' has no attributes.
+The class 'traces::EObject' has no attributes.
+The class 'traces::Trace' has the following attributes: 'rule' of type str.
+'traces::TraceSet' (role 'traces_TraceSet', cardinality 0..*) is associated with 'traces::Trace' (role 'traces_Trace', cardinality 0..*).
+'traces::Trace' (role 'traces_Trace4', cardinality 0..*) is associated with 'traces::EObject' (role 'traces_EObject5', cardinality 0..*).
+'traces::Trace' (role 'traces_Trace2', cardinality 0..*) is associated with 'traces::EObject' (role 'traces_EObject', cardinality 0..*).

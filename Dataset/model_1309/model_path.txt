@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/benedekh/gomrp/hu.bme.mit.inf.gomrp.statemachine/model/StateMachine.ecore

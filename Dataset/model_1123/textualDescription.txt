@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'uppaallite::LocationType' has the following attributes: 'cost' of type str; 'x' of type int; 'invariant' of type str; 'y' of type int; 'name' of type str; 'committed' of type bool; 'id' of type str; 'initial' of type bool; 'urgent' of type bool.
+The class 'uppaallite::TemplateType' has the following attributes: 'declaration' of type str; 'name' of type str.
+The class 'uppaallite::TransitionType' has the following attributes: 'guard' of type str; 'cost' of type str; 'assignment' of type str; 'sync' of type str.
+The class 'uppaallite::UppaalDiagram' has the following attributes: 'resourceWeightDeclaration' of type str; 'declaration' of type str.
+'uppaallite::LocationType' (role 'LocationType', cardinality 0..*) is associated with 'uppaallite::TemplateType' (role 'container', cardinality 0..*).
+'uppaallite::TransitionType' (role 'transition', cardinality 0..*) is associated with 'uppaallite::TemplateType' (role 'TemplateType10', cardinality 0..*).
+'uppaallite::TransitionType' (role 'TransitionType', cardinality 0..*) is associated with 'uppaallite::TemplateType' (role 'container3', cardinality 0..*).
+'uppaallite::UppaalDiagram' (role 'uppaallite_UppaalDiagram', cardinality 0..*) is associated with 'uppaallite::TemplateType' (role 'uppaallite_TemplateType', cardinality 0..*).
+'uppaallite::TemplateType' (role 'TemplateType', cardinality 0..*) is associated with 'uppaallite::LocationType' (role 'location', cardinality 0..*).
+'uppaallite::TransitionType' (role 'uppaallite_TransitionType7', cardinality 0..*) is associated with 'uppaallite::LocationType' (role 'uppaallite_LocationType8', cardinality 0..*).
+'uppaallite::LocationType' (role 'uppaallite_LocationType', cardinality 0..*) is associated with 'uppaallite::TransitionType' (role 'uppaallite_TransitionType', cardinality 0..*).

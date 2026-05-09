@@ -1,0 +1,28 @@
+The model has 15 class(es).
+The class 'Paper' has no attributes.
+The class 'publicationExample::JournalArticle' has no attributes.
+The class 'publicationExample::Researcher' has no attributes.
+The class 'publicationExample::Humanity' has no attributes.
+The class 'publicationExample::Paper' has no attributes.
+The class 'publicationExample::Human' has no attributes.
+The class 'publicationExample::Books' has no attributes.
+The class 'publicationExample::Thesis' has no attributes.
+The class 'Human' has no attributes.
+The class 'publicationExample::Other' has no attributes.
+The class 'publicationExample::Editorship' has no attributes.
+The class 'Publication' has no attributes.
+The class 'publicationExample::WorkshopPaper' has no attributes.
+The class 'publicationExample::ConferencePaper' has no attributes.
+The class 'publicationExample::Publication' has no attributes.
+'publicationExample::JournalArticle' is a specialization of 'Publication'.
+'publicationExample::Other' is a specialization of 'Publication'.
+'publicationExample::WorkshopPaper' is a specialization of 'Paper'.
+'publicationExample::Researcher' is a specialization of 'Human'.
+'publicationExample::Editorship' is a specialization of 'Publication'.
+'publicationExample::Books' is a specialization of 'Publication'.
+'publicationExample::ConferencePaper' is a specialization of 'Paper'.
+'publicationExample::Paper' is a specialization of 'Publication'.
+'publicationExample::Thesis' is a specialization of 'Publication'.
+'publicationExample::Humanity' (role 'publicationExample_Humanity', cardinality 0..*) is associated with 'publicationExample::Human' (role 'publicationExample_Human', cardinality 0..*).
+'publicationExample::Publication' (role 'publicationExample_Publication4', cardinality 0..*) is associated with 'publicationExample::Humanity' (role 'publicationExample_Humanity3', cardinality 0..*).
+'publicationExample::Researcher' (role 'publicationExample_Researcher', cardinality 0..*) is associated with 'publicationExample::Publication' (role 'publicationExample_Publication', cardinality 0..*).

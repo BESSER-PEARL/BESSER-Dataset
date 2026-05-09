@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'Node' has no attributes.
+The class 'petrinet::Place' has no attributes.
+The class 'Identifyable' has no attributes.
+The class 'petrinet::PetriNet' has no attributes.
+The class 'petrinet::Node' has no attributes.
+The class 'petrinet::Arc' has no attributes.
+The class 'petrinet::Identifyable' has the following attributes: 'id' of type str.
+The class 'petrinet::Transition' has no attributes.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Node' is a specialization of 'Identifyable'.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Arc' is a specialization of 'Identifyable'.
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc2', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node3', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc8', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet7', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet10', cardinality 0..*) is associated with 'petrinet::Transition' (role 'petrinet_Transition', cardinality 0..*).
+'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node5', cardinality 0..*).

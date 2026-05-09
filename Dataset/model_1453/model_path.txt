@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/JanKoehnlein/Generic-Graph-View/org.eclipse.xtext.graphview.example/src/ecore/Tree.ecore

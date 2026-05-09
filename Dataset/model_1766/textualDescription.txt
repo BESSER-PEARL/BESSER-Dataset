@@ -1,0 +1,54 @@
+The model has 24 class(es).
+The class 'MediaLibrary::Image' has no attributes.
+The class 'MediaLibrary::MusicTrack' has no attributes.
+The class 'MediaLibrary::MediaSource' has no attributes.
+The class 'MediaLibrary::Video' has no attributes.
+The class 'DurationArtifact' has no attributes.
+The class 'MediaLibrary::Library' has no attributes.
+The class 'MediaSource' has no attributes.
+The class 'MediaLibrary::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'MediaLibrary::Device' has no attributes.
+The class 'MediaLibrary::Tablet' has no attributes.
+The class 'MediaLibrary::Store' has no attributes.
+The class 'MediaLibrary::ExternalSource' has the following attributes: 'sourceType' of type str.
+The class 'MediaLibrary::Computer' has no attributes.
+The class 'MediaLibrary::Ecosystem' has no attributes.
+The class 'MediaLibrary::EReader' has the following attributes: 'videoEnabled' of type str; 'audioEnabled' of type str.
+The class 'MediaLibrary::Ebook' has no attributes.
+The class 'Device' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'MediaLibrary::AudioBook' has no attributes.
+The class 'MediaLibrary::MediaCollection' has no attributes.
+The class 'MediaLibrary::Smartphone' has no attributes.
+The class 'MediaLibrary::DurationArtifact' has the following attributes: 'duration' of type int.
+The class 'MediaLibrary::Artifact' has no attributes.
+The enumeration 'SourceType' has the following literals: 'VHS', 'OTHER', 'CD', 'CASSETTE', 'DVD', 'HDD'.
+'MediaLibrary::ExternalSource' is a specialization of 'MediaSource'.
+'MediaLibrary::AudioBook' is a specialization of 'DurationArtifact'.
+'MediaLibrary::MediaCollection' is a specialization of 'NamedElement'.
+'MediaLibrary::Video' is a specialization of 'DurationArtifact'.
+'MediaLibrary::Store' is a specialization of 'MediaSource'.
+'MediaLibrary::DurationArtifact' is a specialization of 'Artifact'.
+'MediaLibrary::Image' is a specialization of 'Artifact'.
+'MediaLibrary::Artifact' is a specialization of 'NamedElement'.
+'MediaLibrary::Smartphone' is a specialization of 'Device'.
+'MediaLibrary::Device' is a specialization of 'NamedElement'.
+'MediaLibrary::EReader' is a specialization of 'Device'.
+'MediaLibrary::Library' is a specialization of 'NamedElement'.
+'MediaLibrary::Ebook' is a specialization of 'Artifact'.
+'MediaLibrary::Computer' is a specialization of 'Device'.
+'MediaLibrary::Tablet' is a specialization of 'Device'.
+'MediaLibrary::MediaSource' is a specialization of 'NamedElement'.
+'MediaLibrary::MusicTrack' is a specialization of 'DurationArtifact'.
+'MediaLibrary::Device' (role 'Device', cardinality 0..*) is associated with 'MediaLibrary::MediaCollection' (role 'hostOf', cardinality 0..*).
+'MediaLibrary::MediaCollection' (role 'MediaLibrary_MediaCollection', cardinality 0..*) is associated with 'MediaLibrary::Library' (role 'MediaLibrary_Library6', cardinality 0..*).
+'MediaLibrary::Ecosystem' (role 'MediaLibrary_Ecosystem4', cardinality 0..*) is associated with 'MediaLibrary::MediaSource' (role 'MediaLibrary_MediaSource', cardinality 0..*).
+'MediaLibrary::Artifact' (role 'Artifact', cardinality 0..*) is associated with 'MediaLibrary::MediaSource' (role 'origin', cardinality 0..*).
+'MediaLibrary::MediaCollection' (role 'MediaCollection', cardinality 0..*) is associated with 'MediaLibrary::Device' (role 'host', cardinality 0..*).
+'MediaLibrary::Artifact' (role 'MediaLibrary_Artifact', cardinality 0..*) is associated with 'MediaLibrary::MediaCollection' (role 'MediaLibrary_MediaCollection8', cardinality 0..*).
+'MediaLibrary::Library' (role 'MediaLibrary_Library', cardinality 0..*) is associated with 'MediaLibrary::Ecosystem' (role 'MediaLibrary_Ecosystem', cardinality 0..*).
+'MediaLibrary::Device' (role 'Device11', cardinality 0..*) is associated with 'MediaLibrary::MediaCollection' (role 'collections', cardinality 0..*).
+'MediaLibrary::Device' (role 'MediaLibrary_Device', cardinality 0..*) is associated with 'MediaLibrary::Ecosystem' (role 'MediaLibrary_Ecosystem2', cardinality 0..*).
+'MediaLibrary::MediaCollection' (role 'MediaCollection14', cardinality 0..*) is associated with 'MediaLibrary::Device' (role 'syncedDevices', cardinality 0..*).
+'MediaLibrary::MediaSource' (role 'MediaSource', cardinality 0..*) is associated with 'MediaLibrary::Artifact' (role 'contents', cardinality 0..*).

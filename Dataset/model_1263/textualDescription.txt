@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'hutnArticleFamilies::Person' has the following attributes: 'name' of type str.
+The class 'hutnArticleFamilies::Family' has the following attributes: 'lotteryNumbers' of type int; 'name' of type str; 'migrant' of type bool; 'nuclear' of type bool.
+'hutnArticleFamilies::Person' (role 'hutnArticleFamilies_Person', cardinality 0..*) is associated with 'hutnArticleFamilies::Family' (role 'hutnArticleFamilies_Family', cardinality 0..*).
+'hutnArticleFamilies::Family' (role 'hutnArticleFamilies_Family3', cardinality 0..*) is associated with 'hutnArticleFamilies::Family' (role 'hutnArticleFamilies_Family1', cardinality 0..*).

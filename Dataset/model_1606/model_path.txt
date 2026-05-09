@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eMoflon/benchmarx/examples/pntopnw/metamodels/Petrinet/model/PetriNet.ecore

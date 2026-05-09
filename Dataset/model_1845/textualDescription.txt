@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Library::Cards' has no attributes.
+The class 'Library::Library' has no attributes.
+'Library::Cards' (role 'Library_Cards', cardinality 0..*) is associated with 'Library::Library' (role 'Library_Library', cardinality 0..*).

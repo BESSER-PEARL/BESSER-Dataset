@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'StateMachinesModule::State' has no attributes.
+The class 'StateMachinesModule::Constraint' has no attributes.
+The class 'StateMachinesModule::StateMachine' has no attributes.
+The class 'StateMachinesModule::Transition' has no attributes.
+'StateMachinesModule::State' (role 'StateMachinesModule_State', cardinality 0..*) is associated with 'StateMachinesModule::StateMachine' (role 'StateMachinesModule_StateMachine', cardinality 0..*).
+'StateMachinesModule::Transition' (role 'StateMachinesModule_Transition4', cardinality 0..*) is associated with 'StateMachinesModule::Constraint' (role 'StateMachinesModule_Constraint', cardinality 0..*).
+'StateMachinesModule::Transition' (role 'StateMachinesModule_Transition', cardinality 0..*) is associated with 'StateMachinesModule::StateMachine' (role 'StateMachinesModule_StateMachine2', cardinality 0..*).

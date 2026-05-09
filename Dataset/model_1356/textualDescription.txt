@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'State' has no attributes.
+The class 'statemachine::State' has the following attributes: 'name' of type str.
+The class 'statemachine::Initial' has no attributes.
+The class 'statemachine::Resource' has the following attributes: 'name' of type str.
+The class 'statemachine::Composite' has no attributes.
+The class 'statemachine::Transition' has the following attributes: 'duration' of type int; 'Id' of type int.
+The class 'statemachine::Simple' has no attributes.
+The class 'statemachine::StateMachine' has the following attributes: 'name' of type str.
+'statemachine::Simple' is a specialization of 'State'.
+'statemachine::Composite' is a specialization of 'State'.
+'statemachine::Initial' is a specialization of 'State'.
+'statemachine::StateMachine' (role 'statemachine_StateMachine2', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State', cardinality 0..*).
+'statemachine::StateMachine' (role 'statemachine_StateMachine', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition6', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State7', cardinality 0..*).
+'statemachine::Composite' (role 'statemachine_Composite', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State15', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State12', cardinality 0..*) is associated with 'statemachine::Resource' (role 'statemachine_Resource13', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition9', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State10', cardinality 0..*).
+'statemachine::Resource' (role 'statemachine_Resource', cardinality 0..*) is associated with 'statemachine::StateMachine' (role 'statemachine_StateMachine4', cardinality 0..*).

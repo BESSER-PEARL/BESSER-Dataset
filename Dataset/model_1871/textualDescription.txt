@@ -1,0 +1,25 @@
+The model has 12 class(es).
+The class 'datatypes::RosIDLReference' has the following attributes: 'rosPackage' of type str; 'namespace' of type str.
+The class 'datatypes::SimpleType' has no attributes.
+The class 'datatypes::DataType' has the following attributes: 'name' of type str.
+The class 'IDLReference' has no attributes.
+The class 'datatypes::VectorType' has no attributes.
+The class 'datatypes::ComplexType' has no attributes.
+The class 'DataType' has no attributes.
+The class 'datatypes::IDLReference' has no attributes.
+The class 'datatypes::TypesLibrary' has the following attributes: 'name' of type str.
+The class 'ComplexType' has no attributes.
+The class 'datatypes::Field' has the following attributes: 'description' of type str; 'measureUnit' of type str; 'name' of type str.
+The class 'datatypes::CustomType' has no attributes.
+'datatypes::RosIDLReference' is a specialization of 'IDLReference'.
+'datatypes::ComplexType' is a specialization of 'DataType'.
+'datatypes::IDLReference' is a specialization of 'ComplexType'.
+'datatypes::VectorType' is a specialization of 'ComplexType'.
+'datatypes::CustomType' is a specialization of 'ComplexType'.
+'datatypes::SimpleType' is a specialization of 'DataType'.
+'datatypes::TypesLibrary' (role 'datatypes_TypesLibrary1', cardinality 0..*) is associated with 'datatypes::TypesLibrary' (role 'datatypes_TypesLibrary', cardinality 0..*).
+'datatypes::TypesLibrary' (role 'typesLibrary', cardinality 0..*) is associated with 'datatypes::DataType' (role 'DataType', cardinality 0..*).
+'datatypes::VectorType' (role 'datatypes_VectorType', cardinality 0..*) is associated with 'datatypes::DataType' (role 'datatypes_DataType', cardinality 0..*).
+'datatypes::DataType' (role 'datatypes_DataType8', cardinality 0..*) is associated with 'datatypes::Field' (role 'datatypes_Field7', cardinality 0..*).
+'datatypes::TypesLibrary' (role 'TypesLibrary', cardinality 0..*) is associated with 'datatypes::DataType' (role 'types', cardinality 0..*).
+'datatypes::CustomType' (role 'datatypes_CustomType', cardinality 0..*) is associated with 'datatypes::Field' (role 'datatypes_Field', cardinality 0..*).

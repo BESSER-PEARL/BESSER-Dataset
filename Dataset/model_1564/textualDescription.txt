@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'graph::Vertex' has the following attributes: 'hotSpot' of type bool.
+The class 'graph::Edge' has the following attributes: 'critical' of type bool.
+The class 'graph::Graph' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'graph::GraphElement' has the following attributes: 'name' of type str.

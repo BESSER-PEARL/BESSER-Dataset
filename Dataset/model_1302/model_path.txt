@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/LazyOcl_StateMachineExample/metaModel/stateMachine.ecore

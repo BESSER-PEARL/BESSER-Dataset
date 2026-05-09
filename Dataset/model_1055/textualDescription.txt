@@ -1,0 +1,19 @@
+The model has 5 class(es).
+The class 'complexStateMachineMetaModel::ComplexStateMachine' has the following attributes: 'Name' of type str.
+The class 'complexStateMachineMetaModel::CompositeState' has no attributes.
+The class 'complexStateMachineMetaModel::Transition' has the following attributes: 'Name' of type str.
+The class 'complexStateMachineMetaModel::State' has the following attributes: 'Name' of type str.
+The class 'State' has no attributes.
+'complexStateMachineMetaModel::CompositeState' is a specialization of 'State'.
+'complexStateMachineMetaModel::Transition' (role 'Transition', cardinality 0..*) is associated with 'complexStateMachineMetaModel::ComplexStateMachine' (role 'ComplexStateMachine2', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'complexStateMachineMetaModel_State22', cardinality 0..*) is associated with 'complexStateMachineMetaModel::CompositeState' (role 'complexStateMachineMetaModel_CompositeState', cardinality 0..*).
+'complexStateMachineMetaModel::CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'complexStateMachineMetaModel::State' (role 'States17', cardinality 0..*).
+'complexStateMachineMetaModel::CompositeState' (role 'CompositeState19', cardinality 0..*) is associated with 'complexStateMachineMetaModel::State' (role 'State20', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'State', cardinality 0..*) is associated with 'complexStateMachineMetaModel::ComplexStateMachine' (role 'ComplexStateMachine', cardinality 0..*).
+'complexStateMachineMetaModel::Transition' (role 'Transitions', cardinality 0..*) is associated with 'complexStateMachineMetaModel::ComplexStateMachine' (role 'ComplexStateMachine5', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'States', cardinality 0..*) is associated with 'complexStateMachineMetaModel::ComplexStateMachine' (role 'ComplexStateMachine11', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'Source', cardinality 0..*) is associated with 'complexStateMachineMetaModel::Transition' (role 'Transition13', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'State9', cardinality 0..*) is associated with 'complexStateMachineMetaModel::Transition' (role 'Incoming', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'complexStateMachineMetaModel_State', cardinality 0..*) is associated with 'complexStateMachineMetaModel::ComplexStateMachine' (role 'complexStateMachineMetaModel_ComplexStateMachine', cardinality 0..*).
+'complexStateMachineMetaModel::State' (role 'State7', cardinality 0..*) is associated with 'complexStateMachineMetaModel::Transition' (role 'Outgoing', cardinality 0..*).
+'complexStateMachineMetaModel::Transition' (role 'Transition15', cardinality 0..*) is associated with 'complexStateMachineMetaModel::State' (role 'Target', cardinality 0..*).

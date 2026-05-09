@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'NHSM::StateMachine' has no attributes.
+The class 'NHSM::FinalState' has no attributes.
+The class 'NHSM::InitialState' has no attributes.
+The class 'NHSM::Transition' has the following attributes: 'cost' of type int; 'trigger' of type str; 'effect' of type str.
+The class 'State' has no attributes.
+The class 'NHSM::State' has the following attributes: 'memRequirement' of type int; 'name' of type str.
+'NHSM::InitialState' is a specialization of 'State'.
+'NHSM::FinalState' is a specialization of 'State'.
+'NHSM::Transition' (role 'NHSM_Transition3', cardinality 0..*) is associated with 'NHSM::State' (role 'NHSM_State4', cardinality 0..*).
+'NHSM::StateMachine' (role 'owningStateMachine9', cardinality 0..*) is associated with 'NHSM::Transition' (role 'Transition', cardinality 0..*).
+'NHSM::State' (role 'NHSM_State', cardinality 0..*) is associated with 'NHSM::Transition' (role 'NHSM_Transition', cardinality 0..*).
+'NHSM::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'NHSM::State' (role 'ownedState', cardinality 0..*).
+'NHSM::Transition' (role 'ownedTransition', cardinality 0..*) is associated with 'NHSM::StateMachine' (role 'StateMachine6', cardinality 0..*).
+'NHSM::StateMachine' (role 'owningStateMachine', cardinality 0..*) is associated with 'NHSM::State' (role 'State', cardinality 0..*).

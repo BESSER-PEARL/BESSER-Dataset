@@ -1,0 +1,42 @@
+The model has 21 class(es).
+The class 'budgeting::Month' has the following attributes: 'name' of type str.
+The class 'Category' has no attributes.
+The class 'budgeting::Category' has the following attributes: 'name' of type str.
+The class 'budgeting::ActualEntry' has no attributes.
+The class 'budgeting::IncomeCategory' has no attributes.
+The class 'budgeting::Transaction' has the following attributes: 'amount' of type str.
+The class 'budgeting::BudgetEntry' has no attributes.
+The class 'Transaction' has no attributes.
+The class 'budgeting::CashTransaction' has the following attributes: 'day' of type str.
+The class 'budgeting::BudgetAmountEntry' has the following attributes: 'amount' of type str.
+The class 'budgeting::Year' has the following attributes: 'name' of type int.
+The class 'budgeting::BudgetFactorEntry' has the following attributes: 'factor' of type float.
+The class 'budgeting::Library' has the following attributes: 'name' of type str.
+The class 'budgeting::ExpenseCategory' has the following attributes: 'patterns' of type str.
+The class 'ActualEntry' has no attributes.
+The class 'BudgetingFile' has no attributes.
+The class 'budgeting::BudgetingFile' has no attributes.
+The class 'budgeting::CardTransaction' has the following attributes: 'day' of type int; 'from_' of type str.
+The class 'budgeting::ActualTransactionEntry' has no attributes.
+The class 'BudgetEntry' has no attributes.
+The class 'budgeting::ActualAmountEntry' has the following attributes: 'amount' of type str.
+The enumeration 'MonthEnum' has the following literals: 'JULY', 'DECEMBER', 'SEPTEMBER', 'JANUARY', 'APRIL', 'MARCH', 'NOVEMBER', 'FEBRUARY', 'MAY', 'OCTOBER', 'AUGUST', 'JUNE'.
+'budgeting::CashTransaction' is a specialization of 'Transaction'.
+'budgeting::Year' is a specialization of 'BudgetingFile'.
+'budgeting::BudgetFactorEntry' is a specialization of 'BudgetEntry'.
+'budgeting::IncomeCategory' is a specialization of 'Category'.
+'budgeting::ActualTransactionEntry' is a specialization of 'ActualEntry'.
+'budgeting::CardTransaction' is a specialization of 'Transaction'.
+'budgeting::ExpenseCategory' is a specialization of 'Category'.
+'budgeting::ActualAmountEntry' is a specialization of 'ActualEntry'.
+'budgeting::Library' is a specialization of 'BudgetingFile'.
+'budgeting::BudgetAmountEntry' is a specialization of 'BudgetEntry'.
+'budgeting::Library' (role 'budgeting_Library', cardinality 0..*) is associated with 'budgeting::Category' (role 'budgeting_Category', cardinality 0..*).
+'budgeting::ActualEntry' (role 'budgeting_ActualEntry13', cardinality 0..*) is associated with 'budgeting::Category' (role 'budgeting_Category14', cardinality 0..*).
+'budgeting::Month' (role 'budgeting_Month', cardinality 0..*) is associated with 'budgeting::Year' (role 'budgeting_Year4', cardinality 0..*).
+'budgeting::Month' (role 'budgeting_Month6', cardinality 0..*) is associated with 'budgeting::BudgetEntry' (role 'budgeting_BudgetEntry', cardinality 0..*).
+'budgeting::BudgetEntry' (role 'budgeting_BudgetEntry16', cardinality 0..*) is associated with 'budgeting::BudgetFactorEntry' (role 'budgeting_BudgetFactorEntry', cardinality 0..*).
+'budgeting::Year' (role 'budgeting_Year', cardinality 0..*) is associated with 'budgeting::Library' (role 'budgeting_Library2', cardinality 0..*).
+'budgeting::Month' (role 'budgeting_Month8', cardinality 0..*) is associated with 'budgeting::ActualEntry' (role 'budgeting_ActualEntry', cardinality 0..*).
+'budgeting::Category' (role 'budgeting_Category11', cardinality 0..*) is associated with 'budgeting::BudgetEntry' (role 'budgeting_BudgetEntry10', cardinality 0..*).
+'budgeting::ActualTransactionEntry' (role 'budgeting_ActualTransactionEntry', cardinality 0..*) is associated with 'budgeting::Transaction' (role 'budgeting_Transaction', cardinality 0..*).

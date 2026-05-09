@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'ktest400::Thing' has the following attributes: 'id' of type int.
+The class 'ktest400::Article' has the following attributes: 'aid' of type str.
+The class 'ktest400::NamedElement' has the following attributes: 'name' of type str.
+The class 'ktest400::RelatedTo' has the following attributes: 'since' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ktest400::Line' has the following attributes: 'quant' of type int; 'articleAid' of type str.
+The class 'ktest400::World' has no attributes.
+'ktest400::Thing' is a specialization of 'NamedElement'.
+'ktest400::Line' is a specialization of 'NamedElement'.
+'ktest400::RelatedTo' is a specialization of 'NamedElement'.
+'ktest400::Article' is a specialization of 'NamedElement'.
+'ktest400::Thing' (role 'ktest400_Thing', cardinality 0..*) is associated with 'ktest400::World' (role 'ktest400_World', cardinality 0..*).
+'ktest400::RelatedTo' (role 'RelatedTo', cardinality 0..*) is associated with 'ktest400::Thing' (role 'fromThing', cardinality 0..*).
+'ktest400::World' (role 'ktest400_World2', cardinality 0..*) is associated with 'ktest400::Article' (role 'ktest400_Article', cardinality 0..*).
+'ktest400::Line' (role 'ktest400_Line13', cardinality 0..*) is associated with 'ktest400::Article' (role 'ktest400_Article14', cardinality 0..*).
+'ktest400::RelatedTo' (role 'relations', cardinality 0..*) is associated with 'ktest400::Thing' (role 'Thing', cardinality 0..*).
+'ktest400::RelatedTo' (role 'ktest400_RelatedTo', cardinality 0..*) is associated with 'ktest400::Thing' (role 'ktest400_Thing8', cardinality 0..*).
+'ktest400::Thing' (role 'ktest400_Thing11', cardinality 0..*) is associated with 'ktest400::Line' (role 'ktest400_Line10', cardinality 0..*).
+'ktest400::Thing' (role 'ktest400_Thing5', cardinality 0..*) is associated with 'ktest400::Line' (role 'ktest400_Line', cardinality 0..*).

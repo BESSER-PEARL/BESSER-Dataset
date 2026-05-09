@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'kwcs::LeafCS' has the following attributes: 'val' of type int.
+The class 'TreeCS' has no attributes.
+The class 'kwcs::TopCS' has no attributes.
+The class 'kwcs::BinCS' has no attributes.
+The class 'kwcs::TreeCS' has no attributes.
+'kwcs::LeafCS' is a specialization of 'TreeCS'.
+'kwcs::BinCS' is a specialization of 'TreeCS'.
+'kwcs::BinCS' (role 'kwcs_BinCS', cardinality 0..*) is associated with 'kwcs::TreeCS' (role 'kwcs_TreeCS2', cardinality 0..*).
+'kwcs::TreeCS' (role 'kwcs_TreeCS5', cardinality 0..*) is associated with 'kwcs::BinCS' (role 'kwcs_BinCS4', cardinality 0..*).
+'kwcs::TopCS' (role 'kwcs_TopCS', cardinality 0..*) is associated with 'kwcs::TreeCS' (role 'kwcs_TreeCS', cardinality 0..*).

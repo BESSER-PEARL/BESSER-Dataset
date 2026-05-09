@@ -1,0 +1,36 @@
+The model has 11 class(es).
+The class 'MetaModelGraph::SubGraph' has the following attributes: 'amountOfParentEClass' of type int; 'amountOfRecursionPackages' of type int; 'amountUnits' of type int; 'amountEClassesOut' of type int; 'amountOfConcreteEClass' of type int; 'amountOfParentAbstractEClass' of type int; 'amountOfAbstractEClass' of type int; 'amountPackages' of type int; 'amountRecursionUnits' of type int; 'height' of type int.
+The class 'MetaModelGraph::SubClass' has no attributes.
+The class 'MetaModelGraph::Graph' has the following attributes: 'amountAbstractEClasses' of type int; 'amountConcreteEClass' of type int; 'amountEClasses' of type int.
+The class 'MetaModelGraph::Node' has the following attributes: 'extension' of type str; 'icon' of type str; 'insideRecursion' of type bool; 'enumModularNotation' of type str.
+The class 'MetaModelGraph::Reference' has no attributes.
+The class 'MetaModelGraph::EAttribute' has no attributes.
+The class 'MetaModelGraph::Composition' has no attributes.
+The class 'MetaModelGraph::EReference' has no attributes.
+The class 'MetaModelGraph::Relation' has no attributes.
+The class 'Relation' has no attributes.
+The class 'MetaModelGraph::EClass' has no attributes.
+The enumeration 'EnumModular' has the following literals: 'Default', 'RecursionAbstractPackage', 'InsideUnit', 'RecursionAbstractUnit', 'Unit', 'AbstractPackageUnit', 'AbstractPackage', 'AbstractUnit', 'Project', 'RecursionPackage', 'InsidePackage', 'RecursionUnit', 'Package', 'InsideProject'.
+'MetaModelGraph::Reference' is a specialization of 'Relation'.
+'MetaModelGraph::SubClass' is a specialization of 'Relation'.
+'MetaModelGraph::Composition' is a specialization of 'Relation'.
+'MetaModelGraph::Node' (role 'MetaModelGraph_Node27', cardinality 0..*) is associated with 'MetaModelGraph::Node' (role 'MetaModelGraph_Node25', cardinality 0..*).
+'MetaModelGraph::Node' (role 'Node39', cardinality 0..*) is associated with 'MetaModelGraph::Composition' (role 'compositions', cardinality 0..*).
+'MetaModelGraph::Reference' (role 'MetaModelGraph_Reference', cardinality 0..*) is associated with 'MetaModelGraph::Node' (role 'MetaModelGraph_Node18', cardinality 0..*).
+'MetaModelGraph::Node' (role 'MetaModelGraph_Node', cardinality 0..*) is associated with 'MetaModelGraph::SubGraph' (role 'MetaModelGraph_SubGraph7', cardinality 0..*).
+'MetaModelGraph::SubGraph' (role 'MetaModelGraph_SubGraph9', cardinality 0..*) is associated with 'MetaModelGraph::Relation' (role 'MetaModelGraph_Relation', cardinality 0..*).
+'MetaModelGraph::Graph' (role 'MetaModelGraph_Graph', cardinality 0..*) is associated with 'MetaModelGraph::SubGraph' (role 'MetaModelGraph_SubGraph', cardinality 0..*).
+'MetaModelGraph::Node' (role 'MetaModelGraph_Node32', cardinality 0..*) is associated with 'MetaModelGraph::Composition' (role 'MetaModelGraph_Composition', cardinality 0..*).
+'MetaModelGraph::SubGraph' (role 'MetaModelGraph_SubGraph14', cardinality 0..*) is associated with 'MetaModelGraph::Node' (role 'MetaModelGraph_Node15', cardinality 0..*).
+'MetaModelGraph::Graph' (role 'MetaModelGraph_Graph2', cardinality 0..*) is associated with 'MetaModelGraph::EClass' (role 'MetaModelGraph_EClass', cardinality 0..*).
+'MetaModelGraph::Node' (role 'Node', cardinality 0..*) is associated with 'MetaModelGraph::Relation' (role 'relations', cardinality 0..*).
+'MetaModelGraph::Composition' (role 'Composition', cardinality 0..*) is associated with 'MetaModelGraph::Node' (role 'parentNode', cardinality 0..*).
+'MetaModelGraph::Node' (role 'target', cardinality 0..*) is associated with 'MetaModelGraph::Relation' (role 'Relation', cardinality 0..*).
+'MetaModelGraph::SubClass' (role 'MetaModelGraph_SubClass', cardinality 0..*) is associated with 'MetaModelGraph::Node' (role 'MetaModelGraph_Node20', cardinality 0..*).
+'MetaModelGraph::EReference' (role 'MetaModelGraph_EReference42', cardinality 0..*) is associated with 'MetaModelGraph::Reference' (role 'MetaModelGraph_Reference41', cardinality 0..*).
+'MetaModelGraph::EReference' (role 'MetaModelGraph_EReference', cardinality 0..*) is associated with 'MetaModelGraph::Composition' (role 'MetaModelGraph_Composition37', cardinality 0..*).
+'MetaModelGraph::Graph' (role 'MetaModelGraph_Graph4', cardinality 0..*) is associated with 'MetaModelGraph::EClass' (role 'MetaModelGraph_EClass5', cardinality 0..*).
+'MetaModelGraph::SubClass' (role 'MetaModelGraph_SubClass30', cardinality 0..*) is associated with 'MetaModelGraph::Node' (role 'MetaModelGraph_Node29', cardinality 0..*).
+'MetaModelGraph::Node' (role 'MetaModelGraph_Node34', cardinality 0..*) is associated with 'MetaModelGraph::EAttribute' (role 'MetaModelGraph_EAttribute', cardinality 0..*).
+'MetaModelGraph::Node' (role 'MetaModelGraph_Node22', cardinality 0..*) is associated with 'MetaModelGraph::EClass' (role 'MetaModelGraph_EClass23', cardinality 0..*).
+'MetaModelGraph::SubGraph' (role 'MetaModelGraph_SubGraph11', cardinality 0..*) is associated with 'MetaModelGraph::EClass' (role 'MetaModelGraph_EClass12', cardinality 0..*).

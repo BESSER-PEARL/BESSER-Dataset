@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class SignalGroup  {
+
+
+
+
+
+
+    private oaam_functions_FunctionsContainerA oaam_functions_functionscontainera;
+
+
+
+
+    private oaam_restrictions_SegregationRestriction oaam_restrictions_segregationrestriction;
+
+
+
+
+    private oaam_restrictions_SegregationRestriction oaam_restrictions_segregationrestriction;
+
+
+    public SignalGroup(
+    ) {
+    }
+
+
+
+    public oaam_functions_FunctionsContainerA getOaam_functions_functionscontainera() {
+        return oaam_functions_functionscontainera;
+    }
+
+    public void setOaam_functions_functionscontainera(oaam_functions_FunctionsContainerA oaam_functions_functionscontainera) {
+        this.oaam_functions_functionscontainera = oaam_functions_functionscontainera;
+    }
+    public oaam_restrictions_SegregationRestriction getOaam_restrictions_segregationrestriction() {
+        return oaam_restrictions_segregationrestriction;
+    }
+
+    public void setOaam_restrictions_segregationrestriction(oaam_restrictions_SegregationRestriction oaam_restrictions_segregationrestriction) {
+        this.oaam_restrictions_segregationrestriction = oaam_restrictions_segregationrestriction;
+    }
+    public oaam_restrictions_SegregationRestriction getOaam_restrictions_segregationrestriction() {
+        return oaam_restrictions_segregationrestriction;
+    }
+
+    public void setOaam_restrictions_segregationrestriction(oaam_restrictions_SegregationRestriction oaam_restrictions_segregationrestriction) {
+        this.oaam_restrictions_segregationrestriction = oaam_restrictions_segregationrestriction;
+    }
+
+}

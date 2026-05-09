@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'TraceItem' has no attributes.
+The class 'trace::TraceItem' has the following attributes: 'kind' of type str.
+The class 'trace::TraceList' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::TraceBySource' has no attributes.
+The class 'trace::M2CTraceItem' has the following attributes: 'token' of type str; 'targetFile' of type str.
+The class 'trace::M2MTraceItem' has no attributes.
+The class 'trace::EObject' has no attributes.
+'trace::M2CTraceItem' is a specialization of 'TraceItem'.
+'trace::M2MTraceItem' is a specialization of 'TraceItem'.
+'trace::Trace' (role 'trace_Trace2', cardinality 0..*) is associated with 'trace::TraceBySource' (role 'trace_TraceBySource', cardinality 0..*).
+'trace::TraceBySource' (role 'trace_TraceBySource8', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject9', cardinality 0..*).
+'trace::TraceList' (role 'trace_TraceList', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).
+'trace::TraceList' (role 'trace_TraceList4', cardinality 0..*) is associated with 'trace::TraceItem' (role 'trace_TraceItem', cardinality 0..*).
+'trace::TraceBySource' (role 'trace_TraceBySource11', cardinality 0..*) is associated with 'trace::TraceItem' (role 'trace_TraceItem12', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject', cardinality 0..*) is associated with 'trace::TraceItem' (role 'trace_TraceItem6', cardinality 0..*).
+'trace::M2MTraceItem' (role 'trace_M2MTraceItem', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject14', cardinality 0..*).

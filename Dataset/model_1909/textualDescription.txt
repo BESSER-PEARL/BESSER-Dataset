@@ -1,0 +1,207 @@
+The model has 111 class(es).
+The class 'preprocess::literals::LowValue' has no attributes.
+The class 'preprocess::water::Replacing' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'preprocess::sentences::CopySentence' has the following attributes: 'suppress' of type bool.
+The class 'DataSegmentToken' has no attributes.
+The class 'Water' has no attributes.
+The class 'preprocess::literals::Spaces' has no attributes.
+The class 'CobolRoot' has no attributes.
+The class 'preprocess::layouts::CobolLine' has the following attributes: 'sequenceArea' of type str; 'indicatorArea' of type str; 'comment' of type str; 'contentAreaA' of type str; 'contentAreaB' of type str.
+The class 'preprocess::literals::AllLiteral' has no attributes.
+The class 'preprocess::containers::DataSegment' has no attributes.
+The class 'operands::Operand' has no attributes.
+The class 'CobolSourceFormat' has no attributes.
+The class 'preprocess::sentences::PreprocessingSentence' has no attributes.
+The class 'ProcedureSegment' has no attributes.
+The class 'preprocess::water::Replace' has no attributes.
+The class 'Replacing' has no attributes.
+The class 'preprocess::sentences::Replacing' has no attributes.
+The class 'DataSegmentWater' has no attributes.
+The class 'AlphanumericLiteral' has no attributes.
+The class 'ZeroConstant' has no attributes.
+The class 'preprocess::layouts::ANSI85CobolSourceFormat' has no attributes.
+The class 'PreprocessingUnit' has no attributes.
+The class 'preprocess::water::IncompleteElement' has no attributes.
+The class 'preprocess::containers::Copybook' has no attributes.
+The class 'commons::NamedElement' has no attributes.
+The class 'preprocess::literals::LowValues' has no attributes.
+The class 'preprocess::commons::LibraryElement' has the following attributes: 'libraryName' of type str.
+The class 'preprocess::literals::HighValues' has no attributes.
+The class 'Element' has no attributes.
+The class 'preprocess::water::Off' has no attributes.
+The class 'DataSegment' has no attributes.
+The class 'preprocess::water::Dot' has no attributes.
+The class 'preprocess::water::DataSegmentWater' has no attributes.
+The class 'preprocess::containers::DataCopyUnit' has no attributes.
+The class 'preprocess::literals::ConstantLiteral' has no attributes.
+The class 'preprocess::containers::ProcedureSegment' has no attributes.
+The class 'CobolWord' has no attributes.
+The class 'preprocess::water::Division' has no attributes.
+The class 'preprocess::containers::PreprocessingGroup' has no attributes.
+The class 'preprocess::literals::AlphanumericLiteral' has the following attributes: 'value' of type str.
+The class 'preprocess::literals::Zeroes' has no attributes.
+The class 'ProcedureSegmentWater' has no attributes.
+The class 'water::IncompleteElement' has no attributes.
+The class 'preprocess::literals::NullConstant' has no attributes.
+The class 'Literal' has no attributes.
+The class 'preprocess::containers::PreprocessingUnit' has the following attributes: 'id' of type str.
+The class 'preprocess::literals::AlphanumericHexaDecimalLiteral' has no attributes.
+The class 'preprocess::water::End' has no attributes.
+The class 'water::ProcedureSegmentWater' has no attributes.
+The class 'preprocess::layouts::CobolSourceFormat' has the following attributes: 'regex' of type str; 'type' of type str; 'pattern' of type str; 'commentEntryMultiLine' of type bool.
+The class 'preprocess::water::PreprocessingUnitWater' has no attributes.
+The class 'PreprocessingSentence' has no attributes.
+The class 'preprocess::literals::NumericLiteral' has the following attributes: 'value' of type str.
+The class 'CopyUnit' has no attributes.
+The class 'preprocess::literals::ZeroConstant' has no attributes.
+The class 'preprocess::sentences::ReplaceSentence' has the following attributes: 'switch' of type bool.
+The class 'preprocess::literals::LowValueConstant' has no attributes.
+The class 'preprocess::containers::CobolRoot' has no attributes.
+The class 'preprocess::water::Suppress' has no attributes.
+The class 'preprocess::statements::Statement' has no attributes.
+The class 'preprocess::literals::Space' has no attributes.
+The class 'preprocess::operands::CobolWord' has the following attributes: 'value' of type str.
+The class 'preprocess::water::On' has no attributes.
+The class 'preprocess::literals::SpaceConstant' has no attributes.
+The class 'Segment' has no attributes.
+The class 'preprocess::Dummy' has no attributes.
+The class 'preprocess::literals::Zeros' has no attributes.
+The class 'preprocess::containers::ProcedureCopyUnit' has no attributes.
+The class 'preprocess::statements::Execute' has the following attributes: 'water' of type str.
+The class 'preprocess::literals::QuoteConstant' has no attributes.
+The class 'commons::LibraryElement' has no attributes.
+The class 'preprocess::literals::Quote' has no attributes.
+The class 'preprocess::literals::Zero' has no attributes.
+The class 'QuoteConstant' has no attributes.
+The class 'preprocess::containers::CopyUnit' has no attributes.
+The class 'preprocess::commons::Element' has no attributes.
+The class 'SpaceConstant' has no attributes.
+The class 'preprocess::water::In' has no attributes.
+The class 'water::PreprocessingUnitWater' has no attributes.
+The class 'preprocess::literals::PseudoLiteral' has the following attributes: 'value' of type str.
+The class 'preprocess::literals::Quotes' has no attributes.
+The class 'NullConstant' has no attributes.
+The class 'preprocess::literals::FigurativeConstantLiteral' has no attributes.
+The class 'preprocess::containers::Segment' has no attributes.
+The class 'sentences::PreprocessingSentence' has no attributes.
+The class 'containers::CobolRoot' has no attributes.
+The class 'preprocess::water::By' has no attributes.
+The class 'PreprocessingUnitWater' has no attributes.
+The class 'HighValueConstant' has no attributes.
+The class 'water::Water' has no attributes.
+The class 'preprocess::water::Program' has no attributes.
+The class 'FigurativeConstantLiteral' has no attributes.
+The class 'preprocess::literals::Nulls' has no attributes.
+The class 'CobolLine' has no attributes.
+The class 'preprocess::water::Procedure' has no attributes.
+The class 'preprocess::literals::Null' has no attributes.
+The class 'LowValueConstant' has no attributes.
+The class 'preprocess::water::ProcedureSegmentWater' has no attributes.
+The class 'preprocess::water::DataSegmentToken' has no attributes.
+The class 'Operand' has no attributes.
+The class 'preprocess::literals::HighValue' has no attributes.
+The class 'ConstantLiteral' has no attributes.
+The class 'preprocess::water::All' has no attributes.
+The class 'preprocess::operands::Operand' has no attributes.
+The class 'preprocess::literals::HighValueConstant' has no attributes.
+The class 'preprocess::water::Of' has no attributes.
+The class 'preprocess::water::Water' has no attributes.
+The class 'preprocess::commons::NamedElement' has the following attributes: 'name' of type str.
+The class 'IncompleteElement' has no attributes.
+The class 'preprocess::literals::Literal' has no attributes.
+The enumeration 'LowValueConstants' has the following literals: 'lowValue', 'lowValues'.
+The enumeration 'QuoteConstants' has the following literals: 'quotes', 'quote'.
+The enumeration 'HighValueConstants' has the following literals: 'highValues', 'highValue'.
+The enumeration 'identifications' has the following literals: 'id', 'identification'.
+The enumeration 'NullConstants' has the following literals: 'nulls', 'null'.
+The enumeration 'PreprocessingUnitTokens' has the following literals: 'off', 'division', 'replace', 'replacing', 'by', 'of', 'in_', 'program', 'end', 'on', 'procedure', 'suppress', 'all'.
+The enumeration 'SpaceConstants' has the following literals: 'space', 'spaces'.
+The enumeration 'ZeroConstants' has the following literals: 'zero', 'zeroes', 'zeros'.
+The enumeration 'CobolSourceFormatTypeEnum' has the following literals: 'ANSI85'.
+'preprocess::layouts::ANSI85CobolSourceFormat' is a specialization of 'CobolSourceFormat'.
+'preprocess::water::Of' is a specialization of 'DataSegmentToken'.
+'preprocess::water::ProcedureSegmentWater' is a specialization of 'Water'.
+'preprocess::literals::Zero' is a specialization of 'ZeroConstant'.
+'preprocess::water::Dot' is a specialization of 'PreprocessingUnitWater'.
+'preprocess::containers::ProcedureCopyUnit' is a specialization of 'CopyUnit'.
+'preprocess::containers::DataCopyUnit' is a specialization of 'CopyUnit'.
+'preprocess::literals::Null' is a specialization of 'NullConstant'.
+'preprocess::literals::FigurativeConstantLiteral' is a specialization of 'Literal'.
+'preprocess::literals::NumericLiteral' is a specialization of 'Literal'.
+'preprocess::literals::QuoteConstant' is a specialization of 'ConstantLiteral'.
+'preprocess::containers::Copybook' is a specialization of 'water::IncompleteElement'.
+'preprocess::literals::Nulls' is a specialization of 'NullConstant'.
+'preprocess::operands::CobolWord' is a specialization of 'water::PreprocessingUnitWater'.
+'preprocess::literals::AlphanumericLiteral' is a specialization of 'Literal'.
+'preprocess::literals::ConstantLiteral' is a specialization of 'FigurativeConstantLiteral'.
+'preprocess::water::DataSegmentWater' is a specialization of 'water::Water'.
+'preprocess::containers::PreprocessingUnit' is a specialization of 'water::IncompleteElement'.
+'preprocess::literals::Space' is a specialization of 'SpaceConstant'.
+'preprocess::literals::PseudoLiteral' is a specialization of 'Literal'.
+'preprocess::literals::LowValues' is a specialization of 'LowValueConstant'.
+'preprocess::containers::PreprocessingUnit' is a specialization of 'commons::NamedElement'.
+'preprocess::water::All' is a specialization of 'DataSegmentToken'.
+'preprocess::literals::HighValue' is a specialization of 'HighValueConstant'.
+'preprocess::water::In' is a specialization of 'DataSegmentToken'.
+'preprocess::containers::CopyUnit' is a specialization of 'IncompleteElement'.
+'preprocess::literals::Quote' is a specialization of 'QuoteConstant'.
+'preprocess::operands::CobolWord' is a specialization of 'operands::Operand'.
+'preprocess::literals::Literal' is a specialization of 'water::PreprocessingUnitWater'.
+'preprocess::sentences::CopySentence' is a specialization of 'commons::NamedElement'.
+'preprocess::literals::Spaces' is a specialization of 'SpaceConstant'.
+'preprocess::sentences::CopySentence' is a specialization of 'commons::LibraryElement'.
+'preprocess::literals::HighValueConstant' is a specialization of 'ConstantLiteral'.
+'preprocess::commons::NamedElement' is a specialization of 'Element'.
+'preprocess::literals::NullConstant' is a specialization of 'ConstantLiteral'.
+'preprocess::water::Procedure' is a specialization of 'ProcedureSegmentWater'.
+'preprocess::water::On' is a specialization of 'DataSegmentToken'.
+'preprocess::water::Replace' is a specialization of 'DataSegmentToken'.
+'preprocess::water::Division' is a specialization of 'DataSegmentToken'.
+'preprocess::water::Off' is a specialization of 'DataSegmentToken'.
+'preprocess::statements::Execute' is a specialization of 'statements::Statement'.
+'preprocess::literals::LowValue' is a specialization of 'LowValueConstant'.
+'preprocess::sentences::ReplaceSentence' is a specialization of 'PreprocessingSentence'.
+'preprocess::literals::Quotes' is a specialization of 'QuoteConstant'.
+'preprocess::containers::DataSegment' is a specialization of 'Segment'.
+'preprocess::water::Suppress' is a specialization of 'DataSegmentToken'.
+'preprocess::water::Program' is a specialization of 'DataSegmentToken'.
+'preprocess::water::PreprocessingUnitWater' is a specialization of 'DataSegmentWater'.
+'preprocess::commons::LibraryElement' is a specialization of 'Element'.
+'preprocess::water::End' is a specialization of 'DataSegmentToken'.
+'preprocess::containers::Copybook' is a specialization of 'commons::NamedElement'.
+'preprocess::sentences::CopySentence' is a specialization of 'sentences::PreprocessingSentence'.
+'preprocess::literals::SpaceConstant' is a specialization of 'ConstantLiteral'.
+'preprocess::literals::LowValueConstant' is a specialization of 'ConstantLiteral'.
+'preprocess::literals::ZeroConstant' is a specialization of 'ConstantLiteral'.
+'preprocess::literals::Literal' is a specialization of 'operands::Operand'.
+'preprocess::containers::Segment' is a specialization of 'IncompleteElement'.
+'preprocess::water::DataSegmentWater' is a specialization of 'water::ProcedureSegmentWater'.
+'preprocess::literals::Zeroes' is a specialization of 'ZeroConstant'.
+'preprocess::containers::ProcedureSegment' is a specialization of 'Segment'.
+'preprocess::water::Replacing' is a specialization of 'DataSegmentToken'.
+'preprocess::water::By' is a specialization of 'DataSegmentToken'.
+'preprocess::literals::AllLiteral' is a specialization of 'FigurativeConstantLiteral'.
+'preprocess::literals::HighValues' is a specialization of 'HighValueConstant'.
+'preprocess::literals::AlphanumericHexaDecimalLiteral' is a specialization of 'AlphanumericLiteral'.
+'preprocess::water::DataSegmentToken' is a specialization of 'DataSegmentWater'.
+'preprocess::literals::Zeros' is a specialization of 'ZeroConstant'.
+'preprocess::containers::PreprocessingGroup' is a specialization of 'CobolRoot'.
+'preprocess::statements::Execute' is a specialization of 'water::PreprocessingUnitWater'.
+'preprocess::containers::Copybook' is a specialization of 'containers::CobolRoot'.
+'PreprocessingSentence' (role 'PreprocessingSentence', cardinality 0..*) is associated with 'preprocess::containers::CopyUnit' (role 'preprocess_containers_CopyUnit', cardinality 0..*).
+'ProcedureSegment' (role 'ProcedureSegment', cardinality 0..*) is associated with 'preprocess::containers::PreprocessingUnit' (role 'preprocess_containers_PreprocessingUnit6', cardinality 0..*).
+'DataSegment' (role 'DataSegment', cardinality 0..*) is associated with 'preprocess::containers::PreprocessingUnit' (role 'preprocess_containers_PreprocessingUnit4', cardinality 0..*).
+'CobolLine' (role 'CobolLine21', cardinality 0..*) is associated with 'preprocess::commons::Element' (role 'preprocess_commons_Element', cardinality 0..*).
+'CobolWord' (role 'CobolWord', cardinality 0..*) is associated with 'preprocess::containers::PreprocessingUnit' (role 'preprocess_containers_PreprocessingUnit2', cardinality 0..*).
+'preprocess::water::IncompleteElement' (role 'preprocess_water_IncompleteElement', cardinality 0..*) is associated with 'Water' (role 'Water', cardinality 0..*).
+'preprocess::containers::Copybook' (role 'preprocess_containers_Copybook', cardinality 0..*) is associated with 'CopyUnit' (role 'CopyUnit', cardinality 0..*).
+'Operand' (role 'Operand', cardinality 0..*) is associated with 'preprocess::sentences::Replacing' (role 'preprocess_sentences_Replacing', cardinality 0..*).
+'preprocess::containers::Segment' (role 'preprocess_containers_Segment', cardinality 0..*) is associated with 'CopyUnit' (role 'CopyUnit13', cardinality 0..*).
+'PreprocessingUnit' (role 'PreprocessingUnit', cardinality 0..*) is associated with 'preprocess::containers::PreprocessingUnit' (role 'preprocess_containers_PreprocessingUnit', cardinality 0..*).
+'PreprocessingUnit' (role 'PreprocessingUnit8', cardinality 0..*) is associated with 'preprocess::containers::PreprocessingGroup' (role 'preprocess_containers_PreprocessingGroup', cardinality 0..*).
+'preprocess::literals::AllLiteral' (role 'preprocess_literals_AllLiteral', cardinality 0..*) is associated with 'Literal' (role 'Literal', cardinality 0..*).
+'preprocess::layouts::CobolLine' (role 'preprocess_layouts_CobolLine', cardinality 0..*) is associated with 'CobolSourceFormat' (role 'CobolSourceFormat', cardinality 0..*).
+'preprocess::sentences::Replacing' (role 'preprocess_sentences_Replacing17', cardinality 0..*) is associated with 'Operand' (role 'Operand18', cardinality 0..*).
+'Replacing' (role 'Replacing', cardinality 0..*) is associated with 'preprocess::sentences::PreprocessingSentence' (role 'preprocess_sentences_PreprocessingSentence', cardinality 0..*).
+'preprocess::containers::CobolRoot' (role 'preprocess_containers_CobolRoot', cardinality 0..*) is associated with 'CobolLine' (role 'CobolLine', cardinality 0..*).

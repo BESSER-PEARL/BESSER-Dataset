@@ -1,0 +1,17 @@
+The model has 5 class(es).
+The class 'addressbook::FederalState' has the following attributes: 'name' of type str.
+The class 'addressbook::Address' has the following attributes: 'street' of type str; 'city' of type str; 'zip' of type str; 'type' of type str.
+The class 'addressbook::AddressBook' has no attributes.
+The class 'addressbook::Person' has the following attributes: 'lastname' of type str; 'firstname' of type str.
+The class 'addressbook::Country' has the following attributes: 'name' of type str.
+The enumeration 'AddressType' has the following literals: 'PRIVATE', 'BUSINESS', 'DELIVERY'.
+'addressbook::Country' (role 'addressbook_Country5', cardinality 0..*) is associated with 'addressbook::Address' (role 'addressbook_Address', cardinality 0..*).
+'addressbook::Country' (role 'country', cardinality 0..*) is associated with 'addressbook::FederalState' (role 'FederalState', cardinality 0..*).
+'addressbook::AddressBook' (role 'addressbook_AddressBook13', cardinality 0..*) is associated with 'addressbook::Country' (role 'addressbook_Country12', cardinality 0..*).
+'addressbook::Person' (role 'person', cardinality 0..*) is associated with 'addressbook::Address' (role 'Address', cardinality 0..*).
+'addressbook::Address' (role 'addressbook_Address7', cardinality 0..*) is associated with 'addressbook::FederalState' (role 'addressbook_FederalState', cardinality 0..*).
+'addressbook::Person' (role 'persons', cardinality 0..*) is associated with 'addressbook::AddressBook' (role 'AddressBook', cardinality 0..*).
+'addressbook::Country' (role 'Country', cardinality 0..*) is associated with 'addressbook::FederalState' (role 'federalStates', cardinality 0..*).
+'addressbook::Country' (role 'addressbook_Country', cardinality 0..*) is associated with 'addressbook::AddressBook' (role 'addressbook_AddressBook', cardinality 0..*).
+'addressbook::Address' (role 'addresses', cardinality 0..*) is associated with 'addressbook::Person' (role 'Person9', cardinality 0..*).
+'addressbook::Person' (role 'Person', cardinality 0..*) is associated with 'addressbook::AddressBook' (role 'addressBook', cardinality 0..*).

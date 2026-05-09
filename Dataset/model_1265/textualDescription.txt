@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'family::Person' has the following attributes: 'name' of type str; 'male' of type bool.
+The class 'family::Family' has the following attributes: 'name' of type str.
+'family::Person' (role 'family_Person', cardinality 0..*) is associated with 'family::Family' (role 'family_Family', cardinality 0..*).

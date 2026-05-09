@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'GraphComponent' has no attributes.
+The class 'graph2::GraphComponent' has the following attributes: 'text' of type str.
+The class 'graph2::Node' has no attributes.
+The class 'graph2::Graph' has no attributes.
+The class 'graph2::Edge' has no attributes.
+'graph2::Node' is a specialization of 'GraphComponent'.
+'graph2::Edge' is a specialization of 'GraphComponent'.
+'graph2::GraphComponent' (role 'graph2_GraphComponent', cardinality 0..*) is associated with 'graph2::Graph' (role 'graph2_Graph', cardinality 0..*).
+'graph2::Node' (role 'graph2_Node4', cardinality 0..*) is associated with 'graph2::Edge' (role 'graph2_Edge3', cardinality 0..*).
+'graph2::Edge' (role 'graph2_Edge', cardinality 0..*) is associated with 'graph2::Node' (role 'graph2_Node', cardinality 0..*).

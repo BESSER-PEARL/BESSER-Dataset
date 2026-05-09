@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/DavidZaf/Lab3/ATL_DEMO_WS16/metamodels/Book.ecore

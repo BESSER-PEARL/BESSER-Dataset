@@ -1,0 +1,245 @@
+The model has 94 class(es).
+The class 'EmigOcl::OclFeatureDefinition' has the following attributes: 'static' of type str.
+The class 'EmigOcl::SetExp' has no attributes.
+The class 'EmigOcl::IterateExp' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'EmigOcl::LetExp' has no attributes.
+The class 'EmigOcl::OperatorCallExp' has the following attributes: 'operationName' of type str.
+The class 'EmigOcl::NumericType' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'EmigOcl::CollectionExp' has no attributes.
+The class 'EmigOcl::EnumLiteralExp' has the following attributes: 'name' of type str.
+The class 'EmigOcl::TuplePart' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'OperationCall' has no attributes.
+The class 'EmigOcl::VariableDeclaration' has the following attributes: 'varName' of type str.
+The class 'CollectionType' has no attributes.
+The class 'EmigOcl::MulOpCallExp' has no attributes.
+The class 'EmigOcl::LocalVariable' has the following attributes: 'eq' of type str.
+The class 'EmigOcl::OclExpression' has no attributes.
+The class 'EmigOcl::LocatedElement' has the following attributes: 'charEnd' of type str; 'charStart' of type str; 'line' of type str; 'column' of type str.
+The class 'EmigOcl::StaticPropertyCall' has no attributes.
+The class 'EmigOcl::EqOpCallExp' has no attributes.
+The class 'EmigOcl::Parameter' has no attributes.
+The class 'EmigOcl::Iterator' has no attributes.
+The class 'EmigOcl::PropertyCallExp' has no attributes.
+The class 'EmigOcl::BagExp' has no attributes.
+The class 'EmigOcl::OclFeature' has the following attributes: 'eq' of type str.
+The class 'EmigOcl::BraceExp' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'EmigOcl::TupleTypeAttribute' has the following attributes: 'name' of type str.
+The class 'EmigOcl::StaticNavigationOrAttributeCall' has the following attributes: 'name' of type str.
+The class 'EmigOcl::VariableExp' has no attributes.
+The class 'EmigOcl::BooleanType' has no attributes.
+The class 'EmigOcl::NavigationOrAttributeCall' has the following attributes: 'name' of type str.
+The class 'PropertyCallExp' has no attributes.
+The class 'EmigOcl::OclContextDefinition' has no attributes.
+The class 'EmigOcl::BagType' has no attributes.
+The class 'EmigOcl::OclModel' has the following attributes: 'name' of type str.
+The class 'EmigOcl::Attribute' has the following attributes: 'name' of type str.
+The class 'OperatorCallExp' has no attributes.
+The class 'PropertyCall' has no attributes.
+The class 'EmigOcl::OclType' has the following attributes: 'name' of type str.
+The class 'EmigOcl::TupleExp' has no attributes.
+The class 'EmigOcl::IntOpCallExp' has no attributes.
+The class 'OclType' has no attributes.
+The class 'EmigOcl::LambdaType' has no attributes.
+The class 'EmigOcl::CollectionType' has no attributes.
+The class 'EmigOcl::TupleType' has no attributes.
+The class 'NumericExp' has no attributes.
+The class 'EmigOcl::Primitive' has no attributes.
+The class 'EmigOcl::LoopExp' has no attributes.
+The class 'OclFeature' has no attributes.
+The class 'EmigOcl::SelfExp' has no attributes.
+The class 'EmigOcl::PropertyCall' has no attributes.
+The class 'EmigOcl::StringType' has no attributes.
+The class 'EmigOcl::Operation' has the following attributes: 'name' of type str.
+The class 'EmigOcl::OclModelElementExp' has the following attributes: 'name' of type str.
+The class 'CollectionExp' has no attributes.
+The class 'EmigOcl::AddOpCallExp' has no attributes.
+The class 'StaticPropertyCall' has no attributes.
+The class 'EmigOcl::OclUndefinedExp' has no attributes.
+The class 'EmigOcl::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'EmigOcl::CollectionOperationCall' has no attributes.
+The class 'EmigOcl::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'EmigOcl::StaticOperationCall' has the following attributes: 'operationName' of type str.
+The class 'EmigOcl::NumericExp' has no attributes.
+The class 'EmigOcl::NotOpCallExp' has no attributes.
+The class 'EmigOcl::OperationCall' has the following attributes: 'operationName' of type str.
+The class 'EmigOcl::OclAnyType' has no attributes.
+The class 'VariableExp' has no attributes.
+The class 'EmigOcl::OrderedSetExp' has no attributes.
+The class 'EmigOcl::OclModelElement' has no attributes.
+The class 'EmigOcl::SequenceType' has no attributes.
+The class 'EmigOcl::SequenceExp' has no attributes.
+The class 'EmigOcl::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+The class 'EmigOcl::IteratorExp' has the following attributes: 'name' of type str.
+The class 'EmigOcl::RealType' has no attributes.
+The class 'EmigOcl::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'EmigOcl::RelOpCallExp' has no attributes.
+The class 'EmigOcl::MapElement' has no attributes.
+The class 'EmigOcl::PrimitiveExp' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'EmigOcl::SetType' has no attributes.
+The class 'EmigOcl::OrderedSetType' has no attributes.
+The class 'EmigOcl::LambdaCallExp' has no attributes.
+The class 'EmigOcl::IntegerType' has no attributes.
+The class 'EmigOcl::IfExp' has no attributes.
+The class 'EmigOcl::StaticPropertyCallExp' has no attributes.
+The class 'EmigOcl::MapExp' has no attributes.
+The class 'EmigOcl::SuperExp' has no attributes.
+The class 'LocalVariable' has no attributes.
+The class 'EmigOcl::MapType' has no attributes.
+The class 'EmigOcl::Module' has the following attributes: 'name' of type str.
+'EmigOcl::PrimitiveExp' is a specialization of 'OclExpression'.
+'EmigOcl::MapExp' is a specialization of 'OclExpression'.
+'EmigOcl::EqOpCallExp' is a specialization of 'OperatorCallExp'.
+'EmigOcl::VariableDeclaration' is a specialization of 'LocatedElement'.
+'EmigOcl::EnumLiteralExp' is a specialization of 'OclExpression'.
+'EmigOcl::BooleanExp' is a specialization of 'PrimitiveExp'.
+'EmigOcl::IteratorExp' is a specialization of 'LoopExp'.
+'EmigOcl::NumericType' is a specialization of 'Primitive'.
+'EmigOcl::Module' is a specialization of 'LocatedElement'.
+'EmigOcl::IntegerExp' is a specialization of 'NumericExp'.
+'EmigOcl::OclModelElementExp' is a specialization of 'OclExpression'.
+'EmigOcl::CollectionType' is a specialization of 'OclType'.
+'EmigOcl::SequenceType' is a specialization of 'CollectionType'.
+'EmigOcl::OrderedSetExp' is a specialization of 'CollectionExp'.
+'EmigOcl::TuplePart' is a specialization of 'LocalVariable'.
+'EmigOcl::NavigationOrAttributeCall' is a specialization of 'PropertyCall'.
+'EmigOcl::OclModel' is a specialization of 'LocatedElement'.
+'EmigOcl::TupleExp' is a specialization of 'OclExpression'.
+'EmigOcl::BraceExp' is a specialization of 'OclExpression'.
+'EmigOcl::StringExp' is a specialization of 'PrimitiveExp'.
+'EmigOcl::IntOpCallExp' is a specialization of 'OperatorCallExp'.
+'EmigOcl::BagExp' is a specialization of 'CollectionExp'.
+'EmigOcl::StaticOperationCall' is a specialization of 'StaticPropertyCall'.
+'EmigOcl::SetType' is a specialization of 'CollectionType'.
+'EmigOcl::VariableExp' is a specialization of 'OclExpression'.
+'EmigOcl::MapType' is a specialization of 'OclType'.
+'EmigOcl::OclType' is a specialization of 'LocatedElement'.
+'EmigOcl::MapElement' is a specialization of 'LocatedElement'.
+'EmigOcl::OclUndefinedExp' is a specialization of 'OclExpression'.
+'EmigOcl::LoopExp' is a specialization of 'PropertyCall'.
+'EmigOcl::StringType' is a specialization of 'Primitive'.
+'EmigOcl::RealExp' is a specialization of 'NumericExp'.
+'EmigOcl::StaticPropertyCallExp' is a specialization of 'OclExpression'.
+'EmigOcl::Parameter' is a specialization of 'VariableDeclaration'.
+'EmigOcl::LocalVariable' is a specialization of 'VariableDeclaration'.
+'EmigOcl::Primitive' is a specialization of 'OclType'.
+'EmigOcl::OperationCall' is a specialization of 'PropertyCall'.
+'EmigOcl::RealType' is a specialization of 'NumericType'.
+'EmigOcl::NumericExp' is a specialization of 'PrimitiveExp'.
+'EmigOcl::PropertyCallExp' is a specialization of 'OclExpression'.
+'EmigOcl::IterateExp' is a specialization of 'LoopExp'.
+'EmigOcl::BagType' is a specialization of 'CollectionType'.
+'EmigOcl::Operation' is a specialization of 'OclFeature'.
+'EmigOcl::OclAnyType' is a specialization of 'OclType'.
+'EmigOcl::SuperExp' is a specialization of 'OclExpression'.
+'EmigOcl::SelfExp' is a specialization of 'OclExpression'.
+'EmigOcl::BooleanType' is a specialization of 'Primitive'.
+'EmigOcl::LambdaCallExp' is a specialization of 'VariableExp'.
+'EmigOcl::OclModelElement' is a specialization of 'OclType'.
+'EmigOcl::OclContextDefinition' is a specialization of 'LocatedElement'.
+'EmigOcl::OrderedSetType' is a specialization of 'CollectionType'.
+'EmigOcl::OclFeatureDefinition' is a specialization of 'LocatedElement'.
+'EmigOcl::TupleTypeAttribute' is a specialization of 'LocatedElement'.
+'EmigOcl::RelOpCallExp' is a specialization of 'OperatorCallExp'.
+'EmigOcl::StaticNavigationOrAttributeCall' is a specialization of 'StaticPropertyCall'.
+'EmigOcl::Iterator' is a specialization of 'VariableDeclaration'.
+'EmigOcl::AddOpCallExp' is a specialization of 'OperatorCallExp'.
+'EmigOcl::OclFeature' is a specialization of 'LocatedElement'.
+'EmigOcl::IfExp' is a specialization of 'OclExpression'.
+'EmigOcl::MulOpCallExp' is a specialization of 'OperatorCallExp'.
+'EmigOcl::SetExp' is a specialization of 'CollectionExp'.
+'EmigOcl::OclExpression' is a specialization of 'LocatedElement'.
+'EmigOcl::SequenceExp' is a specialization of 'CollectionExp'.
+'EmigOcl::CollectionOperationCall' is a specialization of 'OperationCall'.
+'EmigOcl::OperatorCallExp' is a specialization of 'PropertyCallExp'.
+'EmigOcl::TupleType' is a specialization of 'OclType'.
+'EmigOcl::CollectionExp' is a specialization of 'OclExpression'.
+'EmigOcl::LetExp' is a specialization of 'OclExpression'.
+'EmigOcl::IntegerType' is a specialization of 'NumericType'.
+'EmigOcl::LambdaType' is a specialization of 'OclType'.
+'EmigOcl::Attribute' is a specialization of 'OclFeature'.
+'EmigOcl::NotOpCallExp' is a specialization of 'OperatorCallExp'.
+'EmigOcl::OclExpression' (role 'OclExpression130', cardinality 0..*) is associated with 'EmigOcl::Operation' (role 'owningOperation', cardinality 0..*).
+'EmigOcl::IfExp' (role 'IfExp16', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'condition', cardinality 0..*).
+'EmigOcl::LoopExp' (role 'loopExp', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'OclExpression47', cardinality 0..*).
+'EmigOcl::LambdaType' (role 'EmigOcl_LambdaType', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'EmigOcl_OclType107', cardinality 0..*).
+'EmigOcl::OclModelElement' (role 'elements101', cardinality 0..*) is associated with 'EmigOcl::OclModel' (role 'OclModel', cardinality 0..*).
+'EmigOcl::Module' (role 'EmigOcl_Module2', cardinality 0..*) is associated with 'EmigOcl::OclFeatureDefinition' (role 'EmigOcl_OclFeatureDefinition', cardinality 0..*).
+'EmigOcl::StaticPropertyCall' (role 'EmigOcl_StaticPropertyCall', cardinality 0..*) is associated with 'EmigOcl::StaticPropertyCallExp' (role 'EmigOcl_StaticPropertyCallExp32', cardinality 0..*).
+'EmigOcl::LoopExp' (role 'LoopExp71', cardinality 0..*) is associated with 'EmigOcl::Iterator' (role 'iterators', cardinality 0..*).
+'EmigOcl::LetExp' (role 'letExp54', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'OclExpression55', cardinality 0..*).
+'EmigOcl::VariableDeclaration' (role 'referredVariable', cardinality 0..*) is associated with 'EmigOcl::VariableExp' (role 'VariableExp', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'source', cardinality 0..*) is associated with 'EmigOcl::PropertyCallExp' (role 'PropertyCallExp', cardinality 0..*).
+'EmigOcl::TupleExp' (role 'TupleExp', cardinality 0..*) is associated with 'EmigOcl::TuplePart' (role 'tuplePart', cardinality 0..*).
+'EmigOcl::OperationCall' (role 'parentOperation', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'OclExpression39', cardinality 0..*).
+'EmigOcl::Operation' (role 'Operation80', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'returnType', cardinality 0..*).
+'EmigOcl::OclModel' (role 'OclModel138', cardinality 0..*) is associated with 'EmigOcl::OclModel' (role 'metamodel', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'OclExpression57', cardinality 0..*) is associated with 'EmigOcl::IfExp' (role 'ifExp2', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'elements', cardinality 0..*) is associated with 'EmigOcl::CollectionExp' (role 'CollectionExp', cardinality 0..*).
+'EmigOcl::MapType' (role 'mapType2', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'OclType103', cardinality 0..*).
+'EmigOcl::MapExp' (role 'MapExp', cardinality 0..*) is associated with 'EmigOcl::MapElement' (role 'elements25', cardinality 0..*).
+'EmigOcl::LocalVariable' (role 'initializedVariable', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'OclExpression68', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'arguments', cardinality 0..*) is associated with 'EmigOcl::OperationCall' (role 'OperationCall', cardinality 0..*).
+'EmigOcl::PropertyCallExp' (role 'EmigOcl_PropertyCallExp', cardinality 0..*) is associated with 'EmigOcl::PropertyCall' (role 'EmigOcl_PropertyCall', cardinality 0..*).
+'EmigOcl::VariableDeclaration' (role 'variableDeclaration', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'OclType63', cardinality 0..*).
+'EmigOcl::VariableExp' (role 'variableExp', cardinality 0..*) is associated with 'EmigOcl::VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*).
+'EmigOcl::Module' (role 'EmigOcl_Module', cardinality 0..*) is associated with 'EmigOcl::OclModel' (role 'EmigOcl_OclModel', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'EmigOcl_OclExpression43', cardinality 0..*) is associated with 'EmigOcl::LambdaCallExp' (role 'EmigOcl_LambdaCallExp', cardinality 0..*).
+'EmigOcl::OclType' (role 'type91', cardinality 0..*) is associated with 'EmigOcl::VariableDeclaration' (role 'VariableDeclaration92', cardinality 0..*).
+'EmigOcl::OclFeature' (role 'OclFeature', cardinality 0..*) is associated with 'EmigOcl::OclFeatureDefinition' (role 'definition', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'EmigOcl_OclExpression', cardinality 0..*) is associated with 'EmigOcl::MapElement' (role 'EmigOcl_MapElement', cardinality 0..*).
+'EmigOcl::TupleExp' (role 'tuple', cardinality 0..*) is associated with 'EmigOcl::TuplePart' (role 'TuplePart', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'OclExpression78', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'type', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'EmigOcl_OclExpression41', cardinality 0..*) is associated with 'EmigOcl::OperatorCallExp' (role 'EmigOcl_OperatorCallExp', cardinality 0..*).
+'EmigOcl::Attribute' (role 'attribute', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'OclType124', cardinality 0..*).
+'EmigOcl::TupleTypeAttribute' (role 'tupleTypeAttribute', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'OclType98', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'thenExpression', cardinality 0..*) is associated with 'EmigOcl::IfExp' (role 'IfExp12', cardinality 0..*).
+'EmigOcl::LetExp' (role 'LetExp', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'in_', cardinality 0..*).
+'EmigOcl::CollectionType' (role 'CollectionType', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'elementType', cardinality 0..*).
+'EmigOcl::BraceExp' (role 'EmigOcl_BraceExp', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'EmigOcl_OclExpression45', cardinality 0..*).
+'EmigOcl::LetExp' (role 'LetExp66', cardinality 0..*) is associated with 'EmigOcl::LocalVariable' (role 'variable', cardinality 0..*).
+'EmigOcl::OclModel' (role 'model135', cardinality 0..*) is associated with 'EmigOcl::OclModelElement' (role 'OclModelElement', cardinality 0..*).
+'EmigOcl::OclType' (role 'OclType128', cardinality 0..*) is associated with 'EmigOcl::Operation' (role 'operation127', cardinality 0..*).
+'EmigOcl::IterateExp' (role 'IterateExp', cardinality 0..*) is associated with 'EmigOcl::LocalVariable' (role 'result', cardinality 0..*).
+'EmigOcl::OclModel' (role 'EmigOcl_OclModel94', cardinality 0..*) is associated with 'EmigOcl::OclModelElementExp' (role 'EmigOcl_OclModelElementExp', cardinality 0..*).
+'EmigOcl::MapType' (role 'mapType', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'OclType105', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'EmigOcl_OclExpression34', cardinality 0..*) is associated with 'EmigOcl::StaticOperationCall' (role 'EmigOcl_StaticOperationCall', cardinality 0..*).
+'EmigOcl::Parameter' (role 'parameters', cardinality 0..*) is associated with 'EmigOcl::Operation' (role 'Operation73', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'body', cardinality 0..*) is associated with 'EmigOcl::LoopExp' (role 'LoopExp', cardinality 0..*).
+'EmigOcl::IfExp' (role 'ifExp3', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'OclExpression61', cardinality 0..*).
+'EmigOcl::OclType' (role 'OclType', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'oclExpression', cardinality 0..*).
+'EmigOcl::PropertyCallExp' (role 'appliedProperty', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'OclExpression37', cardinality 0..*).
+'EmigOcl::Iterator' (role 'Iterator', cardinality 0..*) is associated with 'EmigOcl::LoopExp' (role 'loopExpr', cardinality 0..*).
+'EmigOcl::OclModel' (role 'OclModel133', cardinality 0..*) is associated with 'EmigOcl::OclModel' (role 'model', cardinality 0..*).
+'EmigOcl::OclContextDefinition' (role 'OclContextDefinition114', cardinality 0..*) is associated with 'EmigOcl::OclFeatureDefinition' (role 'definition113', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'initExpression18', cardinality 0..*) is associated with 'EmigOcl::Attribute' (role 'Attribute', cardinality 0..*).
+'EmigOcl::TupleTypeAttribute' (role 'attributes', cardinality 0..*) is associated with 'EmigOcl::TupleType' (role 'TupleType', cardinality 0..*).
+'EmigOcl::TupleTypeAttribute' (role 'TupleTypeAttribute96', cardinality 0..*) is associated with 'EmigOcl::TupleType' (role 'tupleType', cardinality 0..*).
+'EmigOcl::LambdaType' (role 'EmigOcl_LambdaType109', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'EmigOcl_OclType110', cardinality 0..*).
+'EmigOcl::TupleTypeAttribute' (role 'TupleTypeAttribute', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'type89', cardinality 0..*).
+'EmigOcl::CollectionType' (role 'collectionTypes', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'OclType75', cardinality 0..*).
+'EmigOcl::LocalVariable' (role 'LocalVariable', cardinality 0..*) is associated with 'EmigOcl::OclExpression' (role 'initExpression', cardinality 0..*).
+'EmigOcl::OclType' (role 'type83', cardinality 0..*) is associated with 'EmigOcl::Attribute' (role 'Attribute84', cardinality 0..*).
+'EmigOcl::OclContextDefinition' (role 'context_116', cardinality 0..*) is associated with 'EmigOcl::OclFeatureDefinition' (role 'OclFeatureDefinition', cardinality 0..*).
+'EmigOcl::LocalVariable' (role 'LocalVariable52', cardinality 0..*) is associated with 'EmigOcl::LetExp' (role 'letExp', cardinality 0..*).
+'EmigOcl::MapType' (role 'MapType86', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'keyType', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'elseExpression', cardinality 0..*) is associated with 'EmigOcl::IfExp' (role 'IfExp', cardinality 0..*).
+'EmigOcl::MapElement' (role 'MapElement', cardinality 0..*) is associated with 'EmigOcl::MapExp' (role 'map', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'body14', cardinality 0..*) is associated with 'EmigOcl::Operation' (role 'Operation', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'OclExpression59', cardinality 0..*) is associated with 'EmigOcl::IfExp' (role 'ifExp1', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'OclExpression122', cardinality 0..*) is associated with 'EmigOcl::Attribute' (role 'owningAttribute', cardinality 0..*).
+'EmigOcl::OclType' (role 'OclType118', cardinality 0..*) is associated with 'EmigOcl::OclContextDefinition' (role 'definitions', cardinality 0..*).
+'EmigOcl::OclType' (role 'valueType', cardinality 0..*) is associated with 'EmigOcl::MapType' (role 'MapType', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'OclExpression', cardinality 0..*) is associated with 'EmigOcl::CollectionExp' (role 'collection', cardinality 0..*).
+'EmigOcl::StaticPropertyCallExp' (role 'EmigOcl_StaticPropertyCallExp', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'EmigOcl_OclType', cardinality 0..*).
+'EmigOcl::OclContextDefinition' (role 'OclContextDefinition', cardinality 0..*) is associated with 'EmigOcl::OclType' (role 'context_', cardinality 0..*).
+'EmigOcl::OclFeatureDefinition' (role 'OclFeatureDefinition120', cardinality 0..*) is associated with 'EmigOcl::OclFeature' (role 'feature', cardinality 0..*).
+'EmigOcl::OclExpression' (role 'EmigOcl_OclExpression29', cardinality 0..*) is associated with 'EmigOcl::MapElement' (role 'EmigOcl_MapElement28', cardinality 0..*).
+'EmigOcl::IterateExp' (role 'baseExp', cardinality 0..*) is associated with 'EmigOcl::LocalVariable' (role 'LocalVariable50', cardinality 0..*).
+'EmigOcl::Operation' (role 'operation', cardinality 0..*) is associated with 'EmigOcl::Parameter' (role 'Parameter', cardinality 0..*).

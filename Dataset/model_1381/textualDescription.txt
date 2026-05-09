@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'statemachine::Transition' has no attributes.
+The class 'State' has no attributes.
+The class 'statemachine::Initial' has no attributes.
+The class 'statemachine::Final' has no attributes.
+The class 'statemachine::FSM' has no attributes.
+The class 'statemachine::State' has the following attributes: 'time' of type str.
+'statemachine::Final' is a specialization of 'State'.
+'statemachine::Initial' is a specialization of 'State'.
+'statemachine::FSM' (role 'statemachine_FSM4', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State5', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State11', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition10', cardinality 0..*).
+'statemachine::FSM' (role 'statemachine_FSM2', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State', cardinality 0..*) is associated with 'statemachine::FSM' (role 'statemachine_FSM', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State6', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State8', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State14', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition13', cardinality 0..*).

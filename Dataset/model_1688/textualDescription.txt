@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'yyf::Base' has the following attributes: 'id' of type int.
+The class 'yyf::Bar' has the following attributes: 'id' of type str.
+The class 'yyf::Relation' has the following attributes: 'since' of type str.
+The class 'yyf::Foo' has the following attributes: 'id' of type str.
+The class 'yyf::Output' has the following attributes: 'id' of type str.
+The class 'yyf::Alias' has the following attributes: 'id' of type str.
+The class 'yyf::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+'yyf::Base' is a specialization of 'NamedElement'.
+'yyf::Relation' is a specialization of 'NamedElement'.
+'yyf::Output' (role 'yyf_Output', cardinality 0..*) is associated with 'yyf::Base' (role 'yyf_Base3', cardinality 0..*).
+'yyf::Foo' (role 'yyf_Foo', cardinality 0..*) is associated with 'yyf::Base' (role 'yyf_Base', cardinality 0..*).
+'yyf::Relation' (role 'Relation', cardinality 0..*) is associated with 'yyf::Base' (role 'fromThing', cardinality 0..*).
+'yyf::Output' (role 'yyf_Output15', cardinality 0..*) is associated with 'yyf::Bar' (role 'yyf_Bar14', cardinality 0..*).
+'yyf::Alias' (role 'yyf_Alias', cardinality 0..*) is associated with 'yyf::NamedElement' (role 'yyf_NamedElement', cardinality 0..*).
+'yyf::Base' (role 'Base', cardinality 0..*) is associated with 'yyf::Relation' (role 'relations', cardinality 0..*).
+'yyf::Base' (role 'yyf_Base9', cardinality 0..*) is associated with 'yyf::Relation' (role 'yyf_Relation', cardinality 0..*).
+'yyf::NamedElement' (role 'yyf_NamedElement6', cardinality 0..*) is associated with 'yyf::Bar' (role 'yyf_Bar', cardinality 0..*).
+'yyf::Relation' (role 'yyf_Relation12', cardinality 0..*) is associated with 'yyf::Relation' (role 'yyf_Relation10', cardinality 0..*).

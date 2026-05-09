@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'stuff::Foo' has the following attributes: 'name' of type str.
+The class 'stuff::NamedElement' has the following attributes: 'name' of type str.
+The class 'stuff::Baz' has no attributes.
+The class 'stuff::Bar' has no attributes.
+The class 'Thing' has no attributes.
+The class 'stuff::Thing' has the following attributes: 'id' of type int.
+The class 'stuff::Stuff' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'stuff::World' has no attributes.
+'stuff::Baz' is a specialization of 'NamedElement'.
+'stuff::Stuff' is a specialization of 'Thing'.
+'stuff::Bar' is a specialization of 'NamedElement'.
+'stuff::Thing' (role 'stuff_Thing', cardinality 0..*) is associated with 'stuff::World' (role 'stuff_World', cardinality 0..*).
+'stuff::Thing' (role 'stuff_Thing1', cardinality 0..*) is associated with 'stuff::Thing' (role 'stuff_Thing3', cardinality 0..*).
+'stuff::Stuff' (role 'stuff_Stuff', cardinality 0..*) is associated with 'stuff::Foo' (role 'stuff_Foo', cardinality 0..*).
+'stuff::Baz' (role 'stuff_Baz', cardinality 0..*) is associated with 'stuff::Bar' (role 'stuff_Bar14', cardinality 0..*).
+'stuff::Bar' (role 'stuff_Bar', cardinality 0..*) is associated with 'stuff::Stuff' (role 'stuff_Stuff6', cardinality 0..*).
+'stuff::Stuff' (role 'stuff_Stuff9', cardinality 0..*) is associated with 'stuff::Foo' (role 'stuff_Foo8', cardinality 0..*).
+'stuff::Thing' (role 'stuff_Thing12', cardinality 0..*) is associated with 'stuff::Foo' (role 'stuff_Foo11', cardinality 0..*).

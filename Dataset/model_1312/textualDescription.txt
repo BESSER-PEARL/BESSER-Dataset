@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'StateMachine::WashingMachine' has no attributes.
+The class 'StateMachine::Transition' has the following attributes: 'id' of type int; 'name' of type str; 'trigger' of type str; 'action' of type str.
+The class 'StateMachine::NamedState' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'StateMachine::State' has no attributes.
+The class 'StateMachine::UnNamedState' has the following attributes: 'name' of type str.
+'StateMachine::UnNamedState' is a specialization of 'State'.
+'StateMachine::NamedState' is a specialization of 'State'.
+'StateMachine::State' (role 'StateMachine_State3', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition2', cardinality 0..*).
+'StateMachine::WashingMachine' (role 'StateMachine_WashingMachine10', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition11', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State', cardinality 0..*) is associated with 'StateMachine::Transition' (role 'StateMachine_Transition', cardinality 0..*).
+'StateMachine::State' (role 'StateMachine_State8', cardinality 0..*) is associated with 'StateMachine::WashingMachine' (role 'StateMachine_WashingMachine', cardinality 0..*).
+'StateMachine::Transition' (role 'StateMachine_Transition5', cardinality 0..*) is associated with 'StateMachine::State' (role 'StateMachine_State6', cardinality 0..*).

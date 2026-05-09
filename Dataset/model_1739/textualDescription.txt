@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'comicBookCollection::Person' has the following attributes: 'name' of type str.
+The class 'comicBookCollection::Book' has the following attributes: 'title' of type str; 'publicationDate' of type str.
+The class 'comicBookCollection::Publisher' has the following attributes: 'publishingName' of type str.
+The class 'comicBookCollection::ComicBookCollection' has no attributes.
+The class 'comicBookCollection::Series' has the following attributes: 'seriesTitle' of type str.
+'comicBookCollection::Person' (role 'comicBookCollection_Person9', cardinality 0..*) is associated with 'comicBookCollection::Book' (role 'comicBookCollection_Book8', cardinality 0..*).
+'comicBookCollection::Series' (role 'comicBookCollection_Series', cardinality 0..*) is associated with 'comicBookCollection::Publisher' (role 'comicBookCollection_Publisher2', cardinality 0..*).
+'comicBookCollection::Book' (role 'comicBookCollection_Book11', cardinality 0..*) is associated with 'comicBookCollection::Person' (role 'comicBookCollection_Person12', cardinality 0..*).
+'comicBookCollection::Book' (role 'comicBookCollection_Book6', cardinality 0..*) is associated with 'comicBookCollection::Person' (role 'comicBookCollection_Person', cardinality 0..*).
+'comicBookCollection::Series' (role 'comicBookCollection_Series4', cardinality 0..*) is associated with 'comicBookCollection::Book' (role 'comicBookCollection_Book', cardinality 0..*).
+'comicBookCollection::Publisher' (role 'comicBookCollection_Publisher', cardinality 0..*) is associated with 'comicBookCollection::ComicBookCollection' (role 'comicBookCollection_ComicBookCollection', cardinality 0..*).
+'comicBookCollection::Book' (role 'comicBookCollection_Book14', cardinality 0..*) is associated with 'comicBookCollection::Person' (role 'comicBookCollection_Person15', cardinality 0..*).

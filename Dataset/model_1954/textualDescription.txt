@@ -1,0 +1,330 @@
+The model has 188 class(es).
+The class 'softGalleryLanguage::AmazonElasticComputeCloud' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SingleDependencies' has no attributes.
+The class 'softGalleryLanguage::AmazonFile' has no attributes.
+The class 'softGalleryLanguage::Table::p' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::RestController' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactConstructor' has no attributes.
+The class 'softGalleryLanguage::Props' has no attributes.
+The class 'softGalleryLanguage::RequestMappingValue' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ViewComponentCont' has the following attributes: 'nameView' of type str.
+The class 'softGalleryLanguage::StyleProperties' has no attributes.
+The class 'softGalleryLanguage::Functionality' has no attributes.
+The class 'softGalleryLanguage::ForeignKeyRef' has no attributes.
+The class 'softGalleryLanguage::Entities' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::LayerTarget' has the following attributes: 'layerelations' of type str.
+The class 'softGalleryLanguage::ResponseParameterName' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactActionsContent' has no attributes.
+The class 'softGalleryLanguage::BucketAccess' has no attributes.
+The class 'softGalleryLanguage::Specification' has no attributes.
+The class 'softGalleryLanguage::SpecificationSegmentElement' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PutMapping' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactImports' has no attributes.
+The class 'softGalleryLanguage::ReactDependenciesSubRules' has no attributes.
+The class 'softGalleryLanguage::ArchitectureComponents' has no attributes.
+The class 'softGalleryLanguage::MappingType' has no attributes.
+The class 'softGalleryLanguage::AppAccess' has no attributes.
+The class 'softGalleryLanguage::ReactDependencies' has no attributes.
+The class 'softGalleryLanguage::StorageActionMember' has no attributes.
+The class 'softGalleryLanguage::SingleFile' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SpringRepositoryAnnotation' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::AlbumManagementFunctions' has the following attributes: 'createdAlbName' of type str; 'selectAlbName' of type str.
+The class 'softGalleryLanguage::ReactServicesType' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PresentationLayer' has no attributes.
+The class 'softGalleryLanguage::EnableResourceServer' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactsRelationServ' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Technologies' has no attributes.
+The class 'softGalleryLanguage::DirectoryContent' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PropsType' has the following attributes: 'propsdatas' of type str; 'nameProps' of type str.
+The class 'softGalleryLanguage::StorageClient' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactSubModules' has no attributes.
+The class 'softGalleryLanguage::LogicContent' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::RequestMappingProduces' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StateContent' has the following attributes: 'stateName' of type str; 'componentdatatyp' of type str.
+The class 'softGalleryLanguage::ReactComponents' has no attributes.
+The class 'softGalleryLanguage::ComponentsStylesContent' has the following attributes: 'nameStyle' of type str.
+The class 'softGalleryLanguage::StorageMember' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::EObject' has no attributes.
+The class 'softGalleryLanguage::ExceptionsType' has no attributes.
+The class 'softGalleryLanguage::GetMapping' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::LayerRelations' has the following attributes: 'layerelations' of type str; 'name' of type str.
+The class 'softGalleryLanguage::PhotoException' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StorageActionMemberType' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PostgresUser' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactLibraries' has no attributes.
+The class 'softGalleryLanguage::Spring' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PublicAccess' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ForeignKey::n' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::DataPersistenceLayer' has no attributes.
+The class 'softGalleryLanguage::LayerSource' has the following attributes: 'layerelations' of type str.
+The class 'softGalleryLanguage::NTierConnectionContent' has the following attributes: 'nTierName' of type str; 'ntierconnection' of type str.
+The class 'softGalleryLanguage::ReactConfiguration' has no attributes.
+The class 'softGalleryLanguage::Constraint' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::AlbumException' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SpringRepository' has no attributes.
+The class 'softGalleryLanguage::ObjectsPublic' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ColumnP' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Entity' has no attributes.
+The class 'softGalleryLanguage::Privilege' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PresentationSegments' has the following attributes: 'presentationSName' of type str; 'presentationAName' of type str; 'presentationCName' of type str.
+The class 'softGalleryLanguage::ResponseParameterType' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ForeignKey' has no attributes.
+The class 'softGalleryLanguage::LandingFunctions' has the following attributes: 'nameCarouselName' of type str; 'passPhotoName' of type str.
+The class 'softGalleryLanguage::DeleteMapping' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ExceptionHandler' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::RefTable::p' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StorageMemberAnnotation' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::CriteriaAttributeType' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StorageAction' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SpringEntityAnnotationTypes' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::React' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::AppAccessFunctions' has the following attributes: 'registerName' of type str; 'loginName' of type str.
+The class 'softGalleryLanguage::ExceptionsDomain' has no attributes.
+The class 'softGalleryLanguage::EnableAuthorizationServer' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StorageActionMemberName' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Domain' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StorageMemberType' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Model' has no attributes.
+The class 'softGalleryLanguage::BusinessLogicContent' has no attributes.
+The class 'softGalleryLanguage::EnableWebSecurity' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ViewSchema' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactInfo' has no attributes.
+The class 'softGalleryLanguage::ComponentsStyles' has no attributes.
+The class 'softGalleryLanguage::Configuration' has no attributes.
+The class 'softGalleryLanguage::BusinessLogicLayer' has no attributes.
+The class 'softGalleryLanguage::Cluster' has no attributes.
+The class 'softGalleryLanguage::ReactServiceContRequest' has no attributes.
+The class 'softGalleryLanguage::StorageActionReturn' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::StylePropertiesContent' has the following attributes: 'propName' of type str.
+The class 'softGalleryLanguage::SegmentStructure' has no attributes.
+The class 'softGalleryLanguage::EnableGlobalMethodSecurity' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PackageVersion' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SubcomponentCont' has the following attributes: 'nameSubComp' of type str.
+The class 'softGalleryLanguage::AlbumManagement' has no attributes.
+The class 'softGalleryLanguage::ReactImportContent' has the following attributes: 'impName' of type str.
+The class 'softGalleryLanguage::ReactServiceContent' has the following attributes: 'functName' of type str.
+The class 'softGalleryLanguage::UIContent' has no attributes.
+The class 'softGalleryLanguage::PostMapping' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Predicate' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::FrontEnd' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::BackEnd' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactDependenciesRules' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::OrderSpring' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Metadata' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ControllerSegmentElement' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactConfigurations' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::DataPersistenceContent' has no attributes.
+The class 'softGalleryLanguage::ReactServiceRequestProps' has the following attributes: 'reqPropName' of type str; 'reqPropDescription' of type str.
+The class 'softGalleryLanguage::BusinessLogicSegments' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactLibrary' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ResponseEntity' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::OnlyAuthorized' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ProfileManagement' has no attributes.
+The class 'softGalleryLanguage::NTiersConnections' has no attributes.
+The class 'softGalleryLanguage::Clause' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SegmentStructureContent' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Layer' has no attributes.
+The class 'softGalleryLanguage::NTierTarget' has no attributes.
+The class 'softGalleryLanguage::AtributePhoto' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::NTiers' has no attributes.
+The class 'softGalleryLanguage::AtributeAlbum' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ExceptionProcess' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SpringComponent' has no attributes.
+The class 'softGalleryLanguage::CoreFunctionsDeclaration' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::BucketObjectsNotPublic' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ResponseParameterAnnotation' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Schema' has no attributes.
+The class 'MappingType' has no attributes.
+The class 'softGalleryLanguage::Technology' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::DatatypeDB' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ComponentClass' has no attributes.
+The class 'softGalleryLanguage::RequestMapping' has no attributes.
+The class 'softGalleryLanguage::LogicStructure' has the following attributes: 'indexCompName' of type str; 'appComName' of type str.
+The class 'softGalleryLanguage::MultipleFile' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Database' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::AtributeUserDomain' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::AmazonWebServices' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::UserException' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Policy' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactInformation' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Function' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PackageName' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::AmazonSimpleStorageService' has no attributes.
+The class 'softGalleryLanguage::SpringRepositories' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::RequestMappingMethod' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactModules' has no attributes.
+The class 'softGalleryLanguage::ComponentsUI' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ResponseParameter' has no attributes.
+The class 'softGalleryLanguage::ReactFunctions' has the following attributes: 'lifecycleclass' of type str; 'renderclass' of type str.
+The class 'softGalleryLanguage::PhotoActionsFunctions' has the following attributes: 'nameLoad' of type str; 'namePhoto' of type str; 'nameGenerico' of type str.
+The class 'softGalleryLanguage::AmazonFolder' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Autowired' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PresentationContent' has no attributes.
+The class 'softGalleryLanguage::NTierSource' has no attributes.
+The class 'softGalleryLanguage::ProfileManagementFunctions' has the following attributes: 'viewprofileName' of type str; 'editProfileName' of type str.
+The class 'softGalleryLanguage::Bucket' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::PostgreSQL' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::LandingActions' has no attributes.
+The class 'softGalleryLanguage::BatchOperation' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactCoreFunctions' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactServicesRelation' has no attributes.
+The class 'softGalleryLanguage::PersistenceDataComponent' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Functionalities' has no attributes.
+The class 'softGalleryLanguage::Row' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SpringEntity' has no attributes.
+The class 'softGalleryLanguage::DataPersistenceSegments' has the following attributes: 'amazonSName' of type str; 'postSName' of type str.
+The class 'softGalleryLanguage::Index::p' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::SearchCriteria' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::ReactActions' has no attributes.
+The class 'softGalleryLanguage::ComponentsLogic' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::DOMConfigurations' has the following attributes: 'elements' of type str; 'name' of type str.
+The class 'softGalleryLanguage::PhotoActions' has no attributes.
+The class 'softGalleryLanguage::Directories' has no attributes.
+The class 'softGalleryLanguage::StorageActionAnnotation' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::State' has no attributes.
+The class 'softGalleryLanguage::NTiersRelations' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Query' has no attributes.
+The class 'softGalleryLanguage::Trigger' has the following attributes: 'name' of type str.
+The class 'softGalleryLanguage::Architecture' has no attributes.
+The class 'softGalleryLanguage::SpringBootApplication' has no attributes.
+'softGalleryLanguage::PutMapping' is a specialization of 'MappingType'.
+'softGalleryLanguage::PostMapping' is a specialization of 'MappingType'.
+'softGalleryLanguage::GetMapping' is a specialization of 'MappingType'.
+'softGalleryLanguage::RequestMapping' is a specialization of 'MappingType'.
+'softGalleryLanguage::DeleteMapping' is a specialization of 'MappingType'.
+'softGalleryLanguage::NTiers' (role 'softGalleryLanguage_NTiers', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject47', cardinality 0..*).
+'softGalleryLanguage::AmazonSimpleStorageService' (role 'softGalleryLanguage_AmazonSimpleStorageService', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject255', cardinality 0..*).
+'softGalleryLanguage::Functionalities' (role 'softGalleryLanguage_Functionalities23', cardinality 0..*) is associated with 'softGalleryLanguage::PhotoActions' (role 'softGalleryLanguage_PhotoActions', cardinality 0..*).
+'softGalleryLanguage::ComponentClass' (role 'softGalleryLanguage_ComponentClass190', cardinality 0..*) is associated with 'softGalleryLanguage::ReactFunctions' (role 'softGalleryLanguage_ReactFunctions', cardinality 0..*).
+'softGalleryLanguage::RestController' (role 'softGalleryLanguage_RestController', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject110', cardinality 0..*).
+'softGalleryLanguage::NTiersRelations' (role 'softGalleryLanguage_NTiersRelations89', cardinality 0..*) is associated with 'softGalleryLanguage::NTierTarget' (role 'softGalleryLanguage_NTierTarget88', cardinality 0..*).
+'softGalleryLanguage::Schema' (role 'softGalleryLanguage_Schema238', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject239', cardinality 0..*).
+'softGalleryLanguage::ReactConfiguration' (role 'softGalleryLanguage_ReactConfiguration149', cardinality 0..*) is associated with 'softGalleryLanguage::ReactDependencies' (role 'softGalleryLanguage_ReactDependencies', cardinality 0..*).
+'softGalleryLanguage::StorageClient' (role 'softGalleryLanguage_StorageClient', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject127', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject246', cardinality 0..*) is associated with 'softGalleryLanguage::ColumnP' (role 'softGalleryLanguage_ColumnP', cardinality 0..*).
+'softGalleryLanguage::LayerRelations' (role 'softGalleryLanguage_LayerRelations74', cardinality 0..*) is associated with 'softGalleryLanguage::LayerTarget' (role 'softGalleryLanguage_LayerTarget', cardinality 0..*).
+'softGalleryLanguage::ExceptionsType' (role 'softGalleryLanguage_ExceptionsType', cardinality 0..*) is associated with 'softGalleryLanguage::ExceptionsDomain' (role 'softGalleryLanguage_ExceptionsDomain37', cardinality 0..*).
+'softGalleryLanguage::DOMConfigurations' (role 'softGalleryLanguage_DOMConfigurations', cardinality 0..*) is associated with 'softGalleryLanguage::ReactConfigurations' (role 'softGalleryLanguage_ReactConfigurations162', cardinality 0..*).
+'softGalleryLanguage::ReactsRelationServ' (role 'softGalleryLanguage_ReactsRelationServ225', cardinality 0..*) is associated with 'softGalleryLanguage::ReactServicesType' (role 'softGalleryLanguage_ReactServicesType226', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject108', cardinality 0..*) is associated with 'softGalleryLanguage::SpringRepository' (role 'softGalleryLanguage_SpringRepository', cardinality 0..*).
+'softGalleryLanguage::ReactSubModules' (role 'softGalleryLanguage_ReactSubModules145', cardinality 0..*) is associated with 'softGalleryLanguage::ReactLibraries' (role 'softGalleryLanguage_ReactLibraries', cardinality 0..*).
+'softGalleryLanguage::Functionalities' (role 'softGalleryLanguage_Functionalities25', cardinality 0..*) is associated with 'softGalleryLanguage::LandingActions' (role 'softGalleryLanguage_LandingActions', cardinality 0..*).
+'softGalleryLanguage::ComponentsStyles' (role 'softGalleryLanguage_ComponentsStyles', cardinality 0..*) is associated with 'softGalleryLanguage::ReactComponents' (role 'softGalleryLanguage_ReactComponents168', cardinality 0..*).
+'softGalleryLanguage::Table::p' (role 'softGalleryLanguage_Table_p', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject241', cardinality 0..*).
+'softGalleryLanguage::Directories' (role 'softGalleryLanguage_Directories', cardinality 0..*) is associated with 'softGalleryLanguage::MultipleFile' (role 'softGalleryLanguage_MultipleFile', cardinality 0..*).
+'softGalleryLanguage::OrderSpring' (role 'softGalleryLanguage_OrderSpring', cardinality 0..*) is associated with 'softGalleryLanguage::SpringComponent' (role 'softGalleryLanguage_SpringComponent', cardinality 0..*).
+'softGalleryLanguage::DataPersistenceContent' (role 'softGalleryLanguage_DataPersistenceContent', cardinality 0..*) is associated with 'softGalleryLanguage::DataPersistenceLayer' (role 'softGalleryLanguage_DataPersistenceLayer', cardinality 0..*).
+'softGalleryLanguage::Specification' (role 'softGalleryLanguage_Specification', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject112', cardinality 0..*).
+'softGalleryLanguage::Props' (role 'softGalleryLanguage_Props206', cardinality 0..*) is associated with 'softGalleryLanguage::PropsType' (role 'softGalleryLanguage_PropsType', cardinality 0..*).
+'softGalleryLanguage::ReactModules' (role 'softGalleryLanguage_ReactModules137', cardinality 0..*) is associated with 'softGalleryLanguage::ReactSubModules' (role 'softGalleryLanguage_ReactSubModules', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject253', cardinality 0..*) is associated with 'softGalleryLanguage::AmazonWebServices' (role 'softGalleryLanguage_AmazonWebServices252', cardinality 0..*).
+'softGalleryLanguage::ExceptionsType' (role 'softGalleryLanguage_ExceptionsType43', cardinality 0..*) is associated with 'softGalleryLanguage::UserException' (role 'softGalleryLanguage_UserException', cardinality 0..*).
+'softGalleryLanguage::ReactLibrary' (role 'softGalleryLanguage_ReactLibrary', cardinality 0..*) is associated with 'softGalleryLanguage::ReactLibraries' (role 'softGalleryLanguage_ReactLibraries228', cardinality 0..*).
+'softGalleryLanguage::LayerRelations' (role 'softGalleryLanguage_LayerRelations', cardinality 0..*) is associated with 'softGalleryLanguage::LayerSource' (role 'softGalleryLanguage_LayerSource', cardinality 0..*).
+'softGalleryLanguage::ComponentsStylesContent' (role 'softGalleryLanguage_ComponentsStylesContent210', cardinality 0..*) is associated with 'softGalleryLanguage::StyleProperties' (role 'softGalleryLanguage_StyleProperties', cardinality 0..*).
+'softGalleryLanguage::Functionality' (role 'softGalleryLanguage_Functionality15', cardinality 0..*) is associated with 'softGalleryLanguage::Functionalities' (role 'softGalleryLanguage_Functionalities', cardinality 0..*).
+'softGalleryLanguage::SpecificationSegmentElement' (role 'softGalleryLanguage_SpecificationSegmentElement61', cardinality 0..*) is associated with 'softGalleryLanguage::CriteriaAttributeType' (role 'softGalleryLanguage_CriteriaAttributeType', cardinality 0..*).
+'softGalleryLanguage::RequestMappingValue' (role 'softGalleryLanguage_RequestMappingValue', cardinality 0..*) is associated with 'softGalleryLanguage::RequestMapping' (role 'softGalleryLanguage_RequestMapping', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject133', cardinality 0..*) is associated with 'softGalleryLanguage::StorageActionMember' (role 'softGalleryLanguage_StorageActionMember', cardinality 0..*).
+'softGalleryLanguage::LogicContent' (role 'softGalleryLanguage_LogicContent172', cardinality 0..*) is associated with 'softGalleryLanguage::LogicStructure' (role 'softGalleryLanguage_LogicStructure', cardinality 0..*).
+'softGalleryLanguage::ComponentsStylesContent' (role 'softGalleryLanguage_ComponentsStylesContent', cardinality 0..*) is associated with 'softGalleryLanguage::ComponentsStyles' (role 'softGalleryLanguage_ComponentsStyles208', cardinality 0..*).
+'softGalleryLanguage::ReactActionsContent' (role 'softGalleryLanguage_ReactActionsContent216', cardinality 0..*) is associated with 'softGalleryLanguage::ReactServicesRelation' (role 'softGalleryLanguage_ReactServicesRelation', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject103', cardinality 0..*) is associated with 'softGalleryLanguage::SpringBootApplication' (role 'softGalleryLanguage_SpringBootApplication102', cardinality 0..*).
+'softGalleryLanguage::StorageMember' (role 'softGalleryLanguage_StorageMember', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject129', cardinality 0..*).
+'softGalleryLanguage::ComponentsLogic' (role 'softGalleryLanguage_ComponentsLogic', cardinality 0..*) is associated with 'softGalleryLanguage::ReactComponents' (role 'softGalleryLanguage_ReactComponents164', cardinality 0..*).
+'softGalleryLanguage::LogicContent' (role 'softGalleryLanguage_LogicContent', cardinality 0..*) is associated with 'softGalleryLanguage::ComponentsLogic' (role 'softGalleryLanguage_ComponentsLogic170', cardinality 0..*).
+'softGalleryLanguage::NTierConnectionContent' (role 'softGalleryLanguage_NTierConnectionContent84', cardinality 0..*) is associated with 'softGalleryLanguage::NTierTarget' (role 'softGalleryLanguage_NTierTarget', cardinality 0..*).
+'softGalleryLanguage::Metadata' (role 'softGalleryLanguage_Metadata', cardinality 0..*) is associated with 'softGalleryLanguage::AmazonFile' (role 'softGalleryLanguage_AmazonFile', cardinality 0..*).
+'softGalleryLanguage::ForeignKeyRef' (role 'softGalleryLanguage_ForeignKeyRef', cardinality 0..*) is associated with 'softGalleryLanguage::RefTable::p' (role 'softGalleryLanguage_RefTable_p', cardinality 0..*).
+'softGalleryLanguage::SpecificationSegmentElement' (role 'softGalleryLanguage_SpecificationSegmentElement', cardinality 0..*) is associated with 'softGalleryLanguage::BusinessLogicSegments' (role 'softGalleryLanguage_BusinessLogicSegments59', cardinality 0..*).
+'softGalleryLanguage::ReactDependencies' (role 'softGalleryLanguage_ReactDependencies153', cardinality 0..*) is associated with 'softGalleryLanguage::ReactDependenciesRules' (role 'softGalleryLanguage_ReactDependenciesRules', cardinality 0..*).
+'softGalleryLanguage::StyleProperties' (role 'softGalleryLanguage_StyleProperties212', cardinality 0..*) is associated with 'softGalleryLanguage::StylePropertiesContent' (role 'softGalleryLanguage_StylePropertiesContent', cardinality 0..*).
+'softGalleryLanguage::Spring' (role 'softGalleryLanguage_Spring100', cardinality 0..*) is associated with 'softGalleryLanguage::SpringBootApplication' (role 'softGalleryLanguage_SpringBootApplication', cardinality 0..*).
+'softGalleryLanguage::ViewComponentCont' (role 'softGalleryLanguage_ViewComponentCont', cardinality 0..*) is associated with 'softGalleryLanguage::UIContent' (role 'softGalleryLanguage_UIContent178', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject249', cardinality 0..*) is associated with 'softGalleryLanguage::PostgresUser' (role 'softGalleryLanguage_PostgresUser', cardinality 0..*).
+'softGalleryLanguage::ReactServicesRelation' (role 'softGalleryLanguage_ReactServicesRelation223', cardinality 0..*) is associated with 'softGalleryLanguage::ReactsRelationServ' (role 'softGalleryLanguage_ReactsRelationServ', cardinality 0..*).
+'softGalleryLanguage::AlbumManagement' (role 'softGalleryLanguage_AlbumManagement', cardinality 0..*) is associated with 'softGalleryLanguage::Functionalities' (role 'softGalleryLanguage_Functionalities21', cardinality 0..*).
+'softGalleryLanguage::StateContent' (role 'softGalleryLanguage_StateContent', cardinality 0..*) is associated with 'softGalleryLanguage::State' (role 'softGalleryLanguage_State204', cardinality 0..*).
+'softGalleryLanguage::StorageAction' (role 'softGalleryLanguage_StorageAction', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject131', cardinality 0..*).
+'softGalleryLanguage::Query' (role 'softGalleryLanguage_Query', cardinality 0..*) is associated with 'softGalleryLanguage::Clause' (role 'softGalleryLanguage_Clause', cardinality 0..*).
+'softGalleryLanguage::ReactImports' (role 'softGalleryLanguage_ReactImports194', cardinality 0..*) is associated with 'softGalleryLanguage::ReactImportContent' (role 'softGalleryLanguage_ReactImportContent', cardinality 0..*).
+'softGalleryLanguage::SpringEntityAnnotationTypes' (role 'softGalleryLanguage_SpringEntityAnnotationTypes', cardinality 0..*) is associated with 'softGalleryLanguage::SpringEntity' (role 'softGalleryLanguage_SpringEntity', cardinality 0..*).
+'softGalleryLanguage::ReactFunctions' (role 'softGalleryLanguage_ReactFunctions198', cardinality 0..*) is associated with 'softGalleryLanguage::ReactCoreFunctions' (role 'softGalleryLanguage_ReactCoreFunctions', cardinality 0..*).
+'softGalleryLanguage::ReactConfigurations' (role 'softGalleryLanguage_ReactConfigurations', cardinality 0..*) is associated with 'softGalleryLanguage::ReactConfiguration' (role 'softGalleryLanguage_ReactConfiguration151', cardinality 0..*).
+'softGalleryLanguage::Technologies' (role 'softGalleryLanguage_Technologies', cardinality 0..*) is associated with 'softGalleryLanguage::Technology' (role 'softGalleryLanguage_Technology', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject51', cardinality 0..*) is associated with 'softGalleryLanguage::PresentationLayer' (role 'softGalleryLanguage_PresentationLayer', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject235', cardinality 0..*) is associated with 'softGalleryLanguage::Cluster' (role 'softGalleryLanguage_Cluster234', cardinality 0..*).
+'softGalleryLanguage::NTierSource' (role 'softGalleryLanguage_NTierSource', cardinality 0..*) is associated with 'softGalleryLanguage::NTierConnectionContent' (role 'softGalleryLanguage_NTierConnectionContent82', cardinality 0..*).
+'softGalleryLanguage::ReactServiceContRequest' (role 'softGalleryLanguage_ReactServiceContRequest', cardinality 0..*) is associated with 'softGalleryLanguage::ReactServiceContent' (role 'softGalleryLanguage_ReactServiceContent219', cardinality 0..*).
+'softGalleryLanguage::PhotoException' (role 'softGalleryLanguage_PhotoException', cardinality 0..*) is associated with 'softGalleryLanguage::ExceptionsType' (role 'softGalleryLanguage_ExceptionsType39', cardinality 0..*).
+'softGalleryLanguage::ReactDependenciesSubRules' (role 'softGalleryLanguage_ReactDependenciesSubRules157', cardinality 0..*) is associated with 'softGalleryLanguage::SingleDependencies' (role 'softGalleryLanguage_SingleDependencies', cardinality 0..*).
+'softGalleryLanguage::BusinessLogicContent' (role 'softGalleryLanguage_BusinessLogicContent', cardinality 0..*) is associated with 'softGalleryLanguage::BusinessLogicSegments' (role 'softGalleryLanguage_BusinessLogicSegments', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject123', cardinality 0..*) is associated with 'softGalleryLanguage::ResponseParameter' (role 'softGalleryLanguage_ResponseParameter122', cardinality 0..*).
+'softGalleryLanguage::ReactActions' (role 'softGalleryLanguage_ReactActions214', cardinality 0..*) is associated with 'softGalleryLanguage::ReactActionsContent' (role 'softGalleryLanguage_ReactActionsContent', cardinality 0..*).
+'softGalleryLanguage::Entities' (role 'softGalleryLanguage_Entities', cardinality 0..*) is associated with 'softGalleryLanguage::Entity' (role 'softGalleryLanguage_Entity7', cardinality 0..*).
+'softGalleryLanguage::Functionalities' (role 'softGalleryLanguage_Functionalities17', cardinality 0..*) is associated with 'softGalleryLanguage::ProfileManagement' (role 'softGalleryLanguage_ProfileManagement', cardinality 0..*).
+'softGalleryLanguage::PhotoActionsFunctions' (role 'softGalleryLanguage_PhotoActionsFunctions', cardinality 0..*) is associated with 'softGalleryLanguage::PhotoActions' (role 'softGalleryLanguage_PhotoActions33', cardinality 0..*).
+'softGalleryLanguage::BusinessLogicLayer' (role 'softGalleryLanguage_BusinessLogicLayer', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject54', cardinality 0..*).
+'softGalleryLanguage::PostgreSQL' (role 'softGalleryLanguage_PostgreSQL', cardinality 0..*) is associated with 'softGalleryLanguage::Technologies' (role 'softGalleryLanguage_Technologies96', cardinality 0..*).
+'softGalleryLanguage::ResponseEntity' (role 'softGalleryLanguage_ResponseEntity', cardinality 0..*) is associated with 'softGalleryLanguage::MappingType' (role 'softGalleryLanguage_MappingType', cardinality 0..*).
+'softGalleryLanguage::DataPersistenceSegments' (role 'softGalleryLanguage_DataPersistenceSegments', cardinality 0..*) is associated with 'softGalleryLanguage::DataPersistenceContent' (role 'softGalleryLanguage_DataPersistenceContent64', cardinality 0..*).
+'softGalleryLanguage::ComponentClass' (role 'softGalleryLanguage_ComponentClass188', cardinality 0..*) is associated with 'softGalleryLanguage::ReactImports' (role 'softGalleryLanguage_ReactImports', cardinality 0..*).
+'softGalleryLanguage::SegmentStructureContent' (role 'softGalleryLanguage_SegmentStructureContent', cardinality 0..*) is associated with 'softGalleryLanguage::SegmentStructure' (role 'softGalleryLanguage_SegmentStructure', cardinality 0..*).
+'softGalleryLanguage::ComponentsUI' (role 'softGalleryLanguage_ComponentsUI', cardinality 0..*) is associated with 'softGalleryLanguage::ReactComponents' (role 'softGalleryLanguage_ReactComponents166', cardinality 0..*).
+'softGalleryLanguage::ProfileManagement' (role 'softGalleryLanguage_ProfileManagement27', cardinality 0..*) is associated with 'softGalleryLanguage::ProfileManagementFunctions' (role 'softGalleryLanguage_ProfileManagementFunctions', cardinality 0..*).
+'softGalleryLanguage::ArchitectureComponents' (role 'softGalleryLanguage_ArchitectureComponents', cardinality 0..*) is associated with 'softGalleryLanguage::FrontEnd' (role 'softGalleryLanguage_FrontEnd', cardinality 0..*).
+'softGalleryLanguage::AtributeAlbum' (role 'softGalleryLanguage_AtributeAlbum', cardinality 0..*) is associated with 'softGalleryLanguage::Entities' (role 'softGalleryLanguage_Entities11', cardinality 0..*).
+'softGalleryLanguage::ArchitectureComponents' (role 'softGalleryLanguage_ArchitectureComponents77', cardinality 0..*) is associated with 'softGalleryLanguage::BackEnd' (role 'softGalleryLanguage_BackEnd', cardinality 0..*).
+'softGalleryLanguage::ViewComponentCont' (role 'softGalleryLanguage_ViewComponentCont182', cardinality 0..*) is associated with 'softGalleryLanguage::ComponentClass' (role 'softGalleryLanguage_ComponentClass183', cardinality 0..*).
+'softGalleryLanguage::ControllerSegmentElement' (role 'softGalleryLanguage_ControllerSegmentElement', cardinality 0..*) is associated with 'softGalleryLanguage::BusinessLogicSegments' (role 'softGalleryLanguage_BusinessLogicSegments57', cardinality 0..*).
+'softGalleryLanguage::RequestMapping' (role 'softGalleryLanguage_RequestMapping118', cardinality 0..*) is associated with 'softGalleryLanguage::RequestMappingMethod' (role 'softGalleryLanguage_RequestMappingMethod', cardinality 0..*).
+'softGalleryLanguage::Functionality' (role 'softGalleryLanguage_Functionality', cardinality 0..*) is associated with 'softGalleryLanguage::Domain' (role 'softGalleryLanguage_Domain3', cardinality 0..*).
+'softGalleryLanguage::Technologies' (role 'softGalleryLanguage_Technologies98', cardinality 0..*) is associated with 'softGalleryLanguage::AmazonWebServices' (role 'softGalleryLanguage_AmazonWebServices', cardinality 0..*).
+'softGalleryLanguage::LogicStructure' (role 'softGalleryLanguage_LogicStructure174', cardinality 0..*) is associated with 'softGalleryLanguage::ComponentClass' (role 'softGalleryLanguage_ComponentClass', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject259', cardinality 0..*) is associated with 'softGalleryLanguage::BucketAccess' (role 'softGalleryLanguage_BucketAccess', cardinality 0..*).
+'softGalleryLanguage::ComponentClass' (role 'softGalleryLanguage_ComponentClass186', cardinality 0..*) is associated with 'softGalleryLanguage::SubcomponentCont' (role 'softGalleryLanguage_SubcomponentCont185', cardinality 0..*).
+'softGalleryLanguage::ReactInformation' (role 'softGalleryLanguage_ReactInformation', cardinality 0..*) is associated with 'softGalleryLanguage::ReactInfo' (role 'softGalleryLanguage_ReactInfo230', cardinality 0..*).
+'softGalleryLanguage::ReactServiceContRequest' (role 'softGalleryLanguage_ReactServiceContRequest221', cardinality 0..*) is associated with 'softGalleryLanguage::ReactServiceRequestProps' (role 'softGalleryLanguage_ReactServiceRequestProps', cardinality 0..*).
+'softGalleryLanguage::AppAccess' (role 'softGalleryLanguage_AppAccess29', cardinality 0..*) is associated with 'softGalleryLanguage::AppAccessFunctions' (role 'softGalleryLanguage_AppAccessFunctions', cardinality 0..*).
+'softGalleryLanguage::Entities' (role 'softGalleryLanguage_Entities13', cardinality 0..*) is associated with 'softGalleryLanguage::AtributeUserDomain' (role 'softGalleryLanguage_AtributeUserDomain', cardinality 0..*).
+'softGalleryLanguage::ExceptionProcess' (role 'softGalleryLanguage_ExceptionProcess', cardinality 0..*) is associated with 'softGalleryLanguage::ExceptionHandler' (role 'softGalleryLanguage_ExceptionHandler', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject160', cardinality 0..*) is associated with 'softGalleryLanguage::SingleDependencies' (role 'softGalleryLanguage_SingleDependencies159', cardinality 0..*).
+'softGalleryLanguage::Props' (role 'softGalleryLanguage_Props', cardinality 0..*) is associated with 'softGalleryLanguage::ComponentClass' (role 'softGalleryLanguage_ComponentClass192', cardinality 0..*).
+'softGalleryLanguage::ResponseParameter' (role 'softGalleryLanguage_ResponseParameter', cardinality 0..*) is associated with 'softGalleryLanguage::ResponseEntity' (role 'softGalleryLanguage_ResponseEntity115', cardinality 0..*).
+'softGalleryLanguage::PresentationContent' (role 'softGalleryLanguage_PresentationContent', cardinality 0..*) is associated with 'softGalleryLanguage::PresentationSegments' (role 'softGalleryLanguage_PresentationSegments', cardinality 0..*).
+'softGalleryLanguage::ReactConstructor' (role 'softGalleryLanguage_ReactConstructor', cardinality 0..*) is associated with 'softGalleryLanguage::ReactFunctions' (role 'softGalleryLanguage_ReactFunctions196', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject49', cardinality 0..*) is associated with 'softGalleryLanguage::Layer' (role 'softGalleryLanguage_Layer', cardinality 0..*).
+'softGalleryLanguage::ReactConfiguration' (role 'softGalleryLanguage_ReactConfiguration', cardinality 0..*) is associated with 'softGalleryLanguage::ReactSubModules' (role 'softGalleryLanguage_ReactSubModules139', cardinality 0..*).
+'softGalleryLanguage::ReactConstructor' (role 'softGalleryLanguage_ReactConstructor200', cardinality 0..*) is associated with 'softGalleryLanguage::State' (role 'softGalleryLanguage_State', cardinality 0..*).
+'softGalleryLanguage::Model' (role 'softGalleryLanguage_Model', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject', cardinality 0..*).
+'softGalleryLanguage::AlbumManagement' (role 'softGalleryLanguage_AlbumManagement31', cardinality 0..*) is associated with 'softGalleryLanguage::AlbumManagementFunctions' (role 'softGalleryLanguage_AlbumManagementFunctions', cardinality 0..*).
+'softGalleryLanguage::DirectoryContent' (role 'softGalleryLanguage_DirectoryContent', cardinality 0..*) is associated with 'softGalleryLanguage::SegmentStructureContent' (role 'softGalleryLanguage_SegmentStructureContent67', cardinality 0..*).
+'softGalleryLanguage::ComponentsUI' (role 'softGalleryLanguage_ComponentsUI176', cardinality 0..*) is associated with 'softGalleryLanguage::UIContent' (role 'softGalleryLanguage_UIContent', cardinality 0..*).
+'softGalleryLanguage::SubcomponentCont' (role 'softGalleryLanguage_SubcomponentCont', cardinality 0..*) is associated with 'softGalleryLanguage::UIContent' (role 'softGalleryLanguage_UIContent180', cardinality 0..*).
+'softGalleryLanguage::LandingFunctions' (role 'softGalleryLanguage_LandingFunctions', cardinality 0..*) is associated with 'softGalleryLanguage::LandingActions' (role 'softGalleryLanguage_LandingActions35', cardinality 0..*).
+'softGalleryLanguage::Architecture' (role 'softGalleryLanguage_Architecture', cardinality 0..*) is associated with 'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject45', cardinality 0..*).
+'softGalleryLanguage::Row' (role 'softGalleryLanguage_Row', cardinality 0..*) is associated with 'softGalleryLanguage::Policy' (role 'softGalleryLanguage_Policy', cardinality 0..*).
+'softGalleryLanguage::ExceptionsType' (role 'softGalleryLanguage_ExceptionsType41', cardinality 0..*) is associated with 'softGalleryLanguage::AlbumException' (role 'softGalleryLanguage_AlbumException', cardinality 0..*).
+'softGalleryLanguage::Cluster' (role 'softGalleryLanguage_Cluster', cardinality 0..*) is associated with 'softGalleryLanguage::PostgreSQL' (role 'softGalleryLanguage_PostgreSQL232', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject257', cardinality 0..*) is associated with 'softGalleryLanguage::Bucket' (role 'softGalleryLanguage_Bucket', cardinality 0..*).
+'softGalleryLanguage::Technologies' (role 'softGalleryLanguage_Technologies92', cardinality 0..*) is associated with 'softGalleryLanguage::Spring' (role 'softGalleryLanguage_Spring', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject105', cardinality 0..*) is associated with 'softGalleryLanguage::Configuration' (role 'softGalleryLanguage_Configuration', cardinality 0..*).
+'softGalleryLanguage::ArchitectureComponents' (role 'softGalleryLanguage_ArchitectureComponents79', cardinality 0..*) is associated with 'softGalleryLanguage::PersistenceDataComponent' (role 'softGalleryLanguage_PersistenceDataComponent', cardinality 0..*).
+'softGalleryLanguage::CoreFunctionsDeclaration' (role 'softGalleryLanguage_CoreFunctionsDeclaration', cardinality 0..*) is associated with 'softGalleryLanguage::ReactConstructor' (role 'softGalleryLanguage_ReactConstructor202', cardinality 0..*).
+'softGalleryLanguage::Entity' (role 'softGalleryLanguage_Entity', cardinality 0..*) is associated with 'softGalleryLanguage::Domain' (role 'softGalleryLanguage_Domain', cardinality 0..*).
+'softGalleryLanguage::ReactSubModules' (role 'softGalleryLanguage_ReactSubModules147', cardinality 0..*) is associated with 'softGalleryLanguage::ReactInfo' (role 'softGalleryLanguage_ReactInfo', cardinality 0..*).
+'softGalleryLanguage::NTiersConnections' (role 'softGalleryLanguage_NTiersConnections', cardinality 0..*) is associated with 'softGalleryLanguage::NTierConnectionContent' (role 'softGalleryLanguage_NTierConnectionContent', cardinality 0..*).
+'softGalleryLanguage::NTierSource' (role 'softGalleryLanguage_NTierSource86', cardinality 0..*) is associated with 'softGalleryLanguage::NTiersRelations' (role 'softGalleryLanguage_NTiersRelations', cardinality 0..*).
+'softGalleryLanguage::RequestMapping' (role 'softGalleryLanguage_RequestMapping120', cardinality 0..*) is associated with 'softGalleryLanguage::RequestMappingProduces' (role 'softGalleryLanguage_RequestMappingProduces', cardinality 0..*).
+'softGalleryLanguage::Domain' (role 'softGalleryLanguage_Domain5', cardinality 0..*) is associated with 'softGalleryLanguage::ExceptionsDomain' (role 'softGalleryLanguage_ExceptionsDomain', cardinality 0..*).
+'softGalleryLanguage::Database' (role 'softGalleryLanguage_Database', cardinality 0..*) is associated with 'softGalleryLanguage::Schema' (role 'softGalleryLanguage_Schema', cardinality 0..*).
+'softGalleryLanguage::ReactSubModules' (role 'softGalleryLanguage_ReactSubModules143', cardinality 0..*) is associated with 'softGalleryLanguage::ReactActions' (role 'softGalleryLanguage_ReactActions', cardinality 0..*).
+'softGalleryLanguage::Entities' (role 'softGalleryLanguage_Entities9', cardinality 0..*) is associated with 'softGalleryLanguage::AtributePhoto' (role 'softGalleryLanguage_AtributePhoto', cardinality 0..*).
+'softGalleryLanguage::ReactModules' (role 'softGalleryLanguage_ReactModules', cardinality 0..*) is associated with 'softGalleryLanguage::React' (role 'softGalleryLanguage_React135', cardinality 0..*).
+'softGalleryLanguage::ReactComponents' (role 'softGalleryLanguage_ReactComponents', cardinality 0..*) is associated with 'softGalleryLanguage::ReactSubModules' (role 'softGalleryLanguage_ReactSubModules141', cardinality 0..*).
+'softGalleryLanguage::Functionalities' (role 'softGalleryLanguage_Functionalities19', cardinality 0..*) is associated with 'softGalleryLanguage::AppAccess' (role 'softGalleryLanguage_AppAccess', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject70', cardinality 0..*) is associated with 'softGalleryLanguage::DirectoryContent' (role 'softGalleryLanguage_DirectoryContent69', cardinality 0..*).
+'softGalleryLanguage::ReactDependenciesRules' (role 'softGalleryLanguage_ReactDependenciesRules155', cardinality 0..*) is associated with 'softGalleryLanguage::ReactDependenciesSubRules' (role 'softGalleryLanguage_ReactDependenciesSubRules', cardinality 0..*).
+'softGalleryLanguage::Technologies' (role 'softGalleryLanguage_Technologies94', cardinality 0..*) is associated with 'softGalleryLanguage::React' (role 'softGalleryLanguage_React', cardinality 0..*).
+'softGalleryLanguage::EObject' (role 'softGalleryLanguage_EObject243', cardinality 0..*) is associated with 'softGalleryLanguage::ForeignKey' (role 'softGalleryLanguage_ForeignKey', cardinality 0..*).
+'softGalleryLanguage::ReactServicesType' (role 'softGalleryLanguage_ReactServicesType', cardinality 0..*) is associated with 'softGalleryLanguage::ReactServiceContent' (role 'softGalleryLanguage_ReactServiceContent', cardinality 0..*).

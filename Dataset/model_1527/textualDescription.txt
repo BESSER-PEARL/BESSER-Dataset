@@ -1,0 +1,30 @@
+The model has 12 class(es).
+The class 'fsmtest::RandomTest' has the following attributes: 'name' of type str.
+The class 'fsmtest::SeedDeclaration' has the following attributes: 'val' of type int.
+The class 'fsmtest::PostconditionDeclaration' has no attributes.
+The class 'fsmtest::LoopsDeclaration' has the following attributes: 'val' of type int.
+The class 'fsmtest::ConditionDeclaration' has no attributes.
+The class 'fsmtest::SignalDeclaration' has the following attributes: 'intVal' of type int; 'strVal' of type str; 'signame' of type str; 'port' of type str.
+The class 'fsmtest::PreconditionDeclaration' has no attributes.
+The class 'fsmtest::Model' has no attributes.
+The class 'fsmtest::GuardDeclaration' has no attributes.
+The class 'fsmtest::FsmDefinition' has the following attributes: 'name' of type str.
+The class 'fsmtest::TransitionDeclaration' has the following attributes: 'name' of type str.
+The class 'fsmtest::StateDeclaration' has the following attributes: 'name' of type str.
+'fsmtest::SignalDeclaration' (role 'fsmtest_SignalDeclaration17', cardinality 0..*) is associated with 'fsmtest::TransitionDeclaration' (role 'fsmtest_TransitionDeclaration16', cardinality 0..*).
+'fsmtest::TransitionDeclaration' (role 'fsmtest_TransitionDeclaration', cardinality 0..*) is associated with 'fsmtest::StateDeclaration' (role 'fsmtest_StateDeclaration14', cardinality 0..*).
+'fsmtest::TransitionDeclaration' (role 'fsmtest_TransitionDeclaration22', cardinality 0..*) is associated with 'fsmtest::PreconditionDeclaration' (role 'fsmtest_PreconditionDeclaration', cardinality 0..*).
+'fsmtest::SignalDeclaration' (role 'fsmtest_SignalDeclaration29', cardinality 0..*) is associated with 'fsmtest::PreconditionDeclaration' (role 'fsmtest_PreconditionDeclaration28', cardinality 0..*).
+'fsmtest::ConditionDeclaration' (role 'fsmtest_ConditionDeclaration35', cardinality 0..*) is associated with 'fsmtest::StateDeclaration' (role 'fsmtest_StateDeclaration34', cardinality 0..*).
+'fsmtest::PostconditionDeclaration' (role 'fsmtest_PostconditionDeclaration', cardinality 0..*) is associated with 'fsmtest::TransitionDeclaration' (role 'fsmtest_TransitionDeclaration24', cardinality 0..*).
+'fsmtest::SignalDeclaration' (role 'fsmtest_SignalDeclaration26', cardinality 0..*) is associated with 'fsmtest::ConditionDeclaration' (role 'fsmtest_ConditionDeclaration', cardinality 0..*).
+'fsmtest::TransitionDeclaration' (role 'fsmtest_TransitionDeclaration19', cardinality 0..*) is associated with 'fsmtest::GuardDeclaration' (role 'fsmtest_GuardDeclaration20', cardinality 0..*).
+'fsmtest::LoopsDeclaration' (role 'fsmtest_LoopsDeclaration', cardinality 0..*) is associated with 'fsmtest::RandomTest' (role 'fsmtest_RandomTest9', cardinality 0..*).
+'fsmtest::StateDeclaration' (role 'fsmtest_StateDeclaration', cardinality 0..*) is associated with 'fsmtest::FsmDefinition' (role 'fsmtest_FsmDefinition4', cardinality 0..*).
+'fsmtest::FsmDefinition' (role 'fsmtest_FsmDefinition', cardinality 0..*) is associated with 'fsmtest::Model' (role 'fsmtest_Model', cardinality 0..*).
+'fsmtest::StateDeclaration' (role 'fsmtest_StateDeclaration37', cardinality 0..*) is associated with 'fsmtest::TransitionDeclaration' (role 'fsmtest_TransitionDeclaration38', cardinality 0..*).
+'fsmtest::PostconditionDeclaration' (role 'fsmtest_PostconditionDeclaration31', cardinality 0..*) is associated with 'fsmtest::SignalDeclaration' (role 'fsmtest_SignalDeclaration32', cardinality 0..*).
+'fsmtest::Model' (role 'fsmtest_Model2', cardinality 0..*) is associated with 'fsmtest::RandomTest' (role 'fsmtest_RandomTest', cardinality 0..*).
+'fsmtest::FsmDefinition' (role 'fsmtest_FsmDefinition7', cardinality 0..*) is associated with 'fsmtest::RandomTest' (role 'fsmtest_RandomTest6', cardinality 0..*).
+'fsmtest::SeedDeclaration' (role 'fsmtest_SeedDeclaration', cardinality 0..*) is associated with 'fsmtest::RandomTest' (role 'fsmtest_RandomTest11', cardinality 0..*).
+'fsmtest::GuardDeclaration' (role 'fsmtest_GuardDeclaration', cardinality 0..*) is associated with 'fsmtest::SignalDeclaration' (role 'fsmtest_SignalDeclaration', cardinality 0..*).

@@ -1,0 +1,39 @@
+The model has 15 class(es).
+The class 'Value' has no attributes.
+The class 'statemachine::Value' has no attributes.
+The class 'statemachine::Event' has the following attributes: 'code' of type int; 'name' of type str.
+The class 'statemachine::RangeGuard' has no attributes.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::ValueGuard' has no attributes.
+The class 'statemachine::Statemachine' has the following attributes: 'name' of type str.
+The class 'statemachine::Guard' has no attributes.
+The class 'statemachine::Constant' has the following attributes: 'name' of type str.
+The class 'statemachine::IntLiteral' has the following attributes: 'value' of type int.
+The class 'statemachine::State' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'statemachine::Thing' has the following attributes: 'name' of type str.
+The class 'Guard' has no attributes.
+The class 'statemachine::ConstantRef' has no attributes.
+The class 'statemachine::Command' has the following attributes: 'code' of type int; 'name' of type str.
+'statemachine::RangeGuard' is a specialization of 'Guard'.
+'statemachine::ValueGuard' is a specialization of 'Guard'.
+'statemachine::ConstantRef' is a specialization of 'Value'.
+'statemachine::IntLiteral' is a specialization of 'Value'.
+'statemachine::Constant' (role 'statemachine_Constant', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine7', cardinality 0..*).
+'statemachine::ConstantRef' (role 'statemachine_ConstantRef', cardinality 0..*) is associated with 'statemachine::Constant' (role 'statemachine_Constant19', cardinality 0..*).
+'statemachine::Command' (role 'statemachine_Command21', cardinality 0..*) is associated with 'statemachine::Guard' (role 'statemachine_Guard22', cardinality 0..*).
+'statemachine::Guard' (role 'statemachine_Guard44', cardinality 0..*) is associated with 'statemachine::Thing' (role 'statemachine_Thing43', cardinality 0..*).
+'statemachine::Value' (role 'statemachine_Value14', cardinality 0..*) is associated with 'statemachine::RangeGuard' (role 'statemachine_RangeGuard', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition37', cardinality 0..*) is associated with 'statemachine::Guard' (role 'statemachine_Guard38', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine9', cardinality 0..*).
+'statemachine::Event' (role 'statemachine_Event3', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine2', cardinality 0..*).
+'statemachine::Thing' (role 'statemachine_Thing', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State32', cardinality 0..*).
+'statemachine::Event' (role 'statemachine_Event11', cardinality 0..*) is associated with 'statemachine::Guard' (role 'statemachine_Guard', cardinality 0..*).
+'statemachine::Statemachine' (role 'statemachine_Statemachine', cardinality 0..*) is associated with 'statemachine::Event' (role 'statemachine_Event', cardinality 0..*).
+'statemachine::ValueGuard' (role 'statemachine_ValueGuard', cardinality 0..*) is associated with 'statemachine::Value' (role 'statemachine_Value', cardinality 0..*).
+'statemachine::Transition' (role 'statemachine_Transition', cardinality 0..*) is associated with 'statemachine::State' (role 'statemachine_State30', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State41', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition40', cardinality 0..*).
+'statemachine::Value' (role 'statemachine_Value25', cardinality 0..*) is associated with 'statemachine::Constant' (role 'statemachine_Constant24', cardinality 0..*).
+'statemachine::Event' (role 'statemachine_Event35', cardinality 0..*) is associated with 'statemachine::Transition' (role 'statemachine_Transition34', cardinality 0..*).
+'statemachine::Command' (role 'statemachine_Command', cardinality 0..*) is associated with 'statemachine::Statemachine' (role 'statemachine_Statemachine5', cardinality 0..*).
+'statemachine::RangeGuard' (role 'statemachine_RangeGuard16', cardinality 0..*) is associated with 'statemachine::Value' (role 'statemachine_Value17', cardinality 0..*).
+'statemachine::State' (role 'statemachine_State27', cardinality 0..*) is associated with 'statemachine::Command' (role 'statemachine_Command28', cardinality 0..*).

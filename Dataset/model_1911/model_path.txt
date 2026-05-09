@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/forerik/mdsd2015/MDSD/src/ClassDiagram/ClassDiagram.ecore

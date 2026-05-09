@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'graph::Graph' has no attributes.
+The class 'graph::Node' has no attributes.
+The class 'one' has no attributes.
+'graph::Graph' (role 'graph_Graph', cardinality 0..*) is associated with 'one' (role 'one', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'trace::TraceModel' has no attributes.
+The class 'trace::EventPattern' has no attributes.
+The class 'trace::TimedZone' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::Transition' has no attributes.
+The class 'trace::Automaton' has no attributes.
+The class 'trace::TimedZoneTrace' has no attributes.
+'trace::EventPattern' (role 'trace_EventPattern', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace4', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace6', cardinality 0..*) is associated with 'trace::Automaton' (role 'trace_Automaton', cardinality 0..*).
+'trace::TraceModel' (role 'trace_TraceModel2', cardinality 0..*) is associated with 'trace::TimedZoneTrace' (role 'trace_TimedZoneTrace', cardinality 0..*).
+'trace::TimedZoneTrace' (role 'trace_TimedZoneTrace8', cardinality 0..*) is associated with 'trace::TimedZone' (role 'trace_TimedZone', cardinality 0..*).
+'trace::TraceModel' (role 'trace_TraceModel', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).
+'trace::Transition' (role 'trace_Transition', cardinality 0..*) is associated with 'trace::TimedZoneTrace' (role 'trace_TimedZoneTrace10', cardinality 0..*).

@@ -1,0 +1,45 @@
+The model has 19 class(es).
+The class 'fsmcore::VarDecl' has no attributes.
+The class 'Statement' has no attributes.
+The class 'fsmcore::Trigger' has the following attributes: 'expression' of type bool.
+The class 'fsmcore::Constraint' has no attributes.
+The class 'fsmcore::Conditional' has no attributes.
+The class 'fsmcore::Transition' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'State' has no attributes.
+The class 'fsmcore::Region' has no attributes.
+The class 'fsmcore::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'fsmcore::FinalState' has no attributes.
+The class 'fsmcore::Statement' has no attributes.
+The class 'fsmcore::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsmcore::StateMachine' has no attributes.
+The class 'fsmcore::Program' has no attributes.
+The class 'fsmcore::State' has no attributes.
+The class 'fsmcore::AbstractState' has no attributes.
+The class 'fsmcore::Loop' has no attributes.
+The enumeration 'PseudostateKind' has the following literals: 'initial'.
+'fsmcore::Conditional' is a specialization of 'Statement'.
+'fsmcore::VarDecl' is a specialization of 'Statement'.
+'fsmcore::Transition' is a specialization of 'NamedElement'.
+'fsmcore::FinalState' is a specialization of 'State'.
+'fsmcore::AbstractState' is a specialization of 'NamedElement'.
+'fsmcore::Pseudostate' is a specialization of 'AbstractState'.
+'fsmcore::Region' is a specialization of 'NamedElement'.
+'fsmcore::StateMachine' is a specialization of 'NamedElement'.
+'fsmcore::Loop' is a specialization of 'Statement'.
+'fsmcore::State' is a specialization of 'AbstractState'.
+'fsmcore::State' (role 'fsmcore_State10', cardinality 0..*) is associated with 'fsmcore::Program' (role 'fsmcore_Program11', cardinality 0..*).
+'fsmcore::AbstractState' (role 'AbstractState20', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'outgoing', cardinality 0..*).
+'fsmcore::Program' (role 'fsmcore_Program14', cardinality 0..*) is associated with 'fsmcore::State' (role 'fsmcore_State13', cardinality 0..*).
+'fsmcore::StateMachine' (role 'fsmcore_StateMachine', cardinality 0..*) is associated with 'fsmcore::Region' (role 'fsmcore_Region', cardinality 0..*).
+'fsmcore::Constraint' (role 'fsmcore_Constraint', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'fsmcore_Transition22', cardinality 0..*).
+'fsmcore::Region' (role 'Region', cardinality 0..*) is associated with 'fsmcore::AbstractState' (role 'subvertex', cardinality 0..*).
+'fsmcore::Transition' (role 'Transition6', cardinality 0..*) is associated with 'fsmcore::AbstractState' (role 'source', cardinality 0..*).
+'fsmcore::Statement' (role 'fsmcore_Statement', cardinality 0..*) is associated with 'fsmcore::Program' (role 'fsmcore_Program24', cardinality 0..*).
+'fsmcore::Region' (role 'ownerRegion', cardinality 0..*) is associated with 'fsmcore::AbstractState' (role 'AbstractState', cardinality 0..*).
+'fsmcore::Transition' (role 'fsmcore_Transition', cardinality 0..*) is associated with 'fsmcore::Region' (role 'fsmcore_Region3', cardinality 0..*).
+'fsmcore::Trigger' (role 'fsmcore_Trigger', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'fsmcore_Transition16', cardinality 0..*).
+'fsmcore::AbstractState' (role 'target', cardinality 0..*) is associated with 'fsmcore::Transition' (role 'Transition', cardinality 0..*).
+'fsmcore::Program' (role 'fsmcore_Program', cardinality 0..*) is associated with 'fsmcore::State' (role 'fsmcore_State', cardinality 0..*).
+'fsmcore::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsmcore::AbstractState' (role 'AbstractState18', cardinality 0..*).

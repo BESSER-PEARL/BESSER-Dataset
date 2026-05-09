@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'extlibrary::Borrowable' has no attributes.
+The class 'extlibrary::Book' has the following attributes: 'title' of type str.
+The class 'extlibrary::Borrower' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'Encyclopedia', 'Dictionary'.

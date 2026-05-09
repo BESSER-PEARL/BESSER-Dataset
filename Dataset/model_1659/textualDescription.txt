@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'hello123::Thing' has the following attributes: 'id' of type int.
+The class 'hello123::Property' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'hello123::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'hello123::World' has no attributes.
+The class 'hello123::Foo' has the following attributes: 'id' of type str.
+The class 'hello123::Alias' has the following attributes: 'id' of type str.
+The class 'hello123::RelatedTo' has the following attributes: 'since' of type str.
+The class 'hello123::Bar' has the following attributes: 'id' of type str.
+'hello123::RelatedTo' is a specialization of 'NamedElement'.
+'hello123::Thing' is a specialization of 'NamedElement'.
+'hello123::Thing' (role 'hello123_Thing3', cardinality 0..*) is associated with 'hello123::Property' (role 'hello123_Property', cardinality 0..*).
+'hello123::Thing' (role 'Thing', cardinality 0..*) is associated with 'hello123::RelatedTo' (role 'relations', cardinality 0..*).
+'hello123::Bar' (role 'hello123_Bar', cardinality 0..*) is associated with 'hello123::Thing' (role 'hello123_Thing7', cardinality 0..*).
+'hello123::RelatedTo' (role 'hello123_RelatedTo', cardinality 0..*) is associated with 'hello123::Thing' (role 'hello123_Thing11', cardinality 0..*).
+'hello123::Thing' (role 'fromThing', cardinality 0..*) is associated with 'hello123::RelatedTo' (role 'RelatedTo', cardinality 0..*).
+'hello123::Thing' (role 'hello123_Thing5', cardinality 0..*) is associated with 'hello123::Foo' (role 'hello123_Foo', cardinality 0..*).
+'hello123::World' (role 'hello123_World', cardinality 0..*) is associated with 'hello123::Thing' (role 'hello123_Thing', cardinality 0..*).
+'hello123::Alias' (role 'hello123_Alias', cardinality 0..*) is associated with 'hello123::NamedElement' (role 'hello123_NamedElement', cardinality 0..*).

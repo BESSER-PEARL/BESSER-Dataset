@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'transientotm::TWriter' has the following attributes: 'name' of type str.
+The class 'transientotm::TBook' has the following attributes: 'title' of type str.
+'transientotm::TWriter' (role 'transientotm_TWriter2', cardinality 0..*) is associated with 'transientotm::TBook' (role 'transientotm_TBook3', cardinality 0..*).
+'transientotm::TWriter' (role 'transientotm_TWriter', cardinality 0..*) is associated with 'transientotm::TBook' (role 'transientotm_TBook', cardinality 0..*).

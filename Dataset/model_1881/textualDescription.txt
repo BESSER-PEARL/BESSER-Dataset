@@ -1,0 +1,38 @@
+The model has 15 class(es).
+The class 'shop::Valuable' has the following attributes: 'date' of type date; 'value' of type float.
+The class 'Payment' has no attributes.
+The class 'shop::Shop' has no attributes.
+The class 'shop::ChequePayment' has the following attributes: 'depositDate' of type date; 'deposited' of type bool.
+The class 'Person' has no attributes.
+The class 'shop::CashPayment' has no attributes.
+The class 'shop::Employee' has no attributes.
+The class 'shop::Payment' has the following attributes: 'type' of type str.
+The class 'shop::ElectronicPayment' has no attributes.
+The class 'Valuable' has no attributes.
+The class 'shop::BankOperation' has the following attributes: 'description' of type str.
+The class 'shop::Customer' has no attributes.
+The class 'shop::AccountBook' has the following attributes: 'cashFlow' of type float.
+The class 'shop::Sale' has the following attributes: 'description' of type str.
+The class 'shop::Person' has the following attributes: 'phoneNumbers' of type str; 'lastName' of type str; 'firstName' of type str; 'address' of type str; 'emails' of type str; 'birthDate' of type date.
+The enumeration 'PaymentType' has the following literals: 'CHEQUE', 'CASH', 'ELECTRONIC'.
+'shop::ElectronicPayment' is a specialization of 'Payment'.
+'shop::Customer' is a specialization of 'Person'.
+'shop::ChequePayment' is a specialization of 'Payment'.
+'shop::BankOperation' is a specialization of 'Valuable'.
+'shop::Payment' is a specialization of 'Valuable'.
+'shop::Employee' is a specialization of 'Person'.
+'shop::Sale' is a specialization of 'Valuable'.
+'shop::CashPayment' is a specialization of 'Payment'.
+'shop::Customer' (role 'customer', cardinality 0..*) is associated with 'shop::Sale' (role 'Sale', cardinality 0..*).
+'shop::Employee' (role 'employees', cardinality 0..*) is associated with 'shop::Sale' (role 'Sale12', cardinality 0..*).
+'shop::AccountBook' (role 'shop_AccountBook18', cardinality 0..*) is associated with 'shop::Payment' (role 'shop_Payment', cardinality 0..*).
+'shop::Payment' (role 'payments', cardinality 0..*) is associated with 'shop::Sale' (role 'Sale14', cardinality 0..*).
+'shop::AccountBook' (role 'shop_AccountBook', cardinality 0..*) is associated with 'shop::BankOperation' (role 'shop_BankOperation', cardinality 0..*).
+'shop::Shop' (role 'shop', cardinality 0..*) is associated with 'shop::AccountBook' (role 'AccountBook', cardinality 0..*).
+'shop::Sale' (role 'shop_Sale', cardinality 0..*) is associated with 'shop::Shop' (role 'shop_Shop2', cardinality 0..*).
+'shop::Shop' (role 'shop_Shop', cardinality 0..*) is associated with 'shop::Customer' (role 'shop_Customer', cardinality 0..*).
+'shop::Sale' (role 'sales', cardinality 0..*) is associated with 'shop::Customer' (role 'Customer', cardinality 0..*).
+'shop::Employee' (role 'Employee', cardinality 0..*) is associated with 'shop::Sale' (role 'sales9', cardinality 0..*).
+'shop::Payment' (role 'Payment', cardinality 0..*) is associated with 'shop::Sale' (role 'sale', cardinality 0..*).
+'shop::Shop' (role 'Shop', cardinality 0..*) is associated with 'shop::AccountBook' (role 'accountBook', cardinality 0..*).
+'shop::Employee' (role 'shop_Employee', cardinality 0..*) is associated with 'shop::Shop' (role 'shop_Shop4', cardinality 0..*).

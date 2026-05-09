@@ -1,0 +1,80 @@
+The model has 46 class(es).
+The class 'MapElement' has no attributes.
+The class 'doc::map::ContentGenerator' has no attributes.
+The class 'BookContainer' has no attributes.
+The class 'NameRule' has no attributes.
+The class 'doc::book::Book' has the following attributes: 'title' of type str; 'version' of type str; 'copyrightMarker' of type str; 'copyrightText' of type str.
+The class 'doc::map::File' has the following attributes: 'path' of type str.
+The class 'doc::builder::PropertyEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'doc::map::MapSection' has the following attributes: 'title' of type str; 'id' of type str.
+The class 'doc::fragment::PlainTextContent' has the following attributes: 'value' of type str.
+The class 'map::MapContainer' has no attributes.
+The class 'Author' has no attributes.
+The class 'doc::map::MapContainer' has the following attributes: 'numberingStyle' of type str.
+The class 'doc::builder::BookBuilder' has the following attributes: 'license' of type str; 'copyrightMarker' of type str; 'version' of type str; 'title' of type str.
+The class 'builder::PropertyEntry' has no attributes.
+The class 'doc::map::ResourceFactory' has the following attributes: 'className' of type str.
+The class 'doc::map::Map' has no attributes.
+The class 'doc::fragment::Fragment' has no attributes.
+The class 'PatternRule' has no attributes.
+The class 'ExtensionMappingEntry' has no attributes.
+The class 'doc::fragment::Content' has no attributes.
+The class 'ResourceFactory' has no attributes.
+The class 'doc::map::IncludePatternRule' has no attributes.
+The class 'doc::map::MapElement' has no attributes.
+The class 'doc::map::ExtensionMappingEntry' has the following attributes: 'extension' of type str.
+The class 'Container' has no attributes.
+The class 'doc::book::BookContainer' has the following attributes: 'numberingStyle' of type str.
+The class 'doc::Test' has no attributes.
+The class 'Section' has no attributes.
+The class 'doc::fragment::Copyright' has the following attributes: 'year' of type int.
+The class 'doc::map::Import' has no attributes.
+The class 'doc::map::NameRule' has no attributes.
+The class 'doc::map::Feature' has the following attributes: 'featureId' of type str; 'createSection' of type bool.
+The class 'doc::fragment::Container' has the following attributes: 'content' of type str.
+The class 'MapContainer' has no attributes.
+The class 'Map' has no attributes.
+The class 'Import' has no attributes.
+The class 'BookSection' has no attributes.
+The class 'doc::map::PatternRule' has the following attributes: 'pattern' of type str.
+The class 'doc::book::BookSection' has the following attributes: 'fullNumber' of type str; 'number' of type int; 'id' of type str; 'title' of type str.
+The class 'Content' has no attributes.
+The class 'map::MapElement' has no attributes.
+The class 'doc::fragment::Section' has the following attributes: 'title' of type str.
+The class 'doc::map::ExcludePatternRule' has no attributes.
+The class 'fragment::Content' has no attributes.
+The class 'Copyright' has no attributes.
+The class 'doc::fragment::Author' has the following attributes: 'ref' of type str; 'name' of type str; 'id' of type str.
+The enumeration 'NumberingStyle' has the following literals: 'ROMAN', 'ARABIC', 'LATIN'.
+The enumeration 'RuleResult' has the following literals: 'REJECT', 'ACCEPT'.
+'doc::map::Import' is a specialization of 'MapElement'.
+'doc::fragment::Fragment' is a specialization of 'Container'.
+'doc::book::Book' is a specialization of 'BookContainer'.
+'doc::book::BookSection' is a specialization of 'BookContainer'.
+'doc::map::MapSection' is a specialization of 'map::MapContainer'.
+'doc::map::MapSection' is a specialization of 'map::MapElement'.
+'doc::map::ExcludePatternRule' is a specialization of 'PatternRule'.
+'doc::fragment::PlainTextContent' is a specialization of 'Content'.
+'doc::builder::BookBuilder' is a specialization of 'Map'.
+'doc::map::PatternRule' is a specialization of 'NameRule'.
+'doc::map::Map' is a specialization of 'MapContainer'.
+'doc::map::Feature' is a specialization of 'Import'.
+'doc::fragment::Section' is a specialization of 'Container'.
+'doc::map::ContentGenerator' is a specialization of 'fragment::Content'.
+'doc::map::IncludePatternRule' is a specialization of 'PatternRule'.
+'doc::map::ContentGenerator' is a specialization of 'map::MapElement'.
+'doc::map::File' is a specialization of 'Import'.
+'Section' (role 'Section', cardinality 0..*) is associated with 'doc::fragment::Container' (role 'doc_fragment_Container6', cardinality 0..*).
+'doc::builder::BookBuilder' (role 'doc_builder_BookBuilder', cardinality 0..*) is associated with 'Author' (role 'Author17', cardinality 0..*).
+'Content' (role 'Content', cardinality 0..*) is associated with 'doc::fragment::Container' (role 'doc_fragment_Container', cardinality 0..*).
+'Content' (role 'Content13', cardinality 0..*) is associated with 'doc::book::BookContainer' (role 'doc_book_BookContainer', cardinality 0..*).
+'doc::book::Book' (role 'doc_book_Book', cardinality 0..*) is associated with 'Author' (role 'Author9', cardinality 0..*).
+'ResourceFactory' (role 'ResourceFactory', cardinality 0..*) is associated with 'doc::map::ExtensionMappingEntry' (role 'doc_map_ExtensionMappingEntry', cardinality 0..*).
+'doc::map::MapContainer' (role 'doc_map_MapContainer', cardinality 0..*) is associated with 'MapElement' (role 'MapElement', cardinality 0..*).
+'doc::book::Book' (role 'doc_book_Book11', cardinality 0..*) is associated with 'Copyright' (role 'Copyright', cardinality 0..*).
+'ExtensionMappingEntry' (role 'ExtensionMappingEntry', cardinality 0..*) is associated with 'doc::map::Map' (role 'doc_map_Map', cardinality 0..*).
+'Copyright' (role 'Copyright20', cardinality 0..*) is associated with 'doc::builder::BookBuilder' (role 'doc_builder_BookBuilder19', cardinality 0..*).
+'doc::fragment::Copyright' (role 'doc_fragment_Copyright', cardinality 0..*) is associated with 'Author' (role 'Author', cardinality 0..*).
+'doc::builder::BookBuilder' (role 'doc_builder_BookBuilder22', cardinality 0..*) is associated with 'builder::PropertyEntry' (role 'builder_PropertyEntry', cardinality 0..*).
+'NameRule' (role 'NameRule', cardinality 0..*) is associated with 'doc::map::Feature' (role 'doc_map_Feature', cardinality 0..*).
+'BookSection' (role 'BookSection', cardinality 0..*) is associated with 'doc::book::BookContainer' (role 'doc_book_BookContainer15', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'petrinet::Arc' has the following attributes: 'readArc' of type bool; 'poids' of type int.
+The class 'petrinet::Node' has the following attributes: 'name' of type str.
+The class 'petrinet::PetriNet' has the following attributes: 'name' of type str.
+The class 'petrinet::Place' has the following attributes: 'nbJetons' of type int.
+The class 'Node' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::Arc' (role 'petrinet_Arc7', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node8', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc4', cardinality 0..*) is associated with 'petrinet::Node' (role 'petrinet_Node5', cardinality 0..*).
+'petrinet::Node' (role 'petrinet_Node', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet', cardinality 0..*).
+'petrinet::Arc' (role 'petrinet_Arc', cardinality 0..*) is associated with 'petrinet::PetriNet' (role 'petrinet_PetriNet2', cardinality 0..*).

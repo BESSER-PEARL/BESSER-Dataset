@@ -1,0 +1,46 @@
+The model has 22 class(es).
+The class 'ptnetLoLA::RefMarkedPlace' has the following attributes: 'token' of type int.
+The class 'Node' has no attributes.
+The class 'ArcToPlace' has no attributes.
+The class 'ptnetLoLA::ArcToPlaceExt' has the following attributes: 'probability' of type float.
+The class 'PlaceReference' has no attributes.
+The class 'Transition' has no attributes.
+The class 'ptnetLoLA::Place' has the following attributes: 'finalMarking' of type int; 'token' of type int.
+The class 'ArcToTransition' has no attributes.
+The class 'Arc' has no attributes.
+The class 'ptnetLoLA::Marking' has no attributes.
+The class 'ptnetLoLA::PlaceReference' has no attributes.
+The class 'Place' has no attributes.
+The class 'ptnetLoLA::TransitionExt' has the following attributes: 'maxTime' of type int; 'cost' of type float; 'minTime' of type int; 'probability' of type float.
+The class 'ptnetLoLA::Node' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'ptnetLoLA::PlaceExt' has the following attributes: 'isStart' of type bool; 'probability' of type float.
+The class 'ptnetLoLA::ArcToPlace' has no attributes.
+The class 'ptnetLoLA::Arc' has the following attributes: 'weight' of type int.
+The class 'ptnetLoLA::Annotation' has the following attributes: 'text' of type str.
+The class 'ptnetLoLA::Transition' has no attributes.
+The class 'ptnetLoLA::PtNet' has no attributes.
+The class 'ptnetLoLA::ArcToTransition' has no attributes.
+The class 'ptnetLoLA::ArcToTransitionExt' has the following attributes: 'probability' of type float.
+The enumeration 'NodeType' has the following literals: 'input', 'internal', 'inout', 'output'.
+'ptnetLoLA::RefMarkedPlace' is a specialization of 'PlaceReference'.
+'ptnetLoLA::Place' is a specialization of 'Node'.
+'ptnetLoLA::ArcToTransition' is a specialization of 'Arc'.
+'ptnetLoLA::ArcToPlaceExt' is a specialization of 'ArcToPlace'.
+'ptnetLoLA::ArcToPlace' is a specialization of 'Arc'.
+'ptnetLoLA::PlaceExt' is a specialization of 'Place'.
+'ptnetLoLA::TransitionExt' is a specialization of 'Transition'.
+'ptnetLoLA::Transition' is a specialization of 'Node'.
+'ptnetLoLA::ArcToTransitionExt' is a specialization of 'ArcToTransition'.
+'ptnetLoLA::Arc' (role 'incoming', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'Node23', cardinality 0..*).
+'ptnetLoLA::Marking' (role 'ptnetLoLA_Marking', cardinality 0..*) is associated with 'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet4', cardinality 0..*).
+'ptnetLoLA::PlaceReference' (role 'ptnetLoLA_PlaceReference', cardinality 0..*) is associated with 'ptnetLoLA::Place' (role 'ptnetLoLA_Place20', cardinality 0..*).
+'ptnetLoLA::Arc' (role 'Arc16', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'source', cardinality 0..*).
+'ptnetLoLA::Arc' (role 'outgoing', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'Node', cardinality 0..*).
+'ptnetLoLA::Arc' (role 'Arc', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'target', cardinality 0..*).
+'ptnetLoLA::Annotation' (role 'ptnetLoLA_Annotation13', cardinality 0..*) is associated with 'ptnetLoLA::Node' (role 'ptnetLoLA_Node', cardinality 0..*).
+'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet6', cardinality 0..*) is associated with 'ptnetLoLA::Annotation' (role 'ptnetLoLA_Annotation', cardinality 0..*).
+'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet8', cardinality 0..*) is associated with 'ptnetLoLA::Arc' (role 'ptnetLoLA_Arc', cardinality 0..*).
+'ptnetLoLA::Place' (role 'ptnetLoLA_Place', cardinality 0..*) is associated with 'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet', cardinality 0..*).
+'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet10', cardinality 0..*) is associated with 'ptnetLoLA::Marking' (role 'ptnetLoLA_Marking11', cardinality 0..*).
+'ptnetLoLA::PtNet' (role 'ptnetLoLA_PtNet2', cardinality 0..*) is associated with 'ptnetLoLA::Transition' (role 'ptnetLoLA_Transition', cardinality 0..*).
+'ptnetLoLA::Marking' (role 'ptnetLoLA_Marking18', cardinality 0..*) is associated with 'ptnetLoLA::RefMarkedPlace' (role 'ptnetLoLA_RefMarkedPlace', cardinality 0..*).

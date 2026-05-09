@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/VitoInfinito/moodels/Hotel/Classes.ecore

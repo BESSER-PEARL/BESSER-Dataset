@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'PN::Place' has no attributes.
+The class 'PN::Transition' has the following attributes: 'minDelay' of type float; 'maxDelay' of type float.
+The class 'Node' has no attributes.
+The class 'PN::OutputArc' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'PN::Arc' has no attributes.
+The class 'PN::NamedElement' has the following attributes: 'name' of type str.
+The class 'PN::InputArc' has no attributes.
+The class 'Arc' has no attributes.
+The class 'PN::Node' has no attributes.
+The class 'PN::PetriNet' has the following attributes: 'name' of type str.
+'PN::OutputArc' is a specialization of 'Arc'.
+'PN::Transition' is a specialization of 'Node'.
+'PN::Arc' is a specialization of 'NamedElement'.
+'PN::Place' is a specialization of 'Node'.
+'PN::Node' is a specialization of 'NamedElement'.
+'PN::InputArc' is a specialization of 'Arc'.
+'PN::Place' (role 'PN_Place', cardinality 0..*) is associated with 'PN::OutputArc' (role 'PN_OutputArc3', cardinality 0..*).
+'PN::OutputArc' (role 'PN_OutputArc', cardinality 0..*) is associated with 'PN::Transition' (role 'PN_Transition', cardinality 0..*).
+'PN::NamedElement' (role 'PN_NamedElement', cardinality 0..*) is associated with 'PN::PetriNet' (role 'PN_PetriNet', cardinality 0..*).
+'PN::InputArc' (role 'PN_InputArc', cardinality 0..*) is associated with 'PN::Place' (role 'PN_Place5', cardinality 0..*).
+'PN::Transition' (role 'PN_Transition8', cardinality 0..*) is associated with 'PN::InputArc' (role 'PN_InputArc7', cardinality 0..*).

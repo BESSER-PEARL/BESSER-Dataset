@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alfonsodelavega/mortadelo/es.unican.istr.mortadelo.columnFamilyDataModel/model/columnFamilyDataModel.ecore

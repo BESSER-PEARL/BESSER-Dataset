@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'Place' has no attributes.
+The class 'Transition' has no attributes.
+The class 'PetriNetSim::Transition' has no attributes.
+The class 'PetriNetSim::PetriNet' has no attributes.
+The class 'PetriNetSim::Place' has no attributes.
+The class 'PetriNet' has no attributes.
+'PetriNetSim::PetriNet' is a specialization of 'PetriNet'.
+'PetriNetSim::Transition' is a specialization of 'Transition'.
+'PetriNetSim::Place' is a specialization of 'Place'.

@@ -1,0 +1,46 @@
+The model has 15 class(es).
+The class 'flat11::InitType' has the following attributes: 'ref' of type str.
+The class 'flat11::NameType' has the following attributes: 'x' of type str; 'y' of type str; 'value' of type str.
+The class 'flat11::DocumentRoot' has the following attributes: 'declaration' of type str; 'system' of type str; 'mixed' of type str; 'instantiation' of type str; 'imports' of type str.
+The class 'flat11::ParameterType' has the following attributes: 'y' of type str; 'value' of type str; 'x' of type str.
+The class 'flat11::LocationType' has the following attributes: 'y' of type str; 'color' of type str; 'x' of type str; 'id' of type str.
+The class 'flat11::NtaType' has the following attributes: 'imports' of type str; 'declaration' of type str; 'instantiation' of type str; 'system' of type str.
+The class 'flat11::TargetType' has the following attributes: 'ref' of type str.
+The class 'flat11::LabelType' has the following attributes: 'x' of type str; 'kind' of type str; 'value' of type str; 'y' of type str.
+The class 'flat11::NailType' has the following attributes: 'y' of type str; 'x' of type str.
+The class 'flat11::TemplateType' has the following attributes: 'declaration' of type str.
+The class 'flat11::UrgentType' has no attributes.
+The class 'flat11::TransitionType' has the following attributes: 'color' of type str; 'x' of type str; 'id' of type str; 'y' of type str; 'controllable' of type str; 'action' of type str.
+The class 'flat11::CommittedType' has no attributes.
+The class 'flat11::SourceType' has the following attributes: 'ref' of type str.
+The class 'flat11::EStringToStringMapEntry' has no attributes.
+The enumeration 'KindType' has the following literals: 'synchronisation', 'select', 'comments', 'invariant', 'assignment', 'guard'.
+'flat11::TemplateType' (role 'flat11_TemplateType58', cardinality 0..*) is associated with 'flat11::TransitionType' (role 'flat11_TransitionType59', cardinality 0..*).
+'flat11::TargetType' (role 'flat11_TargetType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot23', cardinality 0..*).
+'flat11::NtaType' (role 'flat11_NtaType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot17', cardinality 0..*).
+'flat11::LocationType' (role 'flat11_LocationType53', cardinality 0..*) is associated with 'flat11::TemplateType' (role 'flat11_TemplateType52', cardinality 0..*).
+'flat11::TemplateType' (role 'flat11_TemplateType46', cardinality 0..*) is associated with 'flat11::NameType' (role 'flat11_NameType47', cardinality 0..*).
+'flat11::EStringToStringMapEntry' (role 'flat11_EStringToStringMapEntry3', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot2', cardinality 0..*).
+'flat11::DocumentRoot' (role 'flat11_DocumentRoot27', cardinality 0..*) is associated with 'flat11::TransitionType' (role 'flat11_TransitionType', cardinality 0..*).
+'flat11::DocumentRoot' (role 'flat11_DocumentRoot11', cardinality 0..*) is associated with 'flat11::LocationType' (role 'flat11_LocationType', cardinality 0..*).
+'flat11::NailType' (role 'flat11_NailType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot13', cardinality 0..*).
+'flat11::NameType' (role 'flat11_NameType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot15', cardinality 0..*).
+'flat11::TransitionType' (role 'flat11_TransitionType64', cardinality 0..*) is associated with 'flat11::TargetType' (role 'flat11_TargetType65', cardinality 0..*).
+'flat11::TransitionType' (role 'flat11_TransitionType61', cardinality 0..*) is associated with 'flat11::SourceType' (role 'flat11_SourceType62', cardinality 0..*).
+'flat11::DocumentRoot' (role 'flat11_DocumentRoot29', cardinality 0..*) is associated with 'flat11::UrgentType' (role 'flat11_UrgentType', cardinality 0..*).
+'flat11::ParameterType' (role 'flat11_ParameterType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot19', cardinality 0..*).
+'flat11::SourceType' (role 'flat11_SourceType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot21', cardinality 0..*).
+'flat11::LocationType' (role 'flat11_LocationType31', cardinality 0..*) is associated with 'flat11::NameType' (role 'flat11_NameType32', cardinality 0..*).
+'flat11::TemplateType' (role 'flat11_TemplateType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot25', cardinality 0..*).
+'flat11::CommittedType' (role 'flat11_CommittedType41', cardinality 0..*) is associated with 'flat11::LocationType' (role 'flat11_LocationType40', cardinality 0..*).
+'flat11::DocumentRoot' (role 'flat11_DocumentRoot9', cardinality 0..*) is associated with 'flat11::LabelType' (role 'flat11_LabelType', cardinality 0..*).
+'flat11::TemplateType' (role 'flat11_TemplateType49', cardinality 0..*) is associated with 'flat11::ParameterType' (role 'flat11_ParameterType50', cardinality 0..*).
+'flat11::NtaType' (role 'flat11_NtaType43', cardinality 0..*) is associated with 'flat11::TemplateType' (role 'flat11_TemplateType44', cardinality 0..*).
+'flat11::NailType' (role 'flat11_NailType71', cardinality 0..*) is associated with 'flat11::TransitionType' (role 'flat11_TransitionType70', cardinality 0..*).
+'flat11::EStringToStringMapEntry' (role 'flat11_EStringToStringMapEntry', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot', cardinality 0..*).
+'flat11::InitType' (role 'flat11_InitType', cardinality 0..*) is associated with 'flat11::DocumentRoot' (role 'flat11_DocumentRoot7', cardinality 0..*).
+'flat11::InitType' (role 'flat11_InitType56', cardinality 0..*) is associated with 'flat11::TemplateType' (role 'flat11_TemplateType55', cardinality 0..*).
+'flat11::LocationType' (role 'flat11_LocationType34', cardinality 0..*) is associated with 'flat11::LabelType' (role 'flat11_LabelType35', cardinality 0..*).
+'flat11::LabelType' (role 'flat11_LabelType68', cardinality 0..*) is associated with 'flat11::TransitionType' (role 'flat11_TransitionType67', cardinality 0..*).
+'flat11::DocumentRoot' (role 'flat11_DocumentRoot5', cardinality 0..*) is associated with 'flat11::CommittedType' (role 'flat11_CommittedType', cardinality 0..*).
+'flat11::UrgentType' (role 'flat11_UrgentType38', cardinality 0..*) is associated with 'flat11::LocationType' (role 'flat11_LocationType37', cardinality 0..*).

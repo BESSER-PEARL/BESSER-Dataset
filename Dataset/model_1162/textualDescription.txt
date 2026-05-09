@@ -1,0 +1,333 @@
+The model has 135 class(es).
+The class 'ATL::LibraryRef' has the following attributes: 'name' of type str.
+The class 'OCL::OclAnyType' has no attributes.
+The class 'OCL::RealType' has no attributes.
+The class 'OutPatternElement' has no attributes.
+The class 'ATL::MatchedRule' has the following attributes: 'isRefining' of type str; 'isNoDefault' of type str; 'isAbstract' of type str.
+The class 'ATL::PatternElement' has no attributes.
+The class 'OCL::Operation' has the following attributes: 'name' of type str.
+The class 'ATL::SimpleOutPatternElement' has no attributes.
+The class 'TupleType' has no attributes.
+The class 'Binding' has no attributes.
+The class 'OCL::NumericType' has no attributes.
+The class 'ATL::BindingStat' has the following attributes: 'isAssignment' of type str; 'propertyName' of type str.
+The class 'OCL::Iterator' has no attributes.
+The class 'ATL::OutPatternElement' has no attributes.
+The class 'InPatternElement' has no attributes.
+The class 'OCL::TupleTypeAttribute' has the following attributes: 'name' of type str.
+The class 'NumericType' has no attributes.
+The class 'ATL::InPattern' has no attributes.
+The class 'OCL::TupleType' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'MatchedRule' has no attributes.
+The class 'OCL::IntegerType' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'ATL::LazyMatchedRule' has the following attributes: 'isUnique' of type str.
+The class 'OCL::StringType' has no attributes.
+The class 'OCL::Primitive' has no attributes.
+The class 'InPattern' has no attributes.
+The class 'Rule' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'ATL::OutPattern' has no attributes.
+The class 'Statement' has no attributes.
+The class 'MapType' has no attributes.
+The class 'OCL::BooleanType' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'OclContextDefinition' has no attributes.
+The class 'TupleTypeAttribute' has no attributes.
+The class 'OclModel' has no attributes.
+The class 'OCL::SetType' has no attributes.
+The class 'OCL::VariableDeclaration' has the following attributes: 'varName' of type str; 'id' of type str.
+The class 'OCL::Parameter' has no attributes.
+The class 'ATL::Module' has the following attributes: 'isRefining' of type str.
+The class 'OCL::OclType' has the following attributes: 'name' of type str.
+The class 'ModuleElement' has no attributes.
+The class 'OCL::OperatorCallExp' has no attributes.
+The class 'ATL::CalledRule' has the following attributes: 'isEndpoint' of type str; 'isEntrypoint' of type str.
+The class 'ATL::InPatternElement' has no attributes.
+The class 'OCL::CollectionType' has no attributes.
+The class 'Module' has no attributes.
+The class 'OCL::CollectionOperationCallExp' has no attributes.
+The class 'ATL::ForEachOutPatternElement' has no attributes.
+The class 'OCL::BagType' has no attributes.
+The class 'OCL::OrderedSetType' has no attributes.
+The class 'OCL::SequenceType' has no attributes.
+The class 'OCL::OclModel' has the following attributes: 'name' of type str.
+The class 'OCL::MapType' has no attributes.
+The class 'OCL::OperationCallExp' has the following attributes: 'operationName' of type str.
+The class 'OCL::OclModelElement' has no attributes.
+The class 'Iterator' has no attributes.
+The class 'Library' has no attributes.
+The class 'ATL::ModuleElement' has no attributes.
+The class 'OCL::PropertyCallExp' has no attributes.
+The class 'MapElement' has no attributes.
+The class 'IterateExp' has no attributes.
+The class 'OCL::LetExp' has no attributes.
+The class 'ActionBlock' has no attributes.
+The class 'OclFeatureDefinition' has no attributes.
+The class 'OCL::LoopExp' has no attributes.
+The class 'ATL::Helper' has no attributes.
+The class 'OCL::OclFeatureDefinition' has no attributes.
+The class 'OCL::PrimitiveExp' has no attributes.
+The class 'ATL::Library' has no attributes.
+The class 'ATL::RuleVariableDeclaration' has no attributes.
+The class 'OCL::TuplePart' has no attributes.
+The class 'Query' has no attributes.
+The class 'TupleExp' has no attributes.
+The class 'OCL::SetExp' has no attributes.
+The class 'OCL::NavigationOrAttributeCallExp' has the following attributes: 'name' of type str.
+The class 'OCL::OclUndefinedExp' has no attributes.
+The class 'OCL::SequenceExp' has no attributes.
+The class 'TuplePart' has no attributes.
+The class 'OCL::OclContextDefinition' has no attributes.
+The class 'OCL::MapExp' has no attributes.
+The class 'ATL::SimpleInPatternElement' has no attributes.
+The class 'ATL::Binding' has the following attributes: 'propertyName' of type str; 'isAssignment' of type str.
+The class 'ATL::Rule' has the following attributes: 'name' of type str.
+The class 'OclExpression' has no attributes.
+The class 'OCL::EnumLiteralExp' has the following attributes: 'name' of type str.
+The class 'RuleVariableDeclaration' has no attributes.
+The class 'PrimitiveExp' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'OCL::CollectionExp' has no attributes.
+The class 'OCL::OrderedSetExp' has no attributes.
+The class 'ATL::LocatedElement' has the following attributes: 'commentsBefore' of type str; 'location' of type str; 'commentsAfter' of type str.
+The class 'OCL::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+The class 'ATL::Query' has no attributes.
+The class 'OCL::TupleExp' has no attributes.
+The class 'LibraryRef' has no attributes.
+The class 'Helper' has no attributes.
+The class 'Unit' has no attributes.
+The class 'OclFeature' has no attributes.
+The class 'OCL::OclFeature' has no attributes.
+The class 'OCL::NumericExp' has no attributes.
+The class 'ATL::Unit' has the following attributes: 'name' of type str.
+The class 'OCL::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'OutPattern' has no attributes.
+The class 'NumericExp' has no attributes.
+The class 'OCL::IfExp' has no attributes.
+The class 'OCL::Attribute' has the following attributes: 'name' of type str.
+The class 'OCL::IteratorExp' has the following attributes: 'name' of type str.
+The class 'ATL::ForStat' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'OCL::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'OCL::IterateExp' has no attributes.
+The class 'MapExp' has no attributes.
+The class 'OCL::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'VariableExp' has no attributes.
+The class 'OclType' has no attributes.
+The class 'PropertyCallExp' has no attributes.
+The class 'CollectionExp' has no attributes.
+The class 'IfExp' has no attributes.
+The class 'OCL::VariableExp' has no attributes.
+The class 'OclModelElement' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'OCL::SuperExp' has no attributes.
+The class 'OCL::OclExpression' has no attributes.
+The class 'Operation' has no attributes.
+The class 'OCL::MapElement' has no attributes.
+The class 'ATL::IfStat' has no attributes.
+The class 'ATL::ExpressionStat' has no attributes.
+The class 'ATL::ActionBlock' has no attributes.
+The class 'OCL::BagExp' has no attributes.
+The class 'ATL::Statement' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'PatternElement' has no attributes.
+'OCL::MapElement' is a specialization of 'LocatedElement'.
+'OCL::OrderedSetType' is a specialization of 'CollectionType'.
+'ATL::ActionBlock' is a specialization of 'LocatedElement'.
+'OCL::IntegerExp' is a specialization of 'NumericExp'.
+'OCL::VariableExp' is a specialization of 'OclExpression'.
+'OCL::TupleType' is a specialization of 'OclType'.
+'OCL::TupleExp' is a specialization of 'OclExpression'.
+'OCL::CollectionOperationCallExp' is a specialization of 'OperationCallExp'.
+'OCL::OperationCallExp' is a specialization of 'PropertyCallExp'.
+'OCL::BooleanType' is a specialization of 'Primitive'.
+'ATL::Binding' is a specialization of 'LocatedElement'.
+'OCL::TupleTypeAttribute' is a specialization of 'LocatedElement'.
+'OCL::IterateExp' is a specialization of 'LoopExp'.
+'OCL::SequenceType' is a specialization of 'CollectionType'.
+'OCL::NumericExp' is a specialization of 'PrimitiveExp'.
+'OCL::PrimitiveExp' is a specialization of 'OclExpression'.
+'OCL::SetExp' is a specialization of 'CollectionExp'.
+'OCL::OclContextDefinition' is a specialization of 'LocatedElement'.
+'OCL::IfExp' is a specialization of 'OclExpression'.
+'OCL::BooleanExp' is a specialization of 'PrimitiveExp'.
+'ATL::ExpressionStat' is a specialization of 'Statement'.
+'OCL::RealExp' is a specialization of 'NumericExp'.
+'ATL::Statement' is a specialization of 'LocatedElement'.
+'OCL::BagType' is a specialization of 'CollectionType'.
+'OCL::PropertyCallExp' is a specialization of 'OclExpression'.
+'OCL::RealType' is a specialization of 'NumericType'.
+'OCL::IntegerType' is a specialization of 'NumericType'.
+'OCL::CollectionExp' is a specialization of 'OclExpression'.
+'ATL::ForStat' is a specialization of 'Statement'.
+'OCL::StringExp' is a specialization of 'PrimitiveExp'.
+'OCL::OclModel' is a specialization of 'LocatedElement'.
+'OCL::OclModelElement' is a specialization of 'OclType'.
+'OCL::NavigationOrAttributeCallExp' is a specialization of 'PropertyCallExp'.
+'ATL::MatchedRule' is a specialization of 'Rule'.
+'OCL::SuperExp' is a specialization of 'OclExpression'.
+'ATL::SimpleInPatternElement' is a specialization of 'InPatternElement'.
+'OCL::TuplePart' is a specialization of 'VariableDeclaration'.
+'ATL::Helper' is a specialization of 'ModuleElement'.
+'OCL::MapExp' is a specialization of 'OclExpression'.
+'ATL::SimpleOutPatternElement' is a specialization of 'OutPatternElement'.
+'ATL::OutPattern' is a specialization of 'LocatedElement'.
+'OCL::OclUndefinedExp' is a specialization of 'OclExpression'.
+'OCL::MapType' is a specialization of 'OclType'.
+'OCL::Attribute' is a specialization of 'OclFeature'.
+'OCL::OclType' is a specialization of 'OclExpression'.
+'OCL::LoopExp' is a specialization of 'PropertyCallExp'.
+'OCL::SequenceExp' is a specialization of 'CollectionExp'.
+'OCL::StringType' is a specialization of 'Primitive'.
+'OCL::SetType' is a specialization of 'CollectionType'.
+'OCL::LetExp' is a specialization of 'OclExpression'.
+'ATL::InPattern' is a specialization of 'LocatedElement'.
+'OCL::OrderedSetExp' is a specialization of 'CollectionExp'.
+'ATL::CalledRule' is a specialization of 'Rule'.
+'OCL::BagExp' is a specialization of 'CollectionExp'.
+'ATL::LazyMatchedRule' is a specialization of 'MatchedRule'.
+'OCL::OclFeature' is a specialization of 'LocatedElement'.
+'ATL::ForEachOutPatternElement' is a specialization of 'OutPatternElement'.
+'ATL::Query' is a specialization of 'Unit'.
+'ATL::Rule' is a specialization of 'ModuleElement'.
+'OCL::OperatorCallExp' is a specialization of 'OperationCallExp'.
+'ATL::IfStat' is a specialization of 'Statement'.
+'ATL::ModuleElement' is a specialization of 'LocatedElement'.
+'ATL::RuleVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'OCL::OclFeatureDefinition' is a specialization of 'LocatedElement'.
+'ATL::Module' is a specialization of 'Unit'.
+'OCL::VariableDeclaration' is a specialization of 'LocatedElement'.
+'OCL::Iterator' is a specialization of 'VariableDeclaration'.
+'ATL::PatternElement' is a specialization of 'VariableDeclaration'.
+'ATL::Unit' is a specialization of 'LocatedElement'.
+'OCL::EnumLiteralExp' is a specialization of 'OclExpression'.
+'ATL::Library' is a specialization of 'Unit'.
+'OCL::Primitive' is a specialization of 'OclType'.
+'ATL::OutPatternElement' is a specialization of 'PatternElement'.
+'OCL::NumericType' is a specialization of 'Primitive'.
+'ATL::InPatternElement' is a specialization of 'PatternElement'.
+'OCL::IteratorExp' is a specialization of 'LoopExp'.
+'OCL::OclAnyType' is a specialization of 'OclType'.
+'OCL::OclExpression' is a specialization of 'LocatedElement'.
+'ATL::BindingStat' is a specialization of 'Statement'.
+'OCL::Parameter' is a specialization of 'VariableDeclaration'.
+'OCL::CollectionType' is a specialization of 'OclType'.
+'ATL::LibraryRef' is a specialization of 'LocatedElement'.
+'OCL::Operation' is a specialization of 'OclFeature'.
+'Rule' (role 'Rule', cardinality 0..*) is associated with 'ATL::OutPattern' (role 'outPattern', cardinality 0..*).
+'OCL::OclModel' (role 'model', cardinality 0..*) is associated with 'OclModel' (role 'OclModel207', cardinality 0..*).
+'ATL::ActionBlock' (role 'ATL_ActionBlock', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'MatchedRule' (role 'MatchedRule', cardinality 0..*) is associated with 'ATL::MatchedRule' (role 'superRule', cardinality 0..*).
+'ATL::ForStat' (role 'ATL_ForStat', cardinality 0..*) is associated with 'Iterator' (role 'Iterator82', cardinality 0..*).
+'OCL::OclType' (role 'valueType', cardinality 0..*) is associated with 'MapType' (role 'MapType', cardinality 0..*).
+'OclExpression' (role 'OclExpression116', cardinality 0..*) is associated with 'OCL::MapElement' (role 'OCL_MapElement', cardinality 0..*).
+'Statement' (role 'Statement88', cardinality 0..*) is associated with 'ATL::ForStat' (role 'ATL_ForStat87', cardinality 0..*).
+'Helper' (role 'Helper4', cardinality 0..*) is associated with 'ATL::Query' (role 'query', cardinality 0..*).
+'OCL::MapExp' (role 'map', cardinality 0..*) is associated with 'MapElement' (role 'MapElement', cardinality 0..*).
+'ATL::ForStat' (role 'ATL_ForStat84', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression85', cardinality 0..*).
+'OCL::Operation' (role 'owningOperation', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression205', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'referredVariable', cardinality 0..*) is associated with 'VariableExp' (role 'VariableExp', cardinality 0..*).
+'OclFeature' (role 'OclFeature', cardinality 0..*) is associated with 'OCL::OclFeatureDefinition' (role 'definition', cardinality 0..*).
+'TupleExp' (role 'TupleExp', cardinality 0..*) is associated with 'OCL::TuplePart' (role 'tuplePart', cardinality 0..*).
+'OCL::Operation' (role 'operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter200', cardinality 0..*).
+'OCL::OclType' (role 'context_', cardinality 0..*) is associated with 'OclContextDefinition' (role 'OclContextDefinition', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'initExpression', cardinality 0..*).
+'OclExpression' (role 'OclExpression138', cardinality 0..*) is associated with 'OCL::IfExp' (role 'ifExp1', cardinality 0..*).
+'TuplePart' (role 'TuplePart', cardinality 0..*) is associated with 'OCL::TupleExp' (role 'tuple', cardinality 0..*).
+'OclExpression' (role 'OclExpression69', cardinality 0..*) is associated with 'ATL::BindingStat' (role 'ATL_BindingStat', cardinality 0..*).
+'OCL::IfExp' (role 'ifExp3', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression140', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'ATL::CalledRule' (role 'ATL_CalledRule', cardinality 0..*).
+'OCL::Parameter' (role 'parameters', cardinality 0..*) is associated with 'Operation' (role 'Operation152', cardinality 0..*).
+'ATL::IfStat' (role 'ATL_IfStat76', cardinality 0..*) is associated with 'Statement' (role 'Statement77', cardinality 0..*).
+'OCL::OclModel' (role 'metamodel', cardinality 0..*) is associated with 'OclModel' (role 'OclModel211', cardinality 0..*).
+'ATL::MatchedRule' (role 'children', cardinality 0..*) is associated with 'MatchedRule' (role 'MatchedRule24', cardinality 0..*).
+'PropertyCallExp' (role 'PropertyCallExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'source', cardinality 0..*).
+'OclType' (role 'OclType203', cardinality 0..*) is associated with 'OCL::Operation' (role 'operation202', cardinality 0..*).
+'ATL::InPattern' (role 'inPattern', cardinality 0..*) is associated with 'InPatternElement' (role 'InPatternElement', cardinality 0..*).
+'ATL::BindingStat' (role 'ATL_BindingStat71', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression72', cardinality 0..*).
+'ATL::MatchedRule' (role 'rule21', cardinality 0..*) is associated with 'InPattern' (role 'InPattern', cardinality 0..*).
+'ATL::IfStat' (role 'ATL_IfStat79', cardinality 0..*) is associated with 'Statement' (role 'Statement80', cardinality 0..*).
+'OCL::MapType' (role 'mapType2', cardinality 0..*) is associated with 'OclType' (role 'OclType181', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'variableDeclaration', cardinality 0..*) is associated with 'OclType' (role 'OclType142', cardinality 0..*).
+'OCL::IfExp' (role 'ifExp2', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression136', cardinality 0..*).
+'OCL::OclFeatureDefinition' (role 'definition186', cardinality 0..*) is associated with 'OclContextDefinition' (role 'OclContextDefinition187', cardinality 0..*).
+'OCL::CollectionType' (role 'collectionTypes', cardinality 0..*) is associated with 'OclType' (role 'OclType154', cardinality 0..*).
+'ATL::Rule' (role 'rule19', cardinality 0..*) is associated with 'RuleVariableDeclaration' (role 'RuleVariableDeclaration', cardinality 0..*).
+'OclModel' (role 'OclModel179', cardinality 0..*) is associated with 'OCL::OclModelElement' (role 'elements178', cardinality 0..*).
+'OclType' (role 'OclType', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'oclExpression', cardinality 0..*).
+'ATL::ExpressionStat' (role 'ATL_ExpressionStat', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression67', cardinality 0..*).
+'ActionBlock' (role 'ActionBlock', cardinality 0..*) is associated with 'ATL::Rule' (role 'rule17', cardinality 0..*).
+'OCL::Attribute' (role 'owningAttribute', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression196', cardinality 0..*).
+'ATL::InPattern' (role 'inPattern28', cardinality 0..*) is associated with 'MatchedRule' (role 'MatchedRule29', cardinality 0..*).
+'OclExpression' (role 'OclExpression74', cardinality 0..*) is associated with 'ATL::IfStat' (role 'ATL_IfStat', cardinality 0..*).
+'OCL::CollectionExp' (role 'collection', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression109', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration131', cardinality 0..*) is associated with 'OCL::LetExp' (role 'letExp', cardinality 0..*).
+'OCL::Iterator' (role 'iterators', cardinality 0..*) is associated with 'LoopExp' (role 'LoopExp150', cardinality 0..*).
+'Binding' (role 'Binding', cardinality 0..*) is associated with 'ATL::OutPatternElement' (role 'outPatternElement', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'initExpression105', cardinality 0..*).
+'Query' (role 'Query', cardinality 0..*) is associated with 'ATL::Helper' (role 'helpers', cardinality 0..*).
+'OclModel' (role 'OclModel49', cardinality 0..*) is associated with 'ATL::OutPatternElement' (role 'ATL_OutPatternElement', cardinality 0..*).
+'TupleType' (role 'TupleType', cardinality 0..*) is associated with 'OCL::TupleTypeAttribute' (role 'attributes', cardinality 0..*).
+'OCL::OclExpression' (role 'elseExpression', cardinality 0..*) is associated with 'IfExp' (role 'IfExp', cardinality 0..*).
+'OCL::VariableExp' (role 'variableExp', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration107', cardinality 0..*).
+'OclModel' (role 'OclModel', cardinality 0..*) is associated with 'ATL::Module' (role 'ATL_Module', cardinality 0..*).
+'ATL::OutPatternElement' (role 'elements43', cardinality 0..*) is associated with 'OutPattern' (role 'OutPattern44', cardinality 0..*).
+'OCL::LetExp' (role 'letExp133', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression134', cardinality 0..*).
+'OCL::TupleTypeAttribute' (role 'tupleTypeAttribute', cardinality 0..*) is associated with 'OclType' (role 'OclType175', cardinality 0..*).
+'ATL::Rule' (role 'rule', cardinality 0..*) is associated with 'OutPattern' (role 'OutPattern', cardinality 0..*).
+'Rule' (role 'Rule64', cardinality 0..*) is associated with 'ATL::ActionBlock' (role 'actionBlock', cardinality 0..*).
+'Unit' (role 'Unit', cardinality 0..*) is associated with 'ATL::LibraryRef' (role 'libraries', cardinality 0..*).
+'OCL::OclContextDefinition' (role 'definitions', cardinality 0..*) is associated with 'OclType' (role 'OclType192', cardinality 0..*).
+'OclFeatureDefinition' (role 'OclFeatureDefinition194', cardinality 0..*) is associated with 'OCL::OclFeature' (role 'feature', cardinality 0..*).
+'IfExp' (role 'IfExp103', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'condition', cardinality 0..*).
+'ATL::Unit' (role 'unit', cardinality 0..*) is associated with 'LibraryRef' (role 'LibraryRef', cardinality 0..*).
+'TupleTypeAttribute' (role 'TupleTypeAttribute173', cardinality 0..*) is associated with 'OCL::TupleType' (role 'tupleType', cardinality 0..*).
+'OperationCallExp' (role 'OperationCallExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'arguments', cardinality 0..*).
+'IterateExp' (role 'IterateExp', cardinality 0..*) is associated with 'OCL::VariableDeclaration' (role 'result', cardinality 0..*).
+'OclModel' (role 'OclModel41', cardinality 0..*) is associated with 'ATL::InPatternElement' (role 'ATL_InPatternElement', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'variable', cardinality 0..*) is associated with 'LetExp' (role 'LetExp146', cardinality 0..*).
+'OclExpression' (role 'OclExpression157', cardinality 0..*) is associated with 'OCL::OclType' (role 'type', cardinality 0..*).
+'ATL::Binding' (role 'bindings', cardinality 0..*) is associated with 'OutPatternElement' (role 'OutPatternElement59', cardinality 0..*).
+'OCL::VariableDeclaration' (role 'initializedVariable', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression144', cardinality 0..*).
+'OCL::OclType' (role 'type162', cardinality 0..*) is associated with 'Attribute' (role 'Attribute163', cardinality 0..*).
+'ATL::Helper' (role 'ATL_Helper14', cardinality 0..*) is associated with 'OclFeatureDefinition' (role 'OclFeatureDefinition', cardinality 0..*).
+'OCL::OclExpression' (role 'elements93', cardinality 0..*) is associated with 'CollectionExp' (role 'CollectionExp', cardinality 0..*).
+'InPatternElement' (role 'InPatternElement46', cardinality 0..*) is associated with 'ATL::OutPatternElement' (role 'mapsTo', cardinality 0..*).
+'OclExpression' (role 'OclExpression31', cardinality 0..*) is associated with 'ATL::InPattern' (role 'ATL_InPattern', cardinality 0..*).
+'ATL::InPatternElement' (role 'elements38', cardinality 0..*) is associated with 'InPattern' (role 'InPattern39', cardinality 0..*).
+'OCL::OclType' (role 'keyType', cardinality 0..*) is associated with 'MapType' (role 'MapType165', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration129', cardinality 0..*) is associated with 'OCL::IterateExp' (role 'baseExp', cardinality 0..*).
+'IfExp' (role 'IfExp99', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'thenExpression', cardinality 0..*).
+'Rule' (role 'Rule61', cardinality 0..*) is associated with 'ATL::RuleVariableDeclaration' (role 'variables', cardinality 0..*).
+'ATL::ModuleElement' (role 'elements', cardinality 0..*) is associated with 'Module' (role 'Module', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'body101', cardinality 0..*).
+'Iterator' (role 'Iterator127', cardinality 0..*) is associated with 'OCL::LoopExp' (role 'loopExpr', cardinality 0..*).
+'ModuleElement' (role 'ModuleElement', cardinality 0..*) is associated with 'ATL::Module' (role 'module', cardinality 0..*).
+'Library' (role 'Library', cardinality 0..*) is associated with 'ATL::Helper' (role 'ATL_Helper', cardinality 0..*).
+'OclExpression' (role 'OclExpression125', cardinality 0..*) is associated with 'OCL::LoopExp' (role 'loopExp', cardinality 0..*).
+'OclModel' (role 'OclModel8', cardinality 0..*) is associated with 'ATL::Module' (role 'ATL_Module7', cardinality 0..*).
+'OclExpression' (role 'OclExpression123', cardinality 0..*) is associated with 'OCL::OperationCallExp' (role 'parentOperation', cardinality 0..*).
+'Iterator' (role 'Iterator', cardinality 0..*) is associated with 'ATL::ForEachOutPatternElement' (role 'ATL_ForEachOutPatternElement55', cardinality 0..*).
+'OclType' (role 'OclType198', cardinality 0..*) is associated with 'OCL::Attribute' (role 'attribute', cardinality 0..*).
+'OCL::MapElement' (role 'OCL_MapElement118', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression119', cardinality 0..*).
+'OCL::OclType' (role 'type170', cardinality 0..*) is associated with 'VariableDeclaration' (role 'VariableDeclaration171', cardinality 0..*).
+'OutPatternElement' (role 'OutPatternElement', cardinality 0..*) is associated with 'ATL::OutPattern' (role 'outPattern34', cardinality 0..*).
+'OclExpression' (role 'OclExpression51', cardinality 0..*) is associated with 'ATL::SimpleOutPatternElement' (role 'ATL_SimpleOutPatternElement', cardinality 0..*).
+'OclExpression' (role 'OclExpression121', cardinality 0..*) is associated with 'OCL::PropertyCallExp' (role 'appliedProperty', cardinality 0..*).
+'ATL::Query' (role 'ATL_Query', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'ATL::Binding' (role 'ATL_Binding', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression57', cardinality 0..*).
+'Helper' (role 'Helper', cardinality 0..*) is associated with 'ATL::Library' (role 'ATL_Library', cardinality 0..*).
+'LetExp' (role 'LetExp', cardinality 0..*) is associated with 'OCL::OclExpression' (role 'in_', cardinality 0..*).
+'OCL::OclType' (role 'type168', cardinality 0..*) is associated with 'TupleTypeAttribute' (role 'TupleTypeAttribute', cardinality 0..*).
+'Operation' (role 'Operation159', cardinality 0..*) is associated with 'OCL::OclType' (role 'returnType', cardinality 0..*).
+'OutPatternElement' (role 'OutPatternElement36', cardinality 0..*) is associated with 'ATL::InPatternElement' (role 'sourceElement', cardinality 0..*).
+'OCL::OclContextDefinition' (role 'context_189', cardinality 0..*) is associated with 'OclFeatureDefinition' (role 'OclFeatureDefinition190', cardinality 0..*).
+'OCL::OclExpression' (role 'body', cardinality 0..*) is associated with 'LoopExp' (role 'LoopExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression53', cardinality 0..*) is associated with 'ATL::ForEachOutPatternElement' (role 'ATL_ForEachOutPatternElement', cardinality 0..*).
+'OclType' (role 'OclType183', cardinality 0..*) is associated with 'OCL::MapType' (role 'mapType', cardinality 0..*).
+'MapExp' (role 'MapExp', cardinality 0..*) is associated with 'OCL::MapElement' (role 'elements114', cardinality 0..*).
+'OclModelElement' (role 'OclModelElement', cardinality 0..*) is associated with 'OCL::OclModel' (role 'model209', cardinality 0..*).
+'CollectionType' (role 'CollectionType', cardinality 0..*) is associated with 'OCL::OclType' (role 'elementType', cardinality 0..*).
