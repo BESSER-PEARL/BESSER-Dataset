@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/nicklas669/mbse.groupd.model/model/petrinet.ecore

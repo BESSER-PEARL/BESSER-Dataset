@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/hallvard/jexercise/no.hal.learning/no.hal.learning.exercise/jdt.ecore/model/ast.ecore

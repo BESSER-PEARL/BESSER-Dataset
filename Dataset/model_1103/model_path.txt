@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cmodw/emf-profiles_testpetrinet/PTNetModel/model/petrinet.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Jmanuel4SandMan/gemoc-test-rtsc/org.muml.seq.xsrtsc.xsrtsc/model/XSRTSC.ecore

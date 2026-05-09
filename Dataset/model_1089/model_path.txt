@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/RFang1997/gls/src/PetriNet.ecore

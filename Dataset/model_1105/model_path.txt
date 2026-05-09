@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/TC06/MBSE/DTU/dk.dtu.compute.mbse.petrinet/model/petrinet.ecore

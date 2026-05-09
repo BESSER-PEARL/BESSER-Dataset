@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cproinger/context-manager/mngr/model/mngr.ecore
