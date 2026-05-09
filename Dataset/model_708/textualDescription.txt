@@ -1,0 +1,38 @@
+The model has 17 class(es).
+The class 'smalluml::Class' has no attributes.
+The class 'smalluml::StringV' has the following attributes: 'Value' of type str.
+The class 'smalluml::Element' has no attributes.
+The class 'Element' has no attributes.
+The class 'smalluml::RealV' has the following attributes: 'Value' of type str.
+The class 'smalluml::Package' has no attributes.
+The class 'smalluml::Attribute' has no attributes.
+The class 'smalluml::Association' has no attributes.
+The class 'smalluml::Operation' has no attributes.
+The class 'Type' has no attributes.
+The class 'smalluml::Cardinalite' has the following attributes: 'upperBound' of type str; 'lowerBound' of type str.
+The class 'smalluml::Enumeration' has the following attributes: 'enumValue' of type str.
+The class 'smalluml::NamedElement' has the following attributes: 'Name' of type str.
+The class 'smalluml::Type' has no attributes.
+The class 'smalluml::BooleanV' has the following attributes: 'Value' of type str.
+The class 'smalluml::IntegerV' has the following attributes: 'Value' of type str.
+The class 'NamedElement' has no attributes.
+'smalluml::Enumeration' is a specialization of 'NamedElement'.
+'smalluml::IntegerV' is a specialization of 'Type'.
+'smalluml::Attribute' is a specialization of 'Type'.
+'smalluml::StringV' is a specialization of 'Type'.
+'smalluml::BooleanV' is a specialization of 'Type'.
+'smalluml::Cardinalite' is a specialization of 'NamedElement'.
+'smalluml::Type' is a specialization of 'NamedElement'.
+'smalluml::NamedElement' is a specialization of 'Element'.
+'smalluml::Operation' is a specialization of 'NamedElement'.
+'smalluml::RealV' is a specialization of 'Type'.
+'smalluml::Class' is a specialization of 'NamedElement'.
+'smalluml::Attribute' (role 'smalluml_Attribute', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class2', cardinality 0..*).
+'smalluml::Element' (role 'smalluml_Element', cardinality 0..*) is associated with 'smalluml::Package' (role 'smalluml_Package', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class12', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association11', cardinality 0..*).
+'smalluml::Association' (role 'smalluml_Association14', cardinality 0..*) is associated with 'smalluml::Cardinalite' (role 'smalluml_Cardinalite', cardinality 0..*).
+'smalluml::Cardinalite' (role 'smalluml_Cardinalite17', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association16', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class', cardinality 0..*) is associated with 'smalluml::Operation' (role 'smalluml_Operation', cardinality 0..*).
+'smalluml::Association' (role 'smalluml_Association', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class9', cardinality 0..*).
+'smalluml::Attribute' (role 'smalluml_Attribute7', cardinality 0..*) is associated with 'smalluml::Type' (role 'smalluml_Type', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class5', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class3', cardinality 0..*).

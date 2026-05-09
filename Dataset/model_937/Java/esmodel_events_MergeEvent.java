@@ -1,0 +1,85 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class esmodel_events_MergeEvent extends Event {
+
+    private int totalTime;
+    private int numberOfConflicts;
+
+
+
+
+
+    private versioning_PrimaryVersionSpec versioning_primaryversionspec;
+
+
+
+
+    private versioning_PrimaryVersionSpec versioning_primaryversionspec;
+
+
+
+
+    private List<operations_AbstractOperation> operations_abstractoperations;
+
+
+    public esmodel_events_MergeEvent(
+        int totalTime,        int numberOfConflicts    ) {
+        super(
+        );
+        this.totalTime = totalTime;
+        this.numberOfConflicts = numberOfConflicts;
+        this.operations_abstractoperations = new ArrayList<>();
+    }
+
+    public esmodel_events_MergeEvent(
+        int totalTime,        int numberOfConflicts        ArrayList<operations_AbstractOperation> operations_abstractoperations    ) {
+        this.totalTime = totalTime;
+        this.numberOfConflicts = numberOfConflicts;
+        this.operations_abstractoperations = operations_abstractoperations;
+    }
+
+    public int getTotaltime() {
+        return totalTime;
+    }
+
+    public void setTotaltime(int totalTime) {
+        this.totalTime = totalTime;
+    }
+    public int getNumberofconflicts() {
+        return numberOfConflicts;
+    }
+
+    public void setNumberofconflicts(int numberOfConflicts) {
+        this.numberOfConflicts = numberOfConflicts;
+    }
+
+    public versioning_PrimaryVersionSpec getVersioning_primaryversionspec() {
+        return versioning_primaryversionspec;
+    }
+
+    public void setVersioning_primaryversionspec(versioning_PrimaryVersionSpec versioning_primaryversionspec) {
+        this.versioning_primaryversionspec = versioning_primaryversionspec;
+    }
+    public versioning_PrimaryVersionSpec getVersioning_primaryversionspec() {
+        return versioning_primaryversionspec;
+    }
+
+    public void setVersioning_primaryversionspec(versioning_PrimaryVersionSpec versioning_primaryversionspec) {
+        this.versioning_primaryversionspec = versioning_primaryversionspec;
+    }
+    public List<operations_AbstractOperation> getOperations_abstractoperations() {
+        return operations_abstractoperations;
+    }
+
+    public void addOperations_abstractoperation(Operations_abstractoperation operations_abstractoperation) {
+        this.operations_abstractoperations.add(operations_abstractoperation);
+    }
+
+}

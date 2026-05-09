@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dstrueber/bigtrafo/org.eclipse.emf.henshin.model/model/henshin.ecore

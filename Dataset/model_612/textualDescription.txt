@@ -1,0 +1,73 @@
+The model has 37 class(es).
+The class 'PackageModel' has no attributes.
+The class 'PHPMVC::coreMVC::MVCClass' has the following attributes: 'name' of type str.
+The class 'HTMLElement' has no attributes.
+The class 'Event' has no attributes.
+The class 'PHPMVC::extPHP::Input' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'Controller' has no attributes.
+The class 'PHPMVC::coreMVC::Method' has the following attributes: 'name' of type str.
+The class 'PHPMVC::extPHP::Checkbox' has no attributes.
+The class 'PackageController' has no attributes.
+The class 'PHPMVC::extPHP::Image' has the following attributes: 'source' of type str.
+The class 'PHPMVC::coreMVC::Application' has the following attributes: 'type' of type str; 'name' of type str; 'routes' of type str; 'locale' of type str.
+The class 'PHPMVC::extPHP::HTMLElement' has the following attributes: 'isEmpty' of type bool; 'tagName' of type str; 'isPairedTag' of type bool.
+The class 'PHPMVC::coreMVC::PackageView' has the following attributes: 'name' of type str.
+The class 'View' has no attributes.
+The class 'PHPMVC::coreMVC::ViewComponent' has the following attributes: 'name' of type str.
+The class 'Model' has no attributes.
+The class 'PHPMVC::coreMVC::Event' has the following attributes: 'handler' of type str; 'type' of type str.
+The class 'Attribute' has no attributes.
+The class 'PHPMVC::coreMVC::Attribute' has the following attributes: 'name' of type str.
+The class 'Identifier' has no attributes.
+The class 'PHPMVC::coreMVC::View' has no attributes.
+The class 'PHPMVC::coreMVC::Identifier' has the following attributes: 'isAutoincremental' of type bool.
+The class 'Input' has no attributes.
+The class 'PHPMVC::coreMVC::Controller' has no attributes.
+The class 'PHPMVC::extPHP::Button' has the following attributes: 'disabled' of type bool; 'type' of type str; 'content' of type str.
+The class 'PHPMVC::extPHP::Form' has the following attributes: 'method' of type str; 'target' of type str; 'action' of type str.
+The class 'PHPMVC::extPHP::Text' has the following attributes: 'content' of type str; 'language' of type str.
+The class 'PHPMVC::extPHP::Anchor' has the following attributes: 'content' of type str; 'hypRef' of type str; 'target' of type str.
+The class 'ViewComponent' has no attributes.
+The class 'PHPMVC::coreMVC::Model' has no attributes.
+The class 'PHPMVC::extPHP::RadioButton' has no attributes.
+The class 'Method' has no attributes.
+The class 'PHPMVC::coreMVC::PackageModel' has the following attributes: 'name' of type str.
+The class 'PackageView' has no attributes.
+The class 'PHPMVC::coreMVC::PackageController' has the following attributes: 'name' of type str.
+The class 'MVCClass' has no attributes.
+The class 'PHPMVC::extPHP::TextField' has no attributes.
+The enumeration 'HTMLTag' has the following literals: 'input', 'workaround', 'img', 'p', 'form', 'button', 'a'.
+The enumeration 'TargetType' has the following literals: 'framename', 'self', 'blank', 'workaround', 'top', 'parent'.
+The enumeration 'InputType' has the following literals: 'checkbox', 'text', 'workaround', 'radio'.
+The enumeration 'EventType' has the following literals: 'workaround', 'onSubmit', 'onLoad', 'onError'.
+The enumeration 'MethodType' has the following literals: 'get', 'workaround', 'post', 'put', 'patch', 'head', 'delete'.
+The enumeration 'ButtonType' has the following literals: 'reset', 'workaround', 'button', 'submit'.
+'PHPMVC::coreMVC::Controller' is a specialization of 'MVCClass'.
+'PHPMVC::extPHP::Checkbox' is a specialization of 'Input'.
+'PHPMVC::extPHP::Form' is a specialization of 'HTMLElement'.
+'PHPMVC::coreMVC::View' is a specialization of 'MVCClass'.
+'PHPMVC::extPHP::Button' is a specialization of 'HTMLElement'.
+'PHPMVC::coreMVC::Identifier' is a specialization of 'Attribute'.
+'PHPMVC::extPHP::RadioButton' is a specialization of 'Input'.
+'PHPMVC::coreMVC::Model' is a specialization of 'MVCClass'.
+'PHPMVC::extPHP::HTMLElement' is a specialization of 'ViewComponent'.
+'PHPMVC::extPHP::Input' is a specialization of 'HTMLElement'.
+'PHPMVC::extPHP::TextField' is a specialization of 'Input'.
+'PHPMVC::extPHP::Text' is a specialization of 'HTMLElement'.
+'PHPMVC::extPHP::Anchor' is a specialization of 'HTMLElement'.
+'PHPMVC::extPHP::Image' is a specialization of 'HTMLElement'.
+'PHPMVC::coreMVC::View' (role 'PHPMVC_coreMVC_View', cardinality 0..*) is associated with 'ViewComponent' (role 'ViewComponent', cardinality 0..*).
+'PHPMVC::coreMVC::MVCClass' (role 'PHPMVC_coreMVC_MVCClass', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'Model' (role 'Model', cardinality 0..*) is associated with 'PHPMVC::coreMVC::PackageModel' (role 'PHPMVC_coreMVC_PackageModel', cardinality 0..*).
+'PHPMVC::coreMVC::Method' (role 'PHPMVC_coreMVC_Method18', cardinality 0..*) is associated with 'Attribute' (role 'Attribute19', cardinality 0..*).
+'PHPMVC::coreMVC::PackageController' (role 'PHPMVC_coreMVC_PackageController', cardinality 0..*) is associated with 'Controller' (role 'Controller', cardinality 0..*).
+'Attribute' (role 'Attribute16', cardinality 0..*) is associated with 'PHPMVC::coreMVC::Method' (role 'PHPMVC_coreMVC_Method', cardinality 0..*).
+'PackageModel' (role 'PackageModel', cardinality 0..*) is associated with 'PHPMVC::coreMVC::Application' (role 'PHPMVC_coreMVC_Application', cardinality 0..*).
+'PHPMVC::extPHP::HTMLElement' (role 'PHPMVC_extPHP_HTMLElement', cardinality 0..*) is associated with 'HTMLElement' (role 'HTMLElement', cardinality 0..*).
+'View' (role 'View', cardinality 0..*) is associated with 'PHPMVC::coreMVC::PackageView' (role 'PHPMVC_coreMVC_PackageView', cardinality 0..*).
+'PHPMVC::coreMVC::Application' (role 'PHPMVC_coreMVC_Application4', cardinality 0..*) is associated with 'PackageController' (role 'PackageController', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'PHPMVC::coreMVC::ViewComponent' (role 'PHPMVC_coreMVC_ViewComponent', cardinality 0..*).
+'PHPMVC::coreMVC::View' (role 'PHPMVC_coreMVC_View12', cardinality 0..*) is associated with 'View' (role 'View13', cardinality 0..*).
+'Identifier' (role 'Identifier', cardinality 0..*) is associated with 'PHPMVC::coreMVC::Model' (role 'PHPMVC_coreMVC_Model', cardinality 0..*).
+'PackageView' (role 'PackageView', cardinality 0..*) is associated with 'PHPMVC::coreMVC::Application' (role 'PHPMVC_coreMVC_Application2', cardinality 0..*).
+'Method' (role 'Method', cardinality 0..*) is associated with 'PHPMVC::coreMVC::Controller' (role 'PHPMVC_coreMVC_Controller', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'graph::Pattern::Matching::Master::Project::Entry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'graph::Pattern::Matching::Master::Project::Graph' has the following attributes: 'name' of type str; 'direct' of type bool.
+The class 'graph::Pattern::Matching::Master::Project::Edge' has the following attributes: 'label' of type str.
+The class 'graph::Pattern::Matching::Master::Project::Vertex' has the following attributes: 'name' of type str.
+'graph::Pattern::Matching::Master::Project::Edge' (role 'graph_Pattern_Matching_Master_Project_Edge', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Vertex' (role 'graph_Pattern_Matching_Master_Project_Vertex8', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Edge' (role 'Edge', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Graph' (role 'graph', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Vertex' (role 'vertices', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Graph' (role 'Graph', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Graph' (role 'graph2', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Edge' (role 'graph_Pattern_Matching_Master_Project_Edge13', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Entry' (role 'graph_Pattern_Matching_Master_Project_Entry14', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Vertex' (role 'graph_Pattern_Matching_Master_Project_Vertex', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Entry' (role 'graph_Pattern_Matching_Master_Project_Entry', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Vertex' (role 'graph_Pattern_Matching_Master_Project_Vertex11', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Edge' (role 'graph_Pattern_Matching_Master_Project_Edge10', cardinality 0..*).
+'graph::Pattern::Matching::Master::Project::Graph' (role 'Graph6', cardinality 0..*) is associated with 'graph::Pattern::Matching::Master::Project::Edge' (role 'edges', cardinality 0..*).

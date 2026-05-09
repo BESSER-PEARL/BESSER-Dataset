@@ -1,0 +1,13 @@
+The model has 3 class(es).
+The class 'spem::WorkSequence' has the following attributes: 'kind' of type str.
+The class 'spem::Process' has no attributes.
+The class 'spem::Activity' has the following attributes: 'name' of type str; 'durationmax' of type int; 'durationmin' of type int.
+The enumeration 'WorkSequenceKind' has the following literals: 'startToStart', 'finishToFinish', 'startToFinish', 'finishToStart'.
+'spem::Activity' (role 'Activity', cardinality 0..*) is associated with 'spem::Process' (role 'process', cardinality 0..*).
+'spem::Process' (role 'Process', cardinality 0..*) is associated with 'spem::Activity' (role 'activities', cardinality 0..*).
+'spem::WorkSequence' (role 'workSquences', cardinality 0..*) is associated with 'spem::Process' (role 'Process13', cardinality 0..*).
+'spem::Activity' (role 'Activity9', cardinality 0..*) is associated with 'spem::WorkSequence' (role 'linkToPredecessor', cardinality 0..*).
+'spem::WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'spem::Process' (role 'process2', cardinality 0..*).
+'spem::WorkSequence' (role 'WorkSequence6', cardinality 0..*) is associated with 'spem::Activity' (role 'successor', cardinality 0..*).
+'spem::Activity' (role 'predecessor', cardinality 0..*) is associated with 'spem::WorkSequence' (role 'WorkSequence4', cardinality 0..*).
+'spem::WorkSequence' (role 'linkToSuccessor', cardinality 0..*) is associated with 'spem::Activity' (role 'Activity11', cardinality 0..*).

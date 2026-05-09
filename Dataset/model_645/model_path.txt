@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gsrinivas37/com.example.goodreads.model/com.example.goodreads.model/model/goodreads.ecore

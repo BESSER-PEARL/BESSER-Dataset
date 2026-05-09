@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'test::Library' has the following attributes: 'name' of type str.
+The class 'test::Writer' has the following attributes: 'firstName' of type str; 'lastName' of type str; 'EMail' of type str; 'BirthDate' of type date; 'Pseudonym' of type bool.
+The class 'test::Book' has the following attributes: 'title' of type str; 'pages' of type int.
+'test::Library' (role 'Library', cardinality 0..*) is associated with 'test::Writer' (role 'writers4', cardinality 0..*).
+'test::Book' (role 'test_Book', cardinality 0..*) is associated with 'test::Library' (role 'test_Library', cardinality 0..*).
+'test::Book' (role 'Book', cardinality 0..*) is associated with 'test::Writer' (role 'writers', cardinality 0..*).
+'test::Writer' (role 'Writer', cardinality 0..*) is associated with 'test::Library' (role 'library', cardinality 0..*).
+'test::Writer' (role 'Writer6', cardinality 0..*) is associated with 'test::Book' (role 'books', cardinality 0..*).

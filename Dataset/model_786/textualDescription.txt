@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'fsm::FSM' has no attributes.
+The class 'fsm::RuntimeConcept1' has the following attributes: 'foo' of type int.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'fsm::RuntimeConcept2' has the following attributes: 'bar' of type str.
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition9', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::State' (role 'fsm_State4', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM3', cardinality 0..*).
+'fsm::FSM' (role 'FSM', cardinality 0..*) is associated with 'fsm::State' (role 'ownedState', cardinality 0..*).
+'fsm::RuntimeConcept1' (role 'fsm_RuntimeConcept1', cardinality 0..*) is associated with 'fsm::RuntimeConcept2' (role 'fsm_RuntimeConcept2', cardinality 0..*).
+'fsm::State' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'fsm::State' (role 'State11', cardinality 0..*).
+'fsm::RuntimeConcept1' (role 'fsm_RuntimeConcept115', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State16', cardinality 0..*).
+'fsm::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'fsm::State' (role 'State13', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::FSM' (role 'owningFSM', cardinality 0..*).

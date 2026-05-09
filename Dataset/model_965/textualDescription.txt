@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'digraph::GraphElement' has no attributes.
+The class 'digraph::Node' has the following attributes: 'label' of type str.
+The class 'digraph::Graph' has no attributes.
+The class 'digraph::Edge' has the following attributes: 'weight' of type str.
+The class 'GraphElement' has no attributes.
+'digraph::Node' is a specialization of 'GraphElement'.
+'digraph::Edge' is a specialization of 'GraphElement'.
+'digraph::Graph' (role 'Graph', cardinality 0..*) is associated with 'digraph::GraphElement' (role 'contents', cardinality 0..*).
+'digraph::Node' (role 'target', cardinality 0..*) is associated with 'digraph::Edge' (role 'Edge4', cardinality 0..*).
+'digraph::Graph' (role 'graph', cardinality 0..*) is associated with 'digraph::GraphElement' (role 'GraphElement', cardinality 0..*).
+'digraph::Node' (role 'Node', cardinality 0..*) is associated with 'digraph::Edge' (role 'outgoing', cardinality 0..*).
+'digraph::Node' (role 'source', cardinality 0..*) is associated with 'digraph::Edge' (role 'Edge', cardinality 0..*).
+'digraph::Node' (role 'Node7', cardinality 0..*) is associated with 'digraph::Edge' (role 'incoming', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/artist-project/ARTIST/source/Tooling/migration/application-discovery-understanding/MUT/Component_Viewpoint_MOMoT/org.eclipse.emf.henshin.model/model/henshin.ecore

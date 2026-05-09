@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'fsm::NoInitialStateException' has no attributes.
+The class 'fsm::FSMException' has no attributes.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::FSM' has no attributes.
+The class 'fsm::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'fsm::NonDeterminism' has no attributes.
+The class 'fsm::NoTransition' has no attributes.
+The class 'FSMException' has no attributes.
+'fsm::NonDeterminism' is a specialization of 'FSMException'.
+'fsm::NoInitialStateException' is a specialization of 'FSMException'.
+'fsm::NoTransition' is a specialization of 'FSMException'.
+'fsm::Transition' (role 'fsm_Transition', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM9', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM11', cardinality 0..*) is associated with 'fsm::FSMException' (role 'fsm_FSMException', cardinality 0..*).
+'fsm::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'fsm::State' (role 'State19', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM3', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State4', cardinality 0..*).
+'fsm::State' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::FSM' (role 'owningFSM', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::Transition' (role 'Transition15', cardinality 0..*) is associated with 'fsm::State' (role 'target', cardinality 0..*).
+'fsm::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'fsm::State' (role 'State17', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM6', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State7', cardinality 0..*).
+'fsm::State' (role 'ownedState', cardinality 0..*) is associated with 'fsm::FSM' (role 'FSM', cardinality 0..*).

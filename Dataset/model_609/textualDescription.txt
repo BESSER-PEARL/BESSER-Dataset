@@ -1,0 +1,110 @@
+The model has 41 class(es).
+The class 'webapp::Detail' has the following attributes: 'scale' of type int; 'precision' of type int.
+The class 'webapp::Properties' has the following attributes: 'package' of type str; 'name' of type str.
+The class 'webapp::OnUpdate' has the following attributes: 'behavior' of type str.
+The class 'webapp::BusinessObject' has the following attributes: 'name' of type str; 'package' of type str.
+The class 'Instruction' has no attributes.
+The class 'webapp::AppConfig' has no attributes.
+The class 'webapp::Library' has no attributes.
+The class 'webapp::Field' has the following attributes: 'name' of type str; 'type' of type str; 'defaultValue' of type str.
+The class 'webapp::Resource' has no attributes.
+The class 'webapp::OnDelete' has the following attributes: 'behavior' of type str.
+The class 'webapp::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'webapp::View' has no attributes.
+The class 'webapp::Controller' has no attributes.
+The class 'webapp::Model' has the following attributes: 'password' of type str; 'databaseName' of type str; 'userName' of type str; 'url' of type str.
+The class 'webapp::Action' has the following attributes: 'name' of type str; 'returnType' of type str.
+The class 'webapp::Page' has the following attributes: 'name' of type str; 'isMain' of type bool.
+The class 'Tag' has no attributes.
+The class 'webapp::WebConfig' has the following attributes: 'displayName' of type str.
+The class 'webapp::Check' has the following attributes: 'expr' of type str.
+The class 'webapp::ForeignKey' has no attributes.
+The class 'webapp::Mapping' has the following attributes: 'left' of type str; 'right' of type str.
+The class 'webapp::File' has no attributes.
+The class 'webapp::PrimaryKey' has no attributes.
+The class 'webapp::Navigation' has the following attributes: 'message' of type str.
+The class 'webapp::Column' has the following attributes: 'isNotNull' of type bool; 'size' of type int; 'type' of type str; 'defaultValue' of type str; 'name' of type str; 'useZeroFill' of type bool.
+The class 'webapp::WebApp' has the following attributes: 'framework' of type str; 'name' of type str.
+The class 'webapp::Image' has no attributes.
+The class 'webapp::Form' has the following attributes: 'method' of type str.
+The class 'webapp::Instruction' has no attributes.
+The class 'webapp::Validator' has the following attributes: 'name' of type str; 'package' of type str.
+The class 'webapp::Messages' has no attributes.
+The class 'webapp::Table' has the following attributes: 'name' of type str; 'charset' of type str.
+The class 'webapp::Unique' has no attributes.
+The class 'webapp::Text' has the following attributes: 'content' of type str.
+The class 'webapp::Th' has no attributes.
+The class 'webapp::Tag' has the following attributes: '_property' of type str.
+The class 'webapp::Input' has the following attributes: 'type' of type str.
+The class 'webapp::Constraint' has no attributes.
+The class 'webapp::Tr' has no attributes.
+The class 'webapp::Td' has no attributes.
+The class 'webapp::TableHTML' has no attributes.
+The enumeration 'Charset' has the following literals: 'CP852', 'CP1257', 'BIG5', 'SWE7', 'CP1251', 'CP866', 'KEYBCS2', 'HP8', 'LATIN5', 'ASCII', 'CP850', 'CP1250', 'GB2312', 'CP1256', 'GEOSTD8', 'MACROMAN', 'EUCKR', 'LATIN7', 'LATIN1', 'UTF8', 'BINARY', 'UCS2', 'KOI8R', 'KOI8U', 'ARMSCII8', 'EUCJMPS', 'MACCE', 'GREEK', 'HEBREW', 'UJIS', 'CP932', 'GBK', 'SJIS', 'DEC8', 'LATIN2', 'TIS620'.
+The enumeration 'FormMethod' has the following literals: 'POST', 'GET'.
+The enumeration 'ColumnType' has the following literals: 'VARCHAR', 'BINARY', 'BLOB', 'TINYTEXT', 'BIGINT', 'DATETIME', 'YEAR', 'MEDIUMTEXT', 'INTEGER', 'TIME', 'FLOAT', 'DECIMAL', 'TINYBLOB', 'DATE', 'TINYINT', 'CHAR', 'TIMESTAMP', 'LONGBLOB', 'TEXT', 'MEDIUMINT', 'SMALLINT', 'LONGTEXT', 'BIT', 'MEDIUMBLOB', 'DOUBLE', 'VARBINARY', 'REAL', 'NUMERIC'.
+The enumeration 'Behavior' has the following literals: 'RESTRICT', 'CASCADE'.
+The enumeration 'InputType' has the following literals: 'TEXT', 'BUTTON'.
+'webapp::Th' is a specialization of 'Tag'.
+'webapp::Tag' is a specialization of 'Instruction'.
+'webapp::Form' is a specialization of 'Tag'.
+'webapp::Tr' is a specialization of 'Tag'.
+'webapp::Text' is a specialization of 'Instruction'.
+'webapp::TableHTML' is a specialization of 'Tag'.
+'webapp::Input' is a specialization of 'Tag'.
+'webapp::Messages' is a specialization of 'Tag'.
+'webapp::Td' is a specialization of 'Tag'.
+'webapp::Input' (role 'webapp_Input', cardinality 0..*) is associated with 'webapp::Action' (role 'webapp_Action84', cardinality 0..*).
+'webapp::Table' (role 'webapp_Table36', cardinality 0..*) is associated with 'webapp::Constraint' (role 'webapp_Constraint', cardinality 0..*).
+'webapp::Field' (role 'webapp_Field117', cardinality 0..*) is associated with 'webapp::BusinessObject' (role 'webapp_BusinessObject118', cardinality 0..*).
+'webapp::Validator' (role 'webapp_Validator67', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page68', cardinality 0..*).
+'webapp::Attribute' (role 'webapp_Attribute', cardinality 0..*) is associated with 'webapp::Tag' (role 'webapp_Tag82', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model20', cardinality 0..*) is associated with 'webapp::BusinessObject' (role 'webapp_BusinessObject', cardinality 0..*).
+'webapp::BusinessObject' (role 'webapp_BusinessObject108', cardinality 0..*) is associated with 'webapp::Action' (role 'webapp_Action109', cardinality 0..*).
+'webapp::Constraint' (role 'webapp_Constraint44', cardinality 0..*) is associated with 'webapp::Check' (role 'webapp_Check', cardinality 0..*).
+'webapp::ForeignKey' (role 'webapp_ForeignKey54', cardinality 0..*) is associated with 'webapp::OnDelete' (role 'webapp_OnDelete', cardinality 0..*).
+'webapp::Page' (role 'webapp_Page76', cardinality 0..*) is associated with 'webapp::Instruction' (role 'webapp_Instruction', cardinality 0..*).
+'webapp::Form' (role 'webapp_Form', cardinality 0..*) is associated with 'webapp::Tag' (role 'webapp_Tag', cardinality 0..*).
+'webapp::Navigation' (role 'webapp_Navigation123', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page124', cardinality 0..*).
+'webapp::Table' (role 'webapp_Table59', cardinality 0..*) is associated with 'webapp::ForeignKey' (role 'webapp_ForeignKey58', cardinality 0..*).
+'webapp::Td' (role 'webapp_Td', cardinality 0..*) is associated with 'webapp::Tr' (role 'webapp_Tr100', cardinality 0..*).
+'webapp::TableHTML' (role 'webapp_TableHTML', cardinality 0..*) is associated with 'webapp::Tr' (role 'webapp_Tr', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp', cardinality 0..*) is associated with 'webapp::AppConfig' (role 'webapp_AppConfig', cardinality 0..*).
+'webapp::Input' (role 'webapp_Input86', cardinality 0..*) is associated with 'webapp::Mapping' (role 'webapp_Mapping87', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model115', cardinality 0..*) is associated with 'webapp::BusinessObject' (role 'webapp_BusinessObject114', cardinality 0..*).
+'webapp::BusinessObject' (role 'webapp_BusinessObject80', cardinality 0..*) is associated with 'webapp::Action' (role 'webapp_Action79', cardinality 0..*).
+'webapp::Input' (role 'webapp_Input92', cardinality 0..*) is associated with 'webapp::Field' (role 'webapp_Field', cardinality 0..*).
+'webapp::File' (role 'webapp_File', cardinality 0..*) is associated with 'webapp::Resource' (role 'webapp_Resource28', cardinality 0..*).
+'webapp::Unique' (role 'webapp_Unique64', cardinality 0..*) is associated with 'webapp::Column' (role 'webapp_Column65', cardinality 0..*).
+'webapp::Constraint' (role 'webapp_Constraint46', cardinality 0..*) is associated with 'webapp::ForeignKey' (role 'webapp_ForeignKey', cardinality 0..*).
+'webapp::Mapping' (role 'webapp_Mapping74', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page73', cardinality 0..*).
+'webapp::Action' (role 'webapp_Action', cardinality 0..*) is associated with 'webapp::Controller' (role 'webapp_Controller24', cardinality 0..*).
+'webapp::Navigation' (role 'webapp_Navigation120', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page121', cardinality 0..*).
+'webapp::BusinessObject' (role 'webapp_BusinessObject105', cardinality 0..*) is associated with 'webapp::Field' (role 'webapp_Field106', cardinality 0..*).
+'webapp::BusinessObject' (role 'webapp_BusinessObject112', cardinality 0..*) is associated with 'webapp::BusinessObject' (role 'webapp_BusinessObject110', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp12', cardinality 0..*) is associated with 'webapp::Resource' (role 'webapp_Resource', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model', cardinality 0..*) is associated with 'webapp::WebApp' (role 'webapp_WebApp8', cardinality 0..*).
+'webapp::PrimaryKey' (role 'webapp_PrimaryKey', cardinality 0..*) is associated with 'webapp::Constraint' (role 'webapp_Constraint40', cardinality 0..*).
+'webapp::OnUpdate' (role 'webapp_OnUpdate', cardinality 0..*) is associated with 'webapp::ForeignKey' (role 'webapp_ForeignKey56', cardinality 0..*).
+'webapp::Column' (role 'webapp_Column38', cardinality 0..*) is associated with 'webapp::Detail' (role 'webapp_Detail', cardinality 0..*).
+'webapp::Column' (role 'webapp_Column62', cardinality 0..*) is associated with 'webapp::ForeignKey' (role 'webapp_ForeignKey61', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp6', cardinality 0..*) is associated with 'webapp::View' (role 'webapp_View', cardinality 0..*).
+'webapp::Validator' (role 'webapp_Validator', cardinality 0..*) is associated with 'webapp::Controller' (role 'webapp_Controller22', cardinality 0..*).
+'webapp::Column' (role 'webapp_Column49', cardinality 0..*) is associated with 'webapp::PrimaryKey' (role 'webapp_PrimaryKey48', cardinality 0..*).
+'webapp::Th' (role 'webapp_Th', cardinality 0..*) is associated with 'webapp::Tr' (role 'webapp_Tr98', cardinality 0..*).
+'webapp::View' (role 'webapp_View16', cardinality 0..*) is associated with 'webapp::Navigation' (role 'webapp_Navigation', cardinality 0..*).
+'webapp::Mapping' (role 'webapp_Mapping', cardinality 0..*) is associated with 'webapp::Properties' (role 'webapp_Properties32', cardinality 0..*).
+'webapp::Resource' (role 'webapp_Resource30', cardinality 0..*) is associated with 'webapp::Properties' (role 'webapp_Properties', cardinality 0..*).
+'webapp::Mapping' (role 'webapp_Mapping90', cardinality 0..*) is associated with 'webapp::Input' (role 'webapp_Input89', cardinality 0..*).
+'webapp::Td' (role 'webapp_Td102', cardinality 0..*) is associated with 'webapp::Tag' (role 'webapp_Tag103', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp10', cardinality 0..*) is associated with 'webapp::Controller' (role 'webapp_Controller', cardinality 0..*).
+'webapp::Input' (role 'webapp_Input94', cardinality 0..*) is associated with 'webapp::Validator' (role 'webapp_Validator95', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp2', cardinality 0..*) is associated with 'webapp::WebConfig' (role 'webapp_WebConfig', cardinality 0..*).
+'webapp::Table' (role 'webapp_Table', cardinality 0..*) is associated with 'webapp::Model' (role 'webapp_Model18', cardinality 0..*).
+'webapp::Image' (role 'webapp_Image', cardinality 0..*) is associated with 'webapp::Resource' (role 'webapp_Resource26', cardinality 0..*).
+'webapp::Table' (role 'webapp_Table34', cardinality 0..*) is associated with 'webapp::Column' (role 'webapp_Column', cardinality 0..*).
+'webapp::Page' (role 'webapp_Page', cardinality 0..*) is associated with 'webapp::View' (role 'webapp_View14', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp4', cardinality 0..*) is associated with 'webapp::Library' (role 'webapp_Library', cardinality 0..*).
+'webapp::Unique' (role 'webapp_Unique', cardinality 0..*) is associated with 'webapp::Constraint' (role 'webapp_Constraint42', cardinality 0..*).
+'webapp::ForeignKey' (role 'webapp_ForeignKey51', cardinality 0..*) is associated with 'webapp::Column' (role 'webapp_Column52', cardinality 0..*).
+'webapp::Properties' (role 'webapp_Properties71', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page70', cardinality 0..*).

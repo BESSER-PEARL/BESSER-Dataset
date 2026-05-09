@@ -1,0 +1,121 @@
+The model has 61 class(es).
+The class 'uml::ForkNode' has no attributes.
+The class 'Action' has no attributes.
+The class 'uml::Package' has no attributes.
+The class 'uml::Namespace' has no attributes.
+The class 'uml::Class' has the following attributes: 'isActive' of type str.
+The class 'uml::Action' has no attributes.
+The class 'uml::ObjectFlow' has the following attributes: 'isMultireceive' of type str; 'isMulticast' of type str.
+The class 'ActivityNode' has no attributes.
+The class 'uml::Type' has no attributes.
+The class 'uml::TemplateableElement' has no attributes.
+The class 'uml::ObjectNode' has the following attributes: 'ordering' of type str; 'isControlType' of type str.
+The class 'uml::ActivityEdge' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'uml::StructuredClassifier' has no attributes.
+The class 'Type' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'uml::ControlFlow' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'uml::TypedElement' has no attributes.
+The class 'uml::OpaqueExpression' has the following attributes: 'body' of type str.
+The class 'uml::InitialNode' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'uml::BehavioredClassifier' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'uml::RedefinableElement' has the following attributes: 'isLeaf' of type str.
+The class 'uml::PackageableElement' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'uml::DecisionNode' has no attributes.
+The class 'EncapsulatedClassifier' has no attributes.
+The class 'uml::Behavior' has the following attributes: 'isReentrant' of type str.
+The class 'uml::EncapsulatedClassifier' has no attributes.
+The class 'uml::ActivityGroup' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'uml::ControlNode' has no attributes.
+The class 'uml::Activity' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'uml::Element' has no attributes.
+The class 'uml::NamedElement' has the following attributes: 'name' of type str.
+The class 'uml::ActivityPartition' has no attributes.
+The class 'uml::ValueSpecification' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'uml::FinalNode' has no attributes.
+The class 'Class' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'ActivityGroup' has no attributes.
+The class 'uml::JoinNode' has the following attributes: 'isCombineDuplicate' of type str.
+The class 'uml::ExecutableNode' has no attributes.
+The class 'uml::ActivityFinalNode' has no attributes.
+The class 'uml::OpaqueAction' has no attributes.
+The class 'uml::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'BehavioredClassifier' has no attributes.
+The class 'uml::ActivityNode' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'StructuredClassifier' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'uml::ActivityParameterNode' has no attributes.
+The class 'Element' has no attributes.
+The class 'uml::ParameterableElement' has no attributes.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'unordered', 'FIFO', 'ordered', 'LIFO'.
+'uml::ActivityFinalNode' is a specialization of 'FinalNode'.
+'uml::Classifier' is a specialization of 'Namespace'.
+'uml::Type' is a specialization of 'PackageableElement'.
+'uml::ObjectNode' is a specialization of 'ActivityNode'.
+'uml::Namespace' is a specialization of 'NamedElement'.
+'uml::ForkNode' is a specialization of 'ControlNode'.
+'uml::Classifier' is a specialization of 'TemplateableElement'.
+'uml::ExecutableNode' is a specialization of 'ActivityNode'.
+'uml::Package' is a specialization of 'Namespace'.
+'uml::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'uml::ControlNode' is a specialization of 'ActivityNode'.
+'uml::Class' is a specialization of 'EncapsulatedClassifier'.
+'uml::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'uml::ControlFlow' is a specialization of 'ActivityEdge'.
+'uml::Classifier' is a specialization of 'Type'.
+'uml::ValueSpecification' is a specialization of 'PackageableElement'.
+'uml::InitialNode' is a specialization of 'ControlNode'.
+'uml::Package' is a specialization of 'TemplateableElement'.
+'uml::OpaqueAction' is a specialization of 'Action'.
+'uml::ActivityEdge' is a specialization of 'RedefinableElement'.
+'uml::PackageableElement' is a specialization of 'NamedElement'.
+'uml::Classifier' is a specialization of 'RedefinableElement'.
+'uml::ActivityGroup' is a specialization of 'Element'.
+'uml::BehavioredClassifier' is a specialization of 'Classifier'.
+'uml::ActivityPartition' is a specialization of 'NamedElement'.
+'uml::ValueSpecification' is a specialization of 'TypedElement'.
+'uml::ObjectNode' is a specialization of 'TypedElement'.
+'uml::RedefinableElement' is a specialization of 'NamedElement'.
+'uml::TypedElement' is a specialization of 'NamedElement'.
+'uml::FinalNode' is a specialization of 'ControlNode'.
+'uml::NamedElement' is a specialization of 'Element'.
+'uml::Package' is a specialization of 'PackageableElement'.
+'uml::Behavior' is a specialization of 'Class'.
+'uml::StructuredClassifier' is a specialization of 'Classifier'.
+'uml::ActivityNode' is a specialization of 'RedefinableElement'.
+'uml::EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+'uml::PackageableElement' is a specialization of 'ParameterableElement'.
+'uml::DecisionNode' is a specialization of 'ControlNode'.
+'uml::Class' is a specialization of 'BehavioredClassifier'.
+'uml::Action' is a specialization of 'ExecutableNode'.
+'uml::JoinNode' is a specialization of 'ControlNode'.
+'uml::TemplateableElement' is a specialization of 'Element'.
+'uml::ParameterableElement' is a specialization of 'Element'.
+'uml::ObjectFlow' is a specialization of 'ActivityEdge'.
+'uml::ActivityPartition' is a specialization of 'ActivityGroup'.
+'uml::Activity' is a specialization of 'Behavior'.
+'uml::ActivityEdge' (role 'uml_ActivityEdge19', cardinality 0..*) is associated with 'uml::ValueSpecification' (role 'uml_ValueSpecification', cardinality 0..*).
+'uml::ActivityNode' (role 'uml_ActivityNode', cardinality 0..*) is associated with 'uml::Activity' (role 'uml_Activity', cardinality 0..*).
+'uml::ActivityNode' (role 'uml_ActivityNode7', cardinality 0..*) is associated with 'uml::ActivityPartition' (role 'uml_ActivityPartition', cardinality 0..*).
+'uml::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'uml::ActivityNode' (role 'ActivityNode17', cardinality 0..*).
+'uml::ActivityEdge' (role 'uml_ActivityEdge', cardinality 0..*) is associated with 'uml::Activity' (role 'uml_Activity3', cardinality 0..*).
+'uml::ActivityEdge' (role 'uml_ActivityEdge10', cardinality 0..*) is associated with 'uml::ActivityPartition' (role 'uml_ActivityPartition9', cardinality 0..*).
+'uml::TypedElement' (role 'uml_TypedElement', cardinality 0..*) is associated with 'uml::Type' (role 'uml_Type', cardinality 0..*).
+'uml::ActivityNode' (role 'source', cardinality 0..*) is associated with 'uml::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'uml::ActivityGroup' (role 'uml_ActivityGroup', cardinality 0..*) is associated with 'uml::Activity' (role 'uml_Activity5', cardinality 0..*).
+'uml::ActivityNode' (role 'target', cardinality 0..*) is associated with 'uml::ActivityEdge' (role 'ActivityEdge14', cardinality 0..*).
+'uml::PackageableElement' (role 'uml_PackageableElement', cardinality 0..*) is associated with 'uml::Package' (role 'uml_Package', cardinality 0..*).
+'uml::ActivityEdge' (role 'outgoing', cardinality 0..*) is associated with 'uml::ActivityNode' (role 'ActivityNode', cardinality 0..*).

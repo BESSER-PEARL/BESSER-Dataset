@@ -1,0 +1,43 @@
+The model has 13 class(es).
+The class 'tfsmextended::NamedElement' has the following attributes: 'name' of type str.
+The class 'tfsmextended::FSMClock' has the following attributes: 'numberOfTicks' of type str.
+The class 'tfsmextended::Guard' has no attributes.
+The class 'tfsmextended::EvaluateGuard' has the following attributes: 'condition' of type str.
+The class 'tfsmextended::TemporalGuard' has the following attributes: 'afterDuration' of type int.
+The class 'tfsmextended::Transition' has the following attributes: 'action' of type str.
+The class 'tfsmextended::State' has no attributes.
+The class 'tfsmextended::FSMEvent' has the following attributes: 'isTriggered' of type str.
+The class 'NamedElement' has no attributes.
+The class 'tfsmextended::EventGuard' has no attributes.
+The class 'Guard' has no attributes.
+The class 'tfsmextended::TFSM' has no attributes.
+The class 'tfsmextended::TimedSystem' has no attributes.
+'tfsmextended::Transition' is a specialization of 'NamedElement'.
+'tfsmextended::State' is a specialization of 'NamedElement'.
+'tfsmextended::EventGuard' is a specialization of 'Guard'.
+'tfsmextended::TFSM' is a specialization of 'NamedElement'.
+'tfsmextended::TemporalGuard' is a specialization of 'Guard'.
+'tfsmextended::FSMClock' is a specialization of 'NamedElement'.
+'tfsmextended::Guard' is a specialization of 'NamedElement'.
+'tfsmextended::TimedSystem' is a specialization of 'NamedElement'.
+'tfsmextended::FSMEvent' is a specialization of 'NamedElement'.
+'tfsmextended::EvaluateGuard' is a specialization of 'Guard'.
+'tfsmextended::State' (role 'source', cardinality 0..*) is associated with 'tfsmextended::Transition' (role 'Transition', cardinality 0..*).
+'tfsmextended::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'tfsmextended::State' (role 'State18', cardinality 0..*).
+'tfsmextended::State' (role 'State16', cardinality 0..*) is associated with 'tfsmextended::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'tfsmextended::TFSM' (role 'owningFSM', cardinality 0..*) is associated with 'tfsmextended::State' (role 'State', cardinality 0..*).
+'tfsmextended::TimedSystem' (role 'tfsmextended_TimedSystem', cardinality 0..*) is associated with 'tfsmextended::TFSM' (role 'tfsmextended_TFSM32', cardinality 0..*).
+'tfsmextended::FSMEvent' (role 'tfsmextended_FSMEvent23', cardinality 0..*) is associated with 'tfsmextended::Transition' (role 'tfsmextended_Transition22', cardinality 0..*).
+'tfsmextended::TFSM' (role 'tfsmextended_TFSM5', cardinality 0..*) is associated with 'tfsmextended::FSMClock' (role 'tfsmextended_FSMClock', cardinality 0..*).
+'tfsmextended::Transition' (role 'tfsmextended_Transition', cardinality 0..*) is associated with 'tfsmextended::TFSM' (role 'tfsmextended_TFSM7', cardinality 0..*).
+'tfsmextended::State' (role 'ownedStates', cardinality 0..*) is associated with 'tfsmextended::TFSM' (role 'TFSM', cardinality 0..*).
+'tfsmextended::Transition' (role 'Transition14', cardinality 0..*) is associated with 'tfsmextended::State' (role 'target', cardinality 0..*).
+'tfsmextended::FSMEvent' (role 'tfsmextended_FSMEvent27', cardinality 0..*) is associated with 'tfsmextended::EventGuard' (role 'tfsmextended_EventGuard', cardinality 0..*).
+'tfsmextended::FSMClock' (role 'tfsmextended_FSMClock35', cardinality 0..*) is associated with 'tfsmextended::TimedSystem' (role 'tfsmextended_TimedSystem34', cardinality 0..*).
+'tfsmextended::Transition' (role 'tfsmextended_Transition30', cardinality 0..*) is associated with 'tfsmextended::FSMEvent' (role 'tfsmextended_FSMEvent29', cardinality 0..*).
+'tfsmextended::FSMClock' (role 'tfsmextended_FSMClock25', cardinality 0..*) is associated with 'tfsmextended::TemporalGuard' (role 'tfsmextended_TemporalGuard', cardinality 0..*).
+'tfsmextended::FSMEvent' (role 'tfsmextended_FSMEvent', cardinality 0..*) is associated with 'tfsmextended::TFSM' (role 'tfsmextended_TFSM3', cardinality 0..*).
+'tfsmextended::Guard' (role 'tfsmextended_Guard', cardinality 0..*) is associated with 'tfsmextended::Transition' (role 'tfsmextended_Transition20', cardinality 0..*).
+'tfsmextended::TFSM' (role 'tfsmextended_TFSM', cardinality 0..*) is associated with 'tfsmextended::State' (role 'tfsmextended_State', cardinality 0..*).
+'tfsmextended::TFSM' (role 'tfsmextended_TFSM9', cardinality 0..*) is associated with 'tfsmextended::State' (role 'tfsmextended_State10', cardinality 0..*).
+'tfsmextended::FSMEvent' (role 'tfsmextended_FSMEvent38', cardinality 0..*) is associated with 'tfsmextended::TimedSystem' (role 'tfsmextended_TimedSystem37', cardinality 0..*).

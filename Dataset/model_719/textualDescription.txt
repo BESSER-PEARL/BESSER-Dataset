@@ -1,0 +1,270 @@
+The model has 109 class(es).
+The class 'structure::Class' has no attributes.
+The class 'kermeta::behavior::Assignment' has the following attributes: 'isCast' of type str.
+The class 'structure::VirtualType' has no attributes.
+The class 'kermeta::structure::Object' has no attributes.
+The class 'structure::ModelingUnit' has no attributes.
+The class 'structure::Tag' has no attributes.
+The class 'kermeta::language::DummyClass' has no attributes.
+The class 'kermeta::structure::Operation' has the following attributes: 'isAbstract' of type str.
+The class 'kermeta::structure::Model' has no attributes.
+The class 'kermeta::structure::Constraint' has the following attributes: 'stereotype' of type str; 'language' of type str.
+The class 'kermeta::structure::ClassDefinition' has the following attributes: 'isAbstract' of type str.
+The class 'structure::Filter' has no attributes.
+The class 'TypeVariable' has no attributes.
+The class 'kermeta::structure::TypeVariable' has no attributes.
+The class 'kermeta::structure::ObjectTypeVariable' has no attributes.
+The class 'kermeta::structure::Package' has the following attributes: 'uri' of type str.
+The class 'structure::NamedElement' has no attributes.
+The class 'ObjectTypeVariable' has no attributes.
+The class 'kermeta::behavior::TypeLiteral' has no attributes.
+The class 'structure::TypeDefinitionContainer' has no attributes.
+The class 'kermeta::structure::VoidType' has no attributes.
+The class 'structure::DataType' has no attributes.
+The class 'structure::TypeVariableBinding' has no attributes.
+The class 'kermeta::structure::PrimitiveType' has no attributes.
+The class 'kermeta::behavior::EmptyExpression' has no attributes.
+The class 'Type' has no attributes.
+The class 'kermeta::structure::DataType' has no attributes.
+The class 'kermeta::structure::TypeDefinition' has the following attributes: 'isAspect' of type str.
+The class 'kermeta::structure::Filter' has the following attributes: 'qualifiedName' of type str.
+The class 'kermeta::structure::Using' has the following attributes: 'qualifiedName' of type str.
+The class 'kermeta::structure::ParameterizedType' has no attributes.
+The class 'kermeta::structure::Type' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'structure::Package' has no attributes.
+The class 'kermeta::structure::ModelTypeVariable' has no attributes.
+The class 'kermeta::behavior::Rescue' has the following attributes: 'exceptionName' of type str.
+The class 'kermeta::structure::Tag' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'kermeta::behavior::Raise' has no attributes.
+The class 'kermeta::behavior::TypeReference' has no attributes.
+The class 'ParameterizedType' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'kermeta::structure::VirtualType' has no attributes.
+The class 'behavior::TypeReference' has no attributes.
+The class 'kermeta::behavior::Block' has no attributes.
+The class 'kermeta::structure::Parameter' has no attributes.
+The class 'structure::ModelTypeVariable' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'kermeta::structure::FunctionType' has no attributes.
+The class 'structure::TypeContainer' has no attributes.
+The class 'kermeta::structure::ProductType' has no attributes.
+The class 'kermeta::behavior::Loop' has no attributes.
+The class 'kermeta::structure::NamedElement' has the following attributes: 'name' of type str.
+The class 'structure::EnumerationLiteral' has no attributes.
+The class 'kermeta::behavior::JavaStaticCall' has the following attributes: 'jmethod' of type str; 'jclass' of type str.
+The class 'kermeta::behavior::VoidLiteral' has no attributes.
+The class 'Object' has no attributes.
+The class 'behavior::LambdaParameter' has no attributes.
+The class 'kermeta::structure::Class' has the following attributes: 'isAbstract' of type str; 'name' of type str.
+The class 'kermeta::behavior::VariableDecl' has the following attributes: 'identifier' of type str.
+The class 'DataType' has no attributes.
+The class 'kermeta::structure::TypeDefinitionContainer' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'kermeta::structure::Enumeration' has no attributes.
+The class 'kermeta::behavior::CallSuperOperation' has no attributes.
+The class 'kermeta::behavior::StringLiteral' has the following attributes: 'value' of type str.
+The class 'structure::Operation' has no attributes.
+The class 'kermeta::structure::TypeContainer' has no attributes.
+The class 'kermeta::structure::Require' has the following attributes: 'uri' of type str.
+The class 'kermeta::behavior::SelfExpression' has no attributes.
+The class 'CallExpression' has no attributes.
+The class 'kermeta::behavior::CallExpression' has the following attributes: 'name' of type str.
+The class 'structure::Using' has no attributes.
+The class 'kermeta::structure::ModelingUnit' has no attributes.
+The class 'structure::ClassDefinition' has no attributes.
+The class 'kermeta::structure::MultiplicityElement' has the following attributes: 'isOrdered' of type str; 'lower' of type str; 'isUnique' of type str; 'upper' of type str.
+The class 'kermeta::behavior::CallFeature' has the following attributes: 'isAtpre' of type str.
+The class 'kermeta::behavior::LambdaExpression' has no attributes.
+The class 'structure::Property' has no attributes.
+The class 'kermeta::structure::TypeVariableBinding' has no attributes.
+The class 'kermeta::behavior::LambdaParameter' has the following attributes: 'name' of type str.
+The class 'structure::TypeVariable' has no attributes.
+The class 'kermeta::behavior::CallResult' has no attributes.
+The class 'structure::Require' has no attributes.
+The class 'structure::Enumeration' has no attributes.
+The class 'structure::Type' has no attributes.
+The class 'kermeta::structure::GenericTypeDefinition' has no attributes.
+The class 'structure::GenericTypeDefinition' has no attributes.
+The class 'kermeta::behavior::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'Literal' has no attributes.
+The class 'behavior::Rescue' has no attributes.
+The class 'structure::Constraint' has no attributes.
+The class 'kermeta::structure::TypedElement' has no attributes.
+The class 'structure::Object' has no attributes.
+The class 'kermeta::behavior::Literal' has no attributes.
+The class 'kermeta::behavior::CallVariable' has the following attributes: 'isAtpre' of type str.
+The class 'kermeta::structure::EnumerationLiteral' has no attributes.
+The class 'behavior::CallExpression' has no attributes.
+The class 'structure::Parameter' has no attributes.
+The class 'Expression' has no attributes.
+The class 'kermeta::behavior::Conditional' has no attributes.
+The class 'kermeta::structure::ModelType' has no attributes.
+The class 'kermeta::DummyClass' has no attributes.
+The class 'behavior::Expression' has no attributes.
+The class 'kermeta::behavior::IntegerLiteral' has the following attributes: 'value' of type str.
+The class 'kermeta::behavior::Expression' has no attributes.
+The class 'kermeta::structure::Property' has the following attributes: 'isGetterAbstract' of type str; 'isDerived' of type str; 'isReadOnly' of type str; 'isComposite' of type str; 'isID' of type str; 'default' of type str; 'isSetterAbstract' of type str.
+The class 'structure::TypeDefinition' has no attributes.
+The class 'kermeta::behavior::CallValue' has no attributes.
+The class 'CallVariable' has no attributes.
+The enumeration 'ConstraintLanguage' has the following literals: 'ocl', 'kermeta'.
+The enumeration 'ConstraintType' has the following literals: 'pre', 'inv', 'post'.
+'kermeta::structure::ObjectTypeVariable' is a specialization of 'TypeVariable'.
+'kermeta::behavior::TypeLiteral' is a specialization of 'Literal'.
+'kermeta::behavior::Assignment' is a specialization of 'Expression'.
+'kermeta::structure::Package' is a specialization of 'structure::TypeDefinitionContainer'.
+'kermeta::structure::ModelTypeVariable' is a specialization of 'TypeVariable'.
+'kermeta::behavior::JavaStaticCall' is a specialization of 'Expression'.
+'kermeta::structure::Parameter' is a specialization of 'MultiplicityElement'.
+'kermeta::structure::VirtualType' is a specialization of 'ObjectTypeVariable'.
+'kermeta::behavior::LambdaExpression' is a specialization of 'Expression'.
+'kermeta::behavior::Expression' is a specialization of 'structure::Object'.
+'kermeta::structure::TypeDefinition' is a specialization of 'NamedElement'.
+'kermeta::structure::ProductType' is a specialization of 'structure::TypeContainer'.
+'kermeta::behavior::SelfExpression' is a specialization of 'Expression'.
+'kermeta::behavior::Expression' is a specialization of 'structure::TypeContainer'.
+'kermeta::structure::DataType' is a specialization of 'structure::Type'.
+'kermeta::structure::ProductType' is a specialization of 'structure::Type'.
+'kermeta::behavior::VariableDecl' is a specialization of 'Expression'.
+'kermeta::behavior::CallVariable' is a specialization of 'CallExpression'.
+'kermeta::structure::DataType' is a specialization of 'structure::TypeDefinition'.
+'kermeta::structure::FunctionType' is a specialization of 'structure::TypeContainer'.
+'kermeta::structure::Class' is a specialization of 'ParameterizedType'.
+'kermeta::behavior::CallFeature' is a specialization of 'CallExpression'.
+'kermeta::structure::Tag' is a specialization of 'Object'.
+'kermeta::structure::FunctionType' is a specialization of 'structure::Type'.
+'kermeta::behavior::VoidLiteral' is a specialization of 'Literal'.
+'kermeta::behavior::CallSuperOperation' is a specialization of 'CallExpression'.
+'kermeta::structure::Constraint' is a specialization of 'NamedElement'.
+'kermeta::structure::TypeVariable' is a specialization of 'structure::Type'.
+'kermeta::behavior::Loop' is a specialization of 'Expression'.
+'kermeta::behavior::CallExpression' is a specialization of 'Expression'.
+'kermeta::structure::PrimitiveType' is a specialization of 'structure::DataType'.
+'kermeta::structure::TypeVariable' is a specialization of 'structure::NamedElement'.
+'kermeta::structure::Model' is a specialization of 'Object'.
+'kermeta::behavior::Block' is a specialization of 'Expression'.
+'kermeta::structure::PrimitiveType' is a specialization of 'structure::TypeContainer'.
+'kermeta::structure::VoidType' is a specialization of 'Type'.
+'kermeta::structure::ModelType' is a specialization of 'structure::Type'.
+'kermeta::behavior::Raise' is a specialization of 'Expression'.
+'kermeta::structure::TypedElement' is a specialization of 'structure::TypeContainer'.
+'kermeta::structure::TypeDefinitionContainer' is a specialization of 'NamedElement'.
+'kermeta::structure::ModelType' is a specialization of 'structure::TypeDefinition'.
+'kermeta::behavior::Rescue' is a specialization of 'Object'.
+'kermeta::structure::TypedElement' is a specialization of 'structure::NamedElement'.
+'kermeta::structure::Operation' is a specialization of 'MultiplicityElement'.
+'kermeta::behavior::TypeReference' is a specialization of 'MultiplicityElement'.
+'kermeta::structure::ModelingUnit' is a specialization of 'Object'.
+'kermeta::structure::Property' is a specialization of 'MultiplicityElement'.
+'kermeta::behavior::Literal' is a specialization of 'Expression'.
+'kermeta::structure::ClassDefinition' is a specialization of 'structure::GenericTypeDefinition'.
+'kermeta::structure::TypeContainer' is a specialization of 'Object'.
+'kermeta::behavior::EmptyExpression' is a specialization of 'Expression'.
+'kermeta::structure::ClassDefinition' is a specialization of 'structure::TypeContainer'.
+'kermeta::structure::EnumerationLiteral' is a specialization of 'NamedElement'.
+'kermeta::behavior::CallResult' is a specialization of 'CallVariable'.
+'kermeta::structure::Require' is a specialization of 'Object'.
+'kermeta::structure::TypeVariableBinding' is a specialization of 'structure::TypeContainer'.
+'kermeta::behavior::CallValue' is a specialization of 'CallExpression'.
+'kermeta::structure::Using' is a specialization of 'Object'.
+'kermeta::structure::TypeVariableBinding' is a specialization of 'structure::Object'.
+'kermeta::behavior::Conditional' is a specialization of 'Expression'.
+'kermeta::structure::Filter' is a specialization of 'Object'.
+'kermeta::structure::MultiplicityElement' is a specialization of 'TypedElement'.
+'kermeta::behavior::LambdaParameter' is a specialization of 'Object'.
+'kermeta::structure::GenericTypeDefinition' is a specialization of 'TypeDefinition'.
+'kermeta::structure::Type' is a specialization of 'Object'.
+'kermeta::behavior::IntegerLiteral' is a specialization of 'Literal'.
+'kermeta::structure::Enumeration' is a specialization of 'DataType'.
+'kermeta::structure::ParameterizedType' is a specialization of 'Type'.
+'kermeta::behavior::StringLiteral' is a specialization of 'Literal'.
+'kermeta::structure::NamedElement' is a specialization of 'Object'.
+'kermeta::structure::TypeVariable' is a specialization of 'structure::TypeContainer'.
+'kermeta::behavior::BooleanLiteral' is a specialization of 'Literal'.
+'kermeta::structure::Package' is a specialization of 'structure::NamedElement'.
+'kermeta::structure::Operation' (role 'kermeta_structure_Operation79', cardinality 0..*) is associated with 'structure::Operation' (role 'structure_Operation80', cardinality 0..*).
+'kermeta::behavior::Raise' (role 'kermeta_behavior_Raise', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression30', cardinality 0..*).
+'kermeta::structure::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'structure::ClassDefinition' (role 'ClassDefinition', cardinality 0..*).
+'structure::Type' (role 'structure_Type127', cardinality 0..*) is associated with 'kermeta::structure::ClassDefinition' (role 'kermeta_structure_ClassDefinition', cardinality 0..*).
+'structure::TypeVariable' (role 'structure_TypeVariable98', cardinality 0..*) is associated with 'kermeta::structure::TypeVariableBinding' (role 'kermeta_structure_TypeVariableBinding', cardinality 0..*).
+'structure::Type' (role 'structure_Type159', cardinality 0..*) is associated with 'kermeta::structure::FunctionType' (role 'kermeta_structure_FunctionType', cardinality 0..*).
+'structure::TypeContainer' (role 'TypeContainer', cardinality 0..*) is associated with 'kermeta::structure::Type' (role 'containedType', cardinality 0..*).
+'kermeta::behavior::Loop' (role 'kermeta_behavior_Loop48', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression49', cardinality 0..*).
+'kermeta::structure::ModelingUnit' (role 'kermeta_structure_ModelingUnit', cardinality 0..*) is associated with 'structure::Package' (role 'structure_Package', cardinality 0..*).
+'structure::Type' (role 'structure_Type101', cardinality 0..*) is associated with 'kermeta::structure::TypeVariableBinding' (role 'kermeta_structure_TypeVariableBinding100', cardinality 0..*).
+'structure::Type' (role 'structure_Type149', cardinality 0..*) is associated with 'kermeta::structure::TypeVariable' (role 'kermeta_structure_TypeVariable', cardinality 0..*).
+'kermeta::behavior::Rescue' (role 'kermeta_behavior_Rescue', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression32', cardinality 0..*).
+'structure::Require' (role 'structure_Require', cardinality 0..*) is associated with 'kermeta::structure::ModelingUnit' (role 'kermeta_structure_ModelingUnit130', cardinality 0..*).
+'kermeta::behavior::Rescue' (role 'kermeta_behavior_Rescue34', cardinality 0..*) is associated with 'behavior::TypeReference' (role 'behavior_TypeReference', cardinality 0..*).
+'kermeta::structure::Property' (role 'kermeta_structure_Property90', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression91', cardinality 0..*).
+'structure::TypeDefinition' (role 'structure_TypeDefinition164', cardinality 0..*) is associated with 'kermeta::structure::TypeDefinitionContainer' (role 'kermeta_structure_TypeDefinitionContainer', cardinality 0..*).
+'behavior::CallExpression' (role 'behavior_CallExpression', cardinality 0..*) is associated with 'kermeta::behavior::Assignment' (role 'kermeta_behavior_Assignment', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression22', cardinality 0..*) is associated with 'kermeta::behavior::Conditional' (role 'kermeta_behavior_Conditional', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression40', cardinality 0..*) is associated with 'kermeta::behavior::LambdaExpression' (role 'kermeta_behavior_LambdaExpression39', cardinality 0..*).
+'structure::Using' (role 'structure_Using', cardinality 0..*) is associated with 'kermeta::structure::ModelingUnit' (role 'kermeta_structure_ModelingUnit132', cardinality 0..*).
+'structure::ClassDefinition' (role 'ClassDefinition93', cardinality 0..*) is associated with 'kermeta::structure::Property' (role 'ownedAttribute', cardinality 0..*).
+'kermeta::structure::FunctionType' (role 'kermeta_structure_FunctionType161', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type162', cardinality 0..*).
+'structure::Tag' (role 'structure_Tag', cardinality 0..*) is associated with 'kermeta::structure::Object' (role 'kermeta_structure_Object', cardinality 0..*).
+'kermeta::behavior::Assignment' (role 'kermeta_behavior_Assignment2', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression46', cardinality 0..*) is associated with 'kermeta::behavior::Loop' (role 'kermeta_behavior_Loop', cardinality 0..*).
+'structure::Operation' (role 'Operation119', cardinality 0..*) is associated with 'kermeta::structure::Constraint' (role 'post', cardinality 0..*).
+'structure::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'kermeta::structure::Enumeration' (role 'enumeration', cardinality 0..*).
+'structure::Type' (role 'structure_Type', cardinality 0..*) is associated with 'kermeta::behavior::Expression' (role 'kermeta_behavior_Expression', cardinality 0..*).
+'kermeta::structure::GenericTypeDefinition' (role 'kermeta_structure_GenericTypeDefinition', cardinality 0..*) is associated with 'structure::TypeVariable' (role 'structure_TypeVariable141', cardinality 0..*).
+'structure::Package' (role 'Package', cardinality 0..*) is associated with 'kermeta::structure::Package' (role 'nestingPackage', cardinality 0..*).
+'behavior::LambdaParameter' (role 'behavior_LambdaParameter', cardinality 0..*) is associated with 'kermeta::behavior::LambdaExpression' (role 'kermeta_behavior_LambdaExpression', cardinality 0..*).
+'kermeta::behavior::Block' (role 'kermeta_behavior_Block', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression10', cardinality 0..*).
+'structure::TypeVariableBinding' (role 'structure_TypeVariableBinding', cardinality 0..*) is associated with 'kermeta::structure::ParameterizedType' (role 'kermeta_structure_ParameterizedType', cardinality 0..*).
+'kermeta::structure::Package' (role 'nestedPackage', cardinality 0..*) is associated with 'structure::Package' (role 'Package105', cardinality 0..*).
+'kermeta::structure::Operation' (role 'kermeta_structure_Operation76', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression77', cardinality 0..*).
+'kermeta::structure::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'structure::Enumeration' (role 'Enumeration', cardinality 0..*).
+'kermeta::structure::ModelType' (role 'kermeta_structure_ModelType', cardinality 0..*) is associated with 'structure::TypeDefinition' (role 'structure_TypeDefinition', cardinality 0..*).
+'structure::TypeVariableBinding' (role 'structure_TypeVariableBinding145', cardinality 0..*) is associated with 'kermeta::structure::ParameterizedType' (role 'kermeta_structure_ParameterizedType144', cardinality 0..*).
+'structure::Operation' (role 'Operation', cardinality 0..*) is associated with 'kermeta::structure::Parameter' (role 'ownedParameter', cardinality 0..*).
+'behavior::Rescue' (role 'behavior_Rescue', cardinality 0..*) is associated with 'kermeta::behavior::Block' (role 'kermeta_behavior_Block12', cardinality 0..*).
+'structure::Type' (role 'structure_Type70', cardinality 0..*) is associated with 'kermeta::structure::Operation' (role 'kermeta_structure_Operation', cardinality 0..*).
+'behavior::TypeReference' (role 'behavior_TypeReference42', cardinality 0..*) is associated with 'kermeta::behavior::LambdaParameter' (role 'kermeta_behavior_LambdaParameter', cardinality 0..*).
+'structure::Object' (role 'structure_Object', cardinality 0..*) is associated with 'kermeta::structure::Model' (role 'kermeta_structure_Model', cardinality 0..*).
+'structure::ModelingUnit' (role 'structure_ModelingUnit', cardinality 0..*) is associated with 'kermeta::structure::ModelingUnit' (role 'kermeta_structure_ModelingUnit134', cardinality 0..*).
+'structure::Object' (role 'Object', cardinality 0..*) is associated with 'kermeta::structure::Tag' (role 'tag', cardinality 0..*).
+'kermeta::behavior::CallFeature' (role 'kermeta_behavior_CallFeature', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression14', cardinality 0..*).
+'structure::Class' (role 'structure_Class', cardinality 0..*) is associated with 'kermeta::structure::Class' (role 'kermeta_structure_Class64', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression36', cardinality 0..*) is associated with 'kermeta::behavior::JavaStaticCall' (role 'kermeta_behavior_JavaStaticCall', cardinality 0..*).
+'kermeta::structure::ParameterizedType' (role 'kermeta_structure_ParameterizedType147', cardinality 0..*) is associated with 'structure::GenericTypeDefinition' (role 'structure_GenericTypeDefinition', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression113', cardinality 0..*) is associated with 'kermeta::structure::Constraint' (role 'kermeta_structure_Constraint', cardinality 0..*).
+'structure::Property' (role 'structure_Property', cardinality 0..*) is associated with 'kermeta::behavior::CallFeature' (role 'kermeta_behavior_CallFeature16', cardinality 0..*).
+'kermeta::structure::Class' (role 'kermeta_structure_Class61', cardinality 0..*) is associated with 'structure::Operation' (role 'structure_Operation62', cardinality 0..*).
+'kermeta::behavior::Loop' (role 'kermeta_behavior_Loop51', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression52', cardinality 0..*).
+'structure::Filter' (role 'structure_Filter', cardinality 0..*) is associated with 'kermeta::structure::ModelingUnit' (role 'kermeta_structure_ModelingUnit136', cardinality 0..*).
+'kermeta::structure::Constraint' (role 'inv', cardinality 0..*) is associated with 'structure::ClassDefinition' (role 'ClassDefinition115', cardinality 0..*).
+'kermeta::behavior::VariableDecl' (role 'kermeta_behavior_VariableDecl', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression54', cardinality 0..*).
+'structure::Operation' (role 'structure_Operation', cardinality 0..*) is associated with 'kermeta::behavior::CallFeature' (role 'kermeta_behavior_CallFeature18', cardinality 0..*).
+'behavior::TypeReference' (role 'behavior_TypeReference57', cardinality 0..*) is associated with 'kermeta::behavior::VariableDecl' (role 'kermeta_behavior_VariableDecl56', cardinality 0..*).
+'behavior::TypeReference' (role 'behavior_TypeReference44', cardinality 0..*) is associated with 'kermeta::behavior::TypeLiteral' (role 'kermeta_behavior_TypeLiteral', cardinality 0..*).
+'structure::Operation' (role 'Operation117', cardinality 0..*) is associated with 'kermeta::structure::Constraint' (role 'pre', cardinality 0..*).
+'structure::Filter' (role 'structure_Filter139', cardinality 0..*) is associated with 'kermeta::structure::ModelingUnit' (role 'kermeta_structure_ModelingUnit138', cardinality 0..*).
+'structure::EnumerationLiteral' (role 'structure_EnumerationLiteral', cardinality 0..*) is associated with 'kermeta::behavior::CallFeature' (role 'kermeta_behavior_CallFeature20', cardinality 0..*).
+'kermeta::structure::Operation' (role 'postOwner', cardinality 0..*) is associated with 'structure::Constraint' (role 'Constraint74', cardinality 0..*).
+'structure::Type' (role 'Type', cardinality 0..*) is associated with 'kermeta::structure::TypeContainer' (role 'typeContainer', cardinality 0..*).
+'structure::Type' (role 'structure_Type108', cardinality 0..*) is associated with 'kermeta::structure::PrimitiveType' (role 'kermeta_structure_PrimitiveType', cardinality 0..*).
+'structure::VirtualType' (role 'VirtualType', cardinality 0..*) is associated with 'kermeta::structure::ModelTypeVariable' (role 'modelType', cardinality 0..*).
+'kermeta::behavior::CallExpression' (role 'kermeta_behavior_CallExpression', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression5', cardinality 0..*).
+'structure::Property' (role 'structure_Property59', cardinality 0..*) is associated with 'kermeta::structure::Class' (role 'kermeta_structure_Class', cardinality 0..*).
+'structure::Type' (role 'structure_Type110', cardinality 0..*) is associated with 'kermeta::structure::TypedElement' (role 'kermeta_structure_TypedElement', cardinality 0..*).
+'structure::ClassDefinition' (role 'structure_ClassDefinition', cardinality 0..*) is associated with 'kermeta::structure::VirtualType' (role 'kermeta_structure_VirtualType', cardinality 0..*).
+'structure::Type' (role 'structure_Type8', cardinality 0..*) is associated with 'kermeta::behavior::CallExpression' (role 'kermeta_behavior_CallExpression7', cardinality 0..*).
+'kermeta::structure::Operation' (role 'preOwner', cardinality 0..*) is associated with 'structure::Constraint' (role 'Constraint', cardinality 0..*).
+'kermeta::structure::ClassDefinition' (role 'invOwner', cardinality 0..*) is associated with 'structure::Constraint' (role 'Constraint121', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression88', cardinality 0..*) is associated with 'kermeta::structure::Property' (role 'kermeta_structure_Property87', cardinality 0..*).
+'kermeta::structure::VirtualType' (role 'virtualType', cardinality 0..*) is associated with 'structure::ModelTypeVariable' (role 'ModelTypeVariable', cardinality 0..*).
+'kermeta::structure::Object' (role 'object', cardinality 0..*) is associated with 'structure::Tag' (role 'Tag', cardinality 0..*).
+'kermeta::behavior::Conditional' (role 'kermeta_behavior_Conditional24', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression25', cardinality 0..*).
+'structure::TypeVariable' (role 'structure_TypeVariable', cardinality 0..*) is associated with 'kermeta::structure::Operation' (role 'kermeta_structure_Operation83', cardinality 0..*).
+'structure::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'kermeta::structure::Operation' (role 'operation', cardinality 0..*).
+'structure::Property' (role 'Property', cardinality 0..*) is associated with 'kermeta::structure::ClassDefinition' (role 'owningClass', cardinality 0..*).
+'kermeta::structure::Property' (role 'kermeta_structure_Property', cardinality 0..*) is associated with 'structure::Property' (role 'structure_Property85', cardinality 0..*).
+'structure::TypeVariableBinding' (role 'structure_TypeVariableBinding155', cardinality 0..*) is associated with 'kermeta::structure::VirtualType' (role 'kermeta_structure_VirtualType154', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression28', cardinality 0..*) is associated with 'kermeta::behavior::Conditional' (role 'kermeta_behavior_Conditional27', cardinality 0..*).
+'structure::Operation' (role 'Operation125', cardinality 0..*) is associated with 'kermeta::structure::ClassDefinition' (role 'owningClass124', cardinality 0..*).
+'structure::Type' (role 'structure_Type157', cardinality 0..*) is associated with 'kermeta::structure::ProductType' (role 'kermeta_structure_ProductType', cardinality 0..*).

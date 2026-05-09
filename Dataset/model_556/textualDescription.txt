@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'gedcoml::Married' has the following attributes: 'separationDay' of type str; 'weddingDay' of type str.
+The class 'gedcoml::FamilyBook' has no attributes.
+The class 'gedcoml::Address' has the following attributes: 'exodus' of type str; 'entry' of type str.
+The class 'gedcoml::PostAddress' has the following attributes: 'city' of type str; 'street' of type str; 'postcode' of type str.
+The class 'gedcoml::FamilyImport' has no attributes.
+The class 'gedcoml::Person' has the following attributes: 'id' of type str; 'sex' of type str.
+The class 'gedcoml::Others' has the following attributes: 'description' of type str.
+The class 'gedcoml::Source' has no attributes.
+The class 'gedcoml::Author' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'Source' has no attributes.
+The class 'gedcoml::Note' has the following attributes: 'content' of type str.
+The class 'gedcoml::UnbekanntePerson' has no attributes.
+The class 'Address' has no attributes.
+The class 'gedcoml::Family' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+The class 'gedcoml::BekanntePerson' has the following attributes: 'birthName' of type str; 'middleName' of type str; 'birthDay' of type str; 'lastName' of type str; 'deathDay' of type str; 'firstName' of type str.
+The class 'gedcoml::Projectdescription' has the following attributes: 'groupId' of type str; 'publishingDate' of type str; 'version' of type str; 'artifactId' of type str.
+The class 'gedcoml::PersonRef' has no attributes.
+The enumeration 'Sexus' has the following literals: 'undefined', 'male', 'female'.
+'gedcoml::PostAddress' is a specialization of 'Address'.
+'gedcoml::BekanntePerson' is a specialization of 'Person'.
+'gedcoml::UnbekanntePerson' is a specialization of 'Person'.
+'gedcoml::Others' is a specialization of 'Source'.
+'gedcoml::PersonRef' is a specialization of 'Source'.
+'gedcoml::FamilyImport' (role 'gedcoml_FamilyImport24', cardinality 0..*) is associated with 'gedcoml::Family' (role 'gedcoml_Family25', cardinality 0..*).
+'gedcoml::Person' (role 'gedcoml_Person28', cardinality 0..*) is associated with 'gedcoml::Married' (role 'gedcoml_Married27', cardinality 0..*).
+'gedcoml::Address' (role 'gedcoml_Address', cardinality 0..*) is associated with 'gedcoml::Person' (role 'gedcoml_Person35', cardinality 0..*).
+'gedcoml::Projectdescription' (role 'gedcoml_Projectdescription2', cardinality 0..*) is associated with 'gedcoml::Author' (role 'gedcoml_Author', cardinality 0..*).
+'gedcoml::Person' (role 'gedcoml_Person8', cardinality 0..*) is associated with 'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson', cardinality 0..*).
+'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson10', cardinality 0..*) is associated with 'gedcoml::Person' (role 'gedcoml_Person11', cardinality 0..*).
+'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson13', cardinality 0..*) is associated with 'gedcoml::Person' (role 'gedcoml_Person14', cardinality 0..*).
+'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson18', cardinality 0..*) is associated with 'gedcoml::Note' (role 'gedcoml_Note', cardinality 0..*).
+'gedcoml::PersonRef' (role 'gedcoml_PersonRef', cardinality 0..*) is associated with 'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson33', cardinality 0..*).
+'gedcoml::Person' (role 'gedcoml_Person', cardinality 0..*) is associated with 'gedcoml::Family' (role 'gedcoml_Family', cardinality 0..*).
+'gedcoml::Projectdescription' (role 'gedcoml_Projectdescription22', cardinality 0..*) is associated with 'gedcoml::FamilyBook' (role 'gedcoml_FamilyBook', cardinality 0..*).
+'gedcoml::Source' (role 'gedcoml_Source', cardinality 0..*) is associated with 'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson20', cardinality 0..*).
+'gedcoml::Family' (role 'gedcoml_Family5', cardinality 0..*) is associated with 'gedcoml::FamilyImport' (role 'gedcoml_FamilyImport6', cardinality 0..*).
+'gedcoml::Projectdescription' (role 'gedcoml_Projectdescription', cardinality 0..*) is associated with 'gedcoml::FamilyImport' (role 'gedcoml_FamilyImport', cardinality 0..*).
+'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson31', cardinality 0..*) is associated with 'gedcoml::Author' (role 'gedcoml_Author30', cardinality 0..*).
+'gedcoml::Married' (role 'gedcoml_Married', cardinality 0..*) is associated with 'gedcoml::BekanntePerson' (role 'gedcoml_BekanntePerson16', cardinality 0..*).

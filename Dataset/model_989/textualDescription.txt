@@ -1,0 +1,15 @@
+The model has 4 class(es).
+The class 'graph::Edge' has the following attributes: 'name' of type str.
+The class 'graph::Node' has the following attributes: 'name' of type str.
+The class 'graph::Graph' has the following attributes: 'name' of type str.
+The class 'graph::Mark' has the following attributes: 'time' of type str.
+'graph::Mark' (role 'marks', cardinality 0..*) is associated with 'graph::Graph' (role 'Graph17', cardinality 0..*).
+'graph::Mark' (role 'Mark6', cardinality 0..*) is associated with 'graph::Node' (role 'node', cardinality 0..*).
+'graph::Node' (role 'graph_Node', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge', cardinality 0..*).
+'graph::Graph' (role 'graph2', cardinality 0..*) is associated with 'graph::Edge' (role 'Edge', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge10', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node11', cardinality 0..*).
+'graph::Node' (role 'Node', cardinality 0..*) is associated with 'graph::Graph' (role 'graph', cardinality 0..*).
+'graph::Graph' (role 'Graph', cardinality 0..*) is associated with 'graph::Node' (role 'nodes', cardinality 0..*).
+'graph::Graph' (role 'Graph13', cardinality 0..*) is associated with 'graph::Edge' (role 'edges', cardinality 0..*).
+'graph::Mark' (role 'Mark', cardinality 0..*) is associated with 'graph::Graph' (role 'graph4', cardinality 0..*).
+'graph::Node' (role 'Node15', cardinality 0..*) is associated with 'graph::Mark' (role 'mark', cardinality 0..*).

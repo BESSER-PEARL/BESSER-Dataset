@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rpc1/org.eclipse.papyrus/extraplugins/soaml/org.eclipse.papyrus.soaml.profile/model/types.ecore

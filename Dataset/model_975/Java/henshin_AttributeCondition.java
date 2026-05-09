@@ -1,0 +1,57 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class henshin_AttributeCondition extends NamedElement {
+
+    private String conditionText;
+
+
+
+
+
+    private henshin_Rule henshin_rule;
+
+
+
+
+    private henshin_Rule henshin_rule;
+
+
+    public henshin_AttributeCondition(
+        String conditionText    ) {
+        super(
+        );
+        this.conditionText = conditionText;
+    }
+
+
+    public String getConditiontext() {
+        return conditionText;
+    }
+
+    public void setConditiontext(String conditionText) {
+        this.conditionText = conditionText;
+    }
+
+    public henshin_Rule getHenshin_rule() {
+        return henshin_rule;
+    }
+
+    public void setHenshin_rule(henshin_Rule henshin_rule) {
+        this.henshin_rule = henshin_rule;
+    }
+    public henshin_Rule getHenshin_rule() {
+        return henshin_rule;
+    }
+
+    public void setHenshin_rule(henshin_Rule henshin_rule) {
+        this.henshin_rule = henshin_rule;
+    }
+
+}

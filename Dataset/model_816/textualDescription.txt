@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'input' of type str; 'output' of type str.
+The class 'fsm::FSM' has no attributes.
+'fsm::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'fsm::State' (role 'State6', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM', cardinality 0..*).
+'fsm::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::State' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::Transition' (role 'Transition3', cardinality 0..*) is associated with 'fsm::State' (role 'target', cardinality 0..*).

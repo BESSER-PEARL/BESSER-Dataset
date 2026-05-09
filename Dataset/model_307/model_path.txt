@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/cloudsmith/org.eclipse.emf/tests/org.eclipse.emf.test.tools/data/ant.expected/models/1.4_5.0/reload/library.rose/emf/library.ecore

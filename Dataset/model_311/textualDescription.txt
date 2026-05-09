@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'library::MapOfDataTypes' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'library::Book' has the following attributes: 'category' of type str; 'pages' of type int; 'title' of type str.
+The class 'library::Writer' has the following attributes: 'name' of type str.
+The class 'library::Library' has the following attributes: 'map1' of type str; 'uRIs_1' of type str; 'name' of type str; 'options' of type str; 'bookByTitleMap' of type str.
+The class 'library::WriterNameMap' has the following attributes: 'key' of type str.
+The enumeration 'BookCategory' has the following literals: 'MYSTERY', 'ScienceFiction', 'Biography'.
+'library::Writer' (role 'Writer', cardinality 0..*) is associated with 'library::Book' (role 'books', cardinality 0..*).
+'library::Writer' (role 'author', cardinality 0..*) is associated with 'library::Book' (role 'Book', cardinality 0..*).
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'library::Writer' (role 'library_Writer', cardinality 0..*).
+'library::WriterNameMap' (role 'library_WriterNameMap13', cardinality 0..*) is associated with 'library::Writer' (role 'library_Writer14', cardinality 0..*).
+'library::Library' (role 'library_Library3', cardinality 0..*) is associated with 'library::Book' (role 'library_Book', cardinality 0..*).
+'library::Library' (role 'library_Library5', cardinality 0..*) is associated with 'library::Book' (role 'library_Book6', cardinality 0..*).
+'library::Library' (role 'library_Library8', cardinality 0..*) is associated with 'library::WriterNameMap' (role 'library_WriterNameMap', cardinality 0..*).
+'library::MapOfDataTypes' (role 'library_MapOfDataTypes', cardinality 0..*) is associated with 'library::Library' (role 'library_Library10', cardinality 0..*).

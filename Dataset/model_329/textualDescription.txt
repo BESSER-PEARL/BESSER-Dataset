@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'bz242995::Writer' has the following attributes: 'name' of type str.
+The class 'bz242995::Library' has the following attributes: 'name' of type str.
+The class 'bz242995::Book' has the following attributes: 'title' of type str; 'pages' of type int; 'category' of type str.
+The class 'bz242995::OneTimeWonder' has the following attributes: 'Name' of type str; 'id' of type str.
+The class 'bz242995::Author' has the following attributes: 'id' of type str; 'Name' of type str.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Biography', 'Mystery'.
+'bz242995::Library' (role 'bz242995_Library3', cardinality 0..*) is associated with 'bz242995::Book' (role 'bz242995_Book', cardinality 0..*).
+'bz242995::Author' (role 'theAuthor', cardinality 0..*) is associated with 'bz242995::OneTimeWonder' (role 'OneTimeWonder', cardinality 0..*).
+'bz242995::Writer' (role 'author', cardinality 0..*) is associated with 'bz242995::Book' (role 'Book', cardinality 0..*).
+'bz242995::Author' (role 'Author', cardinality 0..*) is associated with 'bz242995::OneTimeWonder' (role 'theBook', cardinality 0..*).
+'bz242995::Book' (role 'books', cardinality 0..*) is associated with 'bz242995::Writer' (role 'Writer', cardinality 0..*).
+'bz242995::Writer' (role 'bz242995_Writer', cardinality 0..*) is associated with 'bz242995::Library' (role 'bz242995_Library', cardinality 0..*).

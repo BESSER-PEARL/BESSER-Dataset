@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'mm4::Library' has the following attributes: 'name' of type str.
+The class 'mm4::Medium' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'mm4::Member' has the following attributes: 'name' of type str.
+'mm4::Library' (role 'mm4_Library2', cardinality 0..*) is associated with 'mm4::Medium' (role 'mm4_Medium', cardinality 0..*).
+'mm4::Library' (role 'mm4_Library', cardinality 0..*) is associated with 'mm4::Member' (role 'mm4_Member', cardinality 0..*).
+'mm4::Medium' (role 'mm4_Medium5', cardinality 0..*) is associated with 'mm4::Member' (role 'mm4_Member4', cardinality 0..*).

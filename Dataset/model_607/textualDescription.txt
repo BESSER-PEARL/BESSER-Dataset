@@ -1,0 +1,122 @@
+The model has 38 class(es).
+The class 'assessment::View' has no attributes.
+The class 'Contents' has no attributes.
+The class 'assessment::Node' has no attributes.
+The class 'assessment::Contents' has the following attributes: 'contents' of type str.
+The class 'assessment::Entitlement' has no attributes.
+The class 'assessment::Task' has the following attributes: 'status' of type str.
+The class 'assessment::Scm' has the following attributes: 'repository' of type str; 'branchTag' of type str.
+The class 'assessment::Generic' has no attributes.
+The class 'assessment::Views' has no attributes.
+The class 'assessment::Snippet' has the following attributes: 'columnStart' of type int; 'lineEnd' of type int; 'columnEnd' of type int; 'lineStart' of type int.
+The class 'assessment::Accounts' has no attributes.
+The class 'GraphNode' has no attributes.
+The class 'assessment::Resources' has no attributes.
+The class 'assessment::Entitlements' has no attributes.
+The class 'assessment::Sink' has the following attributes: 'cwes' of type int.
+The class 'assessment::Controller' has no attributes.
+The class 'assessment::Models' has no attributes.
+The class 'assessment::Label' has the following attributes: 'label' of type str.
+The class 'assessment::Applications' has no attributes.
+The class 'assessment::Controllers' has no attributes.
+The class 'assessment::Control' has no attributes.
+The class 'assessment::Application' has the following attributes: 'externalURL' of type str; 'internalURL' of type str.
+The class 'assessment::Model' has no attributes.
+The class 'assessment::Assessment' has no attributes.
+The class 'Label' has no attributes.
+The class 'assessment::Finding' has the following attributes: 'references' of type str; 'reproducer' of type str; 'remediation' of type str.
+The class 'assessment::Graph' has no attributes.
+The class 'assessment::GraphNode' has no attributes.
+The class 'Notes' has no attributes.
+The class 'assessment::Resource' has no attributes.
+The class 'assessment::Notes' has the following attributes: 'notes' of type str.
+The class 'Node' has no attributes.
+The class 'assessment::Account' has the following attributes: 'password' of type str; 'email' of type str.
+The class 'assessment::Findings' has no attributes.
+The class 'assessment::Url' has the following attributes: 'pattern' of type str; 'patternType' of type str.
+The class 'assessment::Http' has the following attributes: 'response' of type str; 'request' of type str.
+The class 'assessment::Sinks' has no attributes.
+The class 'assessment::Tasks' has no attributes.
+The enumeration 'TaskStatus' has the following literals: 'skipped', 'todo', 'in_progress', 'done'.
+The enumeration 'HttpMethod' has the following literals: 'PATCH', 'TRACE', 'PUT', 'POST', 'DELETE', 'CONNECT', 'HEAD', 'OPTIONS', 'GET'.
+The enumeration 'UrlPattern' has the following literals: 'ANT'.
+The enumeration 'Language' has the following literals: 'C_Cpp', 'Python', 'Scala', 'Other', 'PHP', 'C_Sharp', 'Ruby', 'Java'.
+'assessment::Task' is a specialization of 'Notes'.
+'assessment::View' is a specialization of 'Node'.
+'assessment::Entitlement' is a specialization of 'Node'.
+'assessment::Application' is a specialization of 'Notes'.
+'assessment::Snippet' is a specialization of 'Contents'.
+'assessment::Finding' is a specialization of 'Label'.
+'assessment::Task' is a specialization of 'Label'.
+'assessment::Generic' is a specialization of 'GraphNode'.
+'assessment::Resource' is a specialization of 'Contents'.
+'assessment::Resource' is a specialization of 'Notes'.
+'assessment::Controller' is a specialization of 'Node'.
+'assessment::Sink' is a specialization of 'Node'.
+'assessment::Finding' is a specialization of 'Notes'.
+'assessment::Control' is a specialization of 'GraphNode'.
+'assessment::Account' is a specialization of 'Node'.
+'assessment::GraphNode' is a specialization of 'Node'.
+'assessment::Assessment' is a specialization of 'Label'.
+'assessment::Snippet' is a specialization of 'GraphNode'.
+'assessment::Node' is a specialization of 'Notes'.
+'assessment::Model' is a specialization of 'Node'.
+'assessment::Http' is a specialization of 'GraphNode'.
+'assessment::Node' is a specialization of 'Label'.
+'assessment::Assessment' is a specialization of 'Notes'.
+'assessment::Application' is a specialization of 'Label'.
+'assessment::Resource' is a specialization of 'Label'.
+'assessment::Application' (role 'Application96', cardinality 0..*) is associated with 'assessment::Views' (role 'views95', cardinality 0..*).
+'assessment::Accounts' (role 'assessment_Accounts', cardinality 0..*) is associated with 'assessment::Application' (role 'assessment_Application', cardinality 0..*).
+'assessment::Account' (role 'Account', cardinality 0..*) is associated with 'assessment::Entitlement' (role 'entitlements', cardinality 0..*).
+'assessment::Finding' (role 'findings', cardinality 0..*) is associated with 'assessment::Findings' (role 'Findings41', cardinality 0..*).
+'assessment::Application' (role 'application24', cardinality 0..*) is associated with 'assessment::Scm' (role 'Scm', cardinality 0..*).
+'assessment::Task' (role 'Task', cardinality 0..*) is associated with 'assessment::Node' (role 'affects', cardinality 0..*).
+'assessment::Node' (role 'Node', cardinality 0..*) is associated with 'assessment::Node' (role 'referredBy', cardinality 0..*).
+'assessment::Model' (role 'models', cardinality 0..*) is associated with 'assessment::Models' (role 'Models39', cardinality 0..*).
+'assessment::Model' (role 'Model', cardinality 0..*) is associated with 'assessment::Models' (role 'models93', cardinality 0..*).
+'assessment::Views' (role 'views98', cardinality 0..*) is associated with 'assessment::View' (role 'View', cardinality 0..*).
+'assessment::Accounts' (role 'accounts76', cardinality 0..*) is associated with 'assessment::Account' (role 'Account77', cardinality 0..*).
+'assessment::Resource' (role 'Resource', cardinality 0..*) is associated with 'assessment::Snippet' (role 'snippets', cardinality 0..*).
+'assessment::Task' (role 'Task115', cardinality 0..*) is associated with 'assessment::Tasks' (role 'tasks114', cardinality 0..*).
+'assessment::Views' (role 'Views37', cardinality 0..*) is associated with 'assessment::View' (role 'views', cardinality 0..*).
+'assessment::Node' (role 'assessment_Node3', cardinality 0..*) is associated with 'assessment::Node' (role 'assessment_Node1', cardinality 0..*).
+'assessment::Finding' (role 'Finding', cardinality 0..*) is associated with 'assessment::Node' (role 'affects11', cardinality 0..*).
+'assessment::Finding' (role 'Finding68', cardinality 0..*) is associated with 'assessment::Findings' (role 'findings67', cardinality 0..*).
+'assessment::Applications' (role 'applications65', cardinality 0..*) is associated with 'assessment::Assessment' (role 'Assessment', cardinality 0..*).
+'assessment::Resources' (role 'resources108', cardinality 0..*) is associated with 'assessment::Resource' (role 'Resource109', cardinality 0..*).
+'assessment::Assessment' (role 'assessment', cardinality 0..*) is associated with 'assessment::Applications' (role 'Applications', cardinality 0..*).
+'assessment::Node' (role 'Node8', cardinality 0..*) is associated with 'assessment::Node' (role 'refersTo', cardinality 0..*).
+'assessment::Sinks' (role 'assessment_Sinks', cardinality 0..*) is associated with 'assessment::Application' (role 'assessment_Application28', cardinality 0..*).
+'assessment::Accounts' (role 'Accounts', cardinality 0..*) is associated with 'assessment::Account' (role 'accounts', cardinality 0..*).
+'assessment::Resource' (role 'resources', cardinality 0..*) is associated with 'assessment::Resources' (role 'Resources59', cardinality 0..*).
+'assessment::Models' (role 'Models', cardinality 0..*) is associated with 'assessment::Application' (role 'application22', cardinality 0..*).
+'assessment::Application' (role 'Application63', cardinality 0..*) is associated with 'assessment::Applications' (role 'applications62', cardinality 0..*).
+'assessment::Application' (role 'assessment_Application74', cardinality 0..*) is associated with 'assessment::Accounts' (role 'assessment_Accounts73', cardinality 0..*).
+'assessment::Applications' (role 'Applications32', cardinality 0..*) is associated with 'assessment::Application' (role 'applications', cardinality 0..*).
+'assessment::Sinks' (role 'Sinks', cardinality 0..*) is associated with 'assessment::Sink' (role 'sinks', cardinality 0..*).
+'assessment::Findings' (role 'Findings', cardinality 0..*) is associated with 'assessment::Assessment' (role 'assessment14', cardinality 0..*).
+'assessment::Resource' (role 'resource', cardinality 0..*) is associated with 'assessment::Snippet' (role 'Snippet', cardinality 0..*).
+'assessment::Application' (role 'Application106', cardinality 0..*) is associated with 'assessment::Resources' (role 'resources105', cardinality 0..*).
+'assessment::Entitlements' (role 'Entitlements', cardinality 0..*) is associated with 'assessment::Entitlement' (role 'entitlements50', cardinality 0..*).
+'assessment::Sink' (role 'Sink', cardinality 0..*) is associated with 'assessment::Sinks' (role 'sinks103', cardinality 0..*).
+'assessment::Controllers' (role 'controllers79', cardinality 0..*) is associated with 'assessment::Application' (role 'Application80', cardinality 0..*).
+'assessment::Controllers' (role 'Controllers35', cardinality 0..*) is associated with 'assessment::Controller' (role 'controllers', cardinality 0..*).
+'assessment::Application' (role 'application', cardinality 0..*) is associated with 'assessment::Controllers' (role 'Controllers', cardinality 0..*).
+'assessment::Entitlement' (role 'Entitlement', cardinality 0..*) is associated with 'assessment::Account' (role 'accounts47', cardinality 0..*).
+'assessment::Application' (role 'application30', cardinality 0..*) is associated with 'assessment::Resources' (role 'Resources', cardinality 0..*).
+'assessment::Controller' (role 'Controller', cardinality 0..*) is associated with 'assessment::Controllers' (role 'controllers82', cardinality 0..*).
+'assessment::Entitlements' (role 'entitlements87', cardinality 0..*) is associated with 'assessment::Entitlement' (role 'Entitlement88', cardinality 0..*).
+'assessment::Application' (role 'assessment_Application101', cardinality 0..*) is associated with 'assessment::Sinks' (role 'assessment_Sinks100', cardinality 0..*).
+'assessment::Node' (role 'Node44', cardinality 0..*) is associated with 'assessment::Finding' (role 'findings43', cardinality 0..*).
+'assessment::Application' (role 'assessment_Application19', cardinality 0..*) is associated with 'assessment::Entitlements' (role 'assessment_Entitlements', cardinality 0..*).
+'assessment::Application' (role 'assessment_Application85', cardinality 0..*) is associated with 'assessment::Entitlements' (role 'assessment_Entitlements84', cardinality 0..*).
+'assessment::Node' (role 'assessment_Node', cardinality 0..*) is associated with 'assessment::GraphNode' (role 'assessment_GraphNode', cardinality 0..*).
+'assessment::Assessment' (role 'assessment16', cardinality 0..*) is associated with 'assessment::Tasks' (role 'Tasks', cardinality 0..*).
+'assessment::Application' (role 'Application91', cardinality 0..*) is associated with 'assessment::Models' (role 'models90', cardinality 0..*).
+'assessment::Node' (role 'Node55', cardinality 0..*) is associated with 'assessment::Task' (role 'tasks54', cardinality 0..*).
+'assessment::Scm' (role 'scm', cardinality 0..*) is associated with 'assessment::Application' (role 'Application', cardinality 0..*).
+'assessment::Findings' (role 'findings70', cardinality 0..*) is associated with 'assessment::Assessment' (role 'Assessment71', cardinality 0..*).
+'assessment::Task' (role 'tasks', cardinality 0..*) is associated with 'assessment::Tasks' (role 'Tasks52', cardinality 0..*).
+'assessment::Views' (role 'Views', cardinality 0..*) is associated with 'assessment::Application' (role 'application26', cardinality 0..*).
+'assessment::Tasks' (role 'tasks111', cardinality 0..*) is associated with 'assessment::Assessment' (role 'Assessment112', cardinality 0..*).

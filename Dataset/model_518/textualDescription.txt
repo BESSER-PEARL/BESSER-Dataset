@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Families::Families' has no attributes.
+The class 'Member' has no attributes.
+The class 'Families::Member' has the following attributes: 'firstname' of type str.
+The class 'Families::Female' has no attributes.
+The class 'Families::Male' has no attributes.
+The class 'Families::Family' has the following attributes: 'lastname' of type str.
+'Families::Female' is a specialization of 'Member'.
+'Families::Male' is a specialization of 'Member'.
+'Families::Member' (role 'Member', cardinality 0..*) is associated with 'Families::Family' (role 'family', cardinality 0..*).
+'Families::Families' (role 'Families', cardinality 0..*) is associated with 'Families::Family' (role 'families', cardinality 0..*).
+'Families::Families' (role 'container', cardinality 0..*) is associated with 'Families::Family' (role 'Family', cardinality 0..*).
+'Families::Member' (role 'members', cardinality 0..*) is associated with 'Families::Family' (role 'Family4', cardinality 0..*).

@@ -1,0 +1,99 @@
+The model has 37 class(es).
+The class 'occi::BasicType' has no attributes.
+The class 'occi::RecordField' has no attributes.
+The class 'occi::MixinBase' has no attributes.
+The class 'Entity' has no attributes.
+The class 'occi::EObjectType' has the following attributes: 'instanceClassName' of type str.
+The class 'occi::Kind' has no attributes.
+The class 'BasicType' has no attributes.
+The class 'occi::NumericType' has the following attributes: 'minInclusive' of type str; 'type' of type str; 'maxInclusive' of type str; 'minExclusive' of type str; 'totalDigits' of type str; 'maxExclusive' of type str.
+The class 'occi::StringType' has the following attributes: 'minLength' of type str; 'maxLength' of type str; 'length' of type str; 'pattern' of type str.
+The class 'occi::Mixin' has no attributes.
+The class 'Category' has no attributes.
+The class 'AnnotatedElement' has no attributes.
+The class 'occi::Constraint' has the following attributes: 'description' of type str; 'body' of type str; 'name' of type str.
+The class 'occi::AttributeState' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'occi::Category' has the following attributes: 'name' of type str; 'title' of type str; 'term' of type str; 'description' of type str; 'scheme' of type str.
+The class 'occi::Entity' has the following attributes: 'title' of type str; 'location' of type str; 'id' of type str.
+The class 'occi::Link' has no attributes.
+The class 'occi::EnumerationType' has no attributes.
+The class 'occi::Resource' has the following attributes: 'summary' of type str.
+The class 'occi::Type' has no attributes.
+The class 'occi::Transition' has no attributes.
+The class 'occi::EnumerationLiteral' has the following attributes: 'name' of type str; 'documentation' of type str.
+The class 'occi::DataType' has the following attributes: 'name' of type str; 'documentation' of type str.
+The class 'Type' has no attributes.
+The class 'occi::Attribute' has the following attributes: 'description' of type str; 'default' of type str; 'mutable' of type str; 'required' of type str; 'name' of type str.
+The class 'occi::BooleanType' has no attributes.
+The class 'occi::Annotation' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'occi::Configuration' has the following attributes: 'description' of type str; 'location' of type str.
+The class 'occi::State' has the following attributes: 'initial' of type str; 'final' of type str.
+The class 'occi::ArrayType' has no attributes.
+The class 'DataType' has no attributes.
+The class 'occi::Extension' has the following attributes: 'specification' of type str; 'description' of type str; 'scheme' of type str; 'name' of type str.
+The class 'occi::AnnotatedElement' has no attributes.
+The class 'occi::FSM' has no attributes.
+The class 'occi::RecordType' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'occi::Action' has no attributes.
+The enumeration 'NumericTypeEnum' has the following literals: 'BigDecimal', 'Float', 'Short', 'Long', 'Integer', 'Byte', 'Double'.
+'occi::Category' is a specialization of 'AnnotatedElement'.
+'occi::Link' is a specialization of 'Entity'.
+'occi::Kind' is a specialization of 'Type'.
+'occi::EObjectType' is a specialization of 'BasicType'.
+'occi::RecordType' is a specialization of 'DataType'.
+'occi::Type' is a specialization of 'Category'.
+'occi::BooleanType' is a specialization of 'BasicType'.
+'occi::Attribute' is a specialization of 'AnnotatedElement'.
+'occi::EnumerationType' is a specialization of 'DataType'.
+'occi::NumericType' is a specialization of 'BasicType'.
+'occi::BasicType' is a specialization of 'DataType'.
+'occi::StringType' is a specialization of 'BasicType'.
+'occi::Action' is a specialization of 'Category'.
+'occi::ArrayType' is a specialization of 'DataType'.
+'occi::Resource' is a specialization of 'Entity'.
+'occi::Mixin' is a specialization of 'Type'.
+'occi::RecordField' is a specialization of 'Attribute'.
+'occi::Type' (role 'occi_Type', cardinality 0..*) is associated with 'occi::Action' (role 'occi_Action', cardinality 0..*).
+'occi::Type' (role 'occi_Type6', cardinality 0..*) is associated with 'occi::FSM' (role 'occi_FSM', cardinality 0..*).
+'occi::Mixin' (role 'occi_Mixin80', cardinality 0..*) is associated with 'occi::Configuration' (role 'occi_Configuration79', cardinality 0..*).
+'occi::Kind' (role 'occi_Kind37', cardinality 0..*) is associated with 'occi::Mixin' (role 'occi_Mixin36', cardinality 0..*).
+'occi::Action' (role 'occi_Action20', cardinality 0..*) is associated with 'occi::Transition' (role 'occi_Transition19', cardinality 0..*).
+'occi::Link' (role 'links', cardinality 0..*) is associated with 'occi::Resource' (role 'Resource', cardinality 0..*).
+'occi::Kind' (role 'occi_Kind27', cardinality 0..*) is associated with 'occi::Kind' (role 'occi_Kind29', cardinality 0..*).
+'occi::Kind' (role 'occi_Kind', cardinality 0..*) is associated with 'occi::Kind' (role 'occi_Kind23', cardinality 0..*).
+'occi::Kind' (role 'occi_Kind32', cardinality 0..*) is associated with 'occi::Kind' (role 'occi_Kind30', cardinality 0..*).
+'occi::EnumerationLiteral' (role 'literals', cardinality 0..*) is associated with 'occi::EnumerationType' (role 'EnumerationType', cardinality 0..*).
+'occi::MixinBase' (role 'occi_MixinBase54', cardinality 0..*) is associated with 'occi::AttributeState' (role 'occi_AttributeState55', cardinality 0..*).
+'occi::Extension' (role 'occi_Extension66', cardinality 0..*) is associated with 'occi::Kind' (role 'occi_Kind67', cardinality 0..*).
+'occi::EnumerationLiteral' (role 'occi_EnumerationLiteral', cardinality 0..*) is associated with 'occi::State' (role 'occi_State', cardinality 0..*).
+'occi::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'occi::State' (role 'State15', cardinality 0..*).
+'occi::Mixin' (role 'occi_Mixin', cardinality 0..*) is associated with 'occi::Mixin' (role 'occi_Mixin33', cardinality 0..*).
+'occi::DataType' (role 'occi_DataType85', cardinality 0..*) is associated with 'occi::ArrayType' (role 'occi_ArrayType', cardinality 0..*).
+'occi::Transition' (role 'occi_Transition', cardinality 0..*) is associated with 'occi::State' (role 'occi_State17', cardinality 0..*).
+'occi::Attribute' (role 'occi_Attribute', cardinality 0..*) is associated with 'occi::Category' (role 'occi_Category', cardinality 0..*).
+'occi::Resource' (role 'occi_Resource', cardinality 0..*) is associated with 'occi::Configuration' (role 'occi_Configuration77', cardinality 0..*).
+'occi::Mixin' (role 'occi_Mixin48', cardinality 0..*) is associated with 'occi::Entity' (role 'occi_Entity47', cardinality 0..*).
+'occi::MixinBase' (role 'occi_MixinBase', cardinality 0..*) is associated with 'occi::Mixin' (role 'occi_Mixin51', cardinality 0..*).
+'occi::MixinBase' (role 'parts', cardinality 0..*) is associated with 'occi::Entity' (role 'Entity', cardinality 0..*).
+'occi::Entity' (role 'occi_Entity40', cardinality 0..*) is associated with 'occi::Mixin' (role 'occi_Mixin39', cardinality 0..*).
+'occi::Extension' (role 'occi_Extension63', cardinality 0..*) is associated with 'occi::Extension' (role 'occi_Extension', cardinality 0..*).
+'occi::Type' (role 'occi_Type4', cardinality 0..*) is associated with 'occi::Constraint' (role 'occi_Constraint', cardinality 0..*).
+'occi::Annotation' (role 'occi_Annotation', cardinality 0..*) is associated with 'occi::AnnotatedElement' (role 'occi_AnnotatedElement', cardinality 0..*).
+'occi::RecordType' (role 'occi_RecordType', cardinality 0..*) is associated with 'occi::RecordField' (role 'occi_RecordField', cardinality 0..*).
+'occi::Resource' (role 'Resource62', cardinality 0..*) is associated with 'occi::Link' (role 'rlinks', cardinality 0..*).
+'occi::Transition' (role 'Transition', cardinality 0..*) is associated with 'occi::State' (role 'source', cardinality 0..*).
+'occi::Configuration' (role 'occi_Configuration', cardinality 0..*) is associated with 'occi::Extension' (role 'occi_Extension75', cardinality 0..*).
+'occi::Resource' (role 'target', cardinality 0..*) is associated with 'occi::Link' (role 'Link59', cardinality 0..*).
+'occi::State' (role 'ownedState', cardinality 0..*) is associated with 'occi::FSM' (role 'FSM', cardinality 0..*).
+'occi::Mixin' (role 'occi_Mixin70', cardinality 0..*) is associated with 'occi::Extension' (role 'occi_Extension69', cardinality 0..*).
+'occi::Extension' (role 'occi_Extension72', cardinality 0..*) is associated with 'occi::DataType' (role 'occi_DataType73', cardinality 0..*).
+'occi::EnumerationType' (role 'enumerationType', cardinality 0..*) is associated with 'occi::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'occi::State' (role 'State', cardinality 0..*) is associated with 'occi::FSM' (role 'owningFSM', cardinality 0..*).
+'occi::Kind' (role 'occi_Kind26', cardinality 0..*) is associated with 'occi::Entity' (role 'occi_Entity', cardinality 0..*).
+'occi::FSM' (role 'occi_FSM9', cardinality 0..*) is associated with 'occi::Attribute' (role 'occi_Attribute10', cardinality 0..*).
+'occi::DataType' (role 'occi_DataType', cardinality 0..*) is associated with 'occi::Attribute' (role 'occi_Attribute22', cardinality 0..*).
+'occi::Resource' (role 'source57', cardinality 0..*) is associated with 'occi::Link' (role 'Link', cardinality 0..*).
+'occi::MixinBase' (role 'MixinBase', cardinality 0..*) is associated with 'occi::Entity' (role 'entity', cardinality 0..*).
+'occi::Entity' (role 'occi_Entity42', cardinality 0..*) is associated with 'occi::Kind' (role 'occi_Kind43', cardinality 0..*).
+'occi::Entity' (role 'occi_Entity45', cardinality 0..*) is associated with 'occi::AttributeState' (role 'occi_AttributeState', cardinality 0..*).

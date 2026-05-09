@@ -1,0 +1,60 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class UML2_InputPin extends Pin {
+
+
+
+
+
+
+    private UML2_TestIdentityAction uml2_testidentityaction;
+
+
+
+
+    private UML2_LinkEndData uml2_linkenddata;
+
+
+
+
+    private UML2_TestIdentityAction uml2_testidentityaction;
+
+
+    public UML2_InputPin(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public UML2_TestIdentityAction getUml2_testidentityaction() {
+        return uml2_testidentityaction;
+    }
+
+    public void setUml2_testidentityaction(UML2_TestIdentityAction uml2_testidentityaction) {
+        this.uml2_testidentityaction = uml2_testidentityaction;
+    }
+    public UML2_LinkEndData getUml2_linkenddata() {
+        return uml2_linkenddata;
+    }
+
+    public void setUml2_linkenddata(UML2_LinkEndData uml2_linkenddata) {
+        this.uml2_linkenddata = uml2_linkenddata;
+    }
+    public UML2_TestIdentityAction getUml2_testidentityaction() {
+        return uml2_testidentityaction;
+    }
+
+    public void setUml2_testidentityaction(UML2_TestIdentityAction uml2_testidentityaction) {
+        this.uml2_testidentityaction = uml2_testidentityaction;
+    }
+
+}

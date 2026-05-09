@@ -1,0 +1,33 @@
+The model has 13 class(es).
+The class 'notation::HierarchicalNode' has no attributes.
+The class 'notation::BendPoint' has no attributes.
+The class 'notation::DiagramElement' has the following attributes: 'persistent' of type bool; 'visible' of type bool.
+The class 'notation::Node' has the following attributes: 'x' of type int; 'height' of type int; 'width' of type int; 'y' of type int.
+The class 'notation::Edge' has no attributes.
+The class 'notation::RelativeBendPoint' has the following attributes: 'targetY' of type int; 'sourceY' of type int; 'targetX' of type int; 'sourceX' of type int.
+The class 'Identifier' has no attributes.
+The class 'Node' has no attributes.
+The class 'BendPoint' has no attributes.
+The class 'notation::EObject' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'notation::Anchor' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'notation::AbsoluteBendPoint' has the following attributes: 'x' of type int; 'y' of type int.
+'notation::AbsoluteBendPoint' is a specialization of 'BendPoint'.
+'notation::HierarchicalNode' is a specialization of 'Node'.
+'notation::Edge' is a specialization of 'DiagramElement'.
+'notation::DiagramElement' is a specialization of 'Identifier'.
+'notation::Node' is a specialization of 'DiagramElement'.
+'notation::RelativeBendPoint' is a specialization of 'BendPoint'.
+'notation::BendPoint' (role 'BendPoint', cardinality 0..*) is associated with 'notation::Edge' (role 'edge', cardinality 0..*).
+'notation::EObject' (role 'notation_EObject', cardinality 0..*) is associated with 'notation::DiagramElement' (role 'notation_DiagramElement', cardinality 0..*).
+'notation::Node' (role 'source', cardinality 0..*) is associated with 'notation::Edge' (role 'Edge', cardinality 0..*).
+'notation::Node' (role 'target', cardinality 0..*) is associated with 'notation::Edge' (role 'Edge3', cardinality 0..*).
+'notation::Anchor' (role 'notation_Anchor', cardinality 0..*) is associated with 'notation::Edge' (role 'notation_Edge', cardinality 0..*).
+'notation::Edge' (role 'incoming', cardinality 0..*) is associated with 'notation::Node' (role 'Node7', cardinality 0..*).
+'notation::Edge' (role 'Edge21', cardinality 0..*) is associated with 'notation::BendPoint' (role 'bendPoints', cardinality 0..*).
+'notation::Edge' (role 'outgoing', cardinality 0..*) is associated with 'notation::Node' (role 'Node', cardinality 0..*).
+'notation::Edge' (role 'notation_Edge12', cardinality 0..*) is associated with 'notation::Anchor' (role 'notation_Anchor13', cardinality 0..*).
+'notation::Node' (role 'Node16', cardinality 0..*) is associated with 'notation::HierarchicalNode' (role 'parent', cardinality 0..*).
+'notation::HierarchicalNode' (role 'HierarchicalNode9', cardinality 0..*) is associated with 'notation::Edge' (role 'edges', cardinality 0..*).
+'notation::Edge' (role 'Edge19', cardinality 0..*) is associated with 'notation::HierarchicalNode' (role 'parent18', cardinality 0..*).
+'notation::Node' (role 'nodes', cardinality 0..*) is associated with 'notation::HierarchicalNode' (role 'HierarchicalNode', cardinality 0..*).

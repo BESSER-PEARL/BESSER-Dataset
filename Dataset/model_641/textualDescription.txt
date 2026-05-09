@@ -1,0 +1,28 @@
+The model has 11 class(es).
+The class 'Account' has no attributes.
+The class 'BankingSystem::Saving' has the following attributes: 'interestRate' of type float.
+The class 'BankingSystem::Bank' has the following attributes: 'name' of type str; 'bankId' of type int; 'description' of type str.
+The class 'Employee' has no attributes.
+The class 'BankingSystem::Employee' has the following attributes: 'eaddress' of type str; 'ephoneNumber' of type str; 'eid' of type int; 'ename' of type str; 'isCustomer' of type bool; 'eage' of type int.
+The class 'BankingSystem::Financial::Representative' has no attributes.
+The class 'BankingSystem::Account' has the following attributes: 'balance' of type float; 'accountNumber' of type str.
+The class 'BankingSystem::Chequing' has no attributes.
+The class 'BankingSystem::Loan' has the following attributes: 'amount' of type float; 'duration' of type int; 'loanNumber' of type str; 'interestRate' of type float.
+The class 'BankingSystem::Customer' has the following attributes: 'name' of type str; 'customerType' of type str; 'address' of type str; 'age' of type int; 'phoneNumber' of type str.
+The class 'BankingSystem::Branch' has the following attributes: 'branchId' of type int; 'name' of type str; 'phoneNumber' of type str; 'location' of type str.
+The enumeration 'CustomerType' has the following literals: 'Senior', 'Youth', 'Adult'.
+'BankingSystem::Chequing' is a specialization of 'Account'.
+'BankingSystem::Financial::Representative' is a specialization of 'Employee'.
+'BankingSystem::Saving' is a specialization of 'Account'.
+'BankingSystem::Branch' (role 'branch3', cardinality 0..*) is associated with 'BankingSystem::Employee' (role 'Employee', cardinality 0..*).
+'BankingSystem::Branch' (role 'branch', cardinality 0..*) is associated with 'BankingSystem::Customer' (role 'Customer', cardinality 0..*).
+'BankingSystem::Customer' (role 'customer', cardinality 0..*) is associated with 'BankingSystem::Account' (role 'Account', cardinality 0..*).
+'BankingSystem::Branch' (role 'Branch', cardinality 0..*) is associated with 'BankingSystem::Bank' (role 'bank', cardinality 0..*).
+'BankingSystem::Financial::Representative' (role 'Financial_Representative', cardinality 0..*) is associated with 'BankingSystem::Customer' (role 'a', cardinality 0..*).
+'BankingSystem::Customer' (role 'Customer18', cardinality 0..*) is associated with 'BankingSystem::Financial::Representative' (role 'representative', cardinality 0..*).
+'BankingSystem::Branch' (role 'Branch14', cardinality 0..*) is associated with 'BankingSystem::Employee' (role 'employees', cardinality 0..*).
+'BankingSystem::Branch' (role 'Branch6', cardinality 0..*) is associated with 'BankingSystem::Customer' (role 'customers', cardinality 0..*).
+'BankingSystem::Account' (role 'accounts', cardinality 0..*) is associated with 'BankingSystem::Customer' (role 'Customer12', cardinality 0..*).
+'BankingSystem::Customer' (role 'customer9', cardinality 0..*) is associated with 'BankingSystem::Loan' (role 'Loan', cardinality 0..*).
+'BankingSystem::Customer' (role 'Customer16', cardinality 0..*) is associated with 'BankingSystem::Loan' (role 'loans', cardinality 0..*).
+'BankingSystem::Branch' (role 'branches', cardinality 0..*) is associated with 'BankingSystem::Bank' (role 'Bank', cardinality 0..*).

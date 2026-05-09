@@ -1,0 +1,47 @@
+The model has 17 class(es).
+The class 'webapp::Router' has no attributes.
+The class 'webapp::Collection' has no attributes.
+The class 'webapp::ServiceController' has the following attributes: 'endpoint' of type str.
+The class 'Data' has no attributes.
+The class 'webapp::Controller' has no attributes.
+The class 'Controller' has no attributes.
+The class 'webapp::Model' has no attributes.
+The class 'webapp::WebApp' has no attributes.
+The class 'webapp::RouterBinding' has the following attributes: 'requestCookies' of type str; 'requestURL' of type str.
+The class 'webapp::Data' has the following attributes: 'endpoint' of type str.
+The class 'webapp::NamedElement' has the following attributes: 'name' of type str.
+The class 'webapp::Attribute' has the following attributes: 'customType' of type str; 'baseType' of type str.
+The class 'webapp::Template' has the following attributes: 'structure' of type str.
+The class 'NamedElement' has no attributes.
+The class 'webapp::Style' has the following attributes: 'href' of type str; 'src' of type str.
+The class 'webapp::PageController' has no attributes.
+The class 'webapp::View' has no attributes.
+The enumeration 'DataType' has the following literals: 'any', 'string', 'number', 'array', 'boolean', 'date', 'object'.
+'webapp::Data' is a specialization of 'NamedElement'.
+'webapp::Style' is a specialization of 'NamedElement'.
+'webapp::Collection' is a specialization of 'Data'.
+'webapp::Attribute' is a specialization of 'NamedElement'.
+'webapp::Controller' is a specialization of 'NamedElement'.
+'webapp::ServiceController' is a specialization of 'Controller'.
+'webapp::WebApp' is a specialization of 'NamedElement'.
+'webapp::Model' is a specialization of 'Data'.
+'webapp::PageController' is a specialization of 'Controller'.
+'webapp::Template' is a specialization of 'NamedElement'.
+'webapp::View' is a specialization of 'NamedElement'.
+'webapp::RouterBinding' (role 'webapp_RouterBinding', cardinality 0..*) is associated with 'webapp::Router' (role 'webapp_Router28', cardinality 0..*).
+'webapp::Style' (role 'webapp_Style31', cardinality 0..*) is associated with 'webapp::Template' (role 'webapp_Template30', cardinality 0..*).
+'webapp::View' (role 'webapp_View18', cardinality 0..*) is associated with 'webapp::View' (role 'webapp_View20', cardinality 0..*).
+'webapp::View' (role 'webapp_View', cardinality 0..*) is associated with 'webapp::WebApp' (role 'webapp_WebApp10', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp8', cardinality 0..*) is associated with 'webapp::Template' (role 'webapp_Template', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp6', cardinality 0..*) is associated with 'webapp::Controller' (role 'webapp_Controller', cardinality 0..*).
+'webapp::Attribute' (role 'webapp_Attribute26', cardinality 0..*) is associated with 'webapp::View' (role 'webapp_View25', cardinality 0..*).
+'webapp::Controller' (role 'webapp_Controller36', cardinality 0..*) is associated with 'webapp::Attribute' (role 'webapp_Attribute37', cardinality 0..*).
+'webapp::Router' (role 'webapp_Router', cardinality 0..*) is associated with 'webapp::WebApp' (role 'webapp_WebApp2', cardinality 0..*).
+'webapp::Style' (role 'webapp_Style', cardinality 0..*) is associated with 'webapp::WebApp' (role 'webapp_WebApp12', cardinality 0..*).
+'webapp::View' (role 'webapp_View22', cardinality 0..*) is associated with 'webapp::Template' (role 'webapp_Template23', cardinality 0..*).
+'webapp::PageController' (role 'webapp_PageController', cardinality 0..*) is associated with 'webapp::View' (role 'webapp_View39', cardinality 0..*).
+'webapp::Attribute' (role 'webapp_Attribute', cardinality 0..*) is associated with 'webapp::Model' (role 'webapp_Model14', cardinality 0..*).
+'webapp::Controller' (role 'webapp_Controller34', cardinality 0..*) is associated with 'webapp::RouterBinding' (role 'webapp_RouterBinding33', cardinality 0..*).
+'webapp::Collection' (role 'webapp_Collection', cardinality 0..*) is associated with 'webapp::WebApp' (role 'webapp_WebApp', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model17', cardinality 0..*) is associated with 'webapp::Collection' (role 'webapp_Collection16', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp4', cardinality 0..*) is associated with 'webapp::Model' (role 'webapp_Model', cardinality 0..*).

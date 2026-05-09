@@ -1,0 +1,153 @@
+The model has 53 class(es).
+The class 'ryz::TableKey' has the following attributes: 'type' of type str; 'isForeignKey' of type bool; 'isPrimaryKey' of type bool; 'isRequired' of type bool.
+The class 'ryz::ComponentPackage' has no attributes.
+The class 'ryz::ActionMethod' has the following attributes: 'returns' of type str; 'httpMethod' of type str.
+The class 'ryz::Project' has no attributes.
+The class 'ryz::Model' has the following attributes: 'isAbstract' of type bool.
+The class 'ryz::ModelPackage' has no attributes.
+The class 'ryz::AbstractView' has no attributes.
+The class 'ryz::ViewToControllerRelation' has no attributes.
+The class 'ryz::MainComponentRelation' has no attributes.
+The class 'ryz::Parameter' has the following attributes: 'isList' of type bool; 'type' of type str; 'isNullable' of type bool.
+The class 'ryz::PresentationFormElement' has the following attributes: 'labelText' of type str.
+The class 'ryz::Table' has no attributes.
+The class 'ryz::Layout' has no attributes.
+The class 'PresentationFormElement' has no attributes.
+The class 'ryz::ControllerToModelRelation' has the following attributes: 'modelCardinality' of type str; 'modelOperation' of type str.
+The class 'MainComponentRelation' has no attributes.
+The class 'ryz::Form' has no attributes.
+The class 'ryz::Choice' has the following attributes: 'value' of type str; 'selected' of type str; 'text' of type str.
+The class 'NamedElement' has no attributes.
+The class 'MainComponent' has no attributes.
+The class 'ryz::UseCase' has no attributes.
+The class 'ryz::HelperForSendingRequest' has the following attributes: 'requestType' of type str; 'text' of type str; 'httpMethod' of type str.
+The class 'ryz::MvcPackage' has no attributes.
+The class 'ryz::FormElementToPropertyKeyRelation' has no attributes.
+The class 'ryz::UseCasePackage' has no attributes.
+The class 'ryz::ModelAssociation' has the following attributes: 'cardinality' of type str; 'dependentRoleName' of type str; 'principalRoleName' of type str; 'isRequired' of type bool.
+The class 'AbstractView' has no attributes.
+The class 'ryz::ControllerPackage' has no attributes.
+The class 'ryz::UseCaseActorPackage' has no attributes.
+The class 'ryz::ControllerToViewRelation' has no attributes.
+The class 'ryz::Actor' has no attributes.
+The class 'Package' has no attributes.
+The class 'ryz::MainComponent' has no attributes.
+The class 'ComponentPackage' has no attributes.
+The class 'HelperForSendingRequest' has no attributes.
+The class 'ryz::Partial' has no attributes.
+The class 'ryz::NamedElement' has the following attributes: 'name' of type str.
+The class 'ryz::View' has no attributes.
+The class 'ryz::ViewToModelRelation' has the following attributes: 'modelcardinality' of type str.
+The class 'ryz::MultipleChoice' has the following attributes: 'multipleChoiceType' of type str; 'multipleSelection' of type bool.
+The class 'ryz::PresentationForm' has no attributes.
+The class 'ryz::Button' has the following attributes: 'buttonType' of type str.
+The class 'PresentationElement' has no attributes.
+The class 'ryz::PresentationFormElementToPropertyKey' has no attributes.
+The class 'ryz::ActionLink' has no attributes.
+The class 'ryz::Controller' has no attributes.
+The class 'ryz::Header' has the following attributes: 'labelText' of type str; 'name' of type str.
+The class 'ryz::Link' has the following attributes: 'text' of type str.
+The class 'ryz::Input' has the following attributes: 'isReadOnly' of type bool; 'inputDataType' of type str; 'isHidden' of type bool.
+The class 'ryz::Property' has the following attributes: 'type' of type str; 'isRequired' of type bool.
+The class 'ryz::Package' has no attributes.
+The class 'ryz::PresentationElement' has no attributes.
+The class 'ryz::ViewPackage' has no attributes.
+The enumeration 'InputDataType' has the following literals: 'DATE', 'TIME', 'PASSWORD', 'TEXT', 'NUMBER', 'TEL', 'EMAIL', 'FILE'.
+The enumeration 'ActionMethodReturnType' has the following literals: 'Content', 'PartialView', 'Json', 'RedirectToAction', 'View'.
+The enumeration 'ButtonType' has the following literals: 'RESET', 'SUBMIT'.
+The enumeration 'ModelOperation' has the following literals: 'UPDATE', 'DELETE', 'READ', 'CREATE'.
+The enumeration 'ModelPropertyType' has the following literals: 'BOOLEAN', 'DOUBLE', 'INTEGER', 'STRING', 'DATETIME'.
+The enumeration 'ModelCardinality' has the following literals: 'ALL', 'ONE'.
+The enumeration 'RequestType' has the following literals: 'REGULAR_HTTP', 'AJAX'.
+The enumeration 'HttpMethod' has the following literals: 'POST', 'GET'.
+The enumeration 'MultipleChoiceType' has the following literals: 'CHECKBOX_GROUP', 'RADIO_BUTTON', 'DROPDOWN_LIST'.
+The enumeration 'Cardinality' has the following literals: 'ONE_TO_ONE', 'MANY_TO_MANY', 'ONE_TO_MANY'.
+The enumeration 'ActionMethodParameterType' has the following literals: 'STRING', 'INTEGER'.
+'ryz::View' is a specialization of 'AbstractView'.
+'ryz::ModelPackage' is a specialization of 'ComponentPackage'.
+'ryz::ModelAssociation' is a specialization of 'NamedElement'.
+'ryz::Table' is a specialization of 'PresentationElement'.
+'ryz::ViewPackage' is a specialization of 'ComponentPackage'.
+'ryz::Model' is a specialization of 'MainComponent'.
+'ryz::MainComponent' is a specialization of 'NamedElement'.
+'ryz::Link' is a specialization of 'PresentationElement'.
+'ryz::Parameter' is a specialization of 'NamedElement'.
+'ryz::UseCase' is a specialization of 'NamedElement'.
+'ryz::Actor' is a specialization of 'NamedElement'.
+'ryz::ActionLink' is a specialization of 'HelperForSendingRequest'.
+'ryz::Package' is a specialization of 'NamedElement'.
+'ryz::MultipleChoice' is a specialization of 'PresentationFormElement'.
+'ryz::Input' is a specialization of 'PresentationFormElement'.
+'ryz::MvcPackage' is a specialization of 'Package'.
+'ryz::Property' is a specialization of 'NamedElement'.
+'ryz::Partial' is a specialization of 'AbstractView'.
+'ryz::ViewToControllerRelation' is a specialization of 'MainComponentRelation'.
+'ryz::FormElementToPropertyKeyRelation' is a specialization of 'MainComponentRelation'.
+'ryz::MainComponentRelation' is a specialization of 'NamedElement'.
+'ryz::ControllerToModelRelation' is a specialization of 'MainComponentRelation'.
+'ryz::Form' is a specialization of 'HelperForSendingRequest'.
+'ryz::ControllerPackage' is a specialization of 'ComponentPackage'.
+'ryz::Controller' is a specialization of 'MainComponent'.
+'ryz::ControllerToViewRelation' is a specialization of 'MainComponentRelation'.
+'ryz::PresentationForm' is a specialization of 'PresentationElement'.
+'ryz::UseCasePackage' is a specialization of 'NamedElement'.
+'ryz::Button' is a specialization of 'PresentationFormElement'.
+'ryz::ActionMethod' is a specialization of 'NamedElement'.
+'ryz::ViewToModelRelation' is a specialization of 'MainComponentRelation'.
+'ryz::AbstractView' is a specialization of 'MainComponent'.
+'ryz::Layout' is a specialization of 'AbstractView'.
+'ryz::UseCaseActorPackage' is a specialization of 'Package'.
+'ryz::ComponentPackage' is a specialization of 'Package'.
+'ryz::PresentationElement' is a specialization of 'NamedElement'.
+'ryz::TableKey' is a specialization of 'NamedElement'.
+'ryz::Project' is a specialization of 'NamedElement'.
+'ryz::Model' (role 'ryz_Model13', cardinality 0..*) is associated with 'ryz::Model' (role 'ryz_Model11', cardinality 0..*).
+'ryz::ActionMethod' (role 'ryz_ActionMethod38', cardinality 0..*) is associated with 'ryz::ViewToControllerRelation' (role 'ryz_ViewToControllerRelation37', cardinality 0..*).
+'ryz::Property' (role 'ryz_Property69', cardinality 0..*) is associated with 'ryz::ViewToModelRelation' (role 'ryz_ViewToModelRelation68', cardinality 0..*).
+'ryz::UseCase' (role 'UseCase', cardinality 0..*) is associated with 'ryz::ActionMethod' (role 'actionmethod', cardinality 0..*).
+'ryz::ControllerToModelRelation' (role 'ryz_ControllerToModelRelation51', cardinality 0..*) is associated with 'ryz::Property' (role 'ryz_Property52', cardinality 0..*).
+'ryz::Property' (role 'ryz_Property44', cardinality 0..*) is associated with 'ryz::ViewToControllerRelation' (role 'ryz_ViewToControllerRelation43', cardinality 0..*).
+'ryz::ViewToControllerRelation' (role 'ryz_ViewToControllerRelation', cardinality 0..*) is associated with 'ryz::HelperForSendingRequest' (role 'ryz_HelperForSendingRequest35', cardinality 0..*).
+'ryz::AbstractView' (role 'ryz_AbstractView21', cardinality 0..*) is associated with 'ryz::PresentationElement' (role 'ryz_PresentationElement', cardinality 0..*).
+'ryz::ViewToModelRelation' (role 'ryz_ViewToModelRelation', cardinality 0..*) is associated with 'ryz::AbstractView' (role 'ryz_AbstractView63', cardinality 0..*).
+'ryz::Model' (role 'ryz_Model66', cardinality 0..*) is associated with 'ryz::ViewToModelRelation' (role 'ryz_ViewToModelRelation65', cardinality 0..*).
+'ryz::UseCase' (role 'usecase77', cardinality 0..*) is associated with 'ryz::HelperForSendingRequest' (role 'HelperForSendingRequest', cardinality 0..*).
+'ryz::ModelAssociation' (role 'ryz_ModelAssociation', cardinality 0..*) is associated with 'ryz::ModelPackage' (role 'ryz_ModelPackage6', cardinality 0..*).
+'ryz::Model' (role 'ryz_Model15', cardinality 0..*) is associated with 'ryz::TableKey' (role 'ryz_TableKey', cardinality 0..*).
+'ryz::ModelAssociation' (role 'ryz_ModelAssociation28', cardinality 0..*) is associated with 'ryz::Model' (role 'ryz_Model29', cardinality 0..*).
+'ryz::PresentationFormElementToPropertyKey' (role 'ryz_PresentationFormElementToPropertyKey101', cardinality 0..*) is associated with 'ryz::TableKey' (role 'ryz_TableKey102', cardinality 0..*).
+'ryz::ControllerToModelRelation' (role 'ryz_ControllerToModelRelation48', cardinality 0..*) is associated with 'ryz::Model' (role 'ryz_Model49', cardinality 0..*).
+'ryz::ActionMethod' (role 'ryz_ActionMethod31', cardinality 0..*) is associated with 'ryz::Parameter' (role 'ryz_Parameter', cardinality 0..*).
+'ryz::UseCase' (role 'UseCase74', cardinality 0..*) is associated with 'ryz::Actor' (role 'actor', cardinality 0..*).
+'ryz::FormElementToPropertyKeyRelation' (role 'ryz_FormElementToPropertyKeyRelation93', cardinality 0..*) is associated with 'ryz::PresentationFormElementToPropertyKey' (role 'ryz_PresentationFormElementToPropertyKey', cardinality 0..*).
+'ryz::Choice' (role 'ryz_Choice', cardinality 0..*) is associated with 'ryz::MultipleChoice' (role 'ryz_MultipleChoice', cardinality 0..*).
+'ryz::UseCase' (role 'ryz_UseCase', cardinality 0..*) is associated with 'ryz::UseCasePackage' (role 'ryz_UseCasePackage81', cardinality 0..*).
+'ryz::PresentationFormElementToPropertyKey' (role 'ryz_PresentationFormElementToPropertyKey98', cardinality 0..*) is associated with 'ryz::Property' (role 'ryz_Property99', cardinality 0..*).
+'ryz::AbstractView' (role 'ryz_AbstractView61', cardinality 0..*) is associated with 'ryz::ControllerToViewRelation' (role 'ryz_ControllerToViewRelation60', cardinality 0..*).
+'ryz::Model' (role 'ryz_Model41', cardinality 0..*) is associated with 'ryz::ViewToControllerRelation' (role 'ryz_ViewToControllerRelation40', cardinality 0..*).
+'ryz::UseCaseActorPackage' (role 'ryz_UseCaseActorPackage', cardinality 0..*) is associated with 'ryz::Actor' (role 'ryz_Actor', cardinality 0..*).
+'ryz::HelperForSendingRequest' (role 'ryz_HelperForSendingRequest', cardinality 0..*) is associated with 'ryz::AbstractView' (role 'ryz_AbstractView19', cardinality 0..*).
+'ryz::PresentationElement' (role 'presentationelement', cardinality 0..*) is associated with 'ryz::HelperForSendingRequest' (role 'HelperForSendingRequest83', cardinality 0..*).
+'ryz::PresentationFormElement' (role 'ryz_PresentationFormElement96', cardinality 0..*) is associated with 'ryz::PresentationFormElementToPropertyKey' (role 'ryz_PresentationFormElementToPropertyKey95', cardinality 0..*).
+'ryz::Model' (role 'ryz_Model91', cardinality 0..*) is associated with 'ryz::FormElementToPropertyKeyRelation' (role 'ryz_FormElementToPropertyKeyRelation90', cardinality 0..*).
+'ryz::MvcPackage' (role 'ryz_MvcPackage', cardinality 0..*) is associated with 'ryz::MainComponent' (role 'ryz_MainComponent', cardinality 0..*).
+'ryz::ControllerToModelRelation' (role 'ryz_ControllerToModelRelation', cardinality 0..*) is associated with 'ryz::ActionMethod' (role 'ryz_ActionMethod46', cardinality 0..*).
+'ryz::MainComponentRelation' (role 'ryz_MainComponentRelation', cardinality 0..*) is associated with 'ryz::MvcPackage' (role 'ryz_MvcPackage3', cardinality 0..*).
+'ryz::ActionMethod' (role 'ryz_ActionMethod', cardinality 0..*) is associated with 'ryz::Controller' (role 'ryz_Controller23', cardinality 0..*).
+'ryz::UseCase' (role 'usecase79', cardinality 0..*) is associated with 'ryz::ActionMethod' (role 'ActionMethod', cardinality 0..*).
+'ryz::Model' (role 'ryz_Model', cardinality 0..*) is associated with 'ryz::ModelPackage' (role 'ryz_ModelPackage', cardinality 0..*).
+'ryz::FormElementToPropertyKeyRelation' (role 'ryz_FormElementToPropertyKeyRelation', cardinality 0..*) is associated with 'ryz::HelperForSendingRequest' (role 'ryz_HelperForSendingRequest88', cardinality 0..*).
+'ryz::UseCasePackage' (role 'ryz_UseCasePackage', cardinality 0..*) is associated with 'ryz::UseCaseActorPackage' (role 'ryz_UseCaseActorPackage72', cardinality 0..*).
+'ryz::PresentationFormElement' (role 'ryz_PresentationFormElement', cardinality 0..*) is associated with 'ryz::PresentationForm' (role 'ryz_PresentationForm', cardinality 0..*).
+'ryz::Header' (role 'ryz_Header', cardinality 0..*) is associated with 'ryz::Table' (role 'ryz_Table', cardinality 0..*).
+'ryz::PresentationElement' (role 'PresentationElement', cardinality 0..*) is associated with 'ryz::HelperForSendingRequest' (role 'helperforsendingrequest56', cardinality 0..*).
+'ryz::Model' (role 'ryz_Model10', cardinality 0..*) is associated with 'ryz::Property' (role 'ryz_Property', cardinality 0..*).
+'ryz::ControllerToViewRelation' (role 'ryz_ControllerToViewRelation', cardinality 0..*) is associated with 'ryz::ActionMethod' (role 'ryz_ActionMethod58', cardinality 0..*).
+'ryz::ControllerPackage' (role 'ryz_ControllerPackage', cardinality 0..*) is associated with 'ryz::Controller' (role 'ryz_Controller', cardinality 0..*).
+'ryz::UseCase' (role 'usecase', cardinality 0..*) is associated with 'ryz::Actor' (role 'Actor', cardinality 0..*).
+'ryz::ModelAssociation' (role 'ryz_ModelAssociation25', cardinality 0..*) is associated with 'ryz::Model' (role 'ryz_Model26', cardinality 0..*).
+'ryz::UseCase' (role 'UseCase54', cardinality 0..*) is associated with 'ryz::HelperForSendingRequest' (role 'helperforsendingrequest', cardinality 0..*).
+'ryz::ViewPackage' (role 'ryz_ViewPackage', cardinality 0..*) is associated with 'ryz::AbstractView' (role 'ryz_AbstractView', cardinality 0..*).
+'ryz::Partial' (role 'ryz_Partial', cardinality 0..*) is associated with 'ryz::AbstractView' (role 'ryz_AbstractView17', cardinality 0..*).
+'ryz::Package' (role 'ryz_Package', cardinality 0..*) is associated with 'ryz::Project' (role 'ryz_Project', cardinality 0..*).
+'ryz::Layout' (role 'ryz_Layout', cardinality 0..*) is associated with 'ryz::View' (role 'ryz_View', cardinality 0..*).

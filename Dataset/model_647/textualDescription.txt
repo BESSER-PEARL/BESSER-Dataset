@@ -1,0 +1,129 @@
+The model has 61 class(es).
+The class 'cellsheet::EQ' has no attributes.
+The class 'cellsheet::Ast' has no attributes.
+The class 'cellsheet::AstEval' has the following attributes: 'numberValue' of type str; 'text' of type str; 'isError' of type bool.
+The class 'cellsheet::Division' has no attributes.
+The class 'cellsheet::Plus' has no attributes.
+The class 'cellsheet::Union' has no attributes.
+The class 'cellsheet::Concatenation' has no attributes.
+The class 'cellsheet::Number' has no attributes.
+The class 'Ref' has no attributes.
+The class 'cellsheet::Error' has no attributes.
+The class 'cellsheet::Book' has the following attributes: 'bookname' of type str.
+The class 'cellsheet::PostfixOperator' has no attributes.
+The class 'cellsheet::GT' has no attributes.
+The class 'cellsheet::Negation' has no attributes.
+The class 'cellsheet::Token' has the following attributes: 'value' of type str.
+The class 'Cell' has no attributes.
+The class 'cellsheet::BooleanCell' has the following attributes: 'value' of type str.
+The class 'cellsheet::RelativeRef' has no attributes.
+The class 'cellsheet::RelativeRange' has no attributes.
+The class 'cellsheet::EStringToTokenEntry' has the following attributes: 'key' of type str.
+The class 'cellsheet::HasId' has the following attributes: 'id' of type str.
+The class 'cellsheet::Operation' has no attributes.
+The class 'cellsheet::Logical' has no attributes.
+The class 'cellsheet::CellFormat' has the following attributes: 'value' of type str.
+The class 'HasA1' has no attributes.
+The class 'cellsheet::Sheet' has the following attributes: 'sheetIndex' of type int; 'sheetName' of type str.
+The class 'cellsheet::Text' has no attributes.
+The class 'cellsheet::NEQ' has no attributes.
+The class 'cellsheet::TextCell' has the following attributes: 'value' of type str.
+The class 'cellsheet::Addition' has no attributes.
+The class 'HasId' has no attributes.
+The class 'cellsheet::Intersection' has no attributes.
+The class 'cellsheet::GTE' has no attributes.
+The class 'cellsheet::Workspace' has no attributes.
+The class 'cellsheet::DateCell' has the following attributes: 'value' of type date.
+The class 'cellsheet::FormulaCell' has the following attributes: 'value' of type str.
+The class 'Operand' has no attributes.
+The class 'cellsheet::Unknown' has no attributes.
+The class 'cellsheet::Function' has no attributes.
+The class 'Operation' has no attributes.
+The class 'cellsheet::Percent' has no attributes.
+The class 'cellsheet::Cell' has the following attributes: 'colIndex' of type int.
+The class 'cellsheet::LTE' has no attributes.
+The class 'cellsheet::LT' has no attributes.
+The class 'InfixOperator' has no attributes.
+The class 'cellsheet::BlankCell' has the following attributes: 'value' of type str.
+The class 'cellsheet::Noop' has no attributes.
+The class 'cellsheet::Multiplication' has no attributes.
+The class 'cellsheet::Exponentiation' has no attributes.
+The class 'cellsheet::Operand' has no attributes.
+The class 'Ast' has no attributes.
+The class 'cellsheet::Range' has no attributes.
+The class 'cellsheet::Ref' has no attributes.
+The class 'cellsheet::InfixOperator' has no attributes.
+The class 'PrefixOperator' has no attributes.
+The class 'PostfixOperator' has no attributes.
+The class 'cellsheet::HasA1' has the following attributes: 'a1' of type str.
+The class 'cellsheet::Row' has the following attributes: 'rowIndex' of type int.
+The class 'cellsheet::PrefixOperator' has no attributes.
+The class 'cellsheet::Subtraction' has no attributes.
+The class 'cellsheet::NumericCell' has the following attributes: 'value' of type str.
+'cellsheet::TextCell' is a specialization of 'Cell'.
+'cellsheet::Number' is a specialization of 'Operand'.
+'cellsheet::Concatenation' is a specialization of 'InfixOperator'.
+'cellsheet::Union' is a specialization of 'InfixOperator'.
+'cellsheet::InfixOperator' is a specialization of 'Ast'.
+'cellsheet::BlankCell' is a specialization of 'Cell'.
+'cellsheet::Book' is a specialization of 'HasId'.
+'cellsheet::Sheet' is a specialization of 'HasA1'.
+'cellsheet::Text' is a specialization of 'Operand'.
+'cellsheet::Division' is a specialization of 'InfixOperator'.
+'cellsheet::Percent' is a specialization of 'PostfixOperator'.
+'cellsheet::DateCell' is a specialization of 'Cell'.
+'cellsheet::Book' is a specialization of 'HasA1'.
+'cellsheet::RelativeRange' is a specialization of 'Ref'.
+'cellsheet::FormulaCell' is a specialization of 'Cell'.
+'cellsheet::NumericCell' is a specialization of 'Cell'.
+'cellsheet::Addition' is a specialization of 'InfixOperator'.
+'cellsheet::GT' is a specialization of 'InfixOperator'.
+'cellsheet::Range' is a specialization of 'Operand'.
+'cellsheet::Logical' is a specialization of 'Operand'.
+'cellsheet::PostfixOperator' is a specialization of 'Ast'.
+'cellsheet::Subtraction' is a specialization of 'InfixOperator'.
+'cellsheet::BooleanCell' is a specialization of 'Cell'.
+'cellsheet::Function' is a specialization of 'Operation'.
+'cellsheet::Intersection' is a specialization of 'InfixOperator'.
+'cellsheet::Cell' is a specialization of 'HasId'.
+'cellsheet::NEQ' is a specialization of 'InfixOperator'.
+'cellsheet::PrefixOperator' is a specialization of 'Ast'.
+'cellsheet::Cell' is a specialization of 'HasA1'.
+'cellsheet::CellFormat' is a specialization of 'HasId'.
+'cellsheet::Operand' is a specialization of 'Ast'.
+'cellsheet::Exponentiation' is a specialization of 'InfixOperator'.
+'cellsheet::Operation' is a specialization of 'Ast'.
+'cellsheet::Ref' is a specialization of 'Operand'.
+'cellsheet::Row' is a specialization of 'HasA1'.
+'cellsheet::Negation' is a specialization of 'PrefixOperator'.
+'cellsheet::LT' is a specialization of 'InfixOperator'.
+'cellsheet::Error' is a specialization of 'Operand'.
+'cellsheet::RelativeRef' is a specialization of 'Ref'.
+'cellsheet::EQ' is a specialization of 'InfixOperator'.
+'cellsheet::Multiplication' is a specialization of 'InfixOperator'.
+'cellsheet::Plus' is a specialization of 'PrefixOperator'.
+'cellsheet::LTE' is a specialization of 'InfixOperator'.
+'cellsheet::Row' is a specialization of 'HasId'.
+'cellsheet::Noop' is a specialization of 'Ast'.
+'cellsheet::Unknown' is a specialization of 'Ast'.
+'cellsheet::Sheet' is a specialization of 'HasId'.
+'cellsheet::GTE' is a specialization of 'InfixOperator'.
+'cellsheet::Book' (role 'books', cardinality 0..*) is associated with 'cellsheet::Workspace' (role 'Workspace', cardinality 0..*).
+'cellsheet::EStringToTokenEntry' (role 'cellsheet_EStringToTokenEntry3', cardinality 0..*) is associated with 'cellsheet::Workspace' (role 'cellsheet_Workspace', cardinality 0..*).
+'cellsheet::Cell' (role 'Cell24', cardinality 0..*) is associated with 'cellsheet::Ast' (role 'asts', cardinality 0..*).
+'cellsheet::Book' (role 'Book', cardinality 0..*) is associated with 'cellsheet::Workspace' (role 'workspace', cardinality 0..*).
+'cellsheet::Book' (role 'Book9', cardinality 0..*) is associated with 'cellsheet::Sheet' (role 'sheets', cardinality 0..*).
+'cellsheet::Ast' (role 'Ast19', cardinality 0..*) is associated with 'cellsheet::Token' (role 'token', cardinality 0..*).
+'cellsheet::Row' (role 'Row', cardinality 0..*) is associated with 'cellsheet::Sheet' (role 'sheet', cardinality 0..*).
+'cellsheet::Book' (role 'Book29', cardinality 0..*) is associated with 'cellsheet::CellFormat' (role 'cellFormats', cardinality 0..*).
+'cellsheet::Ast' (role 'cellsheet_Ast27', cardinality 0..*) is associated with 'cellsheet::AstEval' (role 'cellsheet_AstEval', cardinality 0..*).
+'cellsheet::Token' (role 'cellsheet_Token', cardinality 0..*) is associated with 'cellsheet::EStringToTokenEntry' (role 'cellsheet_EStringToTokenEntry', cardinality 0..*).
+'cellsheet::Cell' (role 'cellsheet_Cell', cardinality 0..*) is associated with 'cellsheet::Ast' (role 'cellsheet_Ast', cardinality 0..*).
+'cellsheet::Sheet' (role 'Sheet', cardinality 0..*) is associated with 'cellsheet::Book' (role 'book7', cardinality 0..*).
+'cellsheet::Row' (role 'row', cardinality 0..*) is associated with 'cellsheet::Cell' (role 'Cell', cardinality 0..*).
+'cellsheet::Row' (role 'Row15', cardinality 0..*) is associated with 'cellsheet::Cell' (role 'cells', cardinality 0..*).
+'cellsheet::Cell' (role 'cell', cardinality 0..*) is associated with 'cellsheet::Ast' (role 'Ast', cardinality 0..*).
+'cellsheet::Ast' (role 'cellsheet_Ast22', cardinality 0..*) is associated with 'cellsheet::Ast' (role 'cellsheet_Ast20', cardinality 0..*).
+'cellsheet::Row' (role 'rows', cardinality 0..*) is associated with 'cellsheet::Sheet' (role 'Sheet12', cardinality 0..*).
+'cellsheet::CellFormat' (role 'CellFormat', cardinality 0..*) is associated with 'cellsheet::Book' (role 'book', cardinality 0..*).
+'cellsheet::Token' (role 'Token', cardinality 0..*) is associated with 'cellsheet::Ast' (role 'usedBy', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LieberLieber/QvtCodeGenerator/QvtMetamodelCodeGeneration/LL.MDE.Components.Qvt.Metamodel.Generator/model/FlatQVT.ecore

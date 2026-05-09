@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'vml::Edge' has the following attributes: 'relation' of type str.
+The class 'vml::Node' has the following attributes: 'title' of type str.
+The class 'vml::Model' has no attributes.
+The class 'vml::Pie' has the following attributes: 'title' of type str; 'ID' of type str.
+The class 'vml::Diagram' has the following attributes: 'title' of type str.
+The class 'vml::Graph' has the following attributes: 'ID' of type str; 'title' of type str.
+The class 'vml::Slice' has the following attributes: 'title' of type str; 'value' of type int.
+'vml::Diagram' (role 'vml_Diagram4', cardinality 0..*) is associated with 'vml::Graph' (role 'vml_Graph', cardinality 0..*).
+'vml::Pie' (role 'vml_Pie', cardinality 0..*) is associated with 'vml::Diagram' (role 'vml_Diagram2', cardinality 0..*).
+'vml::Diagram' (role 'vml_Diagram', cardinality 0..*) is associated with 'vml::Model' (role 'vml_Model', cardinality 0..*).
+'vml::Edge' (role 'incoming', cardinality 0..*) is associated with 'vml::Node' (role 'Node16', cardinality 0..*).
+'vml::Edge' (role 'Edge13', cardinality 0..*) is associated with 'vml::Node' (role 'target', cardinality 0..*).
+'vml::Node' (role 'vml_Node', cardinality 0..*) is associated with 'vml::Graph' (role 'vml_Graph8', cardinality 0..*).
+'vml::Node' (role 'Node', cardinality 0..*) is associated with 'vml::Edge' (role 'outgoing', cardinality 0..*).
+'vml::Node' (role 'source', cardinality 0..*) is associated with 'vml::Edge' (role 'Edge', cardinality 0..*).
+'vml::Pie' (role 'vml_Pie6', cardinality 0..*) is associated with 'vml::Slice' (role 'vml_Slice', cardinality 0..*).
+'vml::Graph' (role 'vml_Graph10', cardinality 0..*) is associated with 'vml::Edge' (role 'vml_Edge', cardinality 0..*).

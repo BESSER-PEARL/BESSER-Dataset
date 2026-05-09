@@ -1,0 +1,667 @@
+The model has 272 class(es).
+The class 'versioning::PrimaryVersionSpec' has no attributes.
+The class 'esmodel::url::ModelElementUrlFragment' has the following attributes: 'name' of type str.
+The class 'model::state::State' has the following attributes: 'entryConditions' of type str; 'exitConditions' of type str; 'activities' of type str.
+The class 'model::meeting::MeetingSection' has the following attributes: 'allocatedTime' of type int.
+The class 'model::task::ActionItem' has the following attributes: 'activity' of type str; 'done' of type bool.
+The class 'esmodel::accesscontrol::ACUser' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'model::Annotation' has no attributes.
+The class 'model::classes::Dependency' has no attributes.
+The class 'esmodel::events::PresentationSwitchEvent' has the following attributes: 'newPresentation' of type str; 'readView' of type str.
+The class 'UniqueIdentifier' has no attributes.
+The class 'requirement::FunctionalRequirement' has no attributes.
+The class 'esmodel::events::CheckoutEvent' has no attributes.
+The class 'metamodel::ModelVersion' has the following attributes: 'releaseNumber' of type int.
+The class 'esmodel::events::ExceptionEvent' has the following attributes: 'ExceptionTitle' of type str; 'ExceptionStackTrace' of type str; 'ExceptionCauseTitle' of type str; 'ExceptionCauseStackTrace' of type str.
+The class 'model::meeting::IssueMeetingSection' has no attributes.
+The class 'esmodel::events::RevertEvent' has the following attributes: 'revertedChangesCount' of type int.
+The class 'organization::Group' has no attributes.
+The class 'model::change::MergingSolution' has no attributes.
+The class 'esmodel::events::NotificationIgnoreEvent' has the following attributes: 'notificationId' of type str.
+The class 'document::CompositeSection' has no attributes.
+The class 'Event' has no attributes.
+The class 'model::classes::Association' has the following attributes: 'type' of type str; 'sourceRole' of type str; 'targetRole' of type str; 'sourceMultiplicity' of type str; 'targetMultiplicity' of type str.
+The class 'model::rationale::Comment' has no attributes.
+The class 'profile::Stereotype' has no attributes.
+The class 'model::change::ModelChangePackage' has the following attributes: 'sourceVersion' of type int; 'targetVersion' of type int.
+The class 'esmodel::url::ServerUrl' has the following attributes: 'port' of type int; 'hostName' of type str.
+The class 'IdentifiableElement' has no attributes.
+The class 'classes::Association' has no attributes.
+The class 'url::ServerUrl' has no attributes.
+The class 'meeting::IssueMeetingSection' has no attributes.
+The class 'esmodel::events::UpdateEvent' has no attributes.
+The class 'model::change::MergingProposal' has no attributes.
+The class 'accesscontrol::OrgUnitProperty' has no attributes.
+The class 'requirement::Actor' has no attributes.
+The class 'esmodel::events::MergeChoiceEvent' has the following attributes: 'selection' of type str; 'contextFeature' of type str; 'createdIssueName' of type str.
+The class 'StereotypeAttributeInstance' has no attributes.
+The class 'model::state::StateNode' has no attributes.
+The class 'operations::esmodel::EObject' has no attributes.
+The class 'esmodel::events::NavigatorCreateEvent' has the following attributes: 'dynamic' of type bool.
+The class 'model::component::DeploymentNode' has no attributes.
+The class 'model::activity::Branch' has no attributes.
+The class 'profile::StereotypeAttribute' has no attributes.
+The class 'ServerEvent' has no attributes.
+The class 'requirement::UserTask' has no attributes.
+The class 'operations::EObjectToModelElementIdMap' has no attributes.
+The class 'model::meeting::CompositeMeetingSection' has no attributes.
+The class 'esmodel::operations::ReferenceOperation' has the following attributes: 'oppositeFeatureName' of type str; 'containmentType' of type str; 'bidirectional' of type bool.
+The class 'esmodel::operations::MultiAttributeMoveOperation' has the following attributes: 'referencedValue' of type str; 'oldIndex' of type int; 'newIndex' of type int.
+The class 'esmodel::roles::ProjectAdminRole' has no attributes.
+The class 'model::activity::ActivityEnd' has no attributes.
+The class 'esmodel::events::Validate' has no attributes.
+The class 'esmodel::versioning::VersionProperty' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'esmodel::accesscontrol::ACOrgUnit' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'FeatureOperation' has no attributes.
+The class 'esmodel::events::LinkEvent' has the following attributes: 'createdNew' of type bool; 'sourceView' of type str.
+The class 'model::profile::Stereotype' has the following attributes: 'required' of type bool.
+The class 'esmodel::events::AnnotationEvent' has no attributes.
+The class 'esmodel::versioning::VersionSpec' has no attributes.
+The class 'CompositeOperation' has no attributes.
+The class 'esmodel::accesscontrol::OrgUnitProperty' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'ProjectId' has no attributes.
+The class 'profile::StereotypeAttributeInstance' has no attributes.
+The class 'esmodel::versioning::Version' has no attributes.
+The class 'esmodel::ClientVersionInfo' has the following attributes: 'name' of type str; 'version' of type str.
+The class 'esmodel::versioning::HistoryInfo' has no attributes.
+The class 'esmodel::roles::WriterRole' has no attributes.
+The class 'esmodel::events::NotificationGenerationEvent' has no attributes.
+The class 'esmodel::operations::CreateDeleteOperation' has the following attributes: 'delete' of type bool.
+The class 'model::requirement::Step' has the following attributes: 'userStep' of type bool.
+The class 'activity::Transition' has no attributes.
+The class 'operations::ReferenceOperation' has no attributes.
+The class 'Proposal' has no attributes.
+The class 'esmodel::operations::OperationGroup' has the following attributes: 'name' of type str.
+The class 'esmodel::events::URLEvent' has the following attributes: 'sourceView' of type str.
+The class 'esmodel::accesscontrol::ACGroup' has no attributes.
+The class 'esmodel::FileIdentifier' has no attributes.
+The class 'model::requirement::NonFunctionalRequirement' has no attributes.
+The class 'rationale::Issue' has no attributes.
+The class 'activity::ActivityObject' has no attributes.
+The class 'StereotypeAttribute' has no attributes.
+The class 'model::requirement::ActorInstance' has no attributes.
+The class 'esmodel::VersionInfo' has the following attributes: 'emfStoreVersionString' of type str.
+The class 'esmodel::operations::MultiReferenceMoveOperation' has the following attributes: 'oldIndex' of type int; 'newIndex' of type int.
+The class 'model::rationale::Solution' has no attributes.
+The class 'model::attachment::FileAttachment' has the following attributes: 'requiredOffline' of type bool; 'fileSize' of type str; 'fileID' of type str; 'fileHash' of type str; 'fileName' of type str.
+The class 'metamodel::IdentifiableElement' has the following attributes: 'identifier' of type str.
+The class 'model::activity::Transition' has the following attributes: 'condition' of type str.
+The class 'state::StateNode' has no attributes.
+The class 'model::state::StateEnd' has no attributes.
+The class 'esmodel::notification::ESNotification' has the following attributes: 'seen' of type bool; 'provider' of type str; 'details' of type str; 'name' of type str; 'creationDate' of type date; 'sender' of type str; 'message' of type str; 'recipient' of type str.
+The class 'ACOrgUnit' has no attributes.
+The class 'esmodel::operations::EObjectToModelElementIdMap' has no attributes.
+The class 'esmodel::operations::OperationId' has no attributes.
+The class 'WorkItem' has no attributes.
+The class 'NonDomainElement' has no attributes.
+The class 'model::task::WorkItem' has the following attributes: 'effort' of type int; 'resolved' of type bool; 'dueDate' of type date; 'estimate' of type int; 'priority' of type int.
+The class 'model::attachment::UrlAttachment' has the following attributes: 'url' of type str.
+The class 'model::requirement::FunctionalRequirement' has the following attributes: 'storyPoints' of type int; 'priority' of type int; 'reviewed' of type bool; 'cost' of type int.
+The class 'model::profile::Profile' has no attributes.
+The class 'Role' has no attributes.
+The class 'model::profile::StereotypeAttributeInstanceString' has the following attributes: 'value' of type str.
+The class 'ReferenceOperation' has no attributes.
+The class 'ModelElementId' has no attributes.
+The class 'ServerProjectEvent' has no attributes.
+The class 'AttributeOperation' has no attributes.
+The class 'state::Transition' has no attributes.
+The class 'profile::Profile' has no attributes.
+The class 'esmodel::versioning::HeadVersionSpec' has no attributes.
+The class 'esmodel::operations::FeatureOperation' has the following attributes: 'featureName' of type str.
+The class 'model::requirement::SystemFunction' has the following attributes: 'output' of type str; 'exception' of type str; 'input' of type str.
+The class 'esmodel::versioning::ChangePackage' has no attributes.
+The class 'esmodel::operations::DiagramLayoutOperation' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'model::profile::StereotypeInstance' has no attributes.
+The class 'metamodel::AssociationClassElement' has no attributes.
+The class 'esmodel::operations::ModelElementGroup' has the following attributes: 'name' of type str.
+The class 'component::Component' has no attributes.
+The class 'esmodel::ProjectId' has no attributes.
+The class 'esmodel::events::ReadEvent' has the following attributes: 'sourceView' of type str; 'readView' of type str.
+The class 'esmodel::events::Event' has the following attributes: 'timestamp' of type date.
+The class 'model::Project' has no attributes.
+The class 'meeting::MeetingSection' has no attributes.
+The class 'model::organization::OrgUnit' has the following attributes: 'acOrgId' of type str.
+The class 'model::Attachment' has no attributes.
+The class 'requirement::Step' has no attributes.
+The class 'rationale::Proposal' has no attributes.
+The class 'esmodel::roles::ServerAdmin' has no attributes.
+The class 'model::document::CompositeSection' has no attributes.
+The class 'metamodel::ModelElementId' has no attributes.
+The class 'esmodel::url::ProjectUrlFragment' has the following attributes: 'name' of type str.
+The class 'versioning::VersionProperty' has no attributes.
+The class 'ReadEvent' has no attributes.
+The class 'accesscontrol::ACGroup' has no attributes.
+The class 'model::organization::Group' has no attributes.
+The class 'esmodel::accesscontrol::ACOrgUnitId' has no attributes.
+The class 'versioning::LogMessage' has no attributes.
+The class 'task::WorkItem' has no attributes.
+The class 'model::change::MergingIssue' has the following attributes: 'resolvingRevision' of type int.
+The class 'model::component::ComponentService' has no attributes.
+The class 'Project' has no attributes.
+The class 'esmodel::events::UndoEvent' has no attributes.
+The class 'model::profile::StereotypeAttribute' has no attributes.
+The class 'esmodel::events::ShowChangesEvent' has no attributes.
+The class 'classes::Class' has no attributes.
+The class 'model::activity::ActivityObject' has no attributes.
+The class 'esmodel::semantic::SemanticCompositeOperation' has no attributes.
+The class 'model::organization::User' has the following attributes: 'lastName' of type str; 'email' of type str; 'firstName' of type str.
+The class 'model::document::LeafSection' has no attributes.
+The class 'model::state::Transition' has the following attributes: 'condition' of type str.
+The class 'StateNode' has no attributes.
+The class 'MeetingSection' has no attributes.
+The class 'model::UnicaseModelElement' has the following attributes: 'state' of type str; 'name' of type str; 'description' of type str.
+The class 'model::task::WorkPackage' has the following attributes: 'startDate' of type date; 'endDate' of type date.
+The class 'model::requirement::Actor' has no attributes.
+The class 'esmodel::ProjectHistory' has the following attributes: 'projectDescription' of type str; 'projectName' of type str.
+The class 'model::requirement::Scenario' has no attributes.
+The class 'esmodel::operations::AbstractOperation' has the following attributes: 'accepted' of type bool; 'name' of type str; 'clientDate' of type date; 'description' of type str.
+The class 'AbstractOperation' has no attributes.
+The class 'esmodel::events::PerspectiveEvent' has no attributes.
+The class 'classes::Method' has no attributes.
+The class 'metamodel::ModelElement' has the following attributes: 'creator' of type str; 'creationDate' of type date.
+The class 'esmodel::events::PluginFocusEvent' has the following attributes: 'pluginId' of type str; 'startDate' of type date.
+The class 'model::rationale::Assessment' has the following attributes: 'value' of type int.
+The class 'model::document::Section' has no attributes.
+The class 'url::ModelElementUrlFragment' has no attributes.
+The class 'Issue' has no attributes.
+The class 'model::task::Milestone' has no attributes.
+The class 'UnicaseModelElement' has no attributes.
+The class 'OrgUnit' has no attributes.
+The class 'rationale::Solution' has no attributes.
+The class 'organization::User' has no attributes.
+The class 'esmodel::events::MergeEvent' has the following attributes: 'totalTime' of type int; 'numberOfConflicts' of type int.
+The class 'model::activity::Fork' has no attributes.
+The class 'versioning::ChangePackage' has no attributes.
+The class 'VersionSpec' has no attributes.
+The class 'esmodel::roles::Role' has no attributes.
+The class 'Criterion' has no attributes.
+The class 'roles::Role' has no attributes.
+The class 'model::classes::Class' has no attributes.
+The class 'operations::AbstractOperation' has no attributes.
+The class 'esmodel::operations::SingleReferenceOperation' has no attributes.
+The class 'esmodel::server::ServerProjectEvent' has no attributes.
+The class 'classes::Package' has no attributes.
+The class 'profile::StereotypeInstance' has no attributes.
+The class 'esmodel::operations::CompositeOperation' has the following attributes: 'compositeName' of type str; 'compositeDescription' of type str; 'reversed' of type bool.
+The class 'model::profile::StereotypeAttributeInstance' has no attributes.
+The class 'model::diagram::MEDiagram' has the following attributes: 'diagramLayout' of type str; 'type' of type str.
+The class 'model::rationale::Issue' has the following attributes: 'activity' of type str.
+The class 'versioning::TagVersionSpec' has no attributes.
+The class 'events::Event' has no attributes.
+The class 'classes::PackageElement' has no attributes.
+The class 'model::requirement::UseCase' has the following attributes: 'exception' of type str; 'postcondition' of type str; 'precondition' of type str; 'rules' of type str.
+The class 'model::NonDomainElement' has no attributes.
+The class 'esmodel::versioning::LogMessage' has the following attributes: 'message' of type str; 'date' of type date; 'author' of type str; 'clientDate' of type date.
+The class 'requirement::ActorInstance' has no attributes.
+The class 'Solution' has no attributes.
+The class 'model::classes::Attribute' has the following attributes: 'type' of type str; 'label' of type str; 'signature' of type str; 'scope' of type str; 'visibility' of type str; 'properties' of type str; 'defaultValue' of type str.
+The class 'meeting::WorkItemMeetingSection' has no attributes.
+The class 'model::requirement::UserTask' has no attributes.
+The class 'esmodel::versioning::HistoryQuery' has the following attributes: 'includeChangePackage' of type bool.
+The class 'esmodel::operations::MultiReferenceOperation' has the following attributes: 'add' of type bool; 'index' of type int.
+The class 'Section' has no attributes.
+The class 'model::meeting::Meeting' has the following attributes: 'starttime' of type date; 'location' of type str; 'endtime' of type date.
+The class 'esmodel::versioning::TagVersionSpec' has the following attributes: 'name' of type str.
+The class 'model::util::ModelElementPath' has no attributes.
+The class 'ActivityObject' has no attributes.
+The class 'model::classes::MethodArgument' has the following attributes: 'label' of type str; 'direction' of type str; 'type' of type str; 'defaultValue' of type str; 'signature' of type str.
+The class 'PackageElement' has no attributes.
+The class 'classes::Dependency' has no attributes.
+The class 'requirement::SystemFunction' has no attributes.
+The class 'requirement::UseCase' has no attributes.
+The class 'model::component::Component' has no attributes.
+The class 'task::WorkPackage' has no attributes.
+The class 'rationale::Comment' has no attributes.
+The class 'task::Checkable' has no attributes.
+The class 'esmodel::server::ProjectUpdatedEvent' has no attributes.
+The class 'change::ModelChangePackage' has no attributes.
+The class 'esmodel::url::ModelElementUrl' has no attributes.
+The class 'model::rationale::Criterion' has no attributes.
+The class 'operations::OperationId' has no attributes.
+The class 'model::classes::Package' has no attributes.
+The class 'esmodel::operations::MultiAttributeOperation' has the following attributes: 'add' of type bool; 'referencedValues' of type str; 'indexes' of type int.
+The class 'model::activity::Activity' has no attributes.
+The class 'organization::OrgUnit' has no attributes.
+The class 'model::profile::StereotypeAttributeSimple' has the following attributes: 'type' of type str.
+The class 'esmodel::SessionId' has no attributes.
+The class 'rationale::Criterion' has no attributes.
+The class 'esmodel::roles::ReaderRole' has no attributes.
+The class 'change::MergingProposal' has no attributes.
+The class 'model::activity::ActivityInitial' has no attributes.
+The class 'metamodel::UniqueIdentifier' has the following attributes: 'id' of type str.
+The class 'notification::ESNotification' has no attributes.
+The class 'classes::Attribute' has no attributes.
+The class 'esmodel::ServerSpace' has no attributes.
+The class 'esmodel::operations::MultiReferenceSetOperation' has the following attributes: 'index' of type int.
+The class 'requirement::NonFunctionalRequirement' has no attributes.
+The class 'esmodel::server::ServerEvent' has no attributes.
+The class 'document::LeafSection' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'esmodel::events::DNDEvent' has the following attributes: 'targetView' of type str; 'sourceView' of type str.
+The class 'classes::MethodArgument' has no attributes.
+The class 'model::bug::BugReport' has the following attributes: 'done' of type bool; 'severity' of type str; 'resolution' of type str; 'resolutionType' of type str.
+The class 'esmodel::events::TraceEvent' has the following attributes: 'featureName' of type str.
+The class 'Attachment' has no attributes.
+The class 'model::classes::PackageElement' has no attributes.
+The class 'esmodel::operations::AttributeOperation' has the following attributes: 'oldValue' of type str; 'newValue' of type str.
+The class 'esmodel::events::NotificationReadEvent' has the following attributes: 'notificationId' of type str.
+The class 'model::classes::Method' has the following attributes: 'visibility' of type str; 'signature' of type str; 'stubbed' of type bool; 'returnType' of type str; 'properties' of type str; 'scope' of type str; 'label' of type str.
+The class 'model::rationale::Proposal' has no attributes.
+The class 'diagram::model::Diagram' has no attributes.
+The class 'esmodel::versioning::PrimaryVersionSpec' has the following attributes: 'identifier' of type int.
+The class 'SessionId' has no attributes.
+The class 'accesscontrol::ACOrgUnit' has no attributes.
+The class 'model::task::Checkable' has the following attributes: 'checked' of type bool.
+The class 'versioning::Version' has no attributes.
+The class 'document::Section' has no attributes.
+The class 'rationale::Assessment' has no attributes.
+The class 'esmodel::events::MergeGlobalChoiceEvent' has the following attributes: 'selection' of type str.
+The class 'esmodel::versioning::DateVersionSpec' has the following attributes: 'date' of type date.
+The class 'model::state::StateInitial' has no attributes.
+The class 'component::ComponentService' has no attributes.
+The class 'ProjectHistory' has no attributes.
+The class 'esmodel::events::PluginStartEvent' has the following attributes: 'pluginId' of type str.
+The class 'metamodel::NonDomainElement' has no attributes.
+The class 'url::ProjectUrlFragment' has no attributes.
+The class 'esmodel::operations::MultiAttributeSetOperation' has the following attributes: 'index' of type int; 'newValue' of type str; 'oldValue' of type str.
+The class 'esmodel::events::ShowHistoryEvent' has no attributes.
+The class 'metamodel::Project' has no attributes.
+The class 'requirement::Scenario' has no attributes.
+The class 'model::meeting::WorkItemMeetingSection' has no attributes.
+The class 'accesscontrol::ACUser' has no attributes.
+The class 'esmodel::ProjectInfo' has the following attributes: 'description' of type str; 'name' of type str.
+The enumeration 'MergeChoiceSelection' has the following literals: 'Mine', 'MergedText', 'Issue', 'Their'.
+The enumeration 'DiagramType' has the following literals: 'ACTIVITY_DIAGRAM', 'CLASS_DIAGRAM', 'STATE_DIAGRAM', 'USECASE_DIAGRAM', 'COMPONENT_DIAGRAM', 'WORKITEM_DIAGRAM'.
+The enumeration 'MergeGlobalChoiceSelection' has the following literals: 'AllMine', 'AllTheir', 'OKFinished', 'Cancel', 'OKNotFinished'.
+The enumeration 'ActivityType' has the following literals: 'TESTING', 'ANALYSIS', 'OBJECT_DESIGN', 'NONE', 'MANAGEMENT', 'IMPLEMENTATION', 'SYSTEM_DESIGN'.
+The enumeration 'ResolutionType' has the following literals: 'FIXED', 'WONT_FIX', 'CANNOT_REPRODUCE'.
+The enumeration 'ScopeType' has the following literals: 'CLASS', 'INSTANCE'.
+The enumeration 'VisibilityType' has the following literals: 'PROTECTED', 'UNDEFINED', 'GLOBAL', 'PRIVATE', 'PACKAGE'.
+The enumeration 'ArgumentDirectionType' has the following literals: 'INOUT', 'UNDEFINED', 'IN', 'OUT'.
+The enumeration 'AssociationType' has the following literals: 'COMPOSITION', 'DIRECTED_ASSOCIATION', 'UNDIRECTED_ASSOCIATION', 'AGGREGATION'.
+The enumeration 'ContainmentType' has the following literals: 'CONTAINER', 'NONE', 'CONTAINMENT'.
+The enumeration 'Severity' has the following literals: 'TRIVIAL', 'BLOCKER', 'MAJOR', 'FEATURE', 'MINOR'.
+'model::requirement::UseCase' is a specialization of 'UnicaseModelElement'.
+'model::profile::StereotypeAttributeSimple' is a specialization of 'StereotypeAttribute'.
+'model::classes::Dependency' is a specialization of 'UnicaseModelElement'.
+'model::requirement::SystemFunction' is a specialization of 'UnicaseModelElement'.
+'esmodel::operations::FeatureOperation' is a specialization of 'AbstractOperation'.
+'model::activity::Activity' is a specialization of 'ActivityObject'.
+'model::classes::Method' is a specialization of 'UnicaseModelElement'.
+'model::task::WorkPackage' is a specialization of 'WorkItem'.
+'esmodel::events::NotificationGenerationEvent' is a specialization of 'Event'.
+'esmodel::events::CheckoutEvent' is a specialization of 'Event'.
+'model::rationale::Comment' is a specialization of 'NonDomainElement'.
+'esmodel::operations::ReferenceOperation' is a specialization of 'FeatureOperation'.
+'model::meeting::WorkItemMeetingSection' is a specialization of 'MeetingSection'.
+'model::classes::MethodArgument' is a specialization of 'UnicaseModelElement'.
+'model::rationale::Proposal' is a specialization of 'NonDomainElement'.
+'model::task::Checkable' is a specialization of 'UnicaseModelElement'.
+'model::state::StateNode' is a specialization of 'UnicaseModelElement'.
+'esmodel::events::ShowChangesEvent' is a specialization of 'Event'.
+'esmodel::accesscontrol::ACUser' is a specialization of 'ACOrgUnit'.
+'model::task::ActionItem' is a specialization of 'task::Checkable'.
+'esmodel::server::ProjectUpdatedEvent' is a specialization of 'ServerProjectEvent'.
+'esmodel::ProjectId' is a specialization of 'UniqueIdentifier'.
+'model::rationale::Proposal' is a specialization of 'UnicaseModelElement'.
+'model::task::ActionItem' is a specialization of 'task::WorkItem'.
+'esmodel::roles::ReaderRole' is a specialization of 'Role'.
+'model::requirement::UserTask' is a specialization of 'UnicaseModelElement'.
+'esmodel::semantic::SemanticCompositeOperation' is a specialization of 'CompositeOperation'.
+'model::rationale::Issue' is a specialization of 'task::Checkable'.
+'model::component::DeploymentNode' is a specialization of 'UnicaseModelElement'.
+'model::state::Transition' is a specialization of 'UnicaseModelElement'.
+'model::bug::BugReport' is a specialization of 'task::WorkItem'.
+'esmodel::events::Validate' is a specialization of 'Event'.
+'model::requirement::Step' is a specialization of 'UnicaseModelElement'.
+'esmodel::operations::SingleReferenceOperation' is a specialization of 'ReferenceOperation'.
+'model::change::MergingSolution' is a specialization of 'Solution'.
+'model::bug::BugReport' is a specialization of 'task::Checkable'.
+'model::rationale::Solution' is a specialization of 'NonDomainElement'.
+'model::profile::StereotypeAttribute' is a specialization of 'UnicaseModelElement'.
+'model::activity::ActivityObject' is a specialization of 'UnicaseModelElement'.
+'model::rationale::Assessment' is a specialization of 'NonDomainElement'.
+'model::activity::ActivityEnd' is a specialization of 'ActivityObject'.
+'esmodel::operations::AttributeOperation' is a specialization of 'FeatureOperation'.
+'model::attachment::FileAttachment' is a specialization of 'Attachment'.
+'model::classes::PackageElement' is a specialization of 'UnicaseModelElement'.
+'esmodel::events::DNDEvent' is a specialization of 'Event'.
+'model::meeting::MeetingSection' is a specialization of 'UnicaseModelElement'.
+'esmodel::events::PluginStartEvent' is a specialization of 'Event'.
+'model::organization::User' is a specialization of 'OrgUnit'.
+'model::classes::Association' is a specialization of 'UnicaseModelElement'.
+'esmodel::events::ReadEvent' is a specialization of 'Event'.
+'esmodel::roles::WriterRole' is a specialization of 'Role'.
+'model::requirement::Scenario' is a specialization of 'UnicaseModelElement'.
+'model::rationale::Assessment' is a specialization of 'UnicaseModelElement'.
+'esmodel::operations::MultiAttributeMoveOperation' is a specialization of 'FeatureOperation'.
+'model::document::Section' is a specialization of 'UnicaseModelElement'.
+'model::meeting::CompositeMeetingSection' is a specialization of 'MeetingSection'.
+'esmodel::server::ServerProjectEvent' is a specialization of 'ServerEvent'.
+'esmodel::versioning::HeadVersionSpec' is a specialization of 'VersionSpec'.
+'esmodel::events::NotificationReadEvent' is a specialization of 'ReadEvent'.
+'esmodel::events::ShowHistoryEvent' is a specialization of 'Event'.
+'esmodel::operations::MultiReferenceOperation' is a specialization of 'ReferenceOperation'.
+'model::change::MergingIssue' is a specialization of 'Issue'.
+'model::task::Milestone' is a specialization of 'WorkItem'.
+'model::document::LeafSection' is a specialization of 'Section'.
+'esmodel::events::MergeGlobalChoiceEvent' is a specialization of 'Event'.
+'esmodel::operations::OperationId' is a specialization of 'UniqueIdentifier'.
+'model::rationale::Issue' is a specialization of 'task::WorkItem'.
+'esmodel::accesscontrol::ACOrgUnitId' is a specialization of 'UniqueIdentifier'.
+'esmodel::events::NavigatorCreateEvent' is a specialization of 'Event'.
+'model::profile::StereotypeInstance' is a specialization of 'UnicaseModelElement'.
+'esmodel::operations::AbstractOperation' is a specialization of 'IdentifiableElement'.
+'esmodel::versioning::DateVersionSpec' is a specialization of 'VersionSpec'.
+'metamodel::ModelElementId' is a specialization of 'UniqueIdentifier'.
+'model::meeting::Meeting' is a specialization of 'UnicaseModelElement'.
+'model::requirement::NonFunctionalRequirement' is a specialization of 'Criterion'.
+'esmodel::events::UndoEvent' is a specialization of 'Event'.
+'model::attachment::UrlAttachment' is a specialization of 'Attachment'.
+'esmodel::SessionId' is a specialization of 'UniqueIdentifier'.
+'esmodel::events::URLEvent' is a specialization of 'Event'.
+'model::activity::Transition' is a specialization of 'UnicaseModelElement'.
+'esmodel::operations::MultiReferenceSetOperation' is a specialization of 'ReferenceOperation'.
+'esmodel::server::ServerEvent' is a specialization of 'Event'.
+'model::UnicaseModelElement' is a specialization of 'ModelElement'.
+'model::rationale::Comment' is a specialization of 'UnicaseModelElement'.
+'model::activity::Fork' is a specialization of 'ActivityObject'.
+'model::requirement::Step' is a specialization of 'NonDomainElement'.
+'model::change::MergingProposal' is a specialization of 'Proposal'.
+'model::Project' is a specialization of 'Project'.
+'esmodel::notification::ESNotification' is a specialization of 'IdentifiableElement'.
+'model::rationale::Issue' is a specialization of 'Annotation'.
+'esmodel::events::TraceEvent' is a specialization of 'Event'.
+'esmodel::events::PluginFocusEvent' is a specialization of 'Event'.
+'model::Attachment' is a specialization of 'UnicaseModelElement'.
+'model::profile::StereotypeAttributeInstance' is a specialization of 'UnicaseModelElement'.
+'model::task::WorkItem' is a specialization of 'Annotation'.
+'model::state::StateEnd' is a specialization of 'StateNode'.
+'model::requirement::Actor' is a specialization of 'UnicaseModelElement'.
+'model::classes::Class' is a specialization of 'PackageElement'.
+'esmodel::operations::MultiAttributeOperation' is a specialization of 'FeatureOperation'.
+'model::activity::Branch' is a specialization of 'ActivityObject'.
+'esmodel::events::RevertEvent' is a specialization of 'Event'.
+'model::rationale::Solution' is a specialization of 'UnicaseModelElement'.
+'model::document::CompositeSection' is a specialization of 'Section'.
+'esmodel::accesscontrol::ACGroup' is a specialization of 'ACOrgUnit'.
+'metamodel::ModelElement' is a specialization of 'IdentifiableElement'.
+'esmodel::operations::MultiReferenceMoveOperation' is a specialization of 'FeatureOperation'.
+'model::classes::Package' is a specialization of 'PackageElement'.
+'model::classes::Attribute' is a specialization of 'UnicaseModelElement'.
+'model::rationale::Criterion' is a specialization of 'UnicaseModelElement'.
+'model::activity::ActivityInitial' is a specialization of 'ActivityObject'.
+'model::Annotation' is a specialization of 'UnicaseModelElement'.
+'model::component::ComponentService' is a specialization of 'UnicaseModelElement'.
+'model::diagram::MEDiagram' is a specialization of 'Attachment'.
+'model::profile::StereotypeAttributeInstanceString' is a specialization of 'StereotypeAttributeInstance'.
+'model::requirement::SystemFunction' is a specialization of 'NonDomainElement'.
+'esmodel::events::MergeEvent' is a specialization of 'Event'.
+'esmodel::versioning::PrimaryVersionSpec' is a specialization of 'VersionSpec'.
+'esmodel::events::AnnotationEvent' is a specialization of 'Event'.
+'esmodel::accesscontrol::ACOrgUnit' is a specialization of 'IdentifiableElement'.
+'model::state::StateInitial' is a specialization of 'StateNode'.
+'esmodel::operations::MultiAttributeSetOperation' is a specialization of 'FeatureOperation'.
+'model::requirement::ActorInstance' is a specialization of 'UnicaseModelElement'.
+'esmodel::roles::ServerAdmin' is a specialization of 'Role'.
+'model::organization::OrgUnit' is a specialization of 'UnicaseModelElement'.
+'model::change::ModelChangePackage' is a specialization of 'UnicaseModelElement'.
+'esmodel::events::ExceptionEvent' is a specialization of 'Event'.
+'esmodel::versioning::TagVersionSpec' is a specialization of 'VersionSpec'.
+'model::organization::Group' is a specialization of 'OrgUnit'.
+'model::requirement::UserTask' is a specialization of 'NonDomainElement'.
+'esmodel::events::NotificationIgnoreEvent' is a specialization of 'Event'.
+'model::meeting::IssueMeetingSection' is a specialization of 'MeetingSection'.
+'model::profile::Profile' is a specialization of 'UnicaseModelElement'.
+'esmodel::FileIdentifier' is a specialization of 'IdentifiableElement'.
+'esmodel::operations::CompositeOperation' is a specialization of 'AbstractOperation'.
+'esmodel::operations::CreateDeleteOperation' is a specialization of 'AbstractOperation'.
+'esmodel::events::UpdateEvent' is a specialization of 'Event'.
+'esmodel::events::PerspectiveEvent' is a specialization of 'Event'.
+'model::component::Component' is a specialization of 'UnicaseModelElement'.
+'model::state::State' is a specialization of 'StateNode'.
+'esmodel::roles::ProjectAdminRole' is a specialization of 'Role'.
+'esmodel::events::PresentationSwitchEvent' is a specialization of 'Event'.
+'esmodel::events::LinkEvent' is a specialization of 'Event'.
+'esmodel::events::MergeChoiceEvent' is a specialization of 'Event'.
+'model::profile::Stereotype' is a specialization of 'UnicaseModelElement'.
+'model::requirement::FunctionalRequirement' is a specialization of 'UnicaseModelElement'.
+'esmodel::operations::DiagramLayoutOperation' is a specialization of 'AttributeOperation'.
+'classes::Association' (role 'Association54', cardinality 0..*) is associated with 'model::classes::Class' (role 'target53', cardinality 0..*).
+'classes::Method' (role 'Method71', cardinality 0..*) is associated with 'model::classes::Method' (role 'callingMethods', cardinality 0..*).
+'versioning::Version' (role 'Version', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'previousVersion', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId451', cardinality 0..*) is associated with 'esmodel::notification::ESNotification' (role 'esmodel_notification_ESNotification450', cardinality 0..*).
+'model::task::Milestone' (role 'model_task_Milestone', cardinality 0..*) is associated with 'UnicaseModelElement' (role 'UnicaseModelElement35', cardinality 0..*).
+'notification::ESNotification' (role 'notification_ESNotification422', cardinality 0..*) is associated with 'esmodel::events::NotificationGenerationEvent' (role 'esmodel_events_NotificationGenerationEvent', cardinality 0..*).
+'accesscontrol::ACUser' (role 'accesscontrol_ACUser', cardinality 0..*) is associated with 'esmodel::ServerSpace' (role 'esmodel_ServerSpace283', cardinality 0..*).
+'url::ProjectUrlFragment' (role 'url_ProjectUrlFragment', cardinality 0..*) is associated with 'esmodel::url::ModelElementUrl' (role 'esmodel_url_ModelElementUrl461', cardinality 0..*).
+'esmodel::versioning::HistoryQuery' (role 'esmodel_versioning_HistoryQuery311', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId312', cardinality 0..*).
+'model::requirement::ActorInstance' (role 'participatingActorInstances', cardinality 0..*) is associated with 'requirement::Scenario' (role 'Scenario143', cardinality 0..*).
+'model::classes::PackageElement' (role 'target', cardinality 0..*) is associated with 'classes::Dependency' (role 'Dependency46', cardinality 0..*).
+'profile::Stereotype' (role 'Stereotype239', cardinality 0..*) is associated with 'model::profile::StereotypeInstance' (role 'stereotypeInstances', cardinality 0..*).
+'classes::Package' (role 'classes_Package194', cardinality 0..*) is associated with 'model::component::Component' (role 'model_component_Component193', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec', cardinality 0..*) is associated with 'esmodel::ProjectInfo' (role 'esmodel_ProjectInfo276', cardinality 0..*).
+'requirement::Actor' (role 'Actor153', cardinality 0..*) is associated with 'model::requirement::UserTask' (role 'initiatedUserTask', cardinality 0..*).
+'requirement::UseCase' (role 'UseCase159', cardinality 0..*) is associated with 'model::requirement::NonFunctionalRequirement' (role 'nonFunctionalRequirements', cardinality 0..*).
+'organization::User' (role 'organization_User', cardinality 0..*) is associated with 'model::meeting::Meeting' (role 'model_meeting_Meeting', cardinality 0..*).
+'Attachment' (role 'Attachment', cardinality 0..*) is associated with 'model::UnicaseModelElement' (role 'referringModelElements', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId413', cardinality 0..*) is associated with 'esmodel::events::NavigatorCreateEvent' (role 'esmodel_events_NavigatorCreateEvent412', cardinality 0..*).
+'ProjectId' (role 'ProjectId456', cardinality 0..*) is associated with 'esmodel::url::ProjectUrlFragment' (role 'esmodel_url_ProjectUrlFragment', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec316', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'esmodel_versioning_Version315', cardinality 0..*).
+'esmodel::events::ShowHistoryEvent' (role 'esmodel_events_ShowHistoryEvent392', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId393', cardinality 0..*).
+'esmodel::events::UndoEvent' (role 'esmodel_events_UndoEvent', cardinality 0..*) is associated with 'operations::AbstractOperation' (role 'operations_AbstractOperation415', cardinality 0..*).
+'model::rationale::Comment' (role 'model_rationale_Comment', cardinality 0..*) is associated with 'organization::OrgUnit' (role 'organization_OrgUnit179', cardinality 0..*).
+'esmodel::accesscontrol::ACOrgUnit' (role 'esmodel_accesscontrol_ACOrgUnit', cardinality 0..*) is associated with 'roles::Role' (role 'roles_Role', cardinality 0..*).
+'organization::OrgUnit' (role 'organization_OrgUnit', cardinality 0..*) is associated with 'model::requirement::FunctionalRequirement' (role 'model_requirement_FunctionalRequirement', cardinality 0..*).
+'esmodel::events::UpdateEvent' (role 'esmodel_events_UpdateEvent379', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec380', cardinality 0..*).
+'versioning::VersionProperty' (role 'versioning_VersionProperty', cardinality 0..*) is associated with 'esmodel::versioning::ChangePackage' (role 'esmodel_versioning_ChangePackage292', cardinality 0..*).
+'esmodel::events::LinkEvent' (role 'esmodel_events_LinkEvent402', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId403', cardinality 0..*).
+'model::requirement::UserTask' (role 'participatedUserTasks', cardinality 0..*) is associated with 'requirement::Actor' (role 'Actor155', cardinality 0..*).
+'model::organization::User' (role 'reviewer', cardinality 0..*) is associated with 'task::WorkItem' (role 'WorkItem19', cardinality 0..*).
+'esmodel::versioning::HistoryQuery' (role 'esmodel_versioning_HistoryQuery308', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec309', cardinality 0..*).
+'requirement::UseCase' (role 'UseCase157', cardinality 0..*) is associated with 'model::requirement::UserTask' (role 'realizedUserTask', cardinality 0..*).
+'operations::AbstractOperation' (role 'operations_AbstractOperation332', cardinality 0..*) is associated with 'esmodel::operations::CompositeOperation' (role 'esmodel_operations_CompositeOperation', cardinality 0..*).
+'model::change::MergingProposal' (role 'model_change_MergingProposal187', cardinality 0..*) is associated with 'change::ModelChangePackage' (role 'change_ModelChangePackage188', cardinality 0..*).
+'esmodel::events::URLEvent' (role 'esmodel_events_URLEvent', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId424', cardinality 0..*).
+'model::activity::ActivityObject' (role 'source260', cardinality 0..*) is associated with 'activity::Transition' (role 'Transition261', cardinality 0..*).
+'classes::Method' (role 'Method73', cardinality 0..*) is associated with 'model::classes::Method' (role 'calledMethods', cardinality 0..*).
+'esmodel::operations::MultiReferenceOperation' (role 'esmodel_operations_MultiReferenceOperation', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId352', cardinality 0..*).
+'requirement::ActorInstance' (role 'ActorInstance134', cardinality 0..*) is associated with 'model::requirement::Actor' (role 'instantiatedActor', cardinality 0..*).
+'model::requirement::Scenario' (role 'initiatedScenarios', cardinality 0..*) is associated with 'requirement::ActorInstance' (role 'ActorInstance', cardinality 0..*).
+'esmodel::events::URLEvent' (role 'esmodel_events_URLEvent426', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId427', cardinality 0..*).
+'document::LeafSection' (role 'LeafSection8', cardinality 0..*) is associated with 'model::UnicaseModelElement' (role 'referencedModelElements', cardinality 0..*).
+'requirement::UseCase' (role 'requirement_UseCase103', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'model_requirement_UseCase102', cardinality 0..*).
+'model::classes::Class' (role 'subClasses', cardinality 0..*) is associated with 'classes::Class' (role 'Class49', cardinality 0..*).
+'Project' (role 'Project', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'esmodel_versioning_Version', cardinality 0..*).
+'accesscontrol::OrgUnitProperty' (role 'accesscontrol_OrgUnitProperty', cardinality 0..*) is associated with 'esmodel::accesscontrol::ACOrgUnit' (role 'esmodel_accesscontrol_ACOrgUnit441', cardinality 0..*).
+'meeting::WorkItemMeetingSection' (role 'meeting_WorkItemMeetingSection', cardinality 0..*) is associated with 'model::meeting::Meeting' (role 'model_meeting_Meeting217', cardinality 0..*).
+'versioning::ChangePackage' (role 'versioning_ChangePackage', cardinality 0..*) is associated with 'esmodel::versioning::HistoryInfo' (role 'esmodel_versioning_HistoryInfo304', cardinality 0..*).
+'model::rationale::Comment' (role 'comments', cardinality 0..*) is associated with 'UnicaseModelElement' (role 'UnicaseModelElement184', cardinality 0..*).
+'esmodel::events::LinkEvent' (role 'esmodel_events_LinkEvent', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId400', cardinality 0..*).
+'model::state::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'state::StateNode' (role 'StateNode224', cardinality 0..*).
+'rationale::Proposal' (role 'Proposal175', cardinality 0..*) is associated with 'model::rationale::Assessment' (role 'assessments', cardinality 0..*).
+'model::Annotation' (role 'annotations', cardinality 0..*) is associated with 'UnicaseModelElement' (role 'UnicaseModelElement', cardinality 0..*).
+'esmodel::notification::ESNotification' (role 'esmodel_notification_ESNotification453', cardinality 0..*) is associated with 'operations::OperationId' (role 'operations_OperationId454', cardinality 0..*).
+'organization::OrgUnit' (role 'OrgUnit', cardinality 0..*) is associated with 'model::organization::Group' (role 'groupMemberships', cardinality 0..*).
+'esmodel::operations::CreateDeleteOperation' (role 'esmodel_operations_CreateDeleteOperation338', cardinality 0..*) is associated with 'operations::ReferenceOperation' (role 'operations_ReferenceOperation', cardinality 0..*).
+'model::component::DeploymentNode' (role 'model_component_DeploymentNode', cardinality 0..*) is associated with 'component::Component' (role 'component_Component', cardinality 0..*).
+'model::task::WorkItem' (role 'workItemsToReview', cardinality 0..*) is associated with 'organization::User' (role 'User', cardinality 0..*).
+'model::util::ModelElementPath' (role 'model_util_ModelElementPath257', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId258', cardinality 0..*).
+'model::requirement::Scenario' (role 'demoParticipations', cardinality 0..*) is associated with 'classes::Method' (role 'Method119', cardinality 0..*).
+'versioning::Version' (role 'versioning_Version', cardinality 0..*) is associated with 'esmodel::ProjectHistory' (role 'esmodel_ProjectHistory272', cardinality 0..*).
+'esmodel::versioning::ChangePackage' (role 'esmodel_versioning_ChangePackage286', cardinality 0..*) is associated with 'events::Event' (role 'events_Event', cardinality 0..*).
+'model::requirement::Step' (role 'model_requirement_Step', cardinality 0..*) is associated with 'requirement::UseCase' (role 'requirement_UseCase147', cardinality 0..*).
+'model::requirement::FunctionalRequirement' (role 'functionalRequirements', cardinality 0..*) is associated with 'requirement::UseCase' (role 'UseCase92', cardinality 0..*).
+'change::ModelChangePackage' (role 'change_ModelChangePackage190', cardinality 0..*) is associated with 'model::change::MergingSolution' (role 'model_change_MergingSolution', cardinality 0..*).
+'metamodel::Project' (role 'metamodel_Project', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement', cardinality 0..*).
+'classes::Class' (role 'Class122', cardinality 0..*) is associated with 'model::requirement::Scenario' (role 'demoParticipations121', cardinality 0..*).
+'model::requirement::FunctionalRequirement' (role 'refinedRequirement', cardinality 0..*) is associated with 'requirement::FunctionalRequirement' (role 'FunctionalRequirement', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId398', cardinality 0..*) is associated with 'esmodel::events::DNDEvent' (role 'esmodel_events_DNDEvent397', cardinality 0..*).
+'profile::Profile' (role 'Profile', cardinality 0..*) is associated with 'model::profile::Stereotype' (role 'stereotypes', cardinality 0..*).
+'model::organization::OrgUnit' (role 'orgUnits', cardinality 0..*) is associated with 'organization::Group' (role 'Group', cardinality 0..*).
+'requirement::Scenario' (role 'Scenario', cardinality 0..*) is associated with 'model::classes::Class' (role 'participatingClasses', cardinality 0..*).
+'requirement::SystemFunction' (role 'requirement_SystemFunction', cardinality 0..*) is associated with 'model::requirement::Step' (role 'model_requirement_Step151', cardinality 0..*).
+'esmodel::operations::SingleReferenceOperation' (role 'esmodel_operations_SingleReferenceOperation', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId342', cardinality 0..*).
+'model::document::LeafSection' (role 'leafSection', cardinality 0..*) is associated with 'UnicaseModelElement' (role 'UnicaseModelElement83', cardinality 0..*).
+'rationale::Criterion' (role 'rationale_Criterion', cardinality 0..*) is associated with 'model::rationale::Issue' (role 'model_rationale_Issue', cardinality 0..*).
+'classes::PackageElement' (role 'PackageElement80', cardinality 0..*) is associated with 'model::classes::Dependency' (role 'incomingDependencies', cardinality 0..*).
+'esmodel::events::MergeChoiceEvent' (role 'esmodel_events_MergeChoiceEvent430', cardinality 0..*) is associated with 'operations::OperationId' (role 'operations_OperationId431', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId330', cardinality 0..*) is associated with 'esmodel::operations::AbstractOperation' (role 'esmodel_operations_AbstractOperation', cardinality 0..*).
+'esmodel::events::TraceEvent' (role 'esmodel_events_TraceEvent407', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId408', cardinality 0..*).
+'model::UnicaseModelElement' (role 'commentedElement', cardinality 0..*) is associated with 'rationale::Comment' (role 'Comment', cardinality 0..*).
+'UnicaseModelElement' (role 'UnicaseModelElement85', cardinality 0..*) is associated with 'model::document::LeafSection' (role 'incomingDocumentReferences', cardinality 0..*).
+'organization::User' (role 'organization_User205', cardinality 0..*) is associated with 'model::meeting::Meeting' (role 'model_meeting_Meeting204', cardinality 0..*).
+'model::UnicaseModelElement' (role 'annotatedModelElements', cardinality 0..*) is associated with 'Annotation' (role 'Annotation', cardinality 0..*).
+'model::task::WorkItem' (role 'participations', cardinality 0..*) is associated with 'organization::OrgUnit' (role 'OrgUnit30', cardinality 0..*).
+'model::profile::StereotypeAttributeInstance' (role 'stereotypeAttributeInstances250', cardinality 0..*) is associated with 'profile::StereotypeAttribute' (role 'StereotypeAttribute251', cardinality 0..*).
+'notification::ESNotification' (role 'notification_ESNotification', cardinality 0..*) is associated with 'esmodel::versioning::ChangePackage' (role 'esmodel_versioning_ChangePackage290', cardinality 0..*).
+'model::requirement::Scenario' (role 'participatedScenarios', cardinality 0..*) is associated with 'requirement::ActorInstance' (role 'ActorInstance125', cardinality 0..*).
+'esmodel::events::ShowHistoryEvent' (role 'esmodel_events_ShowHistoryEvent', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec387', cardinality 0..*).
+'classes::Class' (role 'Class69', cardinality 0..*) is associated with 'model::classes::Method' (role 'methods', cardinality 0..*).
+'model::rationale::Proposal' (role 'proposals', cardinality 0..*) is associated with 'rationale::Issue' (role 'Issue', cardinality 0..*).
+'model::requirement::UseCase' (role 'useCase', cardinality 0..*) is associated with 'requirement::Step' (role 'Step', cardinality 0..*).
+'rationale::Assessment' (role 'Assessment', cardinality 0..*) is associated with 'model::rationale::Proposal' (role 'proposal', cardinality 0..*).
+'versioning::TagVersionSpec' (role 'versioning_TagVersionSpec319', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'esmodel_versioning_Version318', cardinality 0..*).
+'requirement::Scenario' (role 'Scenario105', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'instantiatedUseCases', cardinality 0..*).
+'versioning::LogMessage' (role 'versioning_LogMessage297', cardinality 0..*) is associated with 'esmodel::versioning::HistoryInfo' (role 'esmodel_versioning_HistoryInfo296', cardinality 0..*).
+'esmodel::operations::SingleReferenceOperation' (role 'esmodel_operations_SingleReferenceOperation344', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId345', cardinality 0..*).
+'classes::Method' (role 'Method', cardinality 0..*) is associated with 'model::classes::Class' (role 'definingClass57', cardinality 0..*).
+'esmodel::url::ModelElementUrl' (role 'esmodel_url_ModelElementUrl463', cardinality 0..*) is associated with 'url::ModelElementUrlFragment' (role 'url_ModelElementUrlFragment', cardinality 0..*).
+'esmodel::events::UpdateEvent' (role 'esmodel_events_UpdateEvent', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec377', cardinality 0..*).
+'requirement::NonFunctionalRequirement' (role 'NonFunctionalRequirement128', cardinality 0..*) is associated with 'model::requirement::Scenario' (role 'restrictedScenarios', cardinality 0..*).
+'task::WorkItem' (role 'WorkItem33', cardinality 0..*) is associated with 'model::task::WorkPackage' (role 'containingWorkpackage', cardinality 0..*).
+'model::meeting::WorkItemMeetingSection' (role 'model_meeting_WorkItemMeetingSection', cardinality 0..*) is associated with 'task::WorkItem' (role 'task_WorkItem', cardinality 0..*).
+'ProjectId' (role 'ProjectId444', cardinality 0..*) is associated with 'esmodel::accesscontrol::OrgUnitProperty' (role 'esmodel_accesscontrol_OrgUnitProperty', cardinality 0..*).
+'model::document::CompositeSection' (role 'parent', cardinality 0..*) is associated with 'document::Section' (role 'Section', cardinality 0..*).
+'ProjectId' (role 'ProjectId436', cardinality 0..*) is associated with 'esmodel::server::ServerProjectEvent' (role 'esmodel_server_ServerProjectEvent', cardinality 0..*).
+'metamodel::Project' (role 'metamodel_Project2', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement3', cardinality 0..*).
+'ProjectId' (role 'ProjectId446', cardinality 0..*) is associated with 'esmodel::roles::Role' (role 'esmodel_roles_Role', cardinality 0..*).
+'esmodel::server::ProjectUpdatedEvent' (role 'esmodel_server_ProjectUpdatedEvent', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec438', cardinality 0..*).
+'model::classes::Association' (role 'incomingAssociations', cardinality 0..*) is associated with 'classes::Class' (role 'Class65', cardinality 0..*).
+'model::profile::StereotypeAttributeInstance' (role 'stereotypeAttributeInstances', cardinality 0..*) is associated with 'profile::StereotypeInstance' (role 'StereotypeInstance248', cardinality 0..*).
+'esmodel::events::DNDEvent' (role 'esmodel_events_DNDEvent', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId395', cardinality 0..*).
+'model::rationale::Assessment' (role 'assessments177', cardinality 0..*) is associated with 'rationale::Criterion' (role 'Criterion', cardinality 0..*).
+'model::diagram::MEDiagram' (role 'model_diagram_MEDiagram39', cardinality 0..*) is associated with 'diagram::model::Diagram' (role 'diagram_model_Diagram', cardinality 0..*).
+'versioning::VersionProperty' (role 'versioning_VersionProperty302', cardinality 0..*) is associated with 'esmodel::versioning::HistoryInfo' (role 'esmodel_versioning_HistoryInfo301', cardinality 0..*).
+'esmodel::ServerSpace' (role 'esmodel_ServerSpace281', cardinality 0..*) is associated with 'SessionId' (role 'SessionId', cardinality 0..*).
+'esmodel::operations::CreateDeleteOperation' (role 'esmodel_operations_CreateDeleteOperation340', cardinality 0..*) is associated with 'operations::EObjectToModelElementIdMap' (role 'operations_EObjectToModelElementIdMap', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec367', cardinality 0..*) is associated with 'esmodel::events::MergeEvent' (role 'esmodel_events_MergeEvent', cardinality 0..*).
+'model::meeting::Meeting' (role 'model_meeting_Meeting215', cardinality 0..*) is associated with 'meeting::IssueMeetingSection' (role 'meeting_IssueMeetingSection', cardinality 0..*).
+'classes::Class' (role 'Class67', cardinality 0..*) is associated with 'model::classes::Attribute' (role 'attributes', cardinality 0..*).
+'model::state::StateNode' (role 'target228', cardinality 0..*) is associated with 'state::Transition' (role 'Transition229', cardinality 0..*).
+'esmodel::events::MergeEvent' (role 'esmodel_events_MergeEvent369', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec370', cardinality 0..*).
+'ProjectId' (role 'ProjectId448', cardinality 0..*) is associated with 'esmodel::notification::ESNotification' (role 'esmodel_notification_ESNotification', cardinality 0..*).
+'task::WorkItem' (role 'WorkItem', cardinality 0..*) is associated with 'model::organization::OrgUnit' (role 'participants', cardinality 0..*).
+'model::requirement::Scenario' (role 'scenarios', cardinality 0..*) is associated with 'requirement::UseCase' (role 'UseCase114', cardinality 0..*).
+'model::requirement::Actor' (role 'participatingActors', cardinality 0..*) is associated with 'requirement::UseCase' (role 'UseCase132', cardinality 0..*).
+'model::document::Section' (role 'subsections', cardinality 0..*) is associated with 'document::CompositeSection' (role 'CompositeSection', cardinality 0..*).
+'model::classes::Package' (role 'parentPackage', cardinality 0..*) is associated with 'classes::PackageElement' (role 'PackageElement', cardinality 0..*).
+'model::util::ModelElementPath' (role 'model_util_ModelElementPath', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId', cardinality 0..*).
+'model::component::Component' (role 'model_component_Component', cardinality 0..*) is associated with 'classes::Package' (role 'classes_Package', cardinality 0..*).
+'url::ServerUrl' (role 'url_ServerUrl', cardinality 0..*) is associated with 'esmodel::url::ModelElementUrl' (role 'esmodel_url_ModelElementUrl', cardinality 0..*).
+'model::activity::Transition' (role 'incomingTransitions268', cardinality 0..*) is associated with 'activity::ActivityObject' (role 'ActivityObject269', cardinality 0..*).
+'activity::ActivityObject' (role 'ActivityObject', cardinality 0..*) is associated with 'model::activity::Transition' (role 'outgoingTransitions266', cardinality 0..*).
+'esmodel::versioning::ChangePackage' (role 'esmodel_versioning_ChangePackage288', cardinality 0..*) is associated with 'versioning::LogMessage' (role 'versioning_LogMessage', cardinality 0..*).
+'requirement::FunctionalRequirement' (role 'FunctionalRequirement97', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'useCases', cardinality 0..*).
+'classes::Class' (role 'Class99', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'participatedUseCases', cardinality 0..*).
+'model::meeting::Meeting' (role 'model_meeting_Meeting207', cardinality 0..*) is associated with 'organization::User' (role 'organization_User208', cardinality 0..*).
+'model::task::WorkItem' (role 'predecessors', cardinality 0..*) is associated with 'task::WorkItem' (role 'WorkItem23', cardinality 0..*).
+'model::requirement::Actor' (role 'initiatingActor', cardinality 0..*) is associated with 'requirement::UseCase' (role 'UseCase130', cardinality 0..*).
+'model::task::WorkItem' (role 'model_task_WorkItem', cardinality 0..*) is associated with 'change::ModelChangePackage' (role 'change_ModelChangePackage', cardinality 0..*).
+'component::Component' (role 'Component200', cardinality 0..*) is associated with 'model::component::ComponentService' (role 'consumedServices', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec306', cardinality 0..*) is associated with 'esmodel::versioning::HistoryQuery' (role 'esmodel_versioning_HistoryQuery', cardinality 0..*).
+'profile::StereotypeInstance' (role 'StereotypeInstance235', cardinality 0..*) is associated with 'model::profile::Stereotype' (role 'stereotype', cardinality 0..*).
+'UnicaseModelElement' (role 'UnicaseModelElement42', cardinality 0..*) is associated with 'model::diagram::MEDiagram' (role 'model_diagram_MEDiagram41', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec417', cardinality 0..*) is associated with 'esmodel::events::ShowChangesEvent' (role 'esmodel_events_ShowChangesEvent', cardinality 0..*).
+'requirement::Scenario' (role 'Scenario95', cardinality 0..*) is associated with 'model::requirement::FunctionalRequirement' (role 'functionalRequirements94', cardinality 0..*).
+'state::StateNode' (role 'StateNode', cardinality 0..*) is associated with 'model::state::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'model::diagram::MEDiagram' (role 'model_diagram_MEDiagram', cardinality 0..*) is associated with 'UnicaseModelElement' (role 'UnicaseModelElement37', cardinality 0..*).
+'esmodel::url::ModelElementUrlFragment' (role 'esmodel_url_ModelElementUrlFragment', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId458', cardinality 0..*).
+'requirement::UseCase' (role 'UseCase149', cardinality 0..*) is associated with 'model::requirement::Step' (role 'useCaseSteps', cardinality 0..*).
+'model::component::Component' (role 'offeringComponent', cardinality 0..*) is associated with 'component::ComponentService' (role 'ComponentService', cardinality 0..*).
+'operations::AbstractOperation' (role 'operations_AbstractOperation335', cardinality 0..*) is associated with 'esmodel::operations::CompositeOperation' (role 'esmodel_operations_CompositeOperation334', cardinality 0..*).
+'model::UnicaseModelElement' (role 'modelElements', cardinality 0..*) is associated with 'document::LeafSection' (role 'LeafSection', cardinality 0..*).
+'model::requirement::Actor' (role 'initiatingActor138', cardinality 0..*) is associated with 'requirement::UserTask' (role 'UserTask139', cardinality 0..*).
+'model::profile::Profile' (role 'profile', cardinality 0..*) is associated with 'profile::Stereotype' (role 'Stereotype', cardinality 0..*).
+'activity::Transition' (role 'Transition264', cardinality 0..*) is associated with 'model::activity::ActivityObject' (role 'target263', cardinality 0..*).
+'model::classes::PackageElement' (role 'source', cardinality 0..*) is associated with 'classes::Dependency' (role 'Dependency', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId350', cardinality 0..*) is associated with 'esmodel::operations::MultiReferenceSetOperation' (role 'esmodel_operations_MultiReferenceSetOperation349', cardinality 0..*).
+'model::task::WorkItem' (role 'assignments', cardinality 0..*) is associated with 'organization::OrgUnit' (role 'OrgUnit27', cardinality 0..*).
+'UnicaseModelElement' (role 'UnicaseModelElement241', cardinality 0..*) is associated with 'model::profile::StereotypeInstance' (role 'appliedStereotypeInstances', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId385', cardinality 0..*) is associated with 'esmodel::events::AnnotationEvent' (role 'esmodel_events_AnnotationEvent384', cardinality 0..*).
+'classes::MethodArgument' (role 'classes_MethodArgument', cardinality 0..*) is associated with 'model::classes::Method' (role 'model_classes_Method', cardinality 0..*).
+'classes::Class' (role 'Class', cardinality 0..*) is associated with 'model::classes::Class' (role 'superClasses', cardinality 0..*).
+'requirement::FunctionalRequirement' (role 'FunctionalRequirement89', cardinality 0..*) is associated with 'model::requirement::FunctionalRequirement' (role 'refiningRequirements', cardinality 0..*).
+'requirement::Step' (role 'requirement_Step', cardinality 0..*) is associated with 'model::requirement::Scenario' (role 'model_requirement_Scenario', cardinality 0..*).
+'esmodel::events::MergeEvent' (role 'esmodel_events_MergeEvent372', cardinality 0..*) is associated with 'operations::AbstractOperation' (role 'operations_AbstractOperation373', cardinality 0..*).
+'model::component::Component' (role 'consumingComponents', cardinality 0..*) is associated with 'component::ComponentService' (role 'ComponentService197', cardinality 0..*).
+'task::WorkItem' (role 'WorkItem17', cardinality 0..*) is associated with 'model::organization::OrgUnit' (role 'assignee', cardinality 0..*).
+'profile::StereotypeAttributeInstance' (role 'StereotypeAttributeInstance246', cardinality 0..*) is associated with 'model::profile::StereotypeAttribute' (role 'stereotypeAttribute', cardinality 0..*).
+'requirement::NonFunctionalRequirement' (role 'NonFunctionalRequirement', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'restrictedUseCases', cardinality 0..*).
+'model::classes::Association' (role 'outgoingAssociations', cardinality 0..*) is associated with 'classes::Class' (role 'Class63', cardinality 0..*).
+'UnicaseModelElement' (role 'UnicaseModelElement13', cardinality 0..*) is associated with 'model::Attachment' (role 'attachments', cardinality 0..*).
+'classes::Association' (role 'Association', cardinality 0..*) is associated with 'model::classes::Class' (role 'source51', cardinality 0..*).
+'rationale::Issue' (role 'rationale_Issue', cardinality 0..*) is associated with 'model::meeting::IssueMeetingSection' (role 'model_meeting_IssueMeetingSection', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId358', cardinality 0..*) is associated with 'esmodel::operations::ModelElementGroup' (role 'esmodel_operations_ModelElementGroup', cardinality 0..*).
+'requirement::UserTask' (role 'UserTask', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'realizingUseCases', cardinality 0..*).
+'profile::StereotypeAttribute' (role 'StereotypeAttribute', cardinality 0..*) is associated with 'model::profile::Stereotype' (role 'stereotype237', cardinality 0..*).
+'versioning::TagVersionSpec' (role 'versioning_TagVersionSpec', cardinality 0..*) is associated with 'esmodel::versioning::HistoryInfo' (role 'esmodel_versioning_HistoryInfo299', cardinality 0..*).
+'esmodel::ServerSpace' (role 'esmodel_ServerSpace', cardinality 0..*) is associated with 'accesscontrol::ACGroup' (role 'accesscontrol_ACGroup', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec390', cardinality 0..*) is associated with 'esmodel::events::ShowHistoryEvent' (role 'esmodel_events_ShowHistoryEvent389', cardinality 0..*).
+'esmodel::accesscontrol::ACGroup' (role 'esmodel_accesscontrol_ACGroup', cardinality 0..*) is associated with 'accesscontrol::ACOrgUnit' (role 'accesscontrol_ACOrgUnit', cardinality 0..*).
+'esmodel::operations::MultiReferenceSetOperation' (role 'esmodel_operations_MultiReferenceSetOperation', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId347', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId363', cardinality 0..*) is associated with 'esmodel::operations::EObjectToModelElementIdMap' (role 'esmodel_operations_EObjectToModelElementIdMap362', cardinality 0..*).
+'profile::StereotypeAttributeInstance' (role 'StereotypeAttributeInstance', cardinality 0..*) is associated with 'model::profile::StereotypeInstance' (role 'stereotypeInstance', cardinality 0..*).
+'rationale::Solution' (role 'Solution', cardinality 0..*) is associated with 'model::rationale::Issue' (role 'issue165', cardinality 0..*).
+'model::classes::Class' (role 'identifiedClasses', cardinality 0..*) is associated with 'requirement::UseCase' (role 'UseCase', cardinality 0..*).
+'rationale::Issue' (role 'Issue171', cardinality 0..*) is associated with 'model::rationale::Solution' (role 'solution', cardinality 0..*).
+'model::task::WorkItem' (role 'containedWorkItems', cardinality 0..*) is associated with 'task::WorkPackage' (role 'WorkPackage', cardinality 0..*).
+'model::classes::Class' (role 'definingClass', cardinality 0..*) is associated with 'classes::Attribute' (role 'Attribute', cardinality 0..*).
+'model::classes::Package' (role 'model_classes_Package', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId382', cardinality 0..*) is associated with 'esmodel::events::AnnotationEvent' (role 'esmodel_events_AnnotationEvent', cardinality 0..*).
+'task::WorkItem' (role 'WorkItem25', cardinality 0..*) is associated with 'model::task::WorkItem' (role 'successors', cardinality 0..*).
+'rationale::Proposal' (role 'Proposal', cardinality 0..*) is associated with 'model::rationale::Issue' (role 'issue', cardinality 0..*).
+'versioning::Version' (role 'Version322', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'nextVersion', cardinality 0..*).
+'profile::Stereotype' (role 'Stereotype244', cardinality 0..*) is associated with 'model::profile::StereotypeAttribute' (role 'stereotypeAttributes', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec375', cardinality 0..*) is associated with 'esmodel::events::CheckoutEvent' (role 'esmodel_events_CheckoutEvent', cardinality 0..*).
+'requirement::Scenario' (role 'Scenario76', cardinality 0..*) is associated with 'model::classes::Method' (role 'participatingMethods', cardinality 0..*).
+'model::requirement::UseCase' (role 'initiatedUseCases', cardinality 0..*) is associated with 'requirement::Actor' (role 'Actor', cardinality 0..*).
+'organization::OrgUnit' (role 'organization_OrgUnit211', cardinality 0..*) is associated with 'model::meeting::Meeting' (role 'model_meeting_Meeting210', cardinality 0..*).
+'requirement::FunctionalRequirement' (role 'FunctionalRequirement117', cardinality 0..*) is associated with 'model::requirement::Scenario' (role 'scenarios116', cardinality 0..*).
+'model::rationale::Solution' (role 'model_rationale_Solution', cardinality 0..*) is associated with 'rationale::Proposal' (role 'rationale_Proposal', cardinality 0..*).
+'versioning::ChangePackage' (role 'versioning_ChangePackage325', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'esmodel_versioning_Version324', cardinality 0..*).
+'requirement::UserTask' (role 'UserTask136', cardinality 0..*) is associated with 'model::requirement::Actor' (role 'participatingActor', cardinality 0..*).
+'meeting::MeetingSection' (role 'meeting_MeetingSection', cardinality 0..*) is associated with 'model::meeting::Meeting' (role 'model_meeting_Meeting213', cardinality 0..*).
+'operations::esmodel::EObject' (role 'operations_esmodel_EObject360', cardinality 0..*) is associated with 'esmodel::operations::EObjectToModelElementIdMap' (role 'esmodel_operations_EObjectToModelElementIdMap', cardinality 0..*).
+'model::requirement::ActorInstance' (role 'initiatingActorInstance', cardinality 0..*) is associated with 'requirement::Scenario' (role 'Scenario141', cardinality 0..*).
+'esmodel::operations::CreateDeleteOperation' (role 'esmodel_operations_CreateDeleteOperation', cardinality 0..*) is associated with 'operations::esmodel::EObject' (role 'operations_esmodel_EObject', cardinality 0..*).
+'esmodel::operations::MultiReferenceMoveOperation' (role 'esmodel_operations_MultiReferenceMoveOperation', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId354', cardinality 0..*).
+'model::requirement::NonFunctionalRequirement' (role 'nonFunctionalRequirements161', cardinality 0..*) is associated with 'requirement::Scenario' (role 'Scenario162', cardinality 0..*).
+'model::change::MergingProposal' (role 'model_change_MergingProposal', cardinality 0..*) is associated with 'change::MergingProposal' (role 'change_MergingProposal', cardinality 0..*).
+'operations::AbstractOperation' (role 'operations_AbstractOperation356', cardinality 0..*) is associated with 'esmodel::operations::OperationGroup' (role 'esmodel_operations_OperationGroup', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId255', cardinality 0..*) is associated with 'model::util::ModelElementPath' (role 'model_util_ModelElementPath254', cardinality 0..*).
+'model::rationale::Comment' (role 'model_rationale_Comment181', cardinality 0..*) is associated with 'organization::OrgUnit' (role 'organization_OrgUnit182', cardinality 0..*).
+'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec420', cardinality 0..*) is associated with 'esmodel::events::ShowChangesEvent' (role 'esmodel_events_ShowChangesEvent419', cardinality 0..*).
+'model::profile::Profile' (role 'model_profile_Profile', cardinality 0..*) is associated with 'UnicaseModelElement' (role 'UnicaseModelElement231', cardinality 0..*).
+'component::Component' (role 'Component', cardinality 0..*) is associated with 'model::component::ComponentService' (role 'offeredServices', cardinality 0..*).
+'requirement::Actor' (role 'Actor109', cardinality 0..*) is associated with 'model::requirement::UseCase' (role 'participatedUseCases108', cardinality 0..*).
+'esmodel::versioning::ChangePackage' (role 'esmodel_versioning_ChangePackage', cardinality 0..*) is associated with 'operations::AbstractOperation' (role 'operations_AbstractOperation', cardinality 0..*).
+'versioning::LogMessage' (role 'versioning_LogMessage328', cardinality 0..*) is associated with 'esmodel::versioning::Version' (role 'esmodel_versioning_Version327', cardinality 0..*).
+'model::requirement::ActorInstance' (role 'instances', cardinality 0..*) is associated with 'requirement::Actor' (role 'Actor145', cardinality 0..*).
+'model::meeting::CompositeMeetingSection' (role 'model_meeting_CompositeMeetingSection', cardinality 0..*) is associated with 'meeting::MeetingSection' (role 'meeting_MeetingSection219', cardinality 0..*).
+'esmodel::versioning::HistoryInfo' (role 'esmodel_versioning_HistoryInfo', cardinality 0..*) is associated with 'versioning::PrimaryVersionSpec' (role 'versioning_PrimaryVersionSpec294', cardinality 0..*).
+'esmodel::events::MergeChoiceEvent' (role 'esmodel_events_MergeChoiceEvent', cardinality 0..*) is associated with 'operations::OperationId' (role 'operations_OperationId', cardinality 0..*).
+'model::classes::Dependency' (role 'outgoingDependencies', cardinality 0..*) is associated with 'classes::PackageElement' (role 'PackageElement78', cardinality 0..*).
+'esmodel::ProjectHistory' (role 'esmodel_ProjectHistory', cardinality 0..*) is associated with 'ProjectId' (role 'ProjectId', cardinality 0..*).
+'esmodel::ProjectInfo' (role 'esmodel_ProjectInfo', cardinality 0..*) is associated with 'ProjectId' (role 'ProjectId274', cardinality 0..*).
+'profile::StereotypeInstance' (role 'StereotypeInstance', cardinality 0..*) is associated with 'model::UnicaseModelElement' (role 'modelElement', cardinality 0..*).
+'esmodel::ServerSpace' (role 'esmodel_ServerSpace279', cardinality 0..*) is associated with 'ProjectHistory' (role 'ProjectHistory', cardinality 0..*).
+'model::rationale::Criterion' (role 'criterion', cardinality 0..*) is associated with 'rationale::Assessment' (role 'Assessment173', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId365', cardinality 0..*) is associated with 'esmodel::events::ReadEvent' (role 'esmodel_events_ReadEvent', cardinality 0..*).
+'model::classes::PackageElement' (role 'containedPackageElements', cardinality 0..*) is associated with 'classes::Package' (role 'Package', cardinality 0..*).
+'model::requirement::UseCase' (role 'model_requirement_UseCase', cardinality 0..*) is associated with 'requirement::UseCase' (role 'requirement_UseCase', cardinality 0..*).
+'esmodel::events::NavigatorCreateEvent' (role 'esmodel_events_NavigatorCreateEvent', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId410', cardinality 0..*).
+'ModelElementId' (role 'ModelElementId405', cardinality 0..*) is associated with 'esmodel::events::TraceEvent' (role 'esmodel_events_TraceEvent', cardinality 0..*).
+'esmodel::events::MergeChoiceEvent' (role 'esmodel_events_MergeChoiceEvent433', cardinality 0..*) is associated with 'ModelElementId' (role 'ModelElementId434', cardinality 0..*).
+'state::Transition' (role 'Transition', cardinality 0..*) is associated with 'model::state::StateNode' (role 'source226', cardinality 0..*).

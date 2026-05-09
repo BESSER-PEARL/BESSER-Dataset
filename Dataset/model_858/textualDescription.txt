@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'fsm::State' has the following attributes: 'isInitialState' of type bool; 'name' of type str.
+The class 'fsm::FiniteStateMachine' has the following attributes: 'producedString' of type str; 'unprocessedString' of type str; 'consummedString' of type str; 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'output' of type str; 'name' of type str; 'input' of type str.
+'fsm::State' (role 'fsm_State5', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::State' (role 'fsm_State3', cardinality 0..*) is associated with 'fsm::FiniteStateMachine' (role 'fsm_FiniteStateMachine2', cardinality 0..*).
+'fsm::FiniteStateMachine' (role 'fsm_FiniteStateMachine', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition7', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State8', cardinality 0..*).

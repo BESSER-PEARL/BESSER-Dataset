@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'ExtendedFamilies::Female' has no attributes.
+The class 'ExtendedFamilies::Person' has the following attributes: 'firstName' of type str.
+The class 'Person' has no attributes.
+The class 'ExtendedFamilies::Family' has the following attributes: 'lastName' of type str; 'singleParent' of type bool; 'noOfChildren' of type int.
+The class 'ExtendedFamilies::Male' has no attributes.
+'ExtendedFamilies::Male' is a specialization of 'Person'.
+'ExtendedFamilies::Female' is a specialization of 'Person'.
+'ExtendedFamilies::Person' (role 'Person', cardinality 0..*) is associated with 'ExtendedFamilies::Family' (role 'family', cardinality 0..*).
+'ExtendedFamilies::Person' (role 'children', cardinality 0..*) is associated with 'ExtendedFamilies::Person' (role 'Person7', cardinality 0..*).
+'ExtendedFamilies::Person' (role 'parents', cardinality 0..*) is associated with 'ExtendedFamilies::Person' (role 'Person4', cardinality 0..*).
+'ExtendedFamilies::Family' (role 'Family', cardinality 0..*) is associated with 'ExtendedFamilies::Person' (role 'members', cardinality 0..*).

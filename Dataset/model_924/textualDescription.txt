@@ -1,0 +1,46 @@
+The model has 23 class(es).
+The class 'petrinetsemantics::SDMMPetriNet::Node::dynamic' has no attributes.
+The class 'petrinetsemantics::EDMMPetriNet::FireTransitionEvent' has the following attributes: 'time' of type float.
+The class 'petrinetsemantics::EDMMPetriNet::PetriNetEvent' has no attributes.
+The class 'petrinetsemantics::SDMMPetriNet::PetriNet::dynamic' has no attributes.
+The class 'petrinetsemantics::SDMMPetriNet::Place::dynamic' has the following attributes: 'marking' of type int.
+The class 'petrinetsemantics::TM3PetriNet::PNSimEvent' has the following attributes: 'date' of type int; 'name' of type str; 'internal' of type bool.
+The class 'Place' has no attributes.
+The class 'PetriNet' has no attributes.
+The class 'PNScenario' has no attributes.
+The class 'petrinetsemantics::DDMMPetriNet::Transition' has the following attributes: 'max_time' of type int; 'min_time' of type int.
+The class 'petrinetsemantics::TM3PetriNet::PNScenario' has no attributes.
+The class 'Node' has no attributes.
+The class 'petrinetsemantics::TM3PetriNet::PNTrace' has no attributes.
+The class 'petrinetsemantics::DDMMPetriNet::PetriNet' has the following attributes: 'name' of type str.
+The class 'petrinetsemantics::DDMMPetriNet::Place' has the following attributes: 'initialMarking' of type int.
+The class 'PNSimEvent' has no attributes.
+The class 'Arc' has no attributes.
+The class 'petrinetsemantics::DDMMPetriNet::Node' has the following attributes: 'name' of type str.
+The class 'Transition' has no attributes.
+The class 'petrinetsemantics::DDMMPetriNet::Arc' has the following attributes: 'weight' of type int; 'kind' of type str.
+The class 'PetriNetEvent' has no attributes.
+The class 'PNTrace' has no attributes.
+The class 'Node::dynamic' has no attributes.
+The enumeration 'ArcKind' has the following literals: 'normal', 'read_arc'.
+'petrinetsemantics::SDMMPetriNet::Place::dynamic' is a specialization of 'Node::dynamic'.
+'petrinetsemantics::DDMMPetriNet::Place' is a specialization of 'Node'.
+'petrinetsemantics::EDMMPetriNet::FireTransitionEvent' is a specialization of 'PetriNetEvent'.
+'petrinetsemantics::EDMMPetriNet::PetriNetEvent' is a specialization of 'PNSimEvent'.
+'petrinetsemantics::DDMMPetriNet::Transition' is a specialization of 'Node'.
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'petrinetsemantics::EDMMPetriNet::FireTransitionEvent' (role 'petrinetsemantics_EDMMPetriNet_FireTransitionEvent', cardinality 0..*).
+'petrinetsemantics::SDMMPetriNet::PetriNet::dynamic' (role 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic19', cardinality 0..*) is associated with 'PetriNet' (role 'PetriNet20', cardinality 0..*).
+'Arc' (role 'Arc5', cardinality 0..*) is associated with 'petrinetsemantics::DDMMPetriNet::Node' (role 'source', cardinality 0..*).
+'petrinetsemantics::TM3PetriNet::PNTrace' (role 'traces', cardinality 0..*) is associated with 'PNScenario' (role 'PNScenario', cardinality 0..*).
+'petrinetsemantics::SDMMPetriNet::Place::dynamic' (role 'petrinetsemantics_SDMMPetriNet_Place_dynamic', cardinality 0..*) is associated with 'Place' (role 'Place', cardinality 0..*).
+'petrinetsemantics::DDMMPetriNet::Arc' (role 'arcs', cardinality 0..*) is associated with 'PetriNet' (role 'PetriNet13', cardinality 0..*).
+'petrinetsemantics::SDMMPetriNet::Node::dynamic' (role 'petrinetsemantics_SDMMPetriNet_Node_dynamic', cardinality 0..*) is associated with 'Node' (role 'Node15', cardinality 0..*).
+'Arc' (role 'Arc7', cardinality 0..*) is associated with 'petrinetsemantics::DDMMPetriNet::Node' (role 'target', cardinality 0..*).
+'petrinetsemantics::DDMMPetriNet::Arc' (role 'outgoings', cardinality 0..*) is associated with 'Node' (role 'Node11', cardinality 0..*).
+'PNTrace' (role 'PNTrace', cardinality 0..*) is associated with 'petrinetsemantics::TM3PetriNet::PNScenario' (role 'scenario', cardinality 0..*).
+'Arc' (role 'Arc', cardinality 0..*) is associated with 'petrinetsemantics::DDMMPetriNet::PetriNet' (role 'net2', cardinality 0..*).
+'PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'petrinetsemantics::DDMMPetriNet::Node' (role 'nodes', cardinality 0..*).
+'petrinetsemantics::DDMMPetriNet::Arc' (role 'incomings', cardinality 0..*) is associated with 'Node' (role 'Node9', cardinality 0..*).
+'PNSimEvent' (role 'PNSimEvent', cardinality 0..*) is associated with 'petrinetsemantics::TM3PetriNet::PNScenario' (role 'petrinetsemantics_TM3PetriNet_PNScenario', cardinality 0..*).
+'petrinetsemantics::SDMMPetriNet::PetriNet::dynamic' (role 'petrinetsemantics_SDMMPetriNet_PetriNet_dynamic', cardinality 0..*) is associated with 'Node::dynamic' (role 'Node_dynamic', cardinality 0..*).
+'Node' (role 'Node', cardinality 0..*) is associated with 'petrinetsemantics::DDMMPetriNet::PetriNet' (role 'net', cardinality 0..*).

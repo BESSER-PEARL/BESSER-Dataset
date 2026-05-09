@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'library::Book' has the following attributes: 'name' of type str; 'author' of type str.
+The class 'library::User' has the following attributes: 'name' of type str.
+The class 'library::BorrowedItem' has the following attributes: 'borrowDate' of type date; 'lastReturnDate' of type date.
+The class 'library::Library' has the following attributes: 'name' of type str.
+'library::Book' (role 'library_Book', cardinality 0..*) is associated with 'library::BorrowedItem' (role 'library_BorrowedItem', cardinality 0..*).
+'library::User' (role 'User', cardinality 0..*) is associated with 'library::Library' (role 'library2', cardinality 0..*).
+'library::BorrowedItem' (role 'BorrowedItem', cardinality 0..*) is associated with 'library::User' (role 'user', cardinality 0..*).
+'library::Book' (role 'Book', cardinality 0..*) is associated with 'library::Library' (role 'library', cardinality 0..*).
+'library::Book' (role 'books', cardinality 0..*) is associated with 'library::Library' (role 'Library', cardinality 0..*).
+'library::BorrowedItem' (role 'borrowedItems', cardinality 0..*) is associated with 'library::User' (role 'User9', cardinality 0..*).
+'library::User' (role 'users', cardinality 0..*) is associated with 'library::Library' (role 'Library6', cardinality 0..*).

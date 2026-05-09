@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/pyecore/pyecore-py2/examples/library.ecore

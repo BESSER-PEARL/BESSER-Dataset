@@ -1,0 +1,54 @@
+The model has 25 class(es).
+The class 'extlibrary::Item' has the following attributes: 'publicationDate' of type date.
+The class 'extlibrary::Periodical' has the following attributes: 'title' of type str; 'issuesPerYear' of type int.
+The class 'extlibrary::Library' has the following attributes: 'people' of type str; 'name' of type str.
+The class 'extlibrary::CirculatingItem' has no attributes.
+The class 'extlibrary::BookOnTape' has no attributes.
+The class 'extlibrary::::15NQcW60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::Person' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'extlibrary::Employee' has no attributes.
+The class 'extlibrary::::15OekG60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::::146VgG60EeGkd4g88tZXfA' has no attributes.
+The class '::15N3gm60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::::15N3gm60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::::148KsW60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::AudioVisualItem' has the following attributes: 'minutesLength' of type int; 'title' of type str; 'damaged' of type bool.
+The class 'extlibrary::Lendable' has the following attributes: 'copies' of type int.
+The class 'extlibrary::::15CRUW60EeGkd4g88tZXfA' has no attributes.
+The class '::15LbQG60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::Borrower' has no attributes.
+The class 'extlibrary::Writer' has the following attributes: 'name' of type str.
+The class 'extlibrary::::15Hw4m60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::Addressable' has the following attributes: 'address' of type str.
+The class '::15OelG60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::::15IX8G60EeGkd4g88tZXfA' has no attributes.
+The class 'extlibrary::VideoCassette' has no attributes.
+The class 'extlibrary::Book' has the following attributes: 'title' of type str; 'category' of type str; 'pages' of type int.
+The enumeration 'BookCategory' has the following literals: 'Mystery', 'Biography', 'ScienceFiction'.
+'extlibrary::Periodical' is a specialization of 'extlibrary::Item'.
+'extlibrary::Book' is a specialization of '::15LbQG60EeGkd4g88tZXfA'.
+'extlibrary::Borrower' is a specialization of '::15N3gm60EeGkd4g88tZXfA'.
+'extlibrary::Library' is a specialization of '::15OelG60EeGkd4g88tZXfA'.
+'extlibrary::Person' is a specialization of '::15OelG60EeGkd4g88tZXfA'.
+'extlibrary::Employee' is a specialization of '::15N3gm60EeGkd4g88tZXfA'.
+'extlibrary::Writer' is a specialization of '::15N3gm60EeGkd4g88tZXfA'.
+'extlibrary::AudioVisualItem' is a specialization of '::15LbQG60EeGkd4g88tZXfA'.
+'extlibrary::BookOnTape' is a specialization of 'extlibrary::AudioVisualItem'.
+'extlibrary::CirculatingItem' is a specialization of 'extlibrary::Lendable'.
+'extlibrary::CirculatingItem' is a specialization of 'extlibrary::Item'.
+'extlibrary::VideoCassette' is a specialization of 'extlibrary::AudioVisualItem'.
+'extlibrary::::15NQcW60EeGkd4g88tZXfA' (role 'extlibrary__15NQcW60EeGkd4g88tZXfA', cardinality 0..*) is associated with 'extlibrary::Library' (role 'extlibrary_Library6', cardinality 0..*).
+'extlibrary::Library' (role 'extlibrary_Library4', cardinality 0..*) is associated with 'extlibrary::::15OekG60EeGkd4g88tZXfA' (role 'extlibrary__15OekG60EeGkd4g88tZXfA', cardinality 0..*).
+'extlibrary::::148KsW60EeGkd4g88tZXfA' (role 'extlibrary__148KsW60EeGkd4g88tZXfA15', cardinality 0..*) is associated with 'extlibrary::Library' (role 'extlibrary_Library14', cardinality 0..*).
+'extlibrary::BookOnTape' (role 'extlibrary_BookOnTape', cardinality 0..*) is associated with 'extlibrary::::15N3gm60EeGkd4g88tZXfA' (role 'extlibrary__15N3gm60EeGkd4g88tZXfA', cardinality 0..*).
+'extlibrary::Library' (role 'extlibrary_Library10', cardinality 0..*) is associated with 'extlibrary::::146VgG60EeGkd4g88tZXfA' (role 'extlibrary__146VgG60EeGkd4g88tZXfA', cardinality 0..*).
+'extlibrary::::15IX8G60EeGkd4g88tZXfA' (role 'extlibrary__15IX8G60EeGkd4g88tZXfA', cardinality 0..*) is associated with 'extlibrary::Borrower' (role 'extlibrary_Borrower', cardinality 0..*).
+'extlibrary::::15OekG60EeGkd4g88tZXfA' (role 'extlibrary__15OekG60EeGkd4g88tZXfA28', cardinality 0..*) is associated with 'extlibrary::Employee' (role 'extlibrary_Employee', cardinality 0..*).
+'extlibrary::Library' (role 'extlibrary_Library8', cardinality 0..*) is associated with 'extlibrary::::15Hw4m60EeGkd4g88tZXfA' (role 'extlibrary__15Hw4m60EeGkd4g88tZXfA', cardinality 0..*).
+'extlibrary::Book' (role 'extlibrary_Book', cardinality 0..*) is associated with 'extlibrary::::15CRUW60EeGkd4g88tZXfA' (role 'extlibrary__15CRUW60EeGkd4g88tZXfA', cardinality 0..*).
+'extlibrary::::15NQcW60EeGkd4g88tZXfA' (role 'extlibrary__15NQcW60EeGkd4g88tZXfA19', cardinality 0..*) is associated with 'extlibrary::Lendable' (role 'extlibrary_Lendable', cardinality 0..*).
+'extlibrary::::15CRUW60EeGkd4g88tZXfA' (role 'extlibrary__15CRUW60EeGkd4g88tZXfA23', cardinality 0..*) is associated with 'extlibrary::BookOnTape' (role 'extlibrary_BookOnTape22', cardinality 0..*).
+'extlibrary::VideoCassette' (role 'extlibrary_VideoCassette', cardinality 0..*) is associated with 'extlibrary::::15N3gm60EeGkd4g88tZXfA' (role 'extlibrary__15N3gm60EeGkd4g88tZXfA25', cardinality 0..*).
+'extlibrary::::15CRUW60EeGkd4g88tZXfA' (role 'extlibrary__15CRUW60EeGkd4g88tZXfA2', cardinality 0..*) is associated with 'extlibrary::Library' (role 'extlibrary_Library', cardinality 0..*).
+'extlibrary::::146VgG60EeGkd4g88tZXfA' (role 'extlibrary__146VgG60EeGkd4g88tZXfA17', cardinality 0..*) is associated with 'extlibrary::Writer' (role 'extlibrary_Writer', cardinality 0..*).
+'extlibrary::::148KsW60EeGkd4g88tZXfA' (role 'extlibrary__148KsW60EeGkd4g88tZXfA', cardinality 0..*) is associated with 'extlibrary::Library' (role 'extlibrary_Library12', cardinality 0..*).

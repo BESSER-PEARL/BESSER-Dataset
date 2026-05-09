@@ -1,0 +1,160 @@
+The model has 74 class(es).
+The class 'TypeImplementation' has no attributes.
+The class 'art::relaxed::NamedElement' has the following attributes: 'name' of type str.
+The class 'art::relaxed::type::relaxed::Dictionary' has no attributes.
+The class 'art::relaxed::type::relaxed::Service' has no attributes.
+The class 'art::relaxed::instance::relaxed::DictionaryValuedAttribute' has no attributes.
+The class 'Operation' has no attributes.
+The class 'TypeGroup' has no attributes.
+The class 'art::relaxed::type::relaxed::Operation' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'art::relaxed::ModelElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'art::relaxed::instance::relaxed::TransmissionBinding' has no attributes.
+The class 'BasicAttribute' has no attributes.
+The class 'InstanceGroup' has no attributes.
+The class 'art::relaxed::implem::relaxed::ComponentImplementation' has no attributes.
+The class 'art::relaxed::TypedElement' has no attributes.
+The class 'art::relaxed::type::relaxed::ControlService' has no attributes.
+The class 'art::relaxed::AspectModelElement' has the following attributes: 'pid' of type str.
+The class 'art::relaxed::implem::relaxed::FractalComponent' has the following attributes: 'controllerDesc' of type str; 'contentDesc' of type str.
+The class 'PortId' has no attributes.
+The class 'CompositeInstance' has no attributes.
+The class 'art::relaxed::System' has no attributes.
+The class 'art::relaxed::type::relaxed::FunctionalService' has no attributes.
+The class 'art::relaxed::instance::relaxed::OtherEntry' has the following attributes: 'key' of type str.
+The class 'art::relaxed::group::relaxed::Group' has no attributes.
+The class 'art::relaxed::type::relaxed::ComponentType' has no attributes.
+The class 'art::relaxed::instance::relaxed::AttributeInstance' has no attributes.
+The class 'art::relaxed::instance::relaxed::DelegationBinding' has no attributes.
+The class 'art::relaxed::instance::relaxed::Binding' has the following attributes: 'id' of type str.
+The class 'art::relaxed::type::relaxed::Port' has no attributes.
+The class 'art::relaxed::instance::relaxed::CompositeInstance' has no attributes.
+The class 'AspectModelElement' has no attributes.
+The class 'art::relaxed::type::relaxed::CompositeType' has no attributes.
+The class 'Group' has no attributes.
+The class 'ComponentImplementation' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'CardinalityElement' has no attributes.
+The class 'art::relaxed::type::relaxed::AbstractPort' has the following attributes: 'uri' of type str; 'protocol' of type str; 'role' of type str.
+The class 'art::relaxed::type::relaxed::PrimitiveType' has no attributes.
+The class 'art::relaxed::CardinalityElement' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'Dictionary' has no attributes.
+The class 'Node' has no attributes.
+The class 'Binding' has no attributes.
+The class 'Entry' has no attributes.
+The class 'DictionaryDefaultValue' has no attributes.
+The class 'art::relaxed::instance::relaxed::DefaultEntry' has no attributes.
+The class 'art::relaxed::type::relaxed::BasicAttribute' has the following attributes: 'defaultValue' of type str.
+The class 'art::relaxed::instance::relaxed::ComponentInstance' has the following attributes: 'state' of type str.
+The class 'art::relaxed::instance::relaxed::ValuedAttribute' has the following attributes: 'value' of type str.
+The class 'art::relaxed::type::relaxed::PortCollection' has no attributes.
+The class 'type::relaxed::AbstractPort' has no attributes.
+The class 'art::relaxed::group::relaxed::TypeGroup' has no attributes.
+The class 'type::relaxed::art::relaxed::DataType' has no attributes.
+The class 'art::relaxed::implem::relaxed::TypeImplementation' has no attributes.
+The class 'ComponentType' has no attributes.
+The class 'art::relaxed::instance::relaxed::PrimitiveInstance' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'art::relaxed::group::relaxed::InstanceGroup' has no attributes.
+The class 'art::relaxed::type::relaxed::DictionaryDefaultValue' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'art::relaxed::implem::relaxed::OSGiComponent' has the following attributes: 'implementingClass' of type str.
+The class 'ComponentInstance' has no attributes.
+The class 'art::relaxed::instance::relaxed::Entry' has the following attributes: 'value' of type str.
+The class 'art::relaxed::implem::relaxed::OSGiType' has the following attributes: 'generateInstanceBundle' of type str.
+The class 'AttributeInstance' has no attributes.
+The class 'Service' has no attributes.
+The class 'art::relaxed::type::relaxed::Attribute' has no attributes.
+The class 'art::relaxed::type::relaxed::Parameter' has no attributes.
+The class 'AbstractPort' has no attributes.
+The class 'TransmissionBinding' has no attributes.
+The class 'art::relaxed::distrib::relaxed::Node' has the following attributes: 'uri' of type str.
+The class 'DelegationBinding' has no attributes.
+The class 'art::relaxed::type::relaxed::PortId' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'art::relaxed::DataType' has no attributes.
+The enumeration 'InstanceState' has the following literals: 'ON', 'OFF'.
+The enumeration 'PortRole' has the following literals: 'client', 'server'.
+'art::relaxed::type::relaxed::Port' is a specialization of 'CardinalityElement'.
+'art::relaxed::instance::relaxed::PrimitiveInstance' is a specialization of 'ComponentInstance'.
+'art::relaxed::instance::relaxed::CompositeInstance' is a specialization of 'ComponentInstance'.
+'art::relaxed::type::relaxed::ControlService' is a specialization of 'Service'.
+'art::relaxed::instance::relaxed::DelegationBinding' is a specialization of 'Binding'.
+'art::relaxed::instance::relaxed::Entry' is a specialization of 'AspectModelElement'.
+'art::relaxed::instance::relaxed::AttributeInstance' is a specialization of 'AspectModelElement'.
+'art::relaxed::type::relaxed::PortCollection' is a specialization of 'AbstractPort'.
+'art::relaxed::type::relaxed::Parameter' is a specialization of 'TypedElement'.
+'art::relaxed::TypedElement' is a specialization of 'ModelElement'.
+'art::relaxed::type::relaxed::AbstractPort' is a specialization of 'NamedElement'.
+'art::relaxed::System' is a specialization of 'ModelElement'.
+'art::relaxed::type::relaxed::ComponentType' is a specialization of 'ModelElement'.
+'art::relaxed::type::relaxed::PrimitiveType' is a specialization of 'ComponentType'.
+'art::relaxed::DataType' is a specialization of 'ModelElement'.
+'art::relaxed::type::relaxed::CompositeType' is a specialization of 'ComponentType'.
+'art::relaxed::implem::relaxed::ComponentImplementation' is a specialization of 'AspectModelElement'.
+'art::relaxed::ModelElement' is a specialization of 'NamedElement'.
+'art::relaxed::group::relaxed::TypeGroup' is a specialization of 'Group'.
+'art::relaxed::distrib::relaxed::Node' is a specialization of 'NamedElement'.
+'art::relaxed::instance::relaxed::ValuedAttribute' is a specialization of 'AttributeInstance'.
+'art::relaxed::CardinalityElement' is a specialization of 'ModelElement'.
+'art::relaxed::instance::relaxed::DefaultEntry' is a specialization of 'Entry'.
+'art::relaxed::group::relaxed::InstanceGroup' is a specialization of 'Group'.
+'art::relaxed::type::relaxed::Dictionary' is a specialization of 'Attribute'.
+'art::relaxed::implem::relaxed::OSGiComponent' is a specialization of 'ComponentImplementation'.
+'art::relaxed::type::relaxed::FunctionalService' is a specialization of 'Service'.
+'art::relaxed::instance::relaxed::OtherEntry' is a specialization of 'Entry'.
+'art::relaxed::type::relaxed::BasicAttribute' is a specialization of 'Attribute'.
+'art::relaxed::type::relaxed::Attribute' is a specialization of 'TypedElement'.
+'art::relaxed::instance::relaxed::ComponentInstance' is a specialization of 'ModelElement'.
+'art::relaxed::type::relaxed::DictionaryDefaultValue' is a specialization of 'AspectModelElement'.
+'art::relaxed::NamedElement' is a specialization of 'AspectModelElement'.
+'art::relaxed::type::relaxed::Operation' is a specialization of 'ModelElement'.
+'art::relaxed::type::relaxed::Service' is a specialization of 'ModelElement'.
+'art::relaxed::implem::relaxed::FractalComponent' is a specialization of 'ComponentImplementation'.
+'art::relaxed::group::relaxed::Group' is a specialization of 'NamedElement'.
+'art::relaxed::instance::relaxed::TransmissionBinding' is a specialization of 'Binding'.
+'art::relaxed::type::relaxed::PortId' is a specialization of 'NamedElement'.
+'art::relaxed::implem::relaxed::OSGiType' is a specialization of 'TypeImplementation'.
+'art::relaxed::type::relaxed::Port' is a specialization of 'type::relaxed::AbstractPort'.
+'art::relaxed::instance::relaxed::Binding' is a specialization of 'AspectModelElement'.
+'art::relaxed::instance::relaxed::DictionaryValuedAttribute' is a specialization of 'AttributeInstance'.
+'art::relaxed::implem::relaxed::TypeImplementation' is a specialization of 'AspectModelElement'.
+'art::relaxed::instance::relaxed::ComponentInstance' (role 'art_relaxed_instance_relaxed_ComponentInstance15', cardinality 0..*) is associated with 'AttributeInstance' (role 'AttributeInstance', cardinality 0..*).
+'TypeImplementation' (role 'TypeImplementation', cardinality 0..*) is associated with 'art::relaxed::type::relaxed::ComponentType' (role 'art_relaxed_type_relaxed_ComponentType45', cardinality 0..*).
+'art::relaxed::System' (role 'art_relaxed_System4', cardinality 0..*) is associated with 'ComponentType' (role 'ComponentType', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::CompositeInstance' (role 'superComponent', cardinality 0..*).
+'art::relaxed::instance::relaxed::DelegationBinding' (role 'art_relaxed_instance_relaxed_DelegationBinding32', cardinality 0..*) is associated with 'AbstractPort' (role 'AbstractPort33', cardinality 0..*).
+'art::relaxed::System' (role 'art_relaxed_System2', cardinality 0..*) is associated with 'Service' (role 'Service', cardinality 0..*).
+'AbstractPort' (role 'AbstractPort30', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::DelegationBinding' (role 'art_relaxed_instance_relaxed_DelegationBinding', cardinality 0..*).
+'art::relaxed::type::relaxed::ComponentType' (role 'art_relaxed_type_relaxed_ComponentType42', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'TypeGroup' (role 'TypeGroup', cardinality 0..*) is associated with 'art::relaxed::type::relaxed::ComponentType' (role 'types', cardinality 0..*).
+'art::relaxed::instance::relaxed::ComponentInstance' (role 'art_relaxed_instance_relaxed_ComponentInstance17', cardinality 0..*) is associated with 'TransmissionBinding' (role 'TransmissionBinding', cardinality 0..*).
+'art::relaxed::type::relaxed::Service' (role 'art_relaxed_type_relaxed_Service', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'art::relaxed::DataType' (role 'art_relaxed_DataType', cardinality 0..*) is associated with 'art::relaxed::System' (role 'art_relaxed_System6', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance64', cardinality 0..*) is associated with 'art::relaxed::group::relaxed::InstanceGroup' (role 'groups63', cardinality 0..*).
+'DictionaryDefaultValue' (role 'DictionaryDefaultValue', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::DefaultEntry' (role 'art_relaxed_instance_relaxed_DefaultEntry', cardinality 0..*).
+'art::relaxed::TypedElement' (role 'art_relaxed_TypedElement', cardinality 0..*) is associated with 'art::relaxed::DataType' (role 'art_relaxed_DataType10', cardinality 0..*).
+'art::relaxed::instance::relaxed::DictionaryValuedAttribute' (role 'art_relaxed_instance_relaxed_DictionaryValuedAttribute', cardinality 0..*) is associated with 'Entry' (role 'Entry', cardinality 0..*).
+'CompositeInstance' (role 'CompositeInstance', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::ComponentInstance' (role 'subComponent', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance68', cardinality 0..*) is associated with 'art::relaxed::distrib::relaxed::Node' (role 'art_relaxed_distrib_relaxed_Node', cardinality 0..*).
+'Parameter' (role 'Parameter50', cardinality 0..*) is associated with 'art::relaxed::type::relaxed::Operation' (role 'art_relaxed_type_relaxed_Operation49', cardinality 0..*).
+'art::relaxed::group::relaxed::InstanceGroup' (role 'art_relaxed_group_relaxed_InstanceGroup', cardinality 0..*) is associated with 'InstanceGroup' (role 'InstanceGroup66', cardinality 0..*).
+'AbstractPort' (role 'AbstractPort28', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::TransmissionBinding' (role 'art_relaxed_instance_relaxed_TransmissionBinding27', cardinality 0..*).
+'art::relaxed::type::relaxed::Operation' (role 'art_relaxed_type_relaxed_Operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'art::relaxed::instance::relaxed::Binding' (role 'art_relaxed_instance_relaxed_Binding', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance24', cardinality 0..*).
+'AbstractPort' (role 'AbstractPort40', cardinality 0..*) is associated with 'art::relaxed::type::relaxed::ComponentType' (role 'art_relaxed_type_relaxed_ComponentType', cardinality 0..*).
+'TypeGroup' (role 'TypeGroup61', cardinality 0..*) is associated with 'art::relaxed::group::relaxed::TypeGroup' (role 'art_relaxed_group_relaxed_TypeGroup', cardinality 0..*).
+'ComponentType' (role 'ComponentType59', cardinality 0..*) is associated with 'art::relaxed::group::relaxed::TypeGroup' (role 'groups', cardinality 0..*).
+'BasicAttribute' (role 'BasicAttribute', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::ValuedAttribute' (role 'art_relaxed_instance_relaxed_ValuedAttribute', cardinality 0..*).
+'DictionaryDefaultValue' (role 'DictionaryDefaultValue57', cardinality 0..*) is associated with 'art::relaxed::type::relaxed::Dictionary' (role 'art_relaxed_type_relaxed_Dictionary56', cardinality 0..*).
+'art::relaxed::instance::relaxed::TransmissionBinding' (role 'art_relaxed_instance_relaxed_TransmissionBinding', cardinality 0..*) is associated with 'AbstractPort' (role 'AbstractPort', cardinality 0..*).
+'art::relaxed::instance::relaxed::ComponentInstance' (role 'art_relaxed_instance_relaxed_ComponentInstance', cardinality 0..*) is associated with 'ComponentType' (role 'ComponentType12', cardinality 0..*).
+'Dictionary' (role 'Dictionary', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::DictionaryValuedAttribute' (role 'art_relaxed_instance_relaxed_DictionaryValuedAttribute37', cardinality 0..*).
+'Group' (role 'Group', cardinality 0..*) is associated with 'art::relaxed::System' (role 'art_relaxed_System8', cardinality 0..*).
+'art::relaxed::type::relaxed::Dictionary' (role 'art_relaxed_type_relaxed_Dictionary', cardinality 0..*) is associated with 'type::relaxed::art::relaxed::DataType' (role 'type_relaxed_art_relaxed_DataType', cardinality 0..*).
+'art::relaxed::type::relaxed::PortCollection' (role 'art_relaxed_type_relaxed_PortCollection', cardinality 0..*) is associated with 'PortId' (role 'PortId', cardinality 0..*).
+'art::relaxed::instance::relaxed::CompositeInstance' (role 'art_relaxed_instance_relaxed_CompositeInstance', cardinality 0..*) is associated with 'DelegationBinding' (role 'DelegationBinding', cardinality 0..*).
+'art::relaxed::type::relaxed::AbstractPort' (role 'art_relaxed_type_relaxed_AbstractPort', cardinality 0..*) is associated with 'Service' (role 'Service52', cardinality 0..*).
+'InstanceGroup' (role 'InstanceGroup', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::ComponentInstance' (role 'instances', cardinality 0..*).
+'Node' (role 'Node', cardinality 0..*) is associated with 'art::relaxed::System' (role 'art_relaxed_System', cardinality 0..*).
+'ComponentImplementation' (role 'ComponentImplementation', cardinality 0..*) is associated with 'art::relaxed::instance::relaxed::ComponentInstance' (role 'art_relaxed_instance_relaxed_ComponentInstance19', cardinality 0..*).

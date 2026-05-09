@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/RomainGuider/ceson/fr.obeo.emf.ceson.test/model/Family.ecore

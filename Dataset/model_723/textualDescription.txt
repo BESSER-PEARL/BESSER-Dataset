@@ -1,0 +1,399 @@
+The model has 156 class(es).
+The class 'behavior::Rescue' has no attributes.
+The class 'org::structure::Model' has no attributes.
+The class 'org::behavior::EmptyExpression' has no attributes.
+The class 'org::structure::AbstractOperation' has no attributes.
+The class 'structure::KermetaModelElement' has no attributes.
+The class 'org::structure::VoidType' has no attributes.
+The class 'org::behavior::Loop' has no attributes.
+The class 'org::structure::UnresolvedOperation' has the following attributes: 'operationIdentifier' of type str.
+The class 'ObjectTypeVariable' has no attributes.
+The class 'behavior::LambdaParameter' has no attributes.
+The class 'structure::ModelTypeVariable' has no attributes.
+The class 'org::structure::FunctionType' has no attributes.
+The class 'org::behavior::CallProperty' has no attributes.
+The class 'structure::VirtualType' has no attributes.
+The class 'org::structure::ModelTypeVariable' has no attributes.
+The class 'org::structure::UnresolvedModelTypeDefinition' has no attributes.
+The class 'behavior::CallExpression' has no attributes.
+The class 'structure::ModelTypeDefinition' has no attributes.
+The class 'org::behavior::VoidLiteral' has no attributes.
+The class 'structure::PropertyBinding' has no attributes.
+The class 'org::structure::UnresolvedType' has the following attributes: 'typeIdentifier' of type str.
+The class 'org::behavior::CallValue' has no attributes.
+The class 'structure::ModelTypeDefinitionBinding' has no attributes.
+The class 'behavior::TypeReference' has no attributes.
+The class 'structure::Using' has no attributes.
+The class 'structure::TypeContainer' has no attributes.
+The class 'org::structure::PropertyAdaptationOperator' has the following attributes: 'setter' of type str; 'adder' of type str; 'getter' of type str; 'remover' of type str.
+The class 'structure::Operation' has no attributes.
+The class 'org::behavior::TypeReference' has no attributes.
+The class 'structure::OperationBinding' has no attributes.
+The class 'org::behavior::Block' has no attributes.
+The class 'structure::EnumerationBinding' has no attributes.
+The class 'structure::MultiplicityElement' has no attributes.
+The class 'org::behavior::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'org::behavior::LambdaParameter' has the following attributes: 'name' of type str.
+The class 'org::structure::TypeContainer' has no attributes.
+The class 'org::behavior::CallTypeLiteral' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'org::behavior::CallOperation' has no attributes.
+The class 'org::behavior::IntegerLiteral' has the following attributes: 'value' of type str.
+The class 'org::structure::MultiplicityElement' has the following attributes: 'lower' of type str; 'upper' of type str; 'isOrdered' of type str; 'isUnique' of type str.
+The class 'org::behavior::Literal' has no attributes.
+The class 'structure::ClassDefinitionBinding' has no attributes.
+The class 'structure::Constraint' has no attributes.
+The class 'org::structure::UnresolvedInferredType' has no attributes.
+The class 'structure::UseAdaptationOperator' has no attributes.
+The class 'CallFeature' has no attributes.
+The class 'structure::TypeVariable' has no attributes.
+The class 'structure::UnresolvedReference' has no attributes.
+The class 'org::structure::ModelElementTypeDefinition' has no attributes.
+The class 'behavior::Expression' has no attributes.
+The class 'org::structure::ModelTypeDefinitionBinding' has no attributes.
+The class 'org::behavior::SelfExpression' has no attributes.
+The class 'org::behavior::CallEnumLiteral' has no attributes.
+The class 'org::behavior::UnresolvedCall' has the following attributes: 'isAtpre' of type str; 'isCalledWithParenthesis' of type str.
+The class 'org::behavior::CallModelTransformation' has no attributes.
+The class 'structure::EnumerationLiteral' has no attributes.
+The class 'structure::ModelTransformation' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'org::structure::UnresolvedAdaptationOperator' has no attributes.
+The class 'structure::Type' has no attributes.
+The class 'org::structure::PropertyBinding' has no attributes.
+The class 'org::structure::KermetaModelElement' has no attributes.
+The class 'org::behavior::Assignment' has the following attributes: 'isCast' of type str.
+The class 'CallExpression' has no attributes.
+The class 'org::structure::OperationBinding' has no attributes.
+The class 'structure::Property' has no attributes.
+The class 'KermetaModelElement' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'AdaptationOperator' has no attributes.
+The class 'CallOperation' has no attributes.
+The class 'org::structure::Type' has no attributes.
+The class 'org::behavior::CallVariable' has the following attributes: 'isAtpre' of type str.
+The class 'org::structure::Operation' has the following attributes: 'uniqueName' of type str; 'isAbstract' of type str.
+The class 'structure::Enumeration' has no attributes.
+The class 'org::structure::ObjectTypeVariable' has no attributes.
+The class 'org::behavior::CallFeature' has the following attributes: 'isAtpre' of type str.
+The class 'org::behavior::Conditional' has no attributes.
+The class 'org::structure::UnresolvedTypeVariable' has no attributes.
+The class 'org::structure::OperationAdaptationOperator' has the following attributes: 'body' of type str.
+The class 'org::structure::UnresolvedModelTransformation' has no attributes.
+The class 'org::structure::AdaptationOperator' has no attributes.
+The class 'structure::UnresolvedProperty' has no attributes.
+The class 'org::behavior::LambdaExpression' has no attributes.
+The class 'structure::Metamodel' has no attributes.
+The class 'org::structure::ClassDefinitionBinding' has no attributes.
+The class 'org::structure::ModelTransformation' has the following attributes: 'isAbstract' of type str.
+The class 'org::structure::ModelTypeDefinitionContainer' has no attributes.
+The class 'org::structure::AdaptationParameter' has no attributes.
+The class 'org::structure::TypeVariable' has no attributes.
+The class 'org::structure::UnresolvedProperty' has the following attributes: 'propertyIdentifier' of type str.
+The class 'org::structure::UnresolvedReference' has no attributes.
+The class 'structure::ModelElementTypeDefinitionContainer' has no attributes.
+The class 'CallVariable' has no attributes.
+The class 'org::structure::Using' has the following attributes: 'toName' of type str; 'fromQName' of type str.
+The class 'structure::GenericTypeDefinition' has no attributes.
+The class 'org::behavior::JavaStaticCall' has the following attributes: 'jclass' of type str; 'jmethod' of type str.
+The class 'structure::FilteredMetamodelReference' has no attributes.
+The class 'org::behavior::Raise' has no attributes.
+The class 'org::behavior::StringLiteral' has the following attributes: 'value' of type str.
+The class 'TypeVariable' has no attributes.
+The class 'org::structure::DataType' has no attributes.
+The class 'structure::ModelTypeDefinitionContainer' has no attributes.
+The class 'ParameterizedType' has no attributes.
+The class 'org::structure::TypeDefinition' has the following attributes: 'isAspect' of type str.
+The class 'ModelElementTypeDefinition' has no attributes.
+The class 'structure::TypeVariableBinding' has no attributes.
+The class 'structure::AdaptationOperator' has no attributes.
+The class 'org::structure::TypeVariableBinding' has no attributes.
+The class 'structure::AdaptationParameter' has no attributes.
+The class 'org::behavior::CallExpression' has the following attributes: 'name' of type str.
+The class 'org::structure::Package' has the following attributes: 'uri' of type str.
+The class 'org::structure::AbstractProperty' has no attributes.
+The class 'Type' has no attributes.
+The class 'org::structure::ModelElementTypeDefinitionContainer' has no attributes.
+The class 'org::structure::Parameter' has no attributes.
+The class 'org::structure::VirtualType' has no attributes.
+The class 'structure::UnresolvedOperation' has no attributes.
+The class 'structure::Package' has no attributes.
+The class 'structure::NamedElement' has no attributes.
+The class 'org::behavior::Rescue' has the following attributes: 'exceptionName' of type str.
+The class 'org::structure::TypedElement' has no attributes.
+The class 'structure::Tag' has no attributes.
+The class 'structure::Class' has no attributes.
+The class 'Expression' has no attributes.
+The class 'org::structure::GenericTypeDefinition' has no attributes.
+The class 'org::structure::ParameterizedType' has no attributes.
+The class 'org::structure::Metamodel' has the following attributes: 'isResolved' of type bool; 'uri' of type str.
+The class 'org::structure::Enumeration' has no attributes.
+The class 'org::structure::UseAdaptationOperator' has no attributes.
+The class 'structure::AbstractOperation' has no attributes.
+The class 'structure::ModelElementTypeDefinition' has no attributes.
+The class 'org::structure::ModelTypeDefinition' has no attributes.
+The class 'org::structure::Class' has the following attributes: 'isAbstract' of type str; 'name' of type str.
+The class 'org::structure::PrimitiveType' has no attributes.
+The class 'org::structure::EnumerationBinding' has no attributes.
+The class 'org::structure::FilteredMetamodelReference' has no attributes.
+The class 'org::structure::ModelType' has no attributes.
+The class 'org::structure::Constraint' has the following attributes: 'stereotype' of type str; 'language' of type str.
+The class 'structure::Parameter' has no attributes.
+The class 'structure::AbstractProperty' has no attributes.
+The class 'org::structure::NamedElement' has the following attributes: 'name' of type str.
+The class 'org::behavior::CallSuperOperation' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'org::structure::Property' has the following attributes: 'isID' of type str; 'isComposite' of type str; 'isDerived' of type str; 'default' of type str; 'isGetterAbstract' of type str; 'isSetterAbstract' of type str; 'isReadOnly' of type str.
+The class 'org::behavior::VariableDecl' has the following attributes: 'identifier' of type str.
+The class 'org::structure::ProductType' has no attributes.
+The class 'Literal' has no attributes.
+The class 'org::structure::EnumerationLiteral' has no attributes.
+The class 'org::structure::ClassDefinition' has the following attributes: 'isFinal' of type str; 'isSingleton' of type str; 'isAbstract' of type str.
+The class 'org::behavior::CallResult' has no attributes.
+The class 'org::structure::Tag' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'structure::ClassDefinition' has no attributes.
+The class 'GenericTypeDefinition' has no attributes.
+The class 'org::behavior::Expression' has no attributes.
+The class 'DataType' has no attributes.
+The enumeration 'ConstraintType' has the following literals: 'post', 'pre', 'inv'.
+The enumeration 'ConstraintLanguage' has the following literals: 'kermeta', 'ocl'.
+'org::structure::Property' is a specialization of 'structure::MultiplicityElement'.
+'org::structure::ModelTypeDefinition' is a specialization of 'TypeDefinition'.
+'org::structure::ModelTypeDefinitionContainer' is a specialization of 'KermetaModelElement'.
+'org::behavior::IntegerLiteral' is a specialization of 'Literal'.
+'org::behavior::CallProperty' is a specialization of 'CallFeature'.
+'org::structure::ModelTransformation' is a specialization of 'MultiplicityElement'.
+'org::behavior::VariableDecl' is a specialization of 'Expression'.
+'org::structure::UnresolvedModelTypeDefinition' is a specialization of 'structure::UnresolvedReference'.
+'org::behavior::UnresolvedCall' is a specialization of 'behavior::CallExpression'.
+'org::behavior::CallModelTransformation' is a specialization of 'CallFeature'.
+'org::structure::EnumerationBinding' is a specialization of 'KermetaModelElement'.
+'org::behavior::SelfExpression' is a specialization of 'Expression'.
+'org::structure::UnresolvedModelTypeDefinition' is a specialization of 'structure::ModelTypeDefinition'.
+'org::behavior::UnresolvedCall' is a specialization of 'structure::UnresolvedReference'.
+'org::structure::OperationAdaptationOperator' is a specialization of 'AdaptationOperator'.
+'org::behavior::BooleanLiteral' is a specialization of 'Literal'.
+'org::structure::ModelType' is a specialization of 'Type'.
+'org::behavior::VoidLiteral' is a specialization of 'Literal'.
+'org::structure::UnresolvedModelTransformation' is a specialization of 'structure::ModelTransformation'.
+'org::behavior::UnresolvedCall' is a specialization of 'structure::TypeContainer'.
+'org::structure::AdaptationParameter' is a specialization of 'TypedElement'.
+'org::behavior::StringLiteral' is a specialization of 'Literal'.
+'org::structure::ModelElementTypeDefinition' is a specialization of 'TypeDefinition'.
+'org::behavior::CallTypeLiteral' is a specialization of 'Literal'.
+'org::structure::UseAdaptationOperator' is a specialization of 'KermetaModelElement'.
+'org::behavior::JavaStaticCall' is a specialization of 'Expression'.
+'org::structure::UnresolvedAdaptationOperator' is a specialization of 'structure::AdaptationOperator'.
+'org::behavior::LambdaParameter' is a specialization of 'KermetaModelElement'.
+'org::structure::FilteredMetamodelReference' is a specialization of 'KermetaModelElement'.
+'org::behavior::Loop' is a specialization of 'Expression'.
+'org::structure::AdaptationOperator' is a specialization of 'NamedElement'.
+'org::behavior::EmptyExpression' is a specialization of 'Expression'.
+'org::structure::PropertyAdaptationOperator' is a specialization of 'AdaptationOperator'.
+'org::behavior::LambdaExpression' is a specialization of 'Expression'.
+'org::structure::PropertyBinding' is a specialization of 'KermetaModelElement'.
+'org::behavior::TypeReference' is a specialization of 'MultiplicityElement'.
+'org::structure::ModelTypeDefinitionBinding' is a specialization of 'structure::ModelTypeDefinitionContainer'.
+'org::behavior::Conditional' is a specialization of 'Expression'.
+'org::structure::UnresolvedAdaptationOperator' is a specialization of 'structure::UnresolvedReference'.
+'org::behavior::Raise' is a specialization of 'Expression'.
+'org::structure::ModelTypeDefinitionBinding' is a specialization of 'structure::KermetaModelElement'.
+'org::behavior::CallValue' is a specialization of 'CallExpression'.
+'org::structure::OperationBinding' is a specialization of 'KermetaModelElement'.
+'org::behavior::Literal' is a specialization of 'Expression'.
+'org::structure::UnresolvedInferredType' is a specialization of 'structure::UnresolvedReference'.
+'org::behavior::CallVariable' is a specialization of 'CallExpression'.
+'org::structure::UnresolvedTypeVariable' is a specialization of 'structure::UnresolvedReference'.
+'org::behavior::CallSuperOperation' is a specialization of 'CallOperation'.
+'org::structure::ClassDefinitionBinding' is a specialization of 'KermetaModelElement'.
+'org::behavior::Rescue' is a specialization of 'KermetaModelElement'.
+'org::structure::VoidType' is a specialization of 'Type'.
+'org::behavior::Block' is a specialization of 'Expression'.
+'org::structure::UnresolvedInferredType' is a specialization of 'structure::Type'.
+'org::behavior::CallFeature' is a specialization of 'CallExpression'.
+'org::structure::ProductType' is a specialization of 'structure::TypeContainer'.
+'org::structure::FunctionType' is a specialization of 'structure::TypeContainer'.
+'org::behavior::Expression' is a specialization of 'structure::TypeContainer'.
+'org::structure::UnresolvedTypeVariable' is a specialization of 'structure::TypeVariable'.
+'org::behavior::CallResult' is a specialization of 'CallVariable'.
+'org::structure::ObjectTypeVariable' is a specialization of 'TypeVariable'.
+'org::behavior::Assignment' is a specialization of 'Expression'.
+'org::structure::ProductType' is a specialization of 'structure::Type'.
+'org::behavior::Expression' is a specialization of 'structure::KermetaModelElement'.
+'org::structure::UnresolvedOperation' is a specialization of 'structure::AbstractOperation'.
+'org::structure::UnresolvedOperation' is a specialization of 'structure::TypeContainer'.
+'org::structure::FunctionType' is a specialization of 'structure::Type'.
+'org::behavior::CallExpression' is a specialization of 'Expression'.
+'org::structure::UnresolvedProperty' is a specialization of 'structure::UnresolvedReference'.
+'org::structure::UnresolvedOperation' is a specialization of 'structure::UnresolvedReference'.
+'org::structure::UnresolvedReference' is a specialization of 'KermetaModelElement'.
+'org::structure::UnresolvedType' is a specialization of 'structure::UnresolvedReference'.
+'org::structure::Using' is a specialization of 'KermetaModelElement'.
+'org::structure::UnresolvedType' is a specialization of 'structure::Type'.
+'org::structure::UnresolvedProperty' is a specialization of 'structure::AbstractProperty'.
+'org::structure::ModelTypeVariable' is a specialization of 'TypeVariable'.
+'org::structure::Model' is a specialization of 'KermetaModelElement'.
+'org::structure::UnresolvedType' is a specialization of 'structure::TypeContainer'.
+'org::structure::TypeVariable' is a specialization of 'structure::NamedElement'.
+'org::structure::VirtualType' is a specialization of 'ObjectTypeVariable'.
+'org::structure::GenericTypeDefinition' is a specialization of 'ModelElementTypeDefinition'.
+'org::structure::TypeVariable' is a specialization of 'structure::TypeContainer'.
+'org::structure::AbstractOperation' is a specialization of 'KermetaModelElement'.
+'org::structure::ModelElementTypeDefinitionContainer' is a specialization of 'NamedElement'.
+'org::structure::ParameterizedType' is a specialization of 'Type'.
+'org::structure::Metamodel' is a specialization of 'structure::NamedElement'.
+'org::structure::AbstractProperty' is a specialization of 'KermetaModelElement'.
+'org::structure::TypeVariable' is a specialization of 'structure::Type'.
+'org::structure::Metamodel' is a specialization of 'structure::KermetaModelElement'.
+'org::structure::Metamodel' is a specialization of 'structure::ModelTypeDefinitionContainer'.
+'org::structure::Enumeration' is a specialization of 'DataType'.
+'org::structure::TypedElement' is a specialization of 'structure::NamedElement'.
+'org::structure::Constraint' is a specialization of 'NamedElement'.
+'org::structure::TypedElement' is a specialization of 'structure::TypeContainer'.
+'org::structure::ClassDefinition' is a specialization of 'GenericTypeDefinition'.
+'org::structure::Package' is a specialization of 'structure::NamedElement'.
+'org::structure::Parameter' is a specialization of 'MultiplicityElement'.
+'org::structure::Tag' is a specialization of 'KermetaModelElement'.
+'org::structure::NamedElement' is a specialization of 'KermetaModelElement'.
+'org::structure::Package' is a specialization of 'structure::ModelElementTypeDefinitionContainer'.
+'org::structure::DataType' is a specialization of 'structure::Type'.
+'org::structure::TypeVariableBinding' is a specialization of 'structure::TypeContainer'.
+'org::structure::PrimitiveType' is a specialization of 'DataType'.
+'org::structure::Class' is a specialization of 'ParameterizedType'.
+'org::structure::DataType' is a specialization of 'structure::ModelElementTypeDefinition'.
+'org::structure::EnumerationLiteral' is a specialization of 'NamedElement'.
+'org::structure::TypeDefinition' is a specialization of 'structure::NamedElement'.
+'org::structure::TypeVariableBinding' is a specialization of 'structure::KermetaModelElement'.
+'org::structure::TypeContainer' is a specialization of 'KermetaModelElement'.
+'org::structure::MultiplicityElement' is a specialization of 'TypedElement'.
+'org::structure::Property' is a specialization of 'structure::AbstractProperty'.
+'org::structure::Operation' is a specialization of 'structure::AbstractOperation'.
+'org::structure::TypeDefinition' is a specialization of 'structure::TypeContainer'.
+'org::structure::Operation' is a specialization of 'structure::MultiplicityElement'.
+'org::structure::Type' is a specialization of 'KermetaModelElement'.
+'org::behavior::CallOperation' is a specialization of 'CallFeature'.
+'org::behavior::CallEnumLiteral' is a specialization of 'CallExpression'.
+'org::structure::UnresolvedModelTransformation' is a specialization of 'structure::UnresolvedReference'.
+'org::behavior::Rescue' (role 'org_behavior_Rescue', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression28', cardinality 0..*).
+'structure::Operation' (role 'structure_Operation199', cardinality 0..*) is associated with 'org::structure::OperationBinding' (role 'org_structure_OperationBinding', cardinality 0..*).
+'structure::EnumerationBinding' (role 'structure_EnumerationBinding', cardinality 0..*) is associated with 'org::structure::ModelTypeDefinitionBinding' (role 'org_structure_ModelTypeDefinitionBinding175', cardinality 0..*).
+'org::structure::PrimitiveType' (role 'org_structure_PrimitiveType', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type119', cardinality 0..*).
+'org::behavior::Assignment' (role 'org_behavior_Assignment2', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression42', cardinality 0..*) is associated with 'org::behavior::Loop' (role 'org_behavior_Loop', cardinality 0..*).
+'org::structure::ModelTypeDefinitionBinding' (role 'org_structure_ModelTypeDefinitionBinding', cardinality 0..*) is associated with 'structure::ClassDefinitionBinding' (role 'structure_ClassDefinitionBinding', cardinality 0..*).
+'org::structure::ModelTypeDefinitionBinding' (role 'org_structure_ModelTypeDefinitionBinding173', cardinality 0..*) is associated with 'structure::UseAdaptationOperator' (role 'structure_UseAdaptationOperator', cardinality 0..*).
+'org::structure::FunctionType' (role 'org_structure_FunctionType', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type167', cardinality 0..*).
+'structure::Property' (role 'structure_Property212', cardinality 0..*) is associated with 'org::structure::PropertyAdaptationOperator' (role 'org_structure_PropertyAdaptationOperator', cardinality 0..*).
+'structure::Property' (role 'structure_Property106', cardinality 0..*) is associated with 'org::structure::Class' (role 'org_structure_Class', cardinality 0..*).
+'org::structure::ClassDefinitionBinding' (role 'org_structure_ClassDefinitionBinding185', cardinality 0..*) is associated with 'structure::ClassDefinition' (role 'structure_ClassDefinition', cardinality 0..*).
+'org::structure::UseAdaptationOperator' (role 'org_structure_UseAdaptationOperator207', cardinality 0..*) is associated with 'structure::UnresolvedReference' (role 'structure_UnresolvedReference', cardinality 0..*).
+'org::structure::TypeVariableBinding' (role 'org_structure_TypeVariableBinding101', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type102', cardinality 0..*).
+'org::structure::ModelTypeDefinitionBinding' (role 'org_structure_ModelTypeDefinitionBinding179', cardinality 0..*) is associated with 'structure::ModelTransformation' (role 'structure_ModelTransformation180', cardinality 0..*).
+'structure::Property' (role 'structure_Property197', cardinality 0..*) is associated with 'org::structure::PropertyBinding' (role 'org_structure_PropertyBinding196', cardinality 0..*).
+'structure::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'org::structure::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).
+'structure::Type' (role 'structure_Type104', cardinality 0..*) is associated with 'org::structure::TypeDefinition' (role 'org_structure_TypeDefinition', cardinality 0..*).
+'org::structure::GenericTypeDefinition' (role 'org_structure_GenericTypeDefinition', cardinality 0..*) is associated with 'structure::TypeVariable' (role 'structure_TypeVariable142', cardinality 0..*).
+'org::structure::ParameterizedType' (role 'org_structure_ParameterizedType148', cardinality 0..*) is associated with 'structure::GenericTypeDefinition' (role 'structure_GenericTypeDefinition', cardinality 0..*).
+'org::structure::VirtualType' (role 'virtualType', cardinality 0..*) is associated with 'structure::ModelTypeVariable' (role 'ModelTypeVariable', cardinality 0..*).
+'org::behavior::CallEnumLiteral' (role 'org_behavior_CallEnumLiteral', cardinality 0..*) is associated with 'structure::EnumerationLiteral' (role 'structure_EnumerationLiteral', cardinality 0..*).
+'org::structure::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'structure::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'structure::Tag' (role 'structure_Tag', cardinality 0..*) is associated with 'org::structure::KermetaModelElement' (role 'org_structure_KermetaModelElement', cardinality 0..*).
+'structure::TypeContainer' (role 'TypeContainer', cardinality 0..*) is associated with 'org::structure::Type' (role 'containedType', cardinality 0..*).
+'org::structure::Operation' (role 'org_structure_Operation', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type71', cardinality 0..*).
+'org::behavior::Conditional' (role 'org_behavior_Conditional20', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression21', cardinality 0..*).
+'structure::Tag' (role 'Tag', cardinality 0..*) is associated with 'org::structure::KermetaModelElement' (role 'object', cardinality 0..*).
+'org::behavior::LambdaExpression' (role 'org_behavior_LambdaExpression35', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression36', cardinality 0..*).
+'org::behavior::LambdaExpression' (role 'org_behavior_LambdaExpression', cardinality 0..*) is associated with 'behavior::LambdaParameter' (role 'behavior_LambdaParameter', cardinality 0..*).
+'structure::Type' (role 'Type', cardinality 0..*) is associated with 'org::structure::TypeContainer' (role 'typeContainer', cardinality 0..*).
+'org::behavior::CallExpression' (role 'org_behavior_CallExpression7', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type8', cardinality 0..*).
+'org::behavior::VariableDecl' (role 'org_behavior_VariableDecl52', cardinality 0..*) is associated with 'behavior::TypeReference' (role 'behavior_TypeReference53', cardinality 0..*).
+'structure::OperationBinding' (role 'structure_OperationBinding', cardinality 0..*) is associated with 'org::structure::ClassDefinitionBinding' (role 'org_structure_ClassDefinitionBinding183', cardinality 0..*).
+'org::structure::Metamodel' (role 'org_structure_Metamodel139', cardinality 0..*) is associated with 'structure::FilteredMetamodelReference' (role 'structure_FilteredMetamodelReference', cardinality 0..*).
+'org::structure::UnresolvedType' (role 'org_structure_UnresolvedType162', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type163', cardinality 0..*).
+'structure::ModelTypeDefinition' (role 'structure_ModelTypeDefinition', cardinality 0..*) is associated with 'org::structure::ModelTypeDefinitionBinding' (role 'org_structure_ModelTypeDefinitionBinding177', cardinality 0..*).
+'org::structure::FunctionType' (role 'org_structure_FunctionType169', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type170', cardinality 0..*).
+'org::behavior::UnresolvedCall' (role 'org_behavior_UnresolvedCall59', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type60', cardinality 0..*).
+'structure::PropertyBinding' (role 'structure_PropertyBinding', cardinality 0..*) is associated with 'org::structure::ClassDefinitionBinding' (role 'org_structure_ClassDefinitionBinding', cardinality 0..*).
+'org::structure::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'structure::ClassDefinition' (role 'ClassDefinition94', cardinality 0..*).
+'org::behavior::CallOperation' (role 'org_behavior_CallOperation', cardinality 0..*) is associated with 'structure::Operation' (role 'structure_Operation', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression50', cardinality 0..*) is associated with 'org::behavior::VariableDecl' (role 'org_behavior_VariableDecl', cardinality 0..*).
+'org::behavior::Expression' (role 'org_behavior_Expression', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type', cardinality 0..*).
+'org::structure::Class' (role 'org_structure_Class108', cardinality 0..*) is associated with 'structure::Operation' (role 'structure_Operation109', cardinality 0..*).
+'structure::TypeVariableBinding' (role 'structure_TypeVariableBinding157', cardinality 0..*) is associated with 'org::structure::VirtualType' (role 'org_structure_VirtualType156', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression14', cardinality 0..*) is associated with 'org::behavior::CallFeature' (role 'org_behavior_CallFeature', cardinality 0..*).
+'org::structure::Operation' (role 'preOwner', cardinality 0..*) is associated with 'structure::Constraint' (role 'Constraint', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression48', cardinality 0..*) is associated with 'org::behavior::Loop' (role 'org_behavior_Loop47', cardinality 0..*).
+'structure::Property' (role 'structure_Property194', cardinality 0..*) is associated with 'org::structure::PropertyBinding' (role 'org_structure_PropertyBinding', cardinality 0..*).
+'structure::Metamodel' (role 'structure_Metamodel219', cardinality 0..*) is associated with 'org::structure::ModelTypeDefinition' (role 'org_structure_ModelTypeDefinition', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression32', cardinality 0..*) is associated with 'org::behavior::JavaStaticCall' (role 'org_behavior_JavaStaticCall', cardinality 0..*).
+'org::structure::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'structure::Package' (role 'Package', cardinality 0..*).
+'structure::KermetaModelElement' (role 'structure_KermetaModelElement', cardinality 0..*) is associated with 'org::structure::Model' (role 'org_structure_Model', cardinality 0..*).
+'structure::Constraint' (role 'Constraint75', cardinality 0..*) is associated with 'org::structure::Operation' (role 'postOwner', cardinality 0..*).
+'org::structure::FilteredMetamodelReference' (role 'org_structure_FilteredMetamodelReference', cardinality 0..*) is associated with 'structure::Metamodel' (role 'structure_Metamodel', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression18', cardinality 0..*) is associated with 'org::behavior::Conditional' (role 'org_behavior_Conditional', cardinality 0..*).
+'org::structure::Package' (role 'org_structure_Package', cardinality 0..*) is associated with 'structure::AdaptationOperator' (role 'structure_AdaptationOperator', cardinality 0..*).
+'behavior::CallExpression' (role 'behavior_CallExpression', cardinality 0..*) is associated with 'org::behavior::Assignment' (role 'org_behavior_Assignment', cardinality 0..*).
+'structure::Type' (role 'structure_Type16', cardinality 0..*) is associated with 'org::behavior::CallSuperOperation' (role 'org_behavior_CallSuperOperation', cardinality 0..*).
+'org::behavior::UnresolvedCall' (role 'org_behavior_UnresolvedCall', cardinality 0..*) is associated with 'structure::Using' (role 'structure_Using', cardinality 0..*).
+'structure::Using' (role 'structure_Using160', cardinality 0..*) is associated with 'org::structure::UnresolvedType' (role 'org_structure_UnresolvedType', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression90', cardinality 0..*) is associated with 'org::structure::Property' (role 'org_structure_Property89', cardinality 0..*).
+'org::structure::TypeVariableBinding' (role 'org_structure_TypeVariableBinding', cardinality 0..*) is associated with 'structure::TypeVariable' (role 'structure_TypeVariable99', cardinality 0..*).
+'org::structure::ModelTypeDefinition' (role 'org_structure_ModelTypeDefinition221', cardinality 0..*) is associated with 'structure::ModelTypeDefinitionBinding' (role 'structure_ModelTypeDefinitionBinding', cardinality 0..*).
+'org::structure::ModelTypeDefinitionContainer' (role 'org_structure_ModelTypeDefinitionContainer', cardinality 0..*) is associated with 'structure::ModelTypeDefinition' (role 'structure_ModelTypeDefinition237', cardinality 0..*).
+'behavior::TypeReference' (role 'behavior_TypeReference38', cardinality 0..*) is associated with 'org::behavior::LambdaParameter' (role 'org_behavior_LambdaParameter', cardinality 0..*).
+'org::structure::TypeVariable' (role 'org_structure_TypeVariable', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type150', cardinality 0..*).
+'structure::Operation' (role 'Operation136', cardinality 0..*) is associated with 'org::structure::ClassDefinition' (role 'owningClass135', cardinality 0..*).
+'structure::ModelTypeDefinition' (role 'structure_ModelTypeDefinition216', cardinality 0..*) is associated with 'org::structure::ModelType' (role 'org_structure_ModelType', cardinality 0..*).
+'structure::Operation' (role 'Operation130', cardinality 0..*) is associated with 'org::structure::Constraint' (role 'post', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression87', cardinality 0..*) is associated with 'org::structure::Property' (role 'org_structure_Property86', cardinality 0..*).
+'org::structure::ModelTransformation' (role 'org_structure_ModelTransformation235', cardinality 0..*) is associated with 'structure::Parameter' (role 'structure_Parameter', cardinality 0..*).
+'org::structure::Metamodel' (role 'org_structure_Metamodel', cardinality 0..*) is associated with 'structure::Package' (role 'structure_Package', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression5', cardinality 0..*) is associated with 'org::behavior::CallExpression' (role 'org_behavior_CallExpression', cardinality 0..*).
+'org::structure::OperationAdaptationOperator' (role 'org_structure_OperationAdaptationOperator', cardinality 0..*) is associated with 'structure::Operation' (role 'structure_Operation214', cardinality 0..*).
+'org::behavior::UnresolvedCall' (role 'org_behavior_UnresolvedCall56', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression57', cardinality 0..*).
+'structure::ModelTypeDefinition' (role 'ModelTypeDefinition', cardinality 0..*) is associated with 'org::structure::ModelTransformation' (role 'ownedTransformations', cardinality 0..*).
+'structure::Constraint' (role 'Constraint132', cardinality 0..*) is associated with 'org::structure::ClassDefinition' (role 'invOwner', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression45', cardinality 0..*) is associated with 'org::behavior::Loop' (role 'org_behavior_Loop44', cardinality 0..*).
+'structure::KermetaModelElement' (role 'structure_KermetaModelElement205', cardinality 0..*) is associated with 'org::structure::UseAdaptationOperator' (role 'org_structure_UseAdaptationOperator', cardinality 0..*).
+'org::structure::Operation' (role 'org_structure_Operation77', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression78', cardinality 0..*).
+'structure::Property' (role 'Property', cardinality 0..*) is associated with 'org::structure::ClassDefinition' (role 'owningClass', cardinality 0..*).
+'structure::Type' (role 'structure_Type165', cardinality 0..*) is associated with 'org::structure::ProductType' (role 'org_structure_ProductType', cardinality 0..*).
+'org::structure::EnumerationBinding' (role 'org_structure_EnumerationBinding', cardinality 0..*) is associated with 'structure::Enumeration' (role 'structure_Enumeration', cardinality 0..*).
+'org::structure::ModelTransformation' (role 'org_structure_ModelTransformation231', cardinality 0..*) is associated with 'structure::Operation' (role 'structure_Operation232', cardinality 0..*).
+'structure::Package' (role 'Package115', cardinality 0..*) is associated with 'org::structure::Package' (role 'nestedPackage', cardinality 0..*).
+'structure::ModelElementTypeDefinition' (role 'structure_ModelElementTypeDefinition', cardinality 0..*) is associated with 'org::structure::ModelElementTypeDefinitionContainer' (role 'org_structure_ModelElementTypeDefinitionContainer', cardinality 0..*).
+'structure::UnresolvedProperty' (role 'structure_UnresolvedProperty', cardinality 0..*) is associated with 'org::structure::Property' (role 'org_structure_Property92', cardinality 0..*).
+'org::structure::Parameter' (role 'ownedParameter', cardinality 0..*) is associated with 'structure::Operation' (role 'Operation', cardinality 0..*).
+'structure::Operation' (role 'structure_Operation202', cardinality 0..*) is associated with 'org::structure::OperationBinding' (role 'org_structure_OperationBinding201', cardinality 0..*).
+'behavior::Rescue' (role 'behavior_Rescue', cardinality 0..*) is associated with 'org::behavior::Block' (role 'org_behavior_Block12', cardinality 0..*).
+'org::structure::UseAdaptationOperator' (role 'org_structure_UseAdaptationOperator209', cardinality 0..*) is associated with 'structure::AdaptationOperator' (role 'structure_AdaptationOperator210', cardinality 0..*).
+'structure::TypeVariable' (role 'structure_TypeVariable', cardinality 0..*) is associated with 'org::structure::Operation' (role 'org_structure_Operation83', cardinality 0..*).
+'behavior::TypeReference' (role 'behavior_TypeReference', cardinality 0..*) is associated with 'org::behavior::Rescue' (role 'org_behavior_Rescue30', cardinality 0..*).
+'org::behavior::CallProperty' (role 'org_behavior_CallProperty', cardinality 0..*) is associated with 'structure::Property' (role 'structure_Property', cardinality 0..*).
+'org::structure::AdaptationOperator' (role 'org_structure_AdaptationOperator', cardinality 0..*) is associated with 'structure::AdaptationParameter' (role 'structure_AdaptationParameter', cardinality 0..*).
+'org::behavior::UnresolvedCall' (role 'org_behavior_UnresolvedCall62', cardinality 0..*) is associated with 'structure::Type' (role 'structure_Type63', cardinality 0..*).
+'org::structure::ClassDefinitionBinding' (role 'org_structure_ClassDefinitionBinding187', cardinality 0..*) is associated with 'structure::ClassDefinition' (role 'structure_ClassDefinition188', cardinality 0..*).
+'org::structure::ModelTransformation' (role 'org_structure_ModelTransformation228', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression229', cardinality 0..*).
+'org::behavior::Raise' (role 'org_behavior_Raise', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression26', cardinality 0..*).
+'org::structure::Class' (role 'org_structure_Class111', cardinality 0..*) is associated with 'structure::Class' (role 'structure_Class', cardinality 0..*).
+'structure::ClassDefinition' (role 'ClassDefinition', cardinality 0..*) is associated with 'org::structure::Operation' (role 'ownedOperation', cardinality 0..*).
+'org::structure::Constraint' (role 'inv', cardinality 0..*) is associated with 'structure::ClassDefinition' (role 'ClassDefinition126', cardinality 0..*).
+'org::behavior::Block' (role 'org_behavior_Block', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression10', cardinality 0..*).
+'structure::TypeVariableBinding' (role 'structure_TypeVariableBinding146', cardinality 0..*) is associated with 'org::structure::ParameterizedType' (role 'org_structure_ParameterizedType145', cardinality 0..*).
+'behavior::TypeReference' (role 'behavior_TypeReference40', cardinality 0..*) is associated with 'org::behavior::CallTypeLiteral' (role 'org_behavior_CallTypeLiteral', cardinality 0..*).
+'structure::Operation' (role 'Operation128', cardinality 0..*) is associated with 'org::structure::Constraint' (role 'pre', cardinality 0..*).
+'org::structure::ModelTransformation' (role 'org_structure_ModelTransformation', cardinality 0..*) is associated with 'structure::ModelTypeVariable' (role 'structure_ModelTypeVariable', cardinality 0..*).
+'behavior::Expression' (role 'behavior_Expression124', cardinality 0..*) is associated with 'org::structure::Constraint' (role 'org_structure_Constraint', cardinality 0..*).
+'structure::ModelElementTypeDefinition' (role 'structure_ModelElementTypeDefinition153', cardinality 0..*) is associated with 'org::structure::VirtualType' (role 'org_structure_VirtualType', cardinality 0..*).
+'org::structure::ParameterizedType' (role 'org_structure_ParameterizedType', cardinality 0..*) is associated with 'structure::TypeVariableBinding' (role 'structure_TypeVariableBinding', cardinality 0..*).
+'org::structure::Operation' (role 'operation', cardinality 0..*) is associated with 'structure::Parameter' (role 'Parameter', cardinality 0..*).
+'org::structure::Property' (role 'org_structure_Property', cardinality 0..*) is associated with 'structure::AbstractProperty' (role 'structure_AbstractProperty', cardinality 0..*).
+'org::structure::EnumerationBinding' (role 'org_structure_EnumerationBinding191', cardinality 0..*) is associated with 'structure::Enumeration' (role 'structure_Enumeration192', cardinality 0..*).
+'org::behavior::Conditional' (role 'org_behavior_Conditional23', cardinality 0..*) is associated with 'behavior::Expression' (role 'behavior_Expression24', cardinality 0..*).
+'structure::ModelElementTypeDefinition' (role 'structure_ModelElementTypeDefinition225', cardinality 0..*) is associated with 'org::structure::ModelTypeDefinition' (role 'org_structure_ModelTypeDefinition224', cardinality 0..*).
+'structure::UnresolvedOperation' (role 'structure_UnresolvedOperation', cardinality 0..*) is associated with 'org::structure::Operation' (role 'org_structure_Operation80', cardinality 0..*).
+'structure::Type' (role 'structure_Type121', cardinality 0..*) is associated with 'org::structure::TypedElement' (role 'org_structure_TypedElement', cardinality 0..*).
+'org::structure::ModelTypeVariable' (role 'modelTypeVariable', cardinality 0..*) is associated with 'structure::VirtualType' (role 'VirtualType', cardinality 0..*).
+'org::structure::ModelTypeDefinition' (role 'owningModelTypeDefinition', cardinality 0..*) is associated with 'structure::ModelTransformation' (role 'ModelTransformation', cardinality 0..*).
+'org::structure::Tag' (role 'kTag', cardinality 0..*) is associated with 'structure::KermetaModelElement' (role 'KermetaModelElement', cardinality 0..*).
+'org::behavior::CallModelTransformation' (role 'org_behavior_CallModelTransformation', cardinality 0..*) is associated with 'structure::ModelTransformation' (role 'structure_ModelTransformation', cardinality 0..*).

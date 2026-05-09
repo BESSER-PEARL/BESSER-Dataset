@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'family::Person' has the following attributes: 'size' of type int; 'age' of type int; 'weight' of type int; 'name' of type str.
+The class 'Person' has no attributes.
+The class 'family::FamilyTree' has no attributes.
+The class 'family::Male' has no attributes.
+The class 'family::Female' has no attributes.
+'family::Female' is a specialization of 'Person'.
+'family::Male' is a specialization of 'Person'.
+'family::Person' (role 'family_Person3', cardinality 0..*) is associated with 'family::Person' (role 'family_Person5', cardinality 0..*).
+'family::Person' (role 'family_Person', cardinality 0..*) is associated with 'family::Male' (role 'family_Male', cardinality 0..*).
+'family::Person' (role 'family_Person10', cardinality 0..*) is associated with 'family::FamilyTree' (role 'family_FamilyTree', cardinality 0..*).
+'family::Person' (role 'family_Person8', cardinality 0..*) is associated with 'family::Person' (role 'family_Person6', cardinality 0..*).
+'family::Person' (role 'family_Person2', cardinality 0..*) is associated with 'family::Female' (role 'family_Female', cardinality 0..*).

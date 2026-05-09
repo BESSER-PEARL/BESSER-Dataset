@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'mm1::Library' has the following attributes: 'name' of type str.
+The class 'mm1::Member' has the following attributes: 'name' of type str.
+The class 'mm1::Book' has the following attributes: 'name' of type str.
+The class 'mm1::Film' has the following attributes: 'name' of type str.
+'mm1::Film' (role 'mm1_Film10', cardinality 0..*) is associated with 'mm1::Member' (role 'mm1_Member9', cardinality 0..*).
+'mm1::Library' (role 'mm1_Library2', cardinality 0..*) is associated with 'mm1::Book' (role 'mm1_Book', cardinality 0..*).
+'mm1::Member' (role 'mm1_Member6', cardinality 0..*) is associated with 'mm1::Book' (role 'mm1_Book7', cardinality 0..*).
+'mm1::Film' (role 'mm1_Film', cardinality 0..*) is associated with 'mm1::Library' (role 'mm1_Library4', cardinality 0..*).
+'mm1::Member' (role 'mm1_Member', cardinality 0..*) is associated with 'mm1::Library' (role 'mm1_Library', cardinality 0..*).

@@ -1,0 +1,34 @@
+The model has 15 class(es).
+The class 'mvc::GraphicComponent' has the following attributes: 'stepSize' of type int.
+The class 'mvc::View' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'mvc::ReturnParameter' has no attributes.
+The class 'mvc::DataBase' has no attributes.
+The class 'mvc::SocialComponent' has the following attributes: 'socialname' of type str; 'social' of type str.
+The class 'mvc::MvcApplication' has the following attributes: 'pagelink' of type str; 'description' of type str; 'picture' of type str; 'email' of type str; 'name' of type str.
+The class 'mvc::Position' has the following attributes: 'long' of type int; 'above' of type int; 'name' of type str; 'wide' of type int; 'align_left' of type int.
+The class 'mvc::Model' has the following attributes: 'type' of type str; 'nameclass' of type str.
+The class 'mvc::Controller' has the following attributes: 'name' of type str.
+The class 'Model' has no attributes.
+The class 'mvc::MapComponent' has the following attributes: 'latitude' of type float; 'longitude' of type float; 'marker' of type bool.
+The class 'mvc::Method' has the following attributes: 'namemethod' of type str; 'type' of type str.
+The class 'mvc::Client' has the following attributes: 'nameservice' of type str.
+The class 'View' has no attributes.
+The class 'mvc::Attribute' has the following attributes: 'typeattribute' of type str; 'nameattribute' of type str.
+'mvc::SocialComponent' is a specialization of 'View'.
+'mvc::MapComponent' is a specialization of 'View'.
+'mvc::Client' is a specialization of 'Model'.
+'mvc::GraphicComponent' is a specialization of 'View'.
+'mvc::DataBase' is a specialization of 'Model'.
+'mvc::Model' (role 'mvc_Model', cardinality 0..*) is associated with 'mvc::MvcApplication' (role 'mvc_MvcApplication2', cardinality 0..*).
+'mvc::Position' (role 'mvc_Position', cardinality 0..*) is associated with 'mvc::View' (role 'mvc_View12', cardinality 0..*).
+'mvc::View' (role 'view', cardinality 0..*) is associated with 'mvc::Controller' (role 'Controller10', cardinality 0..*).
+'mvc::Attribute' (role 'mvc_Attribute19', cardinality 0..*) is associated with 'mvc::GraphicComponent' (role 'mvc_GraphicComponent', cardinality 0..*).
+'mvc::Attribute' (role 'mvc_Attribute', cardinality 0..*) is associated with 'mvc::Method' (role 'mvc_Method', cardinality 0..*).
+'mvc::Attribute' (role 'mvc_Attribute22', cardinality 0..*) is associated with 'mvc::GraphicComponent' (role 'mvc_GraphicComponent21', cardinality 0..*).
+'mvc::Attribute' (role 'mvc_Attribute17', cardinality 0..*) is associated with 'mvc::DataBase' (role 'mvc_DataBase', cardinality 0..*).
+'mvc::Client' (role 'mvc_Client', cardinality 0..*) is associated with 'mvc::Method' (role 'mvc_Method15', cardinality 0..*).
+'mvc::Controller' (role 'controller7', cardinality 0..*) is associated with 'mvc::View' (role 'View', cardinality 0..*).
+'mvc::Model' (role 'Model', cardinality 0..*) is associated with 'mvc::Controller' (role 'controller', cardinality 0..*).
+'mvc::Controller' (role 'mvc_Controller', cardinality 0..*) is associated with 'mvc::MvcApplication' (role 'mvc_MvcApplication4', cardinality 0..*).
+'mvc::Controller' (role 'Controller', cardinality 0..*) is associated with 'mvc::Model' (role 'model', cardinality 0..*).
+'mvc::MvcApplication' (role 'mvc_MvcApplication', cardinality 0..*) is associated with 'mvc::View' (role 'mvc_View', cardinality 0..*).

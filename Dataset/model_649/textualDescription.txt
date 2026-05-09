@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'mm2::Category' has the following attributes: 'name' of type str.
+The class 'mm2::Member' has the following attributes: 'name' of type str.
+The class 'mm2::Medium' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'mm2::Library' has the following attributes: 'name' of type str.
+'mm2::Category' (role 'mm2_Category9', cardinality 0..*) is associated with 'mm2::Medium' (role 'mm2_Medium10', cardinality 0..*).
+'mm2::Library' (role 'mm2_Library4', cardinality 0..*) is associated with 'mm2::Category' (role 'mm2_Category', cardinality 0..*).
+'mm2::Medium' (role 'mm2_Medium13', cardinality 0..*) is associated with 'mm2::Member' (role 'mm2_Member12', cardinality 0..*).
+'mm2::Medium' (role 'mm2_Medium', cardinality 0..*) is associated with 'mm2::Library' (role 'mm2_Library2', cardinality 0..*).
+'mm2::Category' (role 'mm2_Category7', cardinality 0..*) is associated with 'mm2::Category' (role 'mm2_Category5', cardinality 0..*).
+'mm2::Library' (role 'mm2_Library', cardinality 0..*) is associated with 'mm2::Member' (role 'mm2_Member', cardinality 0..*).

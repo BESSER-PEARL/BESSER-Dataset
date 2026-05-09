@@ -1,0 +1,83 @@
+The model has 39 class(es).
+The class 'EMOF::Factory' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'EMOF::Parameter' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Element' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'EMOF::Operation' has no attributes.
+The class 'EMOF::URIExtent' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'EMOF::Element' has no attributes.
+The class 'EMOF::Package' has the following attributes: 'uri' of type str.
+The class 'EMOF::EnumerationLiteral' has no attributes.
+The class 'EMOF::Class' has the following attributes: 'isAbstract' of type str.
+The class 'EMOF::ReflectiveCollection' has no attributes.
+The class 'Extent' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Comment' has no attributes.
+The class 'EMOF::Enumeration' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Class' has no attributes.
+The class 'Property' has no attributes.
+The class 'ReflectiveCollection' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'EMOF::Extent' has no attributes.
+The class 'EMOF::Object' has no attributes.
+The class 'EMOF::ReflectiveSequence' has no attributes.
+The class 'Object' has no attributes.
+The class 'EMOF::TypedElement' has no attributes.
+The class 'Package' has no attributes.
+The class 'EMOF::Tag' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'EMOF::PrimitiveType' has no attributes.
+The class 'Type' has no attributes.
+The class 'EMOF::MultiplicityElement' has the following attributes: 'isUnique' of type str; 'upper' of type str; 'lower' of type str; 'isOrdered' of type str.
+The class 'EMOF::Comment' has the following attributes: 'body' of type str.
+The class 'EMOF::DataType' has no attributes.
+The class 'EMOF::NamedElement' has the following attributes: 'name' of type str.
+The class 'EMOF::Property' has the following attributes: 'isReadOnly' of type str; 'isComposite' of type str; 'default' of type str; 'isID' of type str; 'isDerived' of type str.
+The class 'EMOF::Type' has no attributes.
+The class 'DataType' has no attributes.
+'EMOF::Parameter' is a specialization of 'MultiplicityElement'.
+'EMOF::NamedElement' is a specialization of 'Element'.
+'EMOF::TypedElement' is a specialization of 'NamedElement'.
+'EMOF::Package' is a specialization of 'NamedElement'.
+'EMOF::DataType' is a specialization of 'Type'.
+'EMOF::Operation' is a specialization of 'MultiplicityElement'.
+'EMOF::Tag' is a specialization of 'Element'.
+'EMOF::Parameter' is a specialization of 'TypedElement'.
+'EMOF::Factory' is a specialization of 'Element'.
+'EMOF::ReflectiveCollection' is a specialization of 'Object'.
+'EMOF::Type' is a specialization of 'NamedElement'.
+'EMOF::Property' is a specialization of 'MultiplicityElement'.
+'EMOF::Property' is a specialization of 'TypedElement'.
+'EMOF::Extent' is a specialization of 'Object'.
+'EMOF::Class' is a specialization of 'Type'.
+'EMOF::ReflectiveSequence' is a specialization of 'ReflectiveCollection'.
+'EMOF::PrimitiveType' is a specialization of 'DataType'.
+'EMOF::Enumeration' is a specialization of 'DataType'.
+'EMOF::URIExtent' is a specialization of 'Extent'.
+'EMOF::Element' is a specialization of 'Object'.
+'EMOF::EnumerationLiteral' is a specialization of 'NamedElement'.
+'EMOF::Operation' is a specialization of 'TypedElement'.
+'EMOF::Comment' is a specialization of 'Element'.
+'Type' (role 'Type35', cardinality 0..*) is associated with 'EMOF::TypedElement' (role 'EMOF_TypedElement', cardinality 0..*).
+'EMOF::EnumerationLiteral' (role 'EMOF_EnumerationLiteral', cardinality 0..*) is associated with 'Enumeration' (role 'Enumeration', cardinality 0..*).
+'Class' (role 'Class11', cardinality 0..*) is associated with 'EMOF::Operation' (role 'EMOF_Operation', cardinality 0..*).
+'EMOF::Property' (role 'EMOF_Property29', cardinality 0..*) is associated with 'Property' (role 'Property30', cardinality 0..*).
+'EMOF::Enumeration' (role 'EMOF_Enumeration', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'EMOF::Class' (role 'EMOF_Class4', cardinality 0..*) is associated with 'Class' (role 'Class', cardinality 0..*).
+'EMOF::Operation' (role 'EMOF_Operation15', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'EMOF::Parameter' (role 'EMOF_Parameter', cardinality 0..*) is associated with 'Operation' (role 'Operation25', cardinality 0..*).
+'EMOF::Package' (role 'EMOF_Package22', cardinality 0..*) is associated with 'Type' (role 'Type23', cardinality 0..*).
+'EMOF::Class' (role 'EMOF_Class2', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'EMOF::Factory' (role 'EMOF_Factory', cardinality 0..*) is associated with 'Package' (role 'Package', cardinality 0..*).
+'Package' (role 'Package20', cardinality 0..*) is associated with 'EMOF::Package' (role 'EMOF_Package19', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'EMOF::Tag' (role 'EMOF_Tag', cardinality 0..*).
+'Package' (role 'Package17', cardinality 0..*) is associated with 'EMOF::Package' (role 'EMOF_Package', cardinality 0..*).
+'EMOF::Element' (role 'EMOF_Element', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'Class' (role 'Class27', cardinality 0..*) is associated with 'EMOF::Property' (role 'EMOF_Property', cardinality 0..*).
+'EMOF::Type' (role 'EMOF_Type', cardinality 0..*) is associated with 'Package' (role 'Package33', cardinality 0..*).
+'EMOF::Operation' (role 'EMOF_Operation13', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'EMOF::Class' (role 'EMOF_Class', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'EMOF::Comment' (role 'EMOF_Comment', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).

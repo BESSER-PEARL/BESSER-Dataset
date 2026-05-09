@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/OpenSemanticsIO/semiotics-main/bundles/io.opensemantics.semiotics.model.assessment/model/assessment.ecore

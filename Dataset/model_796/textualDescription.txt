@@ -1,0 +1,14 @@
+The model has 3 class(es).
+The class 'compositefsm::State' has the following attributes: 'name' of type str.
+The class 'compositefsm::FSM' has no attributes.
+The class 'compositefsm::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+'compositefsm::FSM' (role 'owningFSM', cardinality 0..*) is associated with 'compositefsm::State' (role 'State', cardinality 0..*).
+'compositefsm::State' (role 'State14', cardinality 0..*) is associated with 'compositefsm::State' (role 'subStates', cardinality 0..*).
+'compositefsm::State' (role 'State11', cardinality 0..*) is associated with 'compositefsm::State' (role 'superState', cardinality 0..*).
+'compositefsm::FSM' (role 'FSM', cardinality 0..*) is associated with 'compositefsm::State' (role 'ownedState', cardinality 0..*).
+'compositefsm::Transition' (role 'Transition8', cardinality 0..*) is associated with 'compositefsm::State' (role 'target', cardinality 0..*).
+'compositefsm::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'compositefsm::State' (role 'State18', cardinality 0..*).
+'compositefsm::FSM' (role 'compositefsm_FSM3', cardinality 0..*) is associated with 'compositefsm::State' (role 'compositefsm_State4', cardinality 0..*).
+'compositefsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'compositefsm::State' (role 'source', cardinality 0..*).
+'compositefsm::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'compositefsm::State' (role 'State16', cardinality 0..*).
+'compositefsm::State' (role 'compositefsm_State', cardinality 0..*) is associated with 'compositefsm::FSM' (role 'compositefsm_FSM', cardinality 0..*).

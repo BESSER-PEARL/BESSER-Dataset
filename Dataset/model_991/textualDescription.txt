@@ -1,0 +1,21 @@
+The model has 7 class(es).
+The class 'dfs::Edge' has the following attributes: 'type' of type str.
+The class 'dfs::EObject' has no attributes.
+The class 'dfs::Node' has the following attributes: 'postTraversal' of type int; 'preTraversal' of type int.
+The class 'dfs::EdgeProcessor' has no attributes.
+The class 'dfs::DFSGraph' has no attributes.
+The class 'EdgeProcessor' has no attributes.
+The class 'dfs::DepthFirstSearch' has the following attributes: 'preTraversalCounter' of type int; 'postTraversalCounter' of type int.
+The enumeration 'EdgeType' has the following literals: 'BACKWARD_EDGE', 'FORWARD_EDGE', 'TREE_EDGE', 'CROSS_EDGE'.
+'dfs::DepthFirstSearch' is a specialization of 'EdgeProcessor'.
+'dfs::Node' (role 'target', cardinality 0..*) is associated with 'dfs::Edge' (role 'Edge', cardinality 0..*).
+'dfs::Node' (role 'Node13', cardinality 0..*) is associated with 'dfs::Edge' (role 'incoming', cardinality 0..*).
+'dfs::Edge' (role 'Edge6', cardinality 0..*) is associated with 'dfs::Node' (role 'source', cardinality 0..*).
+'dfs::Edge' (role 'Edge15', cardinality 0..*) is associated with 'dfs::DFSGraph' (role 'graph', cardinality 0..*).
+'dfs::Edge' (role 'edges', cardinality 0..*) is associated with 'dfs::DFSGraph' (role 'DFSGraph8', cardinality 0..*).
+'dfs::EObject' (role 'dfs_EObject', cardinality 0..*) is associated with 'dfs::Node' (role 'dfs_Node', cardinality 0..*).
+'dfs::EObject' (role 'dfs_EObject11', cardinality 0..*) is associated with 'dfs::Edge' (role 'dfs_Edge', cardinality 0..*).
+'dfs::EdgeProcessor' (role 'dfs_EdgeProcessor', cardinality 0..*) is associated with 'dfs::EdgeProcessor' (role 'dfs_EdgeProcessor0', cardinality 0..*).
+'dfs::Node' (role 'Node', cardinality 0..*) is associated with 'dfs::Edge' (role 'outgoing', cardinality 0..*).
+'dfs::Node' (role 'Node18', cardinality 0..*) is associated with 'dfs::DFSGraph' (role 'graph17', cardinality 0..*).
+'dfs::DFSGraph' (role 'DFSGraph', cardinality 0..*) is associated with 'dfs::Node' (role 'nodes', cardinality 0..*).

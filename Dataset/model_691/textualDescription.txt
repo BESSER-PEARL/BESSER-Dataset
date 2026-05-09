@@ -1,0 +1,599 @@
+The model has 228 class(es).
+The class 'EssentialOCL::PrimitiveLiteralExp' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'CollectionLiteralExp' has no attributes.
+The class 'Comment' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'ImperativeOCL::DictLiteralPart' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'EssentialOCL::LiteralExp' has no attributes.
+The class 'EssentialOCL::OrderedSetType' has no attributes.
+The class 'QVTBase::Domain' has the following attributes: 'isEnforceable' of type str; 'isCheckable' of type str.
+The class 'QVTOperational::MappingBody' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'EssentialOCL::CollectionItem' has no attributes.
+The class 'EssentialOCL::EnumLiteralExp' has no attributes.
+The class 'EssentialOCL::CollectionRange' has no attributes.
+The class 'ImperativeOCL::ReturnExp' has no attributes.
+The class 'EssentialOCL::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'ImperativeOCL::WhileExp' has no attributes.
+The class 'QVTCore::CoreDomain' has no attributes.
+The class 'EMOF::Class' has the following attributes: 'isAbstract' of type str.
+The class 'QVTCore::PropertyAssignment' has no attributes.
+The class 'QVTOperational::ImperativeCallExp' has the following attributes: 'isVirtual' of type str.
+The class 'EMOF::Enumeration' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'EssentialOCL::InvalidLiteralExp' has no attributes.
+The class 'RealizedVariable' has no attributes.
+The class 'QVTOperational::ResolveExp' has the following attributes: 'isDeferred' of type str; 'one' of type str; 'isInverse' of type str.
+The class 'ReflectiveCollection' has no attributes.
+The class 'EssentialOCL::CallExp' has no attributes.
+The class 'PropertyCallExp' has no attributes.
+The class 'GuardPattern' has no attributes.
+The class 'ModelParameter' has no attributes.
+The class 'EMOF::Comment' has the following attributes: 'body' of type str.
+The class 'EMOF::Property' has the following attributes: 'isReadOnly' of type str; 'isID' of type str; 'default' of type str; 'isComposite' of type str; 'isDerived' of type str.
+The class 'QVTRelation::RelationDomain' has no attributes.
+The class 'QVTOperational::EntryOperation' has no attributes.
+The class 'EssentialOCL::NavigationCallExp' has no attributes.
+The class 'QVTCore::GuardPattern' has no attributes.
+The class 'ModuleImport' has no attributes.
+The class 'EMOF::PrimitiveType' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'EssentialOCL::IteratorExp' has no attributes.
+The class 'ImperativeOCL::OrderedTupleLiteralPart' has no attributes.
+The class 'ImperativeExpression' has no attributes.
+The class 'ImperativeOCL::CatchExp' has no attributes.
+The class 'CatchExp' has no attributes.
+The class 'OrderedTupleLiteralPart' has no attributes.
+The class 'QVTCore::Assignment' has the following attributes: 'isDefault' of type str.
+The class 'ImperativeOCL::ListType' has no attributes.
+The class 'QVTOperational::OperationalTransformation' has no attributes.
+The class 'Property' has no attributes.
+The class 'EMOF::Element' has no attributes.
+The class 'DictLiteralPart' has no attributes.
+The class 'QVTOperational::ModelType' has the following attributes: 'conformanceKind' of type str.
+The class 'QVTTemplate::TemplateExp' has no attributes.
+The class 'QVTOperational::MappingParameter' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'QVTBase::FunctionParameter' has no attributes.
+The class 'QVTCore::EnforcementOperation' has the following attributes: 'enforcementMode' of type str.
+The class 'EntryOperation' has no attributes.
+The class 'Area' has no attributes.
+The class 'EMOF::Object' has no attributes.
+The class 'ImperativeOCL::Typedef' has no attributes.
+The class 'Class' has no attributes.
+The class 'EMOF::Operation' has no attributes.
+The class 'Type' has no attributes.
+The class 'TupleLiteralPart' has no attributes.
+The class 'EssentialOCL::TupleType' has no attributes.
+The class 'EssentialOCL::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'QVTOperational::ConstructorBody' has no attributes.
+The class 'EssentialOCL::OperationCallExp' has no attributes.
+The class 'QVTRelation::Relation' has the following attributes: 'isTopLevel' of type str.
+The class 'Pattern' has no attributes.
+The class 'EssentialOCL::OclExpression' has no attributes.
+The class 'MappingOperation' has no attributes.
+The class 'QVTOperational::VarParameter' has the following attributes: 'kind' of type str.
+The class 'QVTTemplate::ObjectTemplateExp' has no attributes.
+The class 'EssentialOCL::RealLiteralExp' has the following attributes: 'realSymbol' of type str.
+The class 'Assignment' has no attributes.
+The class 'ImperativeOCL::InstantiationExp' has no attributes.
+The class 'ImperativeOCL::AltExp' has no attributes.
+The class 'Element' has no attributes.
+The class 'ImperativeOCL::RaiseExp' has no attributes.
+The class 'EssentialOCL::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type str.
+The class 'Tag' has no attributes.
+The class 'ResolveExp' has no attributes.
+The class 'ImperativeOCL::OrderedTupleLiteralExp' has no attributes.
+The class 'TupleLiteralExp' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'OperationBody' has no attributes.
+The class 'LogExp' has no attributes.
+The class 'Variable' has no attributes.
+The class 'NavigationCallExp' has no attributes.
+The class 'EssentialOCL::BagType' has no attributes.
+The class 'QVTBase::Pattern' has no attributes.
+The class 'EssentialOCL::InvalidType' has no attributes.
+The class 'PropertyTemplateItem' has no attributes.
+The class 'EMOF::Extent' has no attributes.
+The class 'EssentialOCL::VariableExp' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'TemplateExp' has no attributes.
+The class 'ImperativeOCL::TryExp' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'QVTBase::Transformation' has no attributes.
+The class 'QVTRelation::RelationCallExp' has no attributes.
+The class 'QVTOperational::ContextualProperty' has no attributes.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'EssentialOCL::TypeExp' has no attributes.
+The class 'QVTBase::TypedModel' has no attributes.
+The class 'EssentialOCL::Variable' has no attributes.
+The class 'CorePattern' has no attributes.
+The class 'ImperativeLoopExp' has no attributes.
+The class 'QVTOperational::ResolveInExp' has no attributes.
+The class 'EssentialOCL::IterateExp' has no attributes.
+The class 'QVTRelation::Key' has no attributes.
+The class 'ImperativeOCL::DictLiteralExp' has no attributes.
+The class 'EssentialOCL::AnyType' has no attributes.
+The class 'Package' has no attributes.
+The class 'EMOF::Factory' has no attributes.
+The class 'ImperativeOCL::SwitchExp' has no attributes.
+The class 'EMOF::NamedElement' has the following attributes: 'name' of type str.
+The class 'EssentialOCL::FeatureCallExp' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'EssentialOCL::VoidType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'ImperativeOCL::ImperativeIterateExp' has no attributes.
+The class 'QVTCore::BottomPattern' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'EssentialOCL::LoopExp' has no attributes.
+The class 'TypedModel' has no attributes.
+The class 'QVTOperational::Helper' has the following attributes: 'isQuery' of type str.
+The class 'QVTOperational::MappingOperation' has no attributes.
+The class 'EMOF::DataType' has no attributes.
+The class 'RelationImplementation' has no attributes.
+The class 'ModelType' has no attributes.
+The class 'ImperativeOCL::ComputeExp' has no attributes.
+The class 'ImperativeOCL::AssertExp' has the following attributes: 'severity' of type str.
+The class 'EMOF::Parameter' has no attributes.
+The class 'ImperativeOCL::BlockExp' has no attributes.
+The class 'QVTRelation::RelationImplementation' has no attributes.
+The class 'EssentialOCL::IfExp' has no attributes.
+The class 'QVTRelation::RelationDomainAssignment' has no attributes.
+The class 'ImperativeOCL::OrderedTupleType' has no attributes.
+The class 'AltExp' has no attributes.
+The class 'ImperativeOCL::DictionaryType' has no attributes.
+The class 'BottomPattern' has no attributes.
+The class 'ImperativeOCL::ForExp' has no attributes.
+The class 'ImperativeOCL::ListLiteralExp' has no attributes.
+The class 'Transformation' has no attributes.
+The class 'EnforcementOperation' has no attributes.
+The class 'QVTOperational::Library' has no attributes.
+The class 'Extent' has no attributes.
+The class 'ImperativeOCL::ImperativeExpression' has no attributes.
+The class 'Relation' has no attributes.
+The class 'ImperativeCallExp' has no attributes.
+The class 'EssentialOCL::LetExp' has no attributes.
+The class 'DomainPattern' has no attributes.
+The class 'EssentialOCL::NumericLiteralExp' has no attributes.
+The class 'RelationalTransformation' has no attributes.
+The class 'QVTRelation::DomainPattern' has no attributes.
+The class 'QVTOperational::ObjectExp' has no attributes.
+The class 'EssentialOCL::SetType' has no attributes.
+The class 'QVTBase::Rule' has no attributes.
+The class 'EssentialOCL::NullLiteralExp' has no attributes.
+The class 'QVTTemplate::CollectionTemplateExp' has no attributes.
+The class 'EssentialOCL::TupleLiteralPart' has no attributes.
+The class 'QVTBase::Function' has no attributes.
+The class 'EMOF::ReflectiveSequence' has no attributes.
+The class 'QVTCore::CorePattern' has no attributes.
+The class 'EssentialOCL::ExpressionInOcl' has no attributes.
+The class 'ObjectTemplateExp' has no attributes.
+The class 'QVTOperational::ModelParameter' has no attributes.
+The class 'QVTCore::Mapping' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'ImperativeOCL::BreakExp' has no attributes.
+The class 'EMOF::MultiplicityElement' has the following attributes: 'isUnique' of type str; 'upper' of type str; 'isOrdered' of type str; 'lower' of type str.
+The class 'DataType' has no attributes.
+The class 'EMOF::TypedElement' has no attributes.
+The class 'EMOF::ReflectiveCollection' has no attributes.
+The class 'ImperativeOCL::ImperativeLoopExp' has no attributes.
+The class 'InstantiationExp' has no attributes.
+The class 'Object' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'EssentialOCL::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'EMOF::EnumerationLiteral' has no attributes.
+The class 'EssentialOCL::SequenceType' has no attributes.
+The class 'RelationDomainAssignment' has no attributes.
+The class 'RelationDomain' has no attributes.
+The class 'EMOF::URIExtent' has no attributes.
+The class 'EMOF::Type' has no attributes.
+The class 'QVTTemplate::PropertyTemplateItem' has the following attributes: 'isOpposite' of type str.
+The class 'EMOF::Package' has the following attributes: 'uri' of type str.
+The class 'EssentialOCL::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'Key' has no attributes.
+The class 'QVTOperational::OperationBody' has no attributes.
+The class 'QVTCore::VariableAssignment' has no attributes.
+The class 'ImperativeOCL::UnpackExp' has no attributes.
+The class 'ConstructorBody' has no attributes.
+The class 'EssentialOCL::CollectionType' has no attributes.
+The class 'ImperativeOCL::UnlinkExp' has no attributes.
+The class 'ImperativeOCL::AssignExp' has the following attributes: 'isReset' of type str.
+The class 'QVTOperational::ImperativeOperation' has the following attributes: 'isBlackbox' of type str.
+The class 'QVTRelation::RelationalTransformation' has no attributes.
+The class 'EssentialOCL::TupleLiteralExp' has no attributes.
+The class 'QVTCore::Area' has no attributes.
+The class 'EssentialOCL::CollectionLiteralPart' has no attributes.
+The class 'Rule' has no attributes.
+The class 'EssentialOCL::PropertyCallExp' has no attributes.
+The class 'EMOF::Tag' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'QVTRelation::OppositePropertyCallExp' has no attributes.
+The class 'Domain' has no attributes.
+The class 'EssentialOCL::UnlimitedNaturalExp' has the following attributes: 'symbol' of type str.
+The class 'QVTBase::Predicate' has no attributes.
+The class 'QVTOperational::Constructor' has no attributes.
+The class 'Operation' has no attributes.
+The class 'QVTOperational::Module' has the following attributes: 'isBlackbox' of type str.
+The class 'Module' has no attributes.
+The class 'ImperativeOCL::LogExp' has no attributes.
+The class 'QVTCore::RealizedVariable' has no attributes.
+The class 'QVTOperational::ModuleImport' has the following attributes: 'kind' of type str.
+The class 'FeatureCallExp' has no attributes.
+The class 'ImperativeOCL::VariableInitExp' has the following attributes: 'withResult' of type str.
+The class 'MultiplicityElement' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'QVTOperational::MappingCallExp' has the following attributes: 'isStrict' of type str.
+The class 'ImperativeOperation' has no attributes.
+The class 'ImperativeOCL::ContinueExp' has no attributes.
+The class 'VarParameter' has no attributes.
+The enumeration 'DirectionKind' has the following literals: 'out', 'in_', 'inout'.
+The enumeration 'CollectionKind' has the following literals: 'Set', 'OrderedSet', 'Bag', 'Sequence', 'Collection'.
+The enumeration 'SeverityKind' has the following literals: 'warning', 'fatal', 'error'.
+The enumeration 'ImportKind' has the following literals: 'access', 'extension'.
+The enumeration 'EnforcementMode' has the following literals: 'Deletion', 'Creation'.
+'QVTCore::RealizedVariable' is a specialization of 'Variable'.
+'EssentialOCL::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'QVTOperational::ResolveExp' is a specialization of 'CallExp'.
+'ImperativeOCL::ComputeExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'ImperativeOCL::OrderedTupleLiteralExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'EMOF::ReflectiveSequence' is a specialization of 'ReflectiveCollection'.
+'EMOF::EnumerationLiteral' is a specialization of 'NamedElement'.
+'QVTRelation::DomainPattern' is a specialization of 'Pattern'.
+'EssentialOCL::OrderedSetType' is a specialization of 'CollectionType'.
+'QVTOperational::ModelParameter' is a specialization of 'VarParameter'.
+'EssentialOCL::Variable' is a specialization of 'TypedElement'.
+'QVTBase::Function' is a specialization of 'Operation'.
+'QVTOperational::ModelType' is a specialization of 'Class'.
+'ImperativeOCL::RaiseExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'QVTCore::CoreDomain' is a specialization of 'Area'.
+'QVTOperational::ContextualProperty' is a specialization of 'Property'.
+'EssentialOCL::TupleLiteralPart' is a specialization of 'TypedElement'.
+'QVTTemplate::CollectionTemplateExp' is a specialization of 'TemplateExp'.
+'ImperativeOCL::DictLiteralExp' is a specialization of 'LiteralExp'.
+'ImperativeOCL::LogExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::CallExp' is a specialization of 'OclExpression'.
+'EssentialOCL::IfExp' is a specialization of 'OclExpression'.
+'QVTBase::Predicate' is a specialization of 'Element'.
+'QVTOperational::ConstructorBody' is a specialization of 'OperationBody'.
+'ImperativeOCL::ListType' is a specialization of 'CollectionType'.
+'QVTOperational::Module' is a specialization of 'Package'.
+'EssentialOCL::FeatureCallExp' is a specialization of 'CallExp'.
+'EMOF::Package' is a specialization of 'NamedElement'.
+'EssentialOCL::CollectionLiteralPart' is a specialization of 'TypedElement'.
+'EssentialOCL::LoopExp' is a specialization of 'CallExp'.
+'ImperativeOCL::DictionaryType' is a specialization of 'CollectionType'.
+'ImperativeOCL::AltExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::CollectionType' is a specialization of 'DataType'.
+'EssentialOCL::TupleType' is a specialization of 'DataType'.
+'QVTBase::Transformation' is a specialization of 'Class'.
+'QVTOperational::MappingParameter' is a specialization of 'VarParameter'.
+'QVTOperational::MappingCallExp' is a specialization of 'ImperativeCallExp'.
+'EMOF::Operation' is a specialization of 'MultiplicityElement'.
+'EMOF::PrimitiveType' is a specialization of 'DataType'.
+'EMOF::Enumeration' is a specialization of 'DataType'.
+'QVTCore::PropertyAssignment' is a specialization of 'Assignment'.
+'EMOF::Class' is a specialization of 'Type'.
+'QVTOperational::MappingBody' is a specialization of 'OperationBody'.
+'ImperativeOCL::ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+'QVTBase::TypedModel' is a specialization of 'NamedElement'.
+'QVTCore::Mapping' is a specialization of 'Rule'.
+'QVTOperational::ResolveInExp' is a specialization of 'ResolveExp'.
+'ImperativeOCL::ListLiteralExp' is a specialization of 'LiteralExp'.
+'QVTOperational::EntryOperation' is a specialization of 'ImperativeOperation'.
+'EssentialOCL::BagType' is a specialization of 'CollectionType'.
+'ImperativeOCL::ContinueExp' is a specialization of 'ImperativeExpression'.
+'EMOF::Parameter' is a specialization of 'MultiplicityElement'.
+'ImperativeOCL::TryExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::VariableExp' is a specialization of 'OclExpression'.
+'EssentialOCL::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'EMOF::Comment' is a specialization of 'Element'.
+'QVTCore::Assignment' is a specialization of 'Element'.
+'QVTRelation::RelationDomainAssignment' is a specialization of 'Element'.
+'QVTRelation::RelationCallExp' is a specialization of 'OclExpression'.
+'EssentialOCL::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'QVTCore::GuardPattern' is a specialization of 'CorePattern'.
+'EssentialOCL::TupleType' is a specialization of 'Class'.
+'EMOF::URIExtent' is a specialization of 'Extent'.
+'QVTTemplate::TemplateExp' is a specialization of 'LiteralExp'.
+'EssentialOCL::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'QVTOperational::OperationalTransformation' is a specialization of 'Module'.
+'QVTOperational::VarParameter' is a specialization of 'Variable'.
+'QVTBase::Domain' is a specialization of 'NamedElement'.
+'EssentialOCL::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'QVTBase::FunctionParameter' is a specialization of 'Variable'.
+'EMOF::DataType' is a specialization of 'Type'.
+'QVTRelation::RelationalTransformation' is a specialization of 'Transformation'.
+'QVTOperational::MappingOperation' is a specialization of 'ImperativeOperation'.
+'EssentialOCL::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'ImperativeOCL::Typedef' is a specialization of 'Class'.
+'EssentialOCL::AnyType' is a specialization of 'Type'.
+'EssentialOCL::IteratorExp' is a specialization of 'LoopExp'.
+'EssentialOCL::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'QVTOperational::ImperativeCallExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::DictLiteralPart' is a specialization of 'Element'.
+'ImperativeOCL::ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+'ImperativeOCL::AssertExp' is a specialization of 'ImperativeExpression'.
+'QVTOperational::OperationBody' is a specialization of 'Element'.
+'QVTOperational::Module' is a specialization of 'Class'.
+'QVTBase::Transformation' is a specialization of 'Package'.
+'EMOF::NamedElement' is a specialization of 'Element'.
+'ImperativeOCL::OrderedTupleType' is a specialization of 'Class'.
+'ImperativeOCL::InstantiationExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::TypeExp' is a specialization of 'OclExpression'.
+'EMOF::Parameter' is a specialization of 'TypedElement'.
+'EssentialOCL::OclExpression' is a specialization of 'TypedElement'.
+'EMOF::Extent' is a specialization of 'Object'.
+'EMOF::Property' is a specialization of 'TypedElement'.
+'ImperativeOCL::BreakExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::SwitchExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::VariableInitExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::LetExp' is a specialization of 'OclExpression'.
+'QVTCore::EnforcementOperation' is a specialization of 'Element'.
+'EssentialOCL::UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+'QVTBase::Pattern' is a specialization of 'Element'.
+'QVTOperational::ImperativeOperation' is a specialization of 'Operation'.
+'ImperativeOCL::UnlinkExp' is a specialization of 'ImperativeExpression'.
+'EMOF::Tag' is a specialization of 'Element'.
+'EssentialOCL::ExpressionInOcl' is a specialization of 'TypedElement'.
+'QVTOperational::ImperativeCallExp' is a specialization of 'OperationCallExp'.
+'QVTCore::CorePattern' is a specialization of 'Pattern'.
+'EssentialOCL::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'EMOF::Type' is a specialization of 'NamedElement'.
+'QVTOperational::ResolveExp' is a specialization of 'ImperativeExpression'.
+'EMOF::TypedElement' is a specialization of 'NamedElement'.
+'QVTBase::FunctionParameter' is a specialization of 'Parameter'.
+'ImperativeOCL::LogExp' is a specialization of 'OperationCallExp'.
+'QVTRelation::Relation' is a specialization of 'Rule'.
+'ImperativeOCL::ForExp' is a specialization of 'ImperativeLoopExp'.
+'QVTRelation::RelationDomain' is a specialization of 'Domain'.
+'EssentialOCL::OperationCallExp' is a specialization of 'FeatureCallExp'.
+'QVTTemplate::PropertyTemplateItem' is a specialization of 'Element'.
+'EssentialOCL::InvalidType' is a specialization of 'Type'.
+'EssentialOCL::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'ImperativeOCL::ImperativeLoopExp' is a specialization of 'LoopExp'.
+'EMOF::Element' is a specialization of 'Object'.
+'QVTCore::CoreDomain' is a specialization of 'Domain'.
+'EssentialOCL::SetType' is a specialization of 'CollectionType'.
+'EMOF::Property' is a specialization of 'MultiplicityElement'.
+'ImperativeOCL::ReturnExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::NullLiteralExp' is a specialization of 'LiteralExp'.
+'QVTTemplate::ObjectTemplateExp' is a specialization of 'TemplateExp'.
+'EssentialOCL::NavigationCallExp' is a specialization of 'FeatureCallExp'.
+'QVTOperational::Library' is a specialization of 'Module'.
+'EMOF::ReflectiveCollection' is a specialization of 'Object'.
+'ImperativeOCL::AssignExp' is a specialization of 'ImperativeExpression'.
+'QVTCore::BottomPattern' is a specialization of 'CorePattern'.
+'EssentialOCL::PropertyCallExp' is a specialization of 'NavigationCallExp'.
+'QVTBase::Rule' is a specialization of 'NamedElement'.
+'EMOF::Operation' is a specialization of 'TypedElement'.
+'QVTRelation::RelationImplementation' is a specialization of 'Element'.
+'ImperativeOCL::CatchExp' is a specialization of 'ImperativeExpression'.
+'EssentialOCL::LoopExp' is a specialization of 'OclExpression'.
+'EssentialOCL::LiteralExp' is a specialization of 'OclExpression'.
+'QVTOperational::VarParameter' is a specialization of 'Parameter'.
+'EssentialOCL::VoidType' is a specialization of 'Type'.
+'EssentialOCL::SequenceType' is a specialization of 'CollectionType'.
+'EssentialOCL::IterateExp' is a specialization of 'LoopExp'.
+'QVTCore::VariableAssignment' is a specialization of 'Assignment'.
+'ImperativeOCL::BlockExp' is a specialization of 'ImperativeExpression'.
+'QVTOperational::ModuleImport' is a specialization of 'Element'.
+'ImperativeOCL::WhileExp' is a specialization of 'ImperativeExpression'.
+'ImperativeOCL::UnpackExp' is a specialization of 'ImperativeExpression'.
+'QVTOperational::Constructor' is a specialization of 'ImperativeOperation'.
+'EssentialOCL::TemplateParameterType' is a specialization of 'Type'.
+'QVTRelation::OppositePropertyCallExp' is a specialization of 'PropertyCallExp'.
+'QVTRelation::Key' is a specialization of 'Element'.
+'ImperativeOCL::ImperativeExpression' is a specialization of 'OclExpression'.
+'EMOF::Factory' is a specialization of 'Element'.
+'QVTCore::Mapping' is a specialization of 'Area'.
+'QVTOperational::ObjectExp' is a specialization of 'InstantiationExp'.
+'ImperativeOCL::OrderedTupleLiteralPart' is a specialization of 'Element'.
+'QVTOperational::Helper' is a specialization of 'ImperativeOperation'.
+'Variable' (role 'Variable210', cardinality 0..*) is associated with 'QVTBase::Pattern' (role 'QVTBase_Pattern', cardinality 0..*).
+'OclExpression' (role 'OclExpression298', cardinality 0..*) is associated with 'QVTTemplate::PropertyTemplateItem' (role 'QVTTemplate_PropertyTemplateItem297', cardinality 0..*).
+'EssentialOCL::Variable' (role 'EssentialOCL_Variable103', cardinality 0..*) is associated with 'LetExp' (role 'LetExp', cardinality 0..*).
+'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl61', cardinality 0..*) is associated with 'Variable' (role 'Variable62', cardinality 0..*).
+'QVTCore::BottomPattern' (role 'QVTCore_BottomPattern251', cardinality 0..*) is associated with 'Assignment' (role 'Assignment', cardinality 0..*).
+'EnumerationLiteral' (role 'EnumerationLiteral49', cardinality 0..*) is associated with 'EssentialOCL::EnumLiteralExp' (role 'EssentialOCL_EnumLiteralExp', cardinality 0..*).
+'QVTCore::Mapping' (role 'QVTCore_Mapping272', cardinality 0..*) is associated with 'Mapping' (role 'Mapping273', cardinality 0..*).
+'NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'EMOF::Comment' (role 'EMOF_Comment', cardinality 0..*).
+'QVTBase::Transformation' (role 'QVTBase_Transformation', cardinality 0..*) is associated with 'Transformation' (role 'Transformation224', cardinality 0..*).
+'QVTRelation::Key' (role 'QVTRelation_Key308', cardinality 0..*) is associated with 'Property' (role 'Property309', cardinality 0..*).
+'Pattern' (role 'Pattern321', cardinality 0..*) is associated with 'QVTRelation::Relation' (role 'QVTRelation_Relation320', cardinality 0..*).
+'Transformation' (role 'Transformation', cardinality 0..*) is associated with 'QVTBase::Rule' (role 'QVTBase_Rule222', cardinality 0..*).
+'ImperativeOCL::OrderedTupleType' (role 'ImperativeOCL_OrderedTupleType', cardinality 0..*) is associated with 'Type' (role 'Type166', cardinality 0..*).
+'QVTCore::Assignment' (role 'QVTCore_Assignment247', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression248', cardinality 0..*).
+'EssentialOCL::VariableExp' (role 'EssentialOCL_VariableExp', cardinality 0..*) is associated with 'Variable' (role 'Variable108', cardinality 0..*).
+'QVTRelation::RelationCallExp' (role 'QVTRelation_RelationCallExp328', cardinality 0..*) is associated with 'Relation' (role 'Relation', cardinality 0..*).
+'QVTRelation::Relation' (role 'QVTRelation_Relation323', cardinality 0..*) is associated with 'Pattern' (role 'Pattern324', cardinality 0..*).
+'QVTOperational::OperationBody' (role 'QVTOperational_OperationBody425', cardinality 0..*) is associated with 'Variable' (role 'Variable426', cardinality 0..*).
+'RelationImplementation' (role 'RelationImplementation', cardinality 0..*) is associated with 'QVTRelation::Relation' (role 'QVTRelation_Relation', cardinality 0..*).
+'OclExpression' (role 'OclExpression161', cardinality 0..*) is associated with 'ImperativeOCL::LogExp' (role 'ImperativeOCL_LogExp', cardinality 0..*).
+'QVTCore::EnforcementOperation' (role 'QVTCore_EnforcementOperation261', cardinality 0..*) is associated with 'OperationCallExp' (role 'OperationCallExp', cardinality 0..*).
+'QVTBase::Predicate' (role 'QVTBase_Predicate216', cardinality 0..*) is associated with 'Pattern' (role 'Pattern', cardinality 0..*).
+'CollectionLiteralExp' (role 'CollectionLiteralExp', cardinality 0..*) is associated with 'EssentialOCL::CollectionLiteralPart' (role 'EssentialOCL_CollectionLiteralPart', cardinality 0..*).
+'EssentialOCL::CollectionRange' (role 'EssentialOCL_CollectionRange44', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression45', cardinality 0..*).
+'QVTOperational::ModuleImport' (role 'QVTOperational_ModuleImport', cardinality 0..*) is associated with 'ModelType' (role 'ModelType409', cardinality 0..*).
+'OclExpression' (role 'OclExpression129', cardinality 0..*) is associated with 'ImperativeOCL::CatchExp' (role 'ImperativeOCL_CatchExp', cardinality 0..*).
+'QVTOperational::MappingBody' (role 'QVTOperational_MappingBody', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression366', cardinality 0..*).
+'QVTOperational::ModuleImport' (role 'QVTOperational_ModuleImport413', cardinality 0..*) is associated with 'Module' (role 'Module414', cardinality 0..*).
+'OclExpression' (role 'OclExpression188', cardinality 0..*) is associated with 'ImperativeOCL::UnlinkExp' (role 'ImperativeOCL_UnlinkExp', cardinality 0..*).
+'ImperativeOCL::AltExp' (role 'ImperativeOCL_AltExp112', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression113', cardinality 0..*).
+'QVTRelation::RelationalTransformation' (role 'QVTRelation_RelationalTransformation', cardinality 0..*) is associated with 'Key' (role 'Key', cardinality 0..*).
+'EssentialOCL::CollectionLiteralExp' (role 'EssentialOCL_CollectionLiteralExp', cardinality 0..*) is associated with 'CollectionLiteralPart' (role 'CollectionLiteralPart', cardinality 0..*).
+'OclExpression' (role 'OclExpression168', cardinality 0..*) is associated with 'ImperativeOCL::RaiseExp' (role 'ImperativeOCL_RaiseExp', cardinality 0..*).
+'EMOF::Package' (role 'EMOF_Package22', cardinality 0..*) is associated with 'Type' (role 'Type23', cardinality 0..*).
+'EssentialOCL::Variable' (role 'EssentialOCL_Variable105', cardinality 0..*) is associated with 'Parameter' (role 'Parameter106', cardinality 0..*).
+'EMOF::Class' (role 'EMOF_Class', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'Package' (role 'Package17', cardinality 0..*) is associated with 'EMOF::Package' (role 'EMOF_Package', cardinality 0..*).
+'Variable' (role 'Variable59', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl58', cardinality 0..*).
+'QVTOperational::ResolveExp' (role 'QVTOperational_ResolveExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression442', cardinality 0..*).
+'Package' (role 'Package33', cardinality 0..*) is associated with 'EMOF::Type' (role 'EMOF_Type', cardinality 0..*).
+'TupleLiteralExp' (role 'TupleLiteralExp', cardinality 0..*) is associated with 'EssentialOCL::TupleLiteralPart' (role 'EssentialOCL_TupleLiteralPart94', cardinality 0..*).
+'ImperativeOCL::DictionaryType' (role 'ImperativeOCL_DictionaryType', cardinality 0..*) is associated with 'Type' (role 'Type145', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'EMOF::Operation' (role 'EMOF_Operation13', cardinality 0..*).
+'EssentialOCL::LoopExp' (role 'EssentialOCL_LoopExp81', cardinality 0..*) is associated with 'Variable' (role 'Variable82', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation447', cardinality 0..*) is associated with 'QVTOperational::ResolveInExp' (role 'QVTOperational_ResolveInExp', cardinality 0..*).
+'EMOF::Property' (role 'EMOF_Property29', cardinality 0..*) is associated with 'Property' (role 'Property30', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation363', cardinality 0..*) is associated with 'VarParameter' (role 'VarParameter364', cardinality 0..*).
+'QVTBase::Function' (role 'QVTBase_Function', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression208', cardinality 0..*).
+'QVTOperational::OperationalTransformation' (role 'QVTOperational_OperationalTransformation', cardinality 0..*) is associated with 'Class' (role 'Class428', cardinality 0..*).
+'Relation' (role 'Relation379', cardinality 0..*) is associated with 'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation378', cardinality 0..*).
+'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation381', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression382', cardinality 0..*).
+'Variable' (role 'Variable287', cardinality 0..*) is associated with 'QVTTemplate::CollectionTemplateExp' (role 'QVTTemplate_CollectionTemplateExp286', cardinality 0..*).
+'OclExpression' (role 'OclExpression191', cardinality 0..*) is associated with 'ImperativeOCL::UnlinkExp' (role 'ImperativeOCL_UnlinkExp190', cardinality 0..*).
+'EssentialOCL::TupleLiteralExp' (role 'EssentialOCL_TupleLiteralExp', cardinality 0..*) is associated with 'TupleLiteralPart' (role 'TupleLiteralPart', cardinality 0..*).
+'ObjectTemplateExp' (role 'ObjectTemplateExp', cardinality 0..*) is associated with 'QVTTemplate::PropertyTemplateItem' (role 'QVTTemplate_PropertyTemplateItem', cardinality 0..*).
+'Mapping' (role 'Mapping270', cardinality 0..*) is associated with 'QVTCore::Mapping' (role 'QVTCore_Mapping269', cardinality 0..*).
+'QVTOperational::ModelType' (role 'QVTOperational_ModelType392', cardinality 0..*) is associated with 'Package' (role 'Package393', cardinality 0..*).
+'EMOF::Enumeration' (role 'EMOF_Enumeration', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'ImperativeOCL::AltExp' (role 'ImperativeOCL_AltExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression110', cardinality 0..*).
+'QVTTemplate::PropertyTemplateItem' (role 'QVTTemplate_PropertyTemplateItem294', cardinality 0..*) is associated with 'Property' (role 'Property295', cardinality 0..*).
+'ImperativeOCL::Typedef' (role 'ImperativeOCL_Typedef', cardinality 0..*) is associated with 'Type' (role 'Type183', cardinality 0..*).
+'QVTTemplate::ObjectTemplateExp' (role 'QVTTemplate_ObjectTemplateExp', cardinality 0..*) is associated with 'PropertyTemplateItem' (role 'PropertyTemplateItem', cardinality 0..*).
+'EMOF::Element' (role 'EMOF_Element', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'OclExpression' (role 'OclExpression64', cardinality 0..*) is associated with 'EssentialOCL::IfExp' (role 'EssentialOCL_IfExp', cardinality 0..*).
+'Property' (role 'Property92', cardinality 0..*) is associated with 'EssentialOCL::TupleLiteralPart' (role 'EssentialOCL_TupleLiteralPart', cardinality 0..*).
+'OclExpression' (role 'OclExpression214', cardinality 0..*) is associated with 'QVTBase::Predicate' (role 'QVTBase_Predicate', cardinality 0..*).
+'RealizedVariable' (role 'RealizedVariable', cardinality 0..*) is associated with 'QVTCore::BottomPattern' (role 'QVTCore_BottomPattern255', cardinality 0..*).
+'OclExpression' (role 'OclExpression51', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl', cardinality 0..*).
+'ModelParameter' (role 'ModelParameter434', cardinality 0..*) is associated with 'QVTOperational::OperationalTransformation' (role 'QVTOperational_OperationalTransformation433', cardinality 0..*).
+'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation', cardinality 0..*) is associated with 'MappingOperation' (role 'MappingOperation', cardinality 0..*).
+'EssentialOCL::OperationCallExp' (role 'EssentialOCL_OperationCallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression84', cardinality 0..*).
+'EMOF::Parameter' (role 'EMOF_Parameter', cardinality 0..*) is associated with 'Operation' (role 'Operation25', cardinality 0..*).
+'Rule' (role 'Rule', cardinality 0..*) is associated with 'QVTBase::Domain' (role 'QVTBase_Domain', cardinality 0..*).
+'QVTOperational::MappingParameter' (role 'QVTOperational_MappingParameter388', cardinality 0..*) is associated with 'RelationDomain' (role 'RelationDomain', cardinality 0..*).
+'EssentialOCL::LetExp' (role 'EssentialOCL_LetExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression74', cardinality 0..*).
+'Variable' (role 'Variable137', cardinality 0..*) is associated with 'ImperativeOCL::ComputeExp' (role 'ImperativeOCL_ComputeExp136', cardinality 0..*).
+'QVTTemplate::CollectionTemplateExp' (role 'QVTTemplate_CollectionTemplateExp284', cardinality 0..*) is associated with 'CollectionType' (role 'CollectionType', cardinality 0..*).
+'QVTBase::TypedModel' (role 'QVTBase_TypedModel236', cardinality 0..*) is associated with 'Transformation' (role 'Transformation237', cardinality 0..*).
+'OclExpression' (role 'OclExpression143', cardinality 0..*) is associated with 'ImperativeOCL::DictLiteralPart' (role 'ImperativeOCL_DictLiteralPart142', cardinality 0..*).
+'QVTRelation::RelationDomain' (role 'QVTRelation_RelationDomain', cardinality 0..*) is associated with 'RelationDomainAssignment' (role 'RelationDomainAssignment', cardinality 0..*).
+'ImperativeOCL::BlockExp' (role 'ImperativeOCL_BlockExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression127', cardinality 0..*).
+'ImperativeOCL::ReturnExp' (role 'ImperativeOCL_ReturnExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression173', cardinality 0..*).
+'QVTCore::EnforcementOperation' (role 'QVTCore_EnforcementOperation', cardinality 0..*) is associated with 'BottomPattern' (role 'BottomPattern259', cardinality 0..*).
+'Class' (role 'Class350', cardinality 0..*) is associated with 'QVTOperational::ContextualProperty' (role 'QVTOperational_ContextualProperty', cardinality 0..*).
+'Property' (role 'Property312', cardinality 0..*) is associated with 'QVTRelation::Key' (role 'QVTRelation_Key311', cardinality 0..*).
+'OclExpression' (role 'OclExpression326', cardinality 0..*) is associated with 'QVTRelation::RelationCallExp' (role 'QVTRelation_RelationCallExp', cardinality 0..*).
+'ImperativeOCL::ListLiteralExp' (role 'ImperativeOCL_ListLiteralExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression159', cardinality 0..*).
+'QVTBase::Transformation' (role 'QVTBase_Transformation229', cardinality 0..*) is associated with 'Tag' (role 'Tag', cardinality 0..*).
+'TypedModel' (role 'TypedModel344', cardinality 0..*) is associated with 'QVTRelation::RelationImplementation' (role 'QVTRelation_RelationImplementation343', cardinality 0..*).
+'Property' (role 'Property89', cardinality 0..*) is associated with 'EssentialOCL::PropertyCallExp' (role 'EssentialOCL_PropertyCallExp', cardinality 0..*).
+'Variable' (role 'Variable318', cardinality 0..*) is associated with 'QVTRelation::Relation' (role 'QVTRelation_Relation317', cardinality 0..*).
+'TypedModel' (role 'TypedModel', cardinality 0..*) is associated with 'QVTBase::Domain' (role 'QVTBase_Domain206', cardinality 0..*).
+'ImperativeOCL::ImperativeIterateExp' (role 'ImperativeOCL_ImperativeIterateExp', cardinality 0..*) is associated with 'Variable' (role 'Variable147', cardinality 0..*).
+'OclExpression' (role 'OclExpression303', cardinality 0..*) is associated with 'QVTTemplate::TemplateExp' (role 'QVTTemplate_TemplateExp302', cardinality 0..*).
+'OclExpression' (role 'OclExpression353', cardinality 0..*) is associated with 'QVTOperational::ContextualProperty' (role 'QVTOperational_ContextualProperty352', cardinality 0..*).
+'EnforcementOperation' (role 'EnforcementOperation', cardinality 0..*) is associated with 'QVTCore::BottomPattern' (role 'QVTCore_BottomPattern253', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation361', cardinality 0..*) is associated with 'ImperativeOperation' (role 'ImperativeOperation', cardinality 0..*).
+'QVTCore::Area' (role 'QVTCore_Area243', cardinality 0..*) is associated with 'GuardPattern' (role 'GuardPattern', cardinality 0..*).
+'EssentialOCL::TupleLiteralPart' (role 'EssentialOCL_TupleLiteralPart96', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression97', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation', cardinality 0..*) is associated with 'OperationBody' (role 'OperationBody', cardinality 0..*).
+'DomainPattern' (role 'DomainPattern', cardinality 0..*) is associated with 'QVTRelation::RelationDomain' (role 'QVTRelation_RelationDomain331', cardinality 0..*).
+'Class' (role 'Class291', cardinality 0..*) is associated with 'QVTTemplate::ObjectTemplateExp' (role 'QVTTemplate_ObjectTemplateExp290', cardinality 0..*).
+'QVTOperational::ContextualProperty' (role 'QVTOperational_ContextualProperty355', cardinality 0..*) is associated with 'Property' (role 'Property356', cardinality 0..*).
+'EssentialOCL::CollectionType' (role 'EssentialOCL_CollectionType', cardinality 0..*) is associated with 'Type' (role 'Type47', cardinality 0..*).
+'ImperativeOCL::AssignExp' (role 'ImperativeOCL_AssignExp124', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression125', cardinality 0..*).
+'QVTOperational::OperationBody' (role 'QVTOperational_OperationBody', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression420', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'EMOF::Tag' (role 'EMOF_Tag', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation376', cardinality 0..*) is associated with 'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation375', cardinality 0..*).
+'Predicate' (role 'Predicate', cardinality 0..*) is associated with 'QVTBase::Pattern' (role 'QVTBase_Pattern212', cardinality 0..*).
+'ImperativeOCL::ImperativeLoopExp' (role 'ImperativeOCL_ImperativeLoopExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression149', cardinality 0..*).
+'OclExpression' (role 'OclExpression115', cardinality 0..*) is associated with 'ImperativeOCL::AssertExp' (role 'ImperativeOCL_AssertExp', cardinality 0..*).
+'Variable' (role 'Variable196', cardinality 0..*) is associated with 'ImperativeOCL::UnpackExp' (role 'ImperativeOCL_UnpackExp195', cardinality 0..*).
+'RelationalTransformation' (role 'RelationalTransformation437', cardinality 0..*) is associated with 'QVTOperational::OperationalTransformation' (role 'QVTOperational_OperationalTransformation436', cardinality 0..*).
+'TypedModel' (role 'TypedModel234', cardinality 0..*) is associated with 'QVTBase::TypedModel' (role 'QVTBase_TypedModel', cardinality 0..*).
+'QVTOperational::Module' (role 'QVTOperational_Module399', cardinality 0..*) is associated with 'ModuleImport' (role 'ModuleImport', cardinality 0..*).
+'Class' (role 'Class11', cardinality 0..*) is associated with 'EMOF::Operation' (role 'EMOF_Operation', cardinality 0..*).
+'EssentialOCL::TypeExp' (role 'EssentialOCL_TypeExp', cardinality 0..*) is associated with 'Type' (role 'Type99', cardinality 0..*).
+'Type' (role 'Type132', cardinality 0..*) is associated with 'ImperativeOCL::CatchExp' (role 'ImperativeOCL_CatchExp131', cardinality 0..*).
+'OclExpression' (role 'OclExpression369', cardinality 0..*) is associated with 'QVTOperational::MappingBody' (role 'QVTOperational_MappingBody368', cardinality 0..*).
+'ImperativeOCL::TryExp' (role 'ImperativeOCL_TryExp', cardinality 0..*) is associated with 'CatchExp' (role 'CatchExp', cardinality 0..*).
+'QVTOperational::Module' (role 'QVTOperational_Module407', cardinality 0..*) is associated with 'ModelType' (role 'ModelType', cardinality 0..*).
+'OclExpression' (role 'OclExpression140', cardinality 0..*) is associated with 'ImperativeOCL::DictLiteralPart' (role 'ImperativeOCL_DictLiteralPart', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'EMOF::Factory' (role 'EMOF_Factory', cardinality 0..*).
+'ImperativeOCL::InstantiationExp' (role 'ImperativeOCL_InstantiationExp153', cardinality 0..*) is associated with 'Variable' (role 'Variable154', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'EMOF::Class' (role 'EMOF_Class4', cardinality 0..*).
+'Variable' (role 'Variable405', cardinality 0..*) is associated with 'QVTOperational::Module' (role 'QVTOperational_Module404', cardinality 0..*).
+'Property' (role 'Property431', cardinality 0..*) is associated with 'QVTOperational::OperationalTransformation' (role 'QVTOperational_OperationalTransformation430', cardinality 0..*).
+'QVTCore::PropertyAssignment' (role 'QVTCore_PropertyAssignment', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression275', cardinality 0..*).
+'QVTRelation::RelationImplementation' (role 'QVTRelation_RelationImplementation346', cardinality 0..*) is associated with 'Relation' (role 'Relation347', cardinality 0..*).
+'Class' (role 'Class157', cardinality 0..*) is associated with 'ImperativeOCL::InstantiationExp' (role 'ImperativeOCL_InstantiationExp156', cardinality 0..*).
+'OclExpression' (role 'OclExpression186', cardinality 0..*) is associated with 'ImperativeOCL::Typedef' (role 'ImperativeOCL_Typedef185', cardinality 0..*).
+'QVTRelation::RelationDomainAssignment' (role 'QVTRelation_RelationDomainAssignment', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression336', cardinality 0..*).
+'QVTBase::TypedModel' (role 'QVTBase_TypedModel239', cardinality 0..*) is associated with 'Package' (role 'Package240', cardinality 0..*).
+'QVTRelation::RelationImplementation' (role 'QVTRelation_RelationImplementation', cardinality 0..*) is associated with 'Operation' (role 'Operation341', cardinality 0..*).
+'OclExpression' (role 'OclExpression385', cardinality 0..*) is associated with 'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation384', cardinality 0..*).
+'ImperativeOCL::DictLiteralExp' (role 'ImperativeOCL_DictLiteralExp', cardinality 0..*) is associated with 'DictLiteralPart' (role 'DictLiteralPart', cardinality 0..*).
+'Variable' (role 'Variable334', cardinality 0..*) is associated with 'QVTRelation::RelationDomain' (role 'QVTRelation_RelationDomain333', cardinality 0..*).
+'LogExp' (role 'LogExp', cardinality 0..*) is associated with 'ImperativeOCL::AssertExp' (role 'ImperativeOCL_AssertExp117', cardinality 0..*).
+'QVTCore::Assignment' (role 'QVTCore_Assignment', cardinality 0..*) is associated with 'BottomPattern' (role 'BottomPattern245', cardinality 0..*).
+'Class' (role 'Class306', cardinality 0..*) is associated with 'QVTRelation::Key' (role 'QVTRelation_Key', cardinality 0..*).
+'Variable' (role 'Variable72', cardinality 0..*) is associated with 'EssentialOCL::IterateExp' (role 'EssentialOCL_IterateExp', cardinality 0..*).
+'ImperativeOCL::OrderedTupleLiteralPart' (role 'ImperativeOCL_OrderedTupleLiteralPart', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression164', cardinality 0..*).
+'QVTOperational::ModelType' (role 'QVTOperational_ModelType', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression390', cardinality 0..*).
+'EntryOperation' (role 'EntryOperation', cardinality 0..*) is associated with 'QVTOperational::Module' (role 'QVTOperational_Module397', cardinality 0..*).
+'Mapping' (role 'Mapping', cardinality 0..*) is associated with 'QVTCore::Mapping' (role 'QVTCore_Mapping', cardinality 0..*).
+'QVTOperational::Module' (role 'QVTOperational_Module', cardinality 0..*) is associated with 'Property' (role 'Property395', cardinality 0..*).
+'ImperativeOCL::AssignExp' (role 'ImperativeOCL_AssignExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression119', cardinality 0..*).
+'Rule' (role 'Rule232', cardinality 0..*) is associated with 'QVTBase::Transformation' (role 'QVTBase_Transformation231', cardinality 0..*).
+'QVTTemplate::CollectionTemplateExp' (role 'QVTTemplate_CollectionTemplateExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression282', cardinality 0..*).
+'Domain' (role 'Domain', cardinality 0..*) is associated with 'QVTBase::Rule' (role 'QVTBase_Rule', cardinality 0..*).
+'Variable' (role 'Variable339', cardinality 0..*) is associated with 'QVTRelation::RelationDomainAssignment' (role 'QVTRelation_RelationDomainAssignment338', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation449', cardinality 0..*) is associated with 'QVTOperational::VarParameter' (role 'QVTOperational_VarParameter', cardinality 0..*).
+'Tag' (role 'Tag402', cardinality 0..*) is associated with 'QVTOperational::Module' (role 'QVTOperational_Module401', cardinality 0..*).
+'QVTCore::CorePattern' (role 'QVTCore_CorePattern', cardinality 0..*) is associated with 'Variable' (role 'Variable257', cardinality 0..*).
+'Mapping' (role 'Mapping267', cardinality 0..*) is associated with 'QVTCore::Mapping' (role 'QVTCore_Mapping266', cardinality 0..*).
+'QVTCore::GuardPattern' (role 'QVTCore_GuardPattern', cardinality 0..*) is associated with 'Area' (role 'Area263', cardinality 0..*).
+'Type' (role 'Type56', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl55', cardinality 0..*).
+'EMOF::EnumerationLiteral' (role 'EMOF_EnumerationLiteral', cardinality 0..*) is associated with 'Enumeration' (role 'Enumeration', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation423', cardinality 0..*) is associated with 'QVTOperational::OperationBody' (role 'QVTOperational_OperationBody422', cardinality 0..*).
+'QVTTemplate::TemplateExp' (role 'QVTTemplate_TemplateExp', cardinality 0..*) is associated with 'Variable' (role 'Variable300', cardinality 0..*).
+'EssentialOCL::LoopExp' (role 'EssentialOCL_LoopExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression79', cardinality 0..*).
+'ImperativeOCL::RaiseExp' (role 'ImperativeOCL_RaiseExp170', cardinality 0..*) is associated with 'Type' (role 'Type171', cardinality 0..*).
+'Area' (role 'Area', cardinality 0..*) is associated with 'QVTCore::BottomPattern' (role 'QVTCore_BottomPattern', cardinality 0..*).
+'OclExpression' (role 'OclExpression200', cardinality 0..*) is associated with 'ImperativeOCL::WhileExp' (role 'ImperativeOCL_WhileExp', cardinality 0..*).
+'QVTRelation::DomainPattern' (role 'QVTRelation_DomainPattern', cardinality 0..*) is associated with 'TemplateExp' (role 'TemplateExp', cardinality 0..*).
+'Module' (role 'Module', cardinality 0..*) is associated with 'QVTOperational::ModuleImport' (role 'QVTOperational_ModuleImport411', cardinality 0..*).
+'ModelParameter' (role 'ModelParameter', cardinality 0..*) is associated with 'QVTOperational::MappingParameter' (role 'QVTOperational_MappingParameter', cardinality 0..*).
+'EssentialOCL::CallExp' (role 'EssentialOCL_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'EMOF::TypedElement' (role 'EMOF_TypedElement', cardinality 0..*) is associated with 'Type' (role 'Type35', cardinality 0..*).
+'ImperativeOCL::SwitchExp' (role 'ImperativeOCL_SwitchExp', cardinality 0..*) is associated with 'AltExp' (role 'AltExp', cardinality 0..*).
+'ImperativeOCL::VariableInitExp' (role 'ImperativeOCL_VariableInitExp', cardinality 0..*) is associated with 'Variable' (role 'Variable198', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation373', cardinality 0..*) is associated with 'QVTOperational::MappingOperation' (role 'QVTOperational_MappingOperation372', cardinality 0..*).
+'QVTBase::Transformation' (role 'QVTBase_Transformation226', cardinality 0..*) is associated with 'TypedModel' (role 'TypedModel227', cardinality 0..*).
+'QVTCore::VariableAssignment' (role 'QVTCore_VariableAssignment', cardinality 0..*) is associated with 'Variable' (role 'Variable280', cardinality 0..*).
+'ImperativeOCL::AssignExp' (role 'ImperativeOCL_AssignExp121', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression122', cardinality 0..*).
+'EMOF::Class' (role 'EMOF_Class2', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'ImperativeOCL::TryExp' (role 'ImperativeOCL_TryExp180', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression181', cardinality 0..*).
+'OclExpression' (role 'OclExpression177', cardinality 0..*) is associated with 'ImperativeOCL::SwitchExp' (role 'ImperativeOCL_SwitchExp176', cardinality 0..*).
+'EssentialOCL::CollectionRange' (role 'EssentialOCL_CollectionRange', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression42', cardinality 0..*).
+'OclExpression' (role 'OclExpression193', cardinality 0..*) is associated with 'ImperativeOCL::UnpackExp' (role 'ImperativeOCL_UnpackExp', cardinality 0..*).
+'Variable' (role 'Variable445', cardinality 0..*) is associated with 'QVTOperational::ResolveExp' (role 'QVTOperational_ResolveExp444', cardinality 0..*).
+'QVTBase::Rule' (role 'QVTBase_Rule219', cardinality 0..*) is associated with 'Rule' (role 'Rule220', cardinality 0..*).
+'EssentialOCL::IfExp' (role 'EssentialOCL_IfExp66', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression67', cardinality 0..*).
+'QVTOperational::ImperativeOperation' (role 'QVTOperational_ImperativeOperation359', cardinality 0..*) is associated with 'VarParameter' (role 'VarParameter', cardinality 0..*).
+'QVTRelation::Key' (role 'QVTRelation_Key314', cardinality 0..*) is associated with 'RelationalTransformation' (role 'RelationalTransformation', cardinality 0..*).
+'OclExpression' (role 'OclExpression134', cardinality 0..*) is associated with 'ImperativeOCL::ComputeExp' (role 'ImperativeOCL_ComputeExp', cardinality 0..*).
+'EMOF::Package' (role 'EMOF_Package19', cardinality 0..*) is associated with 'Package' (role 'Package20', cardinality 0..*).
+'OclExpression' (role 'OclExpression70', cardinality 0..*) is associated with 'EssentialOCL::IfExp' (role 'EssentialOCL_IfExp69', cardinality 0..*).
+'OclExpression' (role 'OclExpression203', cardinality 0..*) is associated with 'ImperativeOCL::WhileExp' (role 'ImperativeOCL_WhileExp202', cardinality 0..*).
+'ImperativeOCL::InstantiationExp' (role 'ImperativeOCL_InstantiationExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression151', cardinality 0..*).
+'EssentialOCL::Variable' (role 'EssentialOCL_Variable', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression101', cardinality 0..*).
+'QVTOperational::VarParameter' (role 'QVTOperational_VarParameter451', cardinality 0..*) is associated with 'ImperativeOperation' (role 'ImperativeOperation452', cardinality 0..*).
+'EssentialOCL::LetExp' (role 'EssentialOCL_LetExp76', cardinality 0..*) is associated with 'Variable' (role 'Variable77', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'EMOF::Operation' (role 'EMOF_Operation15', cardinality 0..*).
+'Operation' (role 'Operation87', cardinality 0..*) is associated with 'EssentialOCL::OperationCallExp' (role 'EssentialOCL_OperationCallExp86', cardinality 0..*).
+'OrderedTupleLiteralPart' (role 'OrderedTupleLiteralPart', cardinality 0..*) is associated with 'ImperativeOCL::OrderedTupleLiteralExp' (role 'ImperativeOCL_OrderedTupleLiteralExp', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'EssentialOCL::ExpressionInOcl' (role 'EssentialOCL_ExpressionInOcl53', cardinality 0..*).
+'Property' (role 'Property278', cardinality 0..*) is associated with 'QVTCore::PropertyAssignment' (role 'QVTCore_PropertyAssignment277', cardinality 0..*).
+'BottomPattern' (role 'BottomPattern', cardinality 0..*) is associated with 'QVTCore::Area' (role 'QVTCore_Area', cardinality 0..*).
+'QVTOperational::ObjectExp' (role 'QVTOperational_ObjectExp417', cardinality 0..*) is associated with 'Variable' (role 'Variable418', cardinality 0..*).
+'QVTOperational::ObjectExp' (role 'QVTOperational_ObjectExp', cardinality 0..*) is associated with 'ConstructorBody' (role 'ConstructorBody', cardinality 0..*).
+'Class' (role 'Class27', cardinality 0..*) is associated with 'EMOF::Property' (role 'EMOF_Property', cardinality 0..*).
+'OclExpression' (role 'OclExpression38', cardinality 0..*) is associated with 'EssentialOCL::CollectionItem' (role 'EssentialOCL_CollectionItem', cardinality 0..*).
+'QVTOperational::OperationalTransformation' (role 'QVTOperational_OperationalTransformation439', cardinality 0..*) is associated with 'Relation' (role 'Relation440', cardinality 0..*).

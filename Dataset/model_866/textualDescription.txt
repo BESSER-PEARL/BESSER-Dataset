@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'fsm::Action' has the following attributes: 'entryLabel' of type str.
+The class 'fsm::SuperState' has no attributes.
+The class 'fsm::TransientState' has no attributes.
+The class 'fsm::Transition' has the following attributes: 'Effect' of type str; 'Guard' of type str.
+The class 'State' has no attributes.
+The class 'fsm::InitialState' has the following attributes: 'name' of type str.
+The class 'fsm::eAction' has the following attributes: 'exitLabel' of type str.
+The class 'fsm::FSM' has no attributes.
+The class 'fsm::SteadyState' has no attributes.
+The class 'SuperState' has no attributes.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+'fsm::InitialState' is a specialization of 'SuperState'.
+'fsm::State' is a specialization of 'SuperState'.
+'fsm::SteadyState' is a specialization of 'State'.
+'fsm::TransientState' is a specialization of 'State'.
+'fsm::Transition' (role 'fsm_Transition', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State8', cardinality 0..*).
+'fsm::eAction' (role 'fsm_eAction', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State6', cardinality 0..*).
+'fsm::InitialState' (role 'fsm_InitialState', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM2', cardinality 0..*).
+'fsm::State' (role 'fsm_State4', cardinality 0..*) is associated with 'fsm::Action' (role 'fsm_Action', cardinality 0..*).
+'fsm::SuperState' (role 'SuperState', cardinality 0..*) is associated with 'fsm::Transition' (role 'outTrans', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::SuperState' (role 'src', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition10', cardinality 0..*) is associated with 'fsm::SuperState' (role 'fsm_SuperState', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'eiqlibrary::Book' has the following attributes: 'category' of type str; 'pages' of type int; 'title' of type str.
+The class 'eiqlibrary::Library' has the following attributes: 'internalRequestCount' of type int; 'requestCount' of type int; 'address' of type str; 'sumOfPages' of type int.
+The class 'eiqlibrary::Writer' has the following attributes: 'name' of type str.
+The enumeration 'BookCategory' has the following literals: 'SciFi', 'Drama', 'History', 'Art'.
+'eiqlibrary::Book' (role 'eiqlibrary_Book', cardinality 0..*) is associated with 'eiqlibrary::Library' (role 'eiqlibrary_Library2', cardinality 0..*).
+'eiqlibrary::Book' (role 'Book', cardinality 0..*) is associated with 'eiqlibrary::Writer' (role 'authors', cardinality 0..*).
+'eiqlibrary::Book' (role 'eiqlibrary_Book10', cardinality 0..*) is associated with 'eiqlibrary::Writer' (role 'eiqlibrary_Writer9', cardinality 0..*).
+'eiqlibrary::Library' (role 'eiqlibrary_Library', cardinality 0..*) is associated with 'eiqlibrary::Writer' (role 'eiqlibrary_Writer', cardinality 0..*).
+'eiqlibrary::Writer' (role 'Writer', cardinality 0..*) is associated with 'eiqlibrary::Book' (role 'books', cardinality 0..*).
+'eiqlibrary::Book' (role 'eiqlibrary_Book13', cardinality 0..*) is associated with 'eiqlibrary::Writer' (role 'eiqlibrary_Writer12', cardinality 0..*).
+'eiqlibrary::Library' (role 'eiqlibrary_Library4', cardinality 0..*) is associated with 'eiqlibrary::Book' (role 'eiqlibrary_Book5', cardinality 0..*).

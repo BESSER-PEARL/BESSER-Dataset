@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'event' of type str.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'fsm::FSM' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::InitialState' is a specialization of 'State'.
+'fsm::Transition' (role 'outgoingtransitions', cardinality 0..*) is associated with 'fsm::State' (role 'State12', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm', cardinality 0..*).
+'fsm::InitialState' (role 'fsm_InitialState', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM', cardinality 0..*).
+'fsm::Transition' (role 'transitions', cardinality 0..*) is associated with 'fsm::FSM' (role 'FSM10', cardinality 0..*).
+'fsm::FSM' (role 'fsm2', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::State' (role 'states', cardinality 0..*) is associated with 'fsm::FSM' (role 'FSM', cardinality 0..*).
+'fsm::State' (role 'State14', cardinality 0..*) is associated with 'fsm::Transition' (role 'incommingtransitions', cardinality 0..*).
+'fsm::Transition' (role 'Transition8', cardinality 0..*) is associated with 'fsm::State' (role 'to', cardinality 0..*).
+'fsm::Transition' (role 'Transition6', cardinality 0..*) is associated with 'fsm::State' (role 'from_', cardinality 0..*).

@@ -1,0 +1,599 @@
+The model has 228 class(es).
+The class 'FlatQVT::IfExp' has no attributes.
+The class 'RelationDomainAssignment' has no attributes.
+The class 'FlatQVT::NumericLiteralExp' has no attributes.
+The class 'FlatQVT::LiteralExp' has no attributes.
+The class 'FlatQVT::OrderedTupleType' has no attributes.
+The class 'FlatQVT::VariableAssignment' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'FlatQVT::TypedElement' has no attributes.
+The class 'FlatQVT::DictLiteralPart' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'Variable' has no attributes.
+The class 'Object' has no attributes.
+The class 'Package' has no attributes.
+The class 'RelationImplementation' has no attributes.
+The class 'FlatQVT::RealLiteralExp' has the following attributes: 'realSymbol' of type str.
+The class 'FlatQVT::OrderedSetType' has no attributes.
+The class 'FlatQVT::VariableInitExp' has the following attributes: 'withResult' of type str.
+The class 'FlatQVT::EnumerationLiteral' has no attributes.
+The class 'FlatQVT::TupleType' has no attributes.
+The class 'FlatQVT::CorePattern' has no attributes.
+The class 'FlatQVT::NamedElement' has the following attributes: 'name' of type str.
+The class 'FlatQVT::VariableExp' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'FlatQVT::CollectionRange' has no attributes.
+The class 'FlatQVT::ContinueExp' has no attributes.
+The class 'FlatQVT::EntryOperation' has no attributes.
+The class 'FlatQVT::ReflectiveSequence' has no attributes.
+The class 'FlatQVT::Enumeration' has no attributes.
+The class 'FlatQVT::Helper' has the following attributes: 'isQuery' of type str.
+The class 'FlatQVT::ContextualProperty' has no attributes.
+The class 'FlatQVT::RealizedVariable' has no attributes.
+The class 'ModuleImport' has no attributes.
+The class 'FlatQVT::URIExtent' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'FlatQVT::OperationBody' has no attributes.
+The class 'Transformation' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'FlatQVT::OperationCallExp' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'FlatQVT::Element' has no attributes.
+The class 'FlatQVT::OperationalTransformation' has no attributes.
+The class 'FeatureCallExp' has no attributes.
+The class 'Key' has no attributes.
+The class 'FlatQVT::CollectionType' has no attributes.
+The class 'FlatQVT::ImperativeOperation' has the following attributes: 'isBlackbox' of type str.
+The class 'Operation' has no attributes.
+The class 'FlatQVT::SetType' has no attributes.
+The class 'PropertyTemplateItem' has no attributes.
+The class 'ImperativeLoopExp' has no attributes.
+The class 'FlatQVT::Predicate' has no attributes.
+The class 'FlatQVT::GuardPattern' has no attributes.
+The class 'FlatQVT::Comment' has the following attributes: 'body' of type str.
+The class 'FlatQVT::Assignment' has the following attributes: 'isDefault' of type str.
+The class 'FlatQVT::Variable' has no attributes.
+The class 'CatchExp' has no attributes.
+The class 'FlatQVT::TryExp' has no attributes.
+The class 'InstantiationExp' has no attributes.
+The class 'FlatQVT::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'FlatQVT::AssertExp' has the following attributes: 'severity' of type str.
+The class 'FlatQVT::OclExpression' has no attributes.
+The class 'FlatQVT::CollectionItem' has no attributes.
+The class 'FlatQVT::MappingCallExp' has the following attributes: 'isStrict' of type str.
+The class 'FlatQVT::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'FlatQVT::Transformation' has no attributes.
+The class 'Property' has no attributes.
+The class 'ImperativeCallExp' has no attributes.
+The class 'Domain' has no attributes.
+The class 'FlatQVT::AnyType' has no attributes.
+The class 'ImperativeOperation' has no attributes.
+The class 'FlatQVT::Factory' has no attributes.
+The class 'FlatQVT::Function' has no attributes.
+The class 'FlatQVT::ImperativeIterateExp' has no attributes.
+The class 'FlatQVT::OrderedTupleLiteralExp' has no attributes.
+The class 'FlatQVT::Property' has the following attributes: 'default' of type str; 'isReadOnly' of type str; 'isID' of type str; 'isDerived' of type str; 'isComposite' of type str.
+The class 'TupleLiteralPart' has no attributes.
+The class 'FlatQVT::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'LoopExp' has no attributes.
+The class 'FlatQVT::TypeExp' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'TupleLiteralExp' has no attributes.
+The class 'FlatQVT::Type' has no attributes.
+The class 'FlatQVT::ObjectExp' has no attributes.
+The class 'ObjectTemplateExp' has no attributes.
+The class 'FlatQVT::Extent' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'Area' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'FlatQVT::ListType' has no attributes.
+The class 'FlatQVT::ForExp' has no attributes.
+The class 'PropertyCallExp' has no attributes.
+The class 'FlatQVT::Package' has the following attributes: 'uri' of type str.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'FlatQVT::BottomPattern' has no attributes.
+The class 'FlatQVT::VarParameter' has the following attributes: 'kind' of type str.
+The class 'Type' has no attributes.
+The class 'FlatQVT::OppositePropertyCallExp' has no attributes.
+The class 'FlatQVT::WhileExp' has no attributes.
+The class 'FlatQVT::ComputeExp' has no attributes.
+The class 'FlatQVT::ModelParameter' has no attributes.
+The class 'TypedModel' has no attributes.
+The class 'FlatQVT::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type str.
+The class 'EntryOperation' has no attributes.
+The class 'BottomPattern' has no attributes.
+The class 'Tag' has no attributes.
+The class 'FlatQVT::InvalidLiteralExp' has no attributes.
+The class 'ImperativeExpression' has no attributes.
+The class 'OrderedTupleLiteralPart' has no attributes.
+The class 'FlatQVT::ImperativeLoopExp' has no attributes.
+The class 'FlatQVT::EnumLiteralExp' has no attributes.
+The class 'GuardPattern' has no attributes.
+The class 'Class' has no attributes.
+The class 'FlatQVT::InvalidType' has no attributes.
+The class 'VarParameter' has no attributes.
+The class 'FlatQVT::DomainPattern' has no attributes.
+The class 'FlatQVT::MappingOperation' has no attributes.
+The class 'CollectionLiteralExp' has no attributes.
+The class 'FlatQVT::EnforcementOperation' has the following attributes: 'enforcementMode' of type str.
+The class 'ResolveExp' has no attributes.
+The class 'FlatQVT::UnpackExp' has no attributes.
+The class 'FlatQVT::BlockExp' has no attributes.
+The class 'FlatQVT::Class' has the following attributes: 'isAbstract' of type str.
+The class 'FlatQVT::LoopExp' has no attributes.
+The class 'FlatQVT::Operation' has no attributes.
+The class 'Module' has no attributes.
+The class 'Relation' has no attributes.
+The class 'Rule' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'Comment' has no attributes.
+The class 'FlatQVT::PrimitiveLiteralExp' has no attributes.
+The class 'FlatQVT::RelationDomainAssignment' has no attributes.
+The class 'FlatQVT::TupleLiteralExp' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'FlatQVT::Typedef' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'EnforcementOperation' has no attributes.
+The class 'FlatQVT::DictionaryType' has no attributes.
+The class 'FlatQVT::CollectionLiteralPart' has no attributes.
+The class 'FlatQVT::RelationalTransformation' has no attributes.
+The class 'FlatQVT::BreakExp' has no attributes.
+The class 'FlatQVT::UnlimitedNaturalExp' has the following attributes: 'symbol' of type str.
+The class 'FlatQVT::Pattern' has no attributes.
+The class 'FlatQVT::ConstructorBody' has no attributes.
+The class 'FlatQVT::TypedModel' has no attributes.
+The class 'Extent' has no attributes.
+The class 'FlatQVT::ModelType' has the following attributes: 'conformanceKind' of type str.
+The class 'FlatQVT::ListLiteralExp' has no attributes.
+The class 'FlatQVT::ReturnExp' has no attributes.
+The class 'DataType' has no attributes.
+The class 'FlatQVT::TupleLiteralPart' has no attributes.
+The class 'FlatQVT::AssignExp' has the following attributes: 'isReset' of type str.
+The class 'RealizedVariable' has no attributes.
+The class 'DomainPattern' has no attributes.
+The class 'FlatQVT::NavigationCallExp' has no attributes.
+The class 'FlatQVT::ObjectTemplateExp' has no attributes.
+The class 'FlatQVT::Module' has the following attributes: 'isBlackbox' of type str.
+The class 'FlatQVT::ReflectiveCollection' has no attributes.
+The class 'FlatQVT::CallExp' has no attributes.
+The class 'FlatQVT::Parameter' has no attributes.
+The class 'LogExp' has no attributes.
+The class 'FlatQVT::Constructor' has no attributes.
+The class 'RelationDomain' has no attributes.
+The class 'TemplateExp' has no attributes.
+The class 'OperationCallExp' has no attributes.
+The class 'FlatQVT::PropertyTemplateItem' has the following attributes: 'isOpposite' of type str.
+The class 'FlatQVT::RelationImplementation' has no attributes.
+The class 'FlatQVT::Mapping' has no attributes.
+The class 'FlatQVT::LogExp' has no attributes.
+The class 'ModelParameter' has no attributes.
+The class 'FlatQVT::UnlinkExp' has no attributes.
+The class 'OperationBody' has no attributes.
+The class 'FlatQVT::PrimitiveType' has no attributes.
+The class 'ConstructorBody' has no attributes.
+The class 'FlatQVT::RelationCallExp' has no attributes.
+The class 'Element' has no attributes.
+The class 'FlatQVT::RelationDomain' has no attributes.
+The class 'Assignment' has no attributes.
+The class 'FlatQVT::DataType' has no attributes.
+The class 'FlatQVT::NullLiteralExp' has no attributes.
+The class 'FlatQVT::Object' has no attributes.
+The class 'FlatQVT::ResolveInExp' has no attributes.
+The class 'FlatQVT::ImperativeExpression' has no attributes.
+The class 'FlatQVT::Key' has no attributes.
+The class 'FlatQVT::OrderedTupleLiteralPart' has no attributes.
+The class 'FlatQVT::Tag' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'AltExp' has no attributes.
+The class 'ReflectiveCollection' has no attributes.
+The class 'FlatQVT::InstantiationExp' has no attributes.
+The class 'ModelType' has no attributes.
+The class 'FlatQVT::MappingParameter' has no attributes.
+The class 'FlatQVT::Area' has no attributes.
+The class 'FlatQVT::Domain' has the following attributes: 'isEnforceable' of type str; 'isCheckable' of type str.
+The class 'FlatQVT::Rule' has no attributes.
+The class 'FlatQVT::IteratorExp' has no attributes.
+The class 'FlatQVT::CatchExp' has no attributes.
+The class 'FlatQVT::DictLiteralExp' has no attributes.
+The class 'RelationalTransformation' has no attributes.
+The class 'FlatQVT::RaiseExp' has no attributes.
+The class 'FlatQVT::TemplateExp' has no attributes.
+The class 'FlatQVT::MappingBody' has no attributes.
+The class 'FlatQVT::ExpressionInOcl' has no attributes.
+The class 'FlatQVT::MultiplicityElement' has the following attributes: 'lower' of type str; 'isOrdered' of type str; 'upper' of type str; 'isUnique' of type str.
+The class 'FlatQVT::PropertyAssignment' has no attributes.
+The class 'FlatQVT::ResolveExp' has the following attributes: 'one' of type str; 'isInverse' of type str; 'isDeferred' of type str.
+The class 'FlatQVT::Library' has no attributes.
+The class 'FlatQVT::FunctionParameter' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'NavigationCallExp' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'FlatQVT::SwitchExp' has no attributes.
+The class 'FlatQVT::CoreDomain' has no attributes.
+The class 'FlatQVT::PropertyCallExp' has no attributes.
+The class 'FlatQVT::BagType' has no attributes.
+The class 'FlatQVT::VoidType' has no attributes.
+The class 'FlatQVT::ImperativeCallExp' has the following attributes: 'isVirtual' of type str.
+The class 'FlatQVT::CollectionTemplateExp' has no attributes.
+The class 'FlatQVT::LetExp' has no attributes.
+The class 'FlatQVT::AltExp' has no attributes.
+The class 'MappingOperation' has no attributes.
+The class 'FlatQVT::ModuleImport' has the following attributes: 'kind' of type str.
+The class 'FlatQVT::Relation' has the following attributes: 'isTopLevel' of type str.
+The class 'FlatQVT::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'FlatQVT::SequenceType' has no attributes.
+The class 'CorePattern' has no attributes.
+The class 'DictLiteralPart' has no attributes.
+The class 'FlatQVT::FeatureCallExp' has no attributes.
+The class 'FlatQVT::IterateExp' has no attributes.
+The enumeration 'EnforcementMode' has the following literals: 'Creation', 'Deletion'.
+The enumeration 'CollectionKind' has the following literals: 'Bag', 'Set', 'Sequence', 'OrderedSet', 'Collection'.
+The enumeration 'SeverityKind' has the following literals: 'warning', 'error', 'fatal'.
+The enumeration 'DirectionKind' has the following literals: 'inout', 'out', 'in_'.
+The enumeration 'ImportKind' has the following literals: 'access', 'extension'.
+'FlatQVT::AssertExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::SetType' is a specialization of 'CollectionType'.
+'FlatQVT::RelationCallExp' is a specialization of 'OclExpression'.
+'FlatQVT::VoidType' is a specialization of 'Type'.
+'FlatQVT::Comment' is a specialization of 'Element'.
+'FlatQVT::Tag' is a specialization of 'Element'.
+'FlatQVT::MappingParameter' is a specialization of 'VarParameter'.
+'FlatQVT::ForExp' is a specialization of 'ImperativeLoopExp'.
+'FlatQVT::ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+'FlatQVT::PropertyCallExp' is a specialization of 'NavigationCallExp'.
+'FlatQVT::FunctionParameter' is a specialization of 'Variable'.
+'FlatQVT::ListLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::OperationCallExp' is a specialization of 'FeatureCallExp'.
+'FlatQVT::Helper' is a specialization of 'ImperativeOperation'.
+'FlatQVT::ConstructorBody' is a specialization of 'OperationBody'.
+'FlatQVT::LetExp' is a specialization of 'OclExpression'.
+'FlatQVT::Pattern' is a specialization of 'Element'.
+'FlatQVT::MappingBody' is a specialization of 'OperationBody'.
+'FlatQVT::RaiseExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::CoreDomain' is a specialization of 'Domain'.
+'FlatQVT::PropertyTemplateItem' is a specialization of 'Element'.
+'FlatQVT::Function' is a specialization of 'Operation'.
+'FlatQVT::ContextualProperty' is a specialization of 'Property'.
+'FlatQVT::TypedElement' is a specialization of 'NamedElement'.
+'FlatQVT::TryExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::TemplateExp' is a specialization of 'LiteralExp'.
+'FlatQVT::CatchExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::OrderedTupleLiteralPart' is a specialization of 'Element'.
+'FlatQVT::MappingCallExp' is a specialization of 'ImperativeCallExp'.
+'FlatQVT::DictLiteralPart' is a specialization of 'Element'.
+'FlatQVT::ComputeExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::Rule' is a specialization of 'NamedElement'.
+'FlatQVT::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'FlatQVT::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'FlatQVT::Property' is a specialization of 'MultiplicityElement'.
+'FlatQVT::LoopExp' is a specialization of 'CallExp'.
+'FlatQVT::ModuleImport' is a specialization of 'Element'.
+'FlatQVT::Operation' is a specialization of 'MultiplicityElement'.
+'FlatQVT::EnumerationLiteral' is a specialization of 'NamedElement'.
+'FlatQVT::Transformation' is a specialization of 'Class'.
+'FlatQVT::Key' is a specialization of 'Element'.
+'FlatQVT::ImperativeOperation' is a specialization of 'Operation'.
+'FlatQVT::ReflectiveSequence' is a specialization of 'ReflectiveCollection'.
+'FlatQVT::IteratorExp' is a specialization of 'LoopExp'.
+'FlatQVT::IterateExp' is a specialization of 'LoopExp'.
+'FlatQVT::ModelParameter' is a specialization of 'VarParameter'.
+'FlatQVT::ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::OrderedTupleType' is a specialization of 'Class'.
+'FlatQVT::Domain' is a specialization of 'NamedElement'.
+'FlatQVT::RelationDomain' is a specialization of 'Domain'.
+'FlatQVT::TypedModel' is a specialization of 'NamedElement'.
+'FlatQVT::UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+'FlatQVT::TypeExp' is a specialization of 'OclExpression'.
+'FlatQVT::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::LoopExp' is a specialization of 'OclExpression'.
+'FlatQVT::RealizedVariable' is a specialization of 'Variable'.
+'FlatQVT::DictionaryType' is a specialization of 'CollectionType'.
+'FlatQVT::SwitchExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::UnpackExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::Package' is a specialization of 'NamedElement'.
+'FlatQVT::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::AnyType' is a specialization of 'Type'.
+'FlatQVT::OrderedTupleLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::RelationalTransformation' is a specialization of 'Transformation'.
+'FlatQVT::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'FlatQVT::NullLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::Parameter' is a specialization of 'MultiplicityElement'.
+'FlatQVT::Relation' is a specialization of 'Rule'.
+'FlatQVT::TupleType' is a specialization of 'DataType'.
+'FlatQVT::SequenceType' is a specialization of 'CollectionType'.
+'FlatQVT::CollectionType' is a specialization of 'DataType'.
+'FlatQVT::LogExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::BottomPattern' is a specialization of 'CorePattern'.
+'FlatQVT::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'FlatQVT::Mapping' is a specialization of 'Area'.
+'FlatQVT::ObjectTemplateExp' is a specialization of 'TemplateExp'.
+'FlatQVT::Module' is a specialization of 'Package'.
+'FlatQVT::NamedElement' is a specialization of 'Element'.
+'FlatQVT::Mapping' is a specialization of 'Rule'.
+'FlatQVT::VarParameter' is a specialization of 'Parameter'.
+'FlatQVT::URIExtent' is a specialization of 'Extent'.
+'FlatQVT::VariableAssignment' is a specialization of 'Assignment'.
+'FlatQVT::Class' is a specialization of 'Type'.
+'FlatQVT::Module' is a specialization of 'Class'.
+'FlatQVT::ContinueExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::FeatureCallExp' is a specialization of 'CallExp'.
+'FlatQVT::RelationImplementation' is a specialization of 'Element'.
+'FlatQVT::ImperativeExpression' is a specialization of 'OclExpression'.
+'FlatQVT::Constructor' is a specialization of 'ImperativeOperation'.
+'FlatQVT::DomainPattern' is a specialization of 'Pattern'.
+'FlatQVT::UnlinkExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::ResolveExp' is a specialization of 'CallExp'.
+'FlatQVT::Extent' is a specialization of 'Object'.
+'FlatQVT::LiteralExp' is a specialization of 'OclExpression'.
+'FlatQVT::ImperativeLoopExp' is a specialization of 'LoopExp'.
+'FlatQVT::Factory' is a specialization of 'Element'.
+'FlatQVT::AltExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::CoreDomain' is a specialization of 'Area'.
+'FlatQVT::BreakExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::VariableExp' is a specialization of 'OclExpression'.
+'FlatQVT::VarParameter' is a specialization of 'Variable'.
+'FlatQVT::TemplateParameterType' is a specialization of 'Type'.
+'FlatQVT::OperationBody' is a specialization of 'Element'.
+'FlatQVT::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'FlatQVT::InvalidType' is a specialization of 'Type'.
+'FlatQVT::GuardPattern' is a specialization of 'CorePattern'.
+'FlatQVT::Property' is a specialization of 'TypedElement'.
+'FlatQVT::Operation' is a specialization of 'TypedElement'.
+'FlatQVT::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::AssignExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::ReturnExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::BagType' is a specialization of 'CollectionType'.
+'FlatQVT::Library' is a specialization of 'Module'.
+'FlatQVT::ListType' is a specialization of 'CollectionType'.
+'FlatQVT::ResolveInExp' is a specialization of 'ResolveExp'.
+'FlatQVT::Type' is a specialization of 'NamedElement'.
+'FlatQVT::Assignment' is a specialization of 'Element'.
+'FlatQVT::VariableInitExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::Variable' is a specialization of 'TypedElement'.
+'FlatQVT::PropertyAssignment' is a specialization of 'Assignment'.
+'FlatQVT::DataType' is a specialization of 'Type'.
+'FlatQVT::NavigationCallExp' is a specialization of 'FeatureCallExp'.
+'FlatQVT::Parameter' is a specialization of 'TypedElement'.
+'FlatQVT::OrderedSetType' is a specialization of 'CollectionType'.
+'FlatQVT::CollectionLiteralPart' is a specialization of 'TypedElement'.
+'FlatQVT::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'FlatQVT::Enumeration' is a specialization of 'DataType'.
+'FlatQVT::TupleType' is a specialization of 'Class'.
+'FlatQVT::InstantiationExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::BlockExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::Typedef' is a specialization of 'Class'.
+'FlatQVT::IfExp' is a specialization of 'OclExpression'.
+'FlatQVT::OclExpression' is a specialization of 'TypedElement'.
+'FlatQVT::DictLiteralExp' is a specialization of 'LiteralExp'.
+'FlatQVT::Predicate' is a specialization of 'Element'.
+'FlatQVT::ModelType' is a specialization of 'Class'.
+'FlatQVT::ResolveExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::ImperativeCallExp' is a specialization of 'OperationCallExp'.
+'FlatQVT::Transformation' is a specialization of 'Package'.
+'FlatQVT::ObjectExp' is a specialization of 'InstantiationExp'.
+'FlatQVT::EnforcementOperation' is a specialization of 'Element'.
+'FlatQVT::ReflectiveCollection' is a specialization of 'Object'.
+'FlatQVT::WhileExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::LogExp' is a specialization of 'OperationCallExp'.
+'FlatQVT::OperationalTransformation' is a specialization of 'Module'.
+'FlatQVT::Element' is a specialization of 'Object'.
+'FlatQVT::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'FlatQVT::FunctionParameter' is a specialization of 'Parameter'.
+'FlatQVT::CollectionTemplateExp' is a specialization of 'TemplateExp'.
+'FlatQVT::RelationDomainAssignment' is a specialization of 'Element'.
+'FlatQVT::OppositePropertyCallExp' is a specialization of 'PropertyCallExp'.
+'FlatQVT::TupleLiteralPart' is a specialization of 'TypedElement'.
+'FlatQVT::ImperativeCallExp' is a specialization of 'ImperativeExpression'.
+'FlatQVT::MappingOperation' is a specialization of 'ImperativeOperation'.
+'FlatQVT::EntryOperation' is a specialization of 'ImperativeOperation'.
+'FlatQVT::PrimitiveType' is a specialization of 'DataType'.
+'FlatQVT::CorePattern' is a specialization of 'Pattern'.
+'FlatQVT::ExpressionInOcl' is a specialization of 'TypedElement'.
+'FlatQVT::CallExp' is a specialization of 'OclExpression'.
+'FlatQVT::BottomPattern' (role 'FlatQVT_BottomPattern30', cardinality 0..*) is associated with 'EnforcementOperation' (role 'EnforcementOperation', cardinality 0..*).
+'FlatQVT::AssignExp' (role 'FlatQVT_AssignExp14', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression15', cardinality 0..*).
+'FlatQVT::UnlinkExp' (role 'FlatQVT_UnlinkExp423', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression424', cardinality 0..*).
+'FlatQVT::MappingParameter' (role 'FlatQVT_MappingParameter203', cardinality 0..*) is associated with 'RelationDomain' (role 'RelationDomain', cardinality 0..*).
+'FlatQVT::TryExp' (role 'FlatQVT_TryExp391', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression392', cardinality 0..*).
+'FlatQVT::MappingBody' (role 'FlatQVT_MappingBody', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression182', cardinality 0..*).
+'Variable' (role 'Variable374', cardinality 0..*) is associated with 'FlatQVT::TemplateExp' (role 'FlatQVT_TemplateExp', cardinality 0..*).
+'Relation' (role 'Relation351', cardinality 0..*) is associated with 'FlatQVT::RelationImplementation' (role 'FlatQVT_RelationImplementation350', cardinality 0..*).
+'Property' (role 'Property298', cardinality 0..*) is associated with 'FlatQVT::Property' (role 'FlatQVT_Property297', cardinality 0..*).
+'OclExpression' (role 'OclExpression114', cardinality 0..*) is associated with 'FlatQVT::Function' (role 'FlatQVT_Function', cardinality 0..*).
+'FlatQVT::ExpressionInOcl' (role 'FlatQVT_ExpressionInOcl110', cardinality 0..*) is associated with 'Variable' (role 'Variable111', cardinality 0..*).
+'Pattern' (role 'Pattern', cardinality 0..*) is associated with 'FlatQVT::Predicate' (role 'FlatQVT_Predicate293', cardinality 0..*).
+'FlatQVT::Pattern' (role 'FlatQVT_Pattern', cardinality 0..*) is associated with 'Variable' (role 'Variable287', cardinality 0..*).
+'FlatQVT::Package' (role 'FlatQVT_Package279', cardinality 0..*) is associated with 'Package' (role 'Package280', cardinality 0..*).
+'RealizedVariable' (role 'RealizedVariable', cardinality 0..*) is associated with 'FlatQVT::BottomPattern' (role 'FlatQVT_BottomPattern32', cardinality 0..*).
+'Variable' (role 'Variable338', cardinality 0..*) is associated with 'FlatQVT::RelationDomain' (role 'FlatQVT_RelationDomain337', cardinality 0..*).
+'Assignment' (role 'Assignment', cardinality 0..*) is associated with 'FlatQVT::BottomPattern' (role 'FlatQVT_BottomPattern28', cardinality 0..*).
+'Operation' (role 'Operation256', cardinality 0..*) is associated with 'FlatQVT::OperationCallExp' (role 'FlatQVT_OperationCallExp255', cardinality 0..*).
+'TypedModel' (role 'TypedModel348', cardinality 0..*) is associated with 'FlatQVT::RelationImplementation' (role 'FlatQVT_RelationImplementation347', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation359', cardinality 0..*) is associated with 'FlatQVT::ResolveInExp' (role 'FlatQVT_ResolveInExp', cardinality 0..*).
+'ModuleImport' (role 'ModuleImport', cardinality 0..*) is associated with 'FlatQVT::Module' (role 'FlatQVT_Module214', cardinality 0..*).
+'OclExpression' (role 'OclExpression312', cardinality 0..*) is associated with 'FlatQVT::PropertyTemplateItem' (role 'FlatQVT_PropertyTemplateItem311', cardinality 0..*).
+'FlatQVT::RelationalTransformation' (role 'FlatQVT_RelationalTransformation', cardinality 0..*) is associated with 'Key' (role 'Key', cardinality 0..*).
+'OperationCallExp' (role 'OperationCallExp', cardinality 0..*) is associated with 'FlatQVT::EnforcementOperation' (role 'FlatQVT_EnforcementOperation93', cardinality 0..*).
+'FlatQVT::Comment' (role 'FlatQVT_Comment', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).
+'FlatQVT::EnumerationLiteral' (role 'FlatQVT_EnumerationLiteral', cardinality 0..*) is associated with 'Enumeration' (role 'Enumeration', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation', cardinality 0..*) is associated with 'FlatQVT::ImperativeOperation' (role 'FlatQVT_ImperativeOperation133', cardinality 0..*).
+'Predicate' (role 'Predicate', cardinality 0..*) is associated with 'FlatQVT::Pattern' (role 'FlatQVT_Pattern289', cardinality 0..*).
+'FlatQVT::Rule' (role 'FlatQVT_Rule', cardinality 0..*) is associated with 'Domain' (role 'Domain', cardinality 0..*).
+'FlatQVT::VariableInitExp' (role 'FlatQVT_VariableInitExp', cardinality 0..*) is associated with 'Variable' (role 'Variable447', cardinality 0..*).
+'CollectionLiteralPart' (role 'CollectionLiteralPart', cardinality 0..*) is associated with 'FlatQVT::CollectionLiteralExp' (role 'FlatQVT_CollectionLiteralExp', cardinality 0..*).
+'EntryOperation' (role 'EntryOperation', cardinality 0..*) is associated with 'FlatQVT::Module' (role 'FlatQVT_Module212', cardinality 0..*).
+'FlatQVT::CollectionRange' (role 'FlatQVT_CollectionRange', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression49', cardinality 0..*).
+'FlatQVT::LogExp' (role 'FlatQVT_LogExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression165', cardinality 0..*).
+'FlatQVT::Tag' (role 'FlatQVT_Tag', cardinality 0..*) is associated with 'Element' (role 'Element', cardinality 0..*).
+'FlatQVT::ModuleImport' (role 'FlatQVT_ModuleImport227', cardinality 0..*) is associated with 'Module' (role 'Module228', cardinality 0..*).
+'FlatQVT::Domain' (role 'FlatQVT_Domain', cardinality 0..*) is associated with 'Rule' (role 'Rule', cardinality 0..*).
+'ConstructorBody' (role 'ConstructorBody', cardinality 0..*) is associated with 'FlatQVT::ObjectExp' (role 'FlatQVT_ObjectExp', cardinality 0..*).
+'FlatQVT::AssertExp' (role 'FlatQVT_AssertExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression8', cardinality 0..*).
+'Property' (role 'Property303', cardinality 0..*) is associated with 'FlatQVT::PropertyAssignment' (role 'FlatQVT_PropertyAssignment302', cardinality 0..*).
+'FlatQVT::CollectionTemplateExp' (role 'FlatQVT_CollectionTemplateExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression54', cardinality 0..*).
+'FlatQVT::IfExp' (role 'FlatQVT_IfExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression118', cardinality 0..*).
+'Mapping' (role 'Mapping180', cardinality 0..*) is associated with 'FlatQVT::Mapping' (role 'FlatQVT_Mapping179', cardinality 0..*).
+'FlatQVT::ResolveExp' (role 'FlatQVT_ResolveExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression354', cardinality 0..*).
+'OclExpression' (role 'OclExpression253', cardinality 0..*) is associated with 'FlatQVT::OperationCallExp' (role 'FlatQVT_OperationCallExp', cardinality 0..*).
+'FlatQVT::CollectionLiteralPart' (role 'FlatQVT_CollectionLiteralPart', cardinality 0..*) is associated with 'CollectionLiteralExp' (role 'CollectionLiteralExp', cardinality 0..*).
+'FlatQVT::ModuleImport' (role 'FlatQVT_ModuleImport225', cardinality 0..*) is associated with 'Module' (role 'Module', cardinality 0..*).
+'FlatQVT::TypedElement' (role 'FlatQVT_TypedElement', cardinality 0..*) is associated with 'Type' (role 'Type406', cardinality 0..*).
+'FlatQVT::OperationalTransformation' (role 'FlatQVT_OperationalTransformation263', cardinality 0..*) is associated with 'ModelParameter' (role 'ModelParameter264', cardinality 0..*).
+'Package' (role 'Package402', cardinality 0..*) is associated with 'FlatQVT::Type' (role 'FlatQVT_Type', cardinality 0..*).
+'FlatQVT::Package' (role 'FlatQVT_Package', cardinality 0..*) is associated with 'Package' (role 'Package277', cardinality 0..*).
+'Variable' (role 'Variable321', cardinality 0..*) is associated with 'FlatQVT::Relation' (role 'FlatQVT_Relation320', cardinality 0..*).
+'FlatQVT::WhileExp' (role 'FlatQVT_WhileExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression449', cardinality 0..*).
+'Variable' (role 'Variable161', cardinality 0..*) is associated with 'FlatQVT::LetExp' (role 'FlatQVT_LetExp160', cardinality 0..*).
+'FlatQVT::OrderedTupleLiteralPart' (role 'FlatQVT_OrderedTupleLiteralPart', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression273', cardinality 0..*).
+'FlatQVT::Key' (role 'FlatQVT_Key', cardinality 0..*) is associated with 'Class' (role 'Class148', cardinality 0..*).
+'FlatQVT::Transformation' (role 'FlatQVT_Transformation381', cardinality 0..*) is associated with 'TypedModel' (role 'TypedModel382', cardinality 0..*).
+'FlatQVT::SwitchExp' (role 'FlatQVT_SwitchExp', cardinality 0..*) is associated with 'AltExp' (role 'AltExp', cardinality 0..*).
+'FlatQVT::CallExp' (role 'FlatQVT_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression34', cardinality 0..*).
+'Relation' (role 'Relation332', cardinality 0..*) is associated with 'FlatQVT::RelationCallExp' (role 'FlatQVT_RelationCallExp331', cardinality 0..*).
+'OclExpression' (role 'OclExpression200', cardinality 0..*) is associated with 'FlatQVT::MappingOperation' (role 'FlatQVT_MappingOperation199', cardinality 0..*).
+'Package' (role 'Package208', cardinality 0..*) is associated with 'FlatQVT::ModelType' (role 'FlatQVT_ModelType207', cardinality 0..*).
+'Class' (role 'Class236', cardinality 0..*) is associated with 'FlatQVT::ObjectTemplateExp' (role 'FlatQVT_ObjectTemplateExp235', cardinality 0..*).
+'FlatQVT::Property' (role 'FlatQVT_Property', cardinality 0..*) is associated with 'Class' (role 'Class295', cardinality 0..*).
+'Variable' (role 'Variable357', cardinality 0..*) is associated with 'FlatQVT::ResolveExp' (role 'FlatQVT_ResolveExp356', cardinality 0..*).
+'FlatQVT::IfExp' (role 'FlatQVT_IfExp123', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression124', cardinality 0..*).
+'OclExpression' (role 'OclExpression377', cardinality 0..*) is associated with 'FlatQVT::TemplateExp' (role 'FlatQVT_TemplateExp376', cardinality 0..*).
+'FlatQVT::IfExp' (role 'FlatQVT_IfExp120', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression121', cardinality 0..*).
+'GuardPattern' (role 'GuardPattern', cardinality 0..*) is associated with 'FlatQVT::Area' (role 'FlatQVT_Area6', cardinality 0..*).
+'VarParameter' (role 'VarParameter136', cardinality 0..*) is associated with 'FlatQVT::ImperativeOperation' (role 'FlatQVT_ImperativeOperation135', cardinality 0..*).
+'OclExpression' (role 'OclExpression163', cardinality 0..*) is associated with 'FlatQVT::ListLiteralExp' (role 'FlatQVT_ListLiteralExp', cardinality 0..*).
+'FlatQVT::OperationalTransformation' (role 'FlatQVT_OperationalTransformation266', cardinality 0..*) is associated with 'RelationalTransformation' (role 'RelationalTransformation267', cardinality 0..*).
+'FlatQVT::Class' (role 'FlatQVT_Class', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'FlatQVT::InstantiationExp' (role 'FlatQVT_InstantiationExp143', cardinality 0..*) is associated with 'Class' (role 'Class144', cardinality 0..*).
+'MappingOperation' (role 'MappingOperation', cardinality 0..*) is associated with 'FlatQVT::MappingOperation' (role 'FlatQVT_MappingOperation', cardinality 0..*).
+'OclExpression' (role 'OclExpression291', cardinality 0..*) is associated with 'FlatQVT::Predicate' (role 'FlatQVT_Predicate', cardinality 0..*).
+'OclExpression' (role 'OclExpression400', cardinality 0..*) is associated with 'FlatQVT::TupleLiteralPart' (role 'FlatQVT_TupleLiteralPart399', cardinality 0..*).
+'OclExpression' (role 'OclExpression185', cardinality 0..*) is associated with 'FlatQVT::MappingBody' (role 'FlatQVT_MappingBody184', cardinality 0..*).
+'OclExpression' (role 'OclExpression340', cardinality 0..*) is associated with 'FlatQVT::RelationDomainAssignment' (role 'FlatQVT_RelationDomainAssignment', cardinality 0..*).
+'OclExpression' (role 'OclExpression128', cardinality 0..*) is associated with 'FlatQVT::ImperativeLoopExp' (role 'FlatQVT_ImperativeLoopExp', cardinality 0..*).
+'Type' (role 'Type404', cardinality 0..*) is associated with 'FlatQVT::TypeExp' (role 'FlatQVT_TypeExp', cardinality 0..*).
+'Package' (role 'Package414', cardinality 0..*) is associated with 'FlatQVT::TypedModel' (role 'FlatQVT_TypedModel413', cardinality 0..*).
+'TypedModel' (role 'TypedModel', cardinality 0..*) is associated with 'FlatQVT::Domain' (role 'FlatQVT_Domain87', cardinality 0..*).
+'FlatQVT::OperationBody' (role 'FlatQVT_OperationBody250', cardinality 0..*) is associated with 'Variable' (role 'Variable251', cardinality 0..*).
+'FlatQVT::CollectionItem' (role 'FlatQVT_CollectionItem', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression45', cardinality 0..*).
+'FlatQVT::OperationBody' (role 'FlatQVT_OperationBody', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression245', cardinality 0..*).
+'FlatQVT::Package' (role 'FlatQVT_Package282', cardinality 0..*) is associated with 'Type' (role 'Type283', cardinality 0..*).
+'FlatQVT::SwitchExp' (role 'FlatQVT_SwitchExp370', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression371', cardinality 0..*).
+'FlatQVT::Assignment' (role 'FlatQVT_Assignment22', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression23', cardinality 0..*).
+'Property' (role 'Property309', cardinality 0..*) is associated with 'FlatQVT::PropertyTemplateItem' (role 'FlatQVT_PropertyTemplateItem308', cardinality 0..*).
+'OclExpression' (role 'OclExpression36', cardinality 0..*) is associated with 'FlatQVT::CatchExp' (role 'FlatQVT_CatchExp', cardinality 0..*).
+'Tag' (role 'Tag', cardinality 0..*) is associated with 'FlatQVT::Module' (role 'FlatQVT_Module216', cardinality 0..*).
+'FlatQVT::CollectionTemplateExp' (role 'FlatQVT_CollectionTemplateExp56', cardinality 0..*) is associated with 'CollectionType' (role 'CollectionType', cardinality 0..*).
+'OclExpression' (role 'OclExpression12', cardinality 0..*) is associated with 'FlatQVT::AssignExp' (role 'FlatQVT_AssignExp', cardinality 0..*).
+'Property' (role 'Property210', cardinality 0..*) is associated with 'FlatQVT::Module' (role 'FlatQVT_Module', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation431', cardinality 0..*) is associated with 'FlatQVT::VarParameter' (role 'FlatQVT_VarParameter', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'FlatQVT::CatchExp' (role 'FlatQVT_CatchExp38', cardinality 0..*).
+'Variable' (role 'Variable445', cardinality 0..*) is associated with 'FlatQVT::VariableExp' (role 'FlatQVT_VariableExp', cardinality 0..*).
+'Rule' (role 'Rule388', cardinality 0..*) is associated with 'FlatQVT::Transformation' (role 'FlatQVT_Transformation387', cardinality 0..*).
+'ModelParameter' (role 'ModelParameter', cardinality 0..*) is associated with 'FlatQVT::MappingParameter' (role 'FlatQVT_MappingParameter', cardinality 0..*).
+'OclExpression' (role 'OclExpression426', cardinality 0..*) is associated with 'FlatQVT::UnpackExp' (role 'FlatQVT_UnpackExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression18', cardinality 0..*) is associated with 'FlatQVT::AssignExp' (role 'FlatQVT_AssignExp17', cardinality 0..*).
+'OclExpression' (role 'OclExpression452', cardinality 0..*) is associated with 'FlatQVT::WhileExp' (role 'FlatQVT_WhileExp451', cardinality 0..*).
+'FlatQVT::Relation' (role 'FlatQVT_Relation326', cardinality 0..*) is associated with 'Pattern' (role 'Pattern327', cardinality 0..*).
+'OclExpression' (role 'OclExpression52', cardinality 0..*) is associated with 'FlatQVT::CollectionRange' (role 'FlatQVT_CollectionRange51', cardinality 0..*).
+'OclExpression' (role 'OclExpression421', cardinality 0..*) is associated with 'FlatQVT::UnlinkExp' (role 'FlatQVT_UnlinkExp', cardinality 0..*).
+'TypedModel' (role 'TypedModel408', cardinality 0..*) is associated with 'FlatQVT::TypedModel' (role 'FlatQVT_TypedModel', cardinality 0..*).
+'FlatQVT::Relation' (role 'FlatQVT_Relation', cardinality 0..*) is associated with 'RelationImplementation' (role 'RelationImplementation', cardinality 0..*).
+'FlatQVT::Mapping' (role 'FlatQVT_Mapping', cardinality 0..*) is associated with 'Mapping' (role 'Mapping', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'FlatQVT::CollectionTemplateExp' (role 'FlatQVT_CollectionTemplateExp58', cardinality 0..*).
+'Transformation' (role 'Transformation379', cardinality 0..*) is associated with 'FlatQVT::Transformation' (role 'FlatQVT_Transformation', cardinality 0..*).
+'FlatQVT::MappingOperation' (role 'FlatQVT_MappingOperation188', cardinality 0..*) is associated with 'MappingOperation' (role 'MappingOperation189', cardinality 0..*).
+'Type' (role 'Type243', cardinality 0..*) is associated with 'FlatQVT::Operation' (role 'FlatQVT_Operation242', cardinality 0..*).
+'BottomPattern' (role 'BottomPattern20', cardinality 0..*) is associated with 'FlatQVT::Assignment' (role 'FlatQVT_Assignment', cardinality 0..*).
+'Variable' (role 'Variable146', cardinality 0..*) is associated with 'FlatQVT::IterateExp' (role 'FlatQVT_IterateExp', cardinality 0..*).
+'FlatQVT::Transformation' (role 'FlatQVT_Transformation384', cardinality 0..*) is associated with 'Tag' (role 'Tag385', cardinality 0..*).
+'FlatQVT::VariableAssignment' (role 'FlatQVT_VariableAssignment', cardinality 0..*) is associated with 'Variable' (role 'Variable443', cardinality 0..*).
+'FlatQVT::TupleLiteralPart' (role 'FlatQVT_TupleLiteralPart397', cardinality 0..*) is associated with 'TupleLiteralExp' (role 'TupleLiteralExp', cardinality 0..*).
+'FlatQVT::DictLiteralPart' (role 'FlatQVT_DictLiteralPart', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression79', cardinality 0..*).
+'OclExpression' (role 'OclExpression99', cardinality 0..*) is associated with 'FlatQVT::ExpressionInOcl' (role 'FlatQVT_ExpressionInOcl', cardinality 0..*).
+'FlatQVT::EnforcementOperation' (role 'FlatQVT_EnforcementOperation', cardinality 0..*) is associated with 'BottomPattern' (role 'BottomPattern91', cardinality 0..*).
+'Variable' (role 'Variable102', cardinality 0..*) is associated with 'FlatQVT::ExpressionInOcl' (role 'FlatQVT_ExpressionInOcl101', cardinality 0..*).
+'FlatQVT::Rule' (role 'FlatQVT_Rule367', cardinality 0..*) is associated with 'Transformation' (role 'Transformation', cardinality 0..*).
+'Variable' (role 'Variable170', cardinality 0..*) is associated with 'FlatQVT::LoopExp' (role 'FlatQVT_LoopExp169', cardinality 0..*).
+'Type' (role 'Type105', cardinality 0..*) is associated with 'FlatQVT::ExpressionInOcl' (role 'FlatQVT_ExpressionInOcl104', cardinality 0..*).
+'FlatQVT::RaiseExp' (role 'FlatQVT_RaiseExp316', cardinality 0..*) is associated with 'Type' (role 'Type317', cardinality 0..*).
+'FlatQVT::DictionaryType' (role 'FlatQVT_DictionaryType', cardinality 0..*) is associated with 'Type' (role 'Type84', cardinality 0..*).
+'FlatQVT::MappingOperation' (role 'FlatQVT_MappingOperation191', cardinality 0..*) is associated with 'MappingOperation' (role 'MappingOperation192', cardinality 0..*).
+'Variable' (role 'Variable429', cardinality 0..*) is associated with 'FlatQVT::UnpackExp' (role 'FlatQVT_UnpackExp428', cardinality 0..*).
+'Variable' (role 'Variable76', cardinality 0..*) is associated with 'FlatQVT::CorePattern' (role 'FlatQVT_CorePattern', cardinality 0..*).
+'OclExpression' (role 'OclExpression419', cardinality 0..*) is associated with 'FlatQVT::Typedef' (role 'FlatQVT_Typedef418', cardinality 0..*).
+'Property' (role 'Property395', cardinality 0..*) is associated with 'FlatQVT::TupleLiteralPart' (role 'FlatQVT_TupleLiteralPart', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'FlatQVT::Factory' (role 'FlatQVT_Factory', cardinality 0..*).
+'DomainPattern' (role 'DomainPattern', cardinality 0..*) is associated with 'FlatQVT::RelationDomain' (role 'FlatQVT_RelationDomain335', cardinality 0..*).
+'FlatQVT::DomainPattern' (role 'FlatQVT_DomainPattern', cardinality 0..*) is associated with 'TemplateExp' (role 'TemplateExp', cardinality 0..*).
+'FlatQVT::DictLiteralPart' (role 'FlatQVT_DictLiteralPart81', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression82', cardinality 0..*).
+'FlatQVT::OrderedTupleLiteralExp' (role 'FlatQVT_OrderedTupleLiteralExp', cardinality 0..*) is associated with 'OrderedTupleLiteralPart' (role 'OrderedTupleLiteralPart', cardinality 0..*).
+'OclExpression' (role 'OclExpression25', cardinality 0..*) is associated with 'FlatQVT::BlockExp' (role 'FlatQVT_BlockExp', cardinality 0..*).
+'FlatQVT::Class' (role 'FlatQVT_Class43', cardinality 0..*) is associated with 'Class' (role 'Class', cardinality 0..*).
+'FlatQVT::ExpressionInOcl' (role 'FlatQVT_ExpressionInOcl107', cardinality 0..*) is associated with 'Variable' (role 'Variable108', cardinality 0..*).
+'FlatQVT::Relation' (role 'FlatQVT_Relation323', cardinality 0..*) is associated with 'Pattern' (role 'Pattern324', cardinality 0..*).
+'FlatQVT::Area' (role 'FlatQVT_Area', cardinality 0..*) is associated with 'BottomPattern' (role 'BottomPattern', cardinality 0..*).
+'FlatQVT::OperationalTransformation' (role 'FlatQVT_OperationalTransformation260', cardinality 0..*) is associated with 'Property' (role 'Property261', cardinality 0..*).
+'FlatQVT::OrderedTupleType' (role 'FlatQVT_OrderedTupleType', cardinality 0..*) is associated with 'Type' (role 'Type275', cardinality 0..*).
+'FlatQVT::OperationalTransformation' (role 'FlatQVT_OperationalTransformation', cardinality 0..*) is associated with 'Class' (role 'Class258', cardinality 0..*).
+'FlatQVT::Enumeration' (role 'FlatQVT_Enumeration', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral96', cardinality 0..*).
+'FlatQVT::Mapping' (role 'FlatQVT_Mapping173', cardinality 0..*) is associated with 'Mapping' (role 'Mapping174', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'FlatQVT::Class' (role 'FlatQVT_Class41', cardinality 0..*).
+'FlatQVT::ComputeExp' (role 'FlatQVT_ComputeExp65', cardinality 0..*) is associated with 'Variable' (role 'Variable66', cardinality 0..*).
+'FlatQVT::ModuleImport' (role 'FlatQVT_ModuleImport', cardinality 0..*) is associated with 'ModelType' (role 'ModelType223', cardinality 0..*).
+'FlatQVT::RelationDomainAssignment' (role 'FlatQVT_RelationDomainAssignment342', cardinality 0..*) is associated with 'Variable' (role 'Variable343', cardinality 0..*).
+'RelationalTransformation' (role 'RelationalTransformation', cardinality 0..*) is associated with 'FlatQVT::Key' (role 'FlatQVT_Key156', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation248', cardinality 0..*) is associated with 'FlatQVT::OperationBody' (role 'FlatQVT_OperationBody247', cardinality 0..*).
+'FlatQVT::BottomPattern' (role 'FlatQVT_BottomPattern', cardinality 0..*) is associated with 'Area' (role 'Area', cardinality 0..*).
+'Mapping' (role 'Mapping177', cardinality 0..*) is associated with 'FlatQVT::Mapping' (role 'FlatQVT_Mapping176', cardinality 0..*).
+'FlatQVT::EnumLiteralExp' (role 'FlatQVT_EnumLiteralExp', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'OclExpression' (role 'OclExpression167', cardinality 0..*) is associated with 'FlatQVT::LoopExp' (role 'FlatQVT_LoopExp', cardinality 0..*).
+'Relation' (role 'Relation270', cardinality 0..*) is associated with 'FlatQVT::OperationalTransformation' (role 'FlatQVT_OperationalTransformation269', cardinality 0..*).
+'DictLiteralPart' (role 'DictLiteralPart', cardinality 0..*) is associated with 'FlatQVT::DictLiteralExp' (role 'FlatQVT_DictLiteralExp', cardinality 0..*).
+'Property' (role 'Property74', cardinality 0..*) is associated with 'FlatQVT::ContextualProperty' (role 'FlatQVT_ContextualProperty73', cardinality 0..*).
+'FlatQVT::Operation' (role 'FlatQVT_Operation240', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'FlatQVT::PropertyAssignment' (role 'FlatQVT_PropertyAssignment', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression300', cardinality 0..*).
+'FlatQVT::GuardPattern' (role 'FlatQVT_GuardPattern', cardinality 0..*) is associated with 'Area' (role 'Area116', cardinality 0..*).
+'Class' (role 'Class68', cardinality 0..*) is associated with 'FlatQVT::ContextualProperty' (role 'FlatQVT_ContextualProperty', cardinality 0..*).
+'FlatQVT::ReturnExp' (role 'FlatQVT_ReturnExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression361', cardinality 0..*).
+'Variable' (role 'Variable219', cardinality 0..*) is associated with 'FlatQVT::Module' (role 'FlatQVT_Module218', cardinality 0..*).
+'Parameter' (role 'Parameter441', cardinality 0..*) is associated with 'FlatQVT::Variable' (role 'FlatQVT_Variable440', cardinality 0..*).
+'FlatQVT::RaiseExp' (role 'FlatQVT_RaiseExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression314', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'FlatQVT::Element' (role 'FlatQVT_Element', cardinality 0..*).
+'Variable' (role 'Variable232', cardinality 0..*) is associated with 'FlatQVT::ObjectExp' (role 'FlatQVT_ObjectExp231', cardinality 0..*).
+'PropertyTemplateItem' (role 'PropertyTemplateItem', cardinality 0..*) is associated with 'FlatQVT::ObjectTemplateExp' (role 'FlatQVT_ObjectTemplateExp', cardinality 0..*).
+'Rule' (role 'Rule365', cardinality 0..*) is associated with 'FlatQVT::Rule' (role 'FlatQVT_Rule364', cardinality 0..*).
+'OclExpression' (role 'OclExpression197', cardinality 0..*) is associated with 'FlatQVT::MappingOperation' (role 'FlatQVT_MappingOperation196', cardinality 0..*).
+'FlatQVT::ModelType' (role 'FlatQVT_ModelType', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression205', cardinality 0..*).
+'FlatQVT::AltExp' (role 'FlatQVT_AltExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'OclExpression' (role 'OclExpression158', cardinality 0..*) is associated with 'FlatQVT::LetExp' (role 'FlatQVT_LetExp', cardinality 0..*).
+'FlatQVT::ImperativeOperation' (role 'FlatQVT_ImperativeOperation', cardinality 0..*) is associated with 'OperationBody' (role 'OperationBody', cardinality 0..*).
+'FlatQVT::RelationImplementation' (role 'FlatQVT_RelationImplementation', cardinality 0..*) is associated with 'Operation' (role 'Operation345', cardinality 0..*).
+'FlatQVT::Key' (role 'FlatQVT_Key153', cardinality 0..*) is associated with 'Property' (role 'Property154', cardinality 0..*).
+'Class' (role 'Class238', cardinality 0..*) is associated with 'FlatQVT::Operation' (role 'FlatQVT_Operation', cardinality 0..*).
+'FlatQVT::MappingOperation' (role 'FlatQVT_MappingOperation194', cardinality 0..*) is associated with 'Relation' (role 'Relation', cardinality 0..*).
+'ImperativeOperation' (role 'ImperativeOperation434', cardinality 0..*) is associated with 'FlatQVT::VarParameter' (role 'FlatQVT_VarParameter433', cardinality 0..*).
+'Property' (role 'Property305', cardinality 0..*) is associated with 'FlatQVT::PropertyCallExp' (role 'FlatQVT_PropertyCallExp', cardinality 0..*).
+'FlatQVT::RelationDomain' (role 'FlatQVT_RelationDomain', cardinality 0..*) is associated with 'RelationDomainAssignment' (role 'RelationDomainAssignment', cardinality 0..*).
+'FlatQVT::ImperativeOperation' (role 'FlatQVT_ImperativeOperation131', cardinality 0..*) is associated with 'VarParameter' (role 'VarParameter', cardinality 0..*).
+'FlatQVT::Module' (role 'FlatQVT_Module221', cardinality 0..*) is associated with 'ModelType' (role 'ModelType', cardinality 0..*).
+'FlatQVT::ImperativeIterateExp' (role 'FlatQVT_ImperativeIterateExp', cardinality 0..*) is associated with 'Variable' (role 'Variable126', cardinality 0..*).
+'Type' (role 'Type60', cardinality 0..*) is associated with 'FlatQVT::CollectionType' (role 'FlatQVT_CollectionType', cardinality 0..*).
+'FlatQVT::InstantiationExp' (role 'FlatQVT_InstantiationExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression138', cardinality 0..*).
+'FlatQVT::TryExp' (role 'FlatQVT_TryExp', cardinality 0..*) is associated with 'CatchExp' (role 'CatchExp', cardinality 0..*).
+'Property' (role 'Property151', cardinality 0..*) is associated with 'FlatQVT::Key' (role 'FlatQVT_Key150', cardinality 0..*).
+'FlatQVT::Parameter' (role 'FlatQVT_Parameter', cardinality 0..*) is associated with 'Operation' (role 'Operation285', cardinality 0..*).
+'ObjectTemplateExp' (role 'ObjectTemplateExp', cardinality 0..*) is associated with 'FlatQVT::PropertyTemplateItem' (role 'FlatQVT_PropertyTemplateItem', cardinality 0..*).
+'OclExpression' (role 'OclExpression436', cardinality 0..*) is associated with 'FlatQVT::Variable' (role 'FlatQVT_Variable', cardinality 0..*).
+'OclExpression' (role 'OclExpression63', cardinality 0..*) is associated with 'FlatQVT::ComputeExp' (role 'FlatQVT_ComputeExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression71', cardinality 0..*) is associated with 'FlatQVT::ContextualProperty' (role 'FlatQVT_ContextualProperty70', cardinality 0..*).
+'FlatQVT::InstantiationExp' (role 'FlatQVT_InstantiationExp140', cardinality 0..*) is associated with 'Variable' (role 'Variable141', cardinality 0..*).
+'FlatQVT::Variable' (role 'FlatQVT_Variable438', cardinality 0..*) is associated with 'LetExp' (role 'LetExp', cardinality 0..*).
+'Transformation' (role 'Transformation411', cardinality 0..*) is associated with 'FlatQVT::TypedModel' (role 'FlatQVT_TypedModel410', cardinality 0..*).
+'FlatQVT::RelationCallExp' (role 'FlatQVT_RelationCallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression329', cardinality 0..*).
+'TupleLiteralPart' (role 'TupleLiteralPart', cardinality 0..*) is associated with 'FlatQVT::TupleLiteralExp' (role 'FlatQVT_TupleLiteralExp', cardinality 0..*).
+'LogExp' (role 'LogExp', cardinality 0..*) is associated with 'FlatQVT::AssertExp' (role 'FlatQVT_AssertExp10', cardinality 0..*).
+'OclExpression' (role 'OclExpression3', cardinality 0..*) is associated with 'FlatQVT::AltExp' (role 'FlatQVT_AltExp2', cardinality 0..*).
+'FlatQVT::Typedef' (role 'FlatQVT_Typedef', cardinality 0..*) is associated with 'Type' (role 'Type416', cardinality 0..*).

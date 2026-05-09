@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'lts::av::State' has the following attributes: 'name' of type str.
+The class 'lts::av::Advice' has no attributes.
+The class 'lts::av::LTS' has the following attributes: 'name' of type str.
+The class 'lts::av::GlobalScope' has no attributes.
+The class 'lts::av::EObject' has no attributes.
+The class 'lts::av::Transition' has the following attributes: 'input' of type str; 'output' of type str.
+The class 'lts::av::PerJoinPointScope' has no attributes.
+'lts::av::State' (role 'lts_av_State7', cardinality 0..*) is associated with 'lts::av::LTS' (role 'lts_av_LTS6', cardinality 0..*).
+'lts::av::PerJoinPointScope' (role 'lts_av_PerJoinPointScope', cardinality 0..*) is associated with 'lts::av::EObject' (role 'lts_av_EObject20', cardinality 0..*).
+'lts::av::Transition' (role 'Transition', cardinality 0..*) is associated with 'lts::av::State' (role 'source', cardinality 0..*).
+'lts::av::LTS' (role 'owningLTS', cardinality 0..*) is associated with 'lts::av::State' (role 'State', cardinality 0..*).
+'lts::av::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'lts::av::State' (role 'State13', cardinality 0..*).
+'lts::av::LTS' (role 'lts_av_LTS', cardinality 0..*) is associated with 'lts::av::State' (role 'lts_av_State', cardinality 0..*).
+'lts::av::Transition' (role 'Transition11', cardinality 0..*) is associated with 'lts::av::State' (role 'target', cardinality 0..*).
+'lts::av::State' (role 'State15', cardinality 0..*) is associated with 'lts::av::Transition' (role 'incomingTransition', cardinality 0..*).
+'lts::av::LTS' (role 'lts_av_LTS3', cardinality 0..*) is associated with 'lts::av::State' (role 'lts_av_State4', cardinality 0..*).
+'lts::av::EObject' (role 'lts_av_EObject', cardinality 0..*) is associated with 'lts::av::Advice' (role 'lts_av_Advice', cardinality 0..*).
+'lts::av::GlobalScope' (role 'lts_av_GlobalScope', cardinality 0..*) is associated with 'lts::av::EObject' (role 'lts_av_EObject18', cardinality 0..*).
+'lts::av::LTS' (role 'LTS', cardinality 0..*) is associated with 'lts::av::State' (role 'ownedState', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diverse-project/k3/k3-sample/aspectinherithanceexample/fsm.ecore

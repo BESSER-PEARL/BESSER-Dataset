@@ -1,0 +1,810 @@
+The model has 327 class(es).
+The class 'UMLModel::DecisionNode' has the following attributes: 'decisionInput' of type str.
+The class 'Element' has no attributes.
+The class 'ExecutionSpecification' has no attributes.
+The class 'StructuredClassifier' has no attributes.
+The class 'UMLModel::UMLBase' has the following attributes: 'umlID' of type str.
+The class 'UMLModel::ConnectableElement' has the following attributes: 'end' of type str.
+The class 'RedefinableElement' has no attributes.
+The class 'UMLModel::Dependency' has the following attributes: 'client' of type str; 'supplier' of type str.
+The class 'UMLModel::ReceiveSignalEvent' has the following attributes: 'signal' of type str.
+The class 'UMLModel::IntervalConstraint' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'UMLModel::SequenceNode' has no attributes.
+The class 'UMLModel::Parameter' has the following attributes: 'parameterSet' of type str; 'direction' of type str; 'isException' of type str; 'default' of type str; 'effect' of type str; 'isStream' of type str; 'operation' of type str.
+The class 'UMLModel::ValueSpecificationAction' has no attributes.
+The class 'UMLModel::CallBehaviorAction' has the following attributes: 'behavior' of type str.
+The class 'UMLModel::EnumerationLiteral' has the following attributes: 'enumeration' of type str.
+The class 'UMLModel::AcceptCallAction' has no attributes.
+The class 'UMLModel::Association' has the following attributes: 'navigableOwnedEnd' of type str; 'memberEnd' of type str; 'isDerived' of type str; 'endType' of type str.
+The class 'UMLModel::ChangeEvent' has no attributes.
+The class 'UMLModel::Clause' has the following attributes: 'body' of type str; 'bodyOutput' of type str; 'predecessorClause' of type str; 'test' of type str; 'decider' of type str; 'successorClause' of type str.
+The class 'UMLModel::ProtocolStateMachine' has no attributes.
+The class 'UMLBase' has no attributes.
+The class 'UMLModel::MultiplicityElement' has the following attributes: 'isOrdered' of type str; 'isUnique' of type str; 'upper' of type str; 'lower' of type str.
+The class 'UMLModel::TestIdentityAction' has no attributes.
+The class 'UMLModel::Realization' has no attributes.
+The class 'UMLModel::DirectedRelationship' has the following attributes: 'source' of type str; 'target' of type str.
+The class 'UMLModel::ActionExecutionSpecification' has the following attributes: 'action' of type str.
+The class 'Relationship' has no attributes.
+The class 'UMLModel::FunctionBehavior' has no attributes.
+The class 'Type' has no attributes.
+The class 'UMLModel::TypedElement' has the following attributes: 'type' of type str.
+The class 'UMLModel::Constraint' has the following attributes: 'constrainedElement' of type str; 'context' of type str.
+The class 'UMLModel::Continuation' has the following attributes: 'setting' of type str.
+The class 'UMLModel::InterruptibleActivityRegion' has the following attributes: 'node' of type str; 'interruptingEdge' of type str.
+The class 'VariableAction' has no attributes.
+The class 'UMLModel::Actor' has no attributes.
+The class 'Event' has no attributes.
+The class 'UMLModel::ReduceAction' has the following attributes: 'isOrdered' of type str; 'reducer' of type str.
+The class 'UMLModel::StructuredActivityNode' has the following attributes: 'mustIsolate' of type str.
+The class 'Abstraction' has no attributes.
+The class 'UMLModel::ValuePin' has no attributes.
+The class 'UMLModel::Manifestation' has the following attributes: 'utilizedElement' of type str.
+The class 'UMLModel::ReadLinkObjectEndQualifierAction' has the following attributes: 'qualifier' of type str.
+The class 'UMLModel::EncapsulatedClassifier' has the following attributes: 'ownedPort' of type str.
+The class 'CombinedFragment' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'DataType' has no attributes.
+The class 'EObject' has no attributes.
+The class 'UMLModel::Model' has the following attributes: 'viewpoint' of type str.
+The class 'UMLModel::ReadVariableAction' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'UMLModel::LiteralSpecification' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'UMLModel::ProfileApplication' has the following attributes: 'appliedProfile' of type str; 'applyingPackage' of type str; 'isStrict' of type str.
+The class 'UMLModel::TemplateableElement' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'UMLModel::LiteralNull' has no attributes.
+The class 'UMLModel::Pin' has the following attributes: 'isControl' of type str.
+The class 'UMLModel::Reception' has the following attributes: 'signal' of type str.
+The class 'TypedElement' has no attributes.
+The class 'UMLModel::LiteralUnlimitedNatural' has the following attributes: 'value' of type str.
+The class 'UMLModel::ReceiveOperationEvent' has the following attributes: 'operation' of type str.
+The class 'UMLModel::TimeObservation' has the following attributes: 'firstEvent' of type str; 'event' of type str.
+The class 'UMLModel::TimeInterval' has no attributes.
+The class 'UMLModel::InputPin' has no attributes.
+The class 'UMLModel::DataStoreNode' has no attributes.
+The class 'UMLModel::PartDecomposition' has no attributes.
+The class 'UMLModel::InstanceSpecification' has the following attributes: 'classifier' of type str.
+The class 'UMLModel::ProtocolConformance' has the following attributes: 'specificMachine' of type str; 'generalMachine' of type str.
+The class 'UMLModel::FinalState' has no attributes.
+The class 'UMLModel::BehaviorExecutionSpecification' has the following attributes: 'behavior' of type str.
+The class 'UMLModel::Feature' has the following attributes: 'featuringClassifier' of type str; 'isStatic' of type str.
+The class 'UMLModel::StateMachine' has the following attributes: 'extendedStateMachine' of type str; 'submachineState' of type str.
+The class 'UMLModel::Operation' has the following attributes: 'isUnique' of type str; 'precondition' of type str; 'upper' of type str; 'bodyCondition' of type str; 'type' of type str; 'datatype' of type str; 'class_' of type str; 'interface' of type str; 'redefinedOperation' of type str; 'postcondition' of type str; 'isOrdered' of type str; 'isQuery' of type str; 'lower' of type str.
+The class 'UMLModel::ReplyAction' has the following attributes: 'replyToCall' of type str.
+The class 'Behavior' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'UMLModel::InstanceValue' has the following attributes: 'instance' of type str.
+The class 'UMLModel::RemoveVariableValueAction' has the following attributes: 'isRemoveDuplicates' of type str.
+The class 'UMLModel::Classifier' has the following attributes: 'redefinedClassifier' of type str; 'general' of type str; 'feature' of type str; 'isAbstract' of type str; 'inheritedMember' of type str; 'representation' of type str; 'useCase' of type str; 'attribute' of type str; 'powertypeExtent' of type str.
+The class 'IntervalConstraint' has no attributes.
+The class 'UMLModel::LinkEndData' has the following attributes: 'end' of type str; 'value' of type str.
+The class 'UMLModel::DeploymentSpecification' has the following attributes: 'executionLocation' of type str; 'deploymentLocation' of type str; 'deployment' of type str.
+The class 'UMLModel::InformationItem' has the following attributes: 'represented' of type str.
+The class 'UMLModel::ActivityFinalNode' has no attributes.
+The class 'UMLModel::LinkEndCreationData' has the following attributes: 'insertAt' of type str; 'isReplaceAll' of type str.
+The class 'UMLModel::CallOperationAction' has the following attributes: 'operation' of type str.
+The class 'UMLModel::LiteralInteger' has the following attributes: 'value' of type str.
+The class 'UMLModel::BroadcastSignalAction' has the following attributes: 'signal' of type str.
+The class 'UMLModel::CreateObjectAction' has the following attributes: 'classifier' of type str.
+The class 'ActivityGroup' has no attributes.
+The class 'UMLModel::FlowFinalNode' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'DeploymentTarget' has no attributes.
+The class 'UMLModel::RaiseExceptionAction' has no attributes.
+The class 'Action' has no attributes.
+The class 'UMLModel::Slot' has the following attributes: 'definingFeature' of type str; 'owningInstance' of type str.
+The class 'UMLModel::Extension' has the following attributes: 'metaClass' of type str; 'isRequired' of type str.
+The class 'UMLModel::CreationEvent' has no attributes.
+The class 'UMLModel::Expression' has the following attributes: 'symbol' of type str.
+The class 'UMLModel::QualifierValue' has the following attributes: 'value' of type str; 'qualifier' of type str.
+The class 'UMLModel::GeneralOrdering' has the following attributes: 'before' of type str; 'after' of type str.
+The class 'UMLModel::Variable' has the following attributes: 'activityScope' of type str; 'scope' of type str.
+The class 'Namespace' has no attributes.
+The class 'UMLModel::OccurrenceSpecification' has the following attributes: 'toAfter' of type str; 'event' of type str; 'toBefore' of type str.
+The class 'UMLModel::Usage' has no attributes.
+The class 'UMLModel::InterfaceRealization' has the following attributes: 'realizingClassifier' of type str; 'contract' of type str.
+The class 'UMLModel::DeploymentTarget' has the following attributes: 'deployedElement' of type str.
+The class 'UMLModel::PackageableElement' has no attributes.
+The class 'UMLModel::Artifact' has the following attributes: 'fileName' of type str.
+The class 'UMLModel::Transition' has the following attributes: 'redefinedTransition' of type str; 'source' of type str; 'container' of type str; 'kind' of type str; 'target' of type str; 'guard' of type str.
+The class 'UMLModel::DestructionEvent' has no attributes.
+The class 'UMLModel::OperationTemplateParameter' has no attributes.
+The class 'Observation' has no attributes.
+The class 'MessageEnd' has no attributes.
+The class 'EncapsulatedClassifier' has no attributes.
+The class 'UMLModel::InformationFlow' has the following attributes: 'realizingActivityEdge' of type str; 'realizingMessage' of type str; 'conveyed' of type str; 'realizingConnector' of type str; 'realization' of type str; 'informationSource' of type str; 'informationTarget' of type str.
+The class 'UMLModel::MergeNode' has no attributes.
+The class 'UMLModel::StructuralFeatureAction' has the following attributes: 'structuralFeature' of type str.
+The class 'UMLModel::Gate' has no attributes.
+The class 'UMLModel::Image' has the following attributes: 'location' of type str; 'format' of type str; 'content' of type str.
+The class 'UMLModel::ClassifierTemplateParameter' has the following attributes: 'allowSubstitutable' of type str; 'defaultClassifier' of type str; 'constrainingClassifier' of type str.
+The class 'ObjectNode' has no attributes.
+The class 'Property' has no attributes.
+The class 'UMLModel::AcceptEventAction' has the following attributes: 'isUnmarshall' of type str.
+The class 'UMLModel::ExecutionSpecification' has the following attributes: 'start' of type str; 'finish' of type str.
+The class 'UMLModel::ObjectNode' has the following attributes: 'selection' of type str; 'ordering' of type str; 'inState' of type str; 'isControlType' of type str.
+The class 'UMLModel::Interaction' has no attributes.
+The class 'Transition' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'UMLModel::ClearVariableAction' has no attributes.
+The class 'UMLModel::ConnectorEnd' has the following attributes: 'role' of type str; 'definingEnd' of type str; 'partWithPort' of type str.
+The class 'UMLModel::LiteralBoolean' has the following attributes: 'value' of type str.
+The class 'Realization' has no attributes.
+The class 'UMLModel::Activity' has the following attributes: 'isSingleExecution' of type str; 'isReadOnly' of type str; 'partition' of type str; 'structuredNode' of type str.
+The class 'UMLModel::StructuredClassifier' has the following attributes: 'part' of type str; 'role' of type str.
+The class 'UMLModel::Generalization' has the following attributes: 'generalizationSet' of type str; 'isSubstitutable' of type str; 'specific' of type str; 'general' of type str.
+The class 'UMLModel::MessageOccurrenceSpecification' has no attributes.
+The class 'UMLModel::ExceptionHandler' has the following attributes: 'exceptionInput' of type str; 'handlerBody' of type str; 'exceptionType' of type str; 'protectedNode' of type str.
+The class 'Pin' has no attributes.
+The class 'UMLModel::Region' has the following attributes: 'extendedRegion' of type str; 'state' of type str; 'stateMachine' of type str.
+The class 'UMLModel::ActivityEdge' has the following attributes: 'interrupts' of type str; 'source' of type str; 'inGroup' of type str; 'redefinedEdge' of type str; 'inPartition' of type str; 'target' of type str; 'activity' of type str; 'inStructuredNode' of type str.
+The class 'UMLModel::Collaboration' has the following attributes: 'collaborationRole' of type str.
+The class 'UMLModel::InvocationAction' has the following attributes: 'onPort' of type str.
+The class 'UMLModel::ActivityGroup' has the following attributes: 'subgroup' of type str; 'superGroup' of type str; 'inActivity' of type str.
+The class 'UMLModel::Enumeration' has no attributes.
+The class 'UMLModel::FinalNode' has no attributes.
+The class 'UMLModel::TemplateSignature' has the following attributes: 'parameter' of type str; 'template' of type str.
+The class 'UMLModel::CallAction' has the following attributes: 'isSynchronous' of type str.
+The class 'UMLModel::Deployment' has the following attributes: 'location' of type str; 'deployedArtifact' of type str.
+The class 'UMLModel::TemplateParameter' has the following attributes: 'parameteredElement' of type str; 'default' of type str; 'signature' of type str.
+The class 'UMLModel::LoopNode' has the following attributes: 'bodyOutput' of type str; 'setupPart' of type str; 'test' of type str; 'loopVariable' of type str; 'bodyPart' of type str; 'isTestedFirst' of type str; 'decider' of type str.
+The class 'UMLModel::TimeExpression' has the following attributes: 'expr' of type str; 'observation' of type str.
+The class 'TemplateParameter' has no attributes.
+The class 'UMLModel::Vertex' has the following attributes: 'outgoing' of type str; 'incoming' of type str; 'container' of type str.
+The class 'CentralBufferNode' has no attributes.
+The class 'UMLModel::ExecutionEnvironment' has no attributes.
+The class 'UMLModel::BehavioralFeature' has the following attributes: 'isAbstract' of type str; 'concurrency' of type str; 'method' of type str; 'raisedException' of type str.
+The class 'Dependency' has no attributes.
+The class 'UMLModel::ExecutableNode' has no attributes.
+The class 'UMLModel::PackageImport' has the following attributes: 'visibility' of type str; 'importingNamespace' of type str.
+The class 'UMLModel::DurationInterval' has no attributes.
+The class 'UMLModel::TimeConstraint' has the following attributes: 'firstEvent' of type str.
+The class 'UMLModel::ActivityParameterNode' has the following attributes: 'parameter' of type str.
+The class 'UMLModel::ExpansionNode' has the following attributes: 'regionAsOutput' of type str; 'regionAsInput' of type str.
+The class 'UMLModel::CommunicationPath' has no attributes.
+The class 'UMLModel::MessageEvent' has no attributes.
+The class 'UMLModel::Comment' has the following attributes: 'body' of type str; 'annotatedElement' of type str.
+The class 'Expression' has no attributes.
+The class 'UMLModel::Relationship' has the following attributes: 'relatedElement' of type str.
+The class 'ConnectableElement' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'UMLModel::StateInvariant' has no attributes.
+The class 'State' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UMLModel::ReadIsClassifiedObjectAction' has the following attributes: 'classifier' of type str; 'isDirect' of type str.
+The class 'MessageEvent' has no attributes.
+The class 'Node' has no attributes.
+The class 'UMLModel::ParameterableElement' has the following attributes: 'templateParameter' of type str; 'owningTemplateParameter' of type str.
+The class 'UMLModel::TemplateParameterSubstitution' has the following attributes: 'formal' of type str; 'actual' of type str; 'templateBinding' of type str.
+The class 'UMLModel::AssociationClass' has no attributes.
+The class 'UMLModel::Substitution' has the following attributes: 'contract' of type str; 'substitutingClassifier' of type str.
+The class 'UMLModel::ReclassifyObjectAction' has the following attributes: 'isReplaceAll' of type str; 'oldClassifier' of type str; 'newClassifier' of type str.
+The class 'UMLModel::ControlNode' has no attributes.
+The class 'UMLModel::DataType' has no attributes.
+The class 'UMLModel::Action' has the following attributes: 'input' of type str; 'context' of type str; 'output' of type str.
+The class 'UMLModel::ExtensionPoint' has the following attributes: 'useCase' of type str.
+The class 'UMLModel::Profile' has the following attributes: 'metaclassReference' of type str; 'metamodelReference' of type str; 'ownedStereotype' of type str.
+The class 'Package' has no attributes.
+The class 'LinkAction' has no attributes.
+The class 'UMLModel::State' has the following attributes: 'redefinedState' of type str; 'submachine' of type str; 'isComposite' of type str; 'isSubmachineState' of type str; 'isOrthogonal' of type str; 'isSimple' of type str.
+The class 'CreateLinkAction' has no attributes.
+The class 'UMLModel::LinkEndDestructionData' has the following attributes: 'isDestroyDuplicates' of type str; 'destroyAt' of type str.
+The class 'UMLModel::RedefinableTemplateSignature' has the following attributes: 'extendedSignature' of type str; 'classifier' of type str; 'inheritedParameter' of type str.
+The class 'Class' has no attributes.
+The class 'UMLModel::InteractionFragment' has the following attributes: 'enclosingOperand' of type str; 'enclosingInteraction' of type str; 'covered' of type str.
+The class 'UMLModel::AnyReceiveEvent' has no attributes.
+The class 'UMLModel::ConsiderIgnoreFragment' has the following attributes: 'message' of type str.
+The class 'UMLModel::VariableAction' has the following attributes: 'variable' of type str.
+The class 'UMLModel::Abstraction' has no attributes.
+The class 'UMLModel::AddVariableValueAction' has the following attributes: 'isReplaceAll' of type str.
+The class 'UMLModel::PackageMerge' has the following attributes: 'receivingPackage' of type str; 'mergedPackage' of type str.
+The class 'UMLModel::Component' has the following attributes: 'provided' of type str; 'indirectlyInstantiated' of type str; 'required' of type str.
+The class 'UMLModel::DurationConstraint' has the following attributes: 'firstEvent' of type str.
+The class 'InteractionUse' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'UMLModel::Lifeline' has the following attributes: 'interaction' of type str; 'decomposedAs' of type str; 'coveredBy' of type str; 'represents' of type str.
+The class 'UMLModel::ParameterSet' has the following attributes: 'parameter' of type str.
+The class 'Interval' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'UMLModel::ComponentRealization' has the following attributes: 'realizingClassifier' of type str; 'abstraction' of type str.
+The class 'LiteralSpecification' has no attributes.
+The class 'UMLModel::OpaqueBehavior' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'UMLModel::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str; 'importingNamespace' of type str.
+The class 'Constraint' has no attributes.
+The class 'UMLModel::Extend' has the following attributes: 'extensionLocation' of type str; 'extension' of type str; 'extendedCase' of type str.
+The class 'UMLModel::CallEvent' has the following attributes: 'operation' of type str.
+The class 'UMLModel::InteractionConstraint' has no attributes.
+The class 'UMLModel::StructuralFeature' has the following attributes: 'isReadOnly' of type str.
+The class 'ExecutableNode' has no attributes.
+The class 'UMLModel::DurationObservation' has the following attributes: 'event' of type str; 'firstEvent' of type str.
+The class 'UMLModel::Node' has no attributes.
+The class 'UMLModel::RemoveStructuralFeatureValueAction' has the following attributes: 'isRemoveDuplicates' of type str.
+The class 'UMLModel::ActivityNode' has the following attributes: 'inStructuredNode' of type str; 'inGroup' of type str; 'inPartition' of type str; 'redefinedNode' of type str; 'activity' of type str; 'outgoing' of type str; 'incoming' of type str; 'inInterruptibleRegion' of type str.
+The class 'UMLModel::Include' has the following attributes: 'addition' of type str; 'includingCase' of type str.
+The class 'UMLModel::CreateLinkObjectAction' has no attributes.
+The class 'UMLModel::ExpansionRegion' has the following attributes: 'mode' of type str; 'inputElement' of type str; 'outputElement' of type str.
+The class 'CallAction' has no attributes.
+The class 'UMLModel::SendObjectAction' has no attributes.
+The class 'UMLModel::OutputPin' has no attributes.
+The class 'UMLModel::Interface' has the following attributes: 'redefinedInterface' of type str; 'isActive' of type bool.
+The class 'UMLModel::WriteStructuralFeatureAction' has no attributes.
+The class 'OpaqueBehavior' has no attributes.
+The class 'UMLModel::DeployedArtifact' has no attributes.
+The class 'UMLModel::GeneralizationSet' has the following attributes: 'isDisjoint' of type str; 'generalization' of type str; 'powerType' of type str; 'isCovering' of type str.
+The class 'UMLModel::Port' has the following attributes: 'provided' of type str; 'protocol' of type str; 'redefinedPort' of type str; 'isService' of type str; 'required' of type str; 'isBehavior' of type str.
+The class 'StructuredActivityNode' has no attributes.
+The class 'UMLModel::ClearStructuralFeatureAction' has no attributes.
+The class 'UMLModel::Event' has no attributes.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'UMLModel::Stereotype' has no attributes.
+The class 'UMLModel::AddStructuralFeatureValueAction' has the following attributes: 'isReplaceAll' of type str.
+The class 'UMLModel::ConditionalNode' has the following attributes: 'isDeterminate' of type str; 'isAssured' of type str.
+The class 'UMLModel::Element' has the following attributes: 'href' of type str; 'owner' of type str; 'ownedElement' of type str.
+The class 'UMLModel::PrimitiveType' has no attributes.
+The class 'UMLModel::Connector' has the following attributes: 'kind' of type str; 'type' of type str; 'redefinedConnector' of type str; 'contract' of type str.
+The class 'UMLModel::ReadSelfAction' has no attributes.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'UMLModel::DestroyObjectAction' has the following attributes: 'isDestroyOwnedObjects' of type str; 'isDestroyLinks' of type str.
+The class 'UMLModel::ExecutionOccurrenceSpecification' has the following attributes: 'execution' of type str.
+The class 'UMLModel::Type' has the following attributes: 'package' of type str.
+The class 'BehavioralFeature' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'UMLModel::WriteLinkAction' has no attributes.
+The class 'UMLModel::WriteVariableAction' has no attributes.
+The class 'Feature' has no attributes.
+The class 'UMLModel::Observation' has no attributes.
+The class 'UMLModel::Trigger' has the following attributes: 'event' of type str; 'port' of type str.
+The class 'OccurrenceSpecification' has no attributes.
+The class 'UMLModel::OpaqueAction' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'UMLModel::ReadLinkObjectEndAction' has the following attributes: 'end' of type str.
+The class 'UMLModel::ExtensionEnd' has no attributes.
+The class 'UMLModel::ObjectFlow' has the following attributes: 'isMultireceive' of type str; 'transformation' of type str; 'isMulticast' of type str; 'selection' of type str.
+The class 'UMLModel::CombinedFragment' has the following attributes: 'interactionOperator' of type str.
+The class 'UMLModel::ProtocolTransition' has the following attributes: 'preCondition' of type str; 'referred' of type str; 'postCondition' of type str.
+The class 'UMLModel::ConnectableElementTemplateParameter' has no attributes.
+The class 'DeployedArtifact' has no attributes.
+The class 'UMLModel::OpaqueExpression' has the following attributes: 'behavior' of type str; 'body' of type str; 'language' of type str; 'result' of type str.
+The class 'UMLModel::SendSignalEvent' has the following attributes: 'signal' of type str.
+The class 'UMLModel::InteractionOperand' has no attributes.
+The class 'UMLModel::Duration' has the following attributes: 'observation' of type str; 'expr' of type str.
+The class 'UMLModel::SignalEvent' has the following attributes: 'signal' of type str.
+The class 'UMLModel::Property' has the following attributes: 'redefinedProperty' of type str; 'aggregation' of type str; 'opposite' of type str; 'isComposite' of type str; 'default' of type str; 'class_' of type str; 'association' of type str; 'isDerived' of type str; 'isDerivedUnion' of type str; 'owningAssociation' of type str; 'associationEnd' of type str; 'datatype' of type str; 'subsettedProperty' of type str.
+The class 'UMLModel::CreateLinkAction' has no attributes.
+The class 'UMLModel::ExecutionEvent' has no attributes.
+The class 'Association' has no attributes.
+The class 'UMLModel::UnmarshallAction' has the following attributes: 'unmarshallType' of type str.
+The class 'UMLModel::SendSignalAction' has the following attributes: 'signal' of type str.
+The class 'UMLModel::UseCase' has the following attributes: 'subject' of type str.
+The class 'TemplateSignature' has no attributes.
+The class 'UMLModel::CollaborationUse' has the following attributes: 'type' of type str.
+The class 'UMLModel::Signal' has no attributes.
+The class 'UMLModel::BehavioredClassifier' has the following attributes: 'classifierBehavior' of type str.
+The class 'ControlNode' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'InteractionFragment' has no attributes.
+The class 'UMLModel::Message' has the following attributes: 'sendEvent' of type str; 'interaction' of type str; 'messageSort' of type str; 'signature' of type str; 'messageKind' of type str; 'connector' of type str; 'receiveEvent' of type str.
+The class 'UMLModel::InitialNode' has no attributes.
+The class 'UMLModel::ReadStructuralFeatureAction' has no attributes.
+The class 'UMLModel::MessageEnd' has the following attributes: 'message' of type str.
+The class 'AcceptEventAction' has no attributes.
+The class 'UMLModel::Package' has the following attributes: 'nestedPackage' of type str; 'nestingPackage' of type str; 'ownedType' of type str.
+The class 'UMLModel::DestroyLinkAction' has no attributes.
+The class 'UMLModel::Interval' has the following attributes: 'max' of type str; 'min' of type str.
+The class 'StructuralFeature' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'UMLModel::RedefinableElement' has the following attributes: 'isLeaf' of type str; 'redefinedElement' of type str; 'redefinitionContext' of type str.
+The class 'UMLModel::ForkNode' has no attributes.
+The class 'UMLModel::ActivityPartition' has the following attributes: 'node' of type str; 'isExternal' of type str; 'superPartition' of type str; 'subpartition' of type str; 'edge' of type str; 'isDimension' of type str; 'represents' of type str.
+The class 'UMLModel::Class' has the following attributes: 'isActive' of type str; 'superclass' of type str; 'extension' of type str.
+The class 'UMLModel::InteractionUse' has the following attributes: 'refersTo' of type str.
+The class 'UMLModel::LinkAction' has no attributes.
+The class 'UMLModel::ControlFlow' has no attributes.
+The class 'UMLModel::TimeEvent' has the following attributes: 'isRelative' of type str.
+The class 'WriteVariableAction' has no attributes.
+The class 'UMLModel::JoinNode' has the following attributes: 'isCombineDuplicate' of type str.
+The class 'UMLModel::Namespace' has the following attributes: 'ownedMember' of type str; 'importedMember' of type str; 'member' of type str.
+The class 'UMLModel::Device' has no attributes.
+The class 'UMLModel::CentralBufferNode' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'UMLModel::ValueSpecification' has no attributes.
+The class 'UMLModel::ActionInputPin' has no attributes.
+The class 'UMLModel::ConnectionPointReference' has the following attributes: 'state' of type str; 'entry' of type str; 'exit' of type str.
+The class 'UMLModel::ReadLinkAction' has no attributes.
+The class 'UMLModel::ReadExtentAction' has the following attributes: 'classifier' of type str.
+The class 'UMLModel::StartClassifierBehaviorAction' has no attributes.
+The class 'InvocationAction' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'UMLModel::LiteralString' has the following attributes: 'value' of type str.
+The class 'UMLModel::StringExpression' has the following attributes: 'owningExpression' of type str.
+The class 'UMLModel::Behavior' has the following attributes: 'postcondition' of type str; 'specification' of type str; 'context' of type str; 'precondition' of type str; 'redefinedBahavior' of type str; 'isReentrant' of type str.
+The class 'UMLModel::ClearAssociationAction' has the following attributes: 'association' of type str.
+The class 'UMLModel::TemplateBinding' has the following attributes: 'signature' of type str; 'boundElement' of type str.
+The class 'UMLModel::NamedElement' has the following attributes: 'clientDependency' of type str; 'visibility' of type str; 'namespace' of type str; 'name' of type str; 'qualifiedName' of type str.
+The class 'UMLModel::Pseudostate' has the following attributes: 'kind' of type str; 'state' of type str; 'stateMachine' of type str.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'FIFO', 'unordered', 'ordered', 'LIFO'.
+The enumeration 'CallConcurrencyKind' has the following literals: 'guarded', 'sequential', 'concurrent'.
+The enumeration 'ConnectorKind' has the following literals: 'delegation', 'assembly'.
+The enumeration 'ParameterEffectKind' has the following literals: 'update', 'create', 'delete', 'read'.
+The enumeration 'MessageKind' has the following literals: 'found', 'unknown', 'complete', 'lost'.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'public', 'package', 'protected'.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'none', 'composite'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'return_', 'inout', 'out'.
+The enumeration 'TransitionKind' has the following literals: 'external', 'local', 'internal'.
+The enumeration 'InteractionOperatorKind' has the following literals: 'break_', 'strict', 'consider', 'alt', 'opt', 'assert_', 'loop', 'seq', 'critical', 'ignore', 'neg', 'par'.
+The enumeration 'ExpansionKind' has the following literals: 'stream', 'parallel', 'iterative'.
+The enumeration 'MessageSort' has the following literals: 'asynchCall', 'deleteMessage', 'asynchSignal', 'createMessage', 'synchCall', 'reply'.
+The enumeration 'PseudostateKind' has the following literals: 'terminate', 'junction', 'entryPoint', 'initial', 'fork', 'choice', 'exitPoint', 'shallowHistory', 'deepHistory', 'join'.
+'UMLModel::Classifier' is a specialization of 'TemplateableElement'.
+'UMLModel::ExpansionNode' is a specialization of 'ObjectNode'.
+'UMLModel::TimeConstraint' is a specialization of 'IntervalConstraint'.
+'UMLModel::Interval' is a specialization of 'ValueSpecification'.
+'UMLModel::Region' is a specialization of 'RedefinableElement'.
+'UMLModel::InteractionOperand' is a specialization of 'Namespace'.
+'UMLModel::Type' is a specialization of 'PackageableElement'.
+'UMLModel::ControlFlow' is a specialization of 'ActivityEdge'.
+'UMLModel::Property' is a specialization of 'ConnectableElement'.
+'UMLModel::InstanceSpecification' is a specialization of 'DeployedArtifact'.
+'UMLModel::InstanceSpecification' is a specialization of 'PackageableElement'.
+'UMLModel::ConsiderIgnoreFragment' is a specialization of 'CombinedFragment'.
+'UMLModel::ForkNode' is a specialization of 'ControlNode'.
+'UMLModel::ComponentRealization' is a specialization of 'Realization'.
+'UMLModel::ObjectFlow' is a specialization of 'ActivityEdge'.
+'UMLModel::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'UMLModel::StateInvariant' is a specialization of 'InteractionFragment'.
+'UMLModel::AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+'UMLModel::Collaboration' is a specialization of 'StructuredClassifier'.
+'UMLModel::TimeInterval' is a specialization of 'Interval'.
+'UMLModel::MergeNode' is a specialization of 'ControlNode'.
+'UMLModel::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'UMLModel::UnmarshallAction' is a specialization of 'Action'.
+'UMLModel::CallEvent' is a specialization of 'MessageEvent'.
+'UMLModel::Classifier' is a specialization of 'Type'.
+'UMLModel::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'UMLModel::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'UMLModel::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'UMLModel::BehavioredClassifier' is a specialization of 'Classifier'.
+'UMLModel::WriteLinkAction' is a specialization of 'LinkAction'.
+'UMLModel::Interaction' is a specialization of 'Behavior'.
+'UMLModel::InitialNode' is a specialization of 'ControlNode'.
+'UMLModel::ExecutionSpecification' is a specialization of 'InteractionFragment'.
+'UMLModel::InteractionConstraint' is a specialization of 'Constraint'.
+'UMLModel::AssociationClass' is a specialization of 'Association'.
+'UMLModel::OpaqueAction' is a specialization of 'Action'.
+'UMLModel::ExecutableNode' is a specialization of 'ActivityNode'.
+'UMLModel::BehavioralFeature' is a specialization of 'Namespace'.
+'UMLModel::ParameterSet' is a specialization of 'NamedElement'.
+'UMLModel::InteractionUse' is a specialization of 'InteractionFragment'.
+'UMLModel::FinalNode' is a specialization of 'ControlNode'.
+'UMLModel::Region' is a specialization of 'Namespace'.
+'UMLModel::VariableAction' is a specialization of 'Action'.
+'UMLModel::InteractionOperand' is a specialization of 'InteractionFragment'.
+'UMLModel::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'UMLModel::ExecutionEvent' is a specialization of 'Event'.
+'UMLModel::StringExpression' is a specialization of 'Expression'.
+'UMLModel::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'UMLModel::PackageableElement' is a specialization of 'ParameterableElement'.
+'UMLModel::UseCase' is a specialization of 'BehavioredClassifier'.
+'UMLModel::CallOperationAction' is a specialization of 'CallAction'.
+'UMLModel::ActivityNode' is a specialization of 'RedefinableElement'.
+'UMLModel::Collaboration' is a specialization of 'BehavioredClassifier'.
+'UMLModel::ReceiveOperationEvent' is a specialization of 'MessageEvent'.
+'UMLModel::Operation' is a specialization of 'ParameterableElement'.
+'UMLModel::Variable' is a specialization of 'MultiplicityElement'.
+'UMLModel::InstanceSpecification' is a specialization of 'DeploymentTarget'.
+'UMLModel::Property' is a specialization of 'StructuralFeature'.
+'UMLModel::InvocationAction' is a specialization of 'Action'.
+'UMLModel::JoinNode' is a specialization of 'ControlNode'.
+'UMLModel::SendSignalEvent' is a specialization of 'MessageEvent'.
+'UMLModel::Include' is a specialization of 'DirectedRelationship'.
+'UMLModel::ReadSelfAction' is a specialization of 'Action'.
+'UMLModel::CombinedFragment' is a specialization of 'InteractionFragment'.
+'UMLModel::ActivityFinalNode' is a specialization of 'FinalNode'.
+'UMLModel::CentralBufferNode' is a specialization of 'ObjectNode'.
+'UMLModel::Namespace' is a specialization of 'NamedElement'.
+'UMLModel::LiteralNull' is a specialization of 'LiteralSpecification'.
+'UMLModel::DestructionEvent' is a specialization of 'Event'.
+'UMLModel::ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+'UMLModel::StartClassifierBehaviorAction' is a specialization of 'Action'.
+'UMLModel::IntervalConstraint' is a specialization of 'Constraint'.
+'UMLModel::Signal' is a specialization of 'Classifier'.
+'UMLModel::ConnectableElementTemplateParameter' is a specialization of 'TemplateParameter'.
+'UMLModel::DeploymentSpecification' is a specialization of 'Artifact'.
+'UMLModel::ReadLinkObjectEndAction' is a specialization of 'Action'.
+'UMLModel::ControlNode' is a specialization of 'ActivityNode'.
+'UMLModel::StructuralFeature' is a specialization of 'Feature'.
+'UMLModel::Extension' is a specialization of 'Association'.
+'UMLModel::ActivityGroup' is a specialization of 'Element'.
+'UMLModel::ClearVariableAction' is a specialization of 'VariableAction'.
+'UMLModel::Package' is a specialization of 'PackageableElement'.
+'UMLModel::ReadExtentAction' is a specialization of 'Action'.
+'UMLModel::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'UMLModel::Generalization' is a specialization of 'DirectedRelationship'.
+'UMLModel::MessageEnd' is a specialization of 'NamedElement'.
+'UMLModel::ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+'UMLModel::ReplyAction' is a specialization of 'Action'.
+'UMLModel::AssociationClass' is a specialization of 'Class'.
+'UMLModel::ExtensionEnd' is a specialization of 'Property'.
+'UMLModel::ObjectNode' is a specialization of 'TypedElement'.
+'UMLModel::TimeExpression' is a specialization of 'ValueSpecification'.
+'UMLModel::Image' is a specialization of 'Element'.
+'UMLModel::DurationConstraint' is a specialization of 'IntervalConstraint'.
+'UMLModel::ParameterableElement' is a specialization of 'Element'.
+'UMLModel::State' is a specialization of 'Vertex'.
+'UMLModel::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'UMLModel::MessageEvent' is a specialization of 'Event'.
+'UMLModel::InformationFlow' is a specialization of 'DirectedRelationship'.
+'UMLModel::Actor' is a specialization of 'BehavioredClassifier'.
+'UMLModel::LinkEndDestructionData' is a specialization of 'LinkEndData'.
+'UMLModel::ActionInputPin' is a specialization of 'InputPin'.
+'UMLModel::CreationEvent' is a specialization of 'Event'.
+'UMLModel::LinkEndData' is a specialization of 'Element'.
+'UMLModel::OutputPin' is a specialization of 'Pin'.
+'UMLModel::Pin' is a specialization of 'ObjectNode'.
+'UMLModel::ExecutionOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'UMLModel::CommunicationPath' is a specialization of 'Association'.
+'UMLModel::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'UMLModel::RedefinableTemplateSignature' is a specialization of 'RedefinableElement'.
+'UMLModel::Feature' is a specialization of 'RedefinableElement'.
+'UMLModel::CollaborationUse' is a specialization of 'NamedElement'.
+'UMLModel::EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+'UMLModel::ReadVariableAction' is a specialization of 'VariableAction'.
+'UMLModel::UMLBase' is a specialization of 'EObject'.
+'UMLModel::ProtocolTransition' is a specialization of 'Transition'.
+'UMLModel::Usage' is a specialization of 'Dependency'.
+'UMLModel::CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+'UMLModel::ExtensionPoint' is a specialization of 'RedefinableElement'.
+'UMLModel::InformationItem' is a specialization of 'Classifier'.
+'UMLModel::DestroyObjectAction' is a specialization of 'Action'.
+'UMLModel::Association' is a specialization of 'Classifier'.
+'UMLModel::Observation' is a specialization of 'PackageableElement'.
+'UMLModel::ReclassifyObjectAction' is a specialization of 'Action'.
+'UMLModel::Constraint' is a specialization of 'PackageableElement'.
+'UMLModel::Operation' is a specialization of 'BehavioralFeature'.
+'UMLModel::Clause' is a specialization of 'Element'.
+'UMLModel::Association' is a specialization of 'Relationship'.
+'UMLModel::Node' is a specialization of 'DeploymentTarget'.
+'UMLModel::Parameter' is a specialization of 'ConnectableElement'.
+'UMLModel::ActivityEdge' is a specialization of 'RedefinableElement'.
+'UMLModel::RaiseExceptionAction' is a specialization of 'Action'.
+'UMLModel::TimeObservation' is a specialization of 'Observation'.
+'UMLModel::Event' is a specialization of 'PackageableElement'.
+'UMLModel::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'UMLModel::Reception' is a specialization of 'BehavioralFeature'.
+'UMLModel::PackageableElement' is a specialization of 'NamedElement'.
+'UMLModel::StructuredClassifier' is a specialization of 'Classifier'.
+'UMLModel::StringExpression' is a specialization of 'TemplateableElement'.
+'UMLModel::OpaqueBehavior' is a specialization of 'Behavior'.
+'UMLModel::Extend' is a specialization of 'DirectedRelationship'.
+'UMLModel::PackageMerge' is a specialization of 'DirectedRelationship'.
+'UMLModel::ClearAssociationAction' is a specialization of 'Action'.
+'UMLModel::WriteVariableAction' is a specialization of 'VariableAction'.
+'UMLModel::ProfileApplication' is a specialization of 'DirectedRelationship'.
+'UMLModel::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'UMLModel::Lifeline' is a specialization of 'NamedElement'.
+'UMLModel::Duration' is a specialization of 'ValueSpecification'.
+'UMLModel::ValueSpecificationAction' is a specialization of 'Action'.
+'UMLModel::FinalState' is a specialization of 'State'.
+'UMLModel::InputPin' is a specialization of 'Pin'.
+'UMLModel::Variable' is a specialization of 'ConnectableElement'.
+'UMLModel::Model' is a specialization of 'Package'.
+'UMLModel::PartDecomposition' is a specialization of 'InteractionUse'.
+'UMLModel::Substitution' is a specialization of 'Realization'.
+'UMLModel::DataStoreNode' is a specialization of 'CentralBufferNode'.
+'UMLModel::Realization' is a specialization of 'Abstraction'.
+'UMLModel::Extend' is a specialization of 'NamedElement'.
+'UMLModel::Pseudostate' is a specialization of 'Vertex'.
+'UMLModel::DeployedArtifact' is a specialization of 'NamedElement'.
+'UMLModel::ClassifierTemplateParameter' is a specialization of 'TemplateParameter'.
+'UMLModel::InteractionFragment' is a specialization of 'NamedElement'.
+'UMLModel::SendSignalAction' is a specialization of 'InvocationAction'.
+'UMLModel::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'UMLModel::CallBehaviorAction' is a specialization of 'CallAction'.
+'UMLModel::RedefinableTemplateSignature' is a specialization of 'TemplateSignature'.
+'UMLModel::TemplateSignature' is a specialization of 'Element'.
+'UMLModel::State' is a specialization of 'RedefinableElement'.
+'UMLModel::Connector' is a specialization of 'Feature'.
+'UMLModel::GeneralOrdering' is a specialization of 'NamedElement'.
+'UMLModel::ValuePin' is a specialization of 'InputPin'.
+'UMLModel::ExceptionHandler' is a specialization of 'Element'.
+'UMLModel::Comment' is a specialization of 'Element'.
+'UMLModel::SignalEvent' is a specialization of 'MessageEvent'.
+'UMLModel::StructuredActivityNode' is a specialization of 'Action'.
+'UMLModel::TestIdentityAction' is a specialization of 'Action'.
+'UMLModel::Transition' is a specialization of 'Namespace'.
+'UMLModel::State' is a specialization of 'Namespace'.
+'UMLModel::Transition' is a specialization of 'RedefinableElement'.
+'UMLModel::ActivityPartition' is a specialization of 'ActivityGroup'.
+'UMLModel::StateMachine' is a specialization of 'Behavior'.
+'UMLModel::Behavior' is a specialization of 'Class'.
+'UMLModel::TypedElement' is a specialization of 'NamedElement'.
+'UMLModel::DurationObservation' is a specialization of 'Observation'.
+'UMLModel::Interface' is a specialization of 'Classifier'.
+'UMLModel::ProtocolConformance' is a specialization of 'DirectedRelationship'.
+'UMLModel::Class' is a specialization of 'BehavioredClassifier'.
+'UMLModel::TimeEvent' is a specialization of 'Event'.
+'UMLModel::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'UMLModel::GeneralizationSet' is a specialization of 'PackageableElement'.
+'UMLModel::PrimitiveType' is a specialization of 'DataType'.
+'UMLModel::DeploymentTarget' is a specialization of 'NamedElement'.
+'UMLModel::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'UMLModel::SendObjectAction' is a specialization of 'InvocationAction'.
+'UMLModel::Device' is a specialization of 'Node'.
+'UMLModel::MultiplicityElement' is a specialization of 'Element'.
+'UMLModel::Operation' is a specialization of 'TemplateableElement'.
+'UMLModel::Dependency' is a specialization of 'DirectedRelationship'.
+'UMLModel::Slot' is a specialization of 'Element'.
+'UMLModel::Continuation' is a specialization of 'InteractionFragment'.
+'UMLModel::ConnectionPointReference' is a specialization of 'Vertex'.
+'UMLModel::Class' is a specialization of 'EncapsulatedClassifier'.
+'UMLModel::FlowFinalNode' is a specialization of 'FinalNode'.
+'UMLModel::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'UMLModel::TemplateBinding' is a specialization of 'DirectedRelationship'.
+'UMLModel::ValueSpecification' is a specialization of 'TypedElement'.
+'UMLModel::Vertex' is a specialization of 'NamedElement'.
+'UMLModel::CallAction' is a specialization of 'InvocationAction'.
+'UMLModel::MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+'UMLModel::Gate' is a specialization of 'MessageEnd'.
+'UMLModel::ReadLinkAction' is a specialization of 'LinkAction'.
+'UMLModel::TemplateParameterSubstitution' is a specialization of 'Element'.
+'UMLModel::InterfaceRealization' is a specialization of 'Realization'.
+'UMLModel::LoopNode' is a specialization of 'StructuredActivityNode'.
+'UMLModel::ActivityPartition' is a specialization of 'NamedElement'.
+'UMLModel::PackageImport' is a specialization of 'DirectedRelationship'.
+'UMLModel::ValueSpecification' is a specialization of 'PackageableElement'.
+'UMLModel::Element' is a specialization of 'UMLBase'.
+'UMLModel::DecisionNode' is a specialization of 'ControlNode'.
+'UMLModel::FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+'UMLModel::Action' is a specialization of 'ExecutableNode'.
+'UMLModel::Classifier' is a specialization of 'Namespace'.
+'UMLModel::RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+'UMLModel::Property' is a specialization of 'DeploymentTarget'.
+'UMLModel::BroadcastSignalAction' is a specialization of 'InvocationAction'.
+'UMLModel::ActionExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'UMLModel::CreateObjectAction' is a specialization of 'Action'.
+'UMLModel::ChangeEvent' is a specialization of 'Event'.
+'UMLModel::AcceptCallAction' is a specialization of 'AcceptEventAction'.
+'UMLModel::Parameter' is a specialization of 'MultiplicityElement'.
+'UMLModel::Trigger' is a specialization of 'NamedElement'.
+'UMLModel::Abstraction' is a specialization of 'Dependency'.
+'UMLModel::AnyReceiveEvent' is a specialization of 'MessageEvent'.
+'UMLModel::Deployment' is a specialization of 'Dependency'.
+'UMLModel::ReceiveSignalEvent' is a specialization of 'MessageEvent'.
+'UMLModel::OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+'UMLModel::ConnectorEnd' is a specialization of 'MultiplicityElement'.
+'UMLModel::InstanceValue' is a specialization of 'ValueSpecification'.
+'UMLModel::Profile' is a specialization of 'Package'.
+'UMLModel::Component' is a specialization of 'Class'.
+'UMLModel::DirectedRelationship' is a specialization of 'Relationship'.
+'UMLModel::TemplateableElement' is a specialization of 'Element'.
+'UMLModel::Artifact' is a specialization of 'Classifier'.
+'UMLModel::LinkAction' is a specialization of 'Action'.
+'UMLModel::BehavioralFeature' is a specialization of 'Feature'.
+'UMLModel::Enumeration' is a specialization of 'DataType'.
+'UMLModel::Relationship' is a specialization of 'Element'.
+'UMLModel::QualifierValue' is a specialization of 'Element'.
+'UMLModel::StructuredActivityNode' is a specialization of 'Namespace'.
+'UMLModel::StructuredActivityNode' is a specialization of 'ActivityGroup'.
+'UMLModel::SequenceNode' is a specialization of 'StructuredActivityNode'.
+'UMLModel::Package' is a specialization of 'Namespace'.
+'UMLModel::Stereotype' is a specialization of 'Class'.
+'UMLModel::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'UMLModel::Port' is a specialization of 'Property'.
+'UMLModel::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'UMLModel::Package' is a specialization of 'TemplateableElement'.
+'UMLModel::NamedElement' is a specialization of 'Element'.
+'UMLModel::Dependency' is a specialization of 'PackageableElement'.
+'UMLModel::ConnectableElement' is a specialization of 'TypedElement'.
+'UMLModel::MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'UMLModel::DurationInterval' is a specialization of 'Interval'.
+'UMLModel::Message' is a specialization of 'NamedElement'.
+'UMLModel::Node' is a specialization of 'Class'.
+'UMLModel::ConnectableElement' is a specialization of 'ParameterableElement'.
+'UMLModel::StructuralFeature' is a specialization of 'TypedElement'.
+'UMLModel::ExecutionEnvironment' is a specialization of 'Node'.
+'UMLModel::ObjectNode' is a specialization of 'ActivityNode'.
+'UMLModel::Activity' is a specialization of 'Behavior'.
+'UMLModel::Pin' is a specialization of 'MultiplicityElement'.
+'UMLModel::Manifestation' is a specialization of 'Abstraction'.
+'UMLModel::StructuralFeatureAction' is a specialization of 'Action'.
+'UMLModel::InformationFlow' is a specialization of 'PackageableElement'.
+'UMLModel::AcceptEventAction' is a specialization of 'Action'.
+'UMLModel::Include' is a specialization of 'NamedElement'.
+'UMLModel::Interaction' is a specialization of 'InteractionFragment'.
+'UMLModel::TemplateParameter' is a specialization of 'Element'.
+'UMLModel::RedefinableElement' is a specialization of 'NamedElement'.
+'UMLModel::ElementImport' is a specialization of 'DirectedRelationship'.
+'UMLModel::Property' is a specialization of 'TemplateableElement'.
+'UMLModel::Classifier' is a specialization of 'RedefinableElement'.
+'UMLModel::OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+'UMLModel::Artifact' is a specialization of 'DeployedArtifact'.
+'UMLModel::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'UMLModel::DataType' is a specialization of 'Classifier'.
+'UMLModel::LiteralString' is a specialization of 'LiteralSpecification'.
+'UMLModel::BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'UMLModel::Expression' is a specialization of 'ValueSpecification'.
+'UMLModel::ReduceAction' is a specialization of 'Action'.
+'UMLModel::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'UMLModel::AcceptCallAction' (role 'UMLModel_AcceptCallAction', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin97', cardinality 0..*) is associated with 'UMLModel::CreateLinkObjectAction' (role 'UMLModel_CreateLinkObjectAction', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin91', cardinality 0..*) is associated with 'UMLModel::ConditionalNode' (role 'UMLModel_ConditionalNode90', cardinality 0..*).
+'UMLModel::Interaction' (role 'UMLModel_Interaction148', cardinality 0..*) is associated with 'UMLModel::Message' (role 'UMLModel_Message', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin241', cardinality 0..*) is associated with 'UMLModel::ReadExtentAction' (role 'UMLModel_ReadExtentAction', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin287', cardinality 0..*) is associated with 'UMLModel::StartClassifierBehaviorAction' (role 'UMLModel_StartClassifierBehaviorAction', cardinality 0..*).
+'UMLModel::Behavior' (role 'UMLModel_Behavior', cardinality 0..*) is associated with 'UMLModel::Parameter' (role 'UMLModel_Parameter', cardinality 0..*).
+'UMLModel::State' (role 'UMLModel_State327', cardinality 0..*) is associated with 'UMLModel::Region' (role 'UMLModel_Region328', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin289', cardinality 0..*) is associated with 'UMLModel::SendObjectAction' (role 'UMLModel_SendObjectAction', cardinality 0..*).
+'UMLModel::InteractionUse' (role 'UMLModel_InteractionUse154', cardinality 0..*) is associated with 'UMLModel::Action' (role 'UMLModel_Action155', cardinality 0..*).
+'UMLModel::Slot' (role 'UMLModel_Slot282', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification283', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin179', cardinality 0..*) is associated with 'UMLModel::LoopNode' (role 'UMLModel_LoopNode', cardinality 0..*).
+'UMLModel::Artifact' (role 'UMLModel_Artifact40', cardinality 0..*) is associated with 'UMLModel::Property' (role 'UMLModel_Property', cardinality 0..*).
+'UMLModel::Constraint' (role 'UMLModel_Constraint93', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification94', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin245', cardinality 0..*) is associated with 'UMLModel::ReadLinkObjectEndAction' (role 'UMLModel_ReadLinkObjectEndAction', cardinality 0..*).
+'UMLModel::Artifact' (role 'UMLModel_Artifact38', cardinality 0..*) is associated with 'UMLModel::Operation' (role 'UMLModel_Operation', cardinality 0..*).
+'UMLModel::ClearAssociationAction' (role 'UMLModel_ClearAssociationAction', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin79', cardinality 0..*).
+'UMLModel::ProtocolStateMachine' (role 'UMLModel_ProtocolStateMachine230', cardinality 0..*) is associated with 'UMLModel::ProtocolConformance' (role 'UMLModel_ProtocolConformance', cardinality 0..*).
+'UMLModel::Slot' (role 'UMLModel_Slot', cardinality 0..*) is associated with 'UMLModel::InstanceSpecification' (role 'UMLModel_InstanceSpecification', cardinality 0..*).
+'UMLModel::Trigger' (role 'UMLModel_Trigger57', cardinality 0..*) is associated with 'UMLModel::BehavioredClassifier' (role 'UMLModel_BehavioredClassifier56', cardinality 0..*).
+'UMLModel::Variable' (role 'UMLModel_Variable', cardinality 0..*) is associated with 'UMLModel::Activity' (role 'UMLModel_Activity', cardinality 0..*).
+'UMLModel::Connector' (role 'UMLModel_Connector', cardinality 0..*) is associated with 'UMLModel::ConnectorEnd' (role 'UMLModel_ConnectorEnd', cardinality 0..*).
+'UMLModel::Constraint' (role 'UMLModel_Constraint222', cardinality 0..*) is associated with 'UMLModel::ParameterSet' (role 'UMLModel_ParameterSet221', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin250', cardinality 0..*) is associated with 'UMLModel::ReadLinkObjectEndQualifierAction' (role 'UMLModel_ReadLinkObjectEndQualifierAction', cardinality 0..*).
+'UMLModel::Operation' (role 'UMLModel_Operation67', cardinality 0..*) is associated with 'UMLModel::Class' (role 'UMLModel_Class66', cardinality 0..*).
+'UMLModel::Pseudostate' (role 'UMLModel_Pseudostate', cardinality 0..*) is associated with 'UMLModel::State' (role 'UMLModel_State310', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification364', cardinality 0..*) is associated with 'UMLModel::TimeEvent' (role 'UMLModel_TimeEvent', cardinality 0..*).
+'UMLModel::DestroyObjectAction' (role 'UMLModel_DestroyObjectAction', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin109', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin99', cardinality 0..*) is associated with 'UMLModel::CreateObjectAction' (role 'UMLModel_CreateObjectAction', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin234', cardinality 0..*) is associated with 'UMLModel::ReclassifyObjectAction' (role 'UMLModel_ReclassifyObjectAction', cardinality 0..*).
+'UMLModel::UseCase' (role 'UMLModel_UseCase377', cardinality 0..*) is associated with 'UMLModel::Include' (role 'UMLModel_Include', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification63', cardinality 0..*) is associated with 'UMLModel::ChangeEvent' (role 'UMLModel_ChangeEvent', cardinality 0..*).
+'UMLModel::ParameterSet' (role 'UMLModel_ParameterSet50', cardinality 0..*) is associated with 'UMLModel::BehavioralFeature' (role 'UMLModel_BehavioralFeature49', cardinality 0..*).
+'UMLModel::StringExpression' (role 'UMLModel_StringExpression295', cardinality 0..*) is associated with 'UMLModel::StringExpression' (role 'UMLModel_StringExpression293', cardinality 0..*).
+'UMLModel::TemplateableElement' (role 'UMLModel_TemplateableElement', cardinality 0..*) is associated with 'UMLModel::TemplateBinding' (role 'UMLModel_TemplateBinding', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin255', cardinality 0..*) is associated with 'UMLModel::ReadSelfAction' (role 'UMLModel_ReadSelfAction', cardinality 0..*).
+'UMLModel::State' (role 'UMLModel_State312', cardinality 0..*) is associated with 'UMLModel::Constraint' (role 'UMLModel_Constraint313', cardinality 0..*).
+'UMLModel::PackageableElement' (role 'UMLModel_PackageableElement214', cardinality 0..*) is associated with 'UMLModel::Package' (role 'UMLModel_Package213', cardinality 0..*).
+'UMLModel::Region' (role 'UMLModel_Region276', cardinality 0..*) is associated with 'UMLModel::Transition' (role 'UMLModel_Transition', cardinality 0..*).
+'UMLModel::BehavioralFeature' (role 'UMLModel_BehavioralFeature', cardinality 0..*) is associated with 'UMLModel::Parameter' (role 'UMLModel_Parameter47', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin61', cardinality 0..*) is associated with 'UMLModel::CallOperationAction' (role 'UMLModel_CallOperationAction', cardinality 0..*).
+'UMLModel::State' (role 'UMLModel_State', cardinality 0..*) is associated with 'UMLModel::ConnectionPointReference' (role 'UMLModel_ConnectionPointReference', cardinality 0..*).
+'UMLModel::UseCase' (role 'UMLModel_UseCase382', cardinality 0..*) is associated with 'UMLModel::ExtensionPoint' (role 'UMLModel_ExtensionPoint', cardinality 0..*).
+'UMLModel::InteractionConstraint' (role 'UMLModel_InteractionConstraint', cardinality 0..*) is associated with 'UMLModel::InteractionOperand' (role 'UMLModel_InteractionOperand157', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin205', cardinality 0..*) is associated with 'UMLModel::OpaqueAction' (role 'UMLModel_OpaqueAction204', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin292', cardinality 0..*) is associated with 'UMLModel::SendObjectAction' (role 'UMLModel_SendObjectAction291', cardinality 0..*).
+'UMLModel::Deployment' (role 'UMLModel_Deployment107', cardinality 0..*) is associated with 'UMLModel::DeploymentSpecification' (role 'UMLModel_DeploymentSpecification', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin261', cardinality 0..*) is associated with 'UMLModel::ReduceAction' (role 'UMLModel_ReduceAction', cardinality 0..*).
+'UMLModel::Behavior' (role 'UMLModel_Behavior316', cardinality 0..*) is associated with 'UMLModel::State' (role 'UMLModel_State315', cardinality 0..*).
+'UMLModel::Constraint' (role 'UMLModel_Constraint116', cardinality 0..*) is associated with 'UMLModel::Extend' (role 'UMLModel_Extend', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification185', cardinality 0..*) is associated with 'UMLModel::Message' (role 'UMLModel_Message184', cardinality 0..*).
+'UMLModel::ReduceAction' (role 'UMLModel_ReduceAction263', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin264', cardinality 0..*).
+'UMLModel::Behavior' (role 'UMLModel_Behavior322', cardinality 0..*) is associated with 'UMLModel::State' (role 'UMLModel_State321', cardinality 0..*).
+'UMLModel::PackageImport' (role 'UMLModel_PackageImport218', cardinality 0..*) is associated with 'UMLModel::PackageableElement' (role 'UMLModel_PackageableElement219', cardinality 0..*).
+'UMLModel::Deployment' (role 'UMLModel_Deployment', cardinality 0..*) is associated with 'UMLModel::DeploymentTarget' (role 'UMLModel_DeploymentTarget', cardinality 0..*).
+'UMLModel::Artifact' (role 'UMLModel_Artifact', cardinality 0..*) is associated with 'UMLModel::Artifact' (role 'UMLModel_Artifact33', cardinality 0..*).
+'UMLModel::ExecutableNode' (role 'UMLModel_ExecutableNode', cardinality 0..*) is associated with 'UMLModel::ExceptionHandler' (role 'UMLModel_ExceptionHandler', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin32', cardinality 0..*) is associated with 'UMLModel::AddVariableValueAction' (role 'UMLModel_AddVariableValueAction', cardinality 0..*).
+'UMLModel::Parameter' (role 'UMLModel_Parameter209', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification210', cardinality 0..*).
+'UMLModel::ActivityNode' (role 'UMLModel_ActivityNode', cardinality 0..*) is associated with 'UMLModel::Activity' (role 'UMLModel_Activity14', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification386', cardinality 0..*) is associated with 'UMLModel::ValueSpecificationAction' (role 'UMLModel_ValueSpecificationAction', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin375', cardinality 0..*) is associated with 'UMLModel::UnmarshallAction' (role 'UMLModel_UnmarshallAction374', cardinality 0..*).
+'UMLModel::State' (role 'UMLModel_State324', cardinality 0..*) is associated with 'UMLModel::Trigger' (role 'UMLModel_Trigger325', cardinality 0..*).
+'UMLModel::InteractionOperand' (role 'UMLModel_InteractionOperand', cardinality 0..*) is associated with 'UMLModel::CombinedFragment' (role 'UMLModel_CombinedFragment', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin253', cardinality 0..*) is associated with 'UMLModel::ReadLinkObjectEndQualifierAction' (role 'UMLModel_ReadLinkObjectEndQualifierAction252', cardinality 0..*).
+'UMLModel::Action' (role 'UMLModel_Action', cardinality 0..*) is associated with 'UMLModel::Constraint' (role 'UMLModel_Constraint', cardinality 0..*).
+'UMLModel::JoinNode' (role 'UMLModel_JoinNode', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification168', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification207', cardinality 0..*) is associated with 'UMLModel::ObjectNode' (role 'UMLModel_ObjectNode', cardinality 0..*).
+'UMLModel::AddStructuralFeatureValueAction' (role 'UMLModel_AddStructuralFeatureValueAction', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin', cardinality 0..*).
+'UMLModel::BehavioredClassifier' (role 'UMLModel_BehavioredClassifier54', cardinality 0..*) is associated with 'UMLModel::InterfaceRealization' (role 'UMLModel_InterfaceRealization', cardinality 0..*).
+'UMLModel::ReadIsClassifiedObjectAction' (role 'UMLModel_ReadIsClassifiedObjectAction', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin236', cardinality 0..*).
+'UMLModel::Behavior' (role 'UMLModel_Behavior45', cardinality 0..*) is associated with 'UMLModel::ParameterSet' (role 'UMLModel_ParameterSet', cardinality 0..*).
+'UMLModel::ActivityGroup' (role 'UMLModel_ActivityGroup28', cardinality 0..*) is associated with 'UMLModel::ActivityNode' (role 'UMLModel_ActivityNode29', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin239', cardinality 0..*) is associated with 'UMLModel::ReadIsClassifiedObjectAction' (role 'UMLModel_ReadIsClassifiedObjectAction238', cardinality 0..*).
+'UMLModel::Variable' (role 'UMLModel_Variable297', cardinality 0..*) is associated with 'UMLModel::StructuredActivityNode' (role 'UMLModel_StructuredActivityNode', cardinality 0..*).
+'UMLModel::Node' (role 'UMLModel_Node', cardinality 0..*) is associated with 'UMLModel::Node' (role 'UMLModel_Node199', cardinality 0..*).
+'UMLModel::Property' (role 'UMLModel_Property42', cardinality 0..*) is associated with 'UMLModel::Association' (role 'UMLModel_Association', cardinality 0..*).
+'UMLModel::Package' (role 'UMLModel_Package', cardinality 0..*) is associated with 'UMLModel::PackageMerge' (role 'UMLModel_PackageMerge', cardinality 0..*).
+'UMLModel::Abstraction' (role 'UMLModel_Abstraction', cardinality 0..*) is associated with 'UMLModel::OpaqueExpression' (role 'UMLModel_OpaqueExpression', cardinality 0..*).
+'UMLModel::Generalization' (role 'UMLModel_Generalization', cardinality 0..*) is associated with 'UMLModel::Classifier' (role 'UMLModel_Classifier71', cardinality 0..*).
+'UMLModel::TemplateParameter' (role 'UMLModel_TemplateParameter350', cardinality 0..*) is associated with 'UMLModel::ParameterableElement' (role 'UMLModel_ParameterableElement351', cardinality 0..*).
+'UMLModel::Dependency' (role 'UMLModel_Dependency', cardinality 0..*) is associated with 'UMLModel::CollaborationUse' (role 'UMLModel_CollaborationUse81', cardinality 0..*).
+'UMLModel::Clause' (role 'UMLModel_Clause', cardinality 0..*) is associated with 'UMLModel::ConditionalNode' (role 'UMLModel_ConditionalNode', cardinality 0..*).
+'UMLModel::LinkAction' (role 'UMLModel_LinkAction174', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin175', cardinality 0..*).
+'UMLModel::TemplateParameterSubstitution' (role 'UMLModel_TemplateParameterSubstitution', cardinality 0..*) is associated with 'UMLModel::TemplateBinding' (role 'UMLModel_TemplateBinding344', cardinality 0..*).
+'UMLModel::Interface' (role 'UMLModel_Interface', cardinality 0..*) is associated with 'UMLModel::Property' (role 'UMLModel_Property120', cardinality 0..*).
+'UMLModel::Constraint' (role 'UMLModel_Constraint198', cardinality 0..*) is associated with 'UMLModel::Namespace' (role 'UMLModel_Namespace197', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification171', cardinality 0..*) is associated with 'UMLModel::Lifeline' (role 'UMLModel_Lifeline170', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin182', cardinality 0..*) is associated with 'UMLModel::LoopNode' (role 'UMLModel_LoopNode181', cardinality 0..*).
+'UMLModel::Interface' (role 'UMLModel_Interface125', cardinality 0..*) is associated with 'UMLModel::Classifier' (role 'UMLModel_Classifier126', cardinality 0..*).
+'UMLModel::Action' (role 'UMLModel_Action8', cardinality 0..*) is associated with 'UMLModel::Constraint' (role 'UMLModel_Constraint9', cardinality 0..*).
+'UMLModel::DataType' (role 'UMLModel_DataType', cardinality 0..*) is associated with 'UMLModel::Property' (role 'UMLModel_Property101', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin202', cardinality 0..*) is associated with 'UMLModel::OpaqueAction' (role 'UMLModel_OpaqueAction', cardinality 0..*).
+'UMLModel::BehavioredClassifier' (role 'UMLModel_BehavioredClassifier', cardinality 0..*) is associated with 'UMLModel::Behavior' (role 'UMLModel_Behavior52', cardinality 0..*).
+'UMLModel::PackageableElement' (role 'UMLModel_PackageableElement112', cardinality 0..*) is associated with 'UMLModel::ElementImport' (role 'UMLModel_ElementImport', cardinality 0..*).
+'UMLModel::Package' (role 'UMLModel_Package216', cardinality 0..*) is associated with 'UMLModel::ProfileApplication' (role 'UMLModel_ProfileApplication', cardinality 0..*).
+'UMLModel::Interaction' (role 'UMLModel_Interaction142', cardinality 0..*) is associated with 'UMLModel::Action' (role 'UMLModel_Action143', cardinality 0..*).
+'UMLModel::Property' (role 'UMLModel_Property307', cardinality 0..*) is associated with 'UMLModel::Signal' (role 'UMLModel_Signal', cardinality 0..*).
+'UMLModel::TestIdentityAction' (role 'UMLModel_TestIdentityAction358', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin359', cardinality 0..*).
+'UMLModel::Gate' (role 'UMLModel_Gate152', cardinality 0..*) is associated with 'UMLModel::InteractionUse' (role 'UMLModel_InteractionUse', cardinality 0..*).
+'UMLModel::ReadLinkAction' (role 'UMLModel_ReadLinkAction', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin243', cardinality 0..*).
+'UMLModel::Class' (role 'UMLModel_Class', cardinality 0..*) is associated with 'UMLModel::Classifier' (role 'UMLModel_Classifier', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin305', cardinality 0..*) is associated with 'UMLModel::StructuralFeatureAction' (role 'UMLModel_StructuralFeatureAction', cardinality 0..*).
+'UMLModel::Element' (role 'UMLModel_Element', cardinality 0..*) is associated with 'UMLModel::Comment' (role 'UMLModel_Comment', cardinality 0..*).
+'UMLModel::UseCase' (role 'UMLModel_UseCase', cardinality 0..*) is associated with 'UMLModel::Classifier' (role 'UMLModel_Classifier77', cardinality 0..*).
+'UMLModel::Enumeration' (role 'UMLModel_Enumeration', cardinality 0..*) is associated with 'UMLModel::EnumerationLiteral' (role 'UMLModel_EnumerationLiteral', cardinality 0..*).
+'UMLModel::CallAction' (role 'UMLModel_CallAction', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin59', cardinality 0..*).
+'UMLModel::ActivityNode' (role 'UMLModel_ActivityNode303', cardinality 0..*) is associated with 'UMLModel::StructuredActivityNode' (role 'UMLModel_StructuredActivityNode302', cardinality 0..*).
+'UMLModel::InteractionFragment' (role 'UMLModel_InteractionFragment150', cardinality 0..*) is associated with 'UMLModel::GeneralOrdering' (role 'UMLModel_GeneralOrdering', cardinality 0..*).
+'UMLModel::Property' (role 'UMLModel_Property226', cardinality 0..*) is associated with 'UMLModel::Property' (role 'UMLModel_Property228', cardinality 0..*).
+'UMLModel::ActivityGroup' (role 'UMLModel_ActivityGroup', cardinality 0..*) is associated with 'UMLModel::Activity' (role 'UMLModel_Activity18', cardinality 0..*).
+'UMLModel::Expression' (role 'UMLModel_Expression', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification118', cardinality 0..*).
+'UMLModel::PackageableElement' (role 'UMLModel_PackageableElement', cardinality 0..*) is associated with 'UMLModel::Component' (role 'UMLModel_Component', cardinality 0..*).
+'UMLModel::Interface' (role 'UMLModel_Interface128', cardinality 0..*) is associated with 'UMLModel::Reception' (role 'UMLModel_Reception129', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification187', cardinality 0..*) is associated with 'UMLModel::MultiplicityElement' (role 'UMLModel_MultiplicityElement', cardinality 0..*).
+'UMLModel::Region' (role 'UMLModel_Region', cardinality 0..*) is associated with 'UMLModel::Vertex' (role 'UMLModel_Vertex', cardinality 0..*).
+'UMLModel::Trigger' (role 'UMLModel_Trigger', cardinality 0..*) is associated with 'UMLModel::AcceptEventAction' (role 'UMLModel_AcceptEventAction5', cardinality 0..*).
+'UMLModel::ActivityEdge' (role 'UMLModel_ActivityEdge', cardinality 0..*) is associated with 'UMLModel::Activity' (role 'UMLModel_Activity16', cardinality 0..*).
+'UMLModel::StructuredClassifier' (role 'UMLModel_StructuredClassifier', cardinality 0..*) is associated with 'UMLModel::Property' (role 'UMLModel_Property335', cardinality 0..*).
+'UMLModel::TemplateableElement' (role 'UMLModel_TemplateableElement342', cardinality 0..*) is associated with 'UMLModel::TemplateSignature' (role 'UMLModel_TemplateSignature', cardinality 0..*).
+'UMLModel::ElementImport' (role 'UMLModel_ElementImport193', cardinality 0..*) is associated with 'UMLModel::Namespace' (role 'UMLModel_Namespace', cardinality 0..*).
+'UMLModel::Action' (role 'UMLModel_Action11', cardinality 0..*) is associated with 'UMLModel::ActionInputPin' (role 'UMLModel_ActionInputPin', cardinality 0..*).
+'UMLModel::State' (role 'UMLModel_State318', cardinality 0..*) is associated with 'UMLModel::Behavior' (role 'UMLModel_Behavior319', cardinality 0..*).
+'UMLModel::DataType' (role 'UMLModel_DataType103', cardinality 0..*) is associated with 'UMLModel::Operation' (role 'UMLModel_Operation104', cardinality 0..*).
+'UMLModel::Operation' (role 'UMLModel_Operation123', cardinality 0..*) is associated with 'UMLModel::Interface' (role 'UMLModel_Interface122', cardinality 0..*).
+'UMLModel::ActivityEdge' (role 'UMLModel_ActivityEdge300', cardinality 0..*) is associated with 'UMLModel::StructuredActivityNode' (role 'UMLModel_StructuredActivityNode299', cardinality 0..*).
+'UMLModel::Trigger' (role 'UMLModel_Trigger370', cardinality 0..*) is associated with 'UMLModel::Transition' (role 'UMLModel_Transition369', cardinality 0..*).
+'UMLModel::CombinedFragment' (role 'UMLModel_CombinedFragment87', cardinality 0..*) is associated with 'UMLModel::Gate' (role 'UMLModel_Gate', cardinality 0..*).
+'UMLModel::StringExpression' (role 'UMLModel_StringExpression', cardinality 0..*) is associated with 'UMLModel::NamedElement' (role 'UMLModel_NamedElement', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification384', cardinality 0..*) is associated with 'UMLModel::ValuePin' (role 'UMLModel_ValuePin', cardinality 0..*).
+'UMLModel::InteractionFragment' (role 'UMLModel_InteractionFragment160', cardinality 0..*) is associated with 'UMLModel::InteractionOperand' (role 'UMLModel_InteractionOperand159', cardinality 0..*).
+'UMLModel::Property' (role 'UMLModel_Property224', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification225', cardinality 0..*).
+'UMLModel::RemoveStructuralFeatureValueAction' (role 'UMLModel_RemoveStructuralFeatureValueAction', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin273', cardinality 0..*).
+'UMLModel::Manifestation' (role 'UMLModel_Manifestation', cardinality 0..*) is associated with 'UMLModel::Artifact' (role 'UMLModel_Artifact36', cardinality 0..*).
+'UMLModel::Reception' (role 'UMLModel_Reception', cardinality 0..*) is associated with 'UMLModel::Class' (role 'UMLModel_Class69', cardinality 0..*).
+'UMLModel::InteractionFragment' (role 'UMLModel_InteractionFragment', cardinality 0..*) is associated with 'UMLModel::Interaction' (role 'UMLModel_Interaction140', cardinality 0..*).
+'UMLModel::TestIdentityAction' (role 'UMLModel_TestIdentityAction361', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin362', cardinality 0..*).
+'UMLModel::LinkEndData' (role 'UMLModel_LinkEndData', cardinality 0..*) is associated with 'UMLModel::LinkAction' (role 'UMLModel_LinkAction', cardinality 0..*).
+'UMLModel::ParameterableElement' (role 'UMLModel_ParameterableElement', cardinality 0..*) is associated with 'UMLModel::TemplateParameter' (role 'UMLModel_TemplateParameter348', cardinality 0..*).
+'UMLModel::StateMachine' (role 'UMLModel_StateMachine', cardinality 0..*) is associated with 'UMLModel::Region' (role 'UMLModel_Region330', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin271', cardinality 0..*) is associated with 'UMLModel::RemoveVariableValueAction' (role 'UMLModel_RemoveVariableValueAction', cardinality 0..*).
+'UMLModel::ReadLinkObjectEndAction' (role 'UMLModel_ReadLinkObjectEndAction247', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin248', cardinality 0..*).
+'UMLModel::Interaction' (role 'UMLModel_Interaction', cardinality 0..*) is associated with 'UMLModel::Lifeline' (role 'UMLModel_Lifeline', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin269', cardinality 0..*) is associated with 'UMLModel::ReplyAction' (role 'UMLModel_ReplyAction268', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin259', cardinality 0..*) is associated with 'UMLModel::ReadVariableAction' (role 'UMLModel_ReadVariableAction', cardinality 0..*).
+'UMLModel::Image' (role 'UMLModel_Image', cardinality 0..*) is associated with 'UMLModel::Stereotype' (role 'UMLModel_Stereotype', cardinality 0..*).
+'UMLModel::RaiseExceptionAction' (role 'UMLModel_RaiseExceptionAction', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin232', cardinality 0..*).
+'UMLModel::InteractionConstraint' (role 'UMLModel_InteractionConstraint165', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification166', cardinality 0..*).
+'UMLModel::ProtocolStateMachine' (role 'UMLModel_ProtocolStateMachine', cardinality 0..*) is associated with 'UMLModel::Interface' (role 'UMLModel_Interface131', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification23', cardinality 0..*) is associated with 'UMLModel::ActivityEdge' (role 'UMLModel_ActivityEdge22', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin137', cardinality 0..*) is associated with 'UMLModel::InvocationAction' (role 'UMLModel_InvocationAction', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin356', cardinality 0..*) is associated with 'UMLModel::TestIdentityAction' (role 'UMLModel_TestIdentityAction', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin3', cardinality 0..*) is associated with 'UMLModel::AcceptEventAction' (role 'UMLModel_AcceptEventAction', cardinality 0..*).
+'UMLModel::Interaction' (role 'UMLModel_Interaction145', cardinality 0..*) is associated with 'UMLModel::Gate' (role 'UMLModel_Gate146', cardinality 0..*).
+'UMLModel::ActivityEdge' (role 'UMLModel_ActivityEdge20', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin389', cardinality 0..*) is associated with 'UMLModel::ValueSpecificationAction' (role 'UMLModel_ValueSpecificationAction388', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin278', cardinality 0..*) is associated with 'UMLModel::SendSignalAction' (role 'UMLModel_SendSignalAction', cardinality 0..*).
+'UMLModel::ReplyAction' (role 'UMLModel_ReplyAction', cardinality 0..*) is associated with 'UMLModel::InputPin' (role 'UMLModel_InputPin266', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin393', cardinality 0..*) is associated with 'UMLModel::WriteStructuralFeatureAction' (role 'UMLModel_WriteStructuralFeatureAction', cardinality 0..*).
+'UMLModel::InputPin' (role 'UMLModel_InputPin391', cardinality 0..*) is associated with 'UMLModel::WriteVariableAction' (role 'UMLModel_WriteVariableAction', cardinality 0..*).
+'UMLModel::StateInvariant' (role 'UMLModel_StateInvariant', cardinality 0..*) is associated with 'UMLModel::Constraint' (role 'UMLModel_Constraint285', cardinality 0..*).
+'UMLModel::Classifier' (role 'UMLModel_Classifier73', cardinality 0..*) is associated with 'UMLModel::Substitution' (role 'UMLModel_Substitution', cardinality 0..*).
+'UMLModel::ComponentRealization' (role 'UMLModel_ComponentRealization', cardinality 0..*) is associated with 'UMLModel::Component' (role 'UMLModel_Component84', cardinality 0..*).
+'UMLModel::Behavior' (role 'UMLModel_Behavior367', cardinality 0..*) is associated with 'UMLModel::Transition' (role 'UMLModel_Transition366', cardinality 0..*).
+'UMLModel::LinkEndData' (role 'UMLModel_LinkEndData177', cardinality 0..*) is associated with 'UMLModel::QualifierValue' (role 'UMLModel_QualifierValue', cardinality 0..*).
+'UMLModel::ActivityGroup' (role 'UMLModel_ActivityGroup25', cardinality 0..*) is associated with 'UMLModel::ActivityEdge' (role 'UMLModel_ActivityEdge26', cardinality 0..*).
+'UMLModel::Pseudostate' (role 'UMLModel_Pseudostate333', cardinality 0..*) is associated with 'UMLModel::StateMachine' (role 'UMLModel_StateMachine332', cardinality 0..*).
+'UMLModel::TemplateSignature' (role 'UMLModel_TemplateSignature346', cardinality 0..*) is associated with 'UMLModel::TemplateParameter' (role 'UMLModel_TemplateParameter', cardinality 0..*).
+'UMLModel::UnmarshallAction' (role 'UMLModel_UnmarshallAction', cardinality 0..*) is associated with 'UMLModel::OutputPin' (role 'UMLModel_OutputPin372', cardinality 0..*).
+'UMLModel::SequenceNode' (role 'UMLModel_SequenceNode', cardinality 0..*) is associated with 'UMLModel::ExecutableNode' (role 'UMLModel_ExecutableNode280', cardinality 0..*).
+'UMLModel::MultiplicityElement' (role 'UMLModel_MultiplicityElement189', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification190', cardinality 0..*).
+'UMLModel::ParameterableElement' (role 'UMLModel_ParameterableElement354', cardinality 0..*) is associated with 'UMLModel::TemplateParameterSubstitution' (role 'UMLModel_TemplateParameterSubstitution353', cardinality 0..*).
+'UMLModel::OutputPin' (role 'UMLModel_OutputPin257', cardinality 0..*) is associated with 'UMLModel::ReadStructuralFeatureAction' (role 'UMLModel_ReadStructuralFeatureAction', cardinality 0..*).
+'UMLModel::Classifier' (role 'UMLModel_Classifier75', cardinality 0..*) is associated with 'UMLModel::CollaborationUse' (role 'UMLModel_CollaborationUse', cardinality 0..*).
+'UMLModel::Extend' (role 'UMLModel_Extend380', cardinality 0..*) is associated with 'UMLModel::UseCase' (role 'UMLModel_UseCase379', cardinality 0..*).
+'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification135', cardinality 0..*) is associated with 'UMLModel::InstanceSpecification' (role 'UMLModel_InstanceSpecification134', cardinality 0..*).
+'UMLModel::PackageImport' (role 'UMLModel_PackageImport', cardinality 0..*) is associated with 'UMLModel::Namespace' (role 'UMLModel_Namespace195', cardinality 0..*).
+'UMLModel::Connector' (role 'UMLModel_Connector338', cardinality 0..*) is associated with 'UMLModel::StructuredClassifier' (role 'UMLModel_StructuredClassifier337', cardinality 0..*).
+'UMLModel::InteractionConstraint' (role 'UMLModel_InteractionConstraint162', cardinality 0..*) is associated with 'UMLModel::ValueSpecification' (role 'UMLModel_ValueSpecification163', cardinality 0..*).

@@ -1,0 +1,31 @@
+The model has 8 class(es).
+The class 'fsm::Message' has the following attributes: 'name' of type str.
+The class 'fsm::StringToStringMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'fsm::FSM' has the following attributes: 'name' of type str; 'groupId' of type str; 'isServer' of type bool.
+The class 'fsm::Transition' has the following attributes: 'InverseGuard' of type bool; 'name' of type str.
+The class 'fsm::Guard' has the following attributes: 'name' of type str.
+The class 'fsm::Event' has the following attributes: 'name' of type str.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::Action' has the following attributes: 'name' of type str.
+'fsm::Action' (role 'fsm_Action21', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State20', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::Message' (role 'fsm_Message41', cardinality 0..*) is associated with 'fsm::Event' (role 'fsm_Event42', cardinality 0..*).
+'fsm::Action' (role 'fsm_Action', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM8', cardinality 0..*).
+'fsm::State' (role 'fsm_State26', cardinality 0..*) is associated with 'fsm::Message' (role 'fsm_Message27', cardinality 0..*).
+'fsm::FSM' (role 'owningFSM', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM12', cardinality 0..*) is associated with 'fsm::Message' (role 'fsm_Message', cardinality 0..*).
+'fsm::StringToStringMap' (role 'fsm_StringToStringMap48', cardinality 0..*) is associated with 'fsm::Message' (role 'fsm_Message47', cardinality 0..*).
+'fsm::State' (role 'State29', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition33', cardinality 0..*) is associated with 'fsm::Guard' (role 'fsm_Guard34', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM6', cardinality 0..*) is associated with 'fsm::Event' (role 'fsm_Event', cardinality 0..*).
+'fsm::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'fsm::State' (role 'State39', cardinality 0..*).
+'fsm::Action' (role 'fsm_Action31', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM14', cardinality 0..*) is associated with 'fsm::StringToStringMap' (role 'fsm_StringToStringMap', cardinality 0..*).
+'fsm::State' (role 'ownedStates', cardinality 0..*) is associated with 'fsm::FSM' (role 'FSM', cardinality 0..*).
+'fsm::Message' (role 'fsm_Message44', cardinality 0..*) is associated with 'fsm::StringToStringMap' (role 'fsm_StringToStringMap45', cardinality 0..*).
+'fsm::Event' (role 'fsm_Event37', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition36', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM3', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State4', cardinality 0..*).
+'fsm::Guard' (role 'fsm_Guard', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM10', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::State' (role 'source', cardinality 0..*).
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition18', cardinality 0..*).
+'fsm::Action' (role 'fsm_Action24', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State23', cardinality 0..*).

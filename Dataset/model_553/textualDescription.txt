@@ -1,0 +1,185 @@
+The model has 54 class(es).
+The class 'aspectualacme::ArmaniQuantifiedExpression' has the following attributes: 'quantifier' of type str.
+The class 'aspectualacme::ArmaniOrExpression' has the following attributes: 'operators' of type str.
+The class 'aspectualacme::System' has no attributes.
+The class 'aspectualacme::ArmaniIffExpression' has no attributes.
+The class 'aspectualacme::ArmaniFunctionCall' has the following attributes: 'functionId' of type str.
+The class 'Element' has no attributes.
+The class 'aspectualacme::Armani' has the following attributes: 'modifiers' of type str.
+The class 'aspectualacme::RoleType' has no attributes.
+The class 'attachableElement' has no attributes.
+The class 'aspectualacme::ArmaniAdditiveExpression' has the following attributes: 'operators' of type str.
+The class 'aspectualacme::PropertyType' has the following attributes: 'values' of type str; 'type' of type str.
+The class 'aspectualacme::Role' has no attributes.
+The class 'aspectualacme::ArmaniImpliesExpression' has no attributes.
+The class 'aspectualacme::Binding' has no attributes.
+The class 'aspectualacme::ArmaniMultiplicativeExpression' has the following attributes: 'operators' of type str.
+The class 'aspectualacme::ArmaniUnaryExpression' has the following attributes: 'operator' of type str.
+The class 'aspectualacme::ComponentType' has no attributes.
+The class 'BindableElement' has no attributes.
+The class 'aspectualacme::Element' has the following attributes: 'name' of type str.
+The class 'ArmaniExpression' has no attributes.
+The class 'aspectualacme::Component' has no attributes.
+The class 'aspectualacme::BaseRole' has no attributes.
+The class 'aspectualacme::ConnectorType' has no attributes.
+The class 'aspectualacme::Attachment' has no attributes.
+The class 'aspectualacme::ArmaniDesignRuleExpression' has no attributes.
+The class 'Role' has no attributes.
+The class 'aspectualacme::Family' has no attributes.
+The class 'aspectualacme::ArmaniExpression' has no attributes.
+The class 'ArmaniUnaryExpression' has no attributes.
+The class 'aspectualacme::ArmaniRelationalExpression' has the following attributes: 'operators' of type str.
+The class 'aspectualacme::ArmaniVariable' has the following attributes: 'basicType' of type str; 'id' of type str.
+The class 'ArmaniPrimitiveExpression' has no attributes.
+The class 'aspectualacme::ArmaniBooleanExpression' has no attributes.
+The class 'aspectualacme::ArmaniPrimitiveExpression' has no attributes.
+The class 'aspectualacme::ArmaniSetExpression' has the following attributes: 'reference' of type str; 'referenceType' of type str.
+The class 'aspectualacme::TypeDefinition' has no attributes.
+The class 'aspectualacme::Root' has no attributes.
+The class 'aspectualacme::Connector' has no attributes.
+The class 'aspectualacme::Glue' has the following attributes: 'glueType' of type str.
+The class 'aspectualacme::Property' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'TypeDefinition' has no attributes.
+The class 'aspectualacme::BasicElement' has no attributes.
+The class 'aspectualacme::Port' has no attributes.
+The class 'ArmaniDesignRuleExpression' has no attributes.
+The class 'aspectualacme::WildCard' has the following attributes: 'expression' of type str.
+The class 'aspectualacme::ArmaniConstant' has no attributes.
+The class 'BasicElement' has no attributes.
+The class 'aspectualacme::ArmaniEqualityExpression' has the following attributes: 'operators' of type str.
+The class 'aspectualacme::Import' has the following attributes: 'fileName' of type str.
+The class 'aspectualacme::Representation' has the following attributes: 'name' of type str.
+The class 'aspectualacme::BindableElement' has no attributes.
+The class 'aspectualacme::PortType' has no attributes.
+The class 'aspectualacme::CrosscuttingRole' has no attributes.
+The class 'aspectualacme::attachableElement' has no attributes.
+The enumeration 'GlueType' has the following literals: 'after', 'around', 'before'.
+The enumeration 'ArmaniSetTypes' has the following literals: 'Properties', 'Ports', 'Components', 'Elements', 'Representations', 'Roles', 'Connectors'.
+The enumeration 'ArmaniTypes' has the following literals: 'Role', 'Connector', 'Property', 'Component', 'Port', 'Representation'.
+The enumeration 'ArmaniQuantifier' has the following literals: 'forall', 'exists'.
+'aspectualacme::TypeDefinition' is a specialization of 'Element'.
+'aspectualacme::attachableElement' is a specialization of 'Element'.
+'aspectualacme::ArmaniDesignRuleExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::ComponentType' is a specialization of 'TypeDefinition'.
+'aspectualacme::ArmaniImpliesExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::ArmaniFunctionCall' is a specialization of 'ArmaniPrimitiveExpression'.
+'aspectualacme::ArmaniVariable' is a specialization of 'ArmaniExpression'.
+'aspectualacme::ArmaniSetExpression' is a specialization of 'ArmaniPrimitiveExpression'.
+'aspectualacme::Role' is a specialization of 'BindableElement'.
+'aspectualacme::ArmaniMultiplicativeExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::Role' is a specialization of 'attachableElement'.
+'aspectualacme::ArmaniRelationalExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::PortType' is a specialization of 'TypeDefinition'.
+'aspectualacme::Port' is a specialization of 'attachableElement'.
+'aspectualacme::WildCard' is a specialization of 'attachableElement'.
+'aspectualacme::ArmaniIffExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::Port' is a specialization of 'BindableElement'.
+'aspectualacme::RoleType' is a specialization of 'TypeDefinition'.
+'aspectualacme::ArmaniEqualityExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::ArmaniQuantifiedExpression' is a specialization of 'ArmaniDesignRuleExpression'.
+'aspectualacme::CrosscuttingRole' is a specialization of 'Role'.
+'aspectualacme::System' is a specialization of 'BasicElement'.
+'aspectualacme::PropertyType' is a specialization of 'TypeDefinition'.
+'aspectualacme::Family' is a specialization of 'BasicElement'.
+'aspectualacme::ArmaniConstant' is a specialization of 'ArmaniPrimitiveExpression'.
+'aspectualacme::Connector' is a specialization of 'Element'.
+'aspectualacme::ArmaniBooleanExpression' is a specialization of 'ArmaniDesignRuleExpression'.
+'aspectualacme::ArmaniUnaryExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::ConnectorType' is a specialization of 'TypeDefinition'.
+'aspectualacme::ArmaniPrimitiveExpression' is a specialization of 'ArmaniUnaryExpression'.
+'aspectualacme::BaseRole' is a specialization of 'Role'.
+'aspectualacme::ArmaniAdditiveExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::BasicElement' is a specialization of 'Element'.
+'aspectualacme::BindableElement' is a specialization of 'Element'.
+'aspectualacme::ArmaniOrExpression' is a specialization of 'ArmaniExpression'.
+'aspectualacme::Component' is a specialization of 'Element'.
+'aspectualacme::PropertyType' (role 'PropertyType', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'parentFamily25', cardinality 0..*).
+'aspectualacme::Connector' (role 'aspectualacme_Connector91', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'aspectualacme_ConnectorType92', cardinality 0..*).
+'aspectualacme::PropertyType' (role 'prtypes', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'Family48', cardinality 0..*).
+'aspectualacme::Component' (role 'Component61', cardinality 0..*) is associated with 'aspectualacme::System' (role 'parentSystem60', cardinality 0..*).
+'aspectualacme::System' (role 'aspectualacme_System65', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'aspectualacme_Family66', cardinality 0..*).
+'aspectualacme::Role' (role 'aspectualacme_Role', cardinality 0..*) is associated with 'aspectualacme::RoleType' (role 'aspectualacme_RoleType99', cardinality 0..*).
+'aspectualacme::Property' (role 'properties122', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'Family123', cardinality 0..*).
+'aspectualacme::ComponentType' (role 'ComponentType113', cardinality 0..*) is associated with 'aspectualacme::Port' (role 'port112', cardinality 0..*).
+'aspectualacme::Attachment' (role 'attachments139', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'Family140', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily19', cardinality 0..*) is associated with 'aspectualacme::PortType' (role 'PortType', cardinality 0..*).
+'aspectualacme::Component' (role 'aspectualacme_Component', cardinality 0..*) is associated with 'aspectualacme::ComponentType' (role 'aspectualacme_ComponentType71', cardinality 0..*).
+'aspectualacme::Property' (role 'properties', cardinality 0..*) is associated with 'aspectualacme::System' (role 'System120', cardinality 0..*).
+'aspectualacme::ArmaniMultiplicativeExpression' (role 'aspectualacme_ArmaniMultiplicativeExpression', cardinality 0..*) is associated with 'aspectualacme::ArmaniUnaryExpression' (role 'aspectualacme_ArmaniUnaryExpression164', cardinality 0..*).
+'aspectualacme::System' (role 'parentSystem55', cardinality 0..*) is associated with 'aspectualacme::Attachment' (role 'Attachment56', cardinality 0..*).
+'aspectualacme::BaseRole' (role 'aspectualacme_BaseRole126', cardinality 0..*) is associated with 'aspectualacme::Glue' (role 'aspectualacme_Glue125', cardinality 0..*).
+'aspectualacme::WildCard' (role 'aspectualacme_WildCard58', cardinality 0..*) is associated with 'aspectualacme::System' (role 'aspectualacme_System', cardinality 0..*).
+'aspectualacme::ConnectorType' (role 'aspectualacme_ConnectorType', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'aspectualacme_ConnectorType40', cardinality 0..*).
+'aspectualacme::Family' (role 'aspectualacme_Family', cardinality 0..*) is associated with 'aspectualacme::BasicElement' (role 'aspectualacme_BasicElement8', cardinality 0..*).
+'aspectualacme::BindableElement' (role 'aspectualacme_BindableElement147', cardinality 0..*) is associated with 'aspectualacme::Binding' (role 'aspectualacme_Binding146', cardinality 0..*).
+'aspectualacme::attachableElement' (role 'aspectualacme_attachableElement135', cardinality 0..*) is associated with 'aspectualacme::Attachment' (role 'aspectualacme_Attachment134', cardinality 0..*).
+'aspectualacme::PropertyType' (role 'aspectualacme_PropertyType', cardinality 0..*) is associated with 'aspectualacme::Property' (role 'aspectualacme_Property118', cardinality 0..*).
+'aspectualacme::ComponentType' (role 'aspectualacme_ComponentType29', cardinality 0..*) is associated with 'aspectualacme::ComponentType' (role 'aspectualacme_ComponentType', cardinality 0..*).
+'aspectualacme::TypeDefinition' (role 'aspectualacme_TypeDefinition', cardinality 0..*) is associated with 'aspectualacme::ArmaniVariable' (role 'aspectualacme_ArmaniVariable', cardinality 0..*).
+'aspectualacme::Armani' (role 'aspectualacme_Armani155', cardinality 0..*) is associated with 'aspectualacme::ArmaniDesignRuleExpression' (role 'aspectualacme_ArmaniDesignRuleExpression', cardinality 0..*).
+'aspectualacme::Connector' (role 'Connector131', cardinality 0..*) is associated with 'aspectualacme::Glue' (role 'glue', cardinality 0..*).
+'aspectualacme::Property' (role 'Property', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'parentFamily27', cardinality 0..*).
+'aspectualacme::Import' (role 'aspectualacme_Import', cardinality 0..*) is associated with 'aspectualacme::Root' (role 'aspectualacme_Root', cardinality 0..*).
+'aspectualacme::Representation' (role 'Representation149', cardinality 0..*) is associated with 'aspectualacme::Binding' (role 'bindings', cardinality 0..*).
+'aspectualacme::Armani' (role 'aspectualacme_Armani', cardinality 0..*) is associated with 'aspectualacme::BasicElement' (role 'aspectualacme_BasicElement6', cardinality 0..*).
+'aspectualacme::RoleType' (role 'aspectualacme_RoleType102', cardinality 0..*) is associated with 'aspectualacme::Role' (role 'aspectualacme_Role101', cardinality 0..*).
+'aspectualacme::Family' (role 'Family75', cardinality 0..*) is associated with 'aspectualacme::Component' (role 'components74', cardinality 0..*).
+'aspectualacme::BindableElement' (role 'aspectualacme_BindableElement', cardinality 0..*) is associated with 'aspectualacme::Binding' (role 'aspectualacme_Binding144', cardinality 0..*).
+'aspectualacme::ArmaniOrExpression' (role 'aspectualacme_ArmaniOrExpression179', cardinality 0..*) is associated with 'aspectualacme::ArmaniBooleanExpression' (role 'aspectualacme_ArmaniBooleanExpression', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily21', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'ConnectorType', cardinality 0..*).
+'aspectualacme::Role' (role 'Role', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'ConnectorT', cardinality 0..*).
+'aspectualacme::Connector' (role 'connector', cardinality 0..*) is associated with 'aspectualacme::Glue' (role 'Glue', cardinality 0..*).
+'aspectualacme::Property' (role 'aspectualacme_Property', cardinality 0..*) is associated with 'aspectualacme::Element' (role 'aspectualacme_Element', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily17', cardinality 0..*) is associated with 'aspectualacme::ComponentType' (role 'ComponentType', cardinality 0..*).
+'aspectualacme::PortType' (role 'aspectualacme_PortType116', cardinality 0..*) is associated with 'aspectualacme::Port' (role 'aspectualacme_Port115', cardinality 0..*).
+'aspectualacme::Connector' (role 'Connector80', cardinality 0..*) is associated with 'aspectualacme::Role' (role 'Role81', cardinality 0..*).
+'aspectualacme::ArmaniEqualityExpression' (role 'aspectualacme_ArmaniEqualityExpression', cardinality 0..*) is associated with 'aspectualacme::ArmaniRelationalExpression' (role 'aspectualacme_ArmaniRelationalExpression170', cardinality 0..*).
+'aspectualacme::Binding' (role 'aspectualacme_Binding', cardinality 0..*) is associated with 'aspectualacme::Property' (role 'aspectualacme_Property142', cardinality 0..*).
+'aspectualacme::ArmaniQuantifiedExpression' (role 'aspectualacme_ArmaniQuantifiedExpression186', cardinality 0..*) is associated with 'aspectualacme::ArmaniDesignRuleExpression' (role 'aspectualacme_ArmaniDesignRuleExpression187', cardinality 0..*).
+'aspectualacme::Representation' (role 'Representation63', cardinality 0..*) is associated with 'aspectualacme::System' (role 'system', cardinality 0..*).
+'aspectualacme::Element' (role 'Element', cardinality 0..*) is associated with 'aspectualacme::Representation' (role 'representations', cardinality 0..*).
+'aspectualacme::Component' (role 'components', cardinality 0..*) is associated with 'aspectualacme::System' (role 'System', cardinality 0..*).
+'aspectualacme::ComponentType' (role 'ComponentT', cardinality 0..*) is associated with 'aspectualacme::Port' (role 'Port', cardinality 0..*).
+'aspectualacme::Family' (role 'Family35', cardinality 0..*) is associated with 'aspectualacme::RoleType' (role 'rtypes', cardinality 0..*).
+'aspectualacme::Family' (role 'aspectualacme_Family15', cardinality 0..*) is associated with 'aspectualacme::WildCard' (role 'aspectualacme_WildCard', cardinality 0..*).
+'aspectualacme::Family' (role 'Family', cardinality 0..*) is associated with 'aspectualacme::ComponentType' (role 'ctypes', cardinality 0..*).
+'aspectualacme::CrosscuttingRole' (role 'aspectualacme_CrosscuttingRole', cardinality 0..*) is associated with 'aspectualacme::RoleType' (role 'aspectualacme_RoleType106', cardinality 0..*).
+'aspectualacme::Port' (role 'Port69', cardinality 0..*) is associated with 'aspectualacme::Component' (role 'Component68', cardinality 0..*).
+'aspectualacme::Component' (role 'aspectualacme_Component77', cardinality 0..*) is associated with 'aspectualacme::ComponentType' (role 'aspectualacme_ComponentType78', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily13', cardinality 0..*) is associated with 'aspectualacme::Attachment' (role 'Attachment', cardinality 0..*).
+'aspectualacme::PortType' (role 'aspectualacme_PortType', cardinality 0..*) is associated with 'aspectualacme::PortType' (role 'aspectualacme_PortType36', cardinality 0..*).
+'aspectualacme::Glue' (role 'aspectualacme_Glue', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'aspectualacme_ConnectorType44', cardinality 0..*).
+'aspectualacme::PortType' (role 'aspectualacme_PortType108', cardinality 0..*) is associated with 'aspectualacme::Port' (role 'aspectualacme_Port', cardinality 0..*).
+'aspectualacme::ConnectorType' (role 'ConnectorType97', cardinality 0..*) is associated with 'aspectualacme::Role' (role 'role96', cardinality 0..*).
+'aspectualacme::PortType' (role 'ptypes', cardinality 0..*) is associated with 'aspectualacme::Family' (role 'Family39', cardinality 0..*).
+'aspectualacme::ArmaniIffExpression' (role 'aspectualacme_ArmaniIffExpression174', cardinality 0..*) is associated with 'aspectualacme::ArmaniImpliesExpression' (role 'aspectualacme_ArmaniImpliesExpression', cardinality 0..*).
+'aspectualacme::Binding' (role 'Binding', cardinality 0..*) is associated with 'aspectualacme::Representation' (role 'representation', cardinality 0..*).
+'aspectualacme::ArmaniAdditiveExpression' (role 'aspectualacme_ArmaniAdditiveExpression168', cardinality 0..*) is associated with 'aspectualacme::ArmaniRelationalExpression' (role 'aspectualacme_ArmaniRelationalExpression', cardinality 0..*).
+'aspectualacme::System' (role 'System151', cardinality 0..*) is associated with 'aspectualacme::Representation' (role 'parentRepresentation', cardinality 0..*).
+'aspectualacme::ArmaniAdditiveExpression' (role 'aspectualacme_ArmaniAdditiveExpression', cardinality 0..*) is associated with 'aspectualacme::ArmaniMultiplicativeExpression' (role 'aspectualacme_ArmaniMultiplicativeExpression166', cardinality 0..*).
+'aspectualacme::ArmaniEqualityExpression' (role 'aspectualacme_ArmaniEqualityExpression172', cardinality 0..*) is associated with 'aspectualacme::ArmaniIffExpression' (role 'aspectualacme_ArmaniIffExpression', cardinality 0..*).
+'aspectualacme::Port' (role 'port', cardinality 0..*) is associated with 'aspectualacme::Component' (role 'Component110', cardinality 0..*).
+'aspectualacme::ArmaniPrimitiveExpression' (role 'aspectualacme_ArmaniPrimitiveExpression', cardinality 0..*) is associated with 'aspectualacme::ArmaniFunctionCall' (role 'aspectualacme_ArmaniFunctionCall', cardinality 0..*).
+'aspectualacme::ArmaniDesignRuleExpression' (role 'aspectualacme_ArmaniDesignRuleExpression160', cardinality 0..*) is associated with 'aspectualacme::ArmaniPrimitiveExpression' (role 'aspectualacme_ArmaniPrimitiveExpression159', cardinality 0..*).
+'aspectualacme::Property' (role 'Property53', cardinality 0..*) is associated with 'aspectualacme::System' (role 'parentSystem52', cardinality 0..*).
+'aspectualacme::ArmaniUnaryExpression' (role 'aspectualacme_ArmaniUnaryExpression161', cardinality 0..*) is associated with 'aspectualacme::ArmaniUnaryExpression' (role 'aspectualacme_ArmaniUnaryExpression', cardinality 0..*).
+'aspectualacme::RoleType' (role 'aspectualacme_RoleType32', cardinality 0..*) is associated with 'aspectualacme::RoleType' (role 'aspectualacme_RoleType', cardinality 0..*).
+'aspectualacme::Family' (role 'Family89', cardinality 0..*) is associated with 'aspectualacme::Connector' (role 'connectors88', cardinality 0..*).
+'aspectualacme::System' (role 'parentSystem', cardinality 0..*) is associated with 'aspectualacme::Connector' (role 'Connector50', cardinality 0..*).
+'aspectualacme::ArmaniSetExpression' (role 'aspectualacme_ArmaniSetExpression', cardinality 0..*) is associated with 'aspectualacme::ArmaniConstant' (role 'aspectualacme_ArmaniConstant', cardinality 0..*).
+'aspectualacme::Glue' (role 'aspectualacme_Glue128', cardinality 0..*) is associated with 'aspectualacme::CrosscuttingRole' (role 'aspectualacme_CrosscuttingRole129', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily', cardinality 0..*) is associated with 'aspectualacme::Connector' (role 'Connector', cardinality 0..*).
+'aspectualacme::System' (role 'System137', cardinality 0..*) is associated with 'aspectualacme::Attachment' (role 'attachments', cardinality 0..*).
+'aspectualacme::Family' (role 'Family46', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'cntypes', cardinality 0..*).
+'aspectualacme::attachableElement' (role 'aspectualacme_attachableElement', cardinality 0..*) is associated with 'aspectualacme::Attachment' (role 'aspectualacme_Attachment', cardinality 0..*).
+'aspectualacme::ArmaniQuantifiedExpression' (role 'aspectualacme_ArmaniQuantifiedExpression183', cardinality 0..*) is associated with 'aspectualacme::ArmaniSetExpression' (role 'aspectualacme_ArmaniSetExpression184', cardinality 0..*).
+'aspectualacme::Connector' (role 'aspectualacme_Connector', cardinality 0..*) is associated with 'aspectualacme::ConnectorType' (role 'aspectualacme_ConnectorType84', cardinality 0..*).
+'aspectualacme::Root' (role 'aspectualacme_Root2', cardinality 0..*) is associated with 'aspectualacme::BasicElement' (role 'aspectualacme_BasicElement', cardinality 0..*).
+'aspectualacme::RoleType' (role 'aspectualacme_RoleType104', cardinality 0..*) is associated with 'aspectualacme::BaseRole' (role 'aspectualacme_BaseRole', cardinality 0..*).
+'aspectualacme::Element' (role 'element', cardinality 0..*) is associated with 'aspectualacme::Representation' (role 'Representation', cardinality 0..*).
+'aspectualacme::Role' (role 'role', cardinality 0..*) is associated with 'aspectualacme::Connector' (role 'Connector94', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily23', cardinality 0..*) is associated with 'aspectualacme::RoleType' (role 'RoleType', cardinality 0..*).
+'aspectualacme::System' (role 'System86', cardinality 0..*) is associated with 'aspectualacme::Connector' (role 'connectors', cardinality 0..*).
+'aspectualacme::ArmaniOrExpression' (role 'aspectualacme_ArmaniOrExpression', cardinality 0..*) is associated with 'aspectualacme::ArmaniImpliesExpression' (role 'aspectualacme_ArmaniImpliesExpression176', cardinality 0..*).
+'aspectualacme::Family' (role 'parentFamily11', cardinality 0..*) is associated with 'aspectualacme::Component' (role 'Component', cardinality 0..*).
+'aspectualacme::ArmaniVariable' (role 'aspectualacme_ArmaniVariable181', cardinality 0..*) is associated with 'aspectualacme::ArmaniQuantifiedExpression' (role 'aspectualacme_ArmaniQuantifiedExpression', cardinality 0..*).

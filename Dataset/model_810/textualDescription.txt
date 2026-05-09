@@ -1,0 +1,25 @@
+The model has 7 class(es).
+The class 'fsm::Buffer' has the following attributes: 'initialValue' of type str.
+The class 'fsm::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'NamedElement' has no attributes.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsm::StateMachine' has no attributes.
+The class 'fsm::FSMSystem' has no attributes.
+The class 'fsm::State' has no attributes.
+'fsm::State' is a specialization of 'NamedElement'.
+'fsm::FSMSystem' is a specialization of 'NamedElement'.
+'fsm::Buffer' is a specialization of 'NamedElement'.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::Transition' is a specialization of 'NamedElement'.
+'fsm::StateMachine' (role 'fsm_StateMachine18', cardinality 0..*) is associated with 'fsm::Buffer' (role 'fsm_Buffer17', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine3', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::StateMachine' (role 'owningFSM', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::Buffer' (role 'fsm_Buffer', cardinality 0..*) is associated with 'fsm::FSMSystem' (role 'fsm_FSMSystem15', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine13', cardinality 0..*) is associated with 'fsm::FSMSystem' (role 'fsm_FSMSystem', cardinality 0..*).
+'fsm::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'fsm::State' (role 'State9', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::State' (role 'source', cardinality 0..*).
+'fsm::State' (role 'State11', cardinality 0..*) is associated with 'fsm::Transition' (role 'incomingTransitions', cardinality 0..*).
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition7', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine21', cardinality 0..*) is associated with 'fsm::Buffer' (role 'fsm_Buffer20', cardinality 0..*).
+'fsm::State' (role 'ownedStates', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'StateMachine', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*).

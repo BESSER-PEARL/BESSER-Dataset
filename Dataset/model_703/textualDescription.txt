@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'type::EStringToStringMapEntry' has no attributes.
+The class 'AnyType' has no attributes.
+The class 'type::SimpleAnyType' has the following attributes: 'value' of type str; 'rawValue' of type str.
+The class 'type::EDataType' has no attributes.
+The class 'type::AnyType' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'any' of type str.
+The class 'type::XMLTypeDocumentRoot' has the following attributes: 'mixed' of type str; 'comment' of type str; 'cDATA' of type str; 'text' of type str.
+The class 'type::ProcessingInstruction' has the following attributes: 'target' of type str; 'data' of type str.
+'type::SimpleAnyType' is a specialization of 'AnyType'.
+'type::XMLTypeDocumentRoot' (role 'type_XMLTypeDocumentRoot3', cardinality 0..*) is associated with 'type::EStringToStringMapEntry' (role 'type_EStringToStringMapEntry4', cardinality 0..*).
+'type::EStringToStringMapEntry' (role 'type_EStringToStringMapEntry', cardinality 0..*) is associated with 'type::XMLTypeDocumentRoot' (role 'type_XMLTypeDocumentRoot', cardinality 0..*).
+'type::ProcessingInstruction' (role 'type_ProcessingInstruction', cardinality 0..*) is associated with 'type::XMLTypeDocumentRoot' (role 'type_XMLTypeDocumentRoot6', cardinality 0..*).
+'type::SimpleAnyType' (role 'type_SimpleAnyType', cardinality 0..*) is associated with 'type::EDataType' (role 'type_EDataType', cardinality 0..*).

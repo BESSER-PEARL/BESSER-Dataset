@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'PetriNet::Transition' has no attributes.
+The class 'PetriNet::ReseauPetri' has the following attributes: 'name' of type str.
+The class 'PetriNet::Place' has the following attributes: 'jeton' of type int.
+The class 'PetriElement' has no attributes.
+The class 'Noeud' has no attributes.
+The class 'PetriNet::Arc' has the following attributes: 'poids' of type int; 'isReadArc' of type bool.
+The class 'PetriNet::PetriElement' has no attributes.
+The class 'PetriNet::Noeud' has the following attributes: 'name' of type str.
+'PetriNet::Arc' is a specialization of 'PetriElement'.
+'PetriNet::Noeud' is a specialization of 'PetriElement'.
+'PetriNet::Transition' is a specialization of 'Noeud'.
+'PetriNet::Place' is a specialization of 'Noeud'.
+'PetriNet::PetriElement' (role 'PetriNet_PetriElement', cardinality 0..*) is associated with 'PetriNet::ReseauPetri' (role 'PetriNet_ReseauPetri', cardinality 0..*).
+'PetriNet::Noeud' (role 'Noeud2', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'LinksToSuccessors', cardinality 0..*).
+'PetriNet::Arc' (role 'Arc', cardinality 0..*) is associated with 'PetriNet::Noeud' (role 'successor', cardinality 0..*).
+'PetriNet::Arc' (role 'Arc9', cardinality 0..*) is associated with 'PetriNet::Noeud' (role 'predecessor', cardinality 0..*).
+'PetriNet::Noeud' (role 'Noeud', cardinality 0..*) is associated with 'PetriNet::Arc' (role 'linksToPredecessors', cardinality 0..*).
+'PetriNet::PetriElement' (role 'PetriNet_PetriElement5', cardinality 0..*) is associated with 'PetriNet::ReseauPetri' (role 'PetriNet_ReseauPetri6', cardinality 0..*).

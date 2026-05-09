@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'libraryModel::ecore::Book' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'libraryModel::ecore::Picture' has the following attributes: 'pageNumber' of type str.
+The class 'libraryModel::ecore::NamedElement' has the following attributes: 'Name' of type str.
+The class 'libraryModel::ecore::Author' has no attributes.
+The class 'libraryModel::ecore::LibraryModel' has no attributes.
+'libraryModel::ecore::Book' is a specialization of 'NamedElement'.
+'libraryModel::ecore::Author' is a specialization of 'NamedElement'.
+'libraryModel::ecore::Picture' is a specialization of 'NamedElement'.
+'libraryModel::ecore::Book' (role 'Book10', cardinality 0..*) is associated with 'libraryModel::ecore::Picture' (role 'pictures', cardinality 0..*).
+'libraryModel::ecore::Author' (role 'authors', cardinality 0..*) is associated with 'libraryModel::ecore::LibraryModel' (role 'LibraryModel5', cardinality 0..*).
+'libraryModel::ecore::Book' (role 'book', cardinality 0..*) is associated with 'libraryModel::ecore::LibraryModel' (role 'LibraryModel', cardinality 0..*).
+'libraryModel::ecore::LibraryModel' (role 'library8', cardinality 0..*) is associated with 'libraryModel::ecore::Author' (role 'Author', cardinality 0..*).
+'libraryModel::ecore::Book' (role 'book3', cardinality 0..*) is associated with 'libraryModel::ecore::Picture' (role 'Picture', cardinality 0..*).
+'libraryModel::ecore::Book' (role 'libraryModel_ecore_Book', cardinality 0..*) is associated with 'libraryModel::ecore::Author' (role 'libraryModel_ecore_Author', cardinality 0..*).
+'libraryModel::ecore::LibraryModel' (role 'library', cardinality 0..*) is associated with 'libraryModel::ecore::Book' (role 'Book', cardinality 0..*).

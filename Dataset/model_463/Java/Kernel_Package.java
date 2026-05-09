@@ -1,0 +1,70 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Kernel_Package  {
+
+
+
+
+
+
+    private fUML_Kernel_Package fuml_kernel_package;
+
+
+
+
+    private fUML_Kernel_Type fuml_kernel_type;
+
+
+
+
+    private fUML_Kernel_PackageImport fuml_kernel_packageimport;
+
+
+
+
+    private fUML_Kernel_Package fuml_kernel_package;
+
+
+    public Kernel_Package(
+    ) {
+    }
+
+
+
+    public fUML_Kernel_Package getFuml_kernel_package() {
+        return fuml_kernel_package;
+    }
+
+    public void setFuml_kernel_package(fUML_Kernel_Package fuml_kernel_package) {
+        this.fuml_kernel_package = fuml_kernel_package;
+    }
+    public fUML_Kernel_Type getFuml_kernel_type() {
+        return fuml_kernel_type;
+    }
+
+    public void setFuml_kernel_type(fUML_Kernel_Type fuml_kernel_type) {
+        this.fuml_kernel_type = fuml_kernel_type;
+    }
+    public fUML_Kernel_PackageImport getFuml_kernel_packageimport() {
+        return fuml_kernel_packageimport;
+    }
+
+    public void setFuml_kernel_packageimport(fUML_Kernel_PackageImport fuml_kernel_packageimport) {
+        this.fuml_kernel_packageimport = fuml_kernel_packageimport;
+    }
+    public fUML_Kernel_Package getFuml_kernel_package() {
+        return fuml_kernel_package;
+    }
+
+    public void setFuml_kernel_package(fUML_Kernel_Package fuml_kernel_package) {
+        this.fuml_kernel_package = fuml_kernel_package;
+    }
+
+}

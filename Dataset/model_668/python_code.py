@@ -1,0 +1,136 @@
+from datetime import datetime, date, time
+from enum import Enum
+
+############################################
+# Definition of Enumerations
+############################################
+
+class LengthUnitKind(Enum):
+    cm = "cm"
+    mm = "mm"
+    m = "m"
+class LogicalTimeUnit(Enum):
+    tick = "tick"
+class TimeStandardKind(Enum):
+    TAI = "TAI"
+    UT0 = "UT0"
+    UT1 = "UT1"
+    UTC = "UTC"
+    Local = "Local"
+    TT = "TT"
+    TBD = "TBD"
+    TCG = "TCG"
+    TCB = "TCB"
+    Sidereal = "Sidereal"
+    GPS = "GPS"
+class WeightUnitKind(Enum):
+    g = "g"
+    mg = "mg"
+    kg = "kg"
+class DataTxRateUnitKind(Enum):
+    b_per_s = "b_per_s"
+    Kb_per_s = "Kb_per_s"
+    Mb_per_s = "Mb_per_s"
+class DirectionKind(Enum):
+    incr = "incr"
+    decr = "decr"
+class PowerUnitKind(Enum):
+    W = "W"
+    mW = "mW"
+    KW = "KW"
+class SchedPolicyKind(Enum):
+    EarliestDeadlineFirst = "EarliestDeadlineFirst"
+    FIFO = "FIFO"
+    FixedPriority = "FixedPriority"
+    LeastLaxityFirst = "LeastLaxityFirst"
+    RoundRobin = "RoundRobin"
+    TimeTableDriven = "TimeTableDriven"
+    Undef = "Undef"
+    Other = "Other"
+class TimeUnitKind(Enum):
+    s = "s"
+    ms = "ms"
+    us = "us"
+    ns = "ns"
+    min = "min"
+    hrs = "hrs"
+    day = "day"
+class EventKind(Enum):
+    start = "start"
+    finish = "finish"
+    send = "send"
+    receive = "receive"
+    consume = "consume"
+class TimeNatureKind(Enum):
+    discrete = "discrete"
+    dense = "dense"
+class StatisticalQualifierKind(Enum):
+    max = "max"
+    min = "min"
+    mean = "mean"
+    range = "range"
+    percent = "percent"
+    distrib = "distrib"
+    determ = "determ"
+    other = "other"
+    variance = "variance"
+class SourceKind(Enum):
+    est = "est"
+    meas = "meas"
+    calc = "calc"
+    req = "req"
+class AreaUnitKind(Enum):
+    um2 = "um2"
+    mm2 = "mm2"
+class DataSizeUnitKind(Enum):
+    bit = "bit"
+    Byte = "Byte"
+    KB = "KB"
+    MB = "MB"
+    GB = "GB"
+class PeriodicServerKind(Enum):
+    Sporadic = "Sporadic"
+    Deferrable = "Deferrable"
+    Undef = "Undef"
+    Other = "Other"
+class EnergyUnitKind(Enum):
+    J = "J"
+    KJ = "KJ"
+    Wh = "Wh"
+    KWh = "KWh"
+    mWh = "mWh"
+class ProtectProtocolKind(Enum):
+    FIFO = "FIFO"
+    NoPreemption = "NoPreemption"
+    PriorityCeiling = "PriorityCeiling"
+    PriorityInheritance = "PriorityInheritance"
+    StackBased = "StackBased"
+    Undef = "Undef"
+    Other = "Other"
+class TransmModeKind(Enum):
+    simplex = "simplex"
+    halfDuplex = "halfDuplex"
+    fullDuplex = "fullDuplex"
+class TimeInterpretationKind(Enum):
+    duration = "duration"
+    instant = "instant"
+class FrequencyUnitKind(Enum):
+    Hz = "Hz"
+    KHz = "KHz"
+    MHz = "MHz"
+    GHz = "GHz"
+    rpm = "rpm"
+
+
+############################################
+# Definition of Classes
+############################################
+
+class MARTE_Library_TimeLibrary_IdealClock:
+
+    def __init__(self):
+        
+        pass
+    def currentTime(self) :
+        # TODO: Implement currentTime method
+        pass

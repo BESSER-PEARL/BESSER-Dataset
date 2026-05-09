@@ -1,0 +1,23 @@
+The model has 1 class(es).
+The class 'MARTE::Library::TimeLibrary::IdealClock' has no attributes.
+The enumeration 'DataSizeUnitKind' has the following literals: 'Byte', 'bit', 'MB', 'KB', 'GB'.
+The enumeration 'LengthUnitKind' has the following literals: 'mm', 'm', 'cm'.
+The enumeration 'PowerUnitKind' has the following literals: 'W', 'KW', 'mW'.
+The enumeration 'EventKind' has the following literals: 'send', 'start', 'finish', 'receive', 'consume'.
+The enumeration 'EnergyUnitKind' has the following literals: 'Wh', 'KJ', 'mWh', 'J', 'KWh'.
+The enumeration 'FrequencyUnitKind' has the following literals: 'rpm', 'Hz', 'KHz', 'GHz', 'MHz'.
+The enumeration 'SchedPolicyKind' has the following literals: 'FIFO', 'RoundRobin', 'TimeTableDriven', 'LeastLaxityFirst', 'Other', 'EarliestDeadlineFirst', 'Undef', 'FixedPriority'.
+The enumeration 'TimeUnitKind' has the following literals: 'us', 's', 'ms', 'min', 'hrs', 'day', 'ns'.
+The enumeration 'PeriodicServerKind' has the following literals: 'Undef', 'Sporadic', 'Deferrable', 'Other'.
+The enumeration 'DirectionKind' has the following literals: 'decr', 'incr'.
+The enumeration 'StatisticalQualifierKind' has the following literals: 'range', 'other', 'distrib', 'variance', 'min', 'determ', 'mean', 'percent', 'max'.
+The enumeration 'WeightUnitKind' has the following literals: 'g', 'mg', 'kg'.
+The enumeration 'SourceKind' has the following literals: 'meas', 'calc', 'est', 'req'.
+The enumeration 'TransmModeKind' has the following literals: 'simplex', 'halfDuplex', 'fullDuplex'.
+The enumeration 'DataTxRateUnitKind' has the following literals: 'Mb_per_s', 'b_per_s', 'Kb_per_s'.
+The enumeration 'TimeNatureKind' has the following literals: 'dense', 'discrete'.
+The enumeration 'AreaUnitKind' has the following literals: 'mm2', 'um2'.
+The enumeration 'TimeInterpretationKind' has the following literals: 'instant', 'duration'.
+The enumeration 'TimeStandardKind' has the following literals: 'Sidereal', 'TBD', 'GPS', 'TT', 'Local', 'TCG', 'TAI', 'UTC', 'UT0', 'TCB', 'UT1'.
+The enumeration 'ProtectProtocolKind' has the following literals: 'Other', 'Undef', 'FIFO', 'PriorityInheritance', 'StackBased', 'NoPreemption', 'PriorityCeiling'.
+The enumeration 'LogicalTimeUnit' has the following literals: 'tick'.

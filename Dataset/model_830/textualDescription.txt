@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'lts::pc::LTS' has the following attributes: 'name' of type str.
+The class 'lts::pc::EObject' has no attributes.
+The class 'lts::pc::State' has the following attributes: 'name' of type str.
+The class 'lts::pc::Pointcut' has no attributes.
+The class 'lts::pc::Transition' has the following attributes: 'input' of type str; 'output' of type str.
+'lts::pc::Transition' (role 'Transition11', cardinality 0..*) is associated with 'lts::pc::State' (role 'target', cardinality 0..*).
+'lts::pc::State' (role 'State13', cardinality 0..*) is associated with 'lts::pc::Transition' (role 'outgoingTransition', cardinality 0..*).
+'lts::pc::State' (role 'lts_pc_State', cardinality 0..*) is associated with 'lts::pc::LTS' (role 'lts_pc_LTS', cardinality 0..*).
+'lts::pc::State' (role 'State', cardinality 0..*) is associated with 'lts::pc::LTS' (role 'owningLTS', cardinality 0..*).
+'lts::pc::Pointcut' (role 'lts_pc_Pointcut', cardinality 0..*) is associated with 'lts::pc::EObject' (role 'lts_pc_EObject', cardinality 0..*).
+'lts::pc::State' (role 'ownedState', cardinality 0..*) is associated with 'lts::pc::LTS' (role 'LTS', cardinality 0..*).
+'lts::pc::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'lts::pc::State' (role 'State15', cardinality 0..*).
+'lts::pc::LTS' (role 'lts_pc_LTS3', cardinality 0..*) is associated with 'lts::pc::State' (role 'lts_pc_State4', cardinality 0..*).
+'lts::pc::LTS' (role 'lts_pc_LTS6', cardinality 0..*) is associated with 'lts::pc::State' (role 'lts_pc_State7', cardinality 0..*).
+'lts::pc::State' (role 'source', cardinality 0..*) is associated with 'lts::pc::Transition' (role 'Transition', cardinality 0..*).

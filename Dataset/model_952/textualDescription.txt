@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'Graph::Edge' has no attributes.
+The class 'Graph::Graph' has no attributes.
+The class 'Graph::Node' has the following attributes: 'name' of type str.
+'Graph::Edge' (role 'Edge', cardinality 0..*) is associated with 'Graph::Node' (role 'source', cardinality 0..*).
+'Graph::Node' (role 'Node', cardinality 0..*) is associated with 'Graph::Edge' (role 'outgoing', cardinality 0..*).
+'Graph::Node' (role 'Node6', cardinality 0..*) is associated with 'Graph::Edge' (role 'incoming', cardinality 0..*).
+'Graph::Node' (role 'target', cardinality 0..*) is associated with 'Graph::Edge' (role 'Edge3', cardinality 0..*).
+'Graph::Graph' (role 'Graph_Graph', cardinality 0..*) is associated with 'Graph::Node' (role 'Graph_Node', cardinality 0..*).

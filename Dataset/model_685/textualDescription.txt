@@ -1,0 +1,400 @@
+The model has 165 class(es).
+The class 'CollectionLiteralExp' has no attributes.
+The class 'JTL::imperativeocl::BreakExp' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'JTL::essentialocl::TypeExp' has no attributes.
+The class 'JTL::imperativeocl::WhileExp' has no attributes.
+The class 'emof::TypedElement' has no attributes.
+The class 'JTL::JTL::Domain' has the following attributes: 'isCheckable' of type bool; 'isEnforceable' of type bool.
+The class 'ComputeExp' has no attributes.
+The class 'JTL::imperativeocl::UnlinkExp' has no attributes.
+The class 'JTL::imperativeocl::SwitchExp' has no attributes.
+The class 'JTL::emof::Element' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'JTL::imperativeocl::BlockExp' has no attributes.
+The class 'DataType' has no attributes.
+The class 'JTL::template::CollectionTemplateExp' has the following attributes: 'kind' of type str.
+The class 'AssignExp' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'JTL::imperativeocl::Typedef' has no attributes.
+The class 'JTL::essentialocl::LiteralExp' has no attributes.
+The class 'JTL::essentialocl::OrderedSetType' has no attributes.
+The class 'LetExp' has no attributes.
+The class 'JTL::essentialocl::TupleType' has no attributes.
+The class 'Type' has no attributes.
+The class 'JTL::imperativeocl::DictionaryType' has no attributes.
+The class 'JTL::JTL::Predicate' has no attributes.
+The class 'JTL::essentialocl::NullLiteralExp' has no attributes.
+The class 'JTL::essentialocl::CollectionType' has no attributes.
+The class 'JTL::imperativeocl::TryExp' has no attributes.
+The class 'LogExp' has no attributes.
+The class 'Operation' has no attributes.
+The class 'JTL::essentialocl::LoopExp' has no attributes.
+The class 'JTL::imperativeocl::VariableInitExp' has the following attributes: 'withResult' of type bool.
+The class 'emof::Package' has no attributes.
+The class 'JTL::imperativeocl::AltExp' has no attributes.
+The class 'JTL::imperativeocl::ImperativeIterateExp' has no attributes.
+The class 'emof::Type' has no attributes.
+The class 'JTL::JTL::Model' has the following attributes: 'usedPackage' of type str.
+The class 'JTL::emof::NamedElement' has the following attributes: 'name' of type str.
+The class 'ImperativeExpression' has no attributes.
+The class 'JTL::emof::Package' has the following attributes: 'uri' of type str.
+The class 'JTL::imperativeocl::RaiseExp' has no attributes.
+The class 'JTL::essentialocl::CallExp' has no attributes.
+The class 'JTL::essentialocl::VoidType' has no attributes.
+The class 'JTL::imperativeocl::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'essentialocl::CallExp' has no attributes.
+The class 'Relation' has no attributes.
+The class 'JTL::imperativeocl::AnonymousTupleLiteralPart' has no attributes.
+The class 'Element' has no attributes.
+The class 'JTL::essentialocl::OperationCallExp' has no attributes.
+The class 'Variable' has no attributes.
+The class 'JTL::imperativeocl::DictLiteralPart' has no attributes.
+The class 'JTL::imperativeocl::ContinueExp' has no attributes.
+The class 'JTL::essentialocl::OclExpression' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'JTL::emof::TypedElement' has the following attributes: 'type' of type str.
+The class 'JTL::imperativeocl::ForExp' has no attributes.
+The class 'JTL::JTL::When' has no attributes.
+The class 'Package' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'JTL::JTL::Pattern' has no attributes.
+The class 'When' has no attributes.
+The class 'JTL::essentialocl::EnumLiteralExp' has no attributes.
+The class 'JTL::emof::Tag' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'LiteralExp' has no attributes.
+The class 'JTL::template::PropertyTemplateItem' has no attributes.
+The class 'DictLiteralPart' has no attributes.
+The class 'TryExp' has no attributes.
+The class 'JTL::essentialocl::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'JTL::emof::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'PropertyTemplateItem' has no attributes.
+The class 'TupleLiteralExp' has no attributes.
+The class 'emof::Class' has no attributes.
+The class 'JTL::essentialocl::NumericLiteralExp' has no attributes.
+The class 'JTL::essentialocl::TupleLiteralPart' has no attributes.
+The class 'Object' has no attributes.
+The class 'JTL::template::ObjectTemplateExp' has the following attributes: 'referredClass' of type str.
+The class 'JTL::imperativeocl::TupleExp' has no attributes.
+The class 'JTL::essentialocl::InvalidType' has no attributes.
+The class 'JTL::imperativeocl::ImperativeLoopExp' has no attributes.
+The class 'essentialocl::OclExpression' has no attributes.
+The class 'JTL::imperativeocl::AnonymousTupleType' has no attributes.
+The class 'JTL::emof::Operation' has no attributes.
+The class 'emof::MultiplicityElement' has no attributes.
+The class 'JTL::JTL::Relation' has the following attributes: 'isTopLevel' of type bool.
+The class 'JTL::essentialocl::IterateExp' has no attributes.
+The class 'JTL::imperativeocl::InstantiationExp' has no attributes.
+The class 'JTL::emof::Enumeration' has no attributes.
+The class 'JTL::emof::Property' has the following attributes: 'isReadOnly' of type bool; 'isDerived' of type bool; 'isId' of type bool; 'isComposite' of type bool; 'default' of type str.
+The class 'Extent' has no attributes.
+The class 'JTL::essentialocl::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type int.
+The class 'Model' has no attributes.
+The class 'TupleLiteralPart' has no attributes.
+The class 'JTL::essentialocl::InvalidLiteralExp' has no attributes.
+The class 'JTL::imperativeocl::AssignExp' has the following attributes: 'isReset' of type bool.
+The class 'JTL::imperativeocl::AnonymousTupleLiteralExp' has no attributes.
+The class 'Class' has no attributes.
+The class 'JTL::essentialocl::PrimitiveLiteralExp' has no attributes.
+The class 'Tag' has no attributes.
+The class 'JTL::JTL::Transformation' has no attributes.
+The class 'JTL::essentialocl::UnlimitedNaturalExp' has the following attributes: 'symbol' of type str.
+The class 'JTL::essentialocl::SetType' has no attributes.
+The class 'JTL::essentialocl::IteratorExp' has no attributes.
+The class 'JTL::imperativeocl::AssertExp' has the following attributes: 'severity' of type str.
+The class 'JTL::essentialocl::CollectionRange' has no attributes.
+The class 'JTL::emof::Extent' has no attributes.
+The class 'JTL::imperativeocl::DictLiteralExp' has no attributes.
+The class 'JTL::imperativeocl::ImperativeExpression' has no attributes.
+The class 'JTL::essentialocl::VariableExp' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'Comment' has no attributes.
+The class 'JTL::essentialocl::FeaturePropertyCall' has no attributes.
+The class 'JTL::emof::URIExtent' has no attributes.
+The class 'JTL::imperativeocl::ListType' has no attributes.
+The class 'JTL::essentialocl::LetExp' has no attributes.
+The class 'TemplateExp' has no attributes.
+The class 'JTL::essentialocl::CollectionItem' has no attributes.
+The class 'emof::DataType' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'JTL::essentialocl::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'Enumeration' has no attributes.
+The class 'JTL::template::TemplateExp' has no attributes.
+The class 'Transformation' has no attributes.
+The class 'JTL::emof::EnumerationLiteral' has no attributes.
+The class 'JTL::imperativeocl::CollectorExp' has no attributes.
+The class 'JTL::emof::Parameter' has no attributes.
+The class 'JTL::emof::Comment' has no attributes.
+The class 'ObjectTemplateExp' has no attributes.
+The class 'Where' has no attributes.
+The class 'OpaqueExpression' has no attributes.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'JTL::imperativeocl::LogExp' has the following attributes: 'level' of type int; 'text' of type str.
+The class 'JTL::emof::Type' has no attributes.
+The class 'AltExp' has no attributes.
+The class 'JTL::essentialocl::CollectionLiteralPart' has no attributes.
+The class 'JTL::essentialocl::PropertyCallExp' has no attributes.
+The class 'JTL::emof::Object' has no attributes.
+The class 'JTL::essentialocl::BagType' has no attributes.
+The class 'JTL::essentialocl::IfExp' has no attributes.
+The class 'JTL::emof::MultiplicityElement' has the following attributes: 'lower' of type int; 'upper' of type str; 'isOrdered' of type str; 'isUnique' of type str.
+The class 'JTL::essentialocl::TupleLiteralExp' has no attributes.
+The class 'JTL::essentialocl::OpaqueExpression' has no attributes.
+The class 'JTL::JTL::Where' has no attributes.
+The class 'JTL::essentialocl::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type bool.
+The class 'JTL::essentialocl::RealLiteralExp' has the following attributes: 'realSymbol' of type float.
+The class 'imperativeocl::ImperativeExpression' has no attributes.
+The class 'JTL::essentialocl::SequenceType' has no attributes.
+The class 'JTL::imperativeocl::ReturnExp' has no attributes.
+The class 'AnonymousTupleLiteralPart' has no attributes.
+The class 'JTL::imperativeocl::UnpackExp' has no attributes.
+The class 'FeaturePropertyCall' has no attributes.
+The class 'JTL::imperativeocl::ComputeExp' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'Property' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'JTL::emof::DataType' has no attributes.
+The class 'Domain' has no attributes.
+The class 'JTL::essentialocl::ExpressionInOcl' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'JTL::essentialocl::Variable' has no attributes.
+The class 'JTL::essentialocl::AnyType' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'ImperativeLoopExp' has no attributes.
+The class 'essentialocl::LoopExp' has no attributes.
+The class 'JTL::emof::PrimitiveType' has no attributes.
+The enumeration 'CollectionKind' has the following literals: 'OrderedSet', 'Set', 'Bag', 'Sequence'.
+The enumeration 'SeverityKind' has the following literals: 'fatal', 'error', 'warning'.
+'JTL::essentialocl::IteratorExp' is a specialization of 'LoopExp'.
+'JTL::imperativeocl::InstantiationExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'JTL::essentialocl::CallExp' is a specialization of 'OclExpression'.
+'JTL::essentialocl::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'JTL::emof::Property' is a specialization of 'emof::TypedElement'.
+'JTL::essentialocl::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'JTL::JTL::Relation' is a specialization of 'NamedElement'.
+'JTL::emof::Package' is a specialization of 'NamedElement'.
+'JTL::essentialocl::LetExp' is a specialization of 'OclExpression'.
+'JTL::imperativeocl::DictLiteralPart' is a specialization of 'Element'.
+'JTL::essentialocl::TupleLiteralPart' is a specialization of 'TypedElement'.
+'JTL::JTL::Domain' is a specialization of 'NamedElement'.
+'JTL::imperativeocl::DictLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::imperativeocl::ForExp' is a specialization of 'ImperativeLoopExp'.
+'JTL::imperativeocl::SwitchExp' is a specialization of 'essentialocl::CallExp'.
+'JTL::imperativeocl::ReturnExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::OclExpression' is a specialization of 'TypedElement'.
+'JTL::essentialocl::LoopExp' is a specialization of 'essentialocl::OclExpression'.
+'JTL::imperativeocl::AnonymousTupleLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::essentialocl::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::imperativeocl::CollectorExp' is a specialization of 'ImperativeLoopExp'.
+'JTL::emof::Operation' is a specialization of 'emof::MultiplicityElement'.
+'JTL::essentialocl::OperationCallExp' is a specialization of 'FeaturePropertyCall'.
+'JTL::JTL::Pattern' is a specialization of 'Element'.
+'JTL::emof::PrimitiveType' is a specialization of 'DataType'.
+'JTL::essentialocl::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::essentialocl::CollectionLiteralPart' is a specialization of 'TypedElement'.
+'JTL::essentialocl::VoidType' is a specialization of 'Type'.
+'JTL::imperativeocl::AnonymousTupleLiteralPart' is a specialization of 'Element'.
+'JTL::essentialocl::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::emof::URIExtent' is a specialization of 'Extent'.
+'JTL::essentialocl::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'JTL::imperativeocl::UnpackExp' is a specialization of 'ImperativeExpression'.
+'JTL::imperativeocl::VariableInitExp' is a specialization of 'ImperativeExpression'.
+'JTL::template::TemplateExp' is a specialization of 'LiteralExp'.
+'JTL::JTL::Model' is a specialization of 'NamedElement'.
+'JTL::emof::Property' is a specialization of 'emof::MultiplicityElement'.
+'JTL::template::ObjectTemplateExp' is a specialization of 'TemplateExp'.
+'JTL::imperativeocl::BreakExp' is a specialization of 'ImperativeExpression'.
+'JTL::JTL::Predicate' is a specialization of 'Element'.
+'JTL::imperativeocl::LogExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::AnyType' is a specialization of 'emof::Type'.
+'JTL::imperativeocl::ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+'JTL::essentialocl::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::essentialocl::NullLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::essentialocl::IterateExp' is a specialization of 'LoopExp'.
+'JTL::emof::Comment' is a specialization of 'Element'.
+'JTL::imperativeocl::AssertExp' is a specialization of 'ImperativeExpression'.
+'JTL::emof::Type' is a specialization of 'NamedElement'.
+'JTL::imperativeocl::TupleExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::OrderedSetType' is a specialization of 'CollectionType'.
+'JTL::essentialocl::SetType' is a specialization of 'CollectionType'.
+'JTL::essentialocl::VariableExp' is a specialization of 'OclExpression'.
+'JTL::imperativeocl::AssignExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::InvalidType' is a specialization of 'Type'.
+'JTL::imperativeocl::WhileExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::TupleType' is a specialization of 'emof::Class'.
+'JTL::template::CollectionTemplateExp' is a specialization of 'TemplateExp'.
+'JTL::JTL::Where' is a specialization of 'Pattern'.
+'JTL::essentialocl::CollectionType' is a specialization of 'DataType'.
+'JTL::essentialocl::IfExp' is a specialization of 'OclExpression'.
+'JTL::imperativeocl::SwitchExp' is a specialization of 'imperativeocl::ImperativeExpression'.
+'JTL::essentialocl::Variable' is a specialization of 'TypedElement'.
+'JTL::imperativeocl::ListType' is a specialization of 'CollectionType'.
+'JTL::imperativeocl::Typedef' is a specialization of 'Class'.
+'JTL::JTL::Transformation' is a specialization of 'emof::Package'.
+'JTL::essentialocl::UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+'JTL::essentialocl::LiteralExp' is a specialization of 'OclExpression'.
+'JTL::imperativeocl::AnonymousTupleType' is a specialization of 'Class'.
+'JTL::imperativeocl::BlockExp' is a specialization of 'ImperativeExpression'.
+'JTL::imperativeocl::ImperativeExpression' is a specialization of 'OclExpression'.
+'JTL::imperativeocl::ContinueExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::TupleType' is a specialization of 'emof::DataType'.
+'JTL::essentialocl::PropertyCallExp' is a specialization of 'FeaturePropertyCall'.
+'JTL::essentialocl::BagType' is a specialization of 'CollectionType'.
+'JTL::emof::TypedElement' is a specialization of 'NamedElement'.
+'JTL::template::PropertyTemplateItem' is a specialization of 'Element'.
+'JTL::emof::Tag' is a specialization of 'Element'.
+'JTL::imperativeocl::ComputeExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'JTL::essentialocl::LoopExp' is a specialization of 'essentialocl::CallExp'.
+'JTL::essentialocl::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'JTL::emof::Element' is a specialization of 'Object'.
+'JTL::essentialocl::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'JTL::imperativeocl::TryExp' is a specialization of 'ImperativeExpression'.
+'JTL::imperativeocl::ImperativeLoopExp' is a specialization of 'essentialocl::LoopExp'.
+'JTL::JTL::Transformation' is a specialization of 'emof::Class'.
+'JTL::emof::Operation' is a specialization of 'emof::TypedElement'.
+'JTL::emof::Parameter' is a specialization of 'emof::TypedElement'.
+'JTL::imperativeocl::RaiseExp' is a specialization of 'ImperativeExpression'.
+'JTL::emof::Class' is a specialization of 'Type'.
+'JTL::essentialocl::FeaturePropertyCall' is a specialization of 'CallExp'.
+'JTL::imperativeocl::DictionaryType' is a specialization of 'CollectionType'.
+'JTL::JTL::When' is a specialization of 'Pattern'.
+'JTL::emof::EnumerationLiteral' is a specialization of 'NamedElement'.
+'JTL::essentialocl::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'JTL::imperativeocl::AltExp' is a specialization of 'ImperativeExpression'.
+'JTL::essentialocl::TypeExp' is a specialization of 'OclExpression'.
+'JTL::emof::Enumeration' is a specialization of 'DataType'.
+'JTL::emof::DataType' is a specialization of 'Type'.
+'JTL::emof::Extent' is a specialization of 'Object'.
+'JTL::essentialocl::AnyType' is a specialization of 'emof::Class'.
+'JTL::emof::Parameter' is a specialization of 'emof::MultiplicityElement'.
+'JTL::imperativeocl::UnlinkExp' is a specialization of 'ImperativeExpression'.
+'JTL::imperativeocl::TemplateParameterType' is a specialization of 'Type'.
+'JTL::essentialocl::ExpressionInOcl' is a specialization of 'OpaqueExpression'.
+'JTL::imperativeocl::ImperativeLoopExp' is a specialization of 'imperativeocl::ImperativeExpression'.
+'JTL::emof::NamedElement' is a specialization of 'Element'.
+'JTL::essentialocl::SequenceType' is a specialization of 'CollectionType'.
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'JTL::emof::Class' (role 'class_', cardinality 0..*).
+'JTL::JTL::Relation' (role 'relation', cardinality 0..*) is associated with 'Transformation' (role 'Transformation', cardinality 0..*).
+'OclExpression' (role 'OclExpression181', cardinality 0..*) is associated with 'JTL::imperativeocl::AltExp' (role 'JTL_imperativeocl_AltExp', cardinality 0..*).
+'Domain' (role 'Domain54', cardinality 0..*) is associated with 'JTL::JTL::Pattern' (role 'JTL_JTL_Pattern53', cardinality 0..*).
+'JTL::essentialocl::OclExpression' (role 'tryBody', cardinality 0..*) is associated with 'TryExp' (role 'TryExp', cardinality 0..*).
+'JTL::imperativeocl::TryExp' (role 'JTL_imperativeocl_TryExp', cardinality 0..*) is associated with 'Type' (role 'Type195', cardinality 0..*).
+'Variable' (role 'Variable177', cardinality 0..*) is associated with 'JTL::imperativeocl::ComputeExp' (role 'computeOwner', cardinality 0..*).
+'JTL::essentialocl::CollectionLiteralPart' (role 'part', cardinality 0..*) is associated with 'CollectionLiteralExp' (role 'CollectionLiteralExp105', cardinality 0..*).
+'TemplateExp' (role 'TemplateExp', cardinality 0..*) is associated with 'JTL::JTL::Pattern' (role 'JTL_JTL_Pattern51', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'JTL::emof::Operation' (role 'JTL_emof_Operation', cardinality 0..*).
+'AnonymousTupleLiteralPart' (role 'AnonymousTupleLiteralPart', cardinality 0..*) is associated with 'JTL::imperativeocl::AnonymousTupleLiteralExp' (role 'JTL_imperativeocl_AnonymousTupleLiteralExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression115', cardinality 0..*) is associated with 'JTL::essentialocl::ExpressionInOcl' (role 'JTL_essentialocl_ExpressionInOcl', cardinality 0..*).
+'Predicate' (role 'Predicate', cardinality 0..*) is associated with 'JTL::JTL::Pattern' (role 'pattern', cardinality 0..*).
+'OclExpression' (role 'OclExpression107', cardinality 0..*) is associated with 'JTL::essentialocl::CollectionItem' (role 'JTL_essentialocl_CollectionItem', cardinality 0..*).
+'NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'JTL::emof::Comment' (role 'JTL_emof_Comment', cardinality 0..*).
+'JTL::imperativeocl::InstantiationExp' (role 'JTL_imperativeocl_InstantiationExp211', cardinality 0..*) is associated with 'Variable' (role 'Variable212', cardinality 0..*).
+'OclExpression' (role 'OclExpression159', cardinality 0..*) is associated with 'JTL::imperativeocl::AssignExp' (role 'JTL_imperativeocl_AssignExp158', cardinality 0..*).
+'JTL::JTL::Relation' (role 'whenOwner', cardinality 0..*) is associated with 'When' (role 'When', cardinality 0..*).
+'Variable' (role 'Variable88', cardinality 0..*) is associated with 'JTL::essentialocl::VariableExp' (role 'JTL_essentialocl_VariableExp', cardinality 0..*).
+'Property' (role 'Property86', cardinality 0..*) is associated with 'JTL::essentialocl::PropertyCallExp' (role 'JTL_essentialocl_PropertyCallExp', cardinality 0..*).
+'Relation' (role 'Relation100', cardinality 0..*) is associated with 'JTL::essentialocl::OperationCallExp' (role 'JTL_essentialocl_OperationCallExp99', cardinality 0..*).
+'JTL::template::PropertyTemplateItem' (role 'JTL_template_PropertyTemplateItem', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression149', cardinality 0..*).
+'JTL::imperativeocl::TryExp' (role 'JTL_imperativeocl_TryExp197', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression198', cardinality 0..*).
+'OclExpression' (role 'OclExpression92', cardinality 0..*) is associated with 'JTL::essentialocl::LoopExp' (role 'JTL_essentialocl_LoopExp', cardinality 0..*).
+'JTL::JTL::Domain' (role 'domain', cardinality 0..*) is associated with 'Relation' (role 'Relation35', cardinality 0..*).
+'Type' (role 'Type204', cardinality 0..*) is associated with 'JTL::imperativeocl::Typedef' (role 'JTL_imperativeocl_Typedef', cardinality 0..*).
+'JTL::emof::Class' (role 'JTL_emof_Class', cardinality 0..*) is associated with 'Class' (role 'Class3', cardinality 0..*).
+'JTL::imperativeocl::AssignExp' (role 'JTL_imperativeocl_AssignExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression156', cardinality 0..*).
+'JTL::JTL::Model' (role 'JTL_JTL_Model', cardinality 0..*) is associated with 'Model' (role 'Model46', cardinality 0..*).
+'Transformation' (role 'Transformation44', cardinality 0..*) is associated with 'JTL::JTL::Model' (role 'modelParameter', cardinality 0..*).
+'Variable' (role 'Variable42', cardinality 0..*) is associated with 'JTL::JTL::Domain' (role 'JTL_JTL_Domain41', cardinality 0..*).
+'OclExpression' (role 'OclExpression234', cardinality 0..*) is associated with 'JTL::imperativeocl::ImperativeLoopExp' (role 'JTL_imperativeocl_ImperativeLoopExp', cardinality 0..*).
+'JTL::JTL::Predicate' (role 'predicate', cardinality 0..*) is associated with 'Pattern' (role 'Pattern56', cardinality 0..*).
+'JTL::essentialocl::ExpressionInOcl' (role 'JTL_essentialocl_ExpressionInOcl123', cardinality 0..*) is associated with 'Variable' (role 'Variable124', cardinality 0..*).
+'JTL::essentialocl::Variable' (role 'JTL_essentialocl_Variable', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression78', cardinality 0..*).
+'JTL::JTL::Relation' (role 'whereOwner', cardinality 0..*) is associated with 'Where' (role 'Where', cardinality 0..*).
+'JTL::imperativeocl::ReturnExp' (role 'JTL_imperativeocl_ReturnExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression191', cardinality 0..*).
+'Variable' (role 'Variable95', cardinality 0..*) is associated with 'JTL::essentialocl::LoopExp' (role 'JTL_essentialocl_LoopExp94', cardinality 0..*).
+'JTL::template::ObjectTemplateExp' (role 'JTL_template_ObjectTemplateExp', cardinality 0..*) is associated with 'AssignExp' (role 'AssignExp', cardinality 0..*).
+'Property' (role 'Property23', cardinality 0..*) is associated with 'JTL::emof::Property' (role 'JTL_emof_Property', cardinality 0..*).
+'Class' (role 'Class209', cardinality 0..*) is associated with 'JTL::imperativeocl::InstantiationExp' (role 'JTL_imperativeocl_InstantiationExp', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'JTL::emof::Tag' (role 'tag', cardinality 0..*).
+'JTL::JTL::Domain' (role 'JTL_JTL_Domain38', cardinality 0..*) is associated with 'Model' (role 'Model39', cardinality 0..*).
+'OclExpression' (role 'OclExpression225', cardinality 0..*) is associated with 'JTL::imperativeocl::LogExp' (role 'JTL_imperativeocl_LogExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression215', cardinality 0..*) is associated with 'JTL::imperativeocl::InstantiationExp' (role 'JTL_imperativeocl_InstantiationExp214', cardinality 0..*).
+'OclExpression' (role 'OclExpression66', cardinality 0..*) is associated with 'JTL::essentialocl::IfExp' (role 'JTL_essentialocl_IfExp', cardinality 0..*).
+'Relation' (role 'Relation59', cardinality 0..*) is associated with 'JTL::JTL::When' (role 'when', cardinality 0..*).
+'JTL::JTL::Relation' (role 'relation30', cardinality 0..*) is associated with 'Domain' (role 'Domain', cardinality 0..*).
+'JTL::template::CollectionTemplateExp' (role 'JTL_template_CollectionTemplateExp142', cardinality 0..*) is associated with 'CollectionType' (role 'CollectionType', cardinality 0..*).
+'Parameter' (role 'Parameter83', cardinality 0..*) is associated with 'JTL::essentialocl::Variable' (role 'JTL_essentialocl_Variable82', cardinality 0..*).
+'Variable' (role 'Variable118', cardinality 0..*) is associated with 'JTL::essentialocl::ExpressionInOcl' (role 'JTL_essentialocl_ExpressionInOcl117', cardinality 0..*).
+'AltExp' (role 'AltExp', cardinality 0..*) is associated with 'JTL::imperativeocl::SwitchExp' (role 'JTL_imperativeocl_SwitchExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression232', cardinality 0..*) is associated with 'JTL::imperativeocl::AssertExp' (role 'JTL_imperativeocl_AssertExp231', cardinality 0..*).
+'JTL::template::TemplateExp' (role 'JTL_template_TemplateExp135', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression136', cardinality 0..*).
+'JTL::essentialocl::OperationCallExp' (role 'JTL_essentialocl_OperationCallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression97', cardinality 0..*).
+'OclExpression' (role 'OclExpression168', cardinality 0..*) is associated with 'JTL::imperativeocl::SwitchExp' (role 'JTL_imperativeocl_SwitchExp167', cardinality 0..*).
+'JTL::essentialocl::IfExp' (role 'JTL_essentialocl_IfExp71', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression72', cardinality 0..*).
+'JTL::imperativeocl::ImperativeIterateExp' (role 'JTL_imperativeocl_ImperativeIterateExp', cardinality 0..*) is associated with 'Variable' (role 'Variable154', cardinality 0..*).
+'JTL::essentialocl::TupleLiteralPart' (role 'part126', cardinality 0..*) is associated with 'TupleLiteralExp' (role 'TupleLiteralExp127', cardinality 0..*).
+'OclExpression' (role 'OclExpression74', cardinality 0..*) is associated with 'JTL::essentialocl::LetExp' (role 'JTL_essentialocl_LetExp', cardinality 0..*).
+'ObjectTemplateExp' (role 'ObjectTemplateExp', cardinality 0..*) is associated with 'JTL::template::PropertyTemplateItem' (role 'part147', cardinality 0..*).
+'JTL::emof::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'Class' (role 'Class21', cardinality 0..*).
+'JTL::template::ObjectTemplateExp' (role 'objContainer', cardinality 0..*) is associated with 'PropertyTemplateItem' (role 'PropertyTemplateItem', cardinality 0..*).
+'JTL::template::TemplateExp' (role 'JTL_template_TemplateExp', cardinality 0..*) is associated with 'Variable' (role 'Variable133', cardinality 0..*).
+'Variable' (role 'Variable102', cardinality 0..*) is associated with 'JTL::essentialocl::IterateExp' (role 'JTL_essentialocl_IterateExp', cardinality 0..*).
+'LogExp' (role 'LogExp', cardinality 0..*) is associated with 'JTL::imperativeocl::AssertExp' (role 'JTL_imperativeocl_AssertExp', cardinality 0..*).
+'Package' (role 'Package16', cardinality 0..*) is associated with 'JTL::emof::Type' (role 'ownedType', cardinality 0..*).
+'JTL::emof::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'Enumeration' (role 'Enumeration', cardinality 0..*).
+'Variable' (role 'Variable170', cardinality 0..*) is associated with 'JTL::imperativeocl::VariableInitExp' (role 'JTL_imperativeocl_VariableInitExp', cardinality 0..*).
+'Variable' (role 'Variable236', cardinality 0..*) is associated with 'JTL::imperativeocl::CollectorExp' (role 'JTL_imperativeocl_CollectorExp', cardinality 0..*).
+'Variable' (role 'Variable238', cardinality 0..*) is associated with 'JTL::imperativeocl::UnpackExp' (role 'JTL_imperativeocl_UnpackExp', cardinality 0..*).
+'Relation' (role 'Relation61', cardinality 0..*) is associated with 'JTL::JTL::Where' (role 'where', cardinality 0..*).
+'OclExpression' (role 'OclExpression164', cardinality 0..*) is associated with 'JTL::imperativeocl::BlockExp' (role 'JTL_imperativeocl_BlockExp', cardinality 0..*).
+'CollectionLiteralPart' (role 'CollectionLiteralPart', cardinality 0..*) is associated with 'JTL::essentialocl::CollectionLiteralExp' (role 'CollectionLiteralExp', cardinality 0..*).
+'JTL::imperativeocl::DictLiteralPart' (role 'JTL_imperativeocl_DictLiteralPart', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression220', cardinality 0..*).
+'JTL::emof::Package' (role 'package', cardinality 0..*) is associated with 'Type' (role 'Type13', cardinality 0..*).
+'Tag' (role 'Tag', cardinality 0..*) is associated with 'JTL::emof::Element' (role 'element', cardinality 0..*).
+'OclExpression' (role 'OclExpression109', cardinality 0..*) is associated with 'JTL::essentialocl::CollectionRange' (role 'JTL_essentialocl_CollectionRange', cardinality 0..*).
+'JTL::JTL::Transformation' (role 'transformation27', cardinality 0..*) is associated with 'Relation' (role 'Relation', cardinality 0..*).
+'TupleLiteralPart' (role 'TupleLiteralPart', cardinality 0..*) is associated with 'JTL::essentialocl::TupleLiteralExp' (role 'TupleLiteralExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression', cardinality 0..*) is associated with 'JTL::JTL::Predicate' (role 'JTL_JTL_Predicate', cardinality 0..*).
+'OclExpression' (role 'OclExpression112', cardinality 0..*) is associated with 'JTL::essentialocl::CollectionRange' (role 'JTL_essentialocl_CollectionRange111', cardinality 0..*).
+'JTL::imperativeocl::WhileExp' (role 'JTL_imperativeocl_WhileExp174', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression175', cardinality 0..*).
+'JTL::imperativeocl::UnlinkExp' (role 'JTL_imperativeocl_UnlinkExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression186', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'JTL::emof::Class' (role 'Class', cardinality 0..*).
+'JTL::essentialocl::Variable' (role 'variable', cardinality 0..*) is associated with 'LetExp' (role 'LetExp80', cardinality 0..*).
+'JTL::essentialocl::IfExp' (role 'JTL_essentialocl_IfExp68', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression69', cardinality 0..*).
+'JTL::essentialocl::CallExp' (role 'JTL_essentialocl_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression63', cardinality 0..*).
+'DictLiteralPart' (role 'DictLiteralPart', cardinality 0..*) is associated with 'JTL::imperativeocl::DictLiteralExp' (role 'JTL_imperativeocl_DictLiteralExp', cardinality 0..*).
+'JTL::template::PropertyTemplateItem' (role 'JTL_template_PropertyTemplateItem151', cardinality 0..*) is associated with 'Property' (role 'Property152', cardinality 0..*).
+'OclExpression' (role 'OclExpression189', cardinality 0..*) is associated with 'JTL::imperativeocl::UnlinkExp' (role 'JTL_imperativeocl_UnlinkExp188', cardinality 0..*).
+'OclExpression' (role 'OclExpression243', cardinality 0..*) is associated with 'JTL::imperativeocl::AnonymousTupleLiteralPart' (role 'JTL_imperativeocl_AnonymousTupleLiteralPart', cardinality 0..*).
+'JTL::essentialocl::EnumLiteralExp' (role 'JTL_essentialocl_EnumLiteralExp', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral131', cardinality 0..*).
+'OclExpression' (role 'OclExpression145', cardinality 0..*) is associated with 'JTL::template::CollectionTemplateExp' (role 'JTL_template_CollectionTemplateExp144', cardinality 0..*).
+'OclExpression' (role 'OclExpression207', cardinality 0..*) is associated with 'JTL::imperativeocl::Typedef' (role 'JTL_imperativeocl_Typedef206', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'JTL::emof::Element' (role 'JTL_emof_Element', cardinality 0..*).
+'JTL::imperativeocl::TupleExp' (role 'JTL_imperativeocl_TupleExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression202', cardinality 0..*).
+'JTL::imperativeocl::DictLiteralPart' (role 'JTL_imperativeocl_DictLiteralPart222', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression223', cardinality 0..*).
+'JTL::imperativeocl::WhileExp' (role 'JTL_imperativeocl_WhileExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression172', cardinality 0..*).
+'JTL::JTL::Relation' (role 'JTL_JTL_Relation', cardinality 0..*) is associated with 'Variable' (role 'Variable', cardinality 0..*).
+'JTL::essentialocl::ExpressionInOcl' (role 'JTL_essentialocl_ExpressionInOcl120', cardinality 0..*) is associated with 'Variable' (role 'Variable121', cardinality 0..*).
+'Type' (role 'Type217', cardinality 0..*) is associated with 'JTL::imperativeocl::DictionaryType' (role 'JTL_imperativeocl_DictionaryType', cardinality 0..*).
+'JTL::essentialocl::CollectionType' (role 'JTL_essentialocl_CollectionType', cardinality 0..*) is associated with 'Type' (role 'Type129', cardinality 0..*).
+'Model' (role 'Model', cardinality 0..*) is associated with 'JTL::JTL::Transformation' (role 'transformation', cardinality 0..*).
+'JTL::emof::Package' (role 'JTL_emof_Package', cardinality 0..*) is associated with 'Package' (role 'Package', cardinality 0..*).
+'JTL::emof::Operation' (role 'operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'Element' (role 'Element228', cardinality 0..*) is associated with 'JTL::imperativeocl::LogExp' (role 'JTL_imperativeocl_LogExp227', cardinality 0..*).
+'JTL::imperativeocl::TryExp' (role 'tryBodyOwner', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression193', cardinality 0..*).
+'Type' (role 'Type240', cardinality 0..*) is associated with 'JTL::imperativeocl::AnonymousTupleType' (role 'JTL_imperativeocl_AnonymousTupleType', cardinality 0..*).
+'JTL::JTL::Domain' (role 'JTL_JTL_Domain', cardinality 0..*) is associated with 'Pattern' (role 'Pattern', cardinality 0..*).
+'Type' (role 'Type200', cardinality 0..*) is associated with 'JTL::imperativeocl::RaiseExp' (role 'JTL_imperativeocl_RaiseExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression179', cardinality 0..*) is associated with 'JTL::imperativeocl::ComputeExp' (role 'JTL_imperativeocl_ComputeExp', cardinality 0..*).
+'JTL::JTL::Pattern' (role 'JTL_JTL_Pattern', cardinality 0..*) is associated with 'Variable' (role 'Variable49', cardinality 0..*).
+'JTL::emof::Parameter' (role 'ownedParameter', cardinality 0..*) is associated with 'Operation' (role 'Operation18', cardinality 0..*).
+'OclExpression' (role 'OclExpression140', cardinality 0..*) is associated with 'JTL::template::CollectionTemplateExp' (role 'JTL_template_CollectionTemplateExp', cardinality 0..*).
+'Class' (role 'Class9', cardinality 0..*) is associated with 'JTL::emof::Operation' (role 'ownedOperation', cardinality 0..*).
+'JTL::emof::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'JTL::imperativeocl::AltExp' (role 'JTL_imperativeocl_AltExp183', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression184', cardinality 0..*).
+'JTL::essentialocl::Variable' (role 'returnedElement', cardinality 0..*) is associated with 'ComputeExp' (role 'ComputeExp', cardinality 0..*).
+'Variable' (role 'Variable76', cardinality 0..*) is associated with 'JTL::essentialocl::LetExp' (role 'LetExp', cardinality 0..*).
+'JTL::imperativeocl::AssignExp' (role 'JTL_imperativeocl_AssignExp161', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression162', cardinality 0..*).
+'Type' (role 'Type90', cardinality 0..*) is associated with 'JTL::essentialocl::TypeExp' (role 'JTL_essentialocl_TypeExp', cardinality 0..*).

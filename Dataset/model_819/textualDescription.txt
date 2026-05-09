@@ -1,0 +1,13 @@
+The model has 3 class(es).
+The class 'lts::LTS' has the following attributes: 'name' of type str.
+The class 'lts::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'lts::State' has the following attributes: 'name' of type str.
+'lts::State' (role 'State15', cardinality 0..*) is associated with 'lts::Transition' (role 'incomingTransition', cardinality 0..*).
+'lts::LTS' (role 'lts_LTS3', cardinality 0..*) is associated with 'lts::State' (role 'lts_State4', cardinality 0..*).
+'lts::State' (role 'State', cardinality 0..*) is associated with 'lts::LTS' (role 'owningLTS', cardinality 0..*).
+'lts::LTS' (role 'lts_LTS', cardinality 0..*) is associated with 'lts::State' (role 'lts_State', cardinality 0..*).
+'lts::State' (role 'target', cardinality 0..*) is associated with 'lts::Transition' (role 'Transition11', cardinality 0..*).
+'lts::State' (role 'source', cardinality 0..*) is associated with 'lts::Transition' (role 'Transition', cardinality 0..*).
+'lts::State' (role 'State13', cardinality 0..*) is associated with 'lts::Transition' (role 'outgoingTransition', cardinality 0..*).
+'lts::LTS' (role 'LTS', cardinality 0..*) is associated with 'lts::State' (role 'ownedState', cardinality 0..*).
+'lts::LTS' (role 'lts_LTS6', cardinality 0..*) is associated with 'lts::State' (role 'lts_State7', cardinality 0..*).

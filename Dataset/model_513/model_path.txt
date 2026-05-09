@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/crick77/MDE-ConflictResolution/MDE.Project.ATL/TEST/Families2.ecore

@@ -1,0 +1,35 @@
+The model has 14 class(es).
+The class 'qVTcDataDependencyGraph::ReferenceEdge' has no attributes.
+The class 'qVTcDataDependencyGraph::DependencyEdge' has the following attributes: 'direction' of type str; 'multiple' of type bool; 'derived' of type bool.
+The class 'Element' has no attributes.
+The class 'qVTcDataDependencyGraph::MappingNode' has no attributes.
+The class 'qVTcDataDependencyGraph::ClassNode' has the following attributes: 'model' of type str; 'superTypes' of type str.
+The class 'qVTcDataDependencyGraph::DataTypeNode' has no attributes.
+The class 'qVTcDataDependencyGraph::Element' has no attributes.
+The class 'Node' has no attributes.
+The class 'qVTcDataDependencyGraph::ContainmentEdge' has the following attributes: 'model' of type str.
+The class 'qVTcDataDependencyGraph::Node' has the following attributes: 'label' of type str.
+The class 'qVTcDataDependencyGraph::EObject' has no attributes.
+The class 'qVTcDataDependencyGraph::Graph' has the following attributes: 'name' of type str.
+The class 'Edge' has no attributes.
+The class 'qVTcDataDependencyGraph::Edge' has no attributes.
+The enumeration 'Model' has the following literals: 'middle', 'output', 'input'.
+The enumeration 'DependencyDirection' has the following literals: 'input', 'output'.
+'qVTcDataDependencyGraph::DependencyEdge' is a specialization of 'Edge'.
+'qVTcDataDependencyGraph::ContainmentEdge' is a specialization of 'Edge'.
+'qVTcDataDependencyGraph::ClassNode' is a specialization of 'Node'.
+'qVTcDataDependencyGraph::Node' is a specialization of 'Element'.
+'qVTcDataDependencyGraph::MappingNode' is a specialization of 'Node'.
+'qVTcDataDependencyGraph::ReferenceEdge' is a specialization of 'Edge'.
+'qVTcDataDependencyGraph::Edge' is a specialization of 'Element'.
+'qVTcDataDependencyGraph::DataTypeNode' is a specialization of 'Node'.
+'qVTcDataDependencyGraph::DataTypeNode' (role 'qVTcDataDependencyGraph_DataTypeNode', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::EObject' (role 'qVTcDataDependencyGraph_EObject', cardinality 0..*).
+'qVTcDataDependencyGraph::Edge' (role 'Edge13', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Node' (role 'source', cardinality 0..*).
+'qVTcDataDependencyGraph::Element' (role 'elements', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Graph' (role 'Graph', cardinality 0..*).
+'qVTcDataDependencyGraph::Element' (role 'Element', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Graph' (role 'graph', cardinality 0..*).
+'qVTcDataDependencyGraph::DataTypeNode' (role 'qVTcDataDependencyGraph_DataTypeNode2', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::EObject' (role 'qVTcDataDependencyGraph_EObject3', cardinality 0..*).
+'qVTcDataDependencyGraph::Node' (role 'target', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Edge' (role 'Edge', cardinality 0..*).
+'qVTcDataDependencyGraph::EObject' (role 'qVTcDataDependencyGraph_EObject15', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Node' (role 'qVTcDataDependencyGraph_Node', cardinality 0..*).
+'qVTcDataDependencyGraph::Node' (role 'Node', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Edge' (role 'incoming', cardinality 0..*).
+'qVTcDataDependencyGraph::Edge' (role 'qVTcDataDependencyGraph_Edge', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::EObject' (role 'qVTcDataDependencyGraph_EObject8', cardinality 0..*).
+'qVTcDataDependencyGraph::Node' (role 'Node6', cardinality 0..*) is associated with 'qVTcDataDependencyGraph::Edge' (role 'outgoing', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'DAG::Edge' has the following attributes: 'name' of type str; 'ID' of type int.
+The class 'DAG::Graph' has the following attributes: 'name' of type str.
+The class 'DAG::Revision' has no attributes.
+The class 'DAG::Node' has the following attributes: 'ID' of type int; 'name' of type str; 'level' of type int.
+'DAG::Edge' (role 'Edge8', cardinality 0..*) is associated with 'DAG::Node' (role 'to', cardinality 0..*).
+'DAG::Node' (role 'Node', cardinality 0..*) is associated with 'DAG::Node' (role 'children', cardinality 0..*).
+'DAG::Edge' (role 'outgoing', cardinality 0..*) is associated with 'DAG::Node' (role 'Node12', cardinality 0..*).
+'DAG::Node' (role 'parents', cardinality 0..*) is associated with 'DAG::Node' (role 'Node5', cardinality 0..*).
+'DAG::Node' (role 'DAG_Node', cardinality 0..*) is associated with 'DAG::Graph' (role 'DAG_Graph', cardinality 0..*).
+'DAG::Edge' (role 'Edge', cardinality 0..*) is associated with 'DAG::Node' (role 'from_', cardinality 0..*).
+'DAG::Revision' (role 'DAG_Revision', cardinality 0..*) is associated with 'DAG::Node' (role 'DAG_Node10', cardinality 0..*).
+'DAG::Node' (role 'Node14', cardinality 0..*) is associated with 'DAG::Edge' (role 'incoming', cardinality 0..*).

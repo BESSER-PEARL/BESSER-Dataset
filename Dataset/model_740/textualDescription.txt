@@ -1,0 +1,285 @@
+The model has 116 class(es).
+The class 'RefOntoUML::MultiplicityElement' has the following attributes: 'lower' of type str; 'isOrdered' of type str; 'upper' of type str; 'isUnique' of type str.
+The class 'RefOntoUML::SemiRigidMixinClass' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Meronymic' has no attributes.
+The class 'Feature' has no attributes.
+The class 'RefOntoUML::Slot' has no attributes.
+The class 'RefOntoUML::Association' has the following attributes: 'isDerived' of type str.
+The class 'RefOntoUML::LiteralNull' has no attributes.
+The class 'RefOntoUML::Derivation' has no attributes.
+The class 'RefOntoUML::MomentClass' has no attributes.
+The class 'RefOntoUML::LiteralBoolean' has the following attributes: 'value' of type str.
+The class 'RigidMixinClass' has no attributes.
+The class 'RefOntoUML::Feature' has the following attributes: 'isStatic' of type str.
+The class 'RefOntoUML::Enumeration' has no attributes.
+The class 'RefOntoUML::RigidSortalClass' has no attributes.
+The class 'RefOntoUML::Category' has no attributes.
+The class 'RefOntoUML::ObjectClass' has no attributes.
+The class 'RefOntoUML::LiteralUnlimitedNatural' has the following attributes: 'value' of type str.
+The class 'NamedElement' has no attributes.
+The class 'RefOntoUML::Mode' has no attributes.
+The class 'RefOntoUML::Relationship' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'RefOntoUML::EnumerationLiteral' has no attributes.
+The class 'RefOntoUML::NamedElement' has the following attributes: 'name' of type str; 'visibility' of type str; 'qualifiedName' of type str.
+The class 'RefOntoUML::Meronymic' has the following attributes: 'isEssential' of type bool; 'isImmutableWhole' of type bool; 'isImmutablePart' of type bool; 'isShareable' of type bool; 'isInseparable' of type bool.
+The class 'RefOntoUML::subCollectionOf' has no attributes.
+The class 'RefOntoUML::AntiRigidSortalClass' has no attributes.
+The class 'Class' has no attributes.
+The class 'RefOntoUML::Property' has the following attributes: 'isDerived' of type str; 'isComposite' of type str; 'aggregation' of type str; 'isDerivedUnion' of type str; 'default' of type str.
+The class 'RigidSortalClass' has no attributes.
+The class 'AntiRigidMixinClass' has no attributes.
+The class 'RefOntoUML::DataType' has no attributes.
+The class 'RefOntoUML::TypedElement' has no attributes.
+The class 'RefOntoUML::Mediation' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'RefOntoUML::Package' has no attributes.
+The class 'RefOntoUML::componentOf' has no attributes.
+The class 'DataType' has no attributes.
+The class 'RefOntoUML::ValueSpecification' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'RefOntoUML::InstanceSpecification' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'RefOntoUML::Expression' has the following attributes: 'symbol' of type str.
+The class 'RefOntoUML::StructuralFeature' has the following attributes: 'isReadOnly' of type str.
+The class 'RefOntoUML::SortalClass' has no attributes.
+The class 'RefOntoUML::Kind' has no attributes.
+The class 'RefOntoUML::Model' has the following attributes: 'viewpoint' of type str.
+The class 'RefOntoUML::DirectedRelationship' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'RefOntoUML::Comment' has the following attributes: 'body' of type str.
+The class 'ObjectClass' has no attributes.
+The class 'RefOntoUML::Generalization' has the following attributes: 'isSubstitutable' of type str.
+The class 'RefOntoUML::RoleMixin' has no attributes.
+The class 'RefOntoUML::MixinClass' has no attributes.
+The class 'RefOntoUML::Quality' has no attributes.
+The class 'RefOntoUML::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'RefOntoUML::Namespace' has no attributes.
+The class 'SortalClass' has no attributes.
+The class 'RefOntoUML::GeneralizationSet' has the following attributes: 'isCovering' of type str; 'isDisjoint' of type str.
+The class 'MultiplicityElement' has no attributes.
+The class 'RefOntoUML::FormalAssociation' has no attributes.
+The class 'Association' has no attributes.
+The class 'RefOntoUML::Relator' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'RefOntoUML::Quantity' has no attributes.
+The class 'RefOntoUML::RedefinableElement' has the following attributes: 'isLeaf' of type str.
+The class 'RefOntoUML::Element' has no attributes.
+The class 'RefOntoUML::Characterization' has no attributes.
+The class 'RefOntoUML::Dependency' has no attributes.
+The class 'RefOntoUML::SubstanceSortal' has no attributes.
+The class 'Expression' has no attributes.
+The class 'RefOntoUML::Class' has the following attributes: 'isActive' of type str.
+The class 'RefOntoUML::StringExpression' has no attributes.
+The class 'RefOntoUML::LiteralSpecification' has no attributes.
+The class 'RefOntoUML::Phase' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'LiteralSpecification' has no attributes.
+The class 'RefOntoUML::memberOf' has no attributes.
+The class 'RefOntoUML::PackageMerge' has no attributes.
+The class 'DirectedBinaryAssociation' has no attributes.
+The class 'DependencyRelationship' has no attributes.
+The class 'RefOntoUML::IntrinsicMomentClass' has no attributes.
+The class 'RefOntoUML::NonRigidMixinClass' has no attributes.
+The class 'RefOntoUML::OpaqueExpression' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'RefOntoUML::Role' has no attributes.
+The class 'SubstanceSortal' has no attributes.
+The class 'AntiRigidSortalClass' has no attributes.
+The class 'RefOntoUML::Type' has no attributes.
+The class 'SemiRigidMixinClass' has no attributes.
+The class 'NonRigidMixinClass' has no attributes.
+The class 'MixinClass' has no attributes.
+The class 'IntrinsicMomentClass' has no attributes.
+The class 'RefOntoUML::PackageableElement' has no attributes.
+The class 'RefOntoUML::SubKind' has no attributes.
+The class 'RefOntoUML::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'RefOntoUML::subQuantityOf' has no attributes.
+The class 'RefOntoUML::Constraintx' has no attributes.
+The class 'RefOntoUML::Mixin' has no attributes.
+The class 'RefOntoUML::Collective' has the following attributes: 'isExtensional' of type bool.
+The class 'Package' has no attributes.
+The class 'RefOntoUML::LiteralString' has the following attributes: 'value' of type str.
+The class 'Element' has no attributes.
+The class 'RefOntoUML::DirectedBinaryAssociation' has no attributes.
+The class 'MomentClass' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'RefOntoUML::InstanceValue' has no attributes.
+The class 'Type' has no attributes.
+The class 'RefOntoUML::DependencyRelationship' has no attributes.
+The class 'RefOntoUML::LiteralInteger' has the following attributes: 'value' of type str.
+The class 'RefOntoUML::ElementImport' has the following attributes: 'alias' of type str; 'visibility' of type str.
+The class 'RefOntoUML::AntiRigidMixinClass' has no attributes.
+The class 'RefOntoUML::RigidMixinClass' has no attributes.
+The class 'RefOntoUML::MaterialAssociation' has no attributes.
+The class 'RefOntoUML::PrimitiveType' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'public', 'protected', 'private', 'package'.
+The enumeration 'AggregationKind' has the following literals: 'composite', 'shared', 'none'.
+'RefOntoUML::Slot' is a specialization of 'Element'.
+'RefOntoUML::StructuralFeature' is a specialization of 'Feature'.
+'RefOntoUML::Classifier' is a specialization of 'Type'.
+'RefOntoUML::Generalization' is a specialization of 'DirectedRelationship'.
+'RefOntoUML::SortalClass' is a specialization of 'ObjectClass'.
+'RefOntoUML::DirectedBinaryAssociation' is a specialization of 'Association'.
+'RefOntoUML::Enumeration' is a specialization of 'DataType'.
+'RefOntoUML::MultiplicityElement' is a specialization of 'Element'.
+'RefOntoUML::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'RefOntoUML::StringExpression' is a specialization of 'Expression'.
+'RefOntoUML::DataType' is a specialization of 'Classifier'.
+'RefOntoUML::NamedElement' is a specialization of 'Element'.
+'RefOntoUML::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'RefOntoUML::Feature' is a specialization of 'RedefinableElement'.
+'RefOntoUML::StructuralFeature' is a specialization of 'TypedElement'.
+'RefOntoUML::IntrinsicMomentClass' is a specialization of 'MomentClass'.
+'RefOntoUML::Kind' is a specialization of 'SubstanceSortal'.
+'RefOntoUML::Quality' is a specialization of 'IntrinsicMomentClass'.
+'RefOntoUML::ObjectClass' is a specialization of 'Class'.
+'RefOntoUML::RedefinableElement' is a specialization of 'NamedElement'.
+'RefOntoUML::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'RefOntoUML::Property' is a specialization of 'StructuralFeature'.
+'RefOntoUML::GeneralizationSet' is a specialization of 'PackageableElement'.
+'RefOntoUML::Association' is a specialization of 'Relationship'.
+'RefOntoUML::PackageMerge' is a specialization of 'DirectedRelationship'.
+'RefOntoUML::Association' is a specialization of 'Classifier'.
+'RefOntoUML::AntiRigidMixinClass' is a specialization of 'NonRigidMixinClass'.
+'RefOntoUML::Mixin' is a specialization of 'SemiRigidMixinClass'.
+'RefOntoUML::MomentClass' is a specialization of 'Class'.
+'RefOntoUML::TypedElement' is a specialization of 'NamedElement'.
+'RefOntoUML::DependencyRelationship' is a specialization of 'DirectedBinaryAssociation'.
+'RefOntoUML::Dependency' is a specialization of 'DirectedRelationship'.
+'RefOntoUML::Collective' is a specialization of 'SubstanceSortal'.
+'RefOntoUML::Relator' is a specialization of 'MomentClass'.
+'RefOntoUML::Classifier' is a specialization of 'RedefinableElement'.
+'RefOntoUML::SubstanceSortal' is a specialization of 'RigidSortalClass'.
+'RefOntoUML::Comment' is a specialization of 'Element'.
+'RefOntoUML::ElementImport' is a specialization of 'DirectedRelationship'.
+'RefOntoUML::Category' is a specialization of 'RigidMixinClass'.
+'RefOntoUML::Element' is a specialization of 'EModelElement'.
+'RefOntoUML::SubKind' is a specialization of 'RigidSortalClass'.
+'RefOntoUML::Dependency' is a specialization of 'PackageableElement'.
+'RefOntoUML::Mode' is a specialization of 'IntrinsicMomentClass'.
+'RefOntoUML::SemiRigidMixinClass' is a specialization of 'NonRigidMixinClass'.
+'RefOntoUML::DirectedRelationship' is a specialization of 'Relationship'.
+'RefOntoUML::Relationship' is a specialization of 'Element'.
+'RefOntoUML::AntiRigidSortalClass' is a specialization of 'SortalClass'.
+'RefOntoUML::Phase' is a specialization of 'AntiRigidSortalClass'.
+'RefOntoUML::Type' is a specialization of 'PackageableElement'.
+'RefOntoUML::Quantity' is a specialization of 'SubstanceSortal'.
+'RefOntoUML::memberOf' is a specialization of 'Meronymic'.
+'RefOntoUML::Role' is a specialization of 'AntiRigidSortalClass'.
+'RefOntoUML::PrimitiveType' is a specialization of 'DataType'.
+'RefOntoUML::LiteralString' is a specialization of 'LiteralSpecification'.
+'RefOntoUML::RigidMixinClass' is a specialization of 'MixinClass'.
+'RefOntoUML::Mediation' is a specialization of 'DependencyRelationship'.
+'RefOntoUML::ValueSpecification' is a specialization of 'PackageableElement'.
+'RefOntoUML::Namespace' is a specialization of 'NamedElement'.
+'RefOntoUML::Classifier' is a specialization of 'Namespace'.
+'RefOntoUML::MixinClass' is a specialization of 'ObjectClass'.
+'RefOntoUML::InstanceValue' is a specialization of 'ValueSpecification'.
+'RefOntoUML::Constraintx' is a specialization of 'PackageableElement'.
+'RefOntoUML::ValueSpecification' is a specialization of 'TypedElement'.
+'RefOntoUML::RoleMixin' is a specialization of 'AntiRigidMixinClass'.
+'RefOntoUML::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'RefOntoUML::PackageImport' is a specialization of 'DirectedRelationship'.
+'RefOntoUML::Derivation' is a specialization of 'DependencyRelationship'.
+'RefOntoUML::NonRigidMixinClass' is a specialization of 'MixinClass'.
+'RefOntoUML::RigidSortalClass' is a specialization of 'SortalClass'.
+'RefOntoUML::Package' is a specialization of 'PackageableElement'.
+'RefOntoUML::LiteralNull' is a specialization of 'LiteralSpecification'.
+'RefOntoUML::subQuantityOf' is a specialization of 'Meronymic'.
+'RefOntoUML::Meronymic' is a specialization of 'DirectedBinaryAssociation'.
+'RefOntoUML::MaterialAssociation' is a specialization of 'Association'.
+'RefOntoUML::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'RefOntoUML::InstanceSpecification' is a specialization of 'PackageableElement'.
+'RefOntoUML::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'RefOntoUML::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'RefOntoUML::componentOf' is a specialization of 'Meronymic'.
+'RefOntoUML::Model' is a specialization of 'Package'.
+'RefOntoUML::FormalAssociation' is a specialization of 'Association'.
+'RefOntoUML::Class' is a specialization of 'Classifier'.
+'RefOntoUML::subCollectionOf' is a specialization of 'Meronymic'.
+'RefOntoUML::Package' is a specialization of 'Namespace'.
+'RefOntoUML::Characterization' is a specialization of 'DependencyRelationship'.
+'RefOntoUML::PackageableElement' is a specialization of 'NamedElement'.
+'RefOntoUML::Expression' is a specialization of 'ValueSpecification'.
+'RefOntoUML::Class' (role 'RefOntoUML_Class123', cardinality 0..*) is associated with 'RefOntoUML::Class' (role 'RefOntoUML_Class121', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier70', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier72', cardinality 0..*).
+'RefOntoUML::Namespace' (role 'Namespace', cardinality 0..*) is associated with 'RefOntoUML::NamedElement' (role 'ownedMember', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier77', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'RefOntoUML_Property78', cardinality 0..*).
+'RefOntoUML::Element' (role 'owner', cardinality 0..*) is associated with 'RefOntoUML::Element' (role 'Element', cardinality 0..*).
+'RefOntoUML::Property' (role 'RefOntoUML_Property111', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'RefOntoUML_Property113', cardinality 0..*).
+'RefOntoUML::Element' (role 'RefOntoUML_Element50', cardinality 0..*) is associated with 'RefOntoUML::Constraintx' (role 'RefOntoUML_Constraintx', cardinality 0..*).
+'RefOntoUML::RedefinableElement' (role 'RefOntoUML_RedefinableElement', cardinality 0..*) is associated with 'RefOntoUML::RedefinableElement' (role 'RefOntoUML_RedefinableElement79', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier75', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier73', cardinality 0..*).
+'RefOntoUML::Association' (role 'RefOntoUML_Association', cardinality 0..*) is associated with 'RefOntoUML::Type' (role 'RefOntoUML_Type62', cardinality 0..*).
+'RefOntoUML::Element' (role 'ownedElement', cardinality 0..*) is associated with 'RefOntoUML::Element' (role 'Element5', cardinality 0..*).
+'RefOntoUML::Class' (role 'RefOntoUML_Class', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier120', cardinality 0..*).
+'RefOntoUML::Class' (role 'class_', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'Property125', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier', cardinality 0..*) is associated with 'RefOntoUML::NamedElement' (role 'RefOntoUML_NamedElement69', cardinality 0..*).
+'RefOntoUML::Generalization' (role 'generalization', cardinality 0..*) is associated with 'RefOntoUML::GeneralizationSet' (role 'GeneralizationSet87', cardinality 0..*).
+'RefOntoUML::PackageableElement' (role 'RefOntoUML_PackageableElement42', cardinality 0..*) is associated with 'RefOntoUML::ElementImport' (role 'RefOntoUML_ElementImport', cardinality 0..*).
+'RefOntoUML::Slot' (role 'RefOntoUML_Slot149', cardinality 0..*) is associated with 'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification150', cardinality 0..*).
+'RefOntoUML::Namespace' (role 'importingNamespace32', cardinality 0..*) is associated with 'RefOntoUML::PackageImport' (role 'PackageImport', cardinality 0..*).
+'RefOntoUML::Property' (role 'RefOntoUML_Property114', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'RefOntoUML_Property116', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'RefOntoUML::Generalization' (role 'generalization89', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'Classifier95', cardinality 0..*) is associated with 'RefOntoUML::Feature' (role 'feature', cardinality 0..*).
+'RefOntoUML::GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'powertype', cardinality 0..*).
+'RefOntoUML::Constraintx' (role 'Constraintx', cardinality 0..*) is associated with 'RefOntoUML::Namespace' (role 'context', cardinality 0..*).
+'RefOntoUML::InstanceSpecification' (role 'RefOntoUML_InstanceSpecification', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier142', cardinality 0..*).
+'RefOntoUML::Package' (role 'RefOntoUML_Package46', cardinality 0..*) is associated with 'RefOntoUML::PackageImport' (role 'RefOntoUML_PackageImport', cardinality 0..*).
+'RefOntoUML::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'RefOntoUML::Enumeration' (role 'enumeration', cardinality 0..*).
+'RefOntoUML::Property' (role 'RefOntoUML_Property', cardinality 0..*) is associated with 'RefOntoUML::Association' (role 'RefOntoUML_Association64', cardinality 0..*).
+'RefOntoUML::Property' (role 'Property', cardinality 0..*) is associated with 'RefOntoUML::Association' (role 'owningAssociation', cardinality 0..*).
+'RefOntoUML::Property' (role 'RefOntoUML_Property106', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'RefOntoUML_Property104', cardinality 0..*).
+'RefOntoUML::Association' (role 'Association118', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'memberEnd', cardinality 0..*).
+'RefOntoUML::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'RefOntoUML::ElementImport' (role 'ElementImport', cardinality 0..*).
+'RefOntoUML::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'RefOntoUML::Slot' (role 'slot', cardinality 0..*).
+'RefOntoUML::Package' (role 'package', cardinality 0..*) is associated with 'RefOntoUML::Type' (role 'Type', cardinality 0..*).
+'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification134', cardinality 0..*) is associated with 'RefOntoUML::Expression' (role 'RefOntoUML_Expression', cardinality 0..*).
+'RefOntoUML::Package' (role 'receivingPackage', cardinality 0..*) is associated with 'RefOntoUML::PackageMerge' (role 'PackageMerge', cardinality 0..*).
+'RefOntoUML::Namespace' (role 'Namespace48', cardinality 0..*) is associated with 'RefOntoUML::PackageImport' (role 'packageImport', cardinality 0..*).
+'RefOntoUML::Constraintx' (role 'RefOntoUML_Constraintx52', cardinality 0..*) is associated with 'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification', cardinality 0..*).
+'RefOntoUML::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'RefOntoUML::Enumeration' (role 'Enumeration', cardinality 0..*).
+'RefOntoUML::Generalization' (role 'Generalization93', cardinality 0..*) is associated with 'RefOntoUML::GeneralizationSet' (role 'generalizationSet', cardinality 0..*).
+'RefOntoUML::PackageMerge' (role 'packageMerge', cardinality 0..*) is associated with 'RefOntoUML::Package' (role 'Package138', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'Classifier91', cardinality 0..*) is associated with 'RefOntoUML::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*).
+'RefOntoUML::Dependency' (role 'clientDependency', cardinality 0..*) is associated with 'RefOntoUML::NamedElement' (role 'NamedElement', cardinality 0..*).
+'RefOntoUML::NamedElement' (role 'RefOntoUML_NamedElement35', cardinality 0..*) is associated with 'RefOntoUML::Namespace' (role 'RefOntoUML_Namespace', cardinality 0..*).
+'RefOntoUML::Element' (role 'RefOntoUML_Element27', cardinality 0..*) is associated with 'RefOntoUML::DirectedRelationship' (role 'RefOntoUML_DirectedRelationship26', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'specific', cardinality 0..*) is associated with 'RefOntoUML::Generalization' (role 'Generalization', cardinality 0..*).
+'RefOntoUML::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'RefOntoUML::Class' (role 'Class', cardinality 0..*).
+'RefOntoUML::StringExpression' (role 'subExpression', cardinality 0..*) is associated with 'RefOntoUML::StringExpression' (role 'StringExpression132', cardinality 0..*).
+'RefOntoUML::RedefinableElement' (role 'RefOntoUML_RedefinableElement82', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier83', cardinality 0..*).
+'RefOntoUML::Element' (role 'RefOntoUML_Element7', cardinality 0..*) is associated with 'RefOntoUML::Comment' (role 'RefOntoUML_Comment8', cardinality 0..*).
+'RefOntoUML::InstanceSpecification' (role 'owningInstance', cardinality 0..*) is associated with 'RefOntoUML::Slot' (role 'Slot', cardinality 0..*).
+'RefOntoUML::Slot' (role 'RefOntoUML_Slot', cardinality 0..*) is associated with 'RefOntoUML::StructuralFeature' (role 'RefOntoUML_StructuralFeature', cardinality 0..*).
+'RefOntoUML::PackageableElement' (role 'RefOntoUML_PackageableElement38', cardinality 0..*) is associated with 'RefOntoUML::Namespace' (role 'RefOntoUML_Namespace37', cardinality 0..*).
+'RefOntoUML::MultiplicityElement' (role 'RefOntoUML_MultiplicityElement', cardinality 0..*) is associated with 'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification97', cardinality 0..*).
+'RefOntoUML::NamedElement' (role 'RefOntoUML_NamedElement21', cardinality 0..*) is associated with 'RefOntoUML::Dependency' (role 'RefOntoUML_Dependency', cardinality 0..*).
+'RefOntoUML::Element' (role 'RefOntoUML_Element', cardinality 0..*) is associated with 'RefOntoUML::Comment' (role 'RefOntoUML_Comment', cardinality 0..*).
+'RefOntoUML::Property' (role 'ownedAttribute103', cardinality 0..*) is associated with 'RefOntoUML::DataType' (role 'DataType', cardinality 0..*).
+'RefOntoUML::Package' (role 'RefOntoUML_Package', cardinality 0..*) is associated with 'RefOntoUML::PackageableElement' (role 'RefOntoUML_PackageableElement', cardinality 0..*).
+'RefOntoUML::DirectedRelationship' (role 'RefOntoUML_DirectedRelationship', cardinality 0..*) is associated with 'RefOntoUML::Element' (role 'RefOntoUML_Element24', cardinality 0..*).
+'RefOntoUML::Type' (role 'RefOntoUML_Type', cardinality 0..*) is associated with 'RefOntoUML::TypedElement' (role 'RefOntoUML_TypedElement', cardinality 0..*).
+'RefOntoUML::Namespace' (role 'Namespace44', cardinality 0..*) is associated with 'RefOntoUML::ElementImport' (role 'elementImport', cardinality 0..*).
+'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification146', cardinality 0..*) is associated with 'RefOntoUML::InstanceSpecification' (role 'RefOntoUML_InstanceSpecification145', cardinality 0..*).
+'RefOntoUML::Property' (role 'Property127', cardinality 0..*) is associated with 'RefOntoUML::DataType' (role 'datatype', cardinality 0..*).
+'RefOntoUML::Package' (role 'Package57', cardinality 0..*) is associated with 'RefOntoUML::Type' (role 'ownedType', cardinality 0..*).
+'RefOntoUML::NamedElement' (role 'NamedElement40', cardinality 0..*) is associated with 'RefOntoUML::Namespace' (role 'namespace', cardinality 0..*).
+'RefOntoUML::Element' (role 'RefOntoUML_Element29', cardinality 0..*) is associated with 'RefOntoUML::Relationship' (role 'RefOntoUML_Relationship', cardinality 0..*).
+'RefOntoUML::MultiplicityElement' (role 'RefOntoUML_MultiplicityElement99', cardinality 0..*) is associated with 'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification100', cardinality 0..*).
+'RefOntoUML::InstanceValue' (role 'RefOntoUML_InstanceValue', cardinality 0..*) is associated with 'RefOntoUML::InstanceSpecification' (role 'RefOntoUML_InstanceSpecification153', cardinality 0..*).
+'RefOntoUML::StringExpression' (role 'RefOntoUML_StringExpression', cardinality 0..*) is associated with 'RefOntoUML::NamedElement' (role 'RefOntoUML_NamedElement', cardinality 0..*).
+'RefOntoUML::StringExpression' (role 'owningExpression', cardinality 0..*) is associated with 'RefOntoUML::StringExpression' (role 'StringExpression', cardinality 0..*).
+'RefOntoUML::Package' (role 'Package', cardinality 0..*) is associated with 'RefOntoUML::Package' (role 'nestingPackage', cardinality 0..*).
+'RefOntoUML::Dependency' (role 'Dependency', cardinality 0..*) is associated with 'RefOntoUML::NamedElement' (role 'client', cardinality 0..*).
+'RefOntoUML::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'RefOntoUML::Feature' (role 'Feature', cardinality 0..*).
+'RefOntoUML::Association' (role 'association', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'Property60', cardinality 0..*).
+'RefOntoUML::Namespace' (role 'Namespace54', cardinality 0..*) is associated with 'RefOntoUML::Constraintx' (role 'ownedRule', cardinality 0..*).
+'RefOntoUML::Generalization' (role 'RefOntoUML_Generalization', cardinality 0..*) is associated with 'RefOntoUML::Classifier' (role 'RefOntoUML_Classifier85', cardinality 0..*).
+'RefOntoUML::Property' (role 'RefOntoUML_Property109', cardinality 0..*) is associated with 'RefOntoUML::ValueSpecification' (role 'RefOntoUML_ValueSpecification110', cardinality 0..*).
+'RefOntoUML::PackageMerge' (role 'RefOntoUML_PackageMerge', cardinality 0..*) is associated with 'RefOntoUML::Package' (role 'RefOntoUML_Package136', cardinality 0..*).
+'RefOntoUML::Package' (role 'Package16', cardinality 0..*) is associated with 'RefOntoUML::Package' (role 'nestedPackage', cardinality 0..*).
+'RefOntoUML::Association' (role 'Association', cardinality 0..*) is associated with 'RefOntoUML::Property' (role 'ownedEnd', cardinality 0..*).

@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'elements::Book' has the following attributes: 'pages' of type str; 'category' of type str; 'title' of type str.
+The class 'elements::Writer' has the following attributes: 'name' of type str.
+The enumeration 'BookCategory' has the following literals: 'Mystery', 'ScienceFiction', 'Biography'.
+'elements::Writer' (role 'author', cardinality 0..*) is associated with 'elements::Book' (role 'Book', cardinality 0..*).
+'elements::Book' (role 'books', cardinality 0..*) is associated with 'elements::Writer' (role 'Writer', cardinality 0..*).

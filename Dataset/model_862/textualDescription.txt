@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'State' has no attributes.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::Machine' has the following attributes: 'name' of type str.
+The class 'fsm::Transition' has the following attributes: 'event' of type str.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::InitialState' has no attributes.
+'fsm::InitialState' is a specialization of 'State'.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::Transition' (role 'Transition7', cardinality 0..*) is associated with 'fsm::State' (role 'source', cardinality 0..*).
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition5', cardinality 0..*).
+'fsm::Transition' (role 'transitions', cardinality 0..*) is associated with 'fsm::Machine' (role 'Machine9', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::Machine' (role 'owning', cardinality 0..*).
+'fsm::Machine' (role 'owning2', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::State' (role 'State11', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoing', cardinality 0..*).
+'fsm::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsm::State' (role 'State13', cardinality 0..*).
+'fsm::State' (role 'states', cardinality 0..*) is associated with 'fsm::Machine' (role 'Machine', cardinality 0..*).

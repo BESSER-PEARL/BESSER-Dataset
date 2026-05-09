@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/zld3002/Graphiti/LibraryDemoEclipseSummit 2010/Workspace/org.eclipse.graphiti.examples.libary.mm/model/Library.ecore

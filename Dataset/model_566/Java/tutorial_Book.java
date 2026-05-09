@@ -1,0 +1,64 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class tutorial_Book  {
+
+    private String copies;
+    private String name;
+
+
+
+
+
+    private tutorial_Library tutorial_library;
+
+
+
+
+    private tutorial_Library tutorial_library;
+
+
+    public tutorial_Book(
+        String copies,        String name    ) {
+        this.copies = copies;
+        this.name = name;
+    }
+
+
+    public String getCopies() {
+        return copies;
+    }
+
+    public void setCopies(String copies) {
+        this.copies = copies;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public tutorial_Library getTutorial_library() {
+        return tutorial_library;
+    }
+
+    public void setTutorial_library(tutorial_Library tutorial_library) {
+        this.tutorial_library = tutorial_library;
+    }
+    public tutorial_Library getTutorial_library() {
+        return tutorial_library;
+    }
+
+    public void setTutorial_library(tutorial_Library tutorial_library) {
+        this.tutorial_library = tutorial_library;
+    }
+
+}

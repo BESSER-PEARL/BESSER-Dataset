@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'familyright::Family' has no attributes.
+The class 'familyright::Mother' has the following attributes: 'age' of type int; 'address' of type str; 'name' of type str.
+The class 'familyright::Father' has the following attributes: 'name' of type str; 'age' of type int; 'address' of type str.
+The class 'familyright::Son' has the following attributes: 'age' of type int; 'name' of type str.
+The class 'familyright::Daughter' has the following attributes: 'age' of type int; 'name' of type str.
+'familyright::Son' (role 'sons', cardinality 0..*) is associated with 'familyright::Family' (role 'Family4', cardinality 0..*).
+'familyright::Family' (role 'Family6', cardinality 0..*) is associated with 'familyright::Daughter' (role 'daughters', cardinality 0..*).
+'familyright::Mother' (role 'Mother', cardinality 0..*) is associated with 'familyright::Family' (role 'family9', cardinality 0..*).
+'familyright::Son' (role 'Son', cardinality 0..*) is associated with 'familyright::Family' (role 'family11', cardinality 0..*).
+'familyright::Father' (role 'father', cardinality 0..*) is associated with 'familyright::Family' (role 'Family', cardinality 0..*).
+'familyright::Daughter' (role 'Daughter', cardinality 0..*) is associated with 'familyright::Family' (role 'family13', cardinality 0..*).
+'familyright::Father' (role 'Father', cardinality 0..*) is associated with 'familyright::Family' (role 'family', cardinality 0..*).
+'familyright::Family' (role 'Family2', cardinality 0..*) is associated with 'familyright::Mother' (role 'mother', cardinality 0..*).

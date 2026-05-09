@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'pDL1::Process' has the following attributes: 'name' of type str.
+The class 'pDL1::ProcessElement' has no attributes.
+The class 'ProcessElement' has no attributes.
+The class 'pDL1::Guidance' has the following attributes: 'texte' of type str.
+The class 'pDL1::WorkDefinition' has the following attributes: 'name' of type str.
+The class 'pDL1::WorkSequence' has the following attributes: 'linkType' of type str.
+The enumeration 'WorkSequenceType' has the following literals: 'start2start', 'finish2finish', 'finish2start', 'start2finish'.
+'pDL1::WorkSequence' is a specialization of 'ProcessElement'.
+'pDL1::Guidance' is a specialization of 'ProcessElement'.
+'pDL1::WorkDefinition' is a specialization of 'ProcessElement'.
+'pDL1::Process' (role 'pDL1_Process', cardinality 0..*) is associated with 'pDL1::ProcessElement' (role 'pDL1_ProcessElement', cardinality 0..*).
+'pDL1::WorkDefinition' (role 'pDL1_WorkDefinition4', cardinality 0..*) is associated with 'pDL1::WorkSequence' (role 'pDL1_WorkSequence3', cardinality 0..*).
+'pDL1::WorkDefinition' (role 'pDL1_WorkDefinition', cardinality 0..*) is associated with 'pDL1::WorkSequence' (role 'pDL1_WorkSequence', cardinality 0..*).

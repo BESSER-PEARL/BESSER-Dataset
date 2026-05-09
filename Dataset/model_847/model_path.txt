@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/ecore-oa/fsm/fr.inria.diverse.fsm.model/model/fsm.ecore

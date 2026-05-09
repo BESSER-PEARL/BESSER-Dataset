@@ -1,0 +1,24 @@
+The model has 7 class(es).
+The class 'Lims::Family' has the following attributes: 'name' of type str.
+The class 'Lims::Run' has the following attributes: 'date' of type date; 'name' of type str.
+The class 'Lims::Sequencer' has the following attributes: 'name' of type str.
+The class 'Lims::Individual' has the following attributes: 'name' of type str; 'gender' of type str.
+The class 'Lims::Sequenced' has no attributes.
+The class 'Lims::Sample' has the following attributes: 'id' of type str.
+The class 'Lims::Laboratory' has no attributes.
+The enumeration 'Gender' has the following literals: 'UNKNOWN', 'MALE', 'FEMALE'.
+'Lims::Individual' (role 'Individual20', cardinality 0..*) is associated with 'Lims::Sample' (role 'samples', cardinality 0..*).
+'Lims::Individual' (role 'individuals', cardinality 0..*) is associated with 'Lims::Family' (role 'Family6', cardinality 0..*).
+'Lims::Run' (role 'Run', cardinality 0..*) is associated with 'Lims::Sequencer' (role 'sequencer', cardinality 0..*).
+'Lims::Run' (role 'Run22', cardinality 0..*) is associated with 'Lims::Sequenced' (role 'sequenced', cardinality 0..*).
+'Lims::Laboratory' (role 'laboratory4', cardinality 0..*) is associated with 'Lims::Sequencer' (role 'Sequencer', cardinality 0..*).
+'Lims::Individual' (role 'individual', cardinality 0..*) is associated with 'Lims::Sample' (role 'Sample', cardinality 0..*).
+'Lims::Sequenced' (role 'Sequenced', cardinality 0..*) is associated with 'Lims::Run' (role 'run', cardinality 0..*).
+'Lims::Laboratory' (role 'Laboratory15', cardinality 0..*) is associated with 'Lims::Sequencer' (role 'sequencers', cardinality 0..*).
+'Lims::Individual' (role 'Lims_Individual11', cardinality 0..*) is associated with 'Lims::Individual' (role 'Lims_Individual9', cardinality 0..*).
+'Lims::Individual' (role 'Lims_Individual', cardinality 0..*) is associated with 'Lims::Individual' (role 'Lims_Individual7', cardinality 0..*).
+'Lims::Run' (role 'runs', cardinality 0..*) is associated with 'Lims::Sequencer' (role 'Sequencer18', cardinality 0..*).
+'Lims::Sample' (role 'Lims_Sample', cardinality 0..*) is associated with 'Lims::Sequenced' (role 'Lims_Sequenced', cardinality 0..*).
+'Lims::Individual' (role 'Individual', cardinality 0..*) is associated with 'Lims::Family' (role 'family', cardinality 0..*).
+'Lims::Family' (role 'Family', cardinality 0..*) is associated with 'Lims::Laboratory' (role 'laboratory', cardinality 0..*).
+'Lims::Laboratory' (role 'Laboratory', cardinality 0..*) is associated with 'Lims::Family' (role 'families', cardinality 0..*).

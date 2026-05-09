@@ -1,0 +1,394 @@
+The model has 168 class(es).
+The class 'presentation::Binding' has the following attributes: 'path' of type str; 'group' of type str; 'xPath' of type str; 'elementName' of type str; 'mixed' of type str.
+The class 'presentation::Layout' has the following attributes: 'mixed' of type str.
+The class 'presentation::TableTree' has no attributes.
+The class 'presentation::Label' has the following attributes: 'alignment' of type str; 'image' of type str; 'text' of type str.
+The class 'presentation::Composite' has the following attributes: 'layoutDeferred' of type str; 'backgroundMode' of type str; 'group2' of type str.
+The class 'presentation::ViewerColumn' has the following attributes: 'mixed' of type str.
+The class 'presentation::ViewerComparator' has the following attributes: 'mixed' of type str.
+The class 'presentation::ICellModifier' has the following attributes: 'mixed' of type str.
+The class 'presentation::IContentProvider' has the following attributes: 'mixed' of type str.
+The class 'presentation::ViewerFilter' has the following attributes: 'mixed' of type str.
+The class 'presentation::TreeColumn' has the following attributes: 'moveable' of type str; 'resizable' of type str; 'width' of type str; 'toolTipText' of type str; 'group' of type str; 'alignment' of type str.
+The class 'presentation::GridLayout' has the following attributes: 'horizontalSpacing' of type str; 'verticalSpacing' of type str; 'marginTop' of type str; 'numColumns' of type str; 'marginRight' of type str; 'marginLeft' of type str; 'marginWidth' of type str; 'marginHeight' of type str; 'makeColumnsEqualWidth' of type str; 'marginBottom' of type str.
+The class 'presentation::Tray' has the following attributes: 'group' of type str.
+The class 'presentation::TextCellEditor' has no attributes.
+The class 'presentation::SashForm' has the following attributes: 'group3' of type str; 'sASHWIDTH' of type str; 'weights' of type str; 'orientation' of type str; 'sashWidth1' of type str.
+The class 'presentation::Spinner' has the following attributes: 'textLimit' of type str; 'increment' of type str; 'pageIncrement' of type str; 'text' of type str; 'minimum' of type str; 'maximum' of type str; 'digits' of type str; 'selection' of type str.
+The class 'presentation::LayoutData' has the following attributes: 'mixed' of type str.
+The class 'presentation::ColorCellEditor' has no attributes.
+The class 'presentation::TrayDialog' has the following attributes: 'group2' of type str; 'helpAvailable' of type str.
+The class 'presentation::Canvas' has the following attributes: 'group3' of type str; 'mixed1' of type str.
+The class 'presentation::AbstractComboBoxCellEditor' has the following attributes: 'activationStyle' of type str.
+The class 'presentation::TreeViewer' has the following attributes: 'group5' of type str.
+The class 'presentation::List' has the following attributes: 'selection' of type str; 'topIndex' of type str; 'items' of type str; 'group2' of type str; 'selectionIndices' of type str.
+The class 'presentation::Class' has the following attributes: 'mixed' of type str.
+The class 'presentation::TableTreeViewer' has the following attributes: 'group5' of type str.
+The class 'presentation::Scrollable' has the following attributes: 'clientArea' of type str; 'group1' of type str.
+The class 'presentation::Document' has the following attributes: 'mixed' of type str.
+The class 'ControlEditor' has no attributes.
+The class 'presentation::Listener' has the following attributes: 'mixed' of type str.
+The class 'presentation::Item' has the following attributes: 'text' of type str; 'image' of type str.
+The class 'presentation::EStringToStringMapEntry' has no attributes.
+The class 'Layout' has no attributes.
+The class 'ViewerColumn' has no attributes.
+The class 'presentation::RowData' has the following attributes: 'exclude' of type str; 'height' of type str; 'mixed' of type str; 'width' of type str.
+The class 'presentation::Caret' has the following attributes: 'bounds' of type str; 'visible' of type str; 'group' of type str; 'image' of type str; 'location' of type str; 'size' of type str; 'font' of type str.
+The class 'presentation::StyledText' has the following attributes: 'justify' of type str; 'alignment' of type str; 'doubleClickEnabled' of type str; 'group4' of type str; 'lineDelimiter' of type str; 'ranges' of type str; 'selectionForeground' of type str; 'selectionBackground' of type str; 'wordWrap' of type str; 'topIndex' of type str; 'selectionRanges' of type str; 'indent' of type str; 'bidiColoring' of type str; 'horizontalPixel' of type str; 'editable' of type str; 'text' of type str; 'selection' of type str; 'tabs' of type str; 'caretOffset' of type str; 'topPixel' of type str; 'textLimit' of type str; 'selectionText' of type str; 'horizontalIndex' of type str; 'lineSpacing' of type str; 'orientation' of type str; 'blockSelection' of type str.
+The class 'presentation::Tracker' has the following attributes: 'stippled' of type str; 'group' of type str; 'rectangles' of type str.
+The class 'presentation::Control' has the following attributes: 'size' of type str; 'font' of type str; 'location' of type str; 'toolTipText' of type str; 'foreground' of type str; 'dragDetect' of type str; 'visible' of type str; 'background' of type str; 'capture' of type str; 'handle' of type str; 'group' of type str; 'bounds' of type str; 'backgroundImage' of type str; 'redraw' of type str; 'enabled' of type str.
+The class 'presentation::CTabItem' has the following attributes: 'showClose' of type str; 'font' of type str; 'bounds' of type str; 'group' of type str; 'disabledImage' of type str; 'toolTipText' of type str.
+The class 'presentation::RGB' has the following attributes: 'mixed' of type str.
+The class 'presentation::TabFolder' has the following attributes: 'group3' of type str.
+The class 'presentation::Dialog' has the following attributes: 'group1' of type str.
+The class 'presentation::ControlEditor' has the following attributes: 'mixed' of type str; 'horizontalAlignment' of type str; 'minimumWidth' of type str; 'grabVertical' of type str; 'verticalAlignment' of type str; 'group' of type str; 'minimumHeight' of type str; 'grabHorizontal' of type str.
+The class 'ViewerComparator' has no attributes.
+The class 'presentation::Accessible' has the following attributes: 'mixed' of type str.
+The class 'presentation::TableEditor' has the following attributes: 'group1' of type str; 'column' of type str; 'dynamic' of type str.
+The class 'ContentViewer' has no attributes.
+The class 'presentation::ColumnViewerEditor' has the following attributes: 'mixed' of type str.
+The class 'presentation::ICellEditorValidator' has the following attributes: 'mixed' of type str.
+The class 'presentation::Observable' has the following attributes: 'mixed' of type str.
+The class 'presentation::Table' has the following attributes: 'topIndex' of type str; 'linesVisible' of type str; 'group3' of type str; 'headerVisible' of type str; 'itemCount' of type str; 'columnOrder' of type str; 'selectionIndices' of type str; 'sortDirection' of type str.
+The class 'Composite' has no attributes.
+The class 'presentation::Decorations' has the following attributes: 'minimized' of type str; 'image' of type str; 'text' of type str; 'group4' of type str; 'maximized' of type str; 'images' of type str.
+The class 'presentation::CheckboxTableViewer' has the following attributes: 'allChecked' of type str; 'group5' of type str; 'allGrayed' of type str.
+The class 'Dialog' has no attributes.
+The class 'AbstractListViewer' has no attributes.
+The class 'presentation::TreePath' has the following attributes: 'mixed' of type str.
+The class 'presentation::ContentViewer' has the following attributes: 'group1' of type str.
+The class 'presentation::IDialogBlockedHandler' has the following attributes: 'mixed' of type str.
+The class 'presentation::TrayItem' has no attributes.
+The class 'presentation::DialogCellEditor' has no attributes.
+The class 'DialogCellEditor' has no attributes.
+The class 'Observable' has no attributes.
+The class 'presentation::IElementComparer' has the following attributes: 'mixed' of type str.
+The class 'presentation::CTabFolder' has the following attributes: 'minimizeVisible' of type str; 'maximizeVisible' of type str; 'tabHeight' of type str; 'single' of type str; 'marginWidth' of type str; 'unselectedImageVisible' of type str; 'minimumCharacters' of type str; 'selectionForeground' of type str; 'tabPosition' of type str; 'group3' of type str; 'mINTABWIDTH' of type str; 'minimized' of type str; 'mRUVisible' of type str; 'maximized' of type str; 'marginHeight' of type str; 'selectionBackground' of type str; 'unselectedCloseVisible' of type str; 'borderVisible' of type str; 'simple' of type str.
+The class 'presentation::ObjectDataProvider' has the following attributes: 'methodName' of type str; 'group1' of type str.
+The class 'presentation::TableColumn' has the following attributes: 'width' of type str; 'group' of type str; 'resizable' of type str; 'toolTipText' of type str; 'moveable' of type str; 'alignment' of type str.
+The class 'presentation::CLabel' has the following attributes: 'text' of type str; 'image' of type str; 'alignment' of type str.
+The class 'presentation::WindowManager' has the following attributes: 'mixed' of type str.
+The class 'TreeViewer' has no attributes.
+The class 'presentation::ScrollBar' has the following attributes: 'maximum' of type str; 'thumb' of type str; 'group' of type str; 'increment' of type str; 'selection' of type str; 'minimum' of type str; 'size' of type str; 'enabled' of type str; 'pageIncrement' of type str; 'visible' of type str.
+The class 'presentation::MenuItem' has the following attributes: 'enabled' of type str; 'group' of type str; 'selection' of type str; 'accelerator' of type str.
+The class 'presentation::Menu' has the following attributes: 'visible' of type str; 'enabled' of type str; 'group' of type str; 'handle' of type str.
+The class 'presentation::Group' has the following attributes: 'text' of type str.
+The class 'presentation::ListViewer' has the following attributes: 'group3' of type str.
+The class 'presentation::StackLayout' has the following attributes: 'group' of type str; 'marginHeight' of type str; 'marginWidth' of type str.
+The class 'presentation::DocumentObject' has no attributes.
+The class 'Control' has no attributes.
+The class 'presentation::ProgressBar' has the following attributes: 'maximum' of type str; 'state' of type str; 'selection' of type str; 'minimum' of type str.
+The class 'presentation::EObject' has no attributes.
+The class 'presentation::ViewerSorter' has no attributes.
+The class 'presentation::TabItem' has the following attributes: 'group' of type str; 'toolTipText' of type str; 'bounds' of type str.
+The class 'presentation::IBindingContext' has the following attributes: 'mixed' of type str.
+The class 'presentation::CheckboxTreeViewer' has the following attributes: 'group6' of type str; 'allChecked' of type str.
+The class 'presentation::TitleAreaDialog' has the following attributes: 'errorMessage' of type str; 'group3' of type str; 'titleImage' of type str; 'title' of type str; 'message' of type str.
+The class 'presentation::Collection' has the following attributes: 'mixed' of type str.
+The class 'Window' has no attributes.
+The class 'AbstractDataProvider' has no attributes.
+The class 'AbstractTableViewer' has no attributes.
+The class 'presentation::CoolItem' has the following attributes: 'minimumSize' of type str; 'preferredSize' of type str; 'bounds' of type str; 'group' of type str; 'size' of type str.
+The class 'presentation::IME' has the following attributes: 'group' of type str; 'compositionOffset' of type str; 'text' of type str; 'ranges' of type str.
+The class 'Viewer' has no attributes.
+The class 'presentation::CoolBar' has the following attributes: 'itemSizes' of type str; 'itemOrder' of type str; 'locked' of type str; 'wrapIndices' of type str; 'group3' of type str.
+The class 'AbstractTreeViewer' has no attributes.
+The class 'StructuredViewer' has no attributes.
+The class 'presentation::TreeItem' has the following attributes: 'itemCount' of type str; 'expanded' of type str; 'handle' of type str; 'group' of type str; 'grayed' of type str; 'checked' of type str; 'texts' of type str.
+The class 'Scrollable' has no attributes.
+The class 'presentation::AbstractListViewer' has no attributes.
+The class 'presentation::AbstractDataProvider' has the following attributes: 'mixed' of type str; 'key' of type str; 'group' of type str.
+The class 'presentation::CCombo' has the following attributes: 'group3' of type str; 'selection' of type str; 'textLimit' of type str; 'listVisible' of type str; 'visibleItemCount' of type str; 'editable' of type str; 'text' of type str; 'items' of type str.
+The class 'presentation::ExpandBar' has the following attributes: 'spacing' of type str; 'group3' of type str.
+The class 'DocumentObject' has no attributes.
+The class 'Resource' has no attributes.
+The class 'presentation::Widget' has the following attributes: 'helpEvent' of type str; 'mixed' of type str; 'hardKeyUpEvent' of type str; 'dataContext' of type str; 'resizeEvent' of type str; 'keyUpEvent' of type str; 'mouseDownEvent' of type str; 'setDataEvent' of type str; 'deactivateEvent' of type str; 'deiconifyEvent' of type str; 'mouseWheelEvent' of type str; 'mouseExitEvent' of type str; 'keyDownEvent' of type str; 'mouseHoverEvent' of type str; 'focusInEvent' of type str; 'mouseUpEvent' of type str; 'measureItemEvent' of type str; 'closeEvent' of type str; 'mouseMoveEvent' of type str; 'expandEvent' of type str; 'traverseEvent' of type str; 'moveEvent' of type str; 'verifyEvent' of type str; 'selectionEvent' of type str; 'defaultSelectionEvent' of type str; 'iconifyEvent' of type str; 'eraseItemEvent' of type str; 'disposeEvent' of type str; 'menuDetectEvent' of type str; 'mouseEnterEvent' of type str; 'showEvent' of type str; 'paintEvent' of type str; 'dragDetectEvent' of type str; 'imeCompositionEvent' of type str; 'armEvent' of type str; 'paintItemEvent' of type str; 'hideEvent' of type str; 'style' of type str; 'mouseDoubleClickEvent' of type str; 'modifyEvent' of type str; 'hardKeyDownEvent' of type str; 'activateEvent' of type str; 'collapseEvent' of type str; 'focusOutEvent' of type str.
+The class 'presentation::StyleRange' has no attributes.
+The class 'presentation::TableViewer' has the following attributes: 'group4' of type str.
+The class 'presentation::ToolBar' has the following attributes: 'group3' of type str.
+The class 'presentation::Viewer' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'TextStyle' has no attributes.
+The class 'presentation::IStructuredContentProvider' has the following attributes: 'mixed' of type str.
+The class 'presentation::Link' has the following attributes: 'text' of type str.
+The class 'AbstractComboBoxCellEditor' has no attributes.
+The class 'presentation::Shell' has the following attributes: 'alpha' of type str; 'group5' of type str; 'imeInputMode' of type str; 'fullScreen' of type str; 'minimumSize' of type str.
+The class 'presentation::Element' has no attributes.
+The class 'presentation::FormData' has the following attributes: 'width' of type str; 'height' of type str; 'mixed' of type str; 'group' of type str.
+The class 'presentation::FillLayout' has the following attributes: 'marginWidth' of type str; 'type' of type str; 'marginHeight' of type str; 'spacing' of type str.
+The class 'presentation::ComboBoxViewerCellEditor' has the following attributes: 'group1' of type str.
+The class 'presentation::DateTime' has the following attributes: 'day' of type str; 'month' of type str; 'year' of type str; 'minutes' of type str; 'hours' of type str; 'seconds' of type str.
+The class 'presentation::DefaultLabelProvider' has the following attributes: 'mixed' of type str.
+The class 'presentation::GridData' has the following attributes: 'exclude' of type str; 'widthHint' of type str; 'horizontalAlignment' of type str; 'verticalSpan' of type str; 'grabExcessVerticalSpace' of type str; 'verticalIndent' of type str; 'minimumHeight' of type str; 'heightHint' of type str; 'minimumWidth' of type str; 'grabExcessHorizontalSpace' of type str; 'horizontalIndent' of type str; 'horizontalSpan' of type str; 'mixed' of type str; 'verticalAlignment' of type str.
+The class 'presentation::ComboViewer' has no attributes.
+The class 'presentation::IBaseLabelProvider' has the following attributes: 'mixed' of type str.
+The class 'presentation::ExpandItem' has the following attributes: 'group' of type str; 'expanded' of type str; 'height' of type str.
+The class 'presentation::TextStyle' has the following attributes: 'mixed' of type str.
+The class 'presentation::MessageBox' has the following attributes: 'message' of type str.
+The class 'presentation::TableViewerColumn' has the following attributes: 'group' of type str; 'width' of type str; 'text' of type str.
+The class 'presentation::ISelection' has the following attributes: 'mixed' of type str.
+The class 'Item' has no attributes.
+The class 'presentation::ICheckStateProvider' has the following attributes: 'mixed' of type str.
+The class 'presentation::Browser' has the following attributes: 'url' of type str; 'text' of type str; 'browserType' of type str; 'group3' of type str.
+The class 'CellEditor' has no attributes.
+The class 'presentation::Slider' has the following attributes: 'maximum' of type str; 'pageIncrement' of type str; 'selection' of type str; 'minimum' of type str; 'thumb' of type str; 'increment' of type str.
+The class 'Canvas' has no attributes.
+The class 'presentation::Cursor' has no attributes.
+The class 'TrayDialog' has no attributes.
+The class 'presentation::StyledTextContent' has the following attributes: 'mixed' of type str.
+The class 'TableViewer' has no attributes.
+The class 'presentation::StructuredViewer' has the following attributes: 'useHashlookup' of type str; 'group2' of type str.
+The class 'presentation::RowLayout' has the following attributes: 'spacing' of type str; 'justify' of type str; 'marginBottom' of type str; 'marginTop' of type str; 'center' of type str; 'marginRight' of type str; 'marginLeft' of type str; 'type' of type str; 'pack' of type str; 'wrap' of type str; 'fill' of type str; 'marginHeight' of type str; 'marginWidth' of type str.
+The class 'presentation::DefaultCellModifier' has the following attributes: 'mixed' of type str.
+The class 'Widget' has no attributes.
+The class 'presentation::CheckboxCellEditor' has no attributes.
+The class 'presentation::Tree' has the following attributes: 'headerVisible' of type str; 'columnOrder' of type str; 'itemCount' of type str; 'sortDirection' of type str; 'group3' of type str; 'linesVisible' of type str.
+The class 'presentation::Text' has the following attributes: 'caretLocation' of type str; 'doubleClickEnabled' of type str; 'selection' of type str; 'message' of type str; 'echoChar' of type str; 'orientation' of type str; 'editable' of type str; 'lineDelimiter' of type str; 'textLimit' of type str; 'selectionText' of type str; 'topIndex' of type str; 'text' of type str; 'tabs' of type str.
+The class 'presentation::AbstractTreeViewer' has the following attributes: 'autoExpandLevel' of type str; 'group4' of type str.
+The class 'presentation::XMLDataProvider' has the following attributes: 'xPath' of type str; 'group1' of type str.
+The class 'presentation::Window' has the following attributes: 'blockOnOpen' of type str; 'mixed' of type str; 'group' of type str.
+The class 'presentation::FormAttachment' has the following attributes: 'mixed' of type str; 'group' of type str; 'alignment' of type str; 'numerator' of type str; 'denominator' of type str; 'offset' of type str.
+The class 'presentation::Cell' has the following attributes: 'image' of type str; 'mixed' of type str; 'group' of type str; 'text' of type str.
+The class 'presentation::Scale' has the following attributes: 'increment' of type str; 'maximum' of type str; 'selection' of type str; 'minimum' of type str; 'pageIncrement' of type str.
+The class 'presentation::ICommand' has the following attributes: 'mixed' of type str.
+The class 'presentation::ColumnViewer' has the following attributes: 'group3' of type str.
+The class 'presentation::FormLayout' has the following attributes: 'marginHeight' of type str; 'marginLeft' of type str; 'marginWidth' of type str; 'marginTop' of type str; 'marginRight' of type str; 'marginBottom' of type str; 'spacing' of type str.
+The class 'presentation::TableItem' has the following attributes: 'texts' of type str; 'checked' of type str; 'grayed' of type str; 'group' of type str; 'imageIndent' of type str.
+The class 'presentation::ToolItem' has the following attributes: 'disabledImage' of type str; 'selection' of type str; 'enabled' of type str; 'group' of type str; 'toolTipText' of type str; 'width' of type str; 'hotImage' of type str; 'bounds' of type str.
+The class 'presentation::DialogTray' has the following attributes: 'mixed' of type str.
+The class 'presentation::Combo' has the following attributes: 'items' of type str; 'selection' of type str; 'listVisible' of type str; 'textLimit' of type str; 'group3' of type str; 'text' of type str; 'orientation' of type str; 'visibleItemCount' of type str.
+The class 'ColumnViewer' has no attributes.
+The class 'Decorations' has no attributes.
+The class 'presentation::Button' has the following attributes: 'alignment' of type str; 'text' of type str; 'group1' of type str; 'grayed' of type str; 'selection' of type str; 'image' of type str.
+The class 'presentation::Resource' has the following attributes: 'mixed' of type str.
+The class 'presentation::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'presentation::CellEditor' has the following attributes: 'group' of type str; 'errorMessage' of type str; 'style' of type str; 'mixed' of type str.
+The class 'presentation::ToolTip' has the following attributes: 'group' of type str; 'autoHide' of type str; 'visible' of type str; 'message' of type str; 'text' of type str.
+The class 'presentation::Sash' has no attributes.
+The class 'presentation::AbstractTableViewer' has the following attributes: 'itemCount' of type str.
+The class 'presentation::URL' has the following attributes: 'mixed' of type str.
+The class 'presentation::ComboBoxCellEditor' has no attributes.
+'presentation::ProgressBar' is a specialization of 'Control'.
+'presentation::MenuItem' is a specialization of 'Item'.
+'presentation::ExpandBar' is a specialization of 'Composite'.
+'presentation::CheckboxTreeViewer' is a specialization of 'TreeViewer'.
+'presentation::TableViewer' is a specialization of 'AbstractTableViewer'.
+'presentation::CCombo' is a specialization of 'Composite'.
+'presentation::Control' is a specialization of 'Widget'.
+'presentation::Dialog' is a specialization of 'Window'.
+'presentation::IME' is a specialization of 'Widget'.
+'presentation::TabItem' is a specialization of 'Item'.
+'presentation::Shell' is a specialization of 'Decorations'.
+'presentation::CoolBar' is a specialization of 'Composite'.
+'presentation::ListViewer' is a specialization of 'AbstractListViewer'.
+'presentation::Cursor' is a specialization of 'Resource'.
+'presentation::Composite' is a specialization of 'Scrollable'.
+'presentation::TableViewerColumn' is a specialization of 'ViewerColumn'.
+'presentation::Spinner' is a specialization of 'Composite'.
+'presentation::StyleRange' is a specialization of 'TextStyle'.
+'presentation::TreeViewer' is a specialization of 'AbstractTreeViewer'.
+'presentation::TableColumn' is a specialization of 'Item'.
+'presentation::Item' is a specialization of 'Widget'.
+'presentation::ExpandItem' is a specialization of 'Item'.
+'presentation::CheckboxTableViewer' is a specialization of 'TableViewer'.
+'presentation::Menu' is a specialization of 'Widget'.
+'presentation::ContentViewer' is a specialization of 'Viewer'.
+'presentation::RowLayout' is a specialization of 'Layout'.
+'presentation::Button' is a specialization of 'Control'.
+'presentation::Group' is a specialization of 'Composite'.
+'presentation::TitleAreaDialog' is a specialization of 'TrayDialog'.
+'presentation::Text' is a specialization of 'Scrollable'.
+'presentation::CTabFolder' is a specialization of 'Composite'.
+'presentation::StyledText' is a specialization of 'Canvas'.
+'presentation::CheckboxCellEditor' is a specialization of 'CellEditor'.
+'presentation::Tray' is a specialization of 'Widget'.
+'presentation::ToolItem' is a specialization of 'Item'.
+'presentation::GridLayout' is a specialization of 'Layout'.
+'presentation::ToolBar' is a specialization of 'Composite'.
+'presentation::DialogCellEditor' is a specialization of 'CellEditor'.
+'presentation::TrayDialog' is a specialization of 'Dialog'.
+'presentation::TrayItem' is a specialization of 'Item'.
+'presentation::DocumentObject' is a specialization of 'Observable'.
+'presentation::AbstractComboBoxCellEditor' is a specialization of 'CellEditor'.
+'presentation::FormLayout' is a specialization of 'Layout'.
+'presentation::AbstractListViewer' is a specialization of 'StructuredViewer'.
+'presentation::TreeColumn' is a specialization of 'Item'.
+'presentation::StackLayout' is a specialization of 'Layout'.
+'presentation::SashForm' is a specialization of 'Composite'.
+'presentation::TableTreeViewer' is a specialization of 'AbstractTreeViewer'.
+'presentation::ComboBoxCellEditor' is a specialization of 'AbstractComboBoxCellEditor'.
+'presentation::TextCellEditor' is a specialization of 'CellEditor'.
+'presentation::Element' is a specialization of 'DocumentObject'.
+'presentation::ViewerSorter' is a specialization of 'ViewerComparator'.
+'presentation::List' is a specialization of 'Scrollable'.
+'presentation::Slider' is a specialization of 'Control'.
+'presentation::Browser' is a specialization of 'Composite'.
+'presentation::CTabItem' is a specialization of 'Item'.
+'presentation::StructuredViewer' is a specialization of 'ContentViewer'.
+'presentation::TableEditor' is a specialization of 'ControlEditor'.
+'presentation::Caret' is a specialization of 'Widget'.
+'presentation::ComboBoxViewerCellEditor' is a specialization of 'AbstractComboBoxCellEditor'.
+'presentation::CoolItem' is a specialization of 'Item'.
+'presentation::TableItem' is a specialization of 'Item'.
+'presentation::Scale' is a specialization of 'Control'.
+'presentation::Canvas' is a specialization of 'Composite'.
+'presentation::Tree' is a specialization of 'Composite'.
+'presentation::ColumnViewer' is a specialization of 'StructuredViewer'.
+'presentation::Decorations' is a specialization of 'Canvas'.
+'presentation::Scrollable' is a specialization of 'Control'.
+'presentation::Tracker' is a specialization of 'Widget'.
+'presentation::Label' is a specialization of 'Control'.
+'presentation::ComboViewer' is a specialization of 'AbstractListViewer'.
+'presentation::AbstractTableViewer' is a specialization of 'ColumnViewer'.
+'presentation::ObjectDataProvider' is a specialization of 'AbstractDataProvider'.
+'presentation::Table' is a specialization of 'Composite'.
+'presentation::Combo' is a specialization of 'Composite'.
+'presentation::TableTree' is a specialization of 'Composite'.
+'presentation::ColorCellEditor' is a specialization of 'DialogCellEditor'.
+'presentation::Link' is a specialization of 'Control'.
+'presentation::AbstractTreeViewer' is a specialization of 'ColumnViewer'.
+'presentation::DateTime' is a specialization of 'Composite'.
+'presentation::MessageBox' is a specialization of 'Dialog'.
+'presentation::XMLDataProvider' is a specialization of 'AbstractDataProvider'.
+'presentation::TreeItem' is a specialization of 'Item'.
+'presentation::FillLayout' is a specialization of 'Layout'.
+'presentation::ToolTip' is a specialization of 'Widget'.
+'presentation::ScrollBar' is a specialization of 'Widget'.
+'presentation::CLabel' is a specialization of 'Canvas'.
+'presentation::Sash' is a specialization of 'Control'.
+'presentation::TabFolder' is a specialization of 'Composite'.
+'presentation::TabItem' (role 'presentation_TabItem216', cardinality 0..*) is associated with 'presentation::TabFolder' (role 'presentation_TabFolder217', cardinality 0..*).
+'presentation::CellEditor' (role 'presentation_CellEditor52', cardinality 0..*) is associated with 'presentation::ColumnViewer' (role 'presentation_ColumnViewer51', cardinality 0..*).
+'presentation::AbstractDataProvider' (role 'presentation_AbstractDataProvider', cardinality 0..*) is associated with 'presentation::IBindingContext' (role 'presentation_IBindingContext', cardinality 0..*).
+'presentation::Button' (role 'presentation_Button', cardinality 0..*) is associated with 'presentation::ICommand' (role 'presentation_ICommand', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject', cardinality 0..*) is associated with 'presentation::AbstractTreeViewer' (role 'presentation_AbstractTreeViewer3', cardinality 0..*).
+'presentation::Decorations' (role 'presentation_Decorations117', cardinality 0..*) is associated with 'presentation::Menu' (role 'presentation_Menu118', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control140', cardinality 0..*) is associated with 'presentation::FormAttachment' (role 'presentation_FormAttachment', cardinality 0..*).
+'presentation::TableItem' (role 'presentation_TableItem244', cardinality 0..*) is associated with 'presentation::Collection' (role 'presentation_Collection245', cardinality 0..*).
+'presentation::List' (role 'presentation_List', cardinality 0..*) is associated with 'presentation::ListViewer' (role 'presentation_ListViewer', cardinality 0..*).
+'presentation::StructuredViewer' (role 'presentation_StructuredViewer', cardinality 0..*) is associated with 'presentation::ViewerComparator' (role 'presentation_ViewerComparator', cardinality 0..*).
+'presentation::MenuItem' (role 'presentation_MenuItem', cardinality 0..*) is associated with 'presentation::Menu' (role 'presentation_Menu156', cardinality 0..*).
+'presentation::TreePath' (role 'presentation_TreePath', cardinality 0..*) is associated with 'presentation::AbstractTreeViewer' (role 'presentation_AbstractTreeViewer', cardinality 0..*).
+'presentation::TreeItem' (role 'presentation_TreeItem277', cardinality 0..*) is associated with 'presentation::Tree' (role 'presentation_Tree276', cardinality 0..*).
+'presentation::List' (role 'presentation_List184', cardinality 0..*) is associated with 'presentation::ObjectDataProvider' (role 'presentation_ObjectDataProvider183', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject46', cardinality 0..*) is associated with 'presentation::CheckboxTreeViewer' (role 'presentation_CheckboxTreeViewer45', cardinality 0..*).
+'presentation::Collection' (role 'presentation_Collection', cardinality 0..*) is associated with 'presentation::TableItem' (role 'presentation_TableItem239', cardinality 0..*).
+'presentation::SashForm' (role 'presentation_SashForm', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control186', cardinality 0..*).
+'presentation::TabItem' (role 'presentation_TabItem', cardinality 0..*) is associated with 'presentation::TabFolder' (role 'presentation_TabFolder', cardinality 0..*).
+'presentation::TreeItem' (role 'presentation_TreeItem284', cardinality 0..*) is associated with 'presentation::TreeItem' (role 'presentation_TreeItem286', cardinality 0..*).
+'presentation::CoolBar' (role 'presentation_CoolBar', cardinality 0..*) is associated with 'presentation::CoolItem' (role 'presentation_CoolItem', cardinality 0..*).
+'presentation::TrayDialog' (role 'presentation_TrayDialog', cardinality 0..*) is associated with 'presentation::DialogTray' (role 'presentation_DialogTray', cardinality 0..*).
+'presentation::TabFolder' (role 'presentation_TabFolder213', cardinality 0..*) is associated with 'presentation::TabItem' (role 'presentation_TabItem214', cardinality 0..*).
+'presentation::CellEditor' (role 'presentation_CellEditor26', cardinality 0..*) is associated with 'presentation::LayoutData' (role 'presentation_LayoutData', cardinality 0..*).
+'presentation::Binding' (role 'presentation_Binding10', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject11', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject81', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control80', cardinality 0..*).
+'presentation::IStructuredContentProvider' (role 'presentation_IStructuredContentProvider', cardinality 0..*) is associated with 'presentation::ComboBoxViewerCellEditor' (role 'presentation_ComboBoxViewerCellEditor59', cardinality 0..*).
+'presentation::Dialog' (role 'presentation_Dialog122', cardinality 0..*) is associated with 'presentation::IDialogBlockedHandler' (role 'presentation_IDialogBlockedHandler', cardinality 0..*).
+'presentation::CoolItem' (role 'presentation_CoolItem91', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control92', cardinality 0..*).
+'presentation::Menu' (role 'presentation_Menu158', cardinality 0..*) is associated with 'presentation::MenuItem' (role 'presentation_MenuItem159', cardinality 0..*).
+'presentation::MenuItem' (role 'presentation_MenuItem176', cardinality 0..*) is associated with 'presentation::Menu' (role 'presentation_Menu177', cardinality 0..*).
+'presentation::CheckboxTableViewer' (role 'presentation_CheckboxTableViewer', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject33', cardinality 0..*).
+'presentation::CellEditor' (role 'presentation_CellEditor', cardinality 0..*) is associated with 'presentation::ICellEditorValidator' (role 'presentation_ICellEditorValidator', cardinality 0..*).
+'presentation::MenuItem' (role 'presentation_MenuItem173', cardinality 0..*) is associated with 'presentation::ICommand' (role 'presentation_ICommand174', cardinality 0..*).
+'presentation::CTabItem' (role 'presentation_CTabItem109', cardinality 0..*) is associated with 'presentation::CTabFolder' (role 'presentation_CTabFolder110', cardinality 0..*).
+'presentation::ObjectDataProvider' (role 'presentation_ObjectDataProvider', cardinality 0..*) is associated with 'presentation::Class' (role 'presentation_Class', cardinality 0..*).
+'presentation::Table' (role 'presentation_Table235', cardinality 0..*) is associated with 'presentation::TableColumn' (role 'presentation_TableColumn234', cardinality 0..*).
+'presentation::ColumnViewer' (role 'presentation_ColumnViewer', cardinality 0..*) is associated with 'presentation::ColumnViewerEditor' (role 'presentation_ColumnViewerEditor', cardinality 0..*).
+'presentation::TrayItem' (role 'presentation_TrayItem', cardinality 0..*) is associated with 'presentation::Tray' (role 'presentation_Tray', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control120', cardinality 0..*) is associated with 'presentation::Dialog' (role 'presentation_Dialog', cardinality 0..*).
+'presentation::StyledTextContent' (role 'presentation_StyledTextContent', cardinality 0..*) is associated with 'presentation::StyledText' (role 'presentation_StyledText210', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject15', cardinality 0..*) is associated with 'presentation::Browser' (role 'presentation_Browser', cardinality 0..*).
+'presentation::ContentViewer' (role 'presentation_ContentViewer73', cardinality 0..*) is associated with 'presentation::IBaseLabelProvider' (role 'presentation_IBaseLabelProvider74', cardinality 0..*).
+'presentation::Menu' (role 'presentation_Menu', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control76', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject181', cardinality 0..*) is associated with 'presentation::ObjectDataProvider' (role 'presentation_ObjectDataProvider180', cardinality 0..*).
+'presentation::TableTreeViewer' (role 'presentation_TableTreeViewer', cardinality 0..*) is associated with 'presentation::TableTree' (role 'presentation_TableTree', cardinality 0..*).
+'presentation::CheckboxTableViewer' (role 'presentation_CheckboxTableViewer37', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject38', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control83', cardinality 0..*) is associated with 'presentation::Accessible' (role 'presentation_Accessible', cardinality 0..*).
+'presentation::ScrollBar' (role 'presentation_ScrollBar192', cardinality 0..*) is associated with 'presentation::Scrollable' (role 'presentation_Scrollable193', cardinality 0..*).
+'presentation::CheckboxTreeViewer' (role 'presentation_CheckboxTreeViewer42', cardinality 0..*) is associated with 'presentation::ICheckStateProvider' (role 'presentation_ICheckStateProvider43', cardinality 0..*).
+'presentation::CTabFolder' (role 'presentation_CTabFolder103', cardinality 0..*) is associated with 'presentation::CTabItem' (role 'presentation_CTabItem104', cardinality 0..*).
+'presentation::EStringToStringMapEntry' (role 'presentation_EStringToStringMapEntry', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot', cardinality 0..*).
+'presentation::MenuItem' (role 'presentation_MenuItem162', cardinality 0..*) is associated with 'presentation::Menu' (role 'presentation_Menu161', cardinality 0..*).
+'presentation::Menu' (role 'presentation_Menu165', cardinality 0..*) is associated with 'presentation::Menu' (role 'presentation_Menu163', cardinality 0..*).
+'presentation::TreeItem' (role 'presentation_TreeItem287', cardinality 0..*) is associated with 'presentation::TreeItem' (role 'presentation_TreeItem289', cardinality 0..*).
+'presentation::FormAttachment' (role 'presentation_FormAttachment142', cardinality 0..*) is associated with 'presentation::FormData' (role 'presentation_FormData', cardinality 0..*).
+'presentation::Table' (role 'presentation_Table', cardinality 0..*) is associated with 'presentation::TableColumn' (role 'presentation_TableColumn', cardinality 0..*).
+'presentation::Composite' (role 'presentation_Composite129', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot128', cardinality 0..*).
+'presentation::EStringToStringMapEntry' (role 'presentation_EStringToStringMapEntry126', cardinality 0..*) is associated with 'presentation::DocumentRoot' (role 'presentation_DocumentRoot125', cardinality 0..*).
+'presentation::Scrollable' (role 'presentation_Scrollable189', cardinality 0..*) is associated with 'presentation::ScrollBar' (role 'presentation_ScrollBar190', cardinality 0..*).
+'presentation::CTabFolder' (role 'presentation_CTabFolder100', cardinality 0..*) is associated with 'presentation::RGB' (role 'presentation_RGB101', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control113', cardinality 0..*) is associated with 'presentation::CTabItem' (role 'presentation_CTabItem112', cardinality 0..*).
+'presentation::StructuredViewer' (role 'presentation_StructuredViewer202', cardinality 0..*) is associated with 'presentation::ViewerFilter' (role 'presentation_ViewerFilter', cardinality 0..*).
+'presentation::MenuItem' (role 'presentation_MenuItem170', cardinality 0..*) is associated with 'presentation::Menu' (role 'presentation_Menu171', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject296', cardinality 0..*) is associated with 'presentation::Viewer' (role 'presentation_Viewer', cardinality 0..*).
+'presentation::StyleRange' (role 'presentation_StyleRange208', cardinality 0..*) is associated with 'presentation::StyledText' (role 'presentation_StyledText207', cardinality 0..*).
+'presentation::Table' (role 'presentation_Table242', cardinality 0..*) is associated with 'presentation::TableItem' (role 'presentation_TableItem241', cardinality 0..*).
+'presentation::Tree' (role 'presentation_Tree283', cardinality 0..*) is associated with 'presentation::TreeColumn' (role 'presentation_TreeColumn282', cardinality 0..*).
+'presentation::Tree' (role 'presentation_Tree270', cardinality 0..*) is associated with 'presentation::TreeColumn' (role 'presentation_TreeColumn271', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control', cardinality 0..*) is associated with 'presentation::CellEditor' (role 'presentation_CellEditor31', cardinality 0..*).
+'presentation::ToolItem' (role 'presentation_ToolItem255', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control256', cardinality 0..*).
+'presentation::ComboBoxViewerCellEditor' (role 'presentation_ComboBoxViewerCellEditor', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject57', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject55', cardinality 0..*) is associated with 'presentation::ColumnViewer' (role 'presentation_ColumnViewer54', cardinality 0..*).
+'presentation::ControlEditor' (role 'presentation_ControlEditor', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control85', cardinality 0..*).
+'presentation::Composite' (role 'presentation_Composite', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control65', cardinality 0..*).
+'presentation::Button' (role 'presentation_Button115', cardinality 0..*) is associated with 'presentation::Decorations' (role 'presentation_Decorations', cardinality 0..*).
+'presentation::Canvas' (role 'presentation_Canvas19', cardinality 0..*) is associated with 'presentation::Caret' (role 'presentation_Caret', cardinality 0..*).
+'presentation::TreeItem' (role 'presentation_TreeItem280', cardinality 0..*) is associated with 'presentation::Tree' (role 'presentation_Tree279', cardinality 0..*).
+'presentation::Viewer' (role 'presentation_Viewer298', cardinality 0..*) is associated with 'presentation::ISelection' (role 'presentation_ISelection', cardinality 0..*).
+'presentation::ExpandBar' (role 'presentation_ExpandBar135', cardinality 0..*) is associated with 'presentation::ExpandItem' (role 'presentation_ExpandItem134', cardinality 0..*).
+'presentation::Tree' (role 'presentation_Tree294', cardinality 0..*) is associated with 'presentation::TreeViewer' (role 'presentation_TreeViewer', cardinality 0..*).
+'presentation::TreeItem' (role 'presentation_TreeItem', cardinality 0..*) is associated with 'presentation::Tree' (role 'presentation_Tree268', cardinality 0..*).
+'presentation::ComboBoxViewerCellEditor' (role 'presentation_ComboBoxViewerCellEditor63', cardinality 0..*) is associated with 'presentation::ComboViewer' (role 'presentation_ComboViewer', cardinality 0..*).
+'presentation::Menu' (role 'presentation_Menu167', cardinality 0..*) is associated with 'presentation::Decorations' (role 'presentation_Decorations168', cardinality 0..*).
+'presentation::ToolItem' (role 'presentation_ToolItem258', cardinality 0..*) is associated with 'presentation::ToolBar' (role 'presentation_ToolBar259', cardinality 0..*).
+'presentation::StackLayout' (role 'presentation_StackLayout', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control197', cardinality 0..*).
+'presentation::Shell' (role 'presentation_Shell261', cardinality 0..*) is associated with 'presentation::ToolTip' (role 'presentation_ToolTip', cardinality 0..*).
+'presentation::Canvas' (role 'presentation_Canvas', cardinality 0..*) is associated with 'presentation::IME' (role 'presentation_IME', cardinality 0..*).
+'presentation::RGB' (role 'presentation_RGB107', cardinality 0..*) is associated with 'presentation::CTabFolder' (role 'presentation_CTabFolder106', cardinality 0..*).
+'presentation::Cursor' (role 'presentation_Cursor263', cardinality 0..*) is associated with 'presentation::Tracker' (role 'presentation_Tracker', cardinality 0..*).
+'presentation::TextStyle' (role 'presentation_TextStyle', cardinality 0..*) is associated with 'presentation::IME' (role 'presentation_IME153', cardinality 0..*).
+'presentation::FormData' (role 'presentation_FormData147', cardinality 0..*) is associated with 'presentation::FormAttachment' (role 'presentation_FormAttachment148', cardinality 0..*).
+'presentation::Cursor' (role 'presentation_Cursor', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control78', cardinality 0..*).
+'presentation::FormData' (role 'presentation_FormData144', cardinality 0..*) is associated with 'presentation::FormAttachment' (role 'presentation_FormAttachment145', cardinality 0..*).
+'presentation::ToolBar' (role 'presentation_ToolBar', cardinality 0..*) is associated with 'presentation::ToolItem' (role 'presentation_ToolItem', cardinality 0..*).
+'presentation::DocumentRoot' (role 'presentation_DocumentRoot131', cardinality 0..*) is associated with 'presentation::Window' (role 'presentation_Window', cardinality 0..*).
+'presentation::TableItem' (role 'presentation_TableItem230', cardinality 0..*) is associated with 'presentation::Table' (role 'presentation_Table229', cardinality 0..*).
+'presentation::TableItem' (role 'presentation_TableItem', cardinality 0..*) is associated with 'presentation::Cell' (role 'presentation_Cell', cardinality 0..*).
+'presentation::TableColumn' (role 'presentation_TableColumn232', cardinality 0..*) is associated with 'presentation::Element' (role 'presentation_Element', cardinality 0..*).
+'presentation::TreeItem' (role 'presentation_TreeItem274', cardinality 0..*) is associated with 'presentation::Tree' (role 'presentation_Tree273', cardinality 0..*).
+'presentation::CellEditor' (role 'presentation_CellEditor28', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject29', cardinality 0..*).
+'presentation::Canvas' (role 'presentation_Canvas22', cardinality 0..*) is associated with 'presentation::Caret' (role 'presentation_Caret21', cardinality 0..*).
+'presentation::URL' (role 'presentation_URL', cardinality 0..*) is associated with 'presentation::XMLDataProvider' (role 'presentation_XMLDataProvider306', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject40', cardinality 0..*) is associated with 'presentation::CheckboxTreeViewer' (role 'presentation_CheckboxTreeViewer', cardinality 0..*).
+'presentation::Document' (role 'presentation_Document', cardinality 0..*) is associated with 'presentation::XMLDataProvider' (role 'presentation_XMLDataProvider', cardinality 0..*).
+'presentation::WindowManager' (role 'presentation_WindowManager', cardinality 0..*) is associated with 'presentation::Window' (role 'presentation_Window303', cardinality 0..*).
+'presentation::TabItem' (role 'presentation_TabItem219', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control220', cardinality 0..*).
+'presentation::Binding' (role 'presentation_Binding', cardinality 0..*) is associated with 'presentation::EObject' (role 'presentation_EObject8', cardinality 0..*).
+'presentation::RGB' (role 'presentation_RGB', cardinality 0..*) is associated with 'presentation::CTabFolder' (role 'presentation_CTabFolder', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control68', cardinality 0..*) is associated with 'presentation::Composite' (role 'presentation_Composite67', cardinality 0..*).
+'presentation::Shell' (role 'presentation_Shell194', cardinality 0..*) is associated with 'presentation::Shell' (role 'presentation_Shell', cardinality 0..*).
+'presentation::ContentViewer' (role 'presentation_ContentViewer', cardinality 0..*) is associated with 'presentation::IContentProvider' (role 'presentation_IContentProvider', cardinality 0..*).
+'presentation::Tree' (role 'presentation_Tree', cardinality 0..*) is associated with 'presentation::TreeColumn' (role 'presentation_TreeColumn', cardinality 0..*).
+'presentation::ExpandBar' (role 'presentation_ExpandBar', cardinality 0..*) is associated with 'presentation::ExpandItem' (role 'presentation_ExpandItem', cardinality 0..*).
+'presentation::Widget' (role 'presentation_Widget', cardinality 0..*) is associated with 'presentation::Binding' (role 'presentation_Binding13', cardinality 0..*).
+'presentation::CoolItem' (role 'presentation_CoolItem88', cardinality 0..*) is associated with 'presentation::CoolBar' (role 'presentation_CoolBar89', cardinality 0..*).
+'presentation::ScrollBar' (role 'presentation_ScrollBar', cardinality 0..*) is associated with 'presentation::Scrollable' (role 'presentation_Scrollable', cardinality 0..*).
+'presentation::Table' (role 'presentation_Table226', cardinality 0..*) is associated with 'presentation::TableItem' (role 'presentation_TableItem227', cardinality 0..*).
+'presentation::Tree' (role 'presentation_Tree292', cardinality 0..*) is associated with 'presentation::TreeItem' (role 'presentation_TreeItem291', cardinality 0..*).
+'presentation::ICheckStateProvider' (role 'presentation_ICheckStateProvider', cardinality 0..*) is associated with 'presentation::CheckboxTableViewer' (role 'presentation_CheckboxTableViewer35', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control301', cardinality 0..*) is associated with 'presentation::Viewer' (role 'presentation_Viewer300', cardinality 0..*).
+'presentation::StructuredViewer' (role 'presentation_StructuredViewer200', cardinality 0..*) is associated with 'presentation::IElementComparer' (role 'presentation_IElementComparer', cardinality 0..*).
+'presentation::CTabItem' (role 'presentation_CTabItem', cardinality 0..*) is associated with 'presentation::CTabFolder' (role 'presentation_CTabFolder95', cardinality 0..*).
+'presentation::Control' (role 'presentation_Control138', cardinality 0..*) is associated with 'presentation::ExpandItem' (role 'presentation_ExpandItem137', cardinality 0..*).
+'presentation::CTabFolder' (role 'presentation_CTabFolder97', cardinality 0..*) is associated with 'presentation::Control' (role 'presentation_Control98', cardinality 0..*).
+'presentation::ICellModifier' (role 'presentation_ICellModifier', cardinality 0..*) is associated with 'presentation::ColumnViewer' (role 'presentation_ColumnViewer49', cardinality 0..*).
+'presentation::EObject' (role 'presentation_EObject6', cardinality 0..*) is associated with 'presentation::AbstractTreeViewer' (role 'presentation_AbstractTreeViewer5', cardinality 0..*).
+'presentation::FormAttachment' (role 'presentation_FormAttachment151', cardinality 0..*) is associated with 'presentation::FormData' (role 'presentation_FormData150', cardinality 0..*).
+'presentation::StyledText' (role 'presentation_StyledText', cardinality 0..*) is associated with 'presentation::StyleRange' (role 'presentation_StyleRange', cardinality 0..*).
+'presentation::TableColumn' (role 'presentation_TableColumn250', cardinality 0..*) is associated with 'presentation::TableViewerColumn' (role 'presentation_TableViewerColumn', cardinality 0..*).
+'presentation::TitleAreaDialog' (role 'presentation_TitleAreaDialog', cardinality 0..*) is associated with 'presentation::RGB' (role 'presentation_RGB252', cardinality 0..*).
+'presentation::ComboBoxViewerCellEditor' (role 'presentation_ComboBoxViewerCellEditor61', cardinality 0..*) is associated with 'presentation::IBaseLabelProvider' (role 'presentation_IBaseLabelProvider', cardinality 0..*).
+'presentation::Layout' (role 'presentation_Layout', cardinality 0..*) is associated with 'presentation::Composite' (role 'presentation_Composite70', cardinality 0..*).
+'presentation::StructuredViewer' (role 'presentation_StructuredViewer204', cardinality 0..*) is associated with 'presentation::ViewerSorter' (role 'presentation_ViewerSorter', cardinality 0..*).
+'presentation::TableItem' (role 'presentation_TableItem237', cardinality 0..*) is associated with 'presentation::TableEditor' (role 'presentation_TableEditor', cardinality 0..*).
+'presentation::Table' (role 'presentation_Table223', cardinality 0..*) is associated with 'presentation::TableColumn' (role 'presentation_TableColumn224', cardinality 0..*).
+'presentation::Table' (role 'presentation_Table248', cardinality 0..*) is associated with 'presentation::TableViewer' (role 'presentation_TableViewer', cardinality 0..*).

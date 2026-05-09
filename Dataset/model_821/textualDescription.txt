@@ -1,0 +1,46 @@
+The model has 20 class(es).
+The class 'fsm::AssignValueAction' has the following attributes: 'value' of type bool.
+The class 'fsm::DecreaseValueAction' has the following attributes: 'stepValue' of type int.
+The class 'fsm::LessThanNumberGuard' has no attributes.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'fsm::IncreaseValueAction' has the following attributes: 'stepValue' of type int.
+The class 'fsm::Action' has no attributes.
+The class 'fsm::NumberVariable' has the following attributes: 'initialValue' of type int; 'value' of type bool.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::State' has no attributes.
+The class 'fsm::Variable' has the following attributes: 'name' of type str.
+The class 'Guard' has no attributes.
+The class 'Action' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'fsm::EqualNumberGuard' has no attributes.
+The class 'fsm::NumberGuard' has the following attributes: 'value' of type bool.
+The class 'fsm::Guard' has the following attributes: 'not_' of type bool.
+The class 'Variable' has no attributes.
+The class 'fsm::StateMachine' has no attributes.
+The class 'NumberGuard' has no attributes.
+The class 'fsm::GreaterThanNumberGuard' has no attributes.
+'fsm::NumberVariable' is a specialization of 'Variable'.
+'fsm::GreaterThanNumberGuard' is a specialization of 'NumberGuard'.
+'fsm::AssignValueAction' is a specialization of 'Action'.
+'fsm::LessThanNumberGuard' is a specialization of 'NumberGuard'.
+'fsm::IncreaseValueAction' is a specialization of 'Action'.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::EqualNumberGuard' is a specialization of 'NumberGuard'.
+'fsm::NumberGuard' is a specialization of 'Guard'.
+'fsm::DecreaseValueAction' is a specialization of 'Action'.
+'fsm::Transition' is a specialization of 'NamedElement'.
+'fsm::State' is a specialization of 'NamedElement'.
+'fsm::Action' (role 'fsm_Action23', cardinality 0..*) is associated with 'fsm::NumberVariable' (role 'fsm_NumberVariable24', cardinality 0..*).
+'fsm::StateMachine' (role 'fsm_StateMachine7', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State8', cardinality 0..*).
+'fsm::State' (role 'ownedStates', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'StateMachine', cardinality 0..*).
+'fsm::NumberGuard' (role 'fsm_NumberGuard', cardinality 0..*) is associated with 'fsm::NumberVariable' (role 'fsm_NumberVariable', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine3', cardinality 0..*).
+'fsm::Variable' (role 'fsm_Variable', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine5', cardinality 0..*).
+'fsm::StateMachine' (role 'owningFSM', cardinality 0..*) is associated with 'fsm::State' (role 'State', cardinality 0..*).
+'fsm::State' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition12', cardinality 0..*).
+'fsm::State' (role 'State14', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'fsm::State' (role 'State16', cardinality 0..*) is associated with 'fsm::Transition' (role 'incomingTransitions', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition20', cardinality 0..*) is associated with 'fsm::Action' (role 'fsm_Action', cardinality 0..*).
+'fsm::Guard' (role 'fsm_Guard', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition18', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'library::::cPfS4h9KEeeOINGRvT6ccg' has no attributes.
+The class 'library::Writer' has the following attributes: 'name' of type str.
+The class 'library::::cPfTBB9KEeeOINGRvT6ccg' has no attributes.
+The class 'library::Book' has the following attributes: 'category' of type str; 'title' of type str; 'pages' of type int.
+The class 'library::Library' has the following attributes: 'name' of type str; 'address' of type str.
+The class 'library::Employee' has the following attributes: 'name' of type str; 'age' of type int.
+The class 'library::::cPfTDx9KEeeOINGRvT6ccg' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Mistery', 'Biographie'.
+'library::Library' (role 'library_Library2', cardinality 0..*) is associated with 'library::::cPfTBB9KEeeOINGRvT6ccg' (role 'library__cPfTBB9KEeeOINGRvT6ccg', cardinality 0..*).
+'library::::cPfTDx9KEeeOINGRvT6ccg' (role 'library__cPfTDx9KEeeOINGRvT6ccg6', cardinality 0..*) is associated with 'library::Writer' (role 'library_Writer', cardinality 0..*).
+'library::::cPfTBB9KEeeOINGRvT6ccg' (role 'library__cPfTBB9KEeeOINGRvT6ccg8', cardinality 0..*) is associated with 'library::Book' (role 'library_Book', cardinality 0..*).
+'library::::cPfS4h9KEeeOINGRvT6ccg' (role 'library__cPfS4h9KEeeOINGRvT6ccg', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).
+'library::Library' (role 'library_Library4', cardinality 0..*) is associated with 'library::::cPfTDx9KEeeOINGRvT6ccg' (role 'library__cPfTDx9KEeeOINGRvT6ccg', cardinality 0..*).

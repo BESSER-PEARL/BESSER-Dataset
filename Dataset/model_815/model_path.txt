@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/moliz/moliz.gemoc/examples/fsm/language_workbench/org.modelexecution.xmof.examples.fsm/model/fsm.ecore

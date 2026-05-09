@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'ProcessElement' has no attributes.
+The class 'simplepdl::ProcessElement' has no attributes.
+The class 'simplepdl::Process' has the following attributes: 'name' of type str.
+The class 'simplepdl::Guidance' has the following attributes: 'text' of type str.
+The class 'simplepdl::WorkDefinition' has the following attributes: 'name' of type str.
+The class 'simplepdl::WorkSequence' has the following attributes: 'linkType' of type str.
+The enumeration 'WorkSequenceType' has the following literals: 'finishToFinish', 'finishToStart', 'startToFinish', 'startToStart'.
+'simplepdl::WorkSequence' is a specialization of 'ProcessElement'.
+'simplepdl::WorkDefinition' is a specialization of 'ProcessElement'.
+'simplepdl::Guidance' is a specialization of 'ProcessElement'.
+'simplepdl::WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'successor', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'WorkDefinition', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'linksToSuccessors', cardinality 0..*).
+'simplepdl::ProcessElement' (role 'simplepdl_ProcessElement', cardinality 0..*) is associated with 'simplepdl::Process' (role 'simplepdl_Process', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'WorkSequence3', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'predecessor', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'WorkDefinition6', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'linksToPredecessors', cardinality 0..*).
+'simplepdl::Guidance' (role 'simplepdl_Guidance', cardinality 0..*) is associated with 'simplepdl::ProcessElement' (role 'simplepdl_ProcessElement8', cardinality 0..*).

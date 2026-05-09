@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'family::Person' has the following attributes: 'age' of type int; 'gender' of type str; 'surname' of type str.
+The class 'NamedElement' has no attributes.
+The class 'family::Family' has the following attributes: 'numberOfComponents' of type int; 'familyIncome' of type float.
+The class 'family::NamedElement' has the following attributes: 'name' of type str.
+The class 'family::Members' has the following attributes: 'hasChild' of type bool.
+'family::Members' is a specialization of 'NamedElement'.
+'family::Person' is a specialization of 'NamedElement'.
+'family::Family' is a specialization of 'NamedElement'.
+'family::Members' (role 'family_Members2', cardinality 0..*) is associated with 'family::Family' (role 'family_Family', cardinality 0..*).
+'family::Person' (role 'family_Person', cardinality 0..*) is associated with 'family::Members' (role 'family_Members', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 2 class(es).
+The class 'household::Family' has the following attributes: 'name' of type str.
+The class 'household::Member' has the following attributes: 'name' of type str.
+'household::Family' (role 'household_Family2', cardinality 0..*) is associated with 'household::Member' (role 'household_Member3', cardinality 0..*).
+'household::Family' (role 'household_Family', cardinality 0..*) is associated with 'household::Member' (role 'household_Member', cardinality 0..*).
+'household::Member' (role 'household_Member9', cardinality 0..*) is associated with 'household::Family' (role 'household_Family8', cardinality 0..*).
+'household::Member' (role 'household_Member6', cardinality 0..*) is associated with 'household::Family' (role 'household_Family5', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Dipiert/ifml2php/edu.ifml2php.pim.ifml.gen.lycmm/models/metamodels/Metamodel.ecore

@@ -1,0 +1,41 @@
+The model has 17 class(es).
+The class 'fsm::Join' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'fsm::Region' has no attributes.
+The class 'fsm::Trigger' has the following attributes: 'expression' of type str.
+The class 'fsm::TimedTransition' has the following attributes: 'duration' of type int.
+The class 'NamedElement' has no attributes.
+The class 'fsm::Fork' has no attributes.
+The class 'fsm::CompositeState' has no attributes.
+The class 'fsm::StateMachine' has no attributes.
+The class 'fsm::Transition' has the following attributes: 'finalTime' of type int; 'time' of type int; 'initialTime' of type int.
+The class 'State' has no attributes.
+The class 'fsm::InitialState' has no attributes.
+The class 'fsm::FinalState' has no attributes.
+The class 'fsm::State' has the following attributes: 'finalTime' of type int; 'initialTime' of type int.
+The class 'fsm::Pseudostate' has no attributes.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+The class 'Transition' has no attributes.
+'fsm::Pseudostate' is a specialization of 'State'.
+'fsm::State' is a specialization of 'NamedElement'.
+'fsm::CompositeState' is a specialization of 'State'.
+'fsm::TimedTransition' is a specialization of 'Transition'.
+'fsm::Transition' is a specialization of 'NamedElement'.
+'fsm::Fork' is a specialization of 'Pseudostate'.
+'fsm::InitialState' is a specialization of 'State'.
+'fsm::Join' is a specialization of 'Pseudostate'.
+'fsm::FinalState' is a specialization of 'State'.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::State' (role 'source', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition4', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'stateMachine', cardinality 0..*).
+'fsm::State' (role 'State12', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoing', cardinality 0..*).
+'fsm::StateMachine' (role 'stateMachine2', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition', cardinality 0..*).
+'fsm::State' (role 'target', cardinality 0..*) is associated with 'fsm::Transition' (role 'Transition6', cardinality 0..*).
+'fsm::CompositeState' (role 'fsm_CompositeState', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::CompositeState' (role 'fsm_CompositeState17', cardinality 0..*) is associated with 'fsm::Region' (role 'fsm_Region', cardinality 0..*).
+'fsm::Transition' (role 'incoming', cardinality 0..*) is associated with 'fsm::State' (role 'State10', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition', cardinality 0..*) is associated with 'fsm::Trigger' (role 'fsm_Trigger', cardinality 0..*).
+'fsm::Transition' (role 'transitions', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'StateMachine15', cardinality 0..*).
+'fsm::Region' (role 'fsm_Region19', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State20', cardinality 0..*).
+'fsm::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'fsm::State' (role 'states', cardinality 0..*).
+'fsm::CompositeState' (role 'fsm_CompositeState23', cardinality 0..*) is associated with 'fsm::Region' (role 'fsm_Region22', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'family::FatherInLove' has the following attributes: 'Name' of type str; 'Age' of type int.
+The class 'family::Son' has the following attributes: 'Name' of type str; 'Age' of type int.
+The class 'family::Mother' has the following attributes: 'Age' of type int; 'Name' of type str.
+The class 'family::Daughter' has the following attributes: 'Age' of type int; 'Name' of type str.
+The class 'family::Father' has the following attributes: 'Name' of type str; 'Age' of type int.
+The class 'family::Family' has no attributes.
+'family::Mother' (role 'family_Mother', cardinality 0..*) is associated with 'family::Father' (role 'family_Father', cardinality 0..*).
+'family::Father' (role 'family_Father4', cardinality 0..*) is associated with 'family::Daughter' (role 'family_Daughter', cardinality 0..*).
+'family::Family' (role 'family_Family', cardinality 0..*) is associated with 'family::Father' (role 'family_Father8', cardinality 0..*).
+'family::Mother' (role 'family_Mother6', cardinality 0..*) is associated with 'family::FatherInLove' (role 'family_FatherInLove', cardinality 0..*).
+'family::Father' (role 'family_Father2', cardinality 0..*) is associated with 'family::Son' (role 'family_Son', cardinality 0..*).

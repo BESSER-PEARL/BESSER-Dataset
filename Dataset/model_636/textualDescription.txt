@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'lib::Person' has the following attributes: 'name' of type str.
+The class 'lib::Address' has the following attributes: 'postalCode' of type str.
+The class 'lib::Cafeteria' has the following attributes: 'name' of type str.
+The class 'lib::Library' has the following attributes: 'name' of type str.
+The class 'lib::Book' has the following attributes: 'title' of type str.
+'lib::Cafeteria' (role 'cafeteria', cardinality 0..*) is associated with 'lib::Library' (role 'Library8', cardinality 0..*).
+'lib::Library' (role 'library', cardinality 0..*) is associated with 'lib::Person' (role 'Person', cardinality 0..*).
+'lib::Library' (role 'lib_Library', cardinality 0..*) is associated with 'lib::Book' (role 'lib_Book', cardinality 0..*).
+'lib::Library' (role 'lib_Library2', cardinality 0..*) is associated with 'lib::Address' (role 'lib_Address', cardinality 0..*).
+'lib::Library' (role 'Library', cardinality 0..*) is associated with 'lib::Person' (role 'writers', cardinality 0..*).
+'lib::Cafeteria' (role 'Cafeteria', cardinality 0..*) is associated with 'lib::Library' (role 'library5', cardinality 0..*).

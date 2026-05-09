@@ -1,0 +1,35 @@
+The model has 21 class(es).
+The class 'oclstdlib::OclMessage' has no attributes.
+The class 'oclstdlib::OrderedSet' has no attributes.
+The class 'oclstdlib::OclState' has no attributes.
+The class 'oclstdlib::OclSummable' has no attributes.
+The class 'oclstdlib::OrderedCollection' has no attributes.
+The class 'oclstdlib::Sequence' has no attributes.
+The class 'OclVoid' has no attributes.
+The class 'oclstdlib::OclType' has no attributes.
+The class 'oclstdlib::OclLambda' has no attributes.
+The class 'oclstdlib::Bag' has no attributes.
+The class 'OclAny' has no attributes.
+The class 'OclElement' has no attributes.
+The class 'oclstdlib::OclTuple' has no attributes.
+The class 'oclstdlib::OclAny' has no attributes.
+The class 'oclstdlib::OclVoid' has no attributes.
+The class 'oclstdlib::OclElement' has no attributes.
+The class 'oclstdlib::Collection' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'oclstdlib::Set' has no attributes.
+The class 'oclstdlib::OclInvalid' has no attributes.
+The class 'oclstdlib::UniqueCollection' has no attributes.
+The class 'oclstdlib::OclComparable' has no attributes.
+'oclstdlib::OclComparable' is a specialization of 'OclAny'.
+'oclstdlib::OclMessage' is a specialization of 'OclAny'.
+'oclstdlib::OclInvalid' is a specialization of 'OclVoid'.
+'oclstdlib::OclState' is a specialization of 'OclAny'.
+'oclstdlib::OclElement' is a specialization of 'OclAny'.
+'oclstdlib::OclSummable' is a specialization of 'OclAny'.
+'oclstdlib::OclLambda' is a specialization of 'OclAny'.
+'oclstdlib::Collection' is a specialization of 'OclAny'.
+'oclstdlib::OclVoid' is a specialization of 'OclAny'.
+'oclstdlib::OclType' is a specialization of 'OclElement'.
+'oclstdlib::OclTuple' is a specialization of 'OclAny'.
+'oclstdlib::OclElement' (role 'oclstdlib_OclElement4', cardinality 0..*) is associated with 'oclstdlib::OclElement' (role 'oclstdlib_OclElement2', cardinality 0..*).
+'oclstdlib::OclElement' (role 'oclstdlib_OclElement0', cardinality 0..*) is associated with 'oclstdlib::OclElement' (role 'oclstdlib_OclElement', cardinality 0..*).

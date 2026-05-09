@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'library::Writer' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'library::Book' has the following attributes: 'title' of type str; 'pages' of type int.
+'library::Writer' (role 'library_Writer', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).
+'library::Book' (role 'library_Book', cardinality 0..*) is associated with 'library::Library' (role 'library_Library2', cardinality 0..*).
+'library::Writer' (role 'library_Writer4', cardinality 0..*) is associated with 'library::Book' (role 'library_Book5', cardinality 0..*).
+'library::Writer' (role 'library_Writer8', cardinality 0..*) is associated with 'library::Book' (role 'library_Book7', cardinality 0..*).

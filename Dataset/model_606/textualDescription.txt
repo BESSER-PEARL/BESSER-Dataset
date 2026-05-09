@@ -1,0 +1,39 @@
+The model has 17 class(es).
+The class 'SMVC::EntityController' has the following attributes: 'returnOKURL' of type str; 'returnKOURL' of type str.
+The class 'SMVC::SMVCApplication' has the following attributes: 'name' of type str.
+The class 'SMVC::DataAccessObject' has the following attributes: 'showDirectInstancesOnly' of type bool; 'name' of type str.
+The class 'SMVC::Attribute' has the following attributes: 'type' of type str; 'name' of type str; 'label' of type bool; 'multiValued' of type bool.
+The class 'SMVC::Form' has no attributes.
+The class 'SMVC::Entity' has the following attributes: 'name' of type str.
+The class 'SMVC::Controller' has the following attributes: 'operation' of type str; 'url' of type str.
+The class 'SMVC::EntityComponent' has no attributes.
+The class 'SMVC::Link' has the following attributes: 'url' of type str.
+The class 'SMVC::Page' has the following attributes: 'title' of type str.
+The class 'SMVC::SupportedOperation' has the following attributes: 'operationKind' of type str; 'url' of type str.
+The class 'SMVC::View' has the following attributes: 'text' of type str.
+The class 'SMVC::List' has no attributes.
+The class 'Controller' has no attributes.
+The class 'EntityComponent' has no attributes.
+The class 'Component' has no attributes.
+The class 'SMVC::Component' has no attributes.
+The enumeration 'AttributeType' has the following literals: 'VARCHAR', 'BIGINTEGER', 'DOUBLE', 'VOID', 'OID'.
+The enumeration 'Operation' has the following literals: 'readONE', 'read', 'readALL', 'delete', 'forward', '_create', 'update'.
+'SMVC::Form' is a specialization of 'EntityComponent'.
+'SMVC::EntityController' is a specialization of 'Controller'.
+'SMVC::EntityComponent' is a specialization of 'Component'.
+'SMVC::List' is a specialization of 'EntityComponent'.
+'SMVC::Entity' (role 'SMVC_Entity17', cardinality 0..*) is associated with 'SMVC::DataAccessObject' (role 'SMVC_DataAccessObject16', cardinality 0..*).
+'SMVC::Entity' (role 'SMVC_Entity', cardinality 0..*) is associated with 'SMVC::SMVCApplication' (role 'SMVC_SMVCApplication7', cardinality 0..*).
+'SMVC::Attribute' (role 'SMVC_Attribute', cardinality 0..*) is associated with 'SMVC::Entity' (role 'SMVC_Entity19', cardinality 0..*).
+'SMVC::Attribute' (role 'SMVC_Attribute21', cardinality 0..*) is associated with 'SMVC::Entity' (role 'SMVC_Entity22', cardinality 0..*).
+'SMVC::View' (role 'SMVC_View', cardinality 0..*) is associated with 'SMVC::Page' (role 'SMVC_Page26', cardinality 0..*).
+'SMVC::View' (role 'SMVC_View28', cardinality 0..*) is associated with 'SMVC::Component' (role 'SMVC_Component', cardinality 0..*).
+'SMVC::SMVCApplication' (role 'SMVC_SMVCApplication', cardinality 0..*) is associated with 'SMVC::Controller' (role 'SMVC_Controller', cardinality 0..*).
+'SMVC::Controller' (role 'SMVC_Controller12', cardinality 0..*) is associated with 'SMVC::Page' (role 'SMVC_Page', cardinality 0..*).
+'SMVC::EntityComponent' (role 'SMVC_EntityComponent', cardinality 0..*) is associated with 'SMVC::Entity' (role 'SMVC_Entity30', cardinality 0..*).
+'SMVC::SupportedOperation' (role 'SMVC_SupportedOperation', cardinality 0..*) is associated with 'SMVC::List' (role 'SMVC_List', cardinality 0..*).
+'SMVC::EntityController' (role 'SMVC_EntityController', cardinality 0..*) is associated with 'SMVC::DataAccessObject' (role 'SMVC_DataAccessObject14', cardinality 0..*).
+'SMVC::Controller' (role 'SMVC_Controller3', cardinality 0..*) is associated with 'SMVC::SMVCApplication' (role 'SMVC_SMVCApplication2', cardinality 0..*).
+'SMVC::Controller' (role 'SMVC_Controller8', cardinality 0..*) is associated with 'SMVC::Controller' (role 'SMVC_Controller10', cardinality 0..*).
+'SMVC::Page' (role 'SMVC_Page24', cardinality 0..*) is associated with 'SMVC::Link' (role 'SMVC_Link', cardinality 0..*).
+'SMVC::DataAccessObject' (role 'SMVC_DataAccessObject', cardinality 0..*) is associated with 'SMVC::SMVCApplication' (role 'SMVC_SMVCApplication5', cardinality 0..*).

@@ -1,0 +1,22 @@
+The model has 5 class(es).
+The class 'fsm::Transition' has the following attributes: 'trigger' of type str; 'action' of type str; 'name' of type str.
+The class 'fsm::System' has no attributes.
+The class 'fsm::Buffer' has the following attributes: 'name' of type str; 'initialValue' of type str; 'currentValues' of type str.
+The class 'fsm::State' has the following attributes: 'name' of type str.
+The class 'fsm::FSM' has the following attributes: 'consummedString' of type str; 'underProcessTrigger' of type str; 'name' of type str.
+'fsm::FSM' (role 'incomingFSM', cardinality 0..*) is associated with 'fsm::Buffer' (role 'Buffer5', cardinality 0..*).
+'fsm::State' (role 'ownedStates', cardinality 0..*) is associated with 'fsm::FSM' (role 'FSM', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm2', cardinality 0..*).
+'fsm::State' (role 'State22', cardinality 0..*) is associated with 'fsm::Transition' (role 'outgoing', cardinality 0..*).
+'fsm::Transition' (role 'Transition11', cardinality 0..*) is associated with 'fsm::State' (role 'tgt', cardinality 0..*).
+'fsm::FSM' (role 'FSM18', cardinality 0..*) is associated with 'fsm::Buffer' (role 'outputBuffer', cardinality 0..*).
+'fsm::Buffer' (role 'Buffer', cardinality 0..*) is associated with 'fsm::FSM' (role 'outgoingFSM', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM8', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State9', cardinality 0..*).
+'fsm::FSM' (role 'FSM16', cardinality 0..*) is associated with 'fsm::Buffer' (role 'inputBuffer', cardinality 0..*).
+'fsm::State' (role 'State20', cardinality 0..*) is associated with 'fsm::Transition' (role 'incoming', cardinality 0..*).
+'fsm::System' (role 'fsm_System28', cardinality 0..*) is associated with 'fsm::Buffer' (role 'fsm_Buffer', cardinality 0..*).
+'fsm::Transition' (role 'Transition13', cardinality 0..*) is associated with 'fsm::State' (role 'src', cardinality 0..*).
+'fsm::Transition' (role 'ownedTransitions', cardinality 0..*) is associated with 'fsm::FSM' (role 'FSM24', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM26', cardinality 0..*) is associated with 'fsm::System' (role 'fsm_System', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm', cardinality 0..*).

@@ -1,0 +1,40 @@
+The model has 19 class(es).
+The class 'Addressable' has no attributes.
+The class 'Item' has no attributes.
+The class 'extlibrary::BookOnTape' has no attributes.
+The class 'extlibrary::Addressable' has the following attributes: 'address' of type str.
+The class 'extlibrary::VideoCassette' has no attributes.
+The class 'extlibrary::CirculatingItem' has no attributes.
+The class 'extlibrary::AudioVisualItem' has the following attributes: 'minutesLength' of type int; 'title' of type str; 'damaged' of type bool.
+The class 'Person' has no attributes.
+The class 'extlibrary::Item' has the following attributes: 'publicationDate' of type date.
+The class 'extlibrary::Book' has the following attributes: 'category' of type str; 'pages' of type int; 'title' of type str.
+The class 'extlibrary::Employee' has no attributes.
+The class 'extlibrary::Periodical' has the following attributes: 'issuesPerYear' of type int; 'title' of type str.
+The class 'extlibrary::Person' has the following attributes: 'lastName' of type str; 'firstName' of type str.
+The class 'extlibrary::Borrower' has no attributes.
+The class 'extlibrary::Lendable' has the following attributes: 'copies' of type int.
+The class 'Lendable' has no attributes.
+The class 'extlibrary::Writer' has the following attributes: 'name' of type str.
+The class 'AudioVisualItem' has no attributes.
+The class 'CirculatingItem' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Biography', 'Mystery'.
+'extlibrary::Person' is a specialization of 'Addressable'.
+'extlibrary::Writer' is a specialization of 'Person'.
+'extlibrary::Borrower' is a specialization of 'Person'.
+'extlibrary::Employee' is a specialization of 'Person'.
+'extlibrary::VideoCassette' is a specialization of 'AudioVisualItem'.
+'extlibrary::CirculatingItem' is a specialization of 'Lendable'.
+'extlibrary::BookOnTape' is a specialization of 'AudioVisualItem'.
+'extlibrary::Periodical' is a specialization of 'Item'.
+'extlibrary::Book' is a specialization of 'CirculatingItem'.
+'extlibrary::AudioVisualItem' is a specialization of 'CirculatingItem'.
+'extlibrary::CirculatingItem' is a specialization of 'Item'.
+'extlibrary::BookOnTape' (role 'extlibrary_BookOnTape', cardinality 0..*) is associated with 'extlibrary::Person' (role 'extlibrary_Person', cardinality 0..*).
+'extlibrary::VideoCassette' (role 'extlibrary_VideoCassette', cardinality 0..*) is associated with 'extlibrary::Person' (role 'extlibrary_Person7', cardinality 0..*).
+'extlibrary::Employee' (role 'extlibrary_Employee', cardinality 0..*) is associated with 'extlibrary::Employee' (role 'extlibrary_Employee9', cardinality 0..*).
+'extlibrary::Writer' (role 'author', cardinality 0..*) is associated with 'extlibrary::Book' (role 'Book', cardinality 0..*).
+'extlibrary::Lendable' (role 'borrowed', cardinality 0..*) is associated with 'extlibrary::Borrower' (role 'Borrower', cardinality 0..*).
+'extlibrary::Writer' (role 'extlibrary_Writer', cardinality 0..*) is associated with 'extlibrary::BookOnTape' (role 'extlibrary_BookOnTape5', cardinality 0..*).
+'extlibrary::Book' (role 'books', cardinality 0..*) is associated with 'extlibrary::Writer' (role 'Writer', cardinality 0..*).
+'extlibrary::Borrower' (role 'borrowers', cardinality 0..*) is associated with 'extlibrary::Lendable' (role 'Lendable', cardinality 0..*).

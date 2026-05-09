@@ -1,0 +1,16 @@
+The model has 3 class(es).
+The class 'families::FamilyModel' has no attributes.
+The class 'families::Member' has the following attributes: 'age' of type int; 'firstName' of type str.
+The class 'families::Family' has the following attributes: 'town' of type str; 'lastName' of type str; 'street' of type str.
+'families::Member' (role 'daughters', cardinality 0..*) is associated with 'families::Family' (role 'Family14', cardinality 0..*).
+'families::FamilyModel' (role 'model', cardinality 0..*) is associated with 'families::Family' (role 'Family18', cardinality 0..*).
+'families::Family' (role 'Family', cardinality 0..*) is associated with 'families::Member' (role 'father', cardinality 0..*).
+'families::Family' (role 'Family12', cardinality 0..*) is associated with 'families::Member' (role 'sons', cardinality 0..*).
+'families::Family' (role 'Family10', cardinality 0..*) is associated with 'families::Member' (role 'mother', cardinality 0..*).
+'families::Member' (role 'Member', cardinality 0..*) is associated with 'families::Family' (role 'familyFather', cardinality 0..*).
+'families::Member' (role 'Member4', cardinality 0..*) is associated with 'families::Family' (role 'familySon', cardinality 0..*).
+'families::FamilyModel' (role 'model20', cardinality 0..*) is associated with 'families::Member' (role 'Member21', cardinality 0..*).
+'families::Member' (role 'members', cardinality 0..*) is associated with 'families::FamilyModel' (role 'FamilyModel16', cardinality 0..*).
+'families::Member' (role 'Member2', cardinality 0..*) is associated with 'families::Family' (role 'familyMother', cardinality 0..*).
+'families::Member' (role 'Member6', cardinality 0..*) is associated with 'families::Family' (role 'familyDaughter', cardinality 0..*).
+'families::Family' (role 'families', cardinality 0..*) is associated with 'families::FamilyModel' (role 'FamilyModel', cardinality 0..*).

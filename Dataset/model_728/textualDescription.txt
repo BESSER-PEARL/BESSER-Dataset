@@ -1,0 +1,171 @@
+The model has 77 class(es).
+The class 'Identifiable' has no attributes.
+The class 'rif12::ExchangeFile::AttributeDefinitionSimple' has no attributes.
+The class 'rif12::ExchangeFile::AttributeValueFileReference' has the following attributes: 'pathToFile' of type str.
+The class 'rif12::ExchangeFile::AttributeValueEnumeration' has no attributes.
+The class 'SpecElementWithUserDefinedAttributes' has no attributes.
+The class 'DatatypeDefinition' has no attributes.
+The class 'SpecType' has no attributes.
+The class 'RIFContent' has no attributes.
+The class 'RIFHeader' has no attributes.
+The class 'AttributeDefinition' has no attributes.
+The class 'rif12::ExchangeFile::RelationGroup' has no attributes.
+The class 'rif12::ExchangeFile::SpecObject' has no attributes.
+The class 'AttributeDefinitionSimple' has no attributes.
+The class 'rif12::ExchangeFile::AttributeDefinitionEnumeration' has the following attributes: 'multiValued' of type str.
+The class 'rif12::ExchangeFile::EmbeddedValue' has the following attributes: 'key' of type str; 'otherContent' of type str.
+The class 'rif12::ExchangeFile::DatatypeDefinitionInteger' has the following attributes: 'max' of type str; 'min' of type str.
+The class 'rif12::ExchangeFile::DatatypeDefinitionEnumeration' has no attributes.
+The class 'rif12::ExchangeFile::RIFContent' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionString' has the following attributes: 'maxLength' of type str.
+The class 'rif12::ExchangeFile::DatatypeDefinitionXmlData' has the following attributes: 'nameSpaceURI' of type str; 'schemaLocation' of type str.
+The class 'AttributeValueComplex' has no attributes.
+The class 'rif12::ExchangeFile::AttributeValueEmbeddedFile' has no attributes.
+The class 'SpecGroupHierarchyRoot' has no attributes.
+The class 'AttributeValueSimple' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionBinaryFile' has the following attributes: 'mimeType' of type str; 'formatName' of type str; 'filenameSuffix' of type str; 'application' of type str.
+The class 'rif12::ExchangeFile::AttributeDefinition' has no attributes.
+The class 'DataTypes::XmlContent' has no attributes.
+The class 'SpecRelation' has no attributes.
+The class 'rif12::ExchangeFile::AttributeValueSimple' has the following attributes: 'theValue' of type str.
+The class 'rif12::ExchangeFile::AttributeValue' has no attributes.
+The class 'rif12::ExchangeFile::AttributeValueXmlData' has no attributes.
+The class 'AccessPolicy' has no attributes.
+The class 'DatatypeDefinitionComplex' has no attributes.
+The class 'EnumValue' has no attributes.
+The class 'rif12::ExchangeFile::SpecElementWithUserDefinedAttributes' has no attributes.
+The class 'AttributeDefinitionComplex' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionSimple' has no attributes.
+The class 'rif12::ExchangeFile::SpecType' has no attributes.
+The class 'rif12::ExchangeFile::EnumValue' has no attributes.
+The class 'SpecObject' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionDocument' has no attributes.
+The class 'EmbeddedValue' has no attributes.
+The class 'SpecGroup' has no attributes.
+The class 'SpecHierarchy' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionReal' has the following attributes: 'accuracy' of type str; 'max' of type str; 'min' of type str.
+The class 'rif12::ExchangeFile::RIF' has no attributes.
+The class 'rif12::ExchangeFile::SpecGroupHierarchy' has no attributes.
+The class 'DataTypes::BinaryContent' has no attributes.
+The class 'SpecHierarchyRoot' has no attributes.
+The class 'rif12::ExchangeFile::AccessPolicy' has the following attributes: 'accessMode' of type str.
+The class 'rif12::ExchangeFile::AttributeValueEmbeddedDocument' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionBoolean' has no attributes.
+The class 'DataTypes::XhtmlContent' has no attributes.
+The class 'AttributeValueEnumeration' has no attributes.
+The class 'rif12::DataTypes::XhtmlContent' has no attributes.
+The class 'rif12::ExchangeFile::SpecGroupHierarchyRoot' has no attributes.
+The class 'AttributeDefinitionEnumeration' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionComplex' has the following attributes: 'embedded' of type str.
+The class 'rif12::ExchangeFile::DatatypeDefinition' has no attributes.
+The class 'rif12::DataTypes::XmlContent' has no attributes.
+The class 'rif12::ExchangeFile::Identifiable' has the following attributes: 'lastChange' of type str; 'longName' of type str; 'desc' of type str; 'identifier' of type str.
+The class 'rif12::ExchangeFile::RIFHeader' has the following attributes: 'sourceToolId' of type str; 'comment' of type str; 'author' of type str; 'title' of type str; 'creationTime' of type str; 'identifier' of type str.
+The class 'rif12::ExchangeFile::SpecHierarchyRoot' has no attributes.
+The class 'DatatypeDefinitionEnumeration' has no attributes.
+The class 'SpecGroupHierarchy' has no attributes.
+The class 'RelationGroup' has no attributes.
+The class 'rif12::ExchangeFile::AttributeValueComplex' has no attributes.
+The class 'rif12::DataTypes::BinaryContent' has no attributes.
+The class 'rif12::ExchangeFile::SpecRelation' has no attributes.
+The class 'rif12::ExchangeFile::AttributeDefinitionComplex' has no attributes.
+The class 'rif12::ExchangeFile::SpecHierarchy' has no attributes.
+The class 'DatatypeDefinitionSimple' has no attributes.
+The class 'rif12::ExchangeFile::RIFToolExtension' has no attributes.
+The class 'rif12::ExchangeFile::DatatypeDefinitionDate' has the following attributes: 'format' of type str.
+The class 'rif12::ExchangeFile::SpecGroup' has no attributes.
+The class 'AttributeValue' has no attributes.
+The class 'RIFToolExtension' has no attributes.
+The enumeration 'DatatypeDefinitionDateFormatEnum' has the following literals: 'W3C', 'CUSTOM'.
+The enumeration 'AccessPolicyAccessModeEnum' has the following literals: 'EDIT', 'DELETE', 'CREATE'.
+'rif12::ExchangeFile::EnumValue' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::SpecType' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::DatatypeDefinitionBinaryFile' is a specialization of 'DatatypeDefinitionComplex'.
+'rif12::ExchangeFile::DatatypeDefinition' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::AttributeDefinitionComplex' is a specialization of 'AttributeDefinition'.
+'rif12::ExchangeFile::AttributeValueXmlData' is a specialization of 'AttributeValueComplex'.
+'rif12::ExchangeFile::DatatypeDefinitionSimple' is a specialization of 'DatatypeDefinition'.
+'rif12::ExchangeFile::DatatypeDefinitionBoolean' is a specialization of 'DatatypeDefinitionSimple'.
+'rif12::ExchangeFile::SpecGroup' is a specialization of 'SpecElementWithUserDefinedAttributes'.
+'rif12::ExchangeFile::DatatypeDefinitionInteger' is a specialization of 'DatatypeDefinitionSimple'.
+'rif12::ExchangeFile::SpecGroupHierarchyRoot' is a specialization of 'SpecElementWithUserDefinedAttributes'.
+'rif12::ExchangeFile::AttributeValueEmbeddedFile' is a specialization of 'AttributeValueComplex'.
+'rif12::ExchangeFile::AttributeValueSimple' is a specialization of 'AttributeValue'.
+'rif12::ExchangeFile::SpecHierarchyRoot' is a specialization of 'SpecElementWithUserDefinedAttributes'.
+'rif12::ExchangeFile::AttributeValueEmbeddedDocument' is a specialization of 'AttributeValueComplex'.
+'rif12::ExchangeFile::SpecObject' is a specialization of 'SpecElementWithUserDefinedAttributes'.
+'rif12::ExchangeFile::DatatypeDefinitionString' is a specialization of 'DatatypeDefinitionSimple'.
+'rif12::ExchangeFile::SpecRelation' is a specialization of 'SpecElementWithUserDefinedAttributes'.
+'rif12::ExchangeFile::AttributeValueComplex' is a specialization of 'AttributeValue'.
+'rif12::ExchangeFile::SpecHierarchy' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::AccessPolicy' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::DatatypeDefinitionComplex' is a specialization of 'DatatypeDefinition'.
+'rif12::ExchangeFile::RelationGroup' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::DatatypeDefinitionDate' is a specialization of 'DatatypeDefinitionSimple'.
+'rif12::ExchangeFile::AttributeValueEnumeration' is a specialization of 'AttributeValue'.
+'rif12::ExchangeFile::DatatypeDefinitionReal' is a specialization of 'DatatypeDefinitionSimple'.
+'rif12::ExchangeFile::AttributeDefinitionSimple' is a specialization of 'AttributeDefinition'.
+'rif12::ExchangeFile::DatatypeDefinitionXmlData' is a specialization of 'DatatypeDefinitionComplex'.
+'rif12::ExchangeFile::DatatypeDefinitionEnumeration' is a specialization of 'DatatypeDefinition'.
+'rif12::ExchangeFile::AttributeDefinitionEnumeration' is a specialization of 'AttributeDefinition'.
+'rif12::ExchangeFile::SpecGroupHierarchy' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::AttributeDefinition' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::DatatypeDefinitionDocument' is a specialization of 'DatatypeDefinitionComplex'.
+'rif12::ExchangeFile::AttributeValueFileReference' is a specialization of 'AttributeValueComplex'.
+'rif12::ExchangeFile::AttributeValue' is a specialization of 'Identifiable'.
+'rif12::ExchangeFile::SpecElementWithUserDefinedAttributes' is a specialization of 'Identifiable'.
+'RIFHeader' (role 'RIFHeader', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIF' (role 'rif12_ExchangeFile_RIF', cardinality 0..*).
+'AttributeDefinition' (role 'AttributeDefinition', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecType' (role 'rif12_ExchangeFile_SpecType', cardinality 0..*).
+'DatatypeDefinition' (role 'DatatypeDefinition', cardinality 0..*) is associated with 'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy35', cardinality 0..*).
+'rif12::ExchangeFile::SpecHierarchy' (role 'rif12_ExchangeFile_SpecHierarchy10', cardinality 0..*) is associated with 'SpecHierarchy' (role 'SpecHierarchy11', cardinality 0..*).
+'rif12::ExchangeFile::AttributeValueSimple' (role 'rif12_ExchangeFile_AttributeValueSimple', cardinality 0..*) is associated with 'AttributeDefinitionSimple' (role 'AttributeDefinitionSimple', cardinality 0..*).
+'SpecType' (role 'SpecType', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecElementWithUserDefinedAttributes' (role 'rif12_ExchangeFile_SpecElementWithUserDefinedAttributes', cardinality 0..*).
+'rif12::ExchangeFile::SpecHierarchy' (role 'rif12_ExchangeFile_SpecHierarchy', cardinality 0..*) is associated with 'SpecObject' (role 'SpecObject', cardinality 0..*).
+'rif12::ExchangeFile::RelationGroup' (role 'rif12_ExchangeFile_RelationGroup18', cardinality 0..*) is associated with 'SpecType' (role 'SpecType19', cardinality 0..*).
+'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy', cardinality 0..*) is associated with 'SpecGroupHierarchyRoot' (role 'SpecGroupHierarchyRoot', cardinality 0..*).
+'DatatypeDefinitionEnumeration' (role 'DatatypeDefinitionEnumeration', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeDefinitionEnumeration' (role 'rif12_ExchangeFile_AttributeDefinitionEnumeration', cardinality 0..*).
+'rif12::ExchangeFile::AttributeValueFileReference' (role 'rif12_ExchangeFile_AttributeValueFileReference', cardinality 0..*) is associated with 'AttributeDefinitionComplex' (role 'AttributeDefinitionComplex80', cardinality 0..*).
+'rif12::ExchangeFile::SpecHierarchy' (role 'rif12_ExchangeFile_SpecHierarchy7', cardinality 0..*) is associated with 'AttributeValue' (role 'AttributeValue8', cardinality 0..*).
+'AttributeValue' (role 'AttributeValue41', cardinality 0..*) is associated with 'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy40', cardinality 0..*).
+'SpecHierarchy' (role 'SpecHierarchy47', cardinality 0..*) is associated with 'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy46', cardinality 0..*).
+'DataTypes::XhtmlContent' (role 'DataTypes_XhtmlContent', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeValueEmbeddedDocument' (role 'rif12_ExchangeFile_AttributeValueEmbeddedDocument74', cardinality 0..*).
+'SpecHierarchyRoot' (role 'SpecHierarchyRoot', cardinality 0..*) is associated with 'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy52', cardinality 0..*).
+'DatatypeDefinitionSimple' (role 'DatatypeDefinitionSimple', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeDefinitionSimple' (role 'rif12_ExchangeFile_AttributeDefinitionSimple', cardinality 0..*).
+'rif12::ExchangeFile::AttributeDefinitionSimple' (role 'rif12_ExchangeFile_AttributeDefinitionSimple70', cardinality 0..*) is associated with 'AttributeValueSimple' (role 'AttributeValueSimple', cardinality 0..*).
+'AttributeDefinitionComplex' (role 'AttributeDefinitionComplex82', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeValueXmlData' (role 'rif12_ExchangeFile_AttributeValueXmlData', cardinality 0..*).
+'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent95', cardinality 0..*) is associated with 'SpecHierarchyRoot' (role 'SpecHierarchyRoot96', cardinality 0..*).
+'SpecGroupHierarchyRoot' (role 'SpecGroupHierarchyRoot105', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent104', cardinality 0..*).
+'rif12::ExchangeFile::AttributeValueEmbeddedFile' (role 'rif12_ExchangeFile_AttributeValueEmbeddedFile', cardinality 0..*) is associated with 'AttributeDefinitionComplex' (role 'AttributeDefinitionComplex76', cardinality 0..*).
+'SpecObject' (role 'SpecObject21', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecRelation' (role 'rif12_ExchangeFile_SpecRelation', cardinality 0..*).
+'rif12::ExchangeFile::SpecHierarchyRoot' (role 'rif12_ExchangeFile_SpecHierarchyRoot', cardinality 0..*) is associated with 'SpecHierarchy' (role 'SpecHierarchy', cardinality 0..*).
+'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy43', cardinality 0..*) is associated with 'SpecType' (role 'SpecType44', cardinality 0..*).
+'SpecObject' (role 'SpecObject13', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecGroup' (role 'rif12_ExchangeFile_SpecGroup', cardinality 0..*).
+'SpecGroup' (role 'SpecGroup55', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecGroupHierarchy' (role 'rif12_ExchangeFile_SpecGroupHierarchy', cardinality 0..*).
+'SpecGroup' (role 'SpecGroup102', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent101', cardinality 0..*).
+'rif12::ExchangeFile::SpecGroupHierarchyRoot' (role 'rif12_ExchangeFile_SpecGroupHierarchyRoot', cardinality 0..*) is associated with 'SpecGroupHierarchy' (role 'SpecGroupHierarchy', cardinality 0..*).
+'AttributeValue' (role 'AttributeValue', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecElementWithUserDefinedAttributes' (role 'rif12_ExchangeFile_SpecElementWithUserDefinedAttributes3', cardinality 0..*).
+'SpecRelation' (role 'SpecRelation111', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent110', cardinality 0..*).
+'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy27', cardinality 0..*) is associated with 'SpecGroup' (role 'SpecGroup', cardinality 0..*).
+'AttributeValueEnumeration' (role 'AttributeValueEnumeration', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeDefinitionEnumeration' (role 'rif12_ExchangeFile_AttributeDefinitionEnumeration61', cardinality 0..*).
+'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent107', cardinality 0..*) is associated with 'SpecType' (role 'SpecType108', cardinality 0..*).
+'EnumValue' (role 'EnumValue65', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeValueEnumeration' (role 'rif12_ExchangeFile_AttributeValueEnumeration', cardinality 0..*).
+'EnumValue' (role 'EnumValue', cardinality 0..*) is associated with 'rif12::ExchangeFile::DatatypeDefinitionEnumeration' (role 'rif12_ExchangeFile_DatatypeDefinitionEnumeration', cardinality 0..*).
+'rif12::ExchangeFile::AttributeValueEnumeration' (role 'rif12_ExchangeFile_AttributeValueEnumeration67', cardinality 0..*) is associated with 'AttributeDefinitionEnumeration' (role 'AttributeDefinitionEnumeration', cardinality 0..*).
+'DataTypes::XmlContent' (role 'DataTypes_XmlContent', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeValueXmlData' (role 'rif12_ExchangeFile_AttributeValueXmlData84', cardinality 0..*).
+'rif12::ExchangeFile::AttributeValueEmbeddedFile' (role 'rif12_ExchangeFile_AttributeValueEmbeddedFile78', cardinality 0..*) is associated with 'DataTypes::BinaryContent' (role 'DataTypes_BinaryContent', cardinality 0..*).
+'RIFContent' (role 'RIFContent', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIF' (role 'rif12_ExchangeFile_RIF87', cardinality 0..*).
+'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy32', cardinality 0..*) is associated with 'RelationGroup' (role 'RelationGroup33', cardinality 0..*).
+'AttributeDefinitionComplex' (role 'AttributeDefinitionComplex', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeValueEmbeddedDocument' (role 'rif12_ExchangeFile_AttributeValueEmbeddedDocument', cardinality 0..*).
+'rif12::ExchangeFile::SpecRelation' (role 'rif12_ExchangeFile_SpecRelation23', cardinality 0..*) is associated with 'SpecObject' (role 'SpecObject24', cardinality 0..*).
+'RelationGroup' (role 'RelationGroup', cardinality 0..*) is associated with 'rif12::ExchangeFile::SpecGroup' (role 'rif12_ExchangeFile_SpecGroup15', cardinality 0..*).
+'rif12::ExchangeFile::RIF' (role 'rif12_ExchangeFile_RIF89', cardinality 0..*) is associated with 'RIFToolExtension' (role 'RIFToolExtension', cardinality 0..*).
+'SpecRelation' (role 'SpecRelation38', cardinality 0..*) is associated with 'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy37', cardinality 0..*).
+'AccessPolicy' (role 'AccessPolicy', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent', cardinality 0..*).
+'rif12::ExchangeFile::RelationGroup' (role 'rif12_ExchangeFile_RelationGroup', cardinality 0..*) is associated with 'SpecRelation' (role 'SpecRelation', cardinality 0..*).
+'EmbeddedValue' (role 'EmbeddedValue', cardinality 0..*) is associated with 'rif12::ExchangeFile::EnumValue' (role 'rif12_ExchangeFile_EnumValue', cardinality 0..*).
+'SpecObject' (role 'SpecObject99', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent98', cardinality 0..*).
+'DatatypeDefinition' (role 'DatatypeDefinition93', cardinality 0..*) is associated with 'rif12::ExchangeFile::RIFContent' (role 'rif12_ExchangeFile_RIFContent92', cardinality 0..*).
+'SpecObject' (role 'SpecObject50', cardinality 0..*) is associated with 'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy49', cardinality 0..*).
+'rif12::ExchangeFile::AccessPolicy' (role 'rif12_ExchangeFile_AccessPolicy29', cardinality 0..*) is associated with 'AttributeDefinition' (role 'AttributeDefinition30', cardinality 0..*).
+'rif12::ExchangeFile::AttributeDefinitionComplex' (role 'rif12_ExchangeFile_AttributeDefinitionComplex58', cardinality 0..*) is associated with 'AttributeValueComplex' (role 'AttributeValueComplex', cardinality 0..*).
+'DatatypeDefinitionComplex' (role 'DatatypeDefinitionComplex', cardinality 0..*) is associated with 'rif12::ExchangeFile::AttributeDefinitionComplex' (role 'rif12_ExchangeFile_AttributeDefinitionComplex', cardinality 0..*).

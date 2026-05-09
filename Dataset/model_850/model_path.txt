@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jonasanker/mdse-exercises/02_fsm/jonas/org.mdse.fsm/model/FSM.ecore

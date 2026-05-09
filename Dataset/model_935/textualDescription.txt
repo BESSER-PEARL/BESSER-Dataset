@@ -1,0 +1,229 @@
+The model has 113 class(es).
+The class 'uma::TermDefinition' has no attributes.
+The class 'uma::DescriptorDescription' has the following attributes: 'refinedDescription' of type str.
+The class 'uma::Element' has no attributes.
+The class 'uma::BreakdownElementDescription' has the following attributes: 'usageGuidance' of type str.
+The class 'uma::Deliverable' has the following attributes: 'deliveredWorkProduct' of type str; 'group3' of type str.
+The class 'uma::MethodElementProperty' has the following attributes: 'value' of type str.
+The class 'uma::WorkOrder' has the following attributes: 'linkType' of type str; 'id' of type str; 'properties' of type str; 'value' of type str.
+The class 'uma::ProcessDescription' has the following attributes: 'usageNotes' of type str; 'scope' of type str.
+The class 'DescribableElement' has no attributes.
+The class 'uma::PracticeDescription' has the following attributes: 'goals' of type str; 'problem' of type str; 'background' of type str; 'additionalInfo' of type str; 'application' of type str; 'levelsOfAdoption' of type str.
+The class 'MethodUnit' has no attributes.
+The class 'uma::Milestone' has the following attributes: 'requiredResult' of type str.
+The class 'uma::RoleDescriptor' has the following attributes: 'role' of type str; 'responsibleFor' of type str.
+The class 'uma::ProcessElement' has no attributes.
+The class 'uma::ContentElement' has the following attributes: 'reusableAsset' of type str; 'supportingMaterial' of type str; 'checklist' of type str; 'variabilityType' of type str; 'whitepaper' of type str; 'variabilityBasedOnElement' of type str; 'concept' of type str; 'example' of type str; 'guideline' of type str; 'group1' of type str.
+The class 'uma::Example' has no attributes.
+The class 'uma::Kind' has the following attributes: 'applicableMetaClassInfo' of type str.
+The class 'RoleDescriptor' has no attributes.
+The class 'uma::MethodLibrary' has the following attributes: 'tool' of type str.
+The class 'uma::Concept' has no attributes.
+The class 'uma::Iteration' has no attributes.
+The class 'uma::MethodUnit' has the following attributes: 'version' of type str; 'authors' of type str; 'copyright' of type str; 'changeDescription' of type str; 'changeDate' of type str.
+The class 'uma::MethodPlugin' has the following attributes: 'userChangeable' of type str; 'supporting' of type str; 'referencedMethodPlugin' of type str.
+The class 'PackageableElement' has no attributes.
+The class 'uma::PackageableElement' has no attributes.
+The class 'uma::Estimate' has the following attributes: 'estimationMetric' of type str; 'estimationConsiderations' of type str; 'group2' of type str.
+The class 'NamedElement' has no attributes.
+The class 'uma::Whitepaper' has no attributes.
+The class 'uma::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'uma::SupportingMaterial' has no attributes.
+The class 'Descriptor' has no attributes.
+The class 'uma::RoleSet' has the following attributes: 'group2' of type str; 'role' of type str.
+The class 'uma::Report' has no attributes.
+The class 'uma::CapabilityPattern' has no attributes.
+The class 'uma::NamedElement' has the following attributes: 'name' of type str.
+The class 'ContentElement' has no attributes.
+The class 'uma::GuidanceDescription' has the following attributes: 'attachment' of type str.
+The class 'uma::DescribableElement' has the following attributes: 'fulfill' of type str; 'shapeicon' of type str; 'nodeicon' of type str; 'isAbstract' of type str.
+The class 'uma::Template' has no attributes.
+The class 'uma::TaskDescription' has the following attributes: 'purpose' of type str; 'alternatives' of type str.
+The class 'BreakdownElement' has no attributes.
+The class 'BreakdownElementDescription' has no attributes.
+The class 'uma::CompositeRole' has the following attributes: 'group2' of type str.
+The class 'uma::Discipline' has the following attributes: 'task' of type str; 'referenceWorkflow' of type str; 'group2' of type str.
+The class 'uma::WorkProductType' has the following attributes: 'group2' of type str; 'workProduct' of type str.
+The class 'uma::ActivityDescription' has the following attributes: 'howToStaff' of type str; 'purpose' of type str; 'alternatives' of type str.
+The class 'uma::Practice' has the following attributes: 'group2' of type str; 'contentReference' of type str; 'activityReference' of type str.
+The class 'WorkProduct' has no attributes.
+The class 'uma::MethodElement' has the following attributes: 'orderingGuide' of type str; 'presentationName' of type str; 'group' of type str; 'suppressed' of type str; 'id' of type str; 'briefDescription' of type str.
+The class 'Element' has no attributes.
+The class 'uma::WorkProduct' has the following attributes: 'report' of type str; 'toolMentor' of type str; 'estimate' of type str; 'estimationConsiderations' of type str; 'group2' of type str; 'template' of type str.
+The class 'Concept' has no attributes.
+The class 'MethodPackage' has no attributes.
+The class 'uma::ContentDescription' has the following attributes: 'keyConsiderations' of type str; 'mainDescription' of type str; 'externalId' of type str.
+The class 'uma::WorkProductDescriptor' has the following attributes: 'group2' of type str; 'activityExitState' of type str; 'responsibleRole' of type str; 'mandatoryInputTo' of type str; 'optionalInputTo' of type str; 'externalInputTo' of type str; 'activityEntryState' of type str; 'workProduct' of type str; 'outputFrom' of type str; 'impacts' of type str; 'deliverableParts' of type str; 'impactedBy' of type str.
+The class 'uma::Task' has the following attributes: 'postcondition' of type str; 'additionallyPerformedBy' of type str; 'group2' of type str; 'toolMentor' of type str; 'mandatoryInput' of type str; 'estimationConsiderations' of type str; 'estimate' of type str; 'output' of type str; 'performedBy' of type str; 'optionalInput' of type str; 'precondition' of type str.
+The class 'uma::ReusableAsset' has no attributes.
+The class 'uma::WorkDefinition' has the following attributes: 'postcondition' of type str; 'precondition' of type str.
+The class 'uma::Checklist' has no attributes.
+The class 'uma::BreakdownElement' has the following attributes: 'isOptional' of type str; 'example' of type str; 'isPlanned' of type str; 'presentedAfter' of type str; 'reusableAsset' of type str; 'concept' of type str; 'guideline' of type str; 'group1' of type str; 'planningData' of type str; 'supportingMaterial' of type str; 'prefix' of type str; 'hasMultipleOccurrences' of type str; 'checklist' of type str; 'whitepaper' of type str; 'superActivity' of type str; 'presentedBefore' of type str.
+The class 'uma::Roadmap' has no attributes.
+The class 'WorkBreakdownElement' has no attributes.
+The class 'uma::ContentCategoryPackage' has the following attributes: 'group2' of type str.
+The class 'uma::RoleDescription' has the following attributes: 'skills' of type str; 'assignmentApproaches' of type str; 'synonyms' of type str.
+The class 'uma::DeliverableDescription' has the following attributes: 'externalDescription' of type str; 'packagingGuidance' of type str.
+The class 'uma::DeliveryProcessDescription' has the following attributes: 'scale' of type str; 'riskLevel' of type str; 'estimatingTechnique' of type str; 'projectMemberExpertise' of type str; 'projectCharacteristics' of type str; 'typeOfContract' of type str.
+The class 'ActivityDescription' has no attributes.
+The class 'uma::WorkProductDescription' has the following attributes: 'purpose' of type str; 'impactOfNotHaving' of type str; 'reasonsForNotNeeding' of type str.
+The class 'uma::EstimationConsiderations' has no attributes.
+The class 'ProcessPackage' has no attributes.
+The class 'MethodElement' has no attributes.
+The class 'WorkProductDescription' has no attributes.
+The class 'uma::ProcessComponentInterface' has the following attributes: 'group2' of type str.
+The class 'Activity' has no attributes.
+The class 'uma::MethodConfiguration' has the following attributes: 'processView' of type str; 'addedCategory' of type str; 'methodPluginSelection' of type str; 'methodPackageSelection' of type str; 'subtractedCategory' of type str; 'defaultView' of type str; 'baseConfiguration' of type str.
+The class 'Guidance' has no attributes.
+The class 'uma::TaskDescriptor' has the following attributes: 'mandatoryInput' of type str; 'task' of type str; 'optionalInput' of type str; 'performedPrimarilyBy' of type str; 'assistedBy' of type str; 'externalInput' of type str; 'output' of type str; 'additionallyPerformedBy' of type str; 'group3' of type str; 'isSynchronizedWithSource' of type str.
+The class 'uma::RoleSetGrouping' has the following attributes: 'roleSet' of type str; 'group2' of type str.
+The class 'uma::Descriptor' has the following attributes: 'isSynchronizedWithSource' of type str.
+The class 'uma::WorkBreakdownElement' has the following attributes: 'isEventDriven' of type str; 'isRepeatable' of type str; 'isOngoing' of type str; 'group2' of type str.
+The class 'ProcessDescription' has no attributes.
+The class 'uma::Domain' has the following attributes: 'group2' of type str; 'workProduct' of type str.
+The class 'uma::ApplicableMetaClassInfo' has the following attributes: 'isPrimaryExtension' of type str.
+The class 'uma::ToolMentor' has no attributes.
+The class 'uma::Tool' has the following attributes: 'group2' of type str; 'toolMentor' of type str.
+The class 'uma::Outcome' has no attributes.
+The class 'ContentCategory' has no attributes.
+The class 'uma::Role' has the following attributes: 'group2' of type str; 'responsibleFor' of type str.
+The class 'uma::MethodPackage' has the following attributes: 'group1' of type str; 'global_' of type str; 'reusedPackage' of type str.
+The class 'uma::ProcessPlanningTemplate' has the following attributes: 'baseProcess' of type str; 'group4' of type str.
+The class 'uma::EstimatingMetric' has no attributes.
+The class 'uma::Phase' has no attributes.
+The class 'uma::ContentPackage' has the following attributes: 'group2' of type str.
+The class 'uma::Artifact' has the following attributes: 'group3' of type str.
+The class 'uma::ArtifactDescription' has the following attributes: 'representationOptions' of type str; 'representation' of type str; 'briefOutline' of type str; 'notation' of type str.
+The class 'uma::Guidance' has no attributes.
+The class 'uma::DisciplineGrouping' has the following attributes: 'discipline' of type str; 'group2' of type str.
+The class 'uma::Section' has the following attributes: 'description' of type str; 'variabilityType' of type str; 'predecessor' of type str; 'sectionName' of type str; 'variabilityBasedOnElement' of type str.
+The class 'uma::Activity' has the following attributes: 'isEnactable' of type str; 'postcondition' of type str; 'variabilityType' of type str; 'precondition' of type str; 'roadmap' of type str; 'group3' of type str; 'variabilityBasedOnElement' of type str.
+The class 'uma::ContentCategory' has no attributes.
+The class 'uma::ProcessPackage' has the following attributes: 'group2' of type str.
+The class 'uma::CustomCategory' has the following attributes: 'subCategory' of type str; 'group2' of type str; 'categorizedElement' of type str.
+The class 'uma::Guideline' has no attributes.
+The class 'uma::ProcessComponent' has the following attributes: 'version' of type str; 'changeDate' of type str; 'copyright' of type str; 'authors' of type str; 'changeDescription' of type str.
+The class 'uma::TeamProfile' has the following attributes: 'group2' of type str; 'role' of type str; 'subTeam' of type str; 'superTeam' of type str.
+The class 'uma::PlanningData' has the following attributes: 'rank' of type str; 'finishDate' of type str; 'startDate' of type str.
+The class 'ContentDescription' has no attributes.
+The class 'uma::EStringToStringMapEntry' has no attributes.
+The class 'Process' has no attributes.
+The class 'uma::Process' has the following attributes: 'validContext' of type str; 'defaultContext' of type str; 'diagramURI' of type str; 'includesPattern' of type str.
+The class 'ProcessElement' has no attributes.
+The class 'uma::Constraint' has the following attributes: 'mainDescription' of type str.
+The class 'uma::DeliveryProcess' has the following attributes: 'educationMaterial' of type str; 'communicationsMaterial' of type str; 'group4' of type str.
+The enumeration 'VariabilityType' has the following literals: 'na', 'replaces', 'extendsReplaces', 'localContribution', 'localReplacement', 'extends', 'contributes'.
+The enumeration 'WorkOrderType' has the following literals: 'finishToStart', 'finishToFinish', 'startToFinish', 'startToStart'.
+'uma::Discipline' is a specialization of 'ContentCategory'.
+'uma::DeliverableDescription' is a specialization of 'WorkProductDescription'.
+'uma::SupportingMaterial' is a specialization of 'Guidance'.
+'uma::TaskDescription' is a specialization of 'ContentDescription'.
+'uma::Template' is a specialization of 'Guidance'.
+'uma::Tool' is a specialization of 'ContentCategory'.
+'uma::Section' is a specialization of 'MethodElement'.
+'uma::Checklist' is a specialization of 'Guidance'.
+'uma::Guidance' is a specialization of 'ContentElement'.
+'uma::Milestone' is a specialization of 'WorkBreakdownElement'.
+'uma::MethodElementProperty' is a specialization of 'PackageableElement'.
+'uma::Report' is a specialization of 'Guidance'.
+'uma::MethodConfiguration' is a specialization of 'MethodUnit'.
+'uma::Constraint' is a specialization of 'MethodElement'.
+'uma::Practice' is a specialization of 'Guidance'.
+'uma::ApplicableMetaClassInfo' is a specialization of 'PackageableElement'.
+'uma::Artifact' is a specialization of 'WorkProduct'.
+'uma::ContentElement' is a specialization of 'DescribableElement'.
+'uma::PlanningData' is a specialization of 'ProcessElement'.
+'uma::DisciplineGrouping' is a specialization of 'ContentCategory'.
+'uma::Guideline' is a specialization of 'Guidance'.
+'uma::WorkProductDescription' is a specialization of 'ContentDescription'.
+'uma::RoleSet' is a specialization of 'ContentCategory'.
+'uma::NamedElement' is a specialization of 'Element'.
+'uma::ProcessPackage' is a specialization of 'MethodPackage'.
+'uma::WorkDefinition' is a specialization of 'MethodElement'.
+'uma::Task' is a specialization of 'ContentElement'.
+'uma::WorkProduct' is a specialization of 'ContentElement'.
+'uma::ReusableAsset' is a specialization of 'Guidance'.
+'uma::ActivityDescription' is a specialization of 'BreakdownElementDescription'.
+'uma::ToolMentor' is a specialization of 'Guidance'.
+'uma::MethodUnit' is a specialization of 'MethodElement'.
+'uma::DeliveryProcess' is a specialization of 'Process'.
+'uma::Phase' is a specialization of 'Activity'.
+'uma::DescriptorDescription' is a specialization of 'BreakdownElementDescription'.
+'uma::BreakdownElementDescription' is a specialization of 'ContentDescription'.
+'uma::EstimationConsiderations' is a specialization of 'Guidance'.
+'uma::ContentDescription' is a specialization of 'MethodUnit'.
+'uma::Concept' is a specialization of 'Guidance'.
+'uma::PackageableElement' is a specialization of 'NamedElement'.
+'uma::TermDefinition' is a specialization of 'Guidance'.
+'uma::Kind' is a specialization of 'ContentElement'.
+'uma::TeamProfile' is a specialization of 'BreakdownElement'.
+'uma::MethodPlugin' is a specialization of 'MethodUnit'.
+'uma::GuidanceDescription' is a specialization of 'ContentDescription'.
+'uma::RoleDescriptor' is a specialization of 'Descriptor'.
+'uma::ProcessComponent' is a specialization of 'ProcessPackage'.
+'uma::DescribableElement' is a specialization of 'MethodElement'.
+'uma::WorkBreakdownElement' is a specialization of 'BreakdownElement'.
+'uma::Domain' is a specialization of 'ContentCategory'.
+'uma::Estimate' is a specialization of 'Guidance'.
+'uma::Role' is a specialization of 'ContentElement'.
+'uma::ProcessDescription' is a specialization of 'ActivityDescription'.
+'uma::Process' is a specialization of 'Activity'.
+'uma::ProcessComponentInterface' is a specialization of 'BreakdownElement'.
+'uma::EstimatingMetric' is a specialization of 'Guidance'.
+'uma::ContentPackage' is a specialization of 'MethodPackage'.
+'uma::DeliveryProcessDescription' is a specialization of 'ProcessDescription'.
+'uma::Outcome' is a specialization of 'WorkProduct'.
+'uma::Whitepaper' is a specialization of 'Concept'.
+'uma::PracticeDescription' is a specialization of 'ContentDescription'.
+'uma::MethodLibrary' is a specialization of 'MethodUnit'.
+'uma::CapabilityPattern' is a specialization of 'Process'.
+'uma::RoleDescription' is a specialization of 'ContentDescription'.
+'uma::MethodElement' is a specialization of 'PackageableElement'.
+'uma::ArtifactDescription' is a specialization of 'WorkProductDescription'.
+'uma::CompositeRole' is a specialization of 'RoleDescriptor'.
+'uma::ContentCategoryPackage' is a specialization of 'MethodPackage'.
+'uma::RoleSetGrouping' is a specialization of 'ContentCategory'.
+'uma::Descriptor' is a specialization of 'BreakdownElement'.
+'uma::Activity' is a specialization of 'WorkBreakdownElement'.
+'uma::ProcessPlanningTemplate' is a specialization of 'Process'.
+'uma::Deliverable' is a specialization of 'WorkProduct'.
+'uma::ProcessElement' is a specialization of 'DescribableElement'.
+'uma::Example' is a specialization of 'Guidance'.
+'uma::TaskDescriptor' is a specialization of 'WorkBreakdownElement'.
+'uma::BreakdownElement' is a specialization of 'ProcessElement'.
+'uma::WorkProductType' is a specialization of 'ContentCategory'.
+'uma::Roadmap' is a specialization of 'Guidance'.
+'uma::WorkProductDescriptor' is a specialization of 'Descriptor'.
+'uma::ContentCategory' is a specialization of 'ContentElement'.
+'uma::CustomCategory' is a specialization of 'ContentCategory'.
+'uma::Iteration' is a specialization of 'Activity'.
+'uma::MethodPackage' is a specialization of 'MethodElement'.
+'uma::MethodLibrary' (role 'uma_MethodLibrary27', cardinality 0..*) is associated with 'uma::MethodPlugin' (role 'uma_MethodPlugin28', cardinality 0..*).
+'uma::MethodElement' (role 'uma_MethodElement', cardinality 0..*) is associated with 'uma::Constraint' (role 'uma_Constraint', cardinality 0..*).
+'uma::ProcessComponent' (role 'uma_ProcessComponent41', cardinality 0..*) is associated with 'uma::Process' (role 'uma_Process', cardinality 0..*).
+'uma::Domain' (role 'uma_Domain', cardinality 0..*) is associated with 'uma::Domain' (role 'uma_Domain21', cardinality 0..*).
+'uma::ProcessComponentInterface' (role 'uma_ProcessComponentInterface45', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'uma_WorkProductDescriptor', cardinality 0..*).
+'uma::ProcessComponentInterface' (role 'uma_ProcessComponentInterface', cardinality 0..*) is associated with 'uma::ProcessComponent' (role 'uma_ProcessComponent', cardinality 0..*).
+'uma::Role' (role 'uma_Role', cardinality 0..*) is associated with 'uma::CompositeRole' (role 'uma_CompositeRole', cardinality 0..*).
+'uma::Discipline' (role 'uma_Discipline', cardinality 0..*) is associated with 'uma::Discipline' (role 'uma_Discipline9', cardinality 0..*).
+'uma::EStringToStringMapEntry' (role 'uma_EStringToStringMapEntry14', cardinality 0..*) is associated with 'uma::DocumentRoot' (role 'uma_DocumentRoot13', cardinality 0..*).
+'uma::Section' (role 'uma_Section52', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'uma_TaskDescriptor51', cardinality 0..*).
+'uma::DocumentRoot' (role 'uma_DocumentRoot16', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration', cardinality 0..*).
+'uma::Practice' (role 'uma_Practice37', cardinality 0..*) is associated with 'uma::Practice' (role 'uma_Practice', cardinality 0..*).
+'uma::WorkOrder' (role 'uma_WorkOrder', cardinality 0..*) is associated with 'uma::WorkBreakdownElement' (role 'uma_WorkBreakdownElement', cardinality 0..*).
+'uma::TaskDescriptor' (role 'uma_TaskDescriptor', cardinality 0..*) is associated with 'uma::ProcessComponentInterface' (role 'uma_ProcessComponentInterface43', cardinality 0..*).
+'uma::Activity' (role 'uma_Activity', cardinality 0..*) is associated with 'uma::BreakdownElement' (role 'uma_BreakdownElement', cardinality 0..*).
+'uma::MethodElement' (role 'uma_MethodElement25', cardinality 0..*) is associated with 'uma::MethodElementProperty' (role 'uma_MethodElementProperty', cardinality 0..*).
+'uma::Section' (role 'uma_Section', cardinality 0..*) is associated with 'uma::ContentDescription' (role 'uma_ContentDescription', cardinality 0..*).
+'uma::ContentElement' (role 'uma_ContentElement', cardinality 0..*) is associated with 'uma::ContentPackage' (role 'uma_ContentPackage', cardinality 0..*).
+'uma::DocumentRoot' (role 'uma_DocumentRoot20', cardinality 0..*) is associated with 'uma::MethodPlugin' (role 'uma_MethodPlugin', cardinality 0..*).
+'uma::Artifact' (role 'uma_Artifact0', cardinality 0..*) is associated with 'uma::Artifact' (role 'uma_Artifact', cardinality 0..*).
+'uma::MethodPlugin' (role 'uma_MethodPlugin35', cardinality 0..*) is associated with 'uma::MethodPackage' (role 'uma_MethodPackage36', cardinality 0..*).
+'uma::DocumentRoot' (role 'uma_DocumentRoot', cardinality 0..*) is associated with 'uma::EStringToStringMapEntry' (role 'uma_EStringToStringMapEntry', cardinality 0..*).
+'uma::ContentCategoryPackage' (role 'uma_ContentCategoryPackage', cardinality 0..*) is associated with 'uma::ContentCategory' (role 'uma_ContentCategory', cardinality 0..*).
+'uma::MethodLibrary' (role 'uma_MethodLibrary30', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration31', cardinality 0..*).
+'uma::ProcessElement' (role 'uma_ProcessElement', cardinality 0..*) is associated with 'uma::ProcessPackage' (role 'uma_ProcessPackage', cardinality 0..*).
+'uma::MethodLibrary' (role 'uma_MethodLibrary', cardinality 0..*) is associated with 'uma::DocumentRoot' (role 'uma_DocumentRoot18', cardinality 0..*).
+'uma::MethodPackage' (role 'uma_MethodPackage32', cardinality 0..*) is associated with 'uma::MethodPackage' (role 'uma_MethodPackage', cardinality 0..*).
+'uma::Section' (role 'uma_Section49', cardinality 0..*) is associated with 'uma::Section' (role 'uma_Section47', cardinality 0..*).
+'uma::DescribableElement' (role 'uma_DescribableElement', cardinality 0..*) is associated with 'uma::ContentDescription' (role 'uma_ContentDescription8', cardinality 0..*).

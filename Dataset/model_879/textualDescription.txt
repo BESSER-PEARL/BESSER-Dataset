@@ -1,0 +1,39 @@
+The model has 14 class(es).
+The class 'simplepdl::Guidance' has the following attributes: 'text' of type str.
+The class 'ProcessElement' has no attributes.
+The class 'simplepdl::Parameter' has the following attributes: 'nbNeeds' of type int; 'name' of type str.
+The class 'Parameter' has no attributes.
+The class 'simplepdl::ParameterWD' has no attributes.
+The class 'simplepdl::ProcessElement' has no attributes.
+The class 'simplepdl::Resource' has the following attributes: 'name' of type str; 'marking' of type int.
+The class 'Activities' has no attributes.
+The class 'simplepdl::SubWorkDefinition' has no attributes.
+The class 'simplepdl::WorkSequence' has the following attributes: 'linkType' of type str; 'name' of type str.
+The class 'simplepdl::ParameterSWD' has no attributes.
+The class 'simplepdl::WorkDefinition' has no attributes.
+The class 'simplepdl::Process' has the following attributes: 'name' of type str; 'max_time' of type int; 'min_time' of type int.
+The class 'simplepdl::Activities' has the following attributes: 'max_time' of type int; 'name' of type str; 'min_time' of type int.
+The enumeration 'WorkSequenceType' has the following literals: 'finishToStart', 'startToFinish', 'finishToFinish', 'startToStart'.
+'simplepdl::WorkDefinition' is a specialization of 'Activities'.
+'simplepdl::SubWorkDefinition' is a specialization of 'Activities'.
+'simplepdl::WorkSequence' is a specialization of 'ProcessElement'.
+'simplepdl::Parameter' is a specialization of 'ProcessElement'.
+'simplepdl::ParameterSWD' is a specialization of 'Parameter'.
+'simplepdl::Guidance' is a specialization of 'ProcessElement'.
+'simplepdl::Activities' is a specialization of 'ProcessElement'.
+'simplepdl::ParameterWD' is a specialization of 'Parameter'.
+'simplepdl::Activities' (role 'parent', cardinality 0..*) is associated with 'simplepdl::SubWorkDefinition' (role 'SubWorkDefinition', cardinality 0..*).
+'simplepdl::ParameterSWD' (role 'simplepdl_ParameterSWD', cardinality 0..*) is associated with 'simplepdl::SubWorkDefinition' (role 'simplepdl_SubWorkDefinition', cardinality 0..*).
+'simplepdl::Parameter' (role 'simplepdl_Parameter', cardinality 0..*) is associated with 'simplepdl::ParameterSWD' (role 'simplepdl_ParameterSWD20', cardinality 0..*).
+'simplepdl::ParameterWD' (role 'ParameterWD', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'workDefinition', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'linksToPredecessors', cardinality 0..*) is associated with 'simplepdl::Activities' (role 'Activities7', cardinality 0..*).
+'simplepdl::Resource' (role 'simplepdl_Resource17', cardinality 0..*) is associated with 'simplepdl::ParameterWD' (role 'simplepdl_ParameterWD', cardinality 0..*).
+'simplepdl::Resource' (role 'simplepdl_Resource', cardinality 0..*) is associated with 'simplepdl::Process' (role 'simplepdl_Process2', cardinality 0..*).
+'simplepdl::SubWorkDefinition' (role 'children', cardinality 0..*) is associated with 'simplepdl::Activities' (role 'Activities14', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'linksToSuccessors', cardinality 0..*) is associated with 'simplepdl::Activities' (role 'Activities', cardinality 0..*).
+'simplepdl::SubWorkDefinition' (role 'simplepdl_SubWorkDefinition23', cardinality 0..*) is associated with 'simplepdl::ParameterSWD' (role 'simplepdl_ParameterSWD22', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'WorkSequence10', cardinality 0..*) is associated with 'simplepdl::Activities' (role 'predecessor', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'simplepdl::Activities' (role 'successor', cardinality 0..*).
+'simplepdl::Guidance' (role 'simplepdl_Guidance', cardinality 0..*) is associated with 'simplepdl::ProcessElement' (role 'simplepdl_ProcessElement4', cardinality 0..*).
+'simplepdl::ParameterWD' (role 'needsWD', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'WorkDefinition', cardinality 0..*).
+'simplepdl::ProcessElement' (role 'simplepdl_ProcessElement', cardinality 0..*) is associated with 'simplepdl::Process' (role 'simplepdl_Process', cardinality 0..*).

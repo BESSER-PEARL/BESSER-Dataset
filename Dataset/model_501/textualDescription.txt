@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'Families::Father' has no attributes.
+The class 'Families::Member' has the following attributes: 'firstName' of type str.
+The class 'Families::Daughter' has no attributes.
+The class 'Families::Mother' has no attributes.
+The class 'Families::Family' has the following attributes: 'lastName' of type str.
+The class 'Member' has no attributes.
+The class 'Families::Son' has no attributes.
+'Families::Son' is a specialization of 'Member'.
+'Families::Father' is a specialization of 'Member'.
+'Families::Mother' is a specialization of 'Member'.
+'Families::Daughter' is a specialization of 'Member'.
+'Families::Daughter' (role 'Daughter', cardinality 0..*) is associated with 'Families::Family' (role 'familyDaughter', cardinality 0..*).
+'Families::Family' (role 'Family', cardinality 0..*) is associated with 'Families::Father' (role 'father', cardinality 0..*).
+'Families::Son' (role 'sons', cardinality 0..*) is associated with 'Families::Family' (role 'Family8', cardinality 0..*).
+'Families::Family' (role 'familyFather', cardinality 0..*) is associated with 'Families::Father' (role 'Father', cardinality 0..*).
+'Families::Family' (role 'familyMother', cardinality 0..*) is associated with 'Families::Mother' (role 'Mother', cardinality 0..*).
+'Families::Family' (role 'Family10', cardinality 0..*) is associated with 'Families::Daughter' (role 'daughters', cardinality 0..*).
+'Families::Family' (role 'familySon', cardinality 0..*) is associated with 'Families::Son' (role 'Son', cardinality 0..*).
+'Families::Family' (role 'Family6', cardinality 0..*) is associated with 'Families::Mother' (role 'mother', cardinality 0..*).

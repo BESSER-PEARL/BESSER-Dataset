@@ -1,0 +1,47 @@
+The model has 22 class(es).
+The class 'Event' has no attributes.
+The class 'SimplePDLSemantics::DDMMSimplePDL::ProcessElement' has no attributes.
+The class 'WorkDefinitionEvent' has no attributes.
+The class 'SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent' has the following attributes: 'name' of type str; 'date' of type int; 'internal' of type bool.
+The class 'SimplePDLSemantics::DDMMSimplePDL::Process' has the following attributes: 'name' of type str.
+The class 'SimplePDLSemantics::EDMMSimplePDL::StartWD' has no attributes.
+The class 'WorkSequence' has no attributes.
+The class 'WorkDefinition' has no attributes.
+The class 'SimplePDLSemantics::TM3SimplePDL::SPDLTrace' has no attributes.
+The class 'SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition' has the following attributes: 'state' of type str; 'timeElapsed' of type float; 'time' of type str.
+The class 'SimplePDLSemantics::DDMMSimplePDL::WorkSequence' has the following attributes: 'linkType' of type str.
+The class 'Process' has no attributes.
+The class 'SPDLTrace' has no attributes.
+The class 'SimplePDLSemantics::TM3SimplePDL::SPDLScenario' has no attributes.
+The class 'SimplePDLSemantics::DDMMSimplePDL::WorkDefinition' has the following attributes: 'name' of type str.
+The class 'ProcessElement' has no attributes.
+The class 'SimplePDLSemantics::EDMMSimplePDL::FinishWD' has no attributes.
+The class 'SPDLScenario' has no attributes.
+The class 'SimplePDLSemantics::EDMMSimplePDL::Event' has no attributes.
+The class 'SimplePDLSemantics::DDMMSimplePDL::Guidance' has the following attributes: 'text' of type str.
+The class 'SPDLSimEvent' has no attributes.
+The class 'SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent' has no attributes.
+The enumeration 'WorkSequenceType' has the following literals: 'startToStart', 'finishToFinish', 'startToFinish', 'finishToStart'.
+The enumeration 'TimeState' has the following literals: 'inTime', 'tooLate', 'tooEarly'.
+The enumeration 'ExecutionState' has the following literals: 'notStarted', 'finished', 'running'.
+'SimplePDLSemantics::EDMMSimplePDL::Event' is a specialization of 'SPDLSimEvent'.
+'SimplePDLSemantics::DDMMSimplePDL::WorkSequence' is a specialization of 'ProcessElement'.
+'SimplePDLSemantics::DDMMSimplePDL::Guidance' is a specialization of 'ProcessElement'.
+'SimplePDLSemantics::EDMMSimplePDL::FinishWD' is a specialization of 'WorkDefinitionEvent'.
+'SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent' is a specialization of 'Event'.
+'SimplePDLSemantics::EDMMSimplePDL::StartWD' is a specialization of 'WorkDefinitionEvent'.
+'SimplePDLSemantics::DDMMSimplePDL::WorkDefinition' is a specialization of 'ProcessElement'.
+'SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition' is a specialization of 'WorkDefinition'.
+'SimplePDLSemantics::TM3SimplePDL::SPDLTrace' (role 'traces', cardinality 0..*) is associated with 'SPDLScenario' (role 'SPDLScenario', cardinality 0..*).
+'WorkDefinition' (role 'WorkDefinition15', cardinality 0..*) is associated with 'SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent' (role 'SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent', cardinality 0..*).
+'WorkDefinition' (role 'WorkDefinition', cardinality 0..*) is associated with 'SimplePDLSemantics::DDMMSimplePDL::Process' (role 'process', cardinality 0..*).
+'SimplePDLSemantics::DDMMSimplePDL::WorkSequence' (role 'linksToPredecessors', cardinality 0..*) is associated with 'WorkDefinition' (role 'WorkDefinition9', cardinality 0..*).
+'ProcessElement' (role 'ProcessElement', cardinality 0..*) is associated with 'SimplePDLSemantics::DDMMSimplePDL::Process' (role 'parent', cardinality 0..*).
+'SimplePDLSemantics::DDMMSimplePDL::ProcessElement' (role 'processElements', cardinality 0..*) is associated with 'Process' (role 'Process11', cardinality 0..*).
+'WorkDefinition' (role 'WorkDefinition7', cardinality 0..*) is associated with 'SimplePDLSemantics::DDMMSimplePDL::WorkSequence' (role 'linksToSuccessors', cardinality 0..*).
+'SPDLSimEvent' (role 'SPDLSimEvent', cardinality 0..*) is associated with 'SimplePDLSemantics::TM3SimplePDL::SPDLScenario' (role 'SimplePDLSemantics_TM3SimplePDL_SPDLScenario', cardinality 0..*).
+'WorkSequence' (role 'WorkSequence4', cardinality 0..*) is associated with 'SimplePDLSemantics::DDMMSimplePDL::WorkDefinition' (role 'predecessor', cardinality 0..*).
+'WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'SimplePDLSemantics::DDMMSimplePDL::WorkDefinition' (role 'successor', cardinality 0..*).
+'Process' (role 'Process', cardinality 0..*) is associated with 'SimplePDLSemantics::DDMMSimplePDL::WorkDefinition' (role 'from_', cardinality 0..*).
+'SimplePDLSemantics::TM3SimplePDL::SPDLScenario' (role 'scenario', cardinality 0..*) is associated with 'SPDLTrace' (role 'SPDLTrace', cardinality 0..*).
+'SimplePDLSemantics::DDMMSimplePDL::Guidance' (role 'SimplePDLSemantics_DDMMSimplePDL_Guidance', cardinality 0..*) is associated with 'ProcessElement' (role 'ProcessElement13', cardinality 0..*).

@@ -1,0 +1,76 @@
+The model has 36 class(es).
+The class 'DataType' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'emof::Parameter' has no attributes.
+The class 'emof::Object' has no attributes.
+The class 'Object' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'emof::Class' has the following attributes: 'isAbstract' of type str.
+The class 'Class' has no attributes.
+The class 'emof::PrimitiveType' has no attributes.
+The class 'Tag' has no attributes.
+The class 'emof::TypedElement' has no attributes.
+The class 'Comment' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'emof::Comment' has no attributes.
+The class 'emof::Extent' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Package' has no attributes.
+The class 'Type' has no attributes.
+The class 'emof::Element' has no attributes.
+The class 'emof::Type' has no attributes.
+The class 'Property' has no attributes.
+The class 'emof::Enumeration' has no attributes.
+The class 'emof::Operation' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'emof::URIExtent' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Extent' has no attributes.
+The class 'emof::EnumerationLiteral' has no attributes.
+The class 'emof::Tag' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'emof::MultiplicityElement' has the following attributes: 'isOrdered' of type str; 'isUnique' of type str; 'upper' of type str; 'lower' of type str.
+The class 'emof::Property' has the following attributes: 'default' of type str; 'isId' of type str; 'isReadOnly' of type str; 'isDerived' of type str; 'isComposite' of type str.
+The class 'emof::DataType' has no attributes.
+The class 'emof::NamedElement' has the following attributes: 'name' of type str.
+The class 'emof::Package' has the following attributes: 'uri' of type str.
+The class 'Element' has no attributes.
+'emof::TypedElement' is a specialization of 'NamedElement'.
+'emof::NamedElement' is a specialization of 'Element'.
+'emof::DataType' is a specialization of 'Type'.
+'emof::Package' is a specialization of 'NamedElement'.
+'emof::EnumerationLiteral' is a specialization of 'NamedElement'.
+'emof::Property' is a specialization of 'MultiplicityElement'.
+'emof::Operation' is a specialization of 'MultiplicityElement'.
+'emof::Extent' is a specialization of 'Object'.
+'emof::PrimitiveType' is a specialization of 'DataType'.
+'emof::Parameter' is a specialization of 'TypedElement'.
+'emof::Tag' is a specialization of 'Element'.
+'emof::Class' is a specialization of 'Type'.
+'emof::Property' is a specialization of 'TypedElement'.
+'emof::Parameter' is a specialization of 'MultiplicityElement'.
+'emof::URIExtent' is a specialization of 'Extent'.
+'emof::Operation' is a specialization of 'TypedElement'.
+'emof::Element' is a specialization of 'Object'.
+'emof::Comment' is a specialization of 'Element'.
+'emof::Type' is a specialization of 'NamedElement'.
+'emof::Enumeration' is a specialization of 'DataType'.
+'emof::Tag' (role 'emof_Tag', cardinality 0..*) is associated with 'Element' (role 'Element', cardinality 0..*).
+'Operation' (role 'Operation22', cardinality 0..*) is associated with 'emof::Parameter' (role 'emof_Parameter', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'emof::Operation' (role 'emof_Operation16', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'emof::Class' (role 'emof_Class', cardinality 0..*).
+'Property' (role 'Property27', cardinality 0..*) is associated with 'emof::Property' (role 'emof_Property26', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'emof::Class' (role 'emof_Class2', cardinality 0..*).
+'Class' (role 'Class24', cardinality 0..*) is associated with 'emof::Property' (role 'emof_Property', cardinality 0..*).
+'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'emof::Enumeration' (role 'emof_Enumeration', cardinality 0..*).
+'Type' (role 'Type20', cardinality 0..*) is associated with 'emof::Package' (role 'emof_Package19', cardinality 0..*).
+'emof::Element' (role 'emof_Element', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'emof::EnumerationLiteral' (role 'emof_EnumerationLiteral', cardinality 0..*) is associated with 'Enumeration' (role 'Enumeration', cardinality 0..*).
+'Class' (role 'Class12', cardinality 0..*) is associated with 'emof::Operation' (role 'emof_Operation', cardinality 0..*).
+'Type' (role 'Type32', cardinality 0..*) is associated with 'emof::TypedElement' (role 'emof_TypedElement', cardinality 0..*).
+'Tag' (role 'Tag', cardinality 0..*) is associated with 'emof::Element' (role 'emof_Element8', cardinality 0..*).
+'emof::Comment' (role 'emof_Comment', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).
+'emof::Class' (role 'emof_Class4', cardinality 0..*) is associated with 'Class' (role 'Class', cardinality 0..*).
+'Package' (role 'Package30', cardinality 0..*) is associated with 'emof::Type' (role 'emof_Type', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'emof::Operation' (role 'emof_Operation14', cardinality 0..*).
+'emof::Package' (role 'emof_Package', cardinality 0..*) is associated with 'Package' (role 'Package', cardinality 0..*).

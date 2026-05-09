@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class UML2_Generalization extends DirectedRelationship {
+
+
+
+
+    public UML2_Generalization(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

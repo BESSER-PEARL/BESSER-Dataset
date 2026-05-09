@@ -1,0 +1,45 @@
+The model has 17 class(es).
+The class 'reservationsystem::SpecificFlight' has the following attributes: 'date' of type date; 'realArriTime' of type date; 'id' of type int; 'realDepTime' of type date; 'status' of type int.
+The class 'reservationsystem::Plane' has the following attributes: 'model' of type str; 'id' of type str; 'capacity' of type int; 'crewNum' of type int.
+The class 'reservationsystem::Pilot' has the following attributes: 'certificationId' of type str; 'experience' of type int.
+The class 'reservationsystem::User' has the following attributes: 'md5Pwd' of type str; 'userName' of type str; 'userType' of type str.
+The class 'reservationsystem::Attendant' has no attributes.
+The class 'reservationsystem::Crew' has the following attributes: 'employeeId' of type str.
+The class 'reservationsystem::Seat' has the following attributes: 'no' of type str; 'isExit' of type bool; 'type' of type int.
+The class 'reservationsystem::GeneralFlight' has the following attributes: 'arrivalTime' of type str; 'flightNo' of type str; 'departureTime' of type str.
+The class 'reservationsystem::Passenger' has the following attributes: 'specialNeeds' of type str; 'foodPref' of type str.
+The class 'reservationsystem::Booking' has the following attributes: 'baggageInfo' of type str; 'bookingStatus' of type int; 'bookNo' of type str.
+The class 'Person' has no attributes.
+The class 'reservationsystem::PaymentInfo' has the following attributes: 'type' of type int; 'status' of type int; 'cardAddr' of type str; 'createTime' of type date; 'id' of type str; 'cardNo' of type str; 'payTime' of type date; 'cardOwner' of type str.
+The class 'reservationsystem::Airport' has the following attributes: 'abbr' of type str; 'id' of type int; 'name' of type str.
+The class 'Booking' has no attributes.
+The class 'Crew' has no attributes.
+The class 'reservationsystem::City' has the following attributes: 'name' of type str; 'id' of type int; 'abbr' of type str.
+The class 'reservationsystem::Person' has the following attributes: 'name' of type str; 'residence' of type str; 'FamilyName' of type str; 'addr' of type str; 'citizenship' of type str; 'birthDate' of type date; 'id' of type int; 'gender' of type int; 'middleName' of type str; 'passportId' of type str; 'phone' of type str; 'email' of type str.
+'reservationsystem::Pilot' is a specialization of 'Crew'.
+'reservationsystem::PaymentInfo' is a specialization of 'Booking'.
+'reservationsystem::Attendant' is a specialization of 'Crew'.
+'reservationsystem::Crew' is a specialization of 'Person'.
+'reservationsystem::Passenger' is a specialization of 'Person'.
+'reservationsystem::Airport' (role 'airport', cardinality 0..*) is associated with 'reservationsystem::City' (role 'City', cardinality 0..*).
+'reservationsystem::Booking' (role 'Booking26', cardinality 0..*) is associated with 'reservationsystem::SpecificFlight' (role 'specificFlight25', cardinality 0..*).
+'reservationsystem::PaymentInfo' (role 'reservationsystem_PaymentInfo', cardinality 0..*) is associated with 'reservationsystem::Booking' (role 'reservationsystem_Booking7', cardinality 0..*).
+'reservationsystem::Passenger' (role 'reservationsystem_Passenger', cardinality 0..*) is associated with 'reservationsystem::Booking' (role 'reservationsystem_Booking', cardinality 0..*).
+'reservationsystem::Passenger' (role 'Passenger', cardinality 0..*) is associated with 'reservationsystem::Booking' (role 'booking', cardinality 0..*).
+'reservationsystem::SpecificFlight' (role 'SpecificFlight14', cardinality 0..*) is associated with 'reservationsystem::GeneralFlight' (role 'generalFlight', cardinality 0..*).
+'reservationsystem::Person' (role 'reservationsystem_Person', cardinality 0..*) is associated with 'reservationsystem::User' (role 'reservationsystem_User', cardinality 0..*).
+'reservationsystem::Seat' (role 'seats37', cardinality 0..*) is associated with 'reservationsystem::Booking' (role 'Booking38', cardinality 0..*).
+'reservationsystem::GeneralFlight' (role 'GeneralFlight', cardinality 0..*) is associated with 'reservationsystem::SpecificFlight' (role 'specificFlight', cardinality 0..*).
+'reservationsystem::Seat' (role 'Seat', cardinality 0..*) is associated with 'reservationsystem::Booking' (role 'book', cardinality 0..*).
+'reservationsystem::SpecificFlight' (role 'specificFlight23', cardinality 0..*) is associated with 'reservationsystem::Crew' (role 'Crew', cardinality 0..*).
+'reservationsystem::SpecificFlight' (role 'SpecificFlight', cardinality 0..*) is associated with 'reservationsystem::Crew' (role 'crew', cardinality 0..*).
+'reservationsystem::GeneralFlight' (role 'reservationsystem_GeneralFlight', cardinality 0..*) is associated with 'reservationsystem::Airport' (role 'reservationsystem_Airport', cardinality 0..*).
+'reservationsystem::Airport' (role 'reservationsystem_Airport18', cardinality 0..*) is associated with 'reservationsystem::GeneralFlight' (role 'reservationsystem_GeneralFlight17', cardinality 0..*).
+'reservationsystem::Plane' (role 'Plane', cardinality 0..*) is associated with 'reservationsystem::SpecificFlight' (role 'specificFlight21', cardinality 0..*).
+'reservationsystem::Seat' (role 'Seat31', cardinality 0..*) is associated with 'reservationsystem::Plane' (role 'plane30', cardinality 0..*).
+'reservationsystem::Seat' (role 'seats', cardinality 0..*) is associated with 'reservationsystem::Plane' (role 'Plane35', cardinality 0..*).
+'reservationsystem::Plane' (role 'plane', cardinality 0..*) is associated with 'reservationsystem::SpecificFlight' (role 'SpecificFlight28', cardinality 0..*).
+'reservationsystem::Booking' (role 'Booking', cardinality 0..*) is associated with 'reservationsystem::Passenger' (role 'passenger', cardinality 0..*).
+'reservationsystem::Booking' (role 'booking10', cardinality 0..*) is associated with 'reservationsystem::SpecificFlight' (role 'SpecificFlight11', cardinality 0..*).
+'reservationsystem::Crew' (role 'reservationsystem_Crew', cardinality 0..*) is associated with 'reservationsystem::Crew' (role 'reservationsystem_Crew1', cardinality 0..*).
+'reservationsystem::Airport' (role 'Airport', cardinality 0..*) is associated with 'reservationsystem::City' (role 'city', cardinality 0..*).

@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class UML2WithID_CallOperationAction extends CallAction {
+
+
+
+
+
+
+    private UML2WithID_InputPin uml2withid_inputpin;
+
+
+
+
+    private UML2WithID_Operation uml2withid_operation;
+
+
+    public UML2WithID_CallOperationAction(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public UML2WithID_InputPin getUml2withid_inputpin() {
+        return uml2withid_inputpin;
+    }
+
+    public void setUml2withid_inputpin(UML2WithID_InputPin uml2withid_inputpin) {
+        this.uml2withid_inputpin = uml2withid_inputpin;
+    }
+    public UML2WithID_Operation getUml2withid_operation() {
+        return uml2withid_operation;
+    }
+
+    public void setUml2withid_operation(UML2WithID_Operation uml2withid_operation) {
+        this.uml2withid_operation = uml2withid_operation;
+    }
+
+}

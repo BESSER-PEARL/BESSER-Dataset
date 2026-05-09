@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class pivot_CallOperationAction extends NamedElement {
+
+
+
+
+
+
+    private pivot_Operation pivot_operation;
+
+
+    public pivot_CallOperationAction(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public pivot_Operation getPivot_operation() {
+        return pivot_operation;
+    }
+
+    public void setPivot_operation(pivot_Operation pivot_operation) {
+        this.pivot_operation = pivot_operation;
+    }
+
+}

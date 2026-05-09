@@ -1,0 +1,15 @@
+The model has 4 class(es).
+The class 'fsmSample::Transition' has the following attributes: 'input' of type str; 'output' of type str.
+The class 'fsmSample::State' has the following attributes: 'name' of type str.
+The class 'fsmSample::Action' has the following attributes: 'name' of type str.
+The class 'fsmSample::FSM' has the following attributes: 'name' of type str.
+'fsmSample::State' (role 'source', cardinality 0..*) is associated with 'fsmSample::Transition' (role 'Transition', cardinality 0..*).
+'fsmSample::State' (role 'target', cardinality 0..*) is associated with 'fsmSample::Transition' (role 'Transition11', cardinality 0..*).
+'fsmSample::State' (role 'State13', cardinality 0..*) is associated with 'fsmSample::Transition' (role 'outgoingTransition', cardinality 0..*).
+'fsmSample::FSM' (role 'fsmSample_FSM3', cardinality 0..*) is associated with 'fsmSample::State' (role 'fsmSample_State4', cardinality 0..*).
+'fsmSample::State' (role 'fsmSample_State', cardinality 0..*) is associated with 'fsmSample::FSM' (role 'fsmSample_FSM', cardinality 0..*).
+'fsmSample::State' (role 'fsmSample_State7', cardinality 0..*) is associated with 'fsmSample::FSM' (role 'fsmSample_FSM6', cardinality 0..*).
+'fsmSample::FSM' (role 'FSM', cardinality 0..*) is associated with 'fsmSample::State' (role 'ownedState', cardinality 0..*).
+'fsmSample::State' (role 'State', cardinality 0..*) is associated with 'fsmSample::FSM' (role 'owningFSM', cardinality 0..*).
+'fsmSample::Action' (role 'fsmSample_Action', cardinality 0..*) is associated with 'fsmSample::Transition' (role 'fsmSample_Transition', cardinality 0..*).
+'fsmSample::State' (role 'State15', cardinality 0..*) is associated with 'fsmSample::Transition' (role 'incomingTransition', cardinality 0..*).

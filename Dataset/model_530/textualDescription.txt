@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'FamilyRegister::FamilyRegister' has no attributes.
+The class 'FamilyRegister::Family' has the following attributes: 'name' of type str.
+The class 'FamilyRegister::Member' has the following attributes: 'name' of type str.
+'FamilyRegister::Member' (role 'FamilyRegister_Member', cardinality 0..*) is associated with 'FamilyRegister::Family' (role 'FamilyRegister_Family2', cardinality 0..*).
+'FamilyRegister::Family' (role 'FamilyRegister_Family4', cardinality 0..*) is associated with 'FamilyRegister::Member' (role 'FamilyRegister_Member5', cardinality 0..*).
+'FamilyRegister::Family' (role 'FamilyRegister_Family', cardinality 0..*) is associated with 'FamilyRegister::FamilyRegister' (role 'FamilyRegister_FamilyRegister', cardinality 0..*).
+'FamilyRegister::Member' (role 'FamilyRegister_Member8', cardinality 0..*) is associated with 'FamilyRegister::Family' (role 'FamilyRegister_Family7', cardinality 0..*).
+'FamilyRegister::Family' (role 'FamilyRegister_Family10', cardinality 0..*) is associated with 'FamilyRegister::Member' (role 'FamilyRegister_Member11', cardinality 0..*).

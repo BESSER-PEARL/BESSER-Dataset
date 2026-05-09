@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'simplepdl::Process' has the following attributes: 'name' of type str.
+The class 'simplepdl::Allocation' has the following attributes: 'count' of type int.
+The class 'ProcessElements' has no attributes.
+The class 'simplepdl::Ressource' has the following attributes: 'name' of type str; 'count' of type int.
+The class 'simplepdl::WorkDefinition' has the following attributes: 'name' of type str.
+The class 'simplepdl::ProcessElements' has no attributes.
+The class 'simplepdl::WorkSequence' has the following attributes: 'linkType' of type str.
+The class 'simplepdl::Guidance' has the following attributes: 'text' of type str.
+The enumeration 'WorkSequenceType' has the following literals: 'finishToStart', 'finishToFinish', 'startToStart', 'startToFinish'.
+'simplepdl::Guidance' is a specialization of 'ProcessElements'.
+'simplepdl::Ressource' is a specialization of 'ProcessElements'.
+'simplepdl::WorkDefinition' is a specialization of 'ProcessElements'.
+'simplepdl::WorkSequence' is a specialization of 'ProcessElements'.
+'simplepdl::WorkSequence' (role 'linksToSuccessors', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'WorkDefinition', cardinality 0..*).
+'simplepdl::Ressource' (role 'simplepdl_Ressource', cardinality 0..*) is associated with 'simplepdl::Allocation' (role 'simplepdl_Allocation11', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'simplepdl_WorkDefinition14', cardinality 0..*) is associated with 'simplepdl::Allocation' (role 'simplepdl_Allocation13', cardinality 0..*).
+'simplepdl::Guidance' (role 'simplepdl_Guidance', cardinality 0..*) is associated with 'simplepdl::ProcessElements' (role 'simplepdl_ProcessElements9', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'linksToPredecessors', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'WorkDefinition7', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'simplepdl_WorkDefinition', cardinality 0..*) is associated with 'simplepdl::Allocation' (role 'simplepdl_Allocation', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'successor', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'WorkSequence', cardinality 0..*).
+'simplepdl::Process' (role 'simplepdl_Process', cardinality 0..*) is associated with 'simplepdl::ProcessElements' (role 'simplepdl_ProcessElements', cardinality 0..*).
+'simplepdl::WorkSequence' (role 'WorkSequence3', cardinality 0..*) is associated with 'simplepdl::WorkDefinition' (role 'predecessor', cardinality 0..*).

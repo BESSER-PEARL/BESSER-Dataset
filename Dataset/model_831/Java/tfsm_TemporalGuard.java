@@ -1,0 +1,45 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class tfsm_TemporalGuard extends Guard {
+
+    private int afterDuration;
+
+
+
+
+
+    private tfsm_FSMClock tfsm_fsmclock;
+
+
+    public tfsm_TemporalGuard(
+        int afterDuration    ) {
+        super(
+        );
+        this.afterDuration = afterDuration;
+    }
+
+
+    public int getAfterduration() {
+        return afterDuration;
+    }
+
+    public void setAfterduration(int afterDuration) {
+        this.afterDuration = afterDuration;
+    }
+
+    public tfsm_FSMClock getTfsm_fsmclock() {
+        return tfsm_fsmclock;
+    }
+
+    public void setTfsm_fsmclock(tfsm_FSMClock tfsm_fsmclock) {
+        this.tfsm_fsmclock = tfsm_fsmclock;
+    }
+
+}

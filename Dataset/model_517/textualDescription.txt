@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'Families::Families' has no attributes.
+The class 'Families::Family' has the following attributes: 'lastname' of type str.
+The class 'Families::Member' has the following attributes: 'firstname' of type str; 'gender' of type str.
+The enumeration 'GenderType' has the following literals: 'female', 'male'.
+'Families::Family' (role 'family', cardinality 0..*) is associated with 'Families::Member' (role 'Member', cardinality 0..*).
+'Families::Families' (role 'Families', cardinality 0..*) is associated with 'Families::Family' (role 'families', cardinality 0..*).
+'Families::Family' (role 'Family', cardinality 0..*) is associated with 'Families::Families' (role 'container', cardinality 0..*).
+'Families::Member' (role 'members', cardinality 0..*) is associated with 'Families::Family' (role 'Family4', cardinality 0..*).

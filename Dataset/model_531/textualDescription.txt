@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'family::Family' has no attributes.
+The class 'Person' has no attributes.
+The class 'family::Mother' has no attributes.
+The class 'family::Father' has no attributes.
+The class 'Parent' has no attributes.
+The class 'family::Child' has no attributes.
+The class 'family::Parent' has no attributes.
+The class 'family::Person' has the following attributes: 'birthdate' of type date; 'firstname' of type str; 'lastname' of type str.
+'family::Child' is a specialization of 'Person'.
+'family::Mother' is a specialization of 'Parent'.
+'family::Parent' is a specialization of 'Person'.
+'family::Father' is a specialization of 'Parent'.
+'family::Parent' (role 'family_Parent', cardinality 0..*) is associated with 'family::Child' (role 'family_Child', cardinality 0..*).
+'family::Father' (role 'family_Father10', cardinality 0..*) is associated with 'family::Child' (role 'family_Child9', cardinality 0..*).
+'family::Mother' (role 'family_Mother', cardinality 0..*) is associated with 'family::Father' (role 'family_Father', cardinality 0..*).
+'family::Child' (role 'family_Child6', cardinality 0..*) is associated with 'family::Mother' (role 'family_Mother7', cardinality 0..*).
+'family::Father' (role 'family_Father3', cardinality 0..*) is associated with 'family::Mother' (role 'family_Mother4', cardinality 0..*).
+'family::Family' (role 'family_Family', cardinality 0..*) is associated with 'family::Person' (role 'family_Person', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'lazy::Writer' has the following attributes: 'name' of type str.
+The class 'lazy::Library' has the following attributes: 'name' of type str.
+The class 'lazy::Book' has the following attributes: 'title' of type str; 'pages' of type str; 'category' of type str.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Biography', 'Mystery'.
+'lazy::Book' (role 'Book', cardinality 0..*) is associated with 'lazy::Writer' (role 'author', cardinality 0..*).
+'lazy::Writer' (role 'lazy_Writer', cardinality 0..*) is associated with 'lazy::Library' (role 'lazy_Library', cardinality 0..*).
+'lazy::Writer' (role 'Writer', cardinality 0..*) is associated with 'lazy::Book' (role 'books', cardinality 0..*).
+'lazy::Book' (role 'lazy_Book', cardinality 0..*) is associated with 'lazy::Library' (role 'lazy_Library3', cardinality 0..*).

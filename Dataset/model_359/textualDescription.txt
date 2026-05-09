@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Asset' has no attributes.
+The class 'Library' has no attributes.
+The class 'libraryExample::Asset' has the following attributes: 'value' of type float.
+The class 'libraryExample::Writer' has the following attributes: 'lastname' of type str; 'name' of type str.
+The class 'libraryExample::SchoolBook' has no attributes.
+The class 'libraryExample::Library' has the following attributes: 'name' of type str.
+The class 'libraryExample::SchoolLibrary' has the following attributes: 'location' of type str.
+The class 'Book' has no attributes.
+The class 'libraryExample::Book' has the following attributes: 'category' of type str; 'pages' of type int; 'title' of type str.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Biography', 'Mystery'.
+'libraryExample::SchoolBook' is a specialization of 'Book'.
+'libraryExample::SchoolBook' is a specialization of 'Asset'.
+'libraryExample::SchoolLibrary' is a specialization of 'Library'.
+'libraryExample::Writer' (role 'writer', cardinality 0..*) is associated with 'libraryExample::Book' (role 'Book', cardinality 0..*).
+'libraryExample::Writer' (role 'Writer', cardinality 0..*) is associated with 'libraryExample::Book' (role 'books', cardinality 0..*).
+'libraryExample::Library' (role 'libraryExample_Library', cardinality 0..*) is associated with 'libraryExample::Book' (role 'libraryExample_Book', cardinality 0..*).
+'libraryExample::Writer' (role 'libraryExample_Writer', cardinality 0..*) is associated with 'libraryExample::Library' (role 'libraryExample_Library2', cardinality 0..*).

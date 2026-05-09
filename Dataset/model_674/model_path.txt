@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/leoCassiau/smallUML/SmallUML/model/smalluml.ecore

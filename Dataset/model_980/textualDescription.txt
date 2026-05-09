@@ -1,0 +1,114 @@
+The model has 43 class(es).
+The class 'henshin::UnaryUnit' has no attributes.
+The class 'henshin::EClass' has no attributes.
+The class 'GraphElement' has no attributes.
+The class 'henshin::EAttribute' has no attributes.
+The class 'henshin::EReference' has no attributes.
+The class 'henshin::Formula' has no attributes.
+The class 'henshin::Node' has no attributes.
+The class 'henshin::Parameter' has no attributes.
+The class 'BinaryFormula' has no attributes.
+The class 'henshin::UnaryFormula' has no attributes.
+The class 'henshin::PriorityUnit' has no attributes.
+The class 'henshin::ParameterMapping' has no attributes.
+The class 'Unit' has no attributes.
+The class 'henshin::NamedElement' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'henshin::EClassifier' has no attributes.
+The class 'MultiUnit' has no attributes.
+The class 'henshin::Xor' has no attributes.
+The class 'henshin::IndependentUnit' has no attributes.
+The class 'henshin::Edge' has the following attributes: 'indexConstant' of type str; 'index' of type str.
+The class 'henshin::MultiUnit' has no attributes.
+The class 'Formula' has no attributes.
+The class 'henshin::ConditionalUnit' has no attributes.
+The class 'henshin::Mapping' has no attributes.
+The class 'henshin::Or' has no attributes.
+The class 'henshin::Not' has no attributes.
+The class 'henshin::SequentialUnit' has the following attributes: 'strict' of type bool; 'rollback' of type bool.
+The class 'henshin::True' has no attributes.
+The class 'henshin::Attribute' has the following attributes: 'value' of type str; 'null' of type bool; 'constant' of type str.
+The class 'henshin::Graph' has no attributes.
+The class 'henshin::NestedCondition' has the following attributes: 'presenceCondition' of type str.
+The class 'NamedElement' has no attributes.
+The class 'UnaryUnit' has no attributes.
+The class 'henshin::Rule' has the following attributes: 'injectiveMatchingPresenceCondition' of type str; 'featureModel' of type str; 'checkDangling' of type bool; 'injectiveMatching' of type bool.
+The class 'henshin::IteratedUnit' has the following attributes: 'iterations' of type str.
+The class 'henshin::BinaryFormula' has no attributes.
+The class 'henshin::And' has no attributes.
+The class 'henshin::Module' has no attributes.
+The class 'henshin::EPackage' has no attributes.
+The class 'henshin::LoopUnit' has no attributes.
+The class 'henshin::Unit' has the following attributes: 'activated' of type bool.
+The class 'henshin::AttributeCondition' has the following attributes: 'conditionText' of type str.
+The class 'UnaryFormula' has no attributes.
+The class 'henshin::GraphElement' has the following attributes: 'action' of type str; 'presenceCondition' of type str.
+'henshin::SequentialUnit' is a specialization of 'MultiUnit'.
+'henshin::Node' is a specialization of 'NamedElement'.
+'henshin::Attribute' is a specialization of 'GraphElement'.
+'henshin::And' is a specialization of 'BinaryFormula'.
+'henshin::Unit' is a specialization of 'NamedElement'.
+'henshin::Node' is a specialization of 'GraphElement'.
+'henshin::Edge' is a specialization of 'GraphElement'.
+'henshin::MultiUnit' is a specialization of 'Unit'.
+'henshin::Parameter' is a specialization of 'NamedElement'.
+'henshin::LoopUnit' is a specialization of 'UnaryUnit'.
+'henshin::IteratedUnit' is a specialization of 'UnaryUnit'.
+'henshin::Rule' is a specialization of 'Unit'.
+'henshin::Graph' is a specialization of 'NamedElement'.
+'henshin::Xor' is a specialization of 'BinaryFormula'.
+'henshin::AttributeCondition' is a specialization of 'NamedElement'.
+'henshin::True' is a specialization of 'Formula'.
+'henshin::Module' is a specialization of 'NamedElement'.
+'henshin::UnaryUnit' is a specialization of 'Unit'.
+'henshin::NestedCondition' is a specialization of 'Formula'.
+'henshin::UnaryFormula' is a specialization of 'Formula'.
+'henshin::BinaryFormula' is a specialization of 'Formula'.
+'henshin::Not' is a specialization of 'UnaryFormula'.
+'henshin::ConditionalUnit' is a specialization of 'Unit'.
+'henshin::Or' is a specialization of 'BinaryFormula'.
+'henshin::IndependentUnit' is a specialization of 'MultiUnit'.
+'henshin::PriorityUnit' is a specialization of 'MultiUnit'.
+'henshin::Unit' (role 'henshin_Unit', cardinality 0..*) is associated with 'henshin::Module' (role 'henshin_Module7', cardinality 0..*).
+'henshin::Unit' (role 'henshin_Unit75', cardinality 0..*) is associated with 'henshin::ConditionalUnit' (role 'henshin_ConditionalUnit74', cardinality 0..*).
+'henshin::Edge' (role 'incoming', cardinality 0..*) is associated with 'henshin::Node' (role 'Node50', cardinality 0..*).
+'henshin::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'henshin::Unit' (role 'unit', cardinality 0..*).
+'henshin::Node' (role 'target', cardinality 0..*) is associated with 'henshin::Edge' (role 'Edge44', cardinality 0..*).
+'henshin::Graph' (role 'Graph53', cardinality 0..*) is associated with 'henshin::Edge' (role 'edges', cardinality 0..*).
+'henshin::Module' (role 'Module4', cardinality 0..*) is associated with 'henshin::Module' (role 'subModules', cardinality 0..*).
+'henshin::Parameter' (role 'henshin_Parameter34', cardinality 0..*) is associated with 'henshin::ParameterMapping' (role 'henshin_ParameterMapping33', cardinality 0..*).
+'henshin::Rule' (role 'Rule', cardinality 0..*) is associated with 'henshin::AttributeCondition' (role 'attributeConditions', cardinality 0..*).
+'henshin::Attribute' (role 'henshin_Attribute', cardinality 0..*) is associated with 'henshin::EAttribute' (role 'henshin_EAttribute', cardinality 0..*).
+'henshin::Formula' (role 'henshin_Formula', cardinality 0..*) is associated with 'henshin::Graph' (role 'henshin_Graph39', cardinality 0..*).
+'henshin::Module' (role 'Module', cardinality 0..*) is associated with 'henshin::Module' (role 'superModule', cardinality 0..*).
+'henshin::Mapping' (role 'henshin_Mapping', cardinality 0..*) is associated with 'henshin::Rule' (role 'henshin_Rule20', cardinality 0..*).
+'henshin::Unit' (role 'henshin_Unit72', cardinality 0..*) is associated with 'henshin::ConditionalUnit' (role 'henshin_ConditionalUnit71', cardinality 0..*).
+'henshin::Graph' (role 'henshin_Graph77', cardinality 0..*) is associated with 'henshin::NestedCondition' (role 'henshin_NestedCondition', cardinality 0..*).
+'henshin::Graph' (role 'henshin_Graph', cardinality 0..*) is associated with 'henshin::Module' (role 'henshin_Module9', cardinality 0..*).
+'henshin::Edge' (role 'henshin_Edge', cardinality 0..*) is associated with 'henshin::EReference' (role 'henshin_EReference', cardinality 0..*).
+'henshin::BinaryFormula' (role 'henshin_BinaryFormula', cardinality 0..*) is associated with 'henshin::Formula' (role 'henshin_Formula84', cardinality 0..*).
+'henshin::Unit' (role 'henshin_Unit69', cardinality 0..*) is associated with 'henshin::ConditionalUnit' (role 'henshin_ConditionalUnit', cardinality 0..*).
+'henshin::Rule' (role 'henshin_Rule23', cardinality 0..*) is associated with 'henshin::Rule' (role 'henshin_Rule21', cardinality 0..*).
+'henshin::Mapping' (role 'henshin_Mapping59', cardinality 0..*) is associated with 'henshin::Node' (role 'henshin_Node60', cardinality 0..*).
+'henshin::AttributeCondition' (role 'AttributeCondition', cardinality 0..*) is associated with 'henshin::Rule' (role 'rule', cardinality 0..*).
+'henshin::Node' (role 'nodes', cardinality 0..*) is associated with 'henshin::Graph' (role 'Graph', cardinality 0..*).
+'henshin::Mapping' (role 'henshin_Mapping62', cardinality 0..*) is associated with 'henshin::Node' (role 'henshin_Node63', cardinality 0..*).
+'henshin::Attribute' (role 'attributes', cardinality 0..*) is associated with 'henshin::Node' (role 'Node56', cardinality 0..*).
+'henshin::Unit' (role 'henshin_Unit67', cardinality 0..*) is associated with 'henshin::MultiUnit' (role 'henshin_MultiUnit', cardinality 0..*).
+'henshin::Parameter' (role 'parameters', cardinality 0..*) is associated with 'henshin::Unit' (role 'Unit', cardinality 0..*).
+'henshin::Parameter' (role 'henshin_Parameter31', cardinality 0..*) is associated with 'henshin::ParameterMapping' (role 'henshin_ParameterMapping30', cardinality 0..*).
+'henshin::BinaryFormula' (role 'henshin_BinaryFormula86', cardinality 0..*) is associated with 'henshin::Formula' (role 'henshin_Formula87', cardinality 0..*).
+'henshin::NestedCondition' (role 'henshin_NestedCondition79', cardinality 0..*) is associated with 'henshin::Mapping' (role 'henshin_Mapping80', cardinality 0..*).
+'henshin::EClassifier' (role 'henshin_EClassifier', cardinality 0..*) is associated with 'henshin::Parameter' (role 'henshin_Parameter', cardinality 0..*).
+'henshin::Node' (role 'node', cardinality 0..*) is associated with 'henshin::Attribute' (role 'Attribute', cardinality 0..*).
+'henshin::ParameterMapping' (role 'henshin_ParameterMapping', cardinality 0..*) is associated with 'henshin::Unit' (role 'henshin_Unit12', cardinality 0..*).
+'henshin::Rule' (role 'henshin_Rule16', cardinality 0..*) is associated with 'henshin::Graph' (role 'henshin_Graph17', cardinality 0..*).
+'henshin::Node' (role 'Node', cardinality 0..*) is associated with 'henshin::Graph' (role 'graph', cardinality 0..*).
+'henshin::Module' (role 'henshin_Module', cardinality 0..*) is associated with 'henshin::EPackage' (role 'henshin_EPackage', cardinality 0..*).
+'henshin::Rule' (role 'henshin_Rule', cardinality 0..*) is associated with 'henshin::Graph' (role 'henshin_Graph14', cardinality 0..*).
+'henshin::UnaryFormula' (role 'henshin_UnaryFormula', cardinality 0..*) is associated with 'henshin::Formula' (role 'henshin_Formula82', cardinality 0..*).
+'henshin::Node' (role 'henshin_Node', cardinality 0..*) is associated with 'henshin::EClass' (role 'henshin_EClass', cardinality 0..*).
+'henshin::Rule' (role 'henshin_Rule25', cardinality 0..*) is associated with 'henshin::Mapping' (role 'henshin_Mapping26', cardinality 0..*).
+'henshin::UnaryUnit' (role 'henshin_UnaryUnit', cardinality 0..*) is associated with 'henshin::Unit' (role 'henshin_Unit65', cardinality 0..*).
+'henshin::Graph' (role 'graph37', cardinality 0..*) is associated with 'henshin::Edge' (role 'Edge', cardinality 0..*).
+'henshin::Edge' (role 'Edge46', cardinality 0..*) is associated with 'henshin::Node' (role 'source', cardinality 0..*).
+'henshin::Edge' (role 'outgoing', cardinality 0..*) is associated with 'henshin::Node' (role 'Node48', cardinality 0..*).

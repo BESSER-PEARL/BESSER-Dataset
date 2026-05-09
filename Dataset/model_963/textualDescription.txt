@@ -1,0 +1,91 @@
+The model has 35 class(es).
+The class 'vml::Graph' has the following attributes: 'title' of type str; 'ID' of type str.
+The class 'vml::Column' has the following attributes: 'columnTitle' of type str.
+The class 'vml::Category' has the following attributes: 'category' of type str.
+The class 'vml::Chart' has the following attributes: 'xTitle' of type str; 'yTitle' of type str; 'ID' of type str; 'title' of type str.
+The class 'vml::LineChart' has no attributes.
+The class 'vml::Table' has the following attributes: 'tableTitle' of type str.
+The class 'vml::Edge' has the following attributes: 'relation' of type str.
+The class 'vml::Model' has no attributes.
+The class 'vml::Point' has no attributes.
+The class 'Diagram' has no attributes.
+The class 'vml::Slice' has the following attributes: 'value' of type int; 'title' of type str.
+The class 'ChartElement' has no attributes.
+The class 'vml::EdgeStyle' has the following attributes: 'directed' of type bool; 'lineStyle' of type str; 'weight' of type float; 'lineWidth' of type int.
+The class 'vml::Bar' has no attributes.
+The class 'Style' has no attributes.
+The class 'vml::Node' has the following attributes: 'title' of type str; 'icone' of type str.
+The class 'vml::NodeStyle' has the following attributes: 'padding' of type int; 'borderWidth' of type int.
+The class 'DiagramElement' has no attributes.
+The class 'vml::DiagramElement' has no attributes.
+The class 'vml::Scatter' has no attributes.
+The class 'Chart' has no attributes.
+The class 'vml::Style' has no attributes.
+The class 'vml::ChartElement' has the following attributes: 'yValue' of type str; 'ID' of type str; 'xValue' of type str.
+The class 'vml::StackBars' has no attributes.
+The class 'vml::GraphStyle' has no attributes.
+The class 'vml::Diagram' has no attributes.
+The class 'vml::Row' has no attributes.
+The class 'vml::Cell' has the following attributes: 'textValue' of type str.
+The class 'vml::ChartWithAxisStyle' has no attributes.
+The class 'vml::Color' has the following attributes: 'red' of type int; 'green' of type int; 'name' of type str; 'blue' of type int.
+The class 'vml::Pie' has the following attributes: 'identifier' of type str; 'title' of type str.
+The class 'vml::StackBarChart' has no attributes.
+The class 'vml::ChartWithoutAxisStyle' has no attributes.
+The class 'GraphStyle' has no attributes.
+The class 'vml::BarChart' has no attributes.
+The enumeration 'LineStyle' has the following literals: 'Solid', 'Dash', 'Dot'.
+'vml::StackBarChart' is a specialization of 'Chart'.
+'vml::NodeStyle' is a specialization of 'GraphStyle'.
+'vml::ChartWithoutAxisStyle' is a specialization of 'Style'.
+'vml::ChartElement' is a specialization of 'DiagramElement'.
+'vml::Pie' is a specialization of 'Diagram'.
+'vml::Point' is a specialization of 'ChartElement'.
+'vml::EdgeStyle' is a specialization of 'GraphStyle'.
+'vml::Slice' is a specialization of 'DiagramElement'.
+'vml::Scatter' is a specialization of 'Chart'.
+'vml::BarChart' is a specialization of 'Chart'.
+'vml::Node' is a specialization of 'DiagramElement'.
+'vml::LineChart' is a specialization of 'Chart'.
+'vml::Edge' is a specialization of 'DiagramElement'.
+'vml::GraphStyle' is a specialization of 'Style'.
+'vml::StackBars' is a specialization of 'ChartElement'.
+'vml::Chart' is a specialization of 'Diagram'.
+'vml::ChartWithAxisStyle' is a specialization of 'Style'.
+'vml::Graph' is a specialization of 'Diagram'.
+'vml::Bar' is a specialization of 'ChartElement'.
+'vml::Pie' (role 'vml_Pie45', cardinality 0..*) is associated with 'vml::ChartWithoutAxisStyle' (role 'vml_ChartWithoutAxisStyle', cardinality 0..*).
+'vml::Graph' (role 'vml_Graph', cardinality 0..*) is associated with 'vml::Node' (role 'vml_Node47', cardinality 0..*).
+'vml::Slice' (role 'vml_Slice', cardinality 0..*) is associated with 'vml::Pie' (role 'vml_Pie', cardinality 0..*).
+'vml::EdgeStyle' (role 'vml_EdgeStyle36', cardinality 0..*) is associated with 'vml::Color' (role 'vml_Color37', cardinality 0..*).
+'vml::StackBars' (role 'vml_StackBars', cardinality 0..*) is associated with 'vml::StackBarChart' (role 'vml_StackBarChart', cardinality 0..*).
+'vml::ChartWithAxisStyle' (role 'vml_ChartWithAxisStyle', cardinality 0..*) is associated with 'vml::Chart' (role 'vml_Chart', cardinality 0..*).
+'vml::DiagramElement' (role 'vml_DiagramElement', cardinality 0..*) is associated with 'vml::Diagram' (role 'vml_Diagram39', cardinality 0..*).
+'vml::Row' (role 'vml_Row8', cardinality 0..*) is associated with 'vml::Cell' (role 'vml_Cell', cardinality 0..*).
+'vml::Node' (role 'Node57', cardinality 0..*) is associated with 'vml::Edge' (role 'incoming', cardinality 0..*).
+'vml::Edge' (role 'Edge54', cardinality 0..*) is associated with 'vml::Node' (role 'target', cardinality 0..*).
+'vml::BarChart' (role 'vml_BarChart', cardinality 0..*) is associated with 'vml::Bar' (role 'vml_Bar', cardinality 0..*).
+'vml::Table' (role 'vml_Table42', cardinality 0..*) is associated with 'vml::DiagramElement' (role 'vml_DiagramElement41', cardinality 0..*).
+'vml::EdgeStyle' (role 'vml_EdgeStyle30', cardinality 0..*) is associated with 'vml::Node' (role 'vml_Node31', cardinality 0..*).
+'vml::Category' (role 'vml_Category', cardinality 0..*) is associated with 'vml::StackBarChart' (role 'vml_StackBarChart62', cardinality 0..*).
+'vml::Edge' (role 'vml_Edge', cardinality 0..*) is associated with 'vml::Graph' (role 'vml_Graph49', cardinality 0..*).
+'vml::StackBars' (role 'vml_StackBars64', cardinality 0..*) is associated with 'vml::Category' (role 'vml_Category65', cardinality 0..*).
+'vml::Node' (role 'vml_Node', cardinality 0..*) is associated with 'vml::EdgeStyle' (role 'vml_EdgeStyle', cardinality 0..*).
+'vml::Model' (role 'vml_Model', cardinality 0..*) is associated with 'vml::Diagram' (role 'vml_Diagram', cardinality 0..*).
+'vml::Edge' (role 'outgoing', cardinality 0..*) is associated with 'vml::Node' (role 'Node', cardinality 0..*).
+'vml::Column' (role 'vml_Column', cardinality 0..*) is associated with 'vml::Table' (role 'vml_Table4', cardinality 0..*).
+'vml::Color' (role 'vml_Color34', cardinality 0..*) is associated with 'vml::EdgeStyle' (role 'vml_EdgeStyle33', cardinality 0..*).
+'vml::Color' (role 'vml_Color27', cardinality 0..*) is associated with 'vml::NodeStyle' (role 'vml_NodeStyle26', cardinality 0..*).
+'vml::NodeStyle' (role 'vml_NodeStyle', cardinality 0..*) is associated with 'vml::Color' (role 'vml_Color', cardinality 0..*).
+'vml::Model' (role 'vml_Model2', cardinality 0..*) is associated with 'vml::Table' (role 'vml_Table', cardinality 0..*).
+'vml::NodeStyle' (role 'vml_NodeStyle20', cardinality 0..*) is associated with 'vml::Color' (role 'vml_Color21', cardinality 0..*).
+'vml::GraphStyle' (role 'vml_GraphStyle', cardinality 0..*) is associated with 'vml::Graph' (role 'vml_Graph51', cardinality 0..*).
+'vml::Color' (role 'vml_Color24', cardinality 0..*) is associated with 'vml::NodeStyle' (role 'vml_NodeStyle23', cardinality 0..*).
+'vml::Cell' (role 'vml_Cell10', cardinality 0..*) is associated with 'vml::Column' (role 'vml_Column11', cardinality 0..*).
+'vml::Point' (role 'vml_Point71', cardinality 0..*) is associated with 'vml::Scatter' (role 'vml_Scatter', cardinality 0..*).
+'vml::StackBars' (role 'vml_StackBars67', cardinality 0..*) is associated with 'vml::Bar' (role 'vml_Bar68', cardinality 0..*).
+'vml::Node' (role 'source', cardinality 0..*) is associated with 'vml::Edge' (role 'Edge', cardinality 0..*).
+'vml::Table' (role 'vml_Table6', cardinality 0..*) is associated with 'vml::Row' (role 'vml_Row', cardinality 0..*).
+'vml::LineChart' (role 'vml_LineChart', cardinality 0..*) is associated with 'vml::Point' (role 'vml_Point', cardinality 0..*).
+'vml::Diagram' (role 'vml_Diagram14', cardinality 0..*) is associated with 'vml::Diagram' (role 'vml_Diagram12', cardinality 0..*).
+'vml::Color' (role 'vml_Color18', cardinality 0..*) is associated with 'vml::NodeStyle' (role 'vml_NodeStyle17', cardinality 0..*).

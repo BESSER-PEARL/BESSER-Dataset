@@ -1,0 +1,50 @@
+The model has 26 class(es).
+The class 'AssistantMVC::ExamItem' has the following attributes: 'question' of type str.
+The class 'Observer' has no attributes.
+The class 'ExamView' has no attributes.
+The class 'ExamItemController' has no attributes.
+The class 'ExamItemView' has no attributes.
+The class 'AssistantMVC::MultipleChoiceController' has no attributes.
+The class 'AssistantMVC::ExamItemController' has no attributes.
+The class 'Controller' has no attributes.
+The class 'AssistantMVC::ExamItemView' has no attributes.
+The class 'AssistantMVC::View' has the following attributes: 'fontName' of type str; 'fontColor' of type str.
+The class 'AssistantMVC::ExamController' has no attributes.
+The class 'AssistantMVC::Observer' has no attributes.
+The class 'Multiple' has no attributes.
+The class 'AssistantMVC::ExamView' has no attributes.
+The class 'AssistantMVC::OpenController' has no attributes.
+The class 'AssistantMVC::Multiple' has the following attributes: 'selectionWay' of type str; 'numberOfChoices' of type int.
+The class 'AssistantMVC::MultipleChoiceView' has no attributes.
+The class 'AssistantMVC::Controller' has no attributes.
+The class 'Observable' has no attributes.
+The class 'AssistantMVC::MultipleChoice' has the following attributes: 'optional' of type bool.
+The class 'AssistantMVC::Observable' has no attributes.
+The class 'AssistantMVC::OpenView' has no attributes.
+The class 'View' has no attributes.
+The class 'AssistantMVC::Open' has no attributes.
+The class 'AssistantMVC::Exam' has no attributes.
+The class 'ExamItem' has no attributes.
+'AssistantMVC::ExamItemController' is a specialization of 'Controller'.
+'AssistantMVC::ExamItem' is a specialization of 'Observable'.
+'AssistantMVC::Open' is a specialization of 'ExamItem'.
+'AssistantMVC::MultipleChoiceView' is a specialization of 'ExamItemView'.
+'AssistantMVC::ExamView' is a specialization of 'View'.
+'AssistantMVC::ExamController' is a specialization of 'Controller'.
+'AssistantMVC::View' is a specialization of 'Observer'.
+'AssistantMVC::MultipleChoiceController' is a specialization of 'ExamItemController'.
+'AssistantMVC::Controller' is a specialization of 'Observer'.
+'AssistantMVC::OpenController' is a specialization of 'ExamItemController'.
+'AssistantMVC::MultipleChoice' is a specialization of 'ExamItem'.
+'AssistantMVC::Multiple' is a specialization of 'Observable'.
+'AssistantMVC::ExamItemView' is a specialization of 'View'.
+'AssistantMVC::OpenView' is a specialization of 'ExamView'.
+'AssistantMVC::MultipleChoiceView' is a specialization of 'Multiple'.
+'AssistantMVC::MultipleChoiceController' is a specialization of 'Multiple'.
+'AssistantMVC::MultipleChoice' is a specialization of 'Multiple'.
+'AssistantMVC::Exam' is a specialization of 'Observable'.
+'AssistantMVC::Observer' (role 'AssistantMVC_Observer', cardinality 0..*) is associated with 'AssistantMVC::Observable' (role 'AssistantMVC_Observable', cardinality 0..*).
+'AssistantMVC::Controller' (role 'AssistantMVC_Controller', cardinality 0..*) is associated with 'AssistantMVC::Exam' (role 'AssistantMVC_Exam2', cardinality 0..*).
+'AssistantMVC::Controller' (role 'AssistantMVC_Controller8', cardinality 0..*) is associated with 'AssistantMVC::View' (role 'AssistantMVC_View7', cardinality 0..*).
+'AssistantMVC::View' (role 'AssistantMVC_View', cardinality 0..*) is associated with 'AssistantMVC::Exam' (role 'AssistantMVC_Exam4', cardinality 0..*).
+'AssistantMVC::ExamItem' (role 'AssistantMVC_ExamItem', cardinality 0..*) is associated with 'AssistantMVC::Exam' (role 'AssistantMVC_Exam', cardinality 0..*).

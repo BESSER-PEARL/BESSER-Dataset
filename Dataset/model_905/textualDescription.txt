@@ -1,0 +1,348 @@
+The model has 137 class(es).
+The class 'spem::ProcessComponent' has no attributes.
+The class 'spem::Default::TaskDefinitionParameter' has the following attributes: 'name' of type str; 'optionality' of type str.
+The class 'spem::uma::Template' has no attributes.
+The class 'spem::ProcessElement' has no attributes.
+The class 'spem::uma::RoleDefinitionPackage' has no attributes.
+The class 'spem::WorkDefinitionPerformer' has no attributes.
+The class 'spem::Guidance' has no attributes.
+The class 'spem::uma::ReusableAsset' has no attributes.
+The class 'uma::spem::RoleDefinition' has no attributes.
+The class 'CapabilityPattern' has no attributes.
+The class 'ProcessElement' has no attributes.
+The class 'spem::uma::Report' has no attributes.
+The class 'spem::MethodContentUse' has the following attributes: 'isSynchronizedWithSource' of type bool.
+The class 'spem::uma::ProcessPlanningTemplate' has no attributes.
+The class 'spem::uma::Checklist' has no attributes.
+The class 'spem::uma::RoleSetPackage' has no attributes.
+The class 'uma::spem::MethodPlugin' has no attributes.
+The class 'spem::uma::DisciplineGrouping' has no attributes.
+The class 'SupportingMaterial' has no attributes.
+The class 'spem::uma::WorkProductKindPackage' has no attributes.
+The class 'uma::spem::MethodConfiguration' has no attributes.
+The class 'spem::PlanningData' has the following attributes: 'startDate' of type date; 'rank' of type int; 'duration' of type str; 'finishDate' of type date.
+The class 'spem::WorkProductDefinition' has no attributes.
+The class 'BreakdownElement' has no attributes.
+The class 'spem::WorkProductPortConnector' has no attributes.
+The class 'spem::uma::Roadmap' has no attributes.
+The class 'VariabilityElement' has no attributes.
+The class 'spem::uma::DisciplinePackage' has no attributes.
+The class 'spem::ProcessPackage' has no attributes.
+The class 'spem::uma::Outcome' has no attributes.
+The class 'spem::MethodContentElement' has no attributes.
+The class 'spem::WorkProductUseRelationship' has the following attributes: 'relationshipKind' of type str.
+The class 'spem::Category' has no attributes.
+The class 'spem::MethodPlugin' has no attributes.
+The class 'spem::uma::DeliveryProcessPackage' has no attributes.
+The class 'spem::uma::Root' has no attributes.
+The class 'ProcessPackage' has no attributes.
+The class 'spem::uma::Discipline' has no attributes.
+The class 'spem::WorkProductUse' has no attributes.
+The class 'spem::uma::Practice' has the following attributes: 'goal' of type str; 'levelOfAdoption' of type str; 'problem' of type str; 'background' of type str; 'additionalInfo' of type str; 'application' of type str.
+The class 'spem::Activity' has the following attributes: 'isEnactable' of type bool; 'useKind' of type str.
+The class 'spem::uma::ConfigurationPackage' has no attributes.
+The class 'spem::uma::SupportingMaterial' has no attributes.
+The class 'spem::uma::EstimatingConsideration' has no attributes.
+The class 'spem::MethodLibraryPackageableElement' has the following attributes: 'name' of type str.
+The class 'RoleUse' has no attributes.
+The class 'spem::BreakdownElement' has the following attributes: 'hasMultipleOccurrences' of type bool; 'isPlanned' of type bool; 'isOptional' of type bool.
+The class 'spem::uma::ProcessComponentPackage' has no attributes.
+The class 'spem::MethodContentKind' has no attributes.
+The class 'spem::ProcessPerformer' has no attributes.
+The class 'spem::uma::Process' has the following attributes: 'usageNote' of type str; 'scope' of type str.
+The class 'spem::MethodConfiguration' has no attributes.
+The class 'spem::uma::Artifact' has no attributes.
+The class 'WorkDefinitionPerformer' has no attributes.
+The class 'spem::uma::WorkProductDefinitionPackage' has no attributes.
+The class 'spem::ExtensibleElement' has no attributes.
+The class 'spem::uma::Phase' has no attributes.
+The class 'spem::uma::CapabilityPattern' has no attributes.
+The class 'spem::uma::QualificationPackage' has no attributes.
+The class 'ExtensibleElement' has no attributes.
+The class 'spem::uma::TermDefinition' has no attributes.
+The class 'spem::WorkDefinitionParameter' has the following attributes: 'direction' of type str.
+The class 'spem::uma::Example' has no attributes.
+The class 'spem::WorkDefinition' has the following attributes: 'postCondition' of type str; 'preCondition' of type str.
+The class 'spem::WorkSequence' has the following attributes: 'linkKind' of type str.
+The class 'spem::MethodPluginPackageableElement' has no attributes.
+The class 'spem::WorkProductDefinitionRelationship' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'spem::WorkProductPort' has the following attributes: 'isOptional' of type bool; 'portKind' of type str.
+The class 'spem::uma::CategoryPackage' has no attributes.
+The class 'spem::uma::Guideline' has no attributes.
+The class 'DescribableElement' has no attributes.
+The class 'uma::spem::WorkProductPortConnector' has no attributes.
+The class 'MethodContentPackageableElement' has no attributes.
+The class 'uma::spem::Activity' has no attributes.
+The class 'spem::ProcessComponentUse' has no attributes.
+The class 'spem::uma::RoleSet' has no attributes.
+The class 'spem::Default::ResponsibilityAssignment' has no attributes.
+The class 'uma::spem::WorkProductDefinition' has no attributes.
+The class 'Concept' has no attributes.
+The class 'uma::spem::WorkProductUse' has no attributes.
+The class 'spem::Metric' has the following attributes: 'expression' of type str.
+The class 'spem::uma::Whitepaper' has no attributes.
+The class 'spem::uma::Domain' has no attributes.
+The class 'MethodContentPackage' has no attributes.
+The class 'spem::Qualification' has no attributes.
+The class 'Practice' has no attributes.
+The class 'uma::spem::MethodContentElement' has no attributes.
+The class 'Process' has no attributes.
+The class 'ProcessPackageableElement' has no attributes.
+The class 'MethodLibraryPackageableElement' has no attributes.
+The class 'MethodPluginPackageableElement' has no attributes.
+The class 'spem::ProcessParameter' has the following attributes: 'optionality' of type str.
+The class 'MethodContentUse' has no attributes.
+The class 'MethodContentElement' has no attributes.
+The class 'spem::uma::WorkProductKind' has no attributes.
+The class 'spem::Default::TaskDefinitionPerformer' has no attributes.
+The class 'spem::uma::ToolMentor' has no attributes.
+The class 'WorkDefinition' has no attributes.
+The class 'Guidance' has no attributes.
+The class 'spem::ProcessPackageableElement' has the following attributes: 'name' of type str.
+The class 'Activity' has no attributes.
+The class 'spem::uma::DeliveryProcess' has the following attributes: 'scale' of type str; 'riskLevel' of type str; 'projectCharacteristics' of type str; 'typeOfContract' of type str; 'projectMemberExpertise' of type str; 'estimatingTechnique' of type str.
+The class 'spem::uma::Concept' has no attributes.
+The class 'spem::uma::Deliverable' has the following attributes: 'packagingGuidance' of type str; 'externalDescription' of type str.
+The class 'uma::spem::MethodLibrary' has no attributes.
+The class 'spem::RoleDefinition' has the following attributes: 'synonym' of type str.
+The class 'spem::uma::CustomCategory' has no attributes.
+The class 'spem::DescribableElement' has the following attributes: 'changeDate' of type date; 'briefDescription' of type str; 'purpose' of type str; 'mainDescription' of type str; 'author' of type str; 'changeDescription' of type str; 'presentationName' of type str; 'version' of type str; 'copyright' of type str.
+The class 'spem::uma::ToolDefinitionPackage' has no attributes.
+The class 'spem::CompositeRole' has no attributes.
+The class 'spem::MethodLibrary' has the following attributes: 'name' of type str.
+The class 'spem::Step' has the following attributes: 'name' of type str.
+The class 'WorkProductUse' has no attributes.
+The class 'spem::ProcessResponsibilityAssignment' has no attributes.
+The class 'spem::ToolDefinition' has no attributes.
+The class 'spem::MethodContentPackage' has no attributes.
+The class 'spem::uma::Iteration' has no attributes.
+The class 'spem::uma::CapabilityPatternPackage' has no attributes.
+The class 'Category' has no attributes.
+The class 'spem::TeamProfile' has no attributes.
+The class 'spem::uma::TaskDefinitionPackage' has no attributes.
+The class 'spem::TaskUse' has the following attributes: 'preCondition' of type str; 'postCondition' of type str.
+The class 'spem::Milestone' has no attributes.
+The class 'spem::Kind' has no attributes.
+The class 'spem::TaskDefinition' has no attributes.
+The class 'spem::ProcessKind' has no attributes.
+The class 'spem::VariabilityElement' has the following attributes: 'variabilityType' of type str.
+The class 'Kind' has no attributes.
+The class 'spem::uma::GuidancePackage' has no attributes.
+The class 'spem::WorkBreakdownElement' has the following attributes: 'isOngoing' of type bool; 'isRepeatable' of type bool; 'isEventDriven' of type bool.
+The class 'spem::MethodContentPackageableElement' has the following attributes: 'name' of type str.
+The class 'WorkBreakdownElement' has no attributes.
+The class 'spem::uma::DomainPackage' has no attributes.
+The class 'spem::RoleUse' has no attributes.
+The class 'WorkDefinitionParameter' has no attributes.
+The class 'uma::spem::TaskDefinition' has no attributes.
+The enumeration 'RiskLevel' has the following literals: 'HIGH', 'MID', 'LOW'.
+The enumeration 'WorkSequenceKind' has the following literals: 'startToFinish', 'finishToFinish', 'finishToStart', 'startToStart'.
+The enumeration 'VariabilityType' has the following literals: 'contributes', 'na', 'extends', 'replaces', 'extends_replaces'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'out', 'inout'.
+The enumeration 'ContractKind' has the following literals: 'IMPLIED', 'OTHER', 'EXPRESS'.
+The enumeration 'ActivityUseKind' has the following literals: 'localReplacement', 'na', 'localContribution', 'extension'.
+The enumeration 'OptionalityKind' has the following literals: 'mandatory', 'optional'.
+The enumeration 'WorkProductRelationshipKind' has the following literals: 'aggregation', 'impactedBy', 'composition'.
+The enumeration 'ExpertiseLevel' has the following literals: 'LOW', 'LEVEL', 'MID'.
+The enumeration 'EstimatingTechnique' has the following literals: 'SKILLS', 'COST', 'DEFECTS', 'TIME', 'OTHER'.
+'spem::uma::EstimatingConsideration' is a specialization of 'Guidance'.
+'spem::uma::Concept' is a specialization of 'Guidance'.
+'spem::ProcessParameter' is a specialization of 'WorkDefinitionParameter'.
+'spem::Guidance' is a specialization of 'MethodContentElement'.
+'spem::uma::Practice' is a specialization of 'Guidance'.
+'spem::TaskUse' is a specialization of 'WorkBreakdownElement'.
+'spem::ProcessPackage' is a specialization of 'ProcessPackageableElement'.
+'spem::uma::Template' is a specialization of 'Guidance'.
+'spem::WorkProductPort' is a specialization of 'ProcessElement'.
+'spem::uma::SupportingMaterial' is a specialization of 'Guidance'.
+'spem::Default::ResponsibilityAssignment' is a specialization of 'MethodContentElement'.
+'spem::MethodContentKind' is a specialization of 'Kind'.
+'spem::Default::TaskDefinitionParameter' is a specialization of 'WorkDefinitionParameter'.
+'spem::uma::Phase' is a specialization of 'Activity'.
+'spem::uma::DeliveryProcess' is a specialization of 'Process'.
+'spem::WorkProductUseRelationship' is a specialization of 'BreakdownElement'.
+'spem::uma::TaskDefinitionPackage' is a specialization of 'MethodContentPackage'.
+'spem::CompositeRole' is a specialization of 'RoleUse'.
+'spem::uma::Artifact' is a specialization of 'WorkProductUse'.
+'spem::ProcessKind' is a specialization of 'ProcessElement'.
+'spem::TaskUse' is a specialization of 'MethodContentUse'.
+'spem::uma::DisciplineGrouping' is a specialization of 'Category'.
+'spem::uma::ReusableAsset' is a specialization of 'Guidance'.
+'spem::MethodContentElement' is a specialization of 'DescribableElement'.
+'spem::ProcessElement' is a specialization of 'DescribableElement'.
+'spem::Category' is a specialization of 'MethodContentElement'.
+'spem::ProcessPerformer' is a specialization of 'WorkDefinitionPerformer'.
+'spem::uma::WorkProductDefinitionPackage' is a specialization of 'MethodContentPackage'.
+'spem::uma::CategoryPackage' is a specialization of 'MethodContentPackage'.
+'spem::MethodContentElement' is a specialization of 'VariabilityElement'.
+'spem::WorkProductPortConnector' is a specialization of 'ProcessElement'.
+'spem::ProcessPackage' is a specialization of 'MethodPluginPackageableElement'.
+'spem::uma::ProcessComponentPackage' is a specialization of 'ProcessPackage'.
+'spem::RoleDefinition' is a specialization of 'MethodContentElement'.
+'spem::uma::RoleSetPackage' is a specialization of 'MethodContentPackage'.
+'spem::uma::WorkProductKind' is a specialization of 'Kind'.
+'spem::Qualification' is a specialization of 'MethodContentElement'.
+'spem::Step' is a specialization of 'WorkDefinition'.
+'spem::uma::QualificationPackage' is a specialization of 'MethodContentPackage'.
+'spem::uma::ConfigurationPackage' is a specialization of 'MethodContentPackage'.
+'spem::RoleUse' is a specialization of 'MethodContentUse'.
+'spem::uma::Example' is a specialization of 'Guidance'.
+'spem::uma::Iteration' is a specialization of 'Activity'.
+'spem::Kind' is a specialization of 'ExtensibleElement'.
+'spem::uma::Deliverable' is a specialization of 'WorkProductUse'.
+'spem::MethodContentPackage' is a specialization of 'MethodContentPackageableElement'.
+'spem::uma::ToolDefinitionPackage' is a specialization of 'MethodContentPackage'.
+'spem::WorkProductUse' is a specialization of 'MethodContentUse'.
+'spem::MethodPlugin' is a specialization of 'MethodLibraryPackageableElement'.
+'spem::MethodContentElement' is a specialization of 'MethodContentPackageableElement'.
+'spem::uma::Domain' is a specialization of 'Category'.
+'spem::uma::Roadmap' is a specialization of 'Guidance'.
+'spem::uma::Guideline' is a specialization of 'Guidance'.
+'spem::ProcessComponent' is a specialization of 'ProcessPackage'.
+'spem::Metric' is a specialization of 'DescribableElement'.
+'spem::uma::Discipline' is a specialization of 'Category'.
+'spem::MethodContentPackage' is a specialization of 'MethodPluginPackageableElement'.
+'spem::Step' is a specialization of 'DescribableElement'.
+'spem::TeamProfile' is a specialization of 'BreakdownElement'.
+'spem::Activity' is a specialization of 'WorkBreakdownElement'.
+'spem::uma::Checklist' is a specialization of 'Guidance'.
+'spem::WorkBreakdownElement' is a specialization of 'BreakdownElement'.
+'spem::uma::CustomCategory' is a specialization of 'Category'.
+'spem::Activity' is a specialization of 'WorkDefinition'.
+'spem::uma::Outcome' is a specialization of 'WorkProductUse'.
+'spem::MethodContentKind' is a specialization of 'MethodContentElement'.
+'spem::ProcessPerformer' is a specialization of 'BreakdownElement'.
+'spem::PlanningData' is a specialization of 'ProcessElement'.
+'spem::uma::RoleDefinitionPackage' is a specialization of 'MethodContentPackage'.
+'spem::uma::Process' is a specialization of 'Activity'.
+'spem::ProcessElement' is a specialization of 'ProcessPackageableElement'.
+'spem::uma::DomainPackage' is a specialization of 'MethodContentPackage'.
+'spem::uma::ProcessPlanningTemplate' is a specialization of 'Process'.
+'spem::TaskDefinition' is a specialization of 'MethodContentElement'.
+'spem::uma::DisciplinePackage' is a specialization of 'MethodContentPackage'.
+'spem::Activity' is a specialization of 'VariabilityElement'.
+'spem::uma::ToolMentor' is a specialization of 'Guidance'.
+'spem::uma::TermDefinition' is a specialization of 'Guidance'.
+'spem::uma::DeliveryProcessPackage' is a specialization of 'ProcessPackage'.
+'spem::uma::CapabilityPatternPackage' is a specialization of 'ProcessPackage'.
+'spem::uma::WorkProductKindPackage' is a specialization of 'MethodContentPackage'.
+'spem::uma::WorkProductKind' is a specialization of 'MethodContentElement'.
+'spem::BreakdownElement' is a specialization of 'ProcessElement'.
+'spem::ProcessParameter' is a specialization of 'BreakdownElement'.
+'spem::WorkProductDefinition' is a specialization of 'MethodContentElement'.
+'spem::Default::TaskDefinitionPerformer' is a specialization of 'MethodContentElement'.
+'spem::uma::GuidancePackage' is a specialization of 'MethodContentPackage'.
+'spem::MethodConfiguration' is a specialization of 'MethodLibraryPackageableElement'.
+'spem::WorkProductDefinitionRelationship' is a specialization of 'MethodContentElement'.
+'spem::ProcessResponsibilityAssignment' is a specialization of 'BreakdownElement'.
+'spem::Milestone' is a specialization of 'WorkBreakdownElement'.
+'spem::ProcessComponentUse' is a specialization of 'MethodContentUse'.
+'spem::ProcessKind' is a specialization of 'Kind'.
+'spem::Step' is a specialization of 'VariabilityElement'.
+'spem::DescribableElement' is a specialization of 'ExtensibleElement'.
+'spem::uma::RoleSet' is a specialization of 'MethodContentElement'.
+'spem::uma::CapabilityPattern' is a specialization of 'Process'.
+'spem::WorkSequence' is a specialization of 'BreakdownElement'.
+'spem::ToolDefinition' is a specialization of 'MethodContentElement'.
+'spem::uma::Whitepaper' is a specialization of 'Concept'.
+'spem::uma::Report' is a specialization of 'Guidance'.
+'spem::MethodContentUse' is a specialization of 'BreakdownElement'.
+'spem::TaskDefinition' is a specialization of 'WorkDefinition'.
+'spem::WorkDefinitionParameter' (role 'spem_WorkDefinitionParameter', cardinality 0..*) is associated with 'spem::WorkDefinition' (role 'spem_WorkDefinition3', cardinality 0..*).
+'spem::BreakdownElement' (role 'spem_BreakdownElement18', cardinality 0..*) is associated with 'spem::Activity' (role 'spem_Activity17', cardinality 0..*).
+'spem::Activity' (role 'spem_Activity14', cardinality 0..*) is associated with 'spem::BreakdownElement' (role 'spem_BreakdownElement15', cardinality 0..*).
+'uma::spem::WorkProductPortConnector' (role 'uma_spem_WorkProductPortConnector', cardinality 0..*) is associated with 'spem::uma::Process' (role 'spem_uma_Process183', cardinality 0..*).
+'spem::ProcessPackage' (role 'spem_ProcessPackage', cardinality 0..*) is associated with 'spem::ProcessPackageableElement' (role 'spem_ProcessPackageableElement', cardinality 0..*).
+'spem::RoleUse' (role 'spem_RoleUse33', cardinality 0..*) is associated with 'spem::RoleDefinition' (role 'spem_RoleDefinition', cardinality 0..*).
+'spem::Category' (role 'spem_Category150', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration149', cardinality 0..*).
+'spem::TaskDefinition' (role 'spem_TaskDefinition88', cardinality 0..*) is associated with 'spem::Default::TaskDefinitionPerformer' (role 'spem_Default_TaskDefinitionPerformer', cardinality 0..*).
+'spem::RoleDefinition' (role 'spem_RoleDefinition93', cardinality 0..*) is associated with 'spem::Default::ResponsibilityAssignment' (role 'spem_Default_ResponsibilityAssignment', cardinality 0..*).
+'spem::Qualification' (role 'spem_Qualification110', cardinality 0..*) is associated with 'spem::TaskUse' (role 'spem_TaskUse109', cardinality 0..*).
+'spem::Milestone' (role 'spem_Milestone', cardinality 0..*) is associated with 'spem::WorkProductUse' (role 'spem_WorkProductUse51', cardinality 0..*).
+'spem::uma::Root' (role 'spem_uma_Root195', cardinality 0..*) is associated with 'uma::spem::MethodPlugin' (role 'uma_spem_MethodPlugin', cardinality 0..*).
+'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition', cardinality 0..*) is associated with 'spem::WorkProductUse' (role 'spem_WorkProductUse41', cardinality 0..*).
+'spem::ProcessResponsibilityAssignment' (role 'spem_ProcessResponsibilityAssignment39', cardinality 0..*) is associated with 'spem::WorkProductUse' (role 'spem_WorkProductUse', cardinality 0..*).
+'spem::TaskDefinition' (role 'spem_TaskDefinition', cardinality 0..*) is associated with 'spem::Default::TaskDefinitionParameter' (role 'spem_Default_TaskDefinitionParameter', cardinality 0..*).
+'spem::Category' (role 'spem_Category153', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration152', cardinality 0..*).
+'spem::WorkSequence' (role 'linkToSuccessor', cardinality 0..*) is associated with 'spem::WorkBreakdownElement' (role 'WorkBreakdownElement', cardinality 0..*).
+'spem::TaskDefinition' (role 'spem_TaskDefinition70', cardinality 0..*) is associated with 'spem::Qualification' (role 'spem_Qualification71', cardinality 0..*).
+'Artifact' (role 'Artifact', cardinality 0..*) is associated with 'spem::uma::Artifact' (role 'spem_uma_Artifact', cardinality 0..*).
+'spem::MethodContentPackage' (role 'spem_MethodContentPackage173', cardinality 0..*) is associated with 'spem::MethodLibrary' (role 'spem_MethodLibrary172', cardinality 0..*).
+'spem::Activity' (role 'spem_Activity20', cardinality 0..*) is associated with 'spem::ProcessParameter' (role 'spem_ProcessParameter', cardinality 0..*).
+'spem::Category' (role 'category', cardinality 0..*) is associated with 'spem::DescribableElement' (role 'DescribableElement', cardinality 0..*).
+'spem::WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'spem::WorkBreakdownElement' (role 'successor', cardinality 0..*).
+'spem::ProcessComponent' (role 'spem_ProcessComponent133', cardinality 0..*) is associated with 'spem::ProcessComponentUse' (role 'spem_ProcessComponentUse', cardinality 0..*).
+'spem::WorkBreakdownElement' (role 'WorkBreakdownElement10', cardinality 0..*) is associated with 'spem::WorkSequence' (role 'linkToPredecessor', cardinality 0..*).
+'spem::uma::Practice' (role 'spem_uma_Practice', cardinality 0..*) is associated with 'Practice' (role 'Practice', cardinality 0..*).
+'spem::TaskDefinition' (role 'spem_TaskDefinition65', cardinality 0..*) is associated with 'spem::ToolDefinition' (role 'spem_ToolDefinition66', cardinality 0..*).
+'spem::WorkProductUse' (role 'spem_WorkProductUse46', cardinality 0..*) is associated with 'spem::WorkProductUseRelationship' (role 'spem_WorkProductUseRelationship45', cardinality 0..*).
+'spem::VariabilityElement' (role 'spem_VariabilityElement', cardinality 0..*) is associated with 'spem::VariabilityElement' (role 'spem_VariabilityElement126', cardinality 0..*).
+'spem::WorkProductPort' (role 'spem_WorkProductPort136', cardinality 0..*) is associated with 'spem::ProcessComponentUse' (role 'spem_ProcessComponentUse135', cardinality 0..*).
+'spem::MethodPlugin' (role 'spem_MethodPlugin163', cardinality 0..*) is associated with 'spem::MethodPlugin' (role 'spem_MethodPlugin165', cardinality 0..*).
+'spem::MethodPlugin' (role 'spem_MethodPlugin', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration141', cardinality 0..*).
+'spem::WorkDefinition' (role 'spem_WorkDefinition', cardinality 0..*) is associated with 'spem::WorkDefinitionPerformer' (role 'spem_WorkDefinitionPerformer', cardinality 0..*).
+'spem::TeamProfile' (role 'superTeam', cardinality 0..*) is associated with 'spem::TeamProfile' (role 'TeamProfile', cardinality 0..*).
+'spem::MethodContentKind' (role 'spem_MethodContentKind', cardinality 0..*) is associated with 'spem::MethodContentElement' (role 'spem_MethodContentElement', cardinality 0..*).
+'spem::TaskDefinition' (role 'spem_TaskDefinition107', cardinality 0..*) is associated with 'spem::TaskUse' (role 'spem_TaskUse106', cardinality 0..*).
+'spem::Default::ResponsibilityAssignment' (role 'spem_Default_ResponsibilityAssignment95', cardinality 0..*) is associated with 'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition96', cardinality 0..*).
+'spem::ProcessPerformer' (role 'spem_ProcessPerformer31', cardinality 0..*) is associated with 'spem::TaskUse' (role 'spem_TaskUse', cardinality 0..*).
+'spem::uma::DeliveryProcess' (role 'spem_uma_DeliveryProcess', cardinality 0..*) is associated with 'SupportingMaterial' (role 'SupportingMaterial', cardinality 0..*).
+'spem::Qualification' (role 'spem_Qualification', cardinality 0..*) is associated with 'spem::RoleUse' (role 'spem_RoleUse35', cardinality 0..*).
+'uma::spem::WorkProductDefinition' (role 'uma_spem_WorkProductDefinition', cardinality 0..*) is associated with 'spem::uma::Domain' (role 'spem_uma_Domain', cardinality 0..*).
+'spem::MethodConfiguration' (role 'spem_MethodConfiguration155', cardinality 0..*) is associated with 'spem::Category' (role 'spem_Category156', cardinality 0..*).
+'spem::MethodContentPackage' (role 'spem_MethodContentPackage159', cardinality 0..*) is associated with 'spem::MethodPlugin' (role 'spem_MethodPlugin158', cardinality 0..*).
+'spem::Guidance' (role 'spem_Guidance', cardinality 0..*) is associated with 'spem::DescribableElement' (role 'spem_DescribableElement', cardinality 0..*).
+'spem::MethodContentPackage' (role 'spem_MethodContentPackage', cardinality 0..*) is associated with 'spem::MethodContentPackageableElement' (role 'spem_MethodContentPackageableElement', cardinality 0..*).
+'spem::Default::TaskDefinitionPerformer' (role 'spem_Default_TaskDefinitionPerformer90', cardinality 0..*) is associated with 'spem::RoleDefinition' (role 'spem_RoleDefinition91', cardinality 0..*).
+'spem::RoleDefinition' (role 'spem_RoleDefinition80', cardinality 0..*) is associated with 'spem::Qualification' (role 'spem_Qualification81', cardinality 0..*).
+'spem::MethodConfiguration' (role 'spem_MethodConfiguration146', cardinality 0..*) is associated with 'spem::MethodContentPackage' (role 'spem_MethodContentPackage147', cardinality 0..*).
+'spem::ProcessParameter' (role 'spem_ProcessParameter116', cardinality 0..*) is associated with 'spem::TaskUse' (role 'spem_TaskUse115', cardinality 0..*).
+'spem::MethodConfiguration' (role 'spem_MethodConfiguration139', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration137', cardinality 0..*).
+'uma::spem::RoleDefinition' (role 'uma_spem_RoleDefinition', cardinality 0..*) is associated with 'spem::uma::RoleSet' (role 'spem_uma_RoleSet', cardinality 0..*).
+'spem::WorkProductUse' (role 'spem_WorkProductUse49', cardinality 0..*) is associated with 'spem::ProcessParameter' (role 'spem_ProcessParameter48', cardinality 0..*).
+'spem::MethodLibrary' (role 'spem_MethodLibrary169', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration170', cardinality 0..*).
+'spem::uma::Root' (role 'spem_uma_Root', cardinality 0..*) is associated with 'uma::spem::MethodConfiguration' (role 'uma_spem_MethodConfiguration', cardinality 0..*).
+'spem::DescribableElement' (role 'spem_DescribableElement55', cardinality 0..*) is associated with 'spem::Metric' (role 'spem_Metric', cardinality 0..*).
+'spem::RoleUse' (role 'spem_RoleUse125', cardinality 0..*) is associated with 'spem::TeamProfile' (role 'spem_TeamProfile', cardinality 0..*).
+'spem::WorkProductUseRelationship' (role 'spem_WorkProductUseRelationship', cardinality 0..*) is associated with 'spem::WorkProductUse' (role 'spem_WorkProductUse43', cardinality 0..*).
+'spem::uma::Discipline' (role 'spem_uma_Discipline', cardinality 0..*) is associated with 'uma::spem::TaskDefinition' (role 'uma_spem_TaskDefinition', cardinality 0..*).
+'uma::spem::MethodConfiguration' (role 'uma_spem_MethodConfiguration205', cardinality 0..*) is associated with 'spem::uma::ConfigurationPackage' (role 'spem_uma_ConfigurationPackage', cardinality 0..*).
+'spem::DescribableElement' (role 'categorizedElement', cardinality 0..*) is associated with 'spem::Category' (role 'Category', cardinality 0..*).
+'spem::Activity' (role 'spem_Activity129', cardinality 0..*) is associated with 'spem::ProcessComponent' (role 'spem_ProcessComponent', cardinality 0..*).
+'spem::Kind' (role 'spem_Kind', cardinality 0..*) is associated with 'spem::ExtensibleElement' (role 'spem_ExtensibleElement', cardinality 0..*).
+'spem::MethodContentPackage' (role 'spem_MethodContentPackage103', cardinality 0..*) is associated with 'spem::MethodContentPackage' (role 'spem_MethodContentPackage101', cardinality 0..*).
+'spem::ProcessPackage' (role 'spem_ProcessPackage144', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration143', cardinality 0..*).
+'spem::WorkSequence' (role 'WorkSequence7', cardinality 0..*) is associated with 'spem::WorkBreakdownElement' (role 'predecessor', cardinality 0..*).
+'uma::spem::WorkProductUse' (role 'uma_spem_WorkProductUse', cardinality 0..*) is associated with 'spem::uma::Deliverable' (role 'spem_uma_Deliverable', cardinality 0..*).
+'spem::RoleUse' (role 'spem_RoleUse', cardinality 0..*) is associated with 'spem::ProcessPerformer' (role 'spem_ProcessPerformer', cardinality 0..*).
+'spem::Step' (role 'predecessor77', cardinality 0..*) is associated with 'spem::Step' (role 'Step78', cardinality 0..*).
+'spem::Activity' (role 'spem_Activity29', cardinality 0..*) is associated with 'spem::ProcessPerformer' (role 'spem_ProcessPerformer28', cardinality 0..*).
+'spem::ProcessComponent' (role 'spem_ProcessComponent131', cardinality 0..*) is associated with 'spem::WorkProductPort' (role 'spem_WorkProductPort', cardinality 0..*).
+'Process' (role 'Process', cardinality 0..*) is associated with 'spem::uma::Discipline' (role 'spem_uma_Discipline190', cardinality 0..*).
+'spem::uma::Process' (role 'spem_uma_Process', cardinality 0..*) is associated with 'CapabilityPattern' (role 'CapabilityPattern', cardinality 0..*).
+'Process' (role 'Process203', cardinality 0..*) is associated with 'spem::uma::ProcessPlanningTemplate' (role 'spem_uma_ProcessPlanningTemplate', cardinality 0..*).
+'spem::PlanningData' (role 'spem_PlanningData', cardinality 0..*) is associated with 'spem::BreakdownElement' (role 'spem_BreakdownElement', cardinality 0..*).
+'spem::uma::DeliveryProcess' (role 'spem_uma_DeliveryProcess186', cardinality 0..*) is associated with 'SupportingMaterial' (role 'SupportingMaterial187', cardinality 0..*).
+'spem::CompositeRole' (role 'spem_CompositeRole', cardinality 0..*) is associated with 'spem::RoleDefinition' (role 'spem_RoleDefinition118', cardinality 0..*).
+'spem::MethodConfiguration' (role 'spem_MethodConfiguration25', cardinality 0..*) is associated with 'spem::Activity' (role 'spem_Activity24', cardinality 0..*).
+'spem::Step' (role 'successor74', cardinality 0..*) is associated with 'spem::Step' (role 'Step', cardinality 0..*).
+'spem::ProcessResponsibilityAssignment' (role 'spem_ProcessResponsibilityAssignment', cardinality 0..*) is associated with 'spem::RoleUse' (role 'spem_RoleUse37', cardinality 0..*).
+'spem::ProcessElement' (role 'spem_ProcessElement', cardinality 0..*) is associated with 'spem::ProcessKind' (role 'spem_ProcessKind', cardinality 0..*).
+'spem::uma::Practice' (role 'spem_uma_Practice201', cardinality 0..*) is associated with 'uma::spem::MethodContentElement' (role 'uma_spem_MethodContentElement', cardinality 0..*).
+'spem::TaskUse' (role 'spem_TaskUse112', cardinality 0..*) is associated with 'spem::Step' (role 'spem_Step113', cardinality 0..*).
+'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition83', cardinality 0..*) is associated with 'spem::WorkProductDefinitionRelationship' (role 'spem_WorkProductDefinitionRelationship', cardinality 0..*).
+'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition62', cardinality 0..*) is associated with 'spem::ToolDefinition' (role 'spem_ToolDefinition', cardinality 0..*).
+'spem::MethodPlugin' (role 'spem_MethodPlugin167', cardinality 0..*) is associated with 'spem::MethodLibrary' (role 'spem_MethodLibrary', cardinality 0..*).
+'spem::Activity' (role 'spem_Activity22', cardinality 0..*) is associated with 'spem::MethodConfiguration' (role 'spem_MethodConfiguration', cardinality 0..*).
+'spem::Category' (role 'spem_Category', cardinality 0..*) is associated with 'spem::Category' (role 'spem_Category57', cardinality 0..*).
+'uma::spem::Activity' (role 'uma_spem_Activity', cardinality 0..*) is associated with 'spem::uma::Practice' (role 'spem_uma_Practice199', cardinality 0..*).
+'spem::Activity' (role 'spem_Activity', cardinality 0..*) is associated with 'spem::Activity' (role 'spem_Activity11', cardinality 0..*).
+'spem::WorkProductPort' (role 'spem_WorkProductPort175', cardinality 0..*) is associated with 'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition176', cardinality 0..*).
+'spem::TeamProfile' (role 'TeamProfile123', cardinality 0..*) is associated with 'spem::TeamProfile' (role 'subTeam', cardinality 0..*).
+'spem::TaskDefinition' (role 'spem_TaskDefinition68', cardinality 0..*) is associated with 'spem::Step' (role 'spem_Step', cardinality 0..*).
+'uma::spem::MethodLibrary' (role 'uma_spem_MethodLibrary', cardinality 0..*) is associated with 'spem::uma::Root' (role 'spem_uma_Root193', cardinality 0..*).
+'spem::WorkProductDefinitionRelationship' (role 'spem_WorkProductDefinitionRelationship85', cardinality 0..*) is associated with 'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition86', cardinality 0..*).
+'spem::Default::TaskDefinitionParameter' (role 'spem_Default_TaskDefinitionParameter98', cardinality 0..*) is associated with 'spem::WorkProductDefinition' (role 'spem_WorkProductDefinition99', cardinality 0..*).
+'spem::WorkProductPort' (role 'spem_WorkProductPort178', cardinality 0..*) is associated with 'spem::WorkProductPortConnector' (role 'spem_WorkProductPortConnector', cardinality 0..*).
+'spem::MethodPlugin' (role 'spem_MethodPlugin161', cardinality 0..*) is associated with 'spem::ProcessPackage' (role 'spem_ProcessPackage162', cardinality 0..*).

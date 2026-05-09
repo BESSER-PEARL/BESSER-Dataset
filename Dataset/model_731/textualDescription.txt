@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'dc::Point' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'dc::Dimension' has the following attributes: 'height' of type str; 'width' of type str.
+The class 'dc::Bounds' has the following attributes: 'width' of type str; 'x' of type str; 'y' of type str; 'height' of type str.
+The enumeration 'KnownColor' has the following literals: 'blue', 'white', 'olive', 'silver', 'lime', 'green', 'gray', 'maroon', 'teal', 'navy', 'purple', 'aqua', 'fuchsia', 'red', 'black', 'yellow', 'orange'.

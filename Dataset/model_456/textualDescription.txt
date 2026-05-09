@@ -1,0 +1,1111 @@
+The model has 327 class(es).
+The class 'uml3::0::0::StructuredActivityNode' has the following attributes: 'mustIsolate' of type str.
+The class 'uml3::0::0::Event' has no attributes.
+The class 'uml3::0::0::LiteralUnlimitedNatural' has the following attributes: 'value' of type str.
+The class 'uml3::0::0::Continuation' has the following attributes: 'setting' of type str.
+The class 'uml3::0::0::ConnectionPointReference' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'uml3::0::0::ReadIsClassifiedObjectAction' has the following attributes: 'isDirect' of type str.
+The class 'Interval' has no attributes.
+The class 'EncapsulatedClassifier' has no attributes.
+The class 'uml3::0::0::LiteralBoolean' has the following attributes: 'value' of type str.
+The class 'uml3::0::0::Constraint' has no attributes.
+The class 'uml3::0::0::OccurrenceSpecification' has no attributes.
+The class 'uml3::0::0::Variable' has no attributes.
+The class 'uml3::0::0::ReplyAction' has no attributes.
+The class 'uml3::0::0::InitialNode' has no attributes.
+The class 'uml3::0::0::SignalEvent' has no attributes.
+The class 'uml3::0::0::ChangeEvent' has no attributes.
+The class 'uml3::0::0::InformationFlow' has no attributes.
+The class 'uml3::0::0::PackageableElement' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'uml3::0::0::DurationConstraint' has the following attributes: 'firstEvent' of type str.
+The class 'Realization' has no attributes.
+The class 'MessageEnd' has no attributes.
+The class 'uml3::0::0::WriteVariableAction' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'uml3::0::0::SendSignalEvent' has no attributes.
+The class 'uml3::0::0::Gate' has no attributes.
+The class 'uml3::0::0::StartClassifierBehaviorAction' has no attributes.
+The class 'uml3::0::0::Usage' has no attributes.
+The class 'uml3::0::0::TimeConstraint' has the following attributes: 'firstEvent' of type str.
+The class 'uml3::0::0::ReadStructuralFeatureAction' has no attributes.
+The class 'uml3::0::0::ReceiveOperationEvent' has no attributes.
+The class 'Node' has no attributes.
+The class 'uml3::0::0::InteractionUse' has no attributes.
+The class 'uml3::0::0::Duration' has no attributes.
+The class 'uml3::0::0::AddStructuralFeatureValueAction' has the following attributes: 'isReplaceAll' of type str.
+The class 'ControlNode' has no attributes.
+The class 'uml3::0::0::DestructionEvent' has no attributes.
+The class 'uml3::0::0::Action' has no attributes.
+The class 'uml3::0::0::CommunicationPath' has no attributes.
+The class 'uml3::0::0::DestroyLinkAction' has no attributes.
+The class 'uml3::0::0::LiteralSpecification' has no attributes.
+The class 'uml3::0::0::ClearStructuralFeatureAction' has no attributes.
+The class 'uml3::0::0::RaiseExceptionAction' has no attributes.
+The class 'Expression' has no attributes.
+The class 'uml3::0::0::GeneralOrdering' has no attributes.
+The class 'uml3::0::0::Activity' has the following attributes: 'isReadOnly' of type str; 'isSingleExecution' of type str.
+The class 'uml3::0::0::TimeExpression' has no attributes.
+The class 'AcceptEventAction' has no attributes.
+The class 'uml3::0::0::DurationInterval' has no attributes.
+The class 'uml3::0::0::Dependency' has no attributes.
+The class 'uml3::0::0::Lifeline' has no attributes.
+The class 'uml3::0::0::TestIdentityAction' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'uml3::0::0::InterruptibleActivityRegion' has no attributes.
+The class 'uml3::0::0::ReceiveSignalEvent' has no attributes.
+The class 'uml3::0::0::LiteralInteger' has the following attributes: 'value' of type str.
+The class 'uml3::0::0::DurationObservation' has the following attributes: 'firstEvent' of type str.
+The class 'OpaqueBehavior' has no attributes.
+The class 'LiteralSpecification' has no attributes.
+The class 'uml3::0::0::InterfaceRealization' has no attributes.
+The class 'uml3::0::0::Namespace' has no attributes.
+The class 'uml3::0::0::StructuralFeature' has the following attributes: 'isReadOnly' of type str.
+The class 'Observation' has no attributes.
+The class 'uml3::0::0::ConnectableElementTemplateParameter' has no attributes.
+The class 'uml3::0::0::DirectedRelationship' has no attributes.
+The class 'uml3::0::0::ActivityNode' has no attributes.
+The class 'uml3::0::0::SendObjectAction' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'uml3::0::0::LoopNode' has the following attributes: 'isTestedFirst' of type str.
+The class 'uml3::0::0::ExceptionHandler' has no attributes.
+The class 'CentralBufferNode' has no attributes.
+The class 'uml3::0::0::FlowFinalNode' has no attributes.
+The class 'uml3::0::0::CallEvent' has no attributes.
+The class 'uml3::0::0::ReadLinkObjectEndQualifierAction' has no attributes.
+The class 'uml3::0::0::InstanceValue' has no attributes.
+The class 'uml3::0::0::Node' has no attributes.
+The class 'uml3::0::0::BehaviorExecutionSpecification' has no attributes.
+The class 'uml3::0::0::TimeEvent' has the following attributes: 'isRelative' of type str.
+The class 'uml3::0::0::StringExpression' has no attributes.
+The class 'uml3::0::0::AcceptCallAction' has no attributes.
+The class 'uml3::0::0::FinalNode' has no attributes.
+The class 'uml3::0::0::ActivityParameterNode' has no attributes.
+The class 'StructuredActivityNode' has no attributes.
+The class 'uml3::0::0::ClearVariableAction' has no attributes.
+The class 'uml3::0::0::StructuredClassifier' has no attributes.
+The class 'uml3::0::0::Operation' has the following attributes: 'lower' of type str; 'isOrdered' of type str; 'upper' of type str; 'isQuery' of type str; 'isUnique' of type str.
+The class 'uml3::0::0::MessageOccurrenceSpecification' has no attributes.
+The class 'uml3::0::0::AnyReceiveEvent' has no attributes.
+The class 'uml3::0::0::BroadcastSignalAction' has no attributes.
+The class 'uml3::0::0::Type' has no attributes.
+The class 'DeployedArtifact' has no attributes.
+The class 'DataType' has no attributes.
+The class 'uml3::0::0::ReadVariableAction' has no attributes.
+The class 'uml3::0::0::ReadExtentAction' has no attributes.
+The class 'uml3::0::0::Actor' has no attributes.
+The class 'uml3::0::0::UnmarshallAction' has no attributes.
+The class 'TemplateParameter' has no attributes.
+The class 'uml3::0::0::UseCase' has no attributes.
+The class 'uml3::0::0::ActivityEdge' has no attributes.
+The class 'uml3::0::0::CallBehaviorAction' has no attributes.
+The class 'State' has no attributes.
+The class 'uml3::0::0::DeployedArtifact' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'uml3::0::0::OpaqueExpression' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'uml3::0::0::AssociationClass' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'uml3::0::0::DecisionNode' has no attributes.
+The class 'Type' has no attributes.
+The class 'uml3::0::0::CreationEvent' has no attributes.
+The class 'LinkAction' has no attributes.
+The class 'uml3::0::0::SendSignalAction' has no attributes.
+The class 'uml3::0::0::ExecutionSpecification' has no attributes.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'uml3::0::0::ConnectorEnd' has no attributes.
+The class 'uml3::0::0::EncapsulatedClassifier' has no attributes.
+The class 'uml3::0::0::IntervalConstraint' has no attributes.
+The class 'uml3::0::0::DeploymentSpecification' has the following attributes: 'deploymentLocation' of type str; 'executionLocation' of type str.
+The class 'uml3::0::0::ValueSpecificationAction' has no attributes.
+The class 'uml3::0::0::ClearAssociationAction' has no attributes.
+The class 'ActivityGroup' has no attributes.
+The class 'uml3::0::0::InteractionOperand' has no attributes.
+The class 'uml3::0::0::Package' has no attributes.
+The class 'OccurrenceSpecification' has no attributes.
+The class 'uml3::0::0::LinkEndCreationData' has the following attributes: 'isReplaceAll' of type str.
+The class 'Namespace' has no attributes.
+The class 'uml3::0::0::ActivityFinalNode' has no attributes.
+The class 'uml3::0::0::ExpansionNode' has no attributes.
+The class 'uml3::0::0::PackageMerge' has no attributes.
+The class 'uml3::0::0::ReclassifyObjectAction' has the following attributes: 'isReplaceAll' of type str.
+The class 'uml3::0::0::Generalization' has the following attributes: 'isSubstitutable' of type str.
+The class 'uml3::0::0::ConditionalNode' has the following attributes: 'isDeterminate' of type str; 'isAssured' of type str.
+The class 'CombinedFragment' has no attributes.
+The class 'uml3::0::0::MessageEnd' has no attributes.
+The class 'uml3::0::0::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str.
+The class 'uml3::0::0::ExecutionEvent' has no attributes.
+The class 'uml3::0::0::MessageEvent' has no attributes.
+The class 'uml3::0::0::Interval' has no attributes.
+The class 'uml3::0::0::Abstraction' has no attributes.
+The class 'uml3::0::0::CallAction' has the following attributes: 'isSynchronous' of type str.
+The class 'uml3::0::0::Deployment' has no attributes.
+The class 'uml3::0::0::CentralBufferNode' has no attributes.
+The class 'uml3::0::0::ControlNode' has no attributes.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'uml3::0::0::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'ActivityNode' has no attributes.
+The class 'uml3::0::0::ObjectNode' has the following attributes: 'ordering' of type str; 'isControlType' of type str.
+The class 'ValueSpecification' has no attributes.
+The class 'uml3::0::0::InputPin' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'uml3::0::0::RemoveVariableValueAction' has the following attributes: 'isRemoveDuplicates' of type str.
+The class 'TemplateableElement' has no attributes.
+The class 'uml3::0::0::ActionExecutionSpecification' has no attributes.
+The class 'uml3::0::0::BehavioredClassifier' has no attributes.
+The class 'MessageEvent' has no attributes.
+The class 'uml3::0::0::CreateObjectAction' has no attributes.
+The class 'uml3::0::0::SendOperationEvent' has no attributes.
+The class 'uml3::0::0::InstanceSpecification' has no attributes.
+The class 'uml3::0::0::Transition' has the following attributes: 'kind' of type str.
+The class 'uml3::0::0::DataType' has no attributes.
+The class 'uml3::0::0::Relationship' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'ExecutionSpecification' has no attributes.
+The class 'uml3::0::0::Element' has no attributes.
+The class 'uml3::0::0::MultiplicityElement' has the following attributes: 'upper' of type str; 'isOrdered' of type str; 'isUnique' of type str; 'lower' of type str.
+The class 'InputPin' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'uml3::0::0::ValuePin' has no attributes.
+The class 'uml3::0::0::ExecutionEnvironment' has no attributes.
+The class 'Transition' has no attributes.
+The class 'uml3::0::0::ControlFlow' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'uml3::0::0::ActivityPartition' has the following attributes: 'isDimension' of type str; 'isExternal' of type str.
+The class 'uml3::0::0::OpaqueBehavior' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'uml3::0::0::ForkNode' has no attributes.
+The class 'uml3::0::0::Behavior' has the following attributes: 'isReentrant' of type str.
+The class 'uml3::0::0::OpaqueAction' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'StructuredClassifier' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'WriteVariableAction' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'uml3::0::0::TemplateBinding' has no attributes.
+The class 'uml3::0::0::EnumerationLiteral' has no attributes.
+The class 'IntervalConstraint' has no attributes.
+The class 'uml3::0::0::ProtocolStateMachine' has no attributes.
+The class 'uml3::0::0::RedefinableTemplateSignature' has no attributes.
+The class 'uml3::0::0::AcceptEventAction' has the following attributes: 'isUnmarshall' of type str.
+The class 'Artifact' has no attributes.
+The class 'uml3::0::0::ActivityGroup' has no attributes.
+The class 'uml3::0::0::PrimitiveType' has no attributes.
+The class 'Package' has no attributes.
+The class 'uml3::0::0::Collaboration' has no attributes.
+The class 'uml3::0::0::State' has the following attributes: 'isSubmachineState' of type str; 'isComposite' of type str; 'isSimple' of type str; 'isOrthogonal' of type str.
+The class 'uml3::0::0::Trigger' has no attributes.
+The class 'uml3::0::0::TimeObservation' has the following attributes: 'firstEvent' of type str.
+The class 'uml3::0::0::NamedElement' has the following attributes: 'visibility' of type str; 'qualifiedName' of type str; 'name' of type str.
+The class 'uml3::0::0::ExecutableNode' has no attributes.
+The class 'uml3::0::0::RedefinableElement' has the following attributes: 'isLeaf' of type str.
+The class 'uml3::0::0::StateInvariant' has no attributes.
+The class 'uml3::0::0::LinkEndDestructionData' has the following attributes: 'isDestroyDuplicates' of type str.
+The class 'uml3::0::0::TypedElement' has no attributes.
+The class 'uml3::0::0::LiteralNull' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'Action' has no attributes.
+The class 'uml3::0::0::TimeInterval' has no attributes.
+The class 'uml3::0::0::TemplateParameter' has no attributes.
+The class 'uml3::0::0::ParameterSet' has no attributes.
+The class 'uml3::0::0::ExtensionPoint' has no attributes.
+The class 'uml3::0::0::Clause' has no attributes.
+The class 'uml3::0::0::InteractionFragment' has no attributes.
+The class 'uml3::0::0::DestroyObjectAction' has the following attributes: 'isDestroyOwnedObjects' of type str; 'isDestroyLinks' of type str.
+The class 'uml3::0::0::WriteLinkAction' has no attributes.
+The class 'uml3::0::0::BehavioralFeature' has the following attributes: 'concurrency' of type str; 'isAbstract' of type str.
+The class 'uml3::0::0::Model' has the following attributes: 'viewpoint' of type str.
+The class 'Class' has no attributes.
+The class 'VariableAction' has no attributes.
+The class 'Feature' has no attributes.
+The class 'uml3::0::0::Extension' has the following attributes: 'isRequired' of type str.
+The class 'uml3::0::0::Property' has the following attributes: 'isDerivedUnion' of type str; 'default' of type str; 'isComposite' of type str; 'aggregation' of type str; 'isDerived' of type str.
+The class 'uml3::0::0::ClassifierTemplateParameter' has the following attributes: 'allowSubstitutable' of type str.
+The class 'uml3::0::0::Parameter' has the following attributes: 'default' of type str; 'direction' of type str; 'effect' of type str; 'isException' of type str; 'isStream' of type str.
+The class 'uml3::0::0::SequenceNode' has no attributes.
+The class 'uml3::0::0::OperationTemplateParameter' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'uml3::0::0::InformationItem' has no attributes.
+The class 'Association' has no attributes.
+The class 'uml3::0::0::InteractionConstraint' has no attributes.
+The class 'uml3::0::0::Interaction' has no attributes.
+The class 'uml3::0::0::Feature' has the following attributes: 'isStatic' of type str.
+The class 'uml3::0::0::ValueSpecification' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'uml3::0::0::ReadSelfAction' has no attributes.
+The class 'uml3::0::0::ProtocolTransition' has no attributes.
+The class 'uml3::0::0::LinkEndData' has no attributes.
+The class 'uml3::0::0::ParameterableElement' has no attributes.
+The class 'uml3::0::0::ConsiderIgnoreFragment' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'uml3::0::0::Component' has the following attributes: 'isIndirectlyInstantiated' of type str.
+The class 'Event' has no attributes.
+The class 'uml3::0::0::StartObjectBehaviorAction' has no attributes.
+The class 'uml3::0::0::Substitution' has no attributes.
+The class 'uml3::0::0::Signal' has no attributes.
+The class 'InvocationAction' has no attributes.
+The class 'uml3::0::0::WriteStructuralFeatureAction' has no attributes.
+The class 'Property' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'uml3::0::0::ReadLinkObjectEndAction' has no attributes.
+The class 'uml3::0::0::Port' has the following attributes: 'isBehavior' of type str; 'isService' of type str.
+The class 'uml3::0::0::Observation' has no attributes.
+The class 'CreateLinkAction' has no attributes.
+The class 'uml3::0::0::ExtensionEnd' has no attributes.
+The class 'uml3::0::0::Message' has the following attributes: 'messageSort' of type str; 'messageKind' of type str.
+The class 'uml3::0::0::FinalState' has no attributes.
+The class 'uml3::0::0::Pin' has the following attributes: 'isControl' of type str.
+The class 'uml3::0::0::GeneralizationSet' has the following attributes: 'isDisjoint' of type str; 'isCovering' of type str.
+The class 'uml3::0::0::Enumeration' has no attributes.
+The class 'uml3::0::0::TemplateSignature' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'Element' has no attributes.
+The class 'uml3::0::0::CreateLinkAction' has no attributes.
+The class 'uml3::0::0::Interface' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'uml3::0::0::Include' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'uml3::0::0::Reception' has no attributes.
+The class 'uml3::0::0::JoinNode' has the following attributes: 'isCombineDuplicate' of type str.
+The class 'uml3::0::0::CallOperationAction' has no attributes.
+The class 'uml3::0::0::ObjectFlow' has the following attributes: 'isMulticast' of type str; 'isMultireceive' of type str.
+The class 'uml3::0::0::Association' has the following attributes: 'isDerived' of type str.
+The class 'uml3::0::0::VariableAction' has no attributes.
+The class 'Pin' has no attributes.
+The class 'uml3::0::0::QualifierValue' has no attributes.
+The class 'uml3::0::0::RemoveStructuralFeatureValueAction' has the following attributes: 'isRemoveDuplicates' of type str.
+The class 'uml3::0::0::Connector' has the following attributes: 'kind' of type str.
+The class 'StructuralFeature' has no attributes.
+The class 'uml3::0::0::Device' has no attributes.
+The class 'uml3::0::0::Region' has no attributes.
+The class 'uml3::0::0::Extend' has no attributes.
+The class 'uml3::0::0::CollaborationUse' has no attributes.
+The class 'uml3::0::0::OutputPin' has no attributes.
+The class 'uml3::0::0::ExpansionRegion' has the following attributes: 'mode' of type str.
+The class 'InteractionFragment' has no attributes.
+The class 'uml3::0::0::ProtocolConformance' has no attributes.
+The class 'uml3::0::0::TemplateableElement' has no attributes.
+The class 'uml3::0::0::Profile' has no attributes.
+The class 'uml3::0::0::Stereotype' has no attributes.
+The class 'uml3::0::0::InvocationAction' has no attributes.
+The class 'uml3::0::0::LinkAction' has no attributes.
+The class 'uml3::0::0::Vertex' has no attributes.
+The class 'uml3::0::0::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'uml3::0::0::ProfileApplication' has the following attributes: 'isStrict' of type str.
+The class 'uml3::0::0::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'uml3::0::0::Comment' has the following attributes: 'body' of type str.
+The class 'uml3::0::0::CreateLinkObjectAction' has no attributes.
+The class 'uml3::0::0::TemplateParameterSubstitution' has no attributes.
+The class 'uml3::0::0::Slot' has no attributes.
+The class 'uml3::0::0::ReadLinkAction' has no attributes.
+The class 'uml3::0::0::AddVariableValueAction' has the following attributes: 'isReplaceAll' of type str.
+The class 'uml3::0::0::Artifact' has the following attributes: 'fileName' of type str.
+The class 'uml3::0::0::Image' has the following attributes: 'format' of type str; 'location' of type str; 'content' of type str.
+The class 'uml3::0::0::Manifestation' has no attributes.
+The class 'uml3::0::0::StructuralFeatureAction' has no attributes.
+The class 'uml3::0::0::ActionInputPin' has no attributes.
+The class 'InteractionUse' has no attributes.
+The class 'uml3::0::0::LiteralString' has the following attributes: 'value' of type str.
+The class 'uml3::0::0::ComponentRealization' has no attributes.
+The class 'TemplateSignature' has no attributes.
+The class 'uml3::0::0::DataStoreNode' has no attributes.
+The class 'uml3::0::0::ConnectableElement' has no attributes.
+The class 'DeploymentTarget' has no attributes.
+The class 'uml3::0::0::PartDecomposition' has no attributes.
+The class 'uml3::0::0::MergeNode' has no attributes.
+The class 'uml3::0::0::Class' has the following attributes: 'isActive' of type str.
+The class 'uml3::0::0::StateMachine' has no attributes.
+The class 'uml3::0::0::ExecutionOccurrenceSpecification' has no attributes.
+The class 'uml3::0::0::FunctionBehavior' has no attributes.
+The class 'uml3::0::0::Expression' has the following attributes: 'symbol' of type str.
+The class 'uml3::0::0::ReduceAction' has the following attributes: 'isOrdered' of type str.
+The class 'uml3::0::0::DeploymentTarget' has no attributes.
+The class 'uml3::0::0::CombinedFragment' has the following attributes: 'interactionOperator' of type str.
+The class 'uml3::0::0::Realization' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'CallAction' has no attributes.
+The enumeration 'MessageKind' has the following literals: 'complete', 'unknown', 'lost', 'found'.
+The enumeration 'CallConcurrencyKind' has the following literals: 'guarded', 'sequential', 'concurrent'.
+The enumeration 'PseudostateKind' has the following literals: 'fork', 'junction', 'entryPoint', 'join', 'exitPoint', 'initial', 'terminate', 'choice', 'shallowHistory', 'deepHistory'.
+The enumeration 'ConnectorKind' has the following literals: 'delegation', 'assembly'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'out', 'inout', 'return_'.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'composite', 'none'.
+The enumeration 'ExpansionKind' has the following literals: 'iterative', 'parallel', 'stream'.
+The enumeration 'MessageSort' has the following literals: 'createMessage', 'reply', 'synchCall', 'asynchCall', 'asynchSignal', 'deleteMessage'.
+The enumeration 'InteractionOperatorKind' has the following literals: 'seq', 'break_', 'ignore', 'strict', 'neg', 'consider', 'opt', 'alt', 'assert_', 'critical', 'par', 'loop'.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'public', 'protected', 'package'.
+The enumeration 'ParameterEffectKind' has the following literals: 'read', 'update', 'delete', 'create'.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'ordered', 'FIFO', 'unordered', 'LIFO'.
+The enumeration 'TransitionKind' has the following literals: 'external', 'internal', 'local'.
+'uml3::0::0::ReclassifyObjectAction' is a specialization of 'Action'.
+'uml3::0::0::PackageableElement' is a specialization of 'NamedElement'.
+'uml3::0::0::DeployedArtifact' is a specialization of 'NamedElement'.
+'uml3::0::0::State' is a specialization of 'Vertex'.
+'uml3::0::0::Collaboration' is a specialization of 'StructuredClassifier'.
+'uml3::0::0::Slot' is a specialization of 'Element'.
+'uml3::0::0::BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'uml3::0::0::InformationFlow' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'uml3::0::0::PackageImport' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::ConnectableElementTemplateParameter' is a specialization of 'TemplateParameter'.
+'uml3::0::0::Trigger' is a specialization of 'NamedElement'.
+'uml3::0::0::ExecutionSpecification' is a specialization of 'InteractionFragment'.
+'uml3::0::0::ChangeEvent' is a specialization of 'Event'.
+'uml3::0::0::ComponentRealization' is a specialization of 'Realization'.
+'uml3::0::0::Package' is a specialization of 'TemplateableElement'.
+'uml3::0::0::StructuredActivityNode' is a specialization of 'Action'.
+'uml3::0::0::Relationship' is a specialization of 'Element'.
+'uml3::0::0::Behavior' is a specialization of 'Class'.
+'uml3::0::0::State' is a specialization of 'RedefinableElement'.
+'uml3::0::0::ReceiveSignalEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::TimeEvent' is a specialization of 'Event'.
+'uml3::0::0::AssociationClass' is a specialization of 'Association'.
+'uml3::0::0::ExtensionPoint' is a specialization of 'RedefinableElement'.
+'uml3::0::0::ValuePin' is a specialization of 'InputPin'.
+'uml3::0::0::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'uml3::0::0::TypedElement' is a specialization of 'NamedElement'.
+'uml3::0::0::LinkEndDestructionData' is a specialization of 'LinkEndData'.
+'uml3::0::0::Dependency' is a specialization of 'PackageableElement'.
+'uml3::0::0::RedefinableTemplateSignature' is a specialization of 'RedefinableElement'.
+'uml3::0::0::Variable' is a specialization of 'ConnectableElement'.
+'uml3::0::0::ConnectableElement' is a specialization of 'ParameterableElement'.
+'uml3::0::0::StringExpression' is a specialization of 'TemplateableElement'.
+'uml3::0::0::MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'uml3::0::0::SignalEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'uml3::0::0::AcceptCallAction' is a specialization of 'AcceptEventAction'.
+'uml3::0::0::PrimitiveType' is a specialization of 'DataType'.
+'uml3::0::0::AcceptEventAction' is a specialization of 'Action'.
+'uml3::0::0::PartDecomposition' is a specialization of 'InteractionUse'.
+'uml3::0::0::InstanceSpecification' is a specialization of 'DeployedArtifact'.
+'uml3::0::0::Operation' is a specialization of 'BehavioralFeature'.
+'uml3::0::0::ReceiveOperationEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::StateMachine' is a specialization of 'Behavior'.
+'uml3::0::0::ParameterableElement' is a specialization of 'Element'.
+'uml3::0::0::FinalState' is a specialization of 'State'.
+'uml3::0::0::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'uml3::0::0::BehavioralFeature' is a specialization of 'Feature'.
+'uml3::0::0::UnmarshallAction' is a specialization of 'Action'.
+'uml3::0::0::ActivityNode' is a specialization of 'RedefinableElement'.
+'uml3::0::0::Message' is a specialization of 'NamedElement'.
+'uml3::0::0::DurationObservation' is a specialization of 'Observation'.
+'uml3::0::0::InteractionOperand' is a specialization of 'Namespace'.
+'uml3::0::0::BehavioredClassifier' is a specialization of 'Classifier'.
+'uml3::0::0::ExtensionEnd' is a specialization of 'Property'.
+'uml3::0::0::SendSignalAction' is a specialization of 'InvocationAction'.
+'uml3::0::0::ExecutableNode' is a specialization of 'ActivityNode'.
+'uml3::0::0::OutputPin' is a specialization of 'Pin'.
+'uml3::0::0::TimeInterval' is a specialization of 'Interval'.
+'uml3::0::0::BehavioralFeature' is a specialization of 'Namespace'.
+'uml3::0::0::Interface' is a specialization of 'Classifier'.
+'uml3::0::0::ForkNode' is a specialization of 'ControlNode'.
+'uml3::0::0::Artifact' is a specialization of 'Classifier'.
+'uml3::0::0::Region' is a specialization of 'Namespace'.
+'uml3::0::0::ReadVariableAction' is a specialization of 'VariableAction'.
+'uml3::0::0::CommunicationPath' is a specialization of 'Association'.
+'uml3::0::0::DestroyObjectAction' is a specialization of 'Action'.
+'uml3::0::0::ValueSpecification' is a specialization of 'TypedElement'.
+'uml3::0::0::FlowFinalNode' is a specialization of 'FinalNode'.
+'uml3::0::0::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'uml3::0::0::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'uml3::0::0::Reception' is a specialization of 'BehavioralFeature'.
+'uml3::0::0::Classifier' is a specialization of 'TemplateableElement'.
+'uml3::0::0::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'uml3::0::0::Interaction' is a specialization of 'Behavior'.
+'uml3::0::0::SendSignalEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::DataStoreNode' is a specialization of 'CentralBufferNode'.
+'uml3::0::0::InteractionFragment' is a specialization of 'NamedElement'.
+'uml3::0::0::Association' is a specialization of 'Classifier'.
+'uml3::0::0::ProfileApplication' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::ReadLinkAction' is a specialization of 'LinkAction'.
+'uml3::0::0::Classifier' is a specialization of 'RedefinableElement'.
+'uml3::0::0::ProtocolConformance' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::TemplateParameter' is a specialization of 'Element'.
+'uml3::0::0::Pin' is a specialization of 'MultiplicityElement'.
+'uml3::0::0::CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+'uml3::0::0::RedefinableElement' is a specialization of 'NamedElement'.
+'uml3::0::0::ActivityFinalNode' is a specialization of 'FinalNode'.
+'uml3::0::0::ReadLinkObjectEndAction' is a specialization of 'Action'.
+'uml3::0::0::OpaqueBehavior' is a specialization of 'Behavior'.
+'uml3::0::0::LiteralString' is a specialization of 'LiteralSpecification'.
+'uml3::0::0::InstanceSpecification' is a specialization of 'DeploymentTarget'.
+'uml3::0::0::Element' is a specialization of 'EModelElement'.
+'uml3::0::0::Classifier' is a specialization of 'Namespace'.
+'uml3::0::0::CollaborationUse' is a specialization of 'NamedElement'.
+'uml3::0::0::OpaqueAction' is a specialization of 'Action'.
+'uml3::0::0::JoinNode' is a specialization of 'ControlNode'.
+'uml3::0::0::ActivityPartition' is a specialization of 'NamedElement'.
+'uml3::0::0::MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+'uml3::0::0::Comment' is a specialization of 'Element'.
+'uml3::0::0::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'uml3::0::0::RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+'uml3::0::0::LinkEndData' is a specialization of 'Element'.
+'uml3::0::0::PackageMerge' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::CallEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::GeneralOrdering' is a specialization of 'NamedElement'.
+'uml3::0::0::DurationInterval' is a specialization of 'Interval'.
+'uml3::0::0::Profile' is a specialization of 'Package'.
+'uml3::0::0::ValueSpecification' is a specialization of 'PackageableElement'.
+'uml3::0::0::StructuredActivityNode' is a specialization of 'ActivityGroup'.
+'uml3::0::0::StructuredActivityNode' is a specialization of 'Namespace'.
+'uml3::0::0::SendObjectAction' is a specialization of 'InvocationAction'.
+'uml3::0::0::Parameter' is a specialization of 'ConnectableElement'.
+'uml3::0::0::State' is a specialization of 'Namespace'.
+'uml3::0::0::Package' is a specialization of 'PackageableElement'.
+'uml3::0::0::ClassifierTemplateParameter' is a specialization of 'TemplateParameter'.
+'uml3::0::0::Continuation' is a specialization of 'InteractionFragment'.
+'uml3::0::0::Gate' is a specialization of 'MessageEnd'.
+'uml3::0::0::MergeNode' is a specialization of 'ControlNode'.
+'uml3::0::0::BroadcastSignalAction' is a specialization of 'InvocationAction'.
+'uml3::0::0::LinkAction' is a specialization of 'Action'.
+'uml3::0::0::ParameterSet' is a specialization of 'NamedElement'.
+'uml3::0::0::VariableAction' is a specialization of 'Action'.
+'uml3::0::0::TemplateSignature' is a specialization of 'Element'.
+'uml3::0::0::Action' is a specialization of 'ExecutableNode'.
+'uml3::0::0::Duration' is a specialization of 'ValueSpecification'.
+'uml3::0::0::LoopNode' is a specialization of 'StructuredActivityNode'.
+'uml3::0::0::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'uml3::0::0::Component' is a specialization of 'Class'.
+'uml3::0::0::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'uml3::0::0::Package' is a specialization of 'Namespace'.
+'uml3::0::0::InteractionUse' is a specialization of 'InteractionFragment'.
+'uml3::0::0::DecisionNode' is a specialization of 'ControlNode'.
+'uml3::0::0::CallBehaviorAction' is a specialization of 'CallAction'.
+'uml3::0::0::ConsiderIgnoreFragment' is a specialization of 'CombinedFragment'.
+'uml3::0::0::DeploymentSpecification' is a specialization of 'Artifact'.
+'uml3::0::0::Class' is a specialization of 'BehavioredClassifier'.
+'uml3::0::0::InputPin' is a specialization of 'Pin'.
+'uml3::0::0::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'uml3::0::0::MessageEvent' is a specialization of 'Event'.
+'uml3::0::0::ValueSpecificationAction' is a specialization of 'Action'.
+'uml3::0::0::StructuralFeature' is a specialization of 'Feature'.
+'uml3::0::0::CombinedFragment' is a specialization of 'InteractionFragment'.
+'uml3::0::0::Image' is a specialization of 'Element'.
+'uml3::0::0::InterfaceRealization' is a specialization of 'Realization'.
+'uml3::0::0::StructuralFeatureAction' is a specialization of 'Action'.
+'uml3::0::0::TemplateParameterSubstitution' is a specialization of 'Element'.
+'uml3::0::0::TimeExpression' is a specialization of 'ValueSpecification'.
+'uml3::0::0::Generalization' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'uml3::0::0::Pseudostate' is a specialization of 'Vertex'.
+'uml3::0::0::InitialNode' is a specialization of 'ControlNode'.
+'uml3::0::0::Clause' is a specialization of 'Element'.
+'uml3::0::0::Extend' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::CentralBufferNode' is a specialization of 'ObjectNode'.
+'uml3::0::0::Model' is a specialization of 'Package'.
+'uml3::0::0::Operation' is a specialization of 'TemplateableElement'.
+'uml3::0::0::Region' is a specialization of 'RedefinableElement'.
+'uml3::0::0::Include' is a specialization of 'NamedElement'.
+'uml3::0::0::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'uml3::0::0::ReadExtentAction' is a specialization of 'Action'.
+'uml3::0::0::OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+'uml3::0::0::DestructionEvent' is a specialization of 'Event'.
+'uml3::0::0::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'uml3::0::0::ObjectNode' is a specialization of 'ActivityNode'.
+'uml3::0::0::ActivityEdge' is a specialization of 'RedefinableElement'.
+'uml3::0::0::AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+'uml3::0::0::SequenceNode' is a specialization of 'StructuredActivityNode'.
+'uml3::0::0::SendOperationEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::Pin' is a specialization of 'ObjectNode'.
+'uml3::0::0::Signal' is a specialization of 'Classifier'.
+'uml3::0::0::RedefinableTemplateSignature' is a specialization of 'TemplateSignature'.
+'uml3::0::0::StringExpression' is a specialization of 'Expression'.
+'uml3::0::0::CreationEvent' is a specialization of 'Event'.
+'uml3::0::0::TestIdentityAction' is a specialization of 'Action'.
+'uml3::0::0::InvocationAction' is a specialization of 'Action'.
+'uml3::0::0::AnyReceiveEvent' is a specialization of 'MessageEvent'.
+'uml3::0::0::DirectedRelationship' is a specialization of 'Relationship'.
+'uml3::0::0::Property' is a specialization of 'DeploymentTarget'.
+'uml3::0::0::Enumeration' is a specialization of 'DataType'.
+'uml3::0::0::ExecutionOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'uml3::0::0::InstanceValue' is a specialization of 'ValueSpecification'.
+'uml3::0::0::ReduceAction' is a specialization of 'Action'.
+'uml3::0::0::DurationConstraint' is a specialization of 'IntervalConstraint'.
+'uml3::0::0::ClearVariableAction' is a specialization of 'VariableAction'.
+'uml3::0::0::Extension' is a specialization of 'Association'.
+'uml3::0::0::Realization' is a specialization of 'Abstraction'.
+'uml3::0::0::Type' is a specialization of 'PackageableElement'.
+'uml3::0::0::GeneralizationSet' is a specialization of 'PackageableElement'.
+'uml3::0::0::StateInvariant' is a specialization of 'InteractionFragment'.
+'uml3::0::0::ClearAssociationAction' is a specialization of 'Action'.
+'uml3::0::0::ActivityPartition' is a specialization of 'ActivityGroup'.
+'uml3::0::0::ConnectorEnd' is a specialization of 'MultiplicityElement'.
+'uml3::0::0::CallOperationAction' is a specialization of 'CallAction'.
+'uml3::0::0::Feature' is a specialization of 'RedefinableElement'.
+'uml3::0::0::Substitution' is a specialization of 'Realization'.
+'uml3::0::0::ActivityGroup' is a specialization of 'Element'.
+'uml3::0::0::WriteLinkAction' is a specialization of 'LinkAction'.
+'uml3::0::0::ReplyAction' is a specialization of 'Action'.
+'uml3::0::0::ControlFlow' is a specialization of 'ActivityEdge'.
+'uml3::0::0::Deployment' is a specialization of 'Dependency'.
+'uml3::0::0::CreateObjectAction' is a specialization of 'Action'.
+'uml3::0::0::IntervalConstraint' is a specialization of 'Constraint'.
+'uml3::0::0::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'uml3::0::0::TemplateableElement' is a specialization of 'Element'.
+'uml3::0::0::Parameter' is a specialization of 'MultiplicityElement'.
+'uml3::0::0::ControlNode' is a specialization of 'ActivityNode'.
+'uml3::0::0::Classifier' is a specialization of 'Type'.
+'uml3::0::0::ConnectableElement' is a specialization of 'TypedElement'.
+'uml3::0::0::ObjectNode' is a specialization of 'TypedElement'.
+'uml3::0::0::Property' is a specialization of 'ConnectableElement'.
+'uml3::0::0::FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+'uml3::0::0::Observation' is a specialization of 'PackageableElement'.
+'uml3::0::0::Vertex' is a specialization of 'NamedElement'.
+'uml3::0::0::Constraint' is a specialization of 'PackageableElement'.
+'uml3::0::0::Connector' is a specialization of 'Feature'.
+'uml3::0::0::ExceptionHandler' is a specialization of 'Element'.
+'uml3::0::0::Port' is a specialization of 'Property'.
+'uml3::0::0::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'uml3::0::0::Device' is a specialization of 'Node'.
+'uml3::0::0::NamedElement' is a specialization of 'Element'.
+'uml3::0::0::DeploymentTarget' is a specialization of 'NamedElement'.
+'uml3::0::0::ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+'uml3::0::0::Include' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::ExecutionEnvironment' is a specialization of 'Node'.
+'uml3::0::0::InteractionOperand' is a specialization of 'InteractionFragment'.
+'uml3::0::0::Operation' is a specialization of 'ParameterableElement'.
+'uml3::0::0::CallAction' is a specialization of 'InvocationAction'.
+'uml3::0::0::Artifact' is a specialization of 'DeployedArtifact'.
+'uml3::0::0::InteractionConstraint' is a specialization of 'Constraint'.
+'uml3::0::0::DataType' is a specialization of 'Classifier'.
+'uml3::0::0::OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+'uml3::0::0::ActionInputPin' is a specialization of 'InputPin'.
+'uml3::0::0::Class' is a specialization of 'EncapsulatedClassifier'.
+'uml3::0::0::StartObjectBehaviorAction' is a specialization of 'CallAction'.
+'uml3::0::0::StructuralFeature' is a specialization of 'TypedElement'.
+'uml3::0::0::Namespace' is a specialization of 'NamedElement'.
+'uml3::0::0::Collaboration' is a specialization of 'BehavioredClassifier'.
+'uml3::0::0::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'uml3::0::0::Node' is a specialization of 'DeploymentTarget'.
+'uml3::0::0::StartClassifierBehaviorAction' is a specialization of 'Action'.
+'uml3::0::0::Abstraction' is a specialization of 'Dependency'.
+'uml3::0::0::EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+'uml3::0::0::UseCase' is a specialization of 'BehavioredClassifier'.
+'uml3::0::0::Property' is a specialization of 'StructuralFeature'.
+'uml3::0::0::Lifeline' is a specialization of 'NamedElement'.
+'uml3::0::0::ExecutionEvent' is a specialization of 'Event'.
+'uml3::0::0::InformationFlow' is a specialization of 'PackageableElement'.
+'uml3::0::0::Actor' is a specialization of 'BehavioredClassifier'.
+'uml3::0::0::Variable' is a specialization of 'MultiplicityElement'.
+'uml3::0::0::TimeConstraint' is a specialization of 'IntervalConstraint'.
+'uml3::0::0::Interaction' is a specialization of 'InteractionFragment'.
+'uml3::0::0::StructuredClassifier' is a specialization of 'Classifier'.
+'uml3::0::0::PackageableElement' is a specialization of 'ParameterableElement'.
+'uml3::0::0::Usage' is a specialization of 'Dependency'.
+'uml3::0::0::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'uml3::0::0::TimeObservation' is a specialization of 'Observation'.
+'uml3::0::0::Dependency' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'uml3::0::0::LiteralNull' is a specialization of 'LiteralSpecification'.
+'uml3::0::0::QualifierValue' is a specialization of 'Element'.
+'uml3::0::0::AssociationClass' is a specialization of 'Class'.
+'uml3::0::0::MessageEnd' is a specialization of 'NamedElement'.
+'uml3::0::0::Interval' is a specialization of 'ValueSpecification'.
+'uml3::0::0::WriteVariableAction' is a specialization of 'VariableAction'.
+'uml3::0::0::RaiseExceptionAction' is a specialization of 'Action'.
+'uml3::0::0::ProtocolTransition' is a specialization of 'Transition'.
+'uml3::0::0::ObjectFlow' is a specialization of 'ActivityEdge'.
+'uml3::0::0::Event' is a specialization of 'PackageableElement'.
+'uml3::0::0::TemplateBinding' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::MultiplicityElement' is a specialization of 'Element'.
+'uml3::0::0::Extend' is a specialization of 'NamedElement'.
+'uml3::0::0::Activity' is a specialization of 'Behavior'.
+'uml3::0::0::FinalNode' is a specialization of 'ControlNode'.
+'uml3::0::0::Transition' is a specialization of 'Namespace'.
+'uml3::0::0::Node' is a specialization of 'Class'.
+'uml3::0::0::ExpansionNode' is a specialization of 'ObjectNode'.
+'uml3::0::0::Association' is a specialization of 'Relationship'.
+'uml3::0::0::InstanceSpecification' is a specialization of 'PackageableElement'.
+'uml3::0::0::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'uml3::0::0::InformationItem' is a specialization of 'Classifier'.
+'uml3::0::0::ElementImport' is a specialization of 'DirectedRelationship'.
+'uml3::0::0::Manifestation' is a specialization of 'Abstraction'.
+'uml3::0::0::Stereotype' is a specialization of 'Class'.
+'uml3::0::0::Expression' is a specialization of 'ValueSpecification'.
+'uml3::0::0::ConnectionPointReference' is a specialization of 'Vertex'.
+'uml3::0::0::ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+'uml3::0::0::Transition' is a specialization of 'RedefinableElement'.
+'uml3::0::0::ReadSelfAction' is a specialization of 'Action'.
+'uml3::0::0::ActionExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'uml3::0::0::RedefinableTemplateSignature' (role 'uml3_0_0_RedefinableTemplateSignature481', cardinality 0..*) is associated with 'uml3::0::0::TemplateParameter' (role 'uml3_0_0_TemplateParameter482', cardinality 0..*).
+'uml3::0::0::StringExpression' (role 'owningExpression', cardinality 0..*) is associated with 'uml3::0::0::StringExpression' (role 'StringExpression', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'ownedParameter', cardinality 0..*) is associated with 'uml3::0::0::TemplateSignature' (role 'TemplateSignature106', cardinality 0..*).
+'uml3::0::0::Variable' (role 'variable582', cardinality 0..*) is associated with 'uml3::0::0::Activity' (role 'Activity583', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin1043', cardinality 0..*) is associated with 'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1042', cardinality 0..*).
+'uml3::0::0::PackageableElement' (role 'uml3_0_0_PackageableElement39', cardinality 0..*) is associated with 'uml3::0::0::Namespace' (role 'uml3_0_0_Namespace38', cardinality 0..*).
+'uml3::0::0::Package' (role 'Package498', cardinality 0..*) is associated with 'uml3::0::0::PackageMerge' (role 'packageMerge', cardinality 0..*).
+'uml3::0::0::Component' (role 'abstraction', cardinality 0..*) is associated with 'uml3::0::0::ComponentRealization' (role 'ComponentRealization', cardinality 0..*).
+'uml3::0::0::ReplyAction' (role 'uml3_0_0_ReplyAction978', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin979', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'uml3_0_0_ActivityEdge917', cardinality 0..*) is associated with 'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow916', cardinality 0..*).
+'uml3::0::0::Association' (role 'uml3_0_0_Association65', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin976', cardinality 0..*) is associated with 'uml3::0::0::ReplyAction' (role 'uml3_0_0_ReplyAction975', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint256', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior255', cardinality 0..*).
+'uml3::0::0::ObjectNode' (role 'uml3_0_0_ObjectNode640', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior641', cardinality 0..*).
+'uml3::0::0::CreateLinkObjectAction' (role 'uml3_0_0_CreateLinkObjectAction', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin964', cardinality 0..*).
+'uml3::0::0::Message' (role 'uml3_0_0_Message923', cardinality 0..*) is associated with 'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow922', cardinality 0..*).
+'uml3::0::0::Manifestation' (role 'uml3_0_0_Manifestation215', cardinality 0..*) is associated with 'uml3::0::0::PackageableElement' (role 'uml3_0_0_PackageableElement216', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'edge', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'ActivityPartition591', cardinality 0..*).
+'uml3::0::0::PackageMerge' (role 'uml3_0_0_PackageMerge', cardinality 0..*) is associated with 'uml3::0::0::Package' (role 'uml3_0_0_Package496', cardinality 0..*).
+'uml3::0::0::State' (role 'uml3_0_0_State638', cardinality 0..*) is associated with 'uml3::0::0::ObjectNode' (role 'uml3_0_0_ObjectNode637', cardinality 0..*).
+'uml3::0::0::Operation' (role 'uml3_0_0_Operation757', cardinality 0..*) is associated with 'uml3::0::0::CallEvent' (role 'uml3_0_0_CallEvent', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier73', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier71', cardinality 0..*).
+'uml3::0::0::Collaboration' (role 'uml3_0_0_Collaboration454', cardinality 0..*) is associated with 'uml3::0::0::ConnectableElement' (role 'uml3_0_0_ConnectableElement455', cardinality 0..*).
+'uml3::0::0::TemplateSignature' (role 'uml3_0_0_TemplateSignature', cardinality 0..*) is associated with 'uml3::0::0::TemplateBinding' (role 'uml3_0_0_TemplateBinding', cardinality 0..*).
+'uml3::0::0::Deployment' (role 'deployment', cardinality 0..*) is associated with 'uml3::0::0::DeploymentSpecification' (role 'DeploymentSpecification', cardinality 0..*).
+'uml3::0::0::Include' (role 'uml3_0_0_Include', cardinality 0..*) is associated with 'uml3::0::0::UseCase' (role 'uml3_0_0_UseCase464', cardinality 0..*).
+'uml3::0::0::StructuredActivityNode' (role 'StructuredActivityNode602', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'edge601', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin658', cardinality 0..*) is associated with 'uml3::0::0::CallOperationAction' (role 'uml3_0_0_CallOperationAction657', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier76', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier74', cardinality 0..*).
+'uml3::0::0::InstanceSpecification' (role 'uml3_0_0_InstanceSpecification', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier506', cardinality 0..*).
+'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode662', cardinality 0..*) is associated with 'uml3::0::0::SequenceNode' (role 'uml3_0_0_SequenceNode', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'NamedElement41', cardinality 0..*) is associated with 'uml3::0::0::Namespace' (role 'namespace', cardinality 0..*).
+'uml3::0::0::UseCase' (role 'UseCase475', cardinality 0..*) is associated with 'uml3::0::0::Extend' (role 'extend', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier84', cardinality 0..*) is associated with 'uml3::0::0::CollaborationUse' (role 'uml3_0_0_CollaborationUse85', cardinality 0..*).
+'uml3::0::0::UseCase' (role 'useCase', cardinality 0..*) is associated with 'uml3::0::0::ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*).
+'uml3::0::0::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'uml3::0::0::Enumeration' (role 'enumeration', cardinality 0..*).
+'uml3::0::0::Artifact' (role 'uml3_0_0_Artifact', cardinality 0..*) is associated with 'uml3::0::0::Artifact' (role 'uml3_0_0_Artifact204', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin893', cardinality 0..*) is associated with 'uml3::0::0::WriteVariableAction' (role 'uml3_0_0_WriteVariableAction', cardinality 0..*).
+'uml3::0::0::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'uml3::0::0::ElementImport' (role 'ElementImport', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'uml3::0::0::Namespace' (role 'context', cardinality 0..*).
+'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1036', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1037', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement792', cardinality 0..*) is associated with 'uml3::0::0::ConsiderIgnoreFragment' (role 'uml3_0_0_ConsiderIgnoreFragment', cardinality 0..*).
+'uml3::0::0::Class' (role 'uml3_0_0_Class270', cardinality 0..*) is associated with 'uml3::0::0::Class' (role 'uml3_0_0_Class268', cardinality 0..*).
+'uml3::0::0::Package' (role 'uml3_0_0_Package47', cardinality 0..*) is associated with 'uml3::0::0::PackageImport' (role 'uml3_0_0_PackageImport', cardinality 0..*).
+'uml3::0::0::Namespace' (role 'uml3_0_0_Namespace', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement36', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property184', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property186', cardinality 0..*).
+'uml3::0::0::Extend' (role 'Extend', cardinality 0..*) is associated with 'uml3::0::0::UseCase' (role 'extension458', cardinality 0..*).
+'uml3::0::0::ReduceAction' (role 'uml3_0_0_ReduceAction', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior989', cardinality 0..*).
+'uml3::0::0::PackageableElement' (role 'uml3_0_0_PackageableElement197', cardinality 0..*) is associated with 'uml3::0::0::DeploymentTarget' (role 'uml3_0_0_DeploymentTarget', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'ActivityNode587', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'incoming', cardinality 0..*).
+'uml3::0::0::TemplateSignature' (role 'ownedTemplateSignature', cardinality 0..*) is associated with 'uml3::0::0::TemplateableElement' (role 'TemplateableElement104', cardinality 0..*).
+'uml3::0::0::UnmarshallAction' (role 'uml3_0_0_UnmarshallAction', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin981', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin650', cardinality 0..*) is associated with 'uml3::0::0::SendSignalAction' (role 'uml3_0_0_SendSignalAction', cardinality 0..*).
+'uml3::0::0::Comment' (role 'uml3_0_0_Comment', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'uml3_0_0_Element', cardinality 0..*).
+'uml3::0::0::ReadLinkObjectEndAction' (role 'uml3_0_0_ReadLinkObjectEndAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin948', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier933', cardinality 0..*) is associated with 'uml3::0::0::ReclassifyObjectAction' (role 'uml3_0_0_ReclassifyObjectAction932', cardinality 0..*).
+'uml3::0::0::Deployment' (role 'deployment201', cardinality 0..*) is associated with 'uml3::0::0::DeploymentTarget' (role 'DeploymentTarget', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin946', cardinality 0..*) is associated with 'uml3::0::0::StartClassifierBehaviorAction' (role 'uml3_0_0_StartClassifierBehaviorAction', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin', cardinality 0..*) is associated with 'uml3::0::0::OpaqueAction' (role 'uml3_0_0_OpaqueAction', cardinality 0..*).
+'uml3::0::0::RemoveVariableValueAction' (role 'uml3_0_0_RemoveVariableValueAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin897', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification514', cardinality 0..*) is associated with 'uml3::0::0::Slot' (role 'uml3_0_0_Slot513', cardinality 0..*).
+'uml3::0::0::Class' (role 'uml3_0_0_Class265', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier266', cardinality 0..*).
+'uml3::0::0::Activity' (role 'activity573', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'ActivityEdge574', cardinality 0..*).
+'uml3::0::0::ExpansionRegion' (role 'regionAsOutput', cardinality 0..*) is associated with 'uml3::0::0::ExpansionNode' (role 'ExpansionNode1049', cardinality 0..*).
+'uml3::0::0::Association' (role 'owningAssociation', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'Property', cardinality 0..*).
+'uml3::0::0::DurationObservation' (role 'uml3_0_0_DurationObservation', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement886', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property179', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification180', cardinality 0..*).
+'uml3::0::0::TemplateParameterSubstitution' (role 'TemplateParameterSubstitution', cardinality 0..*) is associated with 'uml3::0::0::TemplateBinding' (role 'templateBinding', cardinality 0..*).
+'uml3::0::0::MessageEnd' (role 'uml3_0_0_MessageEnd', cardinality 0..*) is associated with 'uml3::0::0::Message' (role 'uml3_0_0_Message', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint1057', cardinality 0..*) is associated with 'uml3::0::0::ProtocolTransition' (role 'uml3_0_0_ProtocolTransition1056', cardinality 0..*).
+'uml3::0::0::ReplyAction' (role 'uml3_0_0_ReplyAction', cardinality 0..*) is associated with 'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger973', cardinality 0..*).
+'uml3::0::0::ReadIsClassifiedObjectAction' (role 'uml3_0_0_ReadIsClassifiedObjectAction', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier938', cardinality 0..*).
+'uml3::0::0::InstanceSpecification' (role 'uml3_0_0_InstanceSpecification517', cardinality 0..*) is associated with 'uml3::0::0::InstanceValue' (role 'uml3_0_0_InstanceValue', cardinality 0..*).
+'uml3::0::0::VariableAction' (role 'uml3_0_0_VariableAction', cardinality 0..*) is associated with 'uml3::0::0::Variable' (role 'uml3_0_0_Variable', cardinality 0..*).
+'uml3::0::0::Message' (role 'uml3_0_0_Message669', cardinality 0..*) is associated with 'uml3::0::0::MessageEnd' (role 'uml3_0_0_MessageEnd670', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin925', cardinality 0..*) is associated with 'uml3::0::0::ReadExtentAction' (role 'uml3_0_0_ReadExtentAction', cardinality 0..*).
+'uml3::0::0::Slot' (role 'uml3_0_0_Slot', cardinality 0..*) is associated with 'uml3::0::0::StructuralFeature' (role 'uml3_0_0_StructuralFeature', cardinality 0..*).
+'uml3::0::0::InformationItem' (role 'uml3_0_0_InformationItem', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier903', cardinality 0..*).
+'uml3::0::0::RedefinableElement' (role 'uml3_0_0_RedefinableElement92', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier93', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property962', cardinality 0..*) is associated with 'uml3::0::0::ReadLinkObjectEndQualifierAction' (role 'uml3_0_0_ReadLinkObjectEndQualifierAction961', cardinality 0..*).
+'uml3::0::0::Extend' (role 'uml3_0_0_Extend473', cardinality 0..*) is associated with 'uml3::0::0::ExtensionPoint' (role 'uml3_0_0_ExtensionPoint', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier908', cardinality 0..*) is associated with 'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow907', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'uml3_0_0_Element51', cardinality 0..*).
+'uml3::0::0::ParameterableElement' (role 'uml3_0_0_ParameterableElement114', cardinality 0..*) is associated with 'uml3::0::0::TemplateParameter' (role 'uml3_0_0_TemplateParameter113', cardinality 0..*).
+'uml3::0::0::ExtensionPoint' (role 'extensionPoint', cardinality 0..*) is associated with 'uml3::0::0::UseCase' (role 'UseCase477', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin941', cardinality 0..*) is associated with 'uml3::0::0::ReadIsClassifiedObjectAction' (role 'uml3_0_0_ReadIsClassifiedObjectAction940', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action901', cardinality 0..*) is associated with 'uml3::0::0::ActionInputPin' (role 'uml3_0_0_ActionInputPin', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification510', cardinality 0..*) is associated with 'uml3::0::0::InstanceSpecification' (role 'uml3_0_0_InstanceSpecification509', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'uml3_0_0_ActivityEdge588', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'uml3_0_0_ActivityEdge', cardinality 0..*).
+'uml3::0::0::ReclassifyObjectAction' (role 'uml3_0_0_ReclassifyObjectAction', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier930', cardinality 0..*).
+'uml3::0::0::Dependency' (role 'uml3_0_0_Dependency452', cardinality 0..*) is associated with 'uml3::0::0::CollaborationUse' (role 'uml3_0_0_CollaborationUse451', cardinality 0..*).
+'uml3::0::0::Property' (role 'qualifier', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'Property194', cardinality 0..*).
+'uml3::0::0::Artifact' (role 'uml3_0_0_Artifact212', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property213', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'Classifier462', cardinality 0..*) is associated with 'uml3::0::0::UseCase' (role 'useCase461', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'TemplateParameter', cardinality 0..*) is associated with 'uml3::0::0::TemplateSignature' (role 'signature', cardinality 0..*).
+'uml3::0::0::ConnectorEnd' (role 'uml3_0_0_ConnectorEnd', cardinality 0..*) is associated with 'uml3::0::0::ConnectableElement' (role 'uml3_0_0_ConnectableElement', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin992', cardinality 0..*) is associated with 'uml3::0::0::ReduceAction' (role 'uml3_0_0_ReduceAction991', cardinality 0..*).
+'uml3::0::0::UseCase' (role 'UseCase466', cardinality 0..*) is associated with 'uml3::0::0::Include' (role 'include', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint225', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation224', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'ActivityNode571', cardinality 0..*) is associated with 'uml3::0::0::Activity' (role 'activity', cardinality 0..*).
+'uml3::0::0::Slot' (role 'Slot', cardinality 0..*) is associated with 'uml3::0::0::InstanceSpecification' (role 'owningInstance', cardinality 0..*).
+'uml3::0::0::Namespace' (role 'Namespace55', cardinality 0..*) is associated with 'uml3::0::0::Constraint' (role 'ownedRule', cardinality 0..*).
+'uml3::0::0::UseCase' (role 'UseCase', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'subject', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier928', cardinality 0..*) is associated with 'uml3::0::0::ReadExtentAction' (role 'uml3_0_0_ReadExtentAction927', cardinality 0..*).
+'uml3::0::0::RedefinableTemplateSignature' (role 'uml3_0_0_RedefinableTemplateSignature484', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier485', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier774', cardinality 0..*) is associated with 'uml3::0::0::ComponentRealization' (role 'uml3_0_0_ComponentRealization', cardinality 0..*).
+'uml3::0::0::AcceptEventAction' (role 'uml3_0_0_AcceptEventAction968', cardinality 0..*) is associated with 'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger969', cardinality 0..*).
+'uml3::0::0::ValuePin' (role 'uml3_0_0_ValuePin', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification666', cardinality 0..*).
+'uml3::0::0::ReadLinkObjectEndAction' (role 'uml3_0_0_ReadLinkObjectEndAction953', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin954', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'ActivityNode585', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow919', cardinality 0..*) is associated with 'uml3::0::0::Connector' (role 'uml3_0_0_Connector920', cardinality 0..*).
+'uml3::0::0::CallOperationAction' (role 'uml3_0_0_CallOperationAction', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation655', cardinality 0..*).
+'uml3::0::0::Component' (role 'Component', cardinality 0..*) is associated with 'uml3::0::0::ComponentRealization' (role 'realization', cardinality 0..*).
+'uml3::0::0::Extend' (role 'uml3_0_0_Extend470', cardinality 0..*) is associated with 'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint471', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'uml3_0_0_TemplateParameter', cardinality 0..*) is associated with 'uml3::0::0::TemplateSignature' (role 'uml3_0_0_TemplateSignature101', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin936', cardinality 0..*) is associated with 'uml3::0::0::ReclassifyObjectAction' (role 'uml3_0_0_ReclassifyObjectAction935', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'templateParameter', cardinality 0..*) is associated with 'uml3::0::0::ParameterableElement' (role 'ParameterableElement', cardinality 0..*).
+'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1039', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1040', cardinality 0..*).
+'uml3::0::0::SendSignalAction' (role 'uml3_0_0_SendSignalAction652', cardinality 0..*) is associated with 'uml3::0::0::Signal' (role 'uml3_0_0_Signal653', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'uml3_0_0_ActivityEdge596', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification597', cardinality 0..*).
+'uml3::0::0::Substitution' (role 'Substitution', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'substitutingClassifier', cardinality 0..*).
+'uml3::0::0::Relationship' (role 'uml3_0_0_Relationship', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'uml3_0_0_Element30', cardinality 0..*).
+'uml3::0::0::ReadIsClassifiedObjectAction' (role 'uml3_0_0_ReadIsClassifiedObjectAction943', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin944', cardinality 0..*).
+'uml3::0::0::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'uml3::0::0::Slot' (role 'slot', cardinality 0..*).
+'uml3::0::0::ReadLinkObjectEndAction' (role 'uml3_0_0_ReadLinkObjectEndAction950', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property951', cardinality 0..*).
+'uml3::0::0::AcceptEventAction' (role 'uml3_0_0_AcceptEventAction', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin966', cardinality 0..*).
+'uml3::0::0::CallBehaviorAction' (role 'uml3_0_0_CallBehaviorAction', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior660', cardinality 0..*).
+'uml3::0::0::CreateObjectAction' (role 'uml3_0_0_CreateObjectAction796', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin797', cardinality 0..*).
+'uml3::0::0::DeployedArtifact' (role 'uml3_0_0_DeployedArtifact', cardinality 0..*) is associated with 'uml3::0::0::Deployment' (role 'uml3_0_0_Deployment', cardinality 0..*).
+'uml3::0::0::Interface' (role 'interface', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'Operation289', cardinality 0..*).
+'uml3::0::0::ExpansionRegion' (role 'ExpansionRegion', cardinality 0..*) is associated with 'uml3::0::0::ExpansionNode' (role 'outputElement', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement70', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier', cardinality 0..*).
+'uml3::0::0::ParameterableElement' (role 'ParameterableElement109', cardinality 0..*) is associated with 'uml3::0::0::TemplateParameter' (role 'owningTemplateParameter', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint53', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification', cardinality 0..*).
+'uml3::0::0::TemplateSignature' (role 'TemplateSignature', cardinality 0..*) is associated with 'uml3::0::0::TemplateableElement' (role 'template', cardinality 0..*).
+'uml3::0::0::Activity' (role 'activityScope', cardinality 0..*) is associated with 'uml3::0::0::Variable' (role 'Variable569', cardinality 0..*).
+'uml3::0::0::StringExpression' (role 'StringExpression492', cardinality 0..*) is associated with 'uml3::0::0::StringExpression' (role 'subExpression', cardinality 0..*).
+'uml3::0::0::Variable' (role 'variable', cardinality 0..*) is associated with 'uml3::0::0::StructuredActivityNode' (role 'StructuredActivityNode580', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier487', cardinality 0..*) is associated with 'uml3::0::0::ClassifierTemplateParameter' (role 'uml3_0_0_ClassifierTemplateParameter', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'uml3_0_0_TemplateParameter111', cardinality 0..*) is associated with 'uml3::0::0::ParameterableElement' (role 'uml3_0_0_ParameterableElement', cardinality 0..*).
+'uml3::0::0::RedefinableElement' (role 'uml3_0_0_RedefinableElement', cardinality 0..*) is associated with 'uml3::0::0::RedefinableElement' (role 'uml3_0_0_RedefinableElement89', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface776', cardinality 0..*) is associated with 'uml3::0::0::Component' (role 'uml3_0_0_Component', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface297', cardinality 0..*) is associated with 'uml3::0::0::Reception' (role 'uml3_0_0_Reception298', cardinality 0..*).
+'uml3::0::0::CombinedFragment' (role 'uml3_0_0_CombinedFragment789', cardinality 0..*) is associated with 'uml3::0::0::Gate' (role 'uml3_0_0_Gate790', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface286', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property287', cardinality 0..*).
+'uml3::0::0::TimeExpression' (role 'uml3_0_0_TimeExpression888', cardinality 0..*) is associated with 'uml3::0::0::TimeEvent' (role 'uml3_0_0_TimeEvent', cardinality 0..*).
+'uml3::0::0::Artifact' (role 'uml3_0_0_Artifact209', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation210', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface300', cardinality 0..*) is associated with 'uml3::0::0::ProtocolStateMachine' (role 'uml3_0_0_ProtocolStateMachine', cardinality 0..*).
+'uml3::0::0::InterruptibleActivityRegion' (role 'InterruptibleActivityRegion599', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'interruptingEdge', cardinality 0..*).
+'uml3::0::0::ProtocolTransition' (role 'uml3_0_0_ProtocolTransition', cardinality 0..*) is associated with 'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint1051', cardinality 0..*).
+'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow913', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement914', cardinality 0..*).
+'uml3::0::0::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'specific', cardinality 0..*).
+'uml3::0::0::Port' (role 'uml3_0_0_Port', cardinality 0..*) is associated with 'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger351', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement911', cardinality 0..*) is associated with 'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow910', cardinality 0..*).
+'uml3::0::0::PackageImport' (role 'uml3_0_0_PackageImport438', cardinality 0..*) is associated with 'uml3::0::0::Profile' (role 'uml3_0_0_Profile437', cardinality 0..*).
+'uml3::0::0::OpaqueAction' (role 'uml3_0_0_OpaqueAction520', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin', cardinality 0..*).
+'uml3::0::0::ParameterSet' (role 'uml3_0_0_ParameterSet262', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior261', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin971', cardinality 0..*) is associated with 'uml3::0::0::AcceptCallAction' (role 'uml3_0_0_AcceptCallAction', cardinality 0..*).
+'uml3::0::0::Activity' (role 'uml3_0_0_Activity576', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'uml3_0_0_ActivityPartition', cardinality 0..*).
+'uml3::0::0::TemplateBinding' (role 'templateBinding99', cardinality 0..*) is associated with 'uml3::0::0::TemplateableElement' (role 'TemplateableElement', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface', cardinality 0..*) is associated with 'uml3::0::0::InterfaceRealization' (role 'uml3_0_0_InterfaceRealization', cardinality 0..*).
+'uml3::0::0::Extend' (role 'uml3_0_0_Extend', cardinality 0..*) is associated with 'uml3::0::0::UseCase' (role 'uml3_0_0_UseCase468', cardinality 0..*).
+'uml3::0::0::ExpansionNode' (role 'inputElement', cardinality 0..*) is associated with 'uml3::0::0::ExpansionRegion' (role 'ExpansionRegion1046', cardinality 0..*).
+'uml3::0::0::DeploymentTarget' (role 'location', cardinality 0..*) is associated with 'uml3::0::0::Deployment' (role 'Deployment', cardinality 0..*).
+'uml3::0::0::ExpansionNode' (role 'ExpansionNode', cardinality 0..*) is associated with 'uml3::0::0::ExpansionRegion' (role 'regionAsInput', cardinality 0..*).
+'uml3::0::0::Feature' (role 'Feature', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'featuringClassifier', cardinality 0..*).
+'uml3::0::0::ProfileApplication' (role 'uml3_0_0_ProfileApplication', cardinality 0..*) is associated with 'uml3::0::0::Profile' (role 'uml3_0_0_Profile500', cardinality 0..*).
+'uml3::0::0::Message' (role 'uml3_0_0_Message672', cardinality 0..*) is associated with 'uml3::0::0::Connector' (role 'uml3_0_0_Connector673', cardinality 0..*).
+'uml3::0::0::Artifact' (role 'uml3_0_0_Artifact207', cardinality 0..*) is associated with 'uml3::0::0::Manifestation' (role 'uml3_0_0_Manifestation', cardinality 0..*).
+'uml3::0::0::Relationship' (role 'uml3_0_0_Relationship905', cardinality 0..*) is associated with 'uml3::0::0::InformationFlow' (role 'uml3_0_0_InformationFlow', cardinality 0..*).
+'uml3::0::0::ReadLinkObjectEndQualifierAction' (role 'uml3_0_0_ReadLinkObjectEndQualifierAction958', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin959', cardinality 0..*).
+'uml3::0::0::Association' (role 'Association188', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'memberEnd', cardinality 0..*).
+'uml3::0::0::Observation' (role 'uml3_0_0_Observation877', cardinality 0..*) is associated with 'uml3::0::0::Duration' (role 'uml3_0_0_Duration876', cardinality 0..*).
+'uml3::0::0::StructuredActivityNode' (role 'scope', cardinality 0..*) is associated with 'uml3::0::0::Variable' (role 'Variable', cardinality 0..*).
+'uml3::0::0::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'uml3::0::0::Enumeration' (role 'Enumeration', cardinality 0..*).
+'uml3::0::0::PackageImport' (role 'PackageImport', cardinality 0..*) is associated with 'uml3::0::0::Namespace' (role 'importingNamespace33', cardinality 0..*).
+'uml3::0::0::RaiseExceptionAction' (role 'uml3_0_0_RaiseExceptionAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin899', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier984', cardinality 0..*) is associated with 'uml3::0::0::UnmarshallAction' (role 'uml3_0_0_UnmarshallAction983', cardinality 0..*).
+'uml3::0::0::Package' (role 'Package502', cardinality 0..*) is associated with 'uml3::0::0::ProfileApplication' (role 'profileApplication', cardinality 0..*).
+'uml3::0::0::TemplateableElement' (role 'boundElement', cardinality 0..*) is associated with 'uml3::0::0::TemplateBinding' (role 'TemplateBinding', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint222', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation221', cardinality 0..*).
+'uml3::0::0::PackageImport' (role 'packageImport', cardinality 0..*) is associated with 'uml3::0::0::Namespace' (role 'Namespace49', cardinality 0..*).
+'uml3::0::0::GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'powertype', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface291', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier292', cardinality 0..*).
+'uml3::0::0::Operation' (role 'uml3_0_0_Operation1054', cardinality 0..*) is associated with 'uml3::0::0::ProtocolTransition' (role 'uml3_0_0_ProtocolTransition1053', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property164', cardinality 0..*) is associated with 'uml3::0::0::ConnectorEnd' (role 'uml3_0_0_ConnectorEnd163', cardinality 0..*).
+'uml3::0::0::UseCase' (role 'includingCase', cardinality 0..*) is associated with 'uml3::0::0::Include' (role 'Include', cardinality 0..*).
+'uml3::0::0::InterfaceRealization' (role 'interfaceRealization', cardinality 0..*) is associated with 'uml3::0::0::BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*).
+'uml3::0::0::Property' (role 'associationEnd', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'Property191', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint259', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior258', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification494', cardinality 0..*) is associated with 'uml3::0::0::Expression' (role 'uml3_0_0_Expression', cardinality 0..*).
+'uml3::0::0::Node' (role 'uml3_0_0_Node', cardinality 0..*) is associated with 'uml3::0::0::Node' (role 'uml3_0_0_Node784', cardinality 0..*).
+'uml3::0::0::DeploymentSpecification' (role 'configuration', cardinality 0..*) is associated with 'uml3::0::0::Deployment' (role 'Deployment203', cardinality 0..*).
+'uml3::0::0::CreateObjectAction' (role 'uml3_0_0_CreateObjectAction', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier794', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property80', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier79', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin956', cardinality 0..*) is associated with 'uml3::0::0::ReadLinkObjectEndQualifierAction' (role 'uml3_0_0_ReadLinkObjectEndQualifierAction', cardinality 0..*).
+'uml3::0::0::Association' (role 'association', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'Property61', cardinality 0..*).
+'uml3::0::0::AddVariableValueAction' (role 'uml3_0_0_AddVariableValueAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin895', cardinality 0..*).
+'uml3::0::0::CollaborationUse' (role 'uml3_0_0_CollaborationUse', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier82', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property183', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property181', cardinality 0..*).
+'uml3::0::0::InteractionOperand' (role 'uml3_0_0_InteractionOperand787', cardinality 0..*) is associated with 'uml3::0::0::CombinedFragment' (role 'uml3_0_0_CombinedFragment', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface295', cardinality 0..*) is associated with 'uml3::0::0::Interface' (role 'uml3_0_0_Interface293', cardinality 0..*).
+'uml3::0::0::ReadVariableAction' (role 'uml3_0_0_ReadVariableAction', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin891', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification594', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'uml3_0_0_ActivityEdge593', cardinality 0..*).
+'uml3::0::0::UseCase' (role 'uml3_0_0_UseCase', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier87', cardinality 0..*).
+'uml3::0::0::RedefinableTemplateSignature' (role 'uml3_0_0_RedefinableTemplateSignature478', cardinality 0..*) is associated with 'uml3::0::0::RedefinableTemplateSignature' (role 'uml3_0_0_RedefinableTemplateSignature', cardinality 0..*).
+'uml3::0::0::TemplateParameterSubstitution' (role 'uml3_0_0_TemplateParameterSubstitution125', cardinality 0..*) is associated with 'uml3::0::0::ParameterableElement' (role 'uml3_0_0_ParameterableElement126', cardinality 0..*).
+'uml3::0::0::OccurrenceSpecification' (role 'OccurrenceSpecification', cardinality 0..*) is associated with 'uml3::0::0::GeneralOrdering' (role 'toAfter', cardinality 0..*).
+'uml3::0::0::Clause' (role 'uml3_0_0_Clause1008', cardinality 0..*) is associated with 'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode1009', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'uml3_0_0_TemplateParameter120', cardinality 0..*) is associated with 'uml3::0::0::TemplateParameterSubstitution' (role 'uml3_0_0_TemplateParameterSubstitution', cardinality 0..*).
+'uml3::0::0::Clause' (role 'predecessorClause', cardinality 0..*) is associated with 'uml3::0::0::Clause' (role 'Clause1014', cardinality 0..*).
+'uml3::0::0::Port' (role 'uml3_0_0_Port357', cardinality 0..*) is associated with 'uml3::0::0::Port' (role 'uml3_0_0_Port355', cardinality 0..*).
+'uml3::0::0::Class' (role 'metaclass', cardinality 0..*) is associated with 'uml3::0::0::Extension' (role 'Extension', cardinality 0..*).
+'uml3::0::0::Vertex' (role 'uml3_0_0_Vertex335', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition334', cardinality 0..*).
+'uml3::0::0::State' (role 'State317', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'region', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement22', cardinality 0..*) is associated with 'uml3::0::0::Dependency' (role 'uml3_0_0_Dependency', cardinality 0..*).
+'uml3::0::0::Parameter' (role 'uml3_0_0_Parameter152', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation', cardinality 0..*).
+'uml3::0::0::Interaction' (role 'enclosingInteraction', cardinality 0..*) is associated with 'uml3::0::0::InteractionFragment' (role 'InteractionFragment', cardinality 0..*).
+'uml3::0::0::Clause' (role 'uml3_0_0_Clause', cardinality 0..*) is associated with 'uml3::0::0::ConditionalNode' (role 'uml3_0_0_ConditionalNode', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'Classifier140', cardinality 0..*) is associated with 'uml3::0::0::Feature' (role 'feature', cardinality 0..*).
+'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger347', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition346', cardinality 0..*).
+'uml3::0::0::Stereotype' (role 'uml3_0_0_Stereotype432', cardinality 0..*) is associated with 'uml3::0::0::Profile' (role 'uml3_0_0_Profile', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'node', cardinality 0..*) is associated with 'uml3::0::0::StructuredActivityNode' (role 'StructuredActivityNode', cardinality 0..*).
+'uml3::0::0::Message' (role 'uml3_0_0_Message679', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement680', cardinality 0..*).
+'uml3::0::0::DestroyObjectAction' (role 'uml3_0_0_DestroyObjectAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin799', cardinality 0..*).
+'uml3::0::0::InteractionFragment' (role 'coveredBy', cardinality 0..*) is associated with 'uml3::0::0::Lifeline' (role 'Lifeline693', cardinality 0..*).
+'uml3::0::0::Transition' (role 'transition', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'Region329', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'containedEdge', cardinality 0..*) is associated with 'uml3::0::0::ActivityGroup' (role 'ActivityGroup604', cardinality 0..*).
+'uml3::0::0::DecisionNode' (role 'uml3_0_0_DecisionNode', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior763', cardinality 0..*).
+'uml3::0::0::ParameterSet' (role 'parameterSet', cardinality 0..*) is associated with 'uml3::0::0::Parameter' (role 'Parameter', cardinality 0..*).
+'uml3::0::0::Transition' (role 'Transition', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'container315', cardinality 0..*).
+'uml3::0::0::PackageMerge' (role 'PackageMerge', cardinality 0..*) is associated with 'uml3::0::0::Package' (role 'receivingPackage', cardinality 0..*).
+'uml3::0::0::OpaqueExpression' (role 'uml3_0_0_OpaqueExpression', cardinality 0..*) is associated with 'uml3::0::0::Abstraction' (role 'uml3_0_0_Abstraction', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'uml3_0_0_ActivityNode547', cardinality 0..*) is associated with 'uml3::0::0::ActivityNode' (role 'uml3_0_0_ActivityNode', cardinality 0..*).
+'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode', cardinality 0..*) is associated with 'uml3::0::0::ExceptionHandler' (role 'uml3_0_0_ExceptionHandler', cardinality 0..*).
+'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior344', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition343', cardinality 0..*).
+'uml3::0::0::ReceiveOperationEvent' (role 'uml3_0_0_ReceiveOperationEvent', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation753', cardinality 0..*).
+'uml3::0::0::InteractionConstraint' (role 'uml3_0_0_InteractionConstraint733', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification734', cardinality 0..*).
+'uml3::0::0::ExecutableNode' (role 'protectedNode', cardinality 0..*) is associated with 'uml3::0::0::ExceptionHandler' (role 'ExceptionHandler', cardinality 0..*).
+'uml3::0::0::Vertex' (role 'uml3_0_0_Vertex', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition', cardinality 0..*).
+'uml3::0::0::Pseudostate' (role 'connectionPoint399', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'State400', cardinality 0..*).
+'uml3::0::0::ExecutionOccurrenceSpecification' (role 'uml3_0_0_ExecutionOccurrenceSpecification', cardinality 0..*) is associated with 'uml3::0::0::ExecutionSpecification' (role 'uml3_0_0_ExecutionSpecification751', cardinality 0..*).
+'uml3::0::0::StructuralFeature' (role 'uml3_0_0_StructuralFeature811', cardinality 0..*) is associated with 'uml3::0::0::StructuralFeatureAction' (role 'uml3_0_0_StructuralFeatureAction', cardinality 0..*).
+'uml3::0::0::ReduceAction' (role 'uml3_0_0_ReduceAction994', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin995', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification882', cardinality 0..*) is associated with 'uml3::0::0::Interval' (role 'uml3_0_0_Interval881', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'ActivityNode566', cardinality 0..*) is associated with 'uml3::0::0::ActivityGroup' (role 'inGroup565', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1017', cardinality 0..*) is associated with 'uml3::0::0::Clause' (role 'uml3_0_0_Clause1016', cardinality 0..*).
+'uml3::0::0::BehavioredClassifier' (role 'implementingClassifier', cardinality 0..*) is associated with 'uml3::0::0::InterfaceRealization' (role 'InterfaceRealization', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action527', cardinality 0..*) is associated with 'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier528', cardinality 0..*).
+'uml3::0::0::Signal' (role 'uml3_0_0_Signal858', cardinality 0..*) is associated with 'uml3::0::0::BroadcastSignalAction' (role 'uml3_0_0_BroadcastSignalAction', cardinality 0..*).
+'uml3::0::0::State' (role 'uml3_0_0_State', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'uml3_0_0_State370', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'node543', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'ActivityPartition', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification635', cardinality 0..*) is associated with 'uml3::0::0::ObjectNode' (role 'uml3_0_0_ObjectNode634', cardinality 0..*).
+'uml3::0::0::Vertex' (role 'subvertex', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'Region327', cardinality 0..*).
+'uml3::0::0::Stereotype' (role 'uml3_0_0_Stereotype', cardinality 0..*) is associated with 'uml3::0::0::Image' (role 'uml3_0_0_Image', cardinality 0..*).
+'uml3::0::0::InteractionConstraint' (role 'uml3_0_0_InteractionConstraint730', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification731', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin522', cardinality 0..*).
+'uml3::0::0::GeneralizationSet' (role 'GeneralizationSet132', cardinality 0..*) is associated with 'uml3::0::0::Generalization' (role 'generalization', cardinality 0..*).
+'uml3::0::0::Collaboration' (role 'uml3_0_0_Collaboration', cardinality 0..*) is associated with 'uml3::0::0::CollaborationUse' (role 'uml3_0_0_CollaborationUse449', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin834', cardinality 0..*) is associated with 'uml3::0::0::LinkEndData' (role 'uml3_0_0_LinkEndData833', cardinality 0..*).
+'uml3::0::0::State' (role 'uml3_0_0_State379', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior380', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action687', cardinality 0..*) is associated with 'uml3::0::0::Interaction' (role 'uml3_0_0_Interaction', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin868', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecificationAction' (role 'uml3_0_0_ValueSpecificationAction867', cardinality 0..*).
+'uml3::0::0::MessageEnd' (role 'uml3_0_0_MessageEnd682', cardinality 0..*) is associated with 'uml3::0::0::Message' (role 'uml3_0_0_Message683', cardinality 0..*).
+'uml3::0::0::Element' (role 'ownedElement', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'Element5', cardinality 0..*).
+'uml3::0::0::Reception' (role 'uml3_0_0_Reception302', cardinality 0..*) is associated with 'uml3::0::0::Signal' (role 'uml3_0_0_Signal', cardinality 0..*).
+'uml3::0::0::InterruptibleActivityRegion' (role 'InterruptibleActivityRegion', cardinality 0..*) is associated with 'uml3::0::0::ActivityNode' (role 'node545', cardinality 0..*).
+'uml3::0::0::ParameterSet' (role 'uml3_0_0_ParameterSet441', cardinality 0..*) is associated with 'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint442', cardinality 0..*).
+'uml3::0::0::Operation' (role 'Operation', cardinality 0..*) is associated with 'uml3::0::0::Class' (role 'class_', cardinality 0..*).
+'uml3::0::0::QualifierValue' (role 'uml3_0_0_QualifierValue841', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property842', cardinality 0..*).
+'uml3::0::0::Pseudostate' (role 'uml3_0_0_Pseudostate', cardinality 0..*) is associated with 'uml3::0::0::ConnectionPointReference' (role 'uml3_0_0_ConnectionPointReference', cardinality 0..*).
+'uml3::0::0::ActivityPartition' (role 'uml3_0_0_ActivityPartition617', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'uml3_0_0_Element618', cardinality 0..*).
+'uml3::0::0::ObjectFlow' (role 'uml3_0_0_ObjectFlow', cardinality 0..*) is associated with 'uml3::0::0::DecisionNode' (role 'uml3_0_0_DecisionNode765', cardinality 0..*).
+'uml3::0::0::OccurrenceSpecification' (role 'uml3_0_0_OccurrenceSpecification', cardinality 0..*) is associated with 'uml3::0::0::Event' (role 'uml3_0_0_Event723', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin823', cardinality 0..*) is associated with 'uml3::0::0::ClearStructuralFeatureAction' (role 'uml3_0_0_ClearStructuralFeatureAction', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'uml3_0_0_StateMachine', cardinality 0..*) is associated with 'uml3::0::0::StateMachine' (role 'uml3_0_0_StateMachine311', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint741', cardinality 0..*) is associated with 'uml3::0::0::StateInvariant' (role 'uml3_0_0_StateInvariant', cardinality 0..*).
+'uml3::0::0::Association' (role 'uml3_0_0_Association418', cardinality 0..*) is associated with 'uml3::0::0::Connector' (role 'uml3_0_0_Connector417', cardinality 0..*).
+'uml3::0::0::Interaction' (role 'Interaction702', cardinality 0..*) is associated with 'uml3::0::0::Lifeline' (role 'lifeline', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin863', cardinality 0..*) is associated with 'uml3::0::0::SendObjectAction' (role 'uml3_0_0_SendObjectAction862', cardinality 0..*).
+'uml3::0::0::LinkEndData' (role 'uml3_0_0_LinkEndData836', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property837', cardinality 0..*).
+'uml3::0::0::GeneralOrdering' (role 'GeneralOrdering725', cardinality 0..*) is associated with 'uml3::0::0::OccurrenceSpecification' (role 'before', cardinality 0..*).
+'uml3::0::0::Parameter' (role 'uml3_0_0_Parameter', cardinality 0..*) is associated with 'uml3::0::0::OpaqueExpression' (role 'uml3_0_0_OpaqueExpression147', cardinality 0..*).
+'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior248', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior246', cardinality 0..*).
+'uml3::0::0::DirectedRelationship' (role 'uml3_0_0_DirectedRelationship27', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'uml3_0_0_Element28', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin643', cardinality 0..*) is associated with 'uml3::0::0::CallAction' (role 'uml3_0_0_CallAction', cardinality 0..*).
+'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode1006', cardinality 0..*) is associated with 'uml3::0::0::Clause' (role 'uml3_0_0_Clause1005', cardinality 0..*).
+'uml3::0::0::Transition' (role 'uml3_0_0_Transition336', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition338', cardinality 0..*).
+'uml3::0::0::Port' (role 'uml3_0_0_Port359', cardinality 0..*) is associated with 'uml3::0::0::Interface' (role 'uml3_0_0_Interface360', cardinality 0..*).
+'uml3::0::0::Duration' (role 'uml3_0_0_Duration', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification874', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier142', cardinality 0..*) is associated with 'uml3::0::0::Substitution' (role 'uml3_0_0_Substitution', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification155', cardinality 0..*) is associated with 'uml3::0::0::Parameter' (role 'uml3_0_0_Parameter154', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property176', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property174', cardinality 0..*).
+'uml3::0::0::Region' (role 'uml3_0_0_Region', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'uml3_0_0_Region318', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'uml3::0::0::ActivityNode' (role 'source', cardinality 0..*).
+'uml3::0::0::ReadLinkAction' (role 'uml3_0_0_ReadLinkAction', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin847', cardinality 0..*).
+'uml3::0::0::Namespace' (role 'Namespace45', cardinality 0..*) is associated with 'uml3::0::0::ElementImport' (role 'elementImport', cardinality 0..*).
+'uml3::0::0::ExceptionHandler' (role 'handler', cardinality 0..*) is associated with 'uml3::0::0::ExecutableNode' (role 'ExecutableNode', cardinality 0..*).
+'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior', cardinality 0..*) is associated with 'uml3::0::0::OpaqueExpression' (role 'uml3_0_0_OpaqueExpression149', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action533', cardinality 0..*) is associated with 'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint534', cardinality 0..*).
+'uml3::0::0::Gate' (role 'uml3_0_0_Gate714', cardinality 0..*) is associated with 'uml3::0::0::InteractionUse' (role 'uml3_0_0_InteractionUse713', cardinality 0..*).
+'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1027', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1028', cardinality 0..*).
+'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger349', cardinality 0..*) is associated with 'uml3::0::0::Event' (role 'uml3_0_0_Event', cardinality 0..*).
+'uml3::0::0::BehavioredClassifier' (role 'uml3_0_0_BehavioredClassifier', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior253', cardinality 0..*).
+'uml3::0::0::ActivityGroup' (role 'inGroup', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'ActivityEdge563', cardinality 0..*).
+'uml3::0::0::Package' (role 'Package58', cardinality 0..*) is associated with 'uml3::0::0::Type' (role 'ownedType', cardinality 0..*).
+'uml3::0::0::BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'method', cardinality 0..*).
+'uml3::0::0::Connector' (role 'uml3_0_0_Connector419', cardinality 0..*) is associated with 'uml3::0::0::Connector' (role 'uml3_0_0_Connector421', cardinality 0..*).
+'uml3::0::0::ObjectFlow' (role 'uml3_0_0_ObjectFlow770', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior771', cardinality 0..*).
+'uml3::0::0::InteractionUse' (role 'uml3_0_0_InteractionUse716', cardinality 0..*) is associated with 'uml3::0::0::Action' (role 'uml3_0_0_Action717', cardinality 0..*).
+'uml3::0::0::Port' (role 'uml3_0_0_Port362', cardinality 0..*) is associated with 'uml3::0::0::ProtocolStateMachine' (role 'uml3_0_0_ProtocolStateMachine363', cardinality 0..*).
+'uml3::0::0::ChangeEvent' (role 'uml3_0_0_ChangeEvent', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification759', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin814', cardinality 0..*) is associated with 'uml3::0::0::StructuralFeatureAction' (role 'uml3_0_0_StructuralFeatureAction813', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'uml3::0::0::Dependency' (role 'clientDependency', cardinality 0..*).
+'uml3::0::0::Property' (role 'Property444', cardinality 0..*) is associated with 'uml3::0::0::DataType' (role 'datatype', cardinality 0..*).
+'uml3::0::0::TemplateParameterSubstitution' (role 'uml3_0_0_TemplateParameterSubstitution122', cardinality 0..*) is associated with 'uml3::0::0::ParameterableElement' (role 'uml3_0_0_ParameterableElement123', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'edge606', cardinality 0..*) is associated with 'uml3::0::0::Activity' (role 'Activity607', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property407', cardinality 0..*) is associated with 'uml3::0::0::StructuredClassifier' (role 'uml3_0_0_StructuredClassifier', cardinality 0..*).
+'uml3::0::0::Profile' (role 'uml3_0_0_Profile434', cardinality 0..*) is associated with 'uml3::0::0::ElementImport' (role 'uml3_0_0_ElementImport435', cardinality 0..*).
+'uml3::0::0::Association' (role 'uml3_0_0_Association', cardinality 0..*) is associated with 'uml3::0::0::Type' (role 'uml3_0_0_Type63', cardinality 0..*).
+'uml3::0::0::Observation' (role 'uml3_0_0_Observation', cardinality 0..*) is associated with 'uml3::0::0::TimeExpression' (role 'uml3_0_0_TimeExpression872', cardinality 0..*).
+'uml3::0::0::Type' (role 'uml3_0_0_Type243', cardinality 0..*) is associated with 'uml3::0::0::BehavioralFeature' (role 'uml3_0_0_BehavioralFeature242', cardinality 0..*).
+'uml3::0::0::Pseudostate' (role 'uml3_0_0_Pseudostate393', cardinality 0..*) is associated with 'uml3::0::0::ConnectionPointReference' (role 'uml3_0_0_ConnectionPointReference392', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1020', cardinality 0..*) is associated with 'uml3::0::0::Clause' (role 'uml3_0_0_Clause1019', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification157', cardinality 0..*) is associated with 'uml3::0::0::MultiplicityElement' (role 'uml3_0_0_MultiplicityElement', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface354', cardinality 0..*) is associated with 'uml3::0::0::Port' (role 'uml3_0_0_Port353', cardinality 0..*).
+'uml3::0::0::Parameter' (role 'uml3_0_0_Parameter664', cardinality 0..*) is associated with 'uml3::0::0::ActivityParameterNode' (role 'uml3_0_0_ActivityParameterNode', cardinality 0..*).
+'uml3::0::0::InteractionUse' (role 'uml3_0_0_InteractionUse', cardinality 0..*) is associated with 'uml3::0::0::Interaction' (role 'uml3_0_0_Interaction711', cardinality 0..*).
+'uml3::0::0::Package' (role 'uml3_0_0_Package', cardinality 0..*) is associated with 'uml3::0::0::PackageableElement' (role 'uml3_0_0_PackageableElement', cardinality 0..*).
+'uml3::0::0::ParameterableElement' (role 'ownedParameteredElement', cardinality 0..*) is associated with 'uml3::0::0::TemplateParameter' (role 'TemplateParameter116', cardinality 0..*).
+'uml3::0::0::ConnectableElement' (role 'uml3_0_0_ConnectableElement167', cardinality 0..*) is associated with 'uml3::0::0::ConnectorEnd' (role 'uml3_0_0_ConnectorEnd166', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint234', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation233', cardinality 0..*).
+'uml3::0::0::TestIdentityAction' (role 'uml3_0_0_TestIdentityAction803', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin804', cardinality 0..*).
+'uml3::0::0::State' (role 'uml3_0_0_State385', cardinality 0..*) is associated with 'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger386', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action524', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin525', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin845', cardinality 0..*) is associated with 'uml3::0::0::QualifierValue' (role 'uml3_0_0_QualifierValue844', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'StateMachine397', cardinality 0..*) is associated with 'uml3::0::0::Pseudostate' (role 'connectionPoint', cardinality 0..*).
+'uml3::0::0::ActivityGroup' (role 'group', cardinality 0..*) is associated with 'uml3::0::0::Activity' (role 'Activity561', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification870', cardinality 0..*) is associated with 'uml3::0::0::TimeExpression' (role 'uml3_0_0_TimeExpression', cardinality 0..*).
+'uml3::0::0::Generalization' (role 'Generalization138', cardinality 0..*) is associated with 'uml3::0::0::GeneralizationSet' (role 'generalizationSet', cardinality 0..*).
+'uml3::0::0::Interaction' (role 'interaction691', cardinality 0..*) is associated with 'uml3::0::0::Message' (role 'Message', cardinality 0..*).
+'uml3::0::0::Interval' (role 'uml3_0_0_Interval', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification879', cardinality 0..*).
+'uml3::0::0::StringExpression' (role 'uml3_0_0_StringExpression', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement', cardinality 0..*).
+'uml3::0::0::ActivityGroup' (role 'ActivityGroup578', cardinality 0..*) is associated with 'uml3::0::0::Activity' (role 'inActivity', cardinality 0..*).
+'uml3::0::0::ConditionalNode' (role 'uml3_0_0_ConditionalNode1002', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1003', cardinality 0..*).
+'uml3::0::0::Class' (role 'uml3_0_0_Class', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'uml3_0_0_Property172', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin827', cardinality 0..*) is associated with 'uml3::0::0::AddStructuralFeatureValueAction' (role 'uml3_0_0_AddStructuralFeatureValueAction', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'ActivityNode609', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'inPartition', cardinality 0..*).
+'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior768', cardinality 0..*) is associated with 'uml3::0::0::ObjectFlow' (role 'uml3_0_0_ObjectFlow767', cardinality 0..*).
+'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1024', cardinality 0..*) is associated with 'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode1025', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'uml3::0::0::Generalization' (role 'generalization134', cardinality 0..*).
+'uml3::0::0::Class' (role 'Class429', cardinality 0..*) is associated with 'uml3::0::0::Extension' (role 'extension', cardinality 0..*).
+'uml3::0::0::ActivityPartition' (role 'ActivityPartition615', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'subpartition', cardinality 0..*).
+'uml3::0::0::BehavioredClassifier' (role 'uml3_0_0_BehavioredClassifier275', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior276', cardinality 0..*).
+'uml3::0::0::Operation' (role 'ownedOperation230', cardinality 0..*) is associated with 'uml3::0::0::DataType' (role 'DataType231', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'Classifier136', cardinality 0..*) is associated with 'uml3::0::0::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*).
+'uml3::0::0::Lifeline' (role 'Lifeline', cardinality 0..*) is associated with 'uml3::0::0::Interaction' (role 'interaction', cardinality 0..*).
+'uml3::0::0::OccurrenceSpecification' (role 'uml3_0_0_OccurrenceSpecification739', cardinality 0..*) is associated with 'uml3::0::0::ExecutionSpecification' (role 'uml3_0_0_ExecutionSpecification738', cardinality 0..*).
+'uml3::0::0::BehavioredClassifier' (role 'uml3_0_0_BehavioredClassifier278', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior279', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'Classifier144', cardinality 0..*) is associated with 'uml3::0::0::Substitution' (role 'substitution', cardinality 0..*).
+'uml3::0::0::Interaction' (role 'uml3_0_0_Interaction689', cardinality 0..*) is associated with 'uml3::0::0::Gate' (role 'uml3_0_0_Gate', cardinality 0..*).
+'uml3::0::0::BehaviorExecutionSpecification' (role 'uml3_0_0_BehaviorExecutionSpecification', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior745', cardinality 0..*).
+'uml3::0::0::ConnectorEnd' (role 'uml3_0_0_ConnectorEnd424', cardinality 0..*) is associated with 'uml3::0::0::Connector' (role 'uml3_0_0_Connector423', cardinality 0..*).
+'uml3::0::0::Connector' (role 'uml3_0_0_Connector426', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior427', cardinality 0..*).
+'uml3::0::0::PackageableElement' (role 'uml3_0_0_PackageableElement43', cardinality 0..*) is associated with 'uml3::0::0::ElementImport' (role 'uml3_0_0_ElementImport', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'ActivityEdge551', cardinality 0..*) is associated with 'uml3::0::0::StructuredActivityNode' (role 'inStructuredNode', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'ActivityEdge625', cardinality 0..*) is associated with 'uml3::0::0::InterruptibleActivityRegion' (role 'interrupts', cardinality 0..*).
+'uml3::0::0::Vertex' (role 'uml3_0_0_Vertex324', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition325', cardinality 0..*).
+'uml3::0::0::DataType' (role 'DataType', cardinality 0..*) is associated with 'uml3::0::0::Property' (role 'ownedAttribute', cardinality 0..*).
+'uml3::0::0::InteractionOperand' (role 'InteractionOperand', cardinality 0..*) is associated with 'uml3::0::0::InteractionFragment' (role 'fragment698', cardinality 0..*).
+'uml3::0::0::TimeObservation' (role 'uml3_0_0_TimeObservation', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'uml3_0_0_NamedElement884', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property305', cardinality 0..*) is associated with 'uml3::0::0::Signal' (role 'uml3_0_0_Signal304', cardinality 0..*).
+'uml3::0::0::SendObjectAction' (role 'uml3_0_0_SendObjectAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin860', cardinality 0..*).
+'uml3::0::0::Type' (role 'uml3_0_0_Type237', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation236', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin809', cardinality 0..*) is associated with 'uml3::0::0::ReadSelfAction' (role 'uml3_0_0_ReadSelfAction', cardinality 0..*).
+'uml3::0::0::Package' (role 'package', cardinality 0..*) is associated with 'uml3::0::0::Type' (role 'Type', cardinality 0..*).
+'uml3::0::0::Interface' (role 'Interface', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'ownedOperation', cardinality 0..*).
+'uml3::0::0::Trigger' (role 'uml3_0_0_Trigger', cardinality 0..*) is associated with 'uml3::0::0::BehavioredClassifier' (role 'uml3_0_0_BehavioredClassifier282', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'containedNode', cardinality 0..*) is associated with 'uml3::0::0::ActivityGroup' (role 'ActivityGroup', cardinality 0..*).
+'uml3::0::0::Comment' (role 'uml3_0_0_Comment8', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'uml3_0_0_Element7', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'stateMachine', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'Region', cardinality 0..*).
+'uml3::0::0::StructuredActivityNode' (role 'uml3_0_0_StructuredActivityNode', cardinality 0..*) is associated with 'uml3::0::0::Activity' (role 'uml3_0_0_Activity', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'stateMachine310', cardinality 0..*) is associated with 'uml3::0::0::Pseudostate' (role 'Pseudostate', cardinality 0..*).
+'uml3::0::0::ProtocolStateMachine' (role 'ProtocolStateMachine', cardinality 0..*) is associated with 'uml3::0::0::ProtocolConformance' (role 'conformance', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin821', cardinality 0..*) is associated with 'uml3::0::0::WriteStructuralFeatureAction' (role 'uml3_0_0_WriteStructuralFeatureAction820', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier130', cardinality 0..*) is associated with 'uml3::0::0::Generalization' (role 'uml3_0_0_Generalization', cardinality 0..*).
+'uml3::0::0::OccurrenceSpecification' (role 'after', cardinality 0..*) is associated with 'uml3::0::0::GeneralOrdering' (role 'GeneralOrdering', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification160', cardinality 0..*) is associated with 'uml3::0::0::MultiplicityElement' (role 'uml3_0_0_MultiplicityElement159', cardinality 0..*).
+'uml3::0::0::GeneralOrdering' (role 'toBefore', cardinality 0..*) is associated with 'uml3::0::0::OccurrenceSpecification' (role 'OccurrenceSpecification720', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'ActivityNode', cardinality 0..*) is associated with 'uml3::0::0::StructuredActivityNode' (role 'inStructuredNode553', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification677', cardinality 0..*) is associated with 'uml3::0::0::Message' (role 'uml3_0_0_Message676', cardinality 0..*).
+'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification999', cardinality 0..*) is associated with 'uml3::0::0::JoinNode' (role 'uml3_0_0_JoinNode', cardinality 0..*).
+'uml3::0::0::ConnectableElement' (role 'uml3_0_0_ConnectableElement700', cardinality 0..*) is associated with 'uml3::0::0::Lifeline' (role 'uml3_0_0_Lifeline', cardinality 0..*).
+'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin816', cardinality 0..*) is associated with 'uml3::0::0::ReadStructuralFeatureAction' (role 'uml3_0_0_ReadStructuralFeatureAction', cardinality 0..*).
+'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode', cardinality 0..*) is associated with 'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode1022', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property170', cardinality 0..*) is associated with 'uml3::0::0::ConnectorEnd' (role 'uml3_0_0_ConnectorEnd169', cardinality 0..*).
+'uml3::0::0::Port' (role 'uml3_0_0_Port405', cardinality 0..*) is associated with 'uml3::0::0::EncapsulatedClassifier' (role 'uml3_0_0_EncapsulatedClassifier', cardinality 0..*).
+'uml3::0::0::InteractionFragment' (role 'InteractionFragment728', cardinality 0..*) is associated with 'uml3::0::0::InteractionOperand' (role 'enclosingOperand', cardinality 0..*).
+'uml3::0::0::ParameterSet' (role 'ParameterSet', cardinality 0..*) is associated with 'uml3::0::0::Parameter' (role 'parameter', cardinality 0..*).
+'uml3::0::0::Parameter' (role 'uml3_0_0_Parameter251', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior250', cardinality 0..*).
+'uml3::0::0::LinkEndDestructionData' (role 'uml3_0_0_LinkEndDestructionData', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin851', cardinality 0..*).
+'uml3::0::0::TestIdentityAction' (role 'uml3_0_0_TestIdentityAction', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin801', cardinality 0..*).
+'uml3::0::0::State' (role 'state', cardinality 0..*) is associated with 'uml3::0::0::ConnectionPointReference' (role 'ConnectionPointReference', cardinality 0..*).
+'uml3::0::0::Vertex' (role 'uml3_0_0_Vertex332', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition331', cardinality 0..*).
+'uml3::0::0::NamedElement' (role 'client', cardinality 0..*) is associated with 'uml3::0::0::Dependency' (role 'Dependency', cardinality 0..*).
+'uml3::0::0::LinkEndData' (role 'uml3_0_0_LinkEndData', cardinality 0..*) is associated with 'uml3::0::0::LinkAction' (role 'uml3_0_0_LinkAction', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint374', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'uml3_0_0_State373', cardinality 0..*).
+'uml3::0::0::ActivityGroup' (role 'superGroup', cardinality 0..*) is associated with 'uml3::0::0::ActivityGroup' (role 'ActivityGroup556', cardinality 0..*).
+'uml3::0::0::Operation' (role 'Operation447', cardinality 0..*) is associated with 'uml3::0::0::DataType' (role 'datatype446', cardinality 0..*).
+'uml3::0::0::Connector' (role 'uml3_0_0_Connector', cardinality 0..*) is associated with 'uml3::0::0::StructuredClassifier' (role 'uml3_0_0_StructuredClassifier415', cardinality 0..*).
+'uml3::0::0::Lifeline' (role 'uml3_0_0_Lifeline704', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification705', cardinality 0..*).
+'uml3::0::0::UnmarshallAction' (role 'uml3_0_0_UnmarshallAction986', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin987', cardinality 0..*).
+'uml3::0::0::TemplateBinding' (role 'TemplateBinding128', cardinality 0..*) is associated with 'uml3::0::0::TemplateParameterSubstitution' (role 'parameterSubstitution', cardinality 0..*).
+'uml3::0::0::Behavior' (role 'Behavior', cardinality 0..*) is associated with 'uml3::0::0::BehavioralFeature' (role 'specification', cardinality 0..*).
+'uml3::0::0::Property' (role 'uml3_0_0_Property410', cardinality 0..*) is associated with 'uml3::0::0::StructuredClassifier' (role 'uml3_0_0_StructuredClassifier409', cardinality 0..*).
+'uml3::0::0::ProfileApplication' (role 'ProfileApplication', cardinality 0..*) is associated with 'uml3::0::0::Package' (role 'applyingPackage', cardinality 0..*).
+'uml3::0::0::TemplateParameter' (role 'TemplateParameter118', cardinality 0..*) is associated with 'uml3::0::0::ParameterableElement' (role 'parameteredElement', cardinality 0..*).
+'uml3::0::0::ObjectNode' (role 'uml3_0_0_ObjectNode', cardinality 0..*) is associated with 'uml3::0::0::ExceptionHandler' (role 'uml3_0_0_ExceptionHandler628', cardinality 0..*).
+'uml3::0::0::TypedElement' (role 'uml3_0_0_TypedElement', cardinality 0..*) is associated with 'uml3::0::0::Type' (role 'uml3_0_0_Type', cardinality 0..*).
+'uml3::0::0::Lifeline' (role 'covered', cardinality 0..*) is associated with 'uml3::0::0::InteractionFragment' (role 'InteractionFragment709', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'StateMachine365', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'submachineState', cardinality 0..*).
+'uml3::0::0::PackageableElement' (role 'uml3_0_0_PackageableElement782', cardinality 0..*) is associated with 'uml3::0::0::Component' (role 'uml3_0_0_Component781', cardinality 0..*).
+'uml3::0::0::ConnectableElement' (role 'uml3_0_0_ConnectableElement413', cardinality 0..*) is associated with 'uml3::0::0::StructuredClassifier' (role 'uml3_0_0_StructuredClassifier412', cardinality 0..*).
+'uml3::0::0::ActivityEdge' (role 'ActivityEdge621', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'inPartition620', cardinality 0..*).
+'uml3::0::0::Element' (role 'uml3_0_0_Element25', cardinality 0..*) is associated with 'uml3::0::0::DirectedRelationship' (role 'uml3_0_0_DirectedRelationship', cardinality 0..*).
+'uml3::0::0::Activity' (role 'Activity', cardinality 0..*) is associated with 'uml3::0::0::ActivityNode' (role 'node538', cardinality 0..*).
+'uml3::0::0::BehavioralFeature' (role 'uml3_0_0_BehavioralFeature245', cardinality 0..*) is associated with 'uml3::0::0::ParameterSet' (role 'uml3_0_0_ParameterSet', cardinality 0..*).
+'uml3::0::0::GeneralOrdering' (role 'uml3_0_0_GeneralOrdering', cardinality 0..*) is associated with 'uml3::0::0::InteractionFragment' (role 'uml3_0_0_InteractionFragment', cardinality 0..*).
+'uml3::0::0::Port' (role 'uml3_0_0_Port648', cardinality 0..*) is associated with 'uml3::0::0::InvocationAction' (role 'uml3_0_0_InvocationAction647', cardinality 0..*).
+'uml3::0::0::ActivityPartition' (role 'superPartition', cardinality 0..*) is associated with 'uml3::0::0::ActivityPartition' (role 'ActivityPartition612', cardinality 0..*).
+'uml3::0::0::SendOperationEvent' (role 'uml3_0_0_SendOperationEvent', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation747', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin831', cardinality 0..*) is associated with 'uml3::0::0::LinkAction' (role 'uml3_0_0_LinkAction830', cardinality 0..*).
+'uml3::0::0::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'uml3::0::0::Package' (role 'Package', cardinality 0..*).
+'uml3::0::0::TestIdentityAction' (role 'uml3_0_0_TestIdentityAction806', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin807', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin825', cardinality 0..*) is associated with 'uml3::0::0::RemoveStructuralFeatureValueAction' (role 'uml3_0_0_RemoveStructuralFeatureValueAction', cardinality 0..*).
+'uml3::0::0::Signal' (role 'uml3_0_0_Signal749', cardinality 0..*) is associated with 'uml3::0::0::SendSignalEvent' (role 'uml3_0_0_SendSignalEvent', cardinality 0..*).
+'uml3::0::0::OccurrenceSpecification' (role 'uml3_0_0_OccurrenceSpecification736', cardinality 0..*) is associated with 'uml3::0::0::ExecutionSpecification' (role 'uml3_0_0_ExecutionSpecification', cardinality 0..*).
+'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior383', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'uml3_0_0_State382', cardinality 0..*).
+'uml3::0::0::State' (role 'state388', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'Region389', cardinality 0..*).
+'uml3::0::0::Association' (role 'uml3_0_0_Association856', cardinality 0..*) is associated with 'uml3::0::0::ClearAssociationAction' (role 'uml3_0_0_ClearAssociationAction855', cardinality 0..*).
+'uml3::0::0::State' (role 'uml3_0_0_State376', cardinality 0..*) is associated with 'uml3::0::0::Behavior' (role 'uml3_0_0_Behavior377', cardinality 0..*).
+'uml3::0::0::Reception' (role 'uml3_0_0_Reception', cardinality 0..*) is associated with 'uml3::0::0::Class' (role 'uml3_0_0_Class272', cardinality 0..*).
+'uml3::0::0::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'container', cardinality 0..*).
+'uml3::0::0::Interface' (role 'uml3_0_0_Interface779', cardinality 0..*) is associated with 'uml3::0::0::Component' (role 'uml3_0_0_Component778', cardinality 0..*).
+'uml3::0::0::ActivityNode' (role 'target', cardinality 0..*) is associated with 'uml3::0::0::ActivityEdge' (role 'ActivityEdge541', cardinality 0..*).
+'uml3::0::0::Operation' (role 'uml3_0_0_Operation226', cardinality 0..*) is associated with 'uml3::0::0::Operation' (role 'uml3_0_0_Operation228', cardinality 0..*).
+'uml3::0::0::BehavioralFeature' (role 'uml3_0_0_BehavioralFeature', cardinality 0..*) is associated with 'uml3::0::0::Parameter' (role 'uml3_0_0_Parameter239', cardinality 0..*).
+'uml3::0::0::ValueSpecificationAction' (role 'uml3_0_0_ValueSpecificationAction', cardinality 0..*) is associated with 'uml3::0::0::ValueSpecification' (role 'uml3_0_0_ValueSpecification865', cardinality 0..*).
+'uml3::0::0::ProtocolConformance' (role 'uml3_0_0_ProtocolConformance', cardinality 0..*) is associated with 'uml3::0::0::ProtocolStateMachine' (role 'uml3_0_0_ProtocolStateMachine402', cardinality 0..*).
+'uml3::0::0::Package' (role 'Package16', cardinality 0..*) is associated with 'uml3::0::0::Package' (role 'nestedPackage', cardinality 0..*).
+'uml3::0::0::Pseudostate' (role 'Pseudostate369', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'state368', cardinality 0..*).
+'uml3::0::0::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'uml3::0::0::Association' (role 'Association', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'uml3::0::0::Region' (role 'region321', cardinality 0..*).
+'uml3::0::0::InterruptibleActivityRegion' (role 'inInterruptibleRegion', cardinality 0..*) is associated with 'uml3::0::0::ActivityNode' (role 'ActivityNode623', cardinality 0..*).
+'uml3::0::0::Message' (role 'message', cardinality 0..*) is associated with 'uml3::0::0::Interaction' (role 'Interaction', cardinality 0..*).
+'uml3::0::0::Clause' (role 'Clause', cardinality 0..*) is associated with 'uml3::0::0::Clause' (role 'successorClause', cardinality 0..*).
+'uml3::0::0::Namespace' (role 'Namespace', cardinality 0..*) is associated with 'uml3::0::0::NamedElement' (role 'ownedMember', cardinality 0..*).
+'uml3::0::0::Classifier' (role 'uml3_0_0_Classifier631', cardinality 0..*) is associated with 'uml3::0::0::ExceptionHandler' (role 'uml3_0_0_ExceptionHandler630', cardinality 0..*).
+'uml3::0::0::SignalEvent' (role 'uml3_0_0_SignalEvent', cardinality 0..*) is associated with 'uml3::0::0::Signal' (role 'uml3_0_0_Signal761', cardinality 0..*).
+'uml3::0::0::Operation' (role 'ownedOperation219', cardinality 0..*) is associated with 'uml3::0::0::Class' (role 'Class', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin853', cardinality 0..*) is associated with 'uml3::0::0::ClearAssociationAction' (role 'uml3_0_0_ClearAssociationAction', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin997', cardinality 0..*) is associated with 'uml3::0::0::StartObjectBehaviorAction' (role 'uml3_0_0_StartObjectBehaviorAction', cardinality 0..*).
+'uml3::0::0::Signal' (role 'uml3_0_0_Signal755', cardinality 0..*) is associated with 'uml3::0::0::ReceiveSignalEvent' (role 'uml3_0_0_ReceiveSignalEvent', cardinality 0..*).
+'uml3::0::0::ProtocolConformance' (role 'ProtocolConformance', cardinality 0..*) is associated with 'uml3::0::0::ProtocolStateMachine' (role 'specificMachine', cardinality 0..*).
+'uml3::0::0::ExecutableNode' (role 'uml3_0_0_ExecutableNode1031', cardinality 0..*) is associated with 'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1030', cardinality 0..*).
+'uml3::0::0::InteractionConstraint' (role 'uml3_0_0_InteractionConstraint', cardinality 0..*) is associated with 'uml3::0::0::InteractionOperand' (role 'uml3_0_0_InteractionOperand', cardinality 0..*).
+'uml3::0::0::Element' (role 'Element', cardinality 0..*) is associated with 'uml3::0::0::Element' (role 'owner', cardinality 0..*).
+'uml3::0::0::ActivityGroup' (role 'ActivityGroup559', cardinality 0..*) is associated with 'uml3::0::0::ActivityGroup' (role 'subgroup', cardinality 0..*).
+'uml3::0::0::InteractionFragment' (role 'fragment', cardinality 0..*) is associated with 'uml3::0::0::Interaction' (role 'Interaction696', cardinality 0..*).
+'uml3::0::0::PartDecomposition' (role 'uml3_0_0_PartDecomposition', cardinality 0..*) is associated with 'uml3::0::0::Lifeline' (role 'uml3_0_0_Lifeline707', cardinality 0..*).
+'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint341', cardinality 0..*) is associated with 'uml3::0::0::Transition' (role 'uml3_0_0_Transition340', cardinality 0..*).
+'uml3::0::0::ActionExecutionSpecification' (role 'uml3_0_0_ActionExecutionSpecification', cardinality 0..*) is associated with 'uml3::0::0::Action' (role 'uml3_0_0_Action743', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin818', cardinality 0..*) is associated with 'uml3::0::0::WriteStructuralFeatureAction' (role 'uml3_0_0_WriteStructuralFeatureAction', cardinality 0..*).
+'uml3::0::0::ConnectionPointReference' (role 'connection', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'State395', cardinality 0..*).
+'uml3::0::0::Action' (role 'uml3_0_0_Action530', cardinality 0..*) is associated with 'uml3::0::0::Constraint' (role 'uml3_0_0_Constraint531', cardinality 0..*).
+'uml3::0::0::LinkEndCreationData' (role 'uml3_0_0_LinkEndCreationData', cardinality 0..*) is associated with 'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin849', cardinality 0..*).
+'uml3::0::0::InputPin' (role 'uml3_0_0_InputPin645', cardinality 0..*) is associated with 'uml3::0::0::InvocationAction' (role 'uml3_0_0_InvocationAction', cardinality 0..*).
+'uml3::0::0::LoopNode' (role 'uml3_0_0_LoopNode1033', cardinality 0..*) is associated with 'uml3::0::0::OutputPin' (role 'uml3_0_0_OutputPin1034', cardinality 0..*).
+'uml3::0::0::LinkEndData' (role 'uml3_0_0_LinkEndData839', cardinality 0..*) is associated with 'uml3::0::0::QualifierValue' (role 'uml3_0_0_QualifierValue', cardinality 0..*).
+'uml3::0::0::StateMachine' (role 'submachine', cardinality 0..*) is associated with 'uml3::0::0::State' (role 'State', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gambastian/automatizacion2015/MDD_Course_Samples/metamodels/simpson family/Families.ecore

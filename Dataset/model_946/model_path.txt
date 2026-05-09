@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/beatrizsanchez/epsilon.reactive.workflow/org.eclipse.epsilon.gradle/src/test/resources/Metamodel/graph.ecore

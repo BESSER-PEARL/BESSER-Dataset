@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Writer' has no attributes.
+The class 'library::Book' has the following attributes: 'pages' of type int; 'category' of type str; 'title' of type str.
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'library::people::Writer' has the following attributes: 'name' of type str.
+The class 'people::library::Book' has no attributes.
+The class 'people::library::Car' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'Mystery', 'Biography', 'ScienceFiction'.
+'library::people::Writer' (role 'author', cardinality 0..*) is associated with 'people::library::Book' (role 'Book', cardinality 0..*).
+'Writer' (role 'Writer', cardinality 0..*) is associated with 'library::Book' (role 'books', cardinality 0..*).
+'library::Book' (role 'library_Book', cardinality 0..*) is associated with 'library::Library' (role 'library_Library4', cardinality 0..*).
+'library::Library' (role 'library_Library', cardinality 0..*) is associated with 'Writer' (role 'Writer2', cardinality 0..*).
+'people::library::Car' (role 'people_library_Car', cardinality 0..*) is associated with 'library::people::Writer' (role 'library_people_Writer', cardinality 0..*).

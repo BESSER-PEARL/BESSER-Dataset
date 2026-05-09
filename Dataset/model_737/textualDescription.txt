@@ -1,0 +1,151 @@
+The model has 72 class(es).
+The class 'Group' has no attributes.
+The class 'type::AbstractPort' has no attributes.
+The class 'BasicAttribute' has no attributes.
+The class 'art::type::Dictionary' has no attributes.
+The class 'art::implem::ComponentImplementation' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'art::type::Operation' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'art::instance::Binding' has the following attributes: 'id' of type str.
+The class 'art::instance::ValuedAttribute' has the following attributes: 'value' of type str.
+The class 'TypedElement' has no attributes.
+The class 'PortId' has no attributes.
+The class 'Entry' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'CompositeInstance' has no attributes.
+The class 'ComponentType' has no attributes.
+The class 'art::type::Port' has no attributes.
+The class 'Operation' has no attributes.
+The class 'art::implem::TypeImplementation' has no attributes.
+The class 'AbstractPort' has no attributes.
+The class 'Service' has no attributes.
+The class 'art::type::Parameter' has no attributes.
+The class 'art::implem::OSGiComponent' has the following attributes: 'implementingClass' of type str.
+The class 'TypeGroup' has no attributes.
+The class 'art::instance::PrimitiveInstance' has no attributes.
+The class 'InstanceGroup' has no attributes.
+The class 'art::ModelElement' has no attributes.
+The class 'TransmissionBinding' has no attributes.
+The class 'art::instance::Entry' has the following attributes: 'value' of type str.
+The class 'art::type::ComponentType' has no attributes.
+The class 'art::instance::TransmissionBinding' has no attributes.
+The class 'art::System' has no attributes.
+The class 'Node' has no attributes.
+The class 'AttributeInstance' has no attributes.
+The class 'art::CardinalityElement' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'art::instance::OtherEntry' has the following attributes: 'key' of type str.
+The class 'art::type::DictionaryDefaultValue' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'art::DataType' has no attributes.
+The class 'art::type::CompositeType' has no attributes.
+The class 'art::implem::FractalComponent' has the following attributes: 'contentDesc' of type str; 'controllerDesc' of type str.
+The class 'Binding' has no attributes.
+The class 'art::instance::AttributeInstance' has no attributes.
+The class 'CardinalityElement' has no attributes.
+The class 'art::instance::ComponentInstance' has the following attributes: 'state' of type str.
+The class 'art::instance::DelegationBinding' has no attributes.
+The class 'art::type::PortId' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'art::type::ControlService' has no attributes.
+The class 'DictionaryDefaultValue' has no attributes.
+The class 'art::instance::DefaultEntry' has no attributes.
+The class 'art::type::PrimitiveType' has no attributes.
+The class 'art::group::TypeGroup' has no attributes.
+The class 'art::NamedElement' has the following attributes: 'name' of type str.
+The class 'art::type::BasicAttribute' has the following attributes: 'defaultValue' of type str.
+The class 'TypeImplementation' has no attributes.
+The class 'art::type::FunctionalService' has no attributes.
+The class 'art::instance::CompositeInstance' has no attributes.
+The class 'type::art::DataType' has no attributes.
+The class 'ComponentInstance' has no attributes.
+The class 'art::type::AbstractPort' has the following attributes: 'role' of type str; 'uri' of type str; 'protocol' of type str.
+The class 'art::TypedElement' has no attributes.
+The class 'art::implem::OSGiType' has the following attributes: 'generateInstanceBundle' of type str.
+The class 'DelegationBinding' has no attributes.
+The class 'art::type::Service' has no attributes.
+The class 'art::type::PortCollection' has no attributes.
+The class 'art::group::InstanceGroup' has no attributes.
+The class 'art::type::Attribute' has no attributes.
+The class 'art::group::Group' has no attributes.
+The class 'Dictionary' has no attributes.
+The class 'art::instance::DictionaryValuedAttribute' has no attributes.
+The class 'art::distrib::Node' has the following attributes: 'uri' of type str.
+The class 'ComponentImplementation' has no attributes.
+The enumeration 'PortRole' has the following literals: 'server', 'client'.
+The enumeration 'InstanceState' has the following literals: 'ON', 'OFF'.
+'art::group::Group' is a specialization of 'NamedElement'.
+'art::type::Port' is a specialization of 'type::AbstractPort'.
+'art::type::Attribute' is a specialization of 'TypedElement'.
+'art::type::AbstractPort' is a specialization of 'NamedElement'.
+'art::System' is a specialization of 'ModelElement'.
+'art::instance::CompositeInstance' is a specialization of 'ComponentInstance'.
+'art::group::InstanceGroup' is a specialization of 'Group'.
+'art::type::FunctionalService' is a specialization of 'Service'.
+'art::type::ComponentType' is a specialization of 'ModelElement'.
+'art::type::Operation' is a specialization of 'ModelElement'.
+'art::type::ControlService' is a specialization of 'Service'.
+'art::TypedElement' is a specialization of 'ModelElement'.
+'art::type::Dictionary' is a specialization of 'Attribute'.
+'art::implem::OSGiType' is a specialization of 'TypeImplementation'.
+'art::DataType' is a specialization of 'ModelElement'.
+'art::instance::DictionaryValuedAttribute' is a specialization of 'AttributeInstance'.
+'art::type::PortCollection' is a specialization of 'AbstractPort'.
+'art::instance::TransmissionBinding' is a specialization of 'Binding'.
+'art::type::PortId' is a specialization of 'NamedElement'.
+'art::implem::OSGiComponent' is a specialization of 'ComponentImplementation'.
+'art::instance::ComponentInstance' is a specialization of 'ModelElement'.
+'art::distrib::Node' is a specialization of 'NamedElement'.
+'art::instance::ValuedAttribute' is a specialization of 'AttributeInstance'.
+'art::type::Parameter' is a specialization of 'TypedElement'.
+'art::CardinalityElement' is a specialization of 'ModelElement'.
+'art::instance::DelegationBinding' is a specialization of 'Binding'.
+'art::type::BasicAttribute' is a specialization of 'Attribute'.
+'art::instance::OtherEntry' is a specialization of 'Entry'.
+'art::group::TypeGroup' is a specialization of 'Group'.
+'art::type::Service' is a specialization of 'ModelElement'.
+'art::instance::PrimitiveInstance' is a specialization of 'ComponentInstance'.
+'art::implem::FractalComponent' is a specialization of 'ComponentImplementation'.
+'art::type::CompositeType' is a specialization of 'ComponentType'.
+'art::instance::DefaultEntry' is a specialization of 'Entry'.
+'art::type::PrimitiveType' is a specialization of 'ComponentType'.
+'art::type::Port' is a specialization of 'CardinalityElement'.
+'art::ModelElement' is a specialization of 'NamedElement'.
+'type::art::DataType' (role 'type_art_DataType', cardinality 0..*) is associated with 'art::type::Dictionary' (role 'art_type_Dictionary', cardinality 0..*).
+'art::instance::DictionaryValuedAttribute' (role 'art_instance_DictionaryValuedAttribute', cardinality 0..*) is associated with 'Entry' (role 'Entry', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance24', cardinality 0..*) is associated with 'art::instance::Binding' (role 'art_instance_Binding', cardinality 0..*).
+'art::DataType' (role 'art_DataType10', cardinality 0..*) is associated with 'art::TypedElement' (role 'art_TypedElement', cardinality 0..*).
+'art::System' (role 'art_System6', cardinality 0..*) is associated with 'art::DataType' (role 'art_DataType', cardinality 0..*).
+'DelegationBinding' (role 'DelegationBinding', cardinality 0..*) is associated with 'art::instance::CompositeInstance' (role 'art_instance_CompositeInstance', cardinality 0..*).
+'AbstractPort' (role 'AbstractPort', cardinality 0..*) is associated with 'art::instance::TransmissionBinding' (role 'art_instance_TransmissionBinding', cardinality 0..*).
+'art::System' (role 'art_System8', cardinality 0..*) is associated with 'Group' (role 'Group', cardinality 0..*).
+'art::instance::ComponentInstance' (role 'art_instance_ComponentInstance15', cardinality 0..*) is associated with 'AttributeInstance' (role 'AttributeInstance', cardinality 0..*).
+'art::group::InstanceGroup' (role 'groups63', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance64', cardinality 0..*).
+'ComponentImplementation' (role 'ComponentImplementation', cardinality 0..*) is associated with 'art::instance::ComponentInstance' (role 'art_instance_ComponentInstance19', cardinality 0..*).
+'DictionaryDefaultValue' (role 'DictionaryDefaultValue', cardinality 0..*) is associated with 'art::instance::DefaultEntry' (role 'art_instance_DefaultEntry', cardinality 0..*).
+'art::instance::CompositeInstance' (role 'superComponent', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance', cardinality 0..*).
+'art::type::Dictionary' (role 'art_type_Dictionary56', cardinality 0..*) is associated with 'DictionaryDefaultValue' (role 'DictionaryDefaultValue57', cardinality 0..*).
+'art::instance::ComponentInstance' (role 'subComponent', cardinality 0..*) is associated with 'CompositeInstance' (role 'CompositeInstance', cardinality 0..*).
+'art::instance::DelegationBinding' (role 'art_instance_DelegationBinding', cardinality 0..*) is associated with 'AbstractPort' (role 'AbstractPort30', cardinality 0..*).
+'TypeGroup' (role 'TypeGroup', cardinality 0..*) is associated with 'art::type::ComponentType' (role 'types', cardinality 0..*).
+'art::instance::TransmissionBinding' (role 'art_instance_TransmissionBinding27', cardinality 0..*) is associated with 'AbstractPort' (role 'AbstractPort28', cardinality 0..*).
+'art::group::TypeGroup' (role 'groups', cardinality 0..*) is associated with 'ComponentType' (role 'ComponentType59', cardinality 0..*).
+'art::type::AbstractPort' (role 'art_type_AbstractPort', cardinality 0..*) is associated with 'Service' (role 'Service52', cardinality 0..*).
+'Parameter' (role 'Parameter50', cardinality 0..*) is associated with 'art::type::Operation' (role 'art_type_Operation49', cardinality 0..*).
+'art::System' (role 'art_System', cardinality 0..*) is associated with 'Node' (role 'Node', cardinality 0..*).
+'art::type::Service' (role 'art_type_Service', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'art::type::ComponentType' (role 'art_type_ComponentType45', cardinality 0..*) is associated with 'TypeImplementation' (role 'TypeImplementation', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance68', cardinality 0..*) is associated with 'art::distrib::Node' (role 'art_distrib_Node', cardinality 0..*).
+'art::type::Operation' (role 'art_type_Operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'TransmissionBinding' (role 'TransmissionBinding', cardinality 0..*) is associated with 'art::instance::ComponentInstance' (role 'art_instance_ComponentInstance17', cardinality 0..*).
+'ComponentType' (role 'ComponentType', cardinality 0..*) is associated with 'art::System' (role 'art_System4', cardinality 0..*).
+'art::instance::DictionaryValuedAttribute' (role 'art_instance_DictionaryValuedAttribute37', cardinality 0..*) is associated with 'Dictionary' (role 'Dictionary', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'art::type::ComponentType' (role 'art_type_ComponentType42', cardinality 0..*).
+'PortId' (role 'PortId', cardinality 0..*) is associated with 'art::type::PortCollection' (role 'art_type_PortCollection', cardinality 0..*).
+'AbstractPort' (role 'AbstractPort40', cardinality 0..*) is associated with 'art::type::ComponentType' (role 'art_type_ComponentType', cardinality 0..*).
+'InstanceGroup' (role 'InstanceGroup66', cardinality 0..*) is associated with 'art::group::InstanceGroup' (role 'art_group_InstanceGroup', cardinality 0..*).
+'art::instance::ValuedAttribute' (role 'art_instance_ValuedAttribute', cardinality 0..*) is associated with 'BasicAttribute' (role 'BasicAttribute', cardinality 0..*).
+'Service' (role 'Service', cardinality 0..*) is associated with 'art::System' (role 'art_System2', cardinality 0..*).
+'art::instance::ComponentInstance' (role 'instances', cardinality 0..*) is associated with 'InstanceGroup' (role 'InstanceGroup', cardinality 0..*).
+'ComponentType' (role 'ComponentType12', cardinality 0..*) is associated with 'art::instance::ComponentInstance' (role 'art_instance_ComponentInstance', cardinality 0..*).
+'art::group::TypeGroup' (role 'art_group_TypeGroup', cardinality 0..*) is associated with 'TypeGroup' (role 'TypeGroup61', cardinality 0..*).
+'AbstractPort' (role 'AbstractPort33', cardinality 0..*) is associated with 'art::instance::DelegationBinding' (role 'art_instance_DelegationBinding32', cardinality 0..*).

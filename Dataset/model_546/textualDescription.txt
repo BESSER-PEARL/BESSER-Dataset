@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'geneology::Family' has the following attributes: 'name' of type str.
+The class 'geneology::Geneology' has no attributes.
+The class 'geneology::Member' has the following attributes: 'female' of type bool; 'name' of type str.
+'geneology::Geneology' (role 'geneology', cardinality 0..*) is associated with 'geneology::Family' (role 'Family', cardinality 0..*).
+'geneology::Member' (role 'members', cardinality 0..*) is associated with 'geneology::Family' (role 'Family4', cardinality 0..*).
+'geneology::Geneology' (role 'Geneology', cardinality 0..*) is associated with 'geneology::Family' (role 'families', cardinality 0..*).
+'geneology::Member' (role 'Member', cardinality 0..*) is associated with 'geneology::Family' (role 'family', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'tinylibrary::Person' has the following attributes: 'name' of type str; 'lastName' of type str; 'firstName' of type str.
+The class 'Person' has no attributes.
+The class 'tinylibrary::Book' has the following attributes: 'pages' of type str; 'isbn' of type str; 'damaged' of type str; 'title' of type str; 'published' of type date; 'category' of type str.
+The class 'tinylibrary::Employee' has no attributes.
+The class 'tinylibrary::Library' has no attributes.
+The class 'tinylibrary::Writer' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'Mystery', 'Computing', 'Biography', 'ScienceFiction'.
+'tinylibrary::Writer' is a specialization of 'Person'.
+'tinylibrary::Employee' is a specialization of 'Person'.
+'tinylibrary::Book' (role 'books', cardinality 0..*) is associated with 'tinylibrary::Writer' (role 'Writer', cardinality 0..*).
+'tinylibrary::Writer' (role 'tinylibrary_Writer', cardinality 0..*) is associated with 'tinylibrary::Library' (role 'tinylibrary_Library4', cardinality 0..*).
+'tinylibrary::Employee' (role 'Employee10', cardinality 0..*) is associated with 'tinylibrary::Employee' (role 'manager', cardinality 0..*).
+'tinylibrary::Writer' (role 'authors', cardinality 0..*) is associated with 'tinylibrary::Book' (role 'Book', cardinality 0..*).
+'tinylibrary::Employee' (role 'managed', cardinality 0..*) is associated with 'tinylibrary::Employee' (role 'Employee', cardinality 0..*).
+'tinylibrary::Library' (role 'tinylibrary_Library', cardinality 0..*) is associated with 'tinylibrary::Book' (role 'tinylibrary_Book', cardinality 0..*).
+'tinylibrary::Employee' (role 'tinylibrary_Employee', cardinality 0..*) is associated with 'tinylibrary::Library' (role 'tinylibrary_Library2', cardinality 0..*).

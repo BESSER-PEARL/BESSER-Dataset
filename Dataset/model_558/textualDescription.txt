@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'family::Family' has no attributes.
+The class 'family::person' has the following attributes: 'CPR' of type str; 'age' of type int; 'name' of type str.
+The class 'family::university' has the following attributes: 'name' of type str.
+The class 'family::course' has the following attributes: 'name' of type str.
+'family::person' (role 'family_person9', cardinality 0..*) is associated with 'family::university' (role 'family_university', cardinality 0..*).
+'family::person' (role 'family_person4', cardinality 0..*) is associated with 'family::person' (role 'family_person2', cardinality 0..*).
+'family::person' (role 'family_person', cardinality 0..*) is associated with 'family::person' (role 'family_person0', cardinality 0..*).
+'family::course' (role 'family_course13', cardinality 0..*) is associated with 'family::person' (role 'family_person14', cardinality 0..*).
+'family::Family' (role 'family_Family', cardinality 0..*) is associated with 'family::Family' (role 'family_Family15', cardinality 0..*).
+'family::university' (role 'family_university11', cardinality 0..*) is associated with 'family::course' (role 'family_course', cardinality 0..*).
+'family::person' (role 'family_person5', cardinality 0..*) is associated with 'family::person' (role 'family_person7', cardinality 0..*).
+'family::Family' (role 'family_Family18', cardinality 0..*) is associated with 'family::person' (role 'family_person19', cardinality 0..*).

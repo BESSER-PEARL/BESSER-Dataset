@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'Household::Member' has the following attributes: 'firstName' of type str.
+The class 'Household::HouseholdRoot' has no attributes.
+The class 'Household::Family' has the following attributes: 'lastName' of type str.
+'Household::Family' (role 'Household_Family7', cardinality 0..*) is associated with 'Household::Member' (role 'Household_Member8', cardinality 0..*).
+'Household::HouseholdRoot' (role 'Household_HouseholdRoot', cardinality 0..*) is associated with 'Household::Family' (role 'Household_Family', cardinality 0..*).
+'Household::Family' (role 'Household_Family10', cardinality 0..*) is associated with 'Household::Member' (role 'Household_Member11', cardinality 0..*).
+'Household::Member' (role 'Household_Member', cardinality 0..*) is associated with 'Household::Family' (role 'Household_Family2', cardinality 0..*).
+'Household::Family' (role 'Household_Family4', cardinality 0..*) is associated with 'Household::Member' (role 'Household_Member5', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'timedfsm::State' has the following attributes: 'waitingTime' of type int; 'name' of type str.
+The class 'timedfsm::FSM' has no attributes.
+The class 'timedfsm::Transition' has the following attributes: 'input' of type str; 'waitingTime' of type int; 'output' of type str.
+'timedfsm::State' (role 'timedfsm_State4', cardinality 0..*) is associated with 'timedfsm::FSM' (role 'timedfsm_FSM3', cardinality 0..*).
+'timedfsm::Transition' (role 'Transition8', cardinality 0..*) is associated with 'timedfsm::State' (role 'target', cardinality 0..*).
+'timedfsm::State' (role 'source', cardinality 0..*) is associated with 'timedfsm::Transition' (role 'Transition', cardinality 0..*).
+'timedfsm::FSM' (role 'timedfsm_FSM', cardinality 0..*) is associated with 'timedfsm::State' (role 'timedfsm_State', cardinality 0..*).
+'timedfsm::State' (role 'State12', cardinality 0..*) is associated with 'timedfsm::Transition' (role 'incomingTransition', cardinality 0..*).
+'timedfsm::State' (role 'State10', cardinality 0..*) is associated with 'timedfsm::Transition' (role 'outgoingTransition', cardinality 0..*).
+'timedfsm::State' (role 'State', cardinality 0..*) is associated with 'timedfsm::FSM' (role 'owningFSM', cardinality 0..*).
+'timedfsm::FSM' (role 'FSM', cardinality 0..*) is associated with 'timedfsm::State' (role 'ownedState', cardinality 0..*).

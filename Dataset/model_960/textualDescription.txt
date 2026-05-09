@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'DirectedGraph::Edge' has the following attributes: 'label' of type str; 'weight' of type str.
+The class 'GraphElement' has no attributes.
+The class 'DirectedGraph::GraphElement' has no attributes.
+The class 'DirectedGraph::Node' has the following attributes: 'label' of type str.
+The class 'DirectedGraph::Graph' has no attributes.
+'DirectedGraph::Node' is a specialization of 'GraphElement'.
+'DirectedGraph::Edge' is a specialization of 'GraphElement'.
+'DirectedGraph::Graph' (role 'graph', cardinality 0..*) is associated with 'DirectedGraph::GraphElement' (role 'GraphElement', cardinality 0..*).
+'DirectedGraph::Edge' (role 'outgoing', cardinality 0..*) is associated with 'DirectedGraph::Node' (role 'Node', cardinality 0..*).
+'DirectedGraph::Edge' (role 'incoming', cardinality 0..*) is associated with 'DirectedGraph::Node' (role 'Node7', cardinality 0..*).
+'DirectedGraph::Edge' (role 'Edge4', cardinality 0..*) is associated with 'DirectedGraph::Node' (role 'target', cardinality 0..*).
+'DirectedGraph::GraphElement' (role 'contents', cardinality 0..*) is associated with 'DirectedGraph::Graph' (role 'Graph', cardinality 0..*).
+'DirectedGraph::Edge' (role 'Edge', cardinality 0..*) is associated with 'DirectedGraph::Node' (role 'source', cardinality 0..*).

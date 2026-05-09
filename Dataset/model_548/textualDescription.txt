@@ -1,0 +1,42 @@
+The model has 9 class(es).
+The class 'trackit::Product' has the following attributes: 'name' of type str.
+The class 'trackit::Team' has the following attributes: 'teamName' of type str.
+The class 'Identifiable' has no attributes.
+The class 'trackit::Version' has the following attributes: 'name' of type str; 'status' of type str.
+The class 'trackit::IssueTracker' has the following attributes: 'projectName' of type str.
+The class 'trackit::Identifiable' has the following attributes: 'uuid' of type str.
+The class 'trackit::Comment' has the following attributes: 'dateCreated' of type str; 'text' of type str.
+The class 'trackit::Issue' has the following attributes: 'dateCreated' of type str; 'issueType' of type str; 'status' of type str; 'title' of type str; 'description' of type str.
+The class 'trackit::Member' has the following attributes: 'lastName' of type str; 'fullName' of type str; 'firstName' of type str.
+The enumeration 'VersionStatus' has the following literals: 'COMPLETE', 'IN_PROGRESS'.
+The enumeration 'IssueType' has the following literals: 'BUG', 'ENHANCEMENT', 'HELP_REQUIRED', 'DUPLICATE', 'WONT_FIX'.
+The enumeration 'IssueStatus' has the following literals: 'OPEN', 'CLOSED'.
+'trackit::Version' is a specialization of 'Identifiable'.
+'trackit::Comment' is a specialization of 'Identifiable'.
+'trackit::Issue' is a specialization of 'Identifiable'.
+'trackit::Member' is a specialization of 'Identifiable'.
+'trackit::Product' is a specialization of 'Identifiable'.
+'trackit::Team' is a specialization of 'Identifiable'.
+'trackit::Comment' (role 'Comment47', cardinality 0..*) is associated with 'trackit::Comment' (role 'replies', cardinality 0..*).
+'trackit::Member' (role 'trackit_Member', cardinality 0..*) is associated with 'trackit::IssueTracker' (role 'trackit_IssueTracker6', cardinality 0..*).
+'trackit::Issue' (role 'trackit_Issue33', cardinality 0..*) is associated with 'trackit::Issue' (role 'trackit_Issue35', cardinality 0..*).
+'trackit::Member' (role 'assignedTo', cardinality 0..*) is associated with 'trackit::Issue' (role 'Issue11', cardinality 0..*).
+'trackit::Product' (role 'trackit_Product19', cardinality 0..*) is associated with 'trackit::Version' (role 'trackit_Version18', cardinality 0..*).
+'trackit::Team' (role 'trackit_Team13', cardinality 0..*) is associated with 'trackit::Member' (role 'trackit_Member14', cardinality 0..*).
+'trackit::Issue' (role 'Issue39', cardinality 0..*) is associated with 'trackit::Issue' (role 'blockers', cardinality 0..*).
+'trackit::Issue' (role 'Issue25', cardinality 0..*) is associated with 'trackit::Issue' (role 'blocking', cardinality 0..*).
+'trackit::Issue' (role 'trackit_Issue32', cardinality 0..*) is associated with 'trackit::Issue' (role 'trackit_Issue30', cardinality 0..*).
+'trackit::Issue' (role 'Issue21', cardinality 0..*) is associated with 'trackit::Version' (role 'versionsAffected', cardinality 0..*).
+'trackit::Member' (role 'Member', cardinality 0..*) is associated with 'trackit::Issue' (role 'issuesCreated', cardinality 0..*).
+'trackit::Product' (role 'trackit_Product', cardinality 0..*) is associated with 'trackit::IssueTracker' (role 'trackit_IssueTracker2', cardinality 0..*).
+'trackit::Comment' (role 'parent', cardinality 0..*) is associated with 'trackit::Comment' (role 'Comment50', cardinality 0..*).
+'trackit::Issue' (role 'Issue41', cardinality 0..*) is associated with 'trackit::Comment' (role 'comments', cardinality 0..*).
+'trackit::Product' (role 'trackit_Product16', cardinality 0..*) is associated with 'trackit::Version' (role 'trackit_Version', cardinality 0..*).
+'trackit::Comment' (role 'Comment', cardinality 0..*) is associated with 'trackit::Member' (role 'author9', cardinality 0..*).
+'trackit::Issue' (role 'trackit_Issue', cardinality 0..*) is associated with 'trackit::IssueTracker' (role 'trackit_IssueTracker4', cardinality 0..*).
+'trackit::Member' (role 'author', cardinality 0..*) is associated with 'trackit::Issue' (role 'Issue', cardinality 0..*).
+'trackit::Issue' (role 'issue', cardinality 0..*) is associated with 'trackit::Comment' (role 'Comment29', cardinality 0..*).
+'trackit::Member' (role 'Member27', cardinality 0..*) is associated with 'trackit::Issue' (role 'issuesAssigned', cardinality 0..*).
+'trackit::Issue' (role 'issues', cardinality 0..*) is associated with 'trackit::Version' (role 'Version', cardinality 0..*).
+'trackit::Member' (role 'Member44', cardinality 0..*) is associated with 'trackit::Comment' (role 'comments43', cardinality 0..*).
+'trackit::IssueTracker' (role 'trackit_IssueTracker', cardinality 0..*) is associated with 'trackit::Team' (role 'trackit_Team', cardinality 0..*).

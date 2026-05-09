@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'library::Book' has the following attributes: 'title' of type str.
+The class 'library::Employee' has the following attributes: 'name' of type str.
+The class 'library::Shelf' has the following attributes: 'name' of type str.
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'library::Author' has the following attributes: 'name' of type str.
+'library::Book' (role 'books', cardinality 0..*) is associated with 'library::Author' (role 'Author', cardinality 0..*).
+'library::Library' (role 'library_Library6', cardinality 0..*) is associated with 'library::Author' (role 'library_Author', cardinality 0..*).
+'library::Library' (role 'library_Library8', cardinality 0..*) is associated with 'library::Employee' (role 'library_Employee9', cardinality 0..*).
+'library::Shelf' (role 'library_Shelf', cardinality 0..*) is associated with 'library::Employee' (role 'library_Employee', cardinality 0..*).
+'library::Shelf' (role 'library_Shelf4', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).
+'library::Book' (role 'library_Book', cardinality 0..*) is associated with 'library::Shelf' (role 'library_Shelf11', cardinality 0..*).
+'library::Author' (role 'author', cardinality 0..*) is associated with 'library::Book' (role 'Book', cardinality 0..*).

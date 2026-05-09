@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'Arch::Parameter' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Arch::Div' has no attributes.
+The class 'Arch::Application' has the following attributes: 'name' of type str.
+The class 'Arch::Method' has the following attributes: 'name' of type str; 'returntype' of type str.
+The class 'Arch::Entity' has the following attributes: 'name' of type str.
+The class 'Arch::GraphicControl' has the following attributes: 'name' of type str.
+The class 'Arch::Event' has the following attributes: 'name' of type str.
+The class 'Arch::Logic' has the following attributes: 'name' of type str.
+The class 'Arch::Label' has the following attributes: 'text' of type str.
+The class 'Arch::DropDownList' has the following attributes: 'items' of type str.
+The class 'Arch::FrontEnd' has the following attributes: 'name' of type str.
+The class 'GraphicControl' has no attributes.
+The class 'Arch::Controller' has the following attributes: 'name' of type str.
+The class 'Arch::View' has the following attributes: 'name' of type str.
+The class 'Arch::Service' has the following attributes: 'name' of type str.
+The class 'Arch::TextBox' has the following attributes: 'type' of type str.
+The class 'Arch::Attribute' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Arch::BackEnd' has the following attributes: 'name' of type str.
+'Arch::DropDownList' is a specialization of 'GraphicControl'.
+'Arch::Label' is a specialization of 'GraphicControl'.
+'Arch::TextBox' is a specialization of 'GraphicControl'.
+'Arch::Div' is a specialization of 'GraphicControl'.
+'Arch::FrontEnd' (role 'Arch_FrontEnd4', cardinality 0..*) is associated with 'Arch::View' (role 'Arch_View', cardinality 0..*).
+'Arch::GraphicControl' (role 'Arch_GraphicControl', cardinality 0..*) is associated with 'Arch::View' (role 'Arch_View14', cardinality 0..*).
+'Arch::Method' (role 'Arch_Method', cardinality 0..*) is associated with 'Arch::Service' (role 'Arch_Service24', cardinality 0..*).
+'Arch::Parameter' (role 'Arch_Parameter', cardinality 0..*) is associated with 'Arch::Method' (role 'Arch_Method34', cardinality 0..*).
+'Arch::Attribute' (role 'Arch_Attribute', cardinality 0..*) is associated with 'Arch::Entity' (role 'Arch_Entity29', cardinality 0..*).
+'Arch::Event' (role 'Arch_Event37', cardinality 0..*) is associated with 'Arch::GraphicControl' (role 'Arch_GraphicControl36', cardinality 0..*).
+'Arch::Method' (role 'Arch_Method32', cardinality 0..*) is associated with 'Arch::Entity' (role 'Arch_Entity31', cardinality 0..*).
+'Arch::Method' (role 'Arch_Method27', cardinality 0..*) is associated with 'Arch::Logic' (role 'Arch_Logic26', cardinality 0..*).
+'Arch::FrontEnd' (role 'Arch_FrontEnd', cardinality 0..*) is associated with 'Arch::Application' (role 'Arch_Application', cardinality 0..*).
+'Arch::BackEnd' (role 'Arch_BackEnd12', cardinality 0..*) is associated with 'Arch::Entity' (role 'Arch_Entity', cardinality 0..*).
+'Arch::GraphicControl' (role 'Arch_GraphicControl39', cardinality 0..*) is associated with 'Arch::Div' (role 'Arch_Div', cardinality 0..*).
+'Arch::BackEnd' (role 'Arch_BackEnd8', cardinality 0..*) is associated with 'Arch::Service' (role 'Arch_Service', cardinality 0..*).
+'Arch::Event' (role 'Arch_Event', cardinality 0..*) is associated with 'Arch::Controller' (role 'Arch_Controller22', cardinality 0..*).
+'Arch::BackEnd' (role 'Arch_BackEnd10', cardinality 0..*) is associated with 'Arch::Logic' (role 'Arch_Logic', cardinality 0..*).
+'Arch::FrontEnd' (role 'Arch_FrontEnd6', cardinality 0..*) is associated with 'Arch::Controller' (role 'Arch_Controller', cardinality 0..*).
+'Arch::Controller' (role 'Arch_Controller19', cardinality 0..*) is associated with 'Arch::View' (role 'Arch_View20', cardinality 0..*).
+'Arch::Controller' (role 'Arch_Controller17', cardinality 0..*) is associated with 'Arch::View' (role 'Arch_View16', cardinality 0..*).
+'Arch::BackEnd' (role 'Arch_BackEnd', cardinality 0..*) is associated with 'Arch::Application' (role 'Arch_Application2', cardinality 0..*).

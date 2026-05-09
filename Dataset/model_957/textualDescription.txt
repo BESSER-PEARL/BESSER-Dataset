@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'graph::Graph' has the following attributes: 'name' of type str.
+The class 'graph::ElementType' has the following attributes: 'name' of type str.
+The class 'graph::Node' has the following attributes: 'label' of type str.
+The class 'Element' has no attributes.
+The class 'graph::NodeType' has no attributes.
+The class 'graph::Edge' has no attributes.
+The class 'graph::Element' has no attributes.
+The class 'ElementType' has no attributes.
+The class 'graph::EdgeType' has no attributes.
+'graph::NodeType' is a specialization of 'ElementType'.
+'graph::Edge' is a specialization of 'Element'.
+'graph::Node' is a specialization of 'Element'.
+'graph::EdgeType' is a specialization of 'ElementType'.
+'graph::Element' (role 'Element', cardinality 0..*) is associated with 'graph::Graph' (role 'graph', cardinality 0..*).
+'graph::Graph' (role 'Graph10', cardinality 0..*) is associated with 'graph::ElementType' (role 'elementType', cardinality 0..*).
+'graph::ElementType' (role 'ElementType', cardinality 0..*) is associated with 'graph::Graph' (role 'graph13', cardinality 0..*).
+'graph::Graph' (role 'Graph', cardinality 0..*) is associated with 'graph::Element' (role 'element', cardinality 0..*).
+'graph::NodeType' (role 'graph_NodeType', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge', cardinality 0..*) is associated with 'graph::EdgeType' (role 'graph_EdgeType', cardinality 0..*).
+'graph::Edge' (role 'incoming', cardinality 0..*) is associated with 'graph::Node' (role 'Node', cardinality 0..*).
+'graph::Edge' (role 'Edge', cardinality 0..*) is associated with 'graph::Node' (role 'target', cardinality 0..*).
+'graph::Edge' (role 'Edge2', cardinality 0..*) is associated with 'graph::Node' (role 'source', cardinality 0..*).
+'graph::Edge' (role 'outgoing', cardinality 0..*) is associated with 'graph::Node' (role 'Node6', cardinality 0..*).

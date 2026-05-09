@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'Families::Member' has the following attributes: 'age' of type int; 'firstName' of type str.
+The class 'Families::FamilyRegistry' has no attributes.
+The class 'Families::Family' has the following attributes: 'address' of type str; 'lastName' of type str.
+'Families::Member' (role 'Families_Member', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family', cardinality 0..*).
+'Families::Family' (role 'Families_Family9', cardinality 0..*) is associated with 'Families::Member' (role 'Families_Member8', cardinality 0..*).
+'Families::FamilyRegistry' (role 'Families_FamilyRegistry', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family11', cardinality 0..*).
+'Families::Family' (role 'Families_Family2', cardinality 0..*) is associated with 'Families::Member' (role 'Families_Member3', cardinality 0..*).
+'Families::Member' (role 'Families_Member6', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family5', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adilinam/QVTdCaseStudy/org.eclipse.qvt.declarative.test.parser.qvtrelation/src/org/eclipse/qvt/declarative/test/parser/qvtrelation/models/EMOF.ecore

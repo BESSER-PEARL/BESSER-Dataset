@@ -1,0 +1,25 @@
+The model has 8 class(es).
+The class 'Person' has no attributes.
+The class 'family::Family' has no attributes.
+The class 'family::Mother' has no attributes.
+The class 'FNamedElement' has no attributes.
+The class 'family::Child' has no attributes.
+The class 'family::FNamedElement' has the following attributes: 'name' of type str.
+The class 'family::Father' has no attributes.
+The class 'family::Person' has the following attributes: 'age' of type int; 'sex' of type str.
+The enumeration 'SexType' has the following literals: 'male', 'female'.
+'family::Father' is a specialization of 'Person'.
+'family::Mother' is a specialization of 'Person'.
+'family::Family' is a specialization of 'FNamedElement'.
+'family::Person' is a specialization of 'FNamedElement'.
+'family::Child' is a specialization of 'Person'.
+'family::Father' (role 'father', cardinality 0..*) is associated with 'family::Child' (role 'Child', cardinality 0..*).
+'family::Mother' (role 'wife', cardinality 0..*) is associated with 'family::Father' (role 'Father', cardinality 0..*).
+'family::Child' (role 'children', cardinality 0..*) is associated with 'family::Mother' (role 'Mother13', cardinality 0..*).
+'family::Family' (role 'family_Family', cardinality 0..*) is associated with 'family::Person' (role 'family_Person', cardinality 0..*).
+'family::Child' (role 'children15', cardinality 0..*) is associated with 'family::Father' (role 'Father16', cardinality 0..*).
+'family::Father' (role 'husband', cardinality 0..*) is associated with 'family::Mother' (role 'Mother', cardinality 0..*).
+'family::Family' (role 'family_Family4', cardinality 0..*) is associated with 'family::Mother' (role 'family_Mother', cardinality 0..*).
+'family::Mother' (role 'mother', cardinality 0..*) is associated with 'family::Child' (role 'Child10', cardinality 0..*).
+'family::Family' (role 'family_Family6', cardinality 0..*) is associated with 'family::Child' (role 'family_Child', cardinality 0..*).
+'family::Father' (role 'family_Father', cardinality 0..*) is associated with 'family::Family' (role 'family_Family2', cardinality 0..*).

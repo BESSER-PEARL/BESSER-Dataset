@@ -1,0 +1,50 @@
+The model has 23 class(es).
+The class 'model::TableWithoutMultiplicityConcrete' has no attributes.
+The class 'model::TableContentWithValidation' has the following attributes: 'weight' of type int; 'name' of type str.
+The class 'model::TableWithUnique' has no attributes.
+The class 'model::Referencer' has no attributes.
+The class 'model::Content' has the following attributes: 'uniqueAttribute' of type str; 'secondAttribute' of type str.
+The class 'model::TableContentWithInnerChild2' has no attributes.
+The class 'model::CrossReferenceContainer' has no attributes.
+The class 'model::TableContent' has no attributes.
+The class 'model::Writer' has the following attributes: 'initials' of type str; 'title' of type str; 'firstName' of type str; 'Pseudonym' of type bool; 'BirthDate' of type date; 'lastName' of type str; 'EMail' of type str.
+The class 'model::TableWithMultiplicity' has no attributes.
+The class 'TableContent' has no attributes.
+The class 'model::Librarian' has the following attributes: 'name' of type str.
+The class 'model::CrossReferenceContent' has no attributes.
+The class 'model::PowerBlock' has the following attributes: 'name' of type str.
+The class 'model::Person' has the following attributes: 'age' of type str; 'gender' of type str; 'custom' of type str; 'lastName' of type str; 'firstName' of type str.
+The class 'model::Computer' has the following attributes: 'colors' of type str; 'name' of type str.
+The class 'model::Mainboard' has the following attributes: 'name' of type str.
+The class 'model::Library' has the following attributes: 'phoneNumber' of type str; 'name' of type str.
+The class 'model::Container' has no attributes.
+The class 'model::TableContentWithoutValidation' has the following attributes: 'name' of type str; 'weight' of type int.
+The class 'model::TableWithoutMultiplicity' has no attributes.
+The class 'model::TableContentWithInnerChild' has the following attributes: 'stuff' of type str.
+The class 'model::Book' has the following attributes: 'title' of type str; 'pages' of type int.
+The enumeration 'Color' has the following literals: 'Red', 'Green', 'Blue'.
+The enumeration 'Gender' has the following literals: 'Male', 'Both', 'Female'.
+'model::TableContentWithInnerChild2' is a specialization of 'TableContent'.
+'model::TableContentWithInnerChild' is a specialization of 'TableContent'.
+'model::TableContentWithoutValidation' is a specialization of 'TableContent'.
+'model::TableContentWithValidation' is a specialization of 'TableContent'.
+'model::TableWithoutMultiplicityConcrete' (role 'model_TableWithoutMultiplicityConcrete', cardinality 0..*) is associated with 'model::TableContentWithInnerChild' (role 'model_TableContentWithInnerChild23', cardinality 0..*).
+'model::Library' (role 'model_Library', cardinality 0..*) is associated with 'model::Book' (role 'model_Book', cardinality 0..*).
+'model::Computer' (role 'model_Computer25', cardinality 0..*) is associated with 'model::Referencer' (role 'model_Referencer', cardinality 0..*).
+'model::Computer' (role 'model_Computer11', cardinality 0..*) is associated with 'model::PowerBlock' (role 'model_PowerBlock', cardinality 0..*).
+'model::CrossReferenceContainer' (role 'CrossReferenceContainer', cardinality 0..*) is associated with 'model::CrossReferenceContent' (role 'contents', cardinality 0..*).
+'model::Content' (role 'model_Content', cardinality 0..*) is associated with 'model::Container' (role 'model_Container', cardinality 0..*).
+'model::TableContentWithInnerChild' (role 'model_TableContentWithInnerChild', cardinality 0..*) is associated with 'model::TableContent' (role 'model_TableContent21', cardinality 0..*).
+'model::Library' (role 'model_Library3', cardinality 0..*) is associated with 'model::Librarian' (role 'model_Librarian', cardinality 0..*).
+'model::CrossReferenceContent' (role 'CrossReferenceContent28', cardinality 0..*) is associated with 'model::CrossReferenceContainer' (role 'singleParent', cardinality 0..*).
+'model::Computer' (role 'model_Computer', cardinality 0..*) is associated with 'model::Mainboard' (role 'model_Mainboard', cardinality 0..*).
+'model::TableContent' (role 'model_TableContent15', cardinality 0..*) is associated with 'model::TableWithoutMultiplicity' (role 'model_TableWithoutMultiplicity', cardinality 0..*).
+'model::Writer' (role 'writers6', cardinality 0..*) is associated with 'model::Library' (role 'Library', cardinality 0..*).
+'model::CrossReferenceContainer' (role 'parent', cardinality 0..*) is associated with 'model::CrossReferenceContent' (role 'CrossReferenceContent', cardinality 0..*).
+'model::TableWithUnique' (role 'model_TableWithUnique', cardinality 0..*) is associated with 'model::TableContent' (role 'model_TableContent17', cardinality 0..*).
+'model::Writer' (role 'writers', cardinality 0..*) is associated with 'model::Book' (role 'Book', cardinality 0..*).
+'model::TableContentWithInnerChild2' (role 'model_TableContentWithInnerChild2', cardinality 0..*) is associated with 'model::TableContent' (role 'model_TableContent19', cardinality 0..*).
+'model::Writer' (role 'Writer8', cardinality 0..*) is associated with 'model::Book' (role 'books', cardinality 0..*).
+'model::TableWithMultiplicity' (role 'model_TableWithMultiplicity', cardinality 0..*) is associated with 'model::TableContent' (role 'model_TableContent', cardinality 0..*).
+'model::CrossReferenceContainer' (role 'CrossReferenceContainer31', cardinality 0..*) is associated with 'model::CrossReferenceContent' (role 'singleContent', cardinality 0..*).
+'model::Writer' (role 'Writer', cardinality 0..*) is associated with 'model::Library' (role 'library', cardinality 0..*).

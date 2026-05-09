@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'graph::GraphElement' has the following attributes: 'name' of type str.
+The class 'GraphElement' has no attributes.
+The class 'graph::Edge' has no attributes.
+The class 'graph::Node' has no attributes.
+The class 'graph::Graph' has the following attributes: 'name' of type str.
+'graph::Node' is a specialization of 'GraphElement'.
+'graph::Edge' is a specialization of 'GraphElement'.
+'graph::Graph' (role 'graph_Graph2', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge', cardinality 0..*).
+'graph::Node' (role 'Node8', cardinality 0..*) is associated with 'graph::Edge' (role 'enterings', cardinality 0..*).
+'graph::Edge' (role 'Edge5', cardinality 0..*) is associated with 'graph::Node' (role 'targetNode', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node', cardinality 0..*).
+'graph::Node' (role 'sourceNode', cardinality 0..*) is associated with 'graph::Edge' (role 'Edge', cardinality 0..*).
+'graph::Node' (role 'Node', cardinality 0..*) is associated with 'graph::Edge' (role 'leavings', cardinality 0..*).

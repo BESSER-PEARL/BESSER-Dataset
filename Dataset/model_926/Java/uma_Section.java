@@ -1,0 +1,85 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class uma_Section extends VariabilityElement {
+
+    private String sectionDescription;
+    private String sectionName;
+
+
+
+
+
+    private uma_TaskDescriptor uma_taskdescriptor;
+
+
+
+
+    private List<uma_Section> uma_sections;
+
+
+
+
+    private uma_Section uma_section;
+
+
+    public uma_Section(
+        String sectionDescription,        String sectionName    ) {
+        super(
+        );
+        this.sectionDescription = sectionDescription;
+        this.sectionName = sectionName;
+        this.uma_sections = new ArrayList<>();
+    }
+
+    public uma_Section(
+        String sectionDescription,        String sectionName        ArrayList<uma_Section> uma_sections    ) {
+        this.sectionDescription = sectionDescription;
+        this.sectionName = sectionName;
+        this.uma_sections = uma_sections;
+    }
+
+    public String getSectiondescription() {
+        return sectionDescription;
+    }
+
+    public void setSectiondescription(String sectionDescription) {
+        this.sectionDescription = sectionDescription;
+    }
+    public String getSectionname() {
+        return sectionName;
+    }
+
+    public void setSectionname(String sectionName) {
+        this.sectionName = sectionName;
+    }
+
+    public uma_TaskDescriptor getUma_taskdescriptor() {
+        return uma_taskdescriptor;
+    }
+
+    public void setUma_taskdescriptor(uma_TaskDescriptor uma_taskdescriptor) {
+        this.uma_taskdescriptor = uma_taskdescriptor;
+    }
+    public List<uma_Section> getUma_sections() {
+        return uma_sections;
+    }
+
+    public void addUma_section(Uma_section uma_section) {
+        this.uma_sections.add(uma_section);
+    }
+    public uma_Section getUma_section() {
+        return uma_section;
+    }
+
+    public void setUma_section(uma_Section uma_section) {
+        this.uma_section = uma_section;
+    }
+
+}

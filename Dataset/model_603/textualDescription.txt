@@ -1,0 +1,63 @@
+The model has 18 class(es).
+The class 'mvc::EventAction' has no attributes.
+The class 'Annotable' has no attributes.
+The class 'mvc::UIInput' has no attributes.
+The class 'mvc::UIComponent' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'mvc::ControllerView' has no attributes.
+The class 'mvc::MVCModel' has the following attributes: 'name' of type str; 'version' of type str.
+The class 'mvc::Component' has the following attributes: 'name' of type str.
+The class 'mvc::Association' has the following attributes: 'containment' of type bool; 'lowerBound' of type int; 'name' of type str; 'upperBound' of type int; 'type' of type str.
+The class 'mvc::Model' has the following attributes: 'name' of type str.
+The class 'mvc::UILayout' has the following attributes: 'orientation' of type str; 'columns' of type int.
+The class 'mvc::Attribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'mvc::Controller' has the following attributes: 'name' of type str.
+The class 'mvc::View' has the following attributes: 'name' of type str.
+The class 'UIComponent' has no attributes.
+The class 'mvc::UIActions' has no attributes.
+The class 'mvc::Entity' has the following attributes: 'name' of type str.
+The class 'mvc::Action' has the following attributes: 'name' of type str.
+The class 'mvc::Event' has the following attributes: 'name' of type str.
+The enumeration 'AssociationType' does not specify any literals.
+'mvc::Attribute' is a specialization of 'Annotable'.
+'mvc::MVCModel' is a specialization of 'Annotable'.
+'mvc::Association' is a specialization of 'Annotable'.
+'mvc::Model' is a specialization of 'Annotable'.
+'mvc::ControllerView' is a specialization of 'Annotable'.
+'mvc::UIActions' is a specialization of 'UIComponent'.
+'mvc::EventAction' is a specialization of 'Annotable'.
+'mvc::UIInput' is a specialization of 'UIComponent'.
+'mvc::Component' is a specialization of 'Annotable'.
+'mvc::UIComponent' is a specialization of 'Annotable'.
+'mvc::View' is a specialization of 'Annotable'.
+'mvc::Controller' is a specialization of 'Annotable'.
+'mvc::Event' is a specialization of 'Annotable'.
+'mvc::Entity' is a specialization of 'Annotable'.
+'mvc::UILayout' is a specialization of 'UIComponent'.
+'mvc::Action' is a specialization of 'Annotable'.
+'mvc::UIComponent' (role 'mvc_UIComponent', cardinality 0..*) is associated with 'mvc::UILayout' (role 'mvc_UILayout57', cardinality 0..*).
+'mvc::Controller' (role 'mvc_Controller31', cardinality 0..*) is associated with 'mvc::EventAction' (role 'mvc_EventAction', cardinality 0..*).
+'mvc::Model' (role 'mvc_Model46', cardinality 0..*) is associated with 'mvc::ControllerView' (role 'mvc_ControllerView45', cardinality 0..*).
+'mvc::Event' (role 'mvc_Event37', cardinality 0..*) is associated with 'mvc::Action' (role 'mvc_Action36', cardinality 0..*).
+'mvc::Entity' (role 'mvc_Entity4', cardinality 0..*) is associated with 'mvc::Attribute' (role 'mvc_Attribute', cardinality 0..*).
+'mvc::Action' (role 'mvc_Action33', cardinality 0..*) is associated with 'mvc::Event' (role 'mvc_Event34', cardinality 0..*).
+'mvc::Association' (role 'mvc_Association12', cardinality 0..*) is associated with 'mvc::Entity' (role 'mvc_Entity13', cardinality 0..*).
+'mvc::Model' (role 'mvc_Model', cardinality 0..*) is associated with 'mvc::Entity' (role 'mvc_Entity', cardinality 0..*).
+'mvc::Controller' (role 'mvc_Controller', cardinality 0..*) is associated with 'mvc::MVCModel' (role 'mvc_MVCModel23', cardinality 0..*).
+'mvc::Entity' (role 'mvc_Entity7', cardinality 0..*) is associated with 'mvc::Entity' (role 'mvc_Entity5', cardinality 0..*).
+'mvc::MVCModel' (role 'mvc_MVCModel21', cardinality 0..*) is associated with 'mvc::Event' (role 'mvc_Event', cardinality 0..*).
+'mvc::Model' (role 'mvc_Model16', cardinality 0..*) is associated with 'mvc::MVCModel' (role 'mvc_MVCModel', cardinality 0..*).
+'mvc::Event' (role 'mvc_Event64', cardinality 0..*) is associated with 'mvc::UIActions' (role 'mvc_UIActions', cardinality 0..*).
+'mvc::EventAction' (role 'mvc_EventAction54', cardinality 0..*) is associated with 'mvc::Event' (role 'mvc_Event55', cardinality 0..*).
+'mvc::UILayout' (role 'mvc_UILayout', cardinality 0..*) is associated with 'mvc::View' (role 'mvc_View', cardinality 0..*).
+'mvc::Controller' (role 'mvc_Controller29', cardinality 0..*) is associated with 'mvc::ControllerView' (role 'mvc_ControllerView', cardinality 0..*).
+'mvc::Component' (role 'mvc_Component', cardinality 0..*) is associated with 'mvc::MVCModel' (role 'mvc_MVCModel25', cardinality 0..*).
+'mvc::UILayout' (role 'mvc_UILayout59', cardinality 0..*) is associated with 'mvc::View' (role 'mvc_View60', cardinality 0..*).
+'mvc::Controller' (role 'mvc_Controller49', cardinality 0..*) is associated with 'mvc::Component' (role 'mvc_Component48', cardinality 0..*).
+'mvc::Model' (role 'mvc_Model2', cardinality 0..*) is associated with 'mvc::Association' (role 'mvc_Association', cardinality 0..*).
+'mvc::UIInput' (role 'mvc_UIInput', cardinality 0..*) is associated with 'mvc::Attribute' (role 'mvc_Attribute62', cardinality 0..*).
+'mvc::Event' (role 'mvc_Event40', cardinality 0..*) is associated with 'mvc::Action' (role 'mvc_Action39', cardinality 0..*).
+'mvc::EventAction' (role 'mvc_EventAction51', cardinality 0..*) is associated with 'mvc::Action' (role 'mvc_Action52', cardinality 0..*).
+'mvc::Action' (role 'mvc_Action', cardinality 0..*) is associated with 'mvc::Controller' (role 'mvc_Controller27', cardinality 0..*).
+'mvc::Entity' (role 'mvc_Entity10', cardinality 0..*) is associated with 'mvc::Association' (role 'mvc_Association9', cardinality 0..*).
+'mvc::View' (role 'mvc_View19', cardinality 0..*) is associated with 'mvc::MVCModel' (role 'mvc_MVCModel18', cardinality 0..*).
+'mvc::View' (role 'mvc_View43', cardinality 0..*) is associated with 'mvc::ControllerView' (role 'mvc_ControllerView42', cardinality 0..*).

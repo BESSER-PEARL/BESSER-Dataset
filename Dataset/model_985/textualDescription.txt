@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'cfg::edge' has no attributes.
+The class 'cfg::startnode' has no attributes.
+The class 'cfg::cfg' has no attributes.
+The class 'cfg::node' has the following attributes: 'name' of type str.
+The class 'cfg::endnode' has no attributes.
+The class 'node' has no attributes.
+'cfg::endnode' is a specialization of 'node'.
+'cfg::startnode' is a specialization of 'node'.
+'cfg::node' (role 'cfg_node12', cardinality 0..*) is associated with 'cfg::edge' (role 'cfg_edge11', cardinality 0..*).
+'cfg::node' (role 'source', cardinality 0..*) is associated with 'cfg::edge' (role 'edge8', cardinality 0..*).
+'cfg::node' (role 'node', cardinality 0..*) is associated with 'cfg::edge' (role 'incoming', cardinality 0..*).
+'cfg::edge' (role 'cfg_edge5', cardinality 0..*) is associated with 'cfg::node' (role 'cfg_node4', cardinality 0..*).
+'cfg::edge' (role 'cfg_edge', cardinality 0..*) is associated with 'cfg::cfg' (role 'cfg_cfg2', cardinality 0..*).
+'cfg::node' (role 'node14', cardinality 0..*) is associated with 'cfg::edge' (role 'outgoing', cardinality 0..*).
+'cfg::edge' (role 'edge', cardinality 0..*) is associated with 'cfg::node' (role 'target', cardinality 0..*).
+'cfg::node' (role 'cfg_node', cardinality 0..*) is associated with 'cfg::cfg' (role 'cfg_cfg', cardinality 0..*).

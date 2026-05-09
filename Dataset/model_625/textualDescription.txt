@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'ocldriven::Loans' has the following attributes: 'date' of type date.
+The class 'ocldriven::Dependancy' has no attributes.
+The class 'ocldriven::Member' has the following attributes: 'name' of type str.
+The class 'ocldriven::Media' has the following attributes: 'copies' of type str; 'name' of type str.
+The class 'ocldriven::Library' has no attributes.
+'ocldriven::Dependancy' (role 'ocldriven_Dependancy17', cardinality 0..*) is associated with 'ocldriven::Media' (role 'ocldriven_Media18', cardinality 0..*).
+'ocldriven::Media' (role 'Media', cardinality 0..*) is associated with 'ocldriven::Library' (role 'library', cardinality 0..*).
+'ocldriven::Media' (role 'medias', cardinality 0..*) is associated with 'ocldriven::Library' (role 'Library', cardinality 0..*).
+'ocldriven::Library' (role 'ocldriven_Library5', cardinality 0..*) is associated with 'ocldriven::Dependancy' (role 'ocldriven_Dependancy', cardinality 0..*).
+'ocldriven::Media' (role 'ocldriven_Media', cardinality 0..*) is associated with 'ocldriven::Loans' (role 'ocldriven_Loans10', cardinality 0..*).
+'ocldriven::Dependancy' (role 'ocldriven_Dependancy14', cardinality 0..*) is associated with 'ocldriven::Media' (role 'ocldriven_Media15', cardinality 0..*).
+'ocldriven::Library' (role 'library2', cardinality 0..*) is associated with 'ocldriven::Member' (role 'Member', cardinality 0..*).
+'ocldriven::Library' (role 'ocldriven_Library', cardinality 0..*) is associated with 'ocldriven::Loans' (role 'ocldriven_Loans', cardinality 0..*).
+'ocldriven::Member' (role 'members', cardinality 0..*) is associated with 'ocldriven::Library' (role 'Library12', cardinality 0..*).
+'ocldriven::Loans' (role 'ocldriven_Loans8', cardinality 0..*) is associated with 'ocldriven::Member' (role 'ocldriven_Member', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'petrinet::Node' has the following attributes: 'name' of type str.
+The class 'petrinet::Arc' has the following attributes: 'multiplicity' of type int; 'readOnly' of type bool.
+The class 'petrinet::Place' has the following attributes: 'marking' of type int.
+The class 'PetriNetElement' has no attributes.
+The class 'Node' has no attributes.
+The class 'petrinet::Transition' has no attributes.
+The class 'petrinet::PetriNet' has the following attributes: 'name' of type str.
+The class 'petrinet::PetriNetElement' has no attributes.
+'petrinet::Transition' is a specialization of 'Node'.
+'petrinet::Node' is a specialization of 'PetriNetElement'.
+'petrinet::Arc' is a specialization of 'PetriNetElement'.
+'petrinet::Place' is a specialization of 'Node'.
+'petrinet::PetriNet' (role 'PetriNet', cardinality 0..*) is associated with 'petrinet::PetriNetElement' (role 'petriNetElements', cardinality 0..*).
+'petrinet::PetriNet' (role 'petriNet', cardinality 0..*) is associated with 'petrinet::PetriNetElement' (role 'PetriNetElement', cardinality 0..*).
+'petrinet::Arc' (role 'Arc', cardinality 0..*) is associated with 'petrinet::Node' (role 'predecessor', cardinality 0..*).
+'petrinet::Node' (role 'Node7', cardinality 0..*) is associated with 'petrinet::Arc' (role 'linksToPredecessor', cardinality 0..*).
+'petrinet::Arc' (role 'linksToSuccessor', cardinality 0..*) is associated with 'petrinet::Node' (role 'Node', cardinality 0..*).
+'petrinet::Arc' (role 'Arc4', cardinality 0..*) is associated with 'petrinet::Node' (role 'successor', cardinality 0..*).

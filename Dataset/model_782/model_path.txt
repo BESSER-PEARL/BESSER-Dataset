@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/k3sle-example-fsm/fr.inria.diverse.k3.sle.examples.fsm.metamodel/model/FSM.ecore

@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'GraphMetaM::Model' has the following attributes: 'name' of type str.
+The class 'GraphMetaM::Edge' has the following attributes: 'async_' of type bool; 'localPriority' of type int; 'name' of type str; 'rName' of type str.
+The class 'GraphMetaM::Graph' has the following attributes: 'cycles' of type int; 'rName' of type str; 'name' of type str.
+The class 'GraphMetaM::Vertex' has the following attributes: 'cycles' of type int; 'globalPriority' of type int; 'rName' of type str; 'type' of type str; 'activity' of type str; 'name' of type str.
+The enumeration 'Type' has the following literals: 'or_', 'and_'.
+'GraphMetaM::Vertex' (role 'Vertex5', cardinality 0..*) is associated with 'GraphMetaM::Edge' (role 'outgoing', cardinality 0..*).
+'GraphMetaM::Edge' (role 'Edge8', cardinality 0..*) is associated with 'GraphMetaM::Vertex' (role 'source', cardinality 0..*).
+'GraphMetaM::Model' (role 'GraphMetaM_Model', cardinality 0..*) is associated with 'GraphMetaM::Graph' (role 'GraphMetaM_Graph10', cardinality 0..*).
+'GraphMetaM::Edge' (role 'incoming', cardinality 0..*) is associated with 'GraphMetaM::Vertex' (role 'Vertex', cardinality 0..*).
+'GraphMetaM::Graph' (role 'GraphMetaM_Graph', cardinality 0..*) is associated with 'GraphMetaM::Vertex' (role 'GraphMetaM_Vertex', cardinality 0..*).
+'GraphMetaM::Vertex' (role 'target', cardinality 0..*) is associated with 'GraphMetaM::Edge' (role 'Edge', cardinality 0..*).
+'GraphMetaM::Edge' (role 'GraphMetaM_Edge', cardinality 0..*) is associated with 'GraphMetaM::Graph' (role 'GraphMetaM_Graph2', cardinality 0..*).

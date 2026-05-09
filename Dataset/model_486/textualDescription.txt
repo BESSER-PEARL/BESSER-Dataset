@@ -1,0 +1,11 @@
+The model has 2 class(es).
+The class 'Families::Member' has the following attributes: 'firstName' of type str.
+The class 'Families::Family' has the following attributes: 'lastName' of type str.
+'Families::Member' (role 'Member2', cardinality 0..*) is associated with 'Families::Family' (role 'familyMother', cardinality 0..*).
+'Families::Family' (role 'familySon', cardinality 0..*) is associated with 'Families::Member' (role 'Member4', cardinality 0..*).
+'Families::Member' (role 'sons', cardinality 0..*) is associated with 'Families::Family' (role 'Family11', cardinality 0..*).
+'Families::Member' (role 'Member6', cardinality 0..*) is associated with 'Families::Family' (role 'familyDaughter', cardinality 0..*).
+'Families::Family' (role 'Family9', cardinality 0..*) is associated with 'Families::Member' (role 'mother', cardinality 0..*).
+'Families::Family' (role 'Family', cardinality 0..*) is associated with 'Families::Member' (role 'father', cardinality 0..*).
+'Families::Member' (role 'daughters', cardinality 0..*) is associated with 'Families::Family' (role 'Family13', cardinality 0..*).
+'Families::Member' (role 'Member', cardinality 0..*) is associated with 'Families::Family' (role 'familyFather', cardinality 0..*).

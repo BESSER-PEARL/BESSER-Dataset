@@ -1,0 +1,13 @@
+The model has 3 class(es).
+The class 'k3fsm::State' has the following attributes: 'name' of type str.
+The class 'k3fsm::Transition' has the following attributes: 'name' of type str; 'output' of type str; 'input' of type str.
+The class 'k3fsm::FSM' has the following attributes: 'producedString' of type str; 'consummedString' of type str; 'unprocessedString' of type str; 'name' of type str.
+'k3fsm::FSM' (role 'k3fsm_FSM', cardinality 0..*) is associated with 'k3fsm::State' (role 'k3fsm_State', cardinality 0..*).
+'k3fsm::State' (role 'source', cardinality 0..*) is associated with 'k3fsm::Transition' (role 'Transition', cardinality 0..*).
+'k3fsm::State' (role 'target', cardinality 0..*) is associated with 'k3fsm::Transition' (role 'Transition10', cardinality 0..*).
+'k3fsm::State' (role 'ownedStates', cardinality 0..*) is associated with 'k3fsm::FSM' (role 'FSM', cardinality 0..*).
+'k3fsm::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'k3fsm::State' (role 'State15', cardinality 0..*).
+'k3fsm::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'k3fsm::State' (role 'State13', cardinality 0..*).
+'k3fsm::FSM' (role 'owningFSM', cardinality 0..*) is associated with 'k3fsm::State' (role 'State', cardinality 0..*).
+'k3fsm::State' (role 'k3fsm_State7', cardinality 0..*) is associated with 'k3fsm::FSM' (role 'k3fsm_FSM6', cardinality 0..*).
+'k3fsm::State' (role 'k3fsm_State4', cardinality 0..*) is associated with 'k3fsm::FSM' (role 'k3fsm_FSM3', cardinality 0..*).

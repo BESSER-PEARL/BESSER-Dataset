@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'familyleft2::Daughter' has no attributes.
+The class 'familyleft2::Person' has the following attributes: 'age' of type int; 'name' of type str; 'isMale' of type bool.
+The class 'Person' has no attributes.
+The class 'familyleft2::Mother' has the following attributes: 'address' of type str.
+The class 'familyleft2::Father' has the following attributes: 'address' of type str.
+The class 'familyleft2::Son' has no attributes.
+The class 'familyleft2::Family' has no attributes.
+'familyleft2::Son' is a specialization of 'Person'.
+'familyleft2::Mother' is a specialization of 'Person'.
+'familyleft2::Daughter' is a specialization of 'Person'.
+'familyleft2::Father' is a specialization of 'Person'.
+'familyleft2::Daughter' (role 'Daughter', cardinality 0..*) is associated with 'familyleft2::Family' (role 'family13', cardinality 0..*).
+'familyleft2::Family' (role 'Family4', cardinality 0..*) is associated with 'familyleft2::Son' (role 'sons', cardinality 0..*).
+'familyleft2::Father' (role 'father', cardinality 0..*) is associated with 'familyleft2::Family' (role 'Family', cardinality 0..*).
+'familyleft2::Mother' (role 'Mother', cardinality 0..*) is associated with 'familyleft2::Family' (role 'family9', cardinality 0..*).
+'familyleft2::Mother' (role 'mother', cardinality 0..*) is associated with 'familyleft2::Family' (role 'Family2', cardinality 0..*).
+'familyleft2::Family' (role 'family', cardinality 0..*) is associated with 'familyleft2::Father' (role 'Father', cardinality 0..*).
+'familyleft2::Son' (role 'Son', cardinality 0..*) is associated with 'familyleft2::Family' (role 'family11', cardinality 0..*).
+'familyleft2::Daughter' (role 'daughters', cardinality 0..*) is associated with 'familyleft2::Family' (role 'Family6', cardinality 0..*).

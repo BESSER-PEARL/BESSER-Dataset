@@ -1,0 +1,420 @@
+The model has 151 class(es).
+The class 'uma::RoleSet' has no attributes.
+The class 'uma::ContentCategory' has no attributes.
+The class 'uma::Image' has the following attributes: 'uri' of type str; 'mimeType' of type str.
+The class 'uma::ProcessComponent' has no attributes.
+The class 'uma::Example' has no attributes.
+The class 'uma::UMASemanticModelBridge' has no attributes.
+The class 'uma::DiagramElement' has the following attributes: 'isVisible' of type str.
+The class 'uma::Type' has no attributes.
+The class 'uma::DiagramLink' has the following attributes: 'zoom' of type str.
+The class 'uma::Step' has no attributes.
+The class 'uma::MethodPackage' has the following attributes: 'global_' of type str.
+The class 'uma::GraphicPrimitive' has no attributes.
+The class 'uma::Reference' has the following attributes: 'isIndividualRepresentation' of type str.
+The class 'Section' has no attributes.
+The class 'uma::BreakdownElementDescription' has the following attributes: 'usageGuidance' of type str.
+The class 'uma::VariabilityElement' has the following attributes: 'variabilityType' of type str.
+The class 'uma::Element' has no attributes.
+The class 'uma::Domain' has no attributes.
+The class 'uma::Artifact' has no attributes.
+The class 'uma::EstimatingMetric' has no attributes.
+The class 'Type' has no attributes.
+The class 'Guidance' has no attributes.
+The class 'uma::WorkDefinition' has no attributes.
+The class 'uma::Namespace' has no attributes.
+The class 'VariabilityElement' has no attributes.
+The class 'GraphicPrimitive' has no attributes.
+The class 'MethodElement' has no attributes.
+The class 'uma::ProcessDescription' has the following attributes: 'scope' of type str; 'externalId' of type str; 'usageNotes' of type str.
+The class 'uma::Ellipse' has the following attributes: 'radiusX' of type str; 'rotation' of type str; 'startAngle' of type str; 'radiusY' of type str; 'endAngle' of type str.
+The class 'uma::Template' has no attributes.
+The class 'uma::Concept' has no attributes.
+The class 'uma::EstimationConsiderations' has no attributes.
+The class 'uma::RoleDescription' has the following attributes: 'skills' of type str; 'assignmentApproaches' of type str; 'synonyms' of type str.
+The class 'uma::Phase' has no attributes.
+The class 'uma::Diagram' has the following attributes: 'zoom' of type str.
+The class 'uma::MethodElement' has the following attributes: 'orderingGuide' of type str; 'briefDescription' of type str; 'guid' of type str; 'suppressed' of type str.
+The class 'uma::CoreSemanticModelBridge' has no attributes.
+The class 'uma::ToolMentor' has no attributes.
+The class 'ActivityDescription' has no attributes.
+The class 'uma::ProcessComponentInterface' has no attributes.
+The class 'uma::Dimension' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'MethodUnit' has no attributes.
+The class 'uma::Estimate' has no attributes.
+The class 'uma::Property' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'uma::Roadmap' has no attributes.
+The class 'DescribableElement' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'uma::PracticeDescription' has the following attributes: 'application' of type str; 'problem' of type str; 'levelsOfAdoption' of type str; 'goals' of type str; 'additionalInfo' of type str; 'background' of type str.
+The class 'uma::SemanticModelBridge' has the following attributes: 'presentation' of type str.
+The class 'uma::Iteration' has no attributes.
+The class 'uma::DescribableElement' has the following attributes: 'shapeicon' of type str; 'nodeicon' of type str; 'presentationName' of type str.
+The class 'uma::WorkProductDescription' has the following attributes: 'externalId' of type str; 'reasonsForNotNeeding' of type str; 'purpose' of type str; 'impactOfNotHaving' of type str.
+The class 'uma::ProcessElement' has no attributes.
+The class 'uma::Point' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'uma::ProcessComponentDescriptor' has no attributes.
+The class 'BreakdownElement' has no attributes.
+The class 'uma::PackageableElement' has no attributes.
+The class 'uma::WorkProductDescriptor' has the following attributes: 'activityExitState' of type str; 'activityEntryState' of type str.
+The class 'uma::WorkOrder' has the following attributes: 'linkType' of type str.
+The class 'uma::GraphConnector' has no attributes.
+The class 'WorkBreakdownElement' has no attributes.
+The class 'uma::BreakdownElement' has the following attributes: 'isOptional' of type str; 'hasMultipleOccurrences' of type str; 'prefix' of type str; 'isPlanned' of type str.
+The class 'uma::Task' has no attributes.
+The class 'Concept' has no attributes.
+The class 'uma::WorkBreakdownElement' has the following attributes: 'isOngoing' of type str; 'isRepeatable' of type str; 'isEventDriven' of type str.
+The class 'uma::ContentElement' has no attributes.
+The class 'uma::Deliverable' has no attributes.
+The class 'GraphElement' has no attributes.
+The class 'uma::MethodUnit' has the following attributes: 'authors' of type str; 'version' of type str; 'changeDescription' of type str; 'changeDate' of type str.
+The class 'MethodConfiguration' has no attributes.
+The class 'uma::WorkProduct' has no attributes.
+The class 'WorkProductDescription' has no attributes.
+The class 'uma::Package' has no attributes.
+The class 'uma::ArtifactDescription' has the following attributes: 'briefOutline' of type str; 'representationOptions' of type str.
+The class 'ProcessDescription' has no attributes.
+The class 'uma::DeliveryProcessDescription' has the following attributes: 'projectCharacteristics' of type str; 'projectMemberExpertise' of type str; 'riskLevel' of type str; 'typeOfContract' of type str; 'estimatingTechnique' of type str; 'scale' of type str.
+The class 'Namespace' has no attributes.
+The class 'uma::Report' has no attributes.
+The class 'uma::ContentDescription' has the following attributes: 'mainDescription' of type str; 'keyConsiderations' of type str.
+The class 'uma::PlanningData' has the following attributes: 'startDate' of type str; 'rank' of type str; 'finishDate' of type str.
+The class 'uma::NamedElement' has the following attributes: 'name' of type str.
+The class 'uma::Checklist' has no attributes.
+The class 'Element' has no attributes.
+The class 'uma::Process' has no attributes.
+The class 'uma::Milestone' has no attributes.
+The class 'uma::ProcessPlanningTemplate' has no attributes.
+The class 'uma::TeamProfile' has no attributes.
+The class 'uma::Classifier' has no attributes.
+The class 'uma::Guideline' has no attributes.
+The class 'uma::GraphEdge' has no attributes.
+The class 'uma::TextElement' has the following attributes: 'text' of type str.
+The class 'uma::ProcessFamily' has no attributes.
+The class 'Process' has no attributes.
+The class 'uma::Descriptor' has the following attributes: 'isSynchronizedWithSource' of type str.
+The class 'RoleDescriptor' has no attributes.
+The class 'uma::CustomCategory' has no attributes.
+The class 'WorkDefinition' has no attributes.
+The class 'GraphNode' has no attributes.
+The class 'uma::Outcome' has no attributes.
+The class 'uma::DeliveryProcess' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'uma::DescriptorDescription' has the following attributes: 'refinedDescription' of type str.
+The class 'uma::SupportingMaterial' has no attributes.
+The class 'uma::MethodPlugin' has the following attributes: 'userChangeable' of type str.
+The class 'uma::Constraint' has the following attributes: 'body' of type str.
+The class 'uma::GraphElement' has no attributes.
+The class 'uma::Practice' has no attributes.
+The class 'uma::DisciplineGrouping' has no attributes.
+The class 'uma::Polyline' has the following attributes: 'closed' of type str.
+The class 'uma::MethodConfiguration' has no attributes.
+The class 'BreakdownElementDescription' has no attributes.
+The class 'LeafElement' has no attributes.
+The class 'uma::Whitepaper' has no attributes.
+The class 'uma::Activity' has no attributes.
+The class 'uma::CapabilityPattern' has no attributes.
+The class 'uma::GraphNode' has no attributes.
+The class 'Descriptor' has no attributes.
+The class 'uma::CompositeRole' has no attributes.
+The class 'uma::TermDefinition' has no attributes.
+The class 'uma::ProcessPackage' has no attributes.
+The class 'WorkProduct' has no attributes.
+The class 'uma::WorkProductType' has no attributes.
+The class 'ContentElement' has no attributes.
+The class 'uma::Tool' has no attributes.
+The class 'uma::Guidance' has no attributes.
+The class 'Package' has no attributes.
+The class 'uma::ProcessContribution' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'ContentDescription' has no attributes.
+The class 'uma::MethodLibrary' has no attributes.
+The class 'uma::GuidanceDescription' has the following attributes: 'attachments' of type str.
+The class 'ProcessElement' has no attributes.
+The class 'uma::Discipline' has no attributes.
+The class 'ProcessPackage' has no attributes.
+The class 'uma::RoleSetGrouping' has no attributes.
+The class 'Activity' has no attributes.
+The class 'uma::ContentPackage' has no attributes.
+The class 'uma::Role' has no attributes.
+The class 'SemanticModelBridge' has no attributes.
+The class 'uma::LeafElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'uma::DeliverableDescription' has the following attributes: 'externalDescription' of type str; 'packagingGuidance' of type str.
+The class 'uma::Section' has the following attributes: 'sectionName' of type str; 'sectionDescription' of type str.
+The class 'MethodPackage' has no attributes.
+The class 'ContentCategory' has no attributes.
+The class 'uma::RoleDescriptor' has no attributes.
+The class 'uma::ActivityDescription' has the following attributes: 'howtoStaff' of type str; 'alternatives' of type str; 'purpose' of type str.
+The class 'uma::TaskDescription' has the following attributes: 'alternatives' of type str; 'purpose' of type str.
+The class 'uma::ReusableAsset' has no attributes.
+The class 'uma::TaskDescriptor' has no attributes.
+The class 'uma::SimpleSemanticModelElement' has the following attributes: 'typeInfo' of type str.
+The enumeration 'WorkOrderType' has the following literals: 'startToStart', 'finishToStart', 'finishToFinish', 'startToFinish'.
+The enumeration 'VariabilityType' has the following literals: 'extends', 'na', 'contributes', 'replaces'.
+'uma::Property' is a specialization of 'DiagramElement'.
+'uma::TaskDescriptor' is a specialization of 'WorkBreakdownElement'.
+'uma::Iteration' is a specialization of 'Activity'.
+'uma::Tool' is a specialization of 'ContentCategory'.
+'uma::DeliveryProcessDescription' is a specialization of 'ProcessDescription'.
+'uma::Section' is a specialization of 'VariabilityElement'.
+'uma::MethodPlugin' is a specialization of 'MethodUnit'.
+'uma::WorkProductType' is a specialization of 'ContentCategory'.
+'uma::Step' is a specialization of 'Section'.
+'uma::PracticeDescription' is a specialization of 'ContentDescription'.
+'uma::RoleSetGrouping' is a specialization of 'ContentCategory'.
+'uma::UMASemanticModelBridge' is a specialization of 'SemanticModelBridge'.
+'uma::Phase' is a specialization of 'Activity'.
+'uma::Activity' is a specialization of 'WorkBreakdownElement'.
+'uma::Role' is a specialization of 'ContentElement'.
+'uma::MethodLibrary' is a specialization of 'MethodUnit'.
+'uma::Artifact' is a specialization of 'WorkProduct'.
+'uma::MethodUnit' is a specialization of 'MethodElement'.
+'uma::Deliverable' is a specialization of 'WorkProduct'.
+'uma::Image' is a specialization of 'LeafElement'.
+'uma::TaskDescription' is a specialization of 'ContentDescription'.
+'uma::MethodElement' is a specialization of 'PackageableElement'.
+'uma::GraphElement' is a specialization of 'DiagramElement'.
+'uma::Domain' is a specialization of 'ContentCategory'.
+'uma::GraphConnector' is a specialization of 'GraphElement'.
+'uma::DescriptorDescription' is a specialization of 'BreakdownElementDescription'.
+'uma::ArtifactDescription' is a specialization of 'WorkProductDescription'.
+'uma::DiagramElement' is a specialization of 'MethodElement'.
+'uma::ProcessContribution' is a specialization of 'Process'.
+'uma::GraphNode' is a specialization of 'GraphElement'.
+'uma::WorkProduct' is a specialization of 'ContentElement'.
+'uma::GuidanceDescription' is a specialization of 'ContentDescription'.
+'uma::ActivityDescription' is a specialization of 'BreakdownElementDescription'.
+'uma::BreakdownElementDescription' is a specialization of 'ContentDescription'.
+'uma::RoleSet' is a specialization of 'ContentCategory'.
+'uma::GraphEdge' is a specialization of 'GraphElement'.
+'uma::Ellipse' is a specialization of 'GraphicPrimitive'.
+'uma::Milestone' is a specialization of 'WorkBreakdownElement'.
+'uma::SemanticModelBridge' is a specialization of 'DiagramElement'.
+'uma::DescribableElement' is a specialization of 'Classifier'.
+'uma::CompositeRole' is a specialization of 'RoleDescriptor'.
+'uma::Activity' is a specialization of 'WorkDefinition'.
+'uma::Practice' is a specialization of 'Guidance'.
+'uma::Guidance' is a specialization of 'ContentElement'.
+'uma::WorkProductDescriptor' is a specialization of 'Descriptor'.
+'uma::EstimatingMetric' is a specialization of 'Guidance'.
+'uma::ContentElement' is a specialization of 'VariabilityElement'.
+'uma::BreakdownElement' is a specialization of 'ProcessElement'.
+'uma::DescribableElement' is a specialization of 'MethodElement'.
+'uma::ProcessComponent' is a specialization of 'MethodUnit'.
+'uma::Polyline' is a specialization of 'GraphicPrimitive'.
+'uma::TextElement' is a specialization of 'LeafElement'.
+'uma::RoleDescription' is a specialization of 'ContentDescription'.
+'uma::Package' is a specialization of 'PackageableElement'.
+'uma::SupportingMaterial' is a specialization of 'Guidance'.
+'uma::ToolMentor' is a specialization of 'Guidance'.
+'uma::MethodPlugin' is a specialization of 'Package'.
+'uma::ProcessPlanningTemplate' is a specialization of 'Process'.
+'uma::Example' is a specialization of 'Guidance'.
+'uma::Roadmap' is a specialization of 'Guidance'.
+'uma::Constraint' is a specialization of 'MethodElement'.
+'uma::DeliverableDescription' is a specialization of 'WorkProductDescription'.
+'uma::VariabilityElement' is a specialization of 'MethodElement'.
+'uma::WorkBreakdownElement' is a specialization of 'BreakdownElement'.
+'uma::Discipline' is a specialization of 'ContentCategory'.
+'uma::NamedElement' is a specialization of 'Element'.
+'uma::ProcessPackage' is a specialization of 'MethodPackage'.
+'uma::Activity' is a specialization of 'VariabilityElement'.
+'uma::Package' is a specialization of 'Namespace'.
+'uma::ProcessFamily' is a specialization of 'MethodConfiguration'.
+'uma::Diagram' is a specialization of 'GraphNode'.
+'uma::TaskDescriptor' is a specialization of 'Descriptor'.
+'uma::DeliveryProcess' is a specialization of 'Process'.
+'uma::MethodLibrary' is a specialization of 'Package'.
+'uma::ProcessComponent' is a specialization of 'ProcessPackage'.
+'uma::CoreSemanticModelBridge' is a specialization of 'SemanticModelBridge'.
+'uma::Estimate' is a specialization of 'Guidance'.
+'uma::DiagramLink' is a specialization of 'DiagramElement'.
+'uma::CapabilityPattern' is a specialization of 'Process'.
+'uma::ProcessDescription' is a specialization of 'ActivityDescription'.
+'uma::ContentDescription' is a specialization of 'MethodUnit'.
+'uma::ContentElement' is a specialization of 'DescribableElement'.
+'uma::Type' is a specialization of 'PackageableElement'.
+'uma::ContentCategory' is a specialization of 'ContentElement'.
+'uma::ProcessElement' is a specialization of 'DescribableElement'.
+'uma::Descriptor' is a specialization of 'BreakdownElement'.
+'uma::Concept' is a specialization of 'Guidance'.
+'uma::MethodPackage' is a specialization of 'Package'.
+'uma::RoleDescriptor' is a specialization of 'Descriptor'.
+'uma::Outcome' is a specialization of 'WorkProduct'.
+'uma::TermDefinition' is a specialization of 'Guidance'.
+'uma::EstimationConsiderations' is a specialization of 'Guidance'.
+'uma::PackageableElement' is a specialization of 'NamedElement'.
+'uma::TeamProfile' is a specialization of 'BreakdownElement'.
+'uma::LeafElement' is a specialization of 'DiagramElement'.
+'uma::ReusableAsset' is a specialization of 'Guidance'.
+'uma::ProcessComponentInterface' is a specialization of 'BreakdownElement'.
+'uma::Report' is a specialization of 'Guidance'.
+'uma::PlanningData' is a specialization of 'ProcessElement'.
+'uma::DisciplineGrouping' is a specialization of 'ContentCategory'.
+'uma::WorkDefinition' is a specialization of 'MethodElement'.
+'uma::Reference' is a specialization of 'DiagramElement'.
+'uma::GraphicPrimitive' is a specialization of 'LeafElement'.
+'uma::Classifier' is a specialization of 'Type'.
+'uma::ContentPackage' is a specialization of 'MethodPackage'.
+'uma::MethodConfiguration' is a specialization of 'MethodElement'.
+'uma::ProcessComponentDescriptor' is a specialization of 'Descriptor'.
+'uma::WorkProductDescription' is a specialization of 'ContentDescription'.
+'uma::Process' is a specialization of 'Activity'.
+'uma::Template' is a specialization of 'Guidance'.
+'uma::Step' is a specialization of 'WorkDefinition'.
+'uma::MethodPackage' is a specialization of 'MethodElement'.
+'uma::Task' is a specialization of 'WorkDefinition'.
+'uma::CustomCategory' is a specialization of 'ContentCategory'.
+'uma::Guideline' is a specialization of 'Guidance'.
+'uma::Namespace' is a specialization of 'NamedElement'.
+'uma::Checklist' is a specialization of 'Guidance'.
+'uma::WorkOrder' is a specialization of 'ProcessElement'.
+'uma::Task' is a specialization of 'ContentElement'.
+'uma::Whitepaper' is a specialization of 'Concept'.
+'uma::SimpleSemanticModelElement' is a specialization of 'SemanticModelBridge'.
+'uma::GraphNode' (role 'uma_GraphNode', cardinality 0..*) is associated with 'uma::Dimension' (role 'uma_Dimension', cardinality 0..*).
+'uma::Section' (role 'uma_Section15', cardinality 0..*) is associated with 'uma::Section' (role 'uma_Section17', cardinality 0..*).
+'uma::Checklist' (role 'uma_Checklist126', cardinality 0..*) is associated with 'uma::Activity' (role 'uma_Activity125', cardinality 0..*).
+'uma::DeliveryProcess' (role 'uma_DeliveryProcess250', cardinality 0..*) is associated with 'uma::SupportingMaterial' (role 'uma_SupportingMaterial251', cardinality 0..*).
+'uma::MethodConfiguration' (role 'uma_MethodConfiguration299', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration301', cardinality 0..*).
+'uma::GraphElement' (role 'GraphElement95', cardinality 0..*) is associated with 'uma::SemanticModelBridge' (role 'semanticModel', cardinality 0..*).
+'uma::Process' (role 'uma_Process256', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration257', cardinality 0..*).
+'uma::ProcessComponent' (role 'uma_ProcessComponent262', cardinality 0..*) is associated with 'uma::Process' (role 'uma_Process263', cardinality 0..*).
+'uma::MethodConfiguration' (role 'uma_MethodConfiguration291', cardinality 0..*) is associated with 'uma::MethodPackage' (role 'uma_MethodPackage292', cardinality 0..*).
+'uma::Point' (role 'uma_Point118', cardinality 0..*) is associated with 'uma::Ellipse' (role 'uma_Ellipse', cardinality 0..*).
+'uma::BreakdownElement' (role 'uma_BreakdownElement146', cardinality 0..*) is associated with 'uma::PlanningData' (role 'uma_PlanningData', cardinality 0..*).
+'uma::TeamProfile' (role 'subTeam', cardinality 0..*) is associated with 'uma::TeamProfile' (role 'TeamProfile', cardinality 0..*).
+'uma::Activity' (role 'uma_Activity137', cardinality 0..*) is associated with 'uma::ReusableAsset' (role 'uma_ReusableAsset138', cardinality 0..*).
+'uma::TaskDescriptor' (role 'TaskDescriptor197', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'mandatoryInput', cardinality 0..*).
+'uma::Element' (role 'uma_Element', cardinality 0..*) is associated with 'uma::CoreSemanticModelBridge' (role 'uma_CoreSemanticModelBridge', cardinality 0..*).
+'uma::TaskDescriptor' (role 'externalInputTo', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'WorkProductDescriptor174', cardinality 0..*).
+'uma::MethodPlugin' (role 'uma_MethodPlugin305', cardinality 0..*) is associated with 'uma::MethodLibrary' (role 'uma_MethodLibrary', cardinality 0..*).
+'uma::Role' (role 'uma_Role', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct', cardinality 0..*).
+'uma::WorkProduct' (role 'uma_WorkProduct28', cardinality 0..*) is associated with 'uma::Report' (role 'uma_Report', cardinality 0..*).
+'uma::DiagramLink' (role 'DiagramLink', cardinality 0..*) is associated with 'uma::GraphElement' (role 'graphElement', cardinality 0..*).
+'uma::Point' (role 'uma_Point87', cardinality 0..*) is associated with 'uma::DiagramLink' (role 'uma_DiagramLink', cardinality 0..*).
+'uma::Estimate' (role 'uma_Estimate', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct26', cardinality 0..*).
+'uma::RoleDescriptor' (role 'RoleDescriptor', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'performsAdditionally', cardinality 0..*).
+'uma::Section' (role 'uma_Section', cardinality 0..*) is associated with 'uma::ContentDescription' (role 'uma_ContentDescription14', cardinality 0..*).
+'uma::Activity' (role 'uma_Activity122', cardinality 0..*) is associated with 'uma::SupportingMaterial' (role 'uma_SupportingMaterial123', cardinality 0..*).
+'uma::TaskDescriptor' (role 'TaskDescriptor203', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'output', cardinality 0..*).
+'uma::RoleDescriptor' (role 'uma_RoleDescriptor', cardinality 0..*) is associated with 'uma::TeamProfile' (role 'uma_TeamProfile', cardinality 0..*).
+'uma::ContentDescription' (role 'uma_ContentDescription', cardinality 0..*) is associated with 'uma::DescribableElement' (role 'uma_DescribableElement', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'uma_WorkProductDescriptor', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct187', cardinality 0..*).
+'uma::Guideline' (role 'uma_Guideline135', cardinality 0..*) is associated with 'uma::Activity' (role 'uma_Activity134', cardinality 0..*).
+'uma::UMASemanticModelBridge' (role 'uma_UMASemanticModelBridge', cardinality 0..*) is associated with 'uma::MethodElement' (role 'uma_MethodElement113', cardinality 0..*).
+'uma::Task' (role 'uma_Task50', cardinality 0..*) is associated with 'uma::ToolMentor' (role 'uma_ToolMentor51', cardinality 0..*).
+'uma::ToolMentor' (role 'uma_ToolMentor240', cardinality 0..*) is associated with 'uma::Tool' (role 'uma_Tool', cardinality 0..*).
+'uma::MethodPlugin' (role 'uma_MethodPlugin278', cardinality 0..*) is associated with 'uma::MethodPlugin' (role 'uma_MethodPlugin280', cardinality 0..*).
+'uma::Activity' (role 'uma_Activity227', cardinality 0..*) is associated with 'uma::Discipline' (role 'uma_Discipline226', cardinality 0..*).
+'uma::GraphEdge' (role 'graphEdge', cardinality 0..*) is associated with 'uma::GraphConnector' (role 'GraphConnector101', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'modifies', cardinality 0..*) is associated with 'uma::RoleDescriptor' (role 'RoleDescriptor199', cardinality 0..*).
+'uma::MethodPlugin' (role 'uma_MethodPlugin289', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration288', cardinality 0..*).
+'uma::MethodConfiguration' (role 'uma_MethodConfiguration308', cardinality 0..*) is associated with 'uma::MethodLibrary' (role 'uma_MethodLibrary307', cardinality 0..*).
+'uma::Practice' (role 'uma_Practice218', cardinality 0..*) is associated with 'uma::ContentElement' (role 'uma_ContentElement219', cardinality 0..*).
+'uma::DescribableElement' (role 'uma_DescribableElement244', cardinality 0..*) is associated with 'uma::CustomCategory' (role 'uma_CustomCategory', cardinality 0..*).
+'uma::Diagram' (role 'diagram109', cardinality 0..*) is associated with 'uma::SemanticModelBridge' (role 'SemanticModelBridge110', cardinality 0..*).
+'uma::ContentElement' (role 'uma_ContentElement9', cardinality 0..*) is associated with 'uma::Example' (role 'uma_Example', cardinality 0..*).
+'uma::ContentElement' (role 'uma_ContentElement', cardinality 0..*) is associated with 'uma::SupportingMaterial' (role 'uma_SupportingMaterial', cardinality 0..*).
+'uma::EstimationConsiderations' (role 'uma_EstimationConsiderations', cardinality 0..*) is associated with 'uma::Estimate' (role 'uma_Estimate214', cardinality 0..*).
+'uma::WorkProduct' (role 'uma_WorkProduct37', cardinality 0..*) is associated with 'uma::Task' (role 'uma_Task36', cardinality 0..*).
+'uma::WorkBreakdownElement' (role 'uma_WorkBreakdownElement167', cardinality 0..*) is associated with 'uma::WorkOrder' (role 'uma_WorkOrder166', cardinality 0..*).
+'uma::Role' (role 'uma_Role43', cardinality 0..*) is associated with 'uma::Task' (role 'uma_Task42', cardinality 0..*).
+'uma::TaskDescriptor' (role 'assistsIn', cardinality 0..*) is associated with 'uma::RoleDescriptor' (role 'RoleDescriptor172', cardinality 0..*).
+'uma::MethodPackage' (role 'MethodPackage', cardinality 0..*) is associated with 'uma::MethodPackage' (role 'childPackages', cardinality 0..*).
+'uma::RoleDescriptor' (role 'assistedBy', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'TaskDescriptor159', cardinality 0..*).
+'uma::MethodPackage' (role 'MethodPackage73', cardinality 0..*) is associated with 'uma::MethodPackage' (role 'parentPackage', cardinality 0..*).
+'uma::TaskDescriptor' (role 'uma_TaskDescriptor184', cardinality 0..*) is associated with 'uma::Section' (role 'uma_Section185', cardinality 0..*).
+'uma::RoleDescriptor' (role 'RoleDescriptor208', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'responsibleFor', cardinality 0..*).
+'uma::GraphEdge' (role 'GraphEdge', cardinality 0..*) is associated with 'uma::GraphConnector' (role 'anchor', cardinality 0..*).
+'uma::ToolMentor' (role 'uma_ToolMentor', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct32', cardinality 0..*).
+'uma::WorkProductType' (role 'uma_WorkProductType', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct236', cardinality 0..*).
+'uma::ProcessPlanningTemplate' (role 'uma_ProcessPlanningTemplate', cardinality 0..*) is associated with 'uma::Process' (role 'uma_Process259', cardinality 0..*).
+'uma::DeliveryProcess' (role 'uma_DeliveryProcess303', cardinality 0..*) is associated with 'uma::ProcessFamily' (role 'uma_ProcessFamily', cardinality 0..*).
+'uma::RoleSet' (role 'uma_RoleSet242', cardinality 0..*) is associated with 'uma::RoleSetGrouping' (role 'uma_RoleSetGrouping', cardinality 0..*).
+'uma::MethodConfiguration' (role 'uma_MethodConfiguration294', cardinality 0..*) is associated with 'uma::ContentCategory' (role 'uma_ContentCategory295', cardinality 0..*).
+'uma::Point' (role 'uma_Point', cardinality 0..*) is associated with 'uma::GraphElement' (role 'uma_GraphElement', cardinality 0..*).
+'uma::TaskDescriptor' (role 'uma_TaskDescriptor', cardinality 0..*) is associated with 'uma::Task' (role 'uma_Task169', cardinality 0..*).
+'uma::TaskDescriptor' (role 'TaskDescriptor', cardinality 0..*) is associated with 'uma::RoleDescriptor' (role 'additionallyPerformedBy', cardinality 0..*).
+'uma::Process' (role 'uma_Process254', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration', cardinality 0..*).
+'uma::WorkProduct' (role 'uma_WorkProduct46', cardinality 0..*) is associated with 'uma::Task' (role 'uma_Task45', cardinality 0..*).
+'uma::ContentPackage' (role 'uma_ContentPackage', cardinality 0..*) is associated with 'uma::ContentElement' (role 'uma_ContentElement75', cardinality 0..*).
+'uma::Guideline' (role 'uma_Guideline', cardinality 0..*) is associated with 'uma::ContentElement' (role 'uma_ContentElement7', cardinality 0..*).
+'uma::ProcessComponent' (role 'uma_ProcessComponent', cardinality 0..*) is associated with 'uma::ProcessComponentInterface' (role 'uma_ProcessComponentInterface', cardinality 0..*).
+'uma::RoleSet' (role 'uma_RoleSet', cardinality 0..*) is associated with 'uma::Role' (role 'uma_Role229', cardinality 0..*).
+'uma::Roadmap' (role 'uma_Roadmap', cardinality 0..*) is associated with 'uma::Activity' (role 'uma_Activity', cardinality 0..*).
+'uma::TaskDescriptor' (role 'TaskDescriptor189', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'externalInput', cardinality 0..*).
+'uma::TaskDescriptor' (role 'mandatoryInputTo', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'WorkProductDescriptor176', cardinality 0..*).
+'uma::Practice' (role 'uma_Practice', cardinality 0..*) is associated with 'uma::Practice' (role 'uma_Practice215', cardinality 0..*).
+'uma::Template' (role 'uma_Template', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct30', cardinality 0..*).
+'uma::GraphConnector' (role 'GraphConnector', cardinality 0..*) is associated with 'uma::GraphElement' (role 'graphElement80', cardinality 0..*).
+'uma::Task' (role 'uma_Task48', cardinality 0..*) is associated with 'uma::Step' (role 'uma_Step', cardinality 0..*).
+'uma::Practice' (role 'uma_Practice221', cardinality 0..*) is associated with 'uma::Activity' (role 'uma_Activity222', cardinality 0..*).
+'uma::Point' (role 'uma_Point116', cardinality 0..*) is associated with 'uma::Polyline' (role 'uma_Polyline', cardinality 0..*).
+'uma::WorkProduct' (role 'uma_WorkProduct231', cardinality 0..*) is associated with 'uma::Domain' (role 'uma_Domain', cardinality 0..*).
+'uma::GraphEdge' (role 'uma_GraphEdge', cardinality 0..*) is associated with 'uma::Point' (role 'uma_Point103', cardinality 0..*).
+'uma::Process' (role 'uma_Process', cardinality 0..*) is associated with 'uma::CapabilityPattern' (role 'uma_CapabilityPattern', cardinality 0..*).
+'uma::MethodUnit' (role 'uma_MethodUnit', cardinality 0..*) is associated with 'uma::SupportingMaterial' (role 'uma_SupportingMaterial286', cardinality 0..*).
+'uma::Diagram' (role 'diagram', cardinality 0..*) is associated with 'uma::DiagramLink' (role 'DiagramLink107', cardinality 0..*).
+'uma::Activity' (role 'Activity', cardinality 0..*) is associated with 'uma::BreakdownElement' (role 'breakdownElements', cardinality 0..*).
+'uma::WorkProduct' (role 'uma_WorkProduct40', cardinality 0..*) is associated with 'uma::Task' (role 'uma_Task39', cardinality 0..*).
+'uma::Artifact' (role 'containedArtifacts', cardinality 0..*) is associated with 'uma::Artifact' (role 'Artifact', cardinality 0..*).
+'uma::WorkDefinition' (role 'uma_WorkDefinition', cardinality 0..*) is associated with 'uma::Constraint' (role 'uma_Constraint56', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'uma_WorkProductDescriptor206', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'uma_WorkProductDescriptor204', cardinality 0..*).
+'uma::Discipline' (role 'uma_Discipline238', cardinality 0..*) is associated with 'uma::DisciplineGrouping' (role 'uma_DisciplineGrouping', cardinality 0..*).
+'uma::RoleDescriptor' (role 'performedPrimarilyBy', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'TaskDescriptor162', cardinality 0..*).
+'uma::ProcessComponent' (role 'uma_ProcessComponent275', cardinality 0..*) is associated with 'uma::ProcessComponentDescriptor' (role 'uma_ProcessComponentDescriptor', cardinality 0..*).
+'uma::ContentElement' (role 'uma_ContentElement5', cardinality 0..*) is associated with 'uma::Checklist' (role 'uma_Checklist', cardinality 0..*).
+'uma::Artifact' (role 'containerArtifact', cardinality 0..*) is associated with 'uma::Artifact' (role 'Artifact64', cardinality 0..*).
+'uma::SemanticModelBridge' (role 'SemanticModelBridge', cardinality 0..*) is associated with 'uma::GraphElement' (role 'graphElement82', cardinality 0..*).
+'uma::BreakdownElement' (role 'BreakdownElement', cardinality 0..*) is associated with 'uma::Activity' (role 'superActivities', cardinality 0..*).
+'uma::WorkDefinition' (role 'uma_WorkDefinition58', cardinality 0..*) is associated with 'uma::Constraint' (role 'uma_Constraint59', cardinality 0..*).
+'uma::ContentElement' (role 'uma_ContentElement3', cardinality 0..*) is associated with 'uma::Concept' (role 'uma_Concept', cardinality 0..*).
+'uma::DiagramElement' (role 'contained', cardinality 0..*) is associated with 'uma::GraphElement' (role 'GraphElement', cardinality 0..*).
+'uma::DiagramElement' (role 'referenced', cardinality 0..*) is associated with 'uma::Reference' (role 'Reference', cardinality 0..*).
+'uma::Task' (role 'uma_Task53', cardinality 0..*) is associated with 'uma::Estimate' (role 'uma_Estimate54', cardinality 0..*).
+'uma::SupportingMaterial' (role 'uma_SupportingMaterial248', cardinality 0..*) is associated with 'uma::DeliveryProcess' (role 'uma_DeliveryProcess', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'WorkProductDescriptor180', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'outputFrom', cardinality 0..*).
+'uma::GraphElement' (role 'container', cardinality 0..*) is associated with 'uma::DiagramElement' (role 'DiagramElement', cardinality 0..*).
+'uma::GraphElement' (role 'GraphElement92', cardinality 0..*) is associated with 'uma::GraphConnector' (role 'anchorage', cardinality 0..*).
+'uma::SemanticModelBridge' (role 'namespace', cardinality 0..*) is associated with 'uma::Diagram' (role 'Diagram97', cardinality 0..*).
+'uma::Diagram' (role 'uma_Diagram267', cardinality 0..*) is associated with 'uma::ProcessPackage' (role 'uma_ProcessPackage266', cardinality 0..*).
+'uma::RoleDescriptor' (role 'uma_RoleDescriptor155', cardinality 0..*) is associated with 'uma::Role' (role 'uma_Role156', cardinality 0..*).
+'uma::Task' (role 'uma_Task', cardinality 0..*) is associated with 'uma::Role' (role 'uma_Role34', cardinality 0..*).
+'uma::DiagramElement' (role 'uma_DiagramElement', cardinality 0..*) is associated with 'uma::Property' (role 'uma_Property', cardinality 0..*).
+'uma::Diagram' (role 'Diagram', cardinality 0..*) is associated with 'uma::DiagramLink' (role 'diagramLink', cardinality 0..*).
+'uma::ContentCategory' (role 'uma_ContentCategory298', cardinality 0..*) is associated with 'uma::MethodConfiguration' (role 'uma_MethodConfiguration297', cardinality 0..*).
+'uma::Reference' (role 'reference', cardinality 0..*) is associated with 'uma::DiagramElement' (role 'DiagramElement99', cardinality 0..*).
+'uma::Activity' (role 'uma_Activity131', cardinality 0..*) is associated with 'uma::Example' (role 'uma_Example132', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'impactedBy', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'WorkProductDescriptor195', cardinality 0..*).
+'uma::Role' (role 'uma_Role23', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct24', cardinality 0..*).
+'uma::MethodPackage' (role 'uma_MethodPackage', cardinality 0..*) is associated with 'uma::MethodPackage' (role 'uma_MethodPackage67', cardinality 0..*).
+'uma::EstimatingMetric' (role 'uma_EstimatingMetric', cardinality 0..*) is associated with 'uma::Estimate' (role 'uma_Estimate212', cardinality 0..*).
+'uma::Discipline' (role 'uma_Discipline', cardinality 0..*) is associated with 'uma::Task' (role 'uma_Task224', cardinality 0..*).
+'uma::ContentElement' (role 'uma_ContentElement11', cardinality 0..*) is associated with 'uma::ReusableAsset' (role 'uma_ReusableAsset', cardinality 0..*).
+'uma::TeamProfile' (role 'superTeam', cardinality 0..*) is associated with 'uma::TeamProfile' (role 'TeamProfile153', cardinality 0..*).
+'uma::ProcessPackage' (role 'uma_ProcessPackage', cardinality 0..*) is associated with 'uma::ProcessElement' (role 'uma_ProcessElement', cardinality 0..*).
+'uma::ContentCategory' (role 'uma_ContentCategory', cardinality 0..*) is associated with 'uma::CustomCategory' (role 'uma_CustomCategory246', cardinality 0..*).
+'uma::Deliverable' (role 'uma_Deliverable', cardinality 0..*) is associated with 'uma::WorkProduct' (role 'uma_WorkProduct66', cardinality 0..*).
+'uma::Domain' (role 'uma_Domain232', cardinality 0..*) is associated with 'uma::Domain' (role 'uma_Domain234', cardinality 0..*).
+'uma::Concept' (role 'uma_Concept129', cardinality 0..*) is associated with 'uma::Activity' (role 'uma_Activity128', cardinality 0..*).
+'uma::MethodElement' (role 'uma_MethodElement', cardinality 0..*) is associated with 'uma::Constraint' (role 'uma_Constraint', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'WorkProductDescriptor192', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'impacts', cardinality 0..*).
+'uma::VariabilityElement' (role 'uma_VariabilityElement281', cardinality 0..*) is associated with 'uma::VariabilityElement' (role 'uma_VariabilityElement', cardinality 0..*).
+'uma::GraphElement' (role 'GraphElement89', cardinality 0..*) is associated with 'uma::DiagramLink' (role 'link', cardinality 0..*).
+'uma::CompositeRole' (role 'uma_CompositeRole', cardinality 0..*) is associated with 'uma::Role' (role 'uma_Role210', cardinality 0..*).
+'uma::MethodPackage' (role 'uma_MethodPackage277', cardinality 0..*) is associated with 'uma::MethodPlugin' (role 'uma_MethodPlugin', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'uma_WorkProductDescriptor273', cardinality 0..*) is associated with 'uma::ProcessComponentInterface' (role 'uma_ProcessComponentInterface272', cardinality 0..*).
+'uma::BreakdownElement' (role 'uma_BreakdownElement', cardinality 0..*) is associated with 'uma::BreakdownElement' (role 'uma_BreakdownElement140', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'WorkProductDescriptor178', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'OptionalInputTo', cardinality 0..*).
+'uma::Section' (role 'uma_Section18', cardinality 0..*) is associated with 'uma::Section' (role 'uma_Section20', cardinality 0..*).
+'uma::Process' (role 'uma_Process284', cardinality 0..*) is associated with 'uma::ProcessContribution' (role 'uma_ProcessContribution', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'optionalInput', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'TaskDescriptor201', cardinality 0..*).
+'uma::BreakdownElement' (role 'uma_BreakdownElement144', cardinality 0..*) is associated with 'uma::BreakdownElement' (role 'uma_BreakdownElement142', cardinality 0..*).
+'uma::RoleDescriptor' (role 'workedOnBy', cardinality 0..*) is associated with 'uma::WorkProductDescriptor' (role 'WorkProductDescriptor', cardinality 0..*).
+'uma::WorkProductDescriptor' (role 'WorkProductDescriptor164', cardinality 0..*) is associated with 'uma::RoleDescriptor' (role 'responsibleRole', cardinality 0..*).
+'uma::ProcessComponentInterface' (role 'uma_ProcessComponentInterface269', cardinality 0..*) is associated with 'uma::TaskDescriptor' (role 'uma_TaskDescriptor270', cardinality 0..*).
+'uma::WorkOrder' (role 'uma_WorkOrder', cardinality 0..*) is associated with 'uma::WorkBreakdownElement' (role 'uma_WorkBreakdownElement', cardinality 0..*).
+'uma::TaskDescriptor' (role 'performsAsOwner', cardinality 0..*) is associated with 'uma::RoleDescriptor' (role 'RoleDescriptor182', cardinality 0..*).
+'uma::Point' (role 'uma_Point105', cardinality 0..*) is associated with 'uma::Diagram' (role 'uma_Diagram', cardinality 0..*).

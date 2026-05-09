@@ -1,0 +1,147 @@
+The model has 66 class(es).
+The class 'appBuilderDSL::UiListenerBinding' has the following attributes: 'controlAccess' of type str.
+The class 'appBuilderDSL::CompositeConditionExpression' has no attributes.
+The class 'appBuilderDSL::CompositeScreen' has no attributes.
+The class 'Screen' has no attributes.
+The class 'appBuilderDSL::Expression' has the following attributes: 'terms' of type str.
+The class 'appBuilderDSL::RestCall' has the following attributes: 'url' of type str.
+The class 'appBuilderDSL::List' has the following attributes: 'name' of type str.
+The class 'DataBinding' has no attributes.
+The class 'appBuilderDSL::AbstractElement' has the following attributes: 'name' of type str.
+The class 'appBuilderDSL::Controller' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'appBuilderDSL::SimpleConditionExpression' has the following attributes: 'variableName' of type str.
+The class 'appBuilderDSL::AppBuilder' has no attributes.
+The class 'appBuilderDSL::Type' has the following attributes: 'name' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'appBuilderDSL::System' has no attributes.
+The class 'appBuilderDSL::RowLayout' has no attributes.
+The class 'appBuilderDSL::ValidationBinding' has the following attributes: 'controlAccess' of type str.
+The class 'appBuilderDSL::Attribute' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'appBuilderDSL::Condition' has the following attributes: 'name' of type str.
+The class 'appBuilderDSL::Screen' has the following attributes: 'name' of type str.
+The class 'appBuilderDSL::Business' has no attributes.
+The class 'appBuilderDSL::Model' has no attributes.
+The class 'appBuilderDSL::Navigate' has the following attributes: 'params' of type str.
+The class 'appBuilderDSL::Layout' has the following attributes: 'type' of type str.
+The class 'appBuilderDSL::ScreenLayout' has no attributes.
+The class 'Type' has no attributes.
+The class 'appBuilderDSL::DynamicValue' has the following attributes: 'type' of type str; 'variableName' of type str.
+The class 'appBuilderDSL::Main' has the following attributes: 'appName' of type str; 'appVersion' of type str; 'devices' of type str; 'generalStyle' of type str.
+The class 'appBuilderDSL::SimpleScreen' has no attributes.
+The class 'appBuilderDSL::Text' has the following attributes: 'name' of type str.
+The class 'appBuilderDSL::Label' has the following attributes: 'name' of type str.
+The class 'appBuilderDSL::DataType' has no attributes.
+The class 'appBuilderDSL::DataBinding' has the following attributes: 'controlAccess' of type str.
+The class 'appBuilderDSL::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'Control' has no attributes.
+The class 'appBuilderDSL::NamespaceDeclation' has no attributes.
+The class 'appBuilderDSL::ControlValue' has the following attributes: 'controlAccess' of type str.
+The class 'appBuilderDSL::InstanceService' has the following attributes: 'instanceName' of type str.
+The class 'appBuilderDSL::Value' has no attributes.
+The class 'appBuilderDSL::EntryParameters' has no attributes.
+The class 'Layout' has no attributes.
+The class 'appBuilderDSL::ExecuteAction' has no attributes.
+The class 'appBuilderDSL::UiAction' has the following attributes: 'name' of type str.
+The class 'appBuilderDSL::Action' has no attributes.
+The class 'Action' has no attributes.
+The class 'appBuilderDSL::EnumDataBinding' has the following attributes: 'enumClassName' of type str.
+The class 'appBuilderDSL::GridLayout' has the following attributes: 'columns' of type int.
+The class 'appBuilderDSL::SimpleDataBinding' has the following attributes: 'modelAccess' of type str.
+The class 'appBuilderDSL::Entity' has no attributes.
+The class 'appBuilderDSL::Service' has no attributes.
+The class 'SetInstructionAssignment' has no attributes.
+The class 'Value' has no attributes.
+The class 'appBuilderDSL::Control' has no attributes.
+The class 'appBuilderDSL::Ui' has no attributes.
+The class 'appBuilderDSL::Instruction' has no attributes.
+The class 'ConditionExpression' has no attributes.
+The class 'appBuilderDSL::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'appBuilderDSL::SetInstructionAssignment' has no attributes.
+The class 'appBuilderDSL::ConditionExpression' has no attributes.
+The class 'appBuilderDSL::InitAction' has no attributes.
+The class 'appBuilderDSL::Button' has the following attributes: 'name' of type str.
+The class 'Service' has no attributes.
+The class 'appBuilderDSL::Validator' has no attributes.
+The class 'appBuilderDSL::SetInstruction' has the following attributes: 'modelAccess' of type str.
+The class 'appBuilderDSL::View' has no attributes.
+The enumeration 'Device' has the following literals: 'ipad', 'iphone', 'android4', 'android2'.
+'appBuilderDSL::CompositeScreen' is a specialization of 'Screen'.
+'appBuilderDSL::ExecuteAction' is a specialization of 'Instruction'.
+'appBuilderDSL::DynamicValue' is a specialization of 'Value'.
+'appBuilderDSL::SimpleScreen' is a specialization of 'Screen'.
+'appBuilderDSL::CompositeConditionExpression' is a specialization of 'ConditionExpression'.
+'appBuilderDSL::GridLayout' is a specialization of 'Layout'.
+'appBuilderDSL::ScreenLayout' is a specialization of 'Control'.
+'appBuilderDSL::SimpleDataBinding' is a specialization of 'DataBinding'.
+'appBuilderDSL::System' is a specialization of 'AbstractElement'.
+'appBuilderDSL::List' is a specialization of 'Control'.
+'appBuilderDSL::Button' is a specialization of 'Control'.
+'appBuilderDSL::SimpleConditionExpression' is a specialization of 'ConditionExpression'.
+'appBuilderDSL::UiAction' is a specialization of 'Action'.
+'appBuilderDSL::InstanceService' is a specialization of 'Service'.
+'appBuilderDSL::EnumDataBinding' is a specialization of 'DataBinding'.
+'appBuilderDSL::Entity' is a specialization of 'Type'.
+'appBuilderDSL::NamespaceDeclation' is a specialization of 'AbstractElement'.
+'appBuilderDSL::SetInstruction' is a specialization of 'Instruction'.
+'appBuilderDSL::RowLayout' is a specialization of 'Layout'.
+'appBuilderDSL::DynamicValue' is a specialization of 'SetInstructionAssignment'.
+'appBuilderDSL::Navigate' is a specialization of 'Instruction'.
+'appBuilderDSL::Label' is a specialization of 'Control'.
+'appBuilderDSL::Text' is a specialization of 'Control'.
+'appBuilderDSL::Layout' is a specialization of 'Control'.
+'appBuilderDSL::DataType' is a specialization of 'Type'.
+'appBuilderDSL::ControlValue' is a specialization of 'SetInstructionAssignment'.
+'appBuilderDSL::RestCall' is a specialization of 'SetInstructionAssignment'.
+'appBuilderDSL::System' (role 'appBuilderDSL_System', cardinality 0..*) is associated with 'appBuilderDSL::Business' (role 'appBuilderDSL_Business', cardinality 0..*).
+'appBuilderDSL::Attribute' (role 'appBuilderDSL_Attribute', cardinality 0..*) is associated with 'appBuilderDSL::EntryParameters' (role 'appBuilderDSL_EntryParameters24', cardinality 0..*).
+'appBuilderDSL::SimpleScreen' (role 'appBuilderDSL_SimpleScreen22', cardinality 0..*) is associated with 'appBuilderDSL::Controller' (role 'appBuilderDSL_Controller', cardinality 0..*).
+'appBuilderDSL::SetInstructionAssignment' (role 'appBuilderDSL_SetInstructionAssignment', cardinality 0..*) is associated with 'appBuilderDSL::SetInstruction' (role 'appBuilderDSL_SetInstruction66', cardinality 0..*).
+'appBuilderDSL::AppBuilder' (role 'appBuilderDSL_AppBuilder', cardinality 0..*) is associated with 'appBuilderDSL::AbstractElement' (role 'appBuilderDSL_AbstractElement', cardinality 0..*).
+'appBuilderDSL::Text' (role 'appBuilderDSL_Text', cardinality 0..*) is associated with 'appBuilderDSL::Value' (role 'appBuilderDSL_Value92', cardinality 0..*).
+'appBuilderDSL::ScreenLayout' (role 'appBuilderDSL_ScreenLayout', cardinality 0..*) is associated with 'appBuilderDSL::Screen' (role 'appBuilderDSL_Screen82', cardinality 0..*).
+'appBuilderDSL::CompositeConditionExpression' (role 'appBuilderDSL_CompositeConditionExpression', cardinality 0..*) is associated with 'appBuilderDSL::Condition' (role 'appBuilderDSL_Condition60', cardinality 0..*).
+'appBuilderDSL::Ui' (role 'appBuilderDSL_Ui12', cardinality 0..*) is associated with 'appBuilderDSL::Screen' (role 'appBuilderDSL_Screen', cardinality 0..*).
+'appBuilderDSL::List' (role 'appBuilderDSL_List', cardinality 0..*) is associated with 'appBuilderDSL::Value' (role 'appBuilderDSL_Value', cardinality 0..*).
+'appBuilderDSL::SimpleScreen' (role 'appBuilderDSL_SimpleScreen20', cardinality 0..*) is associated with 'appBuilderDSL::View' (role 'appBuilderDSL_View', cardinality 0..*).
+'appBuilderDSL::ValidationBinding' (role 'appBuilderDSL_ValidationBinding', cardinality 0..*) is associated with 'appBuilderDSL::InitAction' (role 'appBuilderDSL_InitAction36', cardinality 0..*).
+'appBuilderDSL::UiAction' (role 'appBuilderDSL_UiAction', cardinality 0..*) is associated with 'appBuilderDSL::Instruction' (role 'appBuilderDSL_Instruction62', cardinality 0..*).
+'appBuilderDSL::Text' (role 'appBuilderDSL_Text94', cardinality 0..*) is associated with 'appBuilderDSL::Value' (role 'appBuilderDSL_Value95', cardinality 0..*).
+'appBuilderDSL::Label' (role 'appBuilderDSL_Label', cardinality 0..*) is associated with 'appBuilderDSL::Value' (role 'appBuilderDSL_Value102', cardinality 0..*).
+'appBuilderDSL::CompositeScreen' (role 'appBuilderDSL_CompositeScreen', cardinality 0..*) is associated with 'appBuilderDSL::Layout' (role 'appBuilderDSL_Layout104', cardinality 0..*).
+'appBuilderDSL::Controller' (role 'appBuilderDSL_Controller28', cardinality 0..*) is associated with 'appBuilderDSL::Validator' (role 'appBuilderDSL_Validator', cardinality 0..*).
+'appBuilderDSL::Control' (role 'appBuilderDSL_Control72', cardinality 0..*) is associated with 'appBuilderDSL::ControlValue' (role 'appBuilderDSL_ControlValue', cardinality 0..*).
+'appBuilderDSL::UiListenerBinding' (role 'appBuilderDSL_UiListenerBinding44', cardinality 0..*) is associated with 'appBuilderDSL::Action' (role 'appBuilderDSL_Action45', cardinality 0..*).
+'appBuilderDSL::Entity' (role 'appBuilderDSL_Entity108', cardinality 0..*) is associated with 'appBuilderDSL::Feature' (role 'appBuilderDSL_Feature', cardinality 0..*).
+'appBuilderDSL::SetInstruction' (role 'appBuilderDSL_SetInstruction', cardinality 0..*) is associated with 'appBuilderDSL::Attribute' (role 'appBuilderDSL_Attribute64', cardinality 0..*).
+'appBuilderDSL::System' (role 'appBuilderDSL_System3', cardinality 0..*) is associated with 'appBuilderDSL::Ui' (role 'appBuilderDSL_Ui', cardinality 0..*).
+'appBuilderDSL::Action' (role 'appBuilderDSL_Action', cardinality 0..*) is associated with 'appBuilderDSL::Controller' (role 'appBuilderDSL_Controller30', cardinality 0..*).
+'appBuilderDSL::ValidationBinding' (role 'appBuilderDSL_ValidationBinding42', cardinality 0..*) is associated with 'appBuilderDSL::Control' (role 'appBuilderDSL_Control', cardinality 0..*).
+'appBuilderDSL::Type' (role 'appBuilderDSL_Type', cardinality 0..*) is associated with 'appBuilderDSL::Feature' (role 'appBuilderDSL_Feature110', cardinality 0..*).
+'appBuilderDSL::Main' (role 'appBuilderDSL_Main14', cardinality 0..*) is associated with 'appBuilderDSL::Screen' (role 'appBuilderDSL_Screen15', cardinality 0..*).
+'appBuilderDSL::DataBinding' (role 'appBuilderDSL_DataBinding50', cardinality 0..*) is associated with 'appBuilderDSL::Control' (role 'appBuilderDSL_Control51', cardinality 0..*).
+'appBuilderDSL::SimpleScreen' (role 'appBuilderDSL_SimpleScreen', cardinality 0..*) is associated with 'appBuilderDSL::EntryParameters' (role 'appBuilderDSL_EntryParameters', cardinality 0..*).
+'appBuilderDSL::Condition' (role 'appBuilderDSL_Condition', cardinality 0..*) is associated with 'appBuilderDSL::ValidationBinding' (role 'appBuilderDSL_ValidationBinding40', cardinality 0..*).
+'appBuilderDSL::SimpleDataBinding' (role 'appBuilderDSL_SimpleDataBinding', cardinality 0..*) is associated with 'appBuilderDSL::Attribute' (role 'appBuilderDSL_Attribute53', cardinality 0..*).
+'appBuilderDSL::Action' (role 'appBuilderDSL_Action70', cardinality 0..*) is associated with 'appBuilderDSL::ExecuteAction' (role 'appBuilderDSL_ExecuteAction', cardinality 0..*).
+'appBuilderDSL::Screen' (role 'appBuilderDSL_Screen68', cardinality 0..*) is associated with 'appBuilderDSL::Navigate' (role 'appBuilderDSL_Navigate', cardinality 0..*).
+'appBuilderDSL::Entity' (role 'appBuilderDSL_Entity105', cardinality 0..*) is associated with 'appBuilderDSL::Entity' (role 'appBuilderDSL_Entity', cardinality 0..*).
+'appBuilderDSL::InitAction' (role 'appBuilderDSL_InitAction32', cardinality 0..*) is associated with 'appBuilderDSL::DataBinding' (role 'appBuilderDSL_DataBinding', cardinality 0..*).
+'appBuilderDSL::Button' (role 'appBuilderDSL_Button', cardinality 0..*) is associated with 'appBuilderDSL::Value' (role 'appBuilderDSL_Value97', cardinality 0..*).
+'appBuilderDSL::Main' (role 'appBuilderDSL_Main', cardinality 0..*) is associated with 'appBuilderDSL::Ui' (role 'appBuilderDSL_Ui7', cardinality 0..*).
+'appBuilderDSL::View' (role 'appBuilderDSL_View77', cardinality 0..*) is associated with 'appBuilderDSL::Layout' (role 'appBuilderDSL_Layout', cardinality 0..*).
+'appBuilderDSL::Expression' (role 'appBuilderDSL_Expression', cardinality 0..*) is associated with 'appBuilderDSL::DynamicValue' (role 'appBuilderDSL_DynamicValue', cardinality 0..*).
+'appBuilderDSL::Attribute' (role 'appBuilderDSL_Attribute75', cardinality 0..*) is associated with 'appBuilderDSL::Model' (role 'appBuilderDSL_Model74', cardinality 0..*).
+'appBuilderDSL::Layout' (role 'appBuilderDSL_Layout79', cardinality 0..*) is associated with 'appBuilderDSL::Control' (role 'appBuilderDSL_Control80', cardinality 0..*).
+'appBuilderDSL::Value' (role 'appBuilderDSL_Value100', cardinality 0..*) is associated with 'appBuilderDSL::Button' (role 'appBuilderDSL_Button99', cardinality 0..*).
+'appBuilderDSL::UiListenerBinding' (role 'appBuilderDSL_UiListenerBinding', cardinality 0..*) is associated with 'appBuilderDSL::InitAction' (role 'appBuilderDSL_InitAction34', cardinality 0..*).
+'appBuilderDSL::Controller' (role 'appBuilderDSL_Controller26', cardinality 0..*) is associated with 'appBuilderDSL::InitAction' (role 'appBuilderDSL_InitAction', cardinality 0..*).
+'appBuilderDSL::Validator' (role 'appBuilderDSL_Validator55', cardinality 0..*) is associated with 'appBuilderDSL::Condition' (role 'appBuilderDSL_Condition56', cardinality 0..*).
+'appBuilderDSL::Instruction' (role 'appBuilderDSL_Instruction', cardinality 0..*) is associated with 'appBuilderDSL::InitAction' (role 'appBuilderDSL_InitAction38', cardinality 0..*).
+'appBuilderDSL::Service' (role 'appBuilderDSL_Service10', cardinality 0..*) is associated with 'appBuilderDSL::Ui' (role 'appBuilderDSL_Ui9', cardinality 0..*).
+'appBuilderDSL::Business' (role 'appBuilderDSL_Business5', cardinality 0..*) is associated with 'appBuilderDSL::Service' (role 'appBuilderDSL_Service', cardinality 0..*).
+'appBuilderDSL::Value' (role 'appBuilderDSL_Value86', cardinality 0..*) is associated with 'appBuilderDSL::List' (role 'appBuilderDSL_List85', cardinality 0..*).
+'appBuilderDSL::Model' (role 'appBuilderDSL_Model', cardinality 0..*) is associated with 'appBuilderDSL::SimpleScreen' (role 'appBuilderDSL_SimpleScreen18', cardinality 0..*).
+'appBuilderDSL::Value' (role 'appBuilderDSL_Value89', cardinality 0..*) is associated with 'appBuilderDSL::List' (role 'appBuilderDSL_List88', cardinality 0..*).
+'appBuilderDSL::ConditionExpression' (role 'appBuilderDSL_ConditionExpression', cardinality 0..*) is associated with 'appBuilderDSL::Condition' (role 'appBuilderDSL_Condition58', cardinality 0..*).
+'appBuilderDSL::UiListenerBinding' (role 'appBuilderDSL_UiListenerBinding47', cardinality 0..*) is associated with 'appBuilderDSL::Control' (role 'appBuilderDSL_Control48', cardinality 0..*).

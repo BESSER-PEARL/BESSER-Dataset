@@ -1,0 +1,42 @@
+The model has 13 class(es).
+The class 'families::Child' has no attributes.
+The class 'families::Service' has no attributes.
+The class 'families::City' has no attributes.
+The class 'families::Country' has no attributes.
+The class 'families::NamedElement' has the following attributes: 'name' of type str.
+The class 'families::Family' has the following attributes: 'lastName' of type str.
+The class 'NamedElement' has no attributes.
+The class 'families::Parent' has no attributes.
+The class 'families::Company' has no attributes.
+The class 'Member' has no attributes.
+The class 'families::School' has no attributes.
+The class 'families::Neighborhood' has no attributes.
+The class 'families::Member' has the following attributes: 'firstName' of type str.
+'families::Company' is a specialization of 'NamedElement'.
+'families::Child' is a specialization of 'Member'.
+'families::Country' is a specialization of 'NamedElement'.
+'families::City' is a specialization of 'NamedElement'.
+'families::School' is a specialization of 'NamedElement'.
+'families::Neighborhood' is a specialization of 'NamedElement'.
+'families::Parent' is a specialization of 'Member'.
+'families::Country' (role 'families_Country2', cardinality 0..*) is associated with 'families::City' (role 'families_City', cardinality 0..*).
+'families::Member' (role 'families_Member', cardinality 0..*) is associated with 'families::Family' (role 'families_Family34', cardinality 0..*).
+'families::Family' (role 'families_Family8', cardinality 0..*) is associated with 'families::Parent' (role 'families_Parent9', cardinality 0..*).
+'families::Family' (role 'families_Family11', cardinality 0..*) is associated with 'families::Child' (role 'families_Child', cardinality 0..*).
+'families::Neighborhood' (role 'families_Neighborhood', cardinality 0..*) is associated with 'families::School' (role 'families_School', cardinality 0..*).
+'families::Service' (role 'families_Service29', cardinality 0..*) is associated with 'families::School' (role 'families_School28', cardinality 0..*).
+'families::School' (role 'School', cardinality 0..*) is associated with 'families::Child' (role 'students', cardinality 0..*).
+'families::Country' (role 'families_Country4', cardinality 0..*) is associated with 'families::Company' (role 'families_Company', cardinality 0..*).
+'families::Neighborhood' (role 'families_Neighborhood24', cardinality 0..*) is associated with 'families::City' (role 'families_City23', cardinality 0..*).
+'families::City' (role 'families_City37', cardinality 0..*) is associated with 'families::Member' (role 'families_Member36', cardinality 0..*).
+'families::Family' (role 'Family', cardinality 0..*) is associated with 'families::Neighborhood' (role 'registeredIn', cardinality 0..*).
+'families::Parent' (role 'employees', cardinality 0..*) is associated with 'families::Company' (role 'Company', cardinality 0..*).
+'families::Family' (role 'families_Family13', cardinality 0..*) is associated with 'families::Child' (role 'families_Child14', cardinality 0..*).
+'families::School' (role 'families_School26', cardinality 0..*) is associated with 'families::Service' (role 'families_Service', cardinality 0..*).
+'families::Family' (role 'contains', cardinality 0..*) is associated with 'families::Neighborhood' (role 'Neighborhood', cardinality 0..*).
+'families::City' (role 'isIn', cardinality 0..*) is associated with 'families::Company' (role 'Company21', cardinality 0..*).
+'families::Family' (role 'families_Family', cardinality 0..*) is associated with 'families::Country' (role 'families_Country', cardinality 0..*).
+'families::Parent' (role 'Parent', cardinality 0..*) is associated with 'families::Company' (role 'worksIn', cardinality 0..*).
+'families::School' (role 'goesTo', cardinality 0..*) is associated with 'families::Child' (role 'Child', cardinality 0..*).
+'families::City' (role 'City', cardinality 0..*) is associated with 'families::Company' (role 'companies', cardinality 0..*).
+'families::Parent' (role 'families_Parent', cardinality 0..*) is associated with 'families::Family' (role 'families_Family6', cardinality 0..*).

@@ -1,0 +1,254 @@
+The model has 107 class(es).
+The class 'core::Association' has no attributes.
+The class 'foundation::core::BehavioralFeature' has the following attributes: 'isQuery' of type str.
+The class 'Signal' has no attributes.
+The class 'Collaboration' has no attributes.
+The class 'MappingExpression' has no attributes.
+The class 'foundation::core::Interface' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'foundation::core::Association' has no attributes.
+The class 'foundation::core::TemplateParameter' has no attributes.
+The class 'core::Relationship' has no attributes.
+The class 'foundation::core::Component' has no attributes.
+The class 'foundation::core::Operation' has the following attributes: 'isAbstract' of type str; 'specification' of type str; 'isLeaf' of type str; 'concurrency' of type str; 'isRoot' of type str.
+The class 'StateMachine' has no attributes.
+The class 'foundation::core::Class' has the following attributes: 'isActive' of type str.
+The class 'Expression' has no attributes.
+The class 'foundation::core::Permission' has no attributes.
+The class 'AssociationEnd' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'Element' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'foundation::data::types::BooleanExpression' has no attributes.
+The class 'TaggedValue' has no attributes.
+The class 'core::GeneralizableElement' has no attributes.
+The class 'foundation::core::DataType' has no attributes.
+The class 'Comment' has no attributes.
+The class 'PresentationElement' has no attributes.
+The class 'foundation::core::Classifier' has no attributes.
+The class 'TemplateParameter' has no attributes.
+The class 'foundation::data::types::ObjectSetExpression' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'foundation::core::Constraint' has no attributes.
+The class 'foundation::core::ProgrammingLanguageDataType' has no attributes.
+The class 'foundation::core::GeneralizableElement' has the following attributes: 'isAbstract' of type str; 'isLeaf' of type str; 'isRoot' of type str.
+The class 'foundation::core::Node' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'foundation::core::Dependency' has no attributes.
+The class 'TagDefinition' has no attributes.
+The class 'foundation::core::Relationship' has no attributes.
+The class 'Flow' has no attributes.
+The class 'foundation::core::PresentationElement' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'Binding' has no attributes.
+The class 'foundation::core::Element' has no attributes.
+The class 'foundation::data::types::TypeExpression' has no attributes.
+The class 'GeneralizableElement' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'foundation::core::Flow' has no attributes.
+The class 'foundation::core::Namespace' has no attributes.
+The class 'foundation::data::types::ProcedureExpression' has no attributes.
+The class 'foundation::core::Binding' has no attributes.
+The class 'foundation::core::Comment' has the following attributes: 'body' of type str.
+The class 'CallAction' has no attributes.
+The class 'TemplateArgument' has no attributes.
+The class 'Node' has no attributes.
+The class 'core::Namespace' has no attributes.
+The class 'foundation::core::TemplateArgument' has no attributes.
+The class 'foundation::data::types::MappingExpression' has no attributes.
+The class 'foundation::core::EnumerationLiteral' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'Generalization_' has no attributes.
+The class 'foundation::data::types::ActionExpression' has no attributes.
+The class 'foundation::core::Attribute' has no attributes.
+The class 'foundation::core::Stereotype' has the following attributes: 'icon' of type str; 'baseClass' of type str.
+The class 'Feature' has no attributes.
+The class 'foundation::core::Feature' has the following attributes: 'ownerScope' of type str.
+The class 'foundation::data::types::Multiplicity_' has no attributes.
+The class 'MultiplicityRange' has no attributes.
+The class 'foundation::core::Generalization_' has the following attributes: 'discriminator' of type str.
+The class 'StructuralFeature' has no attributes.
+The class 'ElementResidence' has no attributes.
+The class 'Association' has no attributes.
+The class 'foundation::core::Abstraction' has no attributes.
+The class 'foundation::core::TaggedValue' has the following attributes: 'dataValue' of type str.
+The class 'foundation::core::StructuralFeature' has the following attributes: 'ordering' of type str; 'changeability' of type str; 'targetScope' of type str.
+The class 'foundation::core::TagDefinition' has the following attributes: 'tagType' of type str.
+The class 'Method' has no attributes.
+The class 'foundation::core::Enumeration' has no attributes.
+The class 'foundation::data::types::TimeExpression' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'foundation::core::Artifact' has no attributes.
+The class 'foundation::core::AssociationEnd' has the following attributes: 'aggregation' of type str; 'isNavigable' of type str; 'changeability' of type str; 'targetScope' of type str; 'ordering' of type str.
+The class 'AssociationEndRole' has no attributes.
+The class 'core::Class' has no attributes.
+The class 'foundation::core::Usage' has no attributes.
+The class 'CreateAction' has no attributes.
+The class 'foundation::core::ModelElement' has the following attributes: 'isSpecification' of type str; 'visibility' of type str; 'name' of type str.
+The class 'foundation::data::types::MultiplicityRange' has the following attributes: 'lower' of type str; 'upper' of type str.
+The class 'Operation' has no attributes.
+The class 'Multiplicity_' has no attributes.
+The class 'foundation::data::types::ArgListsExpression' has no attributes.
+The class 'foundation::core::ElementResidence' has the following attributes: 'visibility' of type str.
+The class 'Stereotype' has no attributes.
+The class 'ProcedureExpression' has no attributes.
+The class 'foundation::core::Method' has no attributes.
+The class 'CallEvent' has no attributes.
+The class 'Component' has no attributes.
+The class 'foundation::core::Parameter' has the following attributes: 'kind' of type str.
+The class 'foundation::core::AssociationClass' has no attributes.
+The class 'DataType' has no attributes.
+The class 'foundation::data::types::IterationExpression' has no attributes.
+The class 'foundation::data::types::Expression' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'foundation::core::Primitive' has no attributes.
+The class 'TypeExpression' has no attributes.
+The class 'Relationship' has no attributes.
+The enumeration 'ScopeKind' has the following literals: 'instance', 'classifier'.
+The enumeration 'ChangeableKind' has the following literals: 'changeable', 'frozen', 'addOnly'.
+The enumeration 'CallConcurrencyKind' has the following literals: 'guarded', 'sequential', 'concurrent'.
+The enumeration 'AggregationKind' has the following literals: 'composite', 'aggregate', 'none'.
+The enumeration 'PseudostateKind' has the following literals: 'initial', 'fork', 'deepHistory', 'join', 'junction', 'shallowHistory', 'choice'.
+The enumeration 'OrderingKind' has the following literals: 'ordered', 'unordered'.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'public', 'package', 'private'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'out', 'in_', 'inout', 'return_'.
+'foundation::core::Usage' is a specialization of 'Dependency'.
+'foundation::core::Stereotype' is a specialization of 'GeneralizableElement'.
+'foundation::data::types::MappingExpression' is a specialization of 'Expression'.
+'foundation::core::Attribute' is a specialization of 'StructuralFeature'.
+'foundation::core::Class' is a specialization of 'Classifier'.
+'foundation::core::TaggedValue' is a specialization of 'ModelElement'.
+'foundation::core::Feature' is a specialization of 'ModelElement'.
+'foundation::core::Flow' is a specialization of 'Relationship'.
+'foundation::data::types::ObjectSetExpression' is a specialization of 'Expression'.
+'foundation::core::Constraint' is a specialization of 'ModelElement'.
+'foundation::core::Permission' is a specialization of 'Dependency'.
+'foundation::core::Generalization_' is a specialization of 'Relationship'.
+'foundation::core::Comment' is a specialization of 'ModelElement'.
+'foundation::core::Artifact' is a specialization of 'Classifier'.
+'foundation::core::GeneralizableElement' is a specialization of 'ModelElement'.
+'foundation::core::Parameter' is a specialization of 'ModelElement'.
+'foundation::core::Classifier' is a specialization of 'core::Namespace'.
+'foundation::core::Classifier' is a specialization of 'core::GeneralizableElement'.
+'foundation::core::TagDefinition' is a specialization of 'ModelElement'.
+'foundation::data::types::TimeExpression' is a specialization of 'Expression'.
+'foundation::core::Abstraction' is a specialization of 'Dependency'.
+'foundation::core::BehavioralFeature' is a specialization of 'Feature'.
+'foundation::core::Enumeration' is a specialization of 'DataType'.
+'foundation::core::ProgrammingLanguageDataType' is a specialization of 'DataType'.
+'foundation::data::types::ActionExpression' is a specialization of 'Expression'.
+'foundation::core::StructuralFeature' is a specialization of 'Feature'.
+'foundation::core::Node' is a specialization of 'Classifier'.
+'foundation::core::Association' is a specialization of 'core::Relationship'.
+'foundation::core::DataType' is a specialization of 'Classifier'.
+'foundation::core::Relationship' is a specialization of 'ModelElement'.
+'foundation::data::types::ProcedureExpression' is a specialization of 'Expression'.
+'foundation::core::Dependency' is a specialization of 'Relationship'.
+'foundation::data::types::TypeExpression' is a specialization of 'Expression'.
+'foundation::core::EnumerationLiteral' is a specialization of 'ModelElement'.
+'foundation::core::ModelElement' is a specialization of 'Element'.
+'foundation::core::Operation' is a specialization of 'BehavioralFeature'.
+'foundation::core::AssociationClass' is a specialization of 'core::Class'.
+'foundation::core::AssociationEnd' is a specialization of 'ModelElement'.
+'foundation::core::Binding' is a specialization of 'Dependency'.
+'foundation::data::types::IterationExpression' is a specialization of 'Expression'.
+'foundation::core::AssociationClass' is a specialization of 'core::Association'.
+'foundation::core::Method' is a specialization of 'BehavioralFeature'.
+'foundation::core::Interface' is a specialization of 'Classifier'.
+'foundation::core::Primitive' is a specialization of 'DataType'.
+'foundation::core::Component' is a specialization of 'Classifier'.
+'foundation::data::types::ArgListsExpression' is a specialization of 'Expression'.
+'foundation::data::types::BooleanExpression' is a specialization of 'Expression'.
+'foundation::core::Namespace' is a specialization of 'ModelElement'.
+'foundation::core::PresentationElement' is a specialization of 'Element'.
+'foundation::core::Association' is a specialization of 'core::GeneralizableElement'.
+'Stereotype' (role 'Stereotype123', cardinality 0..*) is associated with 'foundation::core::TagDefinition' (role 'definedTag', cardinality 0..*).
+'foundation::core::Feature' (role 'feature', cardinality 0..*) is associated with 'Classifier' (role 'Classifier', cardinality 0..*).
+'foundation::core::AssociationEnd' (role 'foundation_core_AssociationEnd', cardinality 0..*) is associated with 'Multiplicity_' (role 'Multiplicity40', cardinality 0..*).
+'foundation::core::Dependency' (role 'supplierDependency', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement85', cardinality 0..*).
+'Association' (role 'Association', cardinality 0..*) is associated with 'foundation::core::AssociationEnd' (role 'connection', cardinality 0..*).
+'foundation::core::Comment' (role 'comment', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement96', cardinality 0..*).
+'foundation::core::TaggedValue' (role 'taggedValue', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement128', cardinality 0..*).
+'ModelElement' (role 'ModelElement98', cardinality 0..*) is associated with 'foundation::core::Flow' (role 'targetFlow', cardinality 0..*).
+'foundation::core::Constraint' (role 'stereotypeConstraint', cardinality 0..*) is associated with 'Stereotype' (role 'Stereotype51', cardinality 0..*).
+'foundation::core::Flow' (role 'sourceFlow', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement100', cardinality 0..*).
+'ElementResidence' (role 'ElementResidence', cardinality 0..*) is associated with 'foundation::core::ModelElement' (role 'resident', cardinality 0..*).
+'foundation::core::Component' (role 'implementationLocation', cardinality 0..*) is associated with 'Artifact' (role 'Artifact', cardinality 0..*).
+'foundation::core::Operation' (role 'specification64', cardinality 0..*) is associated with 'Method' (role 'Method', cardinality 0..*).
+'foundation::core::ElementResidence' (role 'elementResidence', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement102', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'foundation::core::AssociationEnd' (role 'associationEnd', cardinality 0..*).
+'TagDefinition' (role 'TagDefinition130', cardinality 0..*) is associated with 'foundation::core::TaggedValue' (role 'typedValue', cardinality 0..*).
+'Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'foundation::core::EnumerationLiteral' (role 'literal', cardinality 0..*).
+'foundation::core::Component' (role 'deployedComponent', cardinality 0..*) is associated with 'Node' (role 'Node', cardinality 0..*).
+'Component' (role 'Component', cardinality 0..*) is associated with 'foundation::core::Node' (role 'deploymentLocation', cardinality 0..*).
+'ModelElement' (role 'ModelElement138', cardinality 0..*) is associated with 'foundation::core::TemplateArgument' (role 'foundation_core_TemplateArgument', cardinality 0..*).
+'Binding' (role 'Binding', cardinality 0..*) is associated with 'foundation::core::TemplateArgument' (role 'argument', cardinality 0..*).
+'ProcedureExpression' (role 'ProcedureExpression', cardinality 0..*) is associated with 'foundation::core::Method' (role 'foundation_core_Method', cardinality 0..*).
+'AssociationEnd' (role 'AssociationEnd57', cardinality 0..*) is associated with 'foundation::core::Attribute' (role 'qualifier', cardinality 0..*).
+'foundation::core::ModelElement' (role 'ownedElement', cardinality 0..*) is associated with 'Namespace' (role 'Namespace', cardinality 0..*).
+'Classifier' (role 'Classifier74', cardinality 0..*) is associated with 'foundation::core::Parameter' (role 'typedParameter', cardinality 0..*).
+'foundation::core::Method' (role 'method', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'ModelElement' (role 'ModelElement83', cardinality 0..*) is associated with 'foundation::core::Dependency' (role 'clientDependency', cardinality 0..*).
+'TaggedValue' (role 'TaggedValue', cardinality 0..*) is associated with 'foundation::core::ModelElement' (role 'modelElement', cardinality 0..*).
+'Component' (role 'Component104', cardinality 0..*) is associated with 'foundation::core::ElementResidence' (role 'residentElement', cardinality 0..*).
+'StructuralFeature' (role 'StructuralFeature', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'type', cardinality 0..*).
+'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'foundation::core::Enumeration' (role 'enumeration', cardinality 0..*).
+'CallAction' (role 'CallAction', cardinality 0..*) is associated with 'foundation::core::Operation' (role 'operation', cardinality 0..*).
+'foundation::data::types::MultiplicityRange' (role 'range', cardinality 0..*) is associated with 'Multiplicity_' (role 'Multiplicity', cardinality 0..*).
+'Feature' (role 'Feature', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'owner', cardinality 0..*).
+'foundation::core::TemplateParameter' (role 'foundation_core_TemplateParameter', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement106', cardinality 0..*).
+'foundation::core::Binding' (role 'binding', cardinality 0..*) is associated with 'TemplateArgument' (role 'TemplateArgument', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'type26', cardinality 0..*).
+'foundation::core::Attribute' (role 'availableQualifier', cardinality 0..*) is associated with 'AssociationEndRole' (role 'AssociationEndRole', cardinality 0..*).
+'CreateAction' (role 'CreateAction', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'instantiation', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression', cardinality 0..*) is associated with 'foundation::core::Constraint' (role 'foundation_core_Constraint', cardinality 0..*).
+'ModelElement' (role 'ModelElement108', cardinality 0..*) is associated with 'foundation::core::TemplateParameter' (role 'templateParameter', cardinality 0..*).
+'foundation::core::ModelElement' (role 'context', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine', cardinality 0..*).
+'foundation::core::BehavioralFeature' (role 'behavioralFeature', cardinality 0..*) is associated with 'Parameter' (role 'Parameter60', cardinality 0..*).
+'foundation::core::Operation' (role 'operation67', cardinality 0..*) is associated with 'CallEvent' (role 'CallEvent', cardinality 0..*).
+'foundation::core::TemplateParameter' (role 'foundation_core_TemplateParameter110', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement111', cardinality 0..*).
+'AssociationEnd' (role 'AssociationEnd54', cardinality 0..*) is associated with 'foundation::core::Association' (role 'association53', cardinality 0..*).
+'Generalization_' (role 'Generalization31', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'powertype', cardinality 0..*).
+'foundation::core::Generalization_' (role 'specialization', cardinality 0..*) is associated with 'GeneralizableElement' (role 'GeneralizableElement79', cardinality 0..*).
+'foundation::core::Parameter' (role 'foundation_core_Parameter', cardinality 0..*) is associated with 'Expression' (role 'Expression71', cardinality 0..*).
+'ModelElement' (role 'ModelElement88', cardinality 0..*) is associated with 'foundation::core::PresentationElement' (role 'presentation', cardinality 0..*).
+'foundation::core::TaggedValue' (role 'referenceTag', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement132', cardinality 0..*).
+'foundation::core::ModelElement' (role 'source', cardinality 0..*) is associated with 'Flow' (role 'Flow10', cardinality 0..*).
+'ModelElement' (role 'ModelElement', cardinality 0..*) is associated with 'foundation::core::Namespace' (role 'namespace', cardinality 0..*).
+'foundation::core::ProgrammingLanguageDataType' (role 'foundation_core_ProgrammingLanguageDataType', cardinality 0..*) is associated with 'TypeExpression' (role 'TypeExpression', cardinality 0..*).
+'foundation::core::AssociationEnd' (role 'specifiedEnd', cardinality 0..*) is associated with 'Classifier' (role 'Classifier46', cardinality 0..*).
+'Component' (role 'Component135', cardinality 0..*) is associated with 'foundation::core::Artifact' (role 'implementation', cardinality 0..*).
+'foundation::core::Generalization_' (role 'powertypeRange', cardinality 0..*) is associated with 'Classifier' (role 'Classifier81', cardinality 0..*).
+'foundation::core::ModelElement' (role 'target', cardinality 0..*) is associated with 'Flow' (role 'Flow', cardinality 0..*).
+'foundation::data::types::Multiplicity_' (role 'multiplicity', cardinality 0..*) is associated with 'MultiplicityRange' (role 'MultiplicityRange', cardinality 0..*).
+'TagDefinition' (role 'TagDefinition', cardinality 0..*) is associated with 'foundation::core::Stereotype' (role 'owner115', cardinality 0..*).
+'foundation::core::GeneralizableElement' (role 'parent', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization21', cardinality 0..*).
+'GeneralizableElement' (role 'GeneralizableElement', cardinality 0..*) is associated with 'foundation::core::Generalization_' (role 'generalization', cardinality 0..*).
+'PresentationElement' (role 'PresentationElement', cardinality 0..*) is associated with 'foundation::core::ModelElement' (role 'subject', cardinality 0..*).
+'AssociationEnd' (role 'AssociationEnd', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'participant', cardinality 0..*).
+'ModelElement' (role 'ModelElement49', cardinality 0..*) is associated with 'foundation::core::Constraint' (role 'constraint', cardinality 0..*).
+'Dependency' (role 'Dependency', cardinality 0..*) is associated with 'foundation::core::ModelElement' (role 'client', cardinality 0..*).
+'foundation::core::ModelElement' (role 'supplier', cardinality 0..*) is associated with 'Dependency' (role 'Dependency6', cardinality 0..*).
+'AssociationEnd' (role 'AssociationEnd29', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'specification', cardinality 0..*).
+'ModelElement' (role 'ModelElement117', cardinality 0..*) is associated with 'foundation::core::Stereotype' (role 'stereotype', cardinality 0..*).
+'Signal' (role 'Signal', cardinality 0..*) is associated with 'foundation::core::BehavioralFeature' (role 'context62', cardinality 0..*).
+'foundation::core::StructuralFeature' (role 'foundation_core_StructuralFeature', cardinality 0..*) is associated with 'Multiplicity_' (role 'Multiplicity36', cardinality 0..*).
+'MappingExpression' (role 'MappingExpression', cardinality 0..*) is associated with 'foundation::core::Abstraction' (role 'foundation_core_Abstraction', cardinality 0..*).
+'foundation::core::ModelElement' (role 'extendedElement', cardinality 0..*) is associated with 'Stereotype' (role 'Stereotype', cardinality 0..*).
+'foundation::core::ModelElement' (role 'constrainedElement', cardinality 0..*) is associated with 'Constraint' (role 'Constraint', cardinality 0..*).
+'foundation::core::Stereotype' (role 'constrainedStereotype', cardinality 0..*) is associated with 'Constraint' (role 'Constraint119', cardinality 0..*).
+'Collaboration' (role 'Collaboration', cardinality 0..*) is associated with 'foundation::core::Classifier' (role 'representedClassifier', cardinality 0..*).
+'foundation::core::AssociationEnd' (role 'association', cardinality 0..*) is associated with 'Classifier' (role 'Classifier44', cardinality 0..*).
+'foundation::core::GeneralizableElement' (role 'child', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization_', cardinality 0..*).
+'foundation::core::Component' (role 'container', cardinality 0..*) is associated with 'ElementResidence' (role 'ElementResidence92', cardinality 0..*).
+'foundation::core::ModelElement' (role 'referenceValue', cardinality 0..*) is associated with 'TaggedValue' (role 'TaggedValue17', cardinality 0..*).
+'Collaboration' (role 'Collaboration69', cardinality 0..*) is associated with 'foundation::core::Operation' (role 'representedOperation', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity121', cardinality 0..*) is associated with 'foundation::core::TagDefinition' (role 'foundation_core_TagDefinition', cardinality 0..*).
+'Comment' (role 'Comment', cardinality 0..*) is associated with 'foundation::core::ModelElement' (role 'annotatedElement', cardinality 0..*).
+'Classifier' (role 'Classifier38', cardinality 0..*) is associated with 'foundation::core::StructuralFeature' (role 'typedFeature', cardinality 0..*).
+'TemplateParameter' (role 'TemplateParameter', cardinality 0..*) is associated with 'foundation::core::ModelElement' (role 'template', cardinality 0..*).
+'foundation::core::Attribute' (role 'foundation_core_Attribute', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'foundation::core::Parameter' (role 'parameter', cardinality 0..*) is associated with 'BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*).
+'TaggedValue' (role 'TaggedValue126', cardinality 0..*) is associated with 'foundation::core::TagDefinition' (role 'type125', cardinality 0..*).

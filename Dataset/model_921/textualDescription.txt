@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'pDL2::Process' has the following attributes: 'name' of type str.
+The class 'pDL2::EObject' has no attributes.
+The class 'pDL2::DependanceStart' has no attributes.
+The class 'pDL2::Guidance' has the following attributes: 'texte' of type str.
+The class 'pDL2::WorkSequenceKindStart' has the following attributes: 'Started2Finish' of type str; 'Started2Start' of type str.
+The class 'pDL2::DependanceFinish' has no attributes.
+The class 'pDL2::WorkSequenceKindFinish' has the following attributes: 'Finished2Finish' of type str; 'Finished2Start' of type str.
+The class 'ProcessElement' has no attributes.
+The class 'pDL2::ProcessElement' has no attributes.
+The class 'pDL2::WorkDefinition' has the following attributes: 'name' of type str.
+'pDL2::Guidance' is a specialization of 'ProcessElement'.
+'pDL2::WorkDefinition' is a specialization of 'ProcessElement'.
+'pDL2::DependanceStart' (role 'pDL2_DependanceStart5', cardinality 0..*) is associated with 'pDL2::WorkSequenceKindStart' (role 'pDL2_WorkSequenceKindStart', cardinality 0..*).
+'pDL2::Process' (role 'pDL2_Process', cardinality 0..*) is associated with 'pDL2::ProcessElement' (role 'pDL2_ProcessElement', cardinality 0..*).
+'pDL2::DependanceFinish' (role 'pDL2_DependanceFinish9', cardinality 0..*) is associated with 'pDL2::WorkSequenceKindFinish' (role 'pDL2_WorkSequenceKindFinish', cardinality 0..*).
+'pDL2::WorkDefinition' (role 'pDL2_WorkDefinition', cardinality 0..*) is associated with 'pDL2::EObject' (role 'pDL2_EObject', cardinality 0..*).
+'pDL2::DependanceStart' (role 'pDL2_DependanceStart', cardinality 0..*) is associated with 'pDL2::WorkDefinition' (role 'pDL2_WorkDefinition3', cardinality 0..*).
+'pDL2::WorkDefinition' (role 'pDL2_WorkDefinition7', cardinality 0..*) is associated with 'pDL2::DependanceFinish' (role 'pDL2_DependanceFinish', cardinality 0..*).

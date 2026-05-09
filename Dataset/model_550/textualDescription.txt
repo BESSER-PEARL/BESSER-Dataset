@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'family::Man' has no attributes.
+The class 'family::Person' has the following attributes: 'fechaNacimiento' of type str; 'provincia' of type str; 'name' of type str; 'eCivil' of type str.
+The class 'family::Woman' has no attributes.
+The class 'family::Family' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+'family::Man' is a specialization of 'Person'.
+'family::Woman' is a specialization of 'Person'.
+'family::Person' (role 'family_Person4', cardinality 0..*) is associated with 'family::Woman' (role 'family_Woman', cardinality 0..*).
+'family::Family' (role 'family_Family', cardinality 0..*) is associated with 'family::Person' (role 'family_Person', cardinality 0..*).
+'family::Man' (role 'family_Man', cardinality 0..*) is associated with 'family::Person' (role 'family_Person2', cardinality 0..*).

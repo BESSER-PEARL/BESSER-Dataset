@@ -1,0 +1,120 @@
+The model has 41 class(es).
+The class 'DirectedRelationship' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'uml::ElementImport' has the following attributes: 'alias' of type str; 'visibility' of type str.
+The class 'uml::Abstraction' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'uml::Namespace' has no attributes.
+The class 'uml::NamedElement' has the following attributes: 'qualifiedName' of type str; 'visibility' of type str; 'name' of type str.
+The class 'uml::Class' has the following attributes: 'isActive' of type str; 'name' of type str.
+The class 'uml::Operation' has the following attributes: 'isOrdered' of type str; 'isUnique' of type str; 'upper' of type str; 'lower' of type str; 'isQuery' of type str.
+The class 'uml::PackageableElement' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'uml::Parameter' has the following attributes: 'isStream' of type str; 'isException' of type str; 'default' of type str.
+The class 'NamedElement' has no attributes.
+The class 'uml::Element' has no attributes.
+The class 'Element' has no attributes.
+The class 'Type' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'uml::Relationship' has no attributes.
+The class 'uml::ValueSpecification' has no attributes.
+The class 'uml::DirectedRelationship' has no attributes.
+The class 'uml::Generalization' has the following attributes: 'isSubstitutable' of type str.
+The class 'uml::Dependency' has no attributes.
+The class 'uml::BehavioralFeature' has the following attributes: 'isAbstract' of type str.
+The class 'uml::Package' has the following attributes: 'name' of type str.
+The class 'uml::TypedElement' has no attributes.
+The class 'uml::Model' has the following attributes: 'name' of type str.
+The class 'uml::Comment' has the following attributes: 'body' of type str.
+The class 'Classifier' has no attributes.
+The class 'uml::Type' has no attributes.
+The class 'Feature' has no attributes.
+The class 'uml::Substitution' has no attributes.
+The class 'uml::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'uml::Feature' has the following attributes: 'isStatic' of type str.
+The class 'TypedElement' has no attributes.
+The class 'Realization' has no attributes.
+The class 'uml::Realization' has no attributes.
+The class 'uml::Association' has the following attributes: 'isDerived' of type str.
+The class 'uml::Property' has the following attributes: 'name' of type str.
+The class 'uml::PackageImport' has the following attributes: 'visibility' of type str.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'public', 'protected', 'package'.
+'uml::Dependency' is a specialization of 'PackageableElement'.
+'uml::Dependency' is a specialization of 'DirectedRelationship'.
+'uml::ElementImport' is a specialization of 'DirectedRelationship'.
+'uml::Classifier' is a specialization of 'Type'.
+'uml::ValueSpecification' is a specialization of 'PackageableElement'.
+'uml::ValueSpecification' is a specialization of 'TypedElement'.
+'uml::TypedElement' is a specialization of 'NamedElement'.
+'uml::Type' is a specialization of 'PackageableElement'.
+'uml::Association' is a specialization of 'Classifier'.
+'uml::Association' is a specialization of 'Relationship'.
+'uml::PackageImport' is a specialization of 'DirectedRelationship'.
+'uml::Substitution' is a specialization of 'Realization'.
+'uml::Realization' is a specialization of 'Abstraction'.
+'uml::Abstraction' is a specialization of 'Dependency'.
+'uml::Comment' is a specialization of 'Element'.
+'uml::Operation' is a specialization of 'BehavioralFeature'.
+'uml::BehavioralFeature' is a specialization of 'Namespace'.
+'uml::NamedElement' is a specialization of 'Element'.
+'uml::BehavioralFeature' is a specialization of 'Feature'.
+'uml::Package' is a specialization of 'PackageableElement'.
+'uml::Class' is a specialization of 'Classifier'.
+'uml::DirectedRelationship' is a specialization of 'Relationship'.
+'uml::Generalization' is a specialization of 'DirectedRelationship'.
+'uml::Relationship' is a specialization of 'Element'.
+'uml::Namespace' is a specialization of 'NamedElement'.
+'uml::Substitution' (role 'uml_Substitution', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier67', cardinality 0..*).
+'uml::ValueSpecification' (role 'uml_ValueSpecification', cardinality 0..*) is associated with 'uml::Parameter' (role 'uml_Parameter72', cardinality 0..*).
+'uml::Namespace' (role 'Namespace35', cardinality 0..*) is associated with 'uml::ElementImport' (role 'elementImport', cardinality 0..*).
+'uml::Element' (role 'uml_Element7', cardinality 0..*) is associated with 'uml::Comment' (role 'uml_Comment8', cardinality 0..*).
+'uml::PackageableElement' (role 'uml_PackageableElement29', cardinality 0..*) is associated with 'uml::Namespace' (role 'uml_Namespace28', cardinality 0..*).
+'uml::Package' (role 'Package', cardinality 0..*) is associated with 'uml::Type' (role 'ownedType', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier', cardinality 0..*) is associated with 'uml::NamedElement' (role 'uml_NamedElement54', cardinality 0..*).
+'uml::NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'uml::Dependency' (role 'clientDependency', cardinality 0..*).
+'uml::Element' (role 'Element', cardinality 0..*) is associated with 'uml::Element' (role 'owner', cardinality 0..*).
+'uml::Parameter' (role 'uml_Parameter80', cardinality 0..*) is associated with 'uml::BehavioralFeature' (role 'uml_BehavioralFeature', cardinality 0..*).
+'uml::ElementImport' (role 'ElementImport', cardinality 0..*) is associated with 'uml::Namespace' (role 'importingNamespace', cardinality 0..*).
+'uml::Feature' (role 'feature', cardinality 0..*) is associated with 'uml::Classifier' (role 'Classifier', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier55', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier57', cardinality 0..*).
+'uml::Namespace' (role 'namespace', cardinality 0..*) is associated with 'uml::NamedElement' (role 'NamedElement31', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier101', cardinality 0..*) is associated with 'uml::Generalization' (role 'uml_Generalization100', cardinality 0..*).
+'uml::Type' (role 'uml_Type48', cardinality 0..*) is associated with 'uml::Association' (role 'uml_Association47', cardinality 0..*).
+'uml::NamedElement' (role 'uml_NamedElement', cardinality 0..*) is associated with 'uml::Dependency' (role 'uml_Dependency', cardinality 0..*).
+'uml::Operation' (role 'uml_Operation', cardinality 0..*) is associated with 'uml::Parameter' (role 'uml_Parameter', cardinality 0..*).
+'uml::Class' (role 'class_', cardinality 0..*) is associated with 'uml::Operation' (role 'Operation', cardinality 0..*).
+'uml::Generalization' (role 'uml_Generalization', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class95', cardinality 0..*).
+'uml::Package' (role 'uml_Package37', cardinality 0..*) is associated with 'uml::PackageImport' (role 'uml_PackageImport', cardinality 0..*).
+'uml::Element' (role 'uml_Element21', cardinality 0..*) is associated with 'uml::Relationship' (role 'uml_Relationship', cardinality 0..*).
+'uml::Class' (role 'Class', cardinality 0..*) is associated with 'uml::Operation' (role 'ownedOperation', cardinality 0..*).
+'uml::Namespace' (role 'uml_Namespace', cardinality 0..*) is associated with 'uml::NamedElement' (role 'uml_NamedElement26', cardinality 0..*).
+'uml::TypedElement' (role 'uml_TypedElement', cardinality 0..*) is associated with 'uml::Type' (role 'uml_Type', cardinality 0..*).
+'uml::Class' (role 'uml_Class88', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class90', cardinality 0..*).
+'uml::PackageableElement' (role 'uml_PackageableElement', cardinality 0..*) is associated with 'uml::Package' (role 'uml_Package', cardinality 0..*).
+'uml::Class' (role 'uml_Class', cardinality 0..*) is associated with 'uml::Property' (role 'uml_Property74', cardinality 0..*).
+'uml::Class' (role 'uml_Class92', cardinality 0..*) is associated with 'uml::Property' (role 'uml_Property93', cardinality 0..*).
+'uml::PackageableElement' (role 'uml_PackageableElement33', cardinality 0..*) is associated with 'uml::ElementImport' (role 'uml_ElementImport', cardinality 0..*).
+'uml::Generalization' (role 'uml_Generalization97', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier98', cardinality 0..*).
+'uml::Element' (role 'ownedElement', cardinality 0..*) is associated with 'uml::Element' (role 'Element5', cardinality 0..*).
+'uml::PackageableElement' (role 'uml_PackageableElement103', cardinality 0..*) is associated with 'uml::Model' (role 'uml_Model', cardinality 0..*).
+'uml::Package' (role 'package', cardinality 0..*) is associated with 'uml::Type' (role 'Type', cardinality 0..*).
+'uml::NamedElement' (role 'client', cardinality 0..*) is associated with 'uml::Dependency' (role 'Dependency', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier58', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier60', cardinality 0..*).
+'uml::Association' (role 'uml_Association44', cardinality 0..*) is associated with 'uml::Property' (role 'uml_Property45', cardinality 0..*).
+'uml::DirectedRelationship' (role 'uml_DirectedRelationship', cardinality 0..*) is associated with 'uml::Element' (role 'uml_Element16', cardinality 0..*).
+'uml::Namespace' (role 'importingNamespace24', cardinality 0..*) is associated with 'uml::PackageImport' (role 'PackageImport', cardinality 0..*).
+'uml::Namespace' (role 'Namespace39', cardinality 0..*) is associated with 'uml::PackageImport' (role 'packageImport', cardinality 0..*).
+'uml::Property' (role 'uml_Property51', cardinality 0..*) is associated with 'uml::Association' (role 'uml_Association50', cardinality 0..*).
+'uml::Classifier' (role 'Classifier69', cardinality 0..*) is associated with 'uml::Substitution' (role 'substitution', cardinality 0..*).
+'uml::NamedElement' (role 'ownedMember', cardinality 0..*) is associated with 'uml::Namespace' (role 'Namespace', cardinality 0..*).
+'uml::Classifier' (role 'substitutingClassifier', cardinality 0..*) is associated with 'uml::Substitution' (role 'Substitution', cardinality 0..*).
+'uml::Feature' (role 'Feature', cardinality 0..*) is associated with 'uml::Classifier' (role 'featuringClassifier', cardinality 0..*).
+'uml::Comment' (role 'uml_Comment', cardinality 0..*) is associated with 'uml::Element' (role 'uml_Element', cardinality 0..*).
+'uml::Property' (role 'uml_Property', cardinality 0..*) is associated with 'uml::Association' (role 'uml_Association', cardinality 0..*).
+'uml::Operation' (role 'uml_Operation78', cardinality 0..*) is associated with 'uml::Operation' (role 'uml_Operation76', cardinality 0..*).
+'uml::Property' (role 'uml_Property64', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier63', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier86', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class85', cardinality 0..*).
+'uml::BehavioralFeature' (role 'uml_BehavioralFeature82', cardinality 0..*) is associated with 'uml::Type' (role 'uml_Type83', cardinality 0..*).
+'uml::Element' (role 'uml_Element19', cardinality 0..*) is associated with 'uml::DirectedRelationship' (role 'uml_DirectedRelationship18', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'wheel::WheelSM' has no attributes.
+The class 'wheel::Transition' has the following attributes: 'speed' of type str; 'time' of type str.
+The class 'wheel::State' has the following attributes: 'name' of type str.
+'wheel::State' (role 'wheel_State11', cardinality 0..*) is associated with 'wheel::Transition' (role 'wheel_Transition10', cardinality 0..*).
+'wheel::WheelSM' (role 'wheel_WheelSM2', cardinality 0..*) is associated with 'wheel::State' (role 'wheel_State3', cardinality 0..*).
+'wheel::WheelSM' (role 'owningFSM', cardinality 0..*) is associated with 'wheel::State' (role 'State', cardinality 0..*).
+'wheel::Transition' (role 'wheel_Transition', cardinality 0..*) is associated with 'wheel::State' (role 'wheel_State6', cardinality 0..*).
+'wheel::State' (role 'Source', cardinality 0..*) is associated with 'wheel::Transition' (role 'Transition', cardinality 0..*).
+'wheel::State' (role 'ownedState', cardinality 0..*) is associated with 'wheel::WheelSM' (role 'WheelSM', cardinality 0..*).
+'wheel::WheelSM' (role 'wheel_WheelSM', cardinality 0..*) is associated with 'wheel::State' (role 'wheel_State', cardinality 0..*).
+'wheel::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'wheel::State' (role 'State13', cardinality 0..*).

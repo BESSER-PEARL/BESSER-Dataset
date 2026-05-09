@@ -1,0 +1,153 @@
+The model has 65 class(es).
+The class 'MARTE::Library::BasicNFP::Types::NFP::String' has the following attributes: 'value' of type str.
+The class 'MARTE::Library::BasicNFP::Types::BurstPattern' has no attributes.
+The class 'OpenPattern' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::AperiodicPattern' has no attributes.
+The class 'MARTE::Library::GRM::BasicTypes::SchedParameters' has the following attributes: 'tableEntry' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Percentage' has the following attributes: 'unit' of type str.
+The class 'NFP::Real' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Natural' has the following attributes: 'value' of type str.
+The class 'MARTE::Library::GRM::BasicTypes::FixedPriorityParameters' has no attributes.
+The class 'SporadicPattern' has no attributes.
+The class 'MARTE::Library::TimeLibrary::IdealClock' has no attributes.
+The class 'MARTE::Library::MARTE::DataTypes::Array' has no attributes.
+The class 'MARTE::Library::MARTE::DataTypes::Realnterval' has the following attributes: 'bound' of type str.
+The class 'PeriodicPattern' has no attributes.
+The class 'NFP::Duration' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::SporadicPattern' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Price' has the following attributes: 'unit' of type str.
+The class 'MARTE::Library::MARTE::DataTypes::RealMatrix' has the following attributes: 'matrixElem' of type str.
+The class 'MARTE::Library::MARTE::DataTypes::IntegerInterval' has the following attributes: 'bound' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Weight' has the following attributes: 'precision' of type str; 'unit' of type str.
+The class 'PoolingParameters' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Power' has the following attributes: 'precision' of type str; 'unit' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Boolean' has the following attributes: 'value' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Energy' has the following attributes: 'unit' of type str; 'precision' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Area' has the following attributes: 'unit' of type str; 'precision' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Frequency' has the following attributes: 'precision' of type str; 'unit' of type str.
+The class 'NFP::Integer' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::CommonType' has the following attributes: 'statQ' of type str; 'source' of type str; 'dir' of type str; 'mode' of type str; 'expr' of type str.
+The class 'MARTE::Library::MARTE::DataTypes::Interval' has no attributes.
+The class 'MARTE::Library::MARTE::DataTypes::UtilityType' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::DataTxRate' has the following attributes: 'precision' of type str; 'unit' of type str.
+The class 'MARTE::Library::BasicNFP::Types::PeriodicPattern' has no attributes.
+The class 'MARTE::Library::MARTE::DataTypes::NFP::FrequencyInterval' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::OpenPattern' has the following attributes: 'arrivalProcess' of type str.
+The class 'ClosedPattern' has no attributes.
+The class 'MARTE::Library::RS::Library::TilerSpecification' has no attributes.
+The class 'BurstPattern' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::DataSize' has the following attributes: 'unit' of type str; 'precision' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Length' has the following attributes: 'precision' of type str; 'unit' of type str.
+The class 'MARTE::Library::MARTE::DataTypes::RealVector' has the following attributes: 'vectorElem' of type str.
+The class 'MARTE::Library::GRM::BasicTypes::PoolingParameters' has no attributes.
+The class 'MARTE::Library::GRM::BasicTypes::PeriodicServerParameters' has the following attributes: 'backgroundPriority' of type str; 'kind' of type str.
+The class 'MARTE::Library::RS::Library::ShapeSpecification' has the following attributes: 'size' of type str.
+The class 'MARTE::Library::MARTE::DataTypes::IntegerMatrix' has no attributes.
+The class 'FixedPriorityParameters' has no attributes.
+The class 'MARTE::Library::TimeLibrary::TimedValueType' has the following attributes: 'value' of type str; 'expr' of type str; 'unit' of type str; 'onClock' of type str.
+The class 'AperiodicPattern' has no attributes.
+The class 'IntegerMatrix' has no attributes.
+The class 'NFP::Natural' has no attributes.
+The class 'NFP::CommonType' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Real' has the following attributes: 'value' of type str.
+The class 'MARTE::Library::BasicNFP::Types::IrregularPattern' has no attributes.
+The class 'MARTE::Library::MARTE::DataTypes::NFP::NaturalInterval' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Integer' has the following attributes: 'value' of type str.
+The class 'MARTE::Library::BasicNFP::Types::NFP::Duration' has the following attributes: 'worst' of type str; 'unit' of type str; 'clock' of type str; 'precision' of type str; 'best' of type str.
+The class 'PeriodicServerParameters' has no attributes.
+The class 'EDF::Parameters' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::ArrivalPattern' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::ClosedPattern' has no attributes.
+The class 'MARTE::Library::BasicNFP::Types::NFP::DateTime' has the following attributes: 'value' of type str.
+The class 'NFP::Frequency' has no attributes.
+The class 'IrregularPattern' has no attributes.
+The class 'IntegerVector' has no attributes.
+The class 'MARTE::Library::GRM::BasicTypes::EDF::Parameters' has no attributes.
+The class 'MARTE::Library::MARTE::DataTypes::IntegerVector' has the following attributes: 'vectorElem' of type str.
+The enumeration 'SourceKind' has the following literals: 'est', 'req', 'calc', 'meas'.
+The enumeration 'EnergyUnitKind' has the following literals: 'J', 'KJ', 'Wh', 'KWh', 'mWh'.
+The enumeration 'FrequencyUnitKind' has the following literals: 'rpm', 'GHz', 'Hz', 'KHz', 'MHz'.
+The enumeration 'DataTxRateUnitKind' has the following literals: 'Kb_per_s', 'b_per_s', 'Mb_per_s'.
+The enumeration 'DataSizeUnitKind' has the following literals: 'Byte', 'bit', 'KB', 'GB', 'MB'.
+The enumeration 'LengthUnitKind' has the following literals: 'm', 'mm', 'cm'.
+The enumeration 'ProtectProtocolKind' has the following literals: 'StackBased', 'PriorityInheritance', 'FIFO', 'PriorityCeiling', 'Other', 'Undef', 'NoPreemption'.
+The enumeration 'WeightUnitKind' has the following literals: 'kg', 'g', 'mg'.
+The enumeration 'SchedPolicyKind' has the following literals: 'LeastLaxityFirst', 'RoundRobin', 'FIFO', 'Undef', 'TimeTableDriven', 'FixedPriority', 'Other', 'EarliestDeadlineFirst'.
+The enumeration 'TUK' does not specify any literals.
+The enumeration 'PeriodicServerKind' has the following literals: 'Other', 'Undef', 'Deferrable', 'Sporadic'.
+The enumeration 'LogicalTimeUnit' has the following literals: 'tick'.
+The enumeration 'TimeNatureKind' has the following literals: 'discrete', 'dense'.
+The enumeration 'AreaUnitKind' has the following literals: 'um2', 'mm2'.
+The enumeration 'EventKind' has the following literals: 'finish', 'start', 'consume', 'receive', 'send'.
+The enumeration 'TimeInterpretationKind' has the following literals: 'duration', 'instant'.
+The enumeration 'DirectionKind' has the following literals: 'decr', 'incr'.
+The enumeration 'TimeStandardKind' has the following literals: 'Local', 'TAI', 'GPS', 'UT0', 'TCG', 'UT1', 'Sidereal', 'TBD', 'TCB', 'TT', 'UTC'.
+The enumeration 'StatisticalQualifierKind' has the following literals: 'determ', 'variance', 'mean', 'range', 'other', 'distrib', 'min', 'percent', 'max'.
+The enumeration 'TimeUnitKind' has the following literals: 'hrs', 'ns', 'us', 's', 'min', 'day', 'ms'.
+The enumeration 'PowerUnitKind' has the following literals: 'mW', 'W', 'KW'.
+The enumeration 'TransmModeKind' has the following literals: 'fullDuplex', 'simplex', 'halfDuplex'.
+'MARTE::Library::BasicNFP::Types::NFP::Power' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::BurstPattern' is a specialization of 'AperiodicPattern'.
+'MARTE::Library::BasicNFP::Types::NFP::Energy' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::Real' is a specialization of 'NFP::CommonType'.
+'MARTE::Library::BasicNFP::Types::NFP::Weight' is a specialization of 'NFP::Real'.
+'MARTE::Library::GRM::BasicTypes::PeriodicServerParameters' is a specialization of 'FixedPriorityParameters'.
+'MARTE::Library::BasicNFP::Types::NFP::Frequency' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::Length' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::DateTime' is a specialization of 'NFP::CommonType'.
+'MARTE::Library::BasicNFP::Types::SporadicPattern' is a specialization of 'AperiodicPattern'.
+'MARTE::Library::BasicNFP::Types::NFP::Natural' is a specialization of 'NFP::CommonType'.
+'MARTE::Library::BasicNFP::Types::NFP::Integer' is a specialization of 'NFP::CommonType'.
+'MARTE::Library::BasicNFP::Types::NFP::Area' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::String' is a specialization of 'NFP::CommonType'.
+'MARTE::Library::BasicNFP::Types::IrregularPattern' is a specialization of 'AperiodicPattern'.
+'MARTE::Library::BasicNFP::Types::NFP::Duration' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::DataTxRate' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::Price' is a specialization of 'NFP::Real'.
+'MARTE::Library::BasicNFP::Types::NFP::DataSize' is a specialization of 'NFP::Real'.
+'MARTE::Library::GRM::BasicTypes::PoolingParameters' is a specialization of 'FixedPriorityParameters'.
+'MARTE::Library::BasicNFP::Types::NFP::Boolean' is a specialization of 'NFP::CommonType'.
+'MARTE::Library::BasicNFP::Types::NFP::Percentage' is a specialization of 'NFP::Real'.
+'NFP::Duration' (role 'NFP_Duration13', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::PoolingParameters' (role 'MARTE_Library_GRM_BasicTypes_PoolingParameters12', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::BurstPattern' (role 'MARTE_Library_BasicNFP_Types_BurstPattern', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration48', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::SporadicPattern' (role 'MARTE_Library_BasicNFP_Types_SporadicPattern77', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration78', cardinality 0..*).
+'MARTE::Library::GRM::BasicTypes::SchedParameters' (role 'MARTE_Library_GRM_BasicTypes_SchedParameters3', cardinality 0..*) is associated with 'FixedPriorityParameters' (role 'FixedPriorityParameters', cardinality 0..*).
+'PeriodicPattern' (role 'PeriodicPattern', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::BurstPattern' (role 'MARTE_Library_BasicNFP_Types_BurstPattern56', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration57', cardinality 0..*).
+'NFP::Natural' (role 'NFP_Natural', cardinality 0..*) is associated with 'MARTE::Library::MARTE::DataTypes::NFP::NaturalInterval' (role 'MARTE_Library_MARTE_DataTypes_NFP_NaturalInterval', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration54', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::BurstPattern' (role 'MARTE_Library_BasicNFP_Types_BurstPattern53', cardinality 0..*).
+'PeriodicServerParameters' (role 'PeriodicServerParameters', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::SchedParameters' (role 'MARTE_Library_GRM_BasicTypes_SchedParameters7', cardinality 0..*).
+'NFP::Integer' (role 'NFP_Integer21', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::PeriodicServerParameters' (role 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters20', cardinality 0..*).
+'MARTE::Library::RS::Library::TilerSpecification' (role 'MARTE_Library_RS_Library_TilerSpecification92', cardinality 0..*) is associated with 'IntegerVector' (role 'IntegerVector93', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration65', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::IrregularPattern' (role 'MARTE_Library_BasicNFP_Types_IrregularPattern64', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern32', cardinality 0..*) is associated with 'SporadicPattern' (role 'SporadicPattern', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration10', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::PoolingParameters' (role 'MARTE_Library_GRM_BasicTypes_PoolingParameters', cardinality 0..*).
+'NFP::Integer' (role 'NFP_Integer67', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::ClosedPattern' (role 'MARTE_Library_BasicNFP_Types_ClosedPattern', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration80', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::OpenPattern' (role 'MARTE_Library_BasicNFP_Types_OpenPattern', cardinality 0..*).
+'PoolingParameters' (role 'PoolingParameters', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::SchedParameters' (role 'MARTE_Library_GRM_BasicTypes_SchedParameters5', cardinality 0..*).
+'ClosedPattern' (role 'ClosedPattern', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern30', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::SporadicPattern' (role 'MARTE_Library_BasicNFP_Types_SporadicPattern', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration72', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration62', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::IrregularPattern' (role 'MARTE_Library_BasicNFP_Types_IrregularPattern', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::OpenPattern' (role 'MARTE_Library_BasicNFP_Types_OpenPattern82', cardinality 0..*) is associated with 'NFP::Frequency' (role 'NFP_Frequency', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::PeriodicPattern' (role 'MARTE_Library_BasicNFP_Types_PeriodicPattern38', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration39', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern24', cardinality 0..*) is associated with 'AperiodicPattern' (role 'AperiodicPattern', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration15', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::PeriodicServerParameters' (role 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration42', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::PeriodicPattern' (role 'MARTE_Library_BasicNFP_Types_PeriodicPattern41', cardinality 0..*).
+'NFP::Frequency' (role 'NFP_Frequency85', cardinality 0..*) is associated with 'MARTE::Library::MARTE::DataTypes::NFP::FrequencyInterval' (role 'MARTE_Library_MARTE_DataTypes_NFP_FrequencyInterval', cardinality 0..*).
+'IntegerVector' (role 'IntegerVector88', cardinality 0..*) is associated with 'MARTE::Library::RS::Library::TilerSpecification' (role 'MARTE_Library_RS_Library_TilerSpecification', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration18', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::PeriodicServerParameters' (role 'MARTE_Library_GRM_BasicTypes_PeriodicServerParameters17', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::ClosedPattern' (role 'MARTE_Library_BasicNFP_Types_ClosedPattern69', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration70', cardinality 0..*).
+'NFP::Integer' (role 'NFP_Integer45', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::PeriodicPattern' (role 'MARTE_Library_BasicNFP_Types_PeriodicPattern44', cardinality 0..*).
+'EDF::Parameters' (role 'EDF_Parameters', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::SchedParameters' (role 'MARTE_Library_GRM_BasicTypes_SchedParameters', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::PeriodicPattern' (role 'MARTE_Library_BasicNFP_Types_PeriodicPattern', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration36', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::AperiodicPattern' (role 'MARTE_Library_BasicNFP_Types_AperiodicPattern', cardinality 0..*) is associated with 'NFP::CommonType' (role 'NFP_CommonType', cardinality 0..*).
+'NFP::Integer' (role 'NFP_Integer', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::FixedPriorityParameters' (role 'MARTE_Library_GRM_BasicTypes_FixedPriorityParameters', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern28', cardinality 0..*) is associated with 'IrregularPattern' (role 'IrregularPattern', cardinality 0..*).
+'MARTE::Library::MARTE::DataTypes::IntegerMatrix' (role 'MARTE_Library_MARTE_DataTypes_IntegerMatrix', cardinality 0..*) is associated with 'IntegerVector' (role 'IntegerVector', cardinality 0..*).
+'MARTE::Library::RS::Library::TilerSpecification' (role 'MARTE_Library_RS_Library_TilerSpecification90', cardinality 0..*) is associated with 'IntegerMatrix' (role 'IntegerMatrix', cardinality 0..*).
+'BurstPattern' (role 'BurstPattern', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern26', cardinality 0..*).
+'OpenPattern' (role 'OpenPattern', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::ArrivalPattern' (role 'MARTE_Library_BasicNFP_Types_ArrivalPattern34', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration', cardinality 0..*) is associated with 'MARTE::Library::GRM::BasicTypes::EDF::Parameters' (role 'MARTE_Library_GRM_BasicTypes_EDF_Parameters', cardinality 0..*).
+'NFP::Duration' (role 'NFP_Duration51', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::BurstPattern' (role 'MARTE_Library_BasicNFP_Types_BurstPattern50', cardinality 0..*).
+'NFP::Integer' (role 'NFP_Integer60', cardinality 0..*) is associated with 'MARTE::Library::BasicNFP::Types::BurstPattern' (role 'MARTE_Library_BasicNFP_Types_BurstPattern59', cardinality 0..*).
+'MARTE::Library::BasicNFP::Types::SporadicPattern' (role 'MARTE_Library_BasicNFP_Types_SporadicPattern74', cardinality 0..*) is associated with 'NFP::Duration' (role 'NFP_Duration75', cardinality 0..*).

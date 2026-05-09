@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'tutorial::Loan' has the following attributes: 'date' of type date.
+The class 'tutorial::Member' has the following attributes: 'name' of type str.
+The class 'tutorial::Book' has the following attributes: 'name' of type str; 'copies' of type str.
+The class 'tutorial::Library' has the following attributes: 'name' of type str.
+'tutorial::Library' (role 'tutorial_Library', cardinality 0..*) is associated with 'tutorial::Loan' (role 'tutorial_Loan', cardinality 0..*).
+'tutorial::Book' (role 'Book', cardinality 0..*) is associated with 'tutorial::Library' (role 'library', cardinality 0..*).
+'tutorial::Member' (role 'members', cardinality 0..*) is associated with 'tutorial::Library' (role 'Library6', cardinality 0..*).
+'tutorial::Loan' (role 'tutorial_Loan8', cardinality 0..*) is associated with 'tutorial::Book' (role 'tutorial_Book', cardinality 0..*).
+'tutorial::Loan' (role 'tutorial_Loan10', cardinality 0..*) is associated with 'tutorial::Member' (role 'tutorial_Member', cardinality 0..*).
+'tutorial::Library' (role 'library3', cardinality 0..*) is associated with 'tutorial::Member' (role 'Member', cardinality 0..*).
+'tutorial::Book' (role 'books', cardinality 0..*) is associated with 'tutorial::Library' (role 'Library', cardinality 0..*).

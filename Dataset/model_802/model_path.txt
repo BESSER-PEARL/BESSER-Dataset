@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/gemoc-studio/official_samples/K3FSM/language_workbench/org.eclipse.gemoc.example.k3fsm/model/k3fsm.ecore

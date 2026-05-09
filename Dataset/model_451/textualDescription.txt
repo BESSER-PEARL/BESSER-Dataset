@@ -1,0 +1,1022 @@
+The model has 303 class(es).
+The class 'Relationship' has no attributes.
+The class 'TemplateSignature' has no attributes.
+The class 'UML2::Stop' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'Pin' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'UML2::MessageEnd' has no attributes.
+The class 'UML2::WriteStructuralFeatureAction' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'UML2::TemplateableElement' has no attributes.
+The class 'Node' has no attributes.
+The class 'UML2::Namespace' has no attributes.
+The class 'UML2::Pin' has no attributes.
+The class 'UML2::AcceptCallAction' has no attributes.
+The class 'UML2::PackageableElement' has the following attributes: 'packageableElement_visibility' of type str.
+The class 'VariableAction' has no attributes.
+The class 'UML2::InvocationAction' has no attributes.
+The class 'UML2::RemoveVariableValueAction' has no attributes.
+The class 'UML2::TemplateBinding' has no attributes.
+The class 'UML2::Clause' has no attributes.
+The class 'UML2::ApplyFunctionAction' has no attributes.
+The class 'UML2::CallBehaviorAction' has no attributes.
+The class 'UML2::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'UML2::Generalization' has the following attributes: 'isSubstitutable' of type bool.
+The class 'UML2::ClearAssociationAction' has no attributes.
+The class 'UML2::CreateLinkAction' has no attributes.
+The class 'UML2::ParameterableClassifier' has no attributes.
+The class 'ActivityGroup' has no attributes.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'UML2::EventOccurrence' has no attributes.
+The class 'UML2::LinkEndData' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'UML2::InputPin' has no attributes.
+The class 'Type' has no attributes.
+The class 'Realization' has no attributes.
+The class 'UML2::DestroyLinkAction' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'UML2::ExecutableNode' has no attributes.
+The class 'UML2::BehavioredClassifier' has no attributes.
+The class 'UML2::ClassifierTemplateParameter' has the following attributes: 'allowSubstitutable' of type bool.
+The class 'UML2::DurationObservationAction' has no attributes.
+The class 'UML2::Vertex' has no attributes.
+The class 'UML2::EncapsulatedClassifier' has no attributes.
+The class 'UML2::Action' has the following attributes: 'effect' of type str.
+The class 'LinkAction' has no attributes.
+The class 'EncapsulatedClassifier' has no attributes.
+The class 'UML2::Package' has no attributes.
+The class 'UML2::ConnectableElement' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'IntervalConstraint' has no attributes.
+The class 'UML2::Manifestation' has no attributes.
+The class 'UML2::ClearVariableAction' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'UML2::ExtensionPoint' has no attributes.
+The class 'UML2::Association' has the following attributes: 'isDerived' of type bool.
+The class 'UML2::Continuation' has the following attributes: 'setting' of type bool.
+The class 'UML2::DirectedRelationship' has no attributes.
+The class 'UML2::Connector' has the following attributes: 'kind' of type str.
+The class 'UML2::Activity' has the following attributes: 'body' of type str; 'isSingleExecution' of type bool; 'language' of type str; 'isReadOnly' of type bool.
+The class 'UML2::RedefinableTemplateSignature' has no attributes.
+The class 'UML2::ReadSelfAction' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'UML2::OpaqueExpression' has the following attributes: 'language' of type str; 'bodies' of type str.
+The class 'UML2::SendSignalAction' has no attributes.
+The class 'UML2::Message' has the following attributes: 'messageKind' of type str; 'messageSort' of type str.
+The class 'UML2::AddStructuralFeatureValueAction' has the following attributes: 'isReplaceAll' of type bool.
+The class 'UML2::InitialNode' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'UML2::TimeInterval' has no attributes.
+The class 'State' has no attributes.
+The class 'UML2::DataType' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'InteractionOccurrence' has no attributes.
+The class 'UML2::ValueSpecification' has no attributes.
+The class 'UML2::Extension' has the following attributes: 'isRequired' of type bool.
+The class 'UML2::TemplateParameterSubstitution' has no attributes.
+The class 'UML2::VariableAction' has no attributes.
+The class 'UML2::Relationship' has no attributes.
+The class 'UML2::ConnectorEnd' has no attributes.
+The class 'Interval' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'UML2::Lifeline' has no attributes.
+The class 'UML2::StringExpression' has no attributes.
+The class 'UML2::ProfileApplication' has no attributes.
+The class 'UML2::Include' has no attributes.
+The class 'UML2::Abstraction' has no attributes.
+The class 'UML2::TimeExpression' has the following attributes: 'firstTime' of type bool.
+The class 'UML2::Parameter' has the following attributes: 'default' of type str; 'effect' of type str; 'direction' of type str; 'isException' of type bool; 'isStream' of type bool.
+The class 'UML2::FinalState' has no attributes.
+The class 'UML2::TimeConstraint' has no attributes.
+The class 'UML2::EnumerationLiteral' has no attributes.
+The class 'UML2::DurationInterval' has no attributes.
+The class 'CreateLinkAction' has no attributes.
+The class 'UML2::Device' has no attributes.
+The class 'UML2::Dependency' has no attributes.
+The class 'UML2::ActivityFinalNode' has no attributes.
+The class 'UML2::Deployment' has no attributes.
+The class 'UML2::CentralBufferNode' has no attributes.
+The class 'UML2::Gate' has no attributes.
+The class 'UML2::PrimitiveFunction' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'UML2::ForkNode' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'UML2::ReplyAction' has no attributes.
+The class 'UML2::PrimitiveType' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'UML2::ReadExtentAction' has no attributes.
+The class 'UML2::Realization' has no attributes.
+The class 'UML2::ReadVariableAction' has no attributes.
+The class 'DeployedArtifact' has no attributes.
+The class 'UML2::TemplateableClassifier' has no attributes.
+The class 'UML2::ClearStructuralFeatureAction' has no attributes.
+The class 'UML2::CallTrigger' has no attributes.
+The class 'UML2::ConnectionPointReference' has no attributes.
+The class 'PackageImport' has no attributes.
+The class 'UML2::Extend' has no attributes.
+The class 'UML2::WriteLinkAction' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'UML2::TestIdentityAction' has no attributes.
+The class 'Property' has no attributes.
+The class 'UML2::State' has the following attributes: 'isComposite' of type bool; 'isSubmachineState' of type bool; 'isSimple' of type bool; 'isOrthogonal' of type bool.
+The class 'UML2::ExecutionEnvironment' has no attributes.
+The class 'UML2::StructuredClassifier' has no attributes.
+The class 'CentralBufferNode' has no attributes.
+The class 'DeploymentTarget' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'Element' has no attributes.
+The class 'UML2::InformationItem' has no attributes.
+The class 'UML2::AnyTrigger' has no attributes.
+The class 'UML2::Artifact' has the following attributes: 'fileName' of type str.
+The class 'UML2::OperationTemplateParameter' has no attributes.
+The class 'UML2::DecisionNode' has no attributes.
+The class 'UML2::ReadIsClassifiedObjectAction' has the following attributes: 'isDirect' of type bool.
+The class 'Vertex' has no attributes.
+The class 'UML2::Trigger' has no attributes.
+The class 'DataType' has no attributes.
+The class 'UML2::StructuralFeatureAction' has no attributes.
+The class 'UML2::MultiplicityElement' has the following attributes: 'lower' of type int; 'upper' of type str; 'isUnique' of type bool; 'isOrdered' of type bool.
+The class 'UML2::ControlNode' has no attributes.
+The class 'UML2::InteractionOperand' has no attributes.
+The class 'StructuredClassifier' has no attributes.
+The class 'UML2::TimeTrigger' has the following attributes: 'isRelative' of type bool.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'UML2::InformationFlow' has no attributes.
+The class 'UML2::OutputPin' has no attributes.
+The class 'StructuredActivityNode' has no attributes.
+The class 'UML2::LiteralInteger' has the following attributes: 'value' of type int.
+The class 'UML2::TemplateParameter' has no attributes.
+The class 'UML2::ProtocolTransition' has no attributes.
+The class 'UML2::Substitution' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'UML2::ActivityEdge' has no attributes.
+The class 'UML2::Transition' has the following attributes: 'kind' of type str.
+The class 'UML2::Signal' has no attributes.
+The class 'UML2::InstanceSpecification' has no attributes.
+The class 'UML2::SignalTrigger' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'UML2::QualifierValue' has no attributes.
+The class 'UML2::FinalNode' has no attributes.
+The class 'UML2::GeneralizationSet' has the following attributes: 'isCovering' of type bool; 'isDisjoint' of type bool.
+The class 'Behavior' has no attributes.
+The class 'Package' has no attributes.
+The class 'UML2::RemoveStructuralFeatureValueAction' has no attributes.
+The class 'UML2::AddVariableValueAction' has the following attributes: 'isReplaceAll' of type bool.
+The class 'UML2::StructuredActivityNode' has the following attributes: 'mustIsolate' of type bool.
+The class 'UML2::DestroyObjectAction' has the following attributes: 'isDestroyOwnedObjects' of type bool; 'isDestroyLinks' of type bool.
+The class 'WriteVariableAction' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'UML2::ExceptionHandler' has no attributes.
+The class 'UML2::BehavioralFeature' has the following attributes: 'isAbstract' of type bool; 'concurrency' of type str.
+The class 'UML2::ReadLinkObjectEndQualifierAction' has no attributes.
+The class 'UML2::Classifier' has the following attributes: 'isAbstract' of type bool.
+The class 'UML2::MessageTrigger' has no attributes.
+The class 'AcceptEventAction' has no attributes.
+The class 'OpaqueExpression' has no attributes.
+The class 'UML2::TypedElement' has no attributes.
+The class 'UML2::ControlFlow' has no attributes.
+The class 'UML2::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'UML2::BroadcastSignalAction' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'UML2::DataStoreNode' has no attributes.
+The class 'UML2::RaiseExceptionAction' has no attributes.
+The class 'UML2::CombinedFragment' has the following attributes: 'interactionOperator' of type str.
+The class 'UML2::ReadLinkAction' has no attributes.
+The class 'UML2::LinkAction' has no attributes.
+The class 'UML2::ReadLinkObjectEndAction' has no attributes.
+The class 'UML2::LinkEndCreationData' has the following attributes: 'isReplaceAll' of type bool.
+The class 'UML2::WriteVariableAction' has no attributes.
+The class 'UML2::PackageMerge' has no attributes.
+The class 'UML2::StateMachine' has no attributes.
+The class 'LiteralSpecification' has no attributes.
+The class 'UML2::Usage' has no attributes.
+The class 'UML2::ReadStructuralFeatureAction' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'InvocationAction' has no attributes.
+The class 'UML2::Constraint' has no attributes.
+The class 'UML2::AcceptEventAction' has no attributes.
+The class 'UML2::Feature' has the following attributes: 'isStatic' of type bool.
+The class 'UML2::TemplateSignature' has no attributes.
+The class 'UML2::ObjectNode' has the following attributes: 'ordering' of type str.
+The class 'UML2::LiteralSpecification' has no attributes.
+The class 'UML2::LoopNode' has the following attributes: 'isTestedFirst' of type bool.
+The class 'UML2::Component' has the following attributes: 'isIndirectlyInstantiated' of type bool.
+The class 'Transition' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'UML2::Region' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'UML2::ConnectableElementTemplateParameter' has no attributes.
+The class 'UML2::SendObjectAction' has no attributes.
+The class 'UML2::Expression' has the following attributes: 'symbol' of type str.
+The class 'Action' has no attributes.
+The class 'UML2::CallAction' has the following attributes: 'isSynchronous' of type bool.
+The class 'UML2::ActivityGroup' has no attributes.
+The class 'UML2::ParameterSet' has no attributes.
+The class 'UML2::Node' has no attributes.
+The class 'UML2::AssociationClass' has no attributes.
+The class 'UML2::Variable' has no attributes.
+The class 'UML2::CommunicationPath' has no attributes.
+The class 'UML2::Behavior' has the following attributes: 'isReentrant' of type bool.
+The class 'UML2::Slot' has no attributes.
+The class 'UML2::CallOperationAction' has no attributes.
+The class 'UML2::InteractionConstraint' has no attributes.
+The class 'UML2::ExecutionOccurrence' has no attributes.
+The class 'UML2::LiteralBoolean' has the following attributes: 'value' of type bool.
+The class 'UML2::InstanceValue' has no attributes.
+The class 'TemplateParameter' has no attributes.
+The class 'UML2::ObjectFlow' has the following attributes: 'isMultireceive' of type bool; 'isMulticast' of type bool.
+The class 'UML2::ProtocolConformance' has no attributes.
+The class 'UML2::Operation' has the following attributes: 'isQuery' of type bool.
+The class 'UML2::ParameterableElement' has no attributes.
+The class 'UML2::NamedElement' has the following attributes: 'qualifiedName' of type str; 'visibility' of type str; 'name' of type str.
+The class 'UML2::InterruptibleActivityRegion' has no attributes.
+The class 'UML2::Duration' has the following attributes: 'firstTime' of type bool.
+The class 'UML2::ExpansionNode' has no attributes.
+The class 'UML2::CreateLinkObjectAction' has no attributes.
+The class 'EventOccurrence' has no attributes.
+The class 'UML2::ExpansionRegion' has the following attributes: 'mode' of type str.
+The class 'CallAction' has no attributes.
+The class 'UML2::RedefinableElement' has the following attributes: 'isLeaf' of type bool.
+The class 'Constraint' has no attributes.
+The class 'UML2::Property' has the following attributes: 'isDerivedUnion' of type bool; 'aggregation' of type str; 'default' of type str; 'isDerived' of type bool; 'isComposite' of type bool.
+The class 'UML2::Port' has the following attributes: 'isBehavior' of type bool; 'isService' of type bool.
+The class 'InteractionFragment' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'UML2::Implementation' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'UML2::JoinNode' has the following attributes: 'isCombineDuplicate' of type bool.
+The class 'UML2::ActivityParameterNode' has no attributes.
+The class 'UML2::InteractionFragment' has no attributes.
+The class 'UML2::Interface' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'UML2::Class' has the following attributes: 'isActive' of type bool.
+The class 'UML2::LiteralNull' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UML2::UseCase' has no attributes.
+The class 'UML2::GeneralOrdering' has no attributes.
+The class 'UML2::LiteralUnlimitedNatural' has the following attributes: 'value' of type str.
+The class 'UML2::DeploymentSpecification' has the following attributes: 'executionLocation' of type str; 'deploymentLocation' of type str.
+The class 'UML2::Model' has the following attributes: 'viewpoint' of type str.
+The class 'UML2::InteractionOccurrence' has no attributes.
+The class 'Class' has no attributes.
+The class 'UML2::Interval' has no attributes.
+The class 'UML2::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str.
+The class 'UML2::Stereotype' has no attributes.
+The class 'UML2::DurationConstraint' has no attributes.
+The class 'UML2::ChangeTrigger' has no attributes.
+The class 'UML2::StateInvariant' has no attributes.
+The class 'UML2::Actor' has no attributes.
+The class 'UML2::Type' has no attributes.
+The class 'UML2::DeploymentTarget' has no attributes.
+The class 'UML2::ReclassifyObjectAction' has the following attributes: 'isReplaceAll' of type bool.
+The class 'UML2::LiteralString' has the following attributes: 'value' of type str.
+The class 'UML2::CollaborationOccurrence' has no attributes.
+The class 'UML2::Comment' has the following attributes: 'body' of type str.
+The class 'UML2::ValuePin' has no attributes.
+The class 'UML2::StructuralFeature' has the following attributes: 'isReadOnly' of type bool.
+The class 'UML2::Element' has no attributes.
+The class 'UML2::ConditionalNode' has the following attributes: 'isAssured' of type bool; 'isDeterminate' of type bool.
+The class 'UML2::ProtocolStateMachine' has no attributes.
+The class 'UML2::MergeNode' has no attributes.
+The class 'MessageTrigger' has no attributes.
+The class 'UML2::Permission' has no attributes.
+The class 'UML2::FlowFinalNode' has no attributes.
+The class 'UML2::PartDecomposition' has no attributes.
+The class 'UML2::DeployedArtifact' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'UML2::Interaction' has no attributes.
+The class 'UML2::TimeObservationAction' has no attributes.
+The class 'Association' has no attributes.
+The class 'Feature' has no attributes.
+The class 'UML2::StartOwnedBehaviorAction' has no attributes.
+The class 'UML2::Collaboration' has no attributes.
+The class 'UML2::Reception' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'UML2::ActivityPartition' has the following attributes: 'isExternal' of type bool; 'isDimension' of type bool.
+The class 'UML2::CreateObjectAction' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'UML2::Enumeration' has no attributes.
+The class 'UML2::IntervalConstraint' has no attributes.
+The class 'UML2::Profile' has no attributes.
+The class 'MessageEnd' has no attributes.
+The class 'UML2::ActivityNode' has no attributes.
+The enumeration 'CallConcurrencyKind' has the following literals: 'sequential', 'concurrent', 'guarded'.
+The enumeration 'ConnectorKind' has the following literals: 'delegation', 'assembly'.
+The enumeration 'TransitionKind' has the following literals: 'internal', 'local', 'external'.
+The enumeration 'ExpansionKind' has the following literals: 'parallel', 'iterative', 'stream'.
+The enumeration 'MessageKind' has the following literals: 'lost', 'found', 'complete', 'unknown'.
+The enumeration 'ParameterEffectKind' has the following literals: 'read', 'delete', 'create', 'update'.
+The enumeration 'MessageSort' has the following literals: 'asynchCall', 'asynchSignal', 'synchSignal', 'synchCall'.
+The enumeration 'InteractionOperator' has the following literals: 'alt', 'consider', 'critical', 'ignore', 'break_', 'par', 'assert_', 'neg', 'opt', 'strict', 'loop', 'seq'.
+The enumeration 'PseudostateKind' has the following literals: 'join', 'terminate', 'exitPoint', 'initial', 'deepHistory', 'choice', 'fork', 'shallowHistory', 'entryPoint', 'junction'.
+The enumeration 'VisibilityKind' has the following literals: 'package', 'public', 'protected', 'private'.
+The enumeration 'AggregationKind' has the following literals: 'composite', 'none', 'shared'.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'FIFO', 'LIFO', 'ordered', 'unordered'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'inout', 'return_', 'out'.
+'UML2::Classifier' is a specialization of 'Namespace'.
+'UML2::Constraint' is a specialization of 'PackageableElement'.
+'UML2::ReclassifyObjectAction' is a specialization of 'Action'.
+'UML2::Type' is a specialization of 'PackageableElement'.
+'UML2::Extend' is a specialization of 'DirectedRelationship'.
+'UML2::VariableAction' is a specialization of 'Action'.
+'UML2::Interface' is a specialization of 'Classifier'.
+'UML2::Vertex' is a specialization of 'NamedElement'.
+'UML2::Feature' is a specialization of 'RedefinableElement'.
+'UML2::DurationInterval' is a specialization of 'Interval'.
+'UML2::ChangeTrigger' is a specialization of 'Trigger'.
+'UML2::Region' is a specialization of 'RedefinableElement'.
+'UML2::Manifestation' is a specialization of 'Abstraction'.
+'UML2::RaiseExceptionAction' is a specialization of 'Action'.
+'UML2::ActivityEdge' is a specialization of 'RedefinableElement'.
+'UML2::CombinedFragment' is a specialization of 'InteractionFragment'.
+'UML2::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'UML2::GeneralOrdering' is a specialization of 'NamedElement'.
+'UML2::AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+'UML2::StructuredActivityNode' is a specialization of 'Namespace'.
+'UML2::State' is a specialization of 'RedefinableElement'.
+'UML2::Expression' is a specialization of 'OpaqueExpression'.
+'UML2::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'UML2::Pin' is a specialization of 'ObjectNode'.
+'UML2::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'UML2::TypedElement' is a specialization of 'NamedElement'.
+'UML2::FlowFinalNode' is a specialization of 'FinalNode'.
+'UML2::ValueSpecification' is a specialization of 'ParameterableElement'.
+'UML2::Port' is a specialization of 'Property'.
+'UML2::StringExpression' is a specialization of 'TemplateableElement'.
+'UML2::ReadLinkObjectEndAction' is a specialization of 'Action'.
+'UML2::Lifeline' is a specialization of 'NamedElement'.
+'UML2::AcceptCallAction' is a specialization of 'AcceptEventAction'.
+'UML2::Reception' is a specialization of 'BehavioralFeature'.
+'UML2::CallOperationAction' is a specialization of 'CallAction'.
+'UML2::Class' is a specialization of 'EncapsulatedClassifier'.
+'UML2::JoinNode' is a specialization of 'ControlNode'.
+'UML2::ReadLinkAction' is a specialization of 'LinkAction'.
+'UML2::NamedElement' is a specialization of 'TemplateableElement'.
+'UML2::Interval' is a specialization of 'ValueSpecification'.
+'UML2::ConnectableElement' is a specialization of 'NamedElement'.
+'UML2::ApplyFunctionAction' is a specialization of 'Action'.
+'UML2::Generalization' is a specialization of 'DirectedRelationship'.
+'UML2::Node' is a specialization of 'DeploymentTarget'.
+'UML2::Comment' is a specialization of 'TemplateableElement'.
+'UML2::Artifact' is a specialization of 'DeployedArtifact'.
+'UML2::FinalState' is a specialization of 'State'.
+'UML2::Operation' is a specialization of 'TypedElement'.
+'UML2::InteractionOperand' is a specialization of 'InteractionFragment'.
+'UML2::Pin' is a specialization of 'MultiplicityElement'.
+'UML2::Node' is a specialization of 'Class'.
+'UML2::StartOwnedBehaviorAction' is a specialization of 'Action'.
+'UML2::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'UML2::Behavior' is a specialization of 'Class'.
+'UML2::TemplateParameter' is a specialization of 'Element'.
+'UML2::CommunicationPath' is a specialization of 'Association'.
+'UML2::Model' is a specialization of 'Package'.
+'UML2::Realization' is a specialization of 'Abstraction'.
+'UML2::ConnectionPointReference' is a specialization of 'Vertex'.
+'UML2::OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+'UML2::DurationConstraint' is a specialization of 'IntervalConstraint'.
+'UML2::ObjectNode' is a specialization of 'TypedElement'.
+'UML2::Deployment' is a specialization of 'Dependency'.
+'UML2::ControlNode' is a specialization of 'ActivityNode'.
+'UML2::TestIdentityAction' is a specialization of 'Action'.
+'UML2::AssociationClass' is a specialization of 'Class'.
+'UML2::Component' is a specialization of 'Class'.
+'UML2::ActivityFinalNode' is a specialization of 'FinalNode'.
+'UML2::ProtocolTransition' is a specialization of 'Transition'.
+'UML2::Abstraction' is a specialization of 'Dependency'.
+'UML2::Message' is a specialization of 'NamedElement'.
+'UML2::ReadVariableAction' is a specialization of 'VariableAction'.
+'UML2::InputPin' is a specialization of 'Pin'.
+'UML2::TemplateParameterSubstitution' is a specialization of 'Element'.
+'UML2::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'UML2::EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+'UML2::Parameter' is a specialization of 'TypedElement'.
+'UML2::InformationFlow' is a specialization of 'DirectedRelationship'.
+'UML2::StateInvariant' is a specialization of 'InteractionFragment'.
+'UML2::DirectedRelationship' is a specialization of 'Relationship'.
+'UML2::ActivityPartition' is a specialization of 'NamedElement'.
+'UML2::Association' is a specialization of 'Relationship'.
+'UML2::Parameter' is a specialization of 'ConnectableElement'.
+'UML2::BehavioralFeature' is a specialization of 'Feature'.
+'UML2::Continuation' is a specialization of 'InteractionFragment'.
+'UML2::MultiplicityElement' is a specialization of 'Element'.
+'UML2::ProtocolConformance' is a specialization of 'DirectedRelationship'.
+'UML2::Artifact' is a specialization of 'Classifier'.
+'UML2::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'UML2::TimeTrigger' is a specialization of 'Trigger'.
+'UML2::BroadcastSignalAction' is a specialization of 'InvocationAction'.
+'UML2::ValueSpecification' is a specialization of 'TypedElement'.
+'UML2::PackageableElement' is a specialization of 'ParameterableElement'.
+'UML2::Classifier' is a specialization of 'RedefinableElement'.
+'UML2::ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+'UML2::DataType' is a specialization of 'Classifier'.
+'UML2::Include' is a specialization of 'DirectedRelationship'.
+'UML2::QualifierValue' is a specialization of 'Element'.
+'UML2::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'UML2::TimeObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+'UML2::StructuredActivityNode' is a specialization of 'ActivityGroup'.
+'UML2::MessageEnd' is a specialization of 'NamedElement'.
+'UML2::ActivityNode' is a specialization of 'RedefinableElement'.
+'UML2::ClearAssociationAction' is a specialization of 'Action'.
+'UML2::State' is a specialization of 'Vertex'.
+'UML2::ExtensionPoint' is a specialization of 'RedefinableElement'.
+'UML2::InteractionOperand' is a specialization of 'Namespace'.
+'UML2::ReplyAction' is a specialization of 'Action'.
+'UML2::StructuralFeatureAction' is a specialization of 'Action'.
+'UML2::Namespace' is a specialization of 'NamedElement'.
+'UML2::Interaction' is a specialization of 'Behavior'.
+'UML2::Property' is a specialization of 'ConnectableElement'.
+'UML2::CallBehaviorAction' is a specialization of 'CallAction'.
+'UML2::DataStoreNode' is a specialization of 'CentralBufferNode'.
+'UML2::TemplateableClassifier' is a specialization of 'Classifier'.
+'UML2::ObjectNode' is a specialization of 'ActivityNode'.
+'UML2::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'UML2::TimeExpression' is a specialization of 'ValueSpecification'.
+'UML2::RedefinableTemplateSignature' is a specialization of 'RedefinableElement'.
+'UML2::DeployedArtifact' is a specialization of 'NamedElement'.
+'UML2::Collaboration' is a specialization of 'StructuredClassifier'.
+'UML2::Relationship' is a specialization of 'Element'.
+'UML2::StructuralFeature' is a specialization of 'TypedElement'.
+'UML2::Action' is a specialization of 'ExecutableNode'.
+'UML2::ReadSelfAction' is a specialization of 'Action'.
+'UML2::BehavioredClassifier' is a specialization of 'Classifier'.
+'UML2::InstanceSpecification' is a specialization of 'PackageableElement'.
+'UML2::WriteLinkAction' is a specialization of 'LinkAction'.
+'UML2::Extension' is a specialization of 'Association'.
+'UML2::Parameter' is a specialization of 'MultiplicityElement'.
+'UML2::Operation' is a specialization of 'ParameterableElement'.
+'UML2::DestroyObjectAction' is a specialization of 'Action'.
+'UML2::Pseudostate' is a specialization of 'Vertex'.
+'UML2::Variable' is a specialization of 'ConnectableElement'.
+'UML2::TemplateableElement' is a specialization of 'Element'.
+'UML2::Profile' is a specialization of 'Package'.
+'UML2::Signal' is a specialization of 'Classifier'.
+'UML2::Class' is a specialization of 'BehavioredClassifier'.
+'UML2::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'UML2::ParameterSet' is a specialization of 'NamedElement'.
+'UML2::Implementation' is a specialization of 'Realization'.
+'UML2::InteractionFragment' is a specialization of 'NamedElement'.
+'UML2::TemplateBinding' is a specialization of 'DirectedRelationship'.
+'UML2::RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+'UML2::RedefinableElement' is a specialization of 'NamedElement'.
+'UML2::SendObjectAction' is a specialization of 'InvocationAction'.
+'UML2::TimeInterval' is a specialization of 'Interval'.
+'UML2::Activity' is a specialization of 'Behavior'.
+'UML2::Property' is a specialization of 'StructuralFeature'.
+'UML2::ObjectFlow' is a specialization of 'ActivityEdge'.
+'UML2::Region' is a specialization of 'Namespace'.
+'UML2::PrimitiveFunction' is a specialization of 'PackageableElement'.
+'UML2::StructuredActivityNode' is a specialization of 'Action'.
+'UML2::Actor' is a specialization of 'Classifier'.
+'UML2::InformationItem' is a specialization of 'Classifier'.
+'UML2::EventOccurrence' is a specialization of 'InteractionFragment'.
+'UML2::DurationObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+'UML2::GeneralizationSet' is a specialization of 'PackageableElement'.
+'UML2::PackageMerge' is a specialization of 'DirectedRelationship'.
+'UML2::Dependency' is a specialization of 'PackageableElement'.
+'UML2::ElementImport' is a specialization of 'DirectedRelationship'.
+'UML2::InteractionConstraint' is a specialization of 'Constraint'.
+'UML2::SignalTrigger' is a specialization of 'MessageTrigger'.
+'UML2::RedefinableTemplateSignature' is a specialization of 'TemplateSignature'.
+'UML2::Stop' is a specialization of 'EventOccurrence'.
+'UML2::DeploymentTarget' is a specialization of 'NamedElement'.
+'UML2::PackageImport' is a specialization of 'DirectedRelationship'.
+'UML2::Extend' is a specialization of 'NamedElement'.
+'UML2::CreateObjectAction' is a specialization of 'Action'.
+'UML2::Gate' is a specialization of 'MessageEnd'.
+'UML2::InstanceSpecification' is a specialization of 'DeploymentTarget'.
+'UML2::AssociationClass' is a specialization of 'Association'.
+'UML2::InstanceSpecification' is a specialization of 'DeployedArtifact'.
+'UML2::DecisionNode' is a specialization of 'ControlNode'.
+'UML2::Variable' is a specialization of 'TypedElement'.
+'UML2::ExpansionNode' is a specialization of 'ObjectNode'.
+'UML2::Operation' is a specialization of 'MultiplicityElement'.
+'UML2::DeploymentSpecification' is a specialization of 'Artifact'.
+'UML2::Package' is a specialization of 'PackageableElement'.
+'UML2::Enumeration' is a specialization of 'DataType'.
+'UML2::ActivityPartition' is a specialization of 'ActivityGroup'.
+'UML2::ConnectableElementTemplateParameter' is a specialization of 'TemplateParameter'.
+'UML2::Package' is a specialization of 'Namespace'.
+'UML2::ExecutableNode' is a specialization of 'ActivityNode'.
+'UML2::ParameterableClassifier' is a specialization of 'Classifier'.
+'UML2::Operation' is a specialization of 'BehavioralFeature'.
+'UML2::LiteralNull' is a specialization of 'LiteralSpecification'.
+'UML2::Permission' is a specialization of 'Dependency'.
+'UML2::LinkEndData' is a specialization of 'Element'.
+'UML2::UseCase' is a specialization of 'BehavioredClassifier'.
+'UML2::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'UML2::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'UML2::ConnectableElement' is a specialization of 'ParameterableElement'.
+'UML2::AcceptEventAction' is a specialization of 'Action'.
+'UML2::PackageableElement' is a specialization of 'NamedElement'.
+'UML2::CallAction' is a specialization of 'InvocationAction'.
+'UML2::Stereotype' is a specialization of 'Class'.
+'UML2::FinalNode' is a specialization of 'ControlNode'.
+'UML2::Association' is a specialization of 'Classifier'.
+'UML2::State' is a specialization of 'Namespace'.
+'UML2::ReadExtentAction' is a specialization of 'Action'.
+'UML2::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'UML2::Substitution' is a specialization of 'Realization'.
+'UML2::CentralBufferNode' is a specialization of 'ObjectNode'.
+'UML2::Include' is a specialization of 'NamedElement'.
+'UML2::ExceptionHandler' is a specialization of 'Element'.
+'UML2::Dependency' is a specialization of 'DirectedRelationship'.
+'UML2::Clause' is a specialization of 'Element'.
+'UML2::InitialNode' is a specialization of 'ControlNode'.
+'UML2::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'UML2::ParameterableElement' is a specialization of 'Element'.
+'UML2::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'UML2::Duration' is a specialization of 'ValueSpecification'.
+'UML2::MergeNode' is a specialization of 'ControlNode'.
+'UML2::ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+'UML2::Trigger' is a specialization of 'NamedElement'.
+'UML2::TimeConstraint' is a specialization of 'IntervalConstraint'.
+'UML2::Classifier' is a specialization of 'Type'.
+'UML2::ActivityGroup' is a specialization of 'Element'.
+'UML2::Usage' is a specialization of 'Dependency'.
+'UML2::OutputPin' is a specialization of 'Pin'.
+'UML2::SendSignalAction' is a specialization of 'InvocationAction'.
+'UML2::PartDecomposition' is a specialization of 'InteractionOccurrence'.
+'UML2::TemplateSignature' is a specialization of 'Element'.
+'UML2::IntervalConstraint' is a specialization of 'Constraint'.
+'UML2::AnyTrigger' is a specialization of 'MessageTrigger'.
+'UML2::MessageTrigger' is a specialization of 'Trigger'.
+'UML2::Slot' is a specialization of 'Element'.
+'UML2::CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+'UML2::ConnectorEnd' is a specialization of 'MultiplicityElement'.
+'UML2::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'UML2::BehavioralFeature' is a specialization of 'Namespace'.
+'UML2::Interaction' is a specialization of 'InteractionFragment'.
+'UML2::StateMachine' is a specialization of 'Behavior'.
+'UML2::Device' is a specialization of 'Node'.
+'UML2::ProfileApplication' is a specialization of 'PackageImport'.
+'UML2::Collaboration' is a specialization of 'BehavioredClassifier'.
+'UML2::InformationFlow' is a specialization of 'PackageableElement'.
+'UML2::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'UML2::StructuralFeature' is a specialization of 'Feature'.
+'UML2::StructuredClassifier' is a specialization of 'Classifier'.
+'UML2::ClearVariableAction' is a specialization of 'VariableAction'.
+'UML2::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'UML2::EventOccurrence' is a specialization of 'MessageEnd'.
+'UML2::LinkAction' is a specialization of 'Action'.
+'UML2::CallTrigger' is a specialization of 'MessageTrigger'.
+'UML2::ExecutionOccurrence' is a specialization of 'InteractionFragment'.
+'UML2::Transition' is a specialization of 'RedefinableElement'.
+'UML2::WriteVariableAction' is a specialization of 'VariableAction'.
+'UML2::Variable' is a specialization of 'MultiplicityElement'.
+'UML2::ClassifierTemplateParameter' is a specialization of 'TemplateParameter'.
+'UML2::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'UML2::ControlFlow' is a specialization of 'ActivityEdge'.
+'UML2::LiteralString' is a specialization of 'LiteralSpecification'.
+'UML2::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'UML2::CollaborationOccurrence' is a specialization of 'NamedElement'.
+'UML2::InteractionOccurrence' is a specialization of 'InteractionFragment'.
+'UML2::Property' is a specialization of 'DeploymentTarget'.
+'UML2::Connector' is a specialization of 'Feature'.
+'UML2::ExecutionEnvironment' is a specialization of 'Node'.
+'UML2::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'UML2::LoopNode' is a specialization of 'StructuredActivityNode'.
+'UML2::ForkNode' is a specialization of 'ControlNode'.
+'UML2::ExtensionEnd' is a specialization of 'Property'.
+'UML2::ValuePin' is a specialization of 'InputPin'.
+'UML2::InvocationAction' is a specialization of 'Action'.
+'UML2::InstanceValue' is a specialization of 'ValueSpecification'.
+'UML2::PrimitiveType' is a specialization of 'DataType'.
+'UML2::InputPin' (role 'UML2_InputPin914', cardinality 0..*) is associated with 'UML2::QualifierValue' (role 'UML2_QualifierValue913', cardinality 0..*).
+'UML2::Signal' (role 'UML2_Signal819', cardinality 0..*) is associated with 'UML2::SendSignalAction' (role 'UML2_SendSignalAction818', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property292', cardinality 0..*) is associated with 'UML2::StructuredClassifier' (role 'UML2_StructuredClassifier', cardinality 0..*).
+'UML2::TemplateableElement' (role 'boundElement', cardinality 0..*) is associated with 'UML2::TemplateBinding' (role 'TemplateBinding', cardinality 0..*).
+'UML2::GeneralizationSet' (role 'generalizationSet', cardinality 0..*) is associated with 'UML2::Generalization' (role 'Generalization265', cardinality 0..*).
+'UML2::PrimitiveFunction' (role 'UML2_PrimitiveFunction', cardinality 0..*) is associated with 'UML2::ApplyFunctionAction' (role 'UML2_ApplyFunctionAction', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin826', cardinality 0..*) is associated with 'UML2::SendObjectAction' (role 'UML2_SendObjectAction825', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface446', cardinality 0..*) is associated with 'UML2::Port' (role 'UML2_Port445', cardinality 0..*).
+'UML2::Lifeline' (role 'Lifeline', cardinality 0..*) is associated with 'UML2::Interaction' (role 'interaction', cardinality 0..*).
+'UML2::ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'UML2::Activity' (role 'activity', cardinality 0..*).
+'UML2::ReadLinkAction' (role 'UML2_ReadLinkAction', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin786', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property63', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification64', cardinality 0..*).
+'UML2::Clause' (role 'successorClause', cardinality 0..*) is associated with 'UML2::Clause' (role 'Clause', cardinality 0..*).
+'UML2::Property' (role 'memberEnd', cardinality 0..*) is associated with 'UML2::Association' (role 'Association61', cardinality 0..*).
+'UML2::StructuredActivityNode' (role 'UML2_StructuredActivityNode', cardinality 0..*) is associated with 'UML2::Activity' (role 'UML2_Activity249', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin809', cardinality 0..*) is associated with 'UML2::CallAction' (role 'UML2_CallAction', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property278', cardinality 0..*) is associated with 'UML2::ConnectorEnd' (role 'UML2_ConnectorEnd277', cardinality 0..*).
+'UML2::Lifeline' (role 'covered', cardinality 0..*) is associated with 'UML2::InteractionFragment' (role 'InteractionFragment532', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode515', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin516', cardinality 0..*).
+'UML2::AddStructuralFeatureValueAction' (role 'UML2_AddStructuralFeatureValueAction', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin775', cardinality 0..*).
+'UML2::Type' (role 'UML2_Type158', cardinality 0..*) is associated with 'UML2::BehavioralFeature' (role 'UML2_BehavioralFeature157', cardinality 0..*).
+'UML2::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*) is associated with 'UML2::Classifier' (role 'Classifier263', cardinality 0..*).
+'UML2::Dependency' (role 'UML2_Dependency', cardinality 0..*) is associated with 'UML2::NamedElement' (role 'UML2_NamedElement252', cardinality 0..*).
+'UML2::StringExpression' (role 'subExpression', cardinality 0..*) is associated with 'UML2::StringExpression' (role 'StringExpression602', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin944', cardinality 0..*) is associated with 'UML2::ReplyAction' (role 'UML2_ReplyAction943', cardinality 0..*).
+'UML2::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'UML2::Slot' (role 'slot', cardinality 0..*).
+'UML2::Connector' (role 'UML2_Connector546', cardinality 0..*) is associated with 'UML2::Message' (role 'UML2_Message', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier257', cardinality 0..*) is associated with 'UML2::Realization' (role 'UML2_Realization', cardinality 0..*).
+'UML2::StructuredClassifier' (role 'UML2_StructuredClassifier297', cardinality 0..*) is associated with 'UML2::ConnectableElement' (role 'UML2_ConnectableElement', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier133', cardinality 0..*) is associated with 'UML2::CollaborationOccurrence' (role 'UML2_CollaborationOccurrence', cardinality 0..*).
+'UML2::EventOccurrence' (role 'EventOccurrence557', cardinality 0..*) is associated with 'UML2::GeneralOrdering' (role 'toBefore', cardinality 0..*).
+'UML2::Operation' (role 'UML2_Operation828', cardinality 0..*) is associated with 'UML2::CallOperationAction' (role 'UML2_CallOperationAction', cardinality 0..*).
+'UML2::Type' (role 'UML2_Type', cardinality 0..*) is associated with 'UML2::TypedElement' (role 'UML2_TypedElement', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin949', cardinality 0..*) is associated with 'UML2::RaiseExceptionAction' (role 'UML2_RaiseExceptionAction', cardinality 0..*).
+'UML2::ActivityNode' (role 'containedNode', cardinality 0..*) is associated with 'UML2::StructuredActivityNode' (role 'StructuredActivityNode337', cardinality 0..*).
+'UML2::ActivityPartition' (role 'inPartition', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'ActivityEdge626', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter89', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification90', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin773', cardinality 0..*) is associated with 'UML2::WriteStructuralFeatureAction' (role 'UML2_WriteStructuralFeatureAction', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier162', cardinality 0..*) is associated with 'UML2::InstanceSpecification' (role 'UML2_InstanceSpecification', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin811', cardinality 0..*) is associated with 'UML2::InvocationAction' (role 'UML2_InvocationAction', cardinality 0..*).
+'UML2::Generalization' (role 'generalization180', cardinality 0..*) is associated with 'UML2::GeneralizationSet' (role 'GeneralizationSet181', cardinality 0..*).
+'UML2::Abstraction' (role 'UML2_Abstraction', cardinality 0..*) is associated with 'UML2::OpaqueExpression' (role 'UML2_OpaqueExpression254', cardinality 0..*).
+'UML2::Implementation' (role 'Implementation', cardinality 0..*) is associated with 'UML2::BehavioredClassifier' (role 'implementingClassifier', cardinality 0..*).
+'UML2::SendObjectAction' (role 'UML2_SendObjectAction', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin823', cardinality 0..*).
+'UML2::ConnectableElement' (role 'UML2_ConnectableElement534', cardinality 0..*) is associated with 'UML2::Lifeline' (role 'UML2_Lifeline', cardinality 0..*).
+'UML2::Association' (role 'UML2_Association', cardinality 0..*) is associated with 'UML2::Type' (role 'UML2_Type193', cardinality 0..*).
+'UML2::BehavioredClassifier' (role 'stateMachine_redefinitionContext', cardinality 0..*) is associated with 'UML2::StateMachine' (role 'StateMachine', cardinality 0..*).
+'UML2::ActivityNode' (role 'UML2_ActivityNode485', cardinality 0..*) is associated with 'UML2::Clause' (role 'UML2_Clause484', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification844', cardinality 0..*) is associated with 'UML2::Interval' (role 'UML2_Interval843', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin807', cardinality 0..*) is associated with 'UML2::ApplyFunctionAction' (role 'UML2_ApplyFunctionAction806', cardinality 0..*).
+'UML2::BroadcastSignalAction' (role 'UML2_BroadcastSignalAction', cardinality 0..*) is associated with 'UML2::Signal' (role 'UML2_Signal821', cardinality 0..*).
+'UML2::ActivityGroup' (role 'group', cardinality 0..*) is associated with 'UML2::Activity' (role 'Activity324', cardinality 0..*).
+'UML2::LinkEndData' (role 'UML2_LinkEndData', cardinality 0..*) is associated with 'UML2::LinkAction' (role 'UML2_LinkAction', cardinality 0..*).
+'UML2::Trigger' (role 'UML2_Trigger', cardinality 0..*) is associated with 'UML2::BehavioredClassifier' (role 'UML2_BehavioredClassifier241', cardinality 0..*).
+'UML2::State' (role 'UML2_State', cardinality 0..*) is associated with 'UML2::ObjectNode' (role 'UML2_ObjectNode360', cardinality 0..*).
+'UML2::Reception' (role 'UML2_Reception', cardinality 0..*) is associated with 'UML2::Class' (role 'UML2_Class45', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode503', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin504', cardinality 0..*).
+'UML2::StructuredClassifier' (role 'UML2_StructuredClassifier299', cardinality 0..*) is associated with 'UML2::Connector' (role 'UML2_Connector300', cardinality 0..*).
+'UML2::Clause' (role 'UML2_Clause', cardinality 0..*) is associated with 'UML2::ConditionalNode' (role 'UML2_ConditionalNode', cardinality 0..*).
+'UML2::ClearAssociationAction' (role 'UML2_ClearAssociationAction', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin790', cardinality 0..*).
+'UML2::GeneralOrdering' (role 'toAfter', cardinality 0..*) is associated with 'UML2::EventOccurrence' (role 'EventOccurrence', cardinality 0..*).
+'UML2::Association' (role 'association', cardinality 0..*) is associated with 'UML2::Property' (role 'Property195', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier174', cardinality 0..*) is associated with 'UML2::RedefinableElement' (role 'UML2_RedefinableElement', cardinality 0..*).
+'UML2::ActivityPartition' (role 'ActivityPartition', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'containedEdge315', cardinality 0..*).
+'UML2::Association' (role 'UML2_Association793', cardinality 0..*) is associated with 'UML2::ClearAssociationAction' (role 'UML2_ClearAssociationAction792', cardinality 0..*).
+'UML2::LinkEndData' (role 'UML2_LinkEndData778', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin779', cardinality 0..*).
+'UML2::ReplyAction' (role 'UML2_ReplyAction946', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin947', cardinality 0..*).
+'UML2::ActivityEdge' (role 'ActivityEdge475', cardinality 0..*) is associated with 'UML2::StructuredActivityNode' (role 'inStructuredNode474', cardinality 0..*).
+'UML2::Action' (role 'UML2_Action', cardinality 0..*) is associated with 'UML2::Activity' (role 'UML2_Activity', cardinality 0..*).
+'UML2::ObjectNode' (role 'UML2_ObjectNode362', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior363', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior216', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior214', cardinality 0..*).
+'UML2::AcceptCallAction' (role 'UML2_AcceptCallAction', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin939', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property51', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property49', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin800', cardinality 0..*) is associated with 'UML2::AddVariableValueAction' (role 'UML2_AddVariableValueAction', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier267', cardinality 0..*) is associated with 'UML2::InformationItem' (role 'UML2_InformationItem', cardinality 0..*).
+'UML2::Message' (role 'message', cardinality 0..*) is associated with 'UML2::Interaction' (role 'Interaction548', cardinality 0..*).
+'UML2::LinkEndData' (role 'UML2_LinkEndData784', cardinality 0..*) is associated with 'UML2::QualifierValue' (role 'UML2_QualifierValue', cardinality 0..*).
+'UML2::ActivityGroup' (role 'UML2_ActivityGroup320', cardinality 0..*) is associated with 'UML2::ActivityGroup' (role 'UML2_ActivityGroup322', cardinality 0..*).
+'UML2::ApplyFunctionAction' (role 'UML2_ApplyFunctionAction803', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin804', cardinality 0..*).
+'UML2::MessageEnd' (role 'MessageEnd544', cardinality 0..*) is associated with 'UML2::Message' (role 'sendMessage', cardinality 0..*).
+'UML2::Interaction' (role 'UML2_Interaction', cardinality 0..*) is associated with 'UML2::Gate' (role 'UML2_Gate', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier135', cardinality 0..*) is associated with 'UML2::CollaborationOccurrence' (role 'UML2_CollaborationOccurrence136', cardinality 0..*).
+'UML2::Slot' (role 'Slot', cardinality 0..*) is associated with 'UML2::InstanceSpecification' (role 'owningInstance', cardinality 0..*).
+'UML2::ActivityEdge' (role 'UML2_ActivityEdge308', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification309', cardinality 0..*).
+'UML2::Namespace' (role 'Namespace189', cardinality 0..*) is associated with 'UML2::PackageImport' (role 'packageImport', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin831', cardinality 0..*) is associated with 'UML2::CallOperationAction' (role 'UML2_CallOperationAction830', cardinality 0..*).
+'UML2::UseCase' (role 'UseCase', cardinality 0..*) is associated with 'UML2::Classifier' (role 'subject', cardinality 0..*).
+'UML2::Operation' (role 'UML2_Operation', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint', cardinality 0..*).
+'UML2::Interaction' (role 'enclosingInteraction', cardinality 0..*) is associated with 'UML2::InteractionFragment' (role 'InteractionFragment', cardinality 0..*).
+'UML2::Class' (role 'UML2_Class43', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier', cardinality 0..*).
+'UML2::ConnectableElement' (role 'UML2_ConnectableElement438', cardinality 0..*) is associated with 'UML2::Collaboration' (role 'UML2_Collaboration437', cardinality 0..*).
+'UML2::ActivityNode' (role 'node', cardinality 0..*) is associated with 'UML2::Activity' (role 'Activity332', cardinality 0..*).
+'UML2::ActivityNode' (role 'ActivityNode305', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'incoming', cardinality 0..*).
+'UML2::ConnectorEnd' (role 'UML2_ConnectorEnd', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property274', cardinality 0..*).
+'UML2::InvocationAction' (role 'UML2_InvocationAction813', cardinality 0..*) is associated with 'UML2::Port' (role 'UML2_Port814', cardinality 0..*).
+'UML2::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'UML2::Operation' (role 'operation', cardinality 0..*).
+'UML2::Element' (role 'Element4', cardinality 0..*) is associated with 'UML2::Element' (role 'ownedElement', cardinality 0..*).
+'UML2::Generalization' (role 'generalization', cardinality 0..*) is associated with 'UML2::Classifier' (role 'Classifier176', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property53', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property55', cardinality 0..*).
+'UML2::Activity' (role 'Activity', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'edge', cardinality 0..*).
+'UML2::EncapsulatedClassifier' (role 'UML2_EncapsulatedClassifier', cardinality 0..*) is associated with 'UML2::Port' (role 'UML2_Port451', cardinality 0..*).
+'UML2::Class' (role 'UML2_Class', cardinality 0..*) is associated with 'UML2::Class' (role 'UML2_Class39', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint139', cardinality 0..*) is associated with 'UML2::Namespace' (role 'UML2_Namespace140', cardinality 0..*).
+'UML2::VariableAction' (role 'UML2_VariableAction', cardinality 0..*) is associated with 'UML2::Variable' (role 'UML2_Variable', cardinality 0..*).
+'UML2::ConditionalNode' (role 'UML2_ConditionalNode478', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin479', cardinality 0..*).
+'UML2::ActivityPartition' (role 'ActivityPartition632', cardinality 0..*) is associated with 'UML2::ActivityPartition' (role 'superPartition', cardinality 0..*).
+'UML2::CallTrigger' (role 'UML2_CallTrigger941', cardinality 0..*) is associated with 'UML2::ReplyAction' (role 'UML2_ReplyAction', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin924', cardinality 0..*) is associated with 'UML2::ReadLinkObjectEndQualifierAction' (role 'UML2_ReadLinkObjectEndQualifierAction', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier178', cardinality 0..*) is associated with 'UML2::Generalization' (role 'UML2_Generalization', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property58', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property56', cardinality 0..*).
+'UML2::ActivityNode' (role 'ActivityNode303', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'UML2::BehavioredClassifier' (role 'context', cardinality 0..*) is associated with 'UML2::Behavior' (role 'Behavior236', cardinality 0..*).
+'UML2::InteractionFragment' (role 'fragment530', cardinality 0..*) is associated with 'UML2::InteractionOperand' (role 'InteractionOperand', cardinality 0..*).
+'UML2::StructuredClassifier' (role 'UML2_StructuredClassifier294', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property295', cardinality 0..*).
+'UML2::Class' (role 'metaclass', cardinality 0..*) is associated with 'UML2::Extension' (role 'Extension', cardinality 0..*).
+'UML2::AcceptEventAction' (role 'UML2_AcceptEventAction936', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin937', cardinality 0..*).
+'UML2::ChangeTrigger' (role 'UML2_ChangeTrigger', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification455', cardinality 0..*).
+'UML2::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'UML2::DataType' (role 'DataType', cardinality 0..*).
+'UML2::ParameterSet' (role 'ParameterSet', cardinality 0..*) is associated with 'UML2::Parameter' (role 'parameter', cardinality 0..*).
+'UML2::Property' (role 'associationEnd', cardinality 0..*) is associated with 'UML2::Property' (role 'Property', cardinality 0..*).
+'UML2::Message' (role 'Message', cardinality 0..*) is associated with 'UML2::Interaction' (role 'interaction522', cardinality 0..*).
+'UML2::Element' (role 'owner', cardinality 0..*) is associated with 'UML2::Element' (role 'Element', cardinality 0..*).
+'UML2::ExpansionRegion' (role 'regionAsOutput', cardinality 0..*) is associated with 'UML2::ExpansionNode' (role 'ExpansionNode', cardinality 0..*).
+'UML2::InformationFlow' (role 'UML2_InformationFlow', cardinality 0..*) is associated with 'UML2::Relationship' (role 'UML2_Relationship269', cardinality 0..*).
+'UML2::Activity' (role 'activity246', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier895', cardinality 0..*) is associated with 'UML2::ReclassifyObjectAction' (role 'UML2_ReclassifyObjectAction894', cardinality 0..*).
+'UML2::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'UML2::Package' (role 'Package94', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin764', cardinality 0..*) is associated with 'UML2::ReadSelfAction' (role 'UML2_ReadSelfAction', cardinality 0..*).
+'UML2::ProtocolStateMachine' (role 'UML2_ProtocolStateMachine449', cardinality 0..*) is associated with 'UML2::Port' (role 'UML2_Port448', cardinality 0..*).
+'UML2::ActivityEdge' (role 'interruptingEdge', cardinality 0..*) is associated with 'UML2::InterruptibleActivityRegion' (role 'InterruptibleActivityRegion', cardinality 0..*).
+'UML2::Package' (role 'Package', cardinality 0..*) is associated with 'UML2::Type' (role 'ownedType', cardinality 0..*).
+'UML2::ReadLinkObjectEndAction' (role 'UML2_ReadLinkObjectEndAction', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin916', cardinality 0..*).
+'UML2::Connector' (role 'UML2_Connector284', cardinality 0..*) is associated with 'UML2::Connector' (role 'UML2_Connector282', cardinality 0..*).
+'UML2::StructuredActivityNode' (role 'StructuredActivityNode', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'containedEdge', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode506', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'UML2_ActivityNode507', cardinality 0..*).
+'UML2::StructuralFeatureAction' (role 'UML2_StructuralFeatureAction768', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin769', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior238', cardinality 0..*) is associated with 'UML2::BehavioredClassifier' (role 'UML2_BehavioredClassifier', cardinality 0..*).
+'UML2::Clause' (role 'predecessorClause', cardinality 0..*) is associated with 'UML2::Clause' (role 'Clause490', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin510', cardinality 0..*) is associated with 'UML2::LoopNode' (role 'UML2_LoopNode509', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin798', cardinality 0..*) is associated with 'UML2::WriteVariableAction' (role 'UML2_WriteVariableAction', cardinality 0..*).
+'UML2::ActivityNode' (role 'target', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'ActivityEdge328', cardinality 0..*).
+'UML2::Connector' (role 'UML2_Connector289', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior290', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode518', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin519', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification554', cardinality 0..*) is associated with 'UML2::Message' (role 'UML2_Message553', cardinality 0..*).
+'UML2::Behavior' (role 'Behavior', cardinality 0..*) is associated with 'UML2::BehavioralFeature' (role 'specification', cardinality 0..*).
+'UML2::GeneralOrdering' (role 'UML2_GeneralOrdering', cardinality 0..*) is associated with 'UML2::InteractionFragment' (role 'UML2_InteractionFragment', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode500', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'UML2_ActivityNode501', cardinality 0..*).
+'UML2::ActivityNode' (role 'UML2_ActivityNode335', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'UML2_ActivityNode333', cardinality 0..*).
+'UML2::ActivityPartition' (role 'ActivityPartition340', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'containedNode339', cardinality 0..*).
+'UML2::Message' (role 'Message559', cardinality 0..*) is associated with 'UML2::MessageEnd' (role 'receiveEvent', cardinality 0..*).
+'UML2::LinkEndCreationData' (role 'UML2_LinkEndCreationData', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin788', cardinality 0..*).
+'UML2::Class' (role 'Class212', cardinality 0..*) is associated with 'UML2::Extension' (role 'extension', cardinality 0..*).
+'UML2::ActivityNode' (role 'source', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'ActivityEdge326', cardinality 0..*).
+'UML2::LinkEndData' (role 'UML2_LinkEndData781', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property782', cardinality 0..*).
+'UML2::Property' (role 'Property191', cardinality 0..*) is associated with 'UML2::Association' (role 'owningAssociation', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin493', cardinality 0..*) is associated with 'UML2::Clause' (role 'UML2_Clause492', cardinality 0..*).
+'UML2::Behavior' (role 'ownedBehavior', cardinality 0..*) is associated with 'UML2::BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*).
+'UML2::Message' (role 'UML2_Message550', cardinality 0..*) is associated with 'UML2::NamedElement' (role 'UML2_NamedElement551', cardinality 0..*).
+'UML2::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'UML2::Association' (role 'Association', cardinality 0..*).
+'UML2::Parameter' (role 'ownedParameter', cardinality 0..*) is associated with 'UML2::Operation' (role 'Operation87', cardinality 0..*).
+'UML2::TemplateSignature' (role 'TemplateSignature597', cardinality 0..*) is associated with 'UML2::TemplateableElement' (role 'template', cardinality 0..*).
+'UML2::Message' (role 'Message561', cardinality 0..*) is associated with 'UML2::MessageEnd' (role 'sendEvent', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification165', cardinality 0..*) is associated with 'UML2::InstanceSpecification' (role 'UML2_InstanceSpecification164', cardinality 0..*).
+'UML2::ConnectableElement' (role 'role', cardinality 0..*) is associated with 'UML2::ConnectorEnd' (role 'ConnectorEnd', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification168', cardinality 0..*) is associated with 'UML2::Slot' (role 'UML2_Slot', cardinality 0..*).
+'UML2::Property' (role 'qualifier', cardinality 0..*) is associated with 'UML2::Property' (role 'Property69', cardinality 0..*).
+'UML2::ActivityEdge' (role 'UML2_ActivityEdge317', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification318', cardinality 0..*).
+'UML2::Class' (role 'class_', cardinality 0..*) is associated with 'UML2::Operation' (role 'Operation', cardinality 0..*).
+'UML2::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'UML2::Feature' (role 'feature', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'UML2_ActivityNode498', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin496', cardinality 0..*) is associated with 'UML2::Clause' (role 'UML2_Clause495', cardinality 0..*).
+'UML2::ConnectorEnd' (role 'end', cardinality 0..*) is associated with 'UML2::ConnectableElement' (role 'ConnectableElement', cardinality 0..*).
+'UML2::Interaction' (role 'Interaction', cardinality 0..*) is associated with 'UML2::InteractionFragment' (role 'fragment', cardinality 0..*).
+'UML2::Action' (role 'UML2_Action345', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin', cardinality 0..*).
+'UML2::ActivityNode' (role 'UML2_ActivityNode482', cardinality 0..*) is associated with 'UML2::Clause' (role 'UML2_Clause481', cardinality 0..*).
+'UML2::ActivityPartition' (role 'inPartition628', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'ActivityNode629', cardinality 0..*).
+'UML2::InstanceSpecification' (role 'UML2_InstanceSpecification172', cardinality 0..*) is associated with 'UML2::InstanceValue' (role 'UML2_InstanceValue', cardinality 0..*).
+'UML2::Association' (role 'UML2_Association281', cardinality 0..*) is associated with 'UML2::Connector' (role 'UML2_Connector', cardinality 0..*).
+'UML2::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'UML2::Class' (role 'Class', cardinality 0..*).
+'UML2::ReadLinkObjectEndAction' (role 'UML2_ReadLinkObjectEndAction921', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin922', cardinality 0..*).
+'UML2::AcceptEventAction' (role 'UML2_AcceptEventAction', cardinality 0..*) is associated with 'UML2::Trigger' (role 'UML2_Trigger934', cardinality 0..*).
+'UML2::Element' (role 'UML2_Element637', cardinality 0..*) is associated with 'UML2::ActivityPartition' (role 'UML2_ActivityPartition', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin932', cardinality 0..*) is associated with 'UML2::CreateLinkObjectAction' (role 'UML2_CreateLinkObjectAction', cardinality 0..*).
+'UML2::ActivityEdge' (role 'UML2_ActivityEdge312', cardinality 0..*) is associated with 'UML2::ActivityEdge' (role 'UML2_ActivityEdge310', cardinality 0..*).
+'UML2::LoopNode' (role 'UML2_LoopNode512', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin513', cardinality 0..*).
+'UML2::ReadVariableAction' (role 'UML2_ReadVariableAction', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin796', cardinality 0..*).
+'UML2::ActivityGroup' (role 'ActivityGroup', cardinality 0..*) is associated with 'UML2::Activity' (role 'activityGroup_activity', cardinality 0..*).
+'UML2::StructuralFeature' (role 'UML2_StructuralFeature766', cardinality 0..*) is associated with 'UML2::StructuralFeatureAction' (role 'UML2_StructuralFeatureAction', cardinality 0..*).
+'UML2::ActivityNode' (role 'UML2_ActivityNode', cardinality 0..*) is associated with 'UML2::ActivityGroup' (role 'UML2_ActivityGroup330', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier892', cardinality 0..*) is associated with 'UML2::ReclassifyObjectAction' (role 'UML2_ReclassifyObjectAction', cardinality 0..*).
+'UML2::ReadLinkObjectEndAction' (role 'UML2_ReadLinkObjectEndAction918', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property919', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier259', cardinality 0..*) is associated with 'UML2::Substitution' (role 'UML2_Substitution', cardinality 0..*).
+'UML2::ExpansionNode' (role 'outputElement', cardinality 0..*) is associated with 'UML2::ExpansionRegion' (role 'ExpansionRegion', cardinality 0..*).
+'UML2::ExpansionNode' (role 'inputElement', cardinality 0..*) is associated with 'UML2::ExpansionRegion' (role 'ExpansionRegion640', cardinality 0..*).
+'UML2::Classifier' (role 'Classifier261', cardinality 0..*) is associated with 'UML2::Substitution' (role 'substitution', cardinality 0..*).
+'UML2::Slot' (role 'UML2_Slot170', cardinality 0..*) is associated with 'UML2::StructuralFeature' (role 'UML2_StructuralFeature', cardinality 0..*).
+'UML2::InterruptibleActivityRegion' (role 'InterruptibleActivityRegion343', cardinality 0..*) is associated with 'UML2::ActivityNode' (role 'containedNode342', cardinality 0..*).
+'UML2::StringExpression' (role 'owningExpression', cardinality 0..*) is associated with 'UML2::StringExpression' (role 'StringExpression', cardinality 0..*).
+'UML2::Realization' (role 'realization', cardinality 0..*) is associated with 'UML2::Component' (role 'Component', cardinality 0..*).
+'UML2::ReadLinkObjectEndQualifierAction' (role 'UML2_ReadLinkObjectEndQualifierAction929', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property930', cardinality 0..*).
+'UML2::Operation' (role 'ownedOperation73', cardinality 0..*) is associated with 'UML2::DataType' (role 'DataType74', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin898', cardinality 0..*) is associated with 'UML2::ReclassifyObjectAction' (role 'UML2_ReclassifyObjectAction897', cardinality 0..*).
+'UML2::Dependency' (role 'clientDependency', cardinality 0..*) is associated with 'UML2::NamedElement' (role 'NamedElement', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier272', cardinality 0..*) is associated with 'UML2::InformationFlow' (role 'UML2_InformationFlow271', cardinality 0..*).
+'UML2::ReadStructuralFeatureAction' (role 'UML2_ReadStructuralFeatureAction', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin771', cardinality 0..*).
+'UML2::ActivityPartition' (role 'subgroup', cardinality 0..*) is associated with 'UML2::ActivityPartition' (role 'ActivityPartition635', cardinality 0..*).
+'UML2::ConnectorEnd' (role 'UML2_ConnectorEnd287', cardinality 0..*) is associated with 'UML2::Connector' (role 'UML2_Connector286', cardinality 0..*).
+'UML2::ActivityEdge' (role 'UML2_ActivityEdge', cardinality 0..*) is associated with 'UML2::ActivityGroup' (role 'UML2_ActivityGroup', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin927', cardinality 0..*) is associated with 'UML2::ReadLinkObjectEndQualifierAction' (role 'UML2_ReadLinkObjectEndQualifierAction926', cardinality 0..*).
+'UML2::CallTrigger' (role 'UML2_CallTrigger', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation453', cardinality 0..*).
+'UML2::TestIdentityAction' (role 'UML2_TestIdentityAction761', cardinality 0..*) is associated with 'UML2::OutputPin' (role 'UML2_OutputPin762', cardinality 0..*).
+'UML2::DurationObservationAction' (role 'UML2_DurationObservationAction', cardinality 0..*) is associated with 'UML2::Duration' (role 'UML2_Duration846', cardinality 0..*).
+'UML2::Lifeline' (role 'Lifeline526', cardinality 0..*) is associated with 'UML2::InteractionFragment' (role 'coveredBy', cardinality 0..*).
+'UML2::SendSignalAction' (role 'UML2_SendSignalAction', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin816', cardinality 0..*).
+'UML2::Action' (role 'UML2_Action355', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint356', cardinality 0..*).
+'UML2::BehavioredClassifier' (role 'BehavioredClassifier680', cardinality 0..*) is associated with 'UML2::StateMachine' (role 'ownedStateMachine', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier115', cardinality 0..*) is associated with 'UML2::NamedElement' (role 'UML2_NamedElement116', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin659', cardinality 0..*) is associated with 'UML2::InteractionOccurrence' (role 'UML2_InteractionOccurrence658', cardinality 0..*).
+'UML2::Element' (role 'UML2_Element32', cardinality 0..*) is associated with 'UML2::DirectedRelationship' (role 'UML2_DirectedRelationship', cardinality 0..*).
+'UML2::Action' (role 'UML2_Action347', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin', cardinality 0..*).
+'UML2::NamedElement' (role 'UML2_NamedElement', cardinality 0..*) is associated with 'UML2::StringExpression' (role 'UML2_StringExpression', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter373', cardinality 0..*) is associated with 'UML2::ActivityParameterNode' (role 'UML2_ActivityParameterNode', cardinality 0..*).
+'UML2::InteractionFragment' (role 'InteractionFragment662', cardinality 0..*) is associated with 'UML2::InteractionOperand' (role 'enclosingOperand', cardinality 0..*).
+'UML2::StructuredActivityNode' (role 'scope', cardinality 0..*) is associated with 'UML2::Variable' (role 'Variable', cardinality 0..*).
+'UML2::Duration' (role 'UML2_Duration', cardinality 0..*) is associated with 'UML2::NamedElement' (role 'UML2_NamedElement837', cardinality 0..*).
+'UML2::OpaqueExpression' (role 'UML2_OpaqueExpression539', cardinality 0..*) is associated with 'UML2::Lifeline' (role 'UML2_Lifeline538', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification24', cardinality 0..*) is associated with 'UML2::Expression' (role 'UML2_Expression', cardinality 0..*).
+'UML2::Region' (role 'region687', cardinality 0..*) is associated with 'UML2::State' (role 'State', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter', cardinality 0..*) is associated with 'UML2::OpaqueExpression' (role 'UML2_OpaqueExpression', cardinality 0..*).
+'UML2::ValuePin' (role 'UML2_ValuePin', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification375', cardinality 0..*).
+'UML2::TemplateParameter' (role 'TemplateParameter604', cardinality 0..*) is associated with 'UML2::ParameterableElement' (role 'parameteredElement', cardinality 0..*).
+'UML2::DeployedArtifact' (role 'UML2_DeployedArtifact', cardinality 0..*) is associated with 'UML2::Deployment' (role 'UML2_Deployment', cardinality 0..*).
+'UML2::StateMachine' (role 'UML2_StateMachine676', cardinality 0..*) is associated with 'UML2::StateMachine' (role 'UML2_StateMachine678', cardinality 0..*).
+'UML2::Namespace' (role 'UML2_Namespace16', cardinality 0..*) is associated with 'UML2::PackageableElement' (role 'UML2_PackageableElement', cardinality 0..*).
+'UML2::StartOwnedBehaviorAction' (role 'UML2_StartOwnedBehaviorAction', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin908', cardinality 0..*).
+'UML2::NamedElement' (role 'UML2_NamedElement835', cardinality 0..*) is associated with 'UML2::TimeExpression' (role 'UML2_TimeExpression', cardinality 0..*).
+'UML2::TemplateParameter' (role 'UML2_TemplateParameter591', cardinality 0..*) is associated with 'UML2::ParameterableElement' (role 'UML2_ParameterableElement', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint415', cardinality 0..*) is associated with 'UML2::Extend' (role 'UML2_Extend414', cardinality 0..*).
+'UML2::ParameterSet' (role 'parameterSet', cardinality 0..*) is associated with 'UML2::Parameter' (role 'Parameter852', cardinality 0..*).
+'UML2::ReadIsClassifiedObjectAction' (role 'UML2_ReadIsClassifiedObjectAction', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier900', cardinality 0..*).
+'UML2::UseCase' (role 'includingCase', cardinality 0..*) is associated with 'UML2::Include' (role 'Include', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter220', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior219', cardinality 0..*).
+'UML2::Pseudostate' (role 'UML2_Pseudostate', cardinality 0..*) is associated with 'UML2::StateMachine' (role 'UML2_StateMachine', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface391', cardinality 0..*) is associated with 'UML2::ProtocolStateMachine' (role 'UML2_ProtocolStateMachine', cardinality 0..*).
+'UML2::State' (role 'UML2_State697', cardinality 0..*) is associated with 'UML2::State' (role 'UML2_State695', cardinality 0..*).
+'UML2::Operation' (role 'UML2_Operation83', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint84', cardinality 0..*).
+'UML2::DataType' (role 'datatype', cardinality 0..*) is associated with 'UML2::Property' (role 'Property108', cardinality 0..*).
+'UML2::CollaborationOccurrence' (role 'UML2_CollaborationOccurrence432', cardinality 0..*) is associated with 'UML2::Collaboration' (role 'UML2_Collaboration', cardinality 0..*).
+'UML2::Region' (role 'Region730', cardinality 0..*) is associated with 'UML2::Transition' (role 'transition', cardinality 0..*).
+'UML2::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'UML2::Feature' (role 'Feature', cardinality 0..*).
+'UML2::InteractionOccurrence' (role 'UML2_InteractionOccurrence655', cardinality 0..*) is associated with 'UML2::Gate' (role 'UML2_Gate656', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property405', cardinality 0..*) is associated with 'UML2::Artifact' (role 'UML2_Artifact404', cardinality 0..*).
+'UML2::Package' (role 'UML2_Package', cardinality 0..*) is associated with 'UML2::PackageableElement' (role 'UML2_PackageableElement100', cardinality 0..*).
+'UML2::Include' (role 'include', cardinality 0..*) is associated with 'UML2::UseCase' (role 'UseCase428', cardinality 0..*).
+'UML2::ExecutionOccurrence' (role 'ExecutionOccurrence564', cardinality 0..*) is associated with 'UML2::EventOccurrence' (role 'finish', cardinality 0..*).
+'UML2::Reception' (role 'UML2_Reception389', cardinality 0..*) is associated with 'UML2::Interface' (role 'UML2_Interface388', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior', cardinality 0..*) is associated with 'UML2::OpaqueExpression' (role 'UML2_OpaqueExpression22', cardinality 0..*).
+'UML2::InteractionConstraint' (role 'UML2_InteractionConstraint', cardinality 0..*) is associated with 'UML2::InteractionOperand' (role 'UML2_InteractionOperand', cardinality 0..*).
+'UML2::Class' (role 'UML2_Class48', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property', cardinality 0..*).
+'UML2::ExceptionHandler' (role 'handler', cardinality 0..*) is associated with 'UML2::ExecutableNode' (role 'ExecutableNode', cardinality 0..*).
+'UML2::Activity' (role 'UML2_Activity705', cardinality 0..*) is associated with 'UML2::State' (role 'UML2_State704', cardinality 0..*).
+'UML2::TemplateSignature' (role 'TemplateSignature586', cardinality 0..*) is associated with 'UML2::TemplateParameter' (role 'ownedParameter585', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin906', cardinality 0..*) is associated with 'UML2::ReadIsClassifiedObjectAction' (role 'UML2_ReadIsClassifiedObjectAction905', cardinality 0..*).
+'UML2::State' (role 'state', cardinality 0..*) is associated with 'UML2::Region' (role 'Region702', cardinality 0..*).
+'UML2::ExceptionHandler' (role 'ExceptionHandler', cardinality 0..*) is associated with 'UML2::ExecutableNode' (role 'protectedNode', cardinality 0..*).
+'UML2::Trigger' (role 'UML2_Trigger741', cardinality 0..*) is associated with 'UML2::Transition' (role 'UML2_Transition740', cardinality 0..*).
+'UML2::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'UML2::Namespace' (role 'namespace', cardinality 0..*).
+'UML2::DirectedRelationship' (role 'UML2_DirectedRelationship34', cardinality 0..*) is associated with 'UML2::Element' (role 'UML2_Element35', cardinality 0..*).
+'UML2::Artifact' (role 'UML2_Artifact396', cardinality 0..*) is associated with 'UML2::Artifact' (role 'UML2_Artifact', cardinality 0..*).
+'UML2::Transition' (role 'Transition719', cardinality 0..*) is associated with 'UML2::Vertex' (role 'source718', cardinality 0..*).
+'UML2::Include' (role 'UML2_Include', cardinality 0..*) is associated with 'UML2::UseCase' (role 'UML2_UseCase430', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin756', cardinality 0..*) is associated with 'UML2::TestIdentityAction' (role 'UML2_TestIdentityAction', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin887', cardinality 0..*) is associated with 'UML2::ReadExtentAction' (role 'UML2_ReadExtentAction', cardinality 0..*).
+'UML2::Profile' (role 'UML2_Profile203', cardinality 0..*) is associated with 'UML2::ElementImport' (role 'UML2_ElementImport204', cardinality 0..*).
+'UML2::Package' (role 'mergingPackage', cardinality 0..*) is associated with 'UML2::PackageMerge' (role 'PackageMerge', cardinality 0..*).
+'UML2::TemplateParameter' (role 'UML2_TemplateParameter593', cardinality 0..*) is associated with 'UML2::ParameterableElement' (role 'UML2_ParameterableElement594', cardinality 0..*).
+'UML2::ConnectionPointReference' (role 'UML2_ConnectionPointReference724', cardinality 0..*) is associated with 'UML2::Pseudostate' (role 'UML2_Pseudostate725', cardinality 0..*).
+'UML2::Stereotype' (role 'UML2_Stereotype', cardinality 0..*) is associated with 'UML2::Profile' (role 'UML2_Profile', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface379', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation380', cardinality 0..*).
+'UML2::Region' (role 'region', cardinality 0..*) is associated with 'UML2::StateMachine' (role 'StateMachine685', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior231', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint232', cardinality 0..*).
+'UML2::Vertex' (role 'Vertex736', cardinality 0..*) is associated with 'UML2::Transition' (role 'incoming735', cardinality 0..*).
+'UML2::MultiplicityElement' (role 'UML2_MultiplicityElement', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier124', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier126', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint879', cardinality 0..*) is associated with 'UML2::ProtocolTransition' (role 'UML2_ProtocolTransition', cardinality 0..*).
+'UML2::TimeTrigger' (role 'UML2_TimeTrigger', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification467', cardinality 0..*).
+'UML2::ExecutionOccurrence' (role 'finishExec', cardinality 0..*) is associated with 'UML2::EventOccurrence' (role 'EventOccurrence571', cardinality 0..*).
+'UML2::ExceptionHandler' (role 'UML2_ExceptionHandler650', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier651', cardinality 0..*).
+'UML2::Namespace' (role 'UML2_Namespace', cardinality 0..*) is associated with 'UML2::NamedElement' (role 'UML2_NamedElement13', cardinality 0..*).
+'UML2::EventOccurrence' (role 'EventOccurrence569', cardinality 0..*) is associated with 'UML2::ExecutionOccurrence' (role 'startExec', cardinality 0..*).
+'UML2::Region' (role 'container', cardinality 0..*) is associated with 'UML2::Vertex' (role 'Vertex', cardinality 0..*).
+'UML2::Type' (role 'Type', cardinality 0..*) is associated with 'UML2::Package' (role 'package', cardinality 0..*).
+'UML2::InteractionConstraint' (role 'UML2_InteractionConstraint664', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification665', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification624', cardinality 0..*) is associated with 'UML2::JoinNode' (role 'UML2_JoinNode', cardinality 0..*).
+'UML2::Extend' (role 'extend', cardinality 0..*) is associated with 'UML2::UseCase' (role 'UseCase412', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification668', cardinality 0..*) is associated with 'UML2::InteractionConstraint' (role 'UML2_InteractionConstraint667', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier119', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier117', cardinality 0..*).
+'UML2::Extend' (role 'Extend', cardinality 0..*) is associated with 'UML2::UseCase' (role 'extension420', cardinality 0..*).
+'UML2::TemplateParameter' (role 'UML2_TemplateParameter', cardinality 0..*) is associated with 'UML2::TemplateSignature' (role 'UML2_TemplateSignature', cardinality 0..*).
+'UML2::Reception' (role 'UML2_Reception460', cardinality 0..*) is associated with 'UML2::Signal' (role 'UML2_Signal', cardinality 0..*).
+'UML2::Region' (role 'UML2_Region', cardinality 0..*) is associated with 'UML2::Region' (role 'UML2_Region688', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter149', cardinality 0..*) is associated with 'UML2::BehavioralFeature' (role 'UML2_BehavioralFeature', cardinality 0..*).
+'UML2::ActivityNode' (role 'ActivityNode472', cardinality 0..*) is associated with 'UML2::StructuredActivityNode' (role 'inStructuredNode', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface860', cardinality 0..*) is associated with 'UML2::Component' (role 'UML2_Component859', cardinality 0..*).
+'UML2::Profile' (role 'UML2_Profile210', cardinality 0..*) is associated with 'UML2::ProfileApplication' (role 'UML2_ProfileApplication209', cardinality 0..*).
+'UML2::EventOccurrence' (role 'start', cardinality 0..*) is associated with 'UML2::ExecutionOccurrence' (role 'ExecutionOccurrence', cardinality 0..*).
+'UML2::ExtensionPoint' (role 'extensionPoint', cardinality 0..*) is associated with 'UML2::UseCase' (role 'UseCase426', cardinality 0..*).
+'UML2::TemplateParameterSubstitution' (role 'UML2_TemplateParameterSubstitution', cardinality 0..*) is associated with 'UML2::TemplateParameter' (role 'UML2_TemplateParameter614', cardinality 0..*).
+'UML2::Vertex' (role 'target721', cardinality 0..*) is associated with 'UML2::Transition' (role 'Transition722', cardinality 0..*).
+'UML2::TemplateSignature' (role 'TemplateSignature', cardinality 0..*) is associated with 'UML2::TemplateSignature' (role 'nestingSignature', cardinality 0..*).
+'UML2::ValueSpecification' (role 'UML2_ValueSpecification841', cardinality 0..*) is associated with 'UML2::Interval' (role 'UML2_Interval', cardinality 0..*).
+'UML2::TemplateParameter' (role 'TemplateParameter', cardinality 0..*) is associated with 'UML2::TemplateSignature' (role 'signature', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint229', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior228', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter152', cardinality 0..*) is associated with 'UML2::BehavioralFeature' (role 'UML2_BehavioralFeature151', cardinality 0..*).
+'UML2::Port' (role 'UML2_Port443', cardinality 0..*) is associated with 'UML2::Port' (role 'UML2_Port441', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property123', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier122', cardinality 0..*).
+'UML2::State' (role 'UML2_State713', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint714', cardinality 0..*).
+'UML2::Lifeline' (role 'UML2_Lifeline541', cardinality 0..*) is associated with 'UML2::PartDecomposition' (role 'UML2_PartDecomposition', cardinality 0..*).
+'UML2::ExecutableNode' (role 'UML2_ExecutableNode', cardinality 0..*) is associated with 'UML2::ExceptionHandler' (role 'UML2_ExceptionHandler', cardinality 0..*).
+'UML2::ObjectFlow' (role 'UML2_ObjectFlow367', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior368', cardinality 0..*).
+'UML2::Comment' (role 'UML2_Comment', cardinality 0..*) is associated with 'UML2::Element' (role 'UML2_Element', cardinality 0..*).
+'UML2::PackageableElement' (role 'UML2_PackageableElement408', cardinality 0..*) is associated with 'UML2::Manifestation' (role 'UML2_Manifestation407', cardinality 0..*).
+'UML2::ProtocolTransition' (role 'UML2_ProtocolTransition884', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint885', cardinality 0..*).
+'UML2::ParameterableElement' (role 'UML2_ParameterableElement619', cardinality 0..*) is associated with 'UML2::TemplateParameterSubstitution' (role 'UML2_TemplateParameterSubstitution618', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin752', cardinality 0..*) is associated with 'UML2::CreateObjectAction' (role 'UML2_CreateObjectAction751', cardinality 0..*).
+'UML2::Parameter' (role 'UML2_Parameter223', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior222', cardinality 0..*).
+'UML2::InputPin' (role 'UML2_InputPin754', cardinality 0..*) is associated with 'UML2::DestroyObjectAction' (role 'UML2_DestroyObjectAction', cardinality 0..*).
+'UML2::Artifact' (role 'UML2_Artifact401', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation402', cardinality 0..*).
+'UML2::Namespace' (role 'Namespace', cardinality 0..*) is associated with 'UML2::Constraint' (role 'ownedRule', cardinality 0..*).
+'UML2::DeploymentTarget' (role 'location', cardinality 0..*) is associated with 'UML2::Deployment' (role 'Deployment', cardinality 0..*).
+'UML2::TestIdentityAction' (role 'UML2_TestIdentityAction758', cardinality 0..*) is associated with 'UML2::InputPin' (role 'UML2_InputPin759', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property911', cardinality 0..*) is associated with 'UML2::QualifierValue' (role 'UML2_QualifierValue910', cardinality 0..*).
+'UML2::TemplateParameter' (role 'TemplateParameter606', cardinality 0..*) is associated with 'UML2::ParameterableElement' (role 'ownedParameteredElement', cardinality 0..*).
+'UML2::TemplateableElement' (role 'TemplateableElement', cardinality 0..*) is associated with 'UML2::TemplateSignature' (role 'ownedTemplateSignature', cardinality 0..*).
+'UML2::State' (role 'UML2_State710', cardinality 0..*) is associated with 'UML2::Activity' (role 'UML2_Activity711', cardinality 0..*).
+'UML2::ObjectNode' (role 'UML2_ObjectNode648', cardinality 0..*) is associated with 'UML2::ExceptionHandler' (role 'UML2_ExceptionHandler647', cardinality 0..*).
+'UML2::Node' (role 'UML2_Node872', cardinality 0..*) is associated with 'UML2::Node' (role 'UML2_Node', cardinality 0..*).
+'UML2::ObjectNode' (role 'UML2_ObjectNode', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification358', cardinality 0..*).
+'UML2::CallBehaviorAction' (role 'UML2_CallBehaviorAction', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior833', cardinality 0..*).
+'UML2::ProtocolConformance' (role 'ProtocolConformance', cardinality 0..*) is associated with 'UML2::ProtocolStateMachine' (role 'specificMachine', cardinality 0..*).
+'UML2::SignalTrigger' (role 'UML2_SignalTrigger', cardinality 0..*) is associated with 'UML2::Signal' (role 'UML2_Signal465', cardinality 0..*).
+'UML2::StructuredActivityNode' (role 'StructuredActivityNode469', cardinality 0..*) is associated with 'UML2::Variable' (role 'variable', cardinality 0..*).
+'UML2::ProtocolStateMachine' (role 'ProtocolStateMachine', cardinality 0..*) is associated with 'UML2::ProtocolConformance' (role 'conformance', cardinality 0..*).
+'UML2::Activity' (role 'UML2_Activity747', cardinality 0..*) is associated with 'UML2::Transition' (role 'UML2_Transition746', cardinality 0..*).
+'UML2::PackageMerge' (role 'UML2_PackageMerge', cardinality 0..*) is associated with 'UML2::Package' (role 'UML2_Package105', cardinality 0..*).
+'UML2::Lifeline' (role 'lifeline', cardinality 0..*) is associated with 'UML2::Interaction' (role 'Interaction536', cardinality 0..*).
+'UML2::State' (role 'UML2_State699', cardinality 0..*) is associated with 'UML2::Trigger' (role 'UML2_Trigger700', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior573', cardinality 0..*) is associated with 'UML2::ExecutionOccurrence' (role 'UML2_ExecutionOccurrence', cardinality 0..*).
+'UML2::Element' (role 'UML2_Element147', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint146', cardinality 0..*).
+'UML2::PackageableElement' (role 'UML2_PackageableElement183', cardinality 0..*) is associated with 'UML2::ElementImport' (role 'UML2_ElementImport', cardinality 0..*).
+'UML2::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'UML2::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property377', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint855', cardinality 0..*) is associated with 'UML2::ParameterSet' (role 'UML2_ParameterSet854', cardinality 0..*).
+'UML2::Package' (role 'UML2_Package187', cardinality 0..*) is associated with 'UML2::PackageImport' (role 'UML2_PackageImport', cardinality 0..*).
+'UML2::PackageableElement' (role 'UML2_PackageableElement864', cardinality 0..*) is associated with 'UML2::Component' (role 'UML2_Component863', cardinality 0..*).
+'UML2::Comment' (role 'UML2_Comment29', cardinality 0..*) is associated with 'UML2::StringExpression' (role 'UML2_StringExpression30', cardinality 0..*).
+'UML2::Package' (role 'nestedPackage', cardinality 0..*) is associated with 'UML2::Package' (role 'Package97', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier386', cardinality 0..*) is associated with 'UML2::Interface' (role 'UML2_Interface385', cardinality 0..*).
+'UML2::Component' (role 'abstraction', cardinality 0..*) is associated with 'UML2::Realization' (role 'Realization', cardinality 0..*).
+'UML2::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'UML2::Namespace' (role 'Namespace185', cardinality 0..*).
+'UML2::ExpansionRegion' (role 'regionAsInput', cardinality 0..*) is associated with 'UML2::ExpansionNode' (role 'ExpansionNode643', cardinality 0..*).
+'UML2::ProtocolConformance' (role 'UML2_ProtocolConformance', cardinality 0..*) is associated with 'UML2::ProtocolStateMachine' (role 'UML2_ProtocolStateMachine876', cardinality 0..*).
+'UML2::EventOccurrence' (role 'before', cardinality 0..*) is associated with 'UML2::GeneralOrdering' (role 'GeneralOrdering', cardinality 0..*).
+'UML2::ActivityEdge' (role 'ActivityEdge848', cardinality 0..*) is associated with 'UML2::InterruptibleActivityRegion' (role 'interrupts', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior234', cardinality 0..*) is associated with 'UML2::ParameterSet' (role 'UML2_ParameterSet', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier749', cardinality 0..*) is associated with 'UML2::CreateObjectAction' (role 'UML2_CreateObjectAction', cardinality 0..*).
+'UML2::ObjectFlow' (role 'UML2_ObjectFlow', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior365', cardinality 0..*).
+'UML2::Classifier' (role 'specific', cardinality 0..*) is associated with 'UML2::Generalization' (role 'Generalization', cardinality 0..*).
+'UML2::ParameterableElement' (role 'ParameterableElement589', cardinality 0..*) is associated with 'UML2::TemplateParameter' (role 'owningParameter', cardinality 0..*).
+'UML2::EventOccurrence' (role 'after', cardinality 0..*) is associated with 'UML2::GeneralOrdering' (role 'GeneralOrdering567', cardinality 0..*).
+'UML2::Transition' (role 'Transition', cardinality 0..*) is associated with 'UML2::Region' (role 'container683', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier130', cardinality 0..*) is associated with 'UML2::UseCase' (role 'UML2_UseCase', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint353', cardinality 0..*) is associated with 'UML2::Action' (role 'UML2_Action352', cardinality 0..*).
+'UML2::ReadExtentAction' (role 'UML2_ReadExtentAction889', cardinality 0..*) is associated with 'UML2::Classifier' (role 'UML2_Classifier890', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface393', cardinality 0..*) is associated with 'UML2::Implementation' (role 'UML2_Implementation', cardinality 0..*).
+'UML2::MultiplicityElement' (role 'UML2_MultiplicityElement8', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification9', cardinality 0..*).
+'UML2::BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*) is associated with 'UML2::Behavior' (role 'method', cardinality 0..*).
+'UML2::UseCase' (role 'UML2_UseCase410', cardinality 0..*) is associated with 'UML2::Extend' (role 'UML2_Extend', cardinality 0..*).
+'UML2::TimeObservationAction' (role 'UML2_TimeObservationAction', cardinality 0..*) is associated with 'UML2::TimeExpression' (role 'UML2_TimeExpression839', cardinality 0..*).
+'UML2::GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*) is associated with 'UML2::Classifier' (role 'powertype', cardinality 0..*).
+'UML2::TemplateParameterSubstitution' (role 'TemplateParameterSubstitution', cardinality 0..*) is associated with 'UML2::TemplateBinding' (role 'templateBinding612', cardinality 0..*).
+'UML2::Activity' (role 'UML2_Activity708', cardinality 0..*) is associated with 'UML2::State' (role 'UML2_State707', cardinality 0..*).
+'UML2::Profile' (role 'UML2_Profile206', cardinality 0..*) is associated with 'UML2::PackageImport' (role 'UML2_PackageImport207', cardinality 0..*).
+'UML2::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'UML2::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'UML2::TemplateBinding' (role 'TemplateBinding616', cardinality 0..*) is associated with 'UML2::TemplateParameterSubstitution' (role 'parameterSubstitution', cardinality 0..*).
+'UML2::NamedElement' (role 'client', cardinality 0..*) is associated with 'UML2::Dependency' (role 'Dependency', cardinality 0..*).
+'UML2::Pseudostate' (role 'UML2_Pseudostate728', cardinality 0..*) is associated with 'UML2::ConnectionPointReference' (role 'UML2_ConnectionPointReference727', cardinality 0..*).
+'UML2::TemplateSignature' (role 'TemplateSignature582', cardinality 0..*) is associated with 'UML2::TemplateSignature' (role 'nestedSignature', cardinality 0..*).
+'UML2::OutputPin' (role 'UML2_OutputPin903', cardinality 0..*) is associated with 'UML2::ReadIsClassifiedObjectAction' (role 'UML2_ReadIsClassifiedObjectAction902', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint575', cardinality 0..*) is associated with 'UML2::StateInvariant' (role 'UML2_StateInvariant', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint143', cardinality 0..*) is associated with 'UML2::ValueSpecification' (role 'UML2_ValueSpecification144', cardinality 0..*).
+'UML2::Comment' (role 'UML2_Comment26', cardinality 0..*) is associated with 'UML2::Element' (role 'UML2_Element27', cardinality 0..*).
+'UML2::ProfileApplication' (role 'UML2_ProfileApplication', cardinality 0..*) is associated with 'UML2::Package' (role 'UML2_Package103', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior225', cardinality 0..*) is associated with 'UML2::Parameter' (role 'UML2_Parameter226', cardinality 0..*).
+'UML2::CombinedFragment' (role 'UML2_CombinedFragment672', cardinality 0..*) is associated with 'UML2::Gate' (role 'UML2_Gate673', cardinality 0..*).
+'UML2::Trigger' (role 'UML2_Trigger457', cardinality 0..*) is associated with 'UML2::Port' (role 'UML2_Port458', cardinality 0..*).
+'UML2::MessageEnd' (role 'MessageEnd', cardinality 0..*) is associated with 'UML2::Message' (role 'receiveMessage', cardinality 0..*).
+'UML2::Port' (role 'UML2_Port', cardinality 0..*) is associated with 'UML2::Interface' (role 'UML2_Interface440', cardinality 0..*).
+'UML2::Signal' (role 'UML2_Signal462', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property463', cardinality 0..*).
+'UML2::Namespace' (role 'importingNamespace19', cardinality 0..*) is associated with 'UML2::PackageImport' (role 'PackageImport', cardinality 0..*).
+'UML2::ExtensionPoint' (role 'UML2_ExtensionPoint', cardinality 0..*) is associated with 'UML2::Extend' (role 'UML2_Extend417', cardinality 0..*).
+'UML2::Package' (role 'Package197', cardinality 0..*) is associated with 'UML2::PackageMerge' (role 'packageMerge', cardinality 0..*).
+'UML2::ConnectionPointReference' (role 'UML2_ConnectionPointReference', cardinality 0..*) is associated with 'UML2::State' (role 'UML2_State694', cardinality 0..*).
+'UML2::Classifier' (role 'substitutingClassifier', cardinality 0..*) is associated with 'UML2::Substitution' (role 'Substitution', cardinality 0..*).
+'UML2::Classifier' (role 'UML2_Classifier350', cardinality 0..*) is associated with 'UML2::Action' (role 'UML2_Action349', cardinality 0..*).
+'UML2::Transition' (role 'UML2_Transition737', cardinality 0..*) is associated with 'UML2::Transition' (role 'UML2_Transition', cardinality 0..*).
+'UML2::Region' (role 'Region716', cardinality 0..*) is associated with 'UML2::Vertex' (role 'subvertex', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint744', cardinality 0..*) is associated with 'UML2::Transition' (role 'UML2_Transition743', cardinality 0..*).
+'UML2::DeploymentSpecification' (role 'UML2_DeploymentSpecification', cardinality 0..*) is associated with 'UML2::Deployment' (role 'UML2_Deployment868', cardinality 0..*).
+'UML2::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'UML2::ElementImport' (role 'ElementImport', cardinality 0..*).
+'UML2::Constraint' (role 'UML2_Constraint78', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation77', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface383', cardinality 0..*) is associated with 'UML2::Interface' (role 'UML2_Interface381', cardinality 0..*).
+'UML2::TemplateParameter' (role 'templateParameter', cardinality 0..*) is associated with 'UML2::ParameterableElement' (role 'ParameterableElement', cardinality 0..*).
+'UML2::Relationship' (role 'UML2_Relationship', cardinality 0..*) is associated with 'UML2::Element' (role 'UML2_Element37', cardinality 0..*).
+'UML2::ParameterableElement' (role 'UML2_ParameterableElement622', cardinality 0..*) is associated with 'UML2::TemplateParameterSubstitution' (role 'UML2_TemplateParameterSubstitution621', cardinality 0..*).
+'UML2::ActivityNode' (role 'ActivityNode850', cardinality 0..*) is associated with 'UML2::InterruptibleActivityRegion' (role 'inInterruptibleRegion', cardinality 0..*).
+'UML2::BehavioralFeature' (role 'UML2_BehavioralFeature154', cardinality 0..*) is associated with 'UML2::Parameter' (role 'UML2_Parameter155', cardinality 0..*).
+'UML2::Artifact' (role 'UML2_Artifact399', cardinality 0..*) is associated with 'UML2::Manifestation' (role 'UML2_Manifestation', cardinality 0..*).
+'UML2::Transition' (role 'outgoing732', cardinality 0..*) is associated with 'UML2::Vertex' (role 'Vertex733', cardinality 0..*).
+'UML2::State' (role 'UML2_State691', cardinality 0..*) is associated with 'UML2::StateMachine' (role 'UML2_StateMachine692', cardinality 0..*).
+'UML2::DeploymentTarget' (role 'UML2_DeploymentTarget', cardinality 0..*) is associated with 'UML2::PackageableElement' (role 'UML2_PackageableElement871', cardinality 0..*).
+'UML2::DeploymentTarget' (role 'DeploymentTarget', cardinality 0..*) is associated with 'UML2::Deployment' (role 'deployment', cardinality 0..*).
+'UML2::Operation' (role 'UML2_Operation79', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation81', cardinality 0..*).
+'UML2::Implementation' (role 'implementation', cardinality 0..*) is associated with 'UML2::BehavioredClassifier' (role 'BehavioredClassifier395', cardinality 0..*).
+'UML2::TemplateBinding' (role 'templateBinding', cardinality 0..*) is associated with 'UML2::TemplateableElement' (role 'TemplateableElement608', cardinality 0..*).
+'UML2::ProtocolTransition' (role 'UML2_ProtocolTransition881', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation882', cardinality 0..*).
+'UML2::Dependency' (role 'UML2_Dependency435', cardinality 0..*) is associated with 'UML2::CollaborationOccurrence' (role 'UML2_CollaborationOccurrence434', cardinality 0..*).
+'UML2::Interaction' (role 'UML2_Interaction653', cardinality 0..*) is associated with 'UML2::InteractionOccurrence' (role 'UML2_InteractionOccurrence', cardinality 0..*).
+'UML2::TemplateBinding' (role 'UML2_TemplateBinding', cardinality 0..*) is associated with 'UML2::TemplateSignature' (role 'UML2_TemplateSignature610', cardinality 0..*).
+'UML2::DecisionNode' (role 'UML2_DecisionNode', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior370', cardinality 0..*).
+'UML2::CombinedFragment' (role 'UML2_CombinedFragment', cardinality 0..*) is associated with 'UML2::InteractionOperand' (role 'UML2_InteractionOperand670', cardinality 0..*).
+'UML2::Classifier' (role 'Classifier424', cardinality 0..*) is associated with 'UML2::UseCase' (role 'useCase423', cardinality 0..*).
+'UML2::UseCase' (role 'useCase', cardinality 0..*) is associated with 'UML2::ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*).
+'UML2::StateMachine' (role 'stateMachine', cardinality 0..*) is associated with 'UML2::Region' (role 'Region', cardinality 0..*).
+'UML2::Operation' (role 'Operation111', cardinality 0..*) is associated with 'UML2::DataType' (role 'datatype110', cardinality 0..*).
+'UML2::Interface' (role 'UML2_Interface857', cardinality 0..*) is associated with 'UML2::Component' (role 'UML2_Component', cardinality 0..*).
+'UML2::Package' (role 'UML2_Package200', cardinality 0..*) is associated with 'UML2::PackageMerge' (role 'UML2_PackageMerge199', cardinality 0..*).

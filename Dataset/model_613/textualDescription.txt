@@ -1,0 +1,114 @@
+The model has 40 class(es).
+The class 'PagosPim::Field' has no attributes.
+The class 'PagosPim::Output' has no attributes.
+The class 'PagosPim::IfBlock' has no attributes.
+The class 'PagosPim::Input' has no attributes.
+The class 'PagosPim::ParameterList' has no attributes.
+The class 'PagosPim::Add' has the following attributes: 'operator' of type str.
+The class 'PagosPim::LogicalExpression' has the following attributes: 'conOper' of type str; 'logicalOperator' of type str; 'literal' of type str.
+The class 'PagosPim::SubComponent' has no attributes.
+The class 'GenericComponent' has no attributes.
+The class 'PagosPim::Mult' has the following attributes: 'operator' of type str.
+The class 'PagosPim::EObject' has no attributes.
+The class 'PagosPim::FrontService' has the following attributes: 'fullName' of type str.
+The class 'PagosPim::Application' has the following attributes: 'name' of type str.
+The class 'PagosPim::Return' has the following attributes: 'type' of type str.
+The class 'PagosPim::ProgramIfExpression' has no attributes.
+The class 'PagosPim::Attribute' has the following attributes: 'isIndex' of type str.
+The class 'PagosPim::IfCondition' has no attributes.
+The class 'PagosPim::ElseSegment' has no attributes.
+The class 'PagosPim::GenericComponent' has the following attributes: 'name' of type str.
+The class 'PagosPim::AttributeDefinition' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'PagosPim::DaoComponent' has no attributes.
+The class 'Control' has no attributes.
+The class 'AttributeDefinition' has no attributes.
+The class 'PagosPim::Control' has the following attributes: 'label' of type str.
+The class 'PagosPim::TerminalValue' has the following attributes: 'method' of type str; 'value' of type str.
+The class 'PagosPim::ViewComponent' has the following attributes: 'title' of type str.
+The class 'PagosPim::Action' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'Relation' has no attributes.
+The class 'PagosPim::Expression' has no attributes.
+The class 'PagosPim::NewEClass21' has no attributes.
+The class 'PagosPim::Parameter' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Operation' has no attributes.
+The class 'PagosPim::Operation' has the following attributes: 'name' of type str.
+The class 'PagosPim::DataLayerComponent' has no attributes.
+The class 'PagosPim::LogicComponent' has the following attributes: 'persistible' of type bool.
+The class 'PagosPim::Body' has no attributes.
+The class 'PagosPim::Relation' has the following attributes: 'type' of type str; 'cardinality' of type str; 'name' of type str.
+The class 'PagosPim::ServerService' has no attributes.
+The enumeration 'LogicalCononnector' has the following literals: 'OR', 'AND'.
+The enumeration 'DataTypes' has the following literals: 'double', 'number', 'Date', 'String', 'int', 'long'.
+The enumeration 'MultOper' has the following literals: 'MULT', 'DIV'.
+The enumeration 'LogicalOperator' has the following literals: 'EQUALTO', 'LESSTHAN', 'DIFFERENT'.
+The enumeration 'Cardinality' has the following literals: 'CEROTOONE', 'CEROTOMANY'.
+The enumeration 'AddOper' has the following literals: 'MINUS', 'ADD'.
+The enumeration 'RelationType' has the following literals: 'COMPOSITION', 'REFERENCE'.
+'PagosPim::Mult' is a specialization of 'Expression'.
+'PagosPim::FrontService' is a specialization of 'Operation'.
+'PagosPim::Field' is a specialization of 'Attribute'.
+'PagosPim::DataLayerComponent' is a specialization of 'GenericComponent'.
+'PagosPim::Action' is a specialization of 'Control'.
+'PagosPim::SubComponent' is a specialization of 'Relation'.
+'PagosPim::Output' is a specialization of 'Attribute'.
+'PagosPim::ViewComponent' is a specialization of 'GenericComponent'.
+'PagosPim::LogicComponent' is a specialization of 'GenericComponent'.
+'PagosPim::Action' is a specialization of 'Operation'.
+'PagosPim::Output' is a specialization of 'Control'.
+'PagosPim::TerminalValue' is a specialization of 'Expression'.
+'PagosPim::Attribute' is a specialization of 'AttributeDefinition'.
+'PagosPim::Input' is a specialization of 'Control'.
+'PagosPim::Parameter' is a specialization of 'AttributeDefinition'.
+'PagosPim::DaoComponent' is a specialization of 'GenericComponent'.
+'PagosPim::ServerService' is a specialization of 'GenericComponent'.
+'PagosPim::Input' is a specialization of 'Attribute'.
+'PagosPim::Add' is a specialization of 'Expression'.
+'PagosPim::ViewComponent' (role 'PagosPim_ViewComponent17', cardinality 0..*) is associated with 'PagosPim::SubComponent' (role 'PagosPim_SubComponent', cardinality 0..*).
+'PagosPim::GenericComponent' (role 'PagosPim_GenericComponent25', cardinality 0..*) is associated with 'PagosPim::Relation' (role 'PagosPim_Relation', cardinality 0..*).
+'PagosPim::FrontService' (role 'PagosPim_FrontService12', cardinality 0..*) is associated with 'PagosPim::FrontService' (role 'PagosPim_FrontService10', cardinality 0..*).
+'PagosPim::FrontService' (role 'PagosPim_FrontService14', cardinality 0..*) is associated with 'PagosPim::ServerService' (role 'PagosPim_ServerService15', cardinality 0..*).
+'PagosPim::ParameterList' (role 'PagosPim_ParameterList38', cardinality 0..*) is associated with 'PagosPim::Parameter' (role 'PagosPim_Parameter', cardinality 0..*).
+'PagosPim::ProgramIfExpression' (role 'PagosPim_ProgramIfExpression79', cardinality 0..*) is associated with 'PagosPim::Expression' (role 'PagosPim_Expression80', cardinality 0..*).
+'PagosPim::ServerService' (role 'PagosPim_ServerService', cardinality 0..*) is associated with 'PagosPim::Application' (role 'PagosPim_Application2', cardinality 0..*).
+'PagosPim::GenericComponent' (role 'PagosPim_GenericComponent', cardinality 0..*) is associated with 'PagosPim::Attribute' (role 'PagosPim_Attribute', cardinality 0..*).
+'PagosPim::Mult' (role 'PagosPim_Mult95', cardinality 0..*) is associated with 'PagosPim::Expression' (role 'PagosPim_Expression96', cardinality 0..*).
+'PagosPim::Add' (role 'PagosPim_Add90', cardinality 0..*) is associated with 'PagosPim::Expression' (role 'PagosPim_Expression91', cardinality 0..*).
+'PagosPim::Expression' (role 'PagosPim_Expression88', cardinality 0..*) is associated with 'PagosPim::Add' (role 'PagosPim_Add', cardinality 0..*).
+'PagosPim::IfCondition' (role 'PagosPim_IfCondition59', cardinality 0..*) is associated with 'PagosPim::Return' (role 'PagosPim_Return60', cardinality 0..*).
+'PagosPim::DaoComponent' (role 'PagosPim_DaoComponent105', cardinality 0..*) is associated with 'PagosPim::DataLayerComponent' (role 'PagosPim_DataLayerComponent104', cardinality 0..*).
+'PagosPim::FrontService' (role 'PagosPim_FrontService109', cardinality 0..*) is associated with 'PagosPim::Action' (role 'PagosPim_Action', cardinality 0..*).
+'PagosPim::AttributeDefinition' (role 'PagosPim_AttributeDefinition', cardinality 0..*) is associated with 'PagosPim::EObject' (role 'PagosPim_EObject', cardinality 0..*).
+'PagosPim::IfBlock' (role 'PagosPim_IfBlock63', cardinality 0..*) is associated with 'PagosPim::IfCondition' (role 'PagosPim_IfCondition62', cardinality 0..*).
+'PagosPim::Body' (role 'PagosPim_Body46', cardinality 0..*) is associated with 'PagosPim::IfBlock' (role 'PagosPim_IfBlock', cardinality 0..*).
+'PagosPim::Body' (role 'PagosPim_Body48', cardinality 0..*) is associated with 'PagosPim::Return' (role 'PagosPim_Return49', cardinality 0..*).
+'PagosPim::ViewComponent' (role 'PagosPim_ViewComponent19', cardinality 0..*) is associated with 'PagosPim::Control' (role 'PagosPim_Control', cardinality 0..*).
+'PagosPim::LogicalExpression' (role 'PagosPim_LogicalExpression73', cardinality 0..*) is associated with 'PagosPim::TerminalValue' (role 'PagosPim_TerminalValue74', cardinality 0..*).
+'PagosPim::Application' (role 'PagosPim_Application', cardinality 0..*) is associated with 'PagosPim::LogicComponent' (role 'PagosPim_LogicComponent', cardinality 0..*).
+'PagosPim::TerminalValue' (role 'PagosPim_TerminalValue', cardinality 0..*) is associated with 'PagosPim::LogicalExpression' (role 'PagosPim_LogicalExpression71', cardinality 0..*).
+'PagosPim::IfCondition' (role 'PagosPim_IfCondition57', cardinality 0..*) is associated with 'PagosPim::LogicalExpression' (role 'PagosPim_LogicalExpression', cardinality 0..*).
+'PagosPim::FrontService' (role 'PagosPim_FrontService', cardinality 0..*) is associated with 'PagosPim::Input' (role 'PagosPim_Input', cardinality 0..*).
+'PagosPim::Body' (role 'PagosPim_Body66', cardinality 0..*) is associated with 'PagosPim::ElseSegment' (role 'PagosPim_ElseSegment65', cardinality 0..*).
+'PagosPim::Attribute' (role 'PagosPim_Attribute36', cardinality 0..*) is associated with 'PagosPim::Operation' (role 'PagosPim_Operation35', cardinality 0..*).
+'PagosPim::Relation' (role 'PagosPim_Relation40', cardinality 0..*) is associated with 'PagosPim::GenericComponent' (role 'PagosPim_GenericComponent41', cardinality 0..*).
+'PagosPim::Operation' (role 'PagosPim_Operation31', cardinality 0..*) is associated with 'PagosPim::ParameterList' (role 'PagosPim_ParameterList', cardinality 0..*).
+'PagosPim::IfCondition' (role 'PagosPim_IfCondition', cardinality 0..*) is associated with 'PagosPim::IfBlock' (role 'PagosPim_IfBlock51', cardinality 0..*).
+'PagosPim::Return' (role 'PagosPim_Return', cardinality 0..*) is associated with 'PagosPim::Expression' (role 'PagosPim_Expression44', cardinality 0..*).
+'PagosPim::ElseSegment' (role 'PagosPim_ElseSegment', cardinality 0..*) is associated with 'PagosPim::IfBlock' (role 'PagosPim_IfBlock53', cardinality 0..*).
+'PagosPim::DataLayerComponent' (role 'PagosPim_DataLayerComponent107', cardinality 0..*) is associated with 'PagosPim::Field' (role 'PagosPim_Field', cardinality 0..*).
+'PagosPim::GenericComponent' (role 'PagosPim_GenericComponent27', cardinality 0..*) is associated with 'PagosPim::Operation' (role 'PagosPim_Operation', cardinality 0..*).
+'PagosPim::Expression' (role 'PagosPim_Expression93', cardinality 0..*) is associated with 'PagosPim::Mult' (role 'PagosPim_Mult', cardinality 0..*).
+'PagosPim::ViewComponent' (role 'PagosPim_ViewComponent21', cardinality 0..*) is associated with 'PagosPim::FrontService' (role 'PagosPim_FrontService22', cardinality 0..*).
+'PagosPim::DataLayerComponent' (role 'PagosPim_DataLayerComponent102', cardinality 0..*) is associated with 'PagosPim::LogicComponent' (role 'PagosPim_LogicComponent101', cardinality 0..*).
+'PagosPim::Attribute' (role 'PagosPim_Attribute29', cardinality 0..*) is associated with 'PagosPim::Expression' (role 'PagosPim_Expression', cardinality 0..*).
+'PagosPim::Operation' (role 'PagosPim_Operation33', cardinality 0..*) is associated with 'PagosPim::Body' (role 'PagosPim_Body', cardinality 0..*).
+'PagosPim::ViewComponent' (role 'PagosPim_ViewComponent', cardinality 0..*) is associated with 'PagosPim::Application' (role 'PagosPim_Application8', cardinality 0..*).
+'PagosPim::DaoComponent' (role 'PagosPim_DaoComponent', cardinality 0..*) is associated with 'PagosPim::Application' (role 'PagosPim_Application6', cardinality 0..*).
+'PagosPim::LogicComponent' (role 'PagosPim_LogicComponent99', cardinality 0..*) is associated with 'PagosPim::ServerService' (role 'PagosPim_ServerService98', cardinality 0..*).
+'PagosPim::EObject' (role 'PagosPim_EObject83', cardinality 0..*) is associated with 'PagosPim::TerminalValue' (role 'PagosPim_TerminalValue82', cardinality 0..*).
+'PagosPim::ProgramIfExpression' (role 'PagosPim_ProgramIfExpression', cardinality 0..*) is associated with 'PagosPim::IfBlock' (role 'PagosPim_IfBlock55', cardinality 0..*).
+'PagosPim::Attribute' (role 'PagosPim_Attribute86', cardinality 0..*) is associated with 'PagosPim::TerminalValue' (role 'PagosPim_TerminalValue85', cardinality 0..*).
+'PagosPim::LogicalExpression' (role 'PagosPim_LogicalExpression75', cardinality 0..*) is associated with 'PagosPim::LogicalExpression' (role 'PagosPim_LogicalExpression77', cardinality 0..*).
+'PagosPim::Return' (role 'PagosPim_Return69', cardinality 0..*) is associated with 'PagosPim::ElseSegment' (role 'PagosPim_ElseSegment68', cardinality 0..*).
+'PagosPim::DataLayerComponent' (role 'PagosPim_DataLayerComponent', cardinality 0..*) is associated with 'PagosPim::Application' (role 'PagosPim_Application4', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 6 class(es).
+The class 'EModelElement' has no attributes.
+The class 'family::Family' has the following attributes: 'name' of type str.
+The class 'family::Man' has no attributes.
+The class 'family::Person' has the following attributes: 'lastName' of type str; 'birthMonth' of type str; 'birthDay' of type int; 'firstName' of type str; 'birthCity' of type str; 'birthYear' of type int.
+The class 'Person' has no attributes.
+The class 'family::Woman' has no attributes.
+The enumeration 'Month' has the following literals: 'April', 'March', 'September', 'October', 'November', 'February', 'July', 'January', 'May', 'August', 'December', 'June'.
+'family::Family' is a specialization of 'EModelElement'.
+'family::Man' is a specialization of 'Person'.
+'family::Person' is a specialization of 'EModelElement'.
+'family::Woman' is a specialization of 'Person'.
+'family::Person' (role 'family_Person9', cardinality 0..*) is associated with 'family::Woman' (role 'family_Woman10', cardinality 0..*).
+'family::Person' (role 'family_Person', cardinality 0..*) is associated with 'family::Man' (role 'family_Man7', cardinality 0..*).
+'family::Person' (role 'family_Person11', cardinality 0..*) is associated with 'family::Person' (role 'family_Person13', cardinality 0..*).
+'family::Family' (role 'family_Family3', cardinality 0..*) is associated with 'family::Family' (role 'family_Family5', cardinality 0..*).
+'family::Man' (role 'family_Man19', cardinality 0..*) is associated with 'family::Woman' (role 'family_Woman18', cardinality 0..*).
+'family::Family' (role 'family_Family2', cardinality 0..*) is associated with 'family::Woman' (role 'family_Woman', cardinality 0..*).
+'family::Man' (role 'family_Man', cardinality 0..*) is associated with 'family::Family' (role 'family_Family', cardinality 0..*).
+'family::Woman' (role 'family_Woman16', cardinality 0..*) is associated with 'family::Man' (role 'family_Man15', cardinality 0..*).

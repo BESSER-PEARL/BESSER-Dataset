@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'fsmkerm::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'fsmkerm::FSM' has no attributes.
+The class 'fsmkerm::State' has the following attributes: 'name' of type str.
+The class 'FSMException' has no attributes.
+The class 'fsmkerm::NoTransition' has no attributes.
+The class 'fsmkerm::NoInitialStateException' has no attributes.
+The class 'fsmkerm::FSMException' has no attributes.
+The class 'fsmkerm::NonDeterminism' has no attributes.
+'fsmkerm::NonDeterminism' is a specialization of 'FSMException'.
+'fsmkerm::NoInitialStateException' is a specialization of 'FSMException'.
+'fsmkerm::NoTransition' is a specialization of 'FSMException'.
+'fsmkerm::FSM' (role 'fsmkerm_FSM6', cardinality 0..*) is associated with 'fsmkerm::State' (role 'fsmkerm_State7', cardinality 0..*).
+'fsmkerm::Transition' (role 'outgoingTransition', cardinality 0..*) is associated with 'fsmkerm::State' (role 'State17', cardinality 0..*).
+'fsmkerm::FSM' (role 'FSM', cardinality 0..*) is associated with 'fsmkerm::State' (role 'ownedState', cardinality 0..*).
+'fsmkerm::FSM' (role 'fsmkerm_FSM3', cardinality 0..*) is associated with 'fsmkerm::State' (role 'fsmkerm_State4', cardinality 0..*).
+'fsmkerm::State' (role 'State19', cardinality 0..*) is associated with 'fsmkerm::Transition' (role 'incomingTransition', cardinality 0..*).
+'fsmkerm::FSM' (role 'fsmkerm_FSM11', cardinality 0..*) is associated with 'fsmkerm::FSMException' (role 'fsmkerm_FSMException', cardinality 0..*).
+'fsmkerm::State' (role 'State', cardinality 0..*) is associated with 'fsmkerm::FSM' (role 'owningFSM', cardinality 0..*).
+'fsmkerm::State' (role 'source', cardinality 0..*) is associated with 'fsmkerm::Transition' (role 'Transition', cardinality 0..*).
+'fsmkerm::FSM' (role 'fsmkerm_FSM9', cardinality 0..*) is associated with 'fsmkerm::Transition' (role 'fsmkerm_Transition', cardinality 0..*).
+'fsmkerm::State' (role 'fsmkerm_State', cardinality 0..*) is associated with 'fsmkerm::FSM' (role 'fsmkerm_FSM', cardinality 0..*).
+'fsmkerm::Transition' (role 'Transition15', cardinality 0..*) is associated with 'fsmkerm::State' (role 'target', cardinality 0..*).

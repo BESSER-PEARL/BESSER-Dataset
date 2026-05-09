@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'familyleft1::Mother' has the following attributes: 'age' of type int; 'name' of type str.
+The class 'familyleft1::Son' has the following attributes: 'name' of type str; 'age' of type int; 'sex' of type str.
+The class 'familyleft1::Family' has the following attributes: 'location' of type str; 'surname' of type str.
+The class 'familyleft1::Father' has the following attributes: 'age' of type int; 'name' of type str.
+'familyleft1::Mother' (role 'Mother', cardinality 0..*) is associated with 'familyleft1::Family' (role 'family7', cardinality 0..*).
+'familyleft1::Son' (role 'sons', cardinality 0..*) is associated with 'familyleft1::Family' (role 'Family4', cardinality 0..*).
+'familyleft1::Family' (role 'Family', cardinality 0..*) is associated with 'familyleft1::Father' (role 'father', cardinality 0..*).
+'familyleft1::Family' (role 'family9', cardinality 0..*) is associated with 'familyleft1::Son' (role 'Son', cardinality 0..*).
+'familyleft1::Mother' (role 'mother', cardinality 0..*) is associated with 'familyleft1::Family' (role 'Family2', cardinality 0..*).
+'familyleft1::Father' (role 'Father', cardinality 0..*) is associated with 'familyleft1::Family' (role 'family', cardinality 0..*).

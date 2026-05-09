@@ -1,0 +1,57 @@
+The model has 25 class(es).
+The class 'uFamilyRegistry' has no attributes.
+The class 'aMember' has no attributes.
+The class 'Families::uncertainty::uMember' has no attributes.
+The class 'Families::Family' has the following attributes: 'address' of type str; 'lastName' of type str.
+The class 'Families::FamilyRegistry' has no attributes.
+The class 'Families::uncertainty::uFamily' has no attributes.
+The class 'uFamily' has no attributes.
+The class 'uncertainty::Families::Member' has no attributes.
+The class 'aFamily' has no attributes.
+The class 'Families::Member' has the following attributes: 'age' of type int; 'firstName' of type str.
+The class 'Families::uncertainty::aFamilyRegistry' has no attributes.
+The class 'uncertainty::ModelElement' has no attributes.
+The class 'uncertainty::Families::FamilyRegistry' has no attributes.
+The class 'uncertainty::aMember' has no attributes.
+The class 'uncertainty::aFamily' has no attributes.
+The class 'uncertainty::UData' has no attributes.
+The class 'Families::uncertainty::UData' has the following attributes: 'name' of type str; 'utype' of type str.
+The class 'uncertainty::Families::Family' has no attributes.
+The class 'uMember' has no attributes.
+The class 'uncertainty::aFamilyRegistry' has no attributes.
+The class 'Families::uncertainty::ModelElement' has no attributes.
+The class 'Families::uncertainty::uFamilyRegistry' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'Families::uncertainty::aFamily' has no attributes.
+The class 'Families::uncertainty::aMember' has no attributes.
+The enumeration 'OperatorType' has the following literals: 'OR', 'AND', 'XOR'.
+'Families::uncertainty::uFamily' is a specialization of 'uncertainty::aFamily'.
+'Families::Family' is a specialization of 'uncertainty::aFamily'.
+'Families::uncertainty::uFamilyRegistry' is a specialization of 'uncertainty::aFamilyRegistry'.
+'Families::uncertainty::uFamilyRegistry' is a specialization of 'uncertainty::UData'.
+'Families::uncertainty::uMember' is a specialization of 'uncertainty::aMember'.
+'Families::Member' is a specialization of 'uncertainty::ModelElement'.
+'Families::FamilyRegistry' is a specialization of 'uncertainty::ModelElement'.
+'Families::FamilyRegistry' is a specialization of 'uncertainty::aFamilyRegistry'.
+'Families::Member' is a specialization of 'uncertainty::aMember'.
+'Families::Family' is a specialization of 'uncertainty::ModelElement'.
+'Families::uncertainty::uFamily' is a specialization of 'uncertainty::UData'.
+'Families::uncertainty::uMember' is a specialization of 'uncertainty::UData'.
+'uncertainty::Families::FamilyRegistry' (role 'uncertainty_Families_FamilyRegistry35', cardinality 0..*) is associated with 'Families::uncertainty::uFamilyRegistry' (role 'Families_uncertainty_uFamilyRegistry34', cardinality 0..*).
+'uFamily' (role 'uFamily', cardinality 0..*) is associated with 'Families::uncertainty::uFamily' (role 'Families_uncertainty_uFamily25', cardinality 0..*).
+'uncertainty::Families::Family' (role 'uncertainty_Families_Family23', cardinality 0..*) is associated with 'Families::uncertainty::uFamily' (role 'Families_uncertainty_uFamily22', cardinality 0..*).
+'Families::FamilyRegistry' (role 'Families_FamilyRegistry', cardinality 0..*) is associated with 'aFamily' (role 'aFamily', cardinality 0..*).
+'Families::Family' (role 'Families_Family10', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family12', cardinality 0..*).
+'uncertainty::Families::FamilyRegistry' (role 'uncertainty_Families_FamilyRegistry', cardinality 0..*) is associated with 'Families::uncertainty::uFamilyRegistry' (role 'Families_uncertainty_uFamilyRegistry', cardinality 0..*).
+'aMember' (role 'aMember6', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family5', cardinality 0..*).
+'Families::uncertainty::ModelElement' (role 'Families_uncertainty_ModelElement', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement', cardinality 0..*).
+'ModelElement' (role 'ModelElement19', cardinality 0..*) is associated with 'Families::uncertainty::ModelElement' (role 'Families_uncertainty_ModelElement18', cardinality 0..*).
+'uncertainty::Families::Family' (role 'uncertainty_Families_Family', cardinality 0..*) is associated with 'Families::uncertainty::uFamily' (role 'Families_uncertainty_uFamily', cardinality 0..*).
+'aMember' (role 'aMember', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family', cardinality 0..*).
+'uMember' (role 'uMember', cardinality 0..*) is associated with 'Families::uncertainty::uMember' (role 'Families_uncertainty_uMember31', cardinality 0..*).
+'Families::Family' (role 'Families_Family2', cardinality 0..*) is associated with 'aMember' (role 'aMember3', cardinality 0..*).
+'uFamilyRegistry' (role 'uFamilyRegistry', cardinality 0..*) is associated with 'Families::uncertainty::uFamilyRegistry' (role 'Families_uncertainty_uFamilyRegistry37', cardinality 0..*).
+'aMember' (role 'aMember14', cardinality 0..*) is associated with 'Families::Member' (role 'Families_Member', cardinality 0..*).
+'uncertainty::Families::Member' (role 'uncertainty_Families_Member', cardinality 0..*) is associated with 'Families::uncertainty::uMember' (role 'Families_uncertainty_uMember', cardinality 0..*).
+'Families::uncertainty::uMember' (role 'Families_uncertainty_uMember28', cardinality 0..*) is associated with 'uncertainty::Families::Member' (role 'uncertainty_Families_Member29', cardinality 0..*).
+'aMember' (role 'aMember9', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family8', cardinality 0..*).

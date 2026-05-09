@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'Families::Member' has the following attributes: 'firstName' of type str; 'age' of type int.
+The class 'Families::Family' has the following attributes: 'lastName' of type str; 'address' of type str.
+The class 'Families::FamilyRegistry' has no attributes.
+'Families::Member' (role 'Families_Member', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family', cardinality 0..*).
+'Families::Family' (role 'Families_Family5', cardinality 0..*) is associated with 'Families::Member' (role 'Families_Member6', cardinality 0..*).
+'Families::Member' (role 'Families_Member13', cardinality 0..*) is associated with 'Families::Member' (role 'Families_Member15', cardinality 0..*).
+'Families::Family' (role 'Families_Family17', cardinality 0..*) is associated with 'Families::FamilyRegistry' (role 'Families_FamilyRegistry', cardinality 0..*).
+'Families::Member' (role 'Families_Member9', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family8', cardinality 0..*).
+'Families::Member' (role 'Families_Member3', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family2', cardinality 0..*).
+'Families::Family' (role 'Families_Family10', cardinality 0..*) is associated with 'Families::Family' (role 'Families_Family12', cardinality 0..*).

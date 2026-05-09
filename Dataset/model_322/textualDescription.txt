@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'Library::Writer' has no attributes.
+The class 'Library::Library' has no attributes.
+The class 'Library::Book' has no attributes.
+The enumeration 'BookCategory' has the following literals: 'BIOGRAPHY', 'SCIENCE_FICTION', 'MYSTERY'.

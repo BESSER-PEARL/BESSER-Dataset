@@ -1,0 +1,31 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class fsm_FiniteStateMachine  {
+
+    private String name;
+
+
+
+    public fsm_FiniteStateMachine(
+        String name    ) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}

@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'libraryModel::Library' has the following attributes: 'name' of type str.
+The class 'libraryModel::Book' has the following attributes: 'category' of type str; 'title' of type str; 'pages' of type int.
+The class 'libraryModel::Writer' has the following attributes: 'name' of type str.
+The enumeration 'BookCategory' has the following literals: 'Biography', 'ScienceFiction', 'Mystery'.
+'libraryModel::Book' (role 'libraryModel_Book', cardinality 0..*) is associated with 'libraryModel::Library' (role 'libraryModel_Library2', cardinality 0..*).
+'libraryModel::Library' (role 'libraryModel_Library', cardinality 0..*) is associated with 'libraryModel::Writer' (role 'libraryModel_Writer', cardinality 0..*).
+'libraryModel::Book' (role 'books', cardinality 0..*) is associated with 'libraryModel::Writer' (role 'Writer', cardinality 0..*).
+'libraryModel::Book' (role 'Book', cardinality 0..*) is associated with 'libraryModel::Writer' (role 'author', cardinality 0..*).

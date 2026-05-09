@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/manuelleduc/workspace-cold-gemoc/fr.inria.diverse.gfsm.model/model/gfsm.ecore

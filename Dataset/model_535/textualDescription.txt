@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'Example::RaceDog' has no attributes.
+The class 'Example::Cat' has no attributes.
+The class 'Member' has no attributes.
+The class 'Example::Parent' has no attributes.
+The class 'Example::Dog' has no attributes.
+The class 'Example::Member' has the following attributes: 'lastName' of type str; 'firstName' of type str.
+The class 'Dog' has no attributes.
+The class 'Example::HuntingDog' has no attributes.
+The class 'Example::Son' has no attributes.
+The class 'Example::Pet' has the following attributes: 'name' of type str; 'breed' of type str.
+The class 'Example::Family' has the following attributes: 'address' of type str.
+The class 'Pet' has no attributes.
+The class 'Example::Daughter' has no attributes.
+'Example::Dog' is a specialization of 'Pet'.
+'Example::Parent' is a specialization of 'Member'.
+'Example::Son' is a specialization of 'Member'.
+'Example::Daughter' is a specialization of 'Member'.
+'Example::HuntingDog' is a specialization of 'Dog'.
+'Example::Cat' is a specialization of 'Pet'.
+'Example::RaceDog' is a specialization of 'Dog'.
+'Example::Family' (role 'family4', cardinality 0..*) is associated with 'Example::Daughter' (role 'Daughter', cardinality 0..*).
+'Example::Family' (role 'family', cardinality 0..*) is associated with 'Example::Parent' (role 'Parent', cardinality 0..*).
+'Example::Parent' (role 'parents', cardinality 0..*) is associated with 'Example::Family' (role 'Family', cardinality 0..*).
+'Example::Pet' (role 'Example_Pet', cardinality 0..*) is associated with 'Example::Family' (role 'Example_Family', cardinality 0..*).
+'Example::Son' (role 'Son', cardinality 0..*) is associated with 'Example::Family' (role 'family2', cardinality 0..*).
+'Example::Son' (role 'sons', cardinality 0..*) is associated with 'Example::Family' (role 'Family8', cardinality 0..*).
+'Example::Daughter' (role 'daughters', cardinality 0..*) is associated with 'Example::Family' (role 'Family10', cardinality 0..*).

@@ -1,0 +1,68 @@
+The model has 29 class(es).
+The class 'gfsm::BooleanExpression' has no attributes.
+The class 'gfsm::IntNeg' has no attributes.
+The class 'gfsm::BooleanEqual' has no attributes.
+The class 'gfsm::BooleanCompareExpression' has no attributes.
+The class 'gfsm::Transition' has the following attributes: 'event' of type str.
+The class 'gfsm::IntBinaryExpression' has no attributes.
+The class 'gfsm::BooleanGreaterThan' has no attributes.
+The class 'gfsm::BooleanOr' has no attributes.
+The class 'gfsm::InitialState' has no attributes.
+The class 'IntOperation' has no attributes.
+The class 'gfsm::BooleanBinaryExpression' has no attributes.
+The class 'BooleanBinaryExpression' has no attributes.
+The class 'gfsm::BooleanAnd' has no attributes.
+The class 'gfsm::IntMult' has no attributes.
+The class 'gfsm::IntOperation' has no attributes.
+The class 'IntBinaryExpression' has no attributes.
+The class 'IntExpression' has no attributes.
+The class 'State' has no attributes.
+The class 'gfsm::ConstExpr' has the following attributes: 'value' of type int.
+The class 'BooleanCompareExpression' has no attributes.
+The class 'gfsm::IntVarRef' has the following attributes: 'name' of type str.
+The class 'gfsm::IntBlock' has no attributes.
+The class 'gfsm::IntExpression' has no attributes.
+The class 'gfsm::State' has the following attributes: 'name' of type str.
+The class 'gfsm::IntAdd' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'gfsm::IntVarAssign' has the following attributes: 'name' of type str.
+The class 'gfsm::FSM' has the following attributes: 'name' of type str.
+The class 'gfsm::FinalState' has no attributes.
+'gfsm::IntAdd' is a specialization of 'IntBinaryExpression'.
+'gfsm::IntMult' is a specialization of 'IntBinaryExpression'.
+'gfsm::IntNeg' is a specialization of 'IntExpression'.
+'gfsm::BooleanOr' is a specialization of 'BooleanBinaryExpression'.
+'gfsm::BooleanEqual' is a specialization of 'BooleanCompareExpression'.
+'gfsm::IntVarRef' is a specialization of 'IntExpression'.
+'gfsm::IntVarAssign' is a specialization of 'IntOperation'.
+'gfsm::BooleanGreaterThan' is a specialization of 'BooleanCompareExpression'.
+'gfsm::ConstExpr' is a specialization of 'IntExpression'.
+'gfsm::BooleanBinaryExpression' is a specialization of 'BooleanExpression'.
+'gfsm::BooleanAnd' is a specialization of 'BooleanBinaryExpression'.
+'gfsm::InitialState' is a specialization of 'State'.
+'gfsm::IntBinaryExpression' is a specialization of 'IntExpression'.
+'gfsm::BooleanCompareExpression' is a specialization of 'BooleanExpression'.
+'gfsm::IntBlock' is a specialization of 'IntOperation'.
+'gfsm::FinalState' is a specialization of 'State'.
+'gfsm::State' (role 'states', cardinality 0..*) is associated with 'gfsm::FSM' (role 'FSM10', cardinality 0..*).
+'gfsm::BooleanCompareExpression' (role 'gfsm_BooleanCompareExpression41', cardinality 0..*) is associated with 'gfsm::IntExpression' (role 'gfsm_IntExpression42', cardinality 0..*).
+'gfsm::Transition' (role 'Transition18', cardinality 0..*) is associated with 'gfsm::FSM' (role 'fsm17', cardinality 0..*).
+'gfsm::InitialState' (role 'gfsm_InitialState', cardinality 0..*) is associated with 'gfsm::FSM' (role 'gfsm_FSM', cardinality 0..*).
+'gfsm::State' (role 'gfsm_State', cardinality 0..*) is associated with 'gfsm::IntOperation' (role 'gfsm_IntOperation', cardinality 0..*).
+'gfsm::IntBinaryExpression' (role 'gfsm_IntBinaryExpression25', cardinality 0..*) is associated with 'gfsm::IntExpression' (role 'gfsm_IntExpression26', cardinality 0..*).
+'gfsm::BooleanExpression' (role 'gfsm_BooleanExpression', cardinality 0..*) is associated with 'gfsm::Transition' (role 'gfsm_Transition', cardinality 0..*).
+'gfsm::FSM' (role 'fsm', cardinality 0..*) is associated with 'gfsm::State' (role 'State15', cardinality 0..*).
+'gfsm::IntOperation' (role 'gfsm_IntOperation8', cardinality 0..*) is associated with 'gfsm::State' (role 'gfsm_State7', cardinality 0..*).
+'gfsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'gfsm::State' (role 'from_', cardinality 0..*).
+'gfsm::IntExpression' (role 'gfsm_IntExpression30', cardinality 0..*) is associated with 'gfsm::IntVarAssign' (role 'gfsm_IntVarAssign', cardinality 0..*).
+'gfsm::IntBlock' (role 'gfsm_IntBlock', cardinality 0..*) is associated with 'gfsm::IntVarAssign' (role 'gfsm_IntVarAssign32', cardinality 0..*).
+'gfsm::IntExpression' (role 'gfsm_IntExpression', cardinality 0..*) is associated with 'gfsm::IntBinaryExpression' (role 'gfsm_IntBinaryExpression', cardinality 0..*).
+'gfsm::Transition' (role 'transitions', cardinality 0..*) is associated with 'gfsm::FSM' (role 'FSM', cardinality 0..*).
+'gfsm::State' (role 'gfsm_State22', cardinality 0..*) is associated with 'gfsm::FSM' (role 'gfsm_FSM21', cardinality 0..*).
+'gfsm::State' (role 'to', cardinality 0..*) is associated with 'gfsm::Transition' (role 'Transition13', cardinality 0..*).
+'gfsm::BooleanExpression' (role 'gfsm_BooleanExpression37', cardinality 0..*) is associated with 'gfsm::BooleanBinaryExpression' (role 'gfsm_BooleanBinaryExpression36', cardinality 0..*).
+'gfsm::IntExpression' (role 'gfsm_IntExpression39', cardinality 0..*) is associated with 'gfsm::BooleanCompareExpression' (role 'gfsm_BooleanCompareExpression', cardinality 0..*).
+'gfsm::Transition' (role 'incommingtransitions', cardinality 0..*) is associated with 'gfsm::State' (role 'State4', cardinality 0..*).
+'gfsm::IntNeg' (role 'gfsm_IntNeg', cardinality 0..*) is associated with 'gfsm::IntExpression' (role 'gfsm_IntExpression28', cardinality 0..*).
+'gfsm::Transition' (role 'outgoingtransitions', cardinality 0..*) is associated with 'gfsm::State' (role 'State', cardinality 0..*).
+'gfsm::BooleanExpression' (role 'gfsm_BooleanExpression34', cardinality 0..*) is associated with 'gfsm::BooleanBinaryExpression' (role 'gfsm_BooleanBinaryExpression', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'cascadenotall::Writer' has the following attributes: 'name' of type str.
+The class 'cascadenotall::Library' has the following attributes: 'name' of type str.
+The class 'cascadenotall::Book' has the following attributes: 'title' of type str; 'pages' of type str; 'category' of type str.
+The enumeration 'BookCategory' has the following literals: 'ScienceFiction', 'Mystery', 'Biography'.
+'cascadenotall::Writer' (role 'author', cardinality 0..*) is associated with 'cascadenotall::Book' (role 'Book', cardinality 0..*).
+'cascadenotall::Book' (role 'cascadenotall_Book', cardinality 0..*) is associated with 'cascadenotall::Library' (role 'cascadenotall_Library3', cardinality 0..*).
+'cascadenotall::Writer' (role 'Writer', cardinality 0..*) is associated with 'cascadenotall::Book' (role 'books', cardinality 0..*).
+'cascadenotall::Writer' (role 'cascadenotall_Writer', cardinality 0..*) is associated with 'cascadenotall::Library' (role 'cascadenotall_Library', cardinality 0..*).

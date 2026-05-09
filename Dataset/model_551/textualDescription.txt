@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'familyTree::Person' has the following attributes: 'lastName' of type str; 'name' of type str.
+The class 'familyTree::Male' has no attributes.
+The class 'familyTree::FamilyTree' has no attributes.
+The class 'familyTree::Female' has no attributes.
+The class 'Person' has no attributes.
+'familyTree::Female' is a specialization of 'Person'.
+'familyTree::Male' is a specialization of 'Person'.
+'familyTree::Person' (role 'children3', cardinality 0..*) is associated with 'familyTree::Female' (role 'Female', cardinality 0..*).
+'familyTree::FamilyTree' (role 'tree', cardinality 0..*) is associated with 'familyTree::Person' (role 'Person', cardinality 0..*).
+'familyTree::Male' (role 'Male', cardinality 0..*) is associated with 'familyTree::Person' (role 'children', cardinality 0..*).
+'familyTree::Male' (role 'Male10', cardinality 0..*) is associated with 'familyTree::Female' (role 'wife', cardinality 0..*).
+'familyTree::Person' (role 'Person12', cardinality 0..*) is associated with 'familyTree::Female' (role 'mother', cardinality 0..*).
+'familyTree::Person' (role 'leaves', cardinality 0..*) is associated with 'familyTree::FamilyTree' (role 'FamilyTree', cardinality 0..*).
+'familyTree::Person' (role 'Person8', cardinality 0..*) is associated with 'familyTree::Male' (role 'father', cardinality 0..*).
+'familyTree::Female' (role 'Female6', cardinality 0..*) is associated with 'familyTree::Male' (role 'husband', cardinality 0..*).

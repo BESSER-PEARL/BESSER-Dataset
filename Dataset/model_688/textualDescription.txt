@@ -1,0 +1,395 @@
+The model has 160 class(es).
+The class 'Janus::imperativeocl::BlockExp' has no attributes.
+The class 'PropertyTemplateItem' has no attributes.
+The class 'Janus::emof::Operation' has no attributes.
+The class 'Janus::emof::Extent' has no attributes.
+The class 'Janus::JTL::Predicate' has no attributes.
+The class 'ObjectTemplateExp' has no attributes.
+The class 'Object' has no attributes.
+The class 'Janus::imperativeocl::ReturnExp' has no attributes.
+The class 'Janus::imperativeocl::TryExp' has no attributes.
+The class 'emof::DataType' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'Variable' has no attributes.
+The class 'Janus::essentialocl::TupleLiteralPart' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'Janus::emof::NamedElement' has the following attributes: 'name' of type str.
+The class 'Janus::imperativeocl::InstantiationExp' has no attributes.
+The class 'imperativeocl::ImperativeExpression' has no attributes.
+The class 'essentialocl::OclExpression' has no attributes.
+The class 'Janus::essentialocl::VoidType' has no attributes.
+The class 'Janus::imperativeocl::AnonymousTupleLiteralPart' has no attributes.
+The class 'Janus::essentialocl::PrimitiveLiteralExp' has no attributes.
+The class 'Janus::imperativeocl::UnlinkExp' has no attributes.
+The class 'Janus::emof::Type' has no attributes.
+The class 'LoopExp' has no attributes.
+The class 'Janus::essentialocl::NullLiteralExp' has no attributes.
+The class 'Janus::emof::Enumeration' has no attributes.
+The class 'Janus::imperativeocl::DictionaryType' has no attributes.
+The class 'Janus::essentialocl::PropertyCallExp' has no attributes.
+The class 'Janus::essentialocl::InvalidType' has no attributes.
+The class 'DataType' has no attributes.
+The class 'Janus::essentialocl::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type bool.
+The class 'TryExp' has no attributes.
+The class 'Janus::emof::Parameter' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'Janus::emof::Package' has the following attributes: 'uri' of type str.
+The class 'Janus::emof::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'emof::Type' has no attributes.
+The class 'Janus::essentialocl::CollectionLiteralPart' has no attributes.
+The class 'Janus::emof::EnumerationLiteral' has no attributes.
+The class 'Janus::template::TemplateExp' has no attributes.
+The class 'ImperativeExpression' has no attributes.
+The class 'Janus::imperativeocl::ComputeExp' has no attributes.
+The class 'Janus::essentialocl::FeaturePropertyCall' has no attributes.
+The class 'Janus::essentialocl::InvalidLiteralExp' has no attributes.
+The class 'Janus::imperativeocl::RaiseExp' has no attributes.
+The class 'Janus::imperativeocl::AltExp' has no attributes.
+The class 'Janus::essentialocl::VariableExp' has no attributes.
+The class 'ComputeExp' has no attributes.
+The class 'Transformation' has no attributes.
+The class 'Janus::imperativeocl::AnonymousTupleType' has no attributes.
+The class 'Janus::essentialocl::TupleType' has no attributes.
+The class 'Janus::essentialocl::CollectionItem' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'Janus::imperativeocl::ContinueExp' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'TupleLiteralPart' has no attributes.
+The class 'TupleLiteralExp' has no attributes.
+The class 'Janus::imperativeocl::ForExp' has no attributes.
+The class 'Element' has no attributes.
+The class 'Janus::essentialocl::OpaqueExpression' has no attributes.
+The class 'Model' has no attributes.
+The class 'Janus::essentialocl::CollectionRange' has no attributes.
+The class 'Package' has no attributes.
+The class 'Janus::essentialocl::AnyType' has no attributes.
+The class 'Janus::JTL::Domain' has the following attributes: 'isEnforceable' of type bool; 'isCheckable' of type bool.
+The class 'Janus::emof::Tag' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'Janus::essentialocl::CallExp' has no attributes.
+The class 'Janus::imperativeocl::ListType' has no attributes.
+The class 'Janus::essentialocl::IterateExp' has no attributes.
+The class 'Janus::essentialocl::IfExp' has no attributes.
+The class 'Janus::essentialocl::Variable' has no attributes.
+The class 'Janus::imperativeocl::ImperativeExpression' has no attributes.
+The class 'emof::Class' has no attributes.
+The class 'Janus::essentialocl::LoopExp' has no attributes.
+The class 'Janus::essentialocl::EnumLiteralExp' has no attributes.
+The class 'Janus::imperativeocl::ImperativeLoopExp' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Janus::imperativeocl::AnonymousTupleLiteralExp' has no attributes.
+The class 'Janus::emof::Object' has no attributes.
+The class 'Janus::essentialocl::TypeExp' has no attributes.
+The class 'Janus::essentialocl::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'Janus::imperativeocl::CollectorExp' has no attributes.
+The class 'AltExp' has no attributes.
+The class 'Janus::imperativeocl::BreakExp' has no attributes.
+The class 'Janus::JTL::Relation' has the following attributes: 'isTopLevel' of type bool.
+The class 'Janus::essentialocl::OperationCallExp' has no attributes.
+The class 'Janus::essentialocl::OclExpression' has no attributes.
+The class 'ImperativeLoopExp' has no attributes.
+The class 'Janus::emof::TypedElement' has no attributes.
+The class 'emof::Package' has no attributes.
+The class 'Comment' has no attributes.
+The class 'Janus::essentialocl::RealLiteralExp' has the following attributes: 'realSymbol' of type float.
+The class 'TemplateExp' has no attributes.
+The class 'Janus::emof::PrimitiveType' has no attributes.
+The class 'Janus::template::PropertyTemplateItem' has no attributes.
+The class 'Janus::essentialocl::ExpressionInOcl' has no attributes.
+The class 'Extent' has no attributes.
+The class 'Janus::essentialocl::UnlimitedNaturalExp' has the following attributes: 'symbol' of type str.
+The class 'Janus::imperativeocl::UnpackExp' has no attributes.
+The class 'essentialocl::CallExp' has no attributes.
+The class 'Domain' has no attributes.
+The class 'Janus::imperativeocl::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'DictLiteralPart' has no attributes.
+The class 'OpaqueExpression' has no attributes.
+The class 'Janus::essentialocl::SequenceType' has no attributes.
+The class 'Janus::imperativeocl::DictLiteralPart' has no attributes.
+The class 'Janus::emof::URIExtent' has no attributes.
+The class 'Janus::imperativeocl::Typedef' has no attributes.
+The class 'Janus::JTL::Pattern' has no attributes.
+The class 'Janus::imperativeocl::SwitchExp' has no attributes.
+The class 'LogExp' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'Janus::essentialocl::SetType' has no attributes.
+The class 'Janus::essentialocl::BagType' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Janus::essentialocl::LiteralExp' has no attributes.
+The class 'Janus::essentialocl::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'Janus::emof::Property' has the following attributes: 'isComposite' of type bool; 'isId' of type bool; 'isDerived' of type bool; 'isReadOnly' of type bool; 'default' of type str.
+The class 'Property' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'AnonymousTupleLiteralPart' has no attributes.
+The class 'Janus::essentialocl::NumericLiteralExp' has no attributes.
+The class 'essentialocl::LoopExp' has no attributes.
+The class 'FeaturePropertyCall' has no attributes.
+The class 'Janus::emof::DataType' has no attributes.
+The class 'Janus::essentialocl::OrderedSetType' has no attributes.
+The class 'Tag' has no attributes.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'Janus::emof::MultiplicityElement' has the following attributes: 'upper' of type str; 'isOrdered' of type str; 'isUnique' of type str; 'lower' of type int.
+The class 'Janus::essentialocl::TupleLiteralExp' has no attributes.
+The class 'Janus::template::CollectionTemplateExp' has the following attributes: 'kind' of type str.
+The class 'Janus::imperativeocl::LogExp' has the following attributes: 'level' of type int; 'text' of type str.
+The class 'Janus::imperativeocl::WhileExp' has no attributes.
+The class 'Janus::imperativeocl::DictLiteralExp' has no attributes.
+The class 'Janus::essentialocl::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type int.
+The class 'emof::TypedElement' has no attributes.
+The class 'Janus::essentialocl::IteratorExp' has no attributes.
+The class 'Janus::imperativeocl::ImperativeIterateExp' has no attributes.
+The class 'Janus::essentialocl::LetExp' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'Janus::emof::Element' has no attributes.
+The class 'Relation' has no attributes.
+The class 'Janus::emof::Comment' has no attributes.
+The class 'Janus::imperativeocl::AssignExp' has the following attributes: 'isReset' of type bool.
+The class 'Janus::imperativeocl::AssertExp' has the following attributes: 'severity' of type str.
+The class 'Janus::JTL::Model' has no attributes.
+The class 'Class' has no attributes.
+The class 'Janus::essentialocl::CollectionType' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'emof::MultiplicityElement' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'Janus::template::ObjectTemplateExp' has the following attributes: 'referredClass' of type str.
+The class 'LetExp' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Janus::imperativeocl::TupleExp' has no attributes.
+The class 'Janus::imperativeocl::VariableInitExp' has the following attributes: 'withResult' of type bool.
+The class 'Janus::JTL::Transformation' has no attributes.
+The class 'CollectionLiteralExp' has no attributes.
+The enumeration 'CollectionKind' has the following literals: 'Bag', 'Sequence', 'OrderedSet', 'Set'.
+The enumeration 'SeverityKind' has the following literals: 'error', 'fatal', 'warning'.
+'Janus::emof::Property' is a specialization of 'emof::TypedElement'.
+'Janus::imperativeocl::AnonymousTupleLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::essentialocl::FeaturePropertyCall' is a specialization of 'CallExp'.
+'Janus::essentialocl::NullLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::imperativeocl::TupleExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::InvalidType' is a specialization of 'Type'.
+'Janus::imperativeocl::UnlinkExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::BagType' is a specialization of 'CollectionType'.
+'Janus::imperativeocl::ReturnExp' is a specialization of 'ImperativeExpression'.
+'Janus::imperativeocl::DictLiteralPart' is a specialization of 'Element'.
+'Janus::essentialocl::OclExpression' is a specialization of 'TypedElement'.
+'Janus::essentialocl::LoopExp' is a specialization of 'essentialocl::OclExpression'.
+'Janus::imperativeocl::DictLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::imperativeocl::InstantiationExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::IteratorExp' is a specialization of 'LoopExp'.
+'Janus::emof::TypedElement' is a specialization of 'NamedElement'.
+'Janus::essentialocl::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'Janus::essentialocl::LiteralExp' is a specialization of 'OclExpression'.
+'Janus::essentialocl::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'Janus::imperativeocl::TemplateParameterType' is a specialization of 'Type'.
+'Janus::imperativeocl::SwitchExp' is a specialization of 'imperativeocl::ImperativeExpression'.
+'Janus::imperativeocl::BreakExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::TypeExp' is a specialization of 'OclExpression'.
+'Janus::imperativeocl::WhileExp' is a specialization of 'ImperativeExpression'.
+'Janus::emof::EnumerationLiteral' is a specialization of 'NamedElement'.
+'Janus::imperativeocl::AssignExp' is a specialization of 'ImperativeExpression'.
+'Janus::emof::Type' is a specialization of 'NamedElement'.
+'Janus::essentialocl::CallExp' is a specialization of 'OclExpression'.
+'Janus::essentialocl::UnlimitedNaturalExp' is a specialization of 'NumericLiteralExp'.
+'Janus::essentialocl::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::emof::DataType' is a specialization of 'Type'.
+'Janus::imperativeocl::TryExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::VoidType' is a specialization of 'Type'.
+'Janus::emof::Parameter' is a specialization of 'emof::TypedElement'.
+'Janus::essentialocl::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'Janus::essentialocl::AnyType' is a specialization of 'emof::Type'.
+'Janus::essentialocl::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'Janus::template::CollectionTemplateExp' is a specialization of 'TemplateExp'.
+'Janus::emof::Tag' is a specialization of 'Element'.
+'Janus::JTL::Pattern' is a specialization of 'Element'.
+'Janus::JTL::Model' is a specialization of 'NamedElement'.
+'Janus::imperativeocl::ForExp' is a specialization of 'ImperativeLoopExp'.
+'Janus::essentialocl::Variable' is a specialization of 'TypedElement'.
+'Janus::imperativeocl::AltExp' is a specialization of 'ImperativeExpression'.
+'Janus::imperativeocl::ImperativeExpression' is a specialization of 'OclExpression'.
+'Janus::JTL::Domain' is a specialization of 'NamedElement'.
+'Janus::JTL::Predicate' is a specialization of 'Element'.
+'Janus::essentialocl::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::imperativeocl::AnonymousTupleLiteralPart' is a specialization of 'Element'.
+'Janus::JTL::Transformation' is a specialization of 'emof::Class'.
+'Janus::essentialocl::CollectionType' is a specialization of 'DataType'.
+'Janus::emof::Property' is a specialization of 'emof::MultiplicityElement'.
+'Janus::essentialocl::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'Janus::imperativeocl::ContinueExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::emof::Package' is a specialization of 'NamedElement'.
+'Janus::imperativeocl::UnpackExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::CollectionLiteralPart' is a specialization of 'TypedElement'.
+'Janus::imperativeocl::ImperativeLoopExp' is a specialization of 'essentialocl::LoopExp'.
+'Janus::imperativeocl::BlockExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::TupleLiteralPart' is a specialization of 'TypedElement'.
+'Janus::imperativeocl::DictionaryType' is a specialization of 'CollectionType'.
+'Janus::emof::Element' is a specialization of 'Object'.
+'Janus::imperativeocl::LogExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::IfExp' is a specialization of 'OclExpression'.
+'Janus::JTL::Relation' is a specialization of 'NamedElement'.
+'Janus::essentialocl::IterateExp' is a specialization of 'LoopExp'.
+'Janus::imperativeocl::AssertExp' is a specialization of 'ImperativeExpression'.
+'Janus::emof::URIExtent' is a specialization of 'Extent'.
+'Janus::essentialocl::LetExp' is a specialization of 'OclExpression'.
+'Janus::imperativeocl::ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+'Janus::imperativeocl::CollectorExp' is a specialization of 'ImperativeLoopExp'.
+'Janus::essentialocl::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'Janus::essentialocl::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'Janus::JTL::Transformation' is a specialization of 'emof::Package'.
+'Janus::essentialocl::TupleType' is a specialization of 'emof::Class'.
+'Janus::imperativeocl::ListType' is a specialization of 'CollectionType'.
+'Janus::essentialocl::ExpressionInOcl' is a specialization of 'OpaqueExpression'.
+'Janus::imperativeocl::Typedef' is a specialization of 'Class'.
+'Janus::emof::NamedElement' is a specialization of 'Element'.
+'Janus::emof::Class' is a specialization of 'Type'.
+'Janus::essentialocl::SetType' is a specialization of 'CollectionType'.
+'Janus::essentialocl::OrderedSetType' is a specialization of 'CollectionType'.
+'Janus::template::TemplateExp' is a specialization of 'LiteralExp'.
+'Janus::essentialocl::OperationCallExp' is a specialization of 'FeaturePropertyCall'.
+'Janus::essentialocl::SequenceType' is a specialization of 'CollectionType'.
+'Janus::emof::Extent' is a specialization of 'Object'.
+'Janus::emof::Operation' is a specialization of 'emof::TypedElement'.
+'Janus::imperativeocl::RaiseExp' is a specialization of 'ImperativeExpression'.
+'Janus::emof::Enumeration' is a specialization of 'DataType'.
+'Janus::emof::Parameter' is a specialization of 'emof::MultiplicityElement'.
+'Janus::emof::PrimitiveType' is a specialization of 'DataType'.
+'Janus::imperativeocl::ComputeExp' is a specialization of 'ImperativeExpression'.
+'Janus::template::ObjectTemplateExp' is a specialization of 'TemplateExp'.
+'Janus::imperativeocl::SwitchExp' is a specialization of 'essentialocl::CallExp'.
+'Janus::essentialocl::LoopExp' is a specialization of 'essentialocl::CallExp'.
+'Janus::emof::Operation' is a specialization of 'emof::MultiplicityElement'.
+'Janus::template::PropertyTemplateItem' is a specialization of 'Element'.
+'Janus::essentialocl::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::imperativeocl::AnonymousTupleType' is a specialization of 'Class'.
+'Janus::essentialocl::PropertyCallExp' is a specialization of 'FeaturePropertyCall'.
+'Janus::essentialocl::VariableExp' is a specialization of 'OclExpression'.
+'Janus::essentialocl::TupleType' is a specialization of 'emof::DataType'.
+'Janus::emof::Comment' is a specialization of 'Element'.
+'Janus::essentialocl::AnyType' is a specialization of 'emof::Class'.
+'Janus::imperativeocl::VariableInitExp' is a specialization of 'ImperativeExpression'.
+'Janus::essentialocl::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'Janus::imperativeocl::ImperativeLoopExp' is a specialization of 'imperativeocl::ImperativeExpression'.
+'Janus::JTL::Pattern' (role 'Janus_JTL_Pattern64', cardinality 0..*) is associated with 'Domain' (role 'Domain65', cardinality 0..*).
+'Janus::emof::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'Enumeration' (role 'Enumeration', cardinality 0..*).
+'Janus::JTL::Domain' (role 'Janus_JTL_Domain', cardinality 0..*) is associated with 'Pattern' (role 'Pattern40', cardinality 0..*).
+'Janus::imperativeocl::DictLiteralPart' (role 'Janus_imperativeocl_DictLiteralPart', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression228', cardinality 0..*).
+'Janus::JTL::Transformation' (role 'transformation', cardinality 0..*) is associated with 'Model' (role 'Model', cardinality 0..*).
+'OclExpression' (role 'OclExpression194', cardinality 0..*) is associated with 'Janus::imperativeocl::UnlinkExp' (role 'Janus_imperativeocl_UnlinkExp', cardinality 0..*).
+'Janus::emof::Type' (role 'ownedType', cardinality 0..*) is associated with 'Package' (role 'Package16', cardinality 0..*).
+'LogExp' (role 'LogExp', cardinality 0..*) is associated with 'Janus::imperativeocl::AssertExp' (role 'Janus_imperativeocl_AssertExp', cardinality 0..*).
+'Pattern' (role 'Pattern67', cardinality 0..*) is associated with 'Janus::JTL::Predicate' (role 'predicate', cardinality 0..*).
+'Class' (role 'Class9', cardinality 0..*) is associated with 'Janus::emof::Operation' (role 'ownedOperation', cardinality 0..*).
+'Janus::imperativeocl::DictLiteralPart' (role 'Janus_imperativeocl_DictLiteralPart230', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression231', cardinality 0..*).
+'Janus::JTL::Predicate' (role 'Janus_JTL_Predicate', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression', cardinality 0..*).
+'OclExpression' (role 'OclExpression167', cardinality 0..*) is associated with 'Janus::imperativeocl::AssignExp' (role 'Janus_imperativeocl_AssignExp166', cardinality 0..*).
+'Janus::imperativeocl::AnonymousTupleLiteralPart' (role 'Janus_imperativeocl_AnonymousTupleLiteralPart', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression251', cardinality 0..*).
+'Janus::emof::Operation' (role 'Janus_emof_Operation', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'OclExpression' (role 'OclExpression85', cardinality 0..*) is associated with 'Janus::essentialocl::Variable' (role 'Janus_essentialocl_Variable', cardinality 0..*).
+'OclExpression' (role 'OclExpression233', cardinality 0..*) is associated with 'Janus::imperativeocl::LogExp' (role 'Janus_imperativeocl_LogExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression79', cardinality 0..*) is associated with 'Janus::essentialocl::IfExp' (role 'Janus_essentialocl_IfExp78', cardinality 0..*).
+'Janus::emof::Class' (role 'Class', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'OclExpression' (role 'OclExpression104', cardinality 0..*) is associated with 'Janus::essentialocl::OperationCallExp' (role 'Janus_essentialocl_OperationCallExp', cardinality 0..*).
+'Variable' (role 'Variable178', cardinality 0..*) is associated with 'Janus::imperativeocl::VariableInitExp' (role 'Janus_imperativeocl_VariableInitExp', cardinality 0..*).
+'Janus::essentialocl::EnumLiteralExp' (role 'Janus_essentialocl_EnumLiteralExp', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral140', cardinality 0..*).
+'Janus::imperativeocl::RaiseExp' (role 'Janus_imperativeocl_RaiseExp', cardinality 0..*) is associated with 'Type' (role 'Type208', cardinality 0..*).
+'Variable' (role 'Variable128', cardinality 0..*) is associated with 'Janus::essentialocl::ExpressionInOcl' (role 'Janus_essentialocl_ExpressionInOcl127', cardinality 0..*).
+'ComputeExp' (role 'ComputeExp', cardinality 0..*) is associated with 'Janus::essentialocl::Variable' (role 'returnedElement', cardinality 0..*).
+'OclExpression' (role 'OclExpression242', cardinality 0..*) is associated with 'Janus::imperativeocl::ImperativeLoopExp' (role 'Janus_imperativeocl_ImperativeLoopExp', cardinality 0..*).
+'TryExp' (role 'TryExp', cardinality 0..*) is associated with 'Janus::essentialocl::OclExpression' (role 'tryBody', cardinality 0..*).
+'Janus::emof::Package' (role 'package', cardinality 0..*) is associated with 'Type' (role 'Type13', cardinality 0..*).
+'Janus::JTL::Pattern' (role 'Janus_JTL_Pattern', cardinality 0..*) is associated with 'Variable' (role 'Variable60', cardinality 0..*).
+'Janus::emof::Element' (role 'Janus_emof_Element', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'Variable' (role 'Variable244', cardinality 0..*) is associated with 'Janus::imperativeocl::CollectorExp' (role 'Janus_imperativeocl_CollectorExp', cardinality 0..*).
+'Janus::emof::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'Class' (role 'Class21', cardinality 0..*).
+'Variable' (role 'Variable162', cardinality 0..*) is associated with 'Janus::imperativeocl::ImperativeIterateExp' (role 'Janus_imperativeocl_ImperativeIterateExp', cardinality 0..*).
+'Janus::imperativeocl::AnonymousTupleLiteralExp' (role 'Janus_imperativeocl_AnonymousTupleLiteralExp', cardinality 0..*) is associated with 'AnonymousTupleLiteralPart' (role 'AnonymousTupleLiteralPart', cardinality 0..*).
+'Janus::essentialocl::CollectionRange' (role 'Janus_essentialocl_CollectionRange', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression116', cardinality 0..*).
+'NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'Janus::emof::Comment' (role 'Janus_emof_Comment', cardinality 0..*).
+'Janus::essentialocl::IfExp' (role 'Janus_essentialocl_IfExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression73', cardinality 0..*).
+'Janus::essentialocl::TupleLiteralPart' (role 'part133', cardinality 0..*) is associated with 'TupleLiteralExp' (role 'TupleLiteralExp134', cardinality 0..*).
+'Janus::JTL::Pattern' (role 'pattern', cardinality 0..*) is associated with 'Predicate' (role 'Predicate', cardinality 0..*).
+'Janus::imperativeocl::Typedef' (role 'Janus_imperativeocl_Typedef', cardinality 0..*) is associated with 'Type' (role 'Type212', cardinality 0..*).
+'Janus::imperativeocl::Typedef' (role 'Janus_imperativeocl_Typedef214', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression215', cardinality 0..*).
+'Operation' (role 'Operation18', cardinality 0..*) is associated with 'Janus::emof::Parameter' (role 'ownedParameter', cardinality 0..*).
+'Variable' (role 'Variable185', cardinality 0..*) is associated with 'Janus::imperativeocl::ComputeExp' (role 'computeOwner', cardinality 0..*).
+'Janus::essentialocl::ExpressionInOcl' (role 'Janus_essentialocl_ExpressionInOcl130', cardinality 0..*) is associated with 'Variable' (role 'Variable131', cardinality 0..*).
+'OclExpression' (role 'OclExpression192', cardinality 0..*) is associated with 'Janus::imperativeocl::AltExp' (role 'Janus_imperativeocl_AltExp191', cardinality 0..*).
+'Class' (role 'Class3', cardinality 0..*) is associated with 'Janus::emof::Class' (role 'Janus_emof_Class', cardinality 0..*).
+'Janus::emof::TypedElement' (role 'Janus_emof_TypedElement', cardinality 0..*) is associated with 'Type' (role 'Type25', cardinality 0..*).
+'OclExpression' (role 'OclExpression201', cardinality 0..*) is associated with 'Janus::imperativeocl::TryExp' (role 'tryBodyOwner', cardinality 0..*).
+'Janus::imperativeocl::DictionaryType' (role 'Janus_imperativeocl_DictionaryType', cardinality 0..*) is associated with 'Type' (role 'Type225', cardinality 0..*).
+'Janus::essentialocl::CollectionType' (role 'Janus_essentialocl_CollectionType', cardinality 0..*) is associated with 'Type' (role 'Type138', cardinality 0..*).
+'Janus::essentialocl::PropertyCallExp' (role 'Janus_essentialocl_PropertyCallExp', cardinality 0..*) is associated with 'Property' (role 'Property93', cardinality 0..*).
+'Janus::JTL::Pattern' (role 'when', cardinality 0..*) is associated with 'Relation' (role 'Relation57', cardinality 0..*).
+'OclExpression' (role 'OclExpression189', cardinality 0..*) is associated with 'Janus::imperativeocl::AltExp' (role 'Janus_imperativeocl_AltExp', cardinality 0..*).
+'Variable' (role 'Variable220', cardinality 0..*) is associated with 'Janus::imperativeocl::InstantiationExp' (role 'Janus_imperativeocl_InstantiationExp219', cardinality 0..*).
+'Janus::JTL::Model' (role 'Janus_JTL_Model', cardinality 0..*) is associated with 'Package' (role 'Package50', cardinality 0..*).
+'Janus::essentialocl::CollectionLiteralPart' (role 'part', cardinality 0..*) is associated with 'CollectionLiteralExp' (role 'CollectionLiteralExp112', cardinality 0..*).
+'OclExpression' (role 'OclExpression114', cardinality 0..*) is associated with 'Janus::essentialocl::CollectionItem' (role 'Janus_essentialocl_CollectionItem', cardinality 0..*).
+'Janus::imperativeocl::TryExp' (role 'Janus_imperativeocl_TryExp205', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression206', cardinality 0..*).
+'Janus::imperativeocl::SwitchExp' (role 'Janus_imperativeocl_SwitchExp', cardinality 0..*) is associated with 'AltExp' (role 'AltExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression183', cardinality 0..*) is associated with 'Janus::imperativeocl::WhileExp' (role 'Janus_imperativeocl_WhileExp182', cardinality 0..*).
+'Janus::essentialocl::CallExp' (role 'Janus_essentialocl_CallExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression70', cardinality 0..*).
+'OclExpression' (role 'OclExpression157', cardinality 0..*) is associated with 'Janus::template::PropertyTemplateItem' (role 'Janus_template_PropertyTemplateItem', cardinality 0..*).
+'Transformation' (role 'Transformation', cardinality 0..*) is associated with 'Janus::JTL::Relation' (role 'relation', cardinality 0..*).
+'OclExpression' (role 'OclExpression153', cardinality 0..*) is associated with 'Janus::template::CollectionTemplateExp' (role 'Janus_template_CollectionTemplateExp152', cardinality 0..*).
+'Janus::imperativeocl::TupleExp' (role 'Janus_imperativeocl_TupleExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression210', cardinality 0..*).
+'Pattern' (role 'Pattern', cardinality 0..*) is associated with 'Janus::JTL::Relation' (role 'whereOwner', cardinality 0..*).
+'OclExpression' (role 'OclExpression223', cardinality 0..*) is associated with 'Janus::imperativeocl::InstantiationExp' (role 'Janus_imperativeocl_InstantiationExp222', cardinality 0..*).
+'Model' (role 'Model43', cardinality 0..*) is associated with 'Janus::JTL::Domain' (role 'Janus_JTL_Domain42', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'Janus::emof::Tag' (role 'tag', cardinality 0..*).
+'Janus::essentialocl::LoopExp' (role 'Janus_essentialocl_LoopExp101', cardinality 0..*) is associated with 'Variable' (role 'Variable102', cardinality 0..*).
+'Variable' (role 'Variable246', cardinality 0..*) is associated with 'Janus::imperativeocl::UnpackExp' (role 'Janus_imperativeocl_UnpackExp', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'Janus::emof::Class' (role 'class_', cardinality 0..*).
+'Janus::imperativeocl::ReturnExp' (role 'Janus_imperativeocl_ReturnExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression199', cardinality 0..*).
+'Janus::imperativeocl::SwitchExp' (role 'Janus_imperativeocl_SwitchExp175', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression176', cardinality 0..*).
+'Janus::template::CollectionTemplateExp' (role 'Janus_template_CollectionTemplateExp150', cardinality 0..*) is associated with 'CollectionType' (role 'CollectionType', cardinality 0..*).
+'Variable' (role 'Variable125', cardinality 0..*) is associated with 'Janus::essentialocl::ExpressionInOcl' (role 'Janus_essentialocl_ExpressionInOcl124', cardinality 0..*).
+'Janus::essentialocl::Variable' (role 'Janus_essentialocl_Variable89', cardinality 0..*) is associated with 'Parameter' (role 'Parameter90', cardinality 0..*).
+'OclExpression' (role 'OclExpression187', cardinality 0..*) is associated with 'Janus::imperativeocl::ComputeExp' (role 'Janus_imperativeocl_ComputeExp', cardinality 0..*).
+'Janus::template::PropertyTemplateItem' (role 'Janus_template_PropertyTemplateItem159', cardinality 0..*) is associated with 'Property' (role 'Property160', cardinality 0..*).
+'Type' (role 'Type97', cardinality 0..*) is associated with 'Janus::essentialocl::TypeExp' (role 'Janus_essentialocl_TypeExp', cardinality 0..*).
+'Variable' (role 'Variable95', cardinality 0..*) is associated with 'Janus::essentialocl::VariableExp' (role 'Janus_essentialocl_VariableExp', cardinality 0..*).
+'Relation' (role 'Relation107', cardinality 0..*) is associated with 'Janus::essentialocl::OperationCallExp' (role 'Janus_essentialocl_OperationCallExp106', cardinality 0..*).
+'Janus::JTL::Domain' (role 'Janus_JTL_Domain45', cardinality 0..*) is associated with 'Variable' (role 'Variable46', cardinality 0..*).
+'Variable' (role 'Variable142', cardinality 0..*) is associated with 'Janus::template::TemplateExp' (role 'Janus_template_TemplateExp', cardinality 0..*).
+'Janus::imperativeocl::AssertExp' (role 'Janus_imperativeocl_AssertExp239', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression240', cardinality 0..*).
+'Janus::essentialocl::LetExp' (role 'Janus_essentialocl_LetExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression81', cardinality 0..*).
+'Janus::emof::Operation' (role 'operation', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'Janus::emof::Package' (role 'Janus_emof_Package', cardinality 0..*).
+'Janus::essentialocl::Variable' (role 'variable', cardinality 0..*) is associated with 'LetExp' (role 'LetExp87', cardinality 0..*).
+'Janus::template::CollectionTemplateExp' (role 'Janus_template_CollectionTemplateExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression148', cardinality 0..*).
+'Janus::imperativeocl::WhileExp' (role 'Janus_imperativeocl_WhileExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression180', cardinality 0..*).
+'Janus::essentialocl::ExpressionInOcl' (role 'Janus_essentialocl_ExpressionInOcl', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression122', cardinality 0..*).
+'ObjectTemplateExp' (role 'ObjectTemplateExp', cardinality 0..*) is associated with 'Janus::template::PropertyTemplateItem' (role 'part155', cardinality 0..*).
+'Type' (role 'Type248', cardinality 0..*) is associated with 'Janus::imperativeocl::AnonymousTupleType' (role 'Janus_imperativeocl_AnonymousTupleType', cardinality 0..*).
+'Janus::JTL::Relation' (role 'Janus_JTL_Relation', cardinality 0..*) is associated with 'Variable' (role 'Variable', cardinality 0..*).
+'OclExpression' (role 'OclExpression172', cardinality 0..*) is associated with 'Janus::imperativeocl::BlockExp' (role 'Janus_imperativeocl_BlockExp', cardinality 0..*).
+'OclExpression' (role 'OclExpression119', cardinality 0..*) is associated with 'Janus::essentialocl::CollectionRange' (role 'Janus_essentialocl_CollectionRange118', cardinality 0..*).
+'Domain' (role 'Domain', cardinality 0..*) is associated with 'Janus::JTL::Relation' (role 'relation32', cardinality 0..*).
+'Janus::essentialocl::LoopExp' (role 'Janus_essentialocl_LoopExp', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression99', cardinality 0..*).
+'Property' (role 'Property136', cardinality 0..*) is associated with 'Janus::essentialocl::TupleLiteralPart' (role 'Janus_essentialocl_TupleLiteralPart', cardinality 0..*).
+'OclExpression' (role 'OclExpression197', cardinality 0..*) is associated with 'Janus::imperativeocl::UnlinkExp' (role 'Janus_imperativeocl_UnlinkExp196', cardinality 0..*).
+'DictLiteralPart' (role 'DictLiteralPart', cardinality 0..*) is associated with 'Janus::imperativeocl::DictLiteralExp' (role 'Janus_imperativeocl_DictLiteralExp', cardinality 0..*).
+'Element' (role 'Element236', cardinality 0..*) is associated with 'Janus::imperativeocl::LogExp' (role 'Janus_imperativeocl_LogExp235', cardinality 0..*).
+'OclExpression' (role 'OclExpression170', cardinality 0..*) is associated with 'Janus::imperativeocl::AssignExp' (role 'Janus_imperativeocl_AssignExp169', cardinality 0..*).
+'TupleLiteralPart' (role 'TupleLiteralPart', cardinality 0..*) is associated with 'Janus::essentialocl::TupleLiteralExp' (role 'TupleLiteralExp', cardinality 0..*).
+'Janus::template::ObjectTemplateExp' (role 'objContainer', cardinality 0..*) is associated with 'PropertyTemplateItem' (role 'PropertyTemplateItem', cardinality 0..*).
+'Janus::emof::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'Relation' (role 'Relation55', cardinality 0..*) is associated with 'Janus::JTL::Pattern' (role 'where', cardinality 0..*).
+'Janus::essentialocl::IterateExp' (role 'Janus_essentialocl_IterateExp', cardinality 0..*) is associated with 'Variable' (role 'Variable109', cardinality 0..*).
+'Model' (role 'Model53', cardinality 0..*) is associated with 'Janus::JTL::Model' (role 'Janus_JTL_Model52', cardinality 0..*).
+'Janus::JTL::Model' (role 'modelParameter', cardinality 0..*) is associated with 'Transformation' (role 'Transformation48', cardinality 0..*).
+'OclExpression' (role 'OclExpression145', cardinality 0..*) is associated with 'Janus::template::TemplateExp' (role 'Janus_template_TemplateExp144', cardinality 0..*).
+'Janus::JTL::Pattern' (role 'Janus_JTL_Pattern62', cardinality 0..*) is associated with 'TemplateExp' (role 'TemplateExp', cardinality 0..*).
+'Janus::essentialocl::IfExp' (role 'Janus_essentialocl_IfExp75', cardinality 0..*) is associated with 'OclExpression' (role 'OclExpression76', cardinality 0..*).
+'Janus::emof::Property' (role 'Janus_emof_Property', cardinality 0..*) is associated with 'Property' (role 'Property23', cardinality 0..*).
+'Variable' (role 'Variable83', cardinality 0..*) is associated with 'Janus::essentialocl::LetExp' (role 'LetExp', cardinality 0..*).
+'Janus::essentialocl::CollectionLiteralExp' (role 'CollectionLiteralExp', cardinality 0..*) is associated with 'CollectionLiteralPart' (role 'CollectionLiteralPart', cardinality 0..*).
+'Type' (role 'Type203', cardinality 0..*) is associated with 'Janus::imperativeocl::TryExp' (role 'Janus_imperativeocl_TryExp', cardinality 0..*).
+'Class' (role 'Class217', cardinality 0..*) is associated with 'Janus::imperativeocl::InstantiationExp' (role 'Janus_imperativeocl_InstantiationExp', cardinality 0..*).
+'Relation' (role 'Relation', cardinality 0..*) is associated with 'Janus::JTL::Transformation' (role 'transformation29', cardinality 0..*).
+'Relation' (role 'Relation38', cardinality 0..*) is associated with 'Janus::JTL::Domain' (role 'domain', cardinality 0..*).
+'OclExpression' (role 'OclExpression164', cardinality 0..*) is associated with 'Janus::imperativeocl::AssignExp' (role 'Janus_imperativeocl_AssignExp', cardinality 0..*).
+'Tag' (role 'Tag', cardinality 0..*) is associated with 'Janus::emof::Element' (role 'element', cardinality 0..*).
+'Pattern' (role 'Pattern35', cardinality 0..*) is associated with 'Janus::JTL::Relation' (role 'whenOwner', cardinality 0..*).

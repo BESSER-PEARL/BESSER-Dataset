@@ -1,0 +1,39 @@
+The model has 14 class(es).
+The class 'families::Model' has no attributes.
+The class 'families::Family' has the following attributes: 'id' of type str; 'numberOfChildren' of type int; 'nuclear' of type bool; 'address' of type str; 'averageAge' of type float; 'lotteryNumbers' of type int; 'averageAgePrecise' of type float.
+The class 'NamedElement' has no attributes.
+The class 'families::Dog' has the following attributes: 'breed' of type str; 'loud' of type bool.
+The class 'District' has no attributes.
+The class 'families::Bike' has no attributes.
+The class 'families::Suburb' has no attributes.
+The class 'families::Account' has no attributes.
+The class 'families::Band' has no attributes.
+The class 'families::Person' has no attributes.
+The class 'families::Pet' has the following attributes: 'male' of type bool.
+The class 'Pet' has no attributes.
+The class 'families::NamedElement' has the following attributes: 'name' of type str.
+The class 'families::District' has no attributes.
+The enumeration 'DogBreed' has the following literals: 'labrador', 'poodle'.
+'families::Suburb' is a specialization of 'District'.
+'families::Model' is a specialization of 'NamedElement'.
+'families::Pet' is a specialization of 'NamedElement'.
+'families::Dog' is a specialization of 'Pet'.
+'families::Person' is a specialization of 'NamedElement'.
+'families::Family' is a specialization of 'NamedElement'.
+'families::Person' (role 'families_Person', cardinality 0..*) is associated with 'families::Family' (role 'families_Family2', cardinality 0..*).
+'families::Pet' (role 'families_Pet', cardinality 0..*) is associated with 'families::Family' (role 'families_Family', cardinality 0..*).
+'families::Model' (role 'families_Model', cardinality 0..*) is associated with 'families::NamedElement' (role 'families_NamedElement', cardinality 0..*).
+'families::Person' (role 'families_Person13', cardinality 0..*) is associated with 'families::Person' (role 'families_Person11', cardinality 0..*).
+'families::Bike' (role 'families_Bike', cardinality 0..*) is associated with 'families::Person' (role 'families_Person30', cardinality 0..*).
+'families::Dog' (role 'families_Dog', cardinality 0..*) is associated with 'families::Family' (role 'families_Family4', cardinality 0..*).
+'families::Account' (role 'families_Account10', cardinality 0..*) is associated with 'families::Person' (role 'families_Person9', cardinality 0..*).
+'families::Family' (role 'families_Family33', cardinality 0..*) is associated with 'families::Bike' (role 'families_Bike32', cardinality 0..*).
+'families::Model' (role 'families_Model27', cardinality 0..*) is associated with 'families::NamedElement' (role 'families_NamedElement28', cardinality 0..*).
+'families::Family' (role 'Family', cardinality 0..*) is associated with 'families::District' (role 'district', cardinality 0..*).
+'families::District' (role 'District21', cardinality 0..*) is associated with 'families::Dog' (role 'dogs', cardinality 0..*).
+'families::Person' (role 'families_Person35', cardinality 0..*) is associated with 'families::Band' (role 'families_Band', cardinality 0..*).
+'families::Person' (role 'families_Person19', cardinality 0..*) is associated with 'families::Person' (role 'families_Person17', cardinality 0..*).
+'families::Person' (role 'families_Person7', cardinality 0..*) is associated with 'families::Account' (role 'families_Account', cardinality 0..*).
+'families::Dog' (role 'Dog', cardinality 0..*) is associated with 'families::District' (role 'district24', cardinality 0..*).
+'families::Person' (role 'families_Person16', cardinality 0..*) is associated with 'families::Person' (role 'families_Person14', cardinality 0..*).
+'families::District' (role 'District', cardinality 0..*) is associated with 'families::Family' (role 'families', cardinality 0..*).

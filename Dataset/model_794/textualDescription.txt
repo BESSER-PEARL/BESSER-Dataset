@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'ecore::EClass' has no attributes.
+The class 'ecore::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'ecore::State' has the following attributes: 'name' of type str.
+The class 'FSM' has no attributes.
+The class 'ecore::FSM' has no attributes.
+The class 'ecore::ENamedElement' has no attributes.
+'ecore::EClass' is a specialization of 'FSM'.
+'ecore::State' (role 'target', cardinality 0..*) is associated with 'ecore::Transition' (role 'Transition8', cardinality 0..*).
+'ecore::State' (role 'State12', cardinality 0..*) is associated with 'ecore::Transition' (role 'outgoingTransition', cardinality 0..*).
+'ecore::FSM' (role 'ecore_FSM16', cardinality 0..*) is associated with 'ecore::ENamedElement' (role 'ecore_ENamedElement', cardinality 0..*).
+'ecore::State' (role 'ecore_State10', cardinality 0..*) is associated with 'ecore::EClass' (role 'ecore_EClass', cardinality 0..*).
+'ecore::FSM' (role 'ecore_FSM3', cardinality 0..*) is associated with 'ecore::State' (role 'ecore_State4', cardinality 0..*).
+'ecore::FSM' (role 'FSM', cardinality 0..*) is associated with 'ecore::State' (role 'ownedState', cardinality 0..*).
+'ecore::FSM' (role 'ecore_FSM', cardinality 0..*) is associated with 'ecore::State' (role 'ecore_State', cardinality 0..*).
+'ecore::Transition' (role 'Transition', cardinality 0..*) is associated with 'ecore::State' (role 'source', cardinality 0..*).
+'ecore::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'ecore::State' (role 'State14', cardinality 0..*).
+'ecore::FSM' (role 'owningFSM', cardinality 0..*) is associated with 'ecore::State' (role 'State', cardinality 0..*).

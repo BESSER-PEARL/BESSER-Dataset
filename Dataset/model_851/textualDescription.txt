@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'fsm::FSMModel' has no attributes.
+The class 'fsm::StateMachine' has no attributes.
+The class 'fsm::State' has the following attributes: 'isFinal' of type bool.
+The class 'NamedElement' has no attributes.
+The class 'fsm::Transition' has the following attributes: 'output' of type str; 'input' of type str.
+The class 'fsm::NamedElement' has the following attributes: 'name' of type str.
+'fsm::State' is a specialization of 'NamedElement'.
+'fsm::StateMachine' is a specialization of 'NamedElement'.
+'fsm::FSMModel' is a specialization of 'NamedElement'.
+'fsm::State' (role 'fsm_State3', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine2', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine', cardinality 0..*).
+'fsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'fsm::State' (role 'source', cardinality 0..*).
+'fsm::FSMModel' (role 'fsm_FSMModel', cardinality 0..*) is associated with 'fsm::StateMachine' (role 'fsm_StateMachine9', cardinality 0..*).
+'fsm::State' (role 'fsm_State6', cardinality 0..*) is associated with 'fsm::Transition' (role 'fsm_Transition', cardinality 0..*).
+'fsm::State' (role 'State', cardinality 0..*) is associated with 'fsm::Transition' (role 'transitions', cardinality 0..*).

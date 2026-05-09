@@ -1,0 +1,978 @@
+The model has 295 class(es).
+The class 'CompleteDSLPckg::WriteVariableAction' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'CompleteDSLPckg::MergeNode' has no attributes.
+The class 'CompleteDSLPckg::Connector' has the following attributes: 'kind' of type str.
+The class 'CompleteDSLPckg::Pseudostate' has no attributes.
+The class 'CompleteDSLPckg::InstanceValue' has no attributes.
+The class 'CompleteDSLPckg::AddVariableValueAction' has no attributes.
+The class 'CompleteDSLPckg::LiteralInteger' has no attributes.
+The class 'CompleteDSLPckg::StartClassifierBehaviorAction' has no attributes.
+The class 'CompleteDSLPckg::JoinNode' has the following attributes: 'isCombineDuplicate' of type bool.
+The class 'CompleteDSLPckg::ClearStructuralFeatureAction' has no attributes.
+The class 'CompleteDSLPckg::ActivityParameterNode' has no attributes.
+The class 'CompleteDSLPckg::State' has the following attributes: 'isComposite' of type bool; 'isSubmachineState' of type bool; 'isSimple' of type bool; 'isOrthogonal' of type bool.
+The class 'Class' has no attributes.
+The class 'CompleteDSLPckg::InitialNode' has no attributes.
+The class 'CompleteDSLPckg::ExpansionNode' has no attributes.
+The class 'CompleteDSLPckg::InterruptibleActivityRegion' has no attributes.
+The class 'CompleteDSLPckg::TimeObservation' has the following attributes: 'firstEvent' of type bool.
+The class 'CompleteDSLPckg::TypedElement' has no attributes.
+The class 'CompleteDSLPckg::Realization' has no attributes.
+The class 'CompleteDSLPckg::Action' has no attributes.
+The class 'CompleteDSLPckg::LiteralReal' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'CallAction' has no attributes.
+The class 'CompleteDSLPckg::CreateObjectAction' has no attributes.
+The class 'CompleteDSLPckg::DurationInterval' has no attributes.
+The class 'CompleteDSLPckg::TestIdentityAction' has no attributes.
+The class 'InteractionFragment' has no attributes.
+The class 'CompleteDSLPckg::ProtocolConformance' has no attributes.
+The class 'CompleteDSLPckg::Clause' has no attributes.
+The class 'CompleteDSLPckg::ReadlsClassifiedObjectAction' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'CompleteDSLPckg::ClearVariableAction' has no attributes.
+The class 'CompleteDSLPckg::Extend' has no attributes.
+The class 'CompleteDSLPckg::Operation' has the following attributes: 'lower' of type int; 'isOrdered' of type bool; 'upper' of type int; 'isUnique' of type bool; 'isQuery' of type bool.
+The class 'CompleteDSLPckg::Port' has the following attributes: 'isBehavior' of type bool; 'isConjugated' of type bool; 'isService' of type bool.
+The class 'CompleteDSLPckg::RemoveVariableValueAction' has no attributes.
+The class 'CompleteDSLPckg::PackageableElement' has no attributes.
+The class 'CreateLinkAction' has no attributes.
+The class 'DeploymentTarget' has no attributes.
+The class 'CompleteDSLPckg::Vertex' has no attributes.
+The class 'CompleteDSLPckg::InputPin' has no attributes.
+The class 'CompleteDSLPckg::SendObjectAction' has no attributes.
+The class 'CompleteDSLPckg::Behavior' has the following attributes: 'isReentrant' of type bool.
+The class 'CompleteDSLPckg::CallBehaviorAction' has no attributes.
+The class 'CompleteDSLPckg::VariableAction' has no attributes.
+The class 'CompleteDSLPckg::Region' has no attributes.
+The class 'CompleteDSLPckg::StateMachine' has no attributes.
+The class 'VariableAction' has no attributes.
+The class 'CompleteDSLPckg::Message' has the following attributes: 'messageKind' of type str; 'messageSort' of type str.
+The class 'MultiplicityElement' has no attributes.
+The class 'CompleteDSLPckg::FlowFinalNode' has no attributes.
+The class 'IntervalConstraint' has no attributes.
+The class 'CompleteDSLPckg::ExpansionRegion' has the following attributes: 'mode' of type str.
+The class 'DataType' has no attributes.
+The class 'CompleteDSLPckg::ConsiderIgnoreFragment' has no attributes.
+The class 'CompleteDSLPckg::ProtocolTransition' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'CompleteDSLPckg::Deployment' has no attributes.
+The class 'CompleteDSLPckg::Reception' has no attributes.
+The class 'StructuredActivityNode' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'DeployedArtifact' has no attributes.
+The class 'CompleteDSLPckg::TimeExpression' has no attributes.
+The class 'CompleteDSLPckg::DestroyLinkAction' has no attributes.
+The class 'CompleteDSLPckg::LiteralSpecification' has no attributes.
+The class 'CompleteDSLPckg::UnmarshallAction' has no attributes.
+The class 'CompleteDSLPckg::InterfaceRealization' has no attributes.
+The class 'CompleteDSLPckg::Manifestation' has no attributes.
+The class 'CompleteDSLPckg::LiteralString' has no attributes.
+The class 'CompleteDSLPckg::TimeConstraint' has the following attributes: 'firstEvent' of type bool.
+The class 'CompleteDSLPckg::Component' has the following attributes: 'isIndirectlyInstantiated' of type bool.
+The class 'Property' has no attributes.
+The class 'LiteralSpecification' has no attributes.
+The class 'CompleteDSLPckg::ChangeEvent' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'CompleteDSLPckg::LiteralNull' has no attributes.
+The class 'CompleteDSLPckg::ValueSpecification' has no attributes.
+The class 'CompleteDSLPckg::ReduceAction' has the following attributes: 'isOrdered' of type bool.
+The class 'CompleteDSLPckg::Relationship' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'CompleteDSLPckg::ReadLinkAction' has no attributes.
+The class 'CompleteDSLPckg::DeploymentTarget' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'CompleteDSLPckg::Gate' has no attributes.
+The class 'CompleteDSLPckg::CollaborationUse' has no attributes.
+The class 'CompleteDSLPckg::LinkEndCreationData' has the following attributes: 'isReplaceAll' of type bool.
+The class 'CompleteDSLPckg::AcceptCallAction' has no attributes.
+The class 'CombinedFragment' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'CompleteDSLPckg::GeneralizationSet' has the following attributes: 'isDisjoint' of type bool; 'isCovering' of type bool.
+The class 'Interval' has no attributes.
+The class 'CompleteDSLPckg::ForkNode' has no attributes.
+The class 'CompleteDSLPckg::ExecutionSpecification' has no attributes.
+The class 'OpaqueBehavior' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'CompleteDSLPckg::Lifeline' has no attributes.
+The class 'CompleteDSLPckg::DeployedArtifact' has no attributes.
+The class 'CompleteDSLPckg::BehavioralFeature' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'CompleteDSLPckg::Type' has no attributes.
+The class 'CompleteDSLPckg::Feature' has the following attributes: 'isStatic' of type bool.
+The class 'CompleteDSLPckg::MessageEnd' has no attributes.
+The class 'CompleteDSLPckg::Pin' has no attributes.
+The class 'CompleteDSLPckg::ControlNode' has no attributes.
+The class 'CompleteDSLPckg::PrimitiveType' has no attributes.
+The class 'CompleteDSLPckg::RedefinableElement' has the following attributes: 'isLeaf' of type bool.
+The class 'CompleteDSLPckg::UseCase' has no attributes.
+The class 'CompleteDSLPckg::Parameter' has the following attributes: 'default' of type str.
+The class 'CompleteDSLPckg::CentralBufferNode' has no attributes.
+The class 'CompleteDSLPckg::Interface' has no attributes.
+The class 'CompleteDSLPckg::CreateLinkAction' has no attributes.
+The class 'CompleteDSLPckg::CallEvent' has no attributes.
+The class 'CompleteDSLPckg::ConnectableElement' has no attributes.
+The class 'CentralBufferNode' has no attributes.
+The class 'CompleteDSLPckg::ExtensionPoint' has no attributes.
+The class 'CompleteDSLPckg::IntervalConstraint' has no attributes.
+The class 'CompleteDSLPckg::FunctionBehavior' has no attributes.
+The class 'CompleteDSLPckg::RemoveStructuralFeatureValueAction' has no attributes.
+The class 'CompleteDSLPckg::ObjectNode' has no attributes.
+The class 'CompleteDSLPckg::ActivityGroup' has no attributes.
+The class 'CompleteDSLPckg::DecisionNode' has no attributes.
+The class 'CompleteDSLPckg::Node' has no attributes.
+The class 'CompleteDSLPckg::Include' has no attributes.
+The class 'CompleteDSLPckg::DestructionOccurrenceSpecification' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'CompleteDSLPckg::Abstraction' has no attributes.
+The class 'CompleteDSLPckg::Signal' has no attributes.
+The class 'CompleteDSLPckg::Variable' has no attributes.
+The class 'CompleteDSLPckg::SequenceNode' has no attributes.
+The class 'CompleteDSLPckg::DurationObservation' has the following attributes: 'firstEvent' of type bool.
+The class 'CompleteDSLPckg::BehaviorExecutionSpecification' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'CompleteDSLPckg::ObjectFlow' has the following attributes: 'isMultireceive' of type bool; 'ordering' of type str; 'isMulticast' of type bool; 'isControlType' of type bool.
+The class 'CompleteDSLPckg::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'CompleteDSLPckg::ControlFlow' has no attributes.
+The class 'CompleteDSLPckg::Duration' has no attributes.
+The class 'CompleteDSLPckg::InvocationAction' has no attributes.
+The class 'CompleteDSLPckg::ProtocolStateMachine' has no attributes.
+The class 'CompleteDSLPckg::OpaqueAction' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'Artifact' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'CompleteDSLPckg::LoopNode' has the following attributes: 'isTestedFirst' of type bool.
+The class 'CompleteDSLPckg::Collaboration' has no attributes.
+The class 'CompleteDSLPckg::StateInvariant' has no attributes.
+The class 'Type' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'CompleteDSLPckg::ActionExecutionSpecification' has no attributes.
+The class 'CompleteDSLPckg::Trigger' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'Association' has no attributes.
+The class 'CompleteDSLPckg::EncapsulatedClassifier' has no attributes.
+The class 'CompleteDSLPckg::DataType' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'CompleteDSLPckg::ParameterSet' has no attributes.
+The class 'CompleteDSLPckg::Comment' has the following attributes: 'body' of type str.
+The class 'CompleteDSLPckg::SendSignalAction' has no attributes.
+The class 'CompleteDSLPckg::BehavioredClassifier' has no attributes.
+The class 'CompleteDSLPckg::MessageEvent' has no attributes.
+The class 'MessageEvent' has no attributes.
+The class 'CompleteDSLPckg::Substitution' has no attributes.
+The class 'CompleteDSLPckg::CreateLinkObjectAction' has no attributes.
+The class 'EncapsulatedClassifier' has no attributes.
+The class 'CompleteDSLPckg::ReadStructuralFeatureAction' has no attributes.
+The class 'InteractionUse' has no attributes.
+The class 'Transition' has no attributes.
+The class 'CompleteDSLPckg::Event' has no attributes.
+The class 'State' has no attributes.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'CompleteDSLPckg::StructuredClassifier' has no attributes.
+The class 'CompleteDSLPckg::Property' has the following attributes: 'isDerived' of type bool; 'isID' of type bool; 'isComposite' of type bool; 'isDerivedUnion' of type bool; 'aggregation' of type str; 'default' of type str.
+The class 'CompleteDSLPckg::ExecutionEnvironment' has no attributes.
+The class 'CompleteDSLPckg::Association' has the following attributes: 'isDerived' of type bool.
+The class 'CompleteDSLPckg::ConditionalNode' has the following attributes: 'isDeterminate' of type bool; 'isAssumed' of type bool.
+The class 'CompleteDSLPckg::InteractionOperand' has no attributes.
+The class 'CompleteDSLPckg::RaiseExceptionAction' has no attributes.
+The class 'CompleteDSLPckg::StartObjectBehaviorAction' has no attributes.
+The class 'CompleteDSLPckg::DurationConstraint' has the following attributes: 'firstEvent' of type bool.
+The class 'ActivityNode' has no attributes.
+The class 'CompleteDSLPckg::SignalEvent' has no attributes.
+The class 'CompleteDSLPckg::DestroyObjectAction' has no attributes.
+The class 'LinkAction' has no attributes.
+The class 'CompleteDSLPckg::EnumerationLiteral' has no attributes.
+The class 'CompleteDSLPckg::OpaqueBehavior' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'CompleteDSLPckg::OutputPin' has no attributes.
+The class 'CompleteDSLPckg::Artifact' has the following attributes: 'fileName' of type str.
+The class 'CompleteDSLPckg::CallOperationAction' has no attributes.
+The class 'CompleteDSLPckg::LiteralUnilimitedNatural' has no attributes.
+The class 'CompleteDSLPckg::CallAction' has the following attributes: 'isSynchronous' of type bool.
+The class 'ControlNode' has no attributes.
+The class 'CompleteDSLPckg::OccurenceSpecification' has no attributes.
+The class 'CompleteDSLPckg::Device' has no attributes.
+The class 'CompleteDSLPckg::QualifierValue' has no attributes.
+The class 'CompleteDSLPckg::Class' has no attributes.
+The class 'CompleteDSLPckg::ActionInputPin' has no attributes.
+The class 'CompleteDSLPckg::ValuePin' has no attributes.
+The class 'CompleteDSLPckg::Continuation' has the following attributes: 'setting' of type bool.
+The class 'CompleteDSLPckg::ElementImport' has the following attributes: 'alias' of type str; 'visibility' of type str.
+The class 'CompleteDSLPckg::CombinedFragment' has the following attributes: 'interactionOperator' of type str.
+The class 'CompleteDSLPckg::Constraint' has no attributes.
+The class 'CompleteDSLPckg::Activity' has the following attributes: 'isSingleExecution' of type bool; 'isReadOnly' of type bool.
+The class 'MessageEnd' has no attributes.
+The class 'CompleteDSLPckg::Enumeration' has no attributes.
+The class 'Realization' has no attributes.
+The class 'CompleteDSLPckg::Namespace' has no attributes.
+The class 'CompleteDSLPckg::LinkEndData' has no attributes.
+The class 'CompleteDSLPckg::AssociationClass' has no attributes.
+The class 'CompleteDSLPckg::ReadSelfAction' has no attributes.
+The class 'CompleteDSLPckg::MessageOccurrenceSpecification' has no attributes.
+The class 'CompleteDSLPckg::TimeEvent' has the following attributes: 'isRelative' of type bool.
+The class 'CompleteDSLPckg::FinalState' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'CompleteDSLPckg::ComponentRealization' has no attributes.
+The class 'CompleteDSLPckg::NamedElement' has the following attributes: 'name' of type str; 'qualifiedName' of type str; 'visibility' of type str.
+The class 'CompleteDSLPckg::ExceptionHandler' has no attributes.
+The class 'CompleteDSLPckg::ActivityEdge' has no attributes.
+The class 'CompleteDSLPckg::WriteStructuralFeatureAction' has no attributes.
+The class 'CompleteDSLPckg::ReclassifyObjectAction' has the following attributes: 'isReplaceAll' of type bool.
+The class 'OccurenceSpecification' has no attributes.
+The class 'Event' has no attributes.
+The class 'Feature' has no attributes.
+The class 'CompleteDSLPckg::Usage' has no attributes.
+The class 'CompleteDSLPckg::AcceptEventAction' has the following attributes: 'isUnmarshall' of type bool.
+The class 'CompleteDSLPckg::ExecutableNode' has no attributes.
+The class 'CompleteDSLPckg::Generalization' has the following attributes: 'isSubstitutable' of type bool.
+The class 'CompleteDSLPckg::InteractionConstraint' has no attributes.
+The class 'CompleteDSLPckg::ValueSpecificationAction' has no attributes.
+The class 'Observation' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'Action' has no attributes.
+The class 'CompleteDSLPckg::ActivityPartition' has no attributes.
+The class 'CompleteDSLPckg::AnyReceiveEvent' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'CompleteDSLPckg::AddStructuralFeatureValueAction' has no attributes.
+The class 'CompleteDSLPckg::DataStoreNode' has no attributes.
+The class 'CompleteDSLPckg::TimeInterval' has no attributes.
+The class 'CompleteDSLPckg::DeploymentSpecification' has the following attributes: 'executionLocation' of type str; 'deploymentLocation' of type str.
+The class 'CompleteDSLPckg::LinkEndDestructionData' has the following attributes: 'isDestroyDuplicates' of type bool.
+The class 'CompleteDSLPckg::Slot' has no attributes.
+The class 'CompleteDSLPckg::ReplyAction' has no attributes.
+The class 'MessageOccurrenceSpecification' has no attributes.
+The class 'CompleteDSLPckg::LinkAction' has no attributes.
+The class 'CompleteDSLPckg::Package' has the following attributes: 'URI' of type str.
+The class 'AcceptEventAction' has no attributes.
+The class 'CompleteDSLPckg::StructuralFeature' has the following attributes: 'isReadOnly' of type bool.
+The class 'CompleteDSLPckg::GeneralOrdering' has no attributes.
+The class 'CompleteDSLPckg::Classifier' has the following attributes: 'isAbstract' of type bool; 'isFinalSpecialization' of type bool.
+The class 'CompleteDSLPckg::ConnectorEnd' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'CompleteDSLPckg::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'ActivityGroup' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'CompleteDSLPckg::StructuralFeatureAction' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'StructuredClassifier' has no attributes.
+The class 'InvocationAction' has no attributes.
+The class 'CompleteDSLPckg::DirectedRelationship' has no attributes.
+The class 'CompleteDSLPckg::ExecutionOccurrenceSpecification' has no attributes.
+The class 'CompleteDSLPckg::PackageMerge' has no attributes.
+The class 'CompleteDSLPckg::Dependency' has no attributes.
+The class 'CompleteDSLPckg::StructuredActivityNode' has the following attributes: 'mustIsolate' of type bool.
+The class 'CompleteDSLPckg::InteractionFragment' has no attributes.
+The class 'Element' has no attributes.
+The class 'CompleteDSLPckg::ActivityNode' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'CompleteDSLPckg::ReadExtendAction' has no attributes.
+The class 'Node' has no attributes.
+The class 'CompleteDSLPckg::ConnectionPointReference' has no attributes.
+The class 'CompleteDSLPckg::InstanceSpecification' has no attributes.
+The class 'CompleteDSLPckg::Interval' has no attributes.
+The class 'CompleteDSLPckg::Observation' has no attributes.
+The class 'CompleteDSLPckg::PartDecomposition' has no attributes.
+The class 'CompleteDSLPckg::CommunicationPath' has no attributes.
+The class 'CompleteDSLPckg::Element' has no attributes.
+The class 'CompleteDSLPckg::Transition' has the following attributes: 'kind' of type str.
+The class 'CompleteDSLPckg::FinalNode' has no attributes.
+The class 'CompleteDSLPckg::MultiplicityElement' has the following attributes: 'isUnique' of type bool; 'isOrdered' of type bool; 'lower' of type int; 'upper' of type int.
+The class 'WriteVariableAction' has no attributes.
+The class 'CompleteDSLPckg::WriteLinkAction' has no attributes.
+The class 'CompleteDSLPckg::ActivityFinalNode' has no attributes.
+The class 'CompleteDSLPckg::Interaction' has no attributes.
+The class 'CompleteDSLPckg::LiteralBoolean' has no attributes.
+The class 'Pin' has no attributes.
+The class 'CompleteDSLPckg::ReadLinkObjectEndAction' has no attributes.
+The class 'ExecutionSpecification' has no attributes.
+The class 'CompleteDSLPckg::Actor' has no attributes.
+The class 'CompleteDSLPckg::Expression' has the following attributes: 'symbol' of type str.
+The class 'CompleteDSLPckg::ReadLinkObjectEndQualifierAction' has no attributes.
+The class 'CompleteDSLPckg::ReadVariableAction' has no attributes.
+The class 'CompleteDSLPckg::BroadcastSignalAction' has no attributes.
+The class 'CompleteDSLPckg::InteractionUse' has no attributes.
+The enumeration 'MessageSort' has the following literals: 'asynchCall', 'asynchSignal', 'createMessage', 'synchCall', 'deleteMessage', 'reply'.
+The enumeration 'MessageKind' has the following literals: 'lost', 'complete', 'found', 'unknown'.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'private', 'public', 'package'.
+The enumeration 'InteractionOperandKind' has the following literals: 'opt', 'loop', 'neg', 'ignore', 'consider', 'seq', 'assert_', 'critical', 'alt', 'strict', 'par', 'break_'.
+The enumeration 'TransitionKind' has the following literals: 'internal', 'external'.
+The enumeration 'CallConcurrencyFeature' has the following literals: 'sequential', 'concurrent', 'guarded'.
+The enumeration 'ConnectorKind' has the following literals: 'delegation', 'assembly'.
+The enumeration 'ParameterEffectKind' has the following literals: 'read', 'create', 'update', 'delete'.
+The enumeration 'ExpansionKind' has the following literals: 'stream', 'parallel', 'iterative'.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'composite', 'none'.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'ordered', 'unordered', 'LIFO', 'FIFO'.
+'CompleteDSLPckg::PackageableElement' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Region' is a specialization of 'Namespace'.
+'CompleteDSLPckg::ElementImport' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::Region' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::Interaction' is a specialization of 'Behavior'.
+'CompleteDSLPckg::TimeConstraint' is a specialization of 'IntervalConstraint'.
+'CompleteDSLPckg::PackageImport' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::Vertex' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::DurationConstraint' is a specialization of 'IntervalConstraint'.
+'CompleteDSLPckg::Package' is a specialization of 'Namespace'.
+'CompleteDSLPckg::Pseudostate' is a specialization of 'Vertex'.
+'CompleteDSLPckg::Component' is a specialization of 'Class'.
+'CompleteDSLPckg::Package' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::ConnectionPointReference' is a specialization of 'Vertex'.
+'CompleteDSLPckg::OccurenceSpecification' is a specialization of 'InteractionFragment'.
+'CompleteDSLPckg::Component' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Comment' is a specialization of 'Element'.
+'CompleteDSLPckg::FinalState' is a specialization of 'State'.
+'CompleteDSLPckg::Message' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Port' is a specialization of 'Property'.
+'CompleteDSLPckg::Relationship' is a specialization of 'Element'.
+'CompleteDSLPckg::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'CompleteDSLPckg::MessageOccurrenceSpecification' is a specialization of 'OccurenceSpecification'.
+'CompleteDSLPckg::Connector' is a specialization of 'Feature'.
+'CompleteDSLPckg::DirectedRelationship' is a specialization of 'Relationship'.
+'CompleteDSLPckg::ProtocolConformance' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::ExpansionNode' is a specialization of 'ObjectNode'.
+'CompleteDSLPckg::MultiplicityElement' is a specialization of 'Element'.
+'CompleteDSLPckg::State' is a specialization of 'Vertex'.
+'CompleteDSLPckg::ConnectableElement' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::ValueSpecification' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::State' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::StructuredClassifier' is a specialization of 'Classifier'.
+'CompleteDSLPckg::ValueSpecification' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::State' is a specialization of 'Namespace'.
+'CompleteDSLPckg::EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+'CompleteDSLPckg::TypedElement' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::ProtocolTransition' is a specialization of 'Transition'.
+'CompleteDSLPckg::Collaboration' is a specialization of 'StructuredClassifier'.
+'CompleteDSLPckg::Type' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::Activity' is a specialization of 'Behavior'.
+'CompleteDSLPckg::Collaboration' is a specialization of 'BehavioredClassifier'.
+'CompleteDSLPckg::Continuation' is a specialization of 'InteractionFragment'.
+'CompleteDSLPckg::Expression' is a specialization of 'ValueSpecification'.
+'CompleteDSLPckg::ActivityNode' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::CollaborationUse' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'CompleteDSLPckg::ActivityNode' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::Variable' is a specialization of 'ConnectableElement'.
+'CompleteDSLPckg::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'CompleteDSLPckg::ActivityGroup' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Variable' is a specialization of 'MultiplicityElement'.
+'CompleteDSLPckg::LiteralNull' is a specialization of 'LiteralSpecification'.
+'CompleteDSLPckg::ObjectNode' is a specialization of 'ActivityNode'.
+'CompleteDSLPckg::Variable' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'CompleteDSLPckg::ObjectNode' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::Artifact' is a specialization of 'Classifier'.
+'CompleteDSLPckg::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'CompleteDSLPckg::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'CompleteDSLPckg::Artifact' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::LiteralReal' is a specialization of 'LiteralSpecification'.
+'CompleteDSLPckg::ControlNode' is a specialization of 'ActivityNode'.
+'CompleteDSLPckg::Artifact' is a specialization of 'DeployedArtifact'.
+'CompleteDSLPckg::LiteralString' is a specialization of 'LiteralSpecification'.
+'CompleteDSLPckg::ActivityFinalNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::Manifestation' is a specialization of 'Abstraction'.
+'CompleteDSLPckg::InteractionOperand' is a specialization of 'Namespace'.
+'CompleteDSLPckg::LiteralUnilimitedNatural' is a specialization of 'LiteralSpecification'.
+'CompleteDSLPckg::ActivityFinalNode' is a specialization of 'FinalNode'.
+'CompleteDSLPckg::Node' is a specialization of 'Class'.
+'CompleteDSLPckg::InstanceSpecification' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::InitialNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::Node' is a specialization of 'DeploymentTarget'.
+'CompleteDSLPckg::Constraint' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::ActivityEdge' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::Device' is a specialization of 'Node'.
+'CompleteDSLPckg::Extend' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::Slot' is a specialization of 'Element'.
+'CompleteDSLPckg::ActivityPartition' is a specialization of 'ActivityGroup'.
+'CompleteDSLPckg::ExecutionEnvironment' is a specialization of 'Node'.
+'CompleteDSLPckg::Transition' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::Lifeline' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::RedefinableElement' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::ControlFlow' is a specialization of 'ActivityEdge'.
+'CompleteDSLPckg::CommunicationPath' is a specialization of 'Association'.
+'CompleteDSLPckg::Classifier' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::ObjectFlow' is a specialization of 'ActivityEdge'.
+'CompleteDSLPckg::DeploymentTarget' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Classifier' is a specialization of 'Namespace'.
+'CompleteDSLPckg::CentralBufferNode' is a specialization of 'ObjectNode'.
+'CompleteDSLPckg::Deployment' is a specialization of 'Dependency'.
+'CompleteDSLPckg::Classifier' is a specialization of 'Type'.
+'CompleteDSLPckg::FinalNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::DeployedArtifact' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Feature' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::FlowFinalNode' is a specialization of 'FinalNode'.
+'CompleteDSLPckg::DeploymentSpecification' is a specialization of 'Artifact'.
+'CompleteDSLPckg::StructuralFeature' is a specialization of 'Feature'.
+'CompleteDSLPckg::ForkNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::Action' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'CompleteDSLPckg::JoinNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::SendObjectAction' is a specialization of 'InvocationAction'.
+'CompleteDSLPckg::StructuralFeature' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::MergeNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::OpaqueAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Property' is a specialization of 'StructuralFeature'.
+'CompleteDSLPckg::DecisionNode' is a specialization of 'ControlNode'.
+'CompleteDSLPckg::InputPin' is a specialization of 'Pin'.
+'CompleteDSLPckg::Property' is a specialization of 'ConnectableElement'.
+'CompleteDSLPckg::ExecutableNode' is a specialization of 'ActivityNode'.
+'CompleteDSLPckg::OutputPin' is a specialization of 'Pin'.
+'CompleteDSLPckg::Property' is a specialization of 'DeploymentTarget'.
+'CompleteDSLPckg::LoopNode' is a specialization of 'StructuredActivityNode'.
+'CompleteDSLPckg::Pin' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::InteractionConstraint' is a specialization of 'Constraint'.
+'CompleteDSLPckg::DataStoreNode' is a specialization of 'CentralBufferNode'.
+'CompleteDSLPckg::Pin' is a specialization of 'MultiplicityElement'.
+'CompleteDSLPckg::Generalization' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::ParameterSet' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::ValuePin' is a specialization of 'InputPin'.
+'CompleteDSLPckg::BehavioralFeature' is a specialization of 'Feature'.
+'CompleteDSLPckg::DestructionOccurrenceSpecification' is a specialization of 'MessageOccurrenceSpecification'.
+'CompleteDSLPckg::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'CompleteDSLPckg::CallAction' is a specialization of 'InvocationAction'.
+'CompleteDSLPckg::BehavioralFeature' is a specialization of 'Namespace'.
+'CompleteDSLPckg::MessageEnd' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::StructuredActivityNode' is a specialization of 'Namespace'.
+'CompleteDSLPckg::CallBehaviorAction' is a specialization of 'CallAction'.
+'CompleteDSLPckg::Parameter' is a specialization of 'TypedElement'.
+'CompleteDSLPckg::StructuredActivityNode' is a specialization of 'ExecutableNode'.
+'CompleteDSLPckg::SendSignalAction' is a specialization of 'InvocationAction'.
+'CompleteDSLPckg::Operation' is a specialization of 'BehavioralFeature'.
+'CompleteDSLPckg::StructuredActivityNode' is a specialization of 'ActivityGroup'.
+'CompleteDSLPckg::BroadcastSignalAction' is a specialization of 'InvocationAction'.
+'CompleteDSLPckg::Class' is a specialization of 'Classifier'.
+'CompleteDSLPckg::StructuredActivityNode' is a specialization of 'Action'.
+'CompleteDSLPckg::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'CompleteDSLPckg::Class' is a specialization of 'BehavioredClassifier'.
+'CompleteDSLPckg::Clause' is a specialization of 'Element'.
+'CompleteDSLPckg::CreateObjectAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Class' is a specialization of 'StructuredClassifier'.
+'CompleteDSLPckg::SequenceNode' is a specialization of 'StructuredActivityNode'.
+'CompleteDSLPckg::DestroyObjectAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Class' is a specialization of 'EncapsulatedClassifier'.
+'CompleteDSLPckg::ExceptionHandler' is a specialization of 'Element'.
+'CompleteDSLPckg::TestIdentityAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Association' is a specialization of 'Relationship'.
+'CompleteDSLPckg::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'CompleteDSLPckg::ReadSelfAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Association' is a specialization of 'Classifier'.
+'CompleteDSLPckg::ExecutionOccurrenceSpecification' is a specialization of 'OccurenceSpecification'.
+'CompleteDSLPckg::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'CompleteDSLPckg::ValueSpecificationAction' is a specialization of 'Action'.
+'CompleteDSLPckg::DataType' is a specialization of 'Classifier'.
+'CompleteDSLPckg::StructuralFeatureAction' is a specialization of 'Action'.
+'CompleteDSLPckg::PrimitiveType' is a specialization of 'DataType'.
+'CompleteDSLPckg::ExecutionSpecification' is a specialization of 'InteractionFragment'.
+'CompleteDSLPckg::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'CompleteDSLPckg::Enumeration' is a specialization of 'DataType'.
+'CompleteDSLPckg::StateInvariant' is a specialization of 'InteractionFragment'.
+'CompleteDSLPckg::ActionExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'CompleteDSLPckg::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'CompleteDSLPckg::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'CompleteDSLPckg::Interaction' is a specialization of 'InteractionFragment'.
+'CompleteDSLPckg::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'CompleteDSLPckg::PackageMerge' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'CompleteDSLPckg::Dependency' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'CompleteDSLPckg::Dependency' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'CompleteDSLPckg::Usage' is a specialization of 'Dependency'.
+'CompleteDSLPckg::ExtensionPoint' is a specialization of 'RedefinableElement'.
+'CompleteDSLPckg::LinkAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Abstraction' is a specialization of 'Dependency'.
+'CompleteDSLPckg::LinkEndData' is a specialization of 'Element'.
+'CompleteDSLPckg::Realization' is a specialization of 'Abstraction'.
+'CompleteDSLPckg::UseCase' is a specialization of 'BehavioredClassifier'.
+'CompleteDSLPckg::ReadLinkAction' is a specialization of 'LinkAction'.
+'CompleteDSLPckg::Substitution' is a specialization of 'Realization'.
+'CompleteDSLPckg::WriteLinkAction' is a specialization of 'LinkAction'.
+'CompleteDSLPckg::Interface' is a specialization of 'Classifier'.
+'CompleteDSLPckg::AcceptCallAction' is a specialization of 'AcceptEventAction'.
+'CompleteDSLPckg::InterfaceRealization' is a specialization of 'Realization'.
+'CompleteDSLPckg::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'CompleteDSLPckg::BehavioredClassifier' is a specialization of 'Classifier'.
+'CompleteDSLPckg::LinkEndDestructionData' is a specialization of 'LinkEndData'.
+'CompleteDSLPckg::AssociationClass' is a specialization of 'Class'.
+'CompleteDSLPckg::InteractionUse' is a specialization of 'InteractionFragment'.
+'CompleteDSLPckg::ReplyAction' is a specialization of 'Action'.
+'CompleteDSLPckg::AssociationClass' is a specialization of 'Association'.
+'CompleteDSLPckg::GeneralOrdering' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::UnmarshallAction' is a specialization of 'Action'.
+'CompleteDSLPckg::GeneralizationSet' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::InteractionFragment' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Include' is a specialization of 'DirectedRelationship'.
+'CompleteDSLPckg::AcceptEventAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Event' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::QualifierValue' is a specialization of 'Element'.
+'CompleteDSLPckg::Behavior' is a specialization of 'Class'.
+'CompleteDSLPckg::ReadExtendAction' is a specialization of 'Action'.
+'CompleteDSLPckg::OpaqueBehavior' is a specialization of 'Behavior'.
+'CompleteDSLPckg::ReclassifyObjectAction' is a specialization of 'Action'.
+'CompleteDSLPckg::FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+'CompleteDSLPckg::StartClassifierBehaviorAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Signal' is a specialization of 'Classifier'.
+'CompleteDSLPckg::BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'CompleteDSLPckg::StartObjectBehaviorAction' is a specialization of 'CallAction'.
+'CompleteDSLPckg::Reception' is a specialization of 'BehavioralFeature'.
+'CompleteDSLPckg::ReadLinkObjectEndAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Trigger' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Interval' is a specialization of 'ValueSpecification'.
+'CompleteDSLPckg::CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+'CompleteDSLPckg::MessageEvent' is a specialization of 'Event'.
+'CompleteDSLPckg::VariableAction' is a specialization of 'Action'.
+'CompleteDSLPckg::AnyReceiveEvent' is a specialization of 'MessageEvent'.
+'CompleteDSLPckg::ReduceAction' is a specialization of 'Action'.
+'CompleteDSLPckg::SignalEvent' is a specialization of 'MessageEvent'.
+'CompleteDSLPckg::StateMachine' is a specialization of 'Behavior'.
+'CompleteDSLPckg::CallEvent' is a specialization of 'MessageEvent'.
+'CompleteDSLPckg::Actor' is a specialization of 'BehavioredClassifier'.
+'CompleteDSLPckg::ReadVariableAction' is a specialization of 'VariableAction'.
+'CompleteDSLPckg::ChangeEvent' is a specialization of 'Event'.
+'CompleteDSLPckg::Include' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::WriteVariableAction' is a specialization of 'VariableAction'.
+'CompleteDSLPckg::TimeExpression' is a specialization of 'ValueSpecification'.
+'CompleteDSLPckg::AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+'CompleteDSLPckg::Observation' is a specialization of 'PackageableElement'.
+'CompleteDSLPckg::Extend' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+'CompleteDSLPckg::TimeObservation' is a specialization of 'Observation'.
+'CompleteDSLPckg::Gate' is a specialization of 'MessageEnd'.
+'CompleteDSLPckg::ClearVariableAction' is a specialization of 'VariableAction'.
+'CompleteDSLPckg::DurationObservation' is a specialization of 'Observation'.
+'CompleteDSLPckg::RaiseExceptionAction' is a specialization of 'Action'.
+'CompleteDSLPckg::Duration' is a specialization of 'ValueSpecification'.
+'CompleteDSLPckg::ConsiderIgnoreFragment' is a specialization of 'CombinedFragment'.
+'CompleteDSLPckg::Namespace' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::ComponentRealization' is a specialization of 'Realization'.
+'CompleteDSLPckg::ActionInputPin' is a specialization of 'InputPin'.
+'CompleteDSLPckg::IntervalConstraint' is a specialization of 'Constraint'.
+'CompleteDSLPckg::Transition' is a specialization of 'Namespace'.
+'CompleteDSLPckg::TimeInterval' is a specialization of 'Interval'.
+'CompleteDSLPckg::PartDecomposition' is a specialization of 'InteractionUse'.
+'CompleteDSLPckg::NamedElement' is a specialization of 'Element'.
+'CompleteDSLPckg::DurationInterval' is a specialization of 'Interval'.
+'CompleteDSLPckg::PackageMerge' (role 'CompleteDSLPckg_PackageMerge', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'CompleteDSLPckg_Package194', cardinality 0..*).
+'CompleteDSLPckg::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'CompleteDSLPckg::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition614', cardinality 0..*) is associated with 'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger615', cardinality 0..*).
+'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup716', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup718', cardinality 0..*).
+'CompleteDSLPckg::Vertex' (role 'CompleteDSLPckg_Vertex596', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition597', cardinality 0..*).
+'CompleteDSLPckg::QualifierValue' (role 'CompleteDSLPckg_QualifierValue', cardinality 0..*) is associated with 'CompleteDSLPckg::LinkEndData' (role 'CompleteDSLPckg_LinkEndData477', cardinality 0..*).
+'CompleteDSLPckg::Pseudostate' (role 'CompleteDSLPckg_Pseudostate641', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State640', cardinality 0..*).
+'CompleteDSLPckg::CollaborationUse' (role 'CompleteDSLPckg_CollaborationUse356', cardinality 0..*) is associated with 'CompleteDSLPckg::Collaboration' (role 'CompleteDSLPckg_Collaboration357', cardinality 0..*).
+'CompleteDSLPckg::ReduceAction' (role 'CompleteDSLPckg_ReduceAction559', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior560', cardinality 0..*).
+'CompleteDSLPckg::ElementImport' (role 'ElementImport', cardinality 0..*) is associated with 'CompleteDSLPckg::Namespace' (role 'importingNamespace', cardinality 0..*).
+'CompleteDSLPckg::AcceptCallAction' (role 'CompleteDSLPckg_AcceptCallAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin506', cardinality 0..*).
+'CompleteDSLPckg::Duration' (role 'CompleteDSLPckg_Duration', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification272', cardinality 0..*).
+'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode805', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode806', cardinality 0..*).
+'CompleteDSLPckg::Package' (role 'Package27', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'nestedPackage', cardinality 0..*).
+'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region585', cardinality 0..*) is associated with 'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine586', cardinality 0..*).
+'CompleteDSLPckg::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'CompleteDSLPckg::Namespace' (role 'Namespace19', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'CompleteDSLPckg::Namespace' (role 'context', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition608', cardinality 0..*) is associated with 'CompleteDSLPckg::Vertex' (role 'CompleteDSLPckg_Vertex609', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition622', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition624', cardinality 0..*).
+'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode', cardinality 0..*) is associated with 'CompleteDSLPckg::ExceptionHandler' (role 'CompleteDSLPckg_ExceptionHandler', cardinality 0..*).
+'CompleteDSLPckg::Observation' (role 'CompleteDSLPckg_Observation275', cardinality 0..*) is associated with 'CompleteDSLPckg::Duration' (role 'CompleteDSLPckg_Duration274', cardinality 0..*).
+'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode799', cardinality 0..*) is associated with 'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity800', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin571', cardinality 0..*) is associated with 'CompleteDSLPckg::RaiseExceptionAction' (role 'CompleteDSLPckg_RaiseExceptionAction', cardinality 0..*).
+'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger650', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State649', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement268', cardinality 0..*) is associated with 'CompleteDSLPckg::TimeObservation' (role 'CompleteDSLPckg_TimeObservation', cardinality 0..*).
+'CompleteDSLPckg::Variable' (role 'CompleteDSLPckg_Variable803', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode802', cardinality 0..*).
+'CompleteDSLPckg::VariableAction' (role 'CompleteDSLPckg_VariableAction', cardinality 0..*) is associated with 'CompleteDSLPckg::Variable' (role 'CompleteDSLPckg_Variable', cardinality 0..*).
+'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode808', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin809', cardinality 0..*).
+'CompleteDSLPckg::Component' (role 'CompleteDSLPckg_Component298', cardinality 0..*) is associated with 'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface299', cardinality 0..*).
+'CompleteDSLPckg::ReadLinkObjectEndAction' (role 'CompleteDSLPckg_ReadLinkObjectEndAction541', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin542', cardinality 0..*).
+'CompleteDSLPckg::StructuralFeature' (role 'CompleteDSLPckg_StructuralFeature', cardinality 0..*) is associated with 'CompleteDSLPckg::Slot' (role 'CompleteDSLPckg_Slot', cardinality 0..*).
+'CompleteDSLPckg::Component' (role 'CompleteDSLPckg_Component301', cardinality 0..*) is associated with 'CompleteDSLPckg::ComponentRealization' (role 'CompleteDSLPckg_ComponentRealization', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge738', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge736', cardinality 0..*).
+'CompleteDSLPckg::Namespace' (role 'namespace', cardinality 0..*) is associated with 'CompleteDSLPckg::NamedElement' (role 'NamedElement', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property250', cardinality 0..*) is associated with 'CompleteDSLPckg::Signal' (role 'CompleteDSLPckg_Signal', cardinality 0..*).
+'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter729', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityParameterNode' (role 'CompleteDSLPckg_ActivityParameterNode', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin567', cardinality 0..*) is associated with 'CompleteDSLPckg::AddVariableValueAction' (role 'CompleteDSLPckg_AddVariableValueAction', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint248', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior247', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin481', cardinality 0..*) is associated with 'CompleteDSLPckg::LinkEndCreationData' (role 'CompleteDSLPckg_LinkEndCreationData', cardinality 0..*).
+'CompleteDSLPckg::LinkAction' (role 'CompleteDSLPckg_LinkAction469', cardinality 0..*) is associated with 'CompleteDSLPckg::LinkEndData' (role 'CompleteDSLPckg_LinkEndData', cardinality 0..*).
+'CompleteDSLPckg::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'CompleteDSLPckg::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge774', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition773', cardinality 0..*).
+'CompleteDSLPckg::Action' (role 'CompleteDSLPckg_Action395', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin', cardinality 0..*).
+'CompleteDSLPckg::MultiplicityElement' (role 'MultiplicityElement48', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'lowerValue', cardinality 0..*).
+'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode814', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin815', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'ownedMember', cardinality 0..*) is associated with 'CompleteDSLPckg::Namespace' (role 'Namespace', cardinality 0..*).
+'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode724', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup723', cardinality 0..*).
+'CompleteDSLPckg::Signal' (role 'CompleteDSLPckg_Signal256', cardinality 0..*) is associated with 'CompleteDSLPckg::SignalEvent' (role 'CompleteDSLPckg_SignalEvent', cardinality 0..*).
+'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region583', cardinality 0..*) is associated with 'CompleteDSLPckg::Vertex' (role 'CompleteDSLPckg_Vertex', cardinality 0..*).
+'CompleteDSLPckg::ReduceAction' (role 'CompleteDSLPckg_ReduceAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin554', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge740', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup741', cardinality 0..*).
+'CompleteDSLPckg::ObjectFlow' (role 'CompleteDSLPckg_ObjectFlow763', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State764', cardinality 0..*).
+'CompleteDSLPckg::Interval' (role 'CompleteDSLPckg_Interval279', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification280', cardinality 0..*).
+'CompleteDSLPckg::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'Package', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge727', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup726', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge734', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode735', cardinality 0..*).
+'CompleteDSLPckg::Port' (role 'CompleteDSLPckg_Port362', cardinality 0..*) is associated with 'CompleteDSLPckg::InvocationAction' (role 'CompleteDSLPckg_InvocationAction', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin539', cardinality 0..*) is associated with 'CompleteDSLPckg::ReadLinkObjectEndAction' (role 'CompleteDSLPckg_ReadLinkObjectEndAction538', cardinality 0..*).
+'CompleteDSLPckg::Action' (role 'CompleteDSLPckg_Action397', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin', cardinality 0..*).
+'CompleteDSLPckg::TimeExpression' (role 'CompleteDSLPckg_TimeExpression263', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification264', cardinality 0..*).
+'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition775', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition777', cardinality 0..*).
+'CompleteDSLPckg::DataType' (role 'dataType187', cardinality 0..*) is associated with 'CompleteDSLPckg::Operation' (role 'Operation188', cardinality 0..*).
+'CompleteDSLPckg::Element' (role 'CompleteDSLPckg_Element783', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition782', cardinality 0..*).
+'CompleteDSLPckg::Node' (role 'CompleteDSLPckg_Node376', cardinality 0..*) is associated with 'CompleteDSLPckg::Node' (role 'CompleteDSLPckg_Node', cardinality 0..*).
+'CompleteDSLPckg::TimeInterval' (role 'CompleteDSLPckg_TimeInterval284', cardinality 0..*) is associated with 'CompleteDSLPckg::TimeExpression' (role 'CompleteDSLPckg_TimeExpression285', cardinality 0..*).
+'CompleteDSLPckg::Namespace' (role 'importingNamespace14', cardinality 0..*) is associated with 'CompleteDSLPckg::PackageImport' (role 'PackageImport', cardinality 0..*).
+'CompleteDSLPckg::ReadLinkObjectEndAction' (role 'CompleteDSLPckg_ReadLinkObjectEndAction', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property536', cardinality 0..*).
+'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine579', cardinality 0..*) is associated with 'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine581', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin565', cardinality 0..*) is associated with 'CompleteDSLPckg::WriteVariableAction' (role 'CompleteDSLPckg_WriteVariableAction', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge731', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode732', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'upperValue', cardinality 0..*) is associated with 'CompleteDSLPckg::MultiplicityElement' (role 'MultiplicityElement', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State643', cardinality 0..*) is associated with 'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine644', cardinality 0..*).
+'CompleteDSLPckg::Artifact' (role 'CompleteDSLPckg_Artifact370', cardinality 0..*) is associated with 'CompleteDSLPckg::Artifact' (role 'CompleteDSLPckg_Artifact368', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition611', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior612', cardinality 0..*).
+'CompleteDSLPckg::PackageableElement' (role 'CompleteDSLPckg_PackageableElement379', cardinality 0..*) is associated with 'CompleteDSLPckg::DeploymentTarget' (role 'CompleteDSLPckg_DeploymentTarget', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State591', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region590', cardinality 0..*).
+'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode711', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode712', cardinality 0..*).
+'CompleteDSLPckg::DurationObservation' (role 'CompleteDSLPckg_DurationObservation', cardinality 0..*) is associated with 'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement270', cardinality 0..*).
+'CompleteDSLPckg::PackageMerge' (role 'packageMerge', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'Package192', cardinality 0..*).
+'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State637', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectionPointReference' (role 'CompleteDSLPckg_ConnectionPointReference638', cardinality 0..*).
+'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode811', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge812', cardinality 0..*).
+'CompleteDSLPckg::Vertex' (role 'CompleteDSLPckg_Vertex606', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition605', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition617', cardinality 0..*) is associated with 'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint618', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin563', cardinality 0..*) is associated with 'CompleteDSLPckg::ReadVariableAction' (role 'CompleteDSLPckg_ReadVariableAction', cardinality 0..*).
+'CompleteDSLPckg::DurationInterval' (role 'CompleteDSLPckg_DurationInterval', cardinality 0..*) is associated with 'CompleteDSLPckg::Duration' (role 'CompleteDSLPckg_Duration287', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property550', cardinality 0..*) is associated with 'CompleteDSLPckg::ReadLinkObjectEndQualifierAction' (role 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction549', cardinality 0..*).
+'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup715', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup713', cardinality 0..*).
+'CompleteDSLPckg::PackageableElement' (role 'CompleteDSLPckg_PackageableElement30', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'CompleteDSLPckg_Package29', cardinality 0..*).
+'CompleteDSLPckg::RedefinableElement' (role 'CompleteDSLPckg_RedefinableElement', cardinality 0..*) is associated with 'CompleteDSLPckg::RedefinableElement' (role 'CompleteDSLPckg_RedefinableElement79', cardinality 0..*).
+'CompleteDSLPckg::CallEvent' (role 'CompleteDSLPckg_CallEvent', cardinality 0..*) is associated with 'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation258', cardinality 0..*).
+'CompleteDSLPckg::Dependency' (role 'CompleteDSLPckg_Dependency360', cardinality 0..*) is associated with 'CompleteDSLPckg::CollaborationUse' (role 'CompleteDSLPckg_CollaborationUse359', cardinality 0..*).
+'CompleteDSLPckg::ObjectFlow' (role 'CompleteDSLPckg_ObjectFlow', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior758', cardinality 0..*).
+'CompleteDSLPckg::ReadLinkObjectEndQualifierAction' (role 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin544', cardinality 0..*).
+'CompleteDSLPckg::ConnectionPointReference' (role 'CompleteDSLPckg_ConnectionPointReference634', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State635', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition600', cardinality 0..*) is associated with 'CompleteDSLPckg::Vertex' (role 'CompleteDSLPckg_Vertex599', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification260', cardinality 0..*) is associated with 'CompleteDSLPckg::ChangeEvent' (role 'CompleteDSLPckg_ChangeEvent', cardinality 0..*).
+'CompleteDSLPckg::Pseudostate' (role 'CompleteDSLPckg_Pseudostate632', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectionPointReference' (role 'CompleteDSLPckg_ConnectionPointReference631', cardinality 0..*).
+'CompleteDSLPckg::Namespace' (role 'CompleteDSLPckg_Namespace', cardinality 0..*) is associated with 'CompleteDSLPckg::PackageableElement' (role 'CompleteDSLPckg_PackageableElement', cardinality 0..*).
+'CompleteDSLPckg::Action' (role 'CompleteDSLPckg_Action573', cardinality 0..*) is associated with 'CompleteDSLPckg::ActionInputPin' (role 'CompleteDSLPckg_ActionInputPin', cardinality 0..*).
+'CompleteDSLPckg::DecisionNode' (role 'CompleteDSLPckg_DecisionNode', cardinality 0..*) is associated with 'CompleteDSLPckg::ObjectFlow' (role 'CompleteDSLPckg_ObjectFlow768', cardinality 0..*).
+'CompleteDSLPckg::Artifact' (role 'CompleteDSLPckg_Artifact366', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property367', cardinality 0..*).
+'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region588', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition', cardinality 0..*).
+'CompleteDSLPckg::Observation' (role 'CompleteDSLPckg_Observation', cardinality 0..*) is associated with 'CompleteDSLPckg::TimeExpression' (role 'CompleteDSLPckg_TimeExpression266', cardinality 0..*).
+'CompleteDSLPckg::LinkAction' (role 'CompleteDSLPckg_LinkAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin467', cardinality 0..*).
+'CompleteDSLPckg::JoinNode' (role 'CompleteDSLPckg_JoinNode', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification766', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin483', cardinality 0..*) is associated with 'CompleteDSLPckg::LinkEndDestructionData' (role 'CompleteDSLPckg_LinkEndDestructionData', cardinality 0..*).
+'CompleteDSLPckg::Signal' (role 'CompleteDSLPckg_Signal253', cardinality 0..*) is associated with 'CompleteDSLPckg::Reception' (role 'CompleteDSLPckg_Reception252', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation364', cardinality 0..*) is associated with 'CompleteDSLPckg::Artifact' (role 'CompleteDSLPckg_Artifact', cardinality 0..*).
+'CompleteDSLPckg::ProtocolConformance' (role 'CompleteDSLPckg_ProtocolConformance671', cardinality 0..*) is associated with 'CompleteDSLPckg::ProtocolStateMachine' (role 'CompleteDSLPckg_ProtocolStateMachine672', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior771', cardinality 0..*) is associated with 'CompleteDSLPckg::DecisionNode' (role 'CompleteDSLPckg_DecisionNode770', cardinality 0..*).
+'CompleteDSLPckg::ProtocolStateMachine' (role 'CompleteDSLPckg_ProtocolStateMachine', cardinality 0..*) is associated with 'CompleteDSLPckg::ProtocolConformance' (role 'CompleteDSLPckg_ProtocolConformance', cardinality 0..*).
+'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition778', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition780', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint791', cardinality 0..*) is associated with 'CompleteDSLPckg::ParameterSet' (role 'CompleteDSLPckg_ParameterSet790', cardinality 0..*).
+'CompleteDSLPckg::TimeInterval' (role 'CompleteDSLPckg_TimeInterval292', cardinality 0..*) is associated with 'CompleteDSLPckg::TimeConstraint' (role 'CompleteDSLPckg_TimeConstraint', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition620', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region621', cardinality 0..*).
+'CompleteDSLPckg::TimeExpression' (role 'CompleteDSLPckg_TimeExpression282', cardinality 0..*) is associated with 'CompleteDSLPckg::TimeInterval' (role 'CompleteDSLPckg_TimeInterval', cardinality 0..*).
+'CompleteDSLPckg::Manifestation' (role 'CompleteDSLPckg_Manifestation374', cardinality 0..*) is associated with 'CompleteDSLPckg::PackageableElement' (role 'CompleteDSLPckg_PackageableElement375', cardinality 0..*).
+'CompleteDSLPckg::LinkEndData' (role 'CompleteDSLPckg_LinkEndData471', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin472', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'NamedElement196', cardinality 0..*) is associated with 'CompleteDSLPckg::Dependency' (role 'clientDependency', cardinality 0..*).
+'CompleteDSLPckg::Vertex' (role 'CompleteDSLPckg_Vertex602', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region603', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State646', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region647', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior653', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State652', cardinality 0..*).
+'CompleteDSLPckg::Component' (role 'CompleteDSLPckg_Component', cardinality 0..*) is associated with 'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface296', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement', cardinality 0..*) is associated with 'CompleteDSLPckg::Namespace' (role 'CompleteDSLPckg_Namespace10', cardinality 0..*).
+'CompleteDSLPckg::RemoveVariableValueAction' (role 'CompleteDSLPckg_RemoveVariableValueAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin569', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin557', cardinality 0..*) is associated with 'CompleteDSLPckg::ReduceAction' (role 'CompleteDSLPckg_ReduceAction556', cardinality 0..*).
+'CompleteDSLPckg::DurationConstraint' (role 'CompleteDSLPckg_DurationConstraint', cardinality 0..*) is associated with 'CompleteDSLPckg::DurationInterval' (role 'CompleteDSLPckg_DurationInterval294', cardinality 0..*).
+'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode786', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition785', cardinality 0..*).
+'CompleteDSLPckg::TimeEvent' (role 'CompleteDSLPckg_TimeEvent', cardinality 0..*) is associated with 'CompleteDSLPckg::TimeExpression' (role 'CompleteDSLPckg_TimeExpression', cardinality 0..*).
+'CompleteDSLPckg::Interval' (role 'CompleteDSLPckg_Interval', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification277', cardinality 0..*).
+'CompleteDSLPckg::LinkEndData' (role 'CompleteDSLPckg_LinkEndData474', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property475', cardinality 0..*).
+'CompleteDSLPckg::Duration' (role 'CompleteDSLPckg_Duration290', cardinality 0..*) is associated with 'CompleteDSLPckg::DurationInterval' (role 'CompleteDSLPckg_DurationInterval289', cardinality 0..*).
+'CompleteDSLPckg::Package' (role 'CompleteDSLPckg_Package', cardinality 0..*) is associated with 'CompleteDSLPckg::PackageImport' (role 'CompleteDSLPckg_PackageImport', cardinality 0..*).
+'CompleteDSLPckg::Pseudostate' (role 'CompleteDSLPckg_Pseudostate', cardinality 0..*) is associated with 'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine576', cardinality 0..*).
+'CompleteDSLPckg::Dependency' (role 'Dependency', cardinality 0..*) is associated with 'CompleteDSLPckg::NamedElement' (role 'client', cardinality 0..*).
+'CompleteDSLPckg::ReadLinkAction' (role 'CompleteDSLPckg_ReadLinkAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin479', cardinality 0..*).
+'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine578', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State', cardinality 0..*).
+'CompleteDSLPckg::Pseudostate' (role 'CompleteDSLPckg_Pseudostate626', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State627', cardinality 0..*).
+'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region594', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region592', cardinality 0..*).
+'CompleteDSLPckg::ParameterSet' (role 'CompleteDSLPckg_ParameterSet', cardinality 0..*) is associated with 'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter788', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior659', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State658', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State655', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior656', cardinality 0..*).
+'CompleteDSLPckg::PackageImport' (role 'packageImport', cardinality 0..*) is associated with 'CompleteDSLPckg::Namespace' (role 'Namespace22', cardinality 0..*).
+'CompleteDSLPckg::Pseudostate' (role 'CompleteDSLPckg_Pseudostate629', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectionPointReference' (role 'CompleteDSLPckg_ConnectionPointReference', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior761', cardinality 0..*) is associated with 'CompleteDSLPckg::ObjectFlow' (role 'CompleteDSLPckg_ObjectFlow760', cardinality 0..*).
+'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup720', cardinality 0..*) is associated with 'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity721', cardinality 0..*).
+'CompleteDSLPckg::PackageableElement' (role 'CompleteDSLPckg_PackageableElement17', cardinality 0..*) is associated with 'CompleteDSLPckg::ElementImport' (role 'CompleteDSLPckg_ElementImport', cardinality 0..*).
+'CompleteDSLPckg::InterruptibleActivityRegion' (role 'CompleteDSLPckg_InterruptibleActivityRegion796', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode797', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge794', cardinality 0..*) is associated with 'CompleteDSLPckg::InterruptibleActivityRegion' (role 'CompleteDSLPckg_InterruptibleActivityRegion793', cardinality 0..*).
+'CompleteDSLPckg::ProtocolStateMachine' (role 'CompleteDSLPckg_ProtocolStateMachine669', cardinality 0..*) is associated with 'CompleteDSLPckg::ProtocolConformance' (role 'CompleteDSLPckg_ProtocolConformance668', cardinality 0..*).
+'CompleteDSLPckg::ReadLinkObjectEndQualifierAction' (role 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction546', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin547', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier204', cardinality 0..*) is associated with 'CompleteDSLPckg::Substitution' (role 'CompleteDSLPckg_Substitution', cardinality 0..*).
+'CompleteDSLPckg::CombinedFragment' (role 'CompleteDSLPckg_CombinedFragment959', cardinality 0..*) is associated with 'CompleteDSLPckg::Gate' (role 'CompleteDSLPckg_Gate960', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'value', cardinality 0..*) is associated with 'CompleteDSLPckg::Slot' (role 'Slot', cardinality 0..*).
+'CompleteDSLPckg::SendSignalAction' (role 'CompleteDSLPckg_SendSignalAction417', cardinality 0..*) is associated with 'CompleteDSLPckg::Signal' (role 'CompleteDSLPckg_Signal418', cardinality 0..*).
+'CompleteDSLPckg::ComponentRealization' (role 'CompleteDSLPckg_ComponentRealization306', cardinality 0..*) is associated with 'CompleteDSLPckg::Component' (role 'CompleteDSLPckg_Component307', cardinality 0..*).
+'CompleteDSLPckg::Connector' (role 'CompleteDSLPckg_Connector315', cardinality 0..*) is associated with 'CompleteDSLPckg::Connector' (role 'CompleteDSLPckg_Connector317', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'Interface', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'ownedAttribute124', cardinality 0..*).
+'CompleteDSLPckg::OccurenceSpecification' (role 'CompleteDSLPckg_OccurenceSpecification895', cardinality 0..*) is associated with 'CompleteDSLPckg::GeneralOrdering' (role 'CompleteDSLPckg_GeneralOrdering896', cardinality 0..*).
+'CompleteDSLPckg::DeploymentTarget' (role 'CompleteDSLPckg_DeploymentTarget381', cardinality 0..*) is associated with 'CompleteDSLPckg::Deployment' (role 'CompleteDSLPckg_Deployment', cardinality 0..*).
+'CompleteDSLPckg::ClearStructuralFeatureAction' (role 'CompleteDSLPckg_ClearStructuralFeatureAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin465', cardinality 0..*).
+'CompleteDSLPckg::ExtensionPoint' (role 'CompleteDSLPckg_ExtensionPoint996', cardinality 0..*) is associated with 'CompleteDSLPckg::Extend' (role 'CompleteDSLPckg_Extend995', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'owningConstraint', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'ValueSpecification73', cardinality 0..*).
+'CompleteDSLPckg::Association' (role 'association', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'Property181', cardinality 0..*).
+'CompleteDSLPckg::Port' (role 'CompleteDSLPckg_Port352', cardinality 0..*) is associated with 'CompleteDSLPckg::EncapsulatedClassifier' (role 'CompleteDSLPckg_EncapsulatedClassifier', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin440', cardinality 0..*) is associated with 'CompleteDSLPckg::TestIdentityAction' (role 'CompleteDSLPckg_TestIdentityAction439', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier92', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier90', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint158', cardinality 0..*) is associated with 'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation157', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin513', cardinality 0..*) is associated with 'CompleteDSLPckg::ReclassifyObjectAction' (role 'CompleteDSLPckg_ReclassifyObjectAction', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint674', cardinality 0..*) is associated with 'CompleteDSLPckg::ProtocolTransition' (role 'CompleteDSLPckg_ProtocolTransition', cardinality 0..*).
+'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity683', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup', cardinality 0..*).
+'CompleteDSLPckg::OccurenceSpecification' (role 'CompleteDSLPckg_OccurenceSpecification892', cardinality 0..*) is associated with 'CompleteDSLPckg::GeneralOrdering' (role 'CompleteDSLPckg_GeneralOrdering893', cardinality 0..*).
+'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity687', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition', cardinality 0..*).
+'CompleteDSLPckg::Extend' (role 'CompleteDSLPckg_Extend998', cardinality 0..*) is associated with 'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase999', cardinality 0..*).
+'CompleteDSLPckg::Type' (role 'ownedType', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'Package56', cardinality 0..*).
+'CompleteDSLPckg::StructuredClassifier' (role 'CompleteDSLPckg_StructuredClassifier335', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectableElement' (role 'CompleteDSLPckg_ConnectableElement336', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State663', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State665', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin833', cardinality 0..*) is associated with 'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode832', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression', cardinality 0..*).
+'CompleteDSLPckg::SendObjectAction' (role 'CompleteDSLPckg_SendObjectAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin422', cardinality 0..*).
+'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode829', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin830', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface344', cardinality 0..*) is associated with 'CompleteDSLPckg::Port' (role 'CompleteDSLPckg_Port', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin534', cardinality 0..*) is associated with 'CompleteDSLPckg::QualifierValue' (role 'CompleteDSLPckg_QualifierValue533', cardinality 0..*).
+'CompleteDSLPckg::SequenceNode' (role 'CompleteDSLPckg_SequenceNode', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode860', cardinality 0..*).
+'CompleteDSLPckg::Comment' (role 'CompleteDSLPckg_Comment', cardinality 0..*) is associated with 'CompleteDSLPckg::Element' (role 'CompleteDSLPckg_Element', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface216', cardinality 0..*) is associated with 'CompleteDSLPckg::Reception' (role 'CompleteDSLPckg_Reception217', cardinality 0..*).
+'CompleteDSLPckg::OccurenceSpecification' (role 'CompleteDSLPckg_OccurenceSpecification890', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutionSpecification' (role 'CompleteDSLPckg_ExecutionSpecification889', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'Property211', cardinality 0..*) is associated with 'CompleteDSLPckg::Interface' (role 'interface', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint1002', cardinality 0..*) is associated with 'CompleteDSLPckg::Extend' (role 'CompleteDSLPckg_Extend1001', cardinality 0..*).
+'CompleteDSLPckg::Interaction' (role 'CompleteDSLPckg_Interaction', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionFragment' (role 'CompleteDSLPckg_InteractionFragment900', cardinality 0..*).
+'CompleteDSLPckg::Namespace' (role 'Namespace69', cardinality 0..*) is associated with 'CompleteDSLPckg::Constraint' (role 'ownedRule', cardinality 0..*).
+'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode823', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode824', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin463', cardinality 0..*) is associated with 'CompleteDSLPckg::RemoveStructuralFeatureValueAction' (role 'CompleteDSLPckg_RemoveStructuralFeatureValueAction', cardinality 0..*).
+'CompleteDSLPckg::ProtocolTransition' (role 'CompleteDSLPckg_ProtocolTransition676', cardinality 0..*) is associated with 'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint677', cardinality 0..*).
+'CompleteDSLPckg::ExecutionSpecification' (role 'CompleteDSLPckg_ExecutionSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::OccurenceSpecification' (role 'CompleteDSLPckg_OccurenceSpecification', cardinality 0..*).
+'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase1005', cardinality 0..*) is associated with 'CompleteDSLPckg::Extend' (role 'CompleteDSLPckg_Extend1004', cardinality 0..*).
+'CompleteDSLPckg::StructuralFeature' (role 'CompleteDSLPckg_StructuralFeature449', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuralFeatureAction' (role 'CompleteDSLPckg_StructuralFeatureAction', cardinality 0..*).
+'CompleteDSLPckg::Slot' (role 'Slot63', cardinality 0..*) is associated with 'CompleteDSLPckg::InstanceSpecification' (role 'owningInstace', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin493', cardinality 0..*) is associated with 'CompleteDSLPckg::UnmarshallAction' (role 'CompleteDSLPckg_UnmarshallAction', cardinality 0..*).
+'CompleteDSLPckg::InstanceSpecification' (role 'CompleteDSLPckg_InstanceSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::InstanceValue' (role 'CompleteDSLPckg_InstanceValue', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification744', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge743', cardinality 0..*).
+'CompleteDSLPckg::InteractionFragment' (role 'CompleteDSLPckg_InteractionFragment886', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionOperand' (role 'CompleteDSLPckg_InteractionOperand', cardinality 0..*).
+'CompleteDSLPckg::Gate' (role 'CompleteDSLPckg_Gate970', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionUse' (role 'CompleteDSLPckg_InteractionUse', cardinality 0..*).
+'CompleteDSLPckg::DirectedRelationship' (role 'CompleteDSLPckg_DirectedRelationship', cardinality 0..*) is associated with 'CompleteDSLPckg::Element' (role 'CompleteDSLPckg_Element39', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property339', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuredClassifier' (role 'CompleteDSLPckg_StructuredClassifier338', cardinality 0..*).
+'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode698', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode696', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'interface213', cardinality 0..*) is associated with 'CompleteDSLPckg::Operation' (role 'Operation214', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property179', cardinality 0..*) is associated with 'CompleteDSLPckg::Association' (role 'CompleteDSLPckg_Association', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'specific', cardinality 0..*) is associated with 'CompleteDSLPckg::Generalization' (role 'Generalization', cardinality 0..*).
+'CompleteDSLPckg::SendObjectAction' (role 'CompleteDSLPckg_SendObjectAction424', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin425', cardinality 0..*).
+'CompleteDSLPckg::GeneralOrdering' (role 'CompleteDSLPckg_GeneralOrdering', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionFragment' (role 'CompleteDSLPckg_InteractionFragment884', cardinality 0..*).
+'CompleteDSLPckg::InstanceSpecification' (role 'CompleteDSLPckg_InstanceSpecification67', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'ownedOperation162', cardinality 0..*) is associated with 'CompleteDSLPckg::DataType' (role 'DataType163', cardinality 0..*).
+'CompleteDSLPckg::InteractionUse' (role 'CompleteDSLPckg_InteractionUse972', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification973', cardinality 0..*).
+'CompleteDSLPckg::ReplyAction' (role 'CompleteDSLPckg_ReplyAction490', cardinality 0..*) is associated with 'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger491', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'CompleteDSLPckg::Association' (role 'Association120', cardinality 0..*).
+'CompleteDSLPckg::TestIdentityAction' (role 'CompleteDSLPckg_TestIdentityAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin434', cardinality 0..*).
+'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionFragment' (role 'CompleteDSLPckg_InteractionFragment', cardinality 0..*).
+'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity691', cardinality 0..*) is associated with 'CompleteDSLPckg::Variable' (role 'CompleteDSLPckg_Variable692', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property320', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectorEnd' (role 'CompleteDSLPckg_ConnectorEnd319', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecificationAction' (role 'CompleteDSLPckg_ValueSpecificationAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin444', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification976', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionUse' (role 'CompleteDSLPckg_InteractionUse975', cardinality 0..*).
+'CompleteDSLPckg::BehavioralFeature' (role 'CompleteDSLPckg_BehavioralFeature144', cardinality 0..*) is associated with 'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter143', cardinality 0..*).
+'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode821', cardinality 0..*) is associated with 'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode820', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin528', cardinality 0..*) is associated with 'CompleteDSLPckg::StartObjectBehaviorAction' (role 'CompleteDSLPckg_StartObjectBehaviorAction', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge755', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode756', cardinality 0..*).
+'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode826', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin827', cardinality 0..*).
+'CompleteDSLPckg::Type' (role 'CompleteDSLPckg_Type', cardinality 0..*) is associated with 'CompleteDSLPckg::TypedElement' (role 'CompleteDSLPckg_TypedElement', cardinality 0..*).
+'CompleteDSLPckg::Generalization' (role 'Generalization230', cardinality 0..*) is associated with 'CompleteDSLPckg::GeneralizationSet' (role 'generalizationSet', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification147', cardinality 0..*) is associated with 'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter146', cardinality 0..*).
+'CompleteDSLPckg::BehavioralFeature' (role 'CompleteDSLPckg_BehavioralFeature239', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior238', cardinality 0..*).
+'CompleteDSLPckg::Action' (role 'CompleteDSLPckg_Action906', cardinality 0..*) is associated with 'CompleteDSLPckg::Interaction' (role 'CompleteDSLPckg_Interaction905', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'powertype', cardinality 0..*) is associated with 'CompleteDSLPckg::GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*).
+'CompleteDSLPckg::ExpansionNode' (role 'CompleteDSLPckg_ExpansionNode880', cardinality 0..*) is associated with 'CompleteDSLPckg::ExpansionRegion' (role 'CompleteDSLPckg_ExpansionRegion881', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property979', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionUse' (role 'CompleteDSLPckg_InteractionUse978', cardinality 0..*).
+'CompleteDSLPckg::CollaborationUse' (role 'CompleteDSLPckg_CollaborationUse103', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier102', cardinality 0..*).
+'CompleteDSLPckg::ExceptionHandler' (role 'CompleteDSLPckg_ExceptionHandler862', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode863', cardinality 0..*).
+'CompleteDSLPckg::BroadcastSignalAction' (role 'CompleteDSLPckg_BroadcastSignalAction', cardinality 0..*) is associated with 'CompleteDSLPckg::Signal' (role 'CompleteDSLPckg_Signal420', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property110', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification111', cardinality 0..*).
+'CompleteDSLPckg::ExpansionNode' (role 'CompleteDSLPckg_ExpansionNode877', cardinality 0..*) is associated with 'CompleteDSLPckg::ExpansionRegion' (role 'CompleteDSLPckg_ExpansionRegion878', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge746', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition747', cardinality 0..*).
+'CompleteDSLPckg::Interaction' (role 'CompleteDSLPckg_Interaction982', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionUse' (role 'CompleteDSLPckg_InteractionUse981', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'Property185', cardinality 0..*) is associated with 'CompleteDSLPckg::DataType' (role 'dataType', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface207', cardinality 0..*) is associated with 'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface209', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'ValueSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::MultiplicityElement' (role 'owningUpper', cardinality 0..*).
+'CompleteDSLPckg::Class' (role 'CompleteDSLPckg_Class172', cardinality 0..*) is associated with 'CompleteDSLPckg::Class' (role 'CompleteDSLPckg_Class170', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property106', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property108', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'Property175', cardinality 0..*) is associated with 'CompleteDSLPckg::Class' (role 'class_174', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint245', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior244', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier310', cardinality 0..*) is associated with 'CompleteDSLPckg::ComponentRealization' (role 'CompleteDSLPckg_ComponentRealization309', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin452', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuralFeatureAction' (role 'CompleteDSLPckg_StructuralFeatureAction451', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge752', cardinality 0..*) is associated with 'CompleteDSLPckg::InterruptibleActivityRegion' (role 'CompleteDSLPckg_InterruptibleActivityRegion753', cardinality 0..*).
+'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline910', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionFragment' (role 'CompleteDSLPckg_InteractionFragment911', cardinality 0..*).
+'CompleteDSLPckg::Reception' (role 'CompleteDSLPckg_Reception', cardinality 0..*) is associated with 'CompleteDSLPckg::Class' (role 'CompleteDSLPckg_Class177', cardinality 0..*).
+'CompleteDSLPckg::ExceptionHandler' (role 'CompleteDSLPckg_ExceptionHandler868', cardinality 0..*) is associated with 'CompleteDSLPckg::ObjectNode' (role 'CompleteDSLPckg_ObjectNode', cardinality 0..*).
+'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier984', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior223', cardinality 0..*) is associated with 'CompleteDSLPckg::BehavioredClassifier' (role 'CompleteDSLPckg_BehavioredClassifier', cardinality 0..*).
+'CompleteDSLPckg::AddStructuralFeatureValueAction' (role 'CompleteDSLPckg_AddStructuralFeatureValueAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin461', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation410', cardinality 0..*) is associated with 'CompleteDSLPckg::CallOperationAction' (role 'CompleteDSLPckg_CallOperationAction', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin508', cardinality 0..*) is associated with 'CompleteDSLPckg::ReadExtendAction' (role 'CompleteDSLPckg_ReadExtendAction', cardinality 0..*).
+'CompleteDSLPckg::Gate' (role 'CompleteDSLPckg_Gate', cardinality 0..*) is associated with 'CompleteDSLPckg::Interaction' (role 'CompleteDSLPckg_Interaction908', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier89', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin432', cardinality 0..*) is associated with 'CompleteDSLPckg::DestroyObjectAction' (role 'CompleteDSLPckg_DestroyObjectAction', cardinality 0..*).
+'CompleteDSLPckg::Class' (role 'Class', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'ownedAttribute', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier393', cardinality 0..*) is associated with 'CompleteDSLPckg::Action' (role 'CompleteDSLPckg_Action', cardinality 0..*).
+'CompleteDSLPckg::ConditionalNode' (role 'CompleteDSLPckg_ConditionalNode842', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode843', cardinality 0..*).
+'CompleteDSLPckg::ExtensionPoint' (role 'CompleteDSLPckg_ExtensionPoint', cardinality 0..*) is associated with 'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase986', cardinality 0..*).
+'CompleteDSLPckg::DeployedArtifact' (role 'CompleteDSLPckg_DeployedArtifact', cardinality 0..*) is associated with 'CompleteDSLPckg::Deployment' (role 'CompleteDSLPckg_Deployment386', cardinality 0..*).
+'CompleteDSLPckg::Element' (role 'owner', cardinality 0..*) is associated with 'CompleteDSLPckg::Element' (role 'Element', cardinality 0..*).
+'CompleteDSLPckg::CreateObjectAction' (role 'CompleteDSLPckg_CreateObjectAction429', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin430', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier427', cardinality 0..*) is associated with 'CompleteDSLPckg::CreateObjectAction' (role 'CompleteDSLPckg_CreateObjectAction', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin836', cardinality 0..*) is associated with 'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode835', cardinality 0..*).
+'CompleteDSLPckg::Deployment' (role 'CompleteDSLPckg_Deployment391', cardinality 0..*) is associated with 'CompleteDSLPckg::DeploymentSpecification' (role 'CompleteDSLPckg_DeploymentSpecification390', cardinality 0..*).
+'CompleteDSLPckg::BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*) is associated with 'CompleteDSLPckg::InterfaceRealization' (role 'interfaceRealization', cardinality 0..*).
+'CompleteDSLPckg::QualifierValue' (role 'CompleteDSLPckg_QualifierValue530', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property531', cardinality 0..*).
+'CompleteDSLPckg::Extend' (role 'CompleteDSLPckg_Extend', cardinality 0..*) is associated with 'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase988', cardinality 0..*).
+'CompleteDSLPckg::WriteStructuralFeatureAction' (role 'CompleteDSLPckg_WriteStructuralFeatureAction458', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin459', cardinality 0..*).
+'CompleteDSLPckg::InterruptibleActivityRegion' (role 'CompleteDSLPckg_InterruptibleActivityRegion', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode709', cardinality 0..*).
+'CompleteDSLPckg::ReadlsClassifiedObjectAction' (role 'CompleteDSLPckg_ReadlsClassifiedObjectAction523', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin524', cardinality 0..*).
+'CompleteDSLPckg::CollaborationUse' (role 'CompleteDSLPckg_CollaborationUse', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier100', cardinality 0..*).
+'CompleteDSLPckg::BehaviorExecutionSpecification' (role 'CompleteDSLPckg_BehaviorExecutionSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior942', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin402', cardinality 0..*) is associated with 'CompleteDSLPckg::OpaqueAction' (role 'CompleteDSLPckg_OpaqueAction401', cardinality 0..*).
+'CompleteDSLPckg::Include' (role 'CompleteDSLPckg_Include', cardinality 0..*) is associated with 'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase990', cardinality 0..*).
+'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter242', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior241', cardinality 0..*).
+'CompleteDSLPckg::ValuePin' (role 'CompleteDSLPckg_ValuePin', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification404', cardinality 0..*).
+'CompleteDSLPckg::Comment' (role 'Comment', cardinality 0..*) is associated with 'CompleteDSLPckg::Element' (role 'owningElement', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property114', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property112', cardinality 0..*).
+'CompleteDSLPckg::SendSignalAction' (role 'CompleteDSLPckg_SendSignalAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin415', cardinality 0..*).
+'CompleteDSLPckg::ExtensionPoint' (role 'CompleteDSLPckg_ExtensionPoint992', cardinality 0..*) is associated with 'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase993', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin849', cardinality 0..*) is associated with 'CompleteDSLPckg::ConditionalNode' (role 'CompleteDSLPckg_ConditionalNode848', cardinality 0..*).
+'CompleteDSLPckg::PackageMerge' (role 'PackageMerge', cardinality 0..*) is associated with 'CompleteDSLPckg::Package' (role 'receivingPackage', cardinality 0..*).
+'CompleteDSLPckg::Generalization' (role 'CompleteDSLPckg_Generalization', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier131', cardinality 0..*).
+'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase1008', cardinality 0..*) is associated with 'CompleteDSLPckg::Include' (role 'CompleteDSLPckg_Include1007', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin406', cardinality 0..*) is associated with 'CompleteDSLPckg::CallAction' (role 'CompleteDSLPckg_CallAction', cardinality 0..*).
+'CompleteDSLPckg::Clause' (role 'CompleteDSLPckg_Clause855', cardinality 0..*) is associated with 'CompleteDSLPckg::Clause' (role 'CompleteDSLPckg_Clause853', cardinality 0..*).
+'CompleteDSLPckg::InteractionOperand' (role 'CompleteDSLPckg_InteractionOperand955', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionConstraint' (role 'CompleteDSLPckg_InteractionConstraint', cardinality 0..*).
+'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode846', cardinality 0..*) is associated with 'CompleteDSLPckg::ConditionalNode' (role 'CompleteDSLPckg_ConditionalNode845', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification750', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge749', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint898', cardinality 0..*) is associated with 'CompleteDSLPckg::StateInvariant' (role 'CompleteDSLPckg_StateInvariant', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'Classifier202', cardinality 0..*) is associated with 'CompleteDSLPckg::Substitution' (role 'substitution', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin485', cardinality 0..*) is associated with 'CompleteDSLPckg::ReplyAction' (role 'CompleteDSLPckg_ReplyAction', cardinality 0..*).
+'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter', cardinality 0..*) is associated with 'CompleteDSLPckg::OpaqueExpression' (role 'CompleteDSLPckg_OpaqueExpression', cardinality 0..*).
+'CompleteDSLPckg::InteractionOperand' (role 'CompleteDSLPckg_InteractionOperand957', cardinality 0..*) is associated with 'CompleteDSLPckg::CombinedFragment' (role 'CompleteDSLPckg_CombinedFragment', cardinality 0..*).
+'CompleteDSLPckg::UseCase' (role 'CompleteDSLPckg_UseCase1011', cardinality 0..*) is associated with 'CompleteDSLPckg::Include' (role 'CompleteDSLPckg_Include1010', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface347', cardinality 0..*) is associated with 'CompleteDSLPckg::Port' (role 'CompleteDSLPckg_Port346', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'substitutingClassifier', cardinality 0..*) is associated with 'CompleteDSLPckg::Substitution' (role 'Substitution', cardinality 0..*).
+'CompleteDSLPckg::GeneralizationSet' (role 'GeneralizationSet136', cardinality 0..*) is associated with 'CompleteDSLPckg::Generalization' (role 'generalization135', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint152', cardinality 0..*) is associated with 'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation151', cardinality 0..*).
+'CompleteDSLPckg::Class' (role 'CompleteDSLPckg_Class', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier168', cardinality 0..*).
+'CompleteDSLPckg::Type' (role 'CompleteDSLPckg_Type141', cardinality 0..*) is associated with 'CompleteDSLPckg::BehavioralFeature' (role 'CompleteDSLPckg_BehavioralFeature140', cardinality 0..*).
+'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode838', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin839', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement86', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier85', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property328', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectorEnd' (role 'CompleteDSLPckg_ConnectorEnd327', cardinality 0..*).
+'CompleteDSLPckg::TestIdentityAction' (role 'CompleteDSLPckg_TestIdentityAction436', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin437', cardinality 0..*).
+'CompleteDSLPckg::ExpansionRegion' (role 'CompleteDSLPckg_ExpansionRegion874', cardinality 0..*) is associated with 'CompleteDSLPckg::ExpansionNode' (role 'CompleteDSLPckg_ExpansionNode875', cardinality 0..*).
+'CompleteDSLPckg::StartClassifierBehaviorAction' (role 'CompleteDSLPckg_StartClassifierBehaviorAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin526', cardinality 0..*).
+'CompleteDSLPckg::ExceptionHandler' (role 'CompleteDSLPckg_ExceptionHandler870', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier871', cardinality 0..*).
+'CompleteDSLPckg::ActionExecutionSpecification' (role 'CompleteDSLPckg_ActionExecutionSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::Action' (role 'CompleteDSLPckg_Action944', cardinality 0..*).
+'CompleteDSLPckg::GeneralOrdering' (role 'CompleteDSLPckg_GeneralOrdering949', cardinality 0..*) is associated with 'CompleteDSLPckg::OccurenceSpecification' (role 'CompleteDSLPckg_OccurenceSpecification950', cardinality 0..*).
+'CompleteDSLPckg::ConnectorEnd' (role 'CompleteDSLPckg_ConnectorEnd322', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectableElement' (role 'CompleteDSLPckg_ConnectableElement', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'associationEnd', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'Property', cardinality 0..*).
+'CompleteDSLPckg::InteractionFragment' (role 'CompleteDSLPckg_InteractionFragment953', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionOperand' (role 'CompleteDSLPckg_InteractionOperand952', cardinality 0..*).
+'CompleteDSLPckg::InstanceSpecification' (role 'owningInstanceSpec', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'ValueSpecification65', cardinality 0..*).
+'CompleteDSLPckg::ActivityPartition' (role 'CompleteDSLPckg_ActivityPartition707', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode706', cardinality 0..*).
+'CompleteDSLPckg::Connector' (role 'CompleteDSLPckg_Connector', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectorEnd' (role 'CompleteDSLPckg_ConnectorEnd', cardinality 0..*).
+'CompleteDSLPckg::Feature' (role 'Feature', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'featuringClassifier', cardinality 0..*).
+'CompleteDSLPckg::StructuredActivityNode' (role 'CompleteDSLPckg_StructuredActivityNode', cardinality 0..*) is associated with 'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity689', cardinality 0..*).
+'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline919', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification920', cardinality 0..*).
+'CompleteDSLPckg::Slot' (role 'owningSlot', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'ValueSpecification77', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'memberEnd', cardinality 0..*) is associated with 'CompleteDSLPckg::Association' (role 'Association', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property115', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property117', cardinality 0..*).
+'CompleteDSLPckg::OccurenceSpecification' (role 'CompleteDSLPckg_OccurenceSpecification947', cardinality 0..*) is associated with 'CompleteDSLPckg::GeneralOrdering' (role 'CompleteDSLPckg_GeneralOrdering946', cardinality 0..*).
+'CompleteDSLPckg::Element' (role 'Element5', cardinality 0..*) is associated with 'CompleteDSLPckg::Element' (role 'ownedElement', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'specification', cardinality 0..*) is associated with 'CompleteDSLPckg::Constraint' (role 'Constraint50', cardinality 0..*).
+'CompleteDSLPckg::Deployment' (role 'CompleteDSLPckg_Deployment383', cardinality 0..*) is associated with 'CompleteDSLPckg::DeploymentTarget' (role 'CompleteDSLPckg_DeploymentTarget384', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State661', cardinality 0..*) is associated with 'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint662', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'ValueSpecification45', cardinality 0..*) is associated with 'CompleteDSLPckg::MultiplicityElement' (role 'owningLower', cardinality 0..*).
+'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin399', cardinality 0..*) is associated with 'CompleteDSLPckg::OpaqueAction' (role 'CompleteDSLPckg_OpaqueAction', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'CompleteDSLPckg::Feature' (role 'feature', cardinality 0..*).
+'CompleteDSLPckg::BehavioredClassifier' (role 'CompleteDSLPckg_BehavioredClassifier225', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior226', cardinality 0..*).
+'CompleteDSLPckg::ReclassifyObjectAction' (role 'CompleteDSLPckg_ReclassifyObjectAction515', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier516', cardinality 0..*).
+'CompleteDSLPckg::Clause' (role 'CompleteDSLPckg_Clause850', cardinality 0..*) is associated with 'CompleteDSLPckg::Clause' (role 'CompleteDSLPckg_Clause852', cardinality 0..*).
+'CompleteDSLPckg::RedefinableElement' (role 'CompleteDSLPckg_RedefinableElement82', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier83', cardinality 0..*).
+'CompleteDSLPckg::Dependency' (role 'CompleteDSLPckg_Dependency', cardinality 0..*) is associated with 'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement198', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation680', cardinality 0..*) is associated with 'CompleteDSLPckg::ProtocolTransition' (role 'CompleteDSLPckg_ProtocolTransition679', cardinality 0..*).
+'CompleteDSLPckg::UnmarshallAction' (role 'CompleteDSLPckg_UnmarshallAction495', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier496', cardinality 0..*).
+'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline922', cardinality 0..*) is associated with 'CompleteDSLPckg::PartDecomposition' (role 'CompleteDSLPckg_PartDecomposition', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin858', cardinality 0..*) is associated with 'CompleteDSLPckg::Clause' (role 'CompleteDSLPckg_Clause857', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior236', cardinality 0..*) is associated with 'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior234', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecificationAction' (role 'CompleteDSLPckg_ValueSpecificationAction446', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification447', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin499', cardinality 0..*) is associated with 'CompleteDSLPckg::UnmarshallAction' (role 'CompleteDSLPckg_UnmarshallAction498', cardinality 0..*).
+'CompleteDSLPckg::ConnectableElement' (role 'CompleteDSLPckg_ConnectableElement917', cardinality 0..*) is associated with 'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline916', cardinality 0..*).
+'CompleteDSLPckg::InterfaceRealization' (role 'InterfaceRealization', cardinality 0..*) is associated with 'CompleteDSLPckg::BehavioredClassifier' (role 'implementingClassifier', cardinality 0..*).
+'CompleteDSLPckg::ExpansionRegion' (role 'CompleteDSLPckg_ExpansionRegion', cardinality 0..*) is associated with 'CompleteDSLPckg::ExpansionNode' (role 'CompleteDSLPckg_ExpansionNode', cardinality 0..*).
+'CompleteDSLPckg::Element' (role 'CompleteDSLPckg_Element42', cardinality 0..*) is associated with 'CompleteDSLPckg::DirectedRelationship' (role 'CompleteDSLPckg_DirectedRelationship41', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'qualifier', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'Property129', cardinality 0..*).
+'CompleteDSLPckg::Manifestation' (role 'CompleteDSLPckg_Manifestation', cardinality 0..*) is associated with 'CompleteDSLPckg::Artifact' (role 'CompleteDSLPckg_Artifact372', cardinality 0..*).
+'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin501', cardinality 0..*) is associated with 'CompleteDSLPckg::AcceptEventAction' (role 'CompleteDSLPckg_AcceptEventAction', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior', cardinality 0..*) is associated with 'CompleteDSLPckg::OpaqueExpression' (role 'CompleteDSLPckg_OpaqueExpression60', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'ownedAttribute122', cardinality 0..*) is associated with 'CompleteDSLPckg::DataType' (role 'DataType', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification965', cardinality 0..*) is associated with 'CompleteDSLPckg::InteractionConstraint' (role 'CompleteDSLPckg_InteractionConstraint964', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation', cardinality 0..*) is associated with 'CompleteDSLPckg::Type' (role 'CompleteDSLPckg_Type149', cardinality 0..*).
+'CompleteDSLPckg::ReplyAction' (role 'CompleteDSLPckg_ReplyAction487', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin488', cardinality 0..*).
+'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier206', cardinality 0..*).
+'CompleteDSLPckg::InteractionConstraint' (role 'CompleteDSLPckg_InteractionConstraint967', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification968', cardinality 0..*).
+'CompleteDSLPckg::CreateLinkObjectAction' (role 'CompleteDSLPckg_CreateLinkObjectAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin552', cardinality 0..*).
+'CompleteDSLPckg::InterfaceRealization' (role 'CompleteDSLPckg_InterfaceRealization', cardinality 0..*) is associated with 'CompleteDSLPckg::Interface' (role 'CompleteDSLPckg_Interface220', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'Classifier228', cardinality 0..*) is associated with 'CompleteDSLPckg::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*).
+'CompleteDSLPckg::ExecutionOccurrenceSpecification' (role 'CompleteDSLPckg_ExecutionOccurrenceSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutionSpecification' (role 'CompleteDSLPckg_ExecutionSpecification940', cardinality 0..*).
+'CompleteDSLPckg::Message' (role 'CompleteDSLPckg_Message934', cardinality 0..*) is associated with 'CompleteDSLPckg::MessageEnd' (role 'CompleteDSLPckg_MessageEnd935', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge701', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode700', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge704', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode703', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement962', cardinality 0..*) is associated with 'CompleteDSLPckg::ConsiderIgnoreFragment' (role 'CompleteDSLPckg_ConsiderIgnoreFragment', cardinality 0..*).
+'CompleteDSLPckg::AcceptEventAction' (role 'CompleteDSLPckg_AcceptEventAction503', cardinality 0..*) is associated with 'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger504', cardinality 0..*).
+'CompleteDSLPckg::Relationship' (role 'CompleteDSLPckg_Relationship', cardinality 0..*) is associated with 'CompleteDSLPckg::Element' (role 'CompleteDSLPckg_Element37', cardinality 0..*).
+'CompleteDSLPckg::WriteStructuralFeatureAction' (role 'CompleteDSLPckg_WriteStructuralFeatureAction', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin456', cardinality 0..*).
+'CompleteDSLPckg::OpaqueExpression' (role 'CompleteDSLPckg_OpaqueExpression200', cardinality 0..*) is associated with 'CompleteDSLPckg::Abstraction' (role 'CompleteDSLPckg_Abstraction', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior314', cardinality 0..*) is associated with 'CompleteDSLPckg::Connector' (role 'CompleteDSLPckg_Connector313', cardinality 0..*).
+'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger', cardinality 0..*) is associated with 'CompleteDSLPckg::Event' (role 'CompleteDSLPckg_Event', cardinality 0..*).
+'CompleteDSLPckg::ValueSpecification' (role 'CompleteDSLPckg_ValueSpecification924', cardinality 0..*) is associated with 'CompleteDSLPckg::Message' (role 'CompleteDSLPckg_Message', cardinality 0..*).
+'CompleteDSLPckg::DeploymentSpecification' (role 'CompleteDSLPckg_DeploymentSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::Deployment' (role 'CompleteDSLPckg_Deployment388', cardinality 0..*).
+'CompleteDSLPckg::ReadSelfAction' (role 'CompleteDSLPckg_ReadSelfAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin442', cardinality 0..*).
+'CompleteDSLPckg::Association' (role 'owningAssociation', cardinality 0..*) is associated with 'CompleteDSLPckg::Property' (role 'Property183', cardinality 0..*).
+'CompleteDSLPckg::CallOperationAction' (role 'CompleteDSLPckg_CallOperationAction412', cardinality 0..*) is associated with 'CompleteDSLPckg::InputPin' (role 'CompleteDSLPckg_InputPin413', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'Operation', cardinality 0..*) is associated with 'CompleteDSLPckg::Class' (role 'class_', cardinality 0..*).
+'CompleteDSLPckg::ExceptionHandler' (role 'CompleteDSLPckg_ExceptionHandler865', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode866', cardinality 0..*).
+'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline913', cardinality 0..*) is associated with 'CompleteDSLPckg::Interaction' (role 'CompleteDSLPckg_Interaction914', cardinality 0..*).
+'CompleteDSLPckg::ReadExtendAction' (role 'CompleteDSLPckg_ReadExtendAction510', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier511', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'CompleteDSLPckg::Class' (role 'Class160', cardinality 0..*).
+'CompleteDSLPckg::Property' (role 'CompleteDSLPckg_Property342', cardinality 0..*) is associated with 'CompleteDSLPckg::StructuredClassifier' (role 'CompleteDSLPckg_StructuredClassifier341', cardinality 0..*).
+'CompleteDSLPckg::ReadlsClassifiedObjectAction' (role 'CompleteDSLPckg_ReadlsClassifiedObjectAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin521', cardinality 0..*).
+'CompleteDSLPckg::ConnectorEnd' (role 'CompleteDSLPckg_ConnectorEnd331', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectableElement' (role 'CompleteDSLPckg_ConnectableElement330', cardinality 0..*).
+'CompleteDSLPckg::Interaction' (role 'CompleteDSLPckg_Interaction902', cardinality 0..*) is associated with 'CompleteDSLPckg::Lifeline' (role 'CompleteDSLPckg_Lifeline903', cardinality 0..*).
+'CompleteDSLPckg::ReadStructuralFeatureAction' (role 'CompleteDSLPckg_ReadStructuralFeatureAction', cardinality 0..*) is associated with 'CompleteDSLPckg::OutputPin' (role 'CompleteDSLPckg_OutputPin454', cardinality 0..*).
+'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint155', cardinality 0..*) is associated with 'CompleteDSLPckg::Operation' (role 'CompleteDSLPckg_Operation154', cardinality 0..*).
+'CompleteDSLPckg::MessageEnd' (role 'CompleteDSLPckg_MessageEnd', cardinality 0..*) is associated with 'CompleteDSLPckg::Message' (role 'CompleteDSLPckg_Message932', cardinality 0..*).
+'CompleteDSLPckg::Association' (role 'CompleteDSLPckg_Association325', cardinality 0..*) is associated with 'CompleteDSLPckg::ConnectorEnd' (role 'CompleteDSLPckg_ConnectorEnd324', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier519', cardinality 0..*) is associated with 'CompleteDSLPckg::ReclassifyObjectAction' (role 'CompleteDSLPckg_ReclassifyObjectAction518', cardinality 0..*).
+'CompleteDSLPckg::Package' (role 'package', cardinality 0..*) is associated with 'CompleteDSLPckg::Type' (role 'Type', cardinality 0..*).
+'CompleteDSLPckg::Element' (role 'Element34', cardinality 0..*) is associated with 'CompleteDSLPckg::Comment' (role 'ownedComment', cardinality 0..*).
+'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier93', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'CompleteDSLPckg_Classifier95', cardinality 0..*).
+'CompleteDSLPckg::Element' (role 'CompleteDSLPckg_Element71', cardinality 0..*) is associated with 'CompleteDSLPckg::Constraint' (role 'CompleteDSLPckg_Constraint', cardinality 0..*).
+'CompleteDSLPckg::StructuredClassifier' (role 'CompleteDSLPckg_StructuredClassifier', cardinality 0..*) is associated with 'CompleteDSLPckg::Connector' (role 'CompleteDSLPckg_Connector333', cardinality 0..*).
+'CompleteDSLPckg::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'CompleteDSLPckg::ValueSpecification' (role 'specification53', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior408', cardinality 0..*) is associated with 'CompleteDSLPckg::CallBehaviorAction' (role 'CompleteDSLPckg_CallBehaviorAction', cardinality 0..*).
+'CompleteDSLPckg::Port' (role 'CompleteDSLPckg_Port348', cardinality 0..*) is associated with 'CompleteDSLPckg::Port' (role 'CompleteDSLPckg_Port350', cardinality 0..*).
+'CompleteDSLPckg::Clause' (role 'CompleteDSLPckg_Clause', cardinality 0..*) is associated with 'CompleteDSLPckg::ConditionalNode' (role 'CompleteDSLPckg_ConditionalNode', cardinality 0..*).
+'CompleteDSLPckg::Parameter' (role 'CompleteDSLPckg_Parameter138', cardinality 0..*) is associated with 'CompleteDSLPckg::BehavioralFeature' (role 'CompleteDSLPckg_BehavioralFeature', cardinality 0..*).
+'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode', cardinality 0..*).
+'CompleteDSLPckg::ActivityNode' (role 'CompleteDSLPckg_ActivityNode694', cardinality 0..*) is associated with 'CompleteDSLPckg::ActivityGroup' (role 'CompleteDSLPckg_ActivityGroup695', cardinality 0..*).
+'CompleteDSLPckg::Generalization' (role 'generalization', cardinality 0..*) is associated with 'CompleteDSLPckg::Classifier' (role 'Classifier133', cardinality 0..*).
+'CompleteDSLPckg::NamedElement' (role 'CompleteDSLPckg_NamedElement930', cardinality 0..*) is associated with 'CompleteDSLPckg::Message' (role 'CompleteDSLPckg_Message929', cardinality 0..*).
+'CompleteDSLPckg::Behavior' (role 'CompleteDSLPckg_Behavior232', cardinality 0..*) is associated with 'CompleteDSLPckg::BehavioredClassifier' (role 'CompleteDSLPckg_BehavioredClassifier233', cardinality 0..*).
+'CompleteDSLPckg::PackageableElement' (role 'CompleteDSLPckg_PackageableElement304', cardinality 0..*) is associated with 'CompleteDSLPckg::Component' (role 'CompleteDSLPckg_Component303', cardinality 0..*).
+'CompleteDSLPckg::Operation' (role 'ownedOperation165', cardinality 0..*) is associated with 'CompleteDSLPckg::Interface' (role 'Interface166', cardinality 0..*).
+'CompleteDSLPckg::LoopNode' (role 'CompleteDSLPckg_LoopNode', cardinality 0..*) is associated with 'CompleteDSLPckg::ExecutableNode' (role 'CompleteDSLPckg_ExecutableNode818', cardinality 0..*).
+'CompleteDSLPckg::ActivityEdge' (role 'CompleteDSLPckg_ActivityEdge', cardinality 0..*) is associated with 'CompleteDSLPckg::Activity' (role 'CompleteDSLPckg_Activity685', cardinality 0..*).
+'CompleteDSLPckg::ConnectableElement' (role 'CompleteDSLPckg_ConnectableElement354', cardinality 0..*) is associated with 'CompleteDSLPckg::Collaboration' (role 'CompleteDSLPckg_Collaboration', cardinality 0..*).
+'CompleteDSLPckg::Message' (role 'CompleteDSLPckg_Message938', cardinality 0..*) is associated with 'CompleteDSLPckg::MessageEnd' (role 'CompleteDSLPckg_MessageEnd937', cardinality 0..*).
+'CompleteDSLPckg::InstanceSpecification' (role 'InstanceSpecification75', cardinality 0..*) is associated with 'CompleteDSLPckg::Slot' (role 'slot', cardinality 0..*).
+'CompleteDSLPckg::Connector' (role 'CompleteDSLPckg_Connector927', cardinality 0..*) is associated with 'CompleteDSLPckg::Message' (role 'CompleteDSLPckg_Message926', cardinality 0..*).

@@ -1,0 +1,28 @@
+The model has 9 class(es).
+The class 'iritpdl::Resource' has the following attributes: 'occurrences' of type int.
+The class 'iritpdl::ResourceConf' has the following attributes: 'name' of type str.
+The class 'iritpdl::ProcessElement' has no attributes.
+The class 'iritpdl::Process' has the following attributes: 'name' of type str; 'minTime' of type int; 'maxTime' of type int.
+The class 'iritpdl::Guidance' has the following attributes: 'text' of type str.
+The class 'iritpdl::WorkDefinition' has the following attributes: 'maxTime' of type int; 'minTime' of type int; 'name' of type str.
+The class 'ProcessElement' has no attributes.
+The class 'iritpdl::ResourceType' has the following attributes: 'name' of type str; 'occurrences' of type int.
+The class 'iritpdl::WorkSequence' has the following attributes: 'linkType' of type str.
+The enumeration 'WorkSequenceType' has the following literals: 'startToStart', 'finishToFinish', 'startToFinish', 'finishToStart'.
+'iritpdl::WorkSequence' is a specialization of 'ProcessElement'.
+'iritpdl::WorkDefinition' is a specialization of 'ProcessElement'.
+'iritpdl::Process' (role 'iritpdl_Process', cardinality 0..*) is associated with 'iritpdl::ProcessElement' (role 'iritpdl_ProcessElement', cardinality 0..*).
+'iritpdl::WorkDefinition' (role 'WorkDefinition', cardinality 0..*) is associated with 'iritpdl::WorkSequence' (role 'linksToSuccessors', cardinality 0..*).
+'iritpdl::WorkDefinition' (role 'WorkDefinition17', cardinality 0..*) is associated with 'iritpdl::ProcessElement' (role 'children', cardinality 0..*).
+'iritpdl::Process' (role 'iritpdl_Process2', cardinality 0..*) is associated with 'iritpdl::Guidance' (role 'iritpdl_Guidance', cardinality 0..*).
+'iritpdl::Resource' (role 'iritpdl_Resource', cardinality 0..*) is associated with 'iritpdl::ResourceType' (role 'iritpdl_ResourceType19', cardinality 0..*).
+'iritpdl::Guidance' (role 'iritpdl_Guidance15', cardinality 0..*) is associated with 'iritpdl::ProcessElement' (role 'iritpdl_ProcessElement14', cardinality 0..*).
+'iritpdl::WorkDefinition' (role 'WorkDefinition23', cardinality 0..*) is associated with 'iritpdl::ResourceConf' (role 'resourceConf', cardinality 0..*).
+'iritpdl::WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'iritpdl::WorkDefinition' (role 'successor', cardinality 0..*).
+'iritpdl::WorkDefinition' (role 'workDefinition', cardinality 0..*) is associated with 'iritpdl::ResourceConf' (role 'ResourceConf', cardinality 0..*).
+'iritpdl::ResourceConf' (role 'resourceConf25', cardinality 0..*) is associated with 'iritpdl::Resource' (role 'Resource', cardinality 0..*).
+'iritpdl::Process' (role 'iritpdl_Process4', cardinality 0..*) is associated with 'iritpdl::ResourceType' (role 'iritpdl_ResourceType', cardinality 0..*).
+'iritpdl::WorkDefinition' (role 'parent', cardinality 0..*) is associated with 'iritpdl::ProcessElement' (role 'ProcessElement', cardinality 0..*).
+'iritpdl::WorkSequence' (role 'WorkSequence7', cardinality 0..*) is associated with 'iritpdl::WorkDefinition' (role 'predecessor', cardinality 0..*).
+'iritpdl::Resource' (role 'neededResources', cardinality 0..*) is associated with 'iritpdl::ResourceConf' (role 'ResourceConf21', cardinality 0..*).
+'iritpdl::WorkDefinition' (role 'WorkDefinition12', cardinality 0..*) is associated with 'iritpdl::WorkSequence' (role 'linksToPredecessors', cardinality 0..*).

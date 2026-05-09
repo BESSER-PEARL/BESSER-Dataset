@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'simplePDL::Activity' has no attributes.
+The class 'simplePDL::SubProcess' has no attributes.
+The class 'simplePDL::WorkProduct' has the following attributes: 'name' of type str.
+The class 'simplePDL::WorkDefinition' has the following attributes: 'name' of type str.
+The class 'simplePDL::Process' has the following attributes: 'name' of type str.
+The class 'simplePDL::WorkSequence' has the following attributes: 'linkType' of type str.
+The class 'simplePDL::WorkDefinitionParameter' has the following attributes: 'parameterKind' of type str.
+The class 'WorkDefinition' has no attributes.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'out', 'inout'.
+The enumeration 'WorkSequenceType' has the following literals: 'finishToStart', 'startToFinish', 'finishTofinish', 'startToStart'.
+'simplePDL::SubProcess' is a specialization of 'WorkDefinition'.
+'simplePDL::Activity' is a specialization of 'WorkDefinition'.
+'simplePDL::WorkDefinition' (role 'linksToPredecessors', cardinality 0..*) is associated with 'simplePDL::WorkSequence' (role 'WorkSequence5', cardinality 0..*).
+'simplePDL::WorkDefinition' (role 'WorkDefinition10', cardinality 0..*) is associated with 'simplePDL::WorkSequence' (role 'successor', cardinality 0..*).
+'simplePDL::WorkSequence' (role 'simplePDL_WorkSequence', cardinality 0..*) is associated with 'simplePDL::Process' (role 'simplePDL_Process2', cardinality 0..*).
+'simplePDL::WorkDefinition' (role 'simplePDL_WorkDefinition', cardinality 0..*) is associated with 'simplePDL::Process' (role 'simplePDL_Process', cardinality 0..*).
+'simplePDL::WorkDefinitionParameter' (role 'simplePDL_WorkDefinitionParameter12', cardinality 0..*) is associated with 'simplePDL::WorkProduct' (role 'simplePDL_WorkProduct', cardinality 0..*).
+'simplePDL::WorkDefinition' (role 'simplePDL_WorkDefinition7', cardinality 0..*) is associated with 'simplePDL::WorkDefinitionParameter' (role 'simplePDL_WorkDefinitionParameter', cardinality 0..*).
+'simplePDL::WorkSequence' (role 'WorkSequence', cardinality 0..*) is associated with 'simplePDL::WorkDefinition' (role 'linksToSuccessors', cardinality 0..*).
+'simplePDL::WorkSequence' (role 'predecessor', cardinality 0..*) is associated with 'simplePDL::WorkDefinition' (role 'WorkDefinition', cardinality 0..*).

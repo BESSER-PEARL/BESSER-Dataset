@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'simplepdl::WorkSequence' has the following attributes: 'linkType' of type str.
+The class 'simplepdl::Process' has the following attributes: 'name' of type str.
+The class 'simplepdl::WorkDefinition' has the following attributes: 'name' of type str.
+The enumeration 'WorkSequenceType' has the following literals: 'startToStart', 'finishToStart', 'finishToFinish', 'startToFinish'.
+'simplepdl::WorkDefinition' (role 'predecessor', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'WorkSequence5', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'successor', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'WorkSequence', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'simplepdl_WorkDefinition', cardinality 0..*) is associated with 'simplepdl::Process' (role 'simplepdl_Process', cardinality 0..*).
+'simplepdl::Process' (role 'simplepdl_Process2', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'simplepdl_WorkSequence', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'WorkDefinition', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'linksToSuccessors', cardinality 0..*).
+'simplepdl::WorkDefinition' (role 'WorkDefinition8', cardinality 0..*) is associated with 'simplepdl::WorkSequence' (role 'linksToPredecessors', cardinality 0..*).

@@ -1,0 +1,196 @@
+The model has 63 class(es).
+The class 'RefUML::TypedElement' has no attributes.
+The class 'RefUML::LiteralInteger' has the following attributes: 'value' of type str.
+The class 'RefUML::Package' has no attributes.
+The class 'RefUML::Element' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'RefUML::InstanceSpecification' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'RefUML::Comment' has the following attributes: 'body' of type str.
+The class 'LiteralSpecification' has no attributes.
+The class 'RefUML::EnumerationLiteral' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'RefUML::Expression' has the following attributes: 'symbol' of type str.
+The class 'DataType' has no attributes.
+The class 'RefUML::Enumeration' has no attributes.
+The class 'RefUML::Dependency' has no attributes.
+The class 'RefUML::LiteralSpecification' has no attributes.
+The class 'RefUML::PrimitiveType' has no attributes.
+The class 'RefUML::LiteralBoolean' has the following attributes: 'value' of type str.
+The class 'TypedElement' has no attributes.
+The class 'RefUML::Model' has the following attributes: 'viewpoint' of type str.
+The class 'RefUML::LiteralNull' has no attributes.
+The class 'Element' has no attributes.
+The class 'RefUML::DirectedRelationship' has no attributes.
+The class 'Package' has no attributes.
+The class 'Expression' has no attributes.
+The class 'RefUML::LiteralString' has the following attributes: 'value' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'RefUML::NamedElement' has the following attributes: 'qualifiedName' of type str; 'name' of type str; 'visibility' of type str.
+The class 'RefUML::Slot' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'RefUML::Namespace' has no attributes.
+The class 'RefUML::PackageMerge' has no attributes.
+The class 'Feature' has no attributes.
+The class 'RefUML::Class' has the following attributes: 'isActive' of type str.
+The class 'RefUML::Feature' has the following attributes: 'isStatic' of type str.
+The class 'RefUML::DataType' has no attributes.
+The class 'RefUML::OpaqueExpression' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'RefUML::Generalization' has the following attributes: 'isSubstitutable' of type str.
+The class 'RefUML::Property' has the following attributes: 'default' of type str; 'isDerivedUnion' of type str; 'aggregation' of type str; 'isDerived' of type str; 'isComposite' of type str.
+The class 'RefUML::RedefinableElement' has the following attributes: 'isLeaf' of type str.
+The class 'RefUML::Type' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'RefUML::StringExpression' has no attributes.
+The class 'Type' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'RefUML::StructuralFeature' has the following attributes: 'isReadOnly' of type str.
+The class 'RefUML::PackageableElement' has no attributes.
+The class 'RefUML::InstanceValue' has no attributes.
+The class 'RefUML::Association' has the following attributes: 'isDerived' of type str.
+The class 'RefUML::Relationship' has no attributes.
+The class 'RefUML::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'RefUML::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'RefUML::LiteralUnlimitedNatural' has the following attributes: 'value' of type str.
+The class 'RefUML::GeneralizationSet' has the following attributes: 'isCovering' of type str; 'isDisjoint' of type str.
+The class 'MultiplicityElement' has no attributes.
+The class 'RefUML::MultiplicityElement' has the following attributes: 'isUnique' of type str; 'upper' of type str; 'lower' of type str; 'isOrdered' of type str.
+The class 'RefUML::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str.
+The class 'RefUML::ValueSpecification' has no attributes.
+The class 'RefUML::Constraintx' has no attributes.
+The enumeration 'AggregationKind' has the following literals: 'none', 'shared', 'composite'.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'public', 'private', 'package'.
+'RefUML::StructuralFeature' is a specialization of 'Feature'.
+'RefUML::Type' is a specialization of 'PackageableElement'.
+'RefUML::PackageImport' is a specialization of 'DirectedRelationship'.
+'RefUML::PrimitiveType' is a specialization of 'DataType'.
+'RefUML::Relationship' is a specialization of 'Element'.
+'RefUML::Property' is a specialization of 'StructuralFeature'.
+'RefUML::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'RefUML::Classifier' is a specialization of 'RedefinableElement'.
+'RefUML::Expression' is a specialization of 'ValueSpecification'.
+'RefUML::TypedElement' is a specialization of 'NamedElement'.
+'RefUML::InstanceValue' is a specialization of 'ValueSpecification'.
+'RefUML::Element' is a specialization of 'EModelElement'.
+'RefUML::ValueSpecification' is a specialization of 'PackageableElement'.
+'RefUML::Classifier' is a specialization of 'Type'.
+'RefUML::PackageableElement' is a specialization of 'NamedElement'.
+'RefUML::Slot' is a specialization of 'Element'.
+'RefUML::Class' is a specialization of 'Classifier'.
+'RefUML::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'RefUML::NamedElement' is a specialization of 'Element'.
+'RefUML::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'RefUML::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'RefUML::DirectedRelationship' is a specialization of 'Relationship'.
+'RefUML::Constraintx' is a specialization of 'PackageableElement'.
+'RefUML::LiteralString' is a specialization of 'LiteralSpecification'.
+'RefUML::MultiplicityElement' is a specialization of 'Element'.
+'RefUML::GeneralizationSet' is a specialization of 'PackageableElement'.
+'RefUML::StructuralFeature' is a specialization of 'TypedElement'.
+'RefUML::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'RefUML::LiteralNull' is a specialization of 'LiteralSpecification'.
+'RefUML::StringExpression' is a specialization of 'Expression'.
+'RefUML::Model' is a specialization of 'Package'.
+'RefUML::Package' is a specialization of 'PackageableElement'.
+'RefUML::Association' is a specialization of 'Relationship'.
+'RefUML::Enumeration' is a specialization of 'DataType'.
+'RefUML::Dependency' is a specialization of 'DirectedRelationship'.
+'RefUML::Feature' is a specialization of 'RedefinableElement'.
+'RefUML::Classifier' is a specialization of 'Namespace'.
+'RefUML::ElementImport' is a specialization of 'DirectedRelationship'.
+'RefUML::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'RefUML::Namespace' is a specialization of 'NamedElement'.
+'RefUML::DataType' is a specialization of 'Classifier'.
+'RefUML::RedefinableElement' is a specialization of 'NamedElement'.
+'RefUML::Package' is a specialization of 'Namespace'.
+'RefUML::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'RefUML::InstanceSpecification' is a specialization of 'PackageableElement'.
+'RefUML::Comment' is a specialization of 'Element'.
+'RefUML::PackageMerge' is a specialization of 'DirectedRelationship'.
+'RefUML::Dependency' is a specialization of 'PackageableElement'.
+'RefUML::ValueSpecification' is a specialization of 'TypedElement'.
+'RefUML::Association' is a specialization of 'Classifier'.
+'RefUML::Generalization' is a specialization of 'DirectedRelationship'.
+'RefUML::Namespace' (role 'RefUML_Namespace37', cardinality 0..*) is associated with 'RefUML::PackageableElement' (role 'RefUML_PackageableElement38', cardinality 0..*).
+'RefUML::PackageMerge' (role 'PackageMerge', cardinality 0..*) is associated with 'RefUML::Package' (role 'receivingPackage', cardinality 0..*).
+'RefUML::StructuralFeature' (role 'RefUML_StructuralFeature', cardinality 0..*) is associated with 'RefUML::Slot' (role 'RefUML_Slot', cardinality 0..*).
+'RefUML::Expression' (role 'RefUML_Expression', cardinality 0..*) is associated with 'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification134', cardinality 0..*).
+'RefUML::NamedElement' (role 'RefUML_NamedElement35', cardinality 0..*) is associated with 'RefUML::Namespace' (role 'RefUML_Namespace', cardinality 0..*).
+'RefUML::PackageMerge' (role 'packageMerge', cardinality 0..*) is associated with 'RefUML::Package' (role 'Package138', cardinality 0..*).
+'RefUML::Constraintx' (role 'Constraintx', cardinality 0..*) is associated with 'RefUML::Namespace' (role 'context', cardinality 0..*).
+'RefUML::Association' (role 'owningAssociation', cardinality 0..*) is associated with 'RefUML::Property' (role 'Property', cardinality 0..*).
+'RefUML::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'RefUML::Class' (role 'Class', cardinality 0..*).
+'RefUML::Classifier' (role 'RefUML_Classifier77', cardinality 0..*) is associated with 'RefUML::Property' (role 'RefUML_Property78', cardinality 0..*).
+'RefUML::Package' (role 'package', cardinality 0..*) is associated with 'RefUML::Type' (role 'Type', cardinality 0..*).
+'RefUML::Property' (role 'Property60', cardinality 0..*) is associated with 'RefUML::Association' (role 'association', cardinality 0..*).
+'RefUML::InstanceSpecification' (role 'RefUML_InstanceSpecification145', cardinality 0..*) is associated with 'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification146', cardinality 0..*).
+'RefUML::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'RefUML::ElementImport' (role 'ElementImport', cardinality 0..*).
+'RefUML::Element' (role 'RefUML_Element7', cardinality 0..*) is associated with 'RefUML::Comment' (role 'RefUML_Comment8', cardinality 0..*).
+'RefUML::Classifier' (role 'powertype', cardinality 0..*) is associated with 'RefUML::GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*).
+'RefUML::Type' (role 'RefUML_Type62', cardinality 0..*) is associated with 'RefUML::Association' (role 'RefUML_Association', cardinality 0..*).
+'RefUML::Slot' (role 'Slot', cardinality 0..*) is associated with 'RefUML::InstanceSpecification' (role 'owningInstance', cardinality 0..*).
+'RefUML::GeneralizationSet' (role 'GeneralizationSet87', cardinality 0..*) is associated with 'RefUML::Generalization' (role 'generalization', cardinality 0..*).
+'RefUML::Comment' (role 'RefUML_Comment', cardinality 0..*) is associated with 'RefUML::Element' (role 'RefUML_Element', cardinality 0..*).
+'RefUML::Classifier' (role 'RefUML_Classifier70', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'RefUML_Classifier72', cardinality 0..*).
+'RefUML::Element' (role 'ownedElement', cardinality 0..*) is associated with 'RefUML::Element' (role 'Element5', cardinality 0..*).
+'RefUML::StringExpression' (role 'StringExpression', cardinality 0..*) is associated with 'RefUML::StringExpression' (role 'owningExpression', cardinality 0..*).
+'RefUML::Association' (role 'RefUML_Association64', cardinality 0..*) is associated with 'RefUML::Property' (role 'RefUML_Property', cardinality 0..*).
+'RefUML::DirectedRelationship' (role 'RefUML_DirectedRelationship', cardinality 0..*) is associated with 'RefUML::Element' (role 'RefUML_Element24', cardinality 0..*).
+'RefUML::Classifier' (role 'RefUML_Classifier', cardinality 0..*) is associated with 'RefUML::NamedElement' (role 'RefUML_NamedElement69', cardinality 0..*).
+'RefUML::Class' (role 'RefUML_Class121', cardinality 0..*) is associated with 'RefUML::Class' (role 'RefUML_Class123', cardinality 0..*).
+'RefUML::DirectedRelationship' (role 'RefUML_DirectedRelationship26', cardinality 0..*) is associated with 'RefUML::Element' (role 'RefUML_Element27', cardinality 0..*).
+'RefUML::Slot' (role 'RefUML_Slot149', cardinality 0..*) is associated with 'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification150', cardinality 0..*).
+'RefUML::Element' (role 'RefUML_Element50', cardinality 0..*) is associated with 'RefUML::Constraintx' (role 'RefUML_Constraintx', cardinality 0..*).
+'RefUML::NamedElement' (role 'RefUML_NamedElement', cardinality 0..*) is associated with 'RefUML::StringExpression' (role 'RefUML_StringExpression', cardinality 0..*).
+'RefUML::NamedElement' (role 'RefUML_NamedElement21', cardinality 0..*) is associated with 'RefUML::Dependency' (role 'RefUML_Dependency', cardinality 0..*).
+'RefUML::Class' (role 'RefUML_Class', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'RefUML_Classifier120', cardinality 0..*).
+'RefUML::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'RefUML::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'RefUML::Element' (role 'Element', cardinality 0..*) is associated with 'RefUML::Element' (role 'owner', cardinality 0..*).
+'RefUML::Type' (role 'RefUML_Type', cardinality 0..*) is associated with 'RefUML::TypedElement' (role 'RefUML_TypedElement', cardinality 0..*).
+'RefUML::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'specific', cardinality 0..*).
+'RefUML::Dependency' (role 'clientDependency', cardinality 0..*) is associated with 'RefUML::NamedElement' (role 'NamedElement', cardinality 0..*).
+'RefUML::Property' (role 'memberEnd', cardinality 0..*) is associated with 'RefUML::Association' (role 'Association118', cardinality 0..*).
+'RefUML::Feature' (role 'feature', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'Classifier95', cardinality 0..*).
+'RefUML::Class' (role 'class_', cardinality 0..*) is associated with 'RefUML::Property' (role 'Property125', cardinality 0..*).
+'RefUML::Namespace' (role 'Namespace54', cardinality 0..*) is associated with 'RefUML::Constraintx' (role 'ownedRule', cardinality 0..*).
+'RefUML::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'RefUML::Generalization' (role 'generalization89', cardinality 0..*).
+'RefUML::Namespace' (role 'Namespace', cardinality 0..*) is associated with 'RefUML::NamedElement' (role 'ownedMember', cardinality 0..*).
+'RefUML::Property' (role 'RefUML_Property116', cardinality 0..*) is associated with 'RefUML::Property' (role 'RefUML_Property114', cardinality 0..*).
+'RefUML::Package' (role 'Package', cardinality 0..*) is associated with 'RefUML::Package' (role 'nestingPackage', cardinality 0..*).
+'RefUML::Constraintx' (role 'RefUML_Constraintx52', cardinality 0..*) is associated with 'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification', cardinality 0..*).
+'RefUML::PackageImport' (role 'RefUML_PackageImport', cardinality 0..*) is associated with 'RefUML::Package' (role 'RefUML_Package46', cardinality 0..*).
+'RefUML::Package' (role 'Package16', cardinality 0..*) is associated with 'RefUML::Package' (role 'nestedPackage', cardinality 0..*).
+'RefUML::StringExpression' (role 'subExpression', cardinality 0..*) is associated with 'RefUML::StringExpression' (role 'StringExpression132', cardinality 0..*).
+'RefUML::Property' (role 'RefUML_Property113', cardinality 0..*) is associated with 'RefUML::Property' (role 'RefUML_Property111', cardinality 0..*).
+'RefUML::Namespace' (role 'Namespace48', cardinality 0..*) is associated with 'RefUML::PackageImport' (role 'packageImport', cardinality 0..*).
+'RefUML::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'RefUML::Feature' (role 'Feature', cardinality 0..*).
+'RefUML::PackageMerge' (role 'RefUML_PackageMerge', cardinality 0..*) is associated with 'RefUML::Package' (role 'RefUML_Package136', cardinality 0..*).
+'RefUML::Property' (role 'RefUML_Property109', cardinality 0..*) is associated with 'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification110', cardinality 0..*).
+'RefUML::NamedElement' (role 'client', cardinality 0..*) is associated with 'RefUML::Dependency' (role 'Dependency', cardinality 0..*).
+'RefUML::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'RefUML::Namespace' (role 'Namespace44', cardinality 0..*).
+'RefUML::Slot' (role 'slot', cardinality 0..*) is associated with 'RefUML::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*).
+'RefUML::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'RefUML::Association' (role 'Association', cardinality 0..*).
+'RefUML::Relationship' (role 'RefUML_Relationship', cardinality 0..*) is associated with 'RefUML::Element' (role 'RefUML_Element29', cardinality 0..*).
+'RefUML::PackageableElement' (role 'RefUML_PackageableElement42', cardinality 0..*) is associated with 'RefUML::ElementImport' (role 'RefUML_ElementImport', cardinality 0..*).
+'RefUML::InstanceValue' (role 'RefUML_InstanceValue', cardinality 0..*) is associated with 'RefUML::InstanceSpecification' (role 'RefUML_InstanceSpecification153', cardinality 0..*).
+'RefUML::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'RefUML::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).
+'RefUML::Property' (role 'RefUML_Property104', cardinality 0..*) is associated with 'RefUML::Property' (role 'RefUML_Property106', cardinality 0..*).
+'RefUML::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'Classifier91', cardinality 0..*).
+'RefUML::Property' (role 'ownedAttribute103', cardinality 0..*) is associated with 'RefUML::DataType' (role 'DataType', cardinality 0..*).
+'RefUML::RedefinableElement' (role 'RefUML_RedefinableElement', cardinality 0..*) is associated with 'RefUML::RedefinableElement' (role 'RefUML_RedefinableElement79', cardinality 0..*).
+'RefUML::Namespace' (role 'namespace', cardinality 0..*) is associated with 'RefUML::NamedElement' (role 'NamedElement40', cardinality 0..*).
+'RefUML::Classifier' (role 'RefUML_Classifier75', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'RefUML_Classifier73', cardinality 0..*).
+'RefUML::Classifier' (role 'RefUML_Classifier142', cardinality 0..*) is associated with 'RefUML::InstanceSpecification' (role 'RefUML_InstanceSpecification', cardinality 0..*).
+'RefUML::Generalization' (role 'RefUML_Generalization', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'RefUML_Classifier85', cardinality 0..*).
+'RefUML::PackageImport' (role 'PackageImport', cardinality 0..*) is associated with 'RefUML::Namespace' (role 'importingNamespace32', cardinality 0..*).
+'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification100', cardinality 0..*) is associated with 'RefUML::MultiplicityElement' (role 'RefUML_MultiplicityElement99', cardinality 0..*).
+'RefUML::Type' (role 'ownedType', cardinality 0..*) is associated with 'RefUML::Package' (role 'Package57', cardinality 0..*).
+'RefUML::Property' (role 'Property127', cardinality 0..*) is associated with 'RefUML::DataType' (role 'datatype', cardinality 0..*).
+'RefUML::PackageableElement' (role 'RefUML_PackageableElement', cardinality 0..*) is associated with 'RefUML::Package' (role 'RefUML_Package', cardinality 0..*).
+'RefUML::MultiplicityElement' (role 'RefUML_MultiplicityElement', cardinality 0..*) is associated with 'RefUML::ValueSpecification' (role 'RefUML_ValueSpecification97', cardinality 0..*).
+'RefUML::RedefinableElement' (role 'RefUML_RedefinableElement82', cardinality 0..*) is associated with 'RefUML::Classifier' (role 'RefUML_Classifier83', cardinality 0..*).
+'RefUML::GeneralizationSet' (role 'generalizationSet', cardinality 0..*) is associated with 'RefUML::Generalization' (role 'Generalization93', cardinality 0..*).

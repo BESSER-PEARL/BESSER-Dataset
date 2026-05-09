@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'eavlibrary::City' has the following attributes: 'name' of type str.
+The class 'eavlibrary::Pen' has the following attributes: 'name' of type str.
+The class 'eavlibrary::Book' has the following attributes: 'title' of type str; 'category' of type str; 'pages' of type str; 'test' of type str.
+The class 'eavlibrary::Library' has the following attributes: 'name' of type str.
+The class 'eavlibrary::Writer' has the following attributes: 'abstract' of type str; 'image' of type str; 'name' of type str.
+The enumeration 'BookCategory' has the following literals: 'Mystery', 'Biography', 'ScienceFiction'.
+'eavlibrary::Library' (role 'eavlibrary_Library3', cardinality 0..*) is associated with 'eavlibrary::Book' (role 'eavlibrary_Book', cardinality 0..*).
+'eavlibrary::Writer' (role 'Writer', cardinality 0..*) is associated with 'eavlibrary::Book' (role 'books', cardinality 0..*).
+'eavlibrary::Writer' (role 'eavlibrary_Writer', cardinality 0..*) is associated with 'eavlibrary::Library' (role 'eavlibrary_Library', cardinality 0..*).
+'eavlibrary::Writer' (role 'author', cardinality 0..*) is associated with 'eavlibrary::Book' (role 'Book', cardinality 0..*).
+'eavlibrary::City' (role 'eavlibrary_City', cardinality 0..*) is associated with 'eavlibrary::Writer' (role 'eavlibrary_Writer6', cardinality 0..*).
+'eavlibrary::Writer' (role 'eavlibrary_Writer8', cardinality 0..*) is associated with 'eavlibrary::Pen' (role 'eavlibrary_Pen', cardinality 0..*).

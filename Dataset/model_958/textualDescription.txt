@@ -1,0 +1,21 @@
+The model has 6 class(es).
+The class 'graph::Graph' has no attributes.
+The class 'graph::Vertex' has the following attributes: 'number' of type int; 'label' of type str.
+The class 'Vertex' has no attributes.
+The class 'Adaptable' has no attributes.
+The class 'Attributable' has no attributes.
+The class 'graph::Edge' has the following attributes: 'label' of type str.
+'graph::Graph' is a specialization of 'Vertex'.
+'graph::Edge' is a specialization of 'Attributable'.
+'graph::Vertex' is a specialization of 'Attributable'.
+'graph::Vertex' is a specialization of 'Adaptable'.
+'graph::Graph' (role 'graph_Graph2', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge', cardinality 0..*).
+'graph::Vertex' (role 'graph_Vertex15', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex17', cardinality 0..*).
+'graph::Vertex' (role 'graph_Vertex14', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex12', cardinality 0..*).
+'graph::Edge' (role 'Edge', cardinality 0..*) is associated with 'graph::Vertex' (role 'target', cardinality 0..*).
+'graph::Vertex' (role 'graph_Vertex9', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex11', cardinality 0..*).
+'graph::Edge' (role 'Edge5', cardinality 0..*) is associated with 'graph::Vertex' (role 'source', cardinality 0..*).
+'graph::Edge' (role 'outgoing', cardinality 0..*) is associated with 'graph::Vertex' (role 'Vertex', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge8', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex7', cardinality 0..*).
+'graph::Vertex' (role 'Vertex20', cardinality 0..*) is associated with 'graph::Edge' (role 'incoming', cardinality 0..*).

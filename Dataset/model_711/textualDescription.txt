@@ -1,0 +1,446 @@
+The model has 150 class(es).
+The class 'pivot::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'pivot::NavigationCallExp' has no attributes.
+The class 'pivot::ValueSpecification' has no attributes.
+The class 'pivot::Type' has the following attributes: 'instanceClassName' of type str.
+The class 'pivot::UnspecifiedValueExp' has no attributes.
+The class 'pivot::NullLiteralExp' has no attributes.
+The class 'DataType' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'pivot::CollectionType' has the following attributes: 'lower' of type str; 'upper' of type str.
+The class 'LiteralExp' has no attributes.
+The class 'pivot::PrimitiveType' has no attributes.
+The class 'pivot::CollectionLiteralExp' has the following attributes: 'kind' of type str.
+The class 'pivot::Comment' has the following attributes: 'body' of type str.
+The class 'CollectionLiteralPart' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'pivot::UnspecifiedType' has no attributes.
+The class 'pivot::CollectionItem' has no attributes.
+The class 'pivot::CollectionRange' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'pivot::State' has the following attributes: 'isSimple' of type str; 'isOrthogonal' of type str; 'isComposite' of type str; 'isSubmachineState' of type str.
+The class 'pivot::Visitor' has no attributes.
+The class 'pivot::Constraint' has the following attributes: 'isCallable' of type str.
+The class 'Vertex' has no attributes.
+The class 'pivot::VariableDeclaration' has no attributes.
+The class 'pivot::ConnectionPointReference' has no attributes.
+The class 'pivot::UnlimitedNaturalLiteralExp' has the following attributes: 'unlimitedNaturalSymbol' of type str.
+The class 'Element' has no attributes.
+The class 'pivot::VoidType' has no attributes.
+The class 'pivot::OperationTemplateParameter' has no attributes.
+The class 'pivot::Package' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'pivot::OrderedSetType' has no attributes.
+The class 'TemplateParameter' has no attributes.
+The class 'pivot::OpaqueExpression' has the following attributes: 'body' of type str; 'language' of type str; 'message' of type str.
+The class 'pivot::EnumLiteralExp' has no attributes.
+The class 'pivot::TupleLiteralExp' has no attributes.
+The class 'pivot::PrimitiveLiteralExp' has no attributes.
+The class 'pivot::ConstructorPart' has no attributes.
+The class 'pivot::ConstructorExp' has the following attributes: 'value' of type str.
+The class 'pivot::TypedElement' has the following attributes: 'isRequired' of type str.
+The class 'pivot::DataType' has the following attributes: 'isSerializable' of type str.
+The class 'pivot::Pivotable' has no attributes.
+The class 'pivot::Profile' has no attributes.
+The class 'DynamicElement' has no attributes.
+The class 'pivot::TemplateParameter' has no attributes.
+The class 'pivot::Feature' has the following attributes: 'implementation' of type str; 'implementationClass' of type str.
+The class 'pivot::Visitable' has no attributes.
+The class 'pivot::DynamicType' has no attributes.
+The class 'pivot::DynamicProperty' has the following attributes: 'default' of type str.
+The class 'pivot::PropertyCallExp' has no attributes.
+The class 'pivot::TemplateableElement' has no attributes.
+The class 'pivot::StateMachine' has no attributes.
+The class 'pivot::DynamicElement' has no attributes.
+The class 'pivot::SelfType' has no attributes.
+The class 'pivot::TemplateBinding' has no attributes.
+The class 'pivot::ElementExtension' has no attributes.
+The class 'pivot::SetType' has no attributes.
+The class 'pivot::TemplateParameterSubstitution' has no attributes.
+The class 'pivot::SequenceType' has no attributes.
+The class 'pivot::Stereotype' has no attributes.
+The class 'pivot::EnumerationLiteral' has the following attributes: 'value' of type str.
+The class 'pivot::OCLExpression' has no attributes.
+The class 'pivot::ParameterableElement' has no attributes.
+The class 'Visitable' has no attributes.
+The class 'pivot::StringLiteralExp' has the following attributes: 'stringSymbol' of type str.
+The class 'pivot::Namespace' has no attributes.
+The class 'pivot::AssociationClassCallExp' has no attributes.
+The class 'pivot::RealLiteralExp' has the following attributes: 'realSymbol' of type str.
+The class 'pivot::PackageableElement' has no attributes.
+The class 'pivot::ReferringElement' has no attributes.
+The class 'pivot::OperationCallExp' has no attributes.
+The class 'pivot::StateExp' has no attributes.
+The class 'pivot::VariableExp' has the following attributes: 'implicit' of type str.
+The class 'pivot::Trigger' has no attributes.
+The class 'pivot::InvalidType' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'pivot::NumericLiteralExp' has no attributes.
+The class 'pivot::ExpressionInOCL' has no attributes.
+The class 'pivot::TypeTemplateParameter' has the following attributes: 'allowSubstitutable' of type str.
+The class 'pivot::Variable' has the following attributes: 'implicit' of type str.
+The class 'TypedMultiplicityElement' has no attributes.
+The class 'OpaqueExpression' has no attributes.
+The class 'State' has no attributes.
+The class 'pivot::Property' has the following attributes: 'implicit' of type str; 'isVolatile' of type str; 'isID' of type str; 'isDerived' of type str; 'isResolveProxies' of type str; 'isUnsettable' of type str; 'default' of type str; 'isComposite' of type str; 'isTransient' of type str; 'isReadOnly' of type str.
+The class 'pivot::FinalState' has no attributes.
+The class 'CallExp' has no attributes.
+The class 'pivot::FeatureCallExp' has the following attributes: 'isPre' of type str.
+The class 'pivot::SendSignalAction' has no attributes.
+The class 'pivot::TemplateParameterType' has the following attributes: 'specification' of type str.
+The class 'pivot::InvalidLiteralExp' has no attributes.
+The class 'pivot::IterateExp' has no attributes.
+The class 'pivot::Region' has no attributes.
+The class 'pivot::IfExp' has no attributes.
+The class 'pivot::Import' has no attributes.
+The class 'pivot::IntegerLiteralExp' has the following attributes: 'integerSymbol' of type str.
+The class 'ReferringElement' has no attributes.
+The class 'pivot::Root' has the following attributes: 'externalURI' of type str.
+The class 'LoopExp' has no attributes.
+The class 'pivot::Transition' has the following attributes: 'kind' of type str.
+The class 'pivot::Vertex' has no attributes.
+The class 'pivot::IteratorExp' has no attributes.
+The class 'pivot::Operation' has the following attributes: 'isValidating' of type str; 'isInvalidating' of type str.
+The class 'pivot::MessageExp' has no attributes.
+The class 'pivot::Parameter' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Class' has no attributes.
+The class 'pivot::BooleanLiteralExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'pivot::Iteration' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'NumericLiteralExp' has no attributes.
+The class 'pivot::TypeExp' has no attributes.
+The class 'pivot::AssociationClass' has no attributes.
+The class 'pivot::TypedMultiplicityElement' has no attributes.
+The class 'pivot::LambdaType' has no attributes.
+The class 'pivot::CollectionLiteralPart' has no attributes.
+The class 'pivot::MessageType' has no attributes.
+The class 'pivot::LetExp' has no attributes.
+The class 'pivot::CallExp' has the following attributes: 'implicit' of type str.
+The class 'pivot::Precedence' has the following attributes: 'order' of type str; 'associativity' of type str.
+The class 'NavigationCallExp' has no attributes.
+The class 'Package' has no attributes.
+The class 'pivot::Library' has no attributes.
+The class 'pivot::CallOperationAction' has no attributes.
+The class 'pivot::Behavior' has no attributes.
+The class 'pivot::Signal' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'pivot::TupleLiteralPart' has no attributes.
+The class 'FeatureCallExp' has no attributes.
+The class 'pivot::LoopExp' has no attributes.
+The class 'pivot::Class' has the following attributes: 'isInterface' of type str; 'isAbstract' of type str.
+The class 'pivot::TemplateSignature' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'pivot::BagType' has no attributes.
+The class 'Feature' has no attributes.
+The class 'pivot::LiteralExp' has no attributes.
+The class 'pivot::Annotation' has no attributes.
+The class 'pivot::Metaclass' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'pivot::Enumeration' has no attributes.
+The class 'Type' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'pivot::Element' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'OCLExpression' has no attributes.
+The class 'pivot::AnyType' has no attributes.
+The class 'pivot::NamedElement' has the following attributes: 'isStatic' of type str; 'name' of type str.
+The class 'pivot::Detail' has the following attributes: 'value' of type str.
+The class 'pivot::Nameable' has no attributes.
+The class 'pivot::TupleType' has no attributes.
+The class 'pivot::MorePivotable' has no attributes.
+The enumeration 'CollectionKind' has the following literals: 'OrderedSet', 'Set', 'Sequence', 'Collection', 'Bag'.
+The enumeration 'PseudostateKind' has the following literals: 'initial', 'shallowHistory', 'choice', 'join', 'exitPoint', 'entryPoint', 'fork', 'terminate', 'deepHistory', 'junction'.
+The enumeration 'AssociativityKind' has the following literals: 'Right', 'Left'.
+The enumeration 'TransitionKind' has the following literals: 'local', 'external', 'internal'.
+'pivot::OperationCallExp' is a specialization of 'ReferringElement'.
+'pivot::TemplateParameter' is a specialization of 'Element'.
+'pivot::IteratorExp' is a specialization of 'ReferringElement'.
+'pivot::Iteration' is a specialization of 'Operation'.
+'pivot::Library' is a specialization of 'Package'.
+'pivot::Import' is a specialization of 'NamedElement'.
+'pivot::Root' is a specialization of 'Namespace'.
+'pivot::TupleType' is a specialization of 'DataType'.
+'pivot::Class' is a specialization of 'Namespace'.
+'pivot::ConnectionPointReference' is a specialization of 'Vertex'.
+'pivot::RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+'pivot::FinalState' is a specialization of 'State'.
+'pivot::Parameter' is a specialization of 'VariableDeclaration'.
+'pivot::Package' is a specialization of 'TemplateableElement'.
+'pivot::State' is a specialization of 'Vertex'.
+'pivot::IfExp' is a specialization of 'OCLExpression'.
+'pivot::NamedElement' is a specialization of 'Element'.
+'pivot::Enumeration' is a specialization of 'DataType'.
+'pivot::BagType' is a specialization of 'CollectionType'.
+'pivot::NamedElement' is a specialization of 'Nameable'.
+'pivot::PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+'pivot::Property' is a specialization of 'Feature'.
+'pivot::TemplateParameterSubstitution' is a specialization of 'Element'.
+'pivot::Feature' is a specialization of 'TypedMultiplicityElement'.
+'pivot::ValueSpecification' is a specialization of 'ParameterableElement'.
+'pivot::TypeExp' is a specialization of 'OCLExpression'.
+'pivot::Precedence' is a specialization of 'NamedElement'.
+'pivot::OperationCallExp' is a specialization of 'FeatureCallExp'.
+'pivot::LambdaType' is a specialization of 'DataType'.
+'pivot::UnlimitedNaturalLiteralExp' is a specialization of 'NumericLiteralExp'.
+'pivot::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'pivot::VariableExp' is a specialization of 'OCLExpression'.
+'pivot::VoidType' is a specialization of 'Class'.
+'pivot::InvalidType' is a specialization of 'Class'.
+'pivot::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'pivot::TupleLiteralExp' is a specialization of 'LiteralExp'.
+'pivot::UnspecifiedType' is a specialization of 'Class'.
+'pivot::VariableDeclaration' is a specialization of 'TypedElement'.
+'pivot::CollectionRange' is a specialization of 'CollectionLiteralPart'.
+'pivot::Behavior' is a specialization of 'Class'.
+'pivot::IterateExp' is a specialization of 'LoopExp'.
+'pivot::ExpressionInOCL' is a specialization of 'OpaqueExpression'.
+'pivot::AssociationClass' is a specialization of 'Class'.
+'pivot::EnumLiteralExp' is a specialization of 'LiteralExp'.
+'pivot::Detail' is a specialization of 'NamedElement'.
+'pivot::CollectionLiteralPart' is a specialization of 'TypedElement'.
+'pivot::Constraint' is a specialization of 'NamedElement'.
+'pivot::Profile' is a specialization of 'Package'.
+'pivot::Element' is a specialization of 'Visitable'.
+'pivot::Operation' is a specialization of 'ParameterableElement'.
+'pivot::ConstructorPart' is a specialization of 'TypedElement'.
+'pivot::TupleLiteralPart' is a specialization of 'VariableDeclaration'.
+'pivot::IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+'pivot::TemplateableElement' is a specialization of 'Element'.
+'pivot::DynamicProperty' is a specialization of 'Element'.
+'pivot::LetExp' is a specialization of 'OCLExpression'.
+'pivot::PrimitiveType' is a specialization of 'DataType'.
+'pivot::AnyType' is a specialization of 'Class'.
+'pivot::MessageType' is a specialization of 'Type'.
+'pivot::Trigger' is a specialization of 'NamedElement'.
+'pivot::CallOperationAction' is a specialization of 'NamedElement'.
+'pivot::Type' is a specialization of 'NamedElement'.
+'pivot::StateExp' is a specialization of 'OCLExpression'.
+'pivot::NavigationCallExp' is a specialization of 'FeatureCallExp'.
+'pivot::DynamicElement' is a specialization of 'Element'.
+'pivot::TypedElement' is a specialization of 'NamedElement'.
+'pivot::Namespace' is a specialization of 'NamedElement'.
+'pivot::TypeTemplateParameter' is a specialization of 'TemplateParameter'.
+'pivot::TypeExp' is a specialization of 'ReferringElement'.
+'pivot::TemplateBinding' is a specialization of 'Element'.
+'pivot::CollectionItem' is a specialization of 'CollectionLiteralPart'.
+'pivot::OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+'pivot::PackageableElement' is a specialization of 'ParameterableElement'.
+'pivot::Type' is a specialization of 'TemplateableElement'.
+'pivot::Transition' is a specialization of 'Namespace'.
+'pivot::UnspecifiedValueExp' is a specialization of 'OCLExpression'.
+'pivot::ElementExtension' is a specialization of 'Type'.
+'pivot::DynamicType' is a specialization of 'Type'.
+'pivot::Type' is a specialization of 'ParameterableElement'.
+'pivot::Metaclass' is a specialization of 'Class'.
+'pivot::AssociationClassCallExp' is a specialization of 'NavigationCallExp'.
+'pivot::TypedMultiplicityElement' is a specialization of 'TypedElement'.
+'pivot::SetType' is a specialization of 'CollectionType'.
+'pivot::CallExp' is a specialization of 'OCLExpression'.
+'pivot::IteratorExp' is a specialization of 'LoopExp'.
+'pivot::SendSignalAction' is a specialization of 'NamedElement'.
+'pivot::Operation' is a specialization of 'TemplateableElement'.
+'pivot::SelfType' is a specialization of 'Class'.
+'pivot::PropertyCallExp' is a specialization of 'ReferringElement'.
+'pivot::PropertyCallExp' is a specialization of 'NavigationCallExp'.
+'pivot::CollectionType' is a specialization of 'DataType'.
+'pivot::CollectionLiteralExp' is a specialization of 'LiteralExp'.
+'pivot::Property' is a specialization of 'ParameterableElement'.
+'pivot::TemplateParameterType' is a specialization of 'Type'.
+'pivot::StateMachine' is a specialization of 'Behavior'.
+'pivot::Vertex' is a specialization of 'NamedElement'.
+'pivot::Class' is a specialization of 'Type'.
+'pivot::EnumerationLiteral' is a specialization of 'NamedElement'.
+'pivot::LoopExp' is a specialization of 'CallExp'.
+'pivot::Comment' is a specialization of 'Element'.
+'pivot::NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'pivot::Variable' is a specialization of 'VariableDeclaration'.
+'pivot::InvalidLiteralExp' is a specialization of 'LiteralExp'.
+'pivot::Stereotype' is a specialization of 'Class'.
+'pivot::Region' is a specialization of 'Namespace'.
+'pivot::Parameter' is a specialization of 'TypedMultiplicityElement'.
+'pivot::DynamicType' is a specialization of 'DynamicElement'.
+'pivot::OrderedSetType' is a specialization of 'CollectionType'.
+'pivot::IterateExp' is a specialization of 'ReferringElement'.
+'pivot::VariableExp' is a specialization of 'ReferringElement'.
+'pivot::Operation' is a specialization of 'Namespace'.
+'pivot::FeatureCallExp' is a specialization of 'CallExp'.
+'pivot::ValueSpecification' is a specialization of 'TypedElement'.
+'pivot::MessageExp' is a specialization of 'OCLExpression'.
+'pivot::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'pivot::State' is a specialization of 'Namespace'.
+'pivot::Annotation' is a specialization of 'NamedElement'.
+'pivot::Signal' is a specialization of 'NamedElement'.
+'pivot::SequenceType' is a specialization of 'CollectionType'.
+'pivot::DataType' is a specialization of 'Class'.
+'pivot::OCLExpression' is a specialization of 'TypedElement'.
+'pivot::ParameterableElement' is a specialization of 'Element'.
+'pivot::Pseudostate' is a specialization of 'Vertex'.
+'pivot::LiteralExp' is a specialization of 'OCLExpression'.
+'pivot::Operation' is a specialization of 'Feature'.
+'pivot::Package' is a specialization of 'Namespace'.
+'pivot::ConstructorExp' is a specialization of 'OCLExpression'.
+'pivot::NullLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'pivot::TemplateSignature' is a specialization of 'Element'.
+'pivot::Parameter' (role 'pivot_Parameter', cardinality 0..*) is associated with 'pivot::Iteration' (role 'pivot_Iteration', cardinality 0..*).
+'pivot::LoopExp' (role 'pivot_LoopExp110', cardinality 0..*) is associated with 'pivot::Iteration' (role 'pivot_Iteration111', cardinality 0..*).
+'pivot::MessageExp' (role 'pivot_MessageExp115', cardinality 0..*) is associated with 'pivot::CallOperationAction' (role 'pivot_CallOperationAction116', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression21', cardinality 0..*) is associated with 'pivot::CollectionRange' (role 'pivot_CollectionRange20', cardinality 0..*).
+'pivot::Precedence' (role 'pivot_Precedence', cardinality 0..*) is associated with 'pivot::Library' (role 'pivot_Library', cardinality 0..*).
+'pivot::TemplateSignature' (role 'TemplateSignature298', cardinality 0..*) is associated with 'pivot::TemplateableElement' (role 'template', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation153', cardinality 0..*) is associated with 'pivot::Constraint' (role 'pivot_Constraint154', cardinality 0..*).
+'pivot::Region' (role 'Region', cardinality 0..*) is associated with 'pivot::Transition' (role 'transition', cardinality 0..*).
+'pivot::TemplateBinding' (role 'TemplateBinding', cardinality 0..*) is associated with 'pivot::TemplateParameterSubstitution' (role 'parameterSubstitution', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression81', cardinality 0..*) is associated with 'pivot::IfExp' (role 'pivot_IfExp80', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression75', cardinality 0..*) is associated with 'pivot::IfExp' (role 'pivot_IfExp', cardinality 0..*).
+'pivot::OpaqueExpression' (role 'pivot_OpaqueExpression140', cardinality 0..*) is associated with 'pivot::Operation' (role 'pivot_Operation139', cardinality 0..*).
+'pivot::Region' (role 'pivot_Region266', cardinality 0..*) is associated with 'pivot::StateMachine' (role 'pivot_StateMachine265', cardinality 0..*).
+'pivot::ConnectionPointReference' (role 'pivot_ConnectionPointReference', cardinality 0..*) is associated with 'pivot::Pseudostate' (role 'pivot_Pseudostate', cardinality 0..*).
+'pivot::TemplateParameterSubstitution' (role 'pivot_TemplateParameterSubstitution284', cardinality 0..*) is associated with 'pivot::TemplateParameter' (role 'pivot_TemplateParameter285', cardinality 0..*).
+'pivot::TemplateParameter' (role 'ownedParameter280', cardinality 0..*) is associated with 'pivot::TemplateSignature' (role 'TemplateSignature', cardinality 0..*).
+'pivot::Trigger' (role 'pivot_Trigger', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State236', cardinality 0..*).
+'pivot::ConstructorPart' (role 'pivot_ConstructorPart', cardinality 0..*) is associated with 'pivot::ConstructorExp' (role 'pivot_ConstructorExp', cardinality 0..*).
+'pivot::Package' (role 'pivot_Package', cardinality 0..*) is associated with 'pivot::Package' (role 'pivot_Package166', cardinality 0..*).
+'pivot::ConstructorPart' (role 'pivot_ConstructorPart42', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property', cardinality 0..*).
+'pivot::ExpressionInOCL' (role 'pivot_ExpressionInOCL', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression62', cardinality 0..*).
+'pivot::Property' (role 'pivot_Property48', cardinality 0..*) is associated with 'pivot::DynamicProperty' (role 'pivot_DynamicProperty', cardinality 0..*).
+'pivot::Class' (role 'pivot_Class182', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property181', cardinality 0..*).
+'pivot::Region' (role 'Region352', cardinality 0..*) is associated with 'pivot::Vertex' (role 'subvertex', cardinality 0..*).
+'pivot::ExpressionInOCL' (role 'pivot_ExpressionInOCL72', cardinality 0..*) is associated with 'pivot::Variable' (role 'pivot_Variable73', cardinality 0..*).
+'pivot::Variable' (role 'pivot_Variable102', cardinality 0..*) is associated with 'pivot::LetExp' (role 'pivot_LetExp101', cardinality 0..*).
+'pivot::MessageExp' (role 'pivot_MessageExp120', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression121', cardinality 0..*).
+'pivot::Constraint' (role 'pivot_Constraint36', cardinality 0..*) is associated with 'pivot::OpaqueExpression' (role 'pivot_OpaqueExpression', cardinality 0..*).
+'pivot::IfExp' (role 'pivot_IfExp77', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression78', cardinality 0..*).
+'pivot::TemplateParameter' (role 'owningTemplateParameter', cardinality 0..*) is associated with 'pivot::ParameterableElement' (role 'ParameterableElement', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type127', cardinality 0..*) is associated with 'pivot::Metaclass' (role 'pivot_Metaclass', cardinality 0..*).
+'pivot::Import' (role 'pivot_Import222', cardinality 0..*) is associated with 'pivot::Root' (role 'pivot_Root', cardinality 0..*).
+'pivot::State' (role 'pivot_State248', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State246', cardinality 0..*).
+'pivot::Constraint' (role 'pivot_Constraint', cardinality 0..*) is associated with 'pivot::Element' (role 'pivot_Element32', cardinality 0..*).
+'pivot::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'pivot::Region' (role 'container', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression113', cardinality 0..*) is associated with 'pivot::MessageExp' (role 'pivot_MessageExp', cardinality 0..*).
+'pivot::AssociationClass' (role 'AssociationClass', cardinality 0..*) is associated with 'pivot::Property' (role 'unownedAttribute', cardinality 0..*).
+'pivot::ElementExtension' (role 'pivot_ElementExtension', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type57', cardinality 0..*).
+'pivot::NamedElement' (role 'pivot_NamedElement', cardinality 0..*) is associated with 'pivot::Annotation' (role 'pivot_Annotation129', cardinality 0..*).
+'pivot::ParameterableElement' (role 'ownedParameteredElement', cardinality 0..*) is associated with 'pivot::TemplateParameter' (role 'TemplateParameter', cardinality 0..*).
+'pivot::Property' (role 'pivot_Property189', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property191', cardinality 0..*).
+'pivot::State' (role 'pivot_State241', cardinality 0..*) is associated with 'pivot::Behavior' (role 'pivot_Behavior242', cardinality 0..*).
+'pivot::Type' (role 'Type', cardinality 0..*) is associated with 'pivot::Operation' (role 'ownedOperation', cardinality 0..*).
+'pivot::MessageExp' (role 'pivot_MessageExp118', cardinality 0..*) is associated with 'pivot::SendSignalAction' (role 'pivot_SendSignalAction', cardinality 0..*).
+'pivot::TemplateParameter' (role 'pivot_TemplateParameter', cardinality 0..*) is associated with 'pivot::ParameterableElement' (role 'pivot_ParameterableElement', cardinality 0..*).
+'pivot::NavigationCallExp' (role 'pivot_NavigationCallExp136', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression137', cardinality 0..*).
+'pivot::ParameterableElement' (role 'pivot_ParameterableElement275', cardinality 0..*) is associated with 'pivot::TemplateParameter' (role 'pivot_TemplateParameter274', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression105', cardinality 0..*) is associated with 'pivot::LoopExp' (role 'pivot_LoopExp', cardinality 0..*).
+'pivot::Property' (role 'pivot_Property200', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property202', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type343', cardinality 0..*) is associated with 'pivot::UnspecifiedType' (role 'pivot_UnspecifiedType342', cardinality 0..*).
+'pivot::ElementExtension' (role 'extension', cardinality 0..*) is associated with 'pivot::Element' (role 'Element', cardinality 0..*).
+'pivot::TemplateParameter' (role 'TemplateParameter178', cardinality 0..*) is associated with 'pivot::ParameterableElement' (role 'parameteredElement', cardinality 0..*).
+'pivot::TemplateParameter' (role 'templateParameter', cardinality 0..*) is associated with 'pivot::ParameterableElement' (role 'ParameterableElement278', cardinality 0..*).
+'pivot::ExpressionInOCL' (role 'pivot_ExpressionInOCL69', cardinality 0..*) is associated with 'pivot::Variable' (role 'pivot_Variable70', cardinality 0..*).
+'pivot::Transition' (role 'pivot_Transition307', cardinality 0..*) is associated with 'pivot::Constraint' (role 'pivot_Constraint308', cardinality 0..*).
+'pivot::Constraint' (role 'pivot_Constraint324', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type323', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type94', cardinality 0..*) is associated with 'pivot::LambdaType' (role 'pivot_LambdaType93', cardinality 0..*).
+'pivot::State' (role 'pivot_State230', cardinality 0..*) is associated with 'pivot::ConnectionPointReference' (role 'pivot_ConnectionPointReference231', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type', cardinality 0..*) is associated with 'pivot::CollectionType' (role 'pivot_CollectionType', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation123', cardinality 0..*) is associated with 'pivot::MessageType' (role 'pivot_MessageType', cardinality 0..*).
+'pivot::ParameterableElement' (role 'pivot_ParameterableElement288', cardinality 0..*) is associated with 'pivot::TemplateParameterSubstitution' (role 'pivot_TemplateParameterSubstitution287', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation165', cardinality 0..*) is associated with 'pivot::OperationCallExp' (role 'pivot_OperationCallExp164', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression18', cardinality 0..*) is associated with 'pivot::CollectionRange' (role 'pivot_CollectionRange', cardinality 0..*).
+'pivot::Region' (role 'pivot_Region210', cardinality 0..*) is associated with 'pivot::Region' (role 'pivot_Region', cardinality 0..*).
+'pivot::Type' (role 'owningType', cardinality 0..*) is associated with 'pivot::Property' (role 'Property321', cardinality 0..*).
+'pivot::Type' (role 'ownedType', cardinality 0..*) is associated with 'pivot::Package' (role 'Package329', cardinality 0..*).
+'pivot::NavigationCallExp' (role 'pivot_NavigationCallExp', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property134', cardinality 0..*).
+'pivot::Parameter' (role 'pivot_Parameter349', cardinality 0..*) is associated with 'pivot::Variable' (role 'pivot_Variable348', cardinality 0..*).
+'pivot::OpaqueExpression' (role 'pivot_OpaqueExpression185', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property184', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type44', cardinality 0..*) is associated with 'pivot::DataType' (role 'pivot_DataType', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression162', cardinality 0..*) is associated with 'pivot::OperationCallExp' (role 'pivot_OperationCallExp', cardinality 0..*).
+'pivot::SendSignalAction' (role 'pivot_SendSignalAction227', cardinality 0..*) is associated with 'pivot::Signal' (role 'pivot_Signal228', cardinality 0..*).
+'pivot::ConnectionPointReference' (role 'pivot_ConnectionPointReference30', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State', cardinality 0..*).
+'pivot::AssociationClass' (role 'pivot_AssociationClass', cardinality 0..*) is associated with 'pivot::AssociationClassCallExp' (role 'pivot_AssociationClassCallExp', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type338', cardinality 0..*) is associated with 'pivot::TypedElement' (role 'pivot_TypedElement', cardinality 0..*).
+'pivot::DynamicElement' (role 'pivot_DynamicElement', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type46', cardinality 0..*).
+'pivot::State' (role 'pivot_State214', cardinality 0..*) is associated with 'pivot::Region' (role 'pivot_Region213', cardinality 0..*).
+'pivot::Behavior' (role 'pivot_Behavior239', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State238', cardinality 0..*).
+'pivot::Variable' (role 'pivot_Variable', cardinality 0..*) is associated with 'pivot::ExpressionInOCL' (role 'pivot_ExpressionInOCL64', cardinality 0..*).
+'pivot::Pseudostate' (role 'pivot_Pseudostate260', cardinality 0..*) is associated with 'pivot::StateMachine' (role 'pivot_StateMachine259', cardinality 0..*).
+'pivot::Property' (role 'pivot_Property196', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property194', cardinality 0..*).
+'pivot::Variable' (role 'pivot_Variable345', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression346', cardinality 0..*).
+'pivot::Annotation' (role 'pivot_Annotation4', cardinality 0..*) is associated with 'pivot::Element' (role 'pivot_Element5', cardinality 0..*).
+'pivot::StateMachine' (role 'pivot_StateMachine217', cardinality 0..*) is associated with 'pivot::Region' (role 'pivot_Region216', cardinality 0..*).
+'pivot::Behavior' (role 'pivot_Behavior305', cardinality 0..*) is associated with 'pivot::Transition' (role 'pivot_Transition', cardinality 0..*).
+'pivot::Behavior' (role 'pivot_Behavior', cardinality 0..*) is associated with 'pivot::Class' (role 'pivot_Class13', cardinality 0..*).
+'pivot::TypeExp' (role 'pivot_TypeExp', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type334', cardinality 0..*).
+'pivot::Import' (role 'pivot_Import', cardinality 0..*) is associated with 'pivot::Namespace' (role 'pivot_Namespace83', cardinality 0..*).
+'pivot::Namespace' (role 'pivot_Namespace131', cardinality 0..*) is associated with 'pivot::Constraint' (role 'pivot_Constraint132', cardinality 0..*).
+'pivot::Region' (role 'container220', cardinality 0..*) is associated with 'pivot::Transition' (role 'Transition', cardinality 0..*).
+'pivot::TemplateSignature' (role 'pivot_TemplateSignature293', cardinality 0..*) is associated with 'pivot::TemplateParameter' (role 'pivot_TemplateParameter294', cardinality 0..*).
+'pivot::AssociationClass' (role 'association', cardinality 0..*) is associated with 'pivot::Property' (role 'Property', cardinality 0..*).
+'pivot::Behavior' (role 'pivot_Behavior245', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State244', cardinality 0..*).
+'pivot::LambdaType' (role 'pivot_LambdaType96', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type97', cardinality 0..*).
+'pivot::ElementExtension' (role 'ElementExtension', cardinality 0..*) is associated with 'pivot::Element' (role 'base', cardinality 0..*).
+'pivot::Transition' (role 'Transition356', cardinality 0..*) is associated with 'pivot::Vertex' (role 'source', cardinality 0..*).
+'pivot::Iteration' (role 'pivot_Iteration88', cardinality 0..*) is associated with 'pivot::Parameter' (role 'pivot_Parameter89', cardinality 0..*).
+'pivot::StateExp' (role 'pivot_StateExp', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State257', cardinality 0..*).
+'pivot::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'pivot::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'pivot::TemplateSignature' (role 'pivot_TemplateSignature', cardinality 0..*) is associated with 'pivot::TemplateBinding' (role 'pivot_TemplateBinding', cardinality 0..*).
+'pivot::UnspecifiedType' (role 'pivot_UnspecifiedType', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type340', cardinality 0..*).
+'pivot::State' (role 'pivot_State233', cardinality 0..*) is associated with 'pivot::Pseudostate' (role 'pivot_Pseudostate234', cardinality 0..*).
+'pivot::Detail' (role 'pivot_Detail', cardinality 0..*) is associated with 'pivot::Annotation' (role 'pivot_Annotation2', cardinality 0..*).
+'pivot::Package' (role 'Package', cardinality 0..*) is associated with 'pivot::Package' (role 'nestingPackage', cardinality 0..*).
+'pivot::TemplateSignature' (role 'ownedTemplateSignature', cardinality 0..*) is associated with 'pivot::TemplateableElement' (role 'TemplateableElement296', cardinality 0..*).
+'pivot::Class' (role 'pivot_Class10', cardinality 0..*) is associated with 'pivot::Class' (role 'pivot_Class', cardinality 0..*).
+'pivot::TemplateParameterSubstitution' (role 'pivot_TemplateParameterSubstitution', cardinality 0..*) is associated with 'pivot::ParameterableElement' (role 'pivot_ParameterableElement282', cardinality 0..*).
+'pivot::Pseudostate' (role 'pivot_Pseudostate209', cardinality 0..*) is associated with 'pivot::StateMachine' (role 'pivot_StateMachine', cardinality 0..*).
+'pivot::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'pivot::Enumeration' (role 'Enumeration', cardinality 0..*).
+'pivot::Pseudostate' (role 'pivot_Pseudostate206', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State207', cardinality 0..*).
+'pivot::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'pivot::Operation' (role 'operation', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation150', cardinality 0..*) is associated with 'pivot::Precedence' (role 'pivot_Precedence151', cardinality 0..*).
+'pivot::Trigger' (role 'pivot_Trigger315', cardinality 0..*) is associated with 'pivot::Transition' (role 'pivot_Transition314', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation', cardinality 0..*) is associated with 'pivot::CallOperationAction' (role 'pivot_CallOperationAction', cardinality 0..*).
+'pivot::Root' (role 'pivot_Root224', cardinality 0..*) is associated with 'pivot::Package' (role 'pivot_Package225', cardinality 0..*).
+'pivot::Region' (role 'pivot_Region251', cardinality 0..*) is associated with 'pivot::State' (role 'pivot_State250', cardinality 0..*).
+'pivot::TemplateBinding' (role 'TemplateBinding300', cardinality 0..*) is associated with 'pivot::TemplateableElement' (role 'boundElement', cardinality 0..*).
+'pivot::CollectionLiteralPart' (role 'pivot_CollectionLiteralPart', cardinality 0..*) is associated with 'pivot::CollectionLiteralExp' (role 'pivot_CollectionLiteralExp', cardinality 0..*).
+'pivot::DynamicProperty' (role 'pivot_DynamicProperty50', cardinality 0..*) is associated with 'pivot::DynamicType' (role 'pivot_DynamicType', cardinality 0..*).
+'pivot::Type' (role 'owningType326', cardinality 0..*) is associated with 'pivot::Operation' (role 'Operation327', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type157', cardinality 0..*) is associated with 'pivot::Operation' (role 'pivot_Operation156', cardinality 0..*).
+'pivot::Parameter' (role 'ownedParameter', cardinality 0..*) is associated with 'pivot::Operation' (role 'Operation', cardinality 0..*).
+'pivot::PropertyCallExp' (role 'pivot_PropertyCallExp', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property204', cardinality 0..*).
+'pivot::StateMachine' (role 'pivot_StateMachine261', cardinality 0..*) is associated with 'pivot::StateMachine' (role 'pivot_StateMachine263', cardinality 0..*).
+'pivot::TemplateableElement' (role 'TemplateableElement', cardinality 0..*) is associated with 'pivot::TemplateBinding' (role 'templateBinding', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation142', cardinality 0..*) is associated with 'pivot::Class' (role 'pivot_Class143', cardinality 0..*).
+'pivot::Element' (role 'pivot_Element53', cardinality 0..*) is associated with 'pivot::Comment' (role 'pivot_Comment54', cardinality 0..*).
+'pivot::Transition' (role 'Transition354', cardinality 0..*) is associated with 'pivot::Vertex' (role 'target', cardinality 0..*).
+'pivot::ExpressionInOCL' (role 'pivot_ExpressionInOCL66', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression67', cardinality 0..*).
+'pivot::Property' (role 'pivot_Property199', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property197', cardinality 0..*).
+'pivot::State' (role 'pivot_State253', cardinality 0..*) is associated with 'pivot::Constraint' (role 'pivot_Constraint254', cardinality 0..*).
+'pivot::Vertex' (role 'Vertex312', cardinality 0..*) is associated with 'pivot::Transition' (role 'incoming', cardinality 0..*).
+'pivot::Element' (role 'pivot_Element24', cardinality 0..*) is associated with 'pivot::Comment' (role 'pivot_Comment', cardinality 0..*).
+'pivot::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'pivot::Type' (role 'Type193', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type91', cardinality 0..*) is associated with 'pivot::LambdaType' (role 'pivot_LambdaType', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type330', cardinality 0..*) is associated with 'pivot::Type' (role 'pivot_Type332', cardinality 0..*).
+'pivot::ConnectionPointReference' (role 'pivot_ConnectionPointReference27', cardinality 0..*) is associated with 'pivot::Pseudostate' (role 'pivot_Pseudostate28', cardinality 0..*).
+'pivot::Variable' (role 'pivot_Variable108', cardinality 0..*) is associated with 'pivot::LoopExp' (role 'pivot_LoopExp107', cardinality 0..*).
+'pivot::TupleLiteralPart' (role 'pivot_TupleLiteralPart', cardinality 0..*) is associated with 'pivot::TupleLiteralExp' (role 'pivot_TupleLiteralExp', cardinality 0..*).
+'pivot::Package' (role 'Package172', cardinality 0..*) is associated with 'pivot::Package' (role 'nestedPackage', cardinality 0..*).
+'pivot::TupleLiteralPart' (role 'pivot_TupleLiteralPart318', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression319', cardinality 0..*).
+'pivot::TemplateableElement' (role 'pivot_TemplateableElement', cardinality 0..*) is associated with 'pivot::TemplateableElement' (role 'pivot_TemplateableElement301', cardinality 0..*).
+'pivot::Annotation' (role 'pivot_Annotation', cardinality 0..*) is associated with 'pivot::Element' (role 'pivot_Element', cardinality 0..*).
+'pivot::EnumerationLiteral' (role 'pivot_EnumerationLiteral', cardinality 0..*) is associated with 'pivot::EnumLiteralExp' (role 'pivot_EnumLiteralExp', cardinality 0..*).
+'pivot::ConstructorPart' (role 'pivot_ConstructorPart39', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression40', cardinality 0..*).
+'pivot::Type' (role 'Type174', cardinality 0..*) is associated with 'pivot::Package' (role 'package', cardinality 0..*).
+'pivot::State' (role 'State', cardinality 0..*) is associated with 'pivot::StateMachine' (role 'submachine', cardinality 0..*).
+'pivot::Signal' (role 'pivot_Signal', cardinality 0..*) is associated with 'pivot::MessageType' (role 'pivot_MessageType125', cardinality 0..*).
+'pivot::Operation' (role 'pivot_Operation160', cardinality 0..*) is associated with 'pivot::Operation' (role 'pivot_Operation158', cardinality 0..*).
+'pivot::IterateExp' (role 'pivot_IterateExp', cardinality 0..*) is associated with 'pivot::Variable' (role 'pivot_Variable85', cardinality 0..*).
+'pivot::Type' (role 'pivot_Type336', cardinality 0..*) is associated with 'pivot::TypeTemplateParameter' (role 'pivot_TypeTemplateParameter', cardinality 0..*).
+'pivot::OCLExpression' (role 'pivot_OCLExpression99', cardinality 0..*) is associated with 'pivot::LetExp' (role 'pivot_LetExp', cardinality 0..*).
+'pivot::CollectionItem' (role 'pivot_CollectionItem', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression15', cardinality 0..*).
+'pivot::Property' (role 'pivot_Property188', cardinality 0..*) is associated with 'pivot::Property' (role 'pivot_Property186', cardinality 0..*).
+'pivot::TemplateBinding' (role 'templateBinding270', cardinality 0..*) is associated with 'pivot::TemplateParameterSubstitution' (role 'TemplateParameterSubstitution', cardinality 0..*).
+'pivot::CallExp' (role 'pivot_CallExp', cardinality 0..*) is associated with 'pivot::OCLExpression' (role 'pivot_OCLExpression', cardinality 0..*).
+'pivot::Constraint' (role 'pivot_Constraint34', cardinality 0..*) is associated with 'pivot::Namespace' (role 'pivot_Namespace', cardinality 0..*).
+'pivot::Constraint' (role 'pivot_Constraint148', cardinality 0..*) is associated with 'pivot::Operation' (role 'pivot_Operation147', cardinality 0..*).
+'pivot::TemplateParameter' (role 'TemplateParameter291', cardinality 0..*) is associated with 'pivot::TemplateSignature' (role 'signature', cardinality 0..*).
+'pivot::VariableExp' (role 'pivot_VariableExp', cardinality 0..*) is associated with 'pivot::VariableDeclaration' (role 'pivot_VariableDeclaration', cardinality 0..*).
+'pivot::Vertex' (role 'Vertex310', cardinality 0..*) is associated with 'pivot::Transition' (role 'outgoing', cardinality 0..*).
+'pivot::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'pivot::State' (role 'submachineState', cardinality 0..*).

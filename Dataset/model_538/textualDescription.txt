@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'SimpleFamilies::FamilyRegister' has no attributes.
+The class 'SimpleFamilies::Family' has the following attributes: 'name' of type str.
+The class 'SimpleFamilies::FamilyMember' has the following attributes: 'name' of type str.
+'SimpleFamilies::Family' (role 'SimpleFamilies_Family7', cardinality 0..*) is associated with 'SimpleFamilies::FamilyMember' (role 'SimpleFamilies_FamilyMember8', cardinality 0..*).
+'SimpleFamilies::FamilyMember' (role 'SimpleFamilies_FamilyMember', cardinality 0..*) is associated with 'SimpleFamilies::Family' (role 'SimpleFamilies_Family2', cardinality 0..*).
+'SimpleFamilies::FamilyMember' (role 'SimpleFamilies_FamilyMember5', cardinality 0..*) is associated with 'SimpleFamilies::Family' (role 'SimpleFamilies_Family4', cardinality 0..*).
+'SimpleFamilies::FamilyRegister' (role 'SimpleFamilies_FamilyRegister', cardinality 0..*) is associated with 'SimpleFamilies::Family' (role 'SimpleFamilies_Family', cardinality 0..*).
+'SimpleFamilies::Family' (role 'SimpleFamilies_Family10', cardinality 0..*) is associated with 'SimpleFamilies::FamilyMember' (role 'SimpleFamilies_FamilyMember11', cardinality 0..*).

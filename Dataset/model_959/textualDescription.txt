@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'simplegraph::Edge' has no attributes.
+The class 'simplegraph::Graph' has no attributes.
+The class 'simplegraph::Node' has the following attributes: 'name' of type str.
+'simplegraph::Edge' (role 'incoming', cardinality 0..*) is associated with 'simplegraph::Node' (role 'Node6', cardinality 0..*).
+'simplegraph::Node' (role 'simplegraph_Node', cardinality 0..*) is associated with 'simplegraph::Graph' (role 'simplegraph_Graph', cardinality 0..*).
+'simplegraph::Edge' (role 'Edge', cardinality 0..*) is associated with 'simplegraph::Node' (role 'source', cardinality 0..*).
+'simplegraph::Node' (role 'Node', cardinality 0..*) is associated with 'simplegraph::Edge' (role 'outgoing', cardinality 0..*).
+'simplegraph::Edge' (role 'Edge3', cardinality 0..*) is associated with 'simplegraph::Node' (role 'target', cardinality 0..*).

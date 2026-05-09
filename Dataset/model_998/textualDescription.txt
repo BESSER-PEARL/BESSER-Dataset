@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'Named' has no attributes.
+The class 'graph::Edge' has the following attributes: 'exact' of type bool; 'pathDiscoveredByHeuristic' of type str.
+The class 'graph::Named' has the following attributes: 'name' of type str.
+The class 'graph::Node' has the following attributes: 'derivedOrNotExists' of type bool; 'type' of type str; 'uri' of type str.
+The class 'graph::Graph' has the following attributes: 'owner' of type str.
+'graph::Node' is a specialization of 'Named'.
+'graph::Graph' is a specialization of 'Named'.
+'graph::Edge' is a specialization of 'Named'.
+'graph::Node' (role 'graph_Node8', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge7', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge10', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node11', cardinality 0..*).
+'graph::Node' (role 'graph_Node', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph2', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge4', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node5', cardinality 0..*).

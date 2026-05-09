@@ -1,0 +1,31 @@
+The model has 13 class(es).
+The class 'NamedElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'smalluml::Class' has no attributes.
+The class 'smalluml::NamedElement' has the following attributes: 'name' of type str.
+The class 'smalluml::Operation' has no attributes.
+The class 'smalluml::Property' has the following attributes: 'upperBound' of type int; 'lowerBound' of type int.
+The class 'smalluml::Type' has no attributes.
+The class 'smalluml::TypeReal' has the following attributes: 'value' of type str.
+The class 'smalluml::TypeUnlimitedNatural' has the following attributes: 'value' of type str.
+The class 'smalluml::TypeString' has the following attributes: 'value' of type str.
+The class 'smalluml::TypeInteger' has the following attributes: 'value' of type str.
+The class 'smalluml::TypeBoolean' has the following attributes: 'value' of type str.
+The class 'smalluml::Root' has no attributes.
+'smalluml::Class' is a specialization of 'Type'.
+'smalluml::TypeString' is a specialization of 'Type'.
+'smalluml::Type' is a specialization of 'NamedElement'.
+'smalluml::Operation' is a specialization of 'NamedElement'.
+'smalluml::Property' is a specialization of 'NamedElement'.
+'smalluml::TypeInteger' is a specialization of 'Type'.
+'smalluml::TypeUnlimitedNatural' is a specialization of 'Type'.
+'smalluml::TypeReal' is a specialization of 'Type'.
+'smalluml::TypeBoolean' is a specialization of 'Type'.
+'smalluml::Operation' (role 'smalluml_Operation7', cardinality 0..*) is associated with 'smalluml::Type' (role 'smalluml_Type', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type10', cardinality 0..*) is associated with 'smalluml::Operation' (role 'smalluml_Operation9', cardinality 0..*).
+'smalluml::Root' (role 'smalluml_Root', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class15', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class3', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class1', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type18', cardinality 0..*) is associated with 'smalluml::Root' (role 'smalluml_Root17', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type13', cardinality 0..*) is associated with 'smalluml::Property' (role 'smalluml_Property12', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class5', cardinality 0..*) is associated with 'smalluml::Property' (role 'smalluml_Property', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class', cardinality 0..*) is associated with 'smalluml::Operation' (role 'smalluml_Operation', cardinality 0..*).

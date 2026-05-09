@@ -1,0 +1,15 @@
+The model has 3 class(es).
+The class 'FamiliesWithSiblings::FamilyRegister' has no attributes.
+The class 'FamiliesWithSiblings::FamilyMember' has the following attributes: 'name' of type str.
+The class 'FamiliesWithSiblings::Family' has the following attributes: 'name' of type str.
+'FamiliesWithSiblings::FamilyMember' (role 'FamilyMember7', cardinality 0..*) is associated with 'FamiliesWithSiblings::Family' (role 'daughtersInverse', cardinality 0..*).
+'FamiliesWithSiblings::FamilyMember' (role 'FamilyMember', cardinality 0..*) is associated with 'FamiliesWithSiblings::Family' (role 'fatherInverse', cardinality 0..*).
+'FamiliesWithSiblings::FamilyMember' (role 'daughters', cardinality 0..*) is associated with 'FamiliesWithSiblings::Family' (role 'Family18', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'Family14', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyMember' (role 'mother', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'motherInverse', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyMember' (role 'FamilyMember3', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'Family12', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyMember' (role 'father', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'FamiliesWithSiblings_Family9', cardinality 0..*) is associated with 'FamiliesWithSiblings::Family' (role 'FamiliesWithSiblings_Family', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'Family', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyRegister' (role 'familiesInverse', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'Family16', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyMember' (role 'sons', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'families', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyRegister' (role 'FamilyRegister', cardinality 0..*).
+'FamiliesWithSiblings::Family' (role 'sonsInverse', cardinality 0..*) is associated with 'FamiliesWithSiblings::FamilyMember' (role 'FamilyMember5', cardinality 0..*).

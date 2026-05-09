@@ -1,0 +1,42 @@
+The model has 13 class(es).
+The class 'tfsm::plaink3::FSMClock' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'tfsm::plaink3::NamedElement' has the following attributes: 'name' of type str.
+The class 'tfsm::plaink3::TimedSystem' has no attributes.
+The class 'Guard' has no attributes.
+The class 'tfsm::plaink3::EvaluateGuard' has the following attributes: 'condition' of type str.
+The class 'tfsm::plaink3::State' has no attributes.
+The class 'tfsm::plaink3::TemporalGuard' has the following attributes: 'afterDuration' of type int.
+The class 'tfsm::plaink3::Guard' has no attributes.
+The class 'tfsm::plaink3::EventGuard' has no attributes.
+The class 'tfsm::plaink3::FSMEvent' has no attributes.
+The class 'tfsm::plaink3::TFSM' has no attributes.
+The class 'tfsm::plaink3::Transition' has the following attributes: 'action' of type str.
+'tfsm::plaink3::TFSM' is a specialization of 'NamedElement'.
+'tfsm::plaink3::TemporalGuard' is a specialization of 'Guard'.
+'tfsm::plaink3::TimedSystem' is a specialization of 'NamedElement'.
+'tfsm::plaink3::FSMClock' is a specialization of 'NamedElement'.
+'tfsm::plaink3::EventGuard' is a specialization of 'Guard'.
+'tfsm::plaink3::Guard' is a specialization of 'NamedElement'.
+'tfsm::plaink3::EvaluateGuard' is a specialization of 'Guard'.
+'tfsm::plaink3::State' is a specialization of 'NamedElement'.
+'tfsm::plaink3::FSMEvent' is a specialization of 'NamedElement'.
+'tfsm::plaink3::Transition' is a specialization of 'NamedElement'.
+'tfsm::plaink3::TFSM' (role 'tfsm_plaink3_TFSM7', cardinality 0..*) is associated with 'tfsm::plaink3::Transition' (role 'tfsm_plaink3_Transition', cardinality 0..*).
+'tfsm::plaink3::TFSM' (role 'tfsm_plaink3_TFSM3', cardinality 0..*) is associated with 'tfsm::plaink3::FSMEvent' (role 'tfsm_plaink3_FSMEvent', cardinality 0..*).
+'tfsm::plaink3::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'tfsm::plaink3::State' (role 'State13', cardinality 0..*).
+'tfsm::plaink3::Guard' (role 'tfsm_plaink3_Guard', cardinality 0..*) is associated with 'tfsm::plaink3::Transition' (role 'tfsm_plaink3_Transition17', cardinality 0..*).
+'tfsm::plaink3::TimedSystem' (role 'tfsm_plaink3_TimedSystem', cardinality 0..*) is associated with 'tfsm::plaink3::TFSM' (role 'tfsm_plaink3_TFSM29', cardinality 0..*).
+'tfsm::plaink3::FSMEvent' (role 'tfsm_plaink3_FSMEvent35', cardinality 0..*) is associated with 'tfsm::plaink3::TimedSystem' (role 'tfsm_plaink3_TimedSystem34', cardinality 0..*).
+'tfsm::plaink3::TFSM' (role 'tfsm_plaink3_TFSM5', cardinality 0..*) is associated with 'tfsm::plaink3::FSMClock' (role 'tfsm_plaink3_FSMClock', cardinality 0..*).
+'tfsm::plaink3::FSMEvent' (role 'tfsm_plaink3_FSMEvent26', cardinality 0..*) is associated with 'tfsm::plaink3::Transition' (role 'tfsm_plaink3_Transition27', cardinality 0..*).
+'tfsm::plaink3::FSMClock' (role 'tfsm_plaink3_FSMClock22', cardinality 0..*) is associated with 'tfsm::plaink3::TemporalGuard' (role 'tfsm_plaink3_TemporalGuard', cardinality 0..*).
+'tfsm::plaink3::EventGuard' (role 'tfsm_plaink3_EventGuard', cardinality 0..*) is associated with 'tfsm::plaink3::FSMEvent' (role 'tfsm_plaink3_FSMEvent24', cardinality 0..*).
+'tfsm::plaink3::Transition' (role 'Transition', cardinality 0..*) is associated with 'tfsm::plaink3::State' (role 'source', cardinality 0..*).
+'tfsm::plaink3::FSMEvent' (role 'tfsm_plaink3_FSMEvent20', cardinality 0..*) is associated with 'tfsm::plaink3::Transition' (role 'tfsm_plaink3_Transition19', cardinality 0..*).
+'tfsm::plaink3::TFSM' (role 'owningFSM', cardinality 0..*) is associated with 'tfsm::plaink3::State' (role 'State', cardinality 0..*).
+'tfsm::plaink3::State' (role 'ownedStates', cardinality 0..*) is associated with 'tfsm::plaink3::TFSM' (role 'TFSM', cardinality 0..*).
+'tfsm::plaink3::State' (role 'tfsm_plaink3_State', cardinality 0..*) is associated with 'tfsm::plaink3::TFSM' (role 'tfsm_plaink3_TFSM', cardinality 0..*).
+'tfsm::plaink3::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'tfsm::plaink3::State' (role 'State15', cardinality 0..*).
+'tfsm::plaink3::FSMClock' (role 'tfsm_plaink3_FSMClock32', cardinality 0..*) is associated with 'tfsm::plaink3::TimedSystem' (role 'tfsm_plaink3_TimedSystem31', cardinality 0..*).
+'tfsm::plaink3::State' (role 'target', cardinality 0..*) is associated with 'tfsm::plaink3::Transition' (role 'Transition11', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'simplegraph::Element' has no attributes.
+The class 'Element' has no attributes.
+The class 'simplegraph::Node' has the following attributes: 'label' of type str.
+The class 'simplegraph::Graph' has the following attributes: 'name' of type str.
+The class 'simplegraph::Edge' has no attributes.
+'simplegraph::Edge' is a specialization of 'Element'.
+'simplegraph::Node' is a specialization of 'Element'.
+'simplegraph::Edge' (role 'incoming', cardinality 0..*) is associated with 'simplegraph::Node' (role 'Node', cardinality 0..*).
+'simplegraph::Edge' (role 'Edge2', cardinality 0..*) is associated with 'simplegraph::Node' (role 'source', cardinality 0..*).
+'simplegraph::Element' (role 'Element', cardinality 0..*) is associated with 'simplegraph::Graph' (role 'graph', cardinality 0..*).
+'simplegraph::Node' (role 'Node5', cardinality 0..*) is associated with 'simplegraph::Edge' (role 'outgoing', cardinality 0..*).
+'simplegraph::Edge' (role 'Edge', cardinality 0..*) is associated with 'simplegraph::Node' (role 'target', cardinality 0..*).
+'simplegraph::Graph' (role 'Graph', cardinality 0..*) is associated with 'simplegraph::Element' (role 'element', cardinality 0..*).

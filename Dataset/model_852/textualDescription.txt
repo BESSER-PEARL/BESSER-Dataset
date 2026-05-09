@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'FSM::State' has the following attributes: 'isAccepting' of type bool; 'name' of type str.
+The class 'FSM::StateMachine' has the following attributes: 'name' of type str.
+The class 'FSM::Transition' has the following attributes: 'input' of type str.
+'FSM::StateMachine' (role 'FSM_StateMachine2', cardinality 0..*) is associated with 'FSM::State' (role 'FSM_State3', cardinality 0..*).
+'FSM::Transition' (role 'outgoing', cardinality 0..*) is associated with 'FSM::State' (role 'State', cardinality 0..*).
+'FSM::State' (role 'target', cardinality 0..*) is associated with 'FSM::Transition' (role 'Transition6', cardinality 0..*).
+'FSM::State' (role 'State9', cardinality 0..*) is associated with 'FSM::Transition' (role 'incoming', cardinality 0..*).
+'FSM::State' (role 'source', cardinality 0..*) is associated with 'FSM::Transition' (role 'Transition', cardinality 0..*).
+'FSM::State' (role 'FSM_State', cardinality 0..*) is associated with 'FSM::StateMachine' (role 'FSM_StateMachine', cardinality 0..*).

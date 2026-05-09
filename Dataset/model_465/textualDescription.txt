@@ -1,0 +1,512 @@
+The model has 214 class(es).
+The class 'fuml::BasicBehaviors::FunctionBehavior' has no attributes.
+The class 'fuml::IntermediateActions::ReadStructuralFeatureAction' has no attributes.
+The class 'CompoundValue' has no attributes.
+The class 'fuml::IntermediateActivities::ActivityFinalNode' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'Kernel::InstanceSpecification' has no attributes.
+The class 'fuml::Kernel::Feature' has the following attributes: 'static' of type bool.
+The class 'fuml::IntermediateActivities::Activity' has the following attributes: 'readOnly' of type bool.
+The class 'Event' has no attributes.
+The class 'fuml::IntermediateActions::TestIdentityAction' has no attributes.
+The class 'fuml::IntermediateActions::ReadSelfAction' has no attributes.
+The class 'fuml::IntermediateActivities::ObjectFlow' has no attributes.
+The class 'fuml::Kernel::PackageableElement' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'Kernel::Parameter' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'fuml::Kernel::UnlimitedNaturalValue' has the following attributes: 'value' of type int.
+The class 'fuml::CompleteStructuredActivities::ConditionalNode' has the following attributes: 'determinate' of type bool; 'assured' of type bool.
+The class 'fuml::Kernel::Object' has no attributes.
+The class 'fuml::IntermediateActions::LinkEndData' has no attributes.
+The class 'Kernel::Class' has no attributes.
+The class 'fuml::Kernel::IntegerValue' has the following attributes: 'value' of type int.
+The class 'fuml::Kernel::InstanceSpecification' has no attributes.
+The class 'fuml::IntermediateActivities::JoinNode' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Kernel::Package' has no attributes.
+The class 'LinkAction' has no attributes.
+The class 'fuml::Kernel::Association' has the following attributes: 'derived' of type bool.
+The class 'CompleteStructuredActivities::ExecutableNode' has no attributes.
+The class 'Kernel::Property' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'fuml::Kernel::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'fuml::IntermediateActions::DestroyObjectAction' has the following attributes: 'destroyLinks' of type bool; 'destroyOwnedObjects' of type bool.
+The class 'fuml::Kernel::InstanceValue' has no attributes.
+The class 'fuml::Kernel::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'fuml::IntermediateActivities::InitialNode' has no attributes.
+The class 'InvocationAction' has no attributes.
+The class 'ExtensionalValue' has no attributes.
+The class 'Kernel::Slot' has no attributes.
+The class 'fuml::BasicActions::Pin' has no attributes.
+The class 'fuml::CompleteActions::StartClassifierBehaviorAction' has no attributes.
+The class 'fuml::IntermediateActivities::ActivityEdge' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'fuml::BasicActions::CallAction' has the following attributes: 'synchronous' of type bool.
+The class 'fuml::CompleteActions::AcceptEventAction' has the following attributes: 'unmarshall' of type bool.
+The class 'fuml::Kernel::PrimitiveValue' has no attributes.
+The class 'Kernel::ElementImport' has no attributes.
+The class 'fuml::IntermediateActions::LinkEndCreationData' has the following attributes: 'replaceAll' of type bool.
+The class 'Communications::Signal' has no attributes.
+The class 'fuml::Kernel::StructuralFeature' has the following attributes: 'readOnly' of type bool.
+The class 'IntermediateActivities::ObjectFlow' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'fuml::LociL1::Locus' has no attributes.
+The class 'fuml::IntermediateActivities::ActivityNode' has no attributes.
+The class 'BasicBehaviors::BehavioredClassifier' has no attributes.
+The class 'IntermediateActions::LinkEndData' has no attributes.
+The class 'fuml::IntermediateActivities::DecisionNode' has no attributes.
+The class 'fuml::BasicActions::CallOperationAction' has no attributes.
+The class 'fuml::CompleteStructuredActivities::Clause' has no attributes.
+The class 'Kernel::DataType' has no attributes.
+The class 'SemanticVisitor' has no attributes.
+The class 'fuml::Kernel::LiteralString' has the following attributes: 'value' of type str.
+The class 'Kernel::Object' has no attributes.
+The class 'fuml::IntermediateActions::WriteLinkAction' has no attributes.
+The class 'Pin' has no attributes.
+The class 'fuml::Communications::Reception' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Kernel::Namespace' has no attributes.
+The class 'DataType' has no attributes.
+The class 'fuml::Kernel::Value' has no attributes.
+The class 'Kernel::Generalization' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'ExtraStructuredActivities::ExpansionNode' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'fuml::Communications::Event' has no attributes.
+The class 'fuml::Kernel::Slot' has no attributes.
+The class 'fuml::Kernel::LiteralBoolean' has the following attributes: 'value' of type bool.
+The class 'Communications::Event' has no attributes.
+The class 'Kernel::Association' has no attributes.
+The class 'ExtraStructuredActivities::ExpansionRegion' has no attributes.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'fuml::Kernel::LiteralUnlimitedNatural' has the following attributes: 'value' of type int.
+The class 'Kernel::Type' has no attributes.
+The class 'fuml::Kernel::LiteralInteger' has the following attributes: 'value' of type int.
+The class 'Kernel::NamedElement' has no attributes.
+The class 'fuml::Kernel::Element' has no attributes.
+The class 'fuml::Kernel::Class' has the following attributes: 'active' of type bool.
+The class 'fuml::Kernel::DataValue' has no attributes.
+The class 'fuml::Kernel::StringValue' has the following attributes: 'value' of type str.
+The class 'Communications::Reception' has no attributes.
+The class 'fuml::IntermediateActions::LinkAction' has no attributes.
+The class 'fuml::BasicActions::CallBehaviorAction' has no attributes.
+The class 'Communications::Trigger' has no attributes.
+The class 'fuml::IntermediateActions::RemoveStructuralFeatureValueAction' has the following attributes: 'removeDuplicates' of type bool.
+The class 'CallAction' has no attributes.
+The class 'fuml::Communications::Signal' has no attributes.
+The class 'BasicActions::InputPin' has no attributes.
+The class 'fuml::IntermediateActions::DestroyLinkAction' has no attributes.
+The class 'Kernel::PrimitiveType' has no attributes.
+The class 'fuml::Kernel::ValueSpecification' has no attributes.
+The class 'Kernel::Classifier' has no attributes.
+The class 'fuml::Kernel::BehavioralFeature' has the following attributes: 'abstract' of type bool; 'concurrency' of type str.
+The class 'fuml::IntermediateActivities::FinalNode' has no attributes.
+The class 'Value' has no attributes.
+The class 'fuml::IntermediateActivities::ControlFlow' has no attributes.
+The class 'fuml::Kernel::Namespace' has no attributes.
+The class 'Kernel::MultiplicityElement' has no attributes.
+The class 'fuml::Kernel::PrimitiveType' has no attributes.
+The class 'Kernel::PackageImport' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'fuml::CompleteActions::ReadExtentAction' has no attributes.
+The class 'PrimitiveValue' has no attributes.
+The class 'fuml::IntermediateActivities::ObjectNode' has no attributes.
+The class 'MessageEvent' has no attributes.
+The class 'fuml::Kernel::DataType' has no attributes.
+The class 'IntermediateActivities::ObjectNode' has no attributes.
+The class 'fuml::CompleteActions::ReclassifyObjectAction' has the following attributes: 'replaceAll' of type bool.
+The class 'fuml::Kernel::Classifier' has the following attributes: 'abstract' of type bool; 'finalSpecialization' of type bool.
+The class 'fuml::CompleteStructuredActivities::ExecutableNode' has no attributes.
+The class 'IntermediateActivities::ActivityEdge' has no attributes.
+The class 'fuml::IntermediateActions::CreateObjectAction' has no attributes.
+The class 'CompleteStructuredActivities::Clause' has no attributes.
+The class 'fuml::IntermediateActions::CreateLinkAction' has no attributes.
+The class 'fuml::BasicBehaviors::Behavior' has the following attributes: 'reentrant' of type bool.
+The class 'fuml::Kernel::ElementImport' has the following attributes: 'alias' of type str; 'visibility' of type str.
+The class 'fuml::BasicActions::Action' has the following attributes: 'locallyReentrant' of type bool.
+The class 'LiteralSpecification' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'fuml::Kernel::Operation' has the following attributes: 'unique' of type bool; 'ordered' of type bool; 'upper' of type int; 'lower' of type int; 'query' of type bool.
+The class 'fuml::BasicBehaviors::OpaqueBehavior' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'fuml::CompleteActions::ReduceAction' has the following attributes: 'ordered' of type bool.
+The class 'fuml::CompleteActions::ReadIsClassifiedObjectAction' has the following attributes: 'direct' of type bool.
+The class 'fuml::Kernel::RedefinableElement' has the following attributes: 'leaf' of type bool.
+The class 'CompleteStructuredActivities::StructuredActivityNode' has no attributes.
+The class 'fuml::Communications::MessageEvent' has no attributes.
+The class 'StructuredActivityNode' has no attributes.
+The class 'fuml::BasicActions::SendSignalAction' has no attributes.
+The class 'fuml::Kernel::TypedElement' has no attributes.
+The class 'fuml::ExtraStructuredActivities::ExpansionRegion' has the following attributes: 'mode' of type str.
+The class 'fuml::BasicBehaviors::BehavioredClassifier' has no attributes.
+The class 'StructuredValue' has no attributes.
+The class 'Class' has no attributes.
+The class 'fuml::BasicActions::InvocationAction' has no attributes.
+The class 'fuml::IntermediateActions::ReadLinkAction' has no attributes.
+The class 'fuml::Kernel::EnumerationValue' has no attributes.
+The class 'fuml::Kernel::ExtensionalValue' has no attributes.
+The class 'Kernel::Enumeration' has no attributes.
+The class 'BasicActions::OutputPin' has no attributes.
+The class 'fuml::Kernel::Comment' has the following attributes: 'body' of type str.
+The class 'Kernel::StructuralFeature' has no attributes.
+The class 'fuml::LociL1::SemanticVisitor' has no attributes.
+The class 'Element' has no attributes.
+The class 'fuml::IntermediateActions::ClearAssociationAction' has no attributes.
+The class 'fuml::Kernel::Parameter' has the following attributes: 'direction' of type str.
+The class 'fuml::IntermediateActivities::MergeNode' has no attributes.
+The class 'Kernel::Operation' has no attributes.
+The class 'Action' has no attributes.
+The class 'fuml::Kernel::EnumerationLiteral' has no attributes.
+The class 'fuml::Kernel::MultiplicityElement' has the following attributes: 'unique' of type bool; 'ordered' of type bool; 'lower' of type int; 'upper' of type int.
+The class 'fuml::Kernel::Reference' has no attributes.
+The class 'fuml::Kernel::Type' has no attributes.
+The class 'Feature' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'fuml::Kernel::Property' has the following attributes: 'composite' of type bool; 'derivedUnion' of type bool; 'aggregation' of type str; 'derived' of type bool.
+The class 'Kernel::Feature' has no attributes.
+The class 'fuml::Kernel::CompoundValue' has no attributes.
+The class 'fuml::BasicActions::OutputPin' has no attributes.
+The class 'fuml::Kernel::LiteralNull' has no attributes.
+The class 'fuml::CompleteActions::StartObjectBehaviorAction' has no attributes.
+The class 'fuml::IntermediateActions::ValueSpecificationAction' has no attributes.
+The class 'Kernel::ValueSpecification' has no attributes.
+The class 'Kernel::RedefinableElement' has no attributes.
+The class 'fuml::Kernel::Generalization' has the following attributes: 'substitutable' of type bool.
+The class 'fuml::Kernel::FeatureValue' has the following attributes: 'position' of type int.
+The class 'fuml::Kernel::LiteralSpecification' has no attributes.
+The class 'fuml::Kernel::NamedElement' has the following attributes: 'visibility' of type str; 'qualifiedName' of type str; 'name' of type str.
+The class 'Kernel::Value' has no attributes.
+The class 'fuml::CompleteStructuredActivities::StructuredActivityNode' has the following attributes: 'mustIsolate' of type bool.
+The class 'fuml::CompleteStructuredActivities::LoopNode' has the following attributes: 'testedFirst' of type bool.
+The class 'IntermediateActivities::ActivityNode' has no attributes.
+The class 'Kernel::FeatureValue' has no attributes.
+The class 'fuml::IntermediateActions::ClearStructuralFeatureAction' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'BasicBehaviors::Behavior' has no attributes.
+The class 'fuml::IntermediateActivities::ForkNode' has no attributes.
+The class 'fuml::Kernel::StructuredValue' has no attributes.
+The class 'fuml::IntermediateActions::AddStructuralFeatureValueAction' has the following attributes: 'replaceAll' of type bool.
+The class 'Kernel::Comment' has no attributes.
+The class 'fuml::IntermediateActivities::ActivityParameterNode' has no attributes.
+The class 'fuml::BasicActions::InputPin' has no attributes.
+The class 'OpaqueBehavior' has no attributes.
+The class 'fuml::IntermediateActions::WriteStructuralFeatureAction' has no attributes.
+The class 'fuml::Communications::SignalEvent' has no attributes.
+The class 'fuml::ExtraStructuredActivities::ExpansionNode' has no attributes.
+The class 'Kernel::Element' has no attributes.
+The class 'Kernel::EnumerationLiteral' has no attributes.
+The class 'Kernel::TypedElement' has no attributes.
+The class 'Kernel::BehavioralFeature' has no attributes.
+The class 'fuml::Kernel::Link' has no attributes.
+The class 'fuml::IntermediateActions::LinkEndDestructionData' has the following attributes: 'destroyDuplicates' of type bool.
+The class 'IntermediateActivities::Activity' has no attributes.
+The class 'Kernel::ExtensionalValue' has no attributes.
+The class 'fuml::Communications::Trigger' has no attributes.
+The class 'fuml::IntermediateActions::StructuralFeatureAction' has no attributes.
+The class 'Kernel::PackageableElement' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'fuml::IntermediateActivities::ControlNode' has no attributes.
+The class 'fuml::Kernel::Package' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'fuml::Kernel::Enumeration' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'package', 'protected', 'public'.
+The enumeration 'ExpansionKind' has the following literals: 'iterative', 'parallel', 'stream'.
+The enumeration 'CallConcurrencyKind' has the following literals: 'sequential'.
+The enumeration 'AggregationKind' has the following literals: 'none', 'composite', 'shared'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'inout', 'out', 'return_'.
+'fuml::IntermediateActivities::ObjectNode' is a specialization of 'IntermediateActivities::ActivityNode'.
+'fuml::Kernel::Link' is a specialization of 'ExtensionalValue'.
+'fuml::CompleteActions::ReduceAction' is a specialization of 'Action'.
+'fuml::IntermediateActions::LinkEndData' is a specialization of 'Element'.
+'fuml::BasicActions::SendSignalAction' is a specialization of 'InvocationAction'.
+'fuml::IntermediateActivities::ActivityNode' is a specialization of 'RedefinableElement'.
+'fuml::BasicActions::Pin' is a specialization of 'Kernel::MultiplicityElement'.
+'fuml::IntermediateActions::LinkAction' is a specialization of 'Action'.
+'fuml::Kernel::Package' is a specialization of 'Kernel::Namespace'.
+'fuml::Kernel::BehavioralFeature' is a specialization of 'Feature'.
+'fuml::Kernel::MultiplicityElement' is a specialization of 'Element'.
+'fuml::Kernel::StructuredValue' is a specialization of 'Value'.
+'fuml::Kernel::Association' is a specialization of 'Classifier'.
+'fuml::CompleteActions::StartObjectBehaviorAction' is a specialization of 'CallAction'.
+'fuml::Kernel::ValueSpecification' is a specialization of 'TypedElement'.
+'fuml::IntermediateActivities::ActivityEdge' is a specialization of 'RedefinableElement'.
+'fuml::CompleteActions::StartClassifierBehaviorAction' is a specialization of 'Action'.
+'fuml::CompleteActions::ReclassifyObjectAction' is a specialization of 'Action'.
+'fuml::IntermediateActivities::ForkNode' is a specialization of 'ControlNode'.
+'fuml::Kernel::Value' is a specialization of 'SemanticVisitor'.
+'fuml::IntermediateActivities::ControlFlow' is a specialization of 'ActivityEdge'.
+'fuml::Communications::Reception' is a specialization of 'BehavioralFeature'.
+'fuml::Kernel::Classifier' is a specialization of 'Kernel::Namespace'.
+'fuml::Kernel::ElementImport' is a specialization of 'Element'.
+'fuml::CompleteStructuredActivities::Clause' is a specialization of 'Element'.
+'fuml::Kernel::Property' is a specialization of 'StructuralFeature'.
+'fuml::Kernel::IntegerValue' is a specialization of 'PrimitiveValue'.
+'fuml::Kernel::Classifier' is a specialization of 'Kernel::Type'.
+'fuml::Kernel::BooleanValue' is a specialization of 'PrimitiveValue'.
+'fuml::IntermediateActions::ValueSpecificationAction' is a specialization of 'Action'.
+'fuml::BasicActions::Pin' is a specialization of 'IntermediateActivities::ObjectNode'.
+'fuml::IntermediateActions::LinkEndDestructionData' is a specialization of 'LinkEndData'.
+'fuml::Kernel::LiteralNull' is a specialization of 'LiteralSpecification'.
+'fuml::IntermediateActions::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'fuml::IntermediateActivities::ControlNode' is a specialization of 'ActivityNode'.
+'fuml::Kernel::Parameter' is a specialization of 'Kernel::TypedElement'.
+'fuml::IntermediateActions::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'fuml::IntermediateActivities::ActivityFinalNode' is a specialization of 'FinalNode'.
+'fuml::Kernel::DataValue' is a specialization of 'CompoundValue'.
+'fuml::Kernel::Enumeration' is a specialization of 'DataType'.
+'fuml::Kernel::PrimitiveType' is a specialization of 'DataType'.
+'fuml::Kernel::Class' is a specialization of 'BehavioredClassifier'.
+'fuml::IntermediateActions::ReadSelfAction' is a specialization of 'Action'.
+'fuml::Kernel::ExtensionalValue' is a specialization of 'CompoundValue'.
+'fuml::IntermediateActivities::ObjectFlow' is a specialization of 'ActivityEdge'.
+'fuml::IntermediateActivities::ObjectNode' is a specialization of 'Kernel::TypedElement'.
+'fuml::Kernel::Namespace' is a specialization of 'NamedElement'.
+'fuml::Kernel::Object' is a specialization of 'ExtensionalValue'.
+'fuml::CompleteStructuredActivities::StructuredActivityNode' is a specialization of 'Action'.
+'fuml::IntermediateActions::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'fuml::ExtraStructuredActivities::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'fuml::IntermediateActions::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'fuml::Kernel::InstanceSpecification' is a specialization of 'NamedElement'.
+'fuml::IntermediateActions::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'fuml::Kernel::TypedElement' is a specialization of 'NamedElement'.
+'fuml::Kernel::Slot' is a specialization of 'Element'.
+'fuml::IntermediateActions::TestIdentityAction' is a specialization of 'Action'.
+'fuml::Kernel::Generalization' is a specialization of 'Element'.
+'fuml::Communications::Event' is a specialization of 'PackageableElement'.
+'fuml::BasicBehaviors::Behavior' is a specialization of 'Class'.
+'fuml::Communications::Signal' is a specialization of 'Classifier'.
+'fuml::Kernel::PrimitiveValue' is a specialization of 'Value'.
+'fuml::Communications::MessageEvent' is a specialization of 'Event'.
+'fuml::Kernel::StructuralFeature' is a specialization of 'Kernel::TypedElement'.
+'fuml::CompleteActions::AcceptEventAction' is a specialization of 'Action'.
+'fuml::Kernel::NamedElement' is a specialization of 'Element'.
+'fuml::BasicActions::CallAction' is a specialization of 'InvocationAction'.
+'fuml::Kernel::Parameter' is a specialization of 'Kernel::MultiplicityElement'.
+'fuml::Kernel::StringValue' is a specialization of 'PrimitiveValue'.
+'fuml::CompleteActions::ReadExtentAction' is a specialization of 'Action'.
+'fuml::Kernel::EnumerationValue' is a specialization of 'Value'.
+'fuml::Kernel::StructuralFeature' is a specialization of 'Kernel::Feature'.
+'fuml::Kernel::PackageableElement' is a specialization of 'NamedElement'.
+'fuml::Kernel::RedefinableElement' is a specialization of 'NamedElement'.
+'fuml::BasicActions::CallBehaviorAction' is a specialization of 'CallAction'.
+'fuml::BasicActions::CallOperationAction' is a specialization of 'CallAction'.
+'fuml::IntermediateActions::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'fuml::CompleteStructuredActivities::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'fuml::Kernel::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'fuml::Kernel::Operation' is a specialization of 'BehavioralFeature'.
+'fuml::IntermediateActions::StructuralFeatureAction' is a specialization of 'Action'.
+'fuml::IntermediateActions::WriteLinkAction' is a specialization of 'LinkAction'.
+'fuml::CompleteStructuredActivities::LoopNode' is a specialization of 'StructuredActivityNode'.
+'fuml::Kernel::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'fuml::IntermediateActivities::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'fuml::ExtraStructuredActivities::ExpansionNode' is a specialization of 'ObjectNode'.
+'fuml::IntermediateActivities::Activity' is a specialization of 'Behavior'.
+'fuml::Communications::SignalEvent' is a specialization of 'MessageEvent'.
+'fuml::IntermediateActions::ReadLinkAction' is a specialization of 'LinkAction'.
+'fuml::Kernel::PackageImport' is a specialization of 'Element'.
+'fuml::BasicActions::Action' is a specialization of 'ExecutableNode'.
+'fuml::BasicActions::InputPin' is a specialization of 'Pin'.
+'fuml::IntermediateActions::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'fuml::Kernel::Feature' is a specialization of 'RedefinableElement'.
+'fuml::IntermediateActivities::MergeNode' is a specialization of 'ControlNode'.
+'fuml::Kernel::DataType' is a specialization of 'Classifier'.
+'fuml::Communications::Trigger' is a specialization of 'NamedElement'.
+'fuml::BasicActions::OutputPin' is a specialization of 'Pin'.
+'fuml::Kernel::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'fuml::Kernel::Package' is a specialization of 'Kernel::PackageableElement'.
+'fuml::IntermediateActivities::FinalNode' is a specialization of 'ControlNode'.
+'fuml::CompleteStructuredActivities::ExecutableNode' is a specialization of 'ActivityNode'.
+'fuml::Kernel::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'fuml::Kernel::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'fuml::IntermediateActivities::InitialNode' is a specialization of 'ControlNode'.
+'fuml::Kernel::Type' is a specialization of 'PackageableElement'.
+'fuml::IntermediateActions::ClearAssociationAction' is a specialization of 'Action'.
+'fuml::IntermediateActivities::DecisionNode' is a specialization of 'ControlNode'.
+'fuml::IntermediateActions::DestroyObjectAction' is a specialization of 'Action'.
+'fuml::IntermediateActions::CreateObjectAction' is a specialization of 'Action'.
+'fuml::Kernel::InstanceValue' is a specialization of 'ValueSpecification'.
+'fuml::CompleteActions::ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+'fuml::Kernel::CompoundValue' is a specialization of 'StructuredValue'.
+'fuml::IntermediateActivities::JoinNode' is a specialization of 'ControlNode'.
+'fuml::BasicBehaviors::FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+'fuml::BasicBehaviors::BehavioredClassifier' is a specialization of 'Classifier'.
+'fuml::Kernel::LiteralString' is a specialization of 'LiteralSpecification'.
+'fuml::Kernel::StructuralFeature' is a specialization of 'Kernel::MultiplicityElement'.
+'fuml::BasicBehaviors::OpaqueBehavior' is a specialization of 'Behavior'.
+'fuml::IntermediateActions::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'fuml::Kernel::UnlimitedNaturalValue' is a specialization of 'PrimitiveValue'.
+'fuml::Kernel::Reference' is a specialization of 'StructuredValue'.
+'fuml::BasicActions::InvocationAction' is a specialization of 'Action'.
+'Kernel::Namespace' (role 'Namespace', cardinality 0..*) is associated with 'fuml::Kernel::NamedElement' (role 'ownedMember', cardinality 0..*).
+'IntermediateActions::LinkEndData' (role 'IntermediateActions_LinkEndData', cardinality 0..*) is associated with 'fuml::IntermediateActions::LinkAction' (role 'fuml_IntermediateActions_LinkAction', cardinality 0..*).
+'Kernel::FeatureValue' (role 'Kernel_FeatureValue', cardinality 0..*) is associated with 'fuml::Kernel::CompoundValue' (role 'fuml_Kernel_CompoundValue', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin144', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode143', cardinality 0..*).
+'Kernel::Property' (role 'Kernel_Property67', cardinality 0..*) is associated with 'fuml::Kernel::Property' (role 'fuml_Kernel_Property', cardinality 0..*).
+'Kernel::Object' (role 'Kernel_Object', cardinality 0..*) is associated with 'fuml::Kernel::Reference' (role 'fuml_Kernel_Reference', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin236', cardinality 0..*) is associated with 'fuml::IntermediateActions::LinkEndDestructionData' (role 'fuml_IntermediateActions_LinkEndDestructionData', cardinality 0..*).
+'fuml::Kernel::Operation' (role 'fuml_Kernel_Operation', cardinality 0..*) is associated with 'Kernel::Operation' (role 'Kernel_Operation', cardinality 0..*).
+'Kernel::Class' (role 'Class', cardinality 0..*) is associated with 'fuml::Kernel::Property' (role 'ownedAttribute65', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin172', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::Clause' (role 'fuml_CompleteStructuredActivities_Clause171', cardinality 0..*).
+'fuml::Kernel::Property' (role 'memberEnd', cardinality 0..*) is associated with 'Kernel::Association' (role 'Association62', cardinality 0..*).
+'fuml::Kernel::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'Kernel::Association' (role 'Association', cardinality 0..*).
+'fuml::Kernel::Namespace' (role 'namespace', cardinality 0..*) is associated with 'Kernel::NamedElement' (role 'NamedElement', cardinality 0..*).
+'Kernel::Association' (role 'Kernel_Association', cardinality 0..*) is associated with 'fuml::IntermediateActions::ClearAssociationAction' (role 'fuml_IntermediateActions_ClearAssociationAction', cardinality 0..*).
+'Kernel::Namespace' (role 'Namespace33', cardinality 0..*) is associated with 'fuml::Kernel::PackageImport' (role 'packageImport', cardinality 0..*).
+'IntermediateActivities::ActivityEdge' (role 'ActivityEdge130', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityNode' (role 'source', cardinality 0..*).
+'Kernel::Property' (role 'Kernel_Property219', cardinality 0..*) is associated with 'fuml::IntermediateActions::LinkEndData' (role 'fuml_IntermediateActions_LinkEndData218', cardinality 0..*).
+'CompleteStructuredActivities::Clause' (role 'Clause166', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::Clause' (role 'predecessorClause', cardinality 0..*).
+'fuml::Kernel::Namespace' (role 'importingNamespace23', cardinality 0..*) is associated with 'Kernel::PackageImport' (role 'PackageImport', cardinality 0..*).
+'fuml::Kernel::BehavioralFeature' (role 'fuml_Kernel_BehavioralFeature', cardinality 0..*) is associated with 'Kernel::Parameter' (role 'Kernel_Parameter83', cardinality 0..*).
+'Kernel::StructuralFeature' (role 'Kernel_StructuralFeature314', cardinality 0..*) is associated with 'fuml::Kernel::FeatureValue' (role 'fuml_Kernel_FeatureValue', cardinality 0..*).
+'fuml::Kernel::FeatureValue' (role 'fuml_Kernel_FeatureValue316', cardinality 0..*) is associated with 'Kernel::Value' (role 'Kernel_Value', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode', cardinality 0..*).
+'fuml::IntermediateActivities::ActivityNode' (role 'target', cardinality 0..*) is associated with 'IntermediateActivities::ActivityEdge' (role 'ActivityEdge132', cardinality 0..*).
+'Kernel::ValueSpecification' (role 'Kernel_ValueSpecification81', cardinality 0..*) is associated with 'fuml::Kernel::MultiplicityElement' (role 'fuml_Kernel_MultiplicityElement80', cardinality 0..*).
+'fuml::LociL1::Locus' (role 'fuml_LociL1_Locus', cardinality 0..*) is associated with 'Kernel::ExtensionalValue' (role 'Kernel_ExtensionalValue', cardinality 0..*).
+'Kernel::Class' (role 'Kernel_Class320', cardinality 0..*) is associated with 'fuml::Kernel::Object' (role 'fuml_Kernel_Object', cardinality 0..*).
+'Kernel::Classifier' (role 'Kernel_Classifier268', cardinality 0..*) is associated with 'fuml::CompleteActions::ReadExtentAction' (role 'fuml_CompleteActions_ReadExtentAction267', cardinality 0..*).
+'Kernel::Classifier' (role 'Kernel_Classifier', cardinality 0..*) is associated with 'fuml::Kernel::RedefinableElement' (role 'fuml_Kernel_RedefinableElement45', cardinality 0..*).
+'fuml::CompleteActions::ReduceAction' (role 'fuml_CompleteActions_ReduceAction259', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin260', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin290', cardinality 0..*) is associated with 'fuml::BasicActions::Action' (role 'fuml_BasicActions_Action', cardinality 0..*).
+'fuml::CompleteActions::ReduceAction' (role 'fuml_CompleteActions_ReduceAction', cardinality 0..*) is associated with 'BasicBehaviors::Behavior' (role 'BasicBehaviors_Behavior257', cardinality 0..*).
+'fuml::IntermediateActions::ReadLinkAction' (role 'fuml_IntermediateActions_ReadLinkAction', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin228', cardinality 0..*).
+'fuml::CompleteStructuredActivities::StructuredActivityNode' (role 'fuml_CompleteStructuredActivities_StructuredActivityNode185', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin186', cardinality 0..*).
+'fuml::Kernel::DataType' (role 'datatype', cardinality 0..*) is associated with 'Kernel::Property' (role 'Property77', cardinality 0..*).
+'Kernel::Classifier' (role 'Kernel_Classifier55', cardinality 0..*) is associated with 'fuml::Kernel::Classifier' (role 'fuml_Kernel_Classifier54', cardinality 0..*).
+'Kernel::Operation' (role 'Operation', cardinality 0..*) is associated with 'fuml::Kernel::Class' (role 'class_105', cardinality 0..*).
+'fuml::IntermediateActions::WriteStructuralFeatureAction' (role 'fuml_IntermediateActions_WriteStructuralFeatureAction223', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin224', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin265', cardinality 0..*) is associated with 'fuml::CompleteActions::ReadExtentAction' (role 'fuml_CompleteActions_ReadExtentAction', cardinality 0..*).
+'fuml::Communications::Trigger' (role 'fuml_Communications_Trigger', cardinality 0..*) is associated with 'Communications::Event' (role 'Communications_Event', cardinality 0..*).
+'fuml::Kernel::Namespace' (role 'fuml_Kernel_Namespace25', cardinality 0..*) is associated with 'Kernel::PackageableElement' (role 'Kernel_PackageableElement', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin183', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::StructuredActivityNode' (role 'fuml_CompleteStructuredActivities_StructuredActivityNode', cardinality 0..*).
+'fuml::IntermediateActivities::Activity' (role 'activity123', cardinality 0..*) is associated with 'IntermediateActivities::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'Kernel::Feature' (role 'Feature', cardinality 0..*) is associated with 'fuml::Kernel::Classifier' (role 'featuringClassifier', cardinality 0..*).
+'Kernel::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'fuml::Kernel::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).
+'Kernel::Enumeration' (role 'Kernel_Enumeration', cardinality 0..*) is associated with 'fuml::Kernel::EnumerationValue' (role 'fuml_Kernel_EnumerationValue326', cardinality 0..*).
+'fuml::Kernel::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'Kernel::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'Kernel::Element' (role 'Kernel_Element', cardinality 0..*) is associated with 'fuml::Kernel::Comment' (role 'fuml_Kernel_Comment', cardinality 0..*).
+'fuml::Kernel::Type' (role 'ownedType', cardinality 0..*) is associated with 'Kernel::Package' (role 'Package41', cardinality 0..*).
+'fuml::IntermediateActivities::DecisionNode' (role 'fuml_IntermediateActivities_DecisionNode136', cardinality 0..*) is associated with 'IntermediateActivities::ObjectFlow' (role 'IntermediateActivities_ObjectFlow', cardinality 0..*).
+'IntermediateActivities::ActivityNode' (role 'ActivityNode', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'fuml::ExtraStructuredActivities::ExpansionRegion' (role 'regionAsInput', cardinality 0..*) is associated with 'ExtraStructuredActivities::ExpansionNode' (role 'ExpansionNode', cardinality 0..*).
+'fuml::BasicActions::InvocationAction' (role 'fuml_BasicActions_InvocationAction', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin300', cardinality 0..*).
+'fuml::Kernel::EnumerationValue' (role 'fuml_Kernel_EnumerationValue', cardinality 0..*) is associated with 'Kernel::EnumerationLiteral' (role 'Kernel_EnumerationLiteral', cardinality 0..*).
+'Kernel::Parameter' (role 'Kernel_Parameter138', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityParameterNode' (role 'fuml_IntermediateActivities_ActivityParameterNode', cardinality 0..*).
+'fuml::CompleteActions::ReclassifyObjectAction' (role 'fuml_CompleteActions_ReclassifyObjectAction283', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Kernel_Classifier284', cardinality 0..*).
+'fuml::CompleteActions::ReclassifyObjectAction' (role 'fuml_CompleteActions_ReclassifyObjectAction280', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin281', cardinality 0..*).
+'Kernel::NamedElement' (role 'Kernel_NamedElement49', cardinality 0..*) is associated with 'fuml::Kernel::Classifier' (role 'fuml_Kernel_Classifier', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin216', cardinality 0..*) is associated with 'fuml::IntermediateActions::LinkEndData' (role 'fuml_IntermediateActions_LinkEndData', cardinality 0..*).
+'fuml::IntermediateActions::CreateObjectAction' (role 'fuml_IntermediateActions_CreateObjectAction246', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Kernel_Classifier247', cardinality 0..*).
+'fuml::Kernel::Slot' (role 'fuml_Kernel_Slot', cardinality 0..*) is associated with 'Kernel::StructuralFeature' (role 'Kernel_StructuralFeature', cardinality 0..*).
+'fuml::Kernel::Association' (role 'fuml_Kernel_Association72', cardinality 0..*) is associated with 'Kernel::Property' (role 'Kernel_Property73', cardinality 0..*).
+'fuml::BasicActions::SendSignalAction' (role 'fuml_BasicActions_SendSignalAction', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin302', cardinality 0..*).
+'fuml::ExtraStructuredActivities::ExpansionRegion' (role 'regionAsOutput', cardinality 0..*) is associated with 'ExtraStructuredActivities::ExpansionNode' (role 'ExpansionNode192', cardinality 0..*).
+'fuml::CompleteStructuredActivities::Clause' (role 'fuml_CompleteStructuredActivities_Clause168', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin169', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin244', cardinality 0..*) is associated with 'fuml::IntermediateActions::CreateObjectAction' (role 'fuml_IntermediateActions_CreateObjectAction', cardinality 0..*).
+'Kernel::Property' (role 'Kernel_Property52', cardinality 0..*) is associated with 'fuml::Kernel::Classifier' (role 'fuml_Kernel_Classifier51', cardinality 0..*).
+'fuml::CompleteStructuredActivities::Clause' (role 'successorClause', cardinality 0..*) is associated with 'CompleteStructuredActivities::Clause' (role 'Clause', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin296', cardinality 0..*) is associated with 'fuml::BasicActions::Action' (role 'fuml_BasicActions_Action295', cardinality 0..*).
+'Kernel::NamedElement' (role 'Kernel_NamedElement', cardinality 0..*) is associated with 'fuml::Kernel::Namespace' (role 'fuml_Kernel_Namespace', cardinality 0..*).
+'Communications::Signal' (role 'Communications_Signal', cardinality 0..*) is associated with 'fuml::Communications::SignalEvent' (role 'fuml_Communications_SignalEvent', cardinality 0..*).
+'fuml::Kernel::ElementImport' (role 'fuml_Kernel_ElementImport', cardinality 0..*) is associated with 'Kernel::PackageableElement' (role 'Kernel_PackageableElement28', cardinality 0..*).
+'fuml::Kernel::Package' (role 'nestedPackage', cardinality 0..*) is associated with 'Kernel::Package' (role 'Package39', cardinality 0..*).
+'fuml::IntermediateActions::ReadStructuralFeatureAction' (role 'fuml_IntermediateActions_ReadStructuralFeatureAction', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin232', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin197', cardinality 0..*) is associated with 'fuml::IntermediateActions::StructuralFeatureAction' (role 'fuml_IntermediateActions_StructuralFeatureAction196', cardinality 0..*).
+'fuml::Kernel::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'Kernel::DataType' (role 'DataType', cardinality 0..*).
+'fuml::BasicActions::CallOperationAction' (role 'fuml_BasicActions_CallOperationAction', cardinality 0..*) is associated with 'Kernel::Operation' (role 'Kernel_Operation309', cardinality 0..*).
+'fuml::CompleteStructuredActivities::Clause' (role 'fuml_CompleteStructuredActivities_Clause', cardinality 0..*) is associated with 'CompleteStructuredActivities::ExecutableNode' (role 'CompleteStructuredActivities_ExecutableNode160', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin199', cardinality 0..*) is associated with 'fuml::IntermediateActions::TestIdentityAction' (role 'fuml_IntermediateActions_TestIdentityAction', cardinality 0..*).
+'fuml::CompleteActions::ReadIsClassifiedObjectAction' (role 'fuml_CompleteActions_ReadIsClassifiedObjectAction272', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin273', cardinality 0..*).
+'Kernel::Comment' (role 'Kernel_Comment', cardinality 0..*) is associated with 'fuml::Kernel::Element' (role 'fuml_Kernel_Element', cardinality 0..*).
+'fuml::Communications::Reception' (role 'fuml_Communications_Reception', cardinality 0..*) is associated with 'Communications::Signal' (role 'Communications_Signal12', cardinality 0..*).
+'Kernel::Property' (role 'Property103', cardinality 0..*) is associated with 'fuml::Kernel::Class' (role 'class_', cardinality 0..*).
+'fuml::BasicBehaviors::Behavior' (role 'fuml_BasicBehaviors_Behavior3', cardinality 0..*) is associated with 'BasicBehaviors::BehavioredClassifier' (role 'BasicBehaviors_BehavioredClassifier', cardinality 0..*).
+'Kernel::Class' (role 'Class86', cardinality 0..*) is associated with 'fuml::Kernel::Operation' (role 'ownedOperation', cardinality 0..*).
+'fuml::BasicActions::CallBehaviorAction' (role 'fuml_BasicActions_CallBehaviorAction', cardinality 0..*) is associated with 'BasicBehaviors::Behavior' (role 'BasicBehaviors_Behavior307', cardinality 0..*).
+'CompleteStructuredActivities::ExecutableNode' (role 'CompleteStructuredActivities_ExecutableNode', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode141', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode146', cardinality 0..*).
+'Kernel::Property' (role 'Property', cardinality 0..*) is associated with 'fuml::Kernel::Association' (role 'association', cardinality 0..*).
+'BasicBehaviors::Behavior' (role 'BasicBehaviors_Behavior', cardinality 0..*) is associated with 'fuml::BasicBehaviors::BehavioredClassifier' (role 'fuml_BasicBehaviors_BehavioredClassifier', cardinality 0..*).
+'fuml::IntermediateActions::TestIdentityAction' (role 'fuml_IntermediateActions_TestIdentityAction201', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin202', cardinality 0..*).
+'BasicBehaviors::Behavior' (role 'BasicBehaviors_Behavior134', cardinality 0..*) is associated with 'fuml::IntermediateActivities::DecisionNode' (role 'fuml_IntermediateActivities_DecisionNode', cardinality 0..*).
+'CompleteStructuredActivities::ExecutableNode' (role 'CompleteStructuredActivities_ExecutableNode163', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::Clause' (role 'fuml_CompleteStructuredActivities_Clause162', cardinality 0..*).
+'IntermediateActivities::Activity' (role 'Activity', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityEdge' (role 'edge', cardinality 0..*).
+'Kernel::Classifier' (role 'Classifier59', cardinality 0..*) is associated with 'fuml::Kernel::Generalization' (role 'generalization', cardinality 0..*).
+'fuml::Kernel::InstanceValue' (role 'fuml_Kernel_InstanceValue', cardinality 0..*) is associated with 'Kernel::InstanceSpecification' (role 'Kernel_InstanceSpecification', cardinality 0..*).
+'fuml::IntermediateActivities::Activity' (role 'activity', cardinality 0..*) is associated with 'IntermediateActivities::ActivityNode' (role 'ActivityNode121', cardinality 0..*).
+'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode157', cardinality 0..*) is associated with 'CompleteStructuredActivities::ExecutableNode' (role 'CompleteStructuredActivities_ExecutableNode158', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin152', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode151', cardinality 0..*).
+'fuml::IntermediateActions::LinkEndCreationData' (role 'fuml_IntermediateActions_LinkEndCreationData', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin234', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin230', cardinality 0..*) is associated with 'fuml::IntermediateActions::ReadSelfAction' (role 'fuml_IntermediateActions_ReadSelfAction', cardinality 0..*).
+'Communications::Trigger' (role 'Communications_Trigger', cardinality 0..*) is associated with 'fuml::CompleteActions::AcceptEventAction' (role 'fuml_CompleteActions_AcceptEventAction288', cardinality 0..*).
+'fuml::BasicActions::Action' (role 'fuml_BasicActions_Action292', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Kernel_Classifier293', cardinality 0..*).
+'fuml::Kernel::Association' (role 'fuml_Kernel_Association', cardinality 0..*) is associated with 'Kernel::Type' (role 'Kernel_Type69', cardinality 0..*).
+'IntermediateActivities::ActivityEdge' (role 'ActivityEdge181', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::StructuredActivityNode' (role 'inStructuredNode180', cardinality 0..*).
+'fuml::IntermediateActivities::ActivityNode' (role 'node127', cardinality 0..*) is associated with 'IntermediateActivities::Activity' (role 'Activity128', cardinality 0..*).
+'fuml::Kernel::Package' (role 'package', cardinality 0..*) is associated with 'Kernel::Type' (role 'Type', cardinality 0..*).
+'Kernel::Slot' (role 'Slot', cardinality 0..*) is associated with 'fuml::Kernel::InstanceSpecification' (role 'owningInstance', cardinality 0..*).
+'fuml::Kernel::Class' (role 'fuml_Kernel_Class108', cardinality 0..*) is associated with 'Communications::Reception' (role 'Communications_Reception', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin251', cardinality 0..*) is associated with 'fuml::IntermediateActions::AddStructuralFeatureValueAction' (role 'fuml_IntermediateActions_AddStructuralFeatureValueAction', cardinality 0..*).
+'Kernel::ValueSpecification' (role 'Kernel_ValueSpecification119', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityEdge' (role 'fuml_IntermediateActivities_ActivityEdge', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin214', cardinality 0..*) is associated with 'fuml::IntermediateActions::LinkAction' (role 'fuml_IntermediateActions_LinkAction213', cardinality 0..*).
+'Kernel::Association' (role 'Kernel_Association323', cardinality 0..*) is associated with 'fuml::Kernel::Link' (role 'fuml_Kernel_Link', cardinality 0..*).
+'fuml::BasicBehaviors::BehavioredClassifier' (role 'fuml_BasicBehaviors_BehavioredClassifier6', cardinality 0..*) is associated with 'BasicBehaviors::Behavior' (role 'BasicBehaviors_Behavior7', cardinality 0..*).
+'fuml::CompleteActions::ReadIsClassifiedObjectAction' (role 'fuml_CompleteActions_ReadIsClassifiedObjectAction', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Kernel_Classifier270', cardinality 0..*).
+'Kernel::PrimitiveType' (role 'Kernel_PrimitiveType', cardinality 0..*) is associated with 'fuml::Kernel::PrimitiveValue' (role 'fuml_Kernel_PrimitiveValue', cardinality 0..*).
+'Kernel::ElementImport' (role 'ElementImport', cardinality 0..*) is associated with 'fuml::Kernel::Namespace' (role 'importingNamespace', cardinality 0..*).
+'fuml::Kernel::TypedElement' (role 'fuml_Kernel_TypedElement', cardinality 0..*) is associated with 'Kernel::Type' (role 'Kernel_Type', cardinality 0..*).
+'Kernel::ValueSpecification' (role 'Kernel_ValueSpecification', cardinality 0..*) is associated with 'fuml::Kernel::MultiplicityElement' (role 'fuml_Kernel_MultiplicityElement', cardinality 0..*).
+'Kernel::Type' (role 'Kernel_Type90', cardinality 0..*) is associated with 'fuml::Kernel::Operation' (role 'fuml_Kernel_Operation89', cardinality 0..*).
+'IntermediateActivities::ActivityNode' (role 'ActivityNode115', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityEdge' (role 'incoming', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin205', cardinality 0..*) is associated with 'fuml::IntermediateActions::TestIdentityAction' (role 'fuml_IntermediateActions_TestIdentityAction204', cardinality 0..*).
+'fuml::BasicBehaviors::Behavior' (role 'method', cardinality 0..*) is associated with 'Kernel::BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*).
+'Kernel::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'fuml::Kernel::Slot' (role 'slot', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin263', cardinality 0..*) is associated with 'fuml::CompleteActions::ReduceAction' (role 'fuml_CompleteActions_ReduceAction262', cardinality 0..*).
+'CompleteStructuredActivities::ExecutableNode' (role 'CompleteStructuredActivities_ExecutableNode149', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode148', cardinality 0..*).
+'fuml::Kernel::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'Kernel::Namespace' (role 'Namespace30', cardinality 0..*).
+'fuml::Kernel::Class' (role 'fuml_Kernel_Class', cardinality 0..*) is associated with 'Kernel::Class' (role 'Kernel_Class', cardinality 0..*).
+'Kernel::RedefinableElement' (role 'Kernel_RedefinableElement', cardinality 0..*) is associated with 'fuml::Kernel::RedefinableElement' (role 'fuml_Kernel_RedefinableElement', cardinality 0..*).
+'fuml::Kernel::PackageImport' (role 'fuml_Kernel_PackageImport', cardinality 0..*) is associated with 'Kernel::Package' (role 'Kernel_Package', cardinality 0..*).
+'Kernel::Classifier' (role 'Kernel_Classifier111', cardinality 0..*) is associated with 'fuml::Kernel::Class' (role 'fuml_Kernel_Class110', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin176', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::ConditionalNode' (role 'fuml_CompleteStructuredActivities_ConditionalNode175', cardinality 0..*).
+'fuml::Kernel::Feature' (role 'feature', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Classifier', cardinality 0..*).
+'fuml::IntermediateActions::WriteStructuralFeatureAction' (role 'fuml_IntermediateActions_WriteStructuralFeatureAction', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin221', cardinality 0..*).
+'fuml::Kernel::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'Kernel::Package' (role 'Package', cardinality 0..*).
+'Kernel::Parameter' (role 'Kernel_Parameter', cardinality 0..*) is associated with 'fuml::BasicBehaviors::Behavior' (role 'fuml_BasicBehaviors_Behavior', cardinality 0..*).
+'fuml::CompleteActions::StartClassifierBehaviorAction' (role 'fuml_CompleteActions_StartClassifierBehaviorAction', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin253', cardinality 0..*).
+'fuml::CompleteActions::AcceptEventAction' (role 'fuml_CompleteActions_AcceptEventAction', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin286', cardinality 0..*).
+'Kernel::DataType' (role 'Kernel_DataType', cardinality 0..*) is associated with 'fuml::Kernel::DataValue' (role 'fuml_Kernel_DataValue', cardinality 0..*).
+'fuml::Kernel::Generalization' (role 'fuml_Kernel_Generalization', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Kernel_Classifier57', cardinality 0..*).
+'fuml::Kernel::Element' (role 'owner', cardinality 0..*) is associated with 'Kernel::Element' (role 'Element', cardinality 0..*).
+'Kernel::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'fuml::Kernel::Classifier' (role 'specific', cardinality 0..*).
+'fuml::IntermediateActions::StructuralFeatureAction' (role 'fuml_IntermediateActions_StructuralFeatureAction', cardinality 0..*) is associated with 'Kernel::StructuralFeature' (role 'Kernel_StructuralFeature194', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin312', cardinality 0..*) is associated with 'fuml::BasicActions::CallOperationAction' (role 'fuml_BasicActions_CallOperationAction311', cardinality 0..*).
+'fuml::IntermediateActions::ClearAssociationAction' (role 'fuml_IntermediateActions_ClearAssociationAction239', cardinality 0..*) is associated with 'BasicActions::InputPin' (role 'BasicActions_InputPin240', cardinality 0..*).
+'Kernel::Classifier' (role 'Kernel_Classifier278', cardinality 0..*) is associated with 'fuml::CompleteActions::ReclassifyObjectAction' (role 'fuml_CompleteActions_ReclassifyObjectAction', cardinality 0..*).
+'Kernel::Property' (role 'Property75', cardinality 0..*) is associated with 'fuml::Kernel::Association' (role 'owningAssociation', cardinality 0..*).
+'Kernel::Property' (role 'Kernel_Property', cardinality 0..*) is associated with 'fuml::Communications::Signal' (role 'fuml_Communications_Signal', cardinality 0..*).
+'fuml::IntermediateActions::ValueSpecificationAction' (role 'fuml_IntermediateActions_ValueSpecificationAction', cardinality 0..*) is associated with 'Kernel::ValueSpecification' (role 'Kernel_ValueSpecification207', cardinality 0..*).
+'CompleteStructuredActivities::Clause' (role 'CompleteStructuredActivities_Clause', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::ConditionalNode' (role 'fuml_CompleteStructuredActivities_ConditionalNode', cardinality 0..*).
+'fuml::Kernel::Package' (role 'fuml_Kernel_Package', cardinality 0..*) is associated with 'Kernel::PackageableElement' (role 'Kernel_PackageableElement35', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin249', cardinality 0..*) is associated with 'fuml::IntermediateActions::DestroyObjectAction' (role 'fuml_IntermediateActions_DestroyObjectAction', cardinality 0..*).
+'Communications::Signal' (role 'Communications_Signal305', cardinality 0..*) is associated with 'fuml::BasicActions::SendSignalAction' (role 'fuml_BasicActions_SendSignalAction304', cardinality 0..*).
+'fuml::ExtraStructuredActivities::ExpansionNode' (role 'outputElement', cardinality 0..*) is associated with 'ExtraStructuredActivities::ExpansionRegion' (role 'ExpansionRegion', cardinality 0..*).
+'IntermediateActivities::ActivityNode' (role 'ActivityNode178', cardinality 0..*) is associated with 'fuml::CompleteStructuredActivities::StructuredActivityNode' (role 'inStructuredNode', cardinality 0..*).
+'BasicBehaviors::Behavior' (role 'Behavior', cardinality 0..*) is associated with 'fuml::Kernel::BehavioralFeature' (role 'specification', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin255', cardinality 0..*) is associated with 'fuml::CompleteActions::StartObjectBehaviorAction' (role 'fuml_CompleteActions_StartObjectBehaviorAction', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin276', cardinality 0..*) is associated with 'fuml::CompleteActions::ReadIsClassifiedObjectAction' (role 'fuml_CompleteActions_ReadIsClassifiedObjectAction275', cardinality 0..*).
+'fuml::BasicActions::CallAction' (role 'fuml_BasicActions_CallAction', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin298', cardinality 0..*).
+'CompleteStructuredActivities::StructuredActivityNode' (role 'StructuredActivityNode', cardinality 0..*) is associated with 'fuml::IntermediateActivities::ActivityEdge' (role 'edge117', cardinality 0..*).
+'fuml::Kernel::InstanceSpecification' (role 'fuml_Kernel_InstanceSpecification', cardinality 0..*) is associated with 'Kernel::Classifier' (role 'Kernel_Classifier92', cardinality 0..*).
+'fuml::Kernel::Element' (role 'ownedElement', cardinality 0..*) is associated with 'Kernel::Element' (role 'Element17', cardinality 0..*).
+'fuml::IntermediateActions::ValueSpecificationAction' (role 'fuml_IntermediateActions_ValueSpecificationAction209', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin210', cardinality 0..*).
+'BasicActions::OutputPin' (role 'BasicActions_OutputPin242', cardinality 0..*) is associated with 'fuml::IntermediateActions::ClearStructuralFeatureAction' (role 'fuml_IntermediateActions_ClearStructuralFeatureAction', cardinality 0..*).
+'fuml::IntermediateActivities::ActivityNode' (role 'node', cardinality 0..*) is associated with 'CompleteStructuredActivities::StructuredActivityNode' (role 'StructuredActivityNode125', cardinality 0..*).
+'fuml::ExtraStructuredActivities::ExpansionNode' (role 'inputElement', cardinality 0..*) is associated with 'ExtraStructuredActivities::ExpansionRegion' (role 'ExpansionRegion189', cardinality 0..*).
+'fuml::CompleteStructuredActivities::LoopNode' (role 'fuml_CompleteStructuredActivities_LoopNode154', cardinality 0..*) is associated with 'BasicActions::OutputPin' (role 'BasicActions_OutputPin155', cardinality 0..*).
+'BasicActions::InputPin' (role 'BasicActions_InputPin226', cardinality 0..*) is associated with 'fuml::IntermediateActions::RemoveStructuralFeatureValueAction' (role 'fuml_IntermediateActions_RemoveStructuralFeatureValueAction', cardinality 0..*).
+'Kernel::ValueSpecification' (role 'Kernel_ValueSpecification97', cardinality 0..*) is associated with 'fuml::Kernel::Slot' (role 'fuml_Kernel_Slot96', cardinality 0..*).

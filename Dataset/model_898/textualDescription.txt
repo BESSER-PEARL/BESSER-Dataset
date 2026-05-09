@@ -1,0 +1,26 @@
+The model has 8 class(es).
+The class 'SimplePDL::WorkSequence' has the following attributes: 'linkType' of type str.
+The class 'SimplePDL::Process' has the following attributes: 'name' of type str; 'minTime' of type int; 'maxTime' of type int.
+The class 'ProcessElement' has no attributes.
+The class 'SimplePDL::Guidance' has the following attributes: 'text' of type str.
+The class 'SimplePDL::ProcessElement' has no attributes.
+The class 'SimplePDL::Resource' has the following attributes: 'occurrences' of type int.
+The class 'SimplePDL::WorkDefinition' has the following attributes: 'name' of type str; 'maxTime' of type int; 'minTime' of type int.
+The class 'SimplePDL::ResourceType' has the following attributes: 'name' of type str; 'occurrences' of type int.
+The enumeration 'WorkSequenceType' has the following literals: 'startToFinish', 'finishToFinish', 'finishToStart', 'startToStart'.
+'SimplePDL::ResourceType' is a specialization of 'ProcessElement'.
+'SimplePDL::WorkDefinition' is a specialization of 'ProcessElement'.
+'SimplePDL::WorkSequence' is a specialization of 'ProcessElement'.
+'SimplePDL::Resource' is a specialization of 'ProcessElement'.
+'SimplePDL::WorkSequence' (role 'linksToSuccessors', cardinality 0..*) is associated with 'SimplePDL::WorkDefinition' (role 'WorkDefinition', cardinality 0..*).
+'SimplePDL::WorkDefinition' (role 'successor', cardinality 0..*) is associated with 'SimplePDL::WorkSequence' (role 'WorkSequence', cardinality 0..*).
+'SimplePDL::WorkDefinition' (role 'WorkDefinition10', cardinality 0..*) is associated with 'SimplePDL::WorkSequence' (role 'linksToPredecessors', cardinality 0..*).
+'SimplePDL::WorkDefinition' (role 'parent', cardinality 0..*) is associated with 'SimplePDL::ProcessElement' (role 'ProcessElement', cardinality 0..*).
+'SimplePDL::WorkSequence' (role 'WorkSequence5', cardinality 0..*) is associated with 'SimplePDL::WorkDefinition' (role 'predecessor', cardinality 0..*).
+'SimplePDL::ProcessElement' (role 'SimplePDL_ProcessElement12', cardinality 0..*) is associated with 'SimplePDL::Guidance' (role 'SimplePDL_Guidance13', cardinality 0..*).
+'SimplePDL::Process' (role 'SimplePDL_Process', cardinality 0..*) is associated with 'SimplePDL::ProcessElement' (role 'SimplePDL_ProcessElement', cardinality 0..*).
+'SimplePDL::WorkDefinition' (role 'WorkDefinition17', cardinality 0..*) is associated with 'SimplePDL::Resource' (role 'neededResources', cardinality 0..*).
+'SimplePDL::Guidance' (role 'SimplePDL_Guidance', cardinality 0..*) is associated with 'SimplePDL::Process' (role 'SimplePDL_Process2', cardinality 0..*).
+'SimplePDL::ProcessElement' (role 'child', cardinality 0..*) is associated with 'SimplePDL::WorkDefinition' (role 'WorkDefinition15', cardinality 0..*).
+'SimplePDL::WorkDefinition' (role 'workDefinition', cardinality 0..*) is associated with 'SimplePDL::Resource' (role 'Resource', cardinality 0..*).
+'SimplePDL::Resource' (role 'SimplePDL_Resource', cardinality 0..*) is associated with 'SimplePDL::ResourceType' (role 'SimplePDL_ResourceType', cardinality 0..*).

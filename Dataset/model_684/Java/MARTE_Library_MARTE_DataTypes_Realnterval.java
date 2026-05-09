@@ -1,0 +1,31 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class MARTE_Library_MARTE_DataTypes_Realnterval  {
+
+    private String bound;
+
+
+
+    public MARTE_Library_MARTE_DataTypes_Realnterval(
+        String bound    ) {
+        this.bound = bound;
+    }
+
+
+    public String getBound() {
+        return bound;
+    }
+
+    public void setBound(String bound) {
+        this.bound = bound;
+    }
+
+
+}

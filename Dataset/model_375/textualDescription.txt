@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'library::Book' has the following attributes: 'pages' of type str; 'title' of type str.
+The class 'library::GuideSpecialistBookWriter' has the following attributes: 'amazing' of type str.
+The class 'Writer' has no attributes.
+The class 'library::Library' has the following attributes: 'name' of type str.
+The class 'library::GuideBookWriter' has the following attributes: 'countries' of type str.
+The class 'SpecialistBookWriter' has no attributes.
+The class 'library::SpecialistBookWriter' has the following attributes: 'subject' of type str.
+The class 'library::Writer' has the following attributes: 'name' of type str.
+'library::GuideBookWriter' is a specialization of 'Writer'.
+'library::GuideSpecialistBookWriter' is a specialization of 'SpecialistBookWriter'.
+'library::SpecialistBookWriter' is a specialization of 'Writer'.
+'library::Book' (role 'library_Book', cardinality 0..*) is associated with 'library::Writer' (role 'library_Writer', cardinality 0..*).
+'library::Book' (role 'library_Book2', cardinality 0..*) is associated with 'library::Library' (role 'library_Library', cardinality 0..*).

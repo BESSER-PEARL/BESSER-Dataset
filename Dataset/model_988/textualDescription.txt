@@ -1,0 +1,27 @@
+The model has 8 class(es).
+The class 'graph::Subgraphs' has no attributes.
+The class 'graph::Identifiable' has the following attributes: 'number' of type int; 'ID' of type str.
+The class 'graph::Edge' has the following attributes: 'visited' of type bool; 'EdgeLabel' of type int.
+The class 'graph::Node' has the following attributes: 'visited' of type bool; 'AttackerObservation' of type int; 'Attacker' of type bool; 'name' of type str.
+The class 'graph::NodeResponsibility' has the following attributes: 'operation' of type str.
+The class 'graph::GraphAsset' has the following attributes: 'Encrypted' of type bool; 'Label' of type int.
+The class 'Identifiable' has no attributes.
+The class 'graph::Graph' has no attributes.
+'graph::NodeResponsibility' is a specialization of 'Identifiable'.
+'graph::Node' is a specialization of 'Identifiable'.
+'graph::GraphAsset' is a specialization of 'Identifiable'.
+'graph::Subgraphs' is a specialization of 'Identifiable'.
+'graph::Edge' is a specialization of 'Identifiable'.
+'graph::GraphAsset' (role 'graph_GraphAsset30', cardinality 0..*) is associated with 'graph::NodeResponsibility' (role 'graph_NodeResponsibility29', cardinality 0..*).
+'graph::Node' (role 'graph_Node16', cardinality 0..*) is associated with 'graph::NodeResponsibility' (role 'graph_NodeResponsibility', cardinality 0..*).
+'graph::GraphAsset' (role 'graph_GraphAsset7', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node8', cardinality 0..*).
+'graph::GraphAsset' (role 'graph_GraphAsset', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge5', cardinality 0..*).
+'graph::Node' (role 'graph_Node', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge', cardinality 0..*).
+'graph::GraphAsset' (role 'graph_GraphAsset24', cardinality 0..*) is associated with 'graph::Subgraphs' (role 'graph_Subgraphs23', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge19', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node18', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph', cardinality 0..*) is associated with 'graph::Subgraphs' (role 'graph_Subgraphs32', cardinality 0..*).
+'graph::NodeResponsibility' (role 'graph_NodeResponsibility26', cardinality 0..*) is associated with 'graph::GraphAsset' (role 'graph_GraphAsset27', cardinality 0..*).
+'graph::Node' (role 'graph_Node11', cardinality 0..*) is associated with 'graph::GraphAsset' (role 'graph_GraphAsset10', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge14', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node13', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge2', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node3', cardinality 0..*).
+'graph::Subgraphs' (role 'graph_Subgraphs', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node21', cardinality 0..*).

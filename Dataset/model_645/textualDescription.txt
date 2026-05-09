@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'model::Book' has the following attributes: 'name' of type str; 'author' of type str; 'avgRating' of type int.
+The class 'model::Person' has the following attributes: 'name' of type str.
+The class 'model::DataBase' has no attributes.
+The class 'model::BookShelf' has the following attributes: 'name' of type str.
+'model::BookShelf' (role 'shelves', cardinality 0..*) is associated with 'model::Person' (role 'Person', cardinality 0..*).
+'model::Book' (role 'Book', cardinality 0..*) is associated with 'model::BookShelf' (role 'presentIn', cardinality 0..*).
+'model::Person' (role 'model_Person3', cardinality 0..*) is associated with 'model::Person' (role 'model_Person', cardinality 0..*).
+'model::DataBase' (role 'model_DataBase10', cardinality 0..*) is associated with 'model::Book' (role 'model_Book', cardinality 0..*).
+'model::Book' (role 'books', cardinality 0..*) is associated with 'model::BookShelf' (role 'BookShelf', cardinality 0..*).
+'model::Person' (role 'model_Person8', cardinality 0..*) is associated with 'model::DataBase' (role 'model_DataBase', cardinality 0..*).
+'model::BookShelf' (role 'BookShelf2', cardinality 0..*) is associated with 'model::Person' (role 'ownedBy', cardinality 0..*).
