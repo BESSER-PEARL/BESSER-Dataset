@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/UrtziOtamendi/MetaModelEcore/metamodel/Kasu4.ecore

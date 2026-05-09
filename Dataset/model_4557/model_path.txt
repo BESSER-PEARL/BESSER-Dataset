@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LuukvH/GLT-Assignment3/platoon/model/platoon.ecore

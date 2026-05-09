@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/ATLGT/org.eclipse.m2m.atl.atlgt.examples.simpleclass2relational/transformation/ClassDiagram.ecore

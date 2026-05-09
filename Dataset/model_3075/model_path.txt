@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/alxbrd/org.eclipse.epsilon/examples/org.eclipse.epsilon.examples.exeedoo/OO.ecore

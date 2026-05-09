@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/luciojp/ProjetoCompila/org.xtext.example.mydsl/org.xtext.example.mydsl/model/generated/MyDsl.ecore

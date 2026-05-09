@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang-compiler/archive/plzoo-workspace/test.lang.truffle/interpreter-comp/test.ecore

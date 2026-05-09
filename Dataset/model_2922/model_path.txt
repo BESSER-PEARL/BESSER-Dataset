@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/FunThomas424242/xtext.example/org.example.domainmodel/model/generated/Domainmodel.ecore

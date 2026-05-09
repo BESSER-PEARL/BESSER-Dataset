@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/abdush/BPMN2StateChart/BPMN Normalization/metamodels/BPMNDI.ecore

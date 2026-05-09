@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lotstrom/Hotel-Management-System/Mac Version/IMPL/newClasses.ecore

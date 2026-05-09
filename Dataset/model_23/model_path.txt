@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/herbert-de-vaucanson/idmbe/betp04/betp041/PetriNet.ecore

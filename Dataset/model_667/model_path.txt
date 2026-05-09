@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eMoflon/emoflon-ibex-tests/MoDiscoIbexTGG/metamodels/Types.ecore

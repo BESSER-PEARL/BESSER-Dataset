@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tdegueul/ale-xbase/examples/composition/triple/ALE2/model/ale2.ecore

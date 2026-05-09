@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/hannesN/onotoa/de.topicmapslab.tmcledit/model/tmcledit.ecore

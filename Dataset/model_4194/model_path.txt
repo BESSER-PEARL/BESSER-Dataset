@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/loradd/xtext-lsp-ecore-support/example/theia-workspace/DSL.ecore

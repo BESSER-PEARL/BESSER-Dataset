@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/viatra/EMF-IncQuery-Examples/derived-features-by-queries/school-derived/model/school.ecore

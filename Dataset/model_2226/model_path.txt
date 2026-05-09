@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/martheab/model-to-text/org.eclipse.exercise.studyprogramsmodel/model/studyprograms.ecore

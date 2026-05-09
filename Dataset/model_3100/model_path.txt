@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/vnu-dse/inferOCL/plugins/fr.inria.atlanmod.genmodel.alloy2emf/samplefiles/rcd_mm.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/DevBoost/EMFText-Zoo/BreedingStation/Misc/org.emftext.language.database/metamodel/database.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Zilarion/2IMP20-Generic-Language-Technology/Assignment 3/nl.tue.glt.platoon.platoon2nxc/models/platoon.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/fjavier-umu/mde-data-ree/CDTI_F3_es.modelum.detErrores/src/es/modelum/deterrores/emf/Errores.ecore

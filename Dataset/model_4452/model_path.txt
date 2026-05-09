@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/solomona2003/modelEngineering2018-2019/assignmentOne/MB/Rover_MB/model/rover.ecore

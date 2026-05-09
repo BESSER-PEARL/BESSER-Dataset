@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/NanaEB/jastemf/jastemf/org.jastemf.test/specifications/nta-test/model/testmodel.ecore

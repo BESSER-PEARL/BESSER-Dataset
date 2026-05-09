@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/emf.compare/plugins/org.eclipse.emf.compare.ide.ui.tests/src/org/eclipse/emf/compare/ide/ui/tests/structuremergeviewer/actions/data/_470503/left.ecore

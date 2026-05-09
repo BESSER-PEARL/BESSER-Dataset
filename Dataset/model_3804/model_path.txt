@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/veriatl/Compiler.Asm2boogie/fr.emn.atlanmod.ASM2Boogie.compiler/bin/metamodels/A.ecore

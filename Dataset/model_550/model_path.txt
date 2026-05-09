@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SantiGodoy/FamilyDSL/es.uca.mps.SANTIAGO_GODOY.family/model/family.ecore

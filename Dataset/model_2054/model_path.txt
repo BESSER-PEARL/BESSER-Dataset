@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tdegueul/ale-xbase/examples/fUML/implementations/MonolithicRevisitor/org.modelexecution.operationalsemantics.ad.clean/model/activitydiagram.ecore

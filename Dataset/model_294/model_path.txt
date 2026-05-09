@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/emf.texo/runtime/org.eclipse.emf.texo.demo/model/library.ecore

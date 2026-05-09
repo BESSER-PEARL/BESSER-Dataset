@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Danita25/Tesina/OCL-ATL-standalone-launcher/models/AB.ecore

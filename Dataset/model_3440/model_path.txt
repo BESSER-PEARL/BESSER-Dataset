@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AmmarHasan/EMF_Project_OCL_task7/model/sourceModel.ecore

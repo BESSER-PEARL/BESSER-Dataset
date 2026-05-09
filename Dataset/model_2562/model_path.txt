@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cloudsmith/org.eclipse.emf/tests/org.eclipse.emf.test.common/models/edit.Tree/Tree.ecore

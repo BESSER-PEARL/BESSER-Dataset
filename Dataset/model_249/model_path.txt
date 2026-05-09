@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/RHEAGROUP/EcoreNetto/test/ECoreNetto.Tests/ecore.ecore

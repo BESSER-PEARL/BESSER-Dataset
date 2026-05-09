@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gaborbsd/OOGen/hu.bme.aut.oogen.meta/model/oogen.ecore

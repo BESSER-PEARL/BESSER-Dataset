@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kit-sdq/Metamodel-Reference-Architecture-Validation/casestudies/bpmn/metamodel/interim/proto.mbpmn.services/model/services.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/burhanxz/UML-Synchronously-store-to-DB/model/Types.ecore

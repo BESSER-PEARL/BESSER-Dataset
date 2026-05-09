@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/JMVARA/metagem/examples/Families2Persons/Metamodels/Persons.ecore

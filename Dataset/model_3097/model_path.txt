@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atifjilani/Model_Transformation_Testing_Environment_Motter/MotterTool/SampleTransformation/SimpleClass2SimpleRDBMS/Blank Package.ecore

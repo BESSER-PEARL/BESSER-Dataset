@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kbirken/simbench/plugins/org.nanosite.feamo/model/generated/FeaMo.ecore

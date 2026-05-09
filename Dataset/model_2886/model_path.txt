@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gruzilla/swag/modelDrivenSwag/src/metamodel/metamodel.ecore

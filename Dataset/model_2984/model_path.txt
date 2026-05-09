@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/JChen2010/liftedDSLTrans_experiment/tests/t2/Automata.ecore

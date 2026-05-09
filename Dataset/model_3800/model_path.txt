@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AngelMorenoMDE/kybdele_entity_relationship/es.kybele.kybdele.models.entityrelationship.model/model/EntityRelationship.ecore

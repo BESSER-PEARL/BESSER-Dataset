@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/amirms/gelato/org.servicifi.gelato.language.cobol/metamodel/cobol.ecore

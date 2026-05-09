@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/saidizied14/Reduce/fr.inria.atlanmod.ReduceSimpleExample/company.ecore

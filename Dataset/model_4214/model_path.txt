@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ArsenShnurkov/GrGen/examples/HelloWorld-TTC2011/helloworldext.ecore

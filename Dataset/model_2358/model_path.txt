@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/felipealencar/SDWM2RDBMS/metamodel/SimpleRDBMS.ecore

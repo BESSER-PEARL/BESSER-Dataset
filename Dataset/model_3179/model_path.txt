@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/vladimirkozhaev/blockchainlanugage/org.blockchain.rell/model/generated/Rell.ecore

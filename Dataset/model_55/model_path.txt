@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/scalable-views-heterogeneous-models/java-cdo/model/Java-CDO.ecore

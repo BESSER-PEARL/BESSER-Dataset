@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mde-subtyping/web/subtyping.tests/src/test/resources/sle17/sm/evolution/smObservation_prunned.ecore

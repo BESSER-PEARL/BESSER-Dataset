@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/JUCMNAV/DCtoURN/Thesis_DC_2_URN/Metamodels/CORE.ecore

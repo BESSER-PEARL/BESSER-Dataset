@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/krissrex/ntnu-tdt4250-study-emf/no.ntnu.tdt4250.oving1.model/model/studies.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/nicoh/RPSL/metamodel/rpsl_perception_graph.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/CoastalHacking/tutorial-emf-ocl-transactions-compare-forms/us.coastalhacking.tutorial.ocl.ecore/model/Tutorial.ecore

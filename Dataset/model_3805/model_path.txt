@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gelareh1985/MDE-Excercises/StateMachineEditRules/model/stateMachineEditRules.ecore

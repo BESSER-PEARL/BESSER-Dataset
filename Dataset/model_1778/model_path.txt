@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/TomasEHU/Books/metamodels/BooksOne.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/emf.texo/tests/org.eclipse.emf.texo.modelgenerator.test/models/issues/bz461726.ecore

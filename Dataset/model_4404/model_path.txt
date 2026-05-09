@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/surli/yourcast-assets/config_examples/config_simple/MetamodelSpineFM.ecore

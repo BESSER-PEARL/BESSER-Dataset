@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SOM-Research/emf-rest/emf-rest-demos/family.web/target/classes/Example.ecore

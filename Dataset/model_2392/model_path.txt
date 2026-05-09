@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/maxcruz/mde_crud_maker/GramaticaSQL/org.uniandes.xtext/model/generated/SQL.ecore

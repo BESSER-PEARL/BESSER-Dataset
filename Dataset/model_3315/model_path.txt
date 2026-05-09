@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lengyela89/sirius-incremental-refresh/host/examples/cps/org.eclipse.incquery.examples.cps.traceability/model/traceability.ecore

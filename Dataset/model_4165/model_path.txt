@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ArneDeutsch/xtext-gradle-example/org.xtext.example.mydsl1.parent/org.xtext.example.mydsl1/model/generated/MyDsl1.ecore

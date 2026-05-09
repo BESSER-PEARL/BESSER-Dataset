@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/martin-fleck/momot/examples/at.ac.tuwien.big.momot.examples.ecore/input/JAVA.ecore

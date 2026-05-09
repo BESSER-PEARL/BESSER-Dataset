@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDSEGroup/TraceCompaction/Traceconstruction/trace metamodel/trace-metamodel/model/compactTraceMetamodel.ecore

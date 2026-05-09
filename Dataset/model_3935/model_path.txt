@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/vorto/core-bundles/meta-model/org.eclipse.vorto.core/model/Datatype.ecore

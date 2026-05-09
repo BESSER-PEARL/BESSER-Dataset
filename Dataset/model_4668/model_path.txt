@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang-compiler/languages/boa/boa.lang.truffle.alldispatch/interpreter-comp/boa.ecore

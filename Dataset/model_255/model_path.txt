@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lunalixxi/AGSN/Model_transformation/resource/metamodels/ecore.ecore

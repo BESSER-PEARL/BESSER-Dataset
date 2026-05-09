@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AnisBoubaker/RollBackPoint/models/amazon_sd/AmazonInformational.ecore

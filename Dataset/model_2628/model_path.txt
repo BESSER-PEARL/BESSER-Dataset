@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/spi-fm/ARE4DSL/Acceleo module/AcceleoProject/aredsl.ecore

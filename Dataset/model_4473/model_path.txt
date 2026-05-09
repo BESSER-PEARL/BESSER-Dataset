@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/diverse-project/k3/k3-tools/fr.inria.diverse.k3.tools.aspectGenerator/ASMLogo.ecore

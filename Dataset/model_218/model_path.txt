@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/smokemaker/alfresco-uml-data-modeller/profile/ru.neodoc.content.profile/profile/ecore.ecore

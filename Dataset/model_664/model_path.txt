@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/RobotML/RobotML-SDK/dsl-papyrus/robotml-extension/org.eclipse.papyrus.robotml.extension/model/types.ecore

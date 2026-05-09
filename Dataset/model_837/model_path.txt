@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/grammarware/sle16/bousse/framework-sources/gemoc-studio/official_samples/TFSM/language_workbench/org.gemoc.sample.tfsm.model/model/tfsm.ecore

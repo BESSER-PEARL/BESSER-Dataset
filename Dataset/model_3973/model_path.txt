@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/estepper/org.eclipse.uml2/deprecated/org.eclipse.uml2.uml.profile.l2/model/L2.ecore

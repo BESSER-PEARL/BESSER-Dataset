@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Samskip16/MarsRover/MarsRoverMeta/mars.ru.des.robot.tasks/model/generated/TaskDSL.ecore

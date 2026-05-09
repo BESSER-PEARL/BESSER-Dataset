@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/movespace/gmfsamples/School/tags/emf-tuto6-final-editor/School/model/school.ecore

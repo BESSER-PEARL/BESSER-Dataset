@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/vhfragal/ConFTGen-tool/work_neon_ubu/org.yakindu.sct.model.sgen/model/emf/sgen.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jgralab/funnyqt/test/input/uml-rdbms-bidi/classdiagram.ecore

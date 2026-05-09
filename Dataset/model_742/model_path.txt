@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/vmsobral/sml2/br.ufes.inf.nemo.ontouml.refontouml/model/RefOntoUML.ecore

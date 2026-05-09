@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDEGroup/MDEProfiler/tools/anatlyzer.atl.tests.api/tmp_/Java2KDM.effective.ecore

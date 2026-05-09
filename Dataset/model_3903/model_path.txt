@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/poolborges/org.eclipse.papyrus-bpmn/org.eclipse.papyrus.bpmn/src/org/eclipse/papyrus/bpmn/BPMNProfile/impl/BPMNProfile.ecore

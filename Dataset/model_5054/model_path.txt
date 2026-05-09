@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AnisBoubaker/cbpmn/models/Processes/AmazonSD/AmazonInformational.ecore

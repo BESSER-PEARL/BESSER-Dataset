@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sahayapurv/MDE-Project_Microservice_Sirius/Microservice_EMF/microArch.ecore

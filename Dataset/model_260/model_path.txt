@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/celsobarreto/m3-benchmark/m3_benchmark/metamodels/Ecore.ecore

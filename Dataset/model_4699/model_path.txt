@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jonasanker/mdse-exercises/05_static_semantics_genealogy/morten/Development/org.mdse.genealogy/model/Genealogy.ecore

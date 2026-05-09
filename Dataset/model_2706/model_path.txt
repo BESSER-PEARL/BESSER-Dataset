@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/hallvard/tdt4250-2016/no.hal.pgo/no.hal.pgo.http.tests/src/no/hal/pgo/http/tests/PgoHttpTest.ecore

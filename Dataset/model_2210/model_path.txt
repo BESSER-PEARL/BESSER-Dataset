@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/urdaa/emf/tdt4250.assignment/model/programmes.ecore

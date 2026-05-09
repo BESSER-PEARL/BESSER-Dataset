@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pyecore/pyecore/tests/json/data/minimal.ecore

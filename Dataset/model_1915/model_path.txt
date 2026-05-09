@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/davidediruscio/evoss/bundles/mancoosi-simulator/modelTypes/mancoosimm.ecore

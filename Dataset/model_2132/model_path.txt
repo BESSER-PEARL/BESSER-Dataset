@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/imace/de.cau.cs.kieler/plugins/de.cau.cs.kieler.synccharts.codegen.dependencies/model/synccharts.ecore

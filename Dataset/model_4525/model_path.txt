@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/47hm4n3/idmDrone/plugin/sar.drone/model/generated/Drn.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/yan74/afptext/org.afplib.afptext/model/generated/AfpText.ecore

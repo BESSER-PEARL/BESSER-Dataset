@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/francoispfister/diagraph/mtbe.fr.trace/model/trace-v-101.ecore

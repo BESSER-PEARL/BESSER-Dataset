@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/quratulain-york/epsilon/examples/org.eclipse.epsilon.examples.flexmi.reflective/family.ecore

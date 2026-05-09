@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/yaseenkhantanoli/MDE-Sirius_project/org.eclipse.microservices/model/microArch.ecore

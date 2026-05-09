@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MISO-MDE/PILA/Unified/segundainstancia/PaymentStaticModel/metamodel/PagosPIM.ecore

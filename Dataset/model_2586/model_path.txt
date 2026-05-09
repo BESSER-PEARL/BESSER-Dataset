@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gabrieldulca/diff-merge/src/main/resources/inheritance/inheritance.ecore

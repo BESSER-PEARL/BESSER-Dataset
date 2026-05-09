@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Vedsted/MDSD-IoT-DSL/sdu.mdsd.iot/model/generated/IoT.ecore

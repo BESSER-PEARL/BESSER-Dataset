@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/manualem/moderates/org/sintef/edap_aspects/org.sintef.edap.smartadapters/metamodel/Edap_AOM_Framework.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/xviakoh/jaspersoft-xvia-plugin/com.jaspersoft.studio.data.sql/bin/com/jaspersoft/studio/data/Sql.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AniketosEU/Secure-Service-Specification-and-Deployment/Service Composition Framework/eu.aniketos.mtm.model/model/DI.ecore

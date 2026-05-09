@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/upohl/eloquent/tests/org.muml.psm.allocation.algorithm.ilp.tests/fixtures/oclContext/model/simple.ecore

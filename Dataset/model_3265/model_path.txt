@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/osate/osate2/core/org.osate.aadl2/model/aadl2.ecore

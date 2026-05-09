@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/fvde/crudml/tum.ma.crudml/bowling.ecore

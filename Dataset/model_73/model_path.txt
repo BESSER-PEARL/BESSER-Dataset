@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/NeoEMF/benchmarks/org.eclipse.gmt.modisco/java.cdo/src/main/resources/model/Java-CDO.ecore

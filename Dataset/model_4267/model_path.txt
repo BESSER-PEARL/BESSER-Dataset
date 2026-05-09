@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eneufeld/EmfStore-Test/org.eclipse.example.bowlingmodel/model/bowling.ecore

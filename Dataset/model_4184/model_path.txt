@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tommyettinger/kobold/kobold.parent/kobold/model/generated/Kobold.ecore

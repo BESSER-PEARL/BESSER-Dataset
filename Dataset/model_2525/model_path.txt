@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/anatlyzer/anatlyzer/tests/anatlyzer.atl.tests.unit/metamodels/ABCD.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/manuelleduc/ale-compiler-benchmarks/examples/MODELS/boolexp/model/BoolExp.ecore

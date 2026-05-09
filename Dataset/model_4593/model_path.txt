@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/louismrose/PhD/Analyis/Co-Evo Examples/UML_Activities/14_to_22/uml2/min_uml2.ecore

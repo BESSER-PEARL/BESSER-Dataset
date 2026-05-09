@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/FunThomas424242/myDSL.example/Core/org.emftext.language.myDSL/metamodel/myDSL.ecore

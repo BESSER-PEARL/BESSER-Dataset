@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kevoree/kmf-samples/multiecore/metamodel/B.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/javitroya/ATL2DSLTrans/ruleTypeExtraction/Example/F2P_Extended/Persons_Extended.ecore

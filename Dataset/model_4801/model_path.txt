@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Obeo/emf.compare.acceptance.tests/plugins/emf.compare.arrays/model/types.ecore

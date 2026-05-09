@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/aidbal/TYMLanguage/TymProject/org.pkt.Tym/model/generated/Tym.ecore

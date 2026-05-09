@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/eclipse/mylyn.docs.intent.main/tests/org.eclipse.mylyn.docs.intent.collab.test/model/testModel.ecore

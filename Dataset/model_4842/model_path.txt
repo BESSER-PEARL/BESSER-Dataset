@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/wrwei/Jorvik/org.papyrus.archimate.technollgy/model/archimateTechnology.ecore

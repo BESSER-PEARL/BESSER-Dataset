@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/olemeyer/eu.cloudwave.ude.fcore.editor/model/fcore.ecore

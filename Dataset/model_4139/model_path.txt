@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/max-leuthaeuser/jmhmathexample/de.itemis.jmhmathexample/model/generated/MathDSL.ecore

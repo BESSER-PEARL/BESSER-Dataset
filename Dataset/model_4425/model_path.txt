@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/esp-lab/DSL4Wearable/iotwearable.model/model/iotw.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/dlitvinov/FastEMFStore.other/org.eclipse.emf.emfstore.examplemodel/model/bowling.ecore

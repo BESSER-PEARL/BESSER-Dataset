@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/oscar9214/tesis/PictureMaker/ecore files/ArchimateRelations.ecore

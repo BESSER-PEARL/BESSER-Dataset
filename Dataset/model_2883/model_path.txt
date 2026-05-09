@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/flomotlik/softwarearchitekturen/test/bin/metamodel/metamodel.ecore

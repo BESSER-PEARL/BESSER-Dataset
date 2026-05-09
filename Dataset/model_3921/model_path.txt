@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/catedrasaes-umu/emf4cpp-old/emf4cpp.tests/mydsl/MyDsl.ecore

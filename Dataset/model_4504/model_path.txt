@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tdegueul/gemoc-pirover/RCL/org.gemoc.rover.rcl/model/RCL.ecore

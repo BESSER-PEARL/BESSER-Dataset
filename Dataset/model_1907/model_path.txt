@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/williamgranli/papyrus_hotel_project/impl/Implementation.ecore

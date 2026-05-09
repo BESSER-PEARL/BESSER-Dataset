@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/CFraller/ame-model-execution/ozobot.model/model/model.ecore

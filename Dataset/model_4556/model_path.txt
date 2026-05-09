@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LightChaosman/GLT1/workspace/tue.glt.platoon/model/Platoon.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/aghiles1/idm_polybot_dziri/fr.unice.polytech.dziri.polybot/polybot.ecore

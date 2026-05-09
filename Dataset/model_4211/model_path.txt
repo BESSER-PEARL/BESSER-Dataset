@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Girish-Venkatesh/XTextSelenium/com.vmware.in.testframework/model/generated/TestFramework.ecore

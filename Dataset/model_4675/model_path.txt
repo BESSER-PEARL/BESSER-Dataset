@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jlcanovas/gra2mol/examples/Grammar2Model.examples.Maude2Model/files/metamodels/Maude.ecore

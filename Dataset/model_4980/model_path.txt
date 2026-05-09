@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SINTEF-9012/modaclouds-metamodels/CloudML/CloudML-2.1.ecore

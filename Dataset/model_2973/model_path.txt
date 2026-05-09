@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mcdeck/visualrest/src/de.van_porten.vrest.core/model/RestBehavior.ecore

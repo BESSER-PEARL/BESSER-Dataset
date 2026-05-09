@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/DevBoost/EMFText/Core/Tests/org.emftext.test/src/org/emftext/sdk/concretesyntax/tokenhandling/basesyntax1.ecore

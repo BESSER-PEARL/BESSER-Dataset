@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/magnusjerre/MasterThesisCodeFinal/WireframeToJavaFX-master/JavaFX Test/src/datagenerator/imdb.ecore

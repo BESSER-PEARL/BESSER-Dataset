@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mde-book/cellularautomata/domain/org.kermeta.language.sample.cellularautomata.rules.core.model/metamodel/coreWithIsBoolean/rules_core.ecore

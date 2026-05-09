@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ejaku/grgen/engine-net-2/examples/HelloWorld-TTC2011/helloworldext.ecore

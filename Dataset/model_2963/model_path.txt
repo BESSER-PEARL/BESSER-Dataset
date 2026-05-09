@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/max-kramer/emf-profiles/org.modelversioning.emfprofile.tests/model/basic/sample_ecore_model.ecore

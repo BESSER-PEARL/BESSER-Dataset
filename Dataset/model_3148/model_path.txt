@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/chomats/cadse.as-cu/model/ccore.ecore

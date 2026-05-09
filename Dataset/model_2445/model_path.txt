@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/slashburn/mdd-project/SSDToStateMachine/metamodels/ioautomaton.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/huibo-shi/webEditorFontIssue/org.xtext.example.webFontIssue/model/generated/Font.ecore

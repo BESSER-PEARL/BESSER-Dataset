@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kit-sdq/Metamodel-Reference-Architecture-Validation/evaluationtooling/metamodelassessor.manualtests/models/generics/generic_test.ecore

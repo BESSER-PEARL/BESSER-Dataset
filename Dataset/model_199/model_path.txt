@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sop501/ModelCodes/org.eclipse.epsilon.emg.engine.test.acceptance/model/Ecore.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eMoflon/kaleidoscope-core/com.kaleidoscope.core.aux.simpletree/model/Simpletree.ecore

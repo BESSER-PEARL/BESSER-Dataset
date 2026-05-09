@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/rrgonzalez1992/gmftools/plugins/de.itemis.gmf.example/model/Entity.ecore

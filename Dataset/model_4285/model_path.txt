@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/fhrbek/poker-league/cz.fhsoft.poker.league/src/cz/fhsoft/poker/league/shared/model/PokerLeague.ecore

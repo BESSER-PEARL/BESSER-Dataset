@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SystemsAssuranceGroup/ASE_Case_Study/auv.casestudy/model/robochart.ecore

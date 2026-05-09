@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/clagms/TrNet/DSLTransCompilation/evolved_metamodel_ligh_old.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pricsi/Dipterv/hu.bme.mit.inf.ttmc.constraint.model/model/TTMCConstraint.ecore

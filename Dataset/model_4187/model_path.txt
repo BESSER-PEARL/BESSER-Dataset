@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/zd-zero/ABDT-Eclipse/abdt/model/generated/AnyaBasic.ecore

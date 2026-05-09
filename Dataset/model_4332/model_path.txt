@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/modisco/modisco-models/org.eclipse.gmt.modisco.omg.smm/src/main/resources/model/SMM.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/csy-traceability/jtl.log2b-extended/metamodels/B.ecore

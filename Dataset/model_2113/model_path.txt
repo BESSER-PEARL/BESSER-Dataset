@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kuronosec/vulnfinder/display model/edu.udea.vulnfinder.escaneo/model/escaneo.ecore

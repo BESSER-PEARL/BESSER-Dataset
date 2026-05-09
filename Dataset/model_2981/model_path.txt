@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/awortmann/xmontiarc/ur1.diverse.automata.xdsml/model-gen/XAutomataMT.ecore

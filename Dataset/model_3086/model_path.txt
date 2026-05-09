@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/s-hosoai/solderbullet/jp.ac.jaist.kslab.sb.marte/model/MARTE_sb.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/slisson/kieler-pragmatics/plugins/de.cau.cs.kieler.klighd.krendering/model/krendering.ecore

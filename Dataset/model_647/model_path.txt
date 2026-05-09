@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/epsilonlabs/emc-cellsheet/emf/models/cellsheet.ecore

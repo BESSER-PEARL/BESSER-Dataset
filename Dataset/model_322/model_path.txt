@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Teiid-Designer/teiid-modeshape/sequencers/teiid-modeshape-sequencer-vdb/src/test/resources/ecore/Library.ecore

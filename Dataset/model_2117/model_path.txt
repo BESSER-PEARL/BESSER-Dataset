@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/thesnapdragon/msc-thesis/code/hu.bme.mit.plcspec.testsuitegenerator/src/hu/bme/mit/plcspec/testsuitegenerator/testing/testSuite.ecore

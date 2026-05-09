@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/magwas/zenta/org.rulez.magwas.zenta.model/model/zenta.ecore

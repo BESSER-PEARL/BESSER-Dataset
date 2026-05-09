@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/RenatoEly/Compiladores/org.xtext.example.compilador/model/generated/MyDsl.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cipek/xDrone/ic.ac.uk.xdrone.parent/ic.ac.uk.xdrone/model/generated/XDrone.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/epsilonlabs/parallel-erl/evaluation/uk.ac.york.ocl.javaMM/model/java_findbugs_simple.ecore

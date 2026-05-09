@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Pontesegger/eclipse-testview/org.eclipse.ui.testview/model/TestModel.ecore

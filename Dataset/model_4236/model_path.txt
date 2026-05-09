@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LeCedric/myRepository/com.tad.chart.xtext/model/generated/ChartDsl.ecore

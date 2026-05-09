@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/veriatl/VeriATL.CaseStudies/_ResolveTemp/Source/metamodel/Clazz.ecore

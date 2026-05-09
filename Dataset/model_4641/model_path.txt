@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ghillairet/gmf-tooling-gwt-runtime/org.eclipse.gmf.runtime.notation.gwt/model/notation.ecore

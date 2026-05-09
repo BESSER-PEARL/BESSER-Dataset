@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDEGroup/MDEForge/mdeforge/src/main/resources/utils/Metric.ecore

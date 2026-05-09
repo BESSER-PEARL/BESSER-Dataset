@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/adilinam/EclipsePivotBasedQVTo/org.eclipse.m2m.tests.qvt.oml/models/javaless.ecore

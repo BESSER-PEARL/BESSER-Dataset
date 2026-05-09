@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/evertonlga/mestradotool/Mestrado/metamodels/C_Metamodel.ecore

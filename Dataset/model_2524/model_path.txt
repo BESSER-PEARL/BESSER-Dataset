@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mde-optimiser/mde_optimiser/src/rulegen/uk.ac.kcl.mdeoptimise.rulegen.tests/src/resources/rulegen.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDE4CPP/MDE4CPP/src/examples/commonExamples/SubsetUnionExample/SubsetUnion/model/subsetUnion.ecore

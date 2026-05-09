@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cbiegel/ArchitectureKnowledgeModel/org.emftrace.metamodel/src/org/emftrace/metamodel/BPMN2Model/impl/BPMN2Model.ecore

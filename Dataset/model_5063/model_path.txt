@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LearnPAd/learnpad/lp-model-transformer/src/main/resources/metamodels/learnpad/bpmn2.0/BPMN20.ecore

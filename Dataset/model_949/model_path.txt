@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/quratulain-york/epsilon/examples/org.eclipse.epsilon.eunit.examples.atl/metamodels/graph.ecore

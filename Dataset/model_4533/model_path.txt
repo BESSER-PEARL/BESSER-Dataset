@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/b-atlas/dev_env/eclipse-workspace/IDM/robot/model/robot.ecore

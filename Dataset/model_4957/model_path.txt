@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/roegnarak/YaTM-Graphiti/org.rosi.testmodel/model/testmodel.ecore

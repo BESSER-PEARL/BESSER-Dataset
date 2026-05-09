@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/hellspawn14/WebPicture-Samples/ArchimateV0/Descriptors/archimate2.ecore

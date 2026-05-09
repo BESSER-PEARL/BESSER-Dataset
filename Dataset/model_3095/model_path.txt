@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/dantexier/Tesis/fase2/Tesis/Metamodelos/SimpleClass.ecore

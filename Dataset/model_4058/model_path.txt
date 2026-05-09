@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LaMaksim/DSL-2018/ProjectsDOMIJ/file_transfer/model/external/classDiagram.ecore

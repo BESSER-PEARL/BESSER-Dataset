@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/crossecore/examples-java/viatra/model/java.ecore

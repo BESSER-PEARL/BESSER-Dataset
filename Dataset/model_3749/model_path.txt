@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/park-sungmoo/TadpoleForDBTools/com.hangum.tadpole.rdb.model/model/rdb.ecore

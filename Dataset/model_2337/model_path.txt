@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sgi-dis/Lab03/firsttransformations/metamodel/PersonsOne.ecore

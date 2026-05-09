@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/juancadavid/papyrus/extraplugins/diagram-definition/org.eclipse.papyrus.dd/model/DG.ecore

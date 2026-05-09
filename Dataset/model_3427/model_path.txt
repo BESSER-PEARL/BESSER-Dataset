@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Sorour-j/Epsilon/examples/org.eclipse.epsilon.eugenia.examples.svg/model/people.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jpilgrim/mitra2/tests/de.jevopi.mitra2.test/src/mitraParserTest/simpleUML.ecore

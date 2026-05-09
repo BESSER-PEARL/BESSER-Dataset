@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/swmuir/knarts/knarts/plugins/org.hl7.knart.core/model/r2.ecore

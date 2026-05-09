@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pcdavid/org.eclipse.sirius/plugins/org.eclipse.sirius/model/viewpoint.ecore

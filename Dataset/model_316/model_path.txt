@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/FindOut/Rich-GWT-Editor-Viewer/com.example.library/model/library.ecore

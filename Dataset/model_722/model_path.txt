@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kevoree/kmf-samples/kermeta/org.kevoree.modeling.sample.kermeta.js/metamodel/kermeta.ecore

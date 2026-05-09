@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/abelgomez/kyanos.benchmarks/org.eclipse.gmt.modisco.java.kyanos/src/org/eclipse/gmt/modisco/java/kyanos/impl/java.ecore

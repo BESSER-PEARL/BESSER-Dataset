@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/siba88/ame/at.ac.tuwien.big.momot.examples.university.delete/model/university.ecore

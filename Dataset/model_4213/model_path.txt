@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/alex-lotz/MyDslTest/mydsl/ecore.mydsl/model/mydsl.ecore

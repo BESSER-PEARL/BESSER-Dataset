@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/stolorz/RankPL-EclipsePlugin/pl.stolorz.dsl.rankpl/model/generated/RankPL.ecore

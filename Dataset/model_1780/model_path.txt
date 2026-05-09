@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/patrickneubauer/XMLIntellEdit/individual-experiments/SandboxProject/metamodels/imports.ecore

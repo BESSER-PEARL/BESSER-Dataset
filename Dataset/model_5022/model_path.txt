@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/zxqcreations/emf-validation/org.eclipse.emf.validation.tests/model/OrderSystem.ecore

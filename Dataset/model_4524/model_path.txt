@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/richban/robo-prose/robo-prose-model/model/RoboProse.ecore

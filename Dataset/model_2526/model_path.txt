@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/anatlyzer/beautyocl/src/beautyocl.atl.tests/metamodels/ABCD.ecore

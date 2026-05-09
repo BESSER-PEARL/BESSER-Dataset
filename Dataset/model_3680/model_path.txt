@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sfo/emf4cpp/emf4cpp.tests/tests/company.ecore

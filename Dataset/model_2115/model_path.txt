@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/opendata-for-all/api-tester/metamodels/testsuite/som.rest.test.metamodel/model/TestSuite.ecore

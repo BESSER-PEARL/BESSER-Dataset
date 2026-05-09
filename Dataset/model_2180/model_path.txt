@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mondo-project/mondo-hawk/tests/org.hawk.timeaware.tests/resources/metamodels/Tree.ecore

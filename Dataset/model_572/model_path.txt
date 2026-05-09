@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/moliz/moliz.quantitytypes/plugins/org.modelexecution.quantitytypes.oclinecore/Tutorial.ecore

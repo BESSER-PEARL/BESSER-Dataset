@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/securityandtrust/serval-lms/lu.snt.serval.lms.model.base/metamodel/metamodel@runtime.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/szocske19/openmodelica/onlab.openmodelica.metamodel/model/simulink.ecore

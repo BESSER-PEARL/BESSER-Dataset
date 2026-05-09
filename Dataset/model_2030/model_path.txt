@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/michalis-bachras/thesis_extensions/IoT_metamodel/model/ioT_metamodel.ecore

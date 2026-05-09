@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/axelreichwein/SysML2OSLCResourceShapes/SysMLProfileToOSLCResourceShapes/Original XMI/types.ecore

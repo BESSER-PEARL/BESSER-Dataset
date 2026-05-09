@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/OsmoseEU/OSMOSE_OpenPlatform/OSM_BPM/workspace/org.msee.slmtoolbox.modeling.model/model/bpmn.ecore

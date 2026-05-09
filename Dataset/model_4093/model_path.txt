@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pgaufillet/eclipse-snippets/org.lpdql.automaton/model/automaton.ecore

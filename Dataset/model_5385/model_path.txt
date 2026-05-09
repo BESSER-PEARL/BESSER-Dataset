@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/DevBoost/Reuseware/Tests/org.reuseware.coconut.test/testdata/primitiveOperators/org/reuseware/test/basic/primitiveOperators/Extendable.ecore

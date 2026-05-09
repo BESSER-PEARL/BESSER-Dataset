@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ErikWittern/sfm-toolsuite/edu.kit.sfm.metamodel/model/ServiceFeatureModel.ecore

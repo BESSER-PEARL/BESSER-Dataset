@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/RenanGreca/SmartFireAlarm/OSATE-AADL2_projects/osate/src/aadl2/impl/aadl2.ecore

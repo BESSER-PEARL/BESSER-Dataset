@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sharanka/Math-compiler/dk.sdu.student.shsha15.mathcompiler/model/generated/MyDsl.ecore

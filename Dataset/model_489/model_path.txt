@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kit-sdq/DemoMetamodels/bundles/edu.kit.ipd.sdq.metamodels.families/model/families.ecore

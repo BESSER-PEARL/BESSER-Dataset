@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/naixinWang/SmallUML/org.xtext.example.eaa/model/generated/MyDsl.ecore

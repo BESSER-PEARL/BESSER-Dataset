@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Taddist/Eclipse-Modeling-Framwork/org.eclipse.sirius.sample.basicfamily/model/basicfamily.ecore

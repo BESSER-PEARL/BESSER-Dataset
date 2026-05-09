@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/UNIT-Research-Development/ModelTransformation/com.unitbilisim.research.transformation/model/My.ecore

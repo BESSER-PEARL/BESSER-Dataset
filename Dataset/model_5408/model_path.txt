@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mallampatisuresh/hello/eclipse/sirius/com.ponta027.fta.model/model/fta.ecore

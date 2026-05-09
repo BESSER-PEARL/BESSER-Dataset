@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/wrwei/org.eclipse.epsilon.labs.smartsax.emc.emf/org.eclipse.epsilon.labs.smartsax.emc.emf/test/Test.ecore

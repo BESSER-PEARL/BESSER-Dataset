@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/EgoVanautgaerden/Testje/org.xtext.example.domainmodel/bin/org/example/domainmodel/Domainmodel.ecore

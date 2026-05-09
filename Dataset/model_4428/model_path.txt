@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pedrorleonardo/teseVisualino/eclipse project/workspace_pessoaldsls/LDE/metamodel/lde.ecore

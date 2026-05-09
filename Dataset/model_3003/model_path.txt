@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Mr-Wallet/BlorqueScript/org.example.blorquescript/model/generated/BlorqueScript.ecore

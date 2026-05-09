@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/adisandro/MMINT/examples/NECSIS14/CD-NECSIS14_ClassDiagram.ecore

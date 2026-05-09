@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sanyaade-teachings/tian-seg-emftutorial/hello.emf.example.ppo/model/PrimerPO.ecore

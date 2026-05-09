@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/CoqTL/fr.inria.atlanmod.coqtl.generators/resources/C2R/Class.ecore

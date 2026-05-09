@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/florianpirchner/mobadsl/org.mobadsl.semantic.model/model/Moba.ecore

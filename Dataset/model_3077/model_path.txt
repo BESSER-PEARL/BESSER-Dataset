@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/oliver-reinhard/ddd/com.mimacom.ddd.dm.esm/model/esm.ecore

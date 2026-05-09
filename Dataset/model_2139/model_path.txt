@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lucasvieira123/MDEProject/ad2lts/MetaModel/lts.ecore

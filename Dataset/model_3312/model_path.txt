@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ecsedigergo/BScThesisDepModel/ViatraTraceability/model/viatraTraceability.ecore

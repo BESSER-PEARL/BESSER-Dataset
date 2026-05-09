@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jlcanovas/gra2mol/core/Grammar2Model/metamodel/Service.ecore

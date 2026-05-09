@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jesusc/bento/examples/evaluation/bento.benchmarks/components/oo2java/uml2java/SimpleUML.ecore

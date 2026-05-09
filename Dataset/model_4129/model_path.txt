@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/wizardmil/mdsd.assignment.3/org.xtext.assingment2.Mathinterpreter/model/generated/Mathinterpreter.ecore

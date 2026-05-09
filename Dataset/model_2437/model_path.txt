@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/le99/MHack/sqlDsl4/uniandes.automat.sql/model/generated/Sql.ecore

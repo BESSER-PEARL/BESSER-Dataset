@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/drexedam/Tedapt/ExampleIntegration/metamodel_and_editor/Library/models/Library.ecore

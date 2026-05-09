@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sereGkaluv/restest/bundles/at.fhv.ecss2016.restest.model/model/restest_model.ecore

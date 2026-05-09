@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BlackBeltTechnology/judo-generator/hu.blackbelt.judo.generator.transformer.runtime/model/types.ecore

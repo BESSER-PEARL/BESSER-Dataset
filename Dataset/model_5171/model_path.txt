@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/wwu-pi/acse-xtext-knuth-binaries/xtext-projects/de.unimuenster.pi.bindsl/model/generated/BinDsl.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/emf.texo/tests/org.eclipse.emf.texo.test/src/org/eclipse/emf/texo/test/emfissues/accounting.ecore

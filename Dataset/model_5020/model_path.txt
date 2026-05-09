@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mjtribble/EMF/esof422_homework4/question2/model/esof_homework4_q2.ecore

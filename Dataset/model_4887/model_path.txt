@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/empirical-study/puzzle.empirical.study/githubmetamodels/p2.ecore

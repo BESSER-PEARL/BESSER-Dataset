@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gemoc/org.eclipse.sirius/plugins/org.eclipse.sirius.tree/model/tree.ecore

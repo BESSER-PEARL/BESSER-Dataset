@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/arnobl/comlanDocywood/docywood/docywood.core/src/main/resources/robot/logo.ecore

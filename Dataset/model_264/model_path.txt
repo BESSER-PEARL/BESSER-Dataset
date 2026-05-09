@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/bmaggi/Topcased/plugins/generators/configurators/ecore/Ecore.ecore

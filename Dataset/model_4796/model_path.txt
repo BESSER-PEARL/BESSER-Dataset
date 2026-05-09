@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sdrapeau/all-data-types/plugins/fr.obeo.dsl.sample.alldatatypes/model/alldatatypes.ecore

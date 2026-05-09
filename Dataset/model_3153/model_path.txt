@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tamasborbas/org.eclipse.viatra/transformation/plugins/org.eclipse.viatra.transformation.tracer/model/transformationtrace.ecore

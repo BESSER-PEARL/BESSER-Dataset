@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/ATLGT/org.eclipse.m2m.km3/models/KM3.ecore

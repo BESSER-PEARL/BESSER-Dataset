@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/braintribehq/models2019/Ecore2GmModel/model/annotated/Ecore.ecore

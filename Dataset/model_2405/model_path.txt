@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BackupTheBerlios/replicross-svn/fr.uha.ensisa.DataBase/src/fr/uha/ensisa/DataBase/DataBase.ecore

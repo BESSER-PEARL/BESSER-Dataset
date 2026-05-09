@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/abreslav/java2ecore/org.abreslav.java2ecore.tests/model.expected/imported_model.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/movespace/gmf-tools/test-examples/links/org.eclipse.gmf.tooling.examples.links/model/links.ecore

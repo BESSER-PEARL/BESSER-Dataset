@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/Mogwai/fr.inria.atlanmod.mogwai.gremlin/model/gremlin.ecore

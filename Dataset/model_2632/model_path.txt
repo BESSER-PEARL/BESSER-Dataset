@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/anatlyzer/anatlyzer/examples-test/GR2Sirius/metamodels/viewpoint.ecore

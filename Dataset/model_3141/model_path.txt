@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/benjimor/fuzzy-smalluml/SmallUML/model/smalluml.ecore

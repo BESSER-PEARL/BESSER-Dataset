@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jokingarcia/ContinuousEvolution/ContinuousEvolution_BookShop/metamodels/SWML_v2.ecore

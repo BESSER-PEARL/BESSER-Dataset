@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/maciej-zygmunt/OneRoster/OneRosterRoot/DXP/model/dXP.ecore

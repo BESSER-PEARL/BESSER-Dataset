@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/JamieOBE/OldISOUNIFIFromGoogleCode/emf/ISO20022.ecore

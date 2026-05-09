@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/joergreichert/spray/examples/featuremodeling/org.eclipselabs.spray.featuremodeling.domain/model/fmp.ecore

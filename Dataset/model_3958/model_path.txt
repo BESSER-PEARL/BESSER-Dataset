@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/andrejfreitas/moliz/org.modelexecution.xmof.examples/cd/classes.ecore

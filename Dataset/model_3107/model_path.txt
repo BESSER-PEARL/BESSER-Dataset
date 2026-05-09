@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/b-studios/henshin/plugins/org.eclipse.emf.henshin.tests/model/languagedefinition/uml.ecore

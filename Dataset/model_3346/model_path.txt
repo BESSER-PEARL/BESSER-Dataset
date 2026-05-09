@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jokingarcia/HandyMOF/HandyMOF_Traces/metamodels/Map.ecore

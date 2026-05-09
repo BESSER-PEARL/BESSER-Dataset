@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pjeanjean/sle2019-artifact/languages/minijava/org.tetrabox.minijava.xtext/model/MiniJava.ecore

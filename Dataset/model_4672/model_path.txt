@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/bluesarab/jastemf/jastemf/org.jastemf.converter.test/specifications/jastadd2ecore-test/result/picojava.ecore

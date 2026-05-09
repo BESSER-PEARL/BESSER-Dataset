@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/patrickfav/tuwien/master/SWAG - Software Architectures/swag.model/src/metamodel/metamodel.ecore

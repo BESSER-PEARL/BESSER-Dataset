@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jesusc/bento/examples/evaluation/bento.componetization.atl.examples/src/paper/metrics/SimpleUML.ecore

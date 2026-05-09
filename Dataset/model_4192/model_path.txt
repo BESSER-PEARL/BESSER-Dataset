@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MatzeGIT/BuckMinster/org.xtext.example.hellobuck/bin/org/xtext/example/hellobuck/HelloBuck.ecore

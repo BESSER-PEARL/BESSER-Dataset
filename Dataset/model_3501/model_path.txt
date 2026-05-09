@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/antunesdantass/compilanovo/com.ufcg.compiladores/model/generated/Go.ecore

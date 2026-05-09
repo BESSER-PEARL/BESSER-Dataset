@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LorenzoBettini/packtpub-xtext-book-2nd-examples/org.example.school.parent/org.example.school.model/model/School.ecore

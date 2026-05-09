@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/fraunhofer-iem/mechatronicuml/Uppaal/org.muml.uppaal/model/uppaal.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/doyennehoney/md2sef/Simulation Structure Layer/org.eclipse.RSG.framework/model/RSG.ecore

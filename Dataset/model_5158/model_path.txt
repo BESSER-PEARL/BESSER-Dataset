@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/abreslav/astrans/ru.ifmo.rain.astrans.tests/testData/interpreter/testReadonlyFeatures/input.ecore

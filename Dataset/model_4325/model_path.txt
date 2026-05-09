@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eubr-atmosphere/tma-framework-a/architecture/metamodels/qualitymodel.ecore

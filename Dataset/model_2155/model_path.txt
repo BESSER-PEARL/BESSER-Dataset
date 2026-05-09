@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AlexanderKnueppel/Skeditor/Plugins/de.tubs.skeditor/model/SkillGraph.ecore

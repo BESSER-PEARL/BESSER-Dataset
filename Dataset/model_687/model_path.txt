@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/rominaeramo/JTLframework/src/org.emftext.language.JTLMM/metamodel/JTLMM.ecore

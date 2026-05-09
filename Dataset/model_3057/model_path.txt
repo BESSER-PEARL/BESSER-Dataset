@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/adbetin/ClassLayout2Frontend/co.classLayout2Frontend/model/classLayout2Frontend.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/carrascoMDD/gvCASE_ALBA/gvCASE_ALBA_release_wksp/es.gva.cit.gvmetrica.orgcasi/model/Ecore.ecore

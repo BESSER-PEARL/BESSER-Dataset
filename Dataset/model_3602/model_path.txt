@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/arnobl/comlanDocywood/bin/src/main/resources/thingML/ThingML.ecore

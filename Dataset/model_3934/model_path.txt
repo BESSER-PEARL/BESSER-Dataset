@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SENSIDL-PROJECT/SensIDL-VortoIntegration/bundles/de.fzi.sensidl.vorto.transformation/VortoMetaModel/Datatype.ecore

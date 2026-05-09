@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mbarbero/emfpath/plugins/org.eclipselabs.emfpath.test/resources/model/subPackages.ecore

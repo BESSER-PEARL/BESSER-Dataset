@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/goshi-f-a/OCLTest/ExtendedPO2/model/epo2.ecore

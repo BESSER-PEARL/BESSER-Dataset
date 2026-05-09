@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/wazaabi/tests/org.eclipse.wazaabi.engine.edp.tests/model/Company.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/utwente-fmt/Adt2Upp/src/main/java/com/utwente/standalone/uppaal_0.5.0.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mathiasnh/TDT4250-Assignment3/no.tdt4250.ov1.studyprogram/model/studyprogram.ecore

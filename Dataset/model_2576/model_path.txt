@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/udeshika-sewwandi/siddhi_editor/org.xtext.example.siddhi/model/generated/Siddhi.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/codehaus/activiti/projects/designer/tags/activiti-designer-5.4/activiti-designer-0.8.0/org.activiti.designer.model/model/BPMNDI.ecore

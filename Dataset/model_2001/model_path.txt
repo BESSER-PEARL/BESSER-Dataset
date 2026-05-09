@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/saeaadl/AadlV3Prototype/org.osate.graph/model/TokenTrace.ecore

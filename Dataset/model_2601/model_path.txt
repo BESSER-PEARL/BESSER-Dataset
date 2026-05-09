@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/imbur/szoftverarchitekturak/emfnotification-test/model/model.ecore

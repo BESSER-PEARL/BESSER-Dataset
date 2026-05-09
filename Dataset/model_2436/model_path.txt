@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MISO4202/xtext-egl-sql2java/Gramatica/uniandes.automat.sql/model/generated/Sql.ecore

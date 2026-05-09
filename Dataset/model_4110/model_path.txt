@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/TheBirdyDeveloper/CodeGen/org.xtext.comp/model/generated/Wh.ecore

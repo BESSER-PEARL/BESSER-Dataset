@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gama-platform/gama/msi.gama.lang.gaml/model/generated/Gaml.ecore

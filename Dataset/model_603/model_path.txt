@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/daperador/tesis2/workspace/co.edu.uniandes.csw.ecoredoc/models/MVC.ecore

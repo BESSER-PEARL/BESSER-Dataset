@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jreimone/refactory/Registrations/Mappings/org.emftext.refactoring.mappings.stp.bpmn/metamodel/bpmn.ecore

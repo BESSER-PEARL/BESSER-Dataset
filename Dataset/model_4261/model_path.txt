@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/AlbiDode/Project/Albi-EMF/albi.bowling/model/bowling.ecore

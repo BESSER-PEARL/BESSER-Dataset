@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/TatyPerson/cplie/vary.pseudocodigo.dsl.activator/model/generated/Activator.ecore

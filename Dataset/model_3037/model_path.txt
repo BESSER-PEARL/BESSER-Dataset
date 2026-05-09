@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SciSpike/yaktor-dsl-xtext/conversation/io.yaktor.conversation.as/model/conversation.ecore

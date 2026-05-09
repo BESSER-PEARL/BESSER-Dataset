@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cwi-swat/rascal-ecore-fsm-demo/myfsm.model/model/myfsm.ecore

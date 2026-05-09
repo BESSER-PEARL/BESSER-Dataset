@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ylussaud/ecleek/plugins/org.processus.ecleek/model/generated/Leek.ecore

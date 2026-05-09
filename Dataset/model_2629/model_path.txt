@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gurumc/mscinfo/idp/src/graphRewriter/testGraphEcoreModel/model/nodesAndEdges.ecore

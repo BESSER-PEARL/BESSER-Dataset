@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/gmf-tooling/test-examples/compartments/org.eclipse.gmf.tooling.examples.compartments/model/compartments.ecore

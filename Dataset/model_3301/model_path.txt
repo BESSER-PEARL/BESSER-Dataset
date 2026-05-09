@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/teropa/stem/org.eclipse.stem.core/model/trigger.ecore

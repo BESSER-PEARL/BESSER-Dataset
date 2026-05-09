@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/YounesB-McGill/Comp550-Project/cruise.umple/test/cruise/umple/implementation/ecore/My.ecore

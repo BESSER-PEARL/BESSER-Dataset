@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/adautofbn/pascal-xtext/edu.ufcg.compiladores.pascal/model/generated/Pascal.ecore

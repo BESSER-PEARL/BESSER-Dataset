@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ArthurVard/professor-fish-all/101companies/implementations/atl/Company.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Excilyano/Domain-specific-language/workspace_J2_tp/fr.imta.tp.sql4csv/model/generated/Sql4csv.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Eden-06/CROM/org.rosi.crom.metamodel/src-gen/crom_l1_composed.ecore

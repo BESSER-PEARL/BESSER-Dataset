@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/arcanefoam/qvtMustus/tests/uk.ac.york.qvtd.tests.hhr/model/SimpleGraph.ecore

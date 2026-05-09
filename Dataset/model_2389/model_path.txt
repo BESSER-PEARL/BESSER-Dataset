@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lesleytong/XMU-from-hexiao/edu.ustb.sei.mde.bxcore.dsl/test/Cls2Rdb/SimpleRDBMS.ecore

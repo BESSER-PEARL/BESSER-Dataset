@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/emf.compare/plugins/org.eclipse.emf.compare.rcptt.tests/resources/diagram/class/ts010_tc034/ancestor.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Smahle/ex3/org.study/model/study.ecore

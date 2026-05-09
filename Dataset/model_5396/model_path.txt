@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/virckof/chaintracker-15/examples/metamodels/B.ecore

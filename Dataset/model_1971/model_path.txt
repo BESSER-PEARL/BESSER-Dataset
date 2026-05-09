@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/a66as/kitalpha/transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces.ecore/model/traces.ecore

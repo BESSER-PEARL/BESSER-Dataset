@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Delors/Vespucci2/de.opalproject.vespucci.datamodel/bin/de/opalproject/vespucci/datamodel/impl/datamodel.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Yakindu/statecharts/plugins/org.yakindu.sct.model.sgen/model/emf/sgen.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/dzonekl/netxstudio/model/com.netxforge.netxstudio.models.export/src/models/metrics.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/santiago-m/TF_Intro_Trans_QVT_2da_Parte/TrabajoFinal/metamodelos/SimpleRDBMS.ecore

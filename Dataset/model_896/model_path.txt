@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Elystria/GLS_G111/simplePDL/SimplePDL.ecore

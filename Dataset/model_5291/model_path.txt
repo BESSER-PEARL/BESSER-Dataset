@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lolybc88/pATL/wsParallelATL/org.eclipse.m2m.atl.tests/data/inputs/ReverseBindings/MMA.ecore

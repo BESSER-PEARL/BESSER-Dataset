@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jonasanker/mdse-exercises/02_fsm/morten/org.mdse.fsm/model/fsm.ecore

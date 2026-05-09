@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/vindemac/Splice/M2M-OpenEHR2RichUbi/metamodels/richubi/rich_interface_components.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/veriatl/veriatl_next/model/BIB2DOC/DocBook.ecore

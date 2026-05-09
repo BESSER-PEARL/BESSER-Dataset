@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/patrickneubauer/UoY-MODE-XTEXT/Entity DSL Projects/uk.ac.york.cs.entities/model/entities.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/almazhou/aml-parser/org.zhouxuan.example.myaml/model/generated/Aml.ecore

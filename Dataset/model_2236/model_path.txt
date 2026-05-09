@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/asmundh/TDT4250-ntnu/no.tdt4250.emf.model/model/prosjekt.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/luxingxiao/cdo-gmf-notation/org.eclipse.gmf.runtime.notation.cdo/model/notation.ecore

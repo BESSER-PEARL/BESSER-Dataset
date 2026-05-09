@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/hegyibalint/VIATRA/plugins/org.eclipse.viatra.cep.core.metamodels/models/Cep.ecore

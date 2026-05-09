@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jpvelsamy/sparrow/org.etl.dsl.etl.Sparrow/model/generated/Sparrow.ecore

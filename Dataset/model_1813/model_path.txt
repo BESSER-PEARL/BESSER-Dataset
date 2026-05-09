@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/TransformationToolContest/ttc2019-live/metamodels/ttc2019.live.metamodels/models/DocBook.ecore

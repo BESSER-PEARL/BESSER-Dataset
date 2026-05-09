@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/sunwuliang/SlicingProject3.0/ClassModelSlicing/ecores/RoyalAndLoyal.ecore

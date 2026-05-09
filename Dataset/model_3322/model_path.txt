@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/DemidovAlexander/Xtext_MiniJava_IDE/demidov.projects.minijava.parent/demidov.projects.minijava/model/generated/MiniJava.ecore

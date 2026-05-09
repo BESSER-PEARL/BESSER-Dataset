@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BackupTheBerlios/genfw/examples/tutorial1.gen.beans/model/beans.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/fjavier-umu/mde-data-ree/Y_CA_F3_FragmentosSelect2Selects/metamodels/selects.ecore

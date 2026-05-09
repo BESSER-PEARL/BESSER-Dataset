@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Bynaryman/COMP-Python/org.comp.python.wh/model/generated/Wh.ecore

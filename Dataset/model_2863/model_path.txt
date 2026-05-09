@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mohddanish211/MasterThesis/org.xtext.Abs/model/generated/Abs.ecore

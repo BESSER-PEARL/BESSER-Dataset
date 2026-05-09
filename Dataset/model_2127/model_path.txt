@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ModelWriter/AlloyInEcore/Source/eu.modelwriter.core.alloyinecore.mapping/test/AnnotationTest.ecore

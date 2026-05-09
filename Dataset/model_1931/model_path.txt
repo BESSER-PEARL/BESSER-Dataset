@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SpockReko/mdsd1617/se.chalmers.cse.mdsd1617.group13/se.ecore

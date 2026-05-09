@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Nika24/Xtext/org.xtext.example.entity/model/generated/Entity.ecore

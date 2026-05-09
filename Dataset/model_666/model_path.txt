@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/nikteg/TDA593/types.ecore

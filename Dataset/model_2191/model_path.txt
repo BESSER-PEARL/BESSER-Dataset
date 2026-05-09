@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/NeoEMF/neoemf-io/src/test/resources/model/Sample.ecore

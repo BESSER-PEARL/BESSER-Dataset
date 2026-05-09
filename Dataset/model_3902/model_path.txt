@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/rpc1/org.eclipse.papyrus/extraplugins/bpmn/org.eclipse.papyrus.bpmn/src/org/eclipse/papyrus/bpmn/BPMNProfile/impl/BPMNProfile.ecore

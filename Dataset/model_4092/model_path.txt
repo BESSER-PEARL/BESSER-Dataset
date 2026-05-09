@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tetrabox/statemachines/plugins/org.tetrabox.examples.statemachines.executiondata/model/statemachinesexecutiondata.ecore

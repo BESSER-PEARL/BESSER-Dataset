@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/nasa/CertWare/ftp/model/ftp.ecore

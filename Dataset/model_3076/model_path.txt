@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/dsl-course/xtext-tutorial-turku-interim/fi.tucs.entities/model/generated/Entities.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/geodes-sms/j-t-core/res/friends/friends.ecore

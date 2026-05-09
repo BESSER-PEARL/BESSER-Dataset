@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/rudiw/basic-crud/src/main/java/com/rudiwijaya/grudi/jpa/grudi.ecore

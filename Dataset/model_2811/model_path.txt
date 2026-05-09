@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/megamart2/org.eclipse.papyrus-moka/bundles/core/tools/visualization/org.eclipse.papyrus.moka.xygraph.model/model/XYGraph.ecore

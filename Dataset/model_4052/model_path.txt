@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/KaburaheElla/smalluml/SmallUml/model/smalluml.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tetrabox/examples-behavioral-interface/languages/arduino/org.gemoc.arduino.sequential.xarduino/model/XArduino.ecore

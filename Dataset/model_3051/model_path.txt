@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/avaranovich/megal-xtext/org.softlang.megal/model/Megal.ecore

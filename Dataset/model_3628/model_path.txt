@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ladobme/hu.bme.mit.sc/StateChart/model/stateChart.ecore

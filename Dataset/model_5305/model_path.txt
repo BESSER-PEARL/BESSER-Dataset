@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDEGroup/MDEProfiler/Dataset/manually-evaluated/ListMetamodelRefactoring/ListMetamodelRefactoring/Metamodel/TypeB.ecore

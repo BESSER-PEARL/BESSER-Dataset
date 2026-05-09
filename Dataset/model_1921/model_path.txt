@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ThomasKurz/4DIAC/plugins/org.eclipse.fordiac.ide.model/model/lib.ecore

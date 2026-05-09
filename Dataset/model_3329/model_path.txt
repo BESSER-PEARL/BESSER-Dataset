@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/wicaksana/bdd-model-transformation/01/Assets/psample.ecore

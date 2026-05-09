@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cesar-ferreira/compiler-pascal/org.xtext.compiler.pascal/model/generated/Pascal.ecore

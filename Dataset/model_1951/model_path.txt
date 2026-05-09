@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/openworm/pygeppetto/pygeppetto/ecore/geppettoModel.ecore

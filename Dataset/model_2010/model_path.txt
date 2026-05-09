@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/scalable-views-heterogeneous-models/trace/metamodels/trace.ecore

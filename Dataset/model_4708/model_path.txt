@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mundacho/stratagem/ch.unige.cui.smv.metamodel.adt/model/adt.ecore

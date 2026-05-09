@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lolybc88/LinTra/EMF2LINDA/input/java.ecore

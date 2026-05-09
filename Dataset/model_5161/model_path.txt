@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eliericha/atlanalyser/fr.tpt.atlanalyser.examples/examples/ForPhDPost2Pre/InputMM/in.ecore

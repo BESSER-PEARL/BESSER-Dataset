@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/haibabu/Ancit/com.ancit.sample.model/model/Organization.ecore

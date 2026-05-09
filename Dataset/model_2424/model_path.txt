@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/yamtl/examples/yamtl.examples.mapping.incr.cd2db/src/main/resources/metamodels/Relational.ecore

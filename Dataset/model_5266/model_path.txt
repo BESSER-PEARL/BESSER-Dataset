@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tdegueul/revisitor-alacarte/abc/L1/model/L1.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Jioss/aurora-project/bpmn/org.eclipse.bpmn2/model/BPMNDI.ecore

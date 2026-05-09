@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/arduinomodeling/language/org.gemoc.arduino.sequential.model/model/arduino.ecore

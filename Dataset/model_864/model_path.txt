@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/NanaEB/BA/EclipseWorkspace/org.kermeta.fsm.gmf/model/fsm.ecore

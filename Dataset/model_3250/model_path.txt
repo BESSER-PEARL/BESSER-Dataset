@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/KROKIteam/KROKI-mockup-tool/KrokiMockupTool/libECore/org.eclipse.uml2.uml/model/CMOF.ecore

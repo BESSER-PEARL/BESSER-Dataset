@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/joergreichert/Cool/edu.stanford.compilers.cool/model/generated/Cool.ecore

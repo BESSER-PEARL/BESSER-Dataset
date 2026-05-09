@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/i-BP/boem/tests/fr.ibp.odv.boem.mm.test/model/BoemTest.ecore

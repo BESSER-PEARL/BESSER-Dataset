@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/OO_concept_initial.ecore

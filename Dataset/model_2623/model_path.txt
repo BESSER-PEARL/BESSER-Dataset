@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lengyela89/sirius-custom/plugins/org.eclipse.sirius.diagram/model/diagram.ecore

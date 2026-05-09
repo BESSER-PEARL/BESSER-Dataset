@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/plamkata/TestProjects/Eclipse Projects/Solynchron/net.sf.rcpforms.examples.emf/model/Test.ecore

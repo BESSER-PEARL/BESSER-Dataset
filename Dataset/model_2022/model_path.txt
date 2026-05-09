@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gemoc/modelanimation/trace/xmof_slice_workinprogress/fr.inria.diverse.tracemm.xmof.footprint.eol.test/tracemms/fumltracemmNEWFormat.ecore

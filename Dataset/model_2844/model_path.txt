@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/didier31/Ada2005/org.xtext.Ada2005/model/generated/Adb.ecore

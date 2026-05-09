@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/arcanefoam/qvtMustus/archive/org.eclipse.qvt.declarative.test.relations.atlvm/resources/SimpleUml.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/de-tu-berlin-tfs/Henshin-Editor/de.tub.tfs.henshin.tgg.examples/Examples/CD2RDBM/models/src.ecore

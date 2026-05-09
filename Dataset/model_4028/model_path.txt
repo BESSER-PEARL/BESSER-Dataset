@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/louismrose/PhD/Analyis/Co-Evo Examples/UML_1.5_to_2.0/AssociationEndToProperty/Before.ecore

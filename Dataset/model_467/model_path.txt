@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/artist-project/ARTIST-MBT/source/org.modelexecution.fuml/model/fUML.ecore

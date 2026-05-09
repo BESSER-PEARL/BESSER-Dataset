@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDEGroup/jtl-eclipse/JTL.atl/metamodels/ASPT.ecore

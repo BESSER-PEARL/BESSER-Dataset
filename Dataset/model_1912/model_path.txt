@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/verath/hotel-california/models/tda593.ecore

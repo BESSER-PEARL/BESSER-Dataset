@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/szocske19/dipterv/src/config/XMLType.ecore

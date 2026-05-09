@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gourch/rds2sql/rds2sql/metamodels/genericSql.ecore

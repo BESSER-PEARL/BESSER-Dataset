@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/utwente-fmt/STARS/STARS/sense/meta/uppaal.xsd.ecore

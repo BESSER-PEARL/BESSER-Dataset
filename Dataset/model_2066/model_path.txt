@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tetrabox/examples-behavioral-interface/languages/activitydiagram/org.gemoc.activitydiagram.sequential.model/ad/activitydiagram.ecore

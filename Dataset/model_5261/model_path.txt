@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/fpetitdemang/stage2014/workspace/emf.html/model/DefaultName.ecore

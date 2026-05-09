@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/serhatGezgin/hibernate-dsl/org.yazgel.hibernatedsl/model/hibernate.ecore

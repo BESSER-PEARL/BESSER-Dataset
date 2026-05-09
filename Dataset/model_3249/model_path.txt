@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cycrisec-project/CyCriSec-Profile/bundles/org.eclipse.uml2.uml/model/CMOF24.ecore

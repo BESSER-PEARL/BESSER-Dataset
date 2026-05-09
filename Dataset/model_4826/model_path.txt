@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Fhma/MT_EOL/uk.ac.york.cs.eol.programs.selector/backup_metamodels/archimate.ecore

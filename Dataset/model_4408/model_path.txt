@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/energy-estimation-language/Language_Workbench/org.gemoc.arduino.sequential.model/model/arduino.ecore

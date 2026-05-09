@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/manuelleduc/workspace-cold-gemoc/abc.model/model/model.ecore

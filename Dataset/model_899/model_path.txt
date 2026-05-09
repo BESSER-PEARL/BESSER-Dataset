@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jcb/these-jcb/code/simplepdltopetrinet/metamodels/SimplePDLSemantics_updated.ecore

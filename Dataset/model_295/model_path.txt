@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/viatra/EMF-IncQuery-Examples/library/org.eclipse.viatra2.emf.incquery.base.example/model/library.ecore

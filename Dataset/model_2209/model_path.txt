@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Henriknu/TDT4250_DSL/UniversityStudies/model/universityStudies.ecore

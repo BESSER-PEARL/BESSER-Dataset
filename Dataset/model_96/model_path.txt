@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/levilucio/DSLTransLifting/tests/t10/java5.ecore

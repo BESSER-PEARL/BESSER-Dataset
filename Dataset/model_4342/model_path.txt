@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/bonitasoft/bonita-studio/patched-plugins/org.eclipse.emf.edapt.migration/model/model.ecore

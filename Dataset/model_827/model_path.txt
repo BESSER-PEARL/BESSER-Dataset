@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MatiasVara/BCOoLExamples/languages/tfsmwithonenter/org.gemoc.sample.tfsm.model/model/tfsm.ecore

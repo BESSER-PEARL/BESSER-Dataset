@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/phillipus85/ETLMetricsDataset/2016-01/Individual Projects/Newsletter/NewsletterGenerator/M2M/HTML.ecore

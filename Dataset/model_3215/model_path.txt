@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sentery/ModelTransformation/TestTransformation/Metamodel/graph_bk.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/nicoPae/atl2nmfs/resources/Inheritance/TypeB.ecore

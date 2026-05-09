@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/dvojtise/cellularautomata/domain/org.kermeta.language.sample.cellularautomata.rules.core.model/metamodel/rules_core.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/robotoworks/mechanoid/plugins/com.robotoworks.mechanoid.db/model/generated/SqliteModel.ecore

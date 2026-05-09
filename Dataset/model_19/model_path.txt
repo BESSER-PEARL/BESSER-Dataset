@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MISO4202/uniandes.mdd.petrinet2graphtaller/Petrinet2/model/petrinet2.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/code4ash/ATL-Families2Persons/metamodel/Persons.ecore

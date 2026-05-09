@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/aangenieux/capillary/capillary-transformation/src/main/resources/org/clinigrid/capillary/transformation/Types.ecore

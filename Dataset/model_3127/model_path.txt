@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/ATL_MR/atl-mr/data/Class2Relational/class.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pyecore/pyecoregen/tests/input/B.ecore

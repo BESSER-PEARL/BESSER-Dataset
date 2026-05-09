@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/code4ash/Measurement_Data/02_QVTo_G2P/PetriNet.ecore

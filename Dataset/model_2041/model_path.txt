@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kiwi4boy/urml/ca.queensu.cs.mase.urml/src-gen/ca/queensu/cs/mase/Urml.ecore

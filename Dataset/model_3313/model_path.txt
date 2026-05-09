@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/yamtl/viatra-cps-incr-benchmark/m2m.incr.cps2dep.yamtl/src/main/resources/metamodels/traceability.ecore

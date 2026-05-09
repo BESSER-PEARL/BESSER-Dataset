@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/javitroya/SBFL_MT/Spectrum-based_FaultLoc_MT/SpecBased_FaultLoc_MT/models_Ecore2Maude/ecore.ecore

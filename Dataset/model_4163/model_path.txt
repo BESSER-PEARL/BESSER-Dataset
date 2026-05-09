@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Vinayakatk/xtextScopes/xtextscopes/org.xtext.example.mydsl/model/generated/MyDsl.ecore

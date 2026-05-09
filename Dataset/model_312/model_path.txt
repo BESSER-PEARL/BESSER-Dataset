@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Overruler/org.eclipse.emf/tests/org.eclipse.emf.test.examples/data/htmlExporter/multipackage_library.ecore

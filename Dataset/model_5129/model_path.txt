@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/thalissonoliveira/fixonto/tags/STABLE_VERSION_19_01/caracteristica/model/caracteristica.ecore

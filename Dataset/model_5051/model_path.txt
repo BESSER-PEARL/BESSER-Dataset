@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SOM-Research/EMFtoCSP/plugins/fr.inria.atlanmod.emftocsp.examples/samples/ecore/eShop.ecore

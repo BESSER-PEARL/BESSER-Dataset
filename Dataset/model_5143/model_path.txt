@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pyecore/setuptools-pyecore/tests/resources/standalone/A.ecore

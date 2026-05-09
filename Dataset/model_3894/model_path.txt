@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/geclipse/eu.geclipse.core/plugins/eu.geclipse.workflow.model/model/workflow.ecore

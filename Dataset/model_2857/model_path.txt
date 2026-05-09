@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/rbill/virtualedit/virtualedit/at.ac.tuwien.big.simplejava/model/generated/Simplejava.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/riederm/graphiti_clone/plugins/org.eclipse.graphiti.mm/model/graphiti.ecore

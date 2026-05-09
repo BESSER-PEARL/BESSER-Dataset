@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/gemoc-studio/official_samples/MelangeK3FSM/language_workbench/org.eclipse.gemoc.example.melangek3fsm.xsfsm/model-gen/XSFSMMT.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mdsd-team-1/photos-metamodeling/Photos-EMF-Project/PhotosMetaModel.ecore

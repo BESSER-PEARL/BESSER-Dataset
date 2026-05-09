@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/sunwuliang/SlicingProject3.0/ClassModelSlicing/ecores/Library.ecore

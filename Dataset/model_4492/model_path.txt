@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Snapple49/DES_DSL/des.missionrobot/model/generated/RobotDSL.ecore

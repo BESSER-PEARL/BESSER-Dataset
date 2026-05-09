@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/edgarmueller/emfstore-rest/tests/org.eclipse.emf.emfstore.test.model/model/testmodel.ecore

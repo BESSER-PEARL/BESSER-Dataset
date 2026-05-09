@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/olegsergeyev/lab/tests/org.eclipse.emf.test.tools/data/ant.expected/models/5.0/creation/library.ecore/emf/library.ecore

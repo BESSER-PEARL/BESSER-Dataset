@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/master-mck/ECP/tests/org.eclipse.emfforms.core.services.databinding.testmodel/model/test.ecore

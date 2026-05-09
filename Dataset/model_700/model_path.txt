@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mondo-project/mondo-hawk/tests/org.hawk.integration.tests/resources/metamodels/XMLType.ecore

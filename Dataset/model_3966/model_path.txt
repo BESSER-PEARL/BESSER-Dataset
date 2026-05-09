@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDE4CPP/MDE4CPP/src/common/standardProfile/model/StandardProfile.ecore

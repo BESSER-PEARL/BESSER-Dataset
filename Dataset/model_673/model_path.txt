@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/regressiontesttool/rtt/Examples/DresdenOCL/Example_Ecore/org.dresdenocl.pivotmodel/model/datatypes.ecore

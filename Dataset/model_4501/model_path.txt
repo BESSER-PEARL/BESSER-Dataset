@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/matheusamazonas/des/ex13/SmallRoverDSLMeta/rover.missions/model/generated/RoverDSL.ecore

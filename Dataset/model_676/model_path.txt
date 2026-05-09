@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jkitaj/emf4cpp/emf4cpp/emf4cpp/emf4cpp.tests/metamodels/emof.ecore

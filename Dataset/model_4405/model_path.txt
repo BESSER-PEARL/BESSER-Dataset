@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/surli/spinefm/spinefm-eclipseplugins-root/spinefm-core/model/MetamodelSpineFM.ecore

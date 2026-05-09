@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/perelengo/org.eclipse.papyrus.incubation/layers/plugins/org.eclipse.papyrus.infra.gmfdiag.layers.model/model/notation/notation.ecore

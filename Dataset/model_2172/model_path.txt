@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/SvenPeldszus/GravityTTC/TypeGraphBasic/model/TypeGraphBasic.ecore

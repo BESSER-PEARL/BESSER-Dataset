@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Jonas-C/TDT4250/org.eclipse.NTNU.studymodel/model/ProgrammeNext.ecore

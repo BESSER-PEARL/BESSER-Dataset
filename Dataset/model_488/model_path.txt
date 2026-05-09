@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/NMFCode/ATL2NMFS/resources/TestTransformation/Families.ecore

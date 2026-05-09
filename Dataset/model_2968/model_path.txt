@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/siwiwit/api2mol/plugins/fr.inria.atlanmod.api2mol/rubytl/thirdparty/rmof2/test/models/owl.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/chandni-shah19/BenchMarkBX/examples/familiestopersons/metamodels/Families/model/Families.ecore

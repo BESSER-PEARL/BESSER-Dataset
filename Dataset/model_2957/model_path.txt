@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/zhanglin2018/learnXtext/org.example.entities.parent/org.example.entities/model/generated/Entities.ecore

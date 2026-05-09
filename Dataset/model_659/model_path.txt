@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ra139233/LAB05/types.ecore

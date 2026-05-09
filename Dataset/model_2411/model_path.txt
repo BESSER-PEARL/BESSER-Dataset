@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/KybeleResearch/aml4m2dat/es.kybele.SQL2003_V3/Metamodel/SQL2003_V3.ecore

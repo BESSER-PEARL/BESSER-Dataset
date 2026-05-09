@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/b-studios/henshin/obsolete/org.eclipse.emf.henshin.migration/model/henshin-080.ecore

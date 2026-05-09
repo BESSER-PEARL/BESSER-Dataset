@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/marinamygithub/xtext_project/org.xtext.example.ADSL/model/generated/ADSL.ecore

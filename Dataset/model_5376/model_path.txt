@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/protocol-languages/fr.inria.diverse.puzzle.xyz/models/XYZ.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/atl/tests/org.eclipse.m2m.atl.tests/data/inputs/CanonicElement/persons.ecore

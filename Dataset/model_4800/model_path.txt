@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eneufeld/EMF-ModelGenerator/org.eclipse.emf.modelmutator.testModel/model/testModel.ecore

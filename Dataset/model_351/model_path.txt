@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/PSI-Polska/teneo/tests/org.eclipse.emf.teneo.samples/test/eavlibrary.ecore

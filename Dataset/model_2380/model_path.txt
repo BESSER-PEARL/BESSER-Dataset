@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/luciofernandes/reercase/br.ufpe.cin.eercase.m2t/bin/relational.ecore

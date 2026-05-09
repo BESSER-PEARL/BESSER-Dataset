@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/csbc92/MDSE-mathinterpreter/mathinterpreter/dk.chcla15.mathinterpreter/model/generated/MathAssignmentLanguage.ecore

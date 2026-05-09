@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/pedrorleonardo/teseVisualino/eclipse project/imported/org.eclipse.epsilon.examples.standalone/src/org/eclipse/epsilon/examples/standalone/models/farrusco.ecore

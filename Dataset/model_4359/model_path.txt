@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.mutations.generator/metamodels/SimpleLang.ecore

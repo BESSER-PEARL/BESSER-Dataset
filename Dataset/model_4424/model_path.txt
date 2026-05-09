@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tonlongphuoc/DSL4Wearable/iotwearable.model/model/iotw.ecore

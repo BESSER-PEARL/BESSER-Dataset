@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LorenzoBettini/edelta/edelta.parent/edelta.examples/modified/PersonList.ecore

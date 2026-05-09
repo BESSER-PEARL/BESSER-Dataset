@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ObeoNetwork/TOGAF-Designer/plugins/org.obeonetwork.dsl.togaf.contentfwk/model/contentfwk.ecore

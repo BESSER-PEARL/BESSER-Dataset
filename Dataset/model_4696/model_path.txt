@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/anqili426/familyTreeGen/ca.mcgill.model.familytree.gen/inputs/familytree.ecore

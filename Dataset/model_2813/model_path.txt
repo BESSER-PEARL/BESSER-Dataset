@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/locationtech/geoff/plugins/org.locationtech.geoff.model/model/geoff.ecore

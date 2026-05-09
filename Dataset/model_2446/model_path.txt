@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lta-disco-unimib-it/BCT_TOOLSET/it.unimib.disco.lta.eclipse.fsa/model/fsa.ecore

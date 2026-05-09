@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/DatabasesWorks/Fakturama-2-Accounting-Billing-Software/Fakturama-Parent/com.sebulli.fakturama.model/model/Fakturama.ecore

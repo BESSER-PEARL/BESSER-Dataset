@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/HansH/MarsRover/MarsRoverDSL/MarsRoverDSLMeta/nl.marsrover/model/generated/DSL.ecore

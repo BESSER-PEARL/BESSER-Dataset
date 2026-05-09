@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/harendra-kumar/twouse/west.twouse.tests.models2010-2/Metamodels/ecorePrimitiveTypes.ecore

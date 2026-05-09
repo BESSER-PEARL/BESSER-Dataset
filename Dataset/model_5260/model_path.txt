@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BanafshehAzizi/SEET/evaluation/seet.evaluation.scalability/Newsletter2HTML/metamodels/HTML.ecore

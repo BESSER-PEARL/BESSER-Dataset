@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/adolfosbh/cs2as/oclDependencyAnalysis/example/example2/Classes.ecore

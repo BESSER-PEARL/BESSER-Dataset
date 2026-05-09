@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ajperalt/xtext/org.example.entites/bin/org/examples/entities/Entities.ecore

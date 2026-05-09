@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Gabitchov/org.eclipse.papyrus/extraplugins/marte/org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore

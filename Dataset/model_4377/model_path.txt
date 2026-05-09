@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/dvj-shimbo/kragstein/models/KPackage/model/package.ecore

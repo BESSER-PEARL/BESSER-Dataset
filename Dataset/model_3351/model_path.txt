@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/wbombardellis/BachelorThesis_WilliamBombardelliDaSilva/Metamodels/de.silvawb.java/model/java.ecore

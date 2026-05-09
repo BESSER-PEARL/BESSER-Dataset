@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/bendavid-olivier/mdsec/metamodel/grapho/graphO.ecore

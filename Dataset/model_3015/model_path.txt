@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tetrabox/minijava/plugins/org.tetrabox.minijava.xminijava/model/XMiniJava.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/CoCoResearch/PLConfiguration/SearchStrategies/CoCoStandalone/metamodels/coCoMM.ecore

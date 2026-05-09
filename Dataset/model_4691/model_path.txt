@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/adbetin/sirius-tutorial/org.eclipse.sirius.sample.basicfamily/model/basicfamily.ecore

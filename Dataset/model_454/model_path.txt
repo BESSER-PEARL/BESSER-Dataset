@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/cbiegel/ArchitectureKnowledgeModel/org.emftrace.metamodel/bin/org/emftrace/metamodel/UMLModel/impl/UMLModel.ecore

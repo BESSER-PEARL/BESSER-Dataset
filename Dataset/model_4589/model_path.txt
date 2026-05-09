@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/lolybc88/Primitives/AD2PetriNet/Copy of ActivityDiagram.ecore

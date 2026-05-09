@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/luciuscode/test/SL/model/schoollibrary.ecore

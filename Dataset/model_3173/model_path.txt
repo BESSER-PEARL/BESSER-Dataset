@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mraminella/XtextExamples/org.xtext.example.smalljava/model/generated/SmallJava.ecore

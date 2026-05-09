@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/majicmoo/EGLStuff/Jet2Egl/epsilon-1.1_SR1-ant-emf/org/eclipse/epsilon/hutn/model/HUTN.ecore

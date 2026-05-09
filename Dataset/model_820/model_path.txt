@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gemoc/ICSA2017Tutorial/code/2.4-sirius-start/org.gemoc.sample.legacyfsm.xsfsm/model-gen/XSFSMMT.ecore

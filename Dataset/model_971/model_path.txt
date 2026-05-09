@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipsechaser/de.eclipsechaser.examples.gef3d/de.eclipsechaser.examples.gef3d.model/model/graph.ecore

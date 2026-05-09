@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/doalulema/SI4IoT/wsmodel3/model/wsmodel3.ecore

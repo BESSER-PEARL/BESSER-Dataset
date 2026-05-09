@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/d-ahmed/TER/CLEAN-XTEXT-PROJECT/com.aelos.xtext.architecture/model/generated/Architecture.ecore
