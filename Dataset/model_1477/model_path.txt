@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kub/gmf-test/com.gooddata.gmf.test.emf/model/graph.ecore

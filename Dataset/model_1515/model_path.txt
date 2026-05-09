@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/reauarthur/FSM_REAU/mydsl/model/mydsl.ecore

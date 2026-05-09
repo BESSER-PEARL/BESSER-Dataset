@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/javitroya/AME_ATL_MUT_Testing/Mutation_Testing/mutations/metamodels/ATL.ecore

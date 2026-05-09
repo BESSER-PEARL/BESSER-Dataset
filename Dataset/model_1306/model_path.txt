@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/abdelghafourzguindou/ModelTransformer/stateMachine/StateMachine/model/StateMachineDC.ecore

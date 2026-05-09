@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mikevd92/atl2/Task1/ATL Model Transformation/ExtendedPetriNets2ClassicalPN/PetriNets.ecore

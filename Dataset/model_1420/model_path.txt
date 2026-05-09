@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/bpel/examples/plugins/org.eclipse.xtext.example.fowlerdsl/src-gen/org/eclipse/xtext/example/fowlerdsl/Statemachine.ecore

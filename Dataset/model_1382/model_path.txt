@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/blackmahub/de.hs-fulda.informatik.mdd/mdd_trial_exam_2/model/statemachine.ecore

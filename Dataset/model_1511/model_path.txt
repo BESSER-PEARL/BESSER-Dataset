@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eemanon/idm_a_tp2/code/languagewb/org.gemoc.models17.fsm.model/model/model.ecore

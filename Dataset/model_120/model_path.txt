@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/KDReleng/org.eclipse.dltk.javascript/plugins/org.eclipse.dltk.javascript.core.manipulation/model/dom.ecore

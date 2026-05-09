@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BanafshehAzizi/SEET/plugins/anatlyzer/anatlyzer.atl.standalone.api/examples/workflow2pn/metamodels/petri_nets.ecore

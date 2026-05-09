@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MSubhanH/Ecore2OWL/emf4sw/examples/com.emf4sw.rdf.examples/src/Family.ecore

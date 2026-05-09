@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/kchristi-MrAleborg/ProjetIDM_StateMachine/StateMachine/metaModels/StateMachine.ecore

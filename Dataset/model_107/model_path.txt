@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/evertonlga/mobit/MoBIT/Metamodels/JavaAbstractSyntax.ecore

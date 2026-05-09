@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/epsilonlabs/epsilonlabs/StaticAnalysis/org.eclipse.epsilon.static.analysis.tests/xml_driver/EOL.ecore

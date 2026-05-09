@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/CoWolf/CoWolf/de.uni_stuttgart.iste.cowolf.model.statechart/model/statemachine.ecore

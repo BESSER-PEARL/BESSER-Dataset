@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ekkart/ECNO/examples/APetriNetEditorIn15Minutes/model/PetriNet.ecore

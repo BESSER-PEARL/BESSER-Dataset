@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/patrickneubauer/XMLIntellEdit/xmlintelledit/xmltext/examples/simpleany.ecore

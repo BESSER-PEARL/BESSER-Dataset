@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/LFredin/acceleo_test/plugins/org.eclipse.acceleo.model/model/mtl.ecore

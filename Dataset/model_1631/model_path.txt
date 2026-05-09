@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ekkart/ePNK/plugins/core/org.pnml.tools.epnk/model/PNMLCoreModel.ecore

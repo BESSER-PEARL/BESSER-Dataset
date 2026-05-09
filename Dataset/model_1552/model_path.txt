@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse/mylyn.reviews.r4e/org.eclipse.mylyn.reviews.r4e.core/model/org.eclipse.mylyn.reviews.r4e.core.model.ecore

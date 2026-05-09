@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/montex/CHESS-SBA/org.polarsys.chess.statebased/metamodels/placeTransition.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/diverse-project/melange-examples/otherfsm/model/otherfsm.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BackupTheBerlios/tef-svn/trunk/hub.sam.tef.ocl/resources/OCLCST.ecore

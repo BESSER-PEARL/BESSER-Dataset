@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eMoflon/emoflon-tie-gt-examples/GraphOperations/model/GraphOperations.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Bankzhy/workspace/MDD_SmartPhone/PIM/MetaModel/StateMachineDiagram_Meta.ecore

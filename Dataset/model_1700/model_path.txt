@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tamasborbas/org.eclipse.viatra/examples/library/library.ecore/model/library.ecore

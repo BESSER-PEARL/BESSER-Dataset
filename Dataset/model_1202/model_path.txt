@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/amine-ben/DOCL/docl-parent/fr.inria.diverse.docl/model/generated/DOcl.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/juancadavid/papyrus/sandbox/org.eclipse.papyrus.properties.generation/Source/sample.ecore

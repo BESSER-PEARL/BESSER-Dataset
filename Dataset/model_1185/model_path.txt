@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jesusc/atl-tutorial/src/atl.example.autodebug/metamodels/ATL.ecore

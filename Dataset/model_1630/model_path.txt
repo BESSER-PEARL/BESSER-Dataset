@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/ModelEngineeringBooks/TimedStateMachine/org.pnml.tools.epnk/model/PNMLCoreModel.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/BGCX261/zoomenv-hg-to-git/emf.model/model/Library.ecore

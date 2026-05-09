@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/delislesim/Trace-Compass/org.eclipse.tracecompass.tmf.statemachine.ecore/model/state_machine.ecore

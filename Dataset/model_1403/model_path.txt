@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/nmacedo/MSV/Systems/HSM2NHSM/Resources/HSM.ecore

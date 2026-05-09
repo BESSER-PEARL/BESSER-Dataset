@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/adisandro/MMINT/plugins/Types/StateMachine/edu.toronto.cs.se.modelepedia.statemachine/model/statemachine.ecore

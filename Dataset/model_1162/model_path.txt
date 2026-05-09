@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/javitroya/ATL2DSLTrans/ATL2DSLTrans/ATL.ecore

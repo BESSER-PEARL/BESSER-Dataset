@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tetrabox/examples-behavioral-interface/languages/petrinet/org.tetrabox.examples.petrinet/model/petrinet.ecore

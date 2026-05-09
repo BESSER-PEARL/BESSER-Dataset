@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/jesusc/emop/examples/mop.emf.atl.examples/metamodels/PNML_small.ecore

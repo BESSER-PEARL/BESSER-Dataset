@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/hungngo-quoc/moliz/org.modelexecution.xmof.diff.test/model/petrinet1/petrinet.ecore

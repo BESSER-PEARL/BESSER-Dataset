@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipsesource/coffee-editor/backend/plugins/com.eclipsesource.workflow.glsp.server/src/main/resources/glsp-graph.ecore

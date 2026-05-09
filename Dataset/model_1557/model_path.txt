@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/KristopherBorn/publicationExample/publicationExample/publicationExample.ecore

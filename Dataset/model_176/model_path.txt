@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Solanj/NTPNetTool/src/ru.mathtech.npntool.npnets.model/model/npnets.ecore

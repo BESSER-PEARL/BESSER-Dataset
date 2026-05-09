@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/state-machines/puzzle.examples.fsm.uml.metamodel/models/originalFSM.ecore

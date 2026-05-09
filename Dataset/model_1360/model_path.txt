@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tetrabox/examples-behavioral-interface/languages/statemachines/org.tetrabox.examples.statemachines.abstractsyntax/model/statemachines.ecore

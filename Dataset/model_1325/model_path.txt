@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gssi/metamodelsdataset-ECMFA2020/State.ecore

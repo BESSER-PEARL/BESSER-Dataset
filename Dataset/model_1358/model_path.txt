@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/Jamzeroth/WorkspacesMG/Juno/EMF.example.StateMachine/model/StateMachine.ecore

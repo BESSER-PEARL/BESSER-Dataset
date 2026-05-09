@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/deimpali/hu.bme.mit.petrinet/hu.bme.mit.petrinet.model/model/PetrinetModel.ecore

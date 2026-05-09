@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/Fhma/MT_EOL/eol_resources/metamodels/EOL.ecore

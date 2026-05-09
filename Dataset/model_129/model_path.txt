@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/udaykabe/gra2mol/Grammar2Model.examples.Java2ASTMModel/files/metamodels/gsastm.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/DevBoost/EMFText-Zoo/Inhabitants/PetriNet/org.emftext.language.petrinet/metamodel/petrinet.ecore

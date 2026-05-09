@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/org.eclipse.atl.reactive/tests/org.eclipse.m2m.atl.tests/data/inputs/Sildex2Sam/SAM.ecore

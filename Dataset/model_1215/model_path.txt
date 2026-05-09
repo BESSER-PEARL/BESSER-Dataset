@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/epsilonlabs/epsilonlabs/StaticAnalysis/old/org.eclipse.epsilon.eol.dom/model/Eol.ecore

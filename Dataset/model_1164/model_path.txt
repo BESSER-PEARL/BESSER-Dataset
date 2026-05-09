@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/MDEGroup/EMFMigrate/xtext-based/it.univaq.coevolution.emfmigrate.tests/test-data/ATL.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/quentinceschin123456/dsl-tp/MyFirstEditorCustom/model/myFirstEditorCustom.ecore

@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/aronfabian/onlab_kodgen/hu.aronfabian.petrinet/model/petrinet.ecore

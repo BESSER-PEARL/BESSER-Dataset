@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/atlanmod/atl/plugins/org.eclipse.m2m.atl.common/model/ATL.ecore

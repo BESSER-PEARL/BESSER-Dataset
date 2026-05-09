@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipsesource/ecore-glsp/client/workspace/glsp-graph.ecore

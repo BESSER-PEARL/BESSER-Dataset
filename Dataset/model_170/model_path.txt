@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/gyurjan/Viatra-Dse-Test/Petrinet/model/My.ecore

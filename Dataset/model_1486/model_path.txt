@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/mikevd92/atl2/Task2/ATL Model Transformation/ResourcePetriNet2ResourceModel/PetriNet.ecore

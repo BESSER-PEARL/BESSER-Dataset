@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/turesheim/elibrarium/no.resheim.elibrarium.library.core/model/library.ecore

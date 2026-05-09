@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/CohesionForce/ecfrance-sirius/plugins/org.eclipse.sirius.tests.sample.scxml/model/scxml.ecore

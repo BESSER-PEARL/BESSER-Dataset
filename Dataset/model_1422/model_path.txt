@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/eclipse-efx/efxclipse-rt/demos/org.eclipse.fx.xtext.statemachine/model/generated/Statemachine.ecore

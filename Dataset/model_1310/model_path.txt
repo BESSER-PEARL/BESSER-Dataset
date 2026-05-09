@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/arnobl/kompren/kompren-examples/examples.stateMachineSlicer/src/main/model/StateMachine.ecore

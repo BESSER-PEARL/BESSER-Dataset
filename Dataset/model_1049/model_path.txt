@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/TESTSD2EFSM/Tool/EFSM/model/efsm.ecore

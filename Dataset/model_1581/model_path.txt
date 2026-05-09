@@ -1,1 +1,0 @@
-/modelset/raw-data/repo-ecore-all/data/schwichti/astro/de.upb.dbis.owls/model/PetriNet.ecore
